@@ -1,0 +1,13 @@
+//test return 0
+// basic function call
+
+int f(int a, int b) {
+    int c = a + b; // 11
+    int d = a - b; // -1
+    int e = a / b; // 0
+    return c * d * e;
+}
+
+int main() {
+    return f(5, 6);
+}

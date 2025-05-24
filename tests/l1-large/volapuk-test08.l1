@@ -1,0 +1,12 @@
+//test error
+
+// Tests error when no return estatement
+
+int main() {
+    int i;
+    int j;
+    int k;
+    i = 123;
+    j = i;
+    k = j;
+}

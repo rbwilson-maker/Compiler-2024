@@ -1,0 +1,14 @@
+//test abort
+
+struct s {
+    bool left;
+    bool right;
+};
+
+int main() {
+    struct s* val = alloc(struct s);
+    (*val).left = true;
+    (*val).right = false;
+    assert((*val).left == (*val).right);
+    return 0;
+}

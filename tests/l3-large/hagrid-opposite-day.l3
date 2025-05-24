@@ -1,0 +1,9 @@
+//test error
+//it's opposite day! too bad compilers HATE opposite day.
+
+typedef int bool;
+typedef bool int;
+
+int main(){
+  return 0;
+}

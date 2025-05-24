@@ -1,0 +1,21 @@
+//test return 1282572
+int helper(int x, int low, int high) {
+  if (low == high) {
+    if(low == 0) return 0;
+    else return low-1;
+  }
+  int middle = (low+high)/2;
+  int sqrt = middle * middle;
+  if (sqrt == x) return middle;
+  else if(sqrt < x) return helper(x, middle+1, high);
+  else return helper(x, low, middle);
+}
+
+int mySqrt(int x) {
+  return helper(x, 0, (x+1)/2+1);
+}
+
+int main()
+{
+  return mySqrt(19910924);
+}

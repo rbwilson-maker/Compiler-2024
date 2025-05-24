@@ -1,0 +1,41 @@
+//test return 3
+
+struct eye {
+  bool edible;
+};
+
+struct potato {
+  bool edible;
+  struct eye*[] eyes;
+};
+
+int edible_potatoes(struct potato* p) {
+  int yummy = 0;
+  if(p->edible) {
+    yummy++;
+  }
+  int num_eyes = 3;
+  for(int i = 0; i < num_eyes; i++) {
+    if (p->eyes[i]->edible) {
+      yummy++;
+    }
+  }
+  return yummy;
+}
+
+int main() {
+  struct potato* p = alloc(struct potato);
+  struct eye*[] eyes = alloc_array(struct eye*, 3);
+  struct eye* i = alloc(struct eye);
+  i->edible = true;
+  struct eye* ii = alloc(struct eye);
+  ii->edible = true;
+  struct eye* iii = alloc(struct eye);
+  iii->edible = false;
+  eyes[0] = i;
+  eyes[1] = ii;
+  eyes[2] = iii;
+  p->eyes = eyes;
+  p->edible = true;
+  return edible_potatoes(p);
+}

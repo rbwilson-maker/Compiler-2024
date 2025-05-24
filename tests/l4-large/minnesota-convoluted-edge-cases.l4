@@ -1,0 +1,33 @@
+//test return 4
+
+struct a {
+  int a;
+  struct b* b;
+  int c;
+};
+
+struct b {
+  int a;
+  int b;
+  struct c* c;
+};
+
+struct c {
+  struct a* a;
+  int b;
+  int c;
+};
+
+int main() {
+  struct a* alpha = alloc(struct a);
+  alpha->b = alloc(struct b);
+  alpha->b->c = alloc(struct c);
+  alpha->b->c->a = alpha;
+  alpha->b->c->b = 1;
+  alpha->b->c->c = 2;
+  alpha->b->a = 3;
+  (*(*alpha).b).b = 4;
+  alpha->a = 5;
+  alpha->c = 6;
+  return alpha->b->c->a->b->b;
+}

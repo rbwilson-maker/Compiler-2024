@@ -1,0 +1,16 @@
+//test typecheck
+//test infloop
+
+int main ()
+{
+  bool flip = true;
+
+  while (flip) {
+    flip = false;
+    while (!flip) {
+      flip = true;
+    }
+  }
+
+  return 0;
+}

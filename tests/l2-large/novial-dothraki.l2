@@ -1,0 +1,8 @@
+//test error
+// ternary expression in wrong order
+
+int main() {
+  int k = 1;
+  int y = k : 0x4882 ? 0;
+  return y;
+}

@@ -1,0 +1,12 @@
+//test error
+
+// Shouldn't allow variable declarations to escape their scope
+
+int main() {
+  {
+    int x = 1;
+  }
+  int y = x;
+
+  return 1;
+}

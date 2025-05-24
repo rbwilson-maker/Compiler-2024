@@ -1,0 +1,20 @@
+//test return 208012
+//returns the nth catalan number (n = 14 here)
+
+int choose(int n, int r) {
+  if (n < r) {
+    return 0;
+  } else if (r == 0) {
+    return 1;
+  } else {
+    return choose(n - 1, r - 1) + choose(n - 1, r);
+  }
+}
+
+int catalan(int n) {
+  return choose(2 * n, n) - choose(2 * n, n + 1);
+}
+
+int main() {
+  return catalan(12);
+}

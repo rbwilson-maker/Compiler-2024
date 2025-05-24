@@ -1,0 +1,14 @@
+//test error
+
+struct test{
+  int y;
+  int z;
+};
+
+int main() {
+  struct test* t = alloc(struct test);
+  t->y -> 1;
+  return t->y;
+
+
+}

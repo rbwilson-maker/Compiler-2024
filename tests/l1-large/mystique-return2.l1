@@ -1,0 +1,8 @@
+//test return 2
+
+int main() { 
+    int x=2;
+    int y=3*x-1;
+    return y-x-1;
+ }
+

@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+// test loops
+int main()
+{
+   int i = 1;
+   int j = 1;
+   while(i > 0) {
+      j++;
+   }
+   return i;
+}

@@ -1,0 +1,26 @@
+//test error
+
+/* Dead Code Typedef Keyword Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, September 13, 2015 at 09:30:29 AM 
+ *
+ * This test tests whether the compiler detects that the keyword 'typedef'
+ * is being used as an identifier, even when this happens inside of
+ * dead code, such as after a return statement.
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int z;
+
+    x = 4;
+    y = 3;
+    z = x + y;
+
+    return z;
+    int typedef;
+}

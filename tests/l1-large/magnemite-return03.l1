@@ -1,0 +1,10 @@
+//test return 7
+// arithmetic operations (/ %)
+
+int main() {
+    int a = 23;
+    int b = 17;
+    int c = a / b;
+    int d = c * 14;
+    return d / 2;
+}

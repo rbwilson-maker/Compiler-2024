@@ -1,0 +1,12 @@
+//test return 0
+// simple test defines types t1 and t2
+
+void foo(){
+    return;
+}
+
+int main () {
+    int start = 8;
+    foo();
+    return 0;
+}

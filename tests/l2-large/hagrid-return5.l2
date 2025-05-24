@@ -1,0 +1,11 @@
+//test return 1
+//escaping the forever loop
+
+int main()
+{
+  int x = 0;
+  while(true){
+    return 1;
+  }
+  return x;
+}

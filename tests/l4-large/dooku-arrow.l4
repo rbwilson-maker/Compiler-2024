@@ -1,0 +1,25 @@
+//test return 1
+struct list {
+  int data;
+  struct list* next;
+};
+
+typedef struct list* list;
+
+list nil() {
+  return NULL;
+}
+
+list cons(int x, list l) {
+  list p = alloc(struct list);
+  p->data = x;
+  p->next = l;
+  return p;
+}
+
+int main() {
+  list l = nil();
+  l = cons(1, l);
+  l = cons(2, l);
+  return 1;
+}

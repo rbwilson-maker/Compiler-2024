@@ -1,0 +1,12 @@
+//test return 0
+
+int main() {
+	int sum = 0;
+	for (int i = 1; i <= 0xffff; i++) {
+		sum += i;
+	}
+	for (int i = -1; i >= -0xffff; i--) {
+		sum += i;
+	}
+	return sum;
+}

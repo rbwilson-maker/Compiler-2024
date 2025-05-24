@@ -1,0 +1,20 @@
+//test error
+int main() {
+    return 0;
+    int x;
+    return 1;
+    int y = x;
+    int z;
+    if (true) {
+        return 2;
+    } else {
+        z = 5;
+    }
+    int a = z;
+    int b;
+    while (true) {
+        b = 5;
+    }
+    int c = b;
+    return 7;
+}

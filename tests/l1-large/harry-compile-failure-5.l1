@@ -1,0 +1,14 @@
+//test error
+
+/* return expression with undefined var */
+
+int main()
+{
+    int a;
+    int b;
+
+    a = 4;
+    b = 5;
+
+    return a + b + c;
+}

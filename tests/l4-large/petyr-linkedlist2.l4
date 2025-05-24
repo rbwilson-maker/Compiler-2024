@@ -1,0 +1,27 @@
+//test return 0
+
+// dereference to the end of the list
+
+struct llist {
+    struct llist * next;
+};
+
+typedef struct llist linked ;
+
+int main () {
+    linked * listptr = alloc(linked) ;
+    int i = 0 ;
+    linked * l = listptr ;
+    while ( i < 8 ) {
+       (*l).next = alloc(linked) ;
+       l = (*l).next ;
+       i++ ;
+    }
+    (*l).next = NULL ;
+
+    int res;
+    if (listptr->next->next->next->next->next->next->next->next->next == NULL) res = 0 ;
+    else res = 1;
+
+    return res;
+}

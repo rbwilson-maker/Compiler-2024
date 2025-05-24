@@ -1,0 +1,12 @@
+//test return -34598348
+
+int main ()
+{
+    int x1 = 0x12345678;
+    int x2 = 0xABCDEFFF;
+    int x3 = x1 & 3;
+    int x4 = x2 & 4;
+    int x5 = x1 | 5;
+    int x6 = x2 | 6;
+    return (x3 + x4 + x5 + x6) >> 5;
+}

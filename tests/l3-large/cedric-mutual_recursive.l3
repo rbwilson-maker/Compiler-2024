@@ -1,0 +1,16 @@
+//test return 15451 
+int a(int n);
+int b(int n);
+int a(int n) {
+  if(n == 0) {
+    return 15451;
+  } else {
+    return b(n);
+  }
+}
+int b(int n) {
+  return a(n-1);
+}
+int main() {
+  return a(15451);
+}

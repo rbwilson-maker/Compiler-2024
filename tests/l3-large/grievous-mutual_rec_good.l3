@@ -1,0 +1,14 @@
+//test return 6
+int f(int x);
+
+int g(int b) {
+  return b + (b == -b ? b : f(b-1));
+}
+
+int f(int a){
+  return a + g(a-1);
+}
+
+int main() {
+return f(3);
+}

@@ -1,0 +1,8 @@
+typedef int turing_machine;
+typedef int input;
+
+bool does_it_halt(turing_machine T, input I);
+
+void run(turing_machine T, input I);
+
+void main();

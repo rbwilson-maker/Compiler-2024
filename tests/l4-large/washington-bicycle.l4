@@ -1,0 +1,16 @@
+//test return 0
+
+struct foo;
+struct bar;
+
+struct foo {
+    struct bar *p;
+};
+
+struct bar {
+    struct foo *p;
+};
+
+int main() {
+    return 0;
+}

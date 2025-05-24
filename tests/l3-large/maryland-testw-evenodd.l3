@@ -1,0 +1,19 @@
+//test return 42
+// lots of recursion to check evenness/oddness
+
+int abs(int n) { return n < 0 ? -n : n; }
+
+bool even(int n);
+bool odd(int n);
+
+bool even(int n) { return n == 0 ? true : odd(abs(n-1)); }
+bool odd(int n) { return n == 0 ? false : even(abs(n-1)); }
+
+bool taut(int n) {
+  return even(n) || odd(n);
+}
+
+int main() {
+  for (int i = -7500; i < 7500; i++) assert(taut(i));
+  return 42;
+}

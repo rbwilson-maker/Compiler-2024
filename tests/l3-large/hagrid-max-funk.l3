@@ -1,0 +1,46 @@
+//test return 2
+
+
+
+bool test_func(){
+  return false;
+}
+bool test_func1(){
+  return false;
+  
+}
+bool test_func2(){
+  return false;
+
+}
+bool test_func3(){
+  return false;
+
+}
+bool test_func4(){
+  return false;
+
+}
+bool test_func5(){
+  return false;
+
+}
+bool test_func6(){
+  return false;
+
+}
+bool test_func7(){
+  return false;
+
+}
+bool test_func8(){
+  return false;
+
+}
+
+int main(){
+  if ( test_func() || test_func1() ||test_func2() ||test_func3() ||test_func4() ||test_func5()){
+    return 1;
+  }
+  else return 2;
+}

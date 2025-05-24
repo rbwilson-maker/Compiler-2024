@@ -1,0 +1,13 @@
+//test return 36
+
+int sum_digits(int num) {
+    assert(num >= 0);
+    if (num < 10)
+        return num;
+    return (num % 10) + sum_digits(num / 10);
+}
+
+int main() {
+    assert(sum_digits(1234) == sum_digits(4321));
+    return sum_digits(12345678);
+}

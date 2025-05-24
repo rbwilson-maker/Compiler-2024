@@ -1,0 +1,15 @@
+//test return -1
+
+struct levee {
+    int lazar;
+    struct levee *en_masse;
+};
+typedef struct levee lazar;
+
+int main(){
+    lazar *levee = alloc(lazar);
+    levee->en_masse = alloc(lazar);
+    levee->en_masse->en_masse = alloc(lazar);
+    levee->en_masse->en_masse->lazar = -1;
+    return levee->en_masse->en_masse->lazar;
+}

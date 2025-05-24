@@ -1,0 +1,31 @@
+//test return 1
+
+typedef struct node node;
+
+struct node{
+  int data;
+  node* next;
+};
+
+bool isAcyclic(node* curr){
+  if (curr == NULL) return true;
+  node* pikachu = curr->next;
+  node* tortoise = curr;
+  while (pikachu != tortoise){
+    if (tortoise == NULL || pikachu->next == NULL) return true;
+    tortoise = tortoise->next;
+    pikachu = pikachu->next->next;
+  }
+  return false;
+}
+
+int main(){
+  node* A = alloc(node);
+  node* B = alloc(node);
+  node* C = alloc(node);
+  node* D = alloc(node);
+  A->data = 10; B->data = 20; C->data = 30; D->data = 40;
+  A->next = B; B->next = C; C->next = D; D->next = A;
+  if (isAcyclic(A)) return 0;
+  else return 1;
+}

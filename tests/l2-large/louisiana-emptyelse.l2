@@ -1,0 +1,19 @@
+//test return 42
+
+int main()
+{
+    bool j = false;
+    int x = 1;
+    int y = 0;
+    for ((x == 1 ? true : false); j; ){
+        if (x < 2) 
+        {
+            if (x < 3) 
+            {
+                if (y == 0) j = true;
+            }
+        }
+    }
+
+    return 42;
+}

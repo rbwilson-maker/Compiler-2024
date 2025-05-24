@@ -1,0 +1,36 @@
+//test return 13
+
+void step (int [] good_enough, int n) {
+  int i = 0;
+  while (n != 0) {
+   if(n % 2 == 1) {
+     good_enough[i] = 1;
+   }
+   n /= 2;
+   i++;  
+  }	
+}
+void wipe(int [] B, int n){
+  for (int i = 0; i < n; i++) {
+    B[i] = 0;	  
+  }	
+}
+int getCount (int [] bin_arr, int n){
+  int i = 0;
+  while(n > 0) {
+    i += bin_arr[n-1];
+    n--;
+  }
+  return i;
+}
+int main() {
+  int watch = 1000000000;
+  int [] the_magic = alloc_array(int, 32);
+  int happen = 0;
+  for (int i = 0; i < 5; i++) {
+    wipe(the_magic,32);
+    step(the_magic, watch); 
+    happen = getCount(the_magic,32); 	  
+  }
+  return happen;
+}

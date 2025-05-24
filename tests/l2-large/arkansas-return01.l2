@@ -1,0 +1,12 @@
+//test return 100
+// normal execution of if
+int main() {
+    int x = -100 ;
+    int sign;
+    if (x < 0) {
+        sign = 100;
+    } else {
+        sign = -100;      
+    }
+    return sign;
+}

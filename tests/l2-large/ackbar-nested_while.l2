@@ -1,0 +1,15 @@
+//test return 30
+//A test of a nested while loop
+int main() {
+    int outer = 0;
+    int sum = 0;
+    while(outer < 3){
+        int inner = 0;
+        while(inner < 10){
+            inner++;
+            sum++;
+        }
+        outer++;
+    }
+    return sum;
+}

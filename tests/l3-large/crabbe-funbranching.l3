@@ -1,0 +1,19 @@
+//test error
+
+int num() {
+  return 6;
+}
+
+bool notnum() {
+  return false;
+}
+
+int main(){
+
+  if(true) {
+    return num();
+  }
+  else {
+    return notnum();
+  }
+}

@@ -1,0 +1,16 @@
+//test return 120
+
+int factHelper(int n, int res) {
+    if (n == 0) {
+        return res;
+    }
+    return factHelper(n - 1, res * n);
+}
+
+int fact(int n) {
+    return factHelper(n, 1);
+}
+
+int main() {
+    return fact(5);
+}

@@ -1,0 +1,9 @@
+//test return 32
+
+int nested(int i) {
+    return i * 2;
+}
+
+int main () {
+    return nested(nested(nested(nested(nested(1)))));
+}

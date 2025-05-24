@@ -1,0 +1,15 @@
+//test return 3
+
+int main ()
+{
+    bool bowl = false;
+
+    if (bowl) {
+        int x = 1/0;
+    } else {
+        int y = 1;
+    }
+    int z = 3;
+    return z;
+}
+

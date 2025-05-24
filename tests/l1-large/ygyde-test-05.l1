@@ -1,0 +1,9 @@
+//test return 7
+
+int main()
+{
+  int a = 4409;
+  int b = 1193;
+  int c = 10;
+  return (a * b) % c;
+}

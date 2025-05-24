@@ -1,0 +1,10 @@
+//test return 0
+// test short circuiting
+int main() {
+    bool a = false;
+    bool b = false;
+    if (a && (b || !b)) {
+        return 1;
+    }
+    return 0;
+}

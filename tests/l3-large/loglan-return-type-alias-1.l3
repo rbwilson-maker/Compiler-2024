@@ -1,0 +1,19 @@
+//test return 1
+
+typedef int vatsal;
+typedef bool matthew;
+
+int s(int a) {
+    return a+1;
+}
+
+int main() {
+    vatsal matthe = s(1);
+    matthew vatsa = true;
+    if (vatsa) {
+        return 1;
+    }
+    else {
+        return 2;
+    }
+}

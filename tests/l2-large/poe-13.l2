@@ -1,0 +1,8 @@
+//test error
+
+//C0 does not allow implicit or explicit coercion between integral and boolean
+
+int main() {
+	int a = true;
+	return a;
+}

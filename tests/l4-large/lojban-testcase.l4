@@ -1,0 +1,55 @@
+//test return 3
+
+int intersect(int[] A, int a, int[] B, int b, int[] result) {
+   int idx = 0;
+   for (int i = 0; i < a; i++) {
+      bool same = false;
+      for (int j = 0; j < b; j++) {
+         if (A[i] == B[j]) {
+            same = true;
+         }
+      }
+      if (!same) {
+         result[idx] = A[i];
+         idx++;
+      }
+   }
+
+   for (int i = 0; i < b; i++) {
+      bool same = false;
+      for (int j = 0; j < a; j++) {
+         if (A[j] == B[i]) {
+            same = true;
+         }
+      }
+      if (!same) {
+         result[idx] = B[i];
+         idx++;
+      }
+   }
+
+   return idx;
+}
+
+int run_testcase(int[] A, int a, int[] B, int b, int[] expected, int e)
+{
+    int size = a < b ? a : b;
+    int[] intersection = alloc_array(int, size);
+    int len = intersect(A, a, B, b, intersection);
+
+    return e - len;
+}
+
+int main() {
+    int[] A = alloc_array(int, 5);
+    for (int i = 0; i < 5; i++) A[i] = i;
+
+    int[] B = alloc_array(int, 5);
+    for (int i = 4; i >= 0; i--) B[i] = 5 - i;
+
+    int[] expected = alloc_array(int, 5);
+    int e = 5;
+
+    return run_testcase(A, 5, B, 5, expected, e);
+}
+

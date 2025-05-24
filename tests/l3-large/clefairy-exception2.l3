@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int collatz_helper(int x, int acc) {
+	if (x == 1) return acc;
+	return collatz_helper((x & 1) == 0 ? x / 2 : x * 3 + 1, acc + 1);
+}
+
+int collatz_count(int x) {
+	return collatz_helper(x, 0);
+}
+
+int main() {
+	return 15411 / collatz_count(1);	
+}

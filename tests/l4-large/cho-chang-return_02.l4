@@ -1,0 +1,37 @@
+//test return 5040
+
+typedef int* memint;
+int multiply_many(int *a, int *b, int *c, int *d, int *e, int *f, int *g)
+{
+    return *a * *b * *c * *d * *e * *f * *g;
+}
+
+int main()
+{
+    memint* a = alloc(memint);
+    memint* b = alloc(memint);
+    memint* c = alloc(memint);
+    memint* d = alloc(memint);
+    memint* e = alloc(memint);
+    memint* f = alloc(memint);
+    memint* g = alloc(memint);
+
+    *a = alloc(int);
+    *b = alloc(int);
+    *c = alloc(int);
+    *d = alloc(int);
+    *e = alloc(int);
+    *f = alloc(int);
+    *g = alloc(int);
+
+    **a = 1;
+    **b = 2;
+    **c = 3;
+    **d = 4;
+    **e = 5;
+    **f = 6;
+    **g = 7;
+
+    return multiply_many(*a, *b, *c, *d, *e, *f, *g);
+
+}

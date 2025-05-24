@@ -1,0 +1,27 @@
+//test memerror
+
+typedef int foo;
+
+typedef struct foo sfoo;
+
+typedef struct foo* sfoos;
+
+struct foo {
+  struct foo* a;
+  sfoos b;
+  foo foo;
+};
+
+foo main() {
+  sfoos a = alloc(struct foo);
+  struct foo* b = alloc(sfoo);
+  struct foo* c = alloc(struct foo);
+  a->a = b;
+  b->a = c;
+  while(true) {
+    a = a->a;
+  }
+  return 0;
+}
+
+struct foo;

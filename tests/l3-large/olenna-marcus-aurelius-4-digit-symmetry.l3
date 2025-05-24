@@ -1,0 +1,41 @@
+//test return 0
+//
+
+//returns if a 4 digit number is symmetric
+//ex. 1441 is symmetric, 3442 is not
+bool is_symmetric(int x);
+
+//returns kth digit from the right
+int kth_digit(int x, int k);
+
+
+int main(){
+  assert(is_symmetric(1441));
+  assert(is_symmetric(2112));
+  assert(!(is_symmetric(1234)));
+  assert(!(is_symmetric(5139)));
+  assert(is_symmetric(7667));
+
+  return 0;
+}
+
+
+bool is_symmetric(int x){
+  int v3 = kth_digit(x, 0);
+  int v2 = kth_digit(x, 1);
+  int v1 = kth_digit(x, 2);
+  int v0 = kth_digit(x, 3);
+
+  return ((v3 == v0) && (v2 == v1));
+}
+
+
+int kth_digit(int x, int k){
+  int dig = 0;
+  for (int i = 0; i <= k; i++){
+    dig = x % 10;
+    x = x/10;
+  }
+  return dig;
+}
+

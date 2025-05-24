@@ -1,0 +1,22 @@
+//test div-by-zero 
+
+// testing function redeclarations and local variables shadowing fn names
+
+int x (int y);
+
+int x (int z);
+
+int x (int y);
+
+int x (int bad_if_zero ) {
+    return 1/bad_if_zero;
+}
+
+int y (int z) {
+    int x = 0;
+    return x;
+}
+
+int main() {
+    return x(y(1000000));
+}

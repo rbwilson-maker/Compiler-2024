@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+// defined order of execution
+
+int f(int x, int y) {
+  return 2;
+}
+
+int g() {
+  while(true){}
+  return 0;
+}
+
+int main () {
+  f(g(), 1/0);
+  return 0;
+}

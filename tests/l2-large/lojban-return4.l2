@@ -1,0 +1,12 @@
+//test return 5 
+
+int main()
+{
+	int x = -10;
+	int y = 20;
+	while(x + y > 0) {
+		x++;
+		y -= 2;
+	}
+	return 5+x+y;
+}

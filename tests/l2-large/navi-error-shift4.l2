@@ -1,0 +1,7 @@
+//test div-by-zero
+int main() {
+	int a = 33;
+	int sum = 0;
+	sum <<= -1;
+	return sum;
+}

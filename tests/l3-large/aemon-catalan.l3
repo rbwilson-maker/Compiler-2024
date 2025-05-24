@@ -1,0 +1,17 @@
+//test return 132
+
+int fact(int n);
+
+int catalan(int m) {
+    return fact(2 * m) / fact(m) / fact(m) / (m + 1);
+}
+
+int fact(int n) {
+    if (n == 1) return 1;
+    return n * fact(n - 1);
+}
+
+int main() {
+    assert(catalan(2) == 2);
+    return catalan(6);
+}

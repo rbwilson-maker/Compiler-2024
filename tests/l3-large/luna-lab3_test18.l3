@@ -1,0 +1,14 @@
+//test abort
+
+// Main function is implicitly defined.
+
+int test(int t) {
+    if (t < 10) return main();
+    return 10;
+}
+
+int main() {
+    int t = test(20);
+    assert(t < 0);
+    return t;
+}

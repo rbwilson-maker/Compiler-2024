@@ -1,0 +1,18 @@
+//test error
+
+int function_factory(int x, int q) {
+    return (x | q) + (x - q) * (x << q);
+}
+
+int main() {
+    int a = 0;
+
+    for(int i = 1; i <= 10; i++) {
+        a += i;
+    }
+
+    return function_factory(a, 4);
+}
+
+// incompatible declaration with previous definition
+bool function_factory(int x, int q);

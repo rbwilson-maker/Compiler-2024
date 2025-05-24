@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+int main()
+{
+  while(true)
+  {
+    int x = 3;
+    bool y = x == 3 ? false : (0 / 0) == 1;
+    if (!!y)
+      return 0;
+  }
+  return 1;
+}

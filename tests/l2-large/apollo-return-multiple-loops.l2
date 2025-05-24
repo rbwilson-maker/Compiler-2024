@@ -1,0 +1,24 @@
+//test return 150
+// loopy loops
+
+int main () {
+  int fifteen = 0;
+  bool b = false;
+  int res = 0;
+
+  while (!b) {
+    fifteen++;
+    b = fifteen == 15;
+  }
+
+  b = false;
+  int counter = 0;
+
+  while (!b) {
+    res += fifteen;
+    counter++;
+    if (counter == 10) { b = true; }
+  }
+
+  return res;
+}

@@ -1,0 +1,48 @@
+//test return 1
+
+
+int a1(int arg);
+int a2(int arg);
+int a3(int arg);
+int a4(int arg);
+int a5(int arg);
+int a6(int arg);
+int a7(int arg);
+int a8(int arg);
+int a9(int arg);
+int a10(int arg);
+int a11(int arg);
+int a12(int arg);
+int a13(int arg);
+int a14(int arg);
+int a15(int arg);
+int a16(int arg);
+int a17(int arg);
+int a18(int arg);
+int a19(int arg);
+int a20(int arg);
+
+int a1 (int arg) { if (arg == 0) return 1; return a2 (arg - 1); }
+int a2 (int arg) { if (arg == 0) return 2; return a3 (arg - 1); }
+int a3 (int arg) { if (arg == 0) return 3; return a4 (arg - 1); }
+int a4 (int arg) { if (arg == 0) return 4; return a5 (arg - 1); }
+int a5 (int arg) { if (arg == 0) return 5; return a6 (arg - 1); }
+int a6 (int arg) { if (arg == 0) return 6; return a7 (arg - 1); }
+int a7 (int arg) { if (arg == 0) return 7; return a8 (arg - 1); }
+int a8 (int arg) { if (arg == 0) return 8; return a9 (arg - 1); }
+int a9 (int arg) { if (arg == 0) return 9; return a10 (arg - 1); }
+int a10 (int arg) { if (arg == 0) return 10; return a11 (arg - 1); }
+int a11 (int arg) { if (arg == 0) return 11; return a12 (arg - 1); }
+int a12 (int arg) { if (arg == 0) return 12; return a13 (arg - 1); }
+int a13 (int arg) { if (arg == 0) return 13; return a14 (arg - 1); }
+int a14 (int arg) { if (arg == 0) return 14; return a15 (arg - 1); }
+int a15 (int arg) { if (arg == 0) return 15; return a16 (arg - 1); }
+int a16 (int arg) { if (arg == 0) return 16; return a17 (arg - 1); }
+int a17 (int arg) { if (arg == 0) return 17; return a18 (arg - 1); }
+int a18 (int arg) { if (arg == 0) return 18; return a19 (arg - 1); }
+int a19 (int arg) { if (arg == 0) return 19; return a20 (arg - 1); }
+int a20 (int arg) { if (arg == 0) return 20; return a1 (arg - 1); }
+
+int main() {
+    return a1(5000);
+}

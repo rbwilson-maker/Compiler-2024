@@ -1,0 +1,14 @@
+//test error
+
+int sumsample(int x, int y);
+
+int sum(int a, int b) {
+    int a = 0;
+    int val = a + b + (a * b) - (a - b);
+    return val;
+}
+
+int main() {
+    int val = sum(10, 20);
+    return val;
+}

@@ -1,0 +1,46 @@
+//test return 1
+
+// Assume numbers are 0 - (n-1).
+int is_sorted(int[] a, int n) {
+  int i;
+  for (i = 0; i < n; i++) {
+    if (a[i] != i)
+      return 0;
+  }
+  return 1;
+}
+
+int find(int[] A, int n, int a) {
+  int i;
+  for (i = 0; i < n; i++) {
+    if (A[i] == a)
+      return i;
+  }
+  return -1;
+}
+
+void selection_sort(int[] A, int n) {
+  int i;
+  int spot;
+  int temp;
+
+  for (i = 0; i < n; i++) {
+    spot = find(A, n, i);
+    temp = A[i];
+    A[i] = A[spot];
+    A[spot] = temp;
+  }
+}
+
+int main() {
+  int[] A;
+  A = alloc_array(int, 5);
+  //A = [3, 5, 2, 1, 4];
+  A[0] = 3;
+  A[1] = 0;
+  A[2] = 2;
+  A[3] = 1;
+  A[4] = 4;
+  selection_sort(A, 5);
+  return is_sorted(A, 5);
+}

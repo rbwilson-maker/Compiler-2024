@@ -1,0 +1,23 @@
+//test memerror
+
+int main() {
+    int[] x = alloc_array(int, 10);
+    x[7] = 4;
+    x[4] = 9;
+    x[9] = 2;
+    x[2] = 3;
+    x[3] = 6;
+    x[6] = 1;
+    x[1] = 5;
+    x[5] = 8;
+    x[8] = 0;
+    x[0] = -1;
+
+    int index = 7;
+    // what a mess
+    while (x[index] < 10 || index < 0) {
+        index = x[index];
+    }
+
+	return x[index];
+}

@@ -1,0 +1,18 @@
+//test return 16
+
+int main() {
+    int[] *p1 = alloc(int[]);
+    int*[] p2 = alloc_array(int*,4);
+    *p1 = alloc_array(int, 4);
+    (*p1)[0] = 0;
+    (*p1)[1] = 1;
+    (*p1)[2] = 2;
+    (*p1)[3] = 3;
+    p2[0] = alloc(int); p2[1] = alloc(int);
+    p2[2] = alloc(int); p2[3] = alloc(int);
+    *(p2[0]) = (*p1)[3];
+    *(p2[1]) = (*p1)[2];
+    *(p2[2]) = (*p1)[2];
+    *(p2[3]) = (*p1)[3];
+    return *(p2[0]) + (*p1)[0] + *(p2[1]) + (*p1)[1] + *(p2[2]) + (*p1)[2] + *(p2[3]) + (*p1)[3];
+}

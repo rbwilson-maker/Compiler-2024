@@ -1,0 +1,15 @@
+//test div-by-zero
+
+void myCoffeeIsPeeing () {
+    int x = 8008135;
+    while (true) {
+        x--;
+        1 / x;       
+    }
+}
+
+int main () {
+    myCoffeeIsPeeing();
+
+    return 69;
+}

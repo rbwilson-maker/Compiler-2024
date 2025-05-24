@@ -1,0 +1,12 @@
+//test typecheck
+//why would you do this
+
+int sadbois(int x)
+{
+  return frac(x);
+}
+
+int main()
+{
+  return sadbois(sadbois(sadbois(sadbois(sadbois(sadbois(sadbois(1)))))));
+}

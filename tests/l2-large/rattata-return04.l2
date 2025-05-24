@@ -1,0 +1,10 @@
+//test return 400 
+int main() {
+  int x = 40;
+  int y = 0;
+  while (x != 20) {
+    x--;
+    y++;
+  }
+  return x * y;
+}

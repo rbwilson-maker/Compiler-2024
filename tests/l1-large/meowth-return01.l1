@@ -1,0 +1,17 @@
+//test return 1
+// test basic arithmetic operations except for div and mod
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+
+  a = 1;
+  b = a*2;
+  c = 3+b;
+  d = 4-c;
+  e = -d;
+  return e;
+}

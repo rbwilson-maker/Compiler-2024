@@ -1,0 +1,9 @@
+//test return 2
+int main() {
+  int x;
+  x = 2;
+  if (x != 2) {
+    x = 3;
+  }
+  return x;
+}

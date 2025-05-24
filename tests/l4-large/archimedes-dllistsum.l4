@@ -1,0 +1,62 @@
+//test return 12
+// Sum the values of the doubly-linked list by traversing from both-ends
+// of the list. List size must be odd.
+
+struct node {
+  int val;
+  struct node *next;
+  struct node *prev;
+};
+
+typedef struct node node_t;
+
+struct list {
+  node_t *head;
+  node_t *tail;
+};
+
+typedef struct list list_t;
+
+void populate_list(list_t *lst, int n);
+
+int find_total(list_t *lst) {
+  int sum = 0;
+  while (lst->head != lst->tail) {
+    sum += lst->head->val + lst->tail->val;
+    lst->head = lst->head->next;
+    lst->tail = lst->tail->prev;
+  }
+  return sum;
+}
+
+int main() {
+  int n = 5;
+  assert(n % 2 == 1);
+  list_t *new_lst = alloc(list_t);
+  new_lst->head = NULL;
+  new_lst->tail = NULL;
+  populate_list(new_lst, n);
+  int res = find_total(new_lst);
+  return res;
+}
+
+void populate_list(list_t *lst, int n) {
+  node_t *tmp = lst->head;
+  node_t *new_node = NULL;
+  while (n > 0) {
+    new_node = alloc(node_t);
+    new_node->val = n;
+    new_node->next = NULL;
+    if (tmp == NULL) {
+      new_node->prev = NULL;
+      lst->head = new_node;
+    }
+    else {
+      tmp->next = new_node;
+      new_node->prev = tmp;
+    }
+    lst->tail = new_node;
+    tmp = new_node;
+    n--;
+  }
+}

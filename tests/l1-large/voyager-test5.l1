@@ -1,0 +1,13 @@
+//test error
+
+// this file tests comments error
+
+int main() { 
+    
+    // this is a comment /* another comment
+    but invalid */
+
+    int a = 10;
+    int b = 10;
+    return a + b;
+}

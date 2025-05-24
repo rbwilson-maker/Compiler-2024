@@ -1,0 +1,12 @@
+//test return 150
+//how deep can you recur?
+
+
+int recur(int x){
+  if(x == 0) return 150;
+  else return recur(x-1);
+}
+
+int main(){
+  return recur(99999);
+}

@@ -1,0 +1,11 @@
+//test return 9
+
+int main() {
+  int i = 3;
+  int j = 8;
+  if(i > j) {
+    return i + 1;
+  } else {
+    return j + 1;
+  }
+}

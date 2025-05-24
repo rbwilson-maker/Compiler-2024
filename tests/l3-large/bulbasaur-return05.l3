@@ -1,0 +1,18 @@
+//test return 0
+// uses Newton's Method to compute sqrt
+
+fpt sqrt(int S) {
+  fpt x = itof(1);
+  for (int i = 0; i < 10000; i++) {
+    x = fdiv(fadd(x, fdiv(itof(S), x)), itof(2));
+  }
+  return x;
+}
+
+int main() {
+  assert(ftoi(sqrt(9)) == 3);
+  assert(ftoi(sqrt(36)) == 6);
+  assert(ftoi(sqrt(4194304)) == 2048);
+  print_fpt(sqrt(2));
+  return 0;
+}

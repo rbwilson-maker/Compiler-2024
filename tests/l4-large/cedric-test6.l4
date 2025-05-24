@@ -1,0 +1,28 @@
+//test abort
+bool is_palindrome(int[] x, int len)
+{
+    int front = 0;
+    int end = len -1;
+
+    while (front <= end)
+    {
+        if (x[front] != x[end]) return false;
+        front++;
+        end--;
+    }
+
+    return true;
+}
+
+
+int main()
+{
+    int[] x=  alloc_array(int,5);
+    x[0] = 1;
+    x[1] = 3;
+    x[2] = 0;
+    x[3] = 33;
+    x[4] = 1;
+    assert (is_palindrome(x,5));
+    return 0;
+}

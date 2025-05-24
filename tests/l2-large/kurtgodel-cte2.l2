@@ -1,0 +1,14 @@
+//test error
+// Use of uninitialized variable with no side-effects
+int main()
+{
+    int a = 1;
+    bool b;
+
+    for (; true;) {
+        b = true;
+    }
+    b;
+
+    return a;
+}

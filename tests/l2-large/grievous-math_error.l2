@@ -1,0 +1,12 @@
+//test return 2
+
+// checking simple math.
+int main() {
+  // This is a comment for testing
+  int x = 1;
+  int y = x + 3;
+  // another comment
+  int z = (x + y) % y;
+  
+  return z << 1; 
+}

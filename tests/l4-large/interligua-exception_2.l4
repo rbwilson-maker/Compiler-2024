@@ -1,0 +1,14 @@
+//test div-by-zero
+
+struct a {
+    int x;
+};
+
+int main(){
+    int[] arr = alloc_array(int,10);
+    struct a *s = alloc(struct a);
+    s->x = 0;
+    arr[s->x] = 1;
+    arr[arr[0] / s->x] = 1;
+    return 1;
+}

@@ -1,0 +1,12 @@
+//test error
+// Tests that we can't declare assert.
+
+void assert (bool b) {
+
+}
+
+
+int main () {
+    assert(false);
+    return 0;
+}

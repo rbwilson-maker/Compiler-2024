@@ -1,0 +1,21 @@
+//test error
+
+int fun1(int x);
+
+int fun1 (int x) {    
+    if (x == 0) {
+        return 0;
+    }
+    return fun2(x) + x;
+}
+
+int fun2 (int x) {
+    if (x == 0) {
+        return 0;
+    }
+    return fun1(x - 1) + 1;
+}
+
+int main () {
+    return fun1(3) + fun2(3);
+}

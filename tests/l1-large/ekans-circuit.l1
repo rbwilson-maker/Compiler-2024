@@ -1,0 +1,40 @@
+//test return 24
+int main(){
+    // Rob claims you can't write interesting programs in L1...
+   /* but you can make circuits, so it's pretty strong, actually.
+  unfortunately, you can't make a family of circuits, so it still isn't Turing
+ complete, but it could allow for really huge inputs,*/ // which is close
+
+    // integers = 0 or 1 are the bits.
+    // our input is 10 = 1010_2, 14 = 1110_2
+    int x3 = 1;
+    int x2 = 0;
+    int x1 = 1;
+    int x0 = 0;
+
+    int y3 = 1;
+    int y2 = 1;
+    int y1 = 1;
+    int y0 = 0;
+
+    // Here's four one bit add-with-carries
+    int o0 = y0 + x0 - 2 * (y0 * x0); // xor
+    int c0 = y0 * x0; // and
+    
+    int o1 = y1 + x1 - 2 * (y1 * x1);
+    int c1 = y1 * x1;
+    c1 += c0 * o1;
+    o1 = c0 + o1 - 2 * (c0 * o1);
+    
+    int o2 = y2 + x2 - 2 * (y2 * x2);
+    int c2 = y2 * x2;
+    c2 += c1 * o2;
+    o2 = c1 + o2 - 2 * (c1 * o2);
+    
+    int o3 = y3 + x3 - 2 * (y3 * x3);
+    int c3 = y3 * x3;
+    c3 += c2 * o3;
+    o3 = c2 + o3 - 2 * (c2 * o3);
+    return 16*c3 + 8 *o3 + 4* o2 + 2 * o1 + o0;
+}
+

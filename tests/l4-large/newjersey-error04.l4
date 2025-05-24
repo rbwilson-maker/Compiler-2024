@@ -1,0 +1,12 @@
+//test error
+
+struct just_bool { bool b; };
+
+struct just_bool new_just_bool() {
+  struct just_bool * x = alloc(struct just_bool);
+  return *x;
+}
+
+int main() {
+  return 0;
+}

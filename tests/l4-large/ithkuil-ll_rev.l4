@@ -1,0 +1,43 @@
+//test return 100
+
+struct list {
+    int head;
+    struct list* tail;
+};
+
+typedef struct list list_t;
+
+list_t* upto(int n) {
+    list_t * p;
+    list_t * q;
+    q = NULL;
+    while (n > 0) {
+        p = alloc(list_t);
+        p->head = n;
+        p->tail = q;
+        q = p;
+        n -= 1;
+    }
+    return q;
+}
+
+list_t *reverse(list_t *p) {
+    list_t *prev = NULL;
+    list_t *current = p;
+    while (current != NULL) {
+        list_t *next = current->tail;
+        current->tail = prev;
+        prev = current;
+        current = next;
+    }
+
+    return prev;
+}
+
+int main () {
+    list_t *p;
+    p = NULL;
+    p = upto(100);
+    p = reverse(p);
+    return p->head;
+}

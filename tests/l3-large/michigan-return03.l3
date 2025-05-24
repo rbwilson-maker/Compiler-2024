@@ -1,0 +1,13 @@
+//test return 15
+
+int five(int x);
+int four(int x);
+
+int main () {
+  int x = 3;
+  return five(x);
+}
+
+int five(int x) {
+  return x*5;
+}

@@ -1,0 +1,45 @@
+//test return 411
+
+struct hey {
+  int x;
+};
+typedef struct hey* hey;
+
+struct wow {
+  hey x;  
+};
+typedef struct wow wow;
+
+struct surprise {
+  bool x;
+  wow y;
+};
+typedef struct surprise surprise;
+
+struct balloon {
+  bool x;
+  hey y;
+  surprise z;
+};
+typedef struct balloon* balloon;
+
+void open_gift(balloon x) {
+  x->x = true;
+  assert(x->y == NULL);
+}
+
+void make_surprise(balloon x) {
+  hey y = alloc(struct hey);
+  y->x = 15411;
+  x->y = y;
+  x->z.y.x = y;
+}
+
+int main() {
+  balloon gift = alloc(struct balloon);
+  balloon sample = alloc(struct balloon);
+  open_gift(gift);
+  make_surprise(gift);
+  assert(gift->y->x == gift->z.y.x->x);
+  return gift->x ? 411 : (1/0);
+}

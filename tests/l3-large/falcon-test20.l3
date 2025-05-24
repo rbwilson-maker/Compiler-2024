@@ -1,0 +1,21 @@
+//test abort
+
+bool statics_bad(int c) {
+    int x = c / 0;
+    return x == -1;
+}
+
+bool statics_good(int c) {
+    return c == c + 1;
+}
+
+int main() {
+
+    int b = 15411;
+    bool x = false;
+    int c = x ? 5 : 4;
+    // statics_good(c) evaluating to false should short-circuit the operator, causing
+    // an abort and not a div-by-zero
+    assert(statics_good(c) && statics_bad(c));
+    return c;
+}

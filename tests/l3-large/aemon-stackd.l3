@@ -1,0 +1,37 @@
+//test return 28
+
+int prod(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j) {
+    return a / b * (c % d) * e / f + g * (i + j) / h;
+}
+
+int main() {
+    int a = 10;
+    int b = 1;
+    int c = 2;
+    int d = 3;
+    int e = 4;
+    int f = 5;
+    int g = 6;
+    int h = 7;
+    int i = 8;
+    int j = 9;
+    int count;
+
+    for (count = 0; count < 1000; count++) {
+        while (prod(a, b, c, d, e, f, g, h, i, j) < 100000) {
+            if (prod(j, i, h, g, f, e, d, c, b, a) > 50000) {
+                a++;
+                e++;
+            } else {
+                i++;
+                j++;
+            }
+        }
+        a = a % 17 + 1;
+        e = e % a + 1;
+        j = j % 5 + 1;
+        i = i % 5 + 1;
+    }
+
+    return prod(e, f, a, c, j, g, h, i, d, b);
+}

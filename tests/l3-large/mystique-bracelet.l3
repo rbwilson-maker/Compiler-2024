@@ -1,0 +1,72 @@
+//test return 704370
+
+// how many necklaces can we make with 12 beads 
+// using up to 4 different colors?
+
+int pow(int b, int e) {
+    if (e == 0) return 1;
+    if (e == 1) return b;
+    return b * pow(b, e - 1);
+}
+
+int gcd(int n1, int n2) {
+    int gcd = 1;
+    int max_gcd;
+    if (n1 <= n2) {
+        max_gcd = n1;
+    } else {
+        max_gcd = n2;
+    }
+    for (int i = 2; i <= max_gcd; i++) {
+        if (n1 % i == 0 && n2 % i == 0) {
+            gcd = i;
+        }
+    }
+    return gcd;
+}
+
+
+// euler's totient function
+int phi(int n) {
+    int count = 1;
+    for (int i = 2; i < n; i++) {
+        if (gcd(i, n) == 1) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// how many necklaces can we make with n beads 
+// using up to k different colors?
+// https://oeis.org/A054631
+int necklace(int n, int k) {
+    int sum = 0;
+    for (int d = 1; d <= n; d++) {
+        if (n % d == 0) {
+            sum += phi(d) * pow(k, n/d);
+        }
+    }
+    return sum/n;
+}
+
+// how many bracelets can we make with n beads 
+// using up to k different colors?
+// 
+// bracelets are necklaces that can be flipped
+// https://oeis.org/A081720
+int bracelet(int n, int k) {
+    int x;
+    if (n % 2 == 0) {
+        x = ((k + 1) * pow(k, n / 2)) / 4;
+    } else {
+        x = pow(k, (n + 1)/2) / 2;
+    }
+    return necklace(n, k) / 2 + x;
+}
+
+int main() {
+    int n = 12;
+    int k = 4;
+    return bracelet(n, k);
+}

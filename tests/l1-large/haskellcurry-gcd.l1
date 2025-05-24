@@ -1,0 +1,18 @@
+//test return 4
+
+int main() {
+    // Find the GCD of 512 and 252
+
+    int x = 512;
+    int y = 252;
+    
+    int rem = x % y;
+    x = y;
+    y = rem;
+
+    rem = x % y;
+    x = y;
+    y = rem;
+
+    return y;
+}

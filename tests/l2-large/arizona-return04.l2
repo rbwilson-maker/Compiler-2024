@@ -1,0 +1,25 @@
+//test return 13
+
+int main () 
+{
+  int x1;
+  int x2;
+  int x3;
+  int x4;
+  int x5;
+  int x6;
+
+  x1 = 1;
+  x2 = 2;
+  x3 = 3;
+
+  if (x1 == 0) {
+    x4 = x3 + 5;
+    return x4;
+  }
+  else {
+    x5 = x3 + 10;
+    return x5;
+  }
+  return x6;
+}

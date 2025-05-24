@@ -1,0 +1,7 @@
+//test error
+// declaration of variable must be before return statement
+int main()
+{
+  return a;
+  int a;
+}

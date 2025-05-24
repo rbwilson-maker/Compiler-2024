@@ -1,0 +1,11 @@
+//test typecheck
+
+void func(){
+  int x = 5;
+  int y = 8;
+  int a = x;
+}
+
+int main(){
+  return 10;
+}

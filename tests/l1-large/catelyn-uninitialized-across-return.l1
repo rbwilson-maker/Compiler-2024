@@ -1,0 +1,16 @@
+//test error
+
+int main() {
+  int x = 5 + 3;
+  int r;
+
+  int r = x % 2;
+  r += 1; //r = 1
+
+  r = r + x; //r = 9
+
+  x = j + r;
+
+  return 0;
+  int j;
+}

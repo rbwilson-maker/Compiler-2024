@@ -1,0 +1,20 @@
+//test typecheck
+
+int countOnes(tape t) {
+  int counter = 0;
+  if (isOne(t))
+    counter++;
+  while(moveRight(t)) {
+    if (isOne(t))
+      counter++;
+  }
+  while(moveLeft(t)) {
+  }
+  return counter;
+}
+
+int main() {
+  tape t = 15;
+  assert(countOnes(t) == 4);
+  return 0;
+}

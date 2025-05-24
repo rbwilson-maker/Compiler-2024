@@ -1,0 +1,27 @@
+//test return 2
+
+int main() {
+    int u;
+
+    int a = 1;
+    int b = 1; u = a;
+    int c = 1; u = b;
+    int d = 1; u = c;
+    int e = 1; u = d;
+    int f = 1; u = e;
+    int g = 1; u = f;
+    int h = 1; u = g;
+    int i = 1; u = h;
+    int j = 1; u = i;
+    int k = 1; u = j;
+    int l = 1; u = k;
+    int m = 1; u = l;
+    int n = 1; u = m;
+    int o = 1; u = n;
+    int p = 1; u = o;
+    int q = 1; u = p;
+    int r = 1; u = q;
+    int s = 1; u = r;
+    a = 2; s = a;
+    return s;
+}

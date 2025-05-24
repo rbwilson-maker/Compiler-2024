@@ -1,0 +1,13 @@
+//test div-by-zero
+// division by zero due to mod
+
+int main() {
+    int x;
+    int y;
+    int z;
+    
+    x = 5;
+    y = 4;
+    z = 1;
+    return x % (x - y - z);
+}

@@ -1,0 +1,12 @@
+//test div-by-zero
+//test divide by zero with function calls
+
+int myfunc(int x) {
+    if (x <= 0) return 1 / 0;
+    return myfunc(x / 2);
+}
+
+int main()
+{
+  return myfunc(5);
+}

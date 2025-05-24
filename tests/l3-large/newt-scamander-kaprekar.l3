@@ -1,0 +1,48 @@
+//test return 9999
+
+// all applause to the koz
+
+// calculates the nth kaprekar number (n = 36 in this case)
+
+int square(int n) {return n*n;}
+
+int pow10(int n) {
+	assert(n >= 0);
+	if (n == 0) return 1;
+	return 10*pow10(n-1);
+}
+
+bool is_kaprekar(int n) {
+	assert(n >= 0);
+	int n_sqd = square(n);
+	int lhs = n_sqd;
+	int rhs = 0;
+	int rhs_digits = 0;
+	while (lhs > 0) {
+		int lh_lsd = lhs % 10;
+		lhs /= 10;
+		int rh_msd = lh_lsd * pow10(rhs_digits);
+		rhs += rh_msd;
+		rhs_digits++;
+		if ((rhs != 0) && (rhs + lhs == n)) return true;
+	}
+	return false;
+}
+
+int nth_kaprekar(int n) {
+	assert(n >= 0);
+	int guess = 0;
+	int found = 0;
+	while (found <= n) {
+		if (is_kaprekar(guess)) found++;
+		guess++;
+	}
+	int res = guess - 1;
+	return res;
+}
+
+int main() {
+	int n = 16;
+	int res = nth_kaprekar(n);
+	return res;
+}

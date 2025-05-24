@@ -1,0 +1,11 @@
+//test error
+
+int f (int a, int b) {
+	return a + b;
+}
+
+int main () {
+	int *x = alloc(int);
+	x = f;
+	return x(2+4);
+}

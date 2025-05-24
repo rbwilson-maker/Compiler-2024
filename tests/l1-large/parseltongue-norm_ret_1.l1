@@ -1,0 +1,11 @@
+//test return 0
+
+// Test instructions after return
+
+int main(){
+    return 0;
+
+    int a = 10;
+    int b = 1;
+    return (b * a);
+}

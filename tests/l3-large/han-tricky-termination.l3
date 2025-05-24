@@ -1,0 +1,12 @@
+//test return -1
+
+int sum_powers(int n){
+  if(n == 0){
+     return 0;
+  }
+  return n + sum_powers(n * 2);
+}
+
+int main() {
+    return sum_powers(1);
+}

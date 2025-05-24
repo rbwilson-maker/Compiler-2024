@@ -1,0 +1,55 @@
+//test return 0
+
+void merge(int[] arr, int start, int mid, int end) {
+    int start2 = mid + 1;
+
+    if (arr[mid] <= arr[start2]) {
+        return;
+    }
+
+    while (start <= mid && start2 <= end) {
+        if (arr[start] <= arr[start2]) {
+            start++;
+        } else {
+            int value = arr[start2];
+            int index = start2;
+
+            while (index != start) {
+                arr[index] = arr[index - 1];
+                index--;
+            }
+            arr[start] = value;
+
+            start++;
+            mid++;
+            start2++;
+        }
+    }
+}
+
+void merge_sort(int[] arr, int l, int r) {
+    if (l < r) {
+        int mid = l + (r - l) / 2;
+
+        merge_sort(arr, l, mid);
+        merge_sort(arr, mid + 1, r);
+
+        merge(arr, l, mid, r);
+    }
+}
+
+int main() {
+    int[] arr = alloc_array(int, 457);
+    for (int i = 0; i < 457; i++) {
+        arr[i] = ((i * 877) + 13) % 457; // prng generator
+    }
+
+    merge_sort(arr, 0, 456);
+
+    int res = 0;
+    for (int i = 0; i < 457; i++) {
+        assert(arr[i] == i);
+    }
+
+    return 0;
+}

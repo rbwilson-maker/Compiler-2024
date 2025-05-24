@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int main();
+int foo();
+
+int foo() {
+  int x = main();
+  return 5 + 5;
+}
+
+int main() {
+  return foo();
+}

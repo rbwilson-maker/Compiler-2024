@@ -1,0 +1,50 @@
+//test return 7333
+
+bool isPrime(int i) {
+  for(int j = 2; j < i; j++) {
+    if (i % j == 0) return false;
+  }
+  return true;
+}
+
+struct prime
+{
+  int n;
+  int p;
+  struct prime* next;
+};
+
+int main() {
+  int count = 0;
+  int test = 2;
+
+  struct prime* first = alloc(struct prime);
+  struct prime* go = first;
+  struct prime* savego = go;
+  first->next = NULL;
+
+  while(count < 1000) {
+    if (isPrime(test)) {
+      count += 1;
+      go->n = count;
+      go->p = test;
+      go->next = alloc(struct prime);
+      savego = go;
+      go = go->next;
+      go->next = NULL;
+    }
+    test += 1;
+  }  
+
+  assert(savego->p == 7919);
+
+  struct prime* go2 = first;
+  for(int i = 0; i < 934; i++) {
+    go2 = go2->next;
+  }
+
+  return go2->p;
+
+}
+
+

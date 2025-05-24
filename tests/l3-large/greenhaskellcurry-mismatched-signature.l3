@@ -1,0 +1,18 @@
+//test error
+
+/*
+    mismatched-signature: coolFunction should return a boolean according to the
+    header, but is redeclared as returning an int here.
+
+    Tests:
+    - Type aliases
+    - Incompatible prototypes across files.
+*/
+
+typedef int uncoolType;
+
+uncoolType coolFunction(int x);
+
+int main() {
+    return coolFunction(15411);
+}

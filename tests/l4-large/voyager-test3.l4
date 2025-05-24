@@ -1,0 +1,9 @@
+//test memerror
+
+// test evaluation order
+
+int main() {
+    int[] p = alloc_array(int, 3);
+    p[3] = 1 / 0;
+    return p[3];
+}

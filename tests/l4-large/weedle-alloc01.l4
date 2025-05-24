@@ -1,0 +1,14 @@
+//test return 1337
+int main() {
+  int* x = alloc(int);
+  *x = 1;
+
+  int**** y;
+  y = alloc(int***);
+  *y = alloc(int**);
+  **y = alloc(int*);
+  ***y = alloc(int);
+  ****y = 1336;
+
+  return *x + ****y;
+}

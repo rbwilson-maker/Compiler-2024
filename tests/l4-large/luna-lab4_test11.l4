@@ -1,0 +1,11 @@
+//test error
+
+// Large type cannot be the return type
+
+struct s {int i};
+
+struct s test();
+
+int main() {
+    return 0;
+}

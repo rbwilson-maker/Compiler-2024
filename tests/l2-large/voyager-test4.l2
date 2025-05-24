@@ -1,0 +1,11 @@
+//test error
+// test precedence and type error
+
+int main()
+{
+  int x = 10;
+  // equivalent to "((x + 3) == 13) & 1" instead of "(x + 3) == (13 & 1)"
+  // type error
+  bool y = x + 3 == 13 & 1;
+  return x;
+}

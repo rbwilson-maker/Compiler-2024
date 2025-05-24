@@ -1,0 +1,33 @@
+//test return -360378
+
+int f1() {
+    return 21;
+}
+
+int f2() {
+    return 43;
+}
+
+int f3() {
+    return 323;
+}
+
+int f4(int t7, int t6) {
+    return t7*4+t6 + 2;
+}
+
+int main(){
+    int t1 = f1();
+    int t2 = t1 + f2();
+    int t3 = t1 - t1 + t2;
+    int t5 = t3 - t2 + 323;
+    int t6 = 0;
+    for(int i = 0; i<124;i++){
+        t6 -= t2+t5-t3;
+    }
+    int t7 = t6 *2 +t3 - 2*t1;
+    int t8 = f4(t7, t6);
+    return t8;
+}
+
+

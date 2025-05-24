@@ -1,0 +1,25 @@
+//test return 17
+/* return log 3 of int */
+
+int log_3_helper(int n, int i) {
+  int m = n/3;
+  if(m==0) {
+    return i;
+  }
+  return log_3_helper(m, i+1);
+}
+int log_3(int n) {
+  int m = n/3;
+  if(m==0){
+    return 0;
+  }
+  
+  return log_3_helper(m, 1);
+}
+
+
+
+int main() {
+  return log_3(129140164);
+}
+

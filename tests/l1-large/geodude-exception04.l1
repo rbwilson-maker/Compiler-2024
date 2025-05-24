@@ -1,0 +1,14 @@
+//test div-by-zero
+// hex mod by 0
+int main()
+{
+  int x;
+  int y;
+  int z;
+
+  x = 0x80000000;
+  y = 0xffffffff;
+  z = 0x00000001;
+
+  return x % (y + z);
+}

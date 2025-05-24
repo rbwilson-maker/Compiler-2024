@@ -1,0 +1,12 @@
+//test return 16 
+
+
+int Ackerman(int x, int y) {
+    if (x == 0) return y + 1;
+    if (x > 0 && y == 0) return Ackerman(x - 1, y);
+    return Ackerman(x - 1, Ackerman(x, y - 1));
+}
+
+int main() {
+    return Ackerman(3, 15);
+}

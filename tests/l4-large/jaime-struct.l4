@@ -1,0 +1,18 @@
+//test return 5;
+
+struct tree
+{
+    struct tree* left;
+    struct tree* right;
+    int val;
+};
+
+typedef struct tree tree_t;
+
+int main()
+{
+    tree_t* t = alloc(tree_t);
+    t->left = alloc(tree_t);
+    t->val = 5;
+    return t->val;
+}

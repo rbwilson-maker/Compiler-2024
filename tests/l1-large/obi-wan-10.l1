@@ -1,0 +1,18 @@
+//test return 72
+
+// this tests a valid int max and int min
+int main()
+{
+    int x = 72;
+
+    // this is a comment in the program;
+    /* this is a normal comment. jk it's nested: /* hi */
+     * of course it's on 2 lines */
+
+    //@ This is a one line contract, in L1 it's ok that this isn't really
+    /*@ this is a two-line not real contract... /*@ yay! nesting! @*/
+        line twoo.. @*/
+
+    return x;  // assuming all is well
+}
+

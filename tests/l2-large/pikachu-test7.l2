@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main() {
+  int a = 100;
+  if (a/a == 1) a = 0;
+  if (a/a == 1) a = 100;
+  return 0;
+}

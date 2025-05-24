@@ -1,0 +1,17 @@
+//test return 8128
+//Finds the next perfect number
+
+bool isPerfectNumber(int x) {
+  int sum = 0;
+  for (int i = 1; i < x; i++) {
+    if (x % i == 0) sum += i;
+  }
+  return sum == x;
+}
+
+int nextPerfectNumber(int x) {
+  while (!isPerfectNumber(x)) x++;
+  return x;
+}
+
+int main() { return nextPerfectNumber(4000); }

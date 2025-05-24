@@ -1,0 +1,12 @@
+//test return 3737
+
+int main(){
+    int x = 37;
+    int y = 73;
+    x *= 100;
+    x += x;
+    int z = 10;
+    x = z;
+    x = 3737;
+    return x;
+}

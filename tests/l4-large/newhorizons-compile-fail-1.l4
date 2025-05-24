@@ -1,0 +1,13 @@
+//test error
+// structs cannot be passed on the stack
+struct s {
+    int a;
+};
+
+int foo(struct s a) {
+    return 5;
+}
+
+int main() {
+    return 0;
+}

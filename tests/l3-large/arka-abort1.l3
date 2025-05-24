@@ -1,0 +1,21 @@
+//test abort
+//impossible assert
+
+bool isBig (int num) {
+    return num > 10;
+}
+
+bool isSmall (int num) {
+    return num <= 10;
+}
+
+int main () {
+    int x = 10;
+    assert(isSmall(x));
+    assert(!isBig(x));
+
+    assert(isBig(x+1) && isSmall(x-1));
+    assert(isBig(x) && isSmall(x)); // this should fail
+
+    return 0;
+}

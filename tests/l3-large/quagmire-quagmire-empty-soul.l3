@@ -1,0 +1,13 @@
+//test compile
+
+void my_stomach() {}
+
+bool stomach_empty() {
+    my_stomach();
+    return true;
+}
+
+int main() {
+    assert(stomach_empty());
+    return stomach_empty() ? 0 : 1;
+}

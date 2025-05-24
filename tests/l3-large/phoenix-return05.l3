@@ -1,0 +1,13 @@
+//test return 21
+// sums 1 to n using a recursive function
+
+int rec_sum (int i){
+    if (i == 0) {
+        return i;
+    }
+    return rec_sum(i-1) + i;
+}
+
+int main() {
+    return (rec_sum(6));
+}

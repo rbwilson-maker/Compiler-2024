@@ -1,0 +1,11 @@
+//test div-by-zero
+void funfun(int x, int y);
+
+int main(){
+    funfun(4, 0);
+    return 0;
+}
+
+void funfun(int x, int y){
+    x/y;
+}

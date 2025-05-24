@@ -1,0 +1,5 @@
+//test error
+// cannot begin a decimal constant with 0
+int main() {
+	return 0123;
+}

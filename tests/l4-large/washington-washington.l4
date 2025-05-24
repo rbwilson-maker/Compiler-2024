@@ -1,0 +1,308 @@
+//test return 1789
+
+// Did you know?
+// From 1776 until 1789, the United States was not governed by a president.
+// Only when the Articles of Confederation were replaced with the more liberal
+// Constitution did the country add the title of president, with the first
+// president being George Washington.
+
+struct washington {
+    int presidency;
+    struct washington *washington;
+};
+
+int main() {
+    struct washington *washington = alloc(struct washington);
+    washington->presidency = 1789;
+    washington->washington = washington;
+    return
+        washington
+        // 1000
+        // 100
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 100
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 100
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 100
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 100
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 100
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 100
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 100
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 100
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 100
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+        // 10
+        ->washington->washington->washington->washington->washington
+        ->washington->washington->washington->washington->washington
+
+
+
+        ->presidency;
+
+
+
+}

@@ -1,0 +1,13 @@
+//test return 70
+
+int foo(int y) {
+    return y;
+}
+
+int bar(int x) {
+    return foo(70);
+}
+
+int main() {
+    return bar(5);
+}

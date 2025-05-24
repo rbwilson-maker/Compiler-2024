@@ -1,0 +1,20 @@
+//test return 1
+
+int makeInt(int n, int* ref){
+    (*ref)++;
+    return n;
+}
+
+int main(){
+    int * ref = alloc(int);
+    *ref = 0;
+    int[] A = alloc_array(int,4);
+    A[makeInt(2, ref)]++;
+    if (*ref == 1){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+

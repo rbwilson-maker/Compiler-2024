@@ -1,0 +1,12 @@
+//test memerror
+// uninitialized array as struct field
+
+struct arr {
+  int[] A;
+};
+
+int main () {
+  struct arr* st = alloc(struct arr);
+  (st->A)[5] = 5;
+  return 0;
+}

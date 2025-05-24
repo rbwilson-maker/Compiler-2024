@@ -1,0 +1,17 @@
+//test compile
+
+struct cyc {
+    struct cyc* ptr;
+};
+
+typedef struct cyc* cyc;
+
+void leak() {
+    cyc x = alloc(struct cyc);
+    x->ptr = x;
+}
+
+int main() {
+    for (int i = 0; i >= 0; i++) leak();
+    return 42;
+}

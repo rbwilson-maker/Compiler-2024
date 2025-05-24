@@ -1,0 +1,9 @@
+//test return -5
+
+int main(){
+  int x = 4;
+  int y = 3;
+  y = y - x;
+  y = y - 4;
+  return y;
+}

@@ -1,0 +1,17 @@
+//test return 5
+
+bool checker (int b, int a) {
+	return b == a;
+}
+
+int main () {
+	int x = 1248;
+	int y = 12480;
+	bool c = checker(x, y);
+	if (c) {
+		return 4;
+	}
+	else {
+		return 5;
+	}
+}	

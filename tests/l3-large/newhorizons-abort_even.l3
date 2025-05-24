@@ -1,0 +1,11 @@
+//test abort
+// boolean for abort comes from function call 
+
+bool is_even (int x) {
+    return (x%2 == 0);
+}
+
+int main () {
+  assert(is_even(411));
+  return 0;
+}

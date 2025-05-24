@@ -1,0 +1,20 @@
+//test abort
+//Tests that assert on a false expression raises SIGABRT exception
+
+bool weird(int x);
+
+int main() {
+  weird(25);
+  return 0;
+}
+
+bool weird(int x){
+  while (x > 0) {
+    if (x % 2 == 0) {
+      assert((x-1) % 2 == 0);
+    }
+    x /= 2;
+  }
+  assert(true);
+  return true;
+}

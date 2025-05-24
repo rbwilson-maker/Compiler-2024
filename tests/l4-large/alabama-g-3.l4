@@ -1,0 +1,19 @@
+//test return 0
+
+// So I herd u liek x
+
+struct x;
+
+typedef int x; 
+
+struct x {
+    x X;
+    x chi;
+};
+
+typedef struct x xXx;
+
+int main() {
+    xXx*X = alloc(xXx);
+    return X->X+X->chi;
+}

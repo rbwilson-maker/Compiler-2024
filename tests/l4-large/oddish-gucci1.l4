@@ -1,0 +1,17 @@
+//test return 0
+// types all over the place
+typedef int integer;
+typedef struct nodefined eh;
+typedef struct integer istruct;
+
+struct integer {
+	integer integer;
+};
+
+integer main() {
+	istruct *I = alloc(istruct);
+
+	I->integer = 0;
+
+	return I->integer;
+}

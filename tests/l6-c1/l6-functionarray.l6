@@ -1,0 +1,15 @@
+//test return 251
+
+typedef int foo();
+
+int get_best_course()
+{
+  return 251;
+}
+
+int main()
+{
+  foo* bar = &get_best_course;
+  foo[] bars;
+  return (*bar)();
+}

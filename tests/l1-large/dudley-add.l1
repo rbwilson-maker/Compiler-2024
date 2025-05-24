@@ -1,0 +1,13 @@
+//test return 6
+
+int main() {
+  int a;
+  int x = 1;
+  int y = 2;
+  int z = 3;
+  a = x+y;
+  int b = a+z;
+
+  return b;
+}
+

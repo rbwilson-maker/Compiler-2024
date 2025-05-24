@@ -1,0 +1,8 @@
+//test return 1
+
+int main() {
+    for (; true;) {
+        return 1;
+    }
+    return 1;
+}

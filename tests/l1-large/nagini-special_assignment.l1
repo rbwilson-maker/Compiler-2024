@@ -1,0 +1,19 @@
+//test return 9
+// test special assigment operators
+int main()
+{
+    int a = 100;
+    int b = 20;
+    int c = 30;
+    int d = 5;
+    int e = 7;    
+    int f = 55;
+
+    a += b;
+    a -= c;
+    a *= d;
+    a /= e;
+    a %= f;
+
+    return a;
+}

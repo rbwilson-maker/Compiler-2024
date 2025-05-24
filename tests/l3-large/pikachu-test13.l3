@@ -1,0 +1,28 @@
+//test return 130
+
+int lotsargs(int a, int b, int c, int d,
+             int e, int f, int g, int h,
+             int i, int j, int k, int l, int m)
+{
+  a = m;
+  b = m;
+  c = m;
+  d = m;
+  e = m;
+  f = m;
+  g = m;
+  h = m;
+  i = m;
+  j = m;
+  k = m;
+  l = m;
+  m = a;
+  return a + b + c + d + e + f + g + h + i + j + k + l + m;
+}
+
+int main()
+{
+  int x = 10;
+  int y = lotsargs(x, x, x, x, x, x, x, x, x, x, x, x, x);
+  return y;
+}

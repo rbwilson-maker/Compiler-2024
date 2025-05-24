@@ -1,0 +1,14 @@
+//test error
+
+//function definition inside of main
+
+bool is_positive (int n);
+
+int main () {
+    int x = 1;
+    bool is_positive (int n) {
+        return n > 0;
+    }
+    if is_positive(x) then x = -x;
+    return x;
+}

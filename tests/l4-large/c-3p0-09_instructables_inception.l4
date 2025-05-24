@@ -1,0 +1,3391 @@
+//test return 0
+//Nested structs attack!
+
+struct zz{
+	int zz;
+};
+struct zy{
+	struct zz zy;
+	int * x;
+	bool y;
+};
+struct zx{
+	struct zy zx;
+	int * x;
+	bool y;
+};
+struct zw{
+	struct zx zw;
+	int * x;
+	bool y;
+};
+struct zv{
+	struct zw zv;
+	int * x;
+	bool y;
+};
+struct zu{
+	struct zv zu;
+	int * x;
+	bool y;
+};
+struct zt{
+	struct zu zt;
+	int * x;
+	bool y;
+};
+struct zs{
+	struct zt zs;
+	int * x;
+	bool y;
+};
+struct zr{
+	struct zs zr;
+	int * x;
+	bool y;
+};
+struct zq{
+	struct zr zq;
+	int * x;
+	bool y;
+};
+struct zp{
+	struct zq zp;
+	int * x;
+	bool y;
+};
+struct zo{
+	struct zp zo;
+	int * x;
+	bool y;
+};
+struct zn{
+	struct zo zn;
+	int * x;
+	bool y;
+};
+struct zm{
+	struct zn zm;
+	int * x;
+	bool y;
+};
+struct zl{
+	struct zm zl;
+	int * x;
+	bool y;
+};
+struct zk{
+	struct zl zk;
+	int * x;
+	bool y;
+};
+struct zj{
+	struct zk zj;
+	int * x;
+	bool y;
+};
+struct zi{
+	struct zj zi;
+	int * x;
+	bool y;
+};
+struct zh{
+	struct zi zh;
+	int * x;
+	bool y;
+};
+struct zg{
+	struct zh zg;
+	int * x;
+	bool y;
+};
+struct zf{
+	struct zg zf;
+	int * x;
+	bool y;
+};
+struct ze{
+	struct zf ze;
+	int * x;
+	bool y;
+};
+struct zd{
+	struct ze zd;
+	int * x;
+	bool y;
+};
+struct zc{
+	struct zd zc;
+	int * x;
+	bool y;
+};
+struct zb{
+	struct zc zb;
+	int * x;
+	bool y;
+};
+struct za{
+	struct zb za;
+	int * x;
+	bool y;
+};
+struct yz{
+	struct za yz;
+	int * x;
+	bool y;
+};
+struct yy{
+	struct yz yy;
+	int * x;
+	bool y;
+};
+struct yx{
+	struct yy yx;
+	int * x;
+	bool y;
+};
+struct yw{
+	struct yx yw;
+	int * x;
+	bool y;
+};
+struct yv{
+	struct yw yv;
+	int * x;
+	bool y;
+};
+struct yu{
+	struct yv yu;
+	int * x;
+	bool y;
+};
+struct yt{
+	struct yu yt;
+	int * x;
+	bool y;
+};
+struct ys{
+	struct yt ys;
+	int * x;
+	bool y;
+};
+struct yr{
+	struct ys yr;
+	int * x;
+	bool y;
+};
+struct yq{
+	struct yr yq;
+	int * x;
+	bool y;
+};
+struct yp{
+	struct yq yp;
+	int * x;
+	bool y;
+};
+struct yo{
+	struct yp yo;
+	int * x;
+	bool y;
+};
+struct yn{
+	struct yo yn;
+	int * x;
+	bool y;
+};
+struct ym{
+	struct yn ym;
+	int * x;
+	bool y;
+};
+struct yl{
+	struct ym yl;
+	int * x;
+	bool y;
+};
+struct yk{
+	struct yl yk;
+	int * x;
+	bool y;
+};
+struct yj{
+	struct yk yj;
+	int * x;
+	bool y;
+};
+struct yi{
+	struct yj yi;
+	int * x;
+	bool y;
+};
+struct yh{
+	struct yi yh;
+	int * x;
+	bool y;
+};
+struct yg{
+	struct yh yg;
+	int * x;
+	bool y;
+};
+struct yf{
+	struct yg yf;
+	int * x;
+	bool y;
+};
+struct ye{
+	struct yf ye;
+	int * x;
+	bool y;
+};
+struct yd{
+	struct ye yd;
+	int * x;
+	bool y;
+};
+struct yc{
+	struct yd yc;
+	int * x;
+	bool y;
+};
+struct yb{
+	struct yc yb;
+	int * x;
+	bool y;
+};
+struct ya{
+	struct yb ya;
+	int * x;
+	bool y;
+};
+struct xz{
+	struct ya xz;
+	int * x;
+	bool y;
+};
+struct xy{
+	struct xz xy;
+	int * x;
+	bool y;
+};
+struct xx{
+	struct xy xx;
+	int * x;
+	bool y;
+};
+struct xw{
+	struct xx xw;
+	int * x;
+	bool y;
+};
+struct xv{
+	struct xw xv;
+	int * x;
+	bool y;
+};
+struct xu{
+	struct xv xu;
+	int * x;
+	bool y;
+};
+struct xt{
+	struct xu xt;
+	int * x;
+	bool y;
+};
+struct xs{
+	struct xt xs;
+	int * x;
+	bool y;
+};
+struct xr{
+	struct xs xr;
+	int * x;
+	bool y;
+};
+struct xq{
+	struct xr xq;
+	int * x;
+	bool y;
+};
+struct xp{
+	struct xq xp;
+	int * x;
+	bool y;
+};
+struct xo{
+	struct xp xo;
+	int * x;
+	bool y;
+};
+struct xn{
+	struct xo xn;
+	int * x;
+	bool y;
+};
+struct xm{
+	struct xn xm;
+	int * x;
+	bool y;
+};
+struct xl{
+	struct xm xl;
+	int * x;
+	bool y;
+};
+struct xk{
+	struct xl xk;
+	int * x;
+	bool y;
+};
+struct xj{
+	struct xk xj;
+	int * x;
+	bool y;
+};
+struct xi{
+	struct xj xi;
+	int * x;
+	bool y;
+};
+struct xh{
+	struct xi xh;
+	int * x;
+	bool y;
+};
+struct xg{
+	struct xh xg;
+	int * x;
+	bool y;
+};
+struct xf{
+	struct xg xf;
+	int * x;
+	bool y;
+};
+struct xe{
+	struct xf xe;
+	int * x;
+	bool y;
+};
+struct xd{
+	struct xe xd;
+	int * x;
+	bool y;
+};
+struct xc{
+	struct xd xc;
+	int * x;
+	bool y;
+};
+struct xb{
+	struct xc xb;
+	int * x;
+	bool y;
+};
+struct xa{
+	struct xb xa;
+	int * x;
+	bool y;
+};
+struct wz{
+	struct xa wz;
+	int * x;
+	bool y;
+};
+struct wy{
+	struct wz wy;
+	int * x;
+	bool y;
+};
+struct wx{
+	struct wy wx;
+	int * x;
+	bool y;
+};
+struct ww{
+	struct wx ww;
+	int * x;
+	bool y;
+};
+struct wv{
+	struct ww wv;
+	int * x;
+	bool y;
+};
+struct wu{
+	struct wv wu;
+	int * x;
+	bool y;
+};
+struct wt{
+	struct wu wt;
+	int * x;
+	bool y;
+};
+struct ws{
+	struct wt ws;
+	int * x;
+	bool y;
+};
+struct wr{
+	struct ws wr;
+	int * x;
+	bool y;
+};
+struct wq{
+	struct wr wq;
+	int * x;
+	bool y;
+};
+struct wp{
+	struct wq wp;
+	int * x;
+	bool y;
+};
+struct wo{
+	struct wp wo;
+	int * x;
+	bool y;
+};
+struct wn{
+	struct wo wn;
+	int * x;
+	bool y;
+};
+struct wm{
+	struct wn wm;
+	int * x;
+	bool y;
+};
+struct wl{
+	struct wm wl;
+	int * x;
+	bool y;
+};
+struct wk{
+	struct wl wk;
+	int * x;
+	bool y;
+};
+struct wj{
+	struct wk wj;
+	int * x;
+	bool y;
+};
+struct wi{
+	struct wj wi;
+	int * x;
+	bool y;
+};
+struct wh{
+	struct wi wh;
+	int * x;
+	bool y;
+};
+struct wg{
+	struct wh wg;
+	int * x;
+	bool y;
+};
+struct wf{
+	struct wg wf;
+	int * x;
+	bool y;
+};
+struct we{
+	struct wf we;
+	int * x;
+	bool y;
+};
+struct wd{
+	struct we wd;
+	int * x;
+	bool y;
+};
+struct wc{
+	struct wd wc;
+	int * x;
+	bool y;
+};
+struct wb{
+	struct wc wb;
+	int * x;
+	bool y;
+};
+struct wa{
+	struct wb wa;
+	int * x;
+	bool y;
+};
+struct vz{
+	struct wa vz;
+	int * x;
+	bool y;
+};
+struct vy{
+	struct vz vy;
+	int * x;
+	bool y;
+};
+struct vx{
+	struct vy vx;
+	int * x;
+	bool y;
+};
+struct vw{
+	struct vx vw;
+	int * x;
+	bool y;
+};
+struct vv{
+	struct vw vv;
+	int * x;
+	bool y;
+};
+struct vu{
+	struct vv vu;
+	int * x;
+	bool y;
+};
+struct vt{
+	struct vu vt;
+	int * x;
+	bool y;
+};
+struct vs{
+	struct vt vs;
+	int * x;
+	bool y;
+};
+struct vr{
+	struct vs vr;
+	int * x;
+	bool y;
+};
+struct vq{
+	struct vr vq;
+	int * x;
+	bool y;
+};
+struct vp{
+	struct vq vp;
+	int * x;
+	bool y;
+};
+struct vo{
+	struct vp vo;
+	int * x;
+	bool y;
+};
+struct vn{
+	struct vo vn;
+	int * x;
+	bool y;
+};
+struct vm{
+	struct vn vm;
+	int * x;
+	bool y;
+};
+struct vl{
+	struct vm vl;
+	int * x;
+	bool y;
+};
+struct vk{
+	struct vl vk;
+	int * x;
+	bool y;
+};
+struct vj{
+	struct vk vj;
+	int * x;
+	bool y;
+};
+struct vi{
+	struct vj vi;
+	int * x;
+	bool y;
+};
+struct vh{
+	struct vi vh;
+	int * x;
+	bool y;
+};
+struct vg{
+	struct vh vg;
+	int * x;
+	bool y;
+};
+struct vf{
+	struct vg vf;
+	int * x;
+	bool y;
+};
+struct ve{
+	struct vf ve;
+	int * x;
+	bool y;
+};
+struct vd{
+	struct ve vd;
+	int * x;
+	bool y;
+};
+struct vc{
+	struct vd vc;
+	int * x;
+	bool y;
+};
+struct vb{
+	struct vc vb;
+	int * x;
+	bool y;
+};
+struct va{
+	struct vb va;
+	int * x;
+	bool y;
+};
+struct uz{
+	struct va uz;
+	int * x;
+	bool y;
+};
+struct uy{
+	struct uz uy;
+	int * x;
+	bool y;
+};
+struct ux{
+	struct uy ux;
+	int * x;
+	bool y;
+};
+struct uw{
+	struct ux uw;
+	int * x;
+	bool y;
+};
+struct uv{
+	struct uw uv;
+	int * x;
+	bool y;
+};
+struct uu{
+	struct uv uu;
+	int * x;
+	bool y;
+};
+struct ut{
+	struct uu ut;
+	int * x;
+	bool y;
+};
+struct us{
+	struct ut us;
+	int * x;
+	bool y;
+};
+struct ur{
+	struct us ur;
+	int * x;
+	bool y;
+};
+struct uq{
+	struct ur uq;
+	int * x;
+	bool y;
+};
+struct up{
+	struct uq up;
+	int * x;
+	bool y;
+};
+struct uo{
+	struct up uo;
+	int * x;
+	bool y;
+};
+struct un{
+	struct uo un;
+	int * x;
+	bool y;
+};
+struct um{
+	struct un um;
+	int * x;
+	bool y;
+};
+struct ul{
+	struct um ul;
+	int * x;
+	bool y;
+};
+struct uk{
+	struct ul uk;
+	int * x;
+	bool y;
+};
+struct uj{
+	struct uk uj;
+	int * x;
+	bool y;
+};
+struct ui{
+	struct uj ui;
+	int * x;
+	bool y;
+};
+struct uh{
+	struct ui uh;
+	int * x;
+	bool y;
+};
+struct ug{
+	struct uh ug;
+	int * x;
+	bool y;
+};
+struct uf{
+	struct ug uf;
+	int * x;
+	bool y;
+};
+struct ue{
+	struct uf ue;
+	int * x;
+	bool y;
+};
+struct ud{
+	struct ue ud;
+	int * x;
+	bool y;
+};
+struct uc{
+	struct ud uc;
+	int * x;
+	bool y;
+};
+struct ub{
+	struct uc ub;
+	int * x;
+	bool y;
+};
+struct ua{
+	struct ub ua;
+	int * x;
+	bool y;
+};
+struct tz{
+	struct ua tz;
+	int * x;
+	bool y;
+};
+struct ty{
+	struct tz ty;
+	int * x;
+	bool y;
+};
+struct tx{
+	struct ty tx;
+	int * x;
+	bool y;
+};
+struct tw{
+	struct tx tw;
+	int * x;
+	bool y;
+};
+struct tv{
+	struct tw tv;
+	int * x;
+	bool y;
+};
+struct tu{
+	struct tv tu;
+	int * x;
+	bool y;
+};
+struct tt{
+	struct tu tt;
+	int * x;
+	bool y;
+};
+struct ts{
+	struct tt ts;
+	int * x;
+	bool y;
+};
+struct tr{
+	struct ts tr;
+	int * x;
+	bool y;
+};
+struct tq{
+	struct tr tq;
+	int * x;
+	bool y;
+};
+struct tp{
+	struct tq tp;
+	int * x;
+	bool y;
+};
+struct to{
+	struct tp to;
+	int * x;
+	bool y;
+};
+struct tn{
+	struct to tn;
+	int * x;
+	bool y;
+};
+struct tm{
+	struct tn tm;
+	int * x;
+	bool y;
+};
+struct tl{
+	struct tm tl;
+	int * x;
+	bool y;
+};
+struct tk{
+	struct tl tk;
+	int * x;
+	bool y;
+};
+struct tj{
+	struct tk tj;
+	int * x;
+	bool y;
+};
+struct ti{
+	struct tj ti;
+	int * x;
+	bool y;
+};
+struct th{
+	struct ti th;
+	int * x;
+	bool y;
+};
+struct tg{
+	struct th tg;
+	int * x;
+	bool y;
+};
+struct tf{
+	struct tg tf;
+	int * x;
+	bool y;
+};
+struct te{
+	struct tf te;
+	int * x;
+	bool y;
+};
+struct td{
+	struct te td;
+	int * x;
+	bool y;
+};
+struct tc{
+	struct td tc;
+	int * x;
+	bool y;
+};
+struct tb{
+	struct tc tb;
+	int * x;
+	bool y;
+};
+struct ta{
+	struct tb ta;
+	int * x;
+	bool y;
+};
+struct sz{
+	struct ta sz;
+	int * x;
+	bool y;
+};
+struct sy{
+	struct sz sy;
+	int * x;
+	bool y;
+};
+struct sx{
+	struct sy sx;
+	int * x;
+	bool y;
+};
+struct sw{
+	struct sx sw;
+	int * x;
+	bool y;
+};
+struct sv{
+	struct sw sv;
+	int * x;
+	bool y;
+};
+struct su{
+	struct sv su;
+	int * x;
+	bool y;
+};
+struct st{
+	struct su st;
+	int * x;
+	bool y;
+};
+struct ss{
+	struct st ss;
+	int * x;
+	bool y;
+};
+struct sr{
+	struct ss sr;
+	int * x;
+	bool y;
+};
+struct sq{
+	struct sr sq;
+	int * x;
+	bool y;
+};
+struct sp{
+	struct sq sp;
+	int * x;
+	bool y;
+};
+struct so{
+	struct sp so;
+	int * x;
+	bool y;
+};
+struct sn{
+	struct so sn;
+	int * x;
+	bool y;
+};
+struct sm{
+	struct sn sm;
+	int * x;
+	bool y;
+};
+struct sl{
+	struct sm sl;
+	int * x;
+	bool y;
+};
+struct sk{
+	struct sl sk;
+	int * x;
+	bool y;
+};
+struct sj{
+	struct sk sj;
+	int * x;
+	bool y;
+};
+struct si{
+	struct sj si;
+	int * x;
+	bool y;
+};
+struct sh{
+	struct si sh;
+	int * x;
+	bool y;
+};
+struct sg{
+	struct sh sg;
+	int * x;
+	bool y;
+};
+struct sf{
+	struct sg sf;
+	int * x;
+	bool y;
+};
+struct se{
+	struct sf se;
+	int * x;
+	bool y;
+};
+struct sd{
+	struct se sd;
+	int * x;
+	bool y;
+};
+struct sc{
+	struct sd sc;
+	int * x;
+	bool y;
+};
+struct sb{
+	struct sc sb;
+	int * x;
+	bool y;
+};
+struct sa{
+	struct sb sa;
+	int * x;
+	bool y;
+};
+struct rz{
+	struct sa rz;
+	int * x;
+	bool y;
+};
+struct ry{
+	struct rz ry;
+	int * x;
+	bool y;
+};
+struct rx{
+	struct ry rx;
+	int * x;
+	bool y;
+};
+struct rw{
+	struct rx rw;
+	int * x;
+	bool y;
+};
+struct rv{
+	struct rw rv;
+	int * x;
+	bool y;
+};
+struct ru{
+	struct rv ru;
+	int * x;
+	bool y;
+};
+struct rt{
+	struct ru rt;
+	int * x;
+	bool y;
+};
+struct rs{
+	struct rt rs;
+	int * x;
+	bool y;
+};
+struct rr{
+	struct rs rr;
+	int * x;
+	bool y;
+};
+struct rq{
+	struct rr rq;
+	int * x;
+	bool y;
+};
+struct rp{
+	struct rq rp;
+	int * x;
+	bool y;
+};
+struct ro{
+	struct rp ro;
+	int * x;
+	bool y;
+};
+struct rn{
+	struct ro rn;
+	int * x;
+	bool y;
+};
+struct rm{
+	struct rn rm;
+	int * x;
+	bool y;
+};
+struct rl{
+	struct rm rl;
+	int * x;
+	bool y;
+};
+struct rk{
+	struct rl rk;
+	int * x;
+	bool y;
+};
+struct rj{
+	struct rk rj;
+	int * x;
+	bool y;
+};
+struct ri{
+	struct rj ri;
+	int * x;
+	bool y;
+};
+struct rh{
+	struct ri rh;
+	int * x;
+	bool y;
+};
+struct rg{
+	struct rh rg;
+	int * x;
+	bool y;
+};
+struct rf{
+	struct rg rf;
+	int * x;
+	bool y;
+};
+struct re{
+	struct rf re;
+	int * x;
+	bool y;
+};
+struct rd{
+	struct re rd;
+	int * x;
+	bool y;
+};
+struct rc{
+	struct rd rc;
+	int * x;
+	bool y;
+};
+struct rb{
+	struct rc rb;
+	int * x;
+	bool y;
+};
+struct ra{
+	struct rb ra;
+	int * x;
+	bool y;
+};
+struct qz{
+	struct ra qz;
+	int * x;
+	bool y;
+};
+struct qy{
+	struct qz qy;
+	int * x;
+	bool y;
+};
+struct qx{
+	struct qy qx;
+	int * x;
+	bool y;
+};
+struct qw{
+	struct qx qw;
+	int * x;
+	bool y;
+};
+struct qv{
+	struct qw qv;
+	int * x;
+	bool y;
+};
+struct qu{
+	struct qv qu;
+	int * x;
+	bool y;
+};
+struct qt{
+	struct qu qt;
+	int * x;
+	bool y;
+};
+struct qs{
+	struct qt qs;
+	int * x;
+	bool y;
+};
+struct qr{
+	struct qs qr;
+	int * x;
+	bool y;
+};
+struct qq{
+	struct qr qq;
+	int * x;
+	bool y;
+};
+struct qp{
+	struct qq qp;
+	int * x;
+	bool y;
+};
+struct qo{
+	struct qp qo;
+	int * x;
+	bool y;
+};
+struct qn{
+	struct qo qn;
+	int * x;
+	bool y;
+};
+struct qm{
+	struct qn qm;
+	int * x;
+	bool y;
+};
+struct ql{
+	struct qm ql;
+	int * x;
+	bool y;
+};
+struct qk{
+	struct ql qk;
+	int * x;
+	bool y;
+};
+struct qj{
+	struct qk qj;
+	int * x;
+	bool y;
+};
+struct qi{
+	struct qj qi;
+	int * x;
+	bool y;
+};
+struct qh{
+	struct qi qh;
+	int * x;
+	bool y;
+};
+struct qg{
+	struct qh qg;
+	int * x;
+	bool y;
+};
+struct qf{
+	struct qg qf;
+	int * x;
+	bool y;
+};
+struct qe{
+	struct qf qe;
+	int * x;
+	bool y;
+};
+struct qd{
+	struct qe qd;
+	int * x;
+	bool y;
+};
+struct qc{
+	struct qd qc;
+	int * x;
+	bool y;
+};
+struct qb{
+	struct qc qb;
+	int * x;
+	bool y;
+};
+struct qa{
+	struct qb qa;
+	int * x;
+	bool y;
+};
+struct pz{
+	struct qa pz;
+	int * x;
+	bool y;
+};
+struct py{
+	struct pz py;
+	int * x;
+	bool y;
+};
+struct px{
+	struct py px;
+	int * x;
+	bool y;
+};
+struct pw{
+	struct px pw;
+	int * x;
+	bool y;
+};
+struct pv{
+	struct pw pv;
+	int * x;
+	bool y;
+};
+struct pu{
+	struct pv pu;
+	int * x;
+	bool y;
+};
+struct pt{
+	struct pu pt;
+	int * x;
+	bool y;
+};
+struct ps{
+	struct pt ps;
+	int * x;
+	bool y;
+};
+struct pr{
+	struct ps pr;
+	int * x;
+	bool y;
+};
+struct pq{
+	struct pr pq;
+	int * x;
+	bool y;
+};
+struct pp{
+	struct pq pp;
+	int * x;
+	bool y;
+};
+struct po{
+	struct pp po;
+	int * x;
+	bool y;
+};
+struct pn{
+	struct po pn;
+	int * x;
+	bool y;
+};
+struct pm{
+	struct pn pm;
+	int * x;
+	bool y;
+};
+struct pl{
+	struct pm pl;
+	int * x;
+	bool y;
+};
+struct pk{
+	struct pl pk;
+	int * x;
+	bool y;
+};
+struct pj{
+	struct pk pj;
+	int * x;
+	bool y;
+};
+struct pi{
+	struct pj pi;
+	int * x;
+	bool y;
+};
+struct ph{
+	struct pi ph;
+	int * x;
+	bool y;
+};
+struct pg{
+	struct ph pg;
+	int * x;
+	bool y;
+};
+struct pf{
+	struct pg pf;
+	int * x;
+	bool y;
+};
+struct pe{
+	struct pf pe;
+	int * x;
+	bool y;
+};
+struct pd{
+	struct pe pd;
+	int * x;
+	bool y;
+};
+struct pc{
+	struct pd pc;
+	int * x;
+	bool y;
+};
+struct pb{
+	struct pc pb;
+	int * x;
+	bool y;
+};
+struct pa{
+	struct pb pa;
+	int * x;
+	bool y;
+};
+struct oz{
+	struct pa oz;
+	int * x;
+	bool y;
+};
+struct oy{
+	struct oz oy;
+	int * x;
+	bool y;
+};
+struct ox{
+	struct oy ox;
+	int * x;
+	bool y;
+};
+struct ow{
+	struct ox ow;
+	int * x;
+	bool y;
+};
+struct ov{
+	struct ow ov;
+	int * x;
+	bool y;
+};
+struct ou{
+	struct ov ou;
+	int * x;
+	bool y;
+};
+struct ot{
+	struct ou ot;
+	int * x;
+	bool y;
+};
+struct os{
+	struct ot os;
+	int * x;
+	bool y;
+};
+struct or{
+	struct os or;
+	int * x;
+	bool y;
+};
+struct oq{
+	struct or oq;
+	int * x;
+	bool y;
+};
+struct op{
+	struct oq op;
+	int * x;
+	bool y;
+};
+struct oo{
+	struct op oo;
+	int * x;
+	bool y;
+};
+struct on{
+	struct oo on;
+	int * x;
+	bool y;
+};
+struct om{
+	struct on om;
+	int * x;
+	bool y;
+};
+struct ol{
+	struct om ol;
+	int * x;
+	bool y;
+};
+struct ok{
+	struct ol ok;
+	int * x;
+	bool y;
+};
+struct oj{
+	struct ok oj;
+	int * x;
+	bool y;
+};
+struct oi{
+	struct oj oi;
+	int * x;
+	bool y;
+};
+struct oh{
+	struct oi oh;
+	int * x;
+	bool y;
+};
+struct og{
+	struct oh og;
+	int * x;
+	bool y;
+};
+struct of{
+	struct og of;
+	int * x;
+	bool y;
+};
+struct oe{
+	struct of oe;
+	int * x;
+	bool y;
+};
+struct od{
+	struct oe od;
+	int * x;
+	bool y;
+};
+struct oc{
+	struct od oc;
+	int * x;
+	bool y;
+};
+struct ob{
+	struct oc ob;
+	int * x;
+	bool y;
+};
+struct oa{
+	struct ob oa;
+	int * x;
+	bool y;
+};
+struct nz{
+	struct oa nz;
+	int * x;
+	bool y;
+};
+struct ny{
+	struct nz ny;
+	int * x;
+	bool y;
+};
+struct nx{
+	struct ny nx;
+	int * x;
+	bool y;
+};
+struct nw{
+	struct nx nw;
+	int * x;
+	bool y;
+};
+struct nv{
+	struct nw nv;
+	int * x;
+	bool y;
+};
+struct nu{
+	struct nv nu;
+	int * x;
+	bool y;
+};
+struct nt{
+	struct nu nt;
+	int * x;
+	bool y;
+};
+struct ns{
+	struct nt ns;
+	int * x;
+	bool y;
+};
+struct nr{
+	struct ns nr;
+	int * x;
+	bool y;
+};
+struct nq{
+	struct nr nq;
+	int * x;
+	bool y;
+};
+struct np{
+	struct nq np;
+	int * x;
+	bool y;
+};
+struct no{
+	struct np no;
+	int * x;
+	bool y;
+};
+struct nn{
+	struct no nn;
+	int * x;
+	bool y;
+};
+struct nm{
+	struct nn nm;
+	int * x;
+	bool y;
+};
+struct nl{
+	struct nm nl;
+	int * x;
+	bool y;
+};
+struct nk{
+	struct nl nk;
+	int * x;
+	bool y;
+};
+struct nj{
+	struct nk nj;
+	int * x;
+	bool y;
+};
+struct ni{
+	struct nj ni;
+	int * x;
+	bool y;
+};
+struct nh{
+	struct ni nh;
+	int * x;
+	bool y;
+};
+struct ng{
+	struct nh ng;
+	int * x;
+	bool y;
+};
+struct nf{
+	struct ng nf;
+	int * x;
+	bool y;
+};
+struct ne{
+	struct nf ne;
+	int * x;
+	bool y;
+};
+struct nd{
+	struct ne nd;
+	int * x;
+	bool y;
+};
+struct nc{
+	struct nd nc;
+	int * x;
+	bool y;
+};
+struct nb{
+	struct nc nb;
+	int * x;
+	bool y;
+};
+struct na{
+	struct nb na;
+	int * x;
+	bool y;
+};
+struct mz{
+	struct na mz;
+	int * x;
+	bool y;
+};
+struct my{
+	struct mz my;
+	int * x;
+	bool y;
+};
+struct mx{
+	struct my mx;
+	int * x;
+	bool y;
+};
+struct mw{
+	struct mx mw;
+	int * x;
+	bool y;
+};
+struct mv{
+	struct mw mv;
+	int * x;
+	bool y;
+};
+struct mu{
+	struct mv mu;
+	int * x;
+	bool y;
+};
+struct mt{
+	struct mu mt;
+	int * x;
+	bool y;
+};
+struct ms{
+	struct mt ms;
+	int * x;
+	bool y;
+};
+struct mr{
+	struct ms mr;
+	int * x;
+	bool y;
+};
+struct mq{
+	struct mr mq;
+	int * x;
+	bool y;
+};
+struct mp{
+	struct mq mp;
+	int * x;
+	bool y;
+};
+struct mo{
+	struct mp mo;
+	int * x;
+	bool y;
+};
+struct mn{
+	struct mo mn;
+	int * x;
+	bool y;
+};
+struct mm{
+	struct mn mm;
+	int * x;
+	bool y;
+};
+struct ml{
+	struct mm ml;
+	int * x;
+	bool y;
+};
+struct mk{
+	struct ml mk;
+	int * x;
+	bool y;
+};
+struct mj{
+	struct mk mj;
+	int * x;
+	bool y;
+};
+struct mi{
+	struct mj mi;
+	int * x;
+	bool y;
+};
+struct mh{
+	struct mi mh;
+	int * x;
+	bool y;
+};
+struct mg{
+	struct mh mg;
+	int * x;
+	bool y;
+};
+struct mf{
+	struct mg mf;
+	int * x;
+	bool y;
+};
+struct me{
+	struct mf me;
+	int * x;
+	bool y;
+};
+struct md{
+	struct me md;
+	int * x;
+	bool y;
+};
+struct mc{
+	struct md mc;
+	int * x;
+	bool y;
+};
+struct mb{
+	struct mc mb;
+	int * x;
+	bool y;
+};
+struct ma{
+	struct mb ma;
+	int * x;
+	bool y;
+};
+struct lz{
+	struct ma lz;
+	int * x;
+	bool y;
+};
+struct ly{
+	struct lz ly;
+	int * x;
+	bool y;
+};
+struct lx{
+	struct ly lx;
+	int * x;
+	bool y;
+};
+struct lw{
+	struct lx lw;
+	int * x;
+	bool y;
+};
+struct lv{
+	struct lw lv;
+	int * x;
+	bool y;
+};
+struct lu{
+	struct lv lu;
+	int * x;
+	bool y;
+};
+struct lt{
+	struct lu lt;
+	int * x;
+	bool y;
+};
+struct ls{
+	struct lt ls;
+	int * x;
+	bool y;
+};
+struct lr{
+	struct ls lr;
+	int * x;
+	bool y;
+};
+struct lq{
+	struct lr lq;
+	int * x;
+	bool y;
+};
+struct lp{
+	struct lq lp;
+	int * x;
+	bool y;
+};
+struct lo{
+	struct lp lo;
+	int * x;
+	bool y;
+};
+struct ln{
+	struct lo ln;
+	int * x;
+	bool y;
+};
+struct lm{
+	struct ln lm;
+	int * x;
+	bool y;
+};
+struct ll{
+	struct lm ll;
+	int * x;
+	bool y;
+};
+struct lk{
+	struct ll lk;
+	int * x;
+	bool y;
+};
+struct lj{
+	struct lk lj;
+	int * x;
+	bool y;
+};
+struct li{
+	struct lj li;
+	int * x;
+	bool y;
+};
+struct lh{
+	struct li lh;
+	int * x;
+	bool y;
+};
+struct lg{
+	struct lh lg;
+	int * x;
+	bool y;
+};
+struct lf{
+	struct lg lf;
+	int * x;
+	bool y;
+};
+struct le{
+	struct lf le;
+	int * x;
+	bool y;
+};
+struct ld{
+	struct le ld;
+	int * x;
+	bool y;
+};
+struct lc{
+	struct ld lc;
+	int * x;
+	bool y;
+};
+struct lb{
+	struct lc lb;
+	int * x;
+	bool y;
+};
+struct la{
+	struct lb la;
+	int * x;
+	bool y;
+};
+struct kz{
+	struct la kz;
+	int * x;
+	bool y;
+};
+struct ky{
+	struct kz ky;
+	int * x;
+	bool y;
+};
+struct kx{
+	struct ky kx;
+	int * x;
+	bool y;
+};
+struct kw{
+	struct kx kw;
+	int * x;
+	bool y;
+};
+struct kv{
+	struct kw kv;
+	int * x;
+	bool y;
+};
+struct ku{
+	struct kv ku;
+	int * x;
+	bool y;
+};
+struct kt{
+	struct ku kt;
+	int * x;
+	bool y;
+};
+struct ks{
+	struct kt ks;
+	int * x;
+	bool y;
+};
+struct kr{
+	struct ks kr;
+	int * x;
+	bool y;
+};
+struct kq{
+	struct kr kq;
+	int * x;
+	bool y;
+};
+struct kp{
+	struct kq kp;
+	int * x;
+	bool y;
+};
+struct ko{
+	struct kp ko;
+	int * x;
+	bool y;
+};
+struct kn{
+	struct ko kn;
+	int * x;
+	bool y;
+};
+struct km{
+	struct kn km;
+	int * x;
+	bool y;
+};
+struct kl{
+	struct km kl;
+	int * x;
+	bool y;
+};
+struct kk{
+	struct kl kk;
+	int * x;
+	bool y;
+};
+struct kj{
+	struct kk kj;
+	int * x;
+	bool y;
+};
+struct ki{
+	struct kj ki;
+	int * x;
+	bool y;
+};
+struct kh{
+	struct ki kh;
+	int * x;
+	bool y;
+};
+struct kg{
+	struct kh kg;
+	int * x;
+	bool y;
+};
+struct kf{
+	struct kg kf;
+	int * x;
+	bool y;
+};
+struct ke{
+	struct kf ke;
+	int * x;
+	bool y;
+};
+struct kd{
+	struct ke kd;
+	int * x;
+	bool y;
+};
+struct kc{
+	struct kd kc;
+	int * x;
+	bool y;
+};
+struct kb{
+	struct kc kb;
+	int * x;
+	bool y;
+};
+struct ka{
+	struct kb ka;
+	int * x;
+	bool y;
+};
+struct jz{
+	struct ka jz;
+	int * x;
+	bool y;
+};
+struct jy{
+	struct jz jy;
+	int * x;
+	bool y;
+};
+struct jx{
+	struct jy jx;
+	int * x;
+	bool y;
+};
+struct jw{
+	struct jx jw;
+	int * x;
+	bool y;
+};
+struct jv{
+	struct jw jv;
+	int * x;
+	bool y;
+};
+struct ju{
+	struct jv ju;
+	int * x;
+	bool y;
+};
+struct jt{
+	struct ju jt;
+	int * x;
+	bool y;
+};
+struct js{
+	struct jt js;
+	int * x;
+	bool y;
+};
+struct jr{
+	struct js jr;
+	int * x;
+	bool y;
+};
+struct jq{
+	struct jr jq;
+	int * x;
+	bool y;
+};
+struct jp{
+	struct jq jp;
+	int * x;
+	bool y;
+};
+struct jo{
+	struct jp jo;
+	int * x;
+	bool y;
+};
+struct jn{
+	struct jo jn;
+	int * x;
+	bool y;
+};
+struct jm{
+	struct jn jm;
+	int * x;
+	bool y;
+};
+struct jl{
+	struct jm jl;
+	int * x;
+	bool y;
+};
+struct jk{
+	struct jl jk;
+	int * x;
+	bool y;
+};
+struct jj{
+	struct jk jj;
+	int * x;
+	bool y;
+};
+struct ji{
+	struct jj ji;
+	int * x;
+	bool y;
+};
+struct jh{
+	struct ji jh;
+	int * x;
+	bool y;
+};
+struct jg{
+	struct jh jg;
+	int * x;
+	bool y;
+};
+struct jf{
+	struct jg jf;
+	int * x;
+	bool y;
+};
+struct je{
+	struct jf je;
+	int * x;
+	bool y;
+};
+struct jd{
+	struct je jd;
+	int * x;
+	bool y;
+};
+struct jc{
+	struct jd jc;
+	int * x;
+	bool y;
+};
+struct jb{
+	struct jc jb;
+	int * x;
+	bool y;
+};
+struct ja{
+	struct jb ja;
+	int * x;
+	bool y;
+};
+struct iz{
+	struct ja iz;
+	int * x;
+	bool y;
+};
+struct iy{
+	struct iz iy;
+	int * x;
+	bool y;
+};
+struct ix{
+	struct iy ix;
+	int * x;
+	bool y;
+};
+struct iw{
+	struct ix iw;
+	int * x;
+	bool y;
+};
+struct iv{
+	struct iw iv;
+	int * x;
+	bool y;
+};
+struct iu{
+	struct iv iu;
+	int * x;
+	bool y;
+};
+struct it{
+	struct iu it;
+	int * x;
+	bool y;
+};
+struct is{
+	struct it is;
+	int * x;
+	bool y;
+};
+struct ir{
+	struct is ir;
+	int * x;
+	bool y;
+};
+struct iq{
+	struct ir iq;
+	int * x;
+	bool y;
+};
+struct ip{
+	struct iq ip;
+	int * x;
+	bool y;
+};
+struct io{
+	struct ip io;
+	int * x;
+	bool y;
+};
+struct in{
+	struct io in;
+	int * x;
+	bool y;
+};
+struct im{
+	struct in im;
+	int * x;
+	bool y;
+};
+struct il{
+	struct im il;
+	int * x;
+	bool y;
+};
+struct ik{
+	struct il ik;
+	int * x;
+	bool y;
+};
+struct ij{
+	struct ik ij;
+	int * x;
+	bool y;
+};
+struct ii{
+	struct ij ii;
+	int * x;
+	bool y;
+};
+struct ih{
+	struct ii ih;
+	int * x;
+	bool y;
+};
+struct ig{
+	struct ih ig;
+	int * x;
+	bool y;
+};
+struct i{
+	struct ig i;
+	int * x;
+	bool y;
+};
+struct ie{
+	struct i ie;
+	int * x;
+	bool y;
+};
+struct id{
+	struct ie id;
+	int * x;
+	bool y;
+};
+struct ic{
+	struct id ic;
+	int * x;
+	bool y;
+};
+struct ib{
+	struct ic ib;
+	int * x;
+	bool y;
+};
+struct ia{
+	struct ib ia;
+	int * x;
+	bool y;
+};
+struct hz{
+	struct ia hz;
+	int * x;
+	bool y;
+};
+struct hy{
+	struct hz hy;
+	int * x;
+	bool y;
+};
+struct hx{
+	struct hy hx;
+	int * x;
+	bool y;
+};
+struct hw{
+	struct hx hw;
+	int * x;
+	bool y;
+};
+struct hv{
+	struct hw hv;
+	int * x;
+	bool y;
+};
+struct hu{
+	struct hv hu;
+	int * x;
+	bool y;
+};
+struct ht{
+	struct hu ht;
+	int * x;
+	bool y;
+};
+struct hs{
+	struct ht hs;
+	int * x;
+	bool y;
+};
+struct hr{
+	struct hs hr;
+	int * x;
+	bool y;
+};
+struct hq{
+	struct hr hq;
+	int * x;
+	bool y;
+};
+struct hp{
+	struct hq hp;
+	int * x;
+	bool y;
+};
+struct ho{
+	struct hp ho;
+	int * x;
+	bool y;
+};
+struct hn{
+	struct ho hn;
+	int * x;
+	bool y;
+};
+struct hm{
+	struct hn hm;
+	int * x;
+	bool y;
+};
+struct hl{
+	struct hm hl;
+	int * x;
+	bool y;
+};
+struct hk{
+	struct hl hk;
+	int * x;
+	bool y;
+};
+struct hj{
+	struct hk hj;
+	int * x;
+	bool y;
+};
+struct hi{
+	struct hj hi;
+	int * x;
+	bool y;
+};
+struct hh{
+	struct hi hh;
+	int * x;
+	bool y;
+};
+struct hg{
+	struct hh hg;
+	int * x;
+	bool y;
+};
+struct hf{
+	struct hg hf;
+	int * x;
+	bool y;
+};
+struct he{
+	struct hf he;
+	int * x;
+	bool y;
+};
+struct hd{
+	struct he hd;
+	int * x;
+	bool y;
+};
+struct hc{
+	struct hd hc;
+	int * x;
+	bool y;
+};
+struct hb{
+	struct hc hb;
+	int * x;
+	bool y;
+};
+struct ha{
+	struct hb ha;
+	int * x;
+	bool y;
+};
+struct gz{
+	struct ha gz;
+	int * x;
+	bool y;
+};
+struct gy{
+	struct gz gy;
+	int * x;
+	bool y;
+};
+struct gx{
+	struct gy gx;
+	int * x;
+	bool y;
+};
+struct gw{
+	struct gx gw;
+	int * x;
+	bool y;
+};
+struct gv{
+	struct gw gv;
+	int * x;
+	bool y;
+};
+struct gu{
+	struct gv gu;
+	int * x;
+	bool y;
+};
+struct gt{
+	struct gu gt;
+	int * x;
+	bool y;
+};
+struct gs{
+	struct gt gs;
+	int * x;
+	bool y;
+};
+struct gr{
+	struct gs gr;
+	int * x;
+	bool y;
+};
+struct gq{
+	struct gr gq;
+	int * x;
+	bool y;
+};
+struct gp{
+	struct gq gp;
+	int * x;
+	bool y;
+};
+struct go{
+	struct gp go;
+	int * x;
+	bool y;
+};
+struct gn{
+	struct go gn;
+	int * x;
+	bool y;
+};
+struct gm{
+	struct gn gm;
+	int * x;
+	bool y;
+};
+struct gl{
+	struct gm gl;
+	int * x;
+	bool y;
+};
+struct gk{
+	struct gl gk;
+	int * x;
+	bool y;
+};
+struct gj{
+	struct gk gj;
+	int * x;
+	bool y;
+};
+struct gi{
+	struct gj gi;
+	int * x;
+	bool y;
+};
+struct gh{
+	struct gi gh;
+	int * x;
+	bool y;
+};
+struct gg{
+	struct gh gg;
+	int * x;
+	bool y;
+};
+struct gf{
+	struct gg gf;
+	int * x;
+	bool y;
+};
+struct ge{
+	struct gf ge;
+	int * x;
+	bool y;
+};
+struct gd{
+	struct ge gd;
+	int * x;
+	bool y;
+};
+struct gc{
+	struct gd gc;
+	int * x;
+	bool y;
+};
+struct gb{
+	struct gc gb;
+	int * x;
+	bool y;
+};
+struct ga{
+	struct gb ga;
+	int * x;
+	bool y;
+};
+struct fz{
+	struct ga fz;
+	int * x;
+	bool y;
+};
+struct fy{
+	struct fz fy;
+	int * x;
+	bool y;
+};
+struct fx{
+	struct fy fx;
+	int * x;
+	bool y;
+};
+struct fw{
+	struct fx fw;
+	int * x;
+	bool y;
+};
+struct fv{
+	struct fw fv;
+	int * x;
+	bool y;
+};
+struct fu{
+	struct fv fu;
+	int * x;
+	bool y;
+};
+struct ft{
+	struct fu ft;
+	int * x;
+	bool y;
+};
+struct fs{
+	struct ft fs;
+	int * x;
+	bool y;
+};
+struct fr{
+	struct fs fr;
+	int * x;
+	bool y;
+};
+struct fq{
+	struct fr fq;
+	int * x;
+	bool y;
+};
+struct fp{
+	struct fq fp;
+	int * x;
+	bool y;
+};
+struct fo{
+	struct fp fo;
+	int * x;
+	bool y;
+};
+struct fn{
+	struct fo fn;
+	int * x;
+	bool y;
+};
+struct fm{
+	struct fn fm;
+	int * x;
+	bool y;
+};
+struct fl{
+	struct fm fl;
+	int * x;
+	bool y;
+};
+struct fk{
+	struct fl fk;
+	int * x;
+	bool y;
+};
+struct fj{
+	struct fk fj;
+	int * x;
+	bool y;
+};
+struct fi{
+	struct fj fi;
+	int * x;
+	bool y;
+};
+struct fh{
+	struct fi fh;
+	int * x;
+	bool y;
+};
+struct fg{
+	struct fh fg;
+	int * x;
+	bool y;
+};
+struct ff{
+	struct fg ff;
+	int * x;
+	bool y;
+};
+struct fe{
+	struct ff fe;
+	int * x;
+	bool y;
+};
+struct fd{
+	struct fe fd;
+	int * x;
+	bool y;
+};
+struct fc{
+	struct fd fc;
+	int * x;
+	bool y;
+};
+struct fb{
+	struct fc fb;
+	int * x;
+	bool y;
+};
+struct fa{
+	struct fb fa;
+	int * x;
+	bool y;
+};
+struct ez{
+	struct fa ez;
+	int * x;
+	bool y;
+};
+struct ey{
+	struct ez ey;
+	int * x;
+	bool y;
+};
+struct ex{
+	struct ey ex;
+	int * x;
+	bool y;
+};
+struct ew{
+	struct ex ew;
+	int * x;
+	bool y;
+};
+struct ev{
+	struct ew ev;
+	int * x;
+	bool y;
+};
+struct eu{
+	struct ev eu;
+	int * x;
+	bool y;
+};
+struct et{
+	struct eu et;
+	int * x;
+	bool y;
+};
+struct es{
+	struct et es;
+	int * x;
+	bool y;
+};
+struct er{
+	struct es er;
+	int * x;
+	bool y;
+};
+struct eq{
+	struct er eq;
+	int * x;
+	bool y;
+};
+struct ep{
+	struct eq ep;
+	int * x;
+	bool y;
+};
+struct eo{
+	struct ep eo;
+	int * x;
+	bool y;
+};
+struct en{
+	struct eo en;
+	int * x;
+	bool y;
+};
+struct em{
+	struct en em;
+	int * x;
+	bool y;
+};
+struct el{
+	struct em el;
+	int * x;
+	bool y;
+};
+struct ek{
+	struct el ek;
+	int * x;
+	bool y;
+};
+struct ej{
+	struct ek ej;
+	int * x;
+	bool y;
+};
+struct ei{
+	struct ej ei;
+	int * x;
+	bool y;
+};
+struct eh{
+	struct ei eh;
+	int * x;
+	bool y;
+};
+struct eg{
+	struct eh eg;
+	int * x;
+	bool y;
+};
+struct ef{
+	struct eg ef;
+	int * x;
+	bool y;
+};
+struct ee{
+	struct ef ee;
+	int * x;
+	bool y;
+};
+struct ed{
+	struct ee ed;
+	int * x;
+	bool y;
+};
+struct ec{
+	struct ed ec;
+	int * x;
+	bool y;
+};
+struct eb{
+	struct ec eb;
+	int * x;
+	bool y;
+};
+struct ea{
+	struct eb ea;
+	int * x;
+	bool y;
+};
+struct dz{
+	struct ea dz;
+	int * x;
+	bool y;
+};
+struct dy{
+	struct dz dy;
+	int * x;
+	bool y;
+};
+struct dx{
+	struct dy dx;
+	int * x;
+	bool y;
+};
+struct dw{
+	struct dx dw;
+	int * x;
+	bool y;
+};
+struct dv{
+	struct dw dv;
+	int * x;
+	bool y;
+};
+struct du{
+	struct dv du;
+	int * x;
+	bool y;
+};
+struct dt{
+	struct du dt;
+	int * x;
+	bool y;
+};
+struct ds{
+	struct dt ds;
+	int * x;
+	bool y;
+};
+struct dr{
+	struct ds dr;
+	int * x;
+	bool y;
+};
+struct dq{
+	struct dr dq;
+	int * x;
+	bool y;
+};
+struct dp{
+	struct dq dp;
+	int * x;
+	bool y;
+};
+struct do{
+	struct dp do;
+	int * x;
+	bool y;
+};
+struct dn{
+	struct do dn;
+	int * x;
+	bool y;
+};
+struct dm{
+	struct dn dm;
+	int * x;
+	bool y;
+};
+struct dl{
+	struct dm dl;
+	int * x;
+	bool y;
+};
+struct dk{
+	struct dl dk;
+	int * x;
+	bool y;
+};
+struct dj{
+	struct dk dj;
+	int * x;
+	bool y;
+};
+struct di{
+	struct dj di;
+	int * x;
+	bool y;
+};
+struct dh{
+	struct di dh;
+	int * x;
+	bool y;
+};
+struct dg{
+	struct dh dg;
+	int * x;
+	bool y;
+};
+struct df{
+	struct dg df;
+	int * x;
+	bool y;
+};
+struct de{
+	struct df de;
+	int * x;
+	bool y;
+};
+struct dd{
+	struct de dd;
+	int * x;
+	bool y;
+};
+struct dc{
+	struct dd dc;
+	int * x;
+	bool y;
+};
+struct db{
+	struct dc db;
+	int * x;
+	bool y;
+};
+struct da{
+	struct db da;
+	int * x;
+	bool y;
+};
+struct cz{
+	struct da cz;
+	int * x;
+	bool y;
+};
+struct cy{
+	struct cz cy;
+	int * x;
+	bool y;
+};
+struct cx{
+	struct cy cx;
+	int * x;
+	bool y;
+};
+struct cw{
+	struct cx cw;
+	int * x;
+	bool y;
+};
+struct cv{
+	struct cw cv;
+	int * x;
+	bool y;
+};
+struct cu{
+	struct cv cu;
+	int * x;
+	bool y;
+};
+struct ct{
+	struct cu ct;
+	int * x;
+	bool y;
+};
+struct cs{
+	struct ct cs;
+	int * x;
+	bool y;
+};
+struct cr{
+	struct cs cr;
+	int * x;
+	bool y;
+};
+struct cq{
+	struct cr cq;
+	int * x;
+	bool y;
+};
+struct cp{
+	struct cq cp;
+	int * x;
+	bool y;
+};
+struct co{
+	struct cp co;
+	int * x;
+	bool y;
+};
+struct cn{
+	struct co cn;
+	int * x;
+	bool y;
+};
+struct cm{
+	struct cn cm;
+	int * x;
+	bool y;
+};
+struct cl{
+	struct cm cl;
+	int * x;
+	bool y;
+};
+struct ck{
+	struct cl ck;
+	int * x;
+	bool y;
+};
+struct cj{
+	struct ck cj;
+	int * x;
+	bool y;
+};
+struct ci{
+	struct cj ci;
+	int * x;
+	bool y;
+};
+struct ch{
+	struct ci ch;
+	int * x;
+	bool y;
+};
+struct cg{
+	struct ch cg;
+	int * x;
+	bool y;
+};
+struct cf{
+	struct cg cf;
+	int * x;
+	bool y;
+};
+struct ce{
+	struct cf ce;
+	int * x;
+	bool y;
+};
+struct cd{
+	struct ce cd;
+	int * x;
+	bool y;
+};
+struct cc{
+	struct cd cc;
+	int * x;
+	bool y;
+};
+struct cb{
+	struct cc cb;
+	int * x;
+	bool y;
+};
+struct ca{
+	struct cb ca;
+	int * x;
+	bool y;
+};
+struct bz{
+	struct ca bz;
+	int * x;
+	bool y;
+};
+struct by{
+	struct bz by;
+	int * x;
+	bool y;
+};
+struct bx{
+	struct by bx;
+	int * x;
+	bool y;
+};
+struct bw{
+	struct bx bw;
+	int * x;
+	bool y;
+};
+struct bv{
+	struct bw bv;
+	int * x;
+	bool y;
+};
+struct bu{
+	struct bv bu;
+	int * x;
+	bool y;
+};
+struct bt{
+	struct bu bt;
+	int * x;
+	bool y;
+};
+struct bs{
+	struct bt bs;
+	int * x;
+	bool y;
+};
+struct br{
+	struct bs br;
+	int * x;
+	bool y;
+};
+struct bq{
+	struct br bq;
+	int * x;
+	bool y;
+};
+struct bp{
+	struct bq bp;
+	int * x;
+	bool y;
+};
+struct bo{
+	struct bp bo;
+	int * x;
+	bool y;
+};
+struct bn{
+	struct bo bn;
+	int * x;
+	bool y;
+};
+struct bm{
+	struct bn bm;
+	int * x;
+	bool y;
+};
+struct bl{
+	struct bm bl;
+	int * x;
+	bool y;
+};
+struct bk{
+	struct bl bk;
+	int * x;
+	bool y;
+};
+struct bj{
+	struct bk bj;
+	int * x;
+	bool y;
+};
+struct bi{
+	struct bj bi;
+	int * x;
+	bool y;
+};
+struct bh{
+	struct bi bh;
+	int * x;
+	bool y;
+};
+struct bg{
+	struct bh bg;
+	int * x;
+	bool y;
+};
+struct bf{
+	struct bg bf;
+	int * x;
+	bool y;
+};
+struct be{
+	struct bf be;
+	int * x;
+	bool y;
+};
+struct bd{
+	struct be bd;
+	int * x;
+	bool y;
+};
+struct bc{
+	struct bd bc;
+	int * x;
+	bool y;
+};
+struct bb{
+	struct bc bb;
+	int * x;
+	bool y;
+};
+struct ba{
+	struct bb ba;
+	int * x;
+	bool y;
+};
+struct az{
+	struct ba az;
+	int * x;
+	bool y;
+};
+struct ay{
+	struct az ay;
+	int * x;
+	bool y;
+};
+struct ax{
+	struct ay ax;
+	int * x;
+	bool y;
+};
+struct aw{
+	struct ax aw;
+	int * x;
+	bool y;
+};
+struct av{
+	struct aw av;
+	int * x;
+	bool y;
+};
+struct au{
+	struct av au;
+	int * x;
+	bool y;
+};
+struct at{
+	struct au at;
+	int * x;
+	bool y;
+};
+struct as{
+	struct at as;
+	int * x;
+	bool y;
+};
+struct ar{
+	struct as ar;
+	int * x;
+	bool y;
+};
+struct aq{
+	struct ar aq;
+	int * x;
+	bool y;
+};
+struct ap{
+	struct aq ap;
+	int * x;
+	bool y;
+};
+struct ao{
+	struct ap ao;
+	int * x;
+	bool y;
+};
+struct an{
+	struct ao an;
+	int * x;
+	bool y;
+};
+struct am{
+	struct an am;
+	int * x;
+	bool y;
+};
+struct al{
+	struct am al;
+	int * x;
+	bool y;
+};
+struct ak{
+	struct al ak;
+	int * x;
+	bool y;
+};
+struct aj{
+	struct ak aj;
+	int * x;
+	bool y;
+};
+struct ai{
+	struct aj ai;
+	int * x;
+	bool y;
+};
+struct ah{
+	struct ai ah;
+	int * x;
+	bool y;
+};
+struct ag{
+	struct ah ag;
+	int * x;
+	bool y;
+};
+struct af{
+	struct ag af;
+	int * x;
+	bool y;
+};
+struct ae{
+	struct af ae;
+	int * x;
+	bool y;
+};
+struct ad{
+	struct ae ad;
+	int * x;
+	bool y;
+};
+struct ac{
+	struct ad ac;
+	int * x;
+	bool y;
+};
+struct ab{
+	struct ac ab;
+	int * x;
+	bool y;
+};
+struct aa{
+	struct ab aa;
+	int * x;
+	bool y;
+};
+
+int f(int z){
+	if(z == 0) return 1 / z;
+	return z - 1;
+}
+
+int main(){
+	struct aa * instructables = alloc(struct aa);
+	return f(1 << instructables->aa.ab.ac.ad.ae.af.ag.ah.ai.aj.ak.al.am.an.ao.ap.aq.ar.as.at.au.av.aw.ax.ay.az.ba.bb.bc.bd.be.bf.bg.bh.bi.bj.bk.bl.bm.bn.bo.bp.bq.br.bs.bt.bu.bv.bw.bx.by.bz.ca.cb.cc.cd.ce.cf.cg.ch.ci.cj.ck.cl.cm.cn.co.cp.cq.cr.cs.ct.cu.cv.cw.cx.cy.cz.da.db.dc.dd.de.df.dg.dh.di.dj.dk.dl.dm.dn.do.dp.dq.dr.ds.dt.du.dv.dw.dx.dy.dz.ea.eb.ec.ed.ee.ef.eg.eh.ei.ej.ek.el.em.en.eo.ep.eq.er.es.et.eu.ev.ew.ex.ey.ez.fa.fb.fc.fd.fe.ff.fg.fh.fi.fj.fk.fl.fm.fn.fo.fp.fq.fr.fs.ft.fu.fv.fw.fx.fy.fz.ga.gb.gc.gd.ge.gf.gg.gh.gi.gj.gk.gl.gm.gn.go.gp.gq.gr.gs.gt.gu.gv.gw.gx.gy.gz.ha.hb.hc.hd.he.hf.hg.hh.hi.hj.hk.hl.hm.hn.ho.hp.hq.hr.hs.ht.hu.hv.hw.hx.hy.hz.ia.ib.ic.id.ie.i.ig.ih.ii.ij.ik.il.im.in.io.ip.iq.ir.is.it.iu.iv.iw.ix.iy.iz.ja.jb.jc.jd.je.jf.jg.jh.ji.jj.jk.jl.jm.jn.jo.jp.jq.jr.js.jt.ju.jv.jw.jx.jy.jz.ka.kb.kc.kd.ke.kf.kg.kh.ki.kj.kk.kl.km.kn.ko.kp.kq.kr.ks.kt.ku.kv.kw.kx.ky.kz.la.lb.lc.ld.le.lf.lg.lh.li.lj.lk.ll.lm.ln.lo.lp.lq.lr.ls.lt.lu.lv.lw.lx.ly.lz.ma.mb.mc.md.me.mf.mg.mh.mi.mj.mk.ml.mm.mn.mo.mp.mq.mr.ms.mt.mu.mv.mw.mx.my.mz.na.nb.nc.nd.ne.nf.ng.nh.ni.nj.nk.nl.nm.nn.no.np.nq.nr.ns.nt.nu.nv.nw.nx.ny.nz.oa.ob.oc.od.oe.of.og.oh.oi.oj.ok.ol.om.on.oo.op.oq.or.os.ot.ou.ov.ow.ox.oy.oz.pa.pb.pc.pd.pe.pf.pg.ph.pi.pj.pk.pl.pm.pn.po.pp.pq.pr.ps.pt.pu.pv.pw.px.py.pz.qa.qb.qc.qd.qe.qf.qg.qh.qi.qj.qk.ql.qm.qn.qo.qp.qq.qr.qs.qt.qu.qv.qw.qx.qy.qz.ra.rb.rc.rd.re.rf.rg.rh.ri.rj.rk.rl.rm.rn.ro.rp.rq.rr.rs.rt.ru.rv.rw.rx.ry.rz.sa.sb.sc.sd.se.sf.sg.sh.si.sj.sk.sl.sm.sn.so.sp.sq.sr.ss.st.su.sv.sw.sx.sy.sz.ta.tb.tc.td.te.tf.tg.th.ti.tj.tk.tl.tm.tn.to.tp.tq.tr.ts.tt.tu.tv.tw.tx.ty.tz.ua.ub.uc.ud.ue.uf.ug.uh.ui.uj.uk.ul.um.un.uo.up.uq.ur.us.ut.uu.uv.uw.ux.uy.uz.va.vb.vc.vd.ve.vf.vg.vh.vi.vj.vk.vl.vm.vn.vo.vp.vq.vr.vs.vt.vu.vv.vw.vx.vy.vz.wa.wb.wc.wd.we.wf.wg.wh.wi.wj.wk.wl.wm.wn.wo.wp.wq.wr.ws.wt.wu.wv.ww.wx.wy.wz.xa.xb.xc.xd.xe.xf.xg.xh.xi.xj.xk.xl.xm.xn.xo.xp.xq.xr.xs.xt.xu.xv.xw.xx.xy.xz.ya.yb.yc.yd.ye.yf.yg.yh.yi.yj.yk.yl.ym.yn.yo.yp.yq.yr.ys.yt.yu.yv.yw.yx.yy.yz.za.zb.zc.zd.ze.zf.zg.zh.zi.zj.zk.zl.zm.zn.zo.zp.zq.zr.zs.zt.zu.zv.zw.zx.zy.zz);
+}

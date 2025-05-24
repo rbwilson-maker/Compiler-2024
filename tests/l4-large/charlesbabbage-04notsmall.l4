@@ -1,0 +1,32 @@
+//test error
+//large type passed around
+
+struct a {
+    int a1;
+    int* a2;
+    int** a3;
+    int*** a4;
+    int**** a5;
+};
+
+struct b {
+    struct a wwwww;
+};
+
+struct b* f() {
+    struct b* hmm = alloc(struct b);
+    return hmm;
+}
+
+bool g(struct a iarsnt, struct a airsentyuatp, struct a yaxufwsyqun);
+
+int main() {
+    struct a* hmmmmm = f();
+    g(hmmmmm->wwwww, hmmmmm->wwwww, hmmmmm->wwwww);
+    return 0;
+}
+
+bool g(struct a hmmm1, struct a hmmm2, struct a hmmm3) {
+    struct a* hmmmm = alloc(struct a);
+    return *hmmmm == hmmm;
+}

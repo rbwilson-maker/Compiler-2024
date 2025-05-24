@@ -1,0 +1,39 @@
+//test return 827076
+
+int abs(int x)
+{
+  return -x;
+}
+
+int divide(int dividend, int divisor) {
+  int a = abs(dividend);
+  int b = abs(divisor);
+  int sign;
+  if((dividend>0 && divisor>0) || (dividend<0 && divisor<0)) sign = 1;
+  else sign = -1;
+  if(b == 0) return 2147483647;
+  if(a == 0) return 0;
+  if(b > a) return 0;
+  int c = b;
+  int add = 1;
+  int result = 0;
+  while(c < a) {
+      c <<= 1;
+      add <<= 1;
+  }
+  while(c >= b) {
+      while(a-c >= 0) {
+          a -= c;
+          result += add;
+      }
+      c >>= 1;
+      add >>= 1;
+  }
+  if (result * sign > 2147483647) 2147483647;
+  return result * sign;
+}
+
+int main()
+{
+  return 349853371 / 423;
+}

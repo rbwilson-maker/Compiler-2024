@@ -1,0 +1,16 @@
+//test return 114628
+
+int main() {
+	int a = 1;
+	int b = 1;
+	int c;
+
+	for (int i = 0; i < 20; i++) {
+		if (i % 2 == 0) a += b;
+		else b += a;
+	}
+
+	c = a + b;
+	return c << 2;
+
+}

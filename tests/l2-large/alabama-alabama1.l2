@@ -1,0 +1,10 @@
+//test div-by-zero
+int main() {
+    int x = 5;
+    int y = 2;
+    while (true) {
+        y /= x;
+        x /= 2;
+    }
+    return 0;
+}

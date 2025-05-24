@@ -1,0 +1,66 @@
+//test return 1048575
+
+int _c0_ (int x) {
+return x+0x1;
+}
+int c0_ (int x) {
+return x+0x2;
+}
+int f (int x) {
+return x+0x4;
+}
+int FN (int x) {
+return x+0x8;
+}
+int FUN (int x) {
+return x+0x10;
+}
+int fun (int x) {
+return x+0x20;
+}
+int SKIP (int x) {
+return x+0x40;
+}
+int END (int x) {
+return x+0x80;
+}
+int COMP (int x) {
+return x+0x100;
+}
+int fn (int x) {
+return x+0x200;
+}
+int deref (int x) {
+return x+0x400;
+}
+int pointer (int x) {
+return x+0x800;
+}
+int value (int x) {
+return x+0x1000;
+}
+int err (int x) {
+return x+0x2000;
+}
+int abort (int x) {
+return x+0x4000;
+}
+int idiv (int x) {
+return x+0x8000;
+}
+int sar (int x) {
+return x+0x10000;
+}
+int DIV (int x) {
+return x+0x20000;
+}
+int ERR (int x) {
+return x+0x40000;
+}
+int ABRT (int x) {
+return x+0x80000;
+}
+
+int main () {
+return _c0_(c0_(f(FN(fn(FUN(fun(SKIP(END(COMP(deref(pointer(value(err(abort(idiv(sar(DIV(ERR(ABRT(0))))))))))))))))))));
+}

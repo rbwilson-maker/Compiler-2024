@@ -1,0 +1,15 @@
+//test error
+//type error
+int main() {
+	int a = 1;
+  string c = "hello world";
+	for (int i = 0; i<9; i++) {
+		a++;
+		a--;
+    for (int j = 0; j < 10000000; j++) {
+      c = 0;
+      c = a;
+    }
+	}
+	return a;
+}

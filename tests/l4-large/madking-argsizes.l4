@@ -1,0 +1,13 @@
+//test return 10
+
+int foo (int* x, int y, int*[] z) {
+    z[0] = x;
+    *(z[0]) = y;
+    return *(z[0]);
+}
+
+int main () {
+    int* p = alloc(int);
+    int*[] q = alloc_array(int*, 10);
+    return foo (p, 10, q);
+}

@@ -1,0 +1,14 @@
+//test return 5050
+
+void add(int *a, int i) {
+    *a += i;
+}
+
+int main() {
+    int *sum = alloc(int);
+    *sum = 0;
+    for (int i=1; i<=100; i++) {
+        add(sum, i);
+    }
+    return *sum;
+}

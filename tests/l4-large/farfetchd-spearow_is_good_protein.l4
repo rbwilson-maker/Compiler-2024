@@ -1,0 +1,14 @@
+//test return 0
+
+struct empty{
+    int what;
+};
+
+int main() {
+    struct empty[] what = alloc_array(struct empty, 5);
+    for(int i=0; i<4; i++) {
+       what[i].what = 5;
+    }
+    
+    return what[4].what;
+}

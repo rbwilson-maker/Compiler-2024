@@ -1,0 +1,12 @@
+//test return 1
+int i(int i) {
+    return i / 3;
+}
+int main() {
+    int three = i(9);
+    {
+        int i = i(three);
+        return i;
+    }
+
+}

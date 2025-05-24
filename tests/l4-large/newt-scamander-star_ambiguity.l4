@@ -1,0 +1,24 @@
+//test error
+
+//tests that you don't allow *a++, as you need (*a)++
+
+int main() {
+	int *a;
+	a = alloc(int);
+	*a = 0;
+	int[][][] L;
+	L = alloc_array(int[][], 4);
+	for (int i = 0; i < 4; i++) {
+		L[i] = alloc_array(int[], 4);
+		*a++;
+		for (int j = 0; j < 4; j++) {
+			*a--;
+			L[i][j] = alloc_array(int, 4);
+			for (int k = 0; k < 4; k++) {
+				*a++;
+				L[i][j][k] = 16*i + 4*j + *a;
+			}
+		}
+	}
+	return L[*a-1][*a][*a+1];
+}

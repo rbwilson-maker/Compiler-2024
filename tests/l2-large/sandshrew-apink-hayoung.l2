@@ -1,0 +1,9 @@
+//test error
+int main(){
+    bool hi = true;
+    if (hi){
+        int y = 0;
+        int z = y + 1;
+    }
+    return y;
+}

@@ -1,0 +1,14 @@
+//test error
+
+//test use variable before defining it
+int main() {
+  x = 5;  
+
+  int x;
+  int y;
+  int z;
+
+  y = 0;
+
+  return y/x;
+}

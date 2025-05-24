@@ -1,0 +1,15 @@
+//test return 122
+// Highly nested function calls
+
+int add(int x, int y) { return x + y; }
+int sub(int x, int y) { return x - y; }
+int mul(int x, int y) { return x * y; }
+int div(int x, int y) { return x / y; }
+
+int main() {
+  int a = 5;
+  int b = 12;
+  int c = 6;
+  // (b * ((b * a) / c)) + (c - ((a + (b + (c * a))) / (a * (b / c))))
+  return add(mul(b,div(mul(b,a),c)),sub(c,div(add(a,add(b,mul(c,a))),mul(a,div(b,c)))));
+}

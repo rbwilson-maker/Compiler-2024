@@ -1,0 +1,22 @@
+//test error
+
+// This is designed to test for the redeclaration of a variable.
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+
+  a = 1;
+  b = 2;
+  c = 3;
+  d = 4;
+  e = 5;
+  a += 6;
+  b -= 7;
+  c = -c;
+  int a = 4;
+  return a + b - c + d - e;
+}

@@ -1,0 +1,53 @@
+//test return 10000
+
+int gen_edge(int i, int j) {
+	return (512033 * i + 10245 *j) % 4;
+}
+
+int[][] makeGraph(int V) {
+	int[][] adjmatrix = alloc_array(int[], V);
+	for (int i = 0; i < V; i++)
+		adjmatrix[i] = alloc_array(int, V);
+
+	for (int i = 0; i < V; i++) {
+		for (int j = 0; j < V; j++) {
+			if (i != j) {
+				int is_edge = gen_edge(i, j);
+				adjmatrix[i][j] = is_edge;
+				// adjmatrix[j][i] = is_edge;
+			}
+		}
+	}
+
+	return adjmatrix;
+}
+
+int longest_cycle_dfs(int[][] graph, int V, int cvert, bool[] visited, int clen) {
+	if (visited[cvert])
+		return clen;
+
+	visited[cvert] = true;
+	int cmax = 0;
+	for (int i = 0; i < V; i++) {
+		if (graph[cvert][i] != 0) {
+			int path_len = longest_cycle_dfs(graph, V, i, visited, clen+1);
+			if (path_len > cmax)
+				cmax = path_len;
+		}
+	}
+
+	return cmax;
+}
+
+int longest_cycle(int[][] graph, int V) {
+	int start = 0;
+	bool[] visited = alloc_array(bool, 100000);
+	
+	return longest_cycle_dfs(graph, V, start, visited, 0);
+}
+
+int main() {
+	int V = 10000;
+
+	return longest_cycle(makeGraph(V), V);
+}

@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+    fpt x = itof(10);
+    fpt y = fmul(x, x);
+    int a = ftoi(y);
+    fpt b = fsub(a, a);
+    return y / b;
+}

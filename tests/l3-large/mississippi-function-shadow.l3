@@ -1,0 +1,10 @@
+//test return 3
+
+int apple(int x) {
+    int apple = 3;
+    return apple;
+}
+
+int main() {
+    return apple(10);
+}

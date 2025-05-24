@@ -1,0 +1,17 @@
+//test error
+// Type name shadows function name
+
+void ray() {
+    print_int(1728);
+    return;
+}
+
+type bool ray;
+
+ray f(int h){
+    return h == 0;
+}
+
+int main() {
+    return 0;
+}

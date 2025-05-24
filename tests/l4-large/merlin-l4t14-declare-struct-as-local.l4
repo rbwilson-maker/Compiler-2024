@@ -1,0 +1,15 @@
+//test error
+
+// should not allow structs to be declared as local variable (right)
+
+struct a {
+    int b;
+    int c;
+}
+
+int main() {
+    struct a;
+    a.b = 3;
+    a.c = 4;
+    return a.b + a.c;
+}

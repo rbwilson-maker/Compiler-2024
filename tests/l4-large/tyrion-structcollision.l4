@@ -1,0 +1,19 @@
+//test return 3
+
+struct hi {
+    int a;
+};
+
+int func(struct a *a) {
+    return 1;
+}
+
+int main() {
+    int hi;
+    struct hi *s = alloc(struct hi);
+
+    s->a = 3;
+    hi = s->a;
+
+    return hi;
+}

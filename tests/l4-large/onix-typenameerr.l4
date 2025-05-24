@@ -1,0 +1,15 @@
+//test error
+
+struct S {
+  int x;
+  int y;
+};
+
+typedef struct S st;
+
+int main() {
+  st* s = alloc(st);
+  int st = 5;
+  int y = 5;
+  return st * y;
+}

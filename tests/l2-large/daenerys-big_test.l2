@@ -1,0 +1,29 @@
+//test return 6
+
+int main() {
+   int a = 1;
+   int b = 2;
+   int c = 3;
+
+   bool x = true;
+   bool y = !x;
+   int z = (x && y) ? 0 : 1;
+
+   if (x) {
+      a ^= 1;
+   }
+
+   if (y || b >= 3) {
+      b &= b;
+   } else {
+      y = true;
+   }
+
+   while (y && (c <= 5)) {
+      if (y == x) {
+         c += 1;
+      }
+   }
+
+   return c;
+}

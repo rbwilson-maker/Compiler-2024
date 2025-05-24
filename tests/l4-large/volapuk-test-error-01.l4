@@ -1,0 +1,14 @@
+//test error
+
+typedef int const;
+typedef const val;
+typedef val valkyrie;
+typedef valkyrie ll;
+
+int main() {
+  const c = 1;
+  val v = 22;
+  ll* valkyrie = c + v;
+  int i = valkyrie * c;
+  return i;
+}

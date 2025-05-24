@@ -1,0 +1,17 @@
+//test compile
+
+int g(int a) {
+  return a;
+}
+
+int h(bool b) {
+  return h(b);
+}
+
+int f(int a, bool b) {
+  return g(a) + h(b);
+}
+
+int main() {
+  return f(3, true);
+}

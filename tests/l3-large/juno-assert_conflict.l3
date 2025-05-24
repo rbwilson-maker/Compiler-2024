@@ -1,0 +1,11 @@
+//test return 1
+
+int _c0_assert(int i) {
+    return i;
+}
+
+int main() {
+    assert(true);
+    int x = _c0_assert(1);
+    return x;
+}

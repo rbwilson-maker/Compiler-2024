@@ -1,0 +1,10 @@
+//test div-by-zero
+// Simple inline function call
+
+int zero() {
+  return 0;
+}
+
+int main() {
+  return zero() / zero();
+}

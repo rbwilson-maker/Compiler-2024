@@ -1,0 +1,12 @@
+//test error
+
+struct s;
+
+int main(){
+  struct s* thing = alloc(struct s);
+  return s->z;
+}
+
+struct s {
+  int z;
+};

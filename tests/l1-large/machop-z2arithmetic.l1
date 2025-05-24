@@ -1,0 +1,6 @@
+//test return 0
+// Author: Nick
+int main () {
+  int x = 57;                             /* Grothendieck Prime */
+  return (x % 2) * (x % 2) - (x % 2);     /* In Z2, x^2 = x */
+}

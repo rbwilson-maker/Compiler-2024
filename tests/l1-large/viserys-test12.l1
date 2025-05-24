@@ -1,0 +1,16 @@
+//test return 9
+
+// test modulo
+
+int main()
+{
+  int a = 4;
+
+  int b = 10 % 3;
+  int c = -10 % 3;
+  int d = 10 % -3;
+  int e = -10 % -3;
+
+  return 5 + b + -c + d + -e;
+  return a;
+}

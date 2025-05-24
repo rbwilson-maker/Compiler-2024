@@ -1,0 +1,19 @@
+//test return 117
+// a recursive function
+
+typedef int time;
+
+time remember_me_as_a_time_of_the_day(time n, time m) {
+    if (n == 0){
+        return 100;
+    }
+    if (m == 0) {
+        return 0;
+    }
+    return 1 + remember_me_as_a_time_of_the_day(n-1, m-1);
+}
+int main(){
+    time x = 17;
+    time y = 87;
+    return remember_me_as_a_time_of_the_day(x, y);
+}

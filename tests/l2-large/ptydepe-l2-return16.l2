@@ -1,0 +1,21 @@
+//test return -1
+// Simple while loop with if then else statement program
+int main() {
+    int a = 5;
+    int w = 0;
+    int result = 0;
+    bool b = false;
+ 
+    while(w < a) {
+        for(int i = 0; i < 4; i++) {
+            if(b) {
+                result += 30;
+            } else {
+                return -1;
+            }
+        }
+        w += 1;
+    }
+
+    return result;
+}

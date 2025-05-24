@@ -1,0 +1,21 @@
+//test return 123
+
+int main()
+{
+  /* COMMENTS COMMENTS COMMENTS */
+  if (2 == 2 && (4 - 3) == 1)
+  {
+    if ((2 + 2) == 4)
+    {
+      if ((1234 % 10) != 4)
+      {
+        return 0;
+      }
+      else
+      { 
+        return 123;
+      }
+    }
+  }
+  return 0;
+}

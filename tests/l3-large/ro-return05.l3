@@ -1,0 +1,16 @@
+//test return 1
+// Multiple function declarations
+
+
+int fun(int arg1, int arg2);
+int fun(int param1, int param2);
+int fun(int input1, int input2);
+int fun(int some1, int some2);
+
+int main() {
+  return fun(12, 10583);
+}
+
+int fun(int argument1, int argument2) {
+  return 1;
+}

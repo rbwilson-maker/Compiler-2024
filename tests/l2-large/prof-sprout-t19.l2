@@ -1,0 +1,12 @@
+//test error
+
+int main() {
+  int y;
+  bool q = 1 < 19;
+  if (q) int x = 5;
+  else {
+    int x = 6;
+    y = x;
+  }
+  return y;
+}

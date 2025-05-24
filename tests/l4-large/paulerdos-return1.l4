@@ -1,0 +1,24 @@
+//test return 1
+
+typedef struct a a;
+typedef struct b b;
+
+struct a {
+    b *b;
+    int num;
+};
+
+struct b {
+    a a;
+};
+
+int main() {
+    struct a *a1;
+    a *a2 = alloc(a);
+    a1 = a2;
+
+    b *b1 = alloc(b);
+    b1->a.num = 1;
+    a1->b = b1;
+    return a1->b->a.num;
+}

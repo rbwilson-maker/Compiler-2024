@@ -1,0 +1,24 @@
+//test div-by-zero
+
+int raise (int *x, int *y) {
+	int z = 1024 / *x;
+	*y += z;
+	return z;
+}
+
+int main() {
+
+  int* a;
+  a = alloc(int);
+  *a = 1024;
+  int* b;
+  b = alloc(int);
+
+  for (int i = 0; i <= 10; i++) {
+  	*a = *a / 2;
+  	raise(a, b);
+  }
+  
+  return *b;
+
+}

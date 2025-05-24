@@ -1,0 +1,11 @@
+//test error
+
+struct for {
+    int f;
+    int *g;
+};
+
+int main() {
+    struct for* s = alloc(struct for);
+    return 1 / (s->f);
+}

@@ -1,0 +1,8 @@
+//test return 8
+
+int main()
+{
+int x = 5;
+for(; x < 6; x++) x+= 2;
+return x;
+}

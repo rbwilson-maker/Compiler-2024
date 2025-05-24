@@ -1,0 +1,99 @@
+//test return 1969773390
+
+// one byte is four bits (bools)
+struct byte {
+    bool[] bits;
+};
+
+typedef struct byte byte;
+
+void write_byte(byte *b, int v) {
+    assert(v >= 0 && v < 16);
+    b->bits[0] = ((v & 1) == 1);
+    b->bits[1] = ((v & 2) == 2);
+    b->bits[2] = ((v & 4) == 4);
+    b->bits[3] = ((v & 8) == 8);
+}
+
+int read_byte(byte *b) {
+    int v = 0;
+    v |= (b->bits[0] ? 1 : 0);
+    v |= (b->bits[1] ? 2 : 0);
+    v |= (b->bits[2] ? 4 : 0);
+    v |= (b->bits[3] ? 8 : 0);
+    return v;
+}
+
+void copy_byte(byte *dst, byte *src) {
+    dst->bits[0] = src->bits[0];
+    dst->bits[1] = src->bits[1];
+    dst->bits[2] = src->bits[2];
+    dst->bits[3] = src->bits[3];
+}
+
+struct union {
+    int i;
+    byte*[] bytes; // array of pointers
+};
+
+typedef struct union union;
+
+void union_calc_bytes(union *u) {
+    int i = u->i;
+
+    write_byte(u->bytes[0], i & 0xF);
+    write_byte(u->bytes[1], (i >> 8) & 0xF);
+    write_byte(u->bytes[2], (i >> 16) & 0xF);
+    write_byte(u->bytes[3], (i >> 24) & 0xF);
+}
+
+void union_calc_int(union *u) {
+    u->i = read_byte(u->bytes[0]);
+    u->i |= (read_byte(u->bytes[1]) << 8);
+    u->i |= (read_byte(u->bytes[2]) << 16);
+    u->i |= (read_byte(u->bytes[3]) << 24);
+}
+
+void union_read(union *u, byte*[] b, int i) {
+    copy_byte(b[i], u->bytes[0]);
+    copy_byte(b[i + 1], u->bytes[1]);
+    copy_byte(b[i + 2], u->bytes[2]);
+    copy_byte(b[i + 3], u->bytes[3]);
+}
+
+void union_write(union *u, byte*[] b, int i) {
+    copy_byte(u->bytes[0], b[i]);
+    copy_byte(u->bytes[1], b[i + 1]);
+    copy_byte(u->bytes[2], b[i + 2]);
+    copy_byte(u->bytes[3], b[i + 3]);
+}
+
+byte*[] alloc_bytes(int size) {
+    byte*[] data = alloc_array(byte*, size);
+    for (int i = 0; i < size; i++) {
+        data[i] = alloc(byte);
+        data[i]->bits = alloc_array(bool, 4);
+    }
+    return data;
+}
+
+int main() {
+    byte*[] data = alloc_bytes(16);
+
+    union *u = alloc(union);
+    u->bytes = alloc_bytes(4);
+
+    for (int i = 0; i < 16; i++) {
+        write_byte(data[i], i);
+    }
+
+    int s = 0;
+    // [0, 4) to [12, 16)
+    for (int i = 0; i <= 12; i++) {
+        union_write(u, data, i);
+        union_calc_int(u);
+        s += u->i;
+    }
+
+    return s;
+}

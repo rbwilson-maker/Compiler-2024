@@ -1,0 +1,11 @@
+//test error
+//function in unreachable code should still be defined
+
+int test(int i);
+
+int test_again();
+
+int main(){
+    return 0;
+    test_again();
+}

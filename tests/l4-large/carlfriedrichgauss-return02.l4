@@ -1,0 +1,14 @@
+//test return 1
+// fun with pointers
+
+int main() {
+    int* a = alloc(int);
+    *a = 1;
+    int** ap = alloc(int*);
+    *ap = a;
+    int*** app = alloc(int**);
+    *app = ap;
+    int**** appp = alloc(int***);
+    *appp = app;
+    return ****appp;
+}

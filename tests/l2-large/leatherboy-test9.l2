@@ -1,0 +1,14 @@
+//test error
+
+int main() { 
+    int t1 = 123/5;
+    int t2 = -3*t1 + -402+11+1;
+    int t3 = t1 - 3*t2 + t2*t2;
+    int t5 = (t2 * t4) - t3 - t2+ 312;
+    int t6 = 54*t3-t4+5;
+    int t7 = 0;
+    for(int i = 0; i<1;i++){
+     t7 = 2*t6 *-3 +t1 -3*t2;
+    }
+    return t2*5-t7 + 2*t3;
+}

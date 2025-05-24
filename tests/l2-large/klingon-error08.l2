@@ -1,0 +1,12 @@
+//test error
+
+int main() {
+	int f = 0;
+
+	for (int i = 3; 0; i++) {
+		i++;
+	}
+
+	return 0;
+
+}

@@ -1,0 +1,14 @@
+//test return 5
+
+int foo(int x){
+    return x+1;
+}
+
+int main(){
+    int x = 0;
+    int y = 0;
+    for(x; x < 5; x++){
+        y = foo(y);
+    }
+    return y;
+}

@@ -1,0 +1,11 @@
+//test return 20
+// omited stuff in for loop
+
+int main () {
+    int y = -20;
+    for (;y<20;){
+        y++;
+    }
+    return y;
+
+}

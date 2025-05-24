@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main(){
+    int[] x = alloc_array(int, 5);
+    int[] y = alloc_array(int, 5);
+    int[] z = alloc_array(int, 5);
+
+    return x[0] / y[0];
+}

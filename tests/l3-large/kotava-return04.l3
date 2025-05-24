@@ -1,0 +1,27 @@
+//test return 64
+
+typedef int dog;
+typedef dog cat;
+typedef bool fish;
+
+fish testEqual(dog a, cat b) {
+  assert(a == b);
+  return true;
+}
+
+int main ()
+{
+  dog x;
+  cat y;
+
+  if (testEqual(1, 0x1))
+    x = 0x1;
+  else
+    x = 0;
+
+  for (y = 0; y < 3; y++) {
+    x <<= y;
+  }
+
+  return x << y;
+}

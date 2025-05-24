@@ -1,0 +1,6 @@
+//test error
+// typechecking ternary ops
+
+int main() {
+  return false ? 1 : false;
+}

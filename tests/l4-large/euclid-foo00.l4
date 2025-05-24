@@ -1,0 +1,14 @@
+//test return 1
+/* testing function that takes in a pointer */
+
+void set (int* ptr) {
+    *ptr = 1;
+}
+
+int main () {
+    int* ptr;
+    ptr = alloc(int);
+    *ptr = 0;
+    set(ptr);
+    return *ptr;
+}

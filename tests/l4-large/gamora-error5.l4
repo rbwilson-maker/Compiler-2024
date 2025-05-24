@@ -1,0 +1,25 @@
+//test error
+
+struct abc {
+  int a;
+  int b;
+  int c;
+};
+
+struct abc;
+
+struct abc;
+
+struct abc;
+
+// cannot redefine a struct
+struct abc {
+  int a;
+  int b;
+  int c;
+};
+
+int main()
+{
+  return -20;
+}

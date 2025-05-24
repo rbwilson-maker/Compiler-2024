@@ -1,0 +1,12 @@
+//test return 15
+
+// testing some bitwise ops
+
+int main () {
+    int a = 1;
+    int b = 0;
+    int c = 14;
+    int d = 4;
+    int e = a | c;
+    return -(~e + 1);
+}

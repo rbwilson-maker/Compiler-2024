@@ -1,0 +1,26 @@
+//test error
+typedef struct s1* A;
+struct s1
+{
+  int x;
+  int x;
+};
+typedef struct s2* B;
+struct s2
+{
+  A a;
+  int x;
+  int x2;
+};
+
+
+int main()
+{ 
+  A a = alloc(struct s1);
+  B b = alloc(struct s2);
+  b->a = a;
+  b->x = 1;
+  b->x2 = 2;
+  b->a->x = 3;
+  return 0;
+}

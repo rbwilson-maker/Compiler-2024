@@ -1,0 +1,4 @@
+
+bool is_locked(bool val);
+
+bool atomic_xchg(int lock_ptr, bool val);

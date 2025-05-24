@@ -1,0 +1,40 @@
+//test return 24
+
+// Let's try some floating point!
+// Square roots by newtons method with fixed number of iterations. Returns truncated int.
+
+int sqrt(int n) {
+	fpt two = itof(2);
+	fpt x = itof(n);
+
+	// Starting guess of 10
+	fpt x0 = itof(10);
+
+	// First iteration
+	fpt x0s = fmul(x0, x0);
+	fpt t0n = fsub(x0s, x);
+	fpt t0d = fmul(two, x0);
+	fpt t0 = fdiv(t0n, t0d);
+	fpt x1 = fsub(x0, t0);
+
+	// Second iteration
+	fpt x1s = fmul(x1, x1);
+	fpt t1n = fsub(x1s, x);
+	fpt t1d = fmul(two, x1);
+	fpt t1 = fdiv(t1n, t1d);
+	fpt x2 = fsub(x1, t1);
+
+	// Third iteration
+	fpt x2s = fmul(x2, x2);
+	fpt t2n = fsub(x2s, x);
+	fpt t2d = fmul(two, x2);
+	fpt t2 = fdiv(t2n, t2d);
+	fpt x3 = fsub(x2, t2);
+
+	int res = ftoi(x3);
+	return res;
+}
+
+int main () {
+	return sqrt(612);
+}

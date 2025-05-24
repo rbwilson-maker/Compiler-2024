@@ -1,0 +1,15 @@
+//test return 5
+
+struct x {
+    int x;
+    int *y;
+};
+
+typedef struct x x;
+
+int main(){
+    x[] a = alloc_array(x, 10);
+    a[5].y = alloc(int);
+    *a[5].y = 5;
+    return *a[5].y;
+}

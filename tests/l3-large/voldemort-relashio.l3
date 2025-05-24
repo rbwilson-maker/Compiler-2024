@@ -1,0 +1,11 @@
+//test error
+int function_10(bool b, int i, int j) {
+    return 3 + 4
+}
+
+int mutual() {
+    return main();
+}
+int main() {
+    return mutual()
+}

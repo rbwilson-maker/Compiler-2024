@@ -1,0 +1,32 @@
+//test return 0
+
+struct abc {
+  int a;
+  int b;
+  int c;
+};
+
+struct abc;
+
+struct abc;
+
+struct abc;
+
+struct q;
+struct r;
+struct s;
+
+struct qrs;
+struct qrs {
+  int q;
+  int r;
+  int s;
+  struct qrs *************************************************************hi;
+};
+
+int main()
+{
+  struct abc *hi = alloc(struct abc);
+  struct qrs *bye = alloc(struct qrs);
+  return hi->a + hi->b + hi->c + bye->q + bye->r + bye->s;
+}

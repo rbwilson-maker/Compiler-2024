@@ -1,0 +1,85 @@
+//test return 0
+
+struct textedit {
+    int size;
+    int[] buffer;
+    int offset;
+};
+
+typedef struct textedit textedit_t;
+
+textedit_t *textedit_new(int size) {
+    textedit_t *new = alloc(textedit_t);
+
+    new->size = size;
+    new->buffer = alloc_array(int, size);
+    new->offset = 0;
+
+    return new;
+}
+
+void textedit_seek(textedit_t *te, int offset) {
+    if (offset >= 0 && offset < te->size) {
+        te->offset = offset;
+    }
+}
+
+int textedit_read(textedit_t *te) {
+    if (te->offset >= 0 && te->offset < te->size) {
+        int ch = te->buffer[te->offset];
+        te->offset++;
+        return ch;
+    }
+
+    return -1;
+}
+
+int textedit_read8(textedit_t *te) {
+    if (te->offset < 0 || te->offset + 7 >= te->size) {
+        return -1;
+    }
+
+    int res = 0;
+    for (int i = 0; i < 8; i++) {
+        res += textedit_read(te);
+        if (i < 7) {
+            res *= 16;
+        }
+    }
+
+    return res;
+}
+
+void textedit_write(textedit_t *te, int ch) {
+    if (ch < 0 || ch >= 16) {
+        return;
+    }
+
+    if (te->offset >= 0 && te->offset < te->size) {
+        te->buffer[te->offset] = ch;
+        te->offset++;
+    }
+}
+
+void textedit_write8(textedit_t *te, int num) {
+    if (te->offset < 0 || te->offset + 7 >= te->size) {
+        return;
+    }
+
+    for (int i = 0; i < 8; i++) {
+        int ch = (num >> (4 * (7 - i))) & 15;
+        textedit_write(te, ch);
+    }
+}
+
+int main() {
+    textedit_t *te = textedit_new(16);
+
+    textedit_write8(te, 0xdeadbeef);
+    textedit_seek(te, 8);
+    textedit_write8(te, 0xdeadbeef);
+    textedit_seek(te, 4);
+    assert(textedit_read8(te) == 0xbeefdead);
+
+    return 0;
+}

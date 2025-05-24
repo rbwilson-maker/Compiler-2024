@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+  int *x;
+  x = alloc(int);
+  *x = 150;
+  x = alloc_array(int, 10);
+  return 0;
+}

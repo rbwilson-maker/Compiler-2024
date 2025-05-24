@@ -1,0 +1,13 @@
+//test typecheck
+
+int f(int adb, int adb2) {
+	return adb + adb2;
+}
+
+int g(int adb) {
+	return adb * 2;
+}
+
+int main() {
+	return g(g(g(g(g(g(g(1)))))));
+}

@@ -1,0 +1,12 @@
+//test return 0
+
+//This tests mod by 1 arithmetic
+
+int main()
+{
+    int tyy = 5;
+    int eww = 71;
+    int xr = tyy * eww;
+    int www = eww / 8;
+    return www % (tyy-4);
+}

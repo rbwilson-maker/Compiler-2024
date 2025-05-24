@@ -1,0 +1,15 @@
+//test error
+
+typedef int typede;
+typedef int typed;
+typedef int type;
+
+struct int {
+    typede fint;
+    typed efint;
+    type defint;
+}
+
+int main() {
+    return 0;
+}

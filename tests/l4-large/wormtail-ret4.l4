@@ -1,0 +1,11 @@
+//test return 3
+
+struct a {
+    int x;
+};
+
+int main () {
+    struct a[] as = alloc_array(struct a, 1);
+    as[0].x = 3;
+    return as[0].x;
+}

@@ -1,0 +1,20 @@
+//test return 10
+/* setting array of structs */
+
+struct s {
+    int x;
+};
+
+int main() {
+    struct s[] arr; 
+    arr = alloc_array(struct s, 5);
+    for (int i = 0; i < 5; i++) {
+        arr[i].x = i;
+    }
+
+    int sum = 0;
+    for (int i = 0; i < 5; i++) {
+        sum += arr[i].x;
+    }
+    return sum;
+}

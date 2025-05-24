@@ -1,0 +1,26 @@
+//test return 97
+
+bool prime (int x) {
+    int y = 2;
+    while (y <= x / 2) {
+        if (x % y == 0) {
+            return false;
+        }
+        y++;
+    }
+    return true;
+}
+
+int nextprime (int y) {
+    while (true) {
+        if (prime(y)) {
+            return y;
+        }
+        y++;
+    }
+    return -1;
+}
+
+int main () {
+    return nextprime(90);
+}

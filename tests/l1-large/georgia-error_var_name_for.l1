@@ -1,0 +1,14 @@
+//test error
+//test invalid variable name
+int main()
+{
+  int for;
+  int b;
+  int c;
+
+  for = 11;
+  b = 3;
+  c= for + b;
+ 
+  return c;
+}

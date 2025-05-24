@@ -1,0 +1,21 @@
+//test return 7776
+// powers but with for loop
+
+int abs (int in) {if (in < 0) return -in; else return in;}
+
+int power_help (int base, int exp) {
+assert (exp > 0);
+int out = 1;
+for (int i = 0; i < exp; i++) {
+out = base * out;
+}
+return out;
+}
+
+int power (int base, int exp) {
+int power_pos = power_help(base, abs(exp));
+if (exp >= 0) return power_pos; else return 1/power_pos;
+}
+
+int main() 
+{return power (6, 5);}

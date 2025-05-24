@@ -1,0 +1,22 @@
+//test error
+
+void catheter(int x)
+{
+  int y = 17;
+  for (int i=0; i<x; i++)
+  {
+    y *= i;
+    
+    if (y > x * x)
+    {
+      return i;
+    }
+  }
+}
+
+int main()
+{
+  catheter(100);
+  
+  return 1;
+}

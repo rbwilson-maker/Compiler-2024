@@ -1,0 +1,23 @@
+//test error
+// Testing many args
+
+typedef int i;
+typedef bool b;
+
+// That's a lot of args!
+i f(i arg01, i arg02, b arg03, i arg04, b arg05, b arg06, i arg07, 
+    i arg08, i arg09, b arg10, i arg11, i arg12, i arg13, i arg14,
+    b arg15, b arg16, b arg17, i arg18, b arg19, b arg20, b arg21) {
+  return arg05 && arg06 || arg10 || arg15 && arg16 && arg17 && arg19 ||
+         arg20 && arg21 ? 
+         arg01 + arg02 * arg04 * arg07 + arg08 / arg09 * arg11 + 
+         arg12 << arg13 ^ arg14 % arg18 :
+         arg01 % arg02 + arg04 / arg07 ^ arg08 | arg09 - arg11 -
+         arg12 & arg13 >> arg14 % arg18;
+}
+
+int main() {
+  assert(f(5, 3, false, 9, true, true, 12, 19, 5, false, 60, 7, 17, 13, true, true, false, 19, false, false, false) == 67633165);
+  assert(f(15, 13, false, 49, false, false, 13, 15, 7, true, 49, 76, 0, 7, true, true, true, 4, false, false, true) == 0);
+  return a;
+}

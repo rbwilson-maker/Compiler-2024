@@ -1,0 +1,8 @@
+//test error
+// invalid variable on left
+int main()
+{
+  int x;
+  +x = 0xfad3;
+  return x;
+}

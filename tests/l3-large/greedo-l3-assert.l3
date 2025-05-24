@@ -1,0 +1,39 @@
+//test abort
+
+
+// our favourite is_odd/is_even function pair again :)
+
+bool is_odd(int i);
+bool is_even(int i);
+
+bool is_odd(int i){
+    if(i==0){
+        return false;
+    }else if(i==1){
+        return true;
+    }else if (i>1){
+        return is_even(i-1);
+    }else{
+        return is_even(i+1);
+    }
+}
+
+bool is_even(int i){
+    if(i==0){
+        return true;
+    }else if(i==1){
+        return false;
+    }else if(i>1){
+        return is_odd(i-1);
+    }else{
+        return is_even(i+1);
+    }
+}
+
+int main(){
+    // constant 174499 is the largest value that did not result in a 
+    // stack overflow on my local machine using cc0
+    assert(is_even(174499));
+    // this should not even be called
+    return is_odd(174499) ? 1 : 0;
+}

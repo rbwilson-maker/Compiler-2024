@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+	int result = 1;
+	for (int i = 0; i < 64; i++) {
+		result <<= i;
+	}
+	return result;
+}

@@ -1,0 +1,11 @@
+//test div-by-zero
+int main() {
+  int a = 9;
+  int b = -9;
+  int c = 18;
+
+  int d = c + b - a;
+  int e = c - b + a;
+
+  return (e + a - 3) % d;
+}

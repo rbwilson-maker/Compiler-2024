@@ -1,0 +1,91 @@
+//test return 0
+// 122 moment
+
+typedef int pixel;       // Library (concrete) view of a pixel
+
+int get_red(pixel p)
+{
+  int red = p & 0x00FF0000;
+
+  return red>>16;
+}
+
+int get_green(pixel p)
+{
+  int green = p & 0x0000FF00;
+
+  return green>>8;
+
+}
+
+int get_blue(pixel p)
+{
+  int blue = p & 0x000000FF;
+
+  return blue;
+
+}
+
+int get_alpha(pixel p)
+{
+  int alpha = (p & 0xFF000000)>>24;
+
+  alpha = alpha&0xFF;
+
+  return alpha;
+
+}
+
+pixel make_pixel(int alpha, int red, int green, int blue)
+{
+  int newAlpha = alpha<<24;
+  int newRed = red<<16;
+  int newGreen = green<<8;
+  int newBlue = blue;
+
+  return newAlpha | newRed | newGreen | newBlue;
+
+}
+
+typedef pixel pixel_t;   // Client (abstract) view of a pixel
+
+int main() {
+
+  //test sign extension
+  pixel_t f = make_pixel(128, 128, 128, 128);
+
+  assert(get_alpha(f) == 128);
+  assert(get_red(f) == 128);
+  assert(get_green(f) == 128);
+  assert(get_blue(f) == 128);
+
+
+  // Test some regular cases
+  int red = 100;
+  int green = 50;
+  int blue = 10;
+  int alpha = 5;
+
+  pixel_t p = make_pixel(alpha,red,green,blue);
+
+  assert(p == (alpha<<24 | red<<16 | green<<8 | blue));
+
+  assert(get_red(p) == red);
+  assert(get_green(p) == green);
+  assert(get_blue(p) == blue);
+  assert(get_alpha(p) == alpha);
+
+  p = make_pixel(0,0,0,255);
+  assert(get_blue(p) == 255);
+
+  p = make_pixel(255,0,0,0);
+  assert(get_alpha(p) == 255);
+
+  p = make_pixel(0,255,0,0);
+  assert(get_red(p) == 255);
+
+  p = make_pixel(0,0,255,0);
+  assert(get_green(p) == 255);
+
+  return 0;
+}

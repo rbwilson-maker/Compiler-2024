@@ -1,0 +1,13 @@
+//test div-by-zero
+//runtime error because of div by zero
+int main()
+{
+  int x = 10;
+  int sum = 5;
+  int h = 5;
+  while (x <= 32) {
+    h = sum >> x;
+    x ++;
+  }
+  return sum;
+}

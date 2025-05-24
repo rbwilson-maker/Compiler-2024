@@ -1,0 +1,13 @@
+//test typecheck
+
+bool baz(int x) {
+    return x == x;
+}
+
+int main() {
+    if (baz(3)) {
+        return 5;
+    } else {
+        return 1 / 0;
+    }
+}

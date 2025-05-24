@@ -1,0 +1,22 @@
+//test return -5
+//alternating sum
+
+int sign (int n) {
+    if ((n-1) % 2 == 0)
+        return 1;
+    return -1;
+}
+
+int altSum (int n) {
+    int sum = 0;
+    for (int i=1; i<=n; i++)
+    {
+        sum += sign(i) * i;
+    }
+    return sum;
+}
+
+int main () {
+    int x = 10;
+    return altSum(x);
+}

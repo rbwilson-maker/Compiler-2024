@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+    int[] a = alloc_array(int, 10);
+    int * p = alloc(int);
+
+    return a == p ? 1 : 0;
+}

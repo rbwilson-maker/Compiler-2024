@@ -1,0 +1,21 @@
+//test return 231
+
+int sum(int[] s) { 
+    int total = 0;
+    for (int i = 0; i <= 21; i ++ ) {
+        total += s[i];
+    }
+    return total; 
+}
+
+void f(int[] s, int n) {
+    s[n] = n;
+}
+
+int main () {
+    int[] s = alloc_array(int, 50);
+    for (int i = 0; i <= 21; i ++ ) {
+        f(s, i);
+    }
+    return sum(s);
+}

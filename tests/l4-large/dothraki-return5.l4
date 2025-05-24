@@ -1,0 +1,26 @@
+//test return 27
+
+struct node {
+  int value;
+  struct node *next;
+};
+
+int main()
+{
+  struct node *currNode = alloc(struct node);
+  struct node *head = currNode;
+  for(int i = 2; i < 8; i++) {
+    currNode->value = i;
+    currNode->next = alloc(struct node);
+    currNode = currNode->next;
+  }
+
+  int sum = 0;
+
+  for(int i = 0; i < 6; i++) {
+    sum += head->value;
+    head = head->next;
+  }
+
+  return sum;
+}

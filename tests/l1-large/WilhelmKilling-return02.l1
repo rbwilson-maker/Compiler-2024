@@ -1,0 +1,16 @@
+//test return 1
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  
+  a = 2147483648;
+  b = a - 1; 
+  b *= -2147483648; 
+  d = b / -2147483648; 
+  e = d;
+  return e; 
+} 

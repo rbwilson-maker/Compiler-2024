@@ -1,0 +1,6 @@
+//test error
+//Tests an assignment in a return which should not compile
+
+int main() {
+    return a = 3;
+}

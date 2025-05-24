@@ -1,0 +1,14 @@
+//test return 6
+// Call function in a loop
+
+int foo(int i) {
+  return i + 1;
+}
+
+int main() {
+  int x = 0;
+  for (int i = 0; i < 3; i++) {
+    x += foo(i);
+  }
+  return x;
+}

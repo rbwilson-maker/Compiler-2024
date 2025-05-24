@@ -1,0 +1,52 @@
+//test return 35445
+
+int main() {
+    /* This is a comment
+       /* And it's actually a nested comment 
+          /* The starter parser handles this; don't break it */
+       */
+    */
+
+    int a;
+    int b;
+    int c;
+    int d;
+
+    int x; x = 2048;
+    int y = 3;
+    int z = 0x4Ab30;
+
+    int x01 = 1;
+   int x02 = 2;
+     int x03 = 4;
+   int x04 = 8;
+    int x05 = 16;
+   int x06 = 32;
+     int x07 = ((64));
+   int x08 = 128;
+    int x09 = 256;
+   int x10 = 512;
+     int x11 = 1024;
+    
+    x += y;
+    y *= y;
+    
+    a = 7;
+    c = 8;
+    b = 15; 
+
+    x02 /= x03;
+    x10 %= x04;
+    x05 -= x03;
+
+    a = x09 + (x10 + x05);
+    b = x08 - b;
+    c = c * x04;
+    c = c % (x03);
+
+    /* Everything is still live here */
+    return (a * b * c) + 
+           (x11 - x10 + x09 + x08 + x07 - x06 + x05 - x04 + x03 - x02 + x01) +
+           (z / (y % x));
+    return d;
+}

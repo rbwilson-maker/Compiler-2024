@@ -1,0 +1,9 @@
+//test error
+
+// syntax error
+
+int main() { 
+    int i= 171+= 0;
+    i= j*(i+24)/(19%12);
+    return i; 
+}

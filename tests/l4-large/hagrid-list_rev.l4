@@ -1,0 +1,25 @@
+//test return 654321
+//reverses the list [1, 2, 3, 4, 5, 6] in place
+
+void list_rev (int[] list, int length) {
+  int temp;
+  for (int i = 0; i < length / 2; i++) {
+    temp = list[i];
+    list[i] = list[length - i - 1];
+    list[length - i - 1] = temp;
+  }
+}
+
+int main () {
+  int[] A = alloc_array (int, 6);
+  for (int i = 0; i < 6; i++) {
+    A[i] = i+1;
+  }
+  list_rev (A, 6);
+  int result = 0;
+  for (int i = 0; i < 6; i++) {
+    result *= 10;
+    result += A[i];
+  }
+  return result;
+}

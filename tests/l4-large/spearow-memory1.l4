@@ -1,0 +1,16 @@
+//test error
+
+typedef struct _s s;
+
+struct _s {
+    int i;
+    int j;
+};
+
+int main() {
+    s[] a = NULL;
+    a = alloc_array(s, 1);
+    a[0]->i = 1;
+    a[0]->j = 2;
+    return a[0]->i;
+}

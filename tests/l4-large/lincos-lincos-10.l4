@@ -1,0 +1,114 @@
+//test return 6877
+
+struct node {
+    int id;
+    struct node*[] neighbors;
+    int num_neighbors;
+    int[] weights;
+};
+
+// Floyd-Warshall (non-neg weight only)
+int FW(struct node*[] G, int n, int start, int end){
+    // init n*n dist array
+    int[][] dist = alloc_array(int[], n);
+    for(int i = 0; i < n; i++) {
+        dist[i] = alloc_array(int, n);
+        for(int j = 0; j < n; j++)
+            dist[i][j] = -1; // init to -1
+    }
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < G[i]->num_neighbors; j++){
+            dist[i][G[i]->neighbors[j]->id] = G[i]->weights[j];
+        }
+    }
+
+    for(int i = 0; i < n; i++)
+        dist[i][i] = 0;
+
+    for(int k = 0; k < n; k++)
+        for(int i = 0; i < n; i++)
+            for(int j = 0; j < n; j++){
+                if(dist[i][k] >= 0 && dist[k][j] >= 0){
+                    if(dist[i][j] < 0 || dist[i][j] > dist[i][k] + dist[k][j])
+                        dist[i][j] = dist[i][k] + dist[k][j];
+                }
+            }
+
+    return dist[start][end];
+}
+
+int main() {
+    struct node*[] P = alloc_array(struct node*, 10); // a Petersen graph
+    for (int i = 0; i < 10; i++) {
+        P[i] = alloc(struct node);
+        P[i]->id = i;
+        P[i]->num_neighbors = 3; // Petersen is 3-regular
+        P[i]->neighbors = alloc_array(struct node*, 3);
+        P[i]->weights = alloc_array(int, 3);
+    }
+    // Label outer vertices 0-4, counter-clockwise, and then inner vertices 5-9, counter-clockwise
+    P[0]->neighbors[0] = P[1];
+    P[0]->neighbors[1] = P[4];
+    P[0]->neighbors[2] = P[5];
+    P[1]->neighbors[0] = P[0];
+    P[1]->neighbors[1] = P[2];
+    P[1]->neighbors[2] = P[6];
+    P[2]->neighbors[0] = P[1];
+    P[2]->neighbors[1] = P[3];
+    P[2]->neighbors[2] = P[7];
+    P[3]->neighbors[0] = P[2];
+    P[3]->neighbors[1] = P[4];
+    P[3]->neighbors[2] = P[8];
+    P[4]->neighbors[0] = P[0];
+    P[4]->neighbors[1] = P[3];
+    P[4]->neighbors[2] = P[9];
+    P[5]->neighbors[0] = P[0];
+    P[5]->neighbors[1] = P[7];
+    P[5]->neighbors[2] = P[8];
+    P[6]->neighbors[0] = P[1];
+    P[6]->neighbors[1] = P[8];
+    P[6]->neighbors[2] = P[9];
+    P[7]->neighbors[0] = P[2];
+    P[7]->neighbors[1] = P[5];
+    P[7]->neighbors[2] = P[9];
+    P[8]->neighbors[0] = P[3];
+    P[8]->neighbors[1] = P[5];
+    P[8]->neighbors[2] = P[6];
+    P[9]->neighbors[0] = P[4];
+    P[9]->neighbors[1] = P[6];
+    P[9]->neighbors[2] = P[7];
+
+    P[0]->weights[0] = 34;
+    P[0]->weights[1] = 542376;
+    P[0]->weights[2] = 6778;
+    P[1]->weights[0] = 4;
+    P[1]->weights[1] = 8763;
+    P[1]->weights[2] = 6666;
+    P[2]->weights[0] = 1;
+    P[2]->weights[1] = 0;
+    P[2]->weights[2] = 4237237;
+    P[3]->weights[0] = 234;
+    P[3]->weights[1] = 4613;
+    P[3]->weights[2] = 234;
+    P[4]->weights[0] = 614512341;
+    P[4]->weights[1] = 2147483647;
+    P[4]->weights[2] = 4326;
+    P[5]->weights[0] = 2;
+    P[5]->weights[1] = 22;
+    P[5]->weights[2] = 2222;
+    P[6]->weights[0] = 53;
+    P[6]->weights[1] = 69;
+    P[6]->weights[2] = 1234;
+    P[7]->weights[0] = 45654;
+    P[7]->weights[1] = 4;
+    P[7]->weights[2] = 77;
+    P[8]->weights[0] = 25;
+    P[8]->weights[1] = 2345267;
+    P[8]->weights[2] = 420;
+    P[9]->weights[0] = 3725;
+    P[9]->weights[1] = 345777;
+    P[9]->weights[2] = 9;
+
+    return FW(P, 10, 0, 9);
+}

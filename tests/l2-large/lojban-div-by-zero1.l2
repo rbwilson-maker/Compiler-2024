@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main()
+{
+	bool b = true;
+	for(int i = (2*2*2*2*2); b; i >>= 1) {
+		if(i/i != 1) {
+			b = false;
+		}
+	}
+	return 1;
+}

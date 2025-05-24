@@ -1,0 +1,13 @@
+//test return 6
+
+typedef int * intt;
+
+int f(int a) {
+    return a;
+}
+
+int main() {
+    intt i = alloc(int);
+    *i = 6;
+    return f(* i);
+}

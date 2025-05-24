@@ -1,0 +1,12 @@
+//test compile
+
+typedef struct b a;
+struct b {
+	int a;
+};
+
+int main() {
+	a* b = alloc(a);
+	b->a = 1;
+	return b->a;
+}

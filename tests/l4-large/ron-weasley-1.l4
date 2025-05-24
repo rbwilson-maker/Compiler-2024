@@ -1,0 +1,16 @@
+//test error
+
+
+
+int main(){
+    int* a = alloc(int);
+    int* b = alloc(int);
+    *a = 4;
+    *b = 4;
+    int* c = a + b;
+    return 0;
+}
+
+
+
+

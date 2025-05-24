@@ -1,0 +1,12 @@
+//test error
+//int equals bool is bad
+
+int main() {
+    bool a = true;
+    bool b = false;
+    int x = 1238129837;
+    x ^= 12873;
+    x &= 129873;
+    x |= 203948;
+    return x == b && (a || b);
+}

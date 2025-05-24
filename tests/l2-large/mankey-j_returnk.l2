@@ -1,0 +1,12 @@
+//test return 300
+
+int main ()
+{
+    int k = 300;
+    for(int i = -5; i < 5; i *= -3) {
+        while (k < 300) k += 1;
+        k = 300;
+    }
+    return k;
+}
+

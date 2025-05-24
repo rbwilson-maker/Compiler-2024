@@ -1,0 +1,15 @@
+//test return 1001333
+
+int main () {
+  int fluffy = 12;
+  int spots = 1243;
+  int maru = 1000000;
+
+  while (fluffy != 0) {
+    fluffy--;
+    spots += (2 + fluffy);
+  }
+
+  return maru + spots;
+
+}

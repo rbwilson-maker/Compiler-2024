@@ -1,0 +1,11 @@
+//test abort
+// Function in assertion.
+
+bool not_true() {
+  return false;
+}
+
+int main() {
+  assert(not_true());
+  return 0;
+}

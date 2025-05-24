@@ -1,0 +1,13 @@
+//test error
+// direct field select on pointer
+
+typedef struct foo* foo_t;
+
+struct foo {
+  int bar;
+};
+
+int main() {
+  foo_t f = alloc(struct foo);
+  return foo.bar + 42;
+}

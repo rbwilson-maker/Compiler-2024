@@ -1,0 +1,15 @@
+//test return 8
+
+// structs must be passed to functions by reference
+
+int box_height (box * x) {
+   return x->height;
+}
+
+int main () {
+    box * cube = alloc(box);
+    (*cube).height = 8;
+    (*cube).width = 5;
+    (*cube).depth = 5;
+    return box_height(cube);
+}

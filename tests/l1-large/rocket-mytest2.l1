@@ -1,0 +1,18 @@
+//test div-by-zero
+// division by 0
+int main() { 
+    int THING;
+    int THING2;
+    int THING3;
+    int THING4;
+    int THING5;
+    int SUM;
+
+    THING = 0;
+    THING2 = -1;
+    THING3 = 0;
+    THING4 = 1;
+    THING5 = 0;
+    SUM = THING2 + THING4;
+    return THING4 * THING5 / SUM ; 
+}

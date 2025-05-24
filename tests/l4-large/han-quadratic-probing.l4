@@ -1,0 +1,33 @@
+//test return 42
+
+// Cryptographically secure hashing function.
+int hash(int key) {
+  return key;
+}
+
+bool insert(int*[] hash_table, int n, int key) {
+  bool done = false;
+  for (int try = 0; !done && try < n; try++) {
+    int idx = (hash(key) + try*try) % n;
+    if (hash_table[idx] == NULL) {
+      hash_table[idx] = alloc(int);
+      *hash_table[idx] = key;
+      done = true;
+    }
+  }
+
+  return done;
+}
+
+int main() {
+  int n = 10;
+  int*[] hash_table = alloc_array(int*, n);
+
+  bool success = insert(hash_table, n, 42);
+  if (success) {
+    return *hash_table[2];
+  }
+  else {
+    return -1;
+  }
+}

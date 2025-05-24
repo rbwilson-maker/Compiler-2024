@@ -1,0 +1,30 @@
+//test error
+
+struct S{
+  int a;
+  int b;
+  int c;
+  int d;
+  struct SContainer *s;
+};
+
+struct SContainer {
+  struct S* Sa;
+  struct S* Sb;
+};
+
+void set(struct SContainer *s)
+{
+  s->Sb->c = 25;
+}
+
+typedef struct SContainer S;
+
+int main() {
+  S* S = alloc(S);
+  S->Sa = alloc(struct S);
+  S->Sb = alloc(struct S);
+  S->Sb->c = 24;
+  set(S);
+  return S->Sb->c;
+}

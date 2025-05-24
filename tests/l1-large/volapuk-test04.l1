@@ -1,0 +1,7 @@
+//test return -1
+
+// Test hexadecimals
+
+int main() {
+    return 0xFF + 0xff00 + 0xFF0000 + 0xff000000;
+}

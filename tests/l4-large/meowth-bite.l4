@@ -1,0 +1,14 @@
+//test return 0
+
+// Struct function namespaces don't conflict!
+
+struct main{int wrong;};
+
+int wrong(){
+    struct main *w = alloc(struct main);
+    return 0;
+}
+
+int main(){
+    return wrong();
+}

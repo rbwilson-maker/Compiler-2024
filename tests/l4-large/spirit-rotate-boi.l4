@@ -1,0 +1,27 @@
+//test return 228
+
+int rotate(int[] x, int len) {
+    
+    int tmp = x[0];
+    for (int i = 0; i < len - 1; i++) {
+        x[i] = x[i+1];
+    }
+    x[len-1] = tmp;
+    return x[0];
+}
+
+int main() {
+    
+    int[] a = alloc_array(int, 5);
+    
+    for (int i = 0; i < 5; i++) a[i] = i+1;
+    
+    int x = a[rotate(a, 5)] * 3;
+    a[rotate(a, 5)] *= 5;
+
+    int sum = 0;
+    for (int i = 0; i < 5; i++) sum += a[i];
+
+    // 12 * 19
+    return x * sum; 
+}

@@ -1,0 +1,14 @@
+//test return -1919953542
+
+int main() {
+    
+    int a = 0;
+
+    for (int i=0; i < 20000; i++) {
+        for (int j=0; j < 10000; j++) {
+            a += (j*i/37) ^ 0xF77F3333; 
+        }
+    }
+
+    return a;
+}

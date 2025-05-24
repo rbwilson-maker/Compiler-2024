@@ -1,0 +1,8 @@
+//test return 0
+bool f(int x){
+  return x % 2 == 0 || f(x-1);
+}
+
+int main(){
+  return f(21) ? 0 : 1;
+}

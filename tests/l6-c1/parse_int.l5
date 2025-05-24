@@ -1,0 +1,28 @@
+//test return 15411
+
+int[] fifteen_four_eleven() {
+    int[] result = alloc_array(int, 5);
+    result[0] = 1;
+    result[1] = 5;
+    result[2] = 4;
+    result[3] = 1;
+    result[4] = 1;
+    return result;
+}
+
+int main() {
+    string s = "15411";
+    int[] n15411 = fifteen_four_eleven();
+    int x30 = char_ord('0');
+    int result = 0;
+    for (int i = 0; i < string_length(s); i++) {
+        char at = string_charat(s, i);
+        assert('0' <= at && at <= '9');
+        int digit = char_ord(at) - x30;
+        int expected_digit = n15411[i];
+        assert(digit == expected_digit);
+        result *= 10;
+        result += digit;
+    }
+    return result;
+}

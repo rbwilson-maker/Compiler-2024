@@ -1,0 +1,9 @@
+//test div-by-zero
+//overflow
+
+int main() {
+  int x = 2147483648;
+  int y = x * -1;
+  int z = y / -1;
+  return z;
+}

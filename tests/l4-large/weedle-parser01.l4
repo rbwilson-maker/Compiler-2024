@@ -1,0 +1,15 @@
+//test return 1
+struct a {
+  int x;
+};
+
+int main() {
+  struct a* a = alloc(struct a);
+  int[] arr = alloc_array(int, 10);
+  int x = 1;
+  a->x = 1;
+  (*a).x = 1;
+  arr[0] = 1;
+
+  return 1;
+}

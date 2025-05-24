@@ -1,0 +1,10 @@
+//test abort 
+//assert statement is false
+
+int parity(int a){return a % 2;}
+int main(){
+int par = parity(11);
+assert(par == 0);
+return 1;
+}
+

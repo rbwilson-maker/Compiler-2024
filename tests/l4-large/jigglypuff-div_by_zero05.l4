@@ -1,0 +1,21 @@
+//test div-by-zero
+
+/* Divide By Zero Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ *
+ * Test the classic case presented in lecture
+ */
+
+struct a {
+    int aa;
+    int *a;
+};
+
+int main()
+{
+    struct a *aa = alloc(struct a); 
+    *(aa->a) = 1/(aa->aa);
+    return 0;
+}

@@ -1,0 +1,42 @@
+//test div-by-zero
+
+int f(int *g) {
+	return *g;
+}
+
+
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f {
+	int * h;
+};
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+struct f;
+
+
+
+int main() {
+	struct f *pressftopayrespect = alloc(struct f);
+	struct f *p = pressftopayrespect;
+	p->h = alloc(int);
+	*(p->h) = 3;
+	*(pressftopayrespect->h) = 0;
+	return f(pressftopayrespect->h) % f(p->h);
+}

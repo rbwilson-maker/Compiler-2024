@@ -1,0 +1,9 @@
+//test return 4
+
+int main()
+{
+  int x = 8;
+  {x /= 2;}
+  return x;
+}
+

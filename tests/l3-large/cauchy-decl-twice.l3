@@ -1,0 +1,9 @@
+//test return 0
+int f(int a, int b, int c, int d, int e, int f, int g);
+int f(int g, int f, int e, int d, int c, int b, int a) {
+    return 69;
+}
+int f(int z, int y, int x, int w, int v, int u, int t);
+int main() {
+    return 0;
+}

@@ -1,0 +1,37 @@
+//test return 1
+//Represent a fraction with an integer, where higher 16 bits
+//represent the numerator, while lower 16 bits represent the
+//dominator.
+
+typedef int fraction;
+
+int get_num(fraction x) {
+    return (x >> 16) & 0xFFFF;
+}
+
+int get_dom(fraction x) {
+    return x & 0xFFFF;
+}
+
+fraction create_fraction(int num, int dom) {
+    assert(num > 0 && num <= 0xFFFF);
+    assert(dom > 0 && dom <= 0xFFFF);
+    return (num << 16) | dom;
+}
+
+int get_value(fraction x) {
+    return get_num(x) / get_dom(x);
+}
+
+fraction mul(fraction a, fraction b) {
+    int new_num = get_num(a) * get_num(b);
+    int new_dom = get_dom(a) * get_dom(b);
+    return create_fraction(new_num, new_dom);
+}
+
+int main() {
+    fraction x = create_fraction(3, 4);
+    fraction y = create_fraction(16, 12);
+    fraction z = mul(x, y);
+    return get_value(z);
+}

@@ -1,0 +1,14 @@
+//test return 4
+// test assignment operators with effectual expressions
+
+int f(int *x) {
+  *x += 2;
+  return *x;
+}
+
+int main() {
+  int *x = alloc(int);
+  int[] arr = alloc_array(int, 4);
+  arr[f(x)] += *x;
+  return *x * arr[2];
+}

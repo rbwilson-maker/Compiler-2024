@@ -1,0 +1,57 @@
+//test return 781777670
+
+// an implementation of carrlyess addition and multiplication
+
+int carryless_add(int a, int b) {
+	assert(0 <= a && 0 <= b);
+	int tens = 1;
+	int sum = 0;
+	int res = 0;
+	while (a > 0 || b > 0) {
+		int a_dig = a % 10;
+		int b_dig = b % 10;
+		a /= 10;
+		b /= 10;
+		int sum_dig = (a_dig + b_dig) % 10;
+		res += sum_dig * tens;
+		tens *= 10;
+	}
+	return res;
+}
+
+int carryless_mult_helper(int a, int d) {
+	assert(0 <= d && d < 10);
+	int res = 0;
+	int tens = 1;
+	while (a > 0) {
+		int a_dig = a % 10;
+		a /= 10;
+		int prod = (a_dig * d) % 10;
+		res += prod * tens;
+		tens *= 10;
+	}
+	return res;	
+} 
+
+int carryless_multiply(int a, int b) {
+	assert(a >= 0 && b >= 0);
+	int tens = 1;
+	int product = 0;	
+	while (b > 0) {
+		int b_dig = b % 10;
+		b /= 10;
+		int dig_prod = carryless_mult_helper(a, b_dig);
+		dig_prod *= tens;
+		tens *= 10;
+		product = carryless_add(product, dig_prod);
+	}
+	return product;
+}
+
+int main() {
+	int a = 78096;
+	int b = 10325;
+	int res = carryless_multiply(a, b);
+	assert(res == carryless_multiply(b, a));
+	return res;
+}

@@ -1,0 +1,22 @@
+//test return 10
+
+int gcd(int a, int b);
+int main() {
+  for ( int i = 1; true; i++){
+    int num = 0;
+    for ( int ii = 1; ii<=i; ii++ )	{
+      if (i%ii == 0)	{
+        num+=ii;
+      }
+    }
+    int gcd = gcd(num, i);
+    if (num/gcd == 9 && i/gcd == 5)	{
+      return i;
+    }
+  }
+  return -1;
+}
+
+int gcd ( int a, int b )	{
+  return !(a<=b)? gcd(b, a): a == 0? b:gcd(b%a, a);
+}

@@ -1,0 +1,9 @@
+//test typecheck
+
+int abc(int x){
+  return testInt(x,x+1,x+2,x+3);
+}
+
+int main(){
+  return abc(0);
+}

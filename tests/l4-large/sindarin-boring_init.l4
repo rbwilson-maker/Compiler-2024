@@ -1,0 +1,9 @@
+//test return 0
+
+struct meh {
+  int f1;
+};
+
+int main() {
+  return alloc_array(struct meh, 500)[42].f1;
+}

@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+  int x = 152;
+  while (x > 0) {
+    x--;
+  }
+  return 1/x;
+}

@@ -1,0 +1,15 @@
+//test return 452347
+
+int main() {
+    int a;
+
+    a = -(-(-1523));
+    int b = 1423;
+    int c = -(-11);
+    int d = a + b;
+    int e = 41234;
+    int f = b / c;
+
+    return a + b * ((c + d) + e) / f;
+
+}

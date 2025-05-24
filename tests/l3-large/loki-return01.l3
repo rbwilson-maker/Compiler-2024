@@ -1,0 +1,29 @@
+//test return 1296 
+
+/** 
+ * Computes POW more efficiently
+ */
+
+int f(int x, int y) {
+  assert(y >= 0);
+  int b = x;
+  int e = y;
+  int r = 1;
+
+  while (e>0) {
+    assert(e >= 0);
+    if (e % 2 == 1) {
+      r = b*r;
+    }
+
+    b = b*b;
+    e = e/2;
+  }
+  assert(e == 0);
+  return r;
+}
+
+int main() {
+  return f(6, 4);
+}
+

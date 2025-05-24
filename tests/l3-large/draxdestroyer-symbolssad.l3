@@ -1,0 +1,16 @@
+//test typecheck
+
+void hi() {}
+void iJustMetyou() {}
+void andThisisCrazy() {}
+void butHereesMyNumber() {}
+void soCalLMeMaybe() {}
+
+int main() {
+    hi();
+    iJustMetyou();
+    andThisisCrazy();
+    butHereesMyNumber();
+    soCalLMeMaybe();
+    return -50;
+}

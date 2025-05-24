@@ -1,0 +1,17 @@
+//test return 64
+
+int main() {
+    int x;
+    int y;
+    int z;
+    x = 2;
+    y = 2;
+    z = 2;
+    x = x * y;
+    x = x * y;
+    x = x * y;
+    x = x * y;
+    x = x * y;
+    x = x * y;
+    return x / z;
+}

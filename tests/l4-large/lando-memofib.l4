@@ -1,0 +1,31 @@
+//test return 1556111435 
+
+struct fib {
+  bool memoized;
+  int value;
+};
+
+typedef struct fib fib;
+
+int memofib_helper(int n, fib[] M) {
+  if (M[n].memoized) { return M[n].value; } 
+  if (n == 0) { return 0; }  
+  if (n == 1) { return 1; }
+  int rvalue = memofib_helper(n - 1, M) + memofib_helper(n - 2, M);
+  M[n].memoized = true;
+  M[n].value = rvalue;
+  return rvalue;
+}
+
+int memofib(int n) {
+  assert(n >= 0);
+  fib[] M = alloc_array(fib, n + 1);
+  for (int i = 0; i < n; i++) {
+    M[i].memoized = false;
+  }
+  return memofib_helper(n, M);
+}
+
+int main() {
+  return memofib(1000);
+}

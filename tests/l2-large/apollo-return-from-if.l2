@@ -1,0 +1,15 @@
+//test return 0
+//makes sure that you can return from a block
+int main()
+{
+    for(int i = 0; i < 10; i++)
+    {
+        int j;
+        if(i == 9)
+        {
+            return 0;
+        }
+    }
+    
+    return 1;
+}

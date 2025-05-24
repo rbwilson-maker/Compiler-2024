@@ -1,0 +1,21 @@
+//test return 10
+
+struct conflicts
+{
+    int x;
+    int y;
+    int z;
+};
+
+typedef struct conflicts conflicts;
+
+int main()
+{
+    conflicts* x = alloc(conflicts);
+    x->x = 2;
+    x->y = 5;
+    conflicts* y = alloc(conflicts);
+    y->x = x->x;
+    y->y = x->x*x->y;
+    return y->y;
+}

@@ -1,0 +1,50 @@
+//test return 23
+
+// This test performs operations on a binary search tree
+
+struct tree {
+  int val;
+  struct tree *left;
+  struct tree *right;
+};
+
+struct tree *create_tree() {
+  return NULL;
+}
+
+struct tree *insert(struct tree *t, int v) {
+  if (t == NULL) {
+    t = alloc(struct tree);
+    t->val = v;
+    t->left = NULL;
+    t->right = NULL;
+    return t;
+  }
+  if (v < t->val) t->left = insert(t->left, v);
+  if (v > t->val) t->right = insert(t->right, v);
+  return t;
+}
+
+int size(struct tree *t) {
+  if (t == NULL) return 0;
+  return 1 + size(t->left) + size(t->right);
+}
+
+int nth(struct tree *t, int n) {
+  if (t == NULL) return -1;
+  int left_size = size(t->left);
+  if (n < left_size) return nth(t->left, n);
+  if (n == left_size) return t->val;
+  return nth(t->right, n - (left_size + 1));
+}
+
+int main() {
+  struct tree *tree = create_tree();
+  tree = insert(tree, 6);
+  tree = insert(tree, 2);
+  tree = insert(tree, 9);
+  tree = insert(tree, 7);
+  tree = insert(tree, -81);
+  tree = insert(tree, 3);
+  return nth(tree,5) + nth(tree,3) + nth(tree,3) + nth(tree,1);
+}

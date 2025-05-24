@@ -1,0 +1,14 @@
+//test return 70
+
+// This is designed to test logical not
+int main() {
+  int a = 5;
+  int b = 10;
+  if (!false) {
+    a = 7;
+  }
+  if (!true) {
+    b = 30;
+  }
+  return a * b;
+}

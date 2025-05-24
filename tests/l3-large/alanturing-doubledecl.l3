@@ -1,0 +1,18 @@
+//test return 15251
+
+typedef bool cilantro;
+typedef bool opal;
+
+cilantro isAmazing () {
+   return true;
+}
+
+opal isAmazing ();
+
+int main () {
+   if (isAmazing ()) {
+      return 15251;
+   } else {
+      return 0;
+   }
+}

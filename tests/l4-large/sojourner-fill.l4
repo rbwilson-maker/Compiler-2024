@@ -1,0 +1,13 @@
+//test memerror
+
+void fill(int*[                                                            ]arr, int n) {
+    arr[n] = alloc                         (          int                                                                                  )  ;
+    fill(arr, n-1);
+}
+
+int main() {
+   int*[                                                                                                                                                                    ] arr;
+   arr = alloc_array(int*, 123);
+   fill(arr, 122);
+   return -1;
+}

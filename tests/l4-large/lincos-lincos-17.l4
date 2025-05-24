@@ -1,0 +1,66 @@
+//test div-by-zero
+
+// how many dimensions you want
+
+int main() {
+    int[][][][][] d5 = alloc_array(int[][][][], 20);
+
+    int flag = 1;
+
+    for (int i = 0; i < 20; i++) {
+        int[][][][] d4 = alloc_array(int[][][], 20);
+        d5[i] = d4;
+
+        for (int j = 0; j < 20; j++) {
+            int[][][] d3 = alloc_array(int[][], 20);
+            d4[j] = d3;
+
+            for (int k = 0; k < 20; k++) {
+                int[][] d2 = alloc_array(int[], 20);
+                d3[k] = d2;
+
+                for (int l = 0; l < 20; l++) {
+                    int[] d1 = alloc_array(int, 20);
+                    d2[l] = d1;
+
+                    for (int m = 0; m < 20; m++) {
+                        d1[m] = (m+1) * flag;
+                    }
+                    flag++;
+                }
+            }
+        }
+    }
+
+    int res = 0;
+    for (int i = 0; i < 20; i++) {
+        for (int j = 0; j < 20; j++) {
+            for (int k = 0; k < 20; k++) {
+                for (int l = 0; l < 20; l++) {
+                    for (int m = 0; m < 20; m++) {
+                        res += d5[i][j][k][l][m];
+                    }
+                }
+            }
+        }
+    }
+
+    d5[10][11][12][13][14] = 0;
+    int b = 9999;
+    for (int i = 0; i < 20; i++) {
+        for (int j = 0; j < 20; j++) {
+            for (int k = 0; k < 20; k++) {
+                for (int l = 0; l < 20; l++) {
+                    for (int m = 0; m < 20; m++) {
+                        res -= d5[i][j][k][l][m];
+                        b /= d5[i][j][k][l][m];
+                        b *= d5[i][j][k][l][m];
+                    }
+                }
+            }
+        }
+    }
+
+    return res;
+}
+

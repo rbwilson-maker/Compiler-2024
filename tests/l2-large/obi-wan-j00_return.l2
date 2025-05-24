@@ -1,0 +1,24 @@
+//test return 15
+// longer running program makes sure assembly is efficient
+
+int main()
+{
+    int a = 0;
+    int b = 1;
+    int c = 2;
+    int d = 12;
+
+    int count = 1 << 20;
+    for(int i = 0; i < count; i++) {
+        a++;
+        b += 2;
+        c--;
+        d -= 2;
+        a++;
+        c--;
+        a--;
+        c++;
+    }
+
+    return a + b + c + d;       //2^20+(2^21+1)+(2-2^20)+(12-2^21)
+}

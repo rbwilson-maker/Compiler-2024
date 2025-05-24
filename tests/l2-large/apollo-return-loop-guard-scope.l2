@@ -1,0 +1,11 @@
+//test return 5
+// test loop variable scoping
+
+int main () {
+  int x = 10;
+  int y = 0;
+  for (x = 0; x < 5; x++) {
+    y += x;
+  }
+  return x;
+}

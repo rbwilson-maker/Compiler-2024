@@ -1,0 +1,24 @@
+//test typecheck
+
+struct node
+{
+	int a;
+	struct node *next;
+};
+
+struct btr
+{
+	int val;
+	struct btr *left;
+	struct btr *right;
+};
+
+typedef struct node* listptr;
+
+typedef struct btr* treeptr;
+
+int main()
+{
+	int a = 3;
+	return a;
+}

@@ -1,0 +1,71 @@
+//test return 66
+
+int foo(int a);
+int bar(int a, int b);
+int baz(int a, int b, int c);
+int qux(int a, int b, int c, int d);
+int quux(int a, int b, int c, int d, int e);
+int corge(int a, int b, int c, int d, int e, int f);
+int grault(int a, int b, int c, int d, int e, int f, int g);
+int garply(int a, int b, int c, int d, int e, int f, int g, int h);
+int waldo(int a, int b, int c, int d, int e, int f, int g, int h, int i);
+int fred(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j);
+int plugh(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k);
+int xyzzy(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l);
+int thud(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m);
+
+int foo(int a) {
+  return bar(a, 0);
+}
+
+int bar(int a, int b) {
+  return baz(a, b, 1);
+}
+
+int baz(int a, int b, int c) {
+  return qux(a, b, c, 2);
+}
+
+int qux(int a, int b, int c, int d) {
+  return quux(a, b, c, d, 3);
+}
+
+int quux(int a, int b, int c, int d, int e) {
+  return corge(a, b, c, d, e, 4);
+}
+
+int corge(int a, int b, int c, int d, int e, int f) {
+  return grault(a, b, c, d, e, f, 5);
+}
+
+int grault(int a, int b, int c, int d, int e, int f, int g) {
+  return garply(a, b, c, d, e, f, g, 6);
+}
+
+int garply(int a, int b, int c, int d, int e, int f, int g, int h) {
+  return waldo(a, b, c, d, e, f, g, h, 7);
+}
+
+int waldo(int a, int b, int c, int d, int e, int f, int g, int h, int i) {
+  return fred(a, b, c, d, e, f, g, h, i, 8);
+}
+
+int fred(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j) {
+  return plugh(a, b, c, d, e, f, g, h, i, j, 9);
+}
+
+int plugh(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k) {
+  return xyzzy(a, b, c, d, e, f, g, h, i, j, k, 10);
+}
+
+int xyzzy(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l) {
+  return thud(a, b, c, d, e, f, g, h, i, j, k, l, 11);
+}
+
+int thud(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m) {
+  return a + b + c + d + e + f + g + h + i + j + k + l + m;
+}
+
+int main() {
+  return foo(0);
+}

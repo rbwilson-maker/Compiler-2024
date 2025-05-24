@@ -1,0 +1,10 @@
+//test error
+// access out of scope variable
+
+int main() {
+  for (int x = 0; x < 10; x++) {
+	;
+  }
+  x = 0;
+  return 0;
+}

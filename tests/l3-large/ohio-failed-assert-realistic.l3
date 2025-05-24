@@ -1,0 +1,18 @@
+//test abort
+
+// our friend the Ackermann function. Luckily, we only want A(3,5) in this test case.
+int ackermann(int m, int n) {
+  assert(m >= 0);
+  assert(n >= 0);
+  if (m == 0) {
+    return n + 1;
+  }
+  if (n == 0) {
+    return ackermann(m-1, 1);
+  }
+  return ackermann(m-1, ackermann(m, n-1));
+}
+
+int main() {
+  return ackermann(-1, 5);
+}  

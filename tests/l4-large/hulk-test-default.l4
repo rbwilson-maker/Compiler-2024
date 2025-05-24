@@ -1,0 +1,37 @@
+//test return 0
+
+//checks the default values of allocation
+
+struct first {
+    int x;
+    bool b;
+};
+
+struct second {
+    struct first* f;
+    int y;
+};
+
+struct third {
+    struct second** s; 
+};
+
+int main(){
+    struct first* f = alloc(struct first);
+    assert(f->x == 0);
+    assert(f->b == false);
+    struct second* s = alloc(struct second);
+    assert(s->f == NULL);
+    assert(s->y == 0);
+    struct third* t = alloc(struct third);
+    assert(t->s == NULL);
+    t->s = alloc(struct second*);
+    assert(*(t->s) == NULL);
+
+    int* x = alloc(int);
+    assert(*x == 0);
+    bool* b = alloc(bool);
+    assert(*b == false);
+
+    return 0;
+}

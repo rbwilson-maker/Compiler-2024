@@ -1,0 +1,10 @@
+//test error 
+
+struct a {
+  int a;
+};
+
+int main() {
+  struct a *p1 = alloc(struct a);
+  return a.a; // should use `->`
+}

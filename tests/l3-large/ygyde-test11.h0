@@ -1,0 +1,19 @@
+
+// setup paging here
+int setup_vm();
+
+// this function is supposed to setup interrupts according to architecture
+// specific information
+int setup_interrupts();
+
+// similarly, it's supposed to setup interprocessor communication
+int setup_ipc();
+
+// this sets up the multitasking facilities
+int setup_tasking();
+
+// loads initial task into memory
+int load_init_task();
+
+// panics when fatal error is encountered
+void panic();

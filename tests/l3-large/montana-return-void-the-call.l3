@@ -1,0 +1,26 @@
+//test return 3
+int do_thin(int three, int far) {
+  return 3;
+}
+
+bool do_other_thingy() {
+  return false;
+}
+
+int call_the_void() {
+  int soy_replacement_substitute;
+  soy_replacement_substitute = 33;
+  int three_three = soy_replacement_substitute + 33 - 33;
+  return three_three;
+}
+
+void do_final_void_zone_thing_with_long_function_name_because_it() {
+  call_the_void();
+}
+
+int main() {
+  do_other_thingy();
+  ((do_thin((4),(3))));
+  do_final_void_zone_thing_with_long_function_name_because_it();
+  return 3;
+}

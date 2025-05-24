@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int myfunc(int x) {
+    x + 1;
+    return 0;
+}
+
+int main()
+{
+   return 1 / myfunc(1);
+}

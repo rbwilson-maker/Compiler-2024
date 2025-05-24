@@ -1,0 +1,34 @@
+//test return 1211115118
+//many blocks, with potential scope problems
+
+int main() {
+    {
+        int a = 231;
+        {
+            int b = 23413;
+            int c = 1283;
+            {
+                int x = 348;
+                c = 23897 - x;
+                int d;
+                {
+                    d = 1231;
+                }
+            }
+            {
+                c += ((((-123123))));
+                {{{{}}}}
+            }
+            {
+                int d = 5243454;
+                int e;
+                {
+                    e = a + c;
+                }
+                int r = e + d * a - b % c;
+                return r;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,7 @@
+//test div-by-zero
+//overflow err
+
+int main(){
+  int min = -2147483648;
+  return min/-1; 
+}

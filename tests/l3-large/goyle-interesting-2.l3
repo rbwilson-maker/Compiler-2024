@@ -1,0 +1,21 @@
+//test return -268624003
+
+// Simulate the (Turing complete) Rule 110 cellular automaton.
+
+int rule110(int world, int n) {
+  print_hex(world);
+  for (int i = 0; i < n; i++) {
+    int L = world >> 1 & ~(0x1 << 31);
+    int C = world;
+    int R = world << 1;
+    world = L & (C^R) | ~L & (C|R);
+    print_hex(world);
+  }
+  return world;
+}
+
+int main() {
+  int world = 1;
+  int n = 50;
+  return rule110(world, n);
+}

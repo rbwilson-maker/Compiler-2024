@@ -1,0 +1,21 @@
+//test error
+//cannot use structs before their defns when size info is required
+
+struct e* f(struct e[] hi) { 
+	struct e* s = alloc(struct e);
+	*s = hi[0];
+	return s;
+}
+
+struct e {
+	int x;
+};
+
+
+int main(){
+
+	struct e[] h = alloc_array(struct e, 1);
+
+	return (f(h))->x;
+
+}

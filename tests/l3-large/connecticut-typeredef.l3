@@ -1,0 +1,16 @@
+//test error
+
+typedef int yolo;
+
+yolo holla() {
+	yolo holla = 1;
+	yolo get   = 2;
+	yolo dolla = 3;
+	return dolla;
+}
+
+typedef int yolo;   // <- y u do dis
+
+int main() {
+	return holla();
+}

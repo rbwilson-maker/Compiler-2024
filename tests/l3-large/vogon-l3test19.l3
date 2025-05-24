@@ -1,0 +1,12 @@
+//test return 793984444
+
+int idk(int a) {
+  if (a > 10) {
+    return 123;
+  }
+  return idk(a+1) * idk(a+2) - idk(a+3) * idk(a+5);
+}
+
+int main() { 
+  return idk(3);
+}

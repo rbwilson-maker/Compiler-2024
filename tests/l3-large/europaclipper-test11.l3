@@ -1,0 +1,10 @@
+//test error
+
+int f() {
+   return 10;
+}
+
+int main() {
+  bool g = f();
+  return (g == 0) ? 1 : 0;
+}

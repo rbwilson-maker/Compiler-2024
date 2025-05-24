@@ -1,0 +1,24 @@
+//test return 1
+// pass int as pointer
+
+// adapted from 15210
+bool ss(int[] S, int length, int *k) {
+    if (*k == 0) return true;
+    if (length == 0) return false;
+    if (S[length - 1] > *k) {
+        return ss(S, length - 1, k);
+    }
+    int *newk = alloc(int);
+    *newk = *k - S[length - 1];
+    return ss(S, length - 1, newk) || ss(S, length - 1, k);
+}
+
+int main() {
+    int[] S = alloc_array(int, 100);
+    for (int i = 0; i < 100; i++) {
+        S[i] = 1;
+    }
+    int *k = alloc(int);
+    *k = 95;
+    return ss(S, 100, k) ? 1 : 0;
+}

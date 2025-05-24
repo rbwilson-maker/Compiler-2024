@@ -1,0 +1,28 @@
+//test return 0
+
+struct s {
+       struct s*[] ss;
+       int i;
+       int* j;
+       int k;
+};
+
+struct p {
+       struct s s;
+       int* p;
+       int i;
+};
+
+struct q {
+       struct p p;
+       struct p[] arr;
+};
+
+int main() {
+     struct q*[]*[] t= alloc_array(struct q*[]*, 1);
+     t[0] = alloc(struct q*[]);
+     *(t[0]) = alloc_array(struct q*, 1);
+     (*(t[0]))[0] = alloc(struct q);
+     struct q* ptr = (*(t[0]))[0];
+     return ptr->p.s.i;
+}

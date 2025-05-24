@@ -1,0 +1,23 @@
+typedef struct hehe hehe;
+struct hehe {
+    int h;
+    bool e;
+    int he;
+};
+
+typedef hehe* hehee;
+struct hehehe {
+    hehe hehe;
+    int h;
+    bool e;
+    int he;
+    hehee hehee;
+};
+
+struct h {
+    hehe hehe;
+    struct hehehe hehehe;
+    int* hp;
+};
+
+struct h;

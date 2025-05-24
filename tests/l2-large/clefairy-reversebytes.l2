@@ -1,0 +1,8 @@
+//test return 67305985
+
+int main() {
+    int x = 0x01020304;
+    int x2 = x & (0xFF << 16);
+    int x3 = x & (0xFF << 8);
+    return (x << 24) | (x3 << 8) | (x2 >> 8) | ((x >> 24) & 0xFF);
+}

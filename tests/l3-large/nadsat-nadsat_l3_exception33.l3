@@ -1,0 +1,18 @@
+//test div-by-zero
+
+int divbyzero(int input) {
+  return input / 0;
+}
+
+int failassert(int input) {
+  assert(false);
+  return input;
+}
+
+int mix(int x, int y) {
+  return x + y;
+}
+
+int main() {
+  return mix(divbyzero(30), failassert(20));
+}

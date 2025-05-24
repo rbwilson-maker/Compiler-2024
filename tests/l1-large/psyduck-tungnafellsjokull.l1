@@ -1,0 +1,10 @@
+//test error
+
+int main ()
+{
+int _ = 3;
+int __ = 14;
+int _ = _*_*_;
+int __ += _;
+return __ + 1;
+}

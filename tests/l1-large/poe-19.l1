@@ -1,0 +1,9 @@
+//test return 0
+
+// Assign int an exp that would be larger than hexnum max if optimized
+
+int main()
+{
+	int a = 0xffffffff + 1;
+	return a;
+}

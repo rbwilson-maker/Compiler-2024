@@ -1,0 +1,14 @@
+//test error
+
+typedef int x;
+
+void foo(int x, int y, int* z){
+  *z = x * y;
+  return;
+}
+
+int main() { 
+  int* z = alloc(int);
+  foo(4, 8, z);
+  return *z;
+ }

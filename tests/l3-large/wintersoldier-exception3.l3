@@ -1,0 +1,9 @@
+//test abort
+int main() {
+    assert(false);
+    int x = 0;
+    for (; x < 1337; x += 42) {
+        x = x % x + x;
+    }
+    return x;
+}

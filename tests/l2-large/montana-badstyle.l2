@@ -1,0 +1,18 @@
+//test return 0
+
+int main() {
+  int x = 0;
+  bool y = true;
+  bool z = false;
+  int w = z ? x : 2;
+  int j = 100;
+  while (((((((y ? w : x) == 2 ? 10 : 5)) == 10)))) {
+    int i = 0;
+    if (j < 0)
+      return i;
+    i++;
+    j -= (j > 10) ? 5 : 2;
+  }
+  int i = 1337;
+  return i;
+}

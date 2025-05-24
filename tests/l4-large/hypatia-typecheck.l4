@@ -1,0 +1,11 @@
+//test typecheck
+
+// struct s; -> Declaration not neccessary
+
+bool test(struct s*[]** p) {
+  return true;
+}
+
+int main() {
+  return test(NULL) ? 1 : 0;
+}

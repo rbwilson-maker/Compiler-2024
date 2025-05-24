@@ -1,0 +1,12 @@
+  /*
+   * A turmite is a Turing machine which has an orientation as well as a current * state and a "tape" that consists of an infinite two-dimensional grid of
+   * cells. It has been shown that turmites in general are exactly equivalent in
+   * power to one-dimensional Turing machines with an infinite tape, as either
+   * can simulate the other.
+   *
+   * termite() takes the number of states and color as input and outputs the
+   * possible number of halting configurations
+   *
+   */
+
+   int termite(int number_of_states, int number_of_colors);

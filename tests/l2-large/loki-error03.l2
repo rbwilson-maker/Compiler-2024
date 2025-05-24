@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+    int a;
+    int b;
+
+    a = 10;
+    b = true; // This should not typecheck
+
+    return a + b;
+}

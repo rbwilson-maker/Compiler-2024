@@ -1,0 +1,9 @@
+//test error
+// Undefined variable at return statement
+int main()
+{
+    int i = 1 << 2;
+    i = i >> 2;
+    i &&= i;
+    return a;
+}

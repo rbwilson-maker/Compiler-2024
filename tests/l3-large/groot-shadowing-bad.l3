@@ -1,0 +1,9 @@
+//test error
+
+int f(int a, int a, bool b) {
+  return a + a + (b ? 0 : 1);
+}
+
+int main() {
+  return f(1, 2, 3 == 3);
+}

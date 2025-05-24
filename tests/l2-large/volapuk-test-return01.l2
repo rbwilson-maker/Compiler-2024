@@ -1,0 +1,13 @@
+//test return 7
+
+// Test program does not raise div-by-zero if it does not reach that branch
+
+int main() {
+  int x = 56;
+  int y;
+  if (x != 0)
+    y = x >> 3;
+  else
+    y = x / 0;
+  return y;
+}

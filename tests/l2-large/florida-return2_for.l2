@@ -1,0 +1,10 @@
+//test return 3
+
+int main(){
+    int a = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        if (i < 3) a += i;
+    }
+    return a;
+}

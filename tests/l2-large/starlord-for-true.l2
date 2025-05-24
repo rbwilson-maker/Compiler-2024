@@ -1,0 +1,14 @@
+//test return 150
+
+int main ()
+{
+  int x = 122;
+  for(;true;) {
+    if (x == 150)
+    {
+      return x;
+    }
+    x = x + 1;
+  }
+  return x;
+}

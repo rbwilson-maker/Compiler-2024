@@ -1,0 +1,20 @@
+//test return 3
+
+int main () {
+	int a = 12300;
+	int b = 5124;
+	int c = -11230;
+	int d = 0x7FFFFFFF;
+	int e = 0x80000000;
+	int f = 1624;
+	int g = 71;
+	int h = 6123;
+	int i = a + b + (c + d - e) * (f % g) - h;
+	int u = 17;
+	int v = -1234567;
+	int w = 1234567;
+	int x = 5;
+	int y = -(-i);
+	int z = 15122;
+	return ((x * z) + w - v) / (u - y);
+}

@@ -1,0 +1,22 @@
+//test return 45
+
+struct test {
+  int value;
+};
+
+int main() {
+  struct test*[] a = alloc_array(struct test*, 10);
+
+  for (int i = 0; i < 10; i++) {
+    a[i] = alloc(struct test);
+    a[i] -> value = i;
+  }
+
+  int sum = 0;
+
+  for (int i = 0; i < 10; i++) {
+    sum += a[i] -> value;
+  }
+   
+  return sum;
+}

@@ -1,0 +1,14 @@
+//test return 1
+struct Node {
+    struct Node*[] neighbors;
+    int data;
+};
+
+int main() {
+    struct Node *node1 = alloc(struct Node);
+    node1->neighbors = alloc_array(struct Node*, 1);
+    node1->neighbors[0] = node1;
+    node1->data = 1;
+
+    return node1->data;
+}

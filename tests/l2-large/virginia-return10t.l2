@@ -1,0 +1,12 @@
+//test return 0
+// no division by 0
+int main()
+{
+	
+	for(int i = 0; i < 0; i++)
+	{
+		int blah = 1 / 0;
+	}
+
+	return 0;
+}

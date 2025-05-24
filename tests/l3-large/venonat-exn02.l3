@@ -1,0 +1,18 @@
+//test div-by-zero
+// Slightly more involved inlined function calls.
+
+int zero() {
+  return 0;
+}
+
+int one() {
+  return 1;
+}
+
+int two() {
+  return 2;
+}
+
+int main() {
+  return one() / ((one() + one() + two() + zero()) - two() - two());
+}

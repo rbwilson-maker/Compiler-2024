@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int foo(){
+  return 0;
+}
+
+int bar(){
+  assert(false);
+  return 0;
+}
+int main(){
+  int[] x = alloc_array(int, 5);
+  x[1/foo()] = bar();
+  return x[0];
+}

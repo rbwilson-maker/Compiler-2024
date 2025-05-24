@@ -1,0 +1,23 @@
+//test return 213
+
+// Given a target sum, and a list of available denominations, how many ways
+// are there to reach the target using coins of the available denominations?
+
+int count(int target, int[] denoms, int ndenom) {
+  int[] ways = alloc_array(int, target + 1);
+  ways[0] = 1;
+  for(int i = 0; i < ndenom; i++) {
+    int denom = denoms[i];
+    for(int j = denom; j < target + 1; j++) {
+      ways[j] += ways[j - denom];
+    }
+  }
+  return ways[target];
+}
+
+int main() {
+  int[] denoms = alloc_array(int, 4);
+  denoms[0] = 1; denoms[1] = 5;
+  denoms[2] = 10; denoms[3] = 25;
+  return count(99, denoms, 4);
+}

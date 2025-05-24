@@ -1,0 +1,10 @@
+//test return 15;
+struct s1 {int s1;};
+struct s2 {int s1; struct s1 s2;};
+typedef struct s2 s2;
+int main() {
+  s2* s1 = alloc(s2);
+  s1->s1 = 1;
+  s1->s2.s1 = 2;
+  return 15;
+}

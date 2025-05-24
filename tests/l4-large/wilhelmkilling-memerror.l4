@@ -1,0 +1,16 @@
+//test memerror
+
+struct meow {
+  int a; 
+  int b; 
+};
+
+int main() {
+  struct meow *woof = alloc(struct meow);
+  woof->a = 10;
+  woof->b = 20; 
+  (*woof).a = 15;
+  int meow = woof->a - woof->b + 5; 
+  int[] bow_wow = alloc_array(int, 10); 
+  return (woof->b - woof->a) / bow_wow[110];
+}

@@ -1,0 +1,9 @@
+//test return 3
+// struct defined in header file
+
+int main(){
+  struct mystruct* s = alloc(struct mystruct);
+  s->x = 1;
+  s->y = 2;
+  return s->x + s->y;
+}

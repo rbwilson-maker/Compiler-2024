@@ -1,0 +1,19 @@
+//test return 11;
+
+// given some number, returns the sum of all of the digits of that number
+int sum_digits(int x) {
+    int sum = 0;
+    while (x != 0) {
+        sum += x % 10;
+        x /= 10;
+    }
+    return sum;
+}
+
+int main() {
+    int three = sum_digits(111);
+    int two = sum_digits(20);
+    int six = sum_digits(123);
+
+    return three + two + six;
+}

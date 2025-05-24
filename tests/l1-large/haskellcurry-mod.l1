@@ -1,0 +1,8 @@
+//test return 4
+
+int main() {
+    int numerator = 19;
+    int denominator = 5;
+
+    return numerator % denominator;
+}

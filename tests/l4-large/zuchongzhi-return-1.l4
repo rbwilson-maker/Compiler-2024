@@ -1,0 +1,16 @@
+//test return 1
+// allow variable and struct type to be the same name
+
+struct foo {
+    int bar;
+};
+struct foo1 {
+    struct foo* foo;
+};
+
+int main() {
+    struct foo1 * f = alloc( struct foo1 );
+    f->foo = alloc( struct foo );
+    f->foo->bar = 1;
+    return f->foo->bar;
+}

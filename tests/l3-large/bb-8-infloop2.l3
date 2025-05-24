@@ -1,0 +1,18 @@
+//test return 0
+
+void everyone_get_in_here(int patron)
+{
+  while(true)
+  {
+    print_int(patron);
+    patron++;
+    if (patron > 1000) return;
+  }
+}
+
+int main()
+{
+  int patron = 1;
+  everyone_get_in_here(patron);
+  return 0;
+}

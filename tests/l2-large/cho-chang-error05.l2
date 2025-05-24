@@ -1,0 +1,23 @@
+//test error
+//Returns in while loops do not count
+
+int main()
+{
+    int x = 0;
+    int y = 1;
+    int z = 1;
+
+    if(z == 0)
+    {
+        while(x < 5)
+        {
+            x++;
+            if(x == 5)
+            {
+                return y;
+            }
+        }
+    }
+    else
+        return 0;
+}

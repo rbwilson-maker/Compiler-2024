@@ -1,0 +1,19 @@
+//test abort
+
+int increment(int *x) {
+    int current = *x;
+    assert(current == 0);
+    *x += 1;
+    return current;
+}
+
+int main(){
+    int *x = alloc(int);
+    *x = 0;
+    int[] f = alloc_array(int, 5);
+    int i = 0;
+    f[0] = 0;
+    f[1] = 0;
+    f[increment(x)] = f[increment(x)] + 1;
+    return f[0];
+}

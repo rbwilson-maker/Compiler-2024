@@ -1,0 +1,10 @@
+//test div-by-zero
+int main () {
+	int x;
+	int y;
+	bool z;
+	z = true;
+	x = 3 << 33335555;
+	y = 0;
+	return z ?  x :        y;
+}

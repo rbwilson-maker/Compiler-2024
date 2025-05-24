@@ -1,0 +1,9 @@
+//test div-by-zero
+int main() {
+  bool x = true;
+  bool y = false;
+  if (x || y) {
+    return 1/0;
+  }
+  return 10;
+}

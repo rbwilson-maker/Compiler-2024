@@ -1,0 +1,25 @@
+//test typecheck
+
+struct a;
+
+struct y {
+  struct a* b;
+  int x;
+  int y;
+  int * a;
+};
+
+struct x {
+  int x;
+  struct y* z;
+};
+
+int main(){
+  struct x* X = alloc(struct x);
+  X->z = alloc(struct y);
+  X->x = 2;
+  X->z->x = 2;
+  X->z->y = 4;
+  return 2;
+
+}

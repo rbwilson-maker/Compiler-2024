@@ -1,0 +1,263 @@
+//test return 4723
+
+struct hawaii1 {
+  int h;
+};
+
+struct hawaii2 {
+  int h;
+  struct hawaii1* n;
+};
+
+struct hawaii3 {
+  int h;
+  struct hawaii2* n;
+};
+
+struct hawaii4 {
+  int h;
+  struct hawaii3* n;
+};
+
+struct hawaii5 {
+  int h;
+  struct hawaii4* n;
+};
+
+struct hawaii6 {
+  int h;
+  struct hawaii5* n;
+};
+
+struct hawaii7 {
+  int h;
+  struct hawaii6* n;
+};
+
+struct hawaii8 {
+  int h;
+  struct hawaii7* n;
+};
+
+struct hawaii9 {
+  int h;
+  struct hawaii8* n;
+};
+
+struct hawaii10 {
+  int h;
+  struct hawaii9* n;
+};
+
+struct hawaii11 {
+  int h;
+  struct hawaii10* n;
+};
+
+struct hawaii12 {
+  int h;
+  struct hawaii11* n;
+};
+
+struct hawaii13 {
+  int h;
+  struct hawaii12* n;
+};
+
+struct hawaii14 {
+  int h;
+  struct hawaii13* n;
+};
+
+struct hawaii15 {
+  int h;
+  struct hawaii14* n;
+};
+
+struct hawaii16 {
+  int h;
+  struct hawaii15* n;
+};
+
+struct hawaii17 {
+  int h;
+  struct hawaii16* n;
+};
+
+struct hawaii18 {
+  int h;
+  struct hawaii17* n;
+};
+
+struct hawaii19 {
+  int h;
+  struct hawaii18* n;
+};
+
+struct hawaii20 {
+  int h;
+  struct hawaii19* n;
+};
+
+struct hawaii21 {
+  int h;
+  struct hawaii20* n;
+};
+
+struct hawaii22 {
+  int h;
+  struct hawaii21* n;
+};
+
+struct hawaii23 {
+  int h;
+  struct hawaii22* n;
+};
+
+struct hawaii24 {
+  int h;
+  struct hawaii23* n;
+};
+
+struct hawaii25 {
+  int h;
+  struct hawaii24* n;
+};
+
+struct hawaii26 {
+  int h;
+  struct hawaii25* n;
+};
+
+struct hawaii27 {
+  int h;
+  struct hawaii26* n;
+};
+
+struct hawaii28 {
+  int h;
+  struct hawaii27* n;
+};
+
+struct hawaii29 {
+  int h;
+  struct hawaii28* n;
+};
+
+struct hawaii30 {
+  int h;
+  struct hawaii29* n;
+};
+
+struct hawaii31 {
+  int h;
+  struct hawaii30* n;
+};
+
+struct hawaii32 {
+  int h;
+  struct hawaii31* n;
+};
+
+int main()
+{
+  struct hawaii32* n = alloc(struct hawaii32);
+  n->n = alloc(struct hawaii31);
+  n->n->n = alloc(struct hawaii30);
+  n->n->n->n = alloc(struct hawaii29);
+  n->n->n->n->n = alloc(struct hawaii28);
+  n->n->n->n->n->n = alloc(struct hawaii27);
+  n->n->n->n->n->n->n = alloc(struct hawaii26);
+  n->n->n->n->n->n->n->n = alloc(struct hawaii25);
+  n->n->n->n->n->n->n->n->n = alloc(struct hawaii24);
+  n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii23);
+  n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii22);
+  n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii21);
+  n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii20);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii19);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii18);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii17);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii16);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii15);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii14);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii13);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii12);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii11);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii10);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii9);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii8);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii7);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii6);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii5);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii4);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii3);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii2);
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n = alloc(struct hawaii1);
+  
+  n->h = 1;
+  n->n->h = 0;
+  n->n->n->h = 4;
+  n->n->n->n->h = 9;
+  n->n->n->n->n->h = 8;
+  n->n->n->n->n->n->h = 7;
+  n->n->n->n->n->n->n->h = 6;
+  n->n->n->n->n->n->n->n->h = 3;
+  n->n->n->n->n->n->n->n->n->h = 2;
+  n->n->n->n->n->n->n->n->n->n->h = 4;
+  n->n->n->n->n->n->n->n->n->n->n->h = 1;
+  n->n->n->n->n->n->n->n->n->n->n->n->h = 1;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->h = 18;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 19;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 2;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 23;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 4000;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = -1;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 9;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 86;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 4;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 8;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 365;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 2;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 75;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 7;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 34;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 5;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 7;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 8;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 2;
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h = 4;
+  
+  return
+  n->h +
+  n->n->h +
+  n->n->n->h +
+  n->n->n->n->h +
+  n->n->n->n->n->h +
+  n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h +
+  n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->n->h;
+}

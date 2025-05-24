@@ -1,0 +1,11 @@
+//test abort
+
+typedef int foo;
+typedef bool bar;
+
+int main() {
+  foo a = 1;
+  bar b = false;
+  assert((b? 0: 1) == 0);
+  return 0; // unreachable
+}

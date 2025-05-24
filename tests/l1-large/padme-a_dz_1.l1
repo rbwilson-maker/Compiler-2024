@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main ()
+  {
+    int num = 1;
+    int dem = 0;
+    return ((dem%num) + num/dem);
+  }

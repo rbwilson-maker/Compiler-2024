@@ -1,0 +1,51 @@
+//test return 6
+
+// I'm currently at an interview and this is the question they asked
+// Reverses a linked list in-place
+// Woot 122
+
+struct list {
+  int value;
+  struct list* next;
+};
+
+typedef struct list t;
+
+t* reverse_list(t* x) {
+  if (x == NULL) {
+    return x;
+  }
+  t* last = NULL;
+  t* now = x;
+  t* next = x->next;
+  while (now != NULL) {
+    now->next = last;
+    last = now;
+    now = next;
+    if (next != NULL) {
+      next = next->next;
+    }
+  }
+  return last;
+}
+
+int sum_list(t* x) {
+  if (x != NULL) {
+    return x->value + sum_list(x->next);
+  } else {
+    return 0;
+  }
+}
+
+int main() {
+  t* a = alloc(t);
+  t* b = alloc(t);
+  t* c = alloc(t);
+  a->value = 1;
+  a->next = b;
+  b->value = 2;
+  b->next = c;
+  c->value = 3;
+  c->next = NULL;
+  return sum_list(reverse_list(a));
+}

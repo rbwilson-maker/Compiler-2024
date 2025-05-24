@@ -1,0 +1,21 @@
+//test return -1
+struct tree {
+    struct tree* left;
+    struct tree* right;
+    int value;
+};
+
+struct tree *balanced(int depth) {
+    struct tree* res = alloc(struct tree);
+    if (depth > 0) {
+        res->left = balanced(depth - 1);
+        res->right = balanced(depth - 1);
+    }
+    res->value = -1;
+    return res;
+}
+
+int main() {
+    struct tree* big = balanced(15);
+    return big->left->left->left->left->left->left->left->left->left->left->left->left->left->left->value;
+}

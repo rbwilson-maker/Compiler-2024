@@ -1,0 +1,25 @@
+//test abort
+
+bool failassert() {
+    assert(5 + 2 == 7);
+    assert(5 + 1 == 7);
+    return false;
+}
+
+bool divzero() {
+    5 / 5;
+    5 / 4;
+    5 / 3;
+    5 / 2;
+    5 / 1;
+    5 / 0;
+    5 / -1;
+    return true;
+}
+
+int main() {
+    if (failassert() || divzero()) {
+        return 1;
+    }
+    return -1;
+}

@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main () {
+    int y = 0;
+    {y = 1; int x = 1;}
+    for (;y > 0;)
+        y = 0;
+    for (;false;)
+        y /= 0;
+    y /= 0;
+    return y;
+}

@@ -1,0 +1,12 @@
+//test return 2
+int main() {
+  int one = 1;
+  int two = 2;
+  if (two > one) {
+    return two;
+  } else if (one > two) {
+    return one;
+  } else {
+    return 10/0;
+  }
+}

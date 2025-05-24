@@ -1,0 +1,19 @@
+//test memerror
+
+typedef struct ValueArray_t valArr;
+struct ValueArray_t{
+    int id;
+    int[] vals;
+    int size;
+};
+
+
+int main() {
+    valArr* x = alloc(valArr);
+    x->vals = alloc_array(int, 2);
+    x->size = 2;
+    x->vals[3] = 3;
+
+    return x->vals[3]/x->vals[0];
+
+}

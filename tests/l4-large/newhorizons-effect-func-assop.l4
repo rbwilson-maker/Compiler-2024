@@ -1,0 +1,17 @@
+//test return 664
+
+int foo(int[] x, int i) {
+    x[i] = x[i] + 411;
+    return i+1;
+}
+
+int main() {
+    int[] arr = alloc_array(int, 10);
+    for(int i = 0; i < 10; i++){
+        arr[i] = 1;
+    }
+    arr[foo(arr, 4)] += 251; 
+    // arr[4] = 412 NOT 823
+    // arr[5] = 252 
+    return arr[4] + arr[5];
+}

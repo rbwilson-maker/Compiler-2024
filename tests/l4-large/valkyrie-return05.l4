@@ -1,0 +1,13 @@
+//test return 69420
+//
+
+typedef int foo;
+foo func();
+
+int main(){
+	return func();
+}
+
+foo func(){
+	return 69420;
+}

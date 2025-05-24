@@ -1,0 +1,9 @@
+//test error
+
+// Tests adding two pointers
+int main() {
+    int* a = NULL;
+    bool* b = NULL;
+    void* c = a + b;
+    return 0;
+}

@@ -1,0 +1,17 @@
+//test error
+
+typedef struct c foil;
+/*
+* struct c{
+*     int x;
+*     bool y;
+* };
+*/
+
+int main(){
+    foil[] A;
+    foil* B;
+    B = alloc(foil);
+    A = alloc_array(foil,0);
+    return 0;
+}

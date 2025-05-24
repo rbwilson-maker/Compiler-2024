@@ -1,0 +1,7 @@
+//test error
+typedef bool mytype2;
+
+int main () {
+	mytype2 r = true;
+	return r;
+}

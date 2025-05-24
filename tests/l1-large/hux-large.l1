@@ -1,0 +1,78 @@
+//test return 100
+
+int main() {
+  {
+    int x;
+    int y;
+    int z;
+    x = 3;
+    int w = 5;
+    int j = w % x;
+    z = w * j;
+    y = z + x;
+    {
+      z = x - y;
+      y = x + z;
+      w = z % 4;
+      x = 5 + 2;
+      x = z - y + w % x;
+      {
+        z = x - y;
+        y = x + z;
+        w = z % 4;
+        x = 5 + 2;
+        x = z - y + w % x;
+        {
+          z = x - y;
+          y = x + z;
+          w = z % 5;
+          x = 6 + 4;
+          x = z - y + w % x;
+          {
+            z = x - y;
+            y = x + z;
+            w = z % 6;
+            x = 7 + 4;
+            x = z - y + w % x;
+            {
+              z = x - y;
+              y = x + z;
+              w = z % 7;
+              x = 9 + 5;
+              x = z - y + w % x;
+              {
+                z = x - y;
+                y = x + z;
+                w = z % 8;
+                x = 11 + 6;
+                x = z - y + w % x;
+                {
+                  z = x - y;
+                  y = x + z;
+                  w = z % 9;
+                  x = 13 + 7;
+                  x = z - y + w % x;
+                  {
+                    z = x - y;
+                    y = x + z;
+                    w = z % 10;
+                    x = 15 + 8;
+                    x = z - y + w % x;
+                    {
+                      z = x - y;
+                      y = x + z;
+                      w = z % 11;
+                      x  = 17 + 9;
+                      x = z - y + w % x;
+                      return 100;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

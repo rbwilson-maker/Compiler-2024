@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+  int[] A = alloc_array(int, 10);
+  A[*(1 + 1 < 0 ? NULL : NULL)];
+  return 1;
+}
+

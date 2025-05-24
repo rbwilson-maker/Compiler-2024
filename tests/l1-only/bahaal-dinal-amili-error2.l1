@@ -1,0 +1,12 @@
+//test error
+// cannot have any statements after a block
+
+int main()
+{
+  int a = 1;
+  {
+    int b = 2;
+  }
+
+  return a;
+}

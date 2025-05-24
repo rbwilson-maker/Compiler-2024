@@ -1,0 +1,24 @@
+//test typecheck
+
+void spinlock_init(int[] test_arr) {
+    test_arr[0] = 1;
+    return;
+}
+
+void spinlock_lock(int[] test_arr) {
+    while (atomic_swp(test_arr, 0) == 0) {}
+    return;
+}
+
+void spinlock_unlock(int[] test_arr) {
+    atomic_swp(test_arr, 1);
+    return;
+}
+
+int main() {
+    int[] test_arr = alloc_array(int, 1);
+    spinlock_init(test_arr);
+    spinlock_lock(test_arr);
+    spinlock_unlock(test_arr);
+    return 0;
+}

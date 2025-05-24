@@ -1,0 +1,49 @@
+//test return 105
+//recursive sequence.. register allocation could produce 4-6 registers.
+int main()
+{
+  int a = 1;
+  int b = 1;
+  int c = 1;
+  int t = 0;
+  int t2 = 0;
+
+  a = a+b+c;
+ 
+  t = a;
+  a = a+b+c;
+
+  b = t;
+
+  t = a;
+  t2 = b;
+  a = a+b+c;
+  b = t;
+  c = t2;
+
+  t = a;
+  t2 = b;
+  a = a+b+c;
+  b = t;
+  c = t2;
+
+  t = a;
+  t2 = b;
+  a = a+b+c;
+  b = t;
+  c = t2;
+
+  t = a;
+  t2 = b;
+  a = a+b+c;
+  b = t;
+  c = t2;
+
+  t = a;
+  t2 = b;
+  a = a+b+c;
+  b = t;
+  c = t2;
+
+  return a;
+}

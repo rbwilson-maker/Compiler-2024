@@ -1,0 +1,13 @@
+//test error
+
+// void typedefs are illegal, so this should fail.
+typedef int vоid;
+
+vоid f() {
+    return 1;
+}
+
+int main() {
+    int а = f();
+    return a;
+}

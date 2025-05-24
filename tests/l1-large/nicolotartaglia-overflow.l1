@@ -1,0 +1,8 @@
+//test return ~2147483647
+
+int main() {
+    int MAX = 0x7FFFFFFF;
+    int NEG_ONE = 0xFFFFFFFF;
+    int rip = MAX * NEG_ONE;
+    return rip;
+}

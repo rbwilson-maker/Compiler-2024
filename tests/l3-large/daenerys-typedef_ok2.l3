@@ -1,0 +1,9 @@
+//test return 2
+
+typedef int a_type;
+typedef a_type b_type;
+typedef b_type c_type;
+
+int main() {
+   return 2;
+}

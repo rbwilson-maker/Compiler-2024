@@ -1,0 +1,8 @@
+//test error
+// Reserved Dec Keyword
+
+int main() {
+  int x = 10;
+  x *= 20;
+  return x--1;
+}

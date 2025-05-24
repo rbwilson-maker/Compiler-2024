@@ -1,0 +1,24 @@
+//test return 40
+
+//Binary search for num in array 
+
+int findNumber(int[] arr, int size, int num, int i)
+{
+  if (size == 0) return -1;
+  int left = size/2;
+  int right = size - left;
+  int al = arr[i+left];
+  if (al == num) return (i+left);
+  if (al < num) return findNumber(arr, right, num, i+left);
+  else return findNumber(arr, left, num, i);
+}
+
+
+int main() {
+  int[] arr = alloc_array(int, 1000);
+  for (int i = 0; i < 1000; i++)
+  {
+    arr[i] = i;
+  }
+  return findNumber(arr, 1000, 40, 0);
+}

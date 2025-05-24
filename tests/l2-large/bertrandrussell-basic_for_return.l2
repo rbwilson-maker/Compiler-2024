@@ -1,0 +1,12 @@
+//test return 0
+// basic for loop
+
+int main () {
+    int x = 2345346; 
+    x = (((((((((((((((((((((((((((4)))))))))))))))))))))))))));
+    for (x = 1;x<10;x++){
+        return x -1;
+    }
+    return x;
+
+}

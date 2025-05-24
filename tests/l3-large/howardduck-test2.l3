@@ -1,0 +1,18 @@
+//test error
+
+bool maybe_later (int i) {
+    bool ret = true;
+    while (i > 0) {
+        ret = !ret;
+        i--;
+    }
+    return ret;
+}
+
+int main() {
+    while (true) {
+        if (do_something()) {
+            return maybe_later(not_now(10, false));
+        }
+    }
+}

@@ -1,0 +1,20 @@
+//test return -25 
+struct point {
+	int x;
+	int y;
+};
+
+struct line {
+	struct point* start;
+	struct point* end;
+};
+
+int main() {
+	struct line* l = alloc(struct line);
+	l->start = alloc(struct point);
+	l->end = alloc(struct point);
+	l->end->x = -4;
+	l->end->y = 100;
+	int slope = (l->start->y - l->end->y) / (l->start->x - l->end->x);
+	return slope;
+}

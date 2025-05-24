@@ -1,0 +1,9 @@
+//test return 99
+
+int main(){
+    int** a = alloc(int*);
+    int* b = alloc(int);
+    *b = 99;
+    *a = b;
+    return **a;
+}

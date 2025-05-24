@@ -1,0 +1,13 @@
+//test error
+
+int* bruh() {
+    return alloc(int);
+}
+
+int bruh2() {
+    return *bruh();
+}
+
+int main() {
+    return (bruh2() == bruh2());
+}

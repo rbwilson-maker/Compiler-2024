@@ -1,0 +1,5 @@
+//test compile
+
+int main() {
+  return ftoi(fadd(itof(4), itof(3)));
+}

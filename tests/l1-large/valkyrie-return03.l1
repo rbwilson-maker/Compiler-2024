@@ -1,0 +1,7 @@
+//test return 1
+//Int min arithmetic
+
+int main() {
+	int TMIN = -2147483648;
+	return TMIN / (TMIN * -1);
+}

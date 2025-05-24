@@ -1,0 +1,6 @@
+//test error
+int main() {
+  int[] A = alloc_array(int, 42);
+  //@assert \forall {A} (\element = 0);
+  return 0;
+}

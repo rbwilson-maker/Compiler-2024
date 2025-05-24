@@ -1,0 +1,10 @@
+//test return 1
+//test check short circuit eval
+
+int main() {
+    int x = 0;
+    if (x != 0 && 1 / x >= 0) {
+        return 0;
+    }
+    return 1;
+}

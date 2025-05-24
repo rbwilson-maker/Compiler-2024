@@ -1,0 +1,23 @@
+//test return 1997002999
+
+// Calculates sum of cubes manually and with formula
+int manually_calculate(int a, int b) {
+  return (a * a * a) + (b * b * b);
+}
+
+int calculate_formula(int a, int b) {
+  int ab = a + b;
+  int other = (a * a - (a * b) + b * b);
+  return ab * other;
+}
+
+int main() {
+  int toReturn = 0;
+  for (int i = 0; i < 1000; i++) {
+    assert(manually_calculate(i, i + 1) == 
+           calculate_formula(i, i + 1));
+    toReturn = manually_calculate(i, i + 1);
+  }
+  return toReturn;
+}
+

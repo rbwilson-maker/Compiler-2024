@@ -1,0 +1,18 @@
+//test return 242
+
+void modInPlace(int *x, int y) {
+  *x += 5 * y;
+}
+
+void notInPlace(int x, int y) {
+  x += 5 * y;
+}
+
+int main() {
+  int *a = alloc(int);
+  *a = 7;
+  int b = 47;
+  notInPlace(*a, b);
+  modInPlace(a, b);
+  return *a;
+}

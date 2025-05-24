@@ -1,0 +1,19 @@
+//test compile
+
+void cliffside() {
+    if (0 < 1)
+        if (1 < 2) {
+            if (2 < 3)
+                return;
+        }
+        else
+            if (3 < 4)
+                if (4 < 5)
+                    return;
+                else return;
+}
+
+int main() {
+    cliffside();
+    return 100;
+}

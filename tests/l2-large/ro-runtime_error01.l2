@@ -1,0 +1,12 @@
+//test div-by-zero
+// Shift by large amount
+
+int main() {
+  int x = 1;
+  while (x < 50) {
+    x *= 2;
+  }
+
+  int y = 63;
+  return y << x;
+}

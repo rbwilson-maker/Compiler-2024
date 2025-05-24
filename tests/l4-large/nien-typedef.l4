@@ -1,0 +1,24 @@
+//test return 67
+
+struct a {
+   int i;
+   int j;
+   int k;
+};
+
+typedef struct a a_t;
+
+typedef int wow;
+
+wow main() {
+   a_t * amaze = alloc(a_t);
+   wow local_i = amaze->i;
+   wow local_j = amaze->j;
+   wow local_k = amaze->k;
+   assert(local_i == local_j);
+   assert(local_j == local_k);
+   assert(local_i == local_k);
+   assert(local_i == 0);
+   int w = 67;
+   return w;
+}

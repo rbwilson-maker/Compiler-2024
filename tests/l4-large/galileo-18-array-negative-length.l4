@@ -1,0 +1,11 @@
+//test memerror
+// what if we allocate an array with negative length?
+
+struct unit {
+};
+typedef struct unit unit_t;
+
+int main() {
+  unit_t[] arr = alloc_array(unit_t, -1);
+  return 0;
+}

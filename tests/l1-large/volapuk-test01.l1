@@ -1,0 +1,16 @@
+//test return 200
+// Tests integer operators and precedence
+
+int main() {
+    int i = 0;
+    int bf = 1300;
+    i = i + (3 * 21) + (3 * 14);
+    i = i + (3 * 21) + (3 * 14);
+    i = i + (3 * 21) + (3 * 14) + 60;
+    i = i + 3 * 21 + 3 * 14;
+    i = i + 3 * 21 + 3 * 14;
+    i = i + 3 * 21 + 3 * 14 + 60;
+    i = i * 2;
+    i = i - bf;
+    return i;
+}

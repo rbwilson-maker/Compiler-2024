@@ -1,0 +1,7 @@
+//test return 0
+int main() {
+    int x = 5;
+    int y = -1;
+    bool b = x > 10 && x << y > 0;
+    return b ? 1 : 0;
+}

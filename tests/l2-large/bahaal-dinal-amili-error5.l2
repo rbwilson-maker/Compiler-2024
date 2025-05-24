@@ -1,0 +1,11 @@
+//test error
+// variables initialized in for loop should be contained within its own scope
+
+int main()
+{
+  int a = 0;
+  for (int x = 0; x < 5; x++) {
+    a += x;
+  }
+  return a + x;
+}

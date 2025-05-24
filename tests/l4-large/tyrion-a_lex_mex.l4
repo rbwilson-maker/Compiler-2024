@@ -1,0 +1,10 @@
+//test return 1
+
+typedef int into;
+into id(int v) {
+    return v;
+}
+
+int main() {
+    return id(1);
+}

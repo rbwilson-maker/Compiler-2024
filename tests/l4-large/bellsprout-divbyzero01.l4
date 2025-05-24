@@ -1,0 +1,33 @@
+//test div-by-zero
+
+void swap1(int* a, int* b) {
+  *a ^= *b;
+  *b ^= *a;
+  *a ^= *b;
+}
+
+void swap2(int* a, int* b) {
+  int t = *a;
+  *a = *b;
+  *b = t;
+}
+
+int main() {
+  int* a = alloc(int);
+  int* b = alloc(int);
+  int** c = alloc(int*);
+  *c = alloc(int);
+  int** d = alloc(int*);
+  *d = alloc(int);
+
+  *a = 123;
+  *b = 456;
+  **c = *a;
+  **d = *b;
+  swap1(a, b);
+  swap2(*c, *d);
+  return (*a - **c) / (**d - *b);
+  return *a**b***c***d;
+}
+
+

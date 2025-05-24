@@ -1,0 +1,18 @@
+//test abort
+struct nouse;
+struct nouse 
+{
+    int i;
+    int* j;
+    bool* s;
+};
+int main()
+{
+    int i=0;
+    while(true){
+        int j = 10<<1;
+        i++;
+        assert(i<j);
+    }
+    return 2147483648;
+}

@@ -1,0 +1,14 @@
+//test return 1
+// test the behavior of shifting
+int main() {
+    int i = 37;
+    for (int j = 0; j < 5; j++) {
+        i >>= 1;
+    } // i = 37 >> 5 = 1
+    int l = i + (i >> 5); // j = 1 + 0 = 1
+
+    int k = -1;
+    k >>= 7; // k = -1 >> 7 = -1
+
+    return i + l + k; // 1 + 1 + (-1) = 1
+}

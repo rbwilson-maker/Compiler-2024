@@ -1,0 +1,183 @@
+//test return 42
+//strassen matrix multiply.
+
+typedef int[][] mat2;
+
+// Returns an integer, not necessarily positive
+int hash (int key) {
+    int a = 1664525; int b = 1013904223;
+    int r = key;
+    int h = 0;
+    for (int i = 0; i < 30; i++){
+        h = r*h + i;
+        r = r*a + b;
+    }
+    return h;
+}
+
+mat2 someMatrix(int dim) {
+    mat2 randos = alloc_array(int[], dim);
+    for (int i = 0; i < dim; i++) {
+        randos[i] = alloc_array(int, dim);
+        for (int j = 0; j < dim; j++) {
+            randos[i][j] = hash(i * j);
+        }
+    }
+    return randos;
+}
+
+mat2 cleanMatrix(int dim) {
+    mat2 clean = alloc_array(int[], dim);
+    for (int i = 0; i < dim; i++) {
+        clean[i] = alloc_array(int, dim);
+    }
+    return clean;
+}
+
+
+// Adds the two dim x dim (sub)matrices starting at (row_A, col_A) of A and (row_B, col_B) of B, storing the result in 
+// the dim x dim submatrix of result starting from (row_0, col_0).
+void sum(int dim, mat2 A, int row_A, int col_A,
+                  mat2 B, int row_B, int col_B, 
+                  mat2 result, int row_0, int col_0) {
+    for (int row = 0; row < dim; row++) {
+        for (int col = 0; col < dim; col++) {
+            result[row_0 + row][col_0 + col]  = A[row_A + row][col_A + col] + B[row_B + row][col_B + col];
+        }
+    }
+}
+
+// C = A - B
+void diff(int dim, mat2 A, int row_A, int col_A,
+                   mat2 B, int row_B, int col_B, 
+                   mat2 result, int row_0, int col_0) {
+    for (int row = 0; row < dim; row++) {
+        for (int col = 0; col < dim; col++) {
+            result[row_0 + row][col_0 + col]  = A[row_A + row][col_A + col] - B[row_B + row][col_B + col];
+        }
+    }
+}
+
+// multiplication of X and Y, storing the results in scratch2. scratch1 and scratch2 are also for storing temporary results during
+// computation. doesn't modify X or Y.
+void strassen(int dim, mat2 X, int row_X, int col_X,
+                        mat2 Y, int row_Y, int col_Y,
+                        mat2 scratch1, int row_s1, int col_s1,
+                        mat2 scratch2, int row_s2, int col_s2) {
+    if (dim == 2) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                scratch2[row_s2 + i][col_s2 + j] = 0;
+                for (int k = 0; k < 2; k++) {
+                    scratch2[row_s2 + i][col_s2 + j] += X[row_X + i][col_X + k] * Y[row_Y + k][col_Y + j];
+                }
+            }
+        }
+        return;    
+    }
+
+    int half = dim >> 1;
+    // using reference http://www.cc.gatech.edu/~ninamf/Algos11/lectures/lect0131.pdf
+    // compute q1
+    sum(half, X, row_X, col_X, X, row_X + half, col_X + half, scratch2, row_s2 + half, col_s2);
+    sum(half, Y, row_Y, col_Y, Y, row_Y + half, col_Y + half, scratch2, row_s2 + half, col_s2 + half);
+    strassen(half, scratch2, row_s2 + half, col_s2, scratch2, row_s2 + half, col_s2 + half, 
+                   scratch2, row_s2, col_s2, scratch1, row_s1, col_s1);
+    // compute q2
+    diff(half, Y, row_Y + half, col_Y, Y, row_Y, col_Y, scratch2, row_s2, col_s2 + half);
+    strassen(half, X, row_X + half, col_X + half, scratch2, row_s2, col_s2 + half, 
+                      scratch1, row_s1 + half, col_s1, scratch1, row_s1, col_s1 + half);
+    // compute q3
+    diff(half, X, row_X, col_X + half, X, row_X + half, col_X + half, scratch1, row_s1 + half, col_s1);
+    sum(half, Y, row_Y + half, col_Y, Y, row_Y + half, col_Y + half, scratch1, row_s1 + half, col_s1 + half);
+    strassen(half, scratch1, row_s1 + half, col_s1, scratch1, row_s1 + half, col_s1 + half, 
+                    scratch2, row_s2 + half, col_s2, scratch2, row_s2, col_s2);
+    // compute q4
+    sum(half, X, row_X, col_X, X, row_X, col_X + half, scratch1, row_s1 + half, col_s1);
+    strassen(half, scratch1, row_s1 + half, col_s1, Y, row_Y + half, col_Y + half,
+                    scratch2, row_s2 + half, col_s2, scratch2, row_s2, col_s2 + half);
+    // compute q5
+    sum(half, X, row_X + half, col_X, X, row_X + half, col_X + half, scratch1, row_s1 + half, col_s1 + half);
+    strassen(half, scratch1, row_s1 + half, col_s1 + half, Y, row_Y, col_Y, 
+                    scratch2, row_s2 + half, col_s2, scratch1, row_s1 + half, col_s1);
+    // do top-left result computation, storing in scratch2
+    diff(half, scratch2, row_s2, col_s2, scratch2, row_s2, col_s2 + half, scratch2, row_s2, col_s2);
+    sum(half, scratch2, row_s2, col_s2, scratch1, row_s1, col_s1, scratch2, row_s2, col_s2);
+    sum(half, scratch2, row_s2, col_s2, scratch1, row_s1, col_s1 + half, scratch2, row_s2, col_s2);
+    
+    // compute q6
+    diff(half, Y, row_Y, col_Y + half, Y, row_Y + half, col_Y + half, scratch2, row_s2 + half, col_s2 + half);
+    strassen(half, X, row_X, col_X, scratch2, row_s2 + half, col_s2 + half, 
+                    scratch2, row_s2 + half, col_s2, scratch1, row_s1 + half, col_s1 + half);
+
+    // do bottom-left result computation, storing in scratch2
+    sum(half, scratch1, row_s1, col_s1 + half, scratch1, row_s1 + half, col_s1, scratch2, row_s2 + half, col_s2);
+
+    // do top-right result computation, storing in scratch2
+    sum(half, scratch2, row_s2, col_s2 + half, scratch1, row_s1 + half, col_s1 + half, scratch2, row_s2, col_s2 + half);
+
+    // partially compute bottom-right result, storing in top-left of scratch1, freeing rest of scratch1
+    diff(half, scratch1, row_s1, col_s1, scratch1, row_s1 + half, col_s1, scratch1, row_s1, col_s1);
+    sum(half, scratch1, row_s1, col_s1, scratch1, row_s1 + half, col_s1 + half, scratch1, row_s1, col_s1);
+
+    // compute q7
+    diff(half, X, row_X + half, col_X, X, row_X, col_X, scratch1, row_s1, col_s1 + half);
+    sum(half, Y, row_Y, col_Y, Y, row_Y, col_Y + half, scratch1, row_s1 + half, col_s1);
+    strassen(half, scratch1, row_s1, col_s1 + half, scratch1, row_s1 + half, col_s1,
+                    scratch1, row_s1 + half, col_s1 + half, scratch2, row_s2 + half, col_s2 + half);
+
+    // finish computing bottom-right, storing in scratch2
+    sum(half, scratch1, row_s1, col_s1, scratch2, row_s2 + half, col_s2 + half, scratch2, row_s2 + half, col_s2 + half);
+
+    // AAAND WE'RE DONE !! :)
+}
+
+// dumb matrix multiply that stores the results in A
+void dumb(int dim, mat2 A, mat2 B) {
+
+    mat2 C = alloc_array(int[], dim);
+    for (int i = 0; i < dim; i++) {
+        C[i] = alloc_array(int, dim);
+    }
+    for (int row = 0; row < dim; row++) {
+        for (int col = 0; col < dim; col++) {
+            for (int k = 0; k < dim; k++) {
+                C[row][col] += A[row][k] * B[k][col];
+            }
+        }
+    }
+
+    for (int row = 0; row < dim; row++) {
+        for (int col = 0; col < dim; col++) {
+            A[row][col] = C[row][col];
+        }
+    }
+}
+
+int countMatches(int dim, mat2 A, mat2 B) {
+    int matches = 0;
+    for (int i = 0; i < dim; i++) {
+        for (int j = 0; j < dim; j++) {
+            if (A[i][j] == B[i][j]) matches++;
+        }
+    }
+    return matches;
+}
+
+
+int main() {
+    int DIM = 1 << 8;
+    mat2 theradio = someMatrix(DIM);
+    mat2 remindsme = someMatrix(DIM);
+    mat2 ofmyhome = cleanMatrix(DIM);
+    mat2 faraway = cleanMatrix(DIM);
+
+    strassen(DIM, theradio, 0, 0, remindsme, 0, 0, 
+                    ofmyhome, 0, 0, faraway, 0, 0);
+    dumb(DIM, theradio, remindsme);
+
+    if (countMatches(DIM, theradio, faraway) == DIM * DIM) {    
+        return 42;
+    }
+    return 0;
+}

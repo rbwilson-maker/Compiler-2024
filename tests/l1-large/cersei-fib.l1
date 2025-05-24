@@ -1,0 +1,13 @@
+//test return 21
+
+int main() {
+  int zero = 0;
+  int one = 1;
+  int two = zero + one;
+  int three = one + two;
+  int four = two + three;
+  int five = three + four;
+  int six = four + five;
+  int seven = five + six;
+  return six + seven;
+}

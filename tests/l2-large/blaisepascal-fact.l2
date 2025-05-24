@@ -1,0 +1,9 @@
+//test return 720
+
+int main() {
+  int base = 1;
+  for (int i = 1; i <= 6; i++) {
+    base *= i;
+  }
+  return base;
+}

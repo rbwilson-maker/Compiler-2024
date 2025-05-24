@@ -1,0 +1,14 @@
+//test return 1
+
+bool nothing(int a, int b, int c);
+void sum(int a, int b);
+
+int main() {
+    sum(3, 2);
+
+    return 1;
+}
+
+void sum(int a, int b) {
+    a + b;
+}

@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+    int r = 2;
+    int f = r * r - 5 * r + 6; // f = 0
+    int g = f * 5; // g = 0
+    int h = r / f; // exception
+    return g + h;
+}

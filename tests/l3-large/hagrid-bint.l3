@@ -1,0 +1,14 @@
+//test return 0;
+//whenever "bint" appears imagine the "b" is the B emoji
+
+typedef int bint;
+
+bint main(){
+  int x = 0;
+  bint y = 1;
+  if (x < y) {
+    return x;
+  } else {
+    return y;
+  }
+}

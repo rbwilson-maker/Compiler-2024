@@ -1,0 +1,9 @@
+//test abort
+// asserts false in the main function
+
+int main () {
+    int x = 0;
+    int y = 1;
+    assert(false);
+    return (y/x);
+}

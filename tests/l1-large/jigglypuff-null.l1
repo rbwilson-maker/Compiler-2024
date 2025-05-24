@@ -1,0 +1,24 @@
+//test error
+
+/* Null Keyword Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, September 13, 2015 at 09:27:12 AM 
+ *
+ * This test tests whether the compiler detects that the keyword 'NULL'
+ * is being used as an identifier.
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int NULL;
+
+    x = 4;
+    y = 3;
+    NULL = x + y;
+
+    return NULL;
+}

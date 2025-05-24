@@ -1,0 +1,20 @@
+//test abort
+//Failed assertion
+
+int min(int[] xs, int l) {
+    assert(l > 0);
+    int min = xs[0];
+    for (int i = 1; i < l; i++)
+    {
+        if (xs[i] < min) {
+            min = xs[i];
+        }
+    }
+    return min;
+}
+
+int main() {
+    int[] t = alloc_array(int, 0);
+
+    return min(t, 0);
+}

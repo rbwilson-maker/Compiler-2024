@@ -1,0 +1,10 @@
+//test abort
+
+int main() {
+    fpt o = itof(12903);
+    fpt k = itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(12344))))))))))))))))));
+
+    assert(fless(o, k));
+
+    return 0;
+}

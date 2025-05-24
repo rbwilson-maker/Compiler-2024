@@ -1,0 +1,13 @@
+//test return 12
+
+int main() {
+	int i;
+	int*[] A = alloc_array(int*, 3);
+  int* a = alloc(int);
+  int* b = alloc(int);
+  *a = 5;
+  *b = 7;
+  A[0] = a;
+  A[1] = b;
+	return *(A[0]) + *(A[1]);
+}

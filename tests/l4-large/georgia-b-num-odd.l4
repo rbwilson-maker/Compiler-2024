@@ -1,0 +1,38 @@
+//test return 500
+
+struct Random {
+    int cur;
+};
+
+typedef struct Random Random;
+
+void seed(Random *rand, int seed) {
+    rand->cur = seed;
+}
+
+int rand(Random *r) {
+    r->cur = r->cur * 1103515245 + 12345;
+    return r->cur;
+}
+
+int main() {
+    Random *r = alloc(Random);
+    seed(r, 1337);
+
+    int size = 1000;
+
+    int[] array = alloc_array(int, size);
+
+    for (int i = 0; i < size; i++) {
+        array[i] = rand(r);
+    }
+
+    int odds = 0;
+    for (int i = 0; i < size; i++) {
+        if (array[i] % 2 != 0) {
+            odds++;
+        }
+    }
+
+    return odds;
+}

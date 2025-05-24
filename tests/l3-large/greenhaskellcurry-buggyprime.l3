@@ -1,0 +1,40 @@
+//test abort
+
+/*
+    buggyPrime: Tries to verify the correctness of a buggy isPrime
+    implementation. Should fail on the very last assert only.
+
+    Tests:
+    - Abort
+    - Conditioning on the results of function calls.
+*/
+
+bool isPrime(int n) {
+    if (n <= 2) {
+        return false;
+    }
+
+    for (int f = 2; f < n; f++) {
+        if (n % f == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main() {
+    assert(isPrime(15217));
+    assert(isPrime(3));
+    assert(isPrime(5));
+    assert(!(isPrime(15213)));
+    assert(isPrime(199));
+    assert(isPrime(9649));
+    assert(isPrime(9661));
+    assert(!isPrime(9657));
+
+    // Should fail here!
+    assert(isPrime(2));
+
+    return 0;
+}

@@ -1,0 +1,18 @@
+//test return 1767263190
+
+
+// calculates the nth catalan number, which is the same as the number of strings with n matching paren pairs
+int parenmatching(int n) {
+  if (n <= 1) {
+    return 1;
+  }
+  int count = 0;
+  for (int i = 0; i < n; i++) {
+    count += parenmatching(i) * parenmatching(n - 1 - i);
+  }
+  return count;
+}
+
+int main() { 
+  return parenmatching(19);
+}

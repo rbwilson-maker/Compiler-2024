@@ -1,0 +1,16 @@
+//test return 3
+
+int loop (int i) {
+  return i == 0 ? 0 : loop (i - 1);
+}
+
+
+int main () {
+  int i;
+  int x;
+  i = 10 * 10 * 10;
+  for(; i > 0; i--) loop(i);
+  x = 3; return x;
+}
+
+

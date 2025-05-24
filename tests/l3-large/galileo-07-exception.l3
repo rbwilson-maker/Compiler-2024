@@ -1,0 +1,14 @@
+//test div-by-zero
+// shift operation out of bound
+
+void overflow(int x, int y) {
+    x >> (x + y);
+}
+
+int main() {
+    int x = 100;
+    int y = 10;
+
+    overflow(x, y);
+    return 0;
+}

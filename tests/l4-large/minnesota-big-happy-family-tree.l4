@@ -1,0 +1,39 @@
+//test return 4194260
+
+struct tree {
+  int data;
+  struct tree* left;
+  struct tree* right;
+};
+
+struct tree* summonTreebeard(int minionNum, struct tree* body) {
+  if (minionNum == 0) {
+    return body;
+  }
+  struct tree* lChild = alloc(struct tree);
+  lChild->data = minionNum;
+  struct tree* rChild = alloc(struct tree);
+  rChild->data = minionNum;
+  (*body).left = summonTreebeard(minionNum-1, lChild);
+  body->right = summonTreebeard(minionNum-1, rChild);
+  return body;
+}
+
+int getPower(struct tree* treebeard) {
+  if (treebeard == NULL) {
+    return 0;
+  }
+  else {
+    int lPower = getPower(treebeard->left);
+    int rPower = getPower(treebeard->right);
+    return treebeard->data+lPower+rPower;
+  }
+}
+
+int main() {
+  int minionNum = 20;
+  struct tree* root = alloc(struct tree);
+  root->data = 0;
+  struct tree* treebeard = summonTreebeard(minionNum, root);
+  return getPower(treebeard);
+}

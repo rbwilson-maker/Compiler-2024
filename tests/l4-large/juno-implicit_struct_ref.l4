@@ -1,0 +1,7 @@
+//test error
+
+struct b;
+
+int main () {
+    return b->x;
+}

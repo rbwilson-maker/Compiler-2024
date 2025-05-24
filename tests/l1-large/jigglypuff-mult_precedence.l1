@@ -1,0 +1,24 @@
+//test return 8
+
+/* Multiply Precedence Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Saturday, September 12, 2015 at 04:26:53 PM EDT
+ *
+ * This test tests that the multply operator gets the proper precedence over
+ * the addition and subtraction operators.
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int z;
+
+    x = 4+2 * 5;
+    y = 4-2 * 5;
+    z = x + y;
+
+    return z;
+}

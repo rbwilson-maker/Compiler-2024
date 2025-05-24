@@ -1,0 +1,35 @@
+//test return 0
+//Returns boolean logical && folding of a ternary tree of boolean nodes.
+typedef struct tern_node* node;
+struct tern_node
+{
+  bool val;
+  node left;
+  node right;
+  node center;
+};
+
+bool reduce (node N)
+{
+  if (N == NULL) return true;
+  return N->val && reduce(N->left) && reduce(N->right) && reduce(N->center);
+}
+
+int main()
+{
+  node root = alloc(struct tern_node);
+  root->val = true;
+  
+  node left = alloc(struct tern_node);
+  left->val = true;
+
+  node left_right = alloc(struct tern_node);
+  left_right->val = true;
+
+  
+  node center = alloc(struct tern_node); //default value should be false
+
+  left->right = left_right;
+  root->left = left; root->center = center;
+  return reduce(root) ? 1 : 0;
+}

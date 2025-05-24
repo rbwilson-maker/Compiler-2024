@@ -1,0 +1,30 @@
+//test return 1
+
+/*
+    isPrime: Tests whether a given number is prime
+        Returns 0: Not prime
+        Returns 1: Prime
+
+    Yes, this is just: 
+    https://www.cs.cmu.edu/~15112-f22/notes/notes-loops.html#isPrime
+
+    Tests:
+    - Branching
+    - For loops
+*/
+
+int main() {
+    int n = 15217;
+
+    if (n < 2) {
+        return 0;
+    }
+
+    for (int factor = 2; factor < n; factor++) {
+        if (n % factor == 0) {
+            return 0;
+        }
+    }
+
+    return 1;
+}

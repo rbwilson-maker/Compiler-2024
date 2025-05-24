@@ -1,0 +1,9 @@
+//test return 8
+// use double library functions
+
+int main(){
+  dub x = itod(3);
+  dub y = itod(7);
+  dub z = dmul(x, y);
+  return dtoi(ddiv(dadd(x, z), x));
+}

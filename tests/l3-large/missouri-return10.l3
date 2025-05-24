@@ -1,0 +1,10 @@
+//test return 5
+// Dumb recursion
+
+int dumb(int x) {
+  if (x > 10000) return 5; else return dumb(x + 1);
+}
+
+int main () {
+  return dumb (-5);
+}

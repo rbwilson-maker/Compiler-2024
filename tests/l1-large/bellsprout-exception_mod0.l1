@@ -1,0 +1,15 @@
+//test div-by-zero
+// modula by zero
+int main(){
+    int a;
+    int b;
+    int c;
+    int d;
+    a = 1;
+    b = 1;
+    c = 1;
+    d = 1;
+    d = d - c;
+    b = b - a;
+    return d % b;
+}

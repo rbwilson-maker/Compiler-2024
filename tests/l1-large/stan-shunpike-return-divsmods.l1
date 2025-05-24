@@ -1,0 +1,13 @@
+//test return 65
+
+int main(){
+    int x = 37;
+    x = 37 * 10 + x;
+    int y = x * x;
+    int z = 123;
+    y /= z;
+    y %= z;
+    y = y + (x / 4);
+    int a = y % (x - 331);
+    return a;
+}

@@ -1,0 +1,16 @@
+//test div-by-zero
+// test divide by zero
+
+int main() {
+    int x1;
+    int x2; 
+    int x3;
+    int x4;
+
+    x1 = 1;
+    x2 = x1 + x1;
+    x3 = x2 + x1;
+    x4 = x1 / (x3+x2+x1); 
+    x4 = x1 / x4;
+    return x4;
+}

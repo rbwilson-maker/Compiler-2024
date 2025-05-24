@@ -1,0 +1,18 @@
+//test memerror
+//function call updates memory, so second access is out of bounds
+
+int f(int x, int *p){
+  *p += x;
+  return *p;
+ 
+}
+
+int main(){
+  int[] A = alloc_array(int, 3);
+  int *p = alloc(int);
+  A[f(2,p)];
+  A[f(2,p)];
+  return 0;
+
+
+}

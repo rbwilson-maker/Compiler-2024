@@ -1,0 +1,13 @@
+//test return 17
+
+int fib3(int n) {
+  if (n <= 2) {
+    return 1;
+  } else {
+    return fib3(n - 1) + fib3(n - 2) + fib3(n - 3);
+  }
+}
+
+int main() {
+  return fib3(6);
+}

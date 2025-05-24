@@ -1,0 +1,7 @@
+//test typecheck
+// Uses the header01.h0 header file
+
+int main() {
+  cat myCat = false;
+  return countPets(myCat);
+}

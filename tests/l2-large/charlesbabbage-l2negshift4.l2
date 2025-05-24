@@ -1,0 +1,13 @@
+//test div-by-zero
+//shifts by negative
+
+int main() {
+    int y = 0xffff;
+    int x = 12343213;
+    int i = 3;
+    while (y < x) {
+        x >>= i;
+        i--;
+    }
+    return x;
+}

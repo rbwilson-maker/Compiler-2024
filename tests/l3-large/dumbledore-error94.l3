@@ -1,0 +1,10 @@
+//test error
+// Try to make a typedef with the name of a predefined fixed type
+
+typedef int bool;
+
+int main() {
+    bool a = 1;
+    int b = 1;
+    return a + b;
+}

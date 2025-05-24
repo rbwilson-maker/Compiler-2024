@@ -1,0 +1,14 @@
+//test return 0
+
+int[] idk(int n) {
+  int[] arr = alloc_array(int, n);
+  for (int i = 0; i < 2; i++) {
+    arr[i] = i;
+  }
+  return arr;
+}
+
+int main() {
+  int[] arr = idk(3);
+  return arr[2];
+}

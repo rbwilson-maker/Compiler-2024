@@ -1,0 +1,24 @@
+//test return 114329881
+
+struct list {
+  int data;
+  struct list* next;
+};
+
+int main() {
+  struct list* head = alloc(struct list);
+  struct list* node = head;
+  for(int i = 0; i < 15122; i++) {
+    node->data = i;
+    node->next = alloc(struct list);
+    node = node->next;
+  }
+
+  int sum = 0;
+  while(head != NULL) {
+    sum += head->data;
+    head = head->next;
+  }
+
+  return sum;
+}

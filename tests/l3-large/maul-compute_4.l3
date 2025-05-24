@@ -1,0 +1,14 @@
+//test return 4
+// test passed asserts don't fail incorrectly
+
+bool f(bool x) {
+    assert(true);
+    assert(1 == 1);
+    assert(true ? true : false);
+    assert(x);
+    return x;
+}
+
+int main() {
+    return f(true) ? 4 : -1;
+}

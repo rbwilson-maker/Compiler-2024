@@ -1,0 +1,24 @@
+//test return 0
+// multiple deref
+int main() {
+	int* p = alloc(int);
+	int** p2 = alloc(int*);
+	int*** p3 = alloc(int**);
+	int**** p4 = alloc(int***);
+
+	int* q = alloc(int);
+	int** q2 = alloc(int*);
+
+	*p = 1;
+	*p2 = p;
+	*p3 = p2;
+	*p4 = p3;
+
+	*q = 20;
+	*q2 = q;
+
+	****p4 = **q2;
+	**p4 = q2;
+
+	return ****p4 - 20;
+}

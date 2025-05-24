@@ -1,0 +1,13 @@
+//test memerror
+
+// dereferencing a null pointer
+
+int main() {
+  int* myPtr = alloc(int);
+  *myPtr = 4;
+  for (int i = 0; i < 5; i++) {
+    if (i == *myPtr) 
+      myPtr = NULL;
+  }
+  return *myPtr;
+}

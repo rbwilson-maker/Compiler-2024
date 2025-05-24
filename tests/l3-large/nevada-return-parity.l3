@@ -1,0 +1,16 @@
+//test return 0
+// parity test using mutual recursion
+
+bool is_odd(int n);
+
+bool is_even(int n) {
+    if (n == 0) return true;
+    else return is_odd(n - 1);
+}
+bool is_odd(int n) {
+    return n == 0 ? false : is_even(n - 1);
+}
+
+int main() {
+    return is_even(10001) ? 1 : 0;
+}

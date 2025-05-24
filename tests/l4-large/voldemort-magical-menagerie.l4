@@ -1,0 +1,63 @@
+//test return 0
+struct you {
+    int value;
+};
+
+struct think {
+    int value;
+    struct you inner;
+};
+
+struct the {
+    int value;
+    struct think inner;
+};
+
+struct dead {
+    int value;
+    struct the inner;
+};
+
+struct we {
+    int value;
+    struct dead inner;
+};
+
+struct loved {
+    int value;
+    struct we inner;
+};
+
+struct ever {
+    int value;
+    struct loved inner;
+};
+
+struct truly {
+    int value;
+    struct ever inner;
+};
+
+struct leave {
+    int value;
+    struct truly inner;
+};
+
+struct us {
+    int value;
+    struct leave inner;
+};
+
+int main() {
+    struct us* x = alloc(struct us);
+    assert((*x).value == 0);
+    assert((*x).inner.value == 0);
+    assert((*x).inner.inner.value == 0);
+    assert((*x).inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.inner.inner.inner.inner.value == 0);
+    return 0;
+}

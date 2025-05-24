@@ -1,0 +1,19 @@
+//test memerror
+
+struct A {
+    int a;
+    int b;
+    int c;
+};
+
+struct B {
+    struct A *a;
+    int w;
+};
+
+int main () {
+    struct B *b = alloc(struct B);
+    b->a->b = 3;
+    b->a->a = 6;
+    return (b->w);
+}

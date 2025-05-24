@@ -1,0 +1,17 @@
+//test return 4
+//if-else parsing
+
+int main() {
+  int x = 0;
+  int z = 4;
+  int y;
+  if (x < 0) y = 6;
+  else if (x > 0) y = 5;
+  else if (z > 3) {
+    if (z < 7) y = 4;
+    else y = 3;
+  }
+  else y = 2;
+
+  return y;
+}

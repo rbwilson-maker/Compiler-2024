@@ -1,0 +1,13 @@
+//test error
+
+typedef bool b;
+typedef int i;
+
+i main () {
+i i;
+for (i = 0; i < 2; i++)
+{
+return 7;
+}
+return 3;
+}

@@ -1,0 +1,234 @@
+//test return 42
+typedef int and;
+typedef and love;
+typedef int just;
+typedef love give;
+typedef just down;
+typedef and say;
+typedef bool im;
+typedef say are;
+typedef are want;
+typedef and any;
+typedef any lie;
+typedef and what;
+typedef im from;
+typedef and no;
+typedef are thinking;
+typedef are make;
+typedef say commitments;
+typedef want desert;
+typedef down strangers;
+typedef no to;
+typedef lie other;
+typedef from you;
+typedef bool tell;
+typedef commitments do;
+typedef do we;
+typedef tell full;
+typedef tell run;
+typedef strangers around;
+typedef are get;
+typedef around rules;
+typedef you never;
+typedef no gonna;
+typedef do hurt;
+typedef what how;
+typedef int understand;
+typedef gonna know;
+typedef say guy;
+typedef hurt a;
+typedef rules wouldnt;
+typedef never i;
+typedef do of;
+typedef desert gotta;
+typedef any cry;
+typedef int up;
+typedef cry this;
+typedef gotta so;
+typedef other goodbye;
+typedef you let;
+typedef strangers the;
+typedef from feeling;
+
+/* Rickursive types must be rolled and unrolled */
+struct rick;
+typedef struct rick* rick;
+
+struct rick {
+rick up;
+rick thinking;
+wouldnt* garbage_0;
+rick tell;
+so[] garbage_1;
+of garbage_2;
+rick the;
+we[] garbage_3;
+a[] garbage_4;
+int* garbage_5;
+guy[] garbage_6;
+rick love;
+rick hurt;
+rick are;
+commitments* garbage_7;
+rick what;
+the garbage_8;
+know* garbage_9;
+want[] garbage_10;
+hurt[] garbage_11;
+rick how;
+rick give;
+rick no;
+how garbage_12;
+rick this;
+get* garbage_13;
+what garbage_14;
+rick lie;
+around[] garbage_15;
+int garbage_16;
+rick rules;
+rick cry;
+bool garbage_17;
+rick full;
+gotta[] garbage_18;
+rick wouldnt;
+rick gotta;
+give garbage_19;
+rick around;
+the garbage_20;
+to[] garbage_21;
+a[] garbage_22;
+say[] garbage_23;
+love[] garbage_24;
+rick want;
+goodbye* garbage_25;
+how garbage_26;
+rick and;
+do* garbage_27;
+rick strangers;
+gotta* garbage_28;
+up garbage_29;
+rick you;
+rick desert;
+from* garbage_30;
+rick gonna;
+the* garbage_31;
+rick so;
+rick never;
+bool garbage_32;
+understand* garbage_33;
+rick of;
+guy[] garbage_34;
+rick from;
+rick down;
+tell* garbage_35;
+rick run;
+around garbage_36;
+rick do;
+just garbage_37;
+feeling* garbage_38;
+rick commitments;
+rick feeling;
+rick im;
+rick make;
+rick any;
+rick a;
+a garbage_39;
+rick goodbye;
+rick let;
+to[] garbage_40;
+rick know;
+rick i;
+rick get;
+rick understand;
+any[] garbage_41;
+other* garbage_42;
+rick say;
+rick just;
+this* garbage_43;
+rick we;
+rick to;
+rick other;
+this garbage_44;
+up garbage_45;
+what garbage_46;
+rick guy;
+int end;};
+
+rick roll();
+
+int main(){
+rick astley = roll();
+return astley->
+we->are->no->strangers->to->love->
+you->know->the->rules->and->so->do->i->
+a->full->commitments->what->im->thinking->of->
+you->wouldnt->get->this->from->any->other->guy->
+i->just->want->to->tell->you->how->im->feeling->
+gotta->make->you->understand->
+
+never->gonna->give->you->up->never->gonna->let->you->down->
+never->gonna->run->around->and->desert->you->
+never->gonna->make->you->cry->never->gonna->say->goodbye->
+never->gonna->tell->a->lie->and->hurt->you
+->end;
+}
+
+
+
+rick roll(){
+rick rolled = alloc(struct rick);
+rolled->end = 42;
+
+rolled->up = rolled;
+rolled->thinking = rolled;
+rolled->tell = rolled;
+rolled->the = rolled;
+rolled->love = rolled;
+rolled->hurt = rolled;
+rolled->are = rolled;
+rolled->what = rolled;
+rolled->how = rolled;
+rolled->give = rolled;
+rolled->no = rolled;
+rolled->this = rolled;
+rolled->lie = rolled;
+rolled->rules = rolled;
+rolled->cry = rolled;
+rolled->full = rolled;
+rolled->wouldnt = rolled;
+rolled->gotta = rolled;
+rolled->around = rolled;
+rolled->want = rolled;
+rolled->and = rolled;
+rolled->strangers = rolled;
+rolled->you = rolled;
+rolled->desert = rolled;
+rolled->gonna = rolled;
+rolled->so = rolled;
+rolled->never = rolled;
+rolled->of = rolled;
+rolled->from = rolled;
+rolled->down = rolled;
+rolled->run = rolled;
+rolled->do = rolled;
+rolled->commitments = rolled;
+rolled->feeling = rolled;
+rolled->im = rolled;
+rolled->make = rolled;
+rolled->any = rolled;
+rolled->a = rolled;
+rolled->goodbye = rolled;
+rolled->let = rolled;
+rolled->know = rolled;
+rolled->i = rolled;
+rolled->get = rolled;
+rolled->understand = rolled;
+rolled->say = rolled;
+rolled->just = rolled;
+rolled->we = rolled;
+rolled->to = rolled;
+rolled->other = rolled;
+rolled->guy = rolled;
+return rolled;
+}
+

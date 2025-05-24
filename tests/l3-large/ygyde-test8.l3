@@ -1,0 +1,12 @@
+//test error
+
+int tru() {
+    assert(false);
+    return false;
+}
+
+// basic assert test
+int main() {
+    assert(false);
+    return 0;
+}

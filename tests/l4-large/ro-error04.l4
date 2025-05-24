@@ -1,0 +1,9 @@
+//test memerror
+// don't index into arrays with a negative number
+
+int main() {
+  int *x = alloc(int);
+  *x = 10 - 11;
+  int[] a = alloc_array(int, *x);
+  return a[-1];
+}

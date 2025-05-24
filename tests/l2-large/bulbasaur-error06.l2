@@ -1,0 +1,8 @@
+//test error
+// return in a for but not after
+
+int main() {
+  for(int x = 0; x < 0; x++) {
+    return 5;
+  }
+}

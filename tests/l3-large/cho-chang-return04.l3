@@ -1,0 +1,27 @@
+//test return 12
+
+bool test_two_cond(bool counter, int b)
+{
+    return counter && b < 6;
+}
+int main()
+{
+    int a = 16;
+    int b = 4;
+    int counter = 0;
+    bool test = true;
+    while(test_two_cond(test, b))
+    {
+        if(counter > 3)
+        {
+            test = false;
+        }
+        if(a > b)
+        {
+            a -= 2;
+            b++;
+        }
+        counter++;
+    }
+    return a;
+}

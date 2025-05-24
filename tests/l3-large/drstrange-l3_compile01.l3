@@ -1,0 +1,24 @@
+//test error
+/// make sure function type check fails even though 
+/// it will never be executed.
+
+void func2(int x){
+    return 0;
+}
+
+int func3(int x){
+    return 1;
+}
+
+int func1(int x, int y, int z){
+
+    if (false){
+        return func2(y);
+    }
+
+    return func3(z);
+}
+
+int main() {
+    return 1/func1(0, 1, 2);
+}

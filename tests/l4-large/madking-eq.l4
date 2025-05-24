@@ -1,0 +1,9 @@
+//test return 0
+
+int main() {
+    int[][] HEHE = alloc_array(int[], 10);
+    if (HEHE[0] == HEHE[1]) {
+       return 0;
+    }
+    return HEHE[11][0];
+}

@@ -1,0 +1,8 @@
+//test return 55
+int main() {
+  int x = 3;
+  int y = -30;
+  int z = 25;
+  int a = 0x35;
+  return x | y & z ^ a;
+}

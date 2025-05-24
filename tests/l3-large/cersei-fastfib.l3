@@ -1,0 +1,22 @@
+//test return 10946
+
+int fastfib(int n) {
+  if (n < 2) return 1;
+  else {
+    int cur = 1;
+    int next = 2;
+    int i = 2;
+    while (i < n) {
+      int aux = cur;
+      cur = next;
+      next = next + aux;
+      i++;
+    }
+    return next;
+  }
+}
+
+int main() {
+  return fastfib(20);
+}
+

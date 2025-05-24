@@ -1,0 +1,22 @@
+//test return 0
+
+int foo(int x);
+int bar(int y);
+
+int foo(int x) {
+	if (x <= 0) {
+		return x;
+	}
+	return bar(x - 1);
+}
+
+int bar(int y) {
+	if (y <= 0) {
+		return y;
+	}
+	return foo(y - 1);
+}
+
+int main() {
+	return foo(27);
+}

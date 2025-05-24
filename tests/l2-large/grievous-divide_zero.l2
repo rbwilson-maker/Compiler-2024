@@ -1,0 +1,10 @@
+//test div-by-zero
+
+// checking division by 0 error
+int main() {
+  int x = 0;
+  int y = 4 / x;
+  int z = (x + y) % y;
+  y = y & 0x0;
+  return z; 
+}

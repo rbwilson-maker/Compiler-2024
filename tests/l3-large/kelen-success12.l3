@@ -1,0 +1,19 @@
+//test return 1
+
+// Tests checking int return type in bool expression
+
+int getResult(){
+    return 5;
+}
+
+bool checkResult(){
+    return getResult() == 5;
+}
+
+int main(){
+    if(checkResult()){
+        return 1;
+    } else {
+        return 0;
+    }
+}

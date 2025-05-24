@@ -1,0 +1,20 @@
+//test return 1
+/* More function calls and namespace checking */
+
+
+int dead(int x) {
+  assert(false);
+  return x;
+}
+
+int alive(bool x, int y) {
+  return x ? 1 : dead(y);
+}
+int dead(int y);
+int dead(int alive);
+
+int main () {
+  int dead = 0;
+  dead = alive(true, -1) > 0 ? alive(1 == 1 ? false || true : false, 0) : dead;
+  return dead;
+}

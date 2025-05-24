@@ -1,0 +1,15 @@
+//test div-by-zero
+
+typedef struct list_node *list;
+struct list_node {
+  int data;
+  list next;
+};
+
+int main() {
+  list a = alloc(struct list_node);
+  a->data = 0;
+  list b = alloc(struct list_node);
+  b->data = 10;
+  return b->data / a->data;
+}

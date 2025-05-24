@@ -1,0 +1,23 @@
+//test return 0
+// Tests that your parser correctly parses LValues and Expressions.
+// A trivial LALR(1) parser will not do this correctly due to the nested parens.
+// It's probably not a problem for parsec parsers but oh well...
+
+int main() {
+
+    int x = 0;
+    int y = 1;
+
+    // LValue + PostDec
+    for ( (((((x)))))++; x < 5; x++) {
+        
+    }
+
+    // Expression
+    for ( (((((y)))))+4; y < 5; y++) {
+
+    }
+
+    return x - y;
+
+}

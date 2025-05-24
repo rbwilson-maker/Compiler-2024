@@ -1,0 +1,62 @@
+//test return 2111519385
+
+// Implements mergesort
+void merge(int[] A, int lo, int mid, int hi) {
+    int[] B = alloc_array(int, hi-lo);
+
+    int i = 0;
+    int l = lo;
+    int h = mid;
+
+    while(l < mid && h < hi) {
+        if(A[l] > A[h]) {
+            B[i] = A[h];
+            h++;
+            i++;
+        } else {
+            B[i] = A[l];
+            l++;
+            i++;
+        }
+    }
+
+    while(l < mid) {
+        B[i] = A[l];
+        l++;
+        i++;
+    }
+
+    while(h < hi) {
+        B[i] = A[h];
+        h++;
+        i++;
+    }
+
+    for(i = 0; i < hi - lo; i++) {
+        A[i + lo] = B[i];
+    }
+}
+
+void mergesort(int[] A, int lo, int hi) {
+    if(hi - lo <= 1) {
+        return; // Already sorted!
+    }
+
+    int mid = lo + (hi - lo) / 2;
+
+    mergesort(A, lo, mid);
+    mergesort(A, mid, hi);
+
+    merge(A, lo, mid, hi);
+}
+
+int main() {
+    int[] A = alloc_array(int, 15251);
+    for( int i = 0; i < 15251; i++) {
+        A[i] = 12831231 *i + 1289314618;
+    }
+
+    mergesort(A, 0, 15251);
+
+    return A[15122];
+}

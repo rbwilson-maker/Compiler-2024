@@ -1,0 +1,12 @@
+//test return 0;
+
+struct simple {
+  int field1;
+};
+typedef struct simple simple;
+
+int main() {
+  struct simple* jj = alloc(struct simple);
+
+  return 0;
+}

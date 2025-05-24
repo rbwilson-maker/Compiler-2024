@@ -1,0 +1,23 @@
+//test return 1
+// array slice
+
+int[] slice(int[] A, int len, int start, int end){
+  assert(end - start <= len);
+  int[] sliced_arr = alloc_array(int, end - start);
+  for (int i = 0; i < end - start; i++){
+    sliced_arr[i] = A[start + i];
+  }
+  return sliced_arr;
+}
+
+int main(){
+  int[] A = alloc_array(int, 20);
+  for (int i = 0; i < 20; i++){
+    A[i] = i;
+  }
+  int[] sliced_arr = slice(A, 20, 13, 17);
+  for (int i = 0; i < 17 - 13; i++){
+    assert(sliced_arr[i] == i + 13);
+  }
+  return 1;
+}

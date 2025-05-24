@@ -1,0 +1,14 @@
+//test return 31
+// towers of Hanoi (+ prototypes)
+
+int hanoi(int n);
+
+int main() {
+	return hanoi(5);
+}
+
+int hanoi(int n) {
+	assert(n > 0);
+	if (n == 1) return 1;
+	else return 2 * hanoi(n-1) + 1;
+}

@@ -1,0 +1,9 @@
+//test return 99
+
+int main() {
+    int *x = alloc(int);
+    int *y = alloc(int);
+    assert(*x == *y);
+    assert(x != y);
+    return 99;
+}

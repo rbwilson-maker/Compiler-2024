@@ -1,0 +1,19 @@
+//test return 6
+
+// Basic test of all the new language features.
+// We needed this for our own tests,
+// so I'm sharing it with you.
+
+typedef int foo;
+
+int add(int x, foo y);
+
+int main() {
+    foo x = 3;
+    foo y = add(x, x);
+    return y;
+}
+
+int add(int x, foo y) {
+    return x + y;
+}

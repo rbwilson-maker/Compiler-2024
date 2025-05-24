@@ -1,0 +1,16 @@
+//test return -1
+// namespaces
+
+struct foo {
+  int foo;
+};
+
+struct foo *foo(struct foo *foo) {
+  foo->foo = foo->foo + 1;
+  return foo;
+}
+
+int main() {
+  struct foo *foo = alloc(struct foo);
+  return foo->foo * foo->foo * foo->foo - 1;
+}

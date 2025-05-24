@@ -1,0 +1,5 @@
+//test error 
+int main() {
+  void* v = alloc(void);
+  return 0;
+}

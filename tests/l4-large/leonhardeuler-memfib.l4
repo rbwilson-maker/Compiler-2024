@@ -1,0 +1,30 @@
+//test return 873876091
+
+int fib_helper(int n, int[] memo) {
+    if (n <= 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else if (memo[n] > 0) {
+        return memo[n];
+    }
+    memo[n] = fib_helper(n - 1, memo) + fib_helper(n - 2, memo);
+    return memo[n];
+}
+
+int fib(int n) {
+    int[] memo = alloc_array(int, n + 1);
+    return fib_helper(n, memo);
+}
+
+int main()
+{
+    assert(fib(0) == 0);
+    assert(fib(1) == 1);
+    assert(fib(2) == 1);
+    assert(fib(3) == 2);
+    assert(fib(5) == 5);
+    assert(fib(10) == 55);
+    assert(fib(80000) == 1942870725);
+    return fib(100000);
+}

@@ -1,0 +1,41 @@
+//test return 6
+
+struct person {
+    int id;
+    struct person*[] children;
+};
+
+typedef struct person child;
+
+int main() {
+    child* c1 = alloc(child);
+    c1->id = 1;
+    c1->children = alloc_array(child*, 0);
+
+
+    child* c2 = alloc(child);
+    c2->id = 2;
+    c2->children = alloc_array(child*, 0);
+
+
+    child* c3 = alloc(child);
+    c3->id = 3;
+    c3->children = alloc_array(child*, 0);
+
+    struct person* olive = alloc(struct person);
+    olive->id = 55;
+    olive->children = alloc_array(struct person*, 5);
+
+    olive->children[0] = c1;
+    olive->children[3] = c2;
+    olive->children[4] = c3;
+
+    int id_sum = 0;
+    for (int i=0; i < 5; i++) {
+        if (olive->children[i] != NULL) {
+            id_sum += olive->children[i]->id;
+        }
+    }
+    
+    return id_sum;
+}

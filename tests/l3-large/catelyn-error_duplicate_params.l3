@@ -1,0 +1,11 @@
+//test error
+
+int duplicate(int lol, int haha);
+
+int main(){
+  return duplicate(360, 711);
+}
+
+int duplicate(int rofl, int rofl) {
+  return rofl | rofl;
+}

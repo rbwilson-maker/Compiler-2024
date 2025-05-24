@@ -1,0 +1,10 @@
+//test div-by-zero
+
+// tests using variable in both lvar and expression as well as div-by-zero
+
+int main() {
+	int x = 3; 
+	x = x - x;
+	int y = 4 / x;
+	return y;
+}

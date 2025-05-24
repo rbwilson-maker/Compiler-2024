@@ -1,0 +1,14 @@
+//test return 0
+//more init test
+struct l {
+	struct l* next;
+	int blah;
+};
+
+
+int main()
+{
+	struct l* wut = alloc(struct l);
+	
+	return wut->blah;
+}

@@ -1,0 +1,40 @@
+//test return 0
+// Simple regex problem
+// A magic number is a number formed by concatenation of numbers 1, 14 and 144.
+// We can use each of these numbers any number of times. 
+// Therefore 14144, 141414 and 1411 are magic numbers but 1444, 514 and 414 are not.
+// You're given a number. Determine if it is a magic number or not.
+
+bool solve(int num) {
+  int numFours = 0;
+  while (num > 0) {
+    int temp = num % 10;
+    if (temp == 1) {
+        numFours = 0;
+    }
+    else if (temp == 4) {
+        numFours++;
+        if (numFours > 2) {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
+    num /= 10;
+  }
+  if (numFours == 0) {
+      return true;
+  }
+  else {
+      return false;
+  }
+}
+
+int main() {
+  int num = 1414414;
+  if (solve(num)) {
+    return 0;
+  }
+  return -1111;
+}

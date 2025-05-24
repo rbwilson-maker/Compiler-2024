@@ -1,0 +1,12 @@
+//test return 6
+// tests weird but legal syntax
+
+int main() {
+  int x = 0;
+  (((x))) = (((x))) + 5;
+  (((((x)))))++;
+  x;
+  x + 1;
+  1 + 1;
+  return x;
+}

@@ -1,0 +1,16 @@
+//test error
+
+struct b {
+  int x;
+};
+
+struct a {
+  struct b bS;
+};
+
+
+int main() {
+  struct a;
+  a.x = 10;
+  return a.x;
+}

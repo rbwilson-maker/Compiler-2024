@@ -1,0 +1,62 @@
+//test return 10
+
+/**
+ * Mergesort
+ *
+ * 15-122 Principles of Imperative Computation
+ */
+
+void merge(int[] A, int lo, int mid, int hi)
+//@requires 0 <= lo && lo < mid && mid < hi && hi <= \length(A);
+//@requires is_sorted(A, lo, mid) && is_sorted(A, mid, hi);
+//@ensures is_sorted(A, lo, hi);
+{
+  int[] B = alloc_array(int, hi-lo);
+  int i = lo;
+  int j = mid;
+  int k = 0;
+
+  while (i < mid && j < hi)
+  //@loop_invariant lo <= i && i <= mid;
+  //@loop_invariant mid <= j && j <= hi;
+  //@loop_invariant k == (i - lo) + (j - mid);
+  {
+    if (A[i] <= A[j]) {
+      B[k] = A[i]; i++;
+    } else {
+      B[k] = A[j]; j++;
+    }
+    k++;
+  }
+
+  //@assert i == mid || j == hi;
+  // Warning, loop invariants for these loops have been omitted!
+  while (i < mid) { B[k] = A[i]; i++; k++; }
+  while (j < hi) { B[k] = A[j]; j++; k++; }
+  for (k = 0; k < hi-lo; k++) { A[lo+k] = B[k]; }
+}
+
+void sort(int[] A, int lo, int hi)
+//@requires 0 <= lo && lo <= hi && hi <= \length(A);
+//@ensures is_sorted(A, lo, hi);
+{
+  if (hi-lo <= 1) return;
+  int mid = lo + (hi-lo)/2;
+  sort(A, lo, mid); //@assert is_sorted(A, lo, mid);
+  sort(A, mid, hi); //@assert is_sorted(A, mid, hi);
+  merge(A, lo, mid, hi);
+  return;
+}
+
+int main() {
+  int[] list = alloc_array(int, 1000);
+  for(int i = 0; i < 1000; i++) {
+    if (i % 2 == 0) {
+      list[i] = i;
+    } else {
+      list[i] = -i;
+    }
+  }
+  sort(list, 0, 1000);
+  return 10;
+}

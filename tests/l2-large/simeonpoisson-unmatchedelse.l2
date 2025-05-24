@@ -1,0 +1,14 @@
+//test error
+
+int main() {
+  int x = 5;
+  if (x % 3 == 0) {
+    return 0;
+  } if (x % 4 == 0) {
+    return 1;
+  } else {
+    return 2;
+  } else {
+    return 3;
+  }
+}

@@ -1,0 +1,33 @@
+//test div-by-zero
+
+bool odd(int x);
+
+// Might not work on large numbers, like 33
+bool even(int x) {
+	if (x == 0 || x == 32) {
+		return true;
+	}
+	return odd(x-1) || !even(x-1) || odd(x+1);
+}
+
+bool odd(int x) {
+	if (x == 0 || x == 32) {
+		return false;
+	}
+	return even(x-1) || !odd(x-1) || even(x+1);  // Pretty sure this is how math works
+}
+
+// If x is really even, we should be able to divide by it without any remainder
+bool really_even(int x) {
+	return (100 / x != x);
+}
+
+int main() {
+	bool even14 = even(14);
+	bool odd23 = odd(23);
+	bool even0 = even(0);
+	if (even14 && odd23 && even0 && really_even(0)) {
+		return 69;
+	}
+	return 0;
+}

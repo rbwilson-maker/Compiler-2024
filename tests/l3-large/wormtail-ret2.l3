@@ -1,0 +1,12 @@
+//test return 3
+
+int buzz() {
+  return 3;
+}
+
+int foo() {
+  return buzz();	
+}
+int main() {
+  return foo();
+}

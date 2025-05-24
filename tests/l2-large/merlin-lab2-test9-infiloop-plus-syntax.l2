@@ -1,0 +1,16 @@
+//test typecheck
+//test infloop
+
+// test program would continuously run but fail to terminate;
+// also tests for loop syntax
+
+int main()
+{
+    int count = 0;
+    for(;count < 42;)
+    {
+        count = count + 1;
+        count = count - 1;
+    }
+    return 0;
+}

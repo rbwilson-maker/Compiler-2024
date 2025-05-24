@@ -1,0 +1,16 @@
+//test return 0
+
+int main() {
+    int x0 = 0xffffffff;
+    int x1 = 0xaaaaaaaa;
+    int x2 = 0x55555555;
+    int x3 = 0x0000ffff;
+    int x4 = 0xffff0000;
+
+    // 0xffffffff
+    int x12 = x1 ^ x2;
+    // 0x00000000
+    int x34 = x3 & x4;
+
+    return x0 - (x12 | x34);
+}

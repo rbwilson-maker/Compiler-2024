@@ -1,0 +1,12 @@
+//test memerror
+
+int crafty(){
+    assert(false);
+    return 1;
+}
+
+int main(){
+    int[][] sneaky = alloc_array(int[], 0);
+    sneaky[0][crafty()] = (0 / 0);
+    return 0;
+}

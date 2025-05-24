@@ -1,0 +1,19 @@
+//test return 268435456
+//tests integer semantics, namely overflow
+int main(){
+	int x = 1000000;
+	int y = 400;
+	x *= y;
+	x *= x;
+	int a = 1913759592;
+	int b = -137655602;
+	int c = a % b;
+	int d = a / b;
+	int e = a * a;
+	e *= b;
+	e *= a;
+	e *= a / b;
+	x = x - a;
+	int z = x * x - x % y + 748 * b;
+	return a * b * c * d * e * x * y * z;
+}

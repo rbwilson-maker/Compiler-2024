@@ -1,0 +1,15 @@
+//test return 110
+
+int fib(int n) {
+    int[] fibs = alloc_array(int, n + 1);
+    fibs[0] = 0;
+    fibs[1] = 1;
+    for (int i = 2; i <= n; i++) {
+        fibs[i] = fibs[i - 1] + fibs[i - 2];
+    }
+    return fibs[n];
+}
+
+int main() {
+    return fib(11) + fib(8); // 1 1 2 3 5 8 13 21 34 55 89
+}

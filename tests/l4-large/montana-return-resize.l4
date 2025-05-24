@@ -1,0 +1,213 @@
+//test return 160
+
+// I stole this code from my 122 homework, fall 2012.
+// I hope that's okay.
+// I was pretty proud of it back then.
+// Note my awesome contracts.
+
+struct frac
+{
+  int num;
+  int den;
+};
+
+typedef struct frac* frac;
+
+int frac_to_int(frac f)
+{
+  return (f->num / f->den);
+}
+
+int gcd(int m, int n)
+//@requires m > 0 && n > 0;
+//@ensures \result <= m && \result <= n;
+{
+  int a = m;
+  int b = n;
+
+  while (b != 0)
+    {
+      if (a > b) {a = a - b;}
+      else {b = b - a;}
+    }
+  return a;
+}
+
+int lcm(int m, int n)
+//@requires m > 0 && n > 0;
+//@ensures \result >= m && \result >= n;
+{
+  int g = gcd(m, n);
+
+  return ((m * n) / g);
+}
+
+frac reduce(frac f)
+{
+  int g = gcd(f->num, f->den);
+  frac f_reduced = alloc(struct frac);
+
+  f_reduced->num = f->num/g;
+  f_reduced->den = f->den/g;
+
+  return f_reduced;
+}
+
+frac int_to_frac(int n, int m)
+//@requires n > 0 && m > 0;
+{
+  frac f = alloc(struct frac);
+
+  f->num = n;
+  f->den = m;
+
+  frac f_red = reduce(f);
+
+  return f_red;
+}
+
+frac frac_invert(frac f)
+{
+  frac f_inv = alloc(struct frac);
+
+  f_inv->num = f->den;
+  f_inv->den = f->num;
+
+  return reduce(f_inv);
+}
+
+int frac_cmp(frac f1, frac f2)
+//@ensures \result <= 1 && \result >= -1;
+{
+  int num1;
+  int num2;
+
+  int common_den = lcm(f1->den, f2->den);
+
+  num1 = (f1->num)*(common_den/f1->den);
+  num2 = (f2->num)*(common_den/f2->den);
+
+  if (num1 == num2) {return 0;}
+  else if (num1 > num2) {return 1;}
+  else {return (-1);}
+}
+
+frac frac_add(frac f1, frac f2)
+//@ensures frac_cmp(\result, f1) == 1;
+//@ensures frac_cmp(\result, f2) == 1;
+{
+  frac result = alloc(struct frac);
+
+  int new_den = lcm(f1->den, f2->den);
+
+  int num1 = (f1->num)*(new_den/f1->den);
+  int num2 = (f2->num)*(new_den/f2->den);
+
+  result->num = num1 + num2;
+  result->den = new_den;
+
+  return reduce(result);
+}
+
+frac frac_subtract(frac f1, frac f2)
+//@requires frac_cmp(f1, f2) == 1;
+//@ensures frac_cmp(\result, frac_add(f1, f2)) == (-1);
+{
+  frac result = alloc(struct frac);
+
+  int new_den = lcm(f1->den, f2->den);
+
+  int num1 = (f1->num)*(new_den/f1->den);
+  int num2 = (f2->num)*(new_den/f2->den);
+
+  result->num = num1 - num2;
+  result->den = new_den;
+
+  return reduce(result);
+}
+
+frac frac_multiply(frac f1, frac f2)
+{
+  frac result = alloc(struct frac);
+
+  result->num = f1->num * f2->num;
+  result->den = f1->den * f2->den;
+
+  return reduce(result);
+}
+
+frac frac_divide(frac f1, frac f2)
+{
+  frac result = alloc(struct frac);
+
+  result->num = f1->num * f2->den;
+  result->den = f1->den * f2->num;
+
+  return reduce(result);
+}
+
+// note: Used modified nearest neighhbor algorithm from website:
+// http://tech-algorithm.com/articles/nearest-neighbor-image-scaling/
+
+typedef int pixel;
+
+pixel[] resize(pixel[] pixels, int w1, int h1, int w2, int h2)
+{
+  pixel[] resized = alloc_array(pixel, w2*h2);
+  frac x_ratio = int_to_frac(w1, w2);
+  frac y_ratio = int_to_frac(h1, h2);
+  int px;
+  int py;
+
+  for (int row = 0; row < h2; row++)
+    {
+      for (int col = 0; col < w2; col++)
+	{
+	  px = (col * x_ratio->num) / x_ratio->den;
+	  py = (row * y_ratio->num) / y_ratio->den;
+
+	  resized[(row*w2)+col] = pixels[(py*w1)+px];
+	}
+    }
+
+  return resized;
+}
+
+struct image {
+  int width;
+  int height;
+  pixel[] data;
+};
+
+typedef struct image * image_t;
+
+// Generate a "random" image
+image_t image_load() {
+  image_t image = alloc(struct image);
+  image->width = 1000;
+  image->height = 500;
+  image->data = alloc_array(pixel, image->width * image->height);
+  for (int i = 0; i < image->width * image->height; i++) {
+    image->data[i] = (i * 12345) % 256;
+  }
+  return image;
+}
+
+int main() {
+    image_t source;
+    image_t dest;
+    int width;
+    int height;
+    int per = 50; // Percentage of original size
+    pixel[] inpixels;
+    pixel[] resultpixels;
+
+    source = image_load();
+    width = source->width;
+    height = source->height;
+    inpixels = source->data;
+    resultpixels = resize(inpixels, width, height, width*per/100, height*per/100);
+
+    return resultpixels[width];
+}
+

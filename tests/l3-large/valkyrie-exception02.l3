@@ -1,0 +1,10 @@
+//test abort
+int main(){
+	int x = 0;
+	while(true){
+		x++;
+		assert(x>=0);
+	}
+
+	return -1;
+}

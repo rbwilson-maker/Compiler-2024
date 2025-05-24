@@ -1,0 +1,10 @@
+//test error
+
+bool True() { return true; }
+bool False() { return false; }
+
+int main() {
+  return True() 
+    ? *(False() ? NULL : NULL) // can't dereference this
+    : 0;
+}

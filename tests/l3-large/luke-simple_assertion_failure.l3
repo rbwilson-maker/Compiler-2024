@@ -1,0 +1,7 @@
+//test abort
+
+int main() {
+    bool x = (1 < 2) && (2 < 1);
+    assert(x);
+    return 3;
+}

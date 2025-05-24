@@ -1,0 +1,11 @@
+//test error
+// Declerations in for loops
+
+int main () {
+    for (int t = 1; false; int z)
+    {
+        t += 1;
+    }
+
+    return 42;
+}

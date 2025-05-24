@@ -1,0 +1,18 @@
+//test return -3955
+
+int f(int i, int j) {
+	return i + j;
+}
+
+int g (int i, int j, int k){
+  return j + k - i;
+}
+
+int h(int i, int j, int k){
+	return
+  f(g(i, f(g(i, f(g(i, f(g(i, f(g(i, f(g(i, f(g(i, f(g(i, f(g(i, f(g(i, j, k), j), k), j), k), j), k), j), k), j), k), j), k), j), k), j), k), j), k), j);
+}
+
+int main() {
+  return h(411, 15, -1);
+}

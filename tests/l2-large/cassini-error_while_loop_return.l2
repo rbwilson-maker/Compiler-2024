@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+    // Even though this clearly will
+    // return, l2 semantics dictate that
+    // this program is illegal
+    while(true) {
+        return 2;
+    }
+
+}

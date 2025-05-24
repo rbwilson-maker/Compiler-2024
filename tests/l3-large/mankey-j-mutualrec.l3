@@ -1,0 +1,25 @@
+//test return 364
+
+int r1(int x);
+int r2(int y, int z);
+
+int main() {
+  return r1(5);
+}
+
+int r1(int x) {
+  if (x == 0) {
+    return 0;
+  } else {
+    return 1 + r2(r1(x-1), x-1);
+  }
+}
+
+int r2(int y, int z) {
+  if (y == 0 || z == 0) {
+    return 115;
+  } else {
+    return 123 + r1(z-1);
+  }
+}
+

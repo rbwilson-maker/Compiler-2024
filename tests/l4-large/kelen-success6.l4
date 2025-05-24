@@ -1,0 +1,16 @@
+//test return 2
+
+// Use struct value in ternary operator for return
+struct x{
+    int a;
+    int b;
+    bool z;
+};
+
+int main(){
+    struct x* ourStruct = alloc(struct x);
+    ourStruct->a = 1;
+    ourStruct->b = ourStruct->a + 1;
+    ourStruct->z = ourStruct->a == ourStruct->b;
+    return (ourStruct->z ? ourStruct->a : ourStruct->b);
+}

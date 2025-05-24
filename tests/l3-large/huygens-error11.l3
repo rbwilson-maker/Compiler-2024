@@ -1,0 +1,9 @@
+//test error
+// can only have global function definitions 
+
+int main() {
+    int x(int x, int y) {
+        return x + y;
+    }
+    return x(1,2);
+}

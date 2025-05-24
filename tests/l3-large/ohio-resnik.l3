@@ -1,0 +1,23 @@
+//test return 32
+
+void tryMe() {
+  
+}
+
+int meToo() {
+  1 << 2;
+  {
+  int x = 0;
+  x++;
+  }
+  {
+  int y = 1 << 31;
+  return y;
+  }
+}
+
+int main() {
+  tryMe();
+  meToo();
+  return 32;
+}

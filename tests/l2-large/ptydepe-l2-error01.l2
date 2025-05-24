@@ -1,0 +1,8 @@
+//test error
+// Undefined variable at return statement
+int main()
+{
+    int a = 10;
+    int b = a + 10 + 5 + 1;
+    return notDefined;
+}

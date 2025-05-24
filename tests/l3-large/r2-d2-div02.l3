@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int divv(int a, int b)
+{
+  return a/(b-1);
+}
+
+int main()
+{
+  int a = 3;
+  int b = 1;
+  return divv(a, b);
+}

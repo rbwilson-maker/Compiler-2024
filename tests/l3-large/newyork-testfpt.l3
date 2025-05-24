@@ -1,0 +1,10 @@
+//test return 20
+
+int main() {
+    int x = 10;
+    int y = 10;
+
+    int z = fadd(x, y);
+
+    return z;
+}

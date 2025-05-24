@@ -1,0 +1,30 @@
+//test return 481
+// creates a function that returns the sum of all prime factors of a number
+
+int pf_sum2(int counter, int num) {
+  if (num == 1) return counter;
+  for (int i = 2; i > 0; i++) {
+    if (num % i == 0) {
+      while (num % i == 0) {
+        num /= i;
+        counter += i;
+      }
+      return pf_sum2(counter, num);
+    }
+  }
+  return 1/0; // What black magic have you done?
+}
+
+int pf_sum(int num) {
+  return pf_sum2(0, num);
+}
+
+int main() {
+  assert(pf_sum(8) == pf_sum(9));
+
+  assert(pf_sum(100) == 14);
+
+  assert(pf_sum(12345) == 831);
+
+  return pf_sum(15411);
+}

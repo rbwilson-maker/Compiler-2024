@@ -1,0 +1,36 @@
+//test error
+
+typedef int b;
+struct a;
+struct emp {
+};
+struct empp {
+  struct emp e;
+};
+struct a {
+  int b;
+  struct c[] b;
+};
+struct b;
+struct xx {
+  struct b* c;
+  int*[] d;
+};
+struct bb {
+  struct a e;
+};
+struct a;
+
+struct a* f() {
+  struct a* g = alloc(struct a);
+  struct b* h;
+  g->b = 3;
+  return g;
+}
+struct b {
+  struct a* e;
+};
+
+int main() {
+  return f()->b;
+}

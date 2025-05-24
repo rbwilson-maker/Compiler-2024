@@ -1,0 +1,24 @@
+//test div-by-zero
+
+bool tripOr(bool x, bool y, bool z) {
+
+  return x || y || z;
+  
+}
+
+int main(){
+
+  bool x;
+  bool y;
+  bool z;
+
+  x = true;
+
+  y = 5 < 3;
+
+  z = (x || y);
+
+  return tripOr(y,y,y) ? 5 / 7 : 5 / 0 ;
+  
+  
+}

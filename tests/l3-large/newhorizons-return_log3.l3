@@ -1,0 +1,14 @@
+//test return 11
+
+int log3(int m);
+
+int main () {
+  return log3(177147);
+}
+
+int log3(int n) {
+  int result;
+  for (result = 0; n > 1; n = n/3)
+    result = result+1;
+  return result;
+}

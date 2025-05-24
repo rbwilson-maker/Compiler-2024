@@ -1,0 +1,13 @@
+//test error
+
+struct foo {
+  int bar;
+};
+
+int main() {
+  struct foo* test;
+  struct foo* t;
+  t = alloc(struct foo);
+  test = alloc(struct foo);
+  if (*test == *t) return 1; else return 0;
+}

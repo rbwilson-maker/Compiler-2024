@@ -1,0 +1,19 @@
+//test return 3
+
+int main()
+{
+  int x = 10;
+  int count = 0;
+  bool check = true;
+
+  for(; check;)
+  {
+    if (x == 7) {
+      check = false;
+    } else {
+      count++;
+      x--;
+    }
+  }
+  return count;
+}

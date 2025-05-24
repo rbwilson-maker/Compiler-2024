@@ -1,0 +1,61 @@
+//test return 2
+// Tests a variety of nitpicky corner cases
+
+struct a {
+  int a;
+  int b;
+};
+
+int get_four() {
+  int a = 4;
+  int b = 5;
+  a * b;
+  return a;
+}
+
+typedef struct a a;
+
+bool *get_bool() {
+  return alloc(bool);
+}
+
+int get_a(struct a *b) {
+  return b->a;
+}
+
+void pointer_chase() {
+  int *w = alloc(int);
+  int **x = alloc(int*);
+  int ***y = alloc(int**);
+  int ****z = alloc(int***);
+  *z = y;
+  *y = x;
+  *x = w;
+  *w = 4;
+  assert(****z*****z*****z == 64);
+}
+
+int increment(int *x) {
+  int r = *x;
+  (*x)++;
+  return r;
+}
+
+int main() {
+  *(false? NULL : get_bool());
+  if (false) {
+    *(true? NULL : get_bool());
+  }
+  a *y = alloc(struct a);
+  y->b = get_four();
+  y->a = 2;
+  pointer_chase();
+  int* q = alloc(int);
+  int[] r = alloc_array(int, 5);
+  r[increment(q)]++;
+  r[increment(q)]++;
+  r[increment(q)]++;
+  r[increment(q)]++;
+  r[increment(q)]++;
+  return get_a(y);
+}

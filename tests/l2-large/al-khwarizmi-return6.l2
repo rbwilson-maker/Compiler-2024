@@ -1,0 +1,14 @@
+//test return 2
+
+int main() {
+    int res = 10;
+    bool test = (res << 2) < 5;
+    if (test) {
+        return 1;
+    } else if (!test) {
+        return 2;
+    } else {
+        return 3;
+    }
+    return 4;
+}

@@ -1,0 +1,127 @@
+//test abort
+// test bool assignment and test
+
+int oops(int arg) {
+  if (arg == 1) return 2;
+  return 5;
+}
+
+int recursebaby(int ans) {
+  if (ans == 0) return 1;
+  return recursebaby(oops(ans));
+}
+
+int main() {
+  assert(1 == 0); // abort before looping
+  int ohmama = recursebaby(100); // loops forever
+
+	bool e = true;
+	bool b = false;
+	bool c = e || b; // true
+	bool d = e && b; // false
+  int a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+
+
+	int res = 0;
+	if (e) res++;
+	if (b) res++;
+	if (c) res++;
+	if ((d)) res++;
+	return a + a + a;
+}

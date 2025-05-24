@@ -1,0 +1,30 @@
+//test return 20
+
+//return su of all cumulative sums up until 4:
+//return = 1 + (1 + 2) + (1 + 2 + 3) + (1 + 2 + 3 + 4)
+
+int sum(int i) {
+    int cumSum = 0;
+
+    for(int j = 1; j <= i; j++) {
+        cumSum += j;
+    }
+
+    return cumSum;
+}
+
+int main() {
+    int[] a = alloc_array(int, 4);
+
+    for(int i = 0; i < 4; i++) {
+        a[i] = sum(i + 1);
+    }
+
+    int sumAll = 0;
+
+    for(int i = 0; i < 4; i++) {
+        sumAll += a[i];
+    }
+
+    return sumAll;
+}

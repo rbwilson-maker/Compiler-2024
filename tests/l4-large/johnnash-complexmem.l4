@@ -1,0 +1,25 @@
+//test memerror
+
+struct cplx {
+    int real;
+    int comp;
+};
+
+typedef struct cplx cplxs;
+
+int cool_fun(int b) {
+    return b + 7;
+}
+
+int main() {
+    cplxs[] comp = alloc_array(struct cplx, cool_fun(100));
+
+    comp[0].real = 100;
+    comp[10].comp = 41;
+
+    cplxs*[] comp2 = alloc_array(struct cplx *, cool_fun(10));
+    comp2[0]->real = 100;
+    comp2[10]->comp = 41;
+
+    return comp[0].real - comp2[0]->real + comp[10].comp - comp2[10]->comp;
+}

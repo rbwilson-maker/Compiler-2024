@@ -1,0 +1,92 @@
+//test return 351
+// Simple use of structures
+
+struct something {
+  int q;
+  int w;
+  int e;
+  int r;
+  int t;
+  int y;
+  int u;
+  int i;
+  int o;
+  int p;
+  int a;
+  int s;
+  int d;
+  int f;
+  int g;
+  int h;
+  int j;
+  int k;
+  int l;
+  int z;
+  int x;
+  int c;
+  int v;
+  int b;
+  int n;
+  int m;
+};
+
+int main() {
+  struct something *myStruct = alloc(struct something);
+
+  myStruct->q=1;
+  myStruct->w=2;
+  myStruct->e=3;
+  myStruct->r=4;
+  myStruct->t=5;
+  myStruct->y=6;
+  myStruct->u=7;
+  myStruct->i=8;
+  myStruct->o=9;
+  myStruct->p=10;
+  myStruct->a=11;
+  myStruct->s=12;
+  myStruct->d=13;
+  myStruct->f=14;
+  myStruct->g=15;
+  myStruct->h=16;
+  myStruct->j=17;
+  myStruct->k=18;
+  myStruct->l=19;
+  myStruct->z=20;
+  myStruct->x=21;
+  myStruct->c=22;
+  myStruct->v=23;
+  myStruct->b=24;
+  myStruct->n=25;
+  myStruct->m=26;
+
+  int result =
+  myStruct->q +
+  myStruct->w +
+  myStruct->e +
+  myStruct->r +
+  myStruct->t +
+  myStruct->y +
+  myStruct->u +
+  myStruct->i +
+  myStruct->o +
+  myStruct->p +
+  myStruct->a +
+  myStruct->s +
+  myStruct->d +
+  myStruct->f +
+  myStruct->g +
+  myStruct->h +
+  myStruct->j +
+  myStruct->k +
+  myStruct->l +
+  myStruct->z +
+  myStruct->x +
+  myStruct->c +
+  myStruct->v +
+  myStruct->b +
+  myStruct->n +
+  myStruct->m;
+
+  return result;
+}

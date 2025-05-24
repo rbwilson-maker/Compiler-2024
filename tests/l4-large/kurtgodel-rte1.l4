@@ -1,0 +1,38 @@
+//test abort
+
+struct safe_array {
+    int[] a;
+    int size;
+    bool init;
+};
+
+typedef struct safe_array array;
+
+int get(array *arr, int i) {
+    assert(i >= 0 && i < arr->size);
+    return arr->a[i];
+}
+
+void put(array *arr, int i, int v) {
+    assert(i >= 0 && i < arr->size);
+    arr->a[i] = v;
+}
+
+void init(array *arr, int sz) {
+    assert(!arr->init);
+    arr->a = alloc_array(int, sz);
+    arr->size = sz;
+}
+
+int main() {
+    array *arr = alloc(array);
+    int size = 20;
+    init(arr, size);
+
+    put(arr, 0, 1);
+    for (int i = 1; i <= size; i++) {
+        put(arr, i, i * get(arr, i - 1));
+    }
+
+    return 0;
+}

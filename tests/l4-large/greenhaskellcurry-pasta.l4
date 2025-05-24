@@ -1,0 +1,394 @@
+//test return 6220800
+/*
+    pasta: wontstarve!
+
+    - Backtracking
+    - Sketchy dynamic arrays (just for fun, not because there is garbage
+      collection)
+
+    Tests:
+    - Structs, and typedef'ing them
+    - Passing around pointers
+    - Functions that return pointers
+    - Functions with mutating side-effects
+    - Allocating arrays
+    - Arrays of pointers
+    - Allocating custom typedefs/structs
+    - Lots of de-referencing
+    - Comparisons with NULL
+
+*/
+
+struct pasta {
+    int cookTime;
+    int size;
+};
+
+typedef struct pasta pasta_t;
+
+pasta_t *newPasta(int cookTime, int size) {
+    pasta_t *result = alloc(pasta_t);
+    result->cookTime = cookTime;
+    result->size = size;
+
+    return result;
+}
+
+struct dynamic_array {
+    pasta_t*[] arr;
+    int arrLen;
+    int watermark;
+};
+
+typedef struct dynamic_array dynamic_array_t;
+
+dynamic_array_t* newArray() {
+    int defaultLength = 1;
+    pasta_t*[] newArr = alloc_array(pasta_t*, defaultLength);
+
+    dynamic_array_t *new = alloc(dynamic_array_t);
+    new->arr = newArr;
+    new->arrLen = defaultLength;
+    new->watermark = 0;
+
+    return new;
+}
+
+void grow(dynamic_array_t *arr) {
+    int newSize = arr->arrLen * 2;
+    pasta_t*[] newArr = alloc_array(pasta_t*, newSize);
+
+    // Copy over all the pasta
+    for (int i = 0; i < arr->arrLen; i++) {
+        newArr[i] = (arr->arr)[i];
+    }
+
+    // Update struct fields
+    arr->arr = newArr;
+    arr->arrLen = newSize;
+}
+
+void shrink(dynamic_array_t *arr) {
+    int newSize = arr->arrLen / 2;
+    int minSize = 1;
+
+    // Don't shrink below the minimum size
+    if (newSize < minSize) return;
+
+    pasta_t*[] newArr = alloc_array(pasta_t*, newSize);
+
+    // Copy over all the pasta
+    for (int i = 0; i < newSize; i++) {
+        assert(i >= 0);
+        assert(i < newSize);
+        assert(i < arr->arrLen);
+        newArr[i] = (arr->arr)[i];
+    }
+
+    // Update struct fields
+    arr->arr = newArr;
+    arr->arrLen = newSize;
+}
+
+void insert(dynamic_array_t *arr, pasta_t *newPasta) {
+    // First check if there is enough space
+    if (arr->watermark >= arr->arrLen) {
+        // Resize if necessary
+        grow(arr);
+    }
+
+    // Insert the element
+    assert(arr->watermark >= 0);
+    assert(arr->watermark < arr->arrLen);
+    arr->arr[arr->watermark] = newPasta;
+
+    // Update struct fields
+    arr->watermark += 1;
+}
+
+void pop(dynamic_array_t *arr) {
+    // Pop a pasta from the end of the list
+    arr->watermark -= 1;
+
+    if (arr->watermark <= arr->arrLen / 2) {
+        shrink(arr);
+    }
+}
+
+pasta_t *pop_front(dynamic_array_t *arr) {
+    assert(arr != NULL);
+    assert(arr->arrLen > 0);
+    assert(arr->watermark > 0);
+
+    pasta_t *pasta = arr->arr[0];
+
+    // Copy all the pastas into their new positions
+    for (int i = 0; i < arr->arrLen - 1; i++) {
+        assert(i >= 0);
+        assert(i < arr->arrLen);
+        assert(i + 1 < arr->arrLen);
+        arr->arr[i] = arr->arr[i + 1];
+    }
+
+    // Update struct fields
+    arr->watermark -= 1;
+    if (arr->watermark <= arr->arrLen / 2) {
+        shrink(arr);
+    }
+
+    assert(pasta != NULL);
+    return pasta;
+}
+
+void push_front(dynamic_array_t *arr, pasta_t *pasta) {
+    // Check if adding the element would exceed the limit
+    if (arr->watermark + 1 >= arr->arrLen) {
+        grow(arr);
+    }
+
+    // Push over all the existing pasta
+    for (int i = arr->watermark; i > 0; i--) {
+        assert(i >= 0);
+        assert(i < arr->arrLen);
+        arr->arr[i] = arr->arr[i - 1];
+    }
+
+    // Overwrite the first element
+    arr->arr[0] = pasta;
+
+    // Update struct fields
+    arr->watermark += 1;
+}
+
+dynamic_array_t *fromArray(pasta_t*[] pastas, int numPastas) {
+    dynamic_array_t *newArr = newArray();
+
+    // Just add each pasta
+    for (int i = 0; i < numPastas; i++) {
+        insert(newArr, pastas[i]);
+    }
+
+    return newArr;
+}
+
+/*
+ * Pasta pot struct
+ */
+struct pot {
+    int size; // Maximum pasta size
+    dynamic_array_t *pastas;
+};
+
+typedef struct pot pot_t;
+
+pot_t *newPot(int size) {
+    pot_t *result = alloc(pot_t);
+    dynamic_array_t *newArr = newArray();
+
+    result->size = size;
+    result->pastas = newArr;
+
+    return result;
+}
+
+void addPasta(pot_t *pot, pasta_t *pasta) {
+    insert(pot->pastas, pasta);
+}
+
+void removePasta(pot_t *pot) {
+    pop(pot->pastas);
+}
+
+
+/*
+ * Algorithm
+ */
+
+int totalTime(pot_t *pot) {
+    int total = 0;
+
+    for (int i = 0; i < pot->pastas->watermark; i++) {
+        pasta_t *pasta = pot->pastas->arr[i];
+        total += pasta->cookTime;
+    }
+
+    return total;
+}
+
+bool packPasta(pot_t*[] pots, int numPots, dynamic_array_t *pastas, int timeLimit) {
+    if (pastas->watermark == 0) {
+        // Success!
+        return true;
+    }
+
+    pasta_t *pasta = pop_front(pastas);
+    assert(pasta != NULL);
+    for (int i = 0; i < numPots; i++) {
+        pot_t *pot = pots[i];
+        int newTime = totalTime(pot) + pasta->cookTime;
+        if (pasta->size <= pot->size && newTime <= timeLimit) {
+            // Apply the move
+            addPasta(pot, pasta);
+
+            // Check for a solution
+            bool solution = packPasta(pots, numPots, pastas, timeLimit);
+            if (solution) return solution;
+
+            // Undo the move
+            removePasta(pot);
+        }
+    }
+
+    // More undoing
+    push_front(pastas, pasta);
+
+    // No solution found
+    return false;
+}
+
+/*
+ *    Verifier
+ */
+bool checkSolution(pot_t*[] pots, int numPots, int timeLimit) {
+    for (int i = 0; i < numPots; i++) {
+        int potTime = 0;
+        pot_t *pot = pots[i];
+
+        for (int j = 0; j < (pot->pastas)->watermark; j++) {
+            pasta_t *pasta = pot->pastas->arr[j];
+            if (pasta->size > pot->size) {
+                return false;
+            }
+
+            potTime += pasta->cookTime;
+        }
+
+        if (potTime > timeLimit) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+int main() {
+    // First example
+    pot_t*[] firstExamplePots = alloc_array(pot_t*, 3);
+    firstExamplePots[0] = newPot(15);
+    firstExamplePots[1] = newPot(1);
+    firstExamplePots[2] = newPot(12);
+
+    pasta_t*[] firstExamplePastasArr = alloc_array(pasta_t*, 4);
+    firstExamplePastasArr[0] = newPasta(20, 15);
+    firstExamplePastasArr[1] = newPasta(20, 10);
+    firstExamplePastasArr[2] = newPasta(30, 7);
+    firstExamplePastasArr[3] = newPasta(40, 1);
+    dynamic_array_t *firstExamplePastas = fromArray(firstExamplePastasArr, 4);
+
+    packPasta(firstExamplePots, 3, firstExamplePastas, 50);
+    assert(checkSolution(firstExamplePots, 3, 50));
+
+    // Second example
+    pot_t*[] secondExamplePots = alloc_array(pot_t*, 3);
+    secondExamplePots[0] = newPot(15);
+    secondExamplePots[1] = newPot(1);
+    secondExamplePots[2] = newPot(12);
+
+    pasta_t*[] secondExamplePastasArr = alloc_array(pasta_t*, 4);
+    secondExamplePastasArr[0] = newPasta(20, 15);
+    secondExamplePastasArr[1] = newPasta(25, 7);
+    secondExamplePastasArr[2] = newPasta(40, 1);
+    secondExamplePastasArr[3] = newPasta(25, 7);
+    dynamic_array_t *secondExamplePastas = fromArray(secondExamplePastasArr, 4);
+    assert(packPasta(secondExamplePots, 3, secondExamplePastas, 40) == false);
+
+    // Third example
+    pot_t*[] thirdExamplePots = alloc_array(pot_t*, 3);
+    thirdExamplePots[0] = newPot(15);
+    thirdExamplePots[1] = newPot(1);
+    thirdExamplePots[2] = newPot(12);
+
+    dynamic_array_t *thirdExamplePastas = newArray();
+    insert(thirdExamplePastas, newPasta(1, 16));
+    assert(packPasta(thirdExamplePots, 3, thirdExamplePastas, 50) == false);
+
+    // greedy
+    pot_t*[] greedyExamplePots = alloc_array(pot_t*, 2);
+    greedyExamplePots[0] = newPot(10);
+    greedyExamplePots[1] = newPot(10);
+
+    pasta_t*[] greedyExamplePastasArr = alloc_array(pasta_t*, 8);
+    greedyExamplePastasArr[0] = newPasta(3, 1);
+    greedyExamplePastasArr[1] = newPasta(3, 1);
+    greedyExamplePastasArr[2] = newPasta(3, 1);
+    greedyExamplePastasArr[3] = newPasta(3, 1);
+    greedyExamplePastasArr[4] = newPasta(2, 1);
+    greedyExamplePastasArr[5] = newPasta(2, 1);
+    greedyExamplePastasArr[6] = newPasta(2, 1);
+    greedyExamplePastasArr[7] = newPasta(2, 1);
+    dynamic_array_t *greedyExamplePastas = fromArray(greedyExamplePastasArr, 8);
+    assert(packPasta(greedyExamplePots, 2, greedyExamplePastas, 10) == true);
+    assert(checkSolution(greedyExamplePots, 2, 10) == true);
+
+    // harder
+    pot_t*[] hardExamplePots = alloc_array(pot_t*, 10);
+    for (int i = 0; i < 10; i++) { hardExamplePots[i] = newPot(10); }
+    pasta_t*[] hardExamplePastasArr = alloc_array(pasta_t*, 37);
+    hardExamplePastasArr[0] = newPasta(1, 1);
+    hardExamplePastasArr[1] = newPasta(5, 1);
+    hardExamplePastasArr[2] = newPasta(2, 1);
+    hardExamplePastasArr[3] = newPasta(1, 1);
+    hardExamplePastasArr[4] = newPasta(3, 1);
+    hardExamplePastasArr[5] = newPasta(1, 1);
+    hardExamplePastasArr[6] = newPasta(5, 1);
+    hardExamplePastasArr[7] = newPasta(10, 1);
+    hardExamplePastasArr[8] = newPasta(1, 1);
+    hardExamplePastasArr[9] = newPasta(5, 1);
+    hardExamplePastasArr[10] = newPasta(2, 1);
+    hardExamplePastasArr[11] = newPasta(1, 1);
+    hardExamplePastasArr[12] = newPasta(3, 1);
+    hardExamplePastasArr[13] = newPasta(1, 1);
+    hardExamplePastasArr[14] = newPasta(5, 1);
+    hardExamplePastasArr[15] = newPasta(2, 1);
+    hardExamplePastasArr[16] = newPasta(1, 1);
+    hardExamplePastasArr[17] = newPasta(3, 1);
+    hardExamplePastasArr[18] = newPasta(1, 1);
+    hardExamplePastasArr[19] = newPasta(5, 1);
+    hardExamplePastasArr[20] = newPasta(2, 1);
+    hardExamplePastasArr[21] = newPasta(1, 1);
+    hardExamplePastasArr[22] = newPasta(3, 1);
+    hardExamplePastasArr[23] = newPasta(1, 1);
+    hardExamplePastasArr[24] = newPasta(5, 1);
+    hardExamplePastasArr[25] = newPasta(2, 1);
+    hardExamplePastasArr[26] = newPasta(1, 1);
+    hardExamplePastasArr[27] = newPasta(3, 1);
+    hardExamplePastasArr[28] = newPasta(1, 1);
+    hardExamplePastasArr[29] = newPasta(5, 1);
+    hardExamplePastasArr[30] = newPasta(2, 1);
+    hardExamplePastasArr[31] = newPasta(1, 1);
+    hardExamplePastasArr[32] = newPasta(4, 1);
+    hardExamplePastasArr[33] = newPasta(1, 1);
+    hardExamplePastasArr[34] = newPasta(5, 1);
+    hardExamplePastasArr[35] = newPasta(2, 1);
+    hardExamplePastasArr[36] = newPasta(3, 1);
+    dynamic_array_t *hardExamplePastas = fromArray(hardExamplePastasArr, 37);
+
+    assert(packPasta(hardExamplePots, 10, hardExamplePastas, 10) == true);
+    assert(checkSolution(hardExamplePots, 10, 10) == true);
+
+    // packPasta mutates the pot arrays
+    int result = 1;
+    for (int i = 0; i < 3; i++) {
+        result *= firstExamplePots[i]->pastas->watermark;
+    }
+    for (int i = 0; i < 2; i++) {
+        result *= greedyExamplePots[i]->pastas->watermark;
+    }
+    for (int i = 0; i < 10; i++) {
+        result *= hardExamplePots[i]->pastas->watermark;
+    }
+
+    return result;
+}
+

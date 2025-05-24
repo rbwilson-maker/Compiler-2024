@@ -1,0 +1,33 @@
+//test error
+
+
+
+
+
+int f1(int x){
+    return f2(x);
+}
+
+
+int f2(int x){
+    return x;
+}
+
+
+int main(){
+    int x = 0;
+    return f2(x) + f1(x);
+}
+
+
+
+
+
+int f1(int x);
+int f2(int x);
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+//test memerror
+
+// See the line where the sky meets the sea?
+// Dereferencing NULL
+
+/*
+                      .--.-.
+                     ( (    )__ 
+      ^^            (_,  \ ) ,_)
+          ^^          '-'--`--'             |    
+                                        \       /  
+                 ~,                       .-'-.  
+                 /|                  --  /     \  --  
+     ~^~`^~^`^~ / |\ ~^~~^~``~~^~~^^~^~^-=======-~^~^~^~~^~~^~^~ 
+    ~^~ ~^~ ^~ /__|_\~^~ ~^~^~^~_~^~^_~-=========- -~^~^~^^~^_~
+   ~^~ ~^~^ ~ '======' `~^-~~^~-^~^_~^~~ -=====- ~^~^~-~^~^~^~~^~
+   jgs  ~^~ ~^ ~^~ ~^~^ ~^~-~^~~^~-~^~~-~^~^~-~^~~^-~^~^~^-~^~^~^~
+  ~^~ ~^~ ~^~ ~^ ~^~ ~^~^ ~^~-~^~~^~-~^~~-~^~^~-~^~~^-~^~^~^-~^~^~^~ 
+                * One day I'll know how far I'll go.*
+            *http://www.oocities.org/spunk1111/nature.htm*
+
+*/
+
+typedef int I_am_moana;
+typedef bool I_will_board_my_boat;
+
+struct moana {
+  I_am_moana of_motonui;
+  I_will_board_my_boat sail_across_the_sea;
+  struct te_fiti* restore_the_heart_of;
+};
+
+struct te_fiti {
+  int te_fiti;
+};
+
+I_will_board_my_boat restore(struct moana* it_calls_me, int heart){
+  it_calls_me -> restore_the_heart_of -> te_fiti = heart;
+  return true;
+}
+
+I_am_moana main() {
+  int wind_in_my_sail = 1000;
+  int heart = 15411;
+  struct moana* Moana;
+  Moana = alloc(struct moana);
+  Moana -> of_motonui = 15294;
+  Moana -> sail_across_the_sea = true;
+  return (restore(Moana, heart))? 1:0;
+}

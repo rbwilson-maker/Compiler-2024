@@ -1,0 +1,17 @@
+//test return 0
+
+int main() {
+  string[] ss = alloc_array(string, 3);
+  ss[0] = "Welcome";
+  ss[1] = "To";
+  ss[2] = "CMU";
+  string s = "";
+  for (int i = 0; i < 3; i++) {
+    s = string_join(s, ss[i]);
+  }
+  if (string_equal(s, "WelcomeToCMU")) {
+    return 0;
+  } else {
+    return 1;
+  }
+}

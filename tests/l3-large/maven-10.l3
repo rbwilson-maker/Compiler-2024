@@ -1,0 +1,14 @@
+//test abort
+// Checks assert
+
+int subtract(int x, int y, int z) {
+  return x - y - z;
+}
+
+int main() {
+  int x = 147;
+  int y = 426;
+  int z = 739;
+  assert((subtract(x, y, z) > 0));
+  return 1;
+}

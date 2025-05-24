@@ -1,0 +1,27 @@
+//test div-by-zero
+
+void f(){
+	int a = 4/0;
+}
+
+int g(int a, int b){
+	return a/b;
+}
+
+
+int main(){
+	int a = 4;
+	int b = 0;
+	int c;
+	if (a > b){
+		c = 7;
+	} else{
+		c = 0;
+	}
+
+	c = g(a,b/c);
+
+    f();
+
+    return c;
+}

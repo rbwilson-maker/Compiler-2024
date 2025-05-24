@@ -1,0 +1,12 @@
+//test error
+
+typedef int typedef;
+typedef typedef typedef;
+
+typedef typedef(typedef x) {
+  return 15411;
+}
+
+int main() {
+  return typedef(x);
+}

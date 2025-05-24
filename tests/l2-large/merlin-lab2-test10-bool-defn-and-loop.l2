@@ -1,0 +1,15 @@
+//test return 2
+
+// test that boolean definition and comparisons work
+
+int main()
+{
+    bool tru = true;
+    bool fals = false;
+    int count = 2;
+    while(fals)
+    {
+        count = count + 1;
+    }
+    return count;
+}

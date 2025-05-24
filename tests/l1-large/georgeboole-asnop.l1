@@ -1,0 +1,22 @@
+//test return 1
+
+int main() {
+    int a = 10;
+
+    // += operator
+    a += 3;
+
+    // -= operator
+    a -= 2;
+
+    // *= operator
+    a *= 4;
+
+    // /= operator
+    a /= 2;
+
+    // %= operator
+    a %= 3;
+
+    return a;
+}

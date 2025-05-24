@@ -1,0 +1,32 @@
+//test return 4
+/*
+    looping-ternaryGCD: Finds the GCD of 512 and 252, but with conditionals
+    and loops.
+
+    Tests:
+    - Comparison operators (>=, >)
+    - Ternary expressions
+    - While loops
+    - Scoped variables (while loop body)
+*/
+
+int main() {
+    int x = 512;
+    int y = 252;
+
+    int larger = x >= y ? x : y;
+    int smaller = x + y - larger;
+
+    while (smaller >= 1) {
+        /*
+            "Replace the larger by the remainder of dividing the larger by the
+            smaller."
+        */
+        
+       int remainder = larger % smaller;
+       larger = remainder >= smaller ? remainder : smaller;
+       smaller = remainder > smaller ? smaller : remainder;
+    }
+    
+    return larger;
+}

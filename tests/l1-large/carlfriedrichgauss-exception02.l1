@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main() {
+    int int_max = 2147483647;
+    int y = 1 / (int_max + 1); // Y = 0
+    return 1 / y;
+}

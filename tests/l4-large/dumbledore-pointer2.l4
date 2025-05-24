@@ -1,0 +1,15 @@
+//test return 1
+typedef bool * boolptr;
+
+int main() {
+  boolptr bptr = alloc(bool);
+
+  *bptr = true;
+
+  if (*bptr) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}

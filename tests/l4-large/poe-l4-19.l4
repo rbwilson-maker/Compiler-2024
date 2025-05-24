@@ -1,0 +1,23 @@
+//test return 0
+
+// non context free file
+
+int herp() {
+	int foo = 15;
+	int bar = 411;
+	foo * bar;
+	return 15411;
+}
+
+typedef int foo;
+
+int derp() {
+	foo * bar = alloc(foo);
+	*bar = 15411;
+	return *bar;
+}
+
+int main() {
+	assert(herp() == derp());
+	return 0;
+}

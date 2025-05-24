@@ -1,0 +1,11 @@
+//test typecheck
+//test using header file functions
+
+int decrypt(int msg, int otp);
+
+int main() {
+  int otp = generate_otp(42);
+  int msg = 0xdec0ded;
+  assert(encrypt(decrypt(msg, otp), otp) == msg);
+  return 0;
+}

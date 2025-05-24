@@ -1,0 +1,8 @@
+//test error
+typedef oops int;
+typedef oops bool;
+
+int main() {
+	oops a = 0;
+	return 0;
+}

@@ -1,0 +1,21 @@
+//test abort
+
+// tests void functions in ternaries
+void testlt(int x) {
+    assert(x < 0);
+}
+
+void testgt(int x) {
+    assert(x > 0);
+}
+
+int main() {
+    int x = 5;
+    x >>= 30;
+    if (x > 0) {
+        testgt(x);
+    } else {
+        testlt(x);
+    }
+    return x;
+}

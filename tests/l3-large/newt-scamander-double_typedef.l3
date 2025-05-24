@@ -1,0 +1,9 @@
+//test error
+
+typedef int my_int;
+
+typedef int my_int;  // my_int type declared twice
+
+int main() {
+	return 0;
+}

@@ -1,0 +1,26 @@
+//test return 0
+
+typedef bool bar;
+
+struct arr {
+    int arg;
+    int argh;
+};
+
+int foo(int a, int b){
+    if (a == 0)
+        return b;
+    else
+        foo(a / b, b);
+    return 0;
+}
+
+int main() {
+    bool x = false;
+    bool y = true;
+    foo ( 20, 5);
+    struct arr *pirate = alloc(struct arr); 
+    pirate->arg = foo(20,5);
+    pirate->argh = foo(1,2);
+    return pirate->arg + pirate->argh; 
+}

@@ -1,0 +1,24 @@
+//test return 2
+
+int main() {
+  int i = 3;
+  int j = -4;
+  int x;
+  
+  x = 5;
+  
+  j = x >> 1;
+
+  bool a;
+  bool b;
+
+  a = x > j;
+  b = j > i;
+  
+  if (a || b) {
+    return j;
+  } else {
+    return i;
+  }
+  
+}

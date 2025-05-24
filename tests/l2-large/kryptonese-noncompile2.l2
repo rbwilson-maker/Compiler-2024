@@ -1,0 +1,7 @@
+//test error
+
+int main ()
+{
+  int x = 0xDEAD1234;
+  return  x > 0;//it tries to return a bool which is illegal
+}

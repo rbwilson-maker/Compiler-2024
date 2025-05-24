@@ -1,0 +1,8 @@
+//test return -8
+// test negations and left parens
+int main() {
+	int x;
+	x = 10;
+	((x)) = -x + 2;
+	return x;
+}

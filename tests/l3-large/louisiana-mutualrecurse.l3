@@ -1,0 +1,23 @@
+//test return 1
+
+typedef int leint;
+leint path2(leint z);
+
+int path1(int x){
+    if (x == 0) {
+        return 1;
+    }
+
+    else {
+        return path2(x);
+    }
+}
+
+int path2(int y){
+    return path1(y-1);
+}
+
+int main(){
+    int x = 42;
+    return path1(x);
+}

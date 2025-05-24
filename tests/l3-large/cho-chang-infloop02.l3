@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int main()
+{
+    fpt x = 20;
+    fpt y = 1;
+    fpt z = x;
+    while(fless(0, z))
+    {
+        z = fdiv(x, y);
+    }
+    return 0;
+}

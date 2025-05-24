@@ -1,0 +1,43 @@
+//test return 21
+
+struct c {
+    int i;
+};
+
+struct b {
+    struct c c;
+    int i;
+};
+
+struct a {
+    struct b b;
+    int i;
+};
+
+struct z {
+    struct a a;
+    int i;
+};
+
+struct y {
+    struct z z;
+    int i;
+};
+
+struct x {
+    struct y y;
+    int i;
+};
+
+int main() {
+
+    struct x *x = alloc(struct x);
+    x->i = 1;
+    x->y.i = 2;
+    x->y.z.i = 3;
+    x->y.z.a.i = 4;
+    x->y.z.a.b.i = 5;
+    x->y.z.a.b.c.i = 6;
+
+    return x->i + x->y.i + x->y.z.i + x->y.z.a.i + x->y.z.a.b.i + x->y.z.a.b.c.i;
+}

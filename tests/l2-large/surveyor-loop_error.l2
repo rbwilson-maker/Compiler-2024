@@ -1,0 +1,18 @@
+//test error
+
+int main() {
+  int x = 10;
+  while (x > 0) {
+    {
+      if (x == 0) {
+        return 12;
+      } else {
+        return 8;
+        int y = 16;
+      }
+      int y;
+      x = y;
+    }
+  }
+  return 0;
+}

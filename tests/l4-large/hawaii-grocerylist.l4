@@ -1,0 +1,48 @@
+//test return 1191010588
+
+fpt todollars(int n) {
+  return fdiv(itof(n), itof(100));
+}
+
+struct grocery
+{
+  int quantity;
+  fpt cost;
+  struct grocery* next;
+};
+
+int main() {
+  struct grocery* groceries = alloc(struct grocery);
+  struct grocery* curr = groceries;
+
+  curr->quantity = 10;
+  curr->cost = todollars(199);
+
+  for (int i = 0; i < 400; i++) {
+    struct grocery* new = alloc(struct grocery);
+    new->quantity = ((curr->quantity) * 71) % 23;
+    new->cost = todollars(((curr->cost) * 13) % 1000);
+    curr->next = new;
+    curr = new;
+  }
+
+  curr->next = groceries;
+
+  bool first = true;
+  struct grocery* traverse = groceries;
+  fpt total = itof(0);
+  int prevcost = total;
+  while(prevcost != total || first) {
+    prevcost = total;
+    for (int i = 0; i <= 400; i++) {
+      if (traverse->quantity > 0) {
+        traverse->quantity--;
+        total = fadd(total, traverse->cost);
+      }
+      traverse = traverse->next;
+    }
+    if (first) first = false;
+  }
+
+  return total;
+}

@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+
+int inf_fun(int a, int d) {
+	int c = 0;
+	for(int i = 0; i <= a; i+=d) {
+		if(i%7==0)
+			c++; 
+	}
+	return c;
+}
+
+int main() {
+	assert(inf_fun(49, 1) == 8);
+	assert(inf_fun(69, 0) == -1);
+	return 0;
+}

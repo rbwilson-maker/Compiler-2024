@@ -1,0 +1,9 @@
+//test error
+int recurse(int recurse) {
+  if (recurse == 0) return 0;  
+  recurse(recurse - 1);
+}
+
+int main() {  
+  return recurse(10);
+}

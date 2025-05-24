@@ -1,0 +1,9 @@
+//test return 27
+
+// operator precedence test
+
+int main() {
+  int x = 42;
+  x += 2 + 3 * -5 - 8 / 5 - 7 % 3;
+  return x;
+}

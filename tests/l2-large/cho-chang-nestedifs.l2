@@ -1,0 +1,24 @@
+//test return 1
+//tests that nested ifs work correctly
+
+int main()
+{
+    bool a = true;
+    bool b = false;
+
+    if(a && b)
+    {
+        return 0;
+    }
+    else
+    {
+        if(a || b)
+        {
+            return 1;
+        }
+        else
+        {
+            return 2;
+        }
+    }
+}

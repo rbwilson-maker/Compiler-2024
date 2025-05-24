@@ -1,0 +1,45 @@
+//test return 2020
+
+/* Recusion in structs */
+
+struct linkedlist {
+  int num;
+  struct linkedlist* next;
+};
+
+typedef struct linkedlist* linkedlist;
+
+linkedlist init() {
+  return NULL;
+}
+
+linkedlist push(linkedlist l, int num) {
+  linkedlist lnew = alloc(struct linkedlist); 
+  lnew->num = num;
+  lnew->next = l;
+  return lnew;
+}
+
+int get(linkedlist l, int index) {
+  for(int i = 0; i < index; i++) {
+    l = l->next;
+  }
+
+  return l->num;
+}
+
+int main() {
+  linkedlist l = init();
+  l = push(l, 2020);
+  l = push(l, 0);
+  l = push(l, 2);
+  l = push(l, 0);
+  l = push(l, 2);
+
+  assert(get(l, 0) == 2);
+  assert(get(l, 1) == 0);
+  assert(get(l, 2) == 2);
+  assert(get(l, 3) == 0);
+
+  return get(l, 4);
+}

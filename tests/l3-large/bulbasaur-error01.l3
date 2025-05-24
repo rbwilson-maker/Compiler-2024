@@ -1,0 +1,13 @@
+//test error
+// simple typechecker test
+int fives()
+{
+  return 55;
+}
+
+int main()
+{
+  bool t = fives();
+
+  return t;
+}

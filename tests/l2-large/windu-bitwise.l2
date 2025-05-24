@@ -1,0 +1,19 @@
+//test return 0
+
+int main() {
+    int x = 0xffffffff;
+    int y = 0x00000000;
+    int z = 0xf0f0f0f0;
+
+    int accum = 0;
+    
+    accum += z << 31;
+    accum += z >> 31;
+
+    accum &= z;
+    accum ^= y;
+    accum |= (x ^ z);
+
+    return ~accum;
+}
+

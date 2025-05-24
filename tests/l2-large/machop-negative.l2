@@ -1,0 +1,19 @@
+//test return 0
+// Tests bitwise arithmetic via negation and fuzzy testing
+int main () {
+  int p = 8191;
+  int m = 411;
+  int c = 15;
+
+  int x = 0;
+  int i;
+  int negDiff;
+
+  for (i = 0; i < 100; i++) {
+    negDiff = -x - (~x+1);
+    if (negDiff != 0) return 1;
+    x = (x * m + c) % p;
+  }
+
+  return 0;
+}

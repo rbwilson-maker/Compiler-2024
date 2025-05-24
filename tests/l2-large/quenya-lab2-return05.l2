@@ -1,0 +1,11 @@
+//test return 2187
+// computes an exponent
+int main() {
+  int acc = 1;
+  int exp = 0;
+  while (exp < 7) {
+    acc *= 3;
+    exp++;
+  }
+  return acc;
+}

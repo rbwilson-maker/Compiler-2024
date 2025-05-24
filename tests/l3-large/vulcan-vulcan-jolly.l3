@@ -1,0 +1,18 @@
+//test error
+
+int helper(int a){
+	while(a < 10) {
+		if (a < 5){
+			return 1;
+		} else {
+			if (a < 2){
+				return 2;
+			}
+		}
+	}
+
+}
+
+int main() {
+	return 0;
+}

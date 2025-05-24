@@ -1,0 +1,14 @@
+//test div-by-zero
+//division error because of mod 0
+int main()
+{
+    int a;
+    int b;
+    int c;
+
+    a = 0;
+    b = 8;
+    c = b % a;
+
+    return 1;
+}

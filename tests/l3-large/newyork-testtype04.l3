@@ -1,0 +1,15 @@
+//test return 0
+
+int main();
+
+int f(){
+	return main();
+}
+
+int main(){
+	if (false){
+		return f();
+	}
+
+	return 0;
+}

@@ -1,0 +1,15 @@
+//test error
+// structs may not be redefined, not even if their two definitions are the same
+
+struct a {
+	int foo;
+};
+
+struct a {
+	int foo;
+};
+
+int main() {
+	
+	return 0;
+}

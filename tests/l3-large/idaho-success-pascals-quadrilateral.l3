@@ -1,0 +1,16 @@
+//test return 252
+//computes n choose r for given n and r (n = 10, r = 5 here)
+
+int choose(int n, int r) {
+  if (n < r) {
+    return 0;
+  } else if (r == 0) {
+    return 1;
+  } else {
+    return choose(n - 1, r - 1) + choose(n - 1, r);
+  }
+}
+
+int main() {
+  return choose(10, 5);
+}

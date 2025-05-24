@@ -1,0 +1,17 @@
+//test return 4
+//the function has side effects!
+
+int activate_side_effect(int[] A, int n)
+{
+  //increase A[n] by 1
+  A[n] += 1;
+  return n;
+}
+
+int main()
+{
+  int[] A = alloc_array(int, 1);
+  A[activate_side_effect(A,0)] += 3; //you've activated my trap card!
+  //bad elaboration should result in 5 instead
+  return A[0];
+}

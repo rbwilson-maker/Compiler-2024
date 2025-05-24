@@ -1,0 +1,10 @@
+//test return -58
+int main() {
+  int j = 25;
+  int k = 35;
+  int l = j + k;
+  int m = k * l;
+  int n = l - m;
+  int o = n / k;
+  return o;
+}

@@ -1,0 +1,16 @@
+//test return 7
+
+int main() 
+{
+    bool blah = false;
+    int y;
+    int x;
+    if (blah) {
+        return 192837465;
+    }
+    else {
+        x = 7;
+        return x;
+    }
+    return y;
+}

@@ -1,0 +1,38 @@
+//test div-by-zero
+int main() {
+
+    int z = 2147483647;
+
+    while (true) {
+        if (z != 0) {
+            z /= 2;
+            z *= 2;
+            z >>= 1;
+        }
+
+        // if z minus one ends with three, then do something
+        int g = ((z - 1) & 0x3) == 3 ? 72 : 92;
+
+        // if z ends with 4 and z -1 doesn't end with three, loop forever
+        if ((z & 0x7) == 4 && g != 72) {
+            // loopdy loop
+            for (int j = 0; (!false && false) ? 3 == 3 : (!false || false); j++) {
+                int w = 420;
+                int hallelujah = 69;
+            }
+        }
+
+
+        if (z / 4 == 59) {
+            bool trueBigFacts = true;
+        } else {
+            for (int i = 0; i < 7; i++) {
+                if (i == 7 || i == 6 ? i * 2 /2 == 6 : (false && true || false)) {
+                    int x = 83 / z;
+                }
+            }
+        }
+    }
+
+    return 11 * 11;
+}

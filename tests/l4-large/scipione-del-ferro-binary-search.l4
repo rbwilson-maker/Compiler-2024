@@ -1,0 +1,37 @@
+//test return 3
+// classic binary search
+
+bool find_helper(int[] A, int x, int lo, int hi) {
+    if (lo >= hi) return false;
+    int mid = lo + (hi - lo)/2;
+    if (A[mid] == x) return true;
+    if (A[mid] > x) return find_helper(A, x, lo, mid);
+    return find_helper(A, x, mid + 1, hi);
+}
+
+bool find(int[] A, int n, int x) {
+    return find_helper(A, x, 0, n);
+}
+
+int main() {
+    int n = 42;
+    int[] nums = alloc_array(int, n);
+    for (int i = 0; i < n; i++) {
+        nums[i] = i;
+    }
+
+    int m = 5;
+    int[] nums_to_find = alloc_array(int, m);
+    nums_to_find[0] = 2;
+    nums_to_find[1] = 86;
+    nums_to_find[2] = 40;
+    nums_to_find[3] = 12;
+    nums_to_find[4] = -16;
+
+    int total_found = 0;
+    for (int i = 0; i < m; i++) {
+        if (find(nums, n, nums_to_find[i])) total_found++;
+    }
+
+    return total_found;
+}

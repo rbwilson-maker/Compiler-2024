@@ -1,0 +1,7 @@
+//test return -2147483648
+// integer wrap around
+int main()
+{
+  int a = 2147483647+1; //(2**31-1) + 1 = -2**31. lexer won't catch this
+  return a; 
+}

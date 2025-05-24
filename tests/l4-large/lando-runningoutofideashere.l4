@@ -1,0 +1,25 @@
+//test return 243
+
+struct a {
+  int a;
+  int b;
+};
+
+struct b {
+  int *c;
+  int []d;
+};
+
+struct c {
+  struct a a;
+  struct b b;
+};
+
+
+int main() {
+  struct c[] c = alloc_array(struct c, 10); 
+  c[7].b.c = NULL;
+  c[7].a.b = 243;
+  c[7].b.d = alloc_array(int, 0);
+  return c[7].a.b;
+}

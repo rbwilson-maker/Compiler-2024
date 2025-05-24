@@ -1,0 +1,34 @@
+//test return 1
+
+typedef bool my_bool;
+typedef int my_int;
+
+bool is_even(int x);
+bool is_odd(int x);
+
+my_bool is_even(my_int x);
+my_bool is_odd(my_int x);
+
+
+my_bool is_even(my_int n){
+	if(n==0){
+		return true;
+	} else {
+		return is_odd(n-1);
+	}
+}
+
+my_bool is_odd(my_int n){
+	if(n == 0){
+		return false;
+	} else {
+		return is_even(n-1);
+	}
+	
+}
+
+int main() {
+	assert(is_odd(2453));
+	assert(is_even(5486));
+	return 1;
+}

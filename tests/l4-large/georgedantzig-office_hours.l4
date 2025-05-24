@@ -1,0 +1,55 @@
+//test compile
+
+/* Tests:
+ *  - Use of structs defined in header files
+ *  - Use of structs declared in header files
+ *  - Nested calls
+ */
+
+// Simulate an office hours queue
+
+// Create a new student
+student_t *new_student(int andrewID) {
+    student_t *student = alloc(student_t);
+    student->andrewID = andrewID;
+    // Students are always stressed
+    student->stressed = true;
+    return student;
+}
+
+// Adds a student to the back of the queue
+void add_student(node_t* queue, student_t* student) {
+    push_back(queue, new_node(student));
+}
+
+// Removes a student from the front of a queue
+void help_student(node_t* queue) {
+    student_t* student = from_node(pop_front(queue));
+    student->stressed = false;
+}
+
+int main () {
+    // There are three TAs
+    int available_tas = 3;
+
+    // But there are 100 students on the queue! D:
+    node_t* queue = NULL;
+    for (int i = 0; i < 100; i++) {
+        add_student(queue, new_student(i));
+    }
+
+    // But, they're going to help every student, even if it takes all night!
+    while (queue != NULL) {
+        // A TA helps a student
+        if (available_tas > 0) {
+            help_student(queue);
+            available_tas -= 1;
+        }
+        // The TAs finish helping their students
+        else {
+            available_tas = 3;
+        }
+    }
+
+    return 0;
+}

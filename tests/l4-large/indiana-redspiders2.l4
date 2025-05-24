@@ -1,0 +1,108 @@
+//test return 43
+//43
+struct spiderdoge{
+  int wow;
+  int such;
+  int many;
+  int amaze;
+  int so;
+  int very;
+  int Wow;
+  int color;
+};
+//finds variance
+int sq(int n){
+  return n*n;
+}
+bool isFunny(struct spiderdoge* D){
+  int total = (D->wow + D->such + D->many + D->amaze +
+               D->so + D->very + D->Wow + D->color) / 8;
+  int Ewow = D->wow - total;
+  int Esuch = D->such - total;
+  int Emany = D->many - total;
+  int Eamaze = D->amaze - total;
+  int Eso = D->so - total;
+  int Every = D->very - total;
+  int EWow = D->Wow - total;
+  int Ecolor = D->color - total;
+  int variance = (sq(Ewow) + sq(Esuch) + sq(Emany) + sq(Eamaze)
+                  + sq(Eso) + sq(Every) + sq(EWow) + sq(Ecolor)) / 8;
+  int variance2 = (sq(D->wow) + sq(D->such) + sq(D->many) +
+                   sq(D->amaze) + sq(D->so) + sq(D->very) +
+                   sq(D->Wow) + sq(D->color)) /8 - sq(total);
+
+  return variance == variance2;
+}
+
+int main(){
+  struct spiderdoge* D = alloc(struct spiderdoge);
+  /* how good is this doge?*/
+  D->wow = 0;
+  D->such = 0;
+  D->many = 0;
+  D->amaze = 0;
+  D->so = 0;
+  D->very = 0;
+  D->Wow = 0;
+  D->color = 0;
+  assert(isFunny(D));
+  D->wow = 8;
+  D->such = 8;
+  D->many = 8;
+  D->amaze = 8;
+  D->so = 8;
+  D->very = 8;
+  D->Wow = 8;
+  D->color = 8;
+  assert(isFunny(D));
+  D->wow = 43;
+  D->such = 43;
+  D->many = 43;
+  D->amaze = 43;
+  D->so = 43;
+  D->very = 43;
+  D->Wow = 43;
+  D->color = 43;
+  assert(isFunny(D));
+  D->wow = 8;
+  D->such = 16;
+  D->many = 24;
+  D->amaze = 32;
+  D->so = 40;
+  D->very = 48;
+  D->Wow = 56;
+  D->color = 64;
+  assert(isFunny(D));
+  D->wow = 1;
+  D->such = 2;
+  D->many = 3;
+  D->amaze = 4;
+  D->so = 5;
+  D->very = 6;
+  D->Wow = 7;
+  D->color = 8;
+  assert(!isFunny(D));
+  assert(!isFunny(D));
+  D->wow = -8;
+  D->such = -16;
+  D->many = -32;
+  D->amaze = -64;
+  D->so = -128;
+  assert(!isFunny(D));
+  D->very = -256;
+  D->Wow = -512;
+  D->color = -1024;
+  assert(isFunny(D));
+  D->wow = -2048;
+  D->such = D->wow*2;
+  D->many = D->such*2;
+  D->amaze = D->many*2;
+  D->so = D->amaze*2;
+  D->very = D->so*2;
+  D->Wow = D->very*2;
+  D->color = D->Wow*2;
+  assert(isFunny(D));
+  assert(isFunny(D));
+
+  return 43;
+}

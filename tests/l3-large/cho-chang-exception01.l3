@@ -1,0 +1,15 @@
+//test div-by-zero
+
+bool even(int n) {
+	if (n % 2 == 0)
+		return true;
+
+	1 / 0;
+	return false;
+}
+
+int main() {
+	assert(even(2));
+	even(3);
+	return 0;
+}

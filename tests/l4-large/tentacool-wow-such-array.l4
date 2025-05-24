@@ -1,0 +1,15 @@
+//test return 42
+
+int f(int* p) {
+	int result = *p;
+	*p = 1337;
+	return result;
+}
+
+int main() {
+	int[] arr = alloc_array(int, 1000);  // wow such array
+	int* p = alloc(int);
+	*p = 69;
+	arr[f(p)] += 42;
+	return arr[69];
+}

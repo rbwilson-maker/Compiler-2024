@@ -1,0 +1,10 @@
+//test typecheck
+
+int divbywhat () {
+	int x = 1 / 0;
+	return 2;
+}
+
+int main () {
+	return 0;
+}

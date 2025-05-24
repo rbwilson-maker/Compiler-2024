@@ -1,0 +1,6 @@
+//test div-by-zero
+
+// tests whether the parser/lexer can handle no whitespace, and also a
+// divide-by-zero error
+
+int main(){int var=4;var/=3-3;return var;}

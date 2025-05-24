@@ -1,0 +1,22 @@
+//test abort
+
+int getIndex(int[] arr, int val) {
+    for (int i = 0; i < 100; i++) {
+        if (arr[i] == 10) return i;
+        if (arr[i] == -1) return 1 / 0;
+        arr[i] = -1;
+    }
+    return -1;
+}
+
+int main() {
+    int[] x = alloc_array(int, 10);
+    x[3] = 10;
+    x[getIndex(x, 10)]++;
+    int i = 0;
+    while (true) {
+        assert(x[i] < 11);
+        i++;
+    }
+    return x[10];
+}

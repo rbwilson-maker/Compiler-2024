@@ -1,0 +1,13 @@
+//test abort
+
+int main()
+{
+
+  char j;
+
+  for(int i = 0; true; i++)
+  {
+    j = char_chr(i);
+  }
+  return 251;
+}

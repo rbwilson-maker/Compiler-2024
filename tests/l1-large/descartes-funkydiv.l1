@@ -1,0 +1,13 @@
+//test div-by-zero
+//Tests division with int_min, should yield an exception as 
+//-int_min is one greater than int_max
+
+int main() {
+    int max;
+    max = -2147483648;
+    
+    int temp;
+    temp = max/-1;
+
+    return temp;
+}

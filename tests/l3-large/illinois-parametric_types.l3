@@ -1,0 +1,13 @@
+//test error
+// nonparametric types
+
+bool eq(int a, int b) {
+  return a == b;
+}
+
+int main() {
+  if (eq(true, false) {
+    return -1;
+  }
+  return 0;
+}

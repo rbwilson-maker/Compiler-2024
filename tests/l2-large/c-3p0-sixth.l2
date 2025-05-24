@@ -1,0 +1,15 @@
+//test error
+
+int main()
+{
+  bool a = true;
+  bool b = false;
+
+  while (a || b)
+  {
+    a |= b;
+    b |= a;
+  }
+
+  return 0;
+}

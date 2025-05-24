@@ -1,0 +1,13 @@
+//test return 6
+
+int main() {
+    int x = 60;
+    int y = 0;
+    int z = -5;
+    while (x >= 10) {
+        x -= 10;
+        y++;
+        z += y;
+    }
+    return y;
+}

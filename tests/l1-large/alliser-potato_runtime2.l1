@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main() {
+    int a = 5 * 7 * 0;
+    int b = 0 / 42;
+    int c = (18 + 3) - (2 * 11 - 1);
+    int d = -1 + 1 + 2 - 2;
+    return a + b % c * d; }

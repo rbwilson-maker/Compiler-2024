@@ -1,0 +1,20 @@
+//test return -3
+
+int foo(int a1, bool b1);
+int foo(int a2, bool b2);
+int foo(int a3, bool b3);
+int foo(int a4, bool b4);
+int foo(int a5, bool b5);
+int foo(int a6, bool b6);
+int foo(int a7, bool b7);
+int foo(int a8, bool b8);
+int foo(int a9, bool b9);
+int foo(int a10, bool b10);
+
+int foo(int x, bool y) {
+  return y ? x : -x;
+}
+
+int main() {
+  return foo(3, false);
+}

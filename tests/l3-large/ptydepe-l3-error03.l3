@@ -1,0 +1,11 @@
+//test error
+// uneven braces
+
+int main (int x) {
+    {
+        int mainPrime(){
+            int a = 5;
+            return a;
+        }
+    return mainPrime();
+}

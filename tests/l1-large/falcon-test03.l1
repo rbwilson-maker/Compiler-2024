@@ -1,0 +1,23 @@
+//test div-by-zero
+
+int main() {
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+    int f;
+    int g;
+    int h;
+
+    a = 2;
+    b = a - 1;
+    c = b - 1;
+    d = c + 5;
+    // This part should not be optimized away, even though we never use e
+    e = d * (d * d) / c;
+    f = d + 4;
+    g = f * (f - f * f);
+    h = 4 + g;
+    return h;
+}

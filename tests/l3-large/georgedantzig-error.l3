@@ -1,0 +1,13 @@
+//test error
+
+typedef int func;
+
+int func(int x)
+{
+    return x;
+}
+
+int main()
+{
+    return func(5);
+}

@@ -1,0 +1,12 @@
+//test error
+// pointer comparison
+
+struct a {int x; int y; struct b *b};
+struct b {int w; int z; struct a *a};
+
+int main() {
+    struct a *p = NULL;
+    struct b *t = NULL;
+
+    return a >= b? 42 : 24;
+}

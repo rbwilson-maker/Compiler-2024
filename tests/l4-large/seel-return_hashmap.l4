@@ -1,0 +1,66 @@
+//test return 0
+// Tests funny looking types by using a pointer-to-hashmap
+
+struct node {
+  int key;
+  int val;
+  struct node *next;
+};
+
+typedef struct node node;
+
+node*[]* hm_new() {
+  node*[] arr = alloc_array(node*, 20);
+  node*[]* ptr = alloc(node*[]);
+  *ptr = arr;
+  return ptr;
+}
+
+node* hm_lookup(node*[]* hm, int key) {
+  int index = key % 20;
+  node* n = (*hm)[index];
+  while (NULL != n) {
+    if (n->key == key) {
+      return n;
+    }
+    n = n->next;
+  }
+  return NULL;
+}
+
+void hm_insert(node*[]* hm, int key, int val) {
+  node* n = hm_lookup(hm, key);
+  if (n == NULL) {
+    int index = key % 20;
+    node* new = alloc(node);
+    new->key = key;
+    new->val = val;
+    new->next = (*hm)[index];
+    (*hm)[index] = new;
+  } else {
+    n->val = val;
+  }
+}
+
+int hm_get(node*[]* hm, int key) {
+  node* n = hm_lookup(hm, key);
+  return n == NULL? -1 : n->val;
+}
+
+int main() {
+  node*[]* hm = hm_new();
+  hm_insert(hm, 4, 20);
+  hm_insert(hm, 5, 21);
+  assert(hm_get(hm, 24) == -1);
+  assert(hm_get(hm, 3) == -1);
+  assert(hm_get(hm, 4) == 20);
+  assert(hm_get(hm, 5) == 21);
+  hm_insert(hm, 24, 13);
+  hm_insert(hm, 4, 9);
+  assert(hm_get(hm, 24) == 13);
+  assert(hm_get(hm, 4) == 9);
+  assert(hm_get(hm, 5) == 21);
+  hm_insert(hm, 4, 10);
+  assert(hm_get(hm, 4) == 10);
+  return 0;
+}

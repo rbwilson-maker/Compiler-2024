@@ -1,0 +1,8 @@
+//test return 42
+
+int main()
+{
+int y = 35/10/2;
+if (y == 1) return 42;
+else return y;
+}

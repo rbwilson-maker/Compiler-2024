@@ -1,0 +1,11 @@
+//test error
+
+int f(){
+}
+
+int main(){
+    if(f() == f()){
+           return 10;
+    }
+    return 10;
+}

@@ -1,0 +1,27 @@
+//test return 16
+
+struct C {
+	int c;
+};
+
+struct B {
+	struct C cStruct;
+	int b;
+};
+
+struct A {
+	struct B bStruct;
+	int a;
+};
+
+int main() {
+	struct A *aStruct = alloc(struct A);
+
+	aStruct->a = 4;
+	aStruct->bStruct.b = 5;
+	aStruct->bStruct.cStruct.c = 6;
+
+	aStruct->bStruct.b = aStruct->bStruct.cStruct.c;
+
+	return aStruct->a + aStruct->bStruct.b + aStruct->bStruct.cStruct.c;
+}

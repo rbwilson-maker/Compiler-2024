@@ -1,0 +1,76 @@
+//test return 105
+
+void modify_stuff() {
+     int a1 = 1;
+     int a2 = 2;
+     int a3 = 2;
+     int a4 = 2;
+     int a5 = 2;
+     int a6 = 2;
+     int a7 = 2;
+     int a8 = 2;
+     int a9 = 2;
+     int a10 = 2;
+     int a11 = 2;
+     int a12 = 2;
+     int a13 = 2;
+     int a14 = 2;
+     int a15 = 2;
+     a1 += 1;
+     a2 += 2;
+     a3 += 2;
+     a4 += 2;
+     a5 += 2;
+     a6 += 2;
+     a7 += 2;
+     a8 += 2;
+     a9 += 2;
+     a10 += 2;
+     a11 += 2;
+     a12 += 2;
+     a13 += 2;
+     a14 += 2;
+     a15 += 2;
+     int z = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10 + a11 + a12 + a13 + a14 + a15;
+}
+
+
+int func() {
+     int a1 = 5;
+     int a2 = 5;
+     int a3 = 5;
+     int a4 = 5;
+     int a5 = 5;
+     int a6 = 5;
+     int a7 = 5;
+     int a8 = 5;
+     int a9 = 5;
+     int a10 = 5;
+     int a11 = 5;
+     int a12 = 5;
+     int a13 = 5;
+     int a14 = 5;
+     int a15 = 5;
+     modify_stuff();
+     a1 += 2;
+     a2 += 2;
+     a3 += 2;
+     a4 += 2;
+     a5 += 2;
+     a6 += 2;
+     a7 += 2;
+     a8 += 2;
+     a9 += 2;
+     a10 += 2;
+     a11 += 2;
+     a12 += 2;
+     a13 += 2;
+     a14 += 2;
+     a15 += 2;
+     int z = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10 + a11 + a12 + a13 + a14 + a15;
+     return z;
+}
+
+int main() {
+    return func();
+}

@@ -1,0 +1,27 @@
+//test div-by-zero
+// Recursively multiply two n bit integers where n is a power of 2
+
+typedef int uint;
+
+uint rec_umul(uint x, uint y, int bits) {
+  int res;
+  if (bits == 1) {
+    res = (y & 1) == 0 ? 0 : x;
+    return res;
+  }
+  uint mask = ~(-1 << bits);
+  uint maskhi = ~(-1 << (bits >> 1));
+  uint masklo = ~(-1 << (bits - (bits >> 1)));
+  uint xhi = (x & mask) >> (bits - (bits >> 1)) & maskhi;
+  uint xlo = x & masklo;
+  uint yhi = (y & mask) >> (bits - (bits >> 1)) & maskhi;
+  uint ylo = y & masklo;
+  res = (rec_umul(xhi, yhi, bits >> 1) << (bits >> 1 << 1)) + 
+        ((rec_umul(xhi, ylo, bits >> 1) + rec_umul(xlo, yhi, bits >> 1)) << (bits >> 1)) +
+        rec_umul(xlo, ylo, bits >> 1);
+  return res;
+}
+
+int main() {
+  return rec_umul((1 << 18), (1 << 30) + (1 << 20) + (1 << 5), 32);
+}

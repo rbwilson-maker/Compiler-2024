@@ -1,0 +1,79 @@
+//test return 1
+// sort a linked list using merge sort, yo
+
+struct list {
+  int data;
+  struct list *next;
+};
+
+typedef struct list *list_t;
+
+list_t merge(list_t a, list_t b) {
+  if (a == NULL) return b;
+  if (b == NULL) return a;
+
+  assert(a != NULL && b != NULL);
+  
+  if (a->data < b->data) {
+    a->next = merge(a->next, b);
+    return a;
+  } else {
+    b->next = merge(a, b->next);
+    return b;
+  }
+}
+
+int length(list_t l) {
+  if (l == NULL) return 0;
+
+  return 1 + length(l->next);
+}
+
+
+list_t sort(list_t l) {
+  if (l == NULL) return l;
+
+  if (l->next == NULL) return l;
+
+  int mid = length(l) / 2;
+
+  list_t half = l;
+
+  for (int i=1; i < mid-1; i++)
+    half = half->next;
+
+  list_t dummy = half;
+  half = half->next;
+  dummy->next = NULL;
+
+  l = sort(l);
+  half = sort(half);
+
+  return merge(l, half);
+}
+
+int is_sorted(list_t l) {
+  if (l == NULL) return 1;
+  if (l->next == NULL) return 1;
+
+  if (l->data > l->next->data) return 0;
+
+  return is_sorted(l->next);
+}
+
+int main() {
+  list_t a = alloc(struct list);
+  list_t tmp = a;
+
+  for (int i=0; i<10000; i++) {
+    tmp->next = alloc(struct list);
+    tmp = tmp->next;
+    tmp->data = i % 47;
+  }
+
+  a = sort(a);
+
+  assert(length(a) == 10001);
+
+  return is_sorted(a);
+}

@@ -1,0 +1,12 @@
+//test error
+// the step condition in the for loop may not contain declarations
+
+int main()
+{
+  int a = 1;
+  for (int x = 0; x < 5; int b = 1) {
+    a--;
+    x++;
+  }
+  return a;
+}

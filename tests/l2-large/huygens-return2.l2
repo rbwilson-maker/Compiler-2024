@@ -1,0 +1,12 @@
+//test return 0
+//test if statement
+
+int main() {
+    int x = ((1 >> 10) + 4) << 10 & (2 >> 1);
+    int mask = 0x101;
+    if ((x & mask) > 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+}

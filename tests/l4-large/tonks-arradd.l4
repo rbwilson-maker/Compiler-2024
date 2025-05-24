@@ -1,0 +1,27 @@
+//test return 90
+
+struct my_struct {
+  int x;
+  bool b;
+};
+
+typedef struct my_struct my_type;
+
+int main() {
+  int num_elems = 20;
+
+  my_type[] my_types = alloc_array(my_type, num_elems);
+  for (int i = 0; i < num_elems; i++) {
+    my_types[i].x = i;
+    my_types[i].b = i % 2 == 0;
+  }
+
+  int total = 0;
+  for (int i = 0; i < num_elems; i++) {
+    if (my_types[i].b) {
+      total += my_types[i].x;
+    }
+  }
+
+  return total;
+} 

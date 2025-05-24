@@ -1,0 +1,39 @@
+//test return 1
+
+bool check(int main) {
+    if (main == 0) {
+        print_hex(871889);
+        return true;
+    }
+    return false;
+}
+
+void na2(int na1);
+
+void na1(int na1) {
+    {
+        int na2 = na1;
+        if (check(na2)) {
+            return;
+        }
+    }
+    print_int(0);
+    na2(na1 - 1);
+}
+
+void na2(int na2) {
+    {
+        int na1 = na2;
+        if (check(na1)) {
+            return;
+        }
+    }
+
+    print_int(0);
+    na1(na2 - 1);
+}
+
+int main() {
+    na1(100);
+    return 1;
+}

@@ -1,0 +1,17 @@
+//test return 73
+
+int main() {
+    int i = 0;
+    int count = 0;
+    for (i = 2; i < 100; i++) {
+        bool flag = false;
+        int div = 2;
+        while (div < i) {
+            bool t = (i == (i / div * div));
+            flag = t || flag;
+            div++;
+        }
+        if(flag) count += 1;
+    }
+    return count;
+}

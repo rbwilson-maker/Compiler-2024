@@ -1,0 +1,32 @@
+//test return 5
+// you're allowed to NULL in many places
+
+typedef int* ip;
+typedef fpt* fp;
+
+int deref(int* p){
+    if (p == NULL) return -1; else return *p;
+}
+
+fpt deref_f(fpt* p){
+    if (p == NULL) return -1; else return *p;
+}
+
+ip boring_ref(){ return NULL; }
+
+fp boring_f_ref(){ return NULL; }
+
+int main() {
+    NULL;
+    (NULL);
+    ((NULL));
+    (((NULL)));
+
+    ip i = boring_ref();
+    int j = deref(i);
+
+    fp k = boring_f_ref();
+    fpt l = deref_f(k);
+
+    return 5;
+}

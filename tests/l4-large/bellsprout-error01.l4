@@ -1,0 +1,19 @@
+//test error
+// cannot figure out the size of struct data
+
+struct date;
+typedef struct date date;
+
+date* create_date() {return alloc(date);}
+
+struct date {
+  int year;
+  int month;
+  int day;
+};
+
+int main() {
+  date* today = alloc(date);
+  return 0;
+}
+

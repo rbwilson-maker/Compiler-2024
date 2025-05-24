@@ -1,0 +1,8 @@
+//test div-by-zero
+// mod INT_MIN by -1
+
+int main()
+{
+  int x = 0x80000000; // int min
+  return x % -1;
+}

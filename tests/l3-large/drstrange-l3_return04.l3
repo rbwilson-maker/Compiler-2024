@@ -1,0 +1,14 @@
+//test return 5
+///  simply applies the collatz function once to an even constant
+
+int collatz(int x){
+    if (x % 2 == 0){
+        return x / 2;
+    }
+
+    return 3 * x + 1;
+}
+
+int main() {
+    return collatz(10);
+}

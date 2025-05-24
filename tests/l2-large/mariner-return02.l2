@@ -1,0 +1,8 @@
+//test return -8
+
+int main() {
+    int x = 3 << 5;
+    int y = 9;
+    for (; x > 1 && y >= 9; x--) {}
+    return x - y;
+}

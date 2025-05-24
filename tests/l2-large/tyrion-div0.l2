@@ -1,0 +1,10 @@
+//test div-by-zero
+
+// Compilers f2017: Group Tyrion Lannister
+
+int main() {
+    int x = 1000000;
+    int y = 33;
+    int z = x << y;
+    return z;
+}

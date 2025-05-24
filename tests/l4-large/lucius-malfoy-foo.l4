@@ -1,0 +1,23 @@
+//test return 3840
+
+int FOO() {
+    return 0;
+}
+
+typedef int F00;
+
+int main() {
+    {
+        F00 FOO = FOO();
+        FOO * FOO;
+        FOO *= FOO;
+        assert(FOO == 0);
+    }
+    {
+        F00 * FOO;
+        FOO = alloc(F00);
+        * FOO * * FOO * * FOO;
+        assert(*FOO == 0);
+    }
+    return 0xF00;
+}

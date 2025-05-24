@@ -1,0 +1,25 @@
+//test return 1
+int us_take_nuke(int nuke);
+int ussr_take_nuke(int nuke);
+
+int main()
+{
+  int nuke = 33;
+  return us_take_nuke(nuke);
+}
+
+int us_take_nuke(int n)
+{
+  if (n == 1)
+    return 1;
+  int x = n - 1;
+  return ussr_take_nuke(x);
+}
+
+int ussr_take_nuke(int n)
+{
+  if (n == 2)
+    return 1;
+  int x = n - 2;
+  return us_take_nuke(x);
+}

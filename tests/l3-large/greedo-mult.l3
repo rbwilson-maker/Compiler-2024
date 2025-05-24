@@ -1,0 +1,45 @@
+//test return 148225
+
+int successor(int x)
+{
+  return x+1;
+}
+
+int add(int x, int y)
+{
+  if(x == 0)
+  {
+    return y;
+  }
+  else
+  {
+    return successor(add(x-1,y));
+  }
+}
+
+int mult(int x, int y)
+{
+  if(x == 0)
+  {
+    return 0;
+  }
+  else
+  {
+    return add(mult(x-1,y),y);
+  }
+}
+
+int square(int x)
+{
+  return mult(x,x);
+}
+
+int main()
+{
+  int sum = 0;
+  for(int i = 0; i < 11; i++)
+  {
+    sum = add(sum,square(i));
+  }
+  return square(sum);
+}

@@ -1,0 +1,48 @@
+//test return 35668816
+
+int main(){
+    int x = 0;
+
+    int res = 10;
+
+    if(x == 0){
+        bool b = true;
+        if(b == true){
+            res += 20;
+        }
+        else{
+            res -= 20;
+        }
+    }
+    else if(x == 3){
+        bool b = false;
+        if(b == true){
+            res += 20;
+        }
+        else{
+            res -= 20;
+        }
+    }
+    else{
+        res = 5;
+    }
+
+    if(res > 0){
+        while(res > 0){
+            res = res/2;
+        }
+    }else{
+        res * 1000;
+    }
+
+    if(res == 0){
+        x += 600;
+    }
+
+    for(res; res < 10000; res += 1){
+        if(res % 2 == 1){
+            x += res | 0xF0F;
+        }
+    }
+    return x;
+}

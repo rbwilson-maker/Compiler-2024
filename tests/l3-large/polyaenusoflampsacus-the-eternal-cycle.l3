@@ -1,0 +1,18 @@
+//test div-by-zero
+
+int second(int iter);
+
+int first(int iter) {
+  if(iter == 0) return 1;
+  if(iter < 7561) return second(iter-1) + 1;
+  return second(iter-1); 
+}
+
+int second(int iter) {
+  if(iter < 7561) return first(iter)+1;
+  return first(iter);
+}
+
+int main() {
+  return 1 / (15122- second(50000));
+}

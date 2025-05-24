@@ -1,0 +1,76 @@
+//test return 540225000
+
+// Encodes a list into a product of prime powers. Append operation
+
+bool isPrime(int n) {
+  for (int i = 2 ; i < n ; i += 1) {
+    if (n % i == 0) { return false; }
+  }
+  return true;
+}
+
+int hd(int n) {
+  if (n <= 1) { 1 / 0; }
+  int i = 0;
+  for (i = 0 ; n % 2 == 0 ; n /= 2) {
+    i += 1;
+  }
+  return i;
+}
+
+int tl(int n) {
+  int i = 2;
+  int result = 1;
+
+  for (; n % 2 == 0 ; n /= 2) { }
+
+  for (int p = 3 ; n > 1 ; p += 1) {
+    if (isPrime(p)) {
+      while (n % p == 0) {
+        n /= p;
+        result *= i;
+      }
+      i = p;
+    }
+  }
+  return result;
+}
+
+
+int cons(int x, int n) {
+  int i = 2;
+  int result = 1;
+
+  for (int j = 0 ; j < x ; j += 1) {
+    result *= 2;
+  }
+
+  for (int p = 3 ; n > 1 ; p += 1) {
+    if (isPrime(p)) {
+      while (n % i == 0) {
+        n /= i;
+        result *= p;
+      }
+      i = p;
+    }
+  }
+  return result;
+}
+
+int append(int n, int m) {
+  if (n == 1) { return m; }
+  int h = hd(n);
+  int t = tl(n);
+
+  return cons(h, append(t, m));
+}
+
+int main() {
+  // n = [3, 2]
+  int n = (2*2*2) * (3*3);
+  // m = [5, 4]
+  int m = (2*2*2*2*2) * (3*3*3*3);
+
+  return append(n,m);
+}
+

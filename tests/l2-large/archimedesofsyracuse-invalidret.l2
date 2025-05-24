@@ -1,0 +1,8 @@
+//test error
+// Return on all paths, but invalid type on if.
+
+int main() {
+  int x = 30;
+  if (x >= 30) return true;
+  else return 0;
+}

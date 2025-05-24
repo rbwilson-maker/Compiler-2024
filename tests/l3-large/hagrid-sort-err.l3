@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+   assert(1234 == sort(4321));
+   assert(146999 == sort(964919));
+   print(sort(23));
+   
+   return sort(1);
+}

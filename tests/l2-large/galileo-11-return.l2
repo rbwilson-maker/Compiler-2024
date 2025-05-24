@@ -1,0 +1,16 @@
+//test return 146
+// validate 3x+1 problem
+
+int main() {
+    int steps = 0;
+    int x = 15411;
+    while (x != 1) {
+        if (x % 2 == 0) {
+            x /= 2;
+        } else {
+            x = 3 * x + 1;
+        }
+        steps++;
+    }
+    return steps;
+}

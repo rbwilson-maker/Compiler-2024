@@ -1,0 +1,32 @@
+//test abort
+//abort before a div-zero
+
+int main();
+
+int foo(int x, int y);
+
+bool bar () {
+  if (true)
+  return true;
+  return false;
+}
+
+int main() {
+  for (int i = 1; true; i++) {
+    for (int j = 1; j < i; j++) {
+      foo(i, j);
+    }
+  }
+  return 0;
+}
+
+int main();
+
+int foo(int x, int y) {
+  assert(y % 32 != 0);
+  return (x % 32) / (y % 32);
+}
+
+int foo(int x, int y);
+
+bool bar();

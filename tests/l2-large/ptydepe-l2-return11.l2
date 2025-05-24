@@ -1,0 +1,14 @@
+//test return 5
+// Simple while loop with program
+int main() {
+    int a = 5;
+    int w = 0;
+    int result = 0;
+ 
+    while(w < a) {
+        result += 1;
+        w += 1;
+    }
+
+    return result;
+}

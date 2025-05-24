@@ -1,0 +1,7 @@
+//test error
+// Only array can use [] indexing syntax.
+
+int main() {
+  int *p = alloc(int);
+  return (*p)[1/0]; 
+}

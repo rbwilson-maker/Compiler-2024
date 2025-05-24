@@ -1,0 +1,14 @@
+//test return 1
+
+int fun(int x, bool y) {
+  if (y) {
+    return x%2;
+  }
+  else {
+    return x;
+  }
+}
+
+int main() {
+	return fun(23,true);
+}

@@ -1,0 +1,14 @@
+//test div-by-zero
+
+typedef int d;
+
+int shift(int a, int b, int c);
+
+int main() {
+	d dd = 1;
+	return 1/shift(1, 1, 0);
+}
+
+int shift(int a, int b, int c){
+  return a >> b;
+}

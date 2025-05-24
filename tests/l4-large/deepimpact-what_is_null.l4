@@ -1,0 +1,10 @@
+//test error
+
+bool truth() {
+    return false;
+}
+
+int main() {
+    *(truth() ? NULL : NULL);
+    return 0;
+}

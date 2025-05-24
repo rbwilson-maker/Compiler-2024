@@ -1,0 +1,21 @@
+//test error
+
+int main()
+{
+    int x;
+    int y;
+    int z;
+    int w;
+
+    x = 5;
+    y = 7;
+    z = 6;
+    w = 9;
+
+    int ppl = y*5-x+w/z;
+    if (ppl & x) {
+        return 8^_^8;
+    }
+
+    return 0;
+}

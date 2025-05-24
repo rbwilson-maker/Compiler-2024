@@ -1,0 +1,12 @@
+//test error
+
+typedef int test;
+
+int main() {
+  int test = 2;
+  int arg = 2;
+
+  test * arg;
+
+  return 0;
+}

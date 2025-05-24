@@ -1,0 +1,10 @@
+//test return 0
+
+int main() {
+	int[] l1 = alloc_array(int, 3*3);
+	int[][] l2 = alloc_array(int[], 3);
+	for (int i = 0; i < 3; i++) {
+	    l2[i] = alloc_array(int, 3);
+	}
+	return l1[8] + l2[1][2];
+}

@@ -1,0 +1,16 @@
+//test return 0
+//make sure that scoping works
+int main()
+{
+	int x = 0;
+	if (x > 0)
+	{
+		int y = 5;
+	}
+	else
+	{
+		int y = 10;
+	}
+
+	return x;
+}

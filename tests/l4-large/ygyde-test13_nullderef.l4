@@ -1,0 +1,18 @@
+//test memerror
+
+int foo(int *ptr) {
+    int i = 0;
+    for (i = 0; i < 15; i += 1) {
+        int j;
+        for (j = 0; j < 15; j += 1) {
+            i += j;
+            j += i;
+        }
+    }
+    return (*ptr + i + 1);
+}
+
+int main() {
+    int *test_ptr = NULL;
+    return foo(test_ptr);
+}

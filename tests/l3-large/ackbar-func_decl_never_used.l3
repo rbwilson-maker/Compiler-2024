@@ -1,0 +1,11 @@
+//test return 7
+//A test of declaring a function but never using it
+
+// does not need to be defined
+int retX(int x);
+
+int ret7(int a){ return 7;}
+
+int main(){
+    return ret7(42);
+}

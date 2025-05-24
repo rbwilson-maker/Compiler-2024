@@ -1,0 +1,9 @@
+//test return 1
+int main() {
+  int* x = NULL;
+  int[] y = alloc_array(int, 1);
+  int[]* z = alloc(int[]);
+  *z = alloc_array(int, 1);
+  return 1;
+}
+

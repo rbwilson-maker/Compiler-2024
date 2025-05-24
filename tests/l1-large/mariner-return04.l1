@@ -1,0 +1,13 @@
+//test return 4
+
+int main(){
+	int a;
+	int b = 1;
+	int c;
+	int d = -1;
+	c = b - d;        
+	a = b - c + d;    
+	b = a - c;        
+	d = a - b + c;    
+	return d;
+}

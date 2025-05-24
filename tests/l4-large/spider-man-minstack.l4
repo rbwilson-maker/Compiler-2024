@@ -1,0 +1,55 @@
+//test return -4
+
+typedef struct minstack mstack;
+
+// sad implementation of minstack with max_len elements
+struct minstack {
+    int max_len;
+    int len;
+    int[] st;
+    int[] mvals;
+};
+
+int min(int x, int y) {
+    return (x < y) ? x : y;
+}
+
+void push(int val, mstack * mst) {
+    assert(mst->len + 1 <= mst->max_len);
+    int len = mst->len;
+    mst->st[len] = val;
+    if (len > 0) {
+        mst->mvals[len] = min(val, mst->mvals[len - 1]);
+    }
+    else {
+        mst->mvals[len] = val;
+    }
+    mst->len += 1;
+}
+
+void pop(mstack * mst) {
+    assert(mst->len > 0);
+    mst->len -= 1;
+}
+
+int getmin(mstack * mst) {
+    assert(mst->len > 0);
+    return mst->mvals[mst->len - 1];
+}
+
+int main() {
+    mstack * bloop = alloc(mstack);
+    bloop->max_len = 10;
+    bloop->st = alloc_array(int, bloop->max_len);
+    bloop->mvals = alloc_array(int, bloop->max_len);
+    push(-2, bloop);
+    push(0, bloop);
+    push(-3, bloop);
+    int tot = 0;
+    tot += getmin(bloop);
+    pop(bloop);
+    tot += getmin(bloop);
+    pop(bloop);
+    tot += bloop->len;
+    return tot;
+}

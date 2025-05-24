@@ -1,0 +1,7 @@
+//test error
+// runtime exception: overflow
+int main(){
+    int x = 0xFFFFFFFFF;
+    return x;
+    
+}

@@ -1,0 +1,13 @@
+//test return 1
+struct my_struct {
+  int num;
+  bool truth;
+};
+
+int main() {
+  struct my_struct* a = alloc(struct my_struct);
+  a->num = 0;
+  a->truth = true;
+  if((a->truth && a->num == 0) || (1 / 0 == 0)) return 1;
+  else return 0;
+}

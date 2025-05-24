@@ -1,0 +1,19 @@
+//test div-by-zero
+
+int dosomething(int i, int j)
+{
+    return (i + j + (j - i) + i/j);
+}
+
+int main()
+{
+    int counter = 0;
+    for(int i = 0; i < 100; i ++)
+    {
+        for(int j = 0; j < 200; j ++)
+        {
+            counter += dosomething(100-i, 199-j);
+        }
+    } 
+    return counter;
+}

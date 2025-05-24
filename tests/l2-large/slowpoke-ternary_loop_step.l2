@@ -1,0 +1,12 @@
+//test return 7
+// Test the use of a ternary operator as a loop step.
+
+int main() {
+  bool step = true;
+  int sum = 0;
+  for (int i = 0; i < 10; i += (step ? 1 : 2)) {
+    step = !step;
+    sum++;
+  }
+  return sum;
+}

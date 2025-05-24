@@ -1,0 +1,34 @@
+//test return 90
+
+// here we do something similar to simple linked list stuff but
+// we do it recursively instead
+
+struct node {
+    int val;
+    struct node *next;
+};
+typedef struct node node_t;
+
+int sum(node_t *head) {
+    if(head == NULL)
+        return 0;
+    return head->val + sum(head->next);
+}
+
+int main() {
+    node_t *head = NULL;
+    node_t *prevNode = NULL;
+
+    for(int i = 0; i < 10; i++) {
+        node_t *newNode = alloc(node_t);
+        newNode->val = i * 2;
+
+        if(prevNode != NULL) {
+            prevNode->next = newNode;
+        } else {
+            head = newNode;
+        }
+        prevNode = newNode;
+    }
+    return sum(head);
+}

@@ -1,0 +1,35 @@
+//test return -17
+//loops
+int main()
+{
+  int x = 0;
+  int sum = 5;
+  while (x != 10) {
+    x ++;
+  }
+  while (x < 30) {
+    x += 2;
+  }
+  int y = 3;
+  while (x < 50) {
+    int z = 8;
+    while (false) {
+      sum += 5;
+      z--;
+    }
+    y = 3;
+    x += 3;
+  }
+  while (x != 50) {
+    sum -= 70;
+    x = 50;
+  }
+  sum |= 15;
+  int i;
+  for (i = 1; i < 3; i++) {
+    for (int j = 0; j < 6; j++) {
+      sum += i + j;
+    }
+  }
+  return sum;
+}

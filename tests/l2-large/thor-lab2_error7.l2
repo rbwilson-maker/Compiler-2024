@@ -1,0 +1,9 @@
+//test error
+//update in loop can't be declaration
+
+int main()
+{
+int x = 5;
+for(; x < 6; int y = 6) x << 3;
+return x;
+}

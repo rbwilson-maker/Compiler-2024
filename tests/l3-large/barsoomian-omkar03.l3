@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int f(int s) {
+    return 1 << s;
+}
+
+int f2(int s2) {
+    return 1 << s2;
+}
+
+int main() {
+    return f(f2(5));
+}

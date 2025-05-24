@@ -1,0 +1,5 @@
+// totally definitely returns a pointer to a piece of new memory
+
+int malloc_inator_3000(int size_of_block);
+
+bool has_been_clobbered(int malloced_block);

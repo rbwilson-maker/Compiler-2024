@@ -1,0 +1,15 @@
+struct Edge 
+{ 
+    int src;
+    int dest;
+    int weight; 
+}; 
+
+struct Graph 
+{ 
+    int V;
+    int E;
+    struct Edge[] edge; 
+}; 
+
+struct Graph* create(int V, int E);

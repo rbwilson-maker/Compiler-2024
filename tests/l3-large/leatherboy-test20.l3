@@ -1,0 +1,30 @@
+//test error
+
+int f1() {
+    return 10/5;
+}
+
+int f2() {
+    return 32;
+}
+
+int f3() {
+    return "dds";
+}
+
+int foo(){
+    int t1 = f1();
+    int t2 = -f2()*t1 + -2+1+2;
+    int t3 = t2 - 4*t1 + t1*t2;
+    int t5 = (t1 * t3) - t2 - t3+ 65;
+    int t6 = 0;
+    for(int i = 0; i<1;i++){
+        t6 = t1*t2-t3+f3();
+    }
+    int t7 = 3*t5 *-4 +t2 -4*t5;
+    return t3*2-t7 + 4*t2;
+}
+
+int main() { 
+    return foo();
+}

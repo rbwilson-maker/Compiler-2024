@@ -1,0 +1,128 @@
+//test return 700
+
+// We now use Cantor's pairing function to encode binary trees instead of sequences
+int pair(int x, int y) {
+  return (x + y) * (x + y + 1) / 2 + y;
+}
+
+int min(int x, int y) {
+  return x < y ? x : y;
+}
+
+int isqrt_rec(int x, int lo, int hi) {
+  if (lo == hi) return lo - 1;
+  int mid = lo + (hi - lo) / 2;
+  if (mid * mid == x) return mid;
+  if (mid * mid < x) return isqrt_rec(x, mid+1, hi);
+  return isqrt_rec(x, lo, mid);
+}
+
+int isqrt(int x) {
+  if (x == 0 || x == 1) return x;
+  return isqrt_rec(x, 1, min(x, 65536));
+}
+
+int calc_w(int z) {
+  int y = 8 * z + 1;
+  return (isqrt(y) - 1) / 2;
+}
+
+int snd(int pair) {
+  int w = calc_w(pair);
+  return pair - (w * w + w) / 2;
+}
+
+int fst(int pair) {
+  int w = calc_w(pair);
+  return w - snd(pair);
+}
+
+// Binary tree library over natural numbers
+typedef int tree;
+
+tree empty() {
+  return 0;
+}
+
+bool isEmpty(tree t) {
+  return t == 0;
+}
+
+tree node(tree left, int data, tree right) {
+  return pair(data + 1, pair(left, right));
+}
+
+int data(tree t) {
+  assert(!isEmpty(t));
+  return fst(t) - 1;
+}
+
+tree left(tree t) {
+  assert(!isEmpty(t));
+  return fst(snd(t));
+}
+
+tree right(tree t) {
+  assert(!isEmpty(t));
+  return snd(snd(t));
+}
+
+// Define insertion in a binary search tree
+tree ins(int x, tree t) {
+  if (isEmpty(t)) return node(empty(), x, empty());
+  int y = data(t);
+  if (x < y) {
+    return node(ins(x, left(t)), y, right(t));
+  } else if (x > y) {
+    return node(left(t), y, ins(x, right(t)));
+  } else {
+    return t;
+  }
+}
+
+bool contains(int x, tree t) {
+  if (isEmpty(t)) return false;
+  int y = data(t);
+  return x == y || (x < y && contains(x, left(t))) || (x > y && contains(x, right(t)));
+}
+
+bool isBstRec(tree t, int lo, int hi) {
+  if (isEmpty(t)) return true;
+  int x = data(t);
+  if (x < lo || x > hi) return false;
+  return isBstRec(left(t), lo, x-1) && isBstRec(right(t), x+1, hi);
+}
+
+bool isBst(tree t) {
+  return isBstRec(t, 0, ~(1 << 31));
+}
+
+int main() {
+  tree t = empty();
+  assert(isEmpty(t));
+
+  t = ins(1, t);
+  assert(!contains(0, t));
+  assert(contains(1, t));
+  assert(!contains(2, t));
+  assert(!contains(3, t));
+  assert(isBst(t));
+
+  t = ins(2, t);
+  assert(!contains(0, t));
+  assert(contains(1, t));
+  assert(contains(2, t));
+  assert(!contains(3, t));
+  assert(isBst(t));
+
+  t = ins(0, t);
+  assert(contains(0, t));
+  assert(contains(1, t));
+  assert(contains(2, t));
+  assert(!contains(3, t));
+  assert(isBst(t));
+
+  // After this point we start to overflow... :(
+
+  return t;
+}

@@ -1,0 +1,13 @@
+//test error
+
+int main()
+{
+    // step statement of for loop cannot be a declaration
+    int result = 0;
+    for (int x = 0; x < 7; int e = 5)
+    {
+       result += x;
+    }
+
+    return result;
+}

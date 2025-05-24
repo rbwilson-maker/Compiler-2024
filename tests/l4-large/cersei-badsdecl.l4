@@ -1,0 +1,11 @@
+//test error
+
+typedef struct node node;
+
+struct node {
+  node a;
+};
+
+int main() {
+  return 124;
+}

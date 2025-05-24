@@ -1,0 +1,10 @@
+//test error
+
+/*  Cannot typedef any type to a reserved keyword */
+
+typedef int bool;
+typedef bool int;
+
+int main() {
+    return 0;
+}

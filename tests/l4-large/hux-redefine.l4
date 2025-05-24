@@ -1,0 +1,28 @@
+//test error
+
+struct x {
+  int x;
+  int n;
+  int ana;
+  int xanax;
+}; 
+
+struct x {
+  int x;
+  int n;
+  int ana;
+  int xanax;
+};
+
+typedef struct r r;
+
+
+int main() {
+  struct x*[] hi = alloc_array(struct x*, 3);
+  hi[3] = alloc(struct x);
+  return 3;
+}
+
+struct x* wow(struct x *h) {
+  return h;
+}

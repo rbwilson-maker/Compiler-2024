@@ -1,0 +1,43 @@
+//test error
+
+      /*
+       * This program tests the L3 source
+       *
+       */
+       int func1();
+       int func2();
+       int func3();
+
+       int func1()
+       {
+               int a=0;
+               int b=1;
+
+               return (a & b);
+           }
+
+           int func2()
+           {
+               return func3();
+           }
+
+           int func3()
+           {
+               if(true)
+                   return func1();
+               else
+                   return func2();
+           }
+
+           int func4(int a, int b)
+           {
+               return (a+b > 3 ? a+b : a-b);
+           }
+
+           int main()
+           {
+               if(func4(3) > 5)
+                   return func3();
+               else
+                   return func4(3,5);
+           }

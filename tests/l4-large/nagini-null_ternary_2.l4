@@ -1,0 +1,7 @@
+//test return 123
+
+int main() {
+    int* x = alloc(int);
+    *x = 123; 
+    return *(2 > 1 ? x : NULL);
+}

@@ -1,0 +1,15 @@
+//test memerror
+
+int take_pointer(int* toreturn) {
+  if (toreturn != NULL) {
+    return 0;
+  } else {
+    return *toreturn;
+  }
+}
+
+int main() {
+  int* five = alloc(int);
+  five = NULL;
+  return take_pointer(NULL);
+}

@@ -1,0 +1,33 @@
+//test return 0
+
+int factorial(int n) {
+  assert(n >= 0);
+  if (n <= 1) return 1;
+  return n * factorial(n-1);
+}
+
+//n choose m is equal to n-1 choose m-1 plus n-1 choose m
+int choose(int n, int m) {
+  assert(m <= n);
+  assert(m >= 0);
+  if (m == n) return 1;
+  if (m == 0) return 1;
+  assert(m < n);
+  assert(m > 0);
+  return choose(n-1, m-1) + choose(n-1, m);
+}
+
+int formula(int n, int m) {
+  return factorial(n) / factorial(m) / factorial(n-m);
+}
+ 
+int main() {
+  
+  for(int i = 2; i < 10; i++) {
+    for(int j = 0; j <= i; j++) {
+        assert(choose(i,j) == formula(i, j));
+    }
+  }
+
+  return 0;
+}

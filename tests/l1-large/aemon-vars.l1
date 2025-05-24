@@ -1,0 +1,8 @@
+//test return 22
+int main()
+{
+	int x = 6;
+	int y = x + 10;
+	int z = y + x;
+	return z;
+}

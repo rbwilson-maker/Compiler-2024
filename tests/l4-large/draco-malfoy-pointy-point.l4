@@ -1,0 +1,30 @@
+//test return 1590555021
+
+struct header1 {
+	bool initialized;
+	int*[] data;
+};
+
+typedef struct header2* h;
+struct header2 {
+	bool initialized;
+	struct header1 prev;
+};
+
+struct header3 {
+	bool[] foo;
+	h bar;
+};
+
+int main() {
+	struct header3 *test = alloc(struct header3);
+	test->bar = alloc(struct header2);
+	test->bar->prev.initialized = true;
+	test->bar->prev.data = alloc_array(int*,15);
+	int i = 0;
+	for(;i < 15; i++) {
+		test->bar->prev.data[i] = alloc(int);
+		*(test->bar->prev.data[i]) = (i * 8027394) ^ 0xdeadbeef;
+	}
+	return 5**(*(*test).bar).prev.data[3];
+}

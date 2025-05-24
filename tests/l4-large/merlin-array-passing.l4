@@ -1,0 +1,25 @@
+//test return 0
+
+void update_array(int[] array, int i, int val) {
+    array[i] = val;
+}
+
+int main() {
+
+    int[] array = alloc_array(int,10);
+    for(int i = 0; i < 10; i++) {
+        array[i] = 0;
+    }
+
+    for(int j = 0; j < 10; j++) {
+        update_array(array,j,30);
+    }
+
+    int count = 0; 
+    for(int z = 0; z < 10; z++) {
+        count += array[z];
+    }
+
+    if(300 == count) return 0;
+    else return -1;
+}

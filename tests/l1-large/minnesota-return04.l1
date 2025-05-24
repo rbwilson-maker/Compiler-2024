@@ -1,0 +1,7 @@
+//test return -61728394
+// test division by negative numbers
+int main()
+{
+  int a = 123456789;
+  return a / (-2);
+}

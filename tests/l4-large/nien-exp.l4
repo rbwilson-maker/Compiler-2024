@@ -1,0 +1,49 @@
+//test return 1
+
+dub powBySquare(dub base, int power)
+{
+    if(power == 0)
+    {
+	return itod(1);
+    }
+    else
+    {
+	if(power == 1)
+	{
+	    return base;
+	}
+	else
+	{
+	    if((power % 2) == 0)
+	    {
+		return powBySquare(dmul(base, base), power / 2);
+	    }
+	    else
+	    {
+		return dmul(base, powBySquare(dmul(base, base), (power-1)/2));
+	    }
+	}
+    }
+}
+
+//Calculates e^x
+dub exp(dub x)
+{
+    int n = 100;
+    dub base = dadd(itod(1), ddiv(x, itod(n)));
+    return powBySquare(base, n);
+}
+
+int main()
+{
+    //This should print close to the value of e
+    print_dub(exp(itod(1)));
+
+    //This should print close to the value of e^5
+    print_dub(exp(itod(5)));
+
+    //This should print close to the value of e^e
+    print_dub(exp(exp(itod(1))));
+
+    return dtoi(exp(itod(0)));
+}

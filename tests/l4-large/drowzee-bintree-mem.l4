@@ -1,0 +1,33 @@
+//test memerror
+
+int sum_tree(struct Node* a) {
+    return a->value + sum_tree(a->left) + sum_tree(a->right);
+}
+
+int main() {
+    struct Node* a = alloc(struct Node);
+    a->value = 1;
+   
+    struct Node* b = alloc(struct Node);
+    b->value = 2;
+
+    struct Node* c = alloc(struct Node);
+    c->value = 3;
+
+    struct Node* d = alloc(struct Node);
+    d->value = 4;
+
+    struct Node* e = alloc(struct Node);
+    e->value = 5;
+
+    struct Node* f = alloc(struct Node);
+    f->value = 6;
+
+    a->left = b;
+    a->right = c;
+    b->right = d;
+    c->right = e;
+    c->left = f;
+
+    return sum_tree(a);
+}

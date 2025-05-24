@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+    int x = 150;
+    if (x < 100) {
+        int x = 5;
+    } else {
+        int x = 10;
+    }
+    return x;
+}

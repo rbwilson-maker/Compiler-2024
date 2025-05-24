@@ -1,0 +1,10 @@
+//test return 1
+//multiple operations
+
+int main() {
+  int x = 5;
+  int y = 4;
+  int z = x + y;
+  z = x - y;
+  return z;
+}

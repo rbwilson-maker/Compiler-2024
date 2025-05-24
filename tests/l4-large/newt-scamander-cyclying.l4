@@ -1,0 +1,58 @@
+//test return 1
+
+struct node{
+	struct node* next;
+	int data;
+};
+
+typedef struct node node;
+
+bool isCyclic(node* start){
+	node* rabbit = start;
+	node* turtle = start;
+
+	while(rabbit!=NULL && turtle!=NULL && rabbit->next!=NULL)	{
+		turtle = turtle->next;
+		rabbit = rabbit->next->next;
+		if(rabbit == turtle)
+			return true;
+	}
+	return false;
+}
+
+
+int main(){
+	node* A = alloc(node);
+	node* B = alloc(node);
+	node* C = alloc(node);
+	node* D = alloc(node);
+	node* E = alloc(node);
+	node* F = alloc(node);
+	node* G = alloc(node);
+	node* H = alloc(node);
+
+	A->next = B;
+	B->next = C;
+	C->next = D;
+	D->next = E;
+	E->next = F;
+	F->next = G;
+	G->next = H;
+	H->next = D;
+
+	assert(isCyclic(A));
+
+	A->next = B;
+	B->next = C;
+	C->next = D;
+	D->next = E;
+	E->next = F;
+	F->next = G;
+	G->next = H;
+	H->next = NULL;
+
+	assert(!isCyclic(A));
+
+
+	return 1;
+}

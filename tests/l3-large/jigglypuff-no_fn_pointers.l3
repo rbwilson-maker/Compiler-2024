@@ -1,0 +1,23 @@
+//test error
+
+/* No Function Pointers Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, October 11, 2015 at 09:58:07 PM EDT
+ *
+ * This test tests an edge case with parsing for Lab3. While lvalue's are
+ * permitted (identifiers for now) are permitted to be wrapped in expressions,
+ * function applications are not. Thus, something like (test)() is not permitted
+ * in the L3 syntax.
+ */
+
+int test(int x)
+{
+    return 42;
+}
+
+int main()
+{
+    return (test)(4);
+}

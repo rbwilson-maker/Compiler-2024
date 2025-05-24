@@ -1,0 +1,10 @@
+//test error
+// Main cannot take in custom arguments
+
+int main(int a, int b, int c) {
+  int x;
+  bool x_b;
+  x = 0;
+  x_b = false;
+  return 0;
+}

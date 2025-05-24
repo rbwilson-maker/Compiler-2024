@@ -1,0 +1,21 @@
+//test error
+
+int foo() {
+    return 16;
+}
+
+int foo() {
+    return 12;
+}
+
+int foo() {
+    return 8;
+}
+
+int foo() {
+    return -119;
+}
+
+int main() {
+    return foo() + foo() + foo();
+}

@@ -1,0 +1,7 @@
+//test div-by-zero
+// Floating point division by zero, caused by modulo!
+int main()
+{
+  int x = 1 % 0;
+  return x;
+}

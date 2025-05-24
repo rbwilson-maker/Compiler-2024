@@ -1,0 +1,17 @@
+//test error
+
+struct a {
+  int a;
+};
+
+struct a create_a() {
+  struct a* real_a = alloc(struct a);
+  return *a;
+}
+
+int main() {
+  struct a b = create_a();
+  return 0;
+}
+
+

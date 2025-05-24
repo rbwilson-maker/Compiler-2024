@@ -1,0 +1,8 @@
+//test error
+//type name should be before ident
+
+typedef Bool bool;
+
+int main() {
+  return 0;
+}

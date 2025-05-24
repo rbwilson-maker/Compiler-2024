@@ -1,0 +1,44 @@
+//test return 345
+
+// computes the smallest permutation of the digits in i
+int smallest_perm(int i) {
+  int num_dig = 0;
+  int temp = i;
+  while(temp > 0) {
+    num_dig++;
+    temp /= 10;
+  }
+
+  int res = 0;
+  for(int k = 0; k < num_dig; k++) {
+    int small = 10;
+    int acc = 0;
+    temp = i;
+    while(temp > 0) {
+      // find smallest digit
+      if (temp % 10 < small) {
+        small = temp % 10;
+      }
+      temp /= 10;
+    }
+    temp = i;
+    int dig = 1;
+    res = res*10 + small;
+    while(temp > 0) {
+      // remove smallest digit from i
+      if(temp % 10 != small) {
+        acc = acc + dig*(temp%10);
+        dig *= 10;
+      } else {
+        small = -1;
+      }
+      temp /= 10;
+    }
+    i = acc;
+  }
+  return res;
+}
+
+int main() {
+  return smallest_perm(453);
+}

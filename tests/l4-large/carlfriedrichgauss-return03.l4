@@ -1,0 +1,14 @@
+//test return 1
+// implicit declaration of struct
+
+int foo(struct S* s) {
+    return 1;
+}
+
+int main() {
+    return foo(NULL);
+}
+
+struct S {
+    int x;
+};

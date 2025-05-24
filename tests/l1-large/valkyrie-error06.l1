@@ -1,0 +1,8 @@
+//test error
+//Missing identifier
+int main(){
+	int x = 3;
+	int y = 1;
+	z = 4;
+	return 100 * x + 10 * y + z;
+}

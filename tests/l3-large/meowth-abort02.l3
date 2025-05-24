@@ -1,0 +1,20 @@
+//test abort
+/* test order of evaluation */
+
+int jump_ship() {
+  assert(false);
+  return 1;
+}
+
+int loop_forever() {
+  while (true) {}
+  return 2;
+}
+
+int f(int a, int b, int c, int d) {
+  return a + b + c + d;
+}
+
+int main () {
+  return f(jump_ship(), loop_forever(), 1 / 0, 4);
+}

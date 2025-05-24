@@ -1,0 +1,15 @@
+//test abort
+
+int carrylessAdd(int x, int y) {
+    if (x == 0) return y;
+    if (y == 0) return x;
+    return (x / 10 + y / 10) + carrylessAdd(x/10, y/10) * 10;
+}
+
+
+int main() {
+    assert(carrylessAdd(1, 1) == 2);
+    assert(carrylessAdd(104, 295) == 399);
+    assert(carrylessAdd(2321, 908) == 2229);
+    return 1;
+}

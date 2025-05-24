@@ -1,0 +1,8 @@
+//test return 7
+int main() {
+	int a = 1;
+	while (a < 8) {
+		a += a % 8;
+	}
+	return a - 1;
+}

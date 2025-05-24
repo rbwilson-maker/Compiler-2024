@@ -1,0 +1,9 @@
+//test memerror
+
+int main()
+{
+    int* p = NULL;
+    int * x = alloc(int);
+    x = p;
+    return *x;
+}

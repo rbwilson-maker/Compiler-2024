@@ -1,0 +1,21 @@
+//test memerror
+//attempt access uninitialized field
+
+struct a {
+    int a1;
+    int a2;
+    int a3;
+};
+
+struct b {
+    struct a b1;
+    int b2;
+    bool b3;
+    int *b4;
+    struct a * b5;
+};
+
+int main() {
+    struct b *bbb = alloc(struct b);
+    return (*(*bbb).b5).a2;
+}

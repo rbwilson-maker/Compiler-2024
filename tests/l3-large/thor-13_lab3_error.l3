@@ -1,0 +1,4 @@
+//test error
+void badfn (queue_t q) {return set_tail(q, 5);}
+
+int main() {bad_fn(6); return 0;}

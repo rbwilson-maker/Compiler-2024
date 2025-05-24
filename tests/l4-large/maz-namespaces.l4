@@ -1,0 +1,24 @@
+//test return 0
+
+struct s {
+    int a;
+    int b;
+};
+
+struct t {
+    bool a;
+    int c;
+};
+
+int main() {
+    struct s *a = alloc(struct s);
+    struct t *c = alloc(struct t);
+
+    a->a = 0;
+    a->b = 1;
+    
+    c->a = true;
+    c->c = 0; 
+
+    return a->a + c->c;
+}

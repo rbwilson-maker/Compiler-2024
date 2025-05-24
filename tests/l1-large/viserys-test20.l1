@@ -1,0 +1,10 @@
+//test return 0
+
+int main() {
+  // testing unary ops and order of ops
+  int a = 9;              int b = 0;  int c = 10;
+  int d = 100;
+  int e = d;
+  int z = a;
+  return a * b + (-(1 + 2 + 3)) / 100;
+}

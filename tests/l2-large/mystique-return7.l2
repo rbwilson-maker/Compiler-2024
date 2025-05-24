@@ -1,0 +1,8 @@
+//test return 7
+
+int main () {
+    int x = -10;
+    int y = x << 2;
+    int z = y == -40 ? y : x;
+    return -(z / 4 + 3);
+}

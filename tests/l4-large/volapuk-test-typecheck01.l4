@@ -1,0 +1,11 @@
+//test typecheck
+
+int main() {
+  num[] random_length_array = alloc_array(num, rng());
+
+  for(int i = 0; i < rng(); i++) {
+    random_length_array[i] = rng();
+  }
+
+  return random_length_array[rng()];
+}

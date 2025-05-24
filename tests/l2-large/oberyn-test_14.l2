@@ -1,0 +1,10 @@
+//test return 0
+
+// tests lazy evaluation of terinary operator
+
+int main() {
+	int x = 33;
+	int y = 2;
+
+	return (1 == 1) ? 0 : y >> x;
+}

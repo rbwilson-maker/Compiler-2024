@@ -1,0 +1,11 @@
+//test error
+// redeclare variables
+
+int main() {
+    // Test for comment
+    int x = 15;
+    int y = 8;
+    return x / y;
+    int y = 5;
+    return x / y;
+}

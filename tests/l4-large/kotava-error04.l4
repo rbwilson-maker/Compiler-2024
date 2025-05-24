@@ -1,0 +1,22 @@
+//test error
+
+struct b;
+typedef struct b* b;
+
+struct a {
+  int x; 
+  int y;
+  struct b z; // struct b declared but not defined
+};
+typedef struct a* a;
+
+struct c {
+  a x;
+};
+typedef struct c* c;
+
+int main() {
+  a x = alloc(struct a);
+  c y = alloc(struct c);
+  return 0;
+}

@@ -1,0 +1,21 @@
+//test return 0
+
+int fact(int x)
+{
+  if(x == 0)
+    return 1;
+  return x*fact(x-1);
+}
+
+int main()
+{
+  dub e = itod(0);
+  for(int i = 0; i<10; i++)
+  {
+    e = dadd(e,ddiv(itod(1),itod(fact(i))));
+  }
+  dub lowbound = ddiv(itod(2718),itod(1000));
+  dub highbound = ddiv(itod(2719),itod(1000));
+  assert(dless(lowbound,e) && dless(e,highbound));
+  return 0;
+}

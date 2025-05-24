@@ -1,0 +1,12 @@
+//test return 1
+
+int main()
+{
+  int a;
+  int p;
+  a = 3;
+  p = 5;
+  a *= a * a * a;
+  a %= p;
+  return a;
+}

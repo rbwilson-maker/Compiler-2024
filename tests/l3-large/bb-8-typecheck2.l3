@@ -1,0 +1,18 @@
+//test typecheck
+
+damage burst(mana x)
+{
+  damage random_three = arcanemissiles(x);
+  damage one = fireblast(x);
+  damage three = frostbolt(x);
+  damage four = fireball(x);
+  damage ten = pyroblast(x);
+  return d_add((d_add((d_add (d_add(random_three,one),three)),four)),ten);
+}
+
+int main()
+{
+  mana x = 30;
+  burst(x);
+  return 0;
+}

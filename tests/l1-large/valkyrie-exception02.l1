@@ -1,0 +1,5 @@
+//test div-by-zero
+int main() {
+	int TMIN = -2147483648;
+	return TMIN / (10 * 7 / 2 - 35);
+}

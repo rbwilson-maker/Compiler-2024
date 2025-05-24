@@ -1,0 +1,16 @@
+//test error
+
+// basic type error test
+
+int foo(int[] v) {
+    return 0;
+}
+
+int main () {
+    int[] test_arr = alloc_array(int, 1);
+    int *v;
+    test_arr[0] = 0;
+    foo(v);
+    while (test_arr[0] == 1);
+    return test_arr[0];
+}

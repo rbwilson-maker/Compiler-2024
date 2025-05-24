@@ -1,0 +1,53 @@
+//test return 15
+
+typedef struct list_node node;
+struct list_node {
+    int data;
+    node* next;
+};
+
+typedef struct list_header list;
+struct list_header {
+    node* start;
+    node* end;
+};
+
+list* new_list(){
+    list* l = alloc(list);
+    return l;
+}
+
+void add_to_list(list* l, int data){
+    node* end = l->end;
+    
+    node* new_node = alloc(node);
+    new_node->data = data;
+    if(end == NULL){
+        l->start = new_node;
+        l->end = new_node;
+    }
+    else{
+        end->next = new_node;
+        l->end = new_node;
+    }  
+}
+
+int sum_list(list* l){
+    int sum = 0;
+    node* curr = l->start;
+    while(curr != l->end){
+        sum += curr->data;
+        curr = curr->next;
+    }
+    return sum + curr->data;
+}
+
+int main(){
+    list* l = new_list();
+    add_to_list(l, 1);
+    add_to_list(l, 2);
+    add_to_list(l, 3);
+    add_to_list(l, 4);
+    add_to_list(l, 5);
+    return sum_list(l);
+}

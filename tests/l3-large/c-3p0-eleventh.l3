@@ -1,0 +1,24 @@
+//test typecheck
+
+int raise_power(int e, int t) {
+  int res = 1;
+  while (e > 0) {
+    res *= t;
+    e--;
+  }
+  return res;
+}
+
+int integerBessel8(int k) {
+  if (k <= 0) {
+    return 4;
+  } else {
+    return (integerBessel8(k-1) + 4 * raise_power(k, (-4 * -4 / 4)) / 
+           (factorial(k) * factorial(k+1)));
+  }
+}
+
+int main() {
+  int val = integerBessel8(17);
+  return val;
+}

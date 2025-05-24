@@ -1,0 +1,6 @@
+//test div-by-zero
+int main(){
+  int a=36548;
+  bool b = false;
+  return 3 << (!b?a:0);
+}

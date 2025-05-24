@@ -1,0 +1,12 @@
+//test return 1
+
+//shortcircuiting
+
+int main(){
+    int x = 0;
+    if(true || (5/x == 0)){
+        return 1;
+    }
+    else
+        return (1/0);
+}

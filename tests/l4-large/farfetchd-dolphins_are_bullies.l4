@@ -1,0 +1,15 @@
+//test return 7;
+
+struct bully {
+    int small;
+};
+
+struct dolphin {
+    struct bully b; 
+};
+
+int main() {
+    struct dolphin *d = alloc (struct dolphin);
+    d->b.small = 7;
+    return d->b.small;
+}

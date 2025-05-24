@@ -1,0 +1,11 @@
+//test return 1
+// function directly in a function
+
+int yoo(int x) {
+  return 1;
+}
+
+int main () {
+  return yoo(yoo(yoo(yoo(yoo(yoo(18))))));
+}
+

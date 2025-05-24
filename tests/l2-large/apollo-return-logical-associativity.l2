@@ -1,0 +1,6 @@
+//test return 0
+//makes sure that unary ops bind tightest and that products bind tighter than sums
+int main()
+{
+    return !true && false || !false && true ? 0 : (1 / 0);
+}

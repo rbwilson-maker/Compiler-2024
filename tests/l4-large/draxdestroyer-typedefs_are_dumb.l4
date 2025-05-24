@@ -1,0 +1,36 @@
+//test error
+// Tests scoping nuiance in structs
+typedef int foo1;
+typedef foo1 foo2;
+typedef foo3 foo4;
+typedef foo5 foo6;
+typedef foo7 foo8;
+
+typedef int whoever;
+typedef int up_with;
+typedef whoever static_semantics;
+
+struct foooooooooooooooooooooooooooooooooooooooooooo {
+    foo1 foo1;
+    foo2 foo2;
+    foo3 foo3;
+    foo4 foo4;
+    foo5 foo5;
+    foo6 foo6;
+    foo7 foo7;
+    foo8 foo8;
+}
+
+int main() {
+   whoever came = 0; 
+
+            up_with c0 = 0;
+        static_semantics is_a_clown = 4;
+        // No really
+        foo1 foo1 = 4;
+
+
+return 0;
+
+}
+

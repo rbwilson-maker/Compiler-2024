@@ -1,0 +1,53 @@
+//test return 13
+
+typedef int integer;
+typedef integer signed_natural;
+
+int args(int x1, int x2, int x3, integer x4, int x5, int x6, int x7, bool x8,
+         int x9, int xA, int xB, integer xC, int xD, int xE, int xF, bool xG);
+
+bool _true();
+
+int main() {
+  return args(0, 1, 2, 3, 4, 5, 6, _true(), 8, 9, 10, 11, 12, 13, 14 , _true());
+}
+
+typedef bool bolo;
+signed_natural args(int _1, int y2, int z3, int x4, int x5, int x6, int z7, bool y8,
+                    int x9, int xA, int xB, int xC, int x0, int xE, int xF, bolo _G);
+
+bool _true() {
+  return true;
+}
+
+integer args(int _1, integer y2, int z3, int x4, int x5, int x6, int z7, bool y8,
+             int x9, integer xA, int xB, int xC, int x0, int xE, int xF, bool _G) {
+  if (_G && _1 < y2) {
+    int a2 = x6; 
+    while (xF > x0) {
+      int a0 = _1; 
+      integer a1 = y2 - xB; 
+      int z3_ = x0 + xC; 
+      int x4_ = xA % z3; 
+      int x5_ = 7 * y2 + (y8 ? 3 : 4); 
+      xF--;
+      int a3 = z7; 
+      x0++;
+      bool y8__ = y8;
+      int a4 = x9; 
+      integer xA_ = z3; 
+      int xB_ = 44; 
+      int xC_ = xB * 16; 
+      int x0_ = 0 / 4; 
+      int xE_ = 3; 
+      int xF_ = z3_ / ((z7 - a3) + 1); 
+      xF--;
+      a2 += xA + x5 - z7 - xB_ + x5_ * xA_ + x0 + (y8 ? 4 : y2);
+    }
+
+    return args(a2, a2, a2, _1, xC, x0, a2 / a2, a2 < 0,
+                xC, xF, a2, x0, x0, x0, a2 / a2, _true()); 
+  }
+
+  return xE;
+}

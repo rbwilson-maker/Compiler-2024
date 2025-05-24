@@ -1,0 +1,7 @@
+//test typecheck
+
+int main() {
+	int[] arr = alloc_array(int, 5);
+	int ret = arr[5];
+	return 0;
+}

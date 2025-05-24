@@ -1,0 +1,16 @@
+//test return 59049
+// Test recursive function calls.
+
+int pow(int base, int exp) {
+    assert(fless(itof(0), itof(exp)));
+    if (exp == 1) {
+        return base;
+    }
+    return ftoi(fmul(itof(base), itof(pow(base, exp - 1))));
+}
+
+int main () {
+    int x = 3;
+    int y = 10;
+    return pow(x, y);
+}

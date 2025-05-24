@@ -1,0 +1,23 @@
+//test return 256
+
+struct data {
+	int res;
+	int base;
+};
+
+int exp(int base, int exp) {
+	struct data* d = alloc(struct data);
+	d->base = base;
+	d->res = 1;
+
+	if (exp > 0)
+		for (int i = 0; i < exp; i++) {
+			d->res *= d->base;
+		}
+
+	return d->res;
+}
+
+int main() {
+	return exp(2, 8);
+}

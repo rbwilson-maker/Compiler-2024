@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+
+int factorialIThink(int n) {
+    // avoid branch here for efficiency reasons
+    return n * factorialIThink(n - 1);
+}
+int main() {
+   factorialIThink(100); // Doesn't really matter what we call it with
+   main(); // Hey, why not.
+   return 0;
+}

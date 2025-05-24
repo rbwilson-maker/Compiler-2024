@@ -1,0 +1,23 @@
+//test return 9178
+
+// A novel way of swapping elements
+
+void swap(int[] x, int i, int j)
+{
+    if (i != j)
+    {
+    x[i] = x[i] ^ x[j];
+    x[j] = x[i] ^ x[j];
+    x[i] = x[i] ^ x[j];
+    }
+}
+
+int main()
+{
+    int[] x = alloc_array(int,5);
+    x[0] = 1;
+    x[1] = 2;
+    swap(x,0,1);
+    assert(x[0] == 2 && x[1] == 1);
+    return 9178;
+}

@@ -1,0 +1,10 @@
+//test return 33554431
+// Test associativity of assignment operator.
+
+int main() {
+  int x = 0xFFFFFFF;
+  int y = 2;
+  int z = 1;
+  x >>= y + z;
+  return x;
+}

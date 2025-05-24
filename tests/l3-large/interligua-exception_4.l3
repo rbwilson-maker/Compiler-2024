@@ -1,0 +1,13 @@
+//test abort
+
+int save_div(int num, int denom){
+    if (denom == 0){
+        assert(false);
+    }
+
+    return num / denom;
+}
+
+int main(){
+    return save_div(5,5-5);
+}

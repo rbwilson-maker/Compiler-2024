@@ -1,0 +1,13 @@
+//test return 0
+
+// `c` must be split into two temps since the result of `b % a` must go in %edx but
+// the return value goes in %eax.
+
+int main() {
+    int a = 1;
+    int b = 2;
+
+    int c = b % a;
+
+    return c;
+}

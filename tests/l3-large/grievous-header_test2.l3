@@ -1,0 +1,7 @@
+//test typecheck
+
+int main() {
+    realint x = 1;
+    realint y = realadd(x, 4, true);
+    return 3;
+}

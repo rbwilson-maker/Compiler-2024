@@ -1,0 +1,6 @@
+//test typecheck
+//test infloop
+
+int main() {
+  return main() + 1/0;
+}

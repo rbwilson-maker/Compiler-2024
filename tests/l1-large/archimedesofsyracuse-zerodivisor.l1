@@ -1,0 +1,14 @@
+//test div-by-zero
+// Arithmetic chain results in zero divisor
+int main() {
+  int x = 42;
+  int y = 123;
+  x *= 1;
+  y /= 22;
+  x += 111;
+  y -= x;
+  x = 20;
+  y += (x + 10) * -12 / 3 - (2 + (120 + 32));
+  y *= 0;
+  return x / y;
+}

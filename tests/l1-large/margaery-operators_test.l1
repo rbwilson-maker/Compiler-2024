@@ -1,0 +1,22 @@
+//test return 33
+
+int main() {
+    int x = 100;
+    int y = 10;
+    int sum = x + y;
+    sum = x + y + 1;
+    sum = sum + 10;
+    int dif = x - y;
+    dif = x - y - 20;
+    dif -= 5;
+    int mul = x * y;
+    mul = x * 101;
+    mul *= 2;
+    int tim = x / y;
+    tim = 200 / y;
+    tim /= 3;
+    int rem = x % 7;
+    rem = (x + 3) % y;
+    rem %= 2;
+    return (sum - dif) * mul / tim % 100;
+}

@@ -1,0 +1,22 @@
+//test return 12;
+// if statements within a loop
+int main() {
+  int a = 0;
+  int i = 0;
+  bool cont = true;
+  while (cont) {
+    if (i == 0) {
+      a += 6;
+    } else if (i == 1) {
+      a /= 3;
+    } else if (i == 2) {
+      a *= 7;
+    } else if (i == 5) {
+      cont = false;
+    } else {
+      a--;
+    }
+    i++;
+  }
+  return a;
+}

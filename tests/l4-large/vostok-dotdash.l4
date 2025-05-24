@@ -1,0 +1,18 @@
+//test error
+
+struct eggs {
+    int bacon;
+};
+
+struct gravy {
+    struct eggs* eggs;
+};
+
+int main() {
+    struct eggs* eggs = alloc(struct eggs);
+    eggs->bacon = 6;
+    struct gravy* pGravy = alloc(struct gravy);
+    pGravy->eggs = eggs;
+    struct gravy gravy = *pGravy;
+    return gravy.eggs->bacon;
+}

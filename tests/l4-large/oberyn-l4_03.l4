@@ -1,0 +1,17 @@
+//test return 2
+// side effects in array indexing
+
+int incr(int* i) {
+  (*i)++;
+  return 0;
+}
+
+int main() {
+  int* i = alloc(int);
+  *i = 1;
+  int[] A = alloc_array(int,1);
+  A[incr(i)] = *i;
+
+  return *i;
+}
+

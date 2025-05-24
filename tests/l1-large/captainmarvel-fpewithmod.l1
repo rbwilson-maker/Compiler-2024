@@ -1,0 +1,11 @@
+//test div-by-zero
+int main()
+{
+    int x;
+    x = 3;
+    int y;
+    y = 3;
+    int a;
+    a = x / (x % (x - y));
+    return 0;
+}

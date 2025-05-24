@@ -1,0 +1,12 @@
+//test return 11
+int main() {
+  int j = 100;
+  j += 100;
+  j -= 50;
+  int c = 2;
+  j *= c;
+  j /= (c / 2);
+  c /= 2;
+  j %= 17;
+  return j;
+}

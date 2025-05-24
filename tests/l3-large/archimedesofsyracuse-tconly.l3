@@ -1,0 +1,12 @@
+//test typecheck
+// reach_max, when implemented, should
+// try to reach a max value from min value
+// by shifting - return true if possible
+// - never will since sign is preserved
+
+int main() {
+  int val = -1;
+  bool condition = reach_max(val);
+  assert (condition);
+  return 0;
+}

@@ -1,0 +1,127 @@
+//test return 1
+
+// I <3 overfitting
+
+// simple logistic regression by gd (not stochastic). lr is 0.05 cause thats
+// a reasonable learning rate according to Ruslan. SSE loss, nothing too complex
+
+dub exp(dub x) {
+    dub y = x;
+    dub result = dadd(itod(1),y);
+    for (int i = 2; i < 15; i++) {
+        y = dmul(y, ddiv(x,itod(i)));
+        result = dadd(result, y);
+    }
+    return result;
+}
+
+dub denom(int x, int y){
+    return ddiv(itod(x), itod(y));
+}
+
+dub sigmoid(dub x) {
+    return ddiv(itod(1), dadd(itod(1), exp(dsub(itod(0), x))));
+}
+
+dub dot(dub[] x, dub[] y) {
+    dub result = itod(0);
+    for (int i = 0; i < 3; i++) {
+        result = dadd(result, dmul(x[i], y[i]));
+    }
+    return result; 
+}
+
+dub apply(dub[] weights, dub[] input) {
+    return sigmoid(dot(weights, input));
+}
+
+dub[] gen_updates(dub[] weights, dub[] input, dub output, dub target) {
+    dub lr = denom(1, 20);
+    dub[] result = alloc_array(dub,3);
+    for (int i = 0; i < 3; i++) {
+        result[i] = dmul(output,dmul(dsub(itod(1), output),dmul(dsub(target,output),dmul(lr,input[i]))));
+    }
+    return result;
+}
+
+void apply_updates(dub[] weights, dub[][] updates) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            weights[j] = dadd(weights[j], updates[i][j]);
+        }
+    }
+}
+
+void epoch(dub[] weights, dub[][] inputs, dub[] targets) {
+    dub[][] updates = alloc_array(dub[], 4);
+    for (int i = 0; i < 4; i++) {
+        updates[i] = gen_updates(weights, inputs[i], apply(weights, inputs[i]), targets[i]);
+    }
+    apply_updates(weights, updates);
+}
+
+dub loss(dub[] weights, dub[][] inputs, dub[] targets) {
+    dub result = itod(0);
+    dub temp;
+    for (int i = 0; i < 4; i++) {
+        temp = dsub(sigmoid(dot(weights, inputs[i])), targets[i]);
+        result = dadd(result, dmul(temp, temp));
+    }
+    return result;
+}
+
+dub[] init_weights() {
+    dub[] weights = alloc_array(dub, 3);
+    weights[0] = denom(1, 22);
+    weights[1] = denom(-1, 21);
+    weights[2] = denom(1, 50);
+    return weights;
+}
+
+dub[][] init_inputs() {
+    dub[][] inputs = alloc_array(dub[], 4);
+    dub[] weights = alloc_array(dub, 3);
+    weights[0] = denom(1, 1);
+    weights[1] = denom(1, 2);
+    weights[2] = denom(-1, 1);
+    inputs[0] = weights;
+    weights = alloc_array(dub, 3);
+    weights[0] = denom(1, 1);
+    weights[1] = denom(1, 3);
+    weights[2] = denom(-1, 2);
+    inputs[1] = weights;
+    weights = alloc_array(dub, 3);
+    weights[0] = denom(1, 1);
+    weights[1] = denom(-1, 3);
+    weights[2] = denom(1, 2);
+    inputs[2] = weights;
+    weights = alloc_array(dub, 3);
+    weights[0] = denom(1, 1);
+    weights[1] = denom(-1, 2);
+    weights[2] = denom(1, 3);
+    inputs[3] = weights;
+    return inputs;
+}
+
+dub[] init_targets() {
+    dub[] results = alloc_array(dub, 4);
+    results[0] = itod(1);
+    results[0] = itod(1);
+    results[1] = itod(0);
+    results[1] = itod(0);
+    return results;
+}
+
+
+int main() {
+    dub[] weights = init_weights();
+    dub[][] inputs = init_inputs();
+    dub[] targets = init_targets();
+    for (int i = 0; i < 50000; i++) {
+        epoch(weights, inputs, targets);
+    }
+    dub l = loss(weights, inputs, targets);
+    //Sum of squared error must be less than 0.01
+    return 10>dtoi(dmul(l, itod(1000))) ? 1 : 0;
+}
+

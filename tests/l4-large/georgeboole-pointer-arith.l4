@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+    int* a = alloc(int);
+    bool* b = alloc(bool);
+    int* x = a + b;
+    return 0;
+}

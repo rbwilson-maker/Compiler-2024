@@ -1,0 +1,10 @@
+//test return 5 
+//make sure that scoping works
+int main()
+{
+	int y = 5;
+	int z = 0;
+	for (int x = 0; x < y; x++)
+		z++;
+	return z;
+}

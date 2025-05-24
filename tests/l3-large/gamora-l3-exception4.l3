@@ -1,0 +1,47 @@
+//test abort
+
+int one() {
+  return 1;
+}
+
+int two() {
+  return 2;
+}
+
+int three() {
+  return 3;
+}
+
+int four() {
+  assert(false);
+  return 4;
+}
+
+int five() {
+  return 5;
+}
+
+int six() {
+  return 1/0;
+}
+
+int main () {
+  return one() + two () + three () + four () + five () + six ();
+}
+
+int seven() {
+  return 7;
+}
+
+int eight() {
+  return 8;
+}
+
+int nine() {
+  return 9;
+}
+
+int ten() {
+  return 10;
+}
+

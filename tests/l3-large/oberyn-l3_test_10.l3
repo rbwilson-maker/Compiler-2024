@@ -1,0 +1,28 @@
+//test typecheck
+
+// tests tests mutual recursion
+
+bool even(int n);
+bool odd(int n);
+
+bool even(int n) {
+	if (n == 0) return true;
+	else return !odd(n - 1);
+}
+
+bool odd(int n) {
+	if (n == 0) return false;
+	else return !even(n - 1);
+}
+
+int main() {
+	int x = 0;
+	int y = 0;
+
+	if (even(7)) return 1;
+	if (odd(10)) return 1;
+	if (!even(8)) return 1;
+	if (!odd(13)) return 1;
+
+	return 0;
+}

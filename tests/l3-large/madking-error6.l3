@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+  return 0;
+}
+
+void foo(int x, int y) {
+  int x = y;
+}

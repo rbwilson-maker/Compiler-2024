@@ -1,0 +1,7 @@
+//test return 6
+int main() {
+  for (int x = 0; true; x++) {
+    if (x > 5) return x;
+  }
+  return 37;
+}

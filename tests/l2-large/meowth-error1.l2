@@ -1,0 +1,15 @@
+//test error
+
+//nested for loop based on int even if loop won't get called.
+int main(){
+    int j = 0;
+    int k = 1;
+    if(j == 1){
+        if(k == 0){
+            for(j = 0; k; k++){
+                j++;
+            }
+        }
+    }
+    return 1;
+}

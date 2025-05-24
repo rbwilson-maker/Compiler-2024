@@ -1,0 +1,9 @@
+//test error
+
+// test invalid variable name
+
+int main() {
+    return 1;
+    int struct = 4;
+    return struct; 
+}

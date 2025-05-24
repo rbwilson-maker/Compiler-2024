@@ -1,0 +1,18 @@
+//test return 1
+/// functions side effects are not executed unnecessarily
+
+int func(int* ref) {
+  assert(*ref != 0);
+  *ref -= 1;
+  return *ref;
+}
+
+int main() {
+  int* ref = alloc(int);
+  *ref = 1;
+
+  int[] ints = alloc_array(int, 10);
+  ints[func(ref)] += 1;
+
+  return ints[0];
+}

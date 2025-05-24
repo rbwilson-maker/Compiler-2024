@@ -1,0 +1,38 @@
+//test error
+
+struct twin1
+{
+  int x;
+  int y;
+  int z;
+};
+
+struct twin2
+{
+  int x;
+  int y;
+  int z;
+};
+
+int main() {
+  int s = 500;
+  struct twin1[] twin1array = alloc_array(struct twin1, s);
+
+  for(int i = 0; i < s; i++) {
+    struct twin1* new = alloc(struct twin1);
+    new->x = i;
+    new->y = 2 * (new->x);
+    new->z = 134;
+    twin1array[i] = new;
+
+    if (i == s - 1) {
+      struct twin2* lol = alloc(struct twin2);
+      lol->x = i;
+      lol->y = 2 * (lol->x);
+      lol->z = 1337;
+      twin1array[i] = lol;
+    }
+  }
+
+  return twin1array[s-1]->z;
+}

@@ -1,0 +1,7 @@
+//test compile
+
+int main() {
+    int target = 123;
+    while (rand() != target){}
+    return target;
+}

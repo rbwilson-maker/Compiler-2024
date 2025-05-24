@@ -1,0 +1,10 @@
+//test error
+// no return causes error
+
+int main() {
+    int i = 4;
+    int j = 12;
+    int k = 21;
+
+    int m = i * j * j * k / j / k;
+}

@@ -1,0 +1,14 @@
+//test return 5
+
+int one() {
+	return 1;
+}
+
+int two() {
+	return 2;
+}
+
+int main() {
+   one();
+   return one() + two() + two();
+}

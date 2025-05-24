@@ -1,0 +1,14 @@
+//test div-by-zero
+int foo(bool* b) {
+    if (*b) {1/0;} else {1;}
+    *b = true;
+    return 0;
+}
+int main() {
+    bool[] x = alloc_array(bool,2);
+    x[0] = true;
+    bool * b = alloc(bool);
+    *b = false;
+    x[foo(b)] = (*b) ? foo(b) > 10 : true;
+    return 0;
+}

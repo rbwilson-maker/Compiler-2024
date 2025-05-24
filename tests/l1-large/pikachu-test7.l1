@@ -1,0 +1,8 @@
+//test return -1
+
+int main(){
+    int a = -5/3;
+    a *= 0xFFFF;
+    a /= 0xFFFF;
+    return a;
+}

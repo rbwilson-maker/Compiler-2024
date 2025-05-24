@@ -1,0 +1,51 @@
+//test return 0
+
+typedef bool smile;
+
+typedef int goodbye;
+typedef goodbye or_not;
+
+void testing(smile e) {
+    if (!e) assert(e);
+    else {}
+    assert(e);
+    or_not o = 700;
+    o++;
+    return;
+    return;
+}
+
+typedef or_not e;
+
+smile thing(e thing) {
+    testing(thing == 0);
+    testing(thing == 0);
+    testing(thing == 0);
+    testing(thing != 1);
+    testing(thing == 0);
+    testing(thing == 0);
+    testing(thing == 0);
+    testing(thing != 1);
+
+    return thing != 0;
+}
+
+int main();
+
+int main();
+
+typedef int hello;
+
+hello main();
+
+void not_used();
+
+bool also_not_used();
+
+hello main() {
+    smile t = true;
+    thing(t ? 0 : 1);
+    thing(thing(t && t ? 0 : 1) ? 1 : 0);
+
+    return 0;
+}

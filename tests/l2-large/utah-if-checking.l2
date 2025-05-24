@@ -1,0 +1,17 @@
+//test return 0 
+
+int main () {
+    int z;
+    int y = 5;
+    if (5 == 5) {
+        return 0;
+    } else {
+         if (1 == 2) {
+           for (z = y == 5 ? 0/0 : 5;0/0 == 0/0;z--)
+               return 0;
+         } else {
+             return 0;
+         }
+    }
+    return 0;
+}

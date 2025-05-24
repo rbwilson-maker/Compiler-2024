@@ -1,0 +1,12 @@
+//test error
+// main function has incorrect number of arguments
+
+int mult (int x, int y) {
+	return x * y;
+}
+
+int main(int x, int y) {
+	int res;
+	res = mult(x, y);
+	return res;
+}

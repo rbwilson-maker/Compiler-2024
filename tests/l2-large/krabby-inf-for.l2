@@ -1,0 +1,8 @@
+//test typecheck
+//test infloop
+
+int main() {
+    int x = 6;
+    for (;x<10;) {}
+    return -1000;
+}

@@ -1,0 +1,10 @@
+//test return 1
+
+int f(bool b) {
+    if (b) return 1;
+    else return 0;
+}
+
+int main() {
+    return f(true || (1 << 32 > 0));
+}

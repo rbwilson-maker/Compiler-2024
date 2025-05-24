@@ -1,0 +1,50 @@
+//test return 0
+// messing around with a simple stack
+
+struct stack_link{
+  struct stack_link* next;
+  int val;
+};
+
+typedef struct stack_link link_t;
+
+struct stack{
+  struct stack_link* top;
+};
+
+typedef struct stack stack_t;
+
+int pop(stack_t* s){
+  link_t* old_top = s->top;
+  s->top = s->top->next;
+  return old_top->val;
+}
+
+int peek(stack_t* s){
+  return s->top->val;
+}
+
+void push(stack_t* s, int x){
+  link_t* new_top = alloc(link_t);
+  new_top->val = x;
+  new_top->next = s->top;
+  s->top = new_top;
+}
+
+int main(){
+  stack_t* s = alloc(stack_t);
+
+  int i = 0;
+  while (i<10) {
+    push(s, i);
+    i++;
+  }
+
+  while (i>0){
+    i--;
+    assert(peek(s) == i);
+    assert(pop(s) == i); 
+  }
+
+  return 0;
+}

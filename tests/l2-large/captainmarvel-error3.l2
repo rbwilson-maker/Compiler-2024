@@ -1,0 +1,21 @@
+//test error
+
+int main ()
+{
+  int x;
+  int y;
+
+  x = 0;
+  if (x >= 0) {
+    
+    if ( y < 1){ // not assigned value in the first place
+      
+      y = 1
+      return x - y;
+    }
+  }
+
+  y = 1;
+  return x + y; 
+
+}

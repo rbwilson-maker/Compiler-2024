@@ -1,0 +1,10 @@
+//test error
+// local variables must have small type
+
+struct A {
+    int A;
+}
+
+int main() {
+    return 0;
+}

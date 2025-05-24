@@ -1,0 +1,10 @@
+//test error
+// Declaration and definition have different types
+
+void main();
+
+int main() {
+  int m = 1;
+  int n = 2;
+  return m + n;
+}

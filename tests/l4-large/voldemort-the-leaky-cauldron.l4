@@ -1,0 +1,76 @@
+//test error
+struct yes {
+    int value;
+    struct eaters inner;
+};
+
+struct but {
+    int value;
+    struct yes inner;
+};
+
+struct the {
+    int value;
+    struct but inner;
+};
+
+struct word {
+    int value;
+    struct the inner;
+};
+
+struct isnt {
+    int value;
+    struct word inner;
+};
+
+struct split {
+    int value;
+    struct isnt inner;
+};
+
+struct into {
+    int value;
+    struct split inner;
+};
+
+struct good {
+    int value;
+    struct into inner;
+};
+
+struct people {
+    int value;
+    struct good inner;
+};
+
+struct and {
+    int value;
+    struct people inner;
+};
+
+struct death {
+    int value;
+    struct and inner;
+};
+
+struct eaters {
+    int value;
+    struct death inner;
+};
+
+int main() {
+    struct eaters* x = alloc(struct eaters);
+    assert((*x).value == 0);
+    assert((*x).inner.value == 0);
+    assert((*x).inner.inner.value == 0);
+    assert((*x).inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.inner.inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.inner.inner.inner.inner.inner.value == 0);
+    assert((*x).inner.inner.inner.inner.inner.inner.inner.inner.inner.inner.value == 0);
+    return 0;
+}

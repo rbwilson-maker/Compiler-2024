@@ -1,0 +1,8 @@
+//test return 25
+
+int main()
+{
+  int x = 3;
+  int y = 7;
+  return (((x + y) * (y - x) - 36) + (x * y));
+}

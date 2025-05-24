@@ -1,0 +1,26 @@
+//test div-by-zero
+//meow
+
+struct meow {
+    int meow;
+    bool meowmeow;
+    int meowmeowmeow;
+    bool[] meowmeowmeowmeow;
+};
+typedef struct meow meoww;
+
+int main() {
+    int x = 11411;
+    meoww[] meowww = alloc_array(meoww, x);
+    for (int i = 0; i < x - 1; i++) {
+        meowww[i].meow += i;
+        meowww[i].meowmeow = !(i % 2 == 0);
+        meowww[i].meowmeowmeow = i * i;
+    }
+    for (int i = x - 2; i >= 0; i--) {
+        assert(meowww[i].meow == i);
+        assert(meowww[i].meowmeow == !(i % 2 == 0));
+        assert(meowww[i].meowmeowmeow == i * i);
+    }
+    return meowww[x-2].meowmeowmeow / meowww[x-1].meow;
+}

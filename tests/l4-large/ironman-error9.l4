@@ -1,0 +1,49 @@
+//test error
+
+typedef struct s* node;
+typedef struct s** s;
+typedef node tree;
+
+struct s{
+    struct s* left;
+    struct s* right;
+    int val;
+};
+
+node make_tree(){
+    node root = alloc(struct s);
+    node curr = root;
+    for (int i = 0; i < 100; i++){
+        node next = alloc(struct s);
+        next->val = i;
+        curr->left = next;
+        curr = next;
+    }
+    curr = root;
+    for (int i = 0; i < 100; i++){
+        node next = alloc(node);
+        next->val = i;
+        curr->right = next;
+        curr = next;
+    }
+    return root;
+}
+
+int left(node x){
+    if (x == NULL){
+        return 0;
+    }
+    return x->val + left(x->left);
+}
+
+int sum(node x){
+    if (x == NULL){
+        return 0;
+    }
+    return x->val + sum(x->right) + sum(x->left);
+}
+
+int main(){
+    tree root = make_tree();
+    return left(root) + right(root);
+}

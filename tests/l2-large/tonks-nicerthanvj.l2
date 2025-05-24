@@ -1,0 +1,12 @@
+//test return 120
+int main() {
+  int total = 1;
+  int start = 5;
+
+  int curr = start;
+  while (curr > 1) {
+    total = total * curr;
+    curr = curr - 1;
+  }
+  return total;
+}

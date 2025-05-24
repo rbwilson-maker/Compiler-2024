@@ -1,0 +1,23 @@
+//test return 1
+
+int main() {
+	int a = 1;
+	for(int b = 1; a < a; a++) {
+		if(a > 0) {
+			b += b;
+		}
+	}
+	while(a < 0) {
+		 a = 1;
+	}
+	while(a < 0) {
+		 a = 1;
+	}
+	while(a < 0) {
+		 a = 1;
+	}
+	while(a < 0) {
+		 a = 1;
+	}
+	return a;
+}

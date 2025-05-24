@@ -1,0 +1,20 @@
+//test return 255
+
+typedef struct jan hoffman;
+
+struct jan {
+    int *jan;
+    int[] hoffman;
+};
+    
+int main() {
+    hoffman *jan = alloc(hoffman);
+    jan->jan = alloc(int);
+    *jan->jan = 0;
+    jan->hoffman = alloc_array(int, 8);
+    for (int i = 0; i < 8; i++) {
+        jan->hoffman[i]++;
+        *jan->jan += jan->hoffman[i] + *jan->jan;
+    }
+    return *jan->jan;
+}

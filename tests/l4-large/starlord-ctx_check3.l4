@@ -1,0 +1,18 @@
+//test return 100
+
+typedef int * foo;
+
+int test(foo * x) {
+  return **x;
+}
+
+int main() {
+  {
+    int y;
+  }
+  foo x = alloc(int);
+  *x = 100;
+  foo * y = alloc(foo);
+  * y = x;
+  return test(y);
+}

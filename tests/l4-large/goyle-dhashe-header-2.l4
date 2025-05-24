@@ -1,0 +1,7 @@
+//test typecheck
+
+int main() {
+  d[] x = alloc_array(d, 10);
+  x[0].x.x = 5;
+  return x[0].x.x;
+}

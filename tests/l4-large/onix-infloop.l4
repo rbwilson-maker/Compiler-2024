@@ -1,0 +1,18 @@
+//test typecheck
+//test infloop
+
+struct recStruct {
+  struct recStruct *r;
+};
+
+struct recStruct *makeStructs()
+{
+   struct recStruct* new = alloc(struct recStruct);
+   new->r = makeStructs();
+   return new;
+}
+
+int main() {
+  makeStructs();
+  return 0;
+}

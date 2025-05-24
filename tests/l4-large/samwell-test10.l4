@@ -1,0 +1,11 @@
+//test return 0;
+
+void modifydub(dub* d){
+  *d = itod(1);
+  return;
+}
+
+int main() { 
+  dub* d = alloc(dub);
+  return(dtoi(*d));
+ }

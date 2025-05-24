@@ -1,0 +1,11 @@
+//test error
+// error:expected a type, found identifier 'fake'
+
+struct fake {
+    int x;
+};
+
+int main(){
+    fake* fake = alloc(fake); //this should be alloc(struct fake)
+    return 0;
+}

@@ -1,0 +1,24 @@
+//test abort
+
+int h(int x);
+
+int f(int x){
+    return h(x-1);
+}
+
+int g(int x){
+    return h(x);
+}
+
+int h(int x){
+    if (x == 0){
+       return 1;
+    }else{
+       return 0;
+    }
+}
+
+int main() {
+    assert(f(0) == g(0));
+    return 0;
+}

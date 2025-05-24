@@ -1,0 +1,16 @@
+//test return 10
+// test functions decl not defn, not used
+
+int mult(int x, int y);
+typedef int int_t;
+int conditional(int x, bool y); 
+
+int mult(int_t x, int_t y) {
+    return x * y; 
+}
+
+int main() {
+    return mult(2,5);
+}
+
+int mult(int x, int y); 

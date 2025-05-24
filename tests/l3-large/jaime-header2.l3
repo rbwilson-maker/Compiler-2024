@@ -1,0 +1,28 @@
+//test typecheck
+
+int main()
+{
+    int t1 = 5;
+    int t2 = 7;
+    int t3 = add(t1, t2);
+    int t4 = 12;
+    bool t5 = equal(t4, t3);
+    if(not(t5))
+    {
+        bool t6 = or(t5, and(t5, or(true, and(t5, true))));
+        if(t6)
+        {
+            noop();
+            return t4;  
+        }
+        else
+        {
+            noop();
+            return t1;  
+        }
+    }
+    else
+    {
+        return t2;
+    }
+}

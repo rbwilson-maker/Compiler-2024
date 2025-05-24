@@ -1,0 +1,15 @@
+//test return -277868793
+
+// Compilers f2017: Group Tyrion Lannister
+
+int main() {
+    int a = 4929392;
+
+    for (int i = 0; i < 9392; i++) {
+        a <<= (i % 11);
+        a *= 1337;
+        a += 7;
+    }
+
+    return a;
+}

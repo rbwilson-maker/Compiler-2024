@@ -1,0 +1,21 @@
+//test typecheck
+//test infloop
+
+struct b;
+
+typedef struct b *bp;
+
+
+struct b {
+	int *a;
+	bp next;
+};
+
+int main() {
+	bp []c = alloc_array(struct b *,3);
+	int i = 0;
+	while (i < 3) {
+		if (c[i] != NULL) i++;
+	}
+	return 3;
+}

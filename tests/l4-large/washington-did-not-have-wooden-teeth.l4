@@ -1,0 +1,19 @@
+//test error
+
+// Did you know?
+// To begin with, George Washington's teeth were made from the teeth of slaves
+// on his plantation. Later, they were made of hippopotamus and elephant ivory.
+
+// Apologies to all the people that get their history lessons from compilers
+// test cases, but washington-had-wooden-teeth.l2 was a historically incorrect
+// name.
+
+
+int main() {
+    // What type is that?
+    true ? NULL : NULL;
+    // How about that?
+    int x = true ? NULL : NULL;
+    return 0;
+
+}

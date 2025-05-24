@@ -1,0 +1,12 @@
+//test return 0
+
+typedef int hello;
+typedef int hi;
+typedef hi bye;
+hello yes() {
+  return 0;
+}
+bye main() {
+  return yes();
+}
+

@@ -1,0 +1,20 @@
+//test typecheck
+//test infloop
+//122 always said it was hard to implement binary search
+int indexoftarget(int[] myarray, int target, int from, int to){
+	if (target < myarray[(from+to)/2]){
+		return indexoftarget(myarray,target,(from+to)/2,to);
+	}
+	else if (target > myarray[(from+to)/2]){
+		return indexoftarget(myarray,target,from,(from+to)/2);
+	}
+	return (from+to)/2;
+}
+
+int main(){
+	int[] arr = alloc_array(int,8);
+	for (int i = 0; i<8; i++){
+		arr[i] = i;
+	}
+	return indexoftarget(arr,7,0,8);
+}

@@ -1,0 +1,30 @@
+//test return 1337
+
+struct alpha { //It wouldn't let me use ' in the type name.
+	int* i;
+	bool* b;
+	// Unfortunately, we have countably infinitely many types, so
+	// this can't keep going. =(
+};
+
+typedef struct alpha alpha;
+
+alpha* poly(alpha* input) {
+	alpha* output = alloc(alpha);
+	if(input -> i != NULL) {
+		output -> i = alloc(int);
+		*(output -> i) = 1334 + *(input -> i);
+	}
+	if(input -> b != NULL) {
+		output -> b = alloc(bool);
+		*(output -> b) = !*(input -> b);
+	}
+	return output;
+}
+
+int main() {
+	alpha* x = alloc(alpha);
+	x -> i = alloc(int);
+	*(x -> i) = 3;
+	return *(poly(x) -> i);
+}

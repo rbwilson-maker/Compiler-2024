@@ -1,0 +1,9 @@
+//test return 64
+
+int main () {
+    int y = 1;
+    for (int i = 0; i < 6; i++) {
+    	y <<= 1;
+    }
+    return y;
+}

@@ -1,0 +1,13 @@
+//test return 4
+// test short circuiting logic
+
+int main() {
+
+  int k = 2;
+
+  if (k < 4 || (k << 198 > 2)) {
+    return 4;
+  }
+
+  return 1;
+}

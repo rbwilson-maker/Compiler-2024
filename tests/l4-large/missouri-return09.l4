@@ -1,0 +1,16 @@
+//test return 12
+// Unused struct need not be declared
+
+
+struct maxi
+{
+  int name;
+  struct mini* next;
+};
+
+
+int main () {
+  struct maxi* x = alloc(struct maxi);
+  struct mini* y = x->next;
+  return 12;
+}

@@ -1,0 +1,22 @@
+//test return 10
+
+int sum(int x);
+
+int sum_of_sums(int x){
+  if( x == 0) 
+    return 0;
+  return sum(x)+sum_of_sums(x-1);
+}
+
+int sum(int y){
+  if(y == 0)
+    return 0;
+  return y + sum(y-1);
+}
+
+int main() {
+  return sum_of_sums(3);
+}
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

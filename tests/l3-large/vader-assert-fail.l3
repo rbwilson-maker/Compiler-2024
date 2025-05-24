@@ -1,0 +1,21 @@
+//test abort
+
+// fail an assertion
+
+bool isPrime(int n) {
+    int factor = 2;
+    int bound = n/2;
+    while (factor < bound) {
+        if (n % factor == 0)
+            return false;
+        factor += 1;
+    }
+    return true;
+}
+
+int main() {
+    int x = 100;
+    assert(isPrime(x));
+    return 0;
+}
+

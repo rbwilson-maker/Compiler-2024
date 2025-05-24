@@ -1,0 +1,25 @@
+//test return 3
+
+struct a{
+    int a;
+};
+
+typedef struct a[] b;
+
+b f(int x){
+    return alloc_array(struct a, x); 
+}
+
+int main(){
+    b arr = f(3);
+
+    for(int i=0;i<3;i++){
+        arr[i].a = i;
+    }
+
+    int sum = 0;
+    for(int i=0;i<3;i++){
+        sum += arr[i].a;
+    }
+    return sum;
+}

@@ -1,0 +1,32 @@
+//test error
+
+struct song {
+	int rating;
+};
+
+struct playlist {
+	struct song[] songs;
+};
+
+int averageRating(struct playlist* playlist, int n) {
+	int total = 0;
+	for(int i = 0; i < n; i++) {
+		struct song song = playlist->songs[i];
+		total += song.rating;
+	}
+	return total / n;
+}
+
+int main() {
+	struct song* song1 = alloc(struct song);
+	song1->rating = 10;
+	struct song* song2 = song1;
+	struct song* song3 = alloc(struct song);
+	song3->rating = 6;
+	struct playlist* playlist = alloc(struct playlist);
+	playlist->songs = alloc_array(struct song, 3);
+	playlist->songs[0] = *(song1);
+	playlist->songs[1] = *(song2);
+	playlist->songs[2] = *(song3);
+	return averageRating(playlist);
+}

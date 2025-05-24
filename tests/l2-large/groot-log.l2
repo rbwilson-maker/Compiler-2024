@@ -1,0 +1,10 @@
+//test return 11
+
+int main() {
+  int input = 1623;
+  int result;
+  for (result = 0; input > 0; input /= 2) {
+    result++;
+  }
+  return result;
+}

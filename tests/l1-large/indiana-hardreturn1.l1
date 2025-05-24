@@ -1,0 +1,12 @@
+//test return 56 
+
+
+ int main (	){ 
+ int variableName1 = 2; 
+ int tmp2 = 0; 
+ variableName1*=tmp2; //@assert tmp2 == 0; 
+ return variableName1 + tmp2 + (10%4)
++ /*may not be used*/0x12*(18/(3+(2/1)));
+
+
+}

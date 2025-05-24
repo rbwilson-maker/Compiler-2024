@@ -1,0 +1,31 @@
+//test typecheck
+//test infloop
+
+// Compilers f2017: Group Tyrion Lannister
+
+int main() {
+    int x = 1;
+    for(int n = 3; n < 16; n++) {
+        for(int a = 2; a < (1 << (30/n)); a++) {
+            for(int b = 2; b < (1 << (30/n)); b++) {
+                for(int c = 2; c < (1 << (30/n)); c++) {
+                    int an = 1;
+                    int bn = 1;
+                    int cn = 1;
+                    for(int i = 0; i < n; i++) {
+                        an *= a;
+                        bn *= b;
+                        cn *= c;
+                    }
+                    if(an + bn == cn) {
+                        return a+b+c;
+                    }
+                }
+            }
+        }
+    }
+    while(true) {
+        x++;
+    }
+    return x;
+}

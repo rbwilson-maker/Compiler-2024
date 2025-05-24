@@ -1,0 +1,7 @@
+//test div-by-zero
+
+// Shouldn't cause an assembler error
+
+int main () {
+    return 1 >> 32;
+}

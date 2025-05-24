@@ -1,0 +1,69 @@
+//test return 4
+// a linked list
+
+/*    HEADER    */
+struct _llNode {
+	int val;
+	struct _llNode* next;
+};
+struct ll {
+	struct _llNode* head;
+};
+void addToFront(struct ll* list, int val);
+void addToBack(struct ll* list, int val);
+bool get(struct ll* list, int index, int* out);
+
+
+/*    MAIN    */
+int main() {
+	struct ll* list = alloc(struct ll);
+	addToBack(list, 1);		//ll: 1
+	addToBack(list, 2);		//ll: 1 2
+	addToBack(list, 3);		//ll: 1 2 3
+	addToFront(list, 4);		//ll: 4 1 2 3
+	addToFront(list, 5);		//ll: 5 4 1 2 3
+	addToBack(list, 6);		//ll: 5 4 1 2 3 6
+	addToFront(list, 7);		//ll: 7 5 4 1 2 3 6
+	addToBack(list, 8);		//ll: 7 5 4 1 2 3 6 8
+	int* out = alloc(int);
+	bool success = get(list, 2, out);	//out = 4
+	return (success) ? *out : -1;
+}
+
+
+/*    FUNCTIONS    */
+void addToFront(struct ll* list, int val) {
+	struct _llNode* newNode = alloc(struct _llNode);
+	(*newNode).val = val;
+	(*newNode).next = (*list).head;
+	(*list).head = newNode;
+}
+void addToBack(struct ll* list, int val) {
+	struct _llNode* newNode = alloc(struct _llNode);
+	(*newNode).val = val;
+	if ((*list).head == NULL) {
+		(*list).head = newNode;
+	} else {
+		struct _llNode* here = (*list).head;
+		struct _llNode* next = (*here).next;
+		while (next != NULL) {
+			here = next;
+			next = (*here).next;
+		}
+		(*newNode).next = (*here).next;
+		(*here).next = newNode;
+	}
+}
+bool get(struct ll* list, int index, int* out) {
+	struct _llNode* here = (*list).head;
+	while (index > 0 && here != NULL) {
+		index--;
+		here = (*here).next;
+	}
+	if (here == NULL) {
+		return false;
+	} else {
+		*out = (*here).val;
+		return true;
+	}
+}

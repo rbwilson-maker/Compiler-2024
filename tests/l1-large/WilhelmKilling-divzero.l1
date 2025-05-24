@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+    int sadge;
+    int madge;
+    
+    sadge = 15150;
+    madge = (1 + 2 + 3 + 4 + 5) * 1000 + (1 + 2 + 3 + 4 + 5) * 10;
+
+    return 15122 / (sadge - madge);
+}

@@ -1,0 +1,8 @@
+//test return 61
+ // the hackermann function
+struct jan_the_hoffman{										    int vijay_the_destroyer;     int prachi_the_creator;																					};													 int the_hoffman(struct jan_the_hoffman *daddy){     if (daddy->vijay_the_destroyer == 0){         return daddy->prachi_the_creator + 1;
+    }										    if (daddy->prachi_the_creator == 0){																        daddy->vijay_the_destroyer -= 1;																						        daddy->prachi_the_creator = 1;
+        return the_hoffman(daddy);																									    }     struct jan_the_hoffman *other_daddy = alloc(struct jan_the_hoffman);																    other_daddy->vijay_the_destroyer = daddy->vijay_the_destroyer;				    other_daddy->prachi_the_creator = daddy->prachi_the_creator - 1;	    daddy->prachi_the_creator = the_hoffman(other_daddy);																						    daddy->vijay_the_destroyer--;					    return the_hoffman (daddy);
+}										 int main(){
+    struct jan_the_hoffman *daddy = alloc(struct jan_the_hoffman);																							    daddy->vijay_the_destroyer = 3;																								    daddy->prachi_the_creator = 3;
+    return the_hoffman(daddy); }																												

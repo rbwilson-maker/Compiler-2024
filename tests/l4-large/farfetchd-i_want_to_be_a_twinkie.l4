@@ -1,0 +1,11 @@
+//test memerror
+
+struct empty{
+    int what;
+};
+
+int main() {
+    struct empty **h = alloc(struct empty*);
+    (*h)->what = 5;
+    return (*h)->what;
+}

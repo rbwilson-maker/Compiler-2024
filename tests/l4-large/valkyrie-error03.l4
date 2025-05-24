@@ -1,0 +1,12 @@
+//test error
+//Structure field names
+
+struct str{
+	int a;
+	bool a;
+};
+
+int main(){
+	struct str *x = alloc(struct str);
+	return 0;
+}

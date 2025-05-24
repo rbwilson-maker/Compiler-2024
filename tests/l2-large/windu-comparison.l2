@@ -1,0 +1,50 @@
+//test return 5
+
+int main() {
+    int x = 1;
+    int y = 2;
+
+    int accum = 0;
+
+    if (x < y) {
+        accum += 1;
+    }
+
+    if (x < y-1) {
+        accum += 1;
+    }
+
+    if (x <= y) {
+        accum += 1;
+    }
+
+    if (x <= y-1) {
+        accum += 1;
+    }
+
+    if (x > y) {
+        accum += 1;
+    }
+
+    if (x > y-1) {
+        accum += 1;
+    }
+
+    if (x >= y) {
+        accum += 1;
+    }
+
+    if (x >= y-1) {
+        accum += 1;
+    }
+
+    if (x == y) {
+        accum += 1;
+    }
+
+    if (x != y) {
+        accum += 1;
+    }
+
+    return accum;
+}

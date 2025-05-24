@@ -1,0 +1,169 @@
+//test abort
+
+/* Tests:
+ *  - Pointer aliasing
+ *  - Structs containing pointers
+ *  - Lists of pointers
+ *  - The user's love of frogs
+ */
+
+// The story of a village of frogs!
+
+// Frogs love to dance!
+typedef int music_t;
+
+// Frogs live in mushroom houses :3
+typedef struct mushroom mushroom_t;
+
+typedef struct frog frog_t;
+
+// Each mushroom has its own genre of music.
+struct mushroom {
+    music_t genre;
+    bool playing_music;
+};
+
+struct frog {
+    mushroom_t *location;
+    music_t favorite_genre;
+    bool is_dancing;
+};
+
+// Returns a new frog at the specified location. The frog is not dancing :(
+frog_t* new_frog(mushroom_t *location, music_t favorite_genre) {
+    frog_t* frog = alloc(frog_t);
+    frog->location = location;
+    frog->favorite_genre = favorite_genre;
+    frog->is_dancing = false;
+    return frog;
+}
+
+// Returns a new mushroom.
+mushroom_t* new_mushroom(music_t genre) {
+    mushroom_t* mushroom = alloc(mushroom_t);
+    mushroom->genre = genre;
+    mushroom->playing_music = false;
+    return mushroom;
+}
+
+// Play music in a house. Every frog who loves the music starts dancing!
+void play_music(mushroom_t* mushroom, frog_t*[] frogs) {
+    mushroom->playing_music = true;
+    for (int i = 0; i < 7; i++) {
+        if (frogs[i]->location == mushroom && frogs[i]->favorite_genre == mushroom->genre) {
+            frogs[i]->is_dancing = true;
+        }
+    }
+}
+
+// Stop music in a house. Frogs stop dancing.
+void stop_music(mushroom_t* mushroom, frog_t*[] frogs) {
+    mushroom->playing_music = false;
+    for (int i = 0; i < 7; i++) {
+        if (frogs[i]->location == mushroom) {
+            frogs[i]->is_dancing = false;
+        }
+    }
+}
+
+int main () {
+    // Creates a mushroom village for the frogs!
+    // The village has a town hall and four houses.
+    mushroom_t* town_hall = new_mushroom(0);
+    mushroom_t* house1 = new_mushroom(3);
+    mushroom_t* house2 = new_mushroom(1);
+    mushroom_t* house3 = new_mushroom(2);
+    mushroom_t* house4 = new_mushroom(4);
+
+    // There are seven frogs in the village!
+    frog_t* grog = new_frog(house1, 3);
+    frog_t* trog = new_frog(house2, 1);
+    frog_t* brog = new_frog(house3, 2);
+    frog_t* strog = new_frog(house4, 6);
+    frog_t* sprog = new_frog(house4, 4);
+    frog_t* krog = new_frog(house2, 1);
+    frog_t* drog = new_frog(house3, 2);
+    
+    // Create a list of all our frogs :)
+    frog_t*[] frogs = alloc_array(frog_t*, 7);
+    frogs[0] = grog;
+    frogs[1] = trog;
+    frogs[2] = brog;
+    frogs[3] = strog;
+    frogs[4] = sprog;
+    frogs[5] = krog;
+    frogs[6] = drog;
+
+    // Grog invites Trog to his house
+    trog->location = grog->location;
+    assert(grog->location == house1);
+    assert(trog->location != house2);
+    assert(trog->location == house1);
+
+    // Grog turns on the music
+    play_music(house1, frogs);
+    
+    // Grog starts dancing since he loves the music!
+    assert(grog->is_dancing);
+    // But Trog doesn't love the music :(
+    assert(!trog->is_dancing);
+
+    // Trog goes home
+    trog->location = house2;
+
+    // Trog and Krog turn on the music
+    play_music(house2, frogs);
+
+    // Both Trog and Krog love it!
+    assert(trog->is_dancing);
+    assert(krog->is_dancing);
+
+    // Drog and Brog live together because they share the same music taste
+    play_music(house3, frogs);
+    // They dance together!
+    assert(drog->is_dancing);
+    assert(brog->is_dancing);
+
+    // Strog and Sprog live together, but they don't like the same type of music
+    play_music(house4, frogs);
+    assert(sprog->is_dancing);
+    assert(!strog->is_dancing);
+
+    // Strog has had enough! He stops the music.
+    stop_music(house4, frogs);
+    assert(!sprog->is_dancing);
+    assert(!strog->is_dancing);
+
+    // Strog replaces all the CDs in the house!!
+    house4->genre = 6;
+    play_music(house4, frogs);
+    assert(!sprog->is_dancing);
+    assert(strog->is_dancing);
+
+    // Sprog is so angry, he moves in with Grog, interrupting Grog's dancing!!!
+    sprog->location = grog->location;
+    stop_music(house1, frogs);
+    assert(!grog->is_dancing);
+
+    // Grog calls a town meeting.
+    stop_music(house1, frogs);
+    stop_music(house2, frogs);
+    stop_music(house3, frogs);
+    stop_music(house4, frogs);
+    for (int i = 0; i < 7; i++) {
+        frogs[i]->location = town_hall;
+    }
+
+    // Grog tells everyone they can take turns listening to the music they love at the town hall.
+    // Grog plays the universally loved genre by frogs, Eurobeat.
+    play_music(town_hall, frogs);
+
+    // Everyone starts dancing!!!! (This should fail)
+    for (int i = 0; i < 7; i++) {
+        assert(frogs[i]->is_dancing);
+    }
+
+    // The end! Thanks for reading :3
+
+    return 0;
+}

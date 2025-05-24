@@ -1,0 +1,27 @@
+//test return -2147483648
+// Ans goes to infinity. Then ans * 0 == NaN
+// NaN == INT_MIN in binary
+
+int main() {
+  fpt ans = itof(21);
+  fpt incr = itof(2);
+
+  ans = fadd(fsub(ans, incr), ans);
+  ans = fmul(fdiv(ans, incr), ans);
+  ans = fadd(fsub(ans, incr), ans);
+  ans = fmul(fdiv(ans, incr), ans);
+  ans = fadd(fsub(ans, incr), ans);
+  ans = fmul(fdiv(ans, incr), ans);
+  ans = fadd(fsub(ans, incr), ans);
+  ans = fmul(fdiv(ans, incr), ans);
+  ans = fadd(fsub(ans, incr), ans);
+  ans = fmul(fdiv(ans, incr), ans);
+  ans = fadd(fsub(ans, incr), ans);
+  ans = fmul(fdiv(ans, incr), ans);
+  ans = fadd(fsub(ans, incr), ans);
+  ans = fmul(fdiv(ans, incr), ans);
+  ans = fadd(fsub(ans, incr), ans);
+  ans = fmul(fdiv(ans, incr), ans);
+  ans = fmul(ans, itof(0));
+  return ftoi(ans);
+}

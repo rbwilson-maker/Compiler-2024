@@ -1,0 +1,30 @@
+//test return 170
+int main(){
+    int y = 0;
+    int x = 0;
+    int z = 0;
+    int x_1 = 0;
+    int x_2 = 1;
+    int x_3 = 2;
+    int x_4 = 3;
+    int x_5 = 4;
+    int x_6 = 5;
+    int x_7 = 6;
+    int x_8 = 7;
+    int x_9 = 8;
+    int x_10 = 9;
+    int x_11 = -10;
+    int x_12 = 10;
+    int x_13 = -10;
+    int x_14 = 10;
+    int x_15 = -10;
+    int x_16 = 10;
+    
+
+    for (; x < 10; x++) { y += x; }
+    for (; z < 10; z++) { y += z; }
+    for (; x_1 < 10; x_1++) { y += x_1; }
+    
+    
+    return y+x_1+x_2+x_3+x_4+x_5+x_6+x_7+x_8+x_9+x_10+x_11+x_12+x_13+x_14+x_15-x_16;
+}

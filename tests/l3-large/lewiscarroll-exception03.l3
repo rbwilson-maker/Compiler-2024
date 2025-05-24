@@ -1,0 +1,13 @@
+//test abort
+
+int main () {
+	bool b = (5+4 == 10);
+	bool c = (6+4 == 10);
+	if (b && c) {
+		return 0;
+	}
+	else {	
+		assert(false);
+		return 0;
+	}
+}

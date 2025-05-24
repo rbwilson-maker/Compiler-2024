@@ -1,0 +1,18 @@
+//test return 92
+
+// This is designed to test a complex program
+int main() {
+  int a = 0;
+  int b = 0;
+  int c = 0;
+  while (a != 30) {
+    for (int i = 7; i >= 0; i--) {
+      b += 2;
+    }
+    a += 10;
+    if (b > 20) {
+      c += 7;
+    }
+  }
+  return a + b + c;
+}

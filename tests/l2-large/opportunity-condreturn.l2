@@ -1,0 +1,17 @@
+//test return 8
+
+int main() {
+    if (true) {
+        if (false) {
+            return 0;
+        }
+        else return 8;
+    }
+    else if (false) {
+        if(true) return 3;
+        else return 4;
+    }
+    else return 7;
+
+}
+

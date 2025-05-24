@@ -1,0 +1,21 @@
+//test return 68
+int main() {
+    int a = 4;
+    int b = a;
+    int c = b;
+    int d = c;
+    int e = d;
+    int f = e;
+    int g = f;
+    int h = g;
+    int i = h;
+    int j = i;
+    int k = j;
+    int l = k;
+    int m = l;
+    int n = m;
+    int o = n;
+    int p = o;
+    int q = p;
+    return a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q;
+}

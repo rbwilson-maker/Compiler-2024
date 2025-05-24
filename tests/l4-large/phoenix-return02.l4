@@ -1,0 +1,26 @@
+//test return 1
+
+typedef int foo;
+typedef int* bar;
+struct foobar {
+    foo x;
+    bar y;
+};
+typedef struct foobar something;
+typedef something* foobar_pointer;
+struct barfoo {
+    foo x;
+    bar y;
+};
+
+int main() {
+    foobar_pointer fb = alloc(struct foobar);
+    struct barfoo* bf = alloc(struct barfoo);
+    fb->x = 1;
+    fb->y = alloc(int);
+    *(fb->y) = 10;
+    (*bf).x = fb->x;
+    (*bf).y = alloc(int);
+    *((*bf).y) = *(fb->y);
+    return *(fb->y)/(*((*bf).y));
+}

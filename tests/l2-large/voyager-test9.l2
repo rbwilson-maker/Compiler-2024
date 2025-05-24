@@ -1,0 +1,12 @@
+//test return 3
+// test precedence and math operations
+
+int main()
+{
+  int a = 9;
+  a++;
+  int b = 6;
+  b++;
+  int c = 3 + 4 * 5 >> 1 & (a == 10 ? b : -1);
+  return c;
+}

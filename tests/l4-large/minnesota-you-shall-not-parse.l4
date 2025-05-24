@@ -1,0 +1,32 @@
+//test return 0
+
+struct foo;
+typedef struct foo** fool;
+typedef fool[] fools;
+
+struct foo {
+  fool* Frodo;
+  fool* Sam;
+  fool* Legolas;
+  fool* Gimli;
+  fool* Aragorn;
+  fool* Boromir;
+  fool* Merry;
+  fool* Pippin;
+  struct foo* Gandalf;
+};
+
+void fly_you() {
+  fools*        You_cannot_pass;
+  fools**       I_am_a_servant_of_the_Secret_Fire;
+  fools[]       Wielder_of_the_Flame_of_Anor;
+  fools[][]     The_dark_fire_will_not_avail_you;
+  fools[][][]   Flame_of_Udun;
+  struct foo*   Go_back_to_the_Shadow;
+}
+
+int main() {
+  fly_you(); fools
+    *YOU_SHALL_NOT_PASS;
+  return 0;
+}

@@ -1,0 +1,14 @@
+//test return 5
+// Simple loop with non-reachable if statement program
+int main() {
+    int a = 5;
+    int b = 0;
+ 
+    for(int i = 0; i < a; i++) {
+        if(i == 7) {
+            return 2;
+        }
+        b ++;
+    }
+    return b;
+}

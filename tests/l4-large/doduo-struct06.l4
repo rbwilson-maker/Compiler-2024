@@ -1,0 +1,9 @@
+//test return 3
+
+int main() {
+  name* a = alloc(struct name);
+  struct name* b = alloc(name);
+  a->num = 1;
+  b->num = 2;
+  return a->num + b->num;
+}

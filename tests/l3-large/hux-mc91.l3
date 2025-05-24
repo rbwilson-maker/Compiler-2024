@@ -1,0 +1,12 @@
+//test return 91
+
+int mcCarthy91(int n) {
+	if (n > 100)
+		return n - 10;
+
+	return mcCarthy91(mcCarthy91(n+11));
+}
+
+int main() {
+	return mcCarthy91(5);
+}

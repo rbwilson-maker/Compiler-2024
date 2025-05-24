@@ -1,0 +1,12 @@
+//test return 2147483647
+int main()
+{
+  int TMAX;
+  int overflow;
+
+  TMAX = 2147483647;
+  overflow = 1 / (TMAX + 1);
+  return TMAX;
+}
+
+  

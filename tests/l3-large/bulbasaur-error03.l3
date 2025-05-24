@@ -1,0 +1,15 @@
+//test error
+// bad typedef (void not valid type)
+typedef void bad_type;
+
+bad_type bad_func(int n, int m)
+{
+  return;
+}
+
+int main()
+{
+  bad_func(5,2);
+
+  return 0;
+}

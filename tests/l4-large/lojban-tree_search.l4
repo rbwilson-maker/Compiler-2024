@@ -1,0 +1,55 @@
+//test return 0
+
+struct tree {
+	struct tree* left;
+	int value;
+	struct tree* right;
+};
+
+bool tree_has_int(struct tree* T, int x) {
+  if(T == NULL) return false;
+  else if(T->value == x) return true;
+  else if(T->value > x) return tree_has_int(T->left, x);
+  else return tree_has_int(T->right, x);
+}
+
+int main() {
+  struct tree *Root = alloc(struct tree);
+	struct tree *L = alloc(struct tree);
+	struct tree *R = alloc(struct tree);
+	struct tree *LL = alloc(struct tree);
+	struct tree *LR = alloc(struct tree);
+	struct tree *RL = alloc(struct tree);
+	struct tree *RR = alloc(struct tree);
+
+	Root->left = L;
+	Root->right = R;
+	Root->value = 4;
+
+	L->left = LL;
+  L->right = LR;
+  L->value = 2;
+
+  LL->left = NULL;
+  LL->right = NULL;
+  LL->value = 1;
+
+  LR->left = NULL;
+  LR->right = NULL;
+  LR->value = 3;
+
+  R->left = RL;
+  R->right = RR;
+  R->value = 6;
+
+  RL->left = NULL;
+  RL->right = NULL;
+  RL->value = 5;
+
+  RR->left = NULL;
+  RR->right = NULL;
+  RR->value = 7;
+
+  if(tree_has_int(R, 5)) return 0;
+	else return 1;
+}

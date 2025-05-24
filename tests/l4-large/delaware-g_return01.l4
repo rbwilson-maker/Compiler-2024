@@ -1,0 +1,14 @@
+//test return 4
+//struct test;
+
+struct autobot{
+  int height;
+  int weight;
+};
+
+int main() {
+  struct autobot* a = alloc(struct autobot);
+  a->weight = 2;
+  a->height = 2;
+  return (a->height) + (a->weight);
+}

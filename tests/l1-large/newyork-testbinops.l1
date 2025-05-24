@@ -1,0 +1,15 @@
+//test return 464
+//tests binary operations
+int main(){
+	int x = 5;
+	int y = 10;
+	int z = 100;
+	int a = z * x;
+	y *= a;
+	y %= x;
+	y = y + y + 1;
+	y = y * y;
+	y = y + y - x;
+	int b = (y % z) + (z / y) + a;
+	return b;
+}

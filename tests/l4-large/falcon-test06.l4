@@ -1,0 +1,29 @@
+//test error
+// What the struct?
+
+struct A {
+    int peepee_poopoo;
+};
+
+typedef struct A pppp_t;
+
+int foo(pppp_t p) {
+    return p.peepee_poopoo;
+}
+
+int foo(pppp_t *p) {
+    // Remember kids, always check for nulls!
+    if(p == NULL) return 0;
+    return p->peepee_poopoo;
+}
+
+
+int main() {
+    pppp_t p;
+    pppp_t* p_star = alloc(pppp_t);
+    
+    p.peepee_poopoo = 4;
+    p_star->peepee_poopoo = 4;
+
+    return foo(p) + foo2(p_star);
+}

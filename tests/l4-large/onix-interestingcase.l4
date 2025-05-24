@@ -1,0 +1,58 @@
+//test return 0
+/* Program implements a fake stack */
+
+struct stack {
+  int esp;
+  int ebp;
+  struct mem *memory;
+};
+
+struct mem {
+  int[] memory;
+};
+
+void push (struct stack * mystack,int i) {
+  mystack->esp -= 1;
+  mystack->memory->memory[mystack->esp] = i;
+}
+
+int pop (struct stack * mystack) {
+  int answer = mystack->memory->memory[mystack->esp];
+  mystack->esp += 1;
+  return answer;
+}
+
+void myprog (struct stack * mystack ) {
+  push(mystack,3);
+  push(mystack,4);
+  push(mystack,5);
+  assert(pop(mystack) == 5);
+  assert(pop(mystack) == 4);
+  assert(pop(mystack) == 3);
+}
+
+void teardownframe(struct stack * mystack) {
+  mystack->ebp = pop(mystack);
+}
+
+void setupframe(struct stack * mystack) {
+  push(mystack,mystack->ebp);
+  mystack->ebp = mystack->esp;
+}
+
+int main () {
+  struct stack * mystack;
+  struct mem * mem;
+  mem = alloc(struct mem);
+  mem->memory = alloc_array(int,31);
+  mystack = alloc(struct stack);
+  mystack->esp = 31;
+  mystack->ebp = 31;
+  mystack->memory = mem;
+  setupframe(mystack);
+  myprog(mystack);
+  teardownframe(mystack);
+  assert(mystack->esp == 31);
+  assert(mystack->ebp == 31);
+  return 0;
+}

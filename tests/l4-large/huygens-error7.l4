@@ -1,0 +1,17 @@
+//test error
+// function parameters must have small type
+
+struct A {
+    int a;
+}
+
+int BigF(struct A a, struct A b) {
+    int a = 1;
+    int b = 1;
+    return a + b;
+}
+
+int main() {
+    struct A t;
+    return BigF(t, t);
+}

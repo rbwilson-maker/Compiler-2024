@@ -1,0 +1,18 @@
+//test error
+
+//branch based on int in nested if.
+int main(){
+    int j;
+    int i;
+    int x;
+    int j;
+    x = 1;
+    j = 0;
+    i = 0;
+    if(i == 0){
+        if(x){
+            return 0;
+        }
+    }
+    return 0;
+}

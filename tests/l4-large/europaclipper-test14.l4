@@ -1,0 +1,32 @@
+//test return 0
+
+struct s {
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int f;
+  int g;
+  int h;
+  int i;
+  int j;
+  int k;
+  int l;
+  int m;
+  int n;
+};
+
+int main() {
+  struct s[] a = alloc_array(struct s, 10);
+  for (int i = 0; i < 10; i++) {
+    a[i].a = i;
+    a[i].c = i+1;
+    a[i].e = i+2;
+    a[i].g = i+4;
+    a[i].i = i+6;
+    a[i].k = i+8;
+  }
+
+  return a[0].a;
+}

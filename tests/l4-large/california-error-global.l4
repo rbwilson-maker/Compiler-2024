@@ -1,0 +1,13 @@
+//test error
+
+int troll() {
+    return 0;
+}
+
+
+
+int main() {
+    int troll = troll();
+    int moretroll = troll();
+    return moretroll;
+}

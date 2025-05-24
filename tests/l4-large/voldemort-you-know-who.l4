@@ -1,0 +1,36 @@
+//test return 0
+
+struct list {
+    int head;
+    struct list *tail;
+};
+
+typedef struct list *list_t;
+
+int get_head(list_t l) {
+    return l->head;
+}
+
+void set_head(list_t l, int x) {
+    l->head = x;
+}
+
+list_t get_tail(list_t l) {
+    return l->tail;
+}
+
+void set_tail(list_t l, list_t t) {
+    l->tail = t;
+}
+
+int main() {
+    list_t t = alloc(struct list);
+    set_head(t, 0);
+    list_t t2 = alloc(struct list);
+    set_head(t2, 1);
+    set_tail(t, t2);
+    assert(get_head(t) == 0);
+    assert(get_head(get_tail(t)) == 1);
+    return 0;
+}
+

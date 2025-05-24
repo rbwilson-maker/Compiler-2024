@@ -1,0 +1,245 @@
+//test return 23
+
+// An implementation of Dinic's Algorithm for solving the network maxflow
+// problem in O(n^2 m) time (n nodes, m edges).
+
+struct node;
+typedef struct node node;
+struct edge;
+typedef struct edge edge;
+struct edges;
+typedef struct edges edges;
+struct queue;
+typedef struct queue queue;
+struct netflow;
+typedef struct netflow netflow;
+
+struct edge {
+	node* a;
+	node* b;
+	int ab_cap;
+	int ba_cap;
+	int flow;
+};
+
+struct edges {
+	edge* cur;
+	edges* next;
+};
+
+struct node {
+	int gen;
+	int lv;
+	edges* edges;
+	edges* fwd_edges;
+};
+
+struct queue {
+	node* cur;
+	queue* next;
+};
+
+struct netflow {
+	node* source;
+	node* sink;
+	node*[] nodes;
+	int node_count;
+};
+
+node* make_node() {
+	node* ret = alloc(node);
+	ret->gen = -1;
+	ret->lv = -1;
+	return ret;
+}
+
+void add_edge(node* a, node* b, int fwd, int bwd) {
+	edge* e = alloc(edge);
+	e->a = a;
+	e->b = b;
+	e->ab_cap = fwd;
+	e->ba_cap = bwd;
+
+	edges* new_edges_a = alloc(edges);
+	new_edges_a->next = a->edges;
+	new_edges_a->cur = e;
+	a->edges = new_edges_a;
+
+	edges* new_edges_b = alloc(edges);
+	new_edges_b->next = b->edges;
+	new_edges_b->cur = e;
+	b->edges = new_edges_b;
+}
+
+netflow* input() {
+	// Small graph - taken from https://web.stanford.edu/class/cs97si/08-network-flow-problems.pdf, slide 8
+	node* s = make_node();
+	node* t = make_node();
+
+	node* a = make_node();
+	node* b = make_node();
+	node* c = make_node();
+	node* d = make_node();
+
+	add_edge(s, a, 16, 0);
+	add_edge(s, c, 13, 0);
+	add_edge(a, c, 10, 4);
+	add_edge(a, b, 12, 0);
+	add_edge(b, c, 9, 0);
+	add_edge(c, d, 14, 0);
+	add_edge(b, t, 20, 0);
+	add_edge(b, d, 0, 7);
+	add_edge(d, t, 4, 0);
+
+	netflow* ret = alloc(netflow);
+	ret->source = s;
+	ret->sink = t;
+	ret->nodes = alloc_array(node*, 6);
+	ret->nodes[0] = s;
+	ret->nodes[1] = t;
+	ret->nodes[2] = a;
+	ret->nodes[3] = b;
+	ret->nodes[4] = c;
+	ret->nodes[5] = d;
+	ret->node_count = 6;
+
+	return ret;
+}
+
+void make_level_graph(node* s);
+void push(node* cur, node* t, int f);
+void push_from(edge* e, node* n, int f);
+node* other_node(edge* e, node* n);
+int cap_to(edge* e, node* n);
+int push_blocking_flow(node* s, node* t);
+int search(node* s, node* t);
+
+int main() {
+	netflow* graph = input();
+	int flow = 0;
+
+	for (int i = 0; i < graph->node_count; i++) {
+		make_level_graph(graph->source);
+		flow += push_blocking_flow(graph->source, graph->sink);
+	}
+
+	return flow;
+}
+
+int push_blocking_flow(node* s, node* t) {
+	int ret = 0;
+
+	while (true) {
+		int f = search(s, t);
+
+		if (f == 0) {
+			return ret;
+		}
+
+		push(s, t, f);
+		ret += f;
+	}
+
+	return ret; // required to typecheck; never used
+}
+
+int search(node* s, node* t) {
+	if (s == t) {
+		return 1000000000; // infinity
+	}
+
+	while (s->fwd_edges != NULL) {
+		edge* e = s->fwd_edges->cur;
+		int fwd_cap = cap_to(e, other_node(e, s));
+
+		if (fwd_cap == 0) {
+			s->fwd_edges = s->fwd_edges->next;
+		} else {
+			int ret = search(other_node(e, s), t);
+			if (ret > 0) {
+				return ret > fwd_cap ? fwd_cap : ret;
+			} else {
+				s->fwd_edges = s->fwd_edges->next;
+			}
+		}
+	}
+
+	return 0;
+}
+
+void make_level_graph(node* s) {
+	int gen = s->gen + 1;
+	s->gen = gen;
+	s->lv = 0;
+
+	queue* hd = alloc(queue);
+	hd->next = alloc(queue);
+	hd->next->cur = s;
+	queue* tl = hd->next;
+
+	while (hd->next != NULL) {
+		hd = hd->next;
+		node* cur = hd->cur;
+		edges* edgelist = cur->edges;
+		cur->fwd_edges = NULL;
+
+		while (edgelist != NULL) {
+			edge* e = edgelist->cur;
+			node* next = other_node(e, cur);
+
+			if (cap_to(e, next) > 0) {
+				if (next->gen < gen) {
+					next->gen = gen;
+					next->lv = cur->lv + 1;
+					tl->next = alloc(queue);
+					tl = tl->next;
+					tl->cur = next;
+				}
+
+				if (next->lv > cur->lv) {
+					edges* fwd = alloc(edges);
+					fwd->cur = e;
+					fwd->next = cur->fwd_edges;
+					cur->fwd_edges = fwd;
+				}
+			}
+
+			edgelist = edgelist->next;
+		}
+	}
+}
+
+void push(node* n, node* t, int f) {
+	if (n == t) {
+		return;
+	}
+
+	push_from(n->fwd_edges->cur, n, f);
+	push(other_node(n->fwd_edges->cur, n), t, f);
+}
+
+int cap_to(edge* e, node* n) {
+	if (e->a == n) {
+		return e->ba_cap;
+	}
+	return e->ab_cap;
+}
+
+node* other_node(edge* e, node* n) {
+	if (e->a == n) {
+		return e->b;
+	}
+	return e->a;
+}
+
+void push_from(edge* e, node* n, int f) {
+	if (e->a == n) {
+		e->flow += f;
+		e->ab_cap -= f;
+		e->ba_cap += f;
+	} else {
+		e->flow -= f;
+		e->ab_cap += f;
+		e->ba_cap -= f;
+	}
+}

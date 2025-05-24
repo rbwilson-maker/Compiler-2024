@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+	int * ptr = alloc(int);
+	int * ptrptr = alloc(int*);
+	**ptrptr = ptr;
+	return *ptr;
+}

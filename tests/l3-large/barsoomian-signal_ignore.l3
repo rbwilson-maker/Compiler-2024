@@ -1,0 +1,19 @@
+//test typecheck
+
+/**
+ * @brief Tests the behavior when an illegal shift operation, but the
+ *        SIGFPE signal is ignored.
+ *
+ * Kevin Geng, Team Barsoomian
+ * 15-411 Compilers, Fall 2020
+ */
+
+int main() {
+  int SIG_DFL = 0;
+  int SIG_IGN = 1;
+  int SIGFPE = 8;
+
+  signal(SIGFPE, SIG_IGN);
+
+  return 1 << 40;
+}

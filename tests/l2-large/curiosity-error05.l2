@@ -1,0 +1,48 @@
+//test error
+//last two branches have no return under certain cases
+
+int main()
+{
+  if (true) {
+    
+    if (true) 
+      
+      if (true) return 0;
+      else return 0;
+    
+    else return 0;
+
+  }
+
+  else {
+    
+    if (true) {
+      
+      if (true) {
+        
+        if (true) return 0;
+        else return 0;
+      
+      } 
+      else {
+        
+        if (true) return 0;
+        else return 0;
+
+      } 
+
+    }
+    else {
+
+      if (true) {
+        if (true) return 0;
+      }
+      else {
+        if (false) return 0;
+        else
+          int i = 0;
+      }
+
+    }
+  }
+}

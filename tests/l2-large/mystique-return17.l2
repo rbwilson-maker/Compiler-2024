@@ -1,0 +1,11 @@
+//test return 17
+
+int main() {
+    int i = 17;
+    int x = 0;
+    while (i > 0) {
+        i--;
+        x++;
+    }
+    return (x & i) > 0 ? -17 : 17;
+}

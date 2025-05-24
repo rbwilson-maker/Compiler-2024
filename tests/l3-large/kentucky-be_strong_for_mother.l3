@@ -1,0 +1,56 @@
+//test typecheck
+//test infloop
+
+
+bool wastetime () {
+for (int j = -234123; j < 0x7ffffff; j++)
+	int y = 4;
+
+
+
+return false;
+}
+
+
+
+int main() {
+assert(true);	
+int x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12;
+ x = 12+45 - 235897 % 133;
+assert(12 == 12);
+
+for(int df = 23; df < 0xfffff; df++)
+{
+
+wastetime();
+
+
+}
+
+main();
+
+return 12;
+
+}
+
+

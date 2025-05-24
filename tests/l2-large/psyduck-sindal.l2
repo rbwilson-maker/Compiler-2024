@@ -1,0 +1,12 @@
+//test error
+
+int main() {
+int x = 17;
+while (x < 3000) {
+if (x % 2 == 0)
+{
+return false;
+}
+}
+return x;
+}

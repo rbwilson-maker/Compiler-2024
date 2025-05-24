@@ -1,0 +1,8 @@
+//test typecheck
+
+int main()
+{
+  int a = fpow(3, 2);
+  int b = fpow(a, 2);
+  return (b - 1) / 2;
+}

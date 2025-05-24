@@ -1,0 +1,50 @@
+//test return 8
+
+typedef struct node node_t; 
+struct node {
+  int value; 
+  node_t* left; 
+  node_t* right; 
+  node_t* parent; 
+}; 
+
+struct bst {
+  node_t* root; 
+}; 
+typedef struct bst bst_t;
+
+node_t* add(node_t *root, int i) {
+  if(root == NULL) {
+    node_t* new_node = alloc(node_t); 
+    new_node->value = i; 
+    return new_node; 
+  }
+
+  if(i > root->value) {
+    root->right = add(root->right, i); 
+  } else if(i < root->value) {
+    root->left = add(root->left, i); 
+  }
+  return root; 
+}
+
+int max(node_t* root) {
+  if(root == NULL) return -1000000; 
+  while(root->right != NULL) {
+    root = root->right; 
+  }
+  return root->value; 
+}
+
+int main() {
+  node_t* init = alloc(node_t);
+  bst_t* bst = alloc(bst_t); 
+  bst->root = init; 
+
+  init->value = 0; 
+  add(init, 1);
+  add(init, 5); 
+  add(init, 4); 
+  add(init, 8); 
+  return max(init); 
+}

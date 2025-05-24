@@ -1,0 +1,10 @@
+//test memerror
+
+struct s{
+  int _int;
+};
+
+int main(){
+  struct s*[] essay = alloc_array(struct s*,1);
+  return essay[0]->_int;
+}

@@ -1,0 +1,31 @@
+//test return 0
+
+struct simple_struct;
+
+struct simple_struct {
+  int f1;
+  int f2;
+  bool f3;
+};
+
+typedef struct simple_struct simple_struct;
+
+int main() {
+
+  simple_struct * s1;
+  simple_struct * s2;
+
+  s1 = alloc(simple_struct);
+  s2 = alloc(simple_struct);
+
+  s1->f1 = 17;
+  s1->f2 = -4444;
+  s1->f3 = false;
+
+  s2->f1 = s1->f2;
+  s2->f2 = s1->f1;
+  s1->f3 = !s1->f3;
+
+  return s1->f1 - s2->f2;
+  
+}

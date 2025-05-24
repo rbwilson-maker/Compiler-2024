@@ -1,0 +1,16 @@
+//test return 5
+
+int collatz(int seed, int count) {
+  if (seed == 1) {
+    return count;
+  }
+  else if (seed % 2 == 0) {
+    return collatz(seed/2, count + 1);
+  } else {
+    return collatz(seed * 3 + 1, count + 1);
+  }
+}
+
+int main() {
+  return collatz(5, 0);
+}

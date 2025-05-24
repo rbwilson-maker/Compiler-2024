@@ -1,0 +1,24 @@
+//test return 11
+//if statements
+int main()
+{
+  int x = 6;
+  int sum = 5;
+  bool b = true;
+  if (b) {
+    b = false;
+  }
+  if (b) {
+  }
+  else {
+    if (true)
+    if (false)
+    x = 11/0;
+    else sum += x;
+    if (false)
+    if (true)
+    x = 11;
+    else sum += x;
+  }
+  return sum;
+}

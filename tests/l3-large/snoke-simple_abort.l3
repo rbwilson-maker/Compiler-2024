@@ -1,0 +1,6 @@
+//test abort
+
+int main() {
+	assert(6 > 9 || 10 < 4 || 99 * 99 - 100 < 0);
+	return 1000;
+}

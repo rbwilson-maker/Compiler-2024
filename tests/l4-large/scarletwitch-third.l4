@@ -1,0 +1,17 @@
+//test div-by-zero
+
+int foo(int[] arr, int n){
+    int div = arr[0]; 
+    for(int i = 0; i < n; i++)
+    {
+        div /= arr[i];
+    }
+    return div;
+}
+
+int main() {
+    int[] A; 
+    A = alloc_array(int, 9);
+    foo(A, 9);
+    return 0; 
+}

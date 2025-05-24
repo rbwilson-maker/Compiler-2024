@@ -1,0 +1,7 @@
+//test div-by-zero
+// nested div-by-zero
+
+int main()
+{
+    return (42 + (1/0));
+}

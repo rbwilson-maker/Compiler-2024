@@ -1,0 +1,13 @@
+//test return 200
+int a(int b){
+  if(b < 100)
+    return a(b+1);
+  else if(b < 200)
+    return a(b<<1);
+  else
+    return b;
+}
+
+int main(){
+  return a(4);
+}

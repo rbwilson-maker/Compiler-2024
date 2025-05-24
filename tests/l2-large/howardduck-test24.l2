@@ -1,0 +1,11 @@
+//test div-by-zero
+int main() {
+    int a = 0;
+    int b = 1;
+    int c = 2;
+    while (b <= c) {
+        b++;
+        c >>= b;
+    }
+    return b / c;
+}

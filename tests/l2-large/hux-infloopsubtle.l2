@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+
+int main() {
+    bool b0 = true;
+    bool b1 = false;
+    bool b2 = true;
+
+    for (; (b0 || b1) && (b1 || b2); ) {
+        bool temp0 = b0;
+        bool temp1 = b1;
+        bool temp2 = b2;
+        b0 = temp1;
+        b1 = temp2;
+        b2 = temp0;
+    }
+
+    return 0;
+}

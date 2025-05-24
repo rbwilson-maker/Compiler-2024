@@ -1,0 +1,30 @@
+//test error
+
+// testing whether header files work properly or not
+
+int foo (int a, int b) {
+  return a - b;
+}
+
+int bar (int a, int b) {
+  int c = 1001;
+
+  a = c * b;
+  b = a * c;
+
+  return b;
+}
+
+int main() {
+  int a;
+  int b;
+  int c;
+  int d;
+
+  a = 2;
+  b = 3;
+  c = bar (a, b);
+  d = foo(bar(c, bar(c, c)), foo(bar(a, b), bar(b, a)));
+
+  return d;
+}

@@ -1,0 +1,18 @@
+//test typecheck
+//test infloop
+// Poor implementation of the Towers of Hanoi algorithm (no base case)
+
+// Move the top 'n' blocks in the tower at slot 'from'
+// to the tower at slot 'to',
+// using the empty slot 'via' as an intermediate
+void move (int n, int from, int via, int to) {
+    move(n-1, from, to, via);
+    move (1, from, via, to);
+    move (n-1, via, to, from);
+}
+
+int main() {
+    // Move a 10-tower from the left to the right, using the middle
+    move(10, 0, 1, 2);
+    return 0;
+}

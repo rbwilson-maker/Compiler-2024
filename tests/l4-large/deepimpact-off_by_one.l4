@@ -1,0 +1,9 @@
+//test memerror
+int main() {
+    int[] a = alloc_array(int, 64);
+    int i = 0;
+    for (; i <= 64; i++) {
+        a[i] += 1;
+    }
+    return 0;
+}

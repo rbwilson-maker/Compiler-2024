@@ -1,0 +1,15 @@
+//test return 1
+
+int main() {
+    int seed = 11;
+
+    while (seed > 1) {
+        if (seed % 2 == 1) {
+            seed = seed * 3 + 1;
+        } else {
+            seed /= 2;
+        }
+    }
+
+    return seed;
+}

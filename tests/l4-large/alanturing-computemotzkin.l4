@@ -1,0 +1,22 @@
+//test return 1129760415
+
+// Compute the 24th Motzkin number
+
+int main () {
+    int array_size = 24;
+    int[] num_array = alloc_array(int, array_size);
+
+    num_array[0] = 1;
+
+    for (int n = 1; n < array_size; n++) {
+        int nth_motzkin = num_array[n-1];
+
+        for (int i = 0; i <= n-2; i++) {
+            nth_motzkin += num_array[i] * num_array[n-2-i];
+        }
+
+        num_array[n] = nth_motzkin;
+    }
+ 
+    return num_array[array_size - 1];
+}

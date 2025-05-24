@@ -1,0 +1,9 @@
+//test error
+
+int f() {
+  return g();
+}
+
+int main() {
+  return 0;
+}

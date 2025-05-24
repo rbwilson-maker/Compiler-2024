@@ -1,0 +1,15 @@
+//test return ~2109043959
+
+int double(int val);
+
+int main() {
+  int result = double(339);
+  return result;
+}
+
+int double(int val) {
+  if (val > 1000000) return val * val;
+  int result1 = double (val * 2);
+  int result2 = double (val * 3);
+  return (result1 + result2);
+}

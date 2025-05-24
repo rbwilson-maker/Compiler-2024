@@ -1,0 +1,16 @@
+//test return 87156
+
+int f(int x) {
+  if (x < 0) return f(-x);
+  if (x == 0) return 0;
+  if (x == 1) return 1;
+  if (x == 2) return 2;
+  if (x == 3) return 3;
+  if (x == 4) return 4;
+  if (x == 5) return 5;
+  return f(x - 5) + x % 293;
+}
+
+int main() {
+  return f(0xBEE);
+}

@@ -1,0 +1,8 @@
+//test return 1
+//can you shift the shift?
+
+int main()
+{
+  int x = 1 << 2 >> 1 << 2 >> 1 << 1;
+  return 1;
+}

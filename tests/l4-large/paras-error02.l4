@@ -1,0 +1,12 @@
+//test error
+
+struct foo {
+    int a;
+    int b;
+};
+
+int main() {
+    struct foo[] bar = alloc_array(struct foo, 5);
+    bar[0] = alloc(struct foo);
+    return 0;
+}

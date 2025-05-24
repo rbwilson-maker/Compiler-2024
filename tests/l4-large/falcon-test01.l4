@@ -1,0 +1,24 @@
+//test error
+// Salacious Cyclic structs
+
+struct A;
+struct B;
+struct C;
+
+struct A {
+    struct B bee;
+    struct C see;
+};
+
+struct B {
+    struct A eh;
+    int foo;
+};
+
+struct C {
+    bool fool;
+};
+
+int main() {
+    return 0;
+}

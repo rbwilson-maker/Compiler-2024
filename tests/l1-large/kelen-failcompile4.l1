@@ -1,0 +1,12 @@
+//test error
+
+// Tests using variables in another block or not in the scope
+int main() {
+    {
+        int x = 8;
+    } 
+    {
+        int y = x * x; // use x
+    }
+    return y - 5 + x * 90 / 2 + 9 + 3; // use x and y
+}

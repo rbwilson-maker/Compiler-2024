@@ -1,0 +1,24 @@
+//test return 1234
+
+struct foo{
+  int * bar;
+  int a;
+};
+
+typedef struct foo foo;
+
+int main(){
+  foo[] fooarr = alloc_array(foo, 10);
+  int * ptr;
+
+  int i;
+  for(i=0; i<10; i++){
+    fooarr[i].bar = alloc(int);
+    *(fooarr[i].bar) = i;
+  }
+
+  ptr = fooarr[3].bar;
+  *ptr = 1234;
+
+  return *(fooarr[3].bar);
+}

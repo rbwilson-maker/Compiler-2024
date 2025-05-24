@@ -1,0 +1,8 @@
+//test compile 
+
+int main() {
+    dub x = itod(5); 
+    dub y = itod(5); 
+    dub z = dadd(x, y); 
+    return dtoi(z); 
+}

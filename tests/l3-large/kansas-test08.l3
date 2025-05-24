@@ -1,0 +1,13 @@
+//test return 43
+
+// This is designed to test a void function call
+void func(int a, int b, bool c, int d) {
+  int x = a * b;
+  int y = c ? d : 9;
+  return;
+}
+
+int main() {
+  func(5, 4, true, 10);
+  return 3 + 4 * 10;
+}

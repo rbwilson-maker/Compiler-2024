@@ -1,0 +1,16 @@
+//test error
+
+struct main {
+    int x;
+    int y;
+    int z;
+};
+
+struct struct {
+    struct struct *struct;
+}
+
+int main() {
+    struct main *main = alloc(main);
+    return main->y;
+}

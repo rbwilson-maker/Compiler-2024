@@ -1,0 +1,13 @@
+//test return 47
+
+//basic div-mult-mod test
+
+int main() {
+  int a;
+  int b;
+  int c;
+  a = 47;
+  b = a / 8;
+  c = a % 8;
+  return b * 8 + c;
+}

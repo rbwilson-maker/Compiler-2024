@@ -1,0 +1,15 @@
+//test div-by-zero
+int safeSub(int x) {
+  return (x <= 0) ? x : x - 1;
+}
+
+int main() {
+  int i = 100000;
+  int x = 10;
+  while (i >= 0) {
+    x = safeSub(x);
+    i--;
+  }
+
+  return 10/x;
+}

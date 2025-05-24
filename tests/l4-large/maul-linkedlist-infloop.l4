@@ -1,0 +1,43 @@
+//test return 1000000
+typedef struct ll_node* node;
+struct ll_node
+{
+  int val;
+  node next;
+};
+
+//1 -> 2 -> 3 -> 4 -> 5 -> 3 -> 4 -> 5...
+
+int sum_linked_list(node A)
+{
+  int sum = 0;
+  int count = 0;
+  while (A != NULL)
+  {
+    sum += A->val;
+    count++;
+    A = A->next;
+    if (count > 999999) return count;
+  }
+  return sum;
+}
+int main()
+{
+  node A = alloc(struct ll_node);
+  A->val = 1;
+  node B = alloc(struct ll_node);
+  B->val = 2;
+  node C = alloc(struct ll_node);
+  C->val = 3;
+  node D = alloc(struct ll_node);
+  D->val = 4;
+  node E = alloc(struct ll_node);
+  E->val = 5;
+  
+  A->next = B;
+  B->next = C;
+  C->next = D;
+  D->next = E;
+  E->next = C;
+  return sum_linked_list(A);
+}

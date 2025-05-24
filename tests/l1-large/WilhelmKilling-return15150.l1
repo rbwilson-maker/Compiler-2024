@@ -1,0 +1,19 @@
+//test return 15150
+
+int main() {
+    int x;
+    int y;
+    int z;
+    int w;
+    int v;
+    int res;
+
+    x = 1;
+    y = 2 + x;
+    z = 3 + y;
+    w = 4 + z;
+    v = 5 + w;
+
+    res = (v * 1000) + (v * 10);
+    return res;
+}

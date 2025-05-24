@@ -1,0 +1,23 @@
+//test abort
+
+typedef int f;
+typedef bool g;
+
+f fff(f ff) {
+    assert (ff >= 0);
+    return ff;
+}
+
+g ggg(g gg) {
+    assert (gg);
+    return gg;
+}
+
+f main() {
+    assert (!ggg(ggg(ggg(ggg(fff(1234321) == 123432)))));
+    assert (!ggg(ggg(ggg(fff(1234321) == 123432))));
+    assert (!ggg(ggg(fff(1234321) == 123432)));
+    assert (!ggg(fff(1234321) == 123432));
+    assert (ggg(fff(1234321) == 123432));
+    return 0;
+}

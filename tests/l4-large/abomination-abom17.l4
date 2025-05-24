@@ -1,0 +1,42 @@
+//test return 9
+
+struct cooper;
+
+struct cooper {
+    bool wearingHat;
+    bool onFloor;
+    struct cooper *clone; // Now the cooper is a valid self-referencing struct
+};
+
+typedef int color;
+
+int main() {
+    color RED = 9;
+    color BLUE = 27;
+    color GREEN = 81;
+
+    struct cooper *theoneandonly;
+    theoneandonly = alloc(struct cooper); // Got it, fine, actual allocation, let's do it
+    int result =  (*theoneandonly).wearingHat ? 0 : 0; // What if we try other methods of access now - perhaps with proper dereferencing
+
+    // Or a lot of coopers?
+    struct cooper *current = theoneandonly;
+    for(int i = 0; i < 6; i++) {
+        current->clone = alloc(struct cooper);
+        current = current->clone;
+    }
+
+    for(struct cooper *oneofmany = theoneandonly; oneofmany != NULL; oneofmany = oneofmany->clone) {
+        result++; // Maybe we can do this better
+    }
+
+    // Let's track all the hats for further coopers
+    color[] hats = alloc_array(color, result + 1);
+
+    // But now I prefer to iterate backwards
+    for(; result >= 0; result--) {
+        hats[result] = RED;
+    }
+
+    return hats[0];
+}

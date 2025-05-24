@@ -1,0 +1,8 @@
+//test div-by-zero
+//Default int value of 0
+
+int main() {
+    int[] t = alloc_array(int, 100000);
+
+    return 5 / t[1000];
+}

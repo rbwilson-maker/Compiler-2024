@@ -1,0 +1,29 @@
+//test return 0
+
+struct point_t {
+	int x;
+	int y;
+};
+
+int main() {
+	int b = 3;
+	int c = 4;
+	struct point_t* point = alloc(struct point_t);
+	point -> x = 0;
+	point -> y = 0;
+	// the operation of structs should be relatively efficient
+	int a;
+	for (a = 0; a < 220000000; a++) {
+		int i = b < c ? 1 : 2;
+		if (i > 1) {
+			// reaching here suggests a bug
+			assert(false);
+		}
+		if ((*point).x > (*point).y) {
+			point -> y += i * i / i / (c - b);
+		} else {
+			point -> x += i * i / i / (c - b);
+		}
+	}
+	return (*point).x - (*point).y;
+}

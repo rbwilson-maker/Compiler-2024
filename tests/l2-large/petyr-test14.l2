@@ -1,0 +1,12 @@
+//test return 1
+
+// The testing harness will expect this program to return 0.
+
+// Test 13: logical operators precedence
+
+int main() {
+    int x=0;
+    if (true && !(0==1)) { return 1; }
+    return 0 ;
+
+   }

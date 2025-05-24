@@ -1,0 +1,17 @@
+//test div-by-zero
+// Tests that dead code is not eliminated if we can't determine at compile
+// time if it will cause an exception.
+
+int main () {
+
+    int x = 3;
+    int y = 10;
+
+    for( ; x < y; x++) { }
+
+    int z = x / (x - y);
+
+    int a = 3;
+    return a * 2;
+
+}

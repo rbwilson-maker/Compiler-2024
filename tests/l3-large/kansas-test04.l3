@@ -1,0 +1,16 @@
+//test return 1
+
+// This is designed to test a boolean function call
+bool func() {
+  return true;
+}
+
+int main() {
+  bool y = func();
+  if (y) {
+    return 1;
+  }
+  else {
+    return 2;
+  }
+}

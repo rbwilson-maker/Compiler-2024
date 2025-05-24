@@ -1,0 +1,15 @@
+//test memerror
+
+typedef struct _s s;
+
+struct _s {
+    int i;
+    int j;
+};
+
+int main() {
+    s *a = NULL;
+    a->i = 1;
+    a->j = 2;
+    return a->i;
+}

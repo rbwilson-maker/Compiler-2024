@@ -1,0 +1,9 @@
+//test error
+
+//Output is a reserved identifier!
+
+int main(){
+    int f = 200;
+    int output = 42;
+    return write_to_file(f, output);
+}

@@ -1,0 +1,17 @@
+//test return 88574
+//compute loop
+
+int main() {
+    int a = 1;
+
+    int b = 10;
+
+    while(b >= 0) {
+        a *= 3;
+        a -= 1;
+        b--;
+    }
+
+    return a;
+
+}

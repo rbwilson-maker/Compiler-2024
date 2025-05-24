@@ -1,0 +1,12 @@
+//test return 1
+
+//tests simple arithmetic
+
+int main()
+{
+	int x = 3;
+	int y = x+2;
+	int z = x-y;
+	int a = x + z;
+	return (a) % 4;
+}

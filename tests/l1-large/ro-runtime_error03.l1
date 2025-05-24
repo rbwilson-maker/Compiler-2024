@@ -1,0 +1,9 @@
+//test div-by-zero
+// Test intmin / -1
+
+int main() {
+    int TMAX = 2147483647;
+    int TMIN = TMAX + 1;
+    return TMIN / -1;
+
+}

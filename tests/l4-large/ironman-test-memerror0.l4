@@ -1,0 +1,12 @@
+//test memerror 
+
+struct s {
+    int x;
+};
+
+
+int main(){
+    struct s* x;
+    x = NULL;
+    return x->x;
+}

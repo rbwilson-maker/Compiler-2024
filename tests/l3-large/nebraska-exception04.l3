@@ -1,0 +1,22 @@
+//test div-by-zero
+
+/* Test speed of function calls. */
+void even(int n) {
+  2 / n;
+}
+
+void odd(int n) {
+  4 / n;
+}
+
+int main() {
+  int n = 100000000;
+  for (int i = n; 0 <= n; i--) {
+    if (i % 2 == 0) {
+      even(i);
+    } else {
+      odd(i);
+    }
+  }
+  return 0;
+}

@@ -1,0 +1,37 @@
+//test return 5
+
+
+int main() {
+  int x = 5;
+
+  int y = ftoi(
+    itof(
+      ftoi(
+        itof(
+          ftoi(
+            itof(
+              ftoi(
+                itof(
+                  ftoi(
+                    itof(
+                      ftoi(
+                        itof(
+                          ftoi(
+                            itof(
+                              x
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+  );
+  return y;
+}

@@ -1,0 +1,24 @@
+//Networking library
+
+//Get a socket for internet connections
+int inet_socket ();
+
+//Bind to a part on the local machine
+//Returns 0 on success
+int bind_inet (int sockfd, int port, int mask);
+
+//Make it a listening port
+//Returns 0 on success
+int listen (int sockfd);
+
+//Close the socket or connection
+void close (int fd);
+
+//Accept a connection
+int accept (int sockfd);
+
+//Read an int
+int read (int sockfd);
+
+//Send back a response
+int send (int sockfd, int info);

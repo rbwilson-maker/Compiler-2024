@@ -1,0 +1,42 @@
+//test return 0
+
+struct my_choice {
+  bool has_rock;
+  bool has_paper;
+  bool has_scissor;	
+};
+
+typedef struct my_choice mc;
+
+void hacking (mc* brah) {
+  brah -> has_rock = true;
+  brah -> has_paper = true;
+  brah -> has_scissor = true;	
+}
+bool play (mc *p1, mc *p2) {
+  return (p1 -> has_rock && !(p2 -> has_paper || p2 -> has_rock))
+      || (p1 -> has_paper && !(p2 -> has_scissor || p2 -> has_paper))	
+      || (p1 -> has_scissor && !(p2 -> has_rock || p2 -> has_scissor));
+}
+void choice (mc* move, int choice) {
+  move -> has_rock = false;
+  move -> has_paper = false;
+  move -> has_scissor = false;
+  if (choice == 0) {
+    move -> has_rock = true;	  
+  }
+  else if (choice == 1) {
+    move -> has_paper = true;	  
+  }
+  else {
+    move -> has_scissor = true;	  
+  }
+}
+int main ()
+{
+  mc* normal_player = alloc(mc);
+  mc* hacker = alloc(mc);
+  choice(normal_player,2);
+  hacking(hacker);
+  if (play (normal_player, hacker)){ return 1; } else { return 0; }  	
+}

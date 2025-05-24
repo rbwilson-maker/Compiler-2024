@@ -1,0 +1,16 @@
+//test typecheck
+//pretends i can do a queue with header
+queue_t queue_new() {
+    queue_t q = malloc(sizeof());
+    int null = 0;
+    if (q == null)
+        return q;  
+    set_head(q, null);
+    set_tail(q, null);
+    set_size(q, null);
+    return q;
+}
+
+int main() {
+return queue_new();
+}

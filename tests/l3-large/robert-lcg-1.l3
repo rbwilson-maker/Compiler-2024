@@ -1,0 +1,33 @@
+//test return 3424
+
+// Determines for the input LCG parameters how long the LCG will go before reaching its initial seed again.
+
+// In this case, we're checking:
+//   Seed         -> 38197
+//   Multiplier   -> 12345
+//   Increment    -> 1234
+//   Modulus      -> 123456
+
+// The seed is in a cycle of length 3424.
+
+int next(int x, int a, int c, int m) {
+	return ((x * a) + c) % m;
+}
+
+int main() {
+	int x = 38197;
+	int a = 12345;
+	int c = 1234;
+	int m = 123456;
+
+	int i = 1;
+	int y = next(x, a, c, m);
+
+	while (y != x) {
+		print_int(y);
+		y = next(y, a, c, m);
+		i++;
+	}
+
+	return i;
+}

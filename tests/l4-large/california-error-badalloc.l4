@@ -1,0 +1,14 @@
+//test error
+
+struct douevenlift {
+    int no;
+    bool yes;
+};
+
+
+int main() {
+    struct douevenlift nope = alloc(douevenlift);
+    nope -> no = 0;
+    nope -> yes = false;
+    return 0;
+}

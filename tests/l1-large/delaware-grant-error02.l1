@@ -1,0 +1,11 @@
+//test error
+//return uninitialized variable
+
+int main()
+{
+  int a = 22;
+  int b = 7;
+  int c = 42;
+  int d;
+  return (a + b) + (c + d);
+}

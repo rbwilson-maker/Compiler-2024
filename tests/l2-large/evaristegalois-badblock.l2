@@ -1,0 +1,16 @@
+//test error
+
+int main() {
+    {
+        int x = 5;
+        
+        {
+            x += 2;
+
+            {
+                x += 3;
+            }
+        }
+    }
+    return x;
+}

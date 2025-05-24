@@ -1,0 +1,12 @@
+//test return 1
+
+// returns 1
+int f1() {
+    int x = ftoi(fadd(itof(0), itof(1)));
+    int ret = ftoi(fmul(itof(1), itof(x)));
+    return ret;
+}
+
+int main () {
+    return f1();
+}

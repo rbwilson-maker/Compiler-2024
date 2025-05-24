@@ -1,0 +1,42 @@
+//test return 0
+//Nat x Nat = Nat
+
+int t(int n)
+{
+  return ((n*n)+n) / 2;
+}
+
+int u(int x)
+{
+  int u = 0;
+  while (true) {
+    int j = (u+1)*2 + 1;
+    if (((j * j) - 1) / 8 > x) return u;
+    u++;
+  }
+  return (1/0);
+}
+
+int pair(int x, int y)
+{
+  return t(x + y) + x;
+}
+
+int pi1(int k)
+{
+  return k - t(u(k));
+}
+
+int pi2(int k)
+{
+  return u(k) - k + t(u(k));
+}
+
+
+int main ()
+{
+  for(int x = 0; x < 10000; x++)
+    assert(pair(pi1(x),pi2(x)) == x);
+
+  return 0;
+}

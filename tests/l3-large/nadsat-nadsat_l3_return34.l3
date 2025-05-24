@@ -1,0 +1,39 @@
+//test return 8128
+
+bool isprime(int x) {
+  bool prime = true;
+  int i;
+  for (i = 2; i < x; i++) {
+    if (x % i == 0)
+      prime = false;
+  }
+  return prime;
+}
+
+int perf(int n, int x) {
+  int upper = 13;
+  int p = 2;
+  while (n > 0) {
+    if (p > upper)
+      n = 0;
+    else {
+      x = 1;
+      for (int pi = 0; pi < p; pi++) {
+        x *= 2;
+      }
+      x -= 1;
+      if(isprime(x)) {
+        for (int pj = 0; pj < p - 1; pj++) {
+          x *= 2;
+	}
+	n -= 1;
+      }
+      p += 1;
+    }
+  }
+  return x;
+}
+
+int main() {
+  return perf(4, 0);
+}

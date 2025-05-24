@@ -1,0 +1,12 @@
+//test return 232
+
+int main() {
+  return (((false && false) ? 1 : 0) +
+          ((false && true) ? 2 : 0) +
+          ((true && false) ? 4 : 0) +
+          ((true && true) ? 8 : 0) +
+          ((false || false) ? 16 : 0) +
+          ((false || true) ? 32 : 0) +
+          ((true || false) ? 64 : 0) +
+          ((true && true) ? 128 : 0));
+}

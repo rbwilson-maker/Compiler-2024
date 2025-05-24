@@ -1,0 +1,17 @@
+//test error
+
+int main() {
+    int a;
+    int b = 150;
+    int c = 151;
+
+    if (a < b) {
+        return 100;
+    } else if (a >= b && a < c) {
+        return 200;
+    } else if (a >= c) {
+        return 300;
+    } else {
+        return 400;
+    }
+}

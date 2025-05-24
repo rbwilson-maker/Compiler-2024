@@ -1,0 +1,11 @@
+//test return 0
+// tests INT overflow
+
+int main()
+{
+  int s1 = 2147483647;
+  int s2 = -2147483648;
+  int s3 =  s1 +1;
+
+  return s3-s2;
+}

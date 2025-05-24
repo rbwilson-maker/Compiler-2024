@@ -1,0 +1,52 @@
+//test div-by-zero
+
+
+
+//                                                     /)
+//                                               o__^^/_/)
+//                                                \ ' \`-'     ___
+//                                                 `|  \______/--'`
+//                                                  |         \
+//                                                ././-------,.\ 
+//                                    _
+//                                 (\ \)
+//                               o__^\/     ,
+//                                \ ' \    <   _  _
+// ' '  .                          `|  \____\   -   -
+//        '      . .      ()        |        )  _   _
+//          `.'       `.'         .//---_/-_/ _  _
+
+//                         (\
+//                        (\_\^^__o   .
+//                        `-'\ ` /   `(
+//                           |  \_____|
+//                           |        |                _
+//                         ./`,----./~|     .   .   . - ()
+
+//                                                         (\
+//                                                        (\_\_^__o
+//                                                 ___     `-'/ `_/
+//                                                '`--\______/  |
+//                                           '        /         |
+//                                       `    .  '  -`/.------'\^-'
+
+// look at him go!!!!!!! whoooooooooo 
+
+
+int main () {
+
+  int woof = 3005;
+  int bark = 8427;
+  int maximum_woof = 100000;
+
+  bool barking = true;
+
+  while (barking) {
+    woof = woof + bark;
+    if (woof > maximum_woof) barking = false;
+  }
+
+  return woof / ((woof/bark)/bark) / woof;
+
+
+}

@@ -1,0 +1,20 @@
+//test return 1
+
+typedef int A;
+
+void useless_modify(A *a) {
+  A old = *a;
+  a = alloc(int); // does not affect outside function; related: return09.l4
+  *a = 33;
+}
+
+int main() {
+  A *a = alloc(int);
+  *a = 22;
+  useless_modify(a);
+  if (*a == 22) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

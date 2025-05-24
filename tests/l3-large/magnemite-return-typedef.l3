@@ -1,0 +1,10 @@
+//test return 3
+//typedef
+
+typedef int Nat;
+
+int main() {
+    Nat x = 1;
+    Nat y = 2;
+    return x + y;
+}

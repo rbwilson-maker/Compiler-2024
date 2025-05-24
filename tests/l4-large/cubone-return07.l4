@@ -1,0 +1,15 @@
+//test return 1
+
+struct node {
+  struct node* left;
+  int value;
+  struct node* right;
+};
+
+int main() {
+  struct node* a = alloc(struct node);
+  a -> left = NULL;
+  a -> right = NULL;
+   
+  return ((a -> left == NULL) && (a -> right == NULL)) ? 1 : 0;
+}

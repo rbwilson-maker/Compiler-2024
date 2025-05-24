@@ -1,0 +1,14 @@
+//test return 42
+// Tests the ternary operator
+
+int main() {
+  int a = 4;
+  int b = 39;
+  bool x = false;
+  int c = 10 + ((a == 4)? x? !x? 4 : 5 : 30 : 9 + 3);
+  while (!x? b > 3 : b > 3 && false) {
+    c += 2;
+    x = !x;
+  }
+  return c;
+}

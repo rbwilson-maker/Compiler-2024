@@ -1,0 +1,7 @@
+//test return -42066
+int main(){
+    int x = 0XfF;
+    int y = x* 0xaBCd;
+    y /= x+10;
+    return x-y;
+} 

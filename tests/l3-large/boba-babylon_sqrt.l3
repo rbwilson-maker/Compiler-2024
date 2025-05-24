@@ -1,0 +1,29 @@
+//test return 1087332922
+// Source: https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method
+// This program approximates the square root of a fixed input n.
+// It uses the babylonian method with a rough estimate provided by the
+// "rough estimate" section of the wikipedia article.
+// It stops after either a fixed number of iterations or after the difference
+// between the answer squared and n is less than a fixed epsilon.
+// The return value is approximately equivalent to the IEEE 754 32 bit float
+// 6.4807405 casted to a 32 bit integer.  Its square is about 41.999997.
+int estimate(int n)
+{
+  if (n == 0)
+    return 0;
+  return 1 + estimate(n >> 1);
+}
+
+int main()
+{
+  int n = 42;
+  fpt n_f = itof(n);
+  int iterations = 1000;
+  fpt e = fdiv(itof(1), itof(1000));
+  fpt x = itof(1 << estimate(n));
+  for (int i = 0; i < iterations && fless(e, fmul(x, x)); i++)
+  {
+    x = fdiv(fadd(x, fdiv(n_f, x)), itof(2));
+  }
+  return x;
+}

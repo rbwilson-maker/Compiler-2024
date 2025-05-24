@@ -1,0 +1,19 @@
+//test return 1
+
+int main() {
+    int a = 0xdeadbeef;
+    int b = 0x1337d00d;
+
+    int old_a = a;
+    int old_b = b;
+
+    a ^= b;
+    b ^= a;
+    a ^= b;
+
+    if (old_a == b && old_b == a) {
+        return 1;
+    } else {
+        return 0;
+    }
+}

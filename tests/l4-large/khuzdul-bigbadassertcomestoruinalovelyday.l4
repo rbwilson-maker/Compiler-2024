@@ -1,0 +1,10 @@
+//test error
+
+int recurse(int i){
+  return i == 0 ? 0 : 1 + recurse(i-1) + 1;
+}
+
+int main()
+{
+  return assert(recurse(100) == 2);
+}

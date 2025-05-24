@@ -1,0 +1,16 @@
+//test error
+
+struct s{
+    int x;
+};
+
+struct t{
+    int y;
+};
+
+int main(){
+    struct s* x = true ? alloc(struct s) : alloc(struct s);
+    struct t* another_struct;
+    another_struct = x; // type mismatch
+    return 0;
+}

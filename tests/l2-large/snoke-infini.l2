@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+
+int main() {
+	if (1 == 1) {
+		if (0 == 1) {
+		}
+		else {
+			int snoke = 1;
+			while (1 == 1) {
+				snoke <<= 2;
+        snoke += 100;
+			}
+		}
+	}
+	return 0;
+}

@@ -1,0 +1,33 @@
+//test memerror
+// Checks that NULL checking happens all the way down for lvalues.
+
+struct foo;
+
+struct baz {
+    struct foo [] a;
+    struct foo **  b;
+};
+
+struct bar {
+    int [] y;
+    struct baz [] a;
+};
+
+struct foo {
+    int x;
+    int y;
+    int z;
+    struct bar s;
+};
+
+int main () {
+    struct foo *f;
+    f = alloc(struct foo);
+    f->s.a = alloc_array(struct baz, 10);
+    f->s.a[5].a = alloc_array(struct foo, 20);
+    struct foo *tmp = alloc(struct foo);
+    f->s.a[5].b = alloc(struct foo *);
+    *(f->s.a[5].b) = NULL;
+    (*(f->s.a[5].b))->z = 15;
+    return 0;
+}

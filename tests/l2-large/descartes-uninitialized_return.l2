@@ -1,0 +1,12 @@
+//test error
+// Degenrate case of not initializing a variable
+
+int main() {
+  int x;
+
+  if (true) {
+    x = 5;
+  }
+
+  return x;
+}

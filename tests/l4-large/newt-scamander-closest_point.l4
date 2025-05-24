@@ -1,0 +1,82 @@
+//test return 1
+
+struct point {
+	fpt x;
+	fpt y;	
+};
+
+typedef struct point point;
+
+// babylonian method from https://www.geeksforgeeks.org/square-root-of-a-perfect-square/
+fpt sqrt(fpt n){
+	fpt x = n; 
+	fpt y = itof(1); 
+	fpt e = fdiv(itof(1), itof(1000000)); //e decides the accuracy level
+	while(fless(e, fsub(x, y))) { 
+		x = fdiv(fadd(x,y), itof(2)); 
+		y = fdiv(n,x); 
+	} 
+	return x; 
+}
+
+fpt distance(fpt x, fpt y){
+	return sqrt(fadd(fmul(x, x), fmul(y, y)));
+}
+
+int find_closest(point* target, point*[] points, int N)
+{
+	int mini = -1;
+	fpt min_d = -1;
+	for(int j = 0; j < N; j++){
+		point* curr = points[j];
+		fpt curr_d = distance(curr->x, curr->y);
+		if(mini == -1){
+			mini = j;
+			min_d = curr_d;
+		}
+
+		if (fless(curr_d, min_d)){
+			min_d = curr_d;
+			mini = j;
+		}
+	}
+	return mini;
+}
+
+int main()
+{
+	point *target = alloc(point);
+	point *A = alloc(point);
+	point *B = alloc(point);
+	point *C = alloc(point);
+	point *D = alloc(point);
+	point *E = alloc(point);
+
+	A->x = itof(-5);
+	A->y = itof(9);      // 10.29
+
+	B->x = itof(7);
+	B->y = itof(5);      // 8.6
+
+	C->x = itof(1);
+	C->y = itof(-10);    // 10.04
+
+	D->x = itof(7);
+	D->y = itof(15);     // 30.98
+
+	E->x = itof(-6);
+	E->y = itof(-8);     // 18.76
+
+	target->x = itof(0);
+	target->y = itof(0);
+
+	point* [] points = alloc_array(point*, 5);
+
+	points[0] = A;
+	points[1] = B;
+	points[2] = C;
+	points[3] = D;
+	points[4] = E;
+
+	return find_closest(target, points, 5);
+}

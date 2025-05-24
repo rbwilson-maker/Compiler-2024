@@ -1,0 +1,14 @@
+//test return 157
+
+int f(int x) {
+	return x + 1;
+}
+
+int g(int y) {
+	return y * 52;
+}
+
+int main() {
+	int x = 3;
+	return f(g(x));
+}

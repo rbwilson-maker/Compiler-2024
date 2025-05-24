@@ -1,0 +1,28 @@
+//test return 9217
+
+int evalDegreeNinePoly(int c0, int c1, int c2, int c3, int c4, int c5, int c6, int c7, int c8, int c9, int x) {
+    int res = c0;
+    int xToTheN = x;
+    res += xToTheN * c1;
+    xToTheN *= x;
+    res += xToTheN * c2;
+    xToTheN *= x;
+    res += xToTheN * c3;
+    xToTheN *= x;
+    res += xToTheN * c4;
+    xToTheN *= x;
+    res += xToTheN * c5;
+    xToTheN *= x;
+    res += xToTheN * c6;
+    xToTheN *= x;
+    res += xToTheN * c7;
+    xToTheN *= x;
+    res += xToTheN * c8;
+    xToTheN *= x;
+    return res + xToTheN * c9;
+}
+
+int main() {
+    int x = evalDegreeNinePoly(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2);
+    return x;
+}

@@ -1,0 +1,16 @@
+//test error
+
+typedef int icecream;
+typedef bool banana;
+typedef int igloo;
+typedef bool barn;
+typedef int iceskating;
+typedef bool basketball;
+typedef icecream barn;
+
+int main(){
+    int x = 5;
+    int y = 10;
+    int z = x | y;
+    return z;
+}

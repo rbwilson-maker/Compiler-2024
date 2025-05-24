@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+
+struct a {
+    struct a *a;
+};
+
+int main () {
+    struct a *yikes = alloc(struct a);
+    while (yikes != NULL) {
+        yikes->a = alloc(struct a);
+        yikes = yikes->a;
+    }
+    return 0;
+}

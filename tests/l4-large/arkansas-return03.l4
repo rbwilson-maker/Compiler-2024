@@ -1,0 +1,15 @@
+//test return 55 
+
+struct sss {int[] a; int b;};
+
+int main(){
+  struct sss *s = alloc(struct sss);
+  s -> a = alloc_array(int, 10);
+  int i = 0;
+  s -> b = 0;
+  for(; i < 10; i++){
+    (s -> a[i]) = i + 1;
+    (s -> b) += (s -> a[i]);
+  }
+  return s -> b;
+}

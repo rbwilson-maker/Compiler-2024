@@ -1,0 +1,9 @@
+//test return -559038737
+//bang!
+int main()
+{
+  int x = 0xDEADBEEF;
+  if(((~(((~x + 1) | x) >> 31))& 1) == 1)
+    return 0;
+  return x;
+}

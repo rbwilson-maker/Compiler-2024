@@ -1,0 +1,60 @@
+//test return 42
+
+struct a {
+  int f;
+};
+
+struct b {
+  int f;
+  struct a* a;
+};
+
+struct c {
+  int f;
+  struct b* b;
+};
+
+struct d {
+  int f;
+  struct c* c;
+};
+
+struct e {
+  int f;
+  struct d* d;
+};
+
+struct f {
+  int f;
+  struct e* e;
+};
+
+struct g {
+  int field;
+  struct f* f;
+};
+
+struct h {
+  int f;
+  struct g* g;
+};
+
+int main() {
+  struct a *a = alloc(struct a);
+  struct b *b = alloc(struct b);
+  struct c *c = alloc(struct c);
+  struct d *d = alloc(struct d);
+  struct e *e = alloc(struct e);
+  struct f *f = alloc(struct f);
+  struct g *g = alloc(struct g);
+  struct h *h = alloc(struct h);
+  a->f = 42;
+  b->a = a;
+  c->b = b;
+  d->c = c;
+  e->d = d;
+  f->e = e;
+  g->f = f;
+  h->g = g;
+  return h->g->f->e->d->c->b->a->f;
+}

@@ -1,0 +1,12 @@
+//test error
+
+int main () {
+  int[] A;
+  int* A;
+  int[] A;
+  int* A;
+  int[] A;
+  int* A;
+  A[10] = 10;
+  return A[10];
+}

@@ -1,0 +1,11 @@
+//test div-by-zero
+// Test useless statements
+
+int main () {
+    int x = 0;
+    bool y;
+    1 + 2;
+    x = 3;
+    5 / 0;
+    return 42;
+}

@@ -1,0 +1,9 @@
+//test error
+
+typedef int foo();
+
+int main()
+{
+  foo[] bars = alloc_array(foo,10);
+  return 251;
+}

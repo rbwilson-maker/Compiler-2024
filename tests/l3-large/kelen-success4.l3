@@ -1,0 +1,17 @@
+//test return 11
+
+int f(int count) {
+    int a = 5;
+    int b = 6;
+    int c = a + b;
+
+    if (count < 1000)
+        return f(count + 1);
+    else
+        return c;
+}
+
+// Tests calling function f()
+int main() {
+    return f(1);
+}

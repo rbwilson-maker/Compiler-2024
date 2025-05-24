@@ -1,0 +1,27 @@
+//test return 51170
+
+int main() {
+    int add1 = 1 + 7; // 8
+    int add2 = 0 + 1; // 1
+    int add3 = -0 + 1; // 1
+    int sub1 = 1 - 1; // 0
+    int sub2 = 7 - 0; // 7
+    int mul1 = 0 * 9; // 0
+    int mul2 = 5 * 5; // 25
+    int mul3 = 18 * 1; // 18
+    int div1 = 12 / 1; // 12
+    int div2 = 0 / 1; // 0
+    int div3 = 9 / 3; // 3
+    int div4 = 9 / 4; // 2
+    int mod1 = 0 % 5; // 0
+    int mod2 = 5 % 2; // 1
+    int mod3 = 27 % 9; // 0
+    
+    int add = add1 + add2 + add3; // 10
+    int sub = sub1 + sub2; // 7
+    int mul = mul1 + mul2 + mul3; // 43
+    int div = div1 + div2 + div3 + div4; // 17
+    int mod = mod1 + mod2 + mod3; // 1
+    
+    return add * sub * mul * div * mod;
+}

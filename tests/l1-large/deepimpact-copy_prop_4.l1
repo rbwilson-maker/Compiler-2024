@@ -1,0 +1,47 @@
+//test return 12
+
+// intersperse constants
+int main() {
+    int x1 = -1 + 1;
+    int x2 = -2 + 1;
+    int x3 = -3 + 1;
+    int x4 = -4 + 1;
+    int x5 = -5 + 1;
+    int x6 = -6 + 1;
+    int x7 = -7 + 1;
+    int x8 =-8 + 1;
+    int x9 = 9 + 1;
+    int x10 = 10 + 1;
+    int x11 = 11 + 1;
+    int x12 = 12 + 1;
+    int x13 = 13 + 1;
+    int x14 = 14 + 1;
+    int x15 = 15 + 1;
+    int x16 = 16 + 1;
+    int y;
+    int z;
+
+
+    y = x8;
+    y += x7;
+    y = x1;
+    y /= x4;
+    y = x3;
+    z = x7;
+    y = x5;
+    x1 = x16;
+    x2 = x15;
+    x3 = x14;
+    x4 = x13;
+    x5 = x12;
+    x6 = x11;
+    x7 = x10;
+    x8 = x9;
+    z = x15;
+    z += 3;
+    z = x13;
+    z = x2;
+
+    return z + y;
+
+}

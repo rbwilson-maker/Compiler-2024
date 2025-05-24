@@ -1,0 +1,13 @@
+//test return -6
+// testing division and modulus
+
+int main() {
+  int x = 5;
+  int y = x / 2; 
+  int z = x % 3;
+  int zero = y - z;
+  int a = -13;
+  int b = a / 2;
+
+  return b + zero;
+}

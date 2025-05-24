@@ -1,0 +1,31 @@
+//test memerror
+
+struct cooper;
+
+struct cooper {
+    bool wearingHat;
+    bool onFloor;
+    struct cooper *clone; // Now the cooper is a valid self-referencing struct
+};
+
+typedef int color;
+
+int main() {
+    color RED = 9;
+    color BLUE = 27;
+    color GREEN = 81;
+
+    struct cooper *theoneandonly;
+    theoneandonly = alloc(struct cooper); // Got it, fine, actual allocation, let's do it
+    int result =  (*theoneandonly).wearingHat ? 0 : 1; // What if we try other methods of access now - perhaps with proper dereferencing
+
+    // Let's track all the hats
+    color[] hats = alloc_array(color, 1);
+
+    for(struct cooper *oneofmany = theoneandonly; oneofmany != NULL; oneofmany = oneofmany->clone) {
+        result++; // Let us count the clones
+        hats[result] = RED; // there could be no other color
+    }
+
+    return result;
+}

@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main()
+{
+  int n = 0;
+  int b = 222;
+
+  if (n / 0 == 1 && b == 222) return 42;
+
+  else return 1;
+}

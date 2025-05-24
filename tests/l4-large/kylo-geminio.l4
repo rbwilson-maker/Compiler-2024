@@ -1,0 +1,24 @@
+//test return 0
+
+struct s {
+  struct s* na;
+  int batman;
+};
+typedef struct s* pointer;
+
+int f(pointer[] arr, int counter){
+  if(counter>500)
+    return 0;
+  print_int(5000);
+  arr[f(arr, counter+1)]->na->na->na->na->na->batman += 5;
+  return 0;
+}
+
+int main(){
+  pointer[] array = alloc_array(pointer, 100);
+  for(int i=0; i<100; i++){
+    array[i] = alloc(struct s);
+    array[i]->na = array[i];
+  }
+  return f(array, 0);
+}

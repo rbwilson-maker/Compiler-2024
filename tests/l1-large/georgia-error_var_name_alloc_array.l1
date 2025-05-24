@@ -1,0 +1,14 @@
+//test error
+//test invalid variable name
+int main()
+{
+  int alloc_array;
+  int b;
+  int c;
+
+  alloc_array = 11;
+  b = 3;
+  c= alloc_array + b;
+ 
+  return c;
+}

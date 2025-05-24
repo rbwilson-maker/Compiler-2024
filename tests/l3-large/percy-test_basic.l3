@@ -1,0 +1,15 @@
+//test return 5
+
+int add_plus_one(int a, int b) {
+  return a + b + 1;
+}
+
+int main() {
+  int a = 1;
+  int b = -1;
+  int c = 2;
+  b = add_plus_one(a, b);
+  int d = add_plus_one(b, c);
+  return (d + 1);
+
+}

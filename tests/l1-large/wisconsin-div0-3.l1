@@ -1,0 +1,7 @@
+//test div-by-zero
+// divide by zero
+
+int main()
+{
+  return 6*(5+(4/(3-3))/5)*0;
+}

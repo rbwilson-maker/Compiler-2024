@@ -1,0 +1,16 @@
+//test return 0
+
+
+int num_bits_one(int x){
+  if(x==0) return 0;
+  return (x&1)+num_bits_one(0x7FFFFFFF&(x>>1));
+}
+
+int main(){
+  assert(num_bits_one(0)==0);
+  assert(num_bits_one(1)==1);
+  assert(num_bits_one(2)==1);
+  assert(num_bits_one(0xFFFFFFFF)==32);
+  assert(num_bits_one(0x7FFFFFFF)==31);
+  return 0;
+}

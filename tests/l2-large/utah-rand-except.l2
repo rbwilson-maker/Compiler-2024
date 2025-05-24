@@ -1,0 +1,9 @@
+//test div-by-zero
+//Tests to make sure that exceptions happen in the update
+int main ()
+{
+    int x = 3;
+    for (x--; x/x != 0; x--)
+        x--;
+    return 0;
+}

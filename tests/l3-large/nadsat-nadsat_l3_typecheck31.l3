@@ -1,0 +1,16 @@
+//test typecheck
+//test compile
+// test return 0
+
+int above47(int z) {
+  if (z > 47)
+    return 1;
+  return 0;
+}
+
+int main() {
+  int a = 49;
+  int b = above47(a);
+  return above47(b);
+}
+

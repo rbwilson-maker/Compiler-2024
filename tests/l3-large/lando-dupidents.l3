@@ -1,0 +1,9 @@
+//test error
+
+int we(int cant, int have, int parameters, int that, int have, int the, int same, int name) {
+    return parameters + have + the + parameters;
+}
+
+int main() {
+    return we(0xBEAD, 0xBEEF, 0xAD, 0xDEAD, 0xDEED, 0xBEE, 0xFEE, 0xBED);
+}

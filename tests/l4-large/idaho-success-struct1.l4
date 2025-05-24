@@ -1,0 +1,20 @@
+//test return 0
+struct node {
+  int data;
+  struct node* next;
+};
+
+typedef struct node node;
+
+struct list {
+  node* start;
+};
+
+typedef struct list* list;
+
+int main() {
+  list L = alloc(struct list);
+  L->start = alloc(struct node);
+  L->start->next = alloc(node);
+  return 0;
+}

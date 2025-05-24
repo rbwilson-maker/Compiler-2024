@@ -1,0 +1,16 @@
+//test return 0
+
+int main(){
+	int x = 10;
+	while(x > 0){
+		x--;
+	}
+
+	int y = 20;
+
+	if(x != 0 && y / x == 2){
+		x = 1;
+	}
+
+	return x;	
+}

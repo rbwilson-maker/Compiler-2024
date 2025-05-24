@@ -1,0 +1,13 @@
+// a suite of functions that do memory allocation
+// and other related things
+
+typedef int int_arr;
+
+int_arr make_int_array(int len);
+
+int array_at(int_arr array, int index);
+
+void array_set(int_arr array, int index, int value);
+
+int array_len(int_arr array);
+

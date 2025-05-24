@@ -1,0 +1,16 @@
+//test error
+
+bool my_func(int x) {
+  if (x > 0) {
+    for (int i = 0; i < x; i++) {
+      x++; x += i;
+    }
+
+    return x;
+  }
+  else {
+    return x < 0;
+  }
+}
+
+int main() { return my_func(4) ? 0 : 1; }

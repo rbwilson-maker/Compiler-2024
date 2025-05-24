@@ -1,0 +1,20 @@
+//test error
+// alloc (foo) not an lvalue.
+
+int main ()
+{
+    *alloc(int) = 1;
+    *alloc(int) = 2;
+    *alloc(int) = 3;
+    *alloc(int) = 4;
+    *alloc(int) = 5;
+    *alloc(int) = 6;
+    *alloc(int) = 7;
+    *alloc(int) = 8;
+    *alloc(int) = 9;
+    *alloc(int) = 10;
+    *alloc(int) = 11;
+    *alloc(int) = 12;
+    *alloc(int) = 13;
+    return 0;
+}

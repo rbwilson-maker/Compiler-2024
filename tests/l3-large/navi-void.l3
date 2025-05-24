@@ -1,0 +1,13 @@
+//test error
+
+void f(int a, int b, bool c) {
+	while(a > b) {
+		c = !c;
+	}
+	return;
+}
+
+int main() {
+	void a = f(1, 2, true);
+	return 1 + 2 + 500 / 1;
+}

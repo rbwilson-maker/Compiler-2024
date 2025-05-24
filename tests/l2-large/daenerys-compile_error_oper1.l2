@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+   int x = 4;
+   bool y = (true || false);
+   y = (y && !x);
+   return 1;
+}

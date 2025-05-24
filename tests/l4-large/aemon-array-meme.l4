@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main()
+{
+	int[] a = alloc_array(int, 5);
+	int *b = NULL;
+	a[1 / 0] = *b;
+	return 0;
+}

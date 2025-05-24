@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int main() {
+    int result = 0x7fffffff; // INT_MAX
+
+    int test = 10;
+
+    while (test > -1) {
+        result /= test;
+    }
+
+    return result;
+}

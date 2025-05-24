@@ -1,0 +1,22 @@
+//test return 12345
+
+// dead code elimination doesn't harm correctness
+int main() {
+    int crazy_branch = 52;
+    int crazy_loopy;
+
+    while (crazy_branch >= 0) {
+        crazy_loopy = 1;
+        while (crazy_loopy > 0) {
+            while (crazy_loopy > 0) {
+                while (crazy_branch > 0) {
+                    for (crazy_loopy = 0; crazy_loopy < 1; crazy_loopy += 1) {
+                        return 12345;
+                    }
+                }
+            }
+        }
+        crazy_branch -= 1;
+    }
+    return 0;
+}

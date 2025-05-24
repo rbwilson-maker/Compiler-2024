@@ -1,0 +1,16 @@
+//test error
+// Checks that types cannot be used in multiplication
+
+struct a {
+  int a;
+  int b;
+  int *c;
+};
+
+typedef struct a a_t;
+
+int main() {
+  int x = 1;
+  int y = a_t * x;
+  return y;
+}

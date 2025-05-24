@@ -1,0 +1,13 @@
+//test return 4
+int main() {
+  int x = 0;
+  int y = 0;
+  int j = -1701241354;
+  for (; j < 0; j--) {
+    x = (y == x) ? 5 : 3;
+    y--;
+    y--;
+    x++;
+  }
+  return x;
+}

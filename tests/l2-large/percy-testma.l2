@@ -1,0 +1,14 @@
+//test return 1
+
+int main(){
+	
+	bool b1 = true;
+	bool b2 = false;
+
+	if(b1 && b2 || b1){
+		return 1;
+	} else{
+		return 0;
+	}
+	return 0;
+}

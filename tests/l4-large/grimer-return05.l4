@@ -1,0 +1,33 @@
+//test return 100
+
+struct account {
+  int id;
+  int amount;
+};
+
+bool deposit(struct account *a, int id, int amount) {
+  a->amount += amount;
+  return true;
+}
+
+void init_accounts(struct account[] accounts, int n) {
+  for (int i = 0; i < n; i++) {
+    accounts[i].id = i;
+    accounts[i].amount = 0;
+  }
+}
+
+void payday(struct account[] accounts, int n) {
+  for (int i = 0; i < n; i++) {
+    accounts[i].amount += 100;
+  }
+}
+
+
+int main() {
+  struct account[] accounts = alloc_array(struct account, 100);
+  init_accounts(accounts, 100);
+  payday(accounts, 100); 
+
+  return accounts[30].amount;
+}

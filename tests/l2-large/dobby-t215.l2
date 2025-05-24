@@ -1,0 +1,15 @@
+//test return 550
+int main() {
+  int inner = 10;
+  int outer = 10;
+  int sum = 0;
+  while (inner > 0) {
+    while (outer > 0) {
+      sum += outer;
+      outer--;
+    }
+    inner--;
+    outer = 10;
+  }
+  return 550; 
+}

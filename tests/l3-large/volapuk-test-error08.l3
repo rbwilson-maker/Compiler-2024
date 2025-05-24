@@ -1,0 +1,12 @@
+//test error
+
+int add(int i, int i) {
+  for (int x=0; x <= i; x++) {
+    i += x;
+  }
+  return i;
+}
+
+int main() {
+  return add(60,40);
+}

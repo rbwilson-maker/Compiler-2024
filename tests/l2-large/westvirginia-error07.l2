@@ -1,0 +1,9 @@
+//test error
+//variables declared in inner blocks cannot shadow those in enclosing scope
+int main() {
+    int x = 1;
+    for (int x = 2; x < 5; x++) {
+        x++;
+    }
+    return x;
+}

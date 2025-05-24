@@ -1,0 +1,17 @@
+//test return 42
+//A test of the most basic function
+
+typedef int a;
+typedef a b;
+typedef b c;
+typedef c d;
+typedef d e;
+typedef e nestedInt;
+
+nestedInt always42(){
+    return 42;
+}
+
+int main(){
+    return always42();
+}

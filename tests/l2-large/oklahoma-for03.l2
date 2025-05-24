@@ -1,0 +1,22 @@
+//test return 7919
+// nth prime number
+
+int main () {
+
+  int n = 1000;
+
+  int count = 0;
+  int i;
+
+  for (i = 2; count < n; i++) {
+    bool is_prime = true;
+    for (int j = 2; j * j <= i; j++) {
+      if (i % j == 0) is_prime = false;
+    }
+    if (is_prime) count++;
+  }
+
+  return (i - 1);
+}
+
+  

@@ -1,0 +1,7 @@
+//test error
+// try to use struct merely declared in header
+
+int main() {
+  object_t o = create();
+  return o->field;
+}

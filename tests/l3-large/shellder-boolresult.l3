@@ -1,0 +1,13 @@
+//test return 1
+bool parity(int n) {
+    bool parity = false;
+    while (n != 0) {
+        if (n < 0) parity = ! parity;
+        n <<= 1;
+    }
+    return parity;
+}
+
+int main() {
+    return parity(0xDEDC0C0A) ? 1 : 0;
+}

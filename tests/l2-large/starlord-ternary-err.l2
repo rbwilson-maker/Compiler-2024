@@ -1,0 +1,8 @@
+//test error
+
+int main () {
+  int x = 100;
+  int z = 333 << 2
+  int y = (x) ? -z : z + 1;
+  return y;
+}

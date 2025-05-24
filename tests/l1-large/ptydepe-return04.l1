@@ -1,0 +1,11 @@
+//test return 500
+// Simple integer operations
+int main() {
+    int x = 50;
+    int y = 10;
+    x *= y;
+    x *= x;
+    x /= x;
+    x += 499;
+    return x;
+}

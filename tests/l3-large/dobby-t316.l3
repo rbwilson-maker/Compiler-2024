@@ -1,0 +1,20 @@
+//test return 5
+int p1(int a) {
+  return a + 1;
+}
+
+int p2(int a) {
+  return a + 1;
+}
+
+int p3(int a) {
+  return a + 1;
+}
+
+int main() {
+  int a = p1(1);
+  int b = p2(2);
+  int c = p3(3);
+  return 5;
+}
+

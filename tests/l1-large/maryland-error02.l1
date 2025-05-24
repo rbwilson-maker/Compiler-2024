@@ -1,0 +1,5 @@
+//test error
+// leading zeroes not allowed for decimal constants
+int main() {
+  return 0001;
+}

@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+    int x = 15411;
+    int y = 15213;
+    int z = (x + y) / 2;
+
+    int a = (x - y) % (z - y);
+
+    return x % a;
+}

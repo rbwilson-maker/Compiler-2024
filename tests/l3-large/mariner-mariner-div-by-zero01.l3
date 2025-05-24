@@ -1,0 +1,11 @@
+//test div-by-zero
+//tests typedef
+
+typedef int date;
+
+int main() {
+	date x = 1;
+	date y = 0;
+	date z = x / y;
+	return z;
+}

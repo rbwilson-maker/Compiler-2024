@@ -1,0 +1,10 @@
+//test return 1
+//test comments
+
+int main() {
+	int x;
+	int z = 1;
+
+	x = z // some comment
+	;return x;
+}

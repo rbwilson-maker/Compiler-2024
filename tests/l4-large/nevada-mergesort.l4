@@ -1,0 +1,50 @@
+//test return -1569263856
+
+void mergesort(int[] A, int l, int r) {
+    if (r - l < 2) return;
+
+    int[] B = alloc_array(int, r-l);
+    for (int i = l; i < r; i++)
+        B[i-l] = A[i];
+
+    int mid = (r-l)/2;
+    mergesort(B, 0, (r-l)/2);
+    mergesort(B, (r-l)/2, r-l);
+
+    int i = 0;
+    int j = mid;
+    for (int k = l; k < r; k++) {
+        if (i == mid) {
+            A[k] = B[j];
+            j++;
+        }
+        else if (j == r-l) {
+            A[k] = B[i];
+            i++;
+        }
+        else if (B[i] < B[j]) {
+            A[k] = B[i];
+            i++;
+        }
+        else {
+            A[k] = B[j];
+            j++;
+        }
+    }
+}
+
+int main() {
+    int n = 700000;
+    int[] A = alloc_array(int, n);
+    for (int i = 0; i < n; i++) {
+        A[i] = n-i;
+    }
+
+    mergesort(A, 0, n);
+
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+        sum += (i+1) * A[i];
+
+    return sum;
+}

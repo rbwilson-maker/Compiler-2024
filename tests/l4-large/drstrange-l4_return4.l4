@@ -1,0 +1,11 @@
+//test return 0
+/// NULL can be compared against pointers
+
+int main() {
+  int* x = NULL;
+  bool* y = NULL;
+  assert(x == NULL);
+  assert(y == NULL);
+  assert(NULL == NULL);
+  return 0;
+}

@@ -1,0 +1,22 @@
+//test return 4
+
+int rand(bool f){
+
+	int x;
+
+	if (f) x = 3;
+	else{
+		x = 4;
+	}
+
+	return x;
+}
+
+int main(){
+	int y = 1;
+	int a = 3;
+	bool b = true;
+
+	return y + rand(b);
+}
+

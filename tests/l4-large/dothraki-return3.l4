@@ -1,0 +1,42 @@
+//test return 7
+
+struct state {
+  int n;
+  bool b;
+};
+
+// Simulates a not-so-random game of nim and returns number of moves made to finish a game
+int nim(struct state *s) {
+  if (s->n <= 0) {
+    return 0;
+  }
+  if (s->n == 1) {
+    if (s->b) {
+      s->n -= 1;
+      s->b = false;
+      return 1 + nim(s);
+    } else {
+      s->n -= 1;
+      s->b = true;
+      return 1 + nim(s);
+    }
+  }
+  if (s->b) {
+    s->n -= 2;
+    s->b = false;
+    return 1 + nim(s);
+  } else {
+    s->n -= 1;
+    s->b = true;
+    return 1 + nim(s);
+  }
+}
+
+int main()
+{
+  struct state *s;
+  s = alloc(struct state);
+  s->n = 10;
+  s->b = true;
+  return nim(s);
+}

@@ -1,0 +1,26 @@
+//test return 1
+/* eventually */
+struct my_struct {
+  int i1;
+  int i2;
+  int i3;
+  int i4;
+  int i5;
+  int i6;
+  int i7;
+  int i8;
+  int i9;
+  int i10;
+};
+
+void lots_of_alloc(int n) {
+  struct my_struct* p;
+  for (int i = 0; i < n; i++) {
+    p = alloc(struct my_struct);
+  }
+}
+
+int main() {
+  lots_of_alloc(1000000);
+  return 1;
+}

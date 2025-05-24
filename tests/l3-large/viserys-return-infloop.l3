@@ -1,0 +1,29 @@
+//test typecheck
+//test infloop
+
+typedef int c;
+typedef c d;
+typedef d b;
+
+int test(int var);
+int test(int va);
+int test(int v);
+int test(int var);
+int test(int v);
+int test(int vr);
+int test(int var);
+int test(int var);
+int test(int var);
+int test(int var);
+b four(int test);
+int test(int a) {
+  return four(0);
+}
+
+b four(int tes) {
+  return test(tes);
+}
+
+int main() {
+  return four(1);
+}

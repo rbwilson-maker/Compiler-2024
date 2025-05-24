@@ -1,0 +1,15 @@
+//test return 10
+int add1Otherwise(int x, int depth);
+
+int add1To0(int x) {
+    return add1Otherwise(x, x);
+}
+
+int add1Otherwise(int x, int depth) {
+    if (depth == 10) { return x;}
+    return add1To0(x+1);
+}
+
+int main() {
+    return false ? main() : add1To0(0);
+}

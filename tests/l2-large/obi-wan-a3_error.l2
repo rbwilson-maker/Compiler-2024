@@ -1,0 +1,10 @@
+//test error
+
+int main()
+{
+    for(int i = 411; i < 15000; int j = 411) { //can't decl in 3rd loop section
+        return 0;
+    }
+
+    return 1;
+}

@@ -1,0 +1,16 @@
+//test return 1
+// Playing around with bit manipulations
+
+int main() {
+  int atebadfood = 0x8badf00d;
+  int biosfood = 0xb105f00d;
+  int combined_food = atebadfood & biosfood;
+  combined_food >>= 16;
+
+  bool isbadfood = (combined_food == 0xdeadbeef);
+  int res;
+  if (isbadfood) res = 0;
+  else res = 1;
+
+  return res;
+}

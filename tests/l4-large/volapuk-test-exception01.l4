@@ -1,0 +1,16 @@
+//test memerror
+
+void generate_n(int[] arr, int n) {
+  for(int i=0;i<n;i++){
+    arr[i] = i+1;
+  }
+}
+
+int main() {
+  int[] arr = alloc_array(int, 5);
+  generate_n(arr, 5);
+  for(int i=0;i<5;i++){
+    arr[i] = arr[arr[i]];
+  }
+  return 0;
+}

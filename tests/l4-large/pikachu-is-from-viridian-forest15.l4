@@ -1,0 +1,39 @@
+//test return 90
+// tests lexing/parsing a typedef'd ident followed by that ident
+// see lines 15, 17
+
+struct pikachu
+{
+  int HP;
+  int attack;
+  int defense;
+  int special_attack;
+  int special_defense;
+  int speed;
+};
+
+typedef struct pikachu* pikachu;
+
+pikachu explore_viridian_forest()
+{
+  pikachu sparky = alloc(struct pikachu);
+  sparky->HP = 35;
+  sparky->attack = 55;
+  sparky->defense = 40; // GEN VI represent
+  sparky->special_attack = 50;
+  sparky->special_defense = 50; // GEN VI represent
+  sparky->speed = 90;
+  return sparky;
+}
+
+int main()
+{
+  pikachu sparky = explore_viridian_forest();
+  bool isShiny = false;
+  if (isShiny) {
+    // so lucky
+    return sparky->HP;
+  }
+  return sparky->speed;
+}
+

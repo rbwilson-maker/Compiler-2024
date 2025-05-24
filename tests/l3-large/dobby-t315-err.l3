@@ -1,0 +1,16 @@
+//test error
+
+int returnBool() {
+  int x = 50000;
+  for (int i = x; i >= 0; i--) {
+    assert(true);
+    if (i == 5) {
+      return i;
+    }
+  }
+  return x == 50000;
+}
+
+int main() {
+  return returnBool();
+}

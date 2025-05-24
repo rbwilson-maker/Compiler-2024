@@ -1,0 +1,7 @@
+//test error
+// initialization use undefined variable
+
+int main() {
+    int x = y;
+    return x;
+}

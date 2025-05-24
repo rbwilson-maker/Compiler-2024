@@ -1,0 +1,25 @@
+int sun();
+
+int* mercury(int sun);
+
+int** venus(int sun, int* mercury);
+
+int*** earth(int sun, int* mercury, int** venus);
+
+int**** mars(int sun, int* mercury, int** venus, int*** earth);
+
+int***** jupiter(int sun, int* mercury, int** venus, int*** earth, 
+int**** mars);
+
+int****** saturn(int sun, int* mercury, int** venus, int*** earth,
+int**** mars, int***** jupiter);
+
+int******* uranus(int sun, int* mercury, int** venus, int*** earth,
+int**** mars, int***** jupiter, int****** saturn);
+
+int******** neptune(int sun, int* mercury, int** venus, int*** earth,
+int**** mars, int***** jupiter, int****** saturn, int******* uranus);
+
+int********* pluto(int sun, int* mercury, int** venus, int*** earth,
+int**** mars, int***** jupiter, int****** saturn, int******* uranus,
+int******** neptune);

@@ -1,0 +1,22 @@
+//test abort
+
+bool correct_is_prime(int p) {
+  for (int i = 2; i < p; i++) {
+    if (p % i == 0) return true;
+  }
+  return false;
+}
+
+bool incorrect_is_prime(int p) {
+  for (int i = 1; i < p; i++) {
+    if (p % i == 0) return true;
+  }
+  return false;
+}
+
+int main() {
+  for (int i = 0; i < 10; i++) {
+    assert(correct_is_prime(i) == incorrect_is_prime(i));
+  }
+  return 0;
+}

@@ -1,0 +1,8 @@
+//test memerror
+int main() {
+    int[] a = alloc_array(int, 4);
+    for(int i = 3; i >= 0; i++) {
+        a[i] = i * i;
+    }
+    return 0;
+}

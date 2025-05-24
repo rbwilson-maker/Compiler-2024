@@ -1,0 +1,13 @@
+//test return 10
+
+struct foo {
+    int member1;
+    bool member2;
+};
+
+int main() {
+    struct foo *f = alloc(struct foo);
+    f->member1 = 15;
+    f->member2 = false;
+    return f->member1 - (f->member2 ? 10 : 5);
+}

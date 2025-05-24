@@ -1,0 +1,19 @@
+//test return 31416
+
+int arctan(int x) {
+	int exp = x;
+	int result = 0;
+	
+	for(int i=1; i < 10000; i+= 2)
+	//loop_invariant exp = POW(x, i)
+	{
+		result += (i/2 % 2 == 1 ? -1 : 1)*(exp * 10000)/i;
+		exp = x * x * exp;
+	}
+
+	return result;
+}
+
+int main() {
+	return arctan(1) * 4;
+}

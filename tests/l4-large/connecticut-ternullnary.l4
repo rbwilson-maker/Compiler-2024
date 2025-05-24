@@ -1,0 +1,13 @@
+//test memerror
+
+int* yololol() {
+	return NULL;
+}
+
+bool swag() {
+	return true;
+}
+
+int main() {
+	return *(swag() ? yololol() : yololol());  // Did you try inlining this?
+}

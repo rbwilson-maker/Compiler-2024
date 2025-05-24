@@ -1,0 +1,106 @@
+//test return 15411
+
+struct hashset {
+	int size;
+	int maxlen;
+	int[] data;
+};
+typedef struct hashset * hset_t;
+
+// makes a random hash
+int djb2_hash(int x) {
+	int hash = 5381;
+
+	for (;x != 0; x = x/10) {
+		hash = ((hash << 5) + hash) + x%10;
+	}
+
+	return hash;
+}
+
+// insert and record size increase - checking for overlaps
+void hset_insert(hset_t h, int value) {
+	h->size++;
+	int index = (djb2_hash(value))%h->maxlen;
+	h->data[index]++;
+}
+
+// ascii representation of "http://www.cs.cmu.edu/~janh/courses/411/17/schedule.html" put into a hashset
+// I don't know why but we want to see the most overlaps of the ascii chars for a set of size....10
+int main() {
+	int[] arr = alloc_array(int, 56);
+	hset_t h = alloc(struct hashset);
+	h->maxlen = 10;
+	h->data = alloc_array(int, 10);
+	assert(h->size == 0);
+
+	arr[0] = 104;
+	arr[1] = 116;
+	arr[2] = 116;
+	arr[3] = 112;
+	arr[4] = 58; 
+	arr[5] = 47;
+	arr[6] = 47;
+	arr[7] = 119;
+	arr[8] = 119;
+	arr[9] = 119;
+	arr[10] = 46;
+	arr[11] = 99;
+	arr[12] = 115;
+	arr[13] = 46;
+	arr[14] = 99;
+	arr[15] = 109;
+	arr[16] = 117;
+	arr[17] = 46;
+	arr[18] = 101;
+	arr[19] = 100;
+	arr[20] = 117;
+	arr[21] = 47;
+	arr[22] = 126;
+	arr[23] = 106;
+	arr[24] = 97;
+	arr[25] = 110;
+	arr[26] = 104;
+	arr[27] = 47;
+	arr[28] = 99;
+	arr[29] = 111;
+	arr[30] = 117;
+	arr[31] = 114;
+	arr[32] = 115;
+	arr[33] = 101;
+	arr[34] = 115;
+	arr[35] = 47;
+	arr[36] = 52;
+	arr[37] = 49;
+	arr[38] = 49;
+	arr[39] = 47;
+	arr[40] = 49;
+	arr[41] = 55;
+	arr[42] = 47;
+	arr[43] = 115;
+	arr[44] = 99;
+	arr[45] = 104;
+	arr[46] = 101;
+	arr[47] = 100;
+	arr[48] = 117;
+	arr[49] = 108;
+	arr[50] = 101;
+	arr[51] = 46;
+	arr[52] = 104;
+	arr[53] = 116;
+	arr[54] = 109;
+	arr[55] = 108;
+
+	for (int i = 0; i < 56; i++) {
+		hset_insert(h, arr[i]);
+	}
+
+	int max = 0;
+	for (int i = 0; i < h->maxlen; i++) {
+		if (h->data[i] > max) {
+			max = h->data[i];
+		}
+	}
+
+	return max*1000 + 411;
+}

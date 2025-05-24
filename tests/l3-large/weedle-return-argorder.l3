@@ -1,0 +1,21 @@
+//test typecheck
+//test infloop
+// evaluate function args in order
+int add(int x, int y) {
+  return x + y;
+}
+
+int loop() {
+  while (true) {
+  }
+  return 1;
+}
+
+int fail() {
+  assert(false);
+  return 1;
+}
+
+int main() {
+  return add(loop(), fail());
+}

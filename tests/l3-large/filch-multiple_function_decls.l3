@@ -1,0 +1,14 @@
+//test return 42
+
+typedef int num;
+
+num mystery(int creature, bool z)
+{
+  if (creature % 3 == 0) return 42;
+  else return 1;
+}
+
+int main()
+{
+  return mystery(9, true);
+}

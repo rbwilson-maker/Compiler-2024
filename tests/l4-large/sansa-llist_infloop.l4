@@ -1,0 +1,29 @@
+//test typecheck
+//test infloop
+
+struct list {
+  int data;
+  struct list* next;
+};
+
+typedef struct list* list;
+
+list nil() {
+  return NULL;
+}
+
+list cons(int x, list l) {
+  list p = alloc(struct list);
+  p->data = x;
+  p->next = l;
+  return p;
+}
+
+int main(){
+  list p = cons(11,cons(3,cons(1,cons(2,nil()))));
+  p->next->next->next->next = p;
+  while (p != NULL){
+    p = p->next;
+  }
+  return 0;
+}

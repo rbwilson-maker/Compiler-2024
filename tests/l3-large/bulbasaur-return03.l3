@@ -1,0 +1,13 @@
+//test return 1
+// bad tip calculator (floats not good for money)
+int tip_calc(int n)
+{
+  return ftoi(fmul(itof(n), fdiv(itof(115), itof(100))));
+}
+
+int main()
+{
+  assert(tip_calc(8) == 9);
+
+  return 1;
+}

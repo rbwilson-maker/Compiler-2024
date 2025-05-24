@@ -1,0 +1,10 @@
+//test return 0
+
+struct list {
+  int no_items;
+};
+
+int main() {
+  struct list[] A = alloc_array(struct list, 10);
+  return (A[0]).no_items;
+}

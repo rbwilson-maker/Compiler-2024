@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int main() 
+{
+    int x = 10;
+    int y = 45;
+    int z = y - x;
+    int w = (z / 35) - 1;
+    
+    int a = 151 / w;
+    int b = a * 3;
+
+    return b;
+}

@@ -1,0 +1,17 @@
+//test error
+// cannot pass raw structs to functions
+
+struct arg {
+  int a;
+};
+typedef struct arg arg_t;
+
+int f(arg_t a) {
+  return a.a;
+}
+
+int main() {
+  arg_t a;
+  a.a = 0;
+  return f(a);
+}

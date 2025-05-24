@@ -1,0 +1,17 @@
+//test error 
+
+// testing mutually recursive functions forward decl
+
+int f () {
+    g();
+    return 0;
+}
+
+bool g () {
+    f();
+    return true;
+}
+
+int main() {
+    return 0;
+}

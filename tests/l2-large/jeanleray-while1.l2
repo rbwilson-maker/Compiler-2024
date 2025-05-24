@@ -1,0 +1,16 @@
+//test return 8156
+// nested while loops
+int main(){
+    int x = 5;
+    int y = 2;
+
+    while( x < 8150){
+        while ( y< 1000){
+            x += y;
+            y += x;
+        }
+        y = 10;
+    }
+    
+    return x;
+}

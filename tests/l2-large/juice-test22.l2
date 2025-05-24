@@ -1,0 +1,14 @@
+//test error
+
+int main() {
+  int i = 0;
+  for (int i = 0; i < 5; i++) {
+    i += j;
+    for (int j = 1000; j > 0; j--) {
+      for (int k = 0; k < 1000; k++) {
+        int l = 0;
+      }
+    }
+  }
+  return i;
+}

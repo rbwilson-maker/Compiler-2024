@@ -1,0 +1,50 @@
+//test return 5
+//YAY FOR ARRAY LISTS
+
+struct array_list;
+typedef struct array_list* list;
+
+struct array_list {
+  int len;
+  int[] data;
+  int size;
+};
+
+void push(list l, int v) {
+  if(l->len == l->size) {
+    int[] temp = alloc_array(int, l->size * 2);
+    for(int i = 0; i < l->len; i++) {
+      temp[i] = (l->data)[i];
+    }
+    l->data = temp;
+    l->size *= 2;
+  }
+  (l->data)[l->len] = v;
+  l->len += 1;
+} 
+int pop(list l) {
+  int v = (l->data)[0];
+  for(int i = 1; i < l->len; i++) {
+    (l->data)[i - 1] = (l->data)[i];
+  }
+  l->len -= 1;  
+  return v;
+}
+int main() {
+  int num = 50;
+  list l = alloc(struct array_list);
+  l->len = 0;
+  l->size = 1;
+  l->data = alloc_array(int, 1);
+
+  for(int i = 0; i < num; i++) {
+    for(int j = 0; j < i; j++) {
+      push(l,j);
+    }
+  }
+  for(int i = 0; i < num; i++) {
+    pop(l);
+  }
+  return pop(l);
+}
+

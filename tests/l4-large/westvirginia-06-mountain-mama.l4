@@ -1,0 +1,131 @@
+//test div-by-zero
+//Struct alignment
+
+typedef int num;
+typedef int* numptr;
+typedef numptr numnumptr;
+
+struct A {
+    bool four;
+    int* eight;
+};
+
+struct B{
+    struct A sixteen;
+    int four;
+    int four1;
+    int four2;
+    struct A sixteen1;
+};
+
+typedef struct B fourtyeight;
+
+struct C {
+    int four1;
+    bool[] eight1;
+    bool four2;
+    fourtyeight fe1;
+    fourtyeight fe2;
+    num four3;
+    numptr eight2;
+    bool four4;
+    int four5;
+    numnumptr eight3;
+    bool four6;
+    fourtyeight fe3;
+};
+
+// Initializes field values to arbitrary stuff
+void haveSomeRandomInitValues(struct C[] ihearhervoice) {
+    for (int i = 0; i < 30; i++) {
+        bool isEven = (i % 2 == 0);
+        ihearhervoice[i].four1 = i * 0xdeadbeef;
+        ihearhervoice[i].four2 = (ihearhervoice[i].four1 % 2 == 0);
+        ihearhervoice[i].four3 = i * i * 0xdeadbeef;
+        ihearhervoice[i].four4 = (ihearhervoice[i].four3 % 2 == 0);
+        ihearhervoice[i].four5 = i * i * i * 0xdeadbeef;
+        ihearhervoice[i].four6 = (ihearhervoice[i].four5 % 2 == 0);
+
+        ihearhervoice[i].fe1.four = i * i * i * i * 0xbeefbeef;
+        ihearhervoice[i].fe1.four1 = i * i * i * 0xbeefbeef;
+        ihearhervoice[i].fe1.four2 = i * i * 0xbeefbeef;
+        ihearhervoice[i].fe1.sixteen.four = (ihearhervoice[i].fe1.four1 % 2 == 0);
+        ihearhervoice[i].fe1.sixteen.eight = alloc(int);
+        ihearhervoice[i].fe1.sixteen1.four = (ihearhervoice[i].fe2.four1 % 2 == 0);
+        ihearhervoice[i].fe1.sixteen1.eight = alloc(int);
+
+        ihearhervoice[i].fe2.four = -ihearhervoice[i].four5;
+        ihearhervoice[i].fe2.four1 = -ihearhervoice[i].fe2.four;
+        ihearhervoice[i].fe2.four2 = -ihearhervoice[i].fe2.four1;
+        ihearhervoice[i].fe2.sixteen.four = (ihearhervoice[i].fe2.four1 % 2 == 0);
+        ihearhervoice[i].fe2.sixteen.eight = alloc(int);
+        ihearhervoice[i].fe2.sixteen1.four = (ihearhervoice[i].fe2.four1 % 2 == 0);
+        ihearhervoice[i].fe3.sixteen1.eight = alloc(int);
+
+        ihearhervoice[i].fe3.four = -ihearhervoice[i].fe2.four2;
+        ihearhervoice[i].fe3.four1 = -ihearhervoice[i].fe3.four;
+        ihearhervoice[i].fe3.four2 = -ihearhervoice[i].fe3.four1;
+        ihearhervoice[i].fe3.sixteen.four = (ihearhervoice[i].fe3.four1 % 2 == 0);
+        ihearhervoice[i].fe3.sixteen.eight = alloc(int);
+        ihearhervoice[i].fe3.sixteen1.four = (ihearhervoice[i].fe3.four1 % 2 == 0);
+        ihearhervoice[i].fe3.sixteen1.eight = alloc(int);
+
+        ihearhervoice[i].eight1 = alloc_array(bool, 0);
+        ihearhervoice[i].eight2 = alloc(int);
+        ihearhervoice[i].eight3 = alloc(int);
+    }
+}
+
+int main() {
+    struct C[] inmyeye = alloc_array(struct C, 30);
+
+    haveSomeRandomInitValues(inmyeye); 
+
+    for (int i = 0; i < 30; i++) {
+        bool isEven = (i % 2 == 0);
+        inmyeye[i].four1 = isEven ? 1 : -1;
+        inmyeye[i].four2 = true;
+        inmyeye[i].four3 = -inmyeye[i].four1;
+        inmyeye[i].four4 = true;
+        inmyeye[i].four5 = -inmyeye[i].four3;
+        inmyeye[i].four6 = true;
+        inmyeye[i].fe2.four = -inmyeye[i].four5;
+        inmyeye[i].fe2.four1 = -inmyeye[i].fe2.four;
+        inmyeye[i].fe2.four2 = -inmyeye[i].fe2.four1;
+        inmyeye[i].fe3.four = -inmyeye[i].fe2.four2;
+        inmyeye[i].fe3.four1 = -inmyeye[i].fe3.four;
+        inmyeye[i].fe3.four2 = -inmyeye[i].fe3.four1;
+        inmyeye[i].fe1.sixteen1.four = isEven;
+        inmyeye[i].fe2.sixteen1.four = !isEven;
+    }
+
+    int divisor = 0;
+    inmyeye[0].fe1.sixteen.four = true;
+    inmyeye[0].fe2.sixteen.four = false;
+    for (int i = 0; i < 30; i++) {
+        divisor += inmyeye[i].four1;
+        divisor += inmyeye[i].four3;
+        divisor += inmyeye[i].four5;
+        divisor += inmyeye[i].fe2.four;
+        divisor += inmyeye[i].fe2.four1;
+        divisor += inmyeye[i].fe2.four2;
+        divisor += inmyeye[i].fe3.four;
+        divisor += inmyeye[i].fe3.four1;
+        divisor += inmyeye[i].fe3.four2;
+        if (i > 0) {
+            if (i % 2 == 0) {
+                inmyeye[0].fe1.sixteen.four = inmyeye[i].fe1.sixteen1.four && inmyeye[0].fe1.sixteen.four;
+                inmyeye[0].fe2.sixteen.four = inmyeye[i].fe2.sixteen1.four && inmyeye[0].fe2.sixteen.four;
+            } else {
+                inmyeye[0].fe1.sixteen.four = inmyeye[i].fe2.sixteen1.four && inmyeye[0].fe1.sixteen.four;
+                inmyeye[0].fe2.sixteen.four = inmyeye[i].fe1.sixteen1.four && inmyeye[0].fe2.sixteen.four;
+            }
+        }
+    }
+
+    if (inmyeye[0].fe1.sixteen.four && !inmyeye[0].fe2.sixteen.four) {
+        1 / divisor; // If everything goes right, this should raise division-by-zero.
+    }
+
+    return 0;
+}

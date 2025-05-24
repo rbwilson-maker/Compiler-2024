@@ -1,0 +1,14 @@
+//test error
+
+struct adb;
+struct adb;
+struct adb;
+typedef struct adb gg;
+struct gg {
+	struct adb;
+	int jaja;
+}
+
+int main() {
+	return 3;
+}

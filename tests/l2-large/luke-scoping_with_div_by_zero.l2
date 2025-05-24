@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+    int x = 7;
+    bool y = true;
+    bool z = y;
+    {
+        bool a = z && y;
+    	x = x/0;
+    }
+    return x;
+}

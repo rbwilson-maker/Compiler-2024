@@ -1,0 +1,12 @@
+//test div-by-zero
+//convoluted way to get zero
+
+int main() {
+  int x = 1;
+  int y = x << 4;
+  int k = 2;
+  int l = 4;
+  int div = l - k*2;
+  int z = y / div;
+  return z;
+}

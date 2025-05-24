@@ -1,0 +1,6 @@
+//test typecheck
+
+int main(){
+  {lambda x = 4;}
+  return x();
+}

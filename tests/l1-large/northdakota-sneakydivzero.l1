@@ -1,0 +1,14 @@
+//test div-by-zero
+// a divide by zero hopefully a little obfuscated
+int main()
+{
+    int num = 3*4*5*6;
+
+    int d1 = 6*3*5*4;
+    int d2 = 3*4;
+    int d3 = 5 * d2;
+    int d4 = d3 + d3 + d3;
+    int d5 = d4 + d4 + d4 - d4;
+
+    return num / (d5 - num);
+}

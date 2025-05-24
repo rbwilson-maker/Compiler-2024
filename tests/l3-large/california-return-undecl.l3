@@ -1,0 +1,14 @@
+//test return 0
+
+
+int donothing(int x) {
+    int y;
+    return 5;
+    return y;
+}
+
+
+int main() {
+    donothing(5);
+    return 0;
+}

@@ -1,0 +1,80 @@
+//test return 1234
+//Maximum Cardinality Search
+
+struct adjlist_node {
+    int v2;
+    struct adjlist_node *next;
+};
+
+struct graph {
+    struct adjlist_node*[] adjlist;
+    int size;
+};
+
+bool graph_hasedge(struct graph* G, int v1, int v2) {
+    struct adjlist_node* search = G->adjlist[v1];
+    while (search != NULL) {
+        if (search->v2 == v2) {
+            return true;
+        }
+        search = search->next;
+    }
+    return false;
+}
+
+void graph_addedge(struct graph* G, int v1, int v2) {
+    if (graph_hasedge(G, v1, v2)) {
+        return;
+    }
+    struct adjlist_node* existing = G->adjlist[v1];
+    G->adjlist[v1] = alloc(struct adjlist_node);
+    G->adjlist[v1]->v2 = v2;
+    G->adjlist[v1]->next = existing;
+    
+    existing = G->adjlist[v2];
+    G->adjlist[v2] = alloc(struct adjlist_node);
+    G->adjlist[v2]->v2 = v1;
+    G->adjlist[v2]->next = existing;
+}
+
+int main() {
+    struct graph* G = alloc(struct graph);
+    G->size = 5;
+    G->adjlist = alloc_array(struct adjlist_node*, G->size);
+    graph_addedge(G, 0, 1);
+    graph_addedge(G, 0, 2);
+    graph_addedge(G, 1, 2);
+    graph_addedge(G, 1, 3);
+    graph_addedge(G, 2, 3);
+    graph_addedge(G, 2, 4);
+    
+    int[] weights = alloc_array(int, G->size);
+    int[] result = alloc_array(int, G->size);
+    for (int current = 0; current < G->size; current++) {
+        int maxWeight = -1;
+        int maxI = -1;
+        for (int i = 0; i < G->size; i++) {
+            if (weights[i] > maxWeight) {
+                maxWeight = weights[i];
+                maxI = i;
+            }
+        }
+        result[current] = maxI;
+        struct adjlist_node* search = G->adjlist[maxI];
+        while (search != NULL) {
+            if (weights[search->v2] >= 0) {
+                weights[search->v2]++;
+            }
+            search = search->next;
+        }
+        weights[maxI] = -1;
+    }
+    
+    int output = 0;
+    for (int i = 0; i < G->size; i++) {
+        output *= 10;
+        output += result[i];
+    }
+    return output;
+}
+    

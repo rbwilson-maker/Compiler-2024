@@ -1,0 +1,24 @@
+//test return 0
+struct x {
+  int x;
+  int* y;
+};
+
+struct y {
+  bool* x;
+  bool y;
+};
+
+struct z {
+  struct x y;
+  struct y x;
+};
+
+int main() {
+  struct z* x = alloc(struct z);
+  x->x.x = alloc(bool);
+  x->x.y = *x->x.x;
+  x->y.x = 42;
+  return 0;
+}
+

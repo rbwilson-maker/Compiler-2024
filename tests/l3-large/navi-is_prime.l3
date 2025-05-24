@@ -1,0 +1,17 @@
+//test return 1
+
+bool isPrime(int a) {
+	for(int i = 2; i < a; i++) {
+		if(i * i > a) return true;
+		if(a % i == 0) return false;
+	}
+	return true;
+}
+
+int main() {
+	assert(isPrime(5));
+	assert(isPrime(1000000007));
+	assert(isPrime(2));
+	assert(isPrime(3));
+	return isPrime(7) ? 1 : 0;
+}

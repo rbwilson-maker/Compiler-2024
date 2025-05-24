@@ -1,0 +1,19 @@
+//test return 1073741823
+
+// use newton's method (approximate)
+
+int newton_sqrt(int n) {
+  int guess = n / 2;
+  int oldguess = 0;
+  while (guess * guess > n && oldguess != guess) {
+    oldguess = guess;
+    guess -= (guess * guess - n) / (2 * guess);
+  }
+
+  return guess;
+}
+
+int main() {
+  int n = 0x7FFFFFFF;
+  return newton_sqrt(n);
+}

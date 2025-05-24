@@ -1,0 +1,47 @@
+//test return 18
+
+int main() {
+    int result = 0;
+
+    {
+        int a = 1;
+        int b = 2;
+        int c = 3;
+        result += a > b ? (a > c ? a : c) : b > c ? b : c;
+    }
+    {
+        int a = 1;
+        int b = 3;
+        int c = 2;
+        result += a > b ? (a > c ? a : c) : b > c ? b : c;
+    }
+    {
+        int a = 2;
+        int b = 1;
+        int c = 3;
+        result += a > b ? (a > c ? a : c) : b > c ? b : c;
+    }
+
+    {
+        int a = 2;
+        int b = 3;
+        int c = 1;
+        result += a > b ? (a > c ? a : c) : b > c ? b : c;
+    }
+
+    {
+        int a = 3;
+        int b = 1;
+        int c = 2;
+        result += a > b ? (a > c ? a : c) : b > c ? b : c;
+    }
+
+    {
+        int a = 3;
+        int b = 2;
+        int c = 1;
+        result += a > b ? (a > c ? a : c) : b > c ? b : c;
+    }
+
+    return result;
+}

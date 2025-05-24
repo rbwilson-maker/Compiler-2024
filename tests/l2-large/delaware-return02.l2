@@ -1,0 +1,19 @@
+//test return 4
+// loops doing loopy things
+
+int main() {
+
+  bool b = false;
+
+  for(int i = 0; i < 300; i++) {
+    if (b == true) {
+      b = false; }
+    else {
+      b = true; }
+  }
+
+  if (b) {
+     return 2;
+  } else { return 4; }
+
+}

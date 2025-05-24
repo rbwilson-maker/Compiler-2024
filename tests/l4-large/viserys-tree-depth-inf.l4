@@ -1,0 +1,23 @@
+//test typecheck
+//test infloop
+
+struct tree {
+  int value;
+  struct tree* left;
+  struct tree* right;
+};
+
+typedef struct tree tree;
+
+tree* generate_tree() {
+  tree* t = alloc(tree);
+  t->value = 1;
+  t->left = generate_tree();
+  t->right = generate_tree();
+  return t;
+}
+
+int main() {
+  tree* t = generate_tree();
+  return 1;
+}

@@ -1,0 +1,8 @@
+//test return 0
+
+int main() {
+    int a = 123;
+    bool x = true;
+    int y = false || x && true ? 0 : a / 0;
+    return 0;
+}

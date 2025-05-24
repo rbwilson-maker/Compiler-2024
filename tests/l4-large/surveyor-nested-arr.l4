@@ -1,0 +1,32 @@
+//test return 750
+
+int[][][] create(int dim) {
+  int[][][] ret = alloc_array(int[][], dim);
+  for (int i = 0; i < dim; i++) {
+    ret[i] = alloc_array(int[], dim);
+    for (int j = 0; j < dim; j++) {
+      ret[i][j] = alloc_array(int, dim);
+      for (int k = 0; k < dim; k++) {
+        ret[i][j][k] = i + j + k;
+      }
+    }
+  }
+  return ret;
+}
+
+int sum(int[][][] arr, int dim) {
+  int ret = 0;
+  for (int i = 0; i < dim; i++) {
+    for (int j = 0; j < dim; j++) {
+      for (int k = 0; k < dim; k++) {
+        ret += arr[i][j][k];
+      }
+    }
+  }
+  return ret;
+}
+
+int main() {
+  int dim = 5;
+  return sum(create(dim), dim);
+}

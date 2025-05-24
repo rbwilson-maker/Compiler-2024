@@ -1,0 +1,17 @@
+//test abort
+
+int* foo() {
+  return alloc(int);
+}
+
+int main() {
+  int*[] A = alloc_array(int*, 100);
+  for (int i = 0; i < 101; i++) {
+    assert(i >= 0);
+    assert(i < 100);
+
+    A[i] = foo();
+  }
+
+  return 0;
+}

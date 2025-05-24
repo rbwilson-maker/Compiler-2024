@@ -1,0 +1,10 @@
+//test return 15411
+
+int main() 
+{
+    int x = 10;
+    int y = x * x;
+    y = y * y;
+    int z = y + (5 * 1000);
+    return z + 411;
+}

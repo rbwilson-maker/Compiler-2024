@@ -1,0 +1,7 @@
+//test return 0
+
+int main() {
+    int x = 0x12345678;
+    for (; x > 0; x -= x & -x) {}
+    return x;
+}

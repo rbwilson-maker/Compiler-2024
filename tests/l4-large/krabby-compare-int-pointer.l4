@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+    int x = 5;
+    int* y = alloc(int);
+    if (x == y) {
+        return 55;
+    } else {
+        return -20;
+    }
+}

@@ -1,0 +1,16 @@
+//test div-by-zero
+// division error due to overflow
+int main()
+{
+  int TMAX;
+  int TMIN;
+  int overflow;
+
+  TMAX = 2147483647;
+  TMIN = -1 * TMAX;
+  TMIN = TMIN - 1;
+  overflow = TMIN / -1;
+  return overflow;
+}
+
+  

@@ -1,0 +1,12 @@
+//test error
+// Cannot make void typedefs
+
+typedef void best_type_ever;
+
+best_type_ever best_function_ever(best_type_ever best_input_ever){
+    return best_input_ever;
+}
+
+int main() {
+    return 0;
+}

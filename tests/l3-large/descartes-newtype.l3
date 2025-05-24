@@ -1,0 +1,15 @@
+//test typecheck
+
+//this test defines a new type and ensures the program typechecks
+
+typedef bool jackson;
+
+jackson get_true(){
+    return true;
+}
+
+int main(){
+    int x = 0;
+    jackson romero = get_true();
+    return x;
+}

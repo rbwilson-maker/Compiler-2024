@@ -1,0 +1,35 @@
+//test return 15
+typedef struct tree tree;
+struct tree{
+  tree* left;
+  tree* right;
+  int val;
+};
+
+int sum(tree* root)
+{
+    if (root == NULL) return 0;
+    return root->val + sum(root->left) + sum(root->right);
+}
+
+int main()
+{
+    tree* x = alloc(tree);
+    x->val = 1;
+    tree* y = alloc(tree);
+    y->val = 2;
+    tree* z = alloc(tree);
+    z->val = 3;
+    tree* u = alloc(tree);
+    u->val = 4;
+    tree* v = alloc(tree);
+    v->val = 5;
+    x->left = y;
+    x->right = z;
+    y->left = NULL;
+    z->left = u;
+    z->right = v;
+
+    return sum(x);
+
+}

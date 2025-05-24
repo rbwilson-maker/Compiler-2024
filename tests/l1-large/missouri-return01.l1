@@ -1,0 +1,45 @@
+//test return 34
+/* Complicated, multiple assignment */
+
+int main() {
+  int a;
+  int b;
+  int temp;
+
+  a = 1;
+  b = 1;
+
+  temp = a;
+  a = a + b;
+  b = temp;
+
+  temp = a;
+  a = a + b;
+  b = temp;
+
+  temp = a;
+  a = a + b;
+  b = temp;
+
+  temp = a;
+  a = a + b;
+  b = temp;
+
+  temp = a;
+  a = a + b;
+  b = temp;
+
+  temp = a;
+  a = a + b;
+  b = temp;
+
+  temp = a;
+  a = a + b;
+  b = temp;
+
+  temp = a;
+  a = a + b;
+  b = temp;
+
+  return b;
+}

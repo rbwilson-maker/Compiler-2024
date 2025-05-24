@@ -1,0 +1,18 @@
+//test error
+// Should not typecheck, as a conditional expression cannot have a large type
+
+struct bigboi {
+    int not;
+    bool so;
+    int[] much;
+};
+
+int main () {
+    struct bigboi s1 = alloc(struct bigboi);
+    struct bigboi s2 = alloc(struct bigboi);
+    s1->not = 7;
+    s2->not = 13;
+    s1->so = true;
+    int result = (s1->so ? *s1 : *s2).not;
+    return result;
+}

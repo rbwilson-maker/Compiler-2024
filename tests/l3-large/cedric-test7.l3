@@ -1,0 +1,14 @@
+//test error
+
+int a();
+
+
+int main()
+{
+    int aa = 100;
+    while (aa != 0) aa--;
+
+    a(aa);
+
+    return 0;
+}

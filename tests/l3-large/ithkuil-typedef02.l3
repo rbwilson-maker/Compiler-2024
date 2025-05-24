@@ -1,0 +1,15 @@
+//test return 286
+
+int f1(int x) {
+    return x + 1;
+}
+
+typedef int x;
+
+int f2(int y) {
+    return y + 1;
+}
+
+int main() {
+    return f1(142) + f2(142);
+}

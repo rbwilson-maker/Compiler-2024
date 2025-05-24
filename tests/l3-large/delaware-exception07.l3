@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int divvie (int x, int y) {
+    x / y;
+    divvie(x-1,y-1);
+    divvie(x,y-1);
+    divvie(x-1,y);
+    return 2;
+}
+
+int main() { divvie(10,10);return 0; }

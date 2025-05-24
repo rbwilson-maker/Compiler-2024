@@ -1,0 +1,10 @@
+//test div-by-zero
+int main() {
+    int tina = 1;
+    ((tina)) << 88;
+    return tina;
+}
+
+
+
+

@@ -1,0 +1,12 @@
+//test return 100
+
+int double(int x, int[] A) {
+	A[0] = 100;
+	return 2 * x;
+}
+
+int main() {
+	int[] A = alloc_array(int, 100);
+	A[double(5, A)] = 50;
+	return A[0];
+}

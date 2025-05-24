@@ -1,0 +1,9 @@
+//test typecheck
+//test infloop
+
+//Test forever loop
+
+int main() {
+	for(;true;) 1;
+	return 1;
+}

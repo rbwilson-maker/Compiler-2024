@@ -1,0 +1,15 @@
+//test return 5677
+// reverse bits
+
+int main() {
+    int res = 0;
+    int x = 15411-0xF19;
+    while (x > 0) {
+        res <<= 1;
+        if ((x & 0x1) > 0) {
+            res |= 1;
+        }
+        x >>= 1;
+    }
+    return res;
+}

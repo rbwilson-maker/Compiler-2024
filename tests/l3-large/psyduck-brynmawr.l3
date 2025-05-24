@@ -1,0 +1,11 @@
+//test error
+
+int wat () {
+return 17;
+}
+
+typedef int wat;
+
+wat main () {
+return wat();
+}

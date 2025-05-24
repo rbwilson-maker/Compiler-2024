@@ -1,0 +1,105 @@
+//test return 0
+
+typedef struct heap* heap;
+
+struct heap {
+    int size;
+    int capacity;
+    int[] contents;
+    bool is_min_heap;
+};
+
+void resize_heap(heap H) {
+    int[] currContents = H->contents;
+    int currCapacity = H->capacity;
+    H->capacity *= 2;
+    H->contents = alloc_array(int, H->capacity);
+    for(int i = 0; i < currCapacity; i++) {
+        H->contents[i] = currContents[i];
+    }
+}
+
+void swap(int[] arr, int a, int b) {
+    int temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+}
+
+void heap_up(heap H) {
+    int curr = H->size;
+    while(curr > 1 && (H->is_min_heap ? H->contents[curr / 2] > H->contents[curr] : H->contents[curr / 2] < H->contents[curr])) {
+        swap(H->contents, curr, curr / 2);
+        curr /= 2;
+    }
+}
+
+int get_best_child(heap H, int parent) {
+    int best_child = parent * 2;
+    if(best_child + 1 <= H->size && (H->is_min_heap ? H->contents[best_child] > H->contents[best_child + 1] : H->contents[best_child] < H->contents[best_child + 1]))
+        best_child++;
+    return best_child;
+}
+
+void heap_down(heap H) {
+    int curr = 1;
+    int best_child = get_best_child(H, curr);
+    while(curr <= H->size && best_child <= H->size && (H->is_min_heap ? H->contents[curr] > H->contents[best_child] : H->contents[curr] < H->contents[best_child])) {
+        swap(H->contents, curr, best_child);
+        curr = best_child;
+        best_child = get_best_child(H, curr);
+    }
+}
+
+void insert(heap H, int elt) {
+    if (H->size + 1 >= H->capacity) {
+        resize_heap(H);
+    }
+    H->size += 1;
+    H->contents[H->size] = elt;
+    heap_up(H);
+}
+
+int peek(heap H) {
+    assert(H->size >= 1);
+    return H->contents[1];
+}
+
+int pop(heap H) {
+    assert(H->size >= 1);
+    int result = H->contents[1];
+    swap(H->contents, 1, H->size);
+    H->size--;
+    heap_down(H);
+    return result;
+}
+
+heap init_heap(bool is_min_heap) {
+    heap H = alloc(struct heap);
+    H->size = 0;
+    H->capacity = 1;
+    H->contents = alloc_array(int, H->capacity);
+    H->is_min_heap = is_min_heap;
+    return H;
+}
+
+int main() {
+    heap max = init_heap(false);
+    for(int i = 0; i < 10; i++) {
+        insert(max, i);
+    }
+    assert(max->capacity == 16);
+    assert(max->size == 10);
+    heap min = init_heap(true);
+    for(int i = 9; i >= 0; i--) {
+        int popped = pop(max);
+        assert(popped == i);
+        assert(i == 0 || peek(max) == i-1);
+        insert(min, popped);
+    }
+    assert(min->capacity == 16);
+    assert(min->size == 10);
+    for(int i = 0; i < 10; i++) {
+        assert(pop(min) == i);
+    }
+    return 0;
+}

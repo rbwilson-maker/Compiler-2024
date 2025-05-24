@@ -1,0 +1,49 @@
+//test return 301
+// tests array and pointer aliasing
+
+int[] transform(int[] nonditto, int length)
+{
+  int[] ditto = alloc_array(int, length);
+  for (int i = 0; i < length; i++) {
+    ditto[i] = nonditto[i];
+  }
+  return ditto;
+}
+
+int* clone(int* original)
+{
+  return original;
+}
+
+int main()
+{
+  int[] realpikachu = alloc_array(int, 2);
+  realpikachu[0] = 2;
+  realpikachu[1] = 4;
+  int[] ditto = transform(realpikachu, 2);
+  int[] substitute = realpikachu;
+  realpikachu[0] = 100;
+
+  assert(realpikachu[0] == 100);
+  assert(realpikachu[0] == substitute[0]);
+  assert(realpikachu[1] == substitute[1]);
+  assert(ditto[0] == 2);
+  assert(ditto[1] == realpikachu[1]);
+  assert(ditto[1] == substitute[1]);
+
+  int* mew = alloc(int);
+  int* mewtwo = clone(mew);
+  assert(*mew == *mewtwo);
+  assert(mew == mewtwo);
+  *mew = 151;
+  assert(*mew == *mewtwo);
+  assert(mew == mewtwo);
+  mewtwo = alloc(int);
+  assert(*mew != *mewtwo);
+  assert(mew != mewtwo);
+  *mewtwo = 150;
+  assert(*mew != *mewtwo);
+  assert(mew != mewtwo);
+
+  return *mew + *mewtwo;
+}

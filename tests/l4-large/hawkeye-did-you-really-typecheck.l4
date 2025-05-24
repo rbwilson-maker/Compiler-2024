@@ -1,0 +1,14 @@
+//test error
+
+struct dontreturnme {
+       bool hmm;
+};
+
+struct dontreturnme dontttt() {
+       struct dontreturnme* mhmhm = alloc(struct dontreturnme);
+       return *mhmhm;
+}
+
+int main () {
+    return 0;
+}

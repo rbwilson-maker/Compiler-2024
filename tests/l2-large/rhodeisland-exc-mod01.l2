@@ -1,0 +1,17 @@
+//test div-by-zero
+
+int main()
+{
+    int n;
+    int sum;
+    int i;
+
+    n = 100;
+    sum = 5050;
+    i = 0;
+    while (i <= n) {
+        sum %= i;
+        i += 1;
+    }
+    return sum;
+}

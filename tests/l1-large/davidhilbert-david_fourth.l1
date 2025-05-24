@@ -1,0 +1,10 @@
+//test return 100
+
+int main() {
+    int parse_check = -(-(0 + 1 - 1 + 42 - 42));
+    int small_hex = 0xf;
+    int large_hex = 0xffffffff;
+
+    parse_check = small_hex - large_hex;
+    return 100;
+}

@@ -1,0 +1,4 @@
+//test error
+int main(int param) {
+    return param + main(param);
+}

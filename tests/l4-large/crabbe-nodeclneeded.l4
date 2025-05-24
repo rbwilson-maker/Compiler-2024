@@ -1,0 +1,8 @@
+//test return 3
+// ensure implicit struct declarations are allowed
+
+struct ghost* spooky (int i);
+
+int main () {
+    return 3;
+}

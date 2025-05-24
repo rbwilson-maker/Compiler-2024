@@ -1,0 +1,12 @@
+//test abort
+
+int main()
+{
+   fpt pi = itof(0);
+   for(int i = 0; i< 1000; i++)
+   {
+     pi = fadd(pi,fdiv(itof(1),itof(i)));
+   }
+   assert(fless(itof(3),pi) && fless(pi,itof(4)));
+   return pi;
+}

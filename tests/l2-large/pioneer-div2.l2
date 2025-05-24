@@ -1,0 +1,17 @@
+//test div-by-zero
+
+int main() {
+  // Computes 1 + 1/2 + 1/4 + ... = 2
+  int multiples = 1;
+  int fractions = 1;
+  int two = 0;
+  while (0 == 0) {
+    two += fractions; 
+    multiples = multiples * 2;
+    fractions = 1 / multiples;
+  }
+  if (two != 2) {
+    // WTFFFFF
+  }
+  return two;
+}

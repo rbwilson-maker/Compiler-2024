@@ -1,0 +1,26 @@
+//test return 101
+
+struct point{int x; int y;};
+
+int abs(int n1){
+  if (n1 < 0) return 0 - n1;
+  return n1;
+}
+
+int square(int n1){
+  return n1 * n1;
+}
+
+int distance(struct point *p1, struct point *p2){
+  return square(abs(p1 -> x - p2 -> x)) + square(abs(p1 -> y - p2 -> y));
+}
+
+int main(){
+  struct point *p1 = alloc(struct point);
+  struct point *p2 = alloc(struct point);
+  p1 -> x = 2;
+  p1 -> y = 20;
+  p2 -> x = 3;
+  p2 -> y = 30;
+  return distance(p1, p2);
+}

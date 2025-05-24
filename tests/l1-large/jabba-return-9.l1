@@ -1,0 +1,10 @@
+//test return -9
+
+int main() {
+	int z = /*initialize z*/ 42;
+	int y = -1;
+	int x = z * y;
+	x += z;
+	y = 9;
+	return x - y;
+}

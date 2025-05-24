@@ -1,0 +1,5 @@
+//test error
+//shadow a type declaration from header
+int char0(int x) {return x;}
+
+int main() = {return char0(5); }

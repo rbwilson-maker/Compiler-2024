@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+    int w;
+    int x;
+    int y;
+    int z;
+    x = 1;
+    y = 0;
+    z = x % y;
+    w = 4;
+    return w * z;
+}

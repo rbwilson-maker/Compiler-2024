@@ -1,0 +1,46 @@
+//test return 0
+
+// determine whether a sublist of `l`,
+// an array of length `length`, can be summed
+// to `num`
+bool sublistSum(int[] l, int num, int length)
+{
+  if (num == 0 && length == 0)
+  {
+    return true;
+  }
+  else if (length == 0)
+  {
+    return false;
+  }
+  else
+  {
+    int x = l[length - 1];
+    if (sublistSum(l, num - x, length - 1))
+    {
+      return true;
+    }
+    else
+    {
+      return sublistSum(l, num, length - 1);
+    }
+  }
+}
+
+int main()
+{
+  int length = 4;
+  int[] arr = alloc_array(int, length);
+  for (int i = 0; i < length; i++)
+  {
+    arr[i] = i;
+  }
+  if (sublistSum(arr, 5, length))
+  {
+    return 0;
+  }
+  else
+  {
+    return 1;
+  }
+}

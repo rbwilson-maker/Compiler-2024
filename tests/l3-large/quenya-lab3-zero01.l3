@@ -1,0 +1,12 @@
+//test div-by-zero
+// Division by zero through recursive function calls
+
+int foo(int i, int j) {
+  int x = i / j;
+  return foo(i - 1, j - 1);
+}
+
+int main() {
+  foo(5, 3);
+  return 0;
+}

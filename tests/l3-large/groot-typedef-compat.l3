@@ -1,0 +1,14 @@
+//test return 3
+
+typedef int foo;
+typedef int bar;
+typedef foo baz;
+typedef baz Integer;
+
+Integer main() {
+  foo x = 0;
+  bar y = x + 3;
+  baz z = x + y;
+
+  return z;
+}

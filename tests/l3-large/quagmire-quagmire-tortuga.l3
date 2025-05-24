@@ -1,0 +1,16 @@
+//test return 2
+
+void this_is_here_just_to_be_slow () {
+    return;
+}
+
+int main () {
+    int triple_parity = 0;
+
+    for (int i = 0; i < 147483647; i++) {
+        triple_parity++;
+        triple_parity %= 3;
+        this_is_here_just_to_be_slow();
+    }
+    return triple_parity;
+}

@@ -1,0 +1,24 @@
+//test div-by-zero
+
+/*
+    surprise: Surprise!
+
+    Tests:
+    - Recursion
+    - Effectful function calls
+*/
+
+void g(int n, int ceil) {
+    1 / (ceil - n);
+}
+
+int f(int n, int ceil) {
+    // Effect
+    g(n, ceil);
+
+    return f(n + 1, ceil);
+}
+
+int main() {
+    return f(0, 174450);
+}

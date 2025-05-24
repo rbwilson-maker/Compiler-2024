@@ -1,0 +1,12 @@
+//test abort
+
+int mul_overflow(int x){
+  if (x <= 0)
+    return 0;
+  int y = x * 4;
+  assert(y > x);
+  return mul_overflow(y);
+} 
+int main(){
+  return mul_overflow(1048576);
+}

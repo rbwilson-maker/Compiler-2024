@@ -1,0 +1,13 @@
+//test error
+
+struct baz {
+  int min;
+  bool max;
+};
+
+int main() {
+  struct baz[] arr;
+  arr = alloc_array(struct baz, 20);
+  arr->max = true;
+  return 2;
+}

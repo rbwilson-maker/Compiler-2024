@@ -1,0 +1,16 @@
+//test div-by-zero
+
+typedef int t;
+
+bool f(t x, t y, t z) {
+    return true;
+}
+
+int infinite_recursion(t x) {
+    return infinite_recursion(x + 1);
+}
+
+int main() {
+    t x = 0;
+    return f(x, 1 / x, infinite_recursion(x)) ? 15411 : x;
+}

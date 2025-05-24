@@ -1,0 +1,21 @@
+//test abort
+
+//Testing interchangeability of typedef names
+
+typedef int pixel;
+typedef int pixel2;
+
+int p1(pixel input) {
+  return input - 4;
+}
+
+int p2(pixel2 input) {
+  return input + 4;
+}
+
+int main() {
+  pixel x = 3;
+  pixel2 hi = p1(x);
+  assert(x == 2);
+  return 0;
+}

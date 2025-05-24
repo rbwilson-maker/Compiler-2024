@@ -1,0 +1,11 @@
+/* Cheese .h0 file */
+typedef int cheese;
+
+cheese get_cheese();
+
+void set_cheese(cheese c);
+
+bool is_mozarella(cheese c);
+bool has_holes(cheese c);
+bool holes_are_big(cheese c);
+bool holes_are_square(cheese c);

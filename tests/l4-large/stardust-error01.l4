@@ -1,0 +1,18 @@
+//test error
+//inconsistent type
+
+bool f(int x) 
+{
+	return x == 1;
+}
+
+
+int main()
+{
+	int* a = alloc(int);
+	*a = 2;
+	*a++;
+	bool b = f(*a);
+	int c = f(b);
+	return c;
+}

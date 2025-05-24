@@ -1,0 +1,32 @@
+//test return 27882
+
+// # of paths from (0, 0) to (r, c) without passing through (br, bc)
+int paths (int r, int c, int br, int bc) {
+    int[][] dp = alloc_array(int[], r + 1); // r x c
+    for (int i = 0; i < r + 1; i += 1) {
+        dp[i] = alloc_array(int, c + 1);
+    }
+    dp[0][0] = 1;
+    for (int i = 0; i < r + 1; i += 1) {
+        for (int j = 0; j < c + 1; j += 1) {
+            if (i == br && j == bc) {
+                dp[i][j] = 0;
+            }
+            else {
+                if (i > 0) {
+                    // dp[i][j] -> dp[i-1][j]
+                    dp[i][j] += dp[i-1][j];
+                }
+                if (j > 0) {
+                    // dp[i][j] -> dp[i][j-1]
+                    dp[i][j] += dp[i][j-1];
+                }
+            }
+        }
+    }
+    return dp[r][c];
+}
+
+int main() {
+    return paths(10, 8, 5, 4);
+}

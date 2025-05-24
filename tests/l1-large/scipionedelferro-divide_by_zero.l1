@@ -1,0 +1,8 @@
+//test div-by-zero
+// raises a divide by 0 exception
+
+int main() {
+    int denominator = 4*3 - 12;
+    int x = 1/denominator;
+    return 1;
+}

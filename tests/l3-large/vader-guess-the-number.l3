@@ -1,0 +1,17 @@
+//test return 10001
+
+//the verify function always returns false, and we loop until it returns true
+
+bool verify(int n) {
+  int offset = ~(1 << 31) - 10000;
+  return n + offset < n;
+}
+
+int main() {
+    int guess = 0;
+    while (!verify(guess)) {
+        guess += 1;
+    }
+    return guess;
+}
+

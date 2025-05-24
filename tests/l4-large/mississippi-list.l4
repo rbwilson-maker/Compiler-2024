@@ -1,0 +1,25 @@
+//test return 358168044
+struct list {
+    struct list* next;
+    int value;
+};
+
+struct list *build_list(int len, int val) {
+    if (len == 0) return NULL;
+    struct list *res = alloc(struct list);
+    
+    res->value = val;
+    res->next = build_list(len - 1, val * 19 + 17);
+    return res;
+}
+
+int get_elem(struct list *l, int ind) {
+    if (l == NULL) return 1/0;
+    if (ind == 0) return l->value;
+    return get_elem(l->next, ind - 1);
+}
+
+int main() {
+    struct list* big_list = build_list(1000, 1);
+    return get_elem(big_list, 101);
+}

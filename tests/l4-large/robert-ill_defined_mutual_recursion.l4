@@ -1,0 +1,22 @@
+//test error
+
+struct a {
+	struct b next;
+	int elt;
+};
+
+struct b {
+	struct a next;
+	bool elt;
+};
+
+int main() {
+	struct a* start = alloc(struct a);
+	a->next = alloc(struct b);
+
+	a->next.next = a;
+	a->elt = 0;
+	a->next.elt = true;
+
+	return a->next.next.next.next.elt;
+}

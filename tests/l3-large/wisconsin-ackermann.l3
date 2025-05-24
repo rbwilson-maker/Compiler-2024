@@ -1,0 +1,13 @@
+//test return 4093
+//This computes the ackermann function evaluated at (3,9)
+//http://en.wikipedia.org/wiki/Ackermann_function
+
+int A(int m, int n) {
+    if (m == 0) return n+1;
+    if ((m > 0)&&(n==0)) return A(m-1,1);
+    return A(m-1, A(m, n-1));
+}
+
+int main() {
+    return A(3, 9);
+}

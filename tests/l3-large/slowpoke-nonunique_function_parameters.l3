@@ -1,0 +1,12 @@
+//test error 
+
+int add(int x, int x);
+
+// tests nonunique parameter names
+int main() {
+    return add(10, 5);
+}
+
+int add(int x, int y) {
+  return x + y;
+}

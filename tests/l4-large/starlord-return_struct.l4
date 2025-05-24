@@ -1,0 +1,17 @@
+//test error
+
+typedef struct foo foo;
+struct foo {
+  int i;
+};
+
+foo test(int) {
+  foo *x = alloc(foo);
+  x->i = 1;
+  return x;
+}
+
+
+int main () {
+  return 0;
+}

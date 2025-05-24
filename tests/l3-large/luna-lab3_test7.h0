@@ -1,0 +1,6 @@
+// What if our library declares a "main" function?
+// Should be illegal since we are never supposed to define library
+// defined function.
+
+
+int main();

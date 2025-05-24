@@ -1,0 +1,11 @@
+//test error
+
+void vv() {
+  void* a = alloc(void);
+  return *a;
+}
+
+int main() {
+  vv();
+  return 0;
+}

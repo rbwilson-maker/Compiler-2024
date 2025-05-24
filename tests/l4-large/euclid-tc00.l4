@@ -1,0 +1,13 @@
+//test error
+/* invalid field */
+
+struct s {
+    int x;
+};
+
+int main() {
+    struct s * test;
+    test = alloc(struct s);
+    s->y = 10;
+    return 1;
+}

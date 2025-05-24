@@ -1,0 +1,18 @@
+//test return 0
+
+void foo() {}
+
+void bar(int x) {
+  if (x > 0) {
+    x;
+  } else {
+    x++;
+  }
+}
+
+int main() { 
+  foo();
+  bar(15-150);
+  return 0;
+}
+

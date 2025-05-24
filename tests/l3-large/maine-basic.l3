@@ -1,0 +1,29 @@
+//test return 22659
+// Finds how many integers less than 50000 have collatz sequences of longer
+// than 100
+
+bool collatzGreaterThan100(int n) {
+    int c = 0;
+
+    while (n != 1) {
+        c++;
+        if (n%2 == 0) {
+            n = n/2;
+        } else {
+            n = n*3 + 1;
+        }
+    }
+
+    return c > 100;
+}
+
+int main() {
+    int sum = 0;
+
+    for(int i=1; i < 50000; i++) {
+        if(collatzGreaterThan100(i))
+            sum++;
+    }
+
+    return sum;
+}

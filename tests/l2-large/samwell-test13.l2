@@ -1,0 +1,11 @@
+//test typecheck
+//test infloop
+
+int main() { 
+    int x = 5;
+    for (int i = 0; true; i++)
+    {
+        x += i;
+    }
+    return x;
+ }

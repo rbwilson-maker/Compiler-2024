@@ -1,0 +1,611 @@
+//test return 0
+
+typedef int a0;
+typedef a0 a1;
+typedef a1 a2;
+typedef a2 a3;
+typedef a3 a4;
+typedef a4 a5;
+typedef a5 a6;
+typedef a6 a7;
+typedef a7 a8;
+typedef a8 a9;
+typedef a9 a10;
+typedef a10 a11;
+typedef a11 a12;
+typedef a12 a13;
+typedef a13 a14;
+typedef a14 a15;
+typedef a15 a16;
+typedef a16 a17;
+typedef a17 a18;
+typedef a18 a19;
+typedef a19 a20;
+typedef a20 a21;
+typedef a21 a22;
+typedef a22 a23;
+typedef a23 a24;
+typedef a24 a25;
+typedef a25 a26;
+typedef a26 a27;
+typedef a27 a28;
+typedef a28 a29;
+typedef a29 a30;
+typedef a30 a31;
+typedef a31 a32;
+typedef a32 a33;
+typedef a33 a34;
+typedef a34 a35;
+typedef a35 a36;
+typedef a36 a37;
+typedef a37 a38;
+typedef a38 a39;
+typedef a39 a40;
+typedef a40 a41;
+typedef a41 a42;
+typedef a42 a43;
+typedef a43 a44;
+typedef a44 a45;
+typedef a45 a46;
+typedef a46 a47;
+typedef a47 a48;
+typedef a48 a49;
+typedef a49 a50;
+typedef a50 a51;
+typedef a51 a52;
+typedef a52 a53;
+typedef a53 a54;
+typedef a54 a55;
+typedef a55 a56;
+typedef a56 a57;
+typedef a57 a58;
+typedef a58 a59;
+typedef a59 a60;
+typedef a60 a61;
+typedef a61 a62;
+typedef a62 a63;
+typedef a63 a64;
+typedef a64 a65;
+typedef a65 a66;
+typedef a66 a67;
+typedef a67 a68;
+typedef a68 a69;
+typedef a69 a70;
+typedef a70 a71;
+typedef a71 a72;
+typedef a72 a73;
+typedef a73 a74;
+typedef a74 a75;
+typedef a75 a76;
+typedef a76 a77;
+typedef a77 a78;
+typedef a78 a79;
+typedef a79 a80;
+typedef a80 a81;
+typedef a81 a82;
+typedef a82 a83;
+typedef a83 a84;
+typedef a84 a85;
+typedef a85 a86;
+typedef a86 a87;
+typedef a87 a88;
+typedef a88 a89;
+typedef a89 a90;
+typedef a90 a91;
+typedef a91 a92;
+typedef a92 a93;
+typedef a93 a94;
+typedef a94 a95;
+typedef a95 a96;
+typedef a96 a97;
+typedef a97 a98;
+typedef a98 a99;
+typedef a99 a100;
+typedef a100 a101;
+typedef a101 a102;
+typedef a102 a103;
+typedef a103 a104;
+typedef a104 a105;
+typedef a105 a106;
+typedef a106 a107;
+typedef a107 a108;
+typedef a108 a109;
+typedef a109 a110;
+typedef a110 a111;
+typedef a111 a112;
+typedef a112 a113;
+typedef a113 a114;
+typedef a114 a115;
+typedef a115 a116;
+typedef a116 a117;
+typedef a117 a118;
+typedef a118 a119;
+typedef a119 a120;
+typedef a120 a121;
+typedef a121 a122;
+typedef a122 a123;
+typedef a123 a124;
+typedef a124 a125;
+typedef a125 a126;
+typedef a126 a127;
+typedef a127 a128;
+typedef a128 a129;
+typedef a129 a130;
+typedef a130 a131;
+typedef a131 a132;
+typedef a132 a133;
+typedef a133 a134;
+typedef a134 a135;
+typedef a135 a136;
+typedef a136 a137;
+typedef a137 a138;
+typedef a138 a139;
+typedef a139 a140;
+typedef a140 a141;
+typedef a141 a142;
+typedef a142 a143;
+typedef a143 a144;
+typedef a144 a145;
+typedef a145 a146;
+typedef a146 a147;
+typedef a147 a148;
+typedef a148 a149;
+typedef a149 a150;
+typedef a150 a151;
+typedef a151 a152;
+typedef a152 a153;
+typedef a153 a154;
+typedef a154 a155;
+typedef a155 a156;
+typedef a156 a157;
+typedef a157 a158;
+typedef a158 a159;
+typedef a159 a160;
+typedef a160 a161;
+typedef a161 a162;
+typedef a162 a163;
+typedef a163 a164;
+typedef a164 a165;
+typedef a165 a166;
+typedef a166 a167;
+typedef a167 a168;
+typedef a168 a169;
+typedef a169 a170;
+typedef a170 a171;
+typedef a171 a172;
+typedef a172 a173;
+typedef a173 a174;
+typedef a174 a175;
+typedef a175 a176;
+typedef a176 a177;
+typedef a177 a178;
+typedef a178 a179;
+typedef a179 a180;
+typedef a180 a181;
+typedef a181 a182;
+typedef a182 a183;
+typedef a183 a184;
+typedef a184 a185;
+typedef a185 a186;
+typedef a186 a187;
+typedef a187 a188;
+typedef a188 a189;
+typedef a189 a190;
+typedef a190 a191;
+typedef a191 a192;
+typedef a192 a193;
+typedef a193 a194;
+typedef a194 a195;
+typedef a195 a196;
+typedef a196 a197;
+typedef a197 a198;
+typedef a198 a199;
+typedef a199 a200;
+
+int fn(a0 var) { return var; }
+a0 fn0(a1 var) { return var; }
+a1 fn1(a2 var) { return var; }
+a2 fn2(a3 var) { return var; }
+a3 fn3(a4 var) { return var; }
+a4 fn4(a5 var) { return var; }
+a5 fn5(a6 var) { return var; }
+a6 fn6(a7 var) { return var; }
+a7 fn7(a8 var) { return var; }
+a8 fn8(a9 var) { return var; }
+a9 fn9(a10 var) { return var; }
+a10 fn10(a11 var) { return var; }
+a11 fn11(a12 var) { return var; }
+a12 fn12(a13 var) { return var; }
+a13 fn13(a14 var) { return var; }
+a14 fn14(a15 var) { return var; }
+a15 fn15(a16 var) { return var; }
+a16 fn16(a17 var) { return var; }
+a17 fn17(a18 var) { return var; }
+a18 fn18(a19 var) { return var; }
+a19 fn19(a20 var) { return var; }
+a20 fn20(a21 var) { return var; }
+a21 fn21(a22 var) { return var; }
+a22 fn22(a23 var) { return var; }
+a23 fn23(a24 var) { return var; }
+a24 fn24(a25 var) { return var; }
+a25 fn25(a26 var) { return var; }
+a26 fn26(a27 var) { return var; }
+a27 fn27(a28 var) { return var; }
+a28 fn28(a29 var) { return var; }
+a29 fn29(a30 var) { return var; }
+a30 fn30(a31 var) { return var; }
+a31 fn31(a32 var) { return var; }
+a32 fn32(a33 var) { return var; }
+a33 fn33(a34 var) { return var; }
+a34 fn34(a35 var) { return var; }
+a35 fn35(a36 var) { return var; }
+a36 fn36(a37 var) { return var; }
+a37 fn37(a38 var) { return var; }
+a38 fn38(a39 var) { return var; }
+a39 fn39(a40 var) { return var; }
+a40 fn40(a41 var) { return var; }
+a41 fn41(a42 var) { return var; }
+a42 fn42(a43 var) { return var; }
+a43 fn43(a44 var) { return var; }
+a44 fn44(a45 var) { return var; }
+a45 fn45(a46 var) { return var; }
+a46 fn46(a47 var) { return var; }
+a47 fn47(a48 var) { return var; }
+a48 fn48(a49 var) { return var; }
+a49 fn49(a50 var) { return var; }
+a50 fn50(a51 var) { return var; }
+a51 fn51(a52 var) { return var; }
+a52 fn52(a53 var) { return var; }
+a53 fn53(a54 var) { return var; }
+a54 fn54(a55 var) { return var; }
+a55 fn55(a56 var) { return var; }
+a56 fn56(a57 var) { return var; }
+a57 fn57(a58 var) { return var; }
+a58 fn58(a59 var) { return var; }
+a59 fn59(a60 var) { return var; }
+a60 fn60(a61 var) { return var; }
+a61 fn61(a62 var) { return var; }
+a62 fn62(a63 var) { return var; }
+a63 fn63(a64 var) { return var; }
+a64 fn64(a65 var) { return var; }
+a65 fn65(a66 var) { return var; }
+a66 fn66(a67 var) { return var; }
+a67 fn67(a68 var) { return var; }
+a68 fn68(a69 var) { return var; }
+a69 fn69(a70 var) { return var; }
+a70 fn70(a71 var) { return var; }
+a71 fn71(a72 var) { return var; }
+a72 fn72(a73 var) { return var; }
+a73 fn73(a74 var) { return var; }
+a74 fn74(a75 var) { return var; }
+a75 fn75(a76 var) { return var; }
+a76 fn76(a77 var) { return var; }
+a77 fn77(a78 var) { return var; }
+a78 fn78(a79 var) { return var; }
+a79 fn79(a80 var) { return var; }
+a80 fn80(a81 var) { return var; }
+a81 fn81(a82 var) { return var; }
+a82 fn82(a83 var) { return var; }
+a83 fn83(a84 var) { return var; }
+a84 fn84(a85 var) { return var; }
+a85 fn85(a86 var) { return var; }
+a86 fn86(a87 var) { return var; }
+a87 fn87(a88 var) { return var; }
+a88 fn88(a89 var) { return var; }
+a89 fn89(a90 var) { return var; }
+a90 fn90(a91 var) { return var; }
+a91 fn91(a92 var) { return var; }
+a92 fn92(a93 var) { return var; }
+a93 fn93(a94 var) { return var; }
+a94 fn94(a95 var) { return var; }
+a95 fn95(a96 var) { return var; }
+a96 fn96(a97 var) { return var; }
+a97 fn97(a98 var) { return var; }
+a98 fn98(a99 var) { return var; }
+a99 fn99(a100 var) { return var; }
+a100 fn100(a101 var) { return var; }
+a101 fn101(a102 var) { return var; }
+a102 fn102(a103 var) { return var; }
+a103 fn103(a104 var) { return var; }
+a104 fn104(a105 var) { return var; }
+a105 fn105(a106 var) { return var; }
+a106 fn106(a107 var) { return var; }
+a107 fn107(a108 var) { return var; }
+a108 fn108(a109 var) { return var; }
+a109 fn109(a110 var) { return var; }
+a110 fn110(a111 var) { return var; }
+a111 fn111(a112 var) { return var; }
+a112 fn112(a113 var) { return var; }
+a113 fn113(a114 var) { return var; }
+a114 fn114(a115 var) { return var; }
+a115 fn115(a116 var) { return var; }
+a116 fn116(a117 var) { return var; }
+a117 fn117(a118 var) { return var; }
+a118 fn118(a119 var) { return var; }
+a119 fn119(a120 var) { return var; }
+a120 fn120(a121 var) { return var; }
+a121 fn121(a122 var) { return var; }
+a122 fn122(a123 var) { return var; }
+a123 fn123(a124 var) { return var; }
+a124 fn124(a125 var) { return var; }
+a125 fn125(a126 var) { return var; }
+a126 fn126(a127 var) { return var; }
+a127 fn127(a128 var) { return var; }
+a128 fn128(a129 var) { return var; }
+a129 fn129(a130 var) { return var; }
+a130 fn130(a131 var) { return var; }
+a131 fn131(a132 var) { return var; }
+a132 fn132(a133 var) { return var; }
+a133 fn133(a134 var) { return var; }
+a134 fn134(a135 var) { return var; }
+a135 fn135(a136 var) { return var; }
+a136 fn136(a137 var) { return var; }
+a137 fn137(a138 var) { return var; }
+a138 fn138(a139 var) { return var; }
+a139 fn139(a140 var) { return var; }
+a140 fn140(a141 var) { return var; }
+a141 fn141(a142 var) { return var; }
+a142 fn142(a143 var) { return var; }
+a143 fn143(a144 var) { return var; }
+a144 fn144(a145 var) { return var; }
+a145 fn145(a146 var) { return var; }
+a146 fn146(a147 var) { return var; }
+a147 fn147(a148 var) { return var; }
+a148 fn148(a149 var) { return var; }
+a149 fn149(a150 var) { return var; }
+a150 fn150(a151 var) { return var; }
+a151 fn151(a152 var) { return var; }
+a152 fn152(a153 var) { return var; }
+a153 fn153(a154 var) { return var; }
+a154 fn154(a155 var) { return var; }
+a155 fn155(a156 var) { return var; }
+a156 fn156(a157 var) { return var; }
+a157 fn157(a158 var) { return var; }
+a158 fn158(a159 var) { return var; }
+a159 fn159(a160 var) { return var; }
+a160 fn160(a161 var) { return var; }
+a161 fn161(a162 var) { return var; }
+a162 fn162(a163 var) { return var; }
+a163 fn163(a164 var) { return var; }
+a164 fn164(a165 var) { return var; }
+a165 fn165(a166 var) { return var; }
+a166 fn166(a167 var) { return var; }
+a167 fn167(a168 var) { return var; }
+a168 fn168(a169 var) { return var; }
+a169 fn169(a170 var) { return var; }
+a170 fn170(a171 var) { return var; }
+a171 fn171(a172 var) { return var; }
+a172 fn172(a173 var) { return var; }
+a173 fn173(a174 var) { return var; }
+a174 fn174(a175 var) { return var; }
+a175 fn175(a176 var) { return var; }
+a176 fn176(a177 var) { return var; }
+a177 fn177(a178 var) { return var; }
+a178 fn178(a179 var) { return var; }
+a179 fn179(a180 var) { return var; }
+a180 fn180(a181 var) { return var; }
+a181 fn181(a182 var) { return var; }
+a182 fn182(a183 var) { return var; }
+a183 fn183(a184 var) { return var; }
+a184 fn184(a185 var) { return var; }
+a185 fn185(a186 var) { return var; }
+a186 fn186(a187 var) { return var; }
+a187 fn187(a188 var) { return var; }
+a188 fn188(a189 var) { return var; }
+a189 fn189(a190 var) { return var; }
+a190 fn190(a191 var) { return var; }
+a191 fn191(a192 var) { return var; }
+a192 fn192(a193 var) { return var; }
+a193 fn193(a194 var) { return var; }
+a194 fn194(a195 var) { return var; }
+a195 fn195(a196 var) { return var; }
+a196 fn196(a197 var) { return var; }
+a197 fn197(a198 var) { return var; }
+a198 fn198(a199 var) { return var; }
+a199 fn199(a200 var) { return var; }
+
+int main () {
+	a200 tmp200 = 0;
+	a199 tmp199 = fn199(tmp200);
+	a198 tmp198 = fn198(tmp199);
+	a197 tmp197 = fn197(tmp198);
+	a196 tmp196 = fn196(tmp197);
+	a195 tmp195 = fn195(tmp196);
+	a194 tmp194 = fn194(tmp195);
+	a193 tmp193 = fn193(tmp194);
+	a192 tmp192 = fn192(tmp193);
+	a191 tmp191 = fn191(tmp192);
+	a190 tmp190 = fn190(tmp191);
+	a189 tmp189 = fn189(tmp190);
+	a188 tmp188 = fn188(tmp189);
+	a187 tmp187 = fn187(tmp188);
+	a186 tmp186 = fn186(tmp187);
+	a185 tmp185 = fn185(tmp186);
+	a184 tmp184 = fn184(tmp185);
+	a183 tmp183 = fn183(tmp184);
+	a182 tmp182 = fn182(tmp183);
+	a181 tmp181 = fn181(tmp182);
+	a180 tmp180 = fn180(tmp181);
+	a179 tmp179 = fn179(tmp180);
+	a178 tmp178 = fn178(tmp179);
+	a177 tmp177 = fn177(tmp178);
+	a176 tmp176 = fn176(tmp177);
+	a175 tmp175 = fn175(tmp176);
+	a174 tmp174 = fn174(tmp175);
+	a173 tmp173 = fn173(tmp174);
+	a172 tmp172 = fn172(tmp173);
+	a171 tmp171 = fn171(tmp172);
+	a170 tmp170 = fn170(tmp171);
+	a169 tmp169 = fn169(tmp170);
+	a168 tmp168 = fn168(tmp169);
+	a167 tmp167 = fn167(tmp168);
+	a166 tmp166 = fn166(tmp167);
+	a165 tmp165 = fn165(tmp166);
+	a164 tmp164 = fn164(tmp165);
+	a163 tmp163 = fn163(tmp164);
+	a162 tmp162 = fn162(tmp163);
+	a161 tmp161 = fn161(tmp162);
+	a160 tmp160 = fn160(tmp161);
+	a159 tmp159 = fn159(tmp160);
+	a158 tmp158 = fn158(tmp159);
+	a157 tmp157 = fn157(tmp158);
+	a156 tmp156 = fn156(tmp157);
+	a155 tmp155 = fn155(tmp156);
+	a154 tmp154 = fn154(tmp155);
+	a153 tmp153 = fn153(tmp154);
+	a152 tmp152 = fn152(tmp153);
+	a151 tmp151 = fn151(tmp152);
+	a150 tmp150 = fn150(tmp151);
+	a149 tmp149 = fn149(tmp150);
+	a148 tmp148 = fn148(tmp149);
+	a147 tmp147 = fn147(tmp148);
+	a146 tmp146 = fn146(tmp147);
+	a145 tmp145 = fn145(tmp146);
+	a144 tmp144 = fn144(tmp145);
+	a143 tmp143 = fn143(tmp144);
+	a142 tmp142 = fn142(tmp143);
+	a141 tmp141 = fn141(tmp142);
+	a140 tmp140 = fn140(tmp141);
+	a139 tmp139 = fn139(tmp140);
+	a138 tmp138 = fn138(tmp139);
+	a137 tmp137 = fn137(tmp138);
+	a136 tmp136 = fn136(tmp137);
+	a135 tmp135 = fn135(tmp136);
+	a134 tmp134 = fn134(tmp135);
+	a133 tmp133 = fn133(tmp134);
+	a132 tmp132 = fn132(tmp133);
+	a131 tmp131 = fn131(tmp132);
+	a130 tmp130 = fn130(tmp131);
+	a129 tmp129 = fn129(tmp130);
+	a128 tmp128 = fn128(tmp129);
+	a127 tmp127 = fn127(tmp128);
+	a126 tmp126 = fn126(tmp127);
+	a125 tmp125 = fn125(tmp126);
+	a124 tmp124 = fn124(tmp125);
+	a123 tmp123 = fn123(tmp124);
+	a122 tmp122 = fn122(tmp123);
+	a121 tmp121 = fn121(tmp122);
+	a120 tmp120 = fn120(tmp121);
+	a119 tmp119 = fn119(tmp120);
+	a118 tmp118 = fn118(tmp119);
+	a117 tmp117 = fn117(tmp118);
+	a116 tmp116 = fn116(tmp117);
+	a115 tmp115 = fn115(tmp116);
+	a114 tmp114 = fn114(tmp115);
+	a113 tmp113 = fn113(tmp114);
+	a112 tmp112 = fn112(tmp113);
+	a111 tmp111 = fn111(tmp112);
+	a110 tmp110 = fn110(tmp111);
+	a109 tmp109 = fn109(tmp110);
+	a108 tmp108 = fn108(tmp109);
+	a107 tmp107 = fn107(tmp108);
+	a106 tmp106 = fn106(tmp107);
+	a105 tmp105 = fn105(tmp106);
+	a104 tmp104 = fn104(tmp105);
+	a103 tmp103 = fn103(tmp104);
+	a102 tmp102 = fn102(tmp103);
+	a101 tmp101 = fn101(tmp102);
+	a100 tmp100 = fn100(tmp101);
+	a99 tmp99 = fn99(tmp100);
+	a98 tmp98 = fn98(tmp99);
+	a97 tmp97 = fn97(tmp98);
+	a96 tmp96 = fn96(tmp97);
+	a95 tmp95 = fn95(tmp96);
+	a94 tmp94 = fn94(tmp95);
+	a93 tmp93 = fn93(tmp94);
+	a92 tmp92 = fn92(tmp93);
+	a91 tmp91 = fn91(tmp92);
+	a90 tmp90 = fn90(tmp91);
+	a89 tmp89 = fn89(tmp90);
+	a88 tmp88 = fn88(tmp89);
+	a87 tmp87 = fn87(tmp88);
+	a86 tmp86 = fn86(tmp87);
+	a85 tmp85 = fn85(tmp86);
+	a84 tmp84 = fn84(tmp85);
+	a83 tmp83 = fn83(tmp84);
+	a82 tmp82 = fn82(tmp83);
+	a81 tmp81 = fn81(tmp82);
+	a80 tmp80 = fn80(tmp81);
+	a79 tmp79 = fn79(tmp80);
+	a78 tmp78 = fn78(tmp79);
+	a77 tmp77 = fn77(tmp78);
+	a76 tmp76 = fn76(tmp77);
+	a75 tmp75 = fn75(tmp76);
+	a74 tmp74 = fn74(tmp75);
+	a73 tmp73 = fn73(tmp74);
+	a72 tmp72 = fn72(tmp73);
+	a71 tmp71 = fn71(tmp72);
+	a70 tmp70 = fn70(tmp71);
+	a69 tmp69 = fn69(tmp70);
+	a68 tmp68 = fn68(tmp69);
+	a67 tmp67 = fn67(tmp68);
+	a66 tmp66 = fn66(tmp67);
+	a65 tmp65 = fn65(tmp66);
+	a64 tmp64 = fn64(tmp65);
+	a63 tmp63 = fn63(tmp64);
+	a62 tmp62 = fn62(tmp63);
+	a61 tmp61 = fn61(tmp62);
+	a60 tmp60 = fn60(tmp61);
+	a59 tmp59 = fn59(tmp60);
+	a58 tmp58 = fn58(tmp59);
+	a57 tmp57 = fn57(tmp58);
+	a56 tmp56 = fn56(tmp57);
+	a55 tmp55 = fn55(tmp56);
+	a54 tmp54 = fn54(tmp55);
+	a53 tmp53 = fn53(tmp54);
+	a52 tmp52 = fn52(tmp53);
+	a51 tmp51 = fn51(tmp52);
+	a50 tmp50 = fn50(tmp51);
+	a49 tmp49 = fn49(tmp50);
+	a48 tmp48 = fn48(tmp49);
+	a47 tmp47 = fn47(tmp48);
+	a46 tmp46 = fn46(tmp47);
+	a45 tmp45 = fn45(tmp46);
+	a44 tmp44 = fn44(tmp45);
+	a43 tmp43 = fn43(tmp44);
+	a42 tmp42 = fn42(tmp43);
+	a41 tmp41 = fn41(tmp42);
+	a40 tmp40 = fn40(tmp41);
+	a39 tmp39 = fn39(tmp40);
+	a38 tmp38 = fn38(tmp39);
+	a37 tmp37 = fn37(tmp38);
+	a36 tmp36 = fn36(tmp37);
+	a35 tmp35 = fn35(tmp36);
+	a34 tmp34 = fn34(tmp35);
+	a33 tmp33 = fn33(tmp34);
+	a32 tmp32 = fn32(tmp33);
+	a31 tmp31 = fn31(tmp32);
+	a30 tmp30 = fn30(tmp31);
+	a29 tmp29 = fn29(tmp30);
+	a28 tmp28 = fn28(tmp29);
+	a27 tmp27 = fn27(tmp28);
+	a26 tmp26 = fn26(tmp27);
+	a25 tmp25 = fn25(tmp26);
+	a24 tmp24 = fn24(tmp25);
+	a23 tmp23 = fn23(tmp24);
+	a22 tmp22 = fn22(tmp23);
+	a21 tmp21 = fn21(tmp22);
+	a20 tmp20 = fn20(tmp21);
+	a19 tmp19 = fn19(tmp20);
+	a18 tmp18 = fn18(tmp19);
+	a17 tmp17 = fn17(tmp18);
+	a16 tmp16 = fn16(tmp17);
+	a15 tmp15 = fn15(tmp16);
+	a14 tmp14 = fn14(tmp15);
+	a13 tmp13 = fn13(tmp14);
+	a12 tmp12 = fn12(tmp13);
+	a11 tmp11 = fn11(tmp12);
+	a10 tmp10 = fn10(tmp11);
+	a9 tmp9 = fn9(tmp10);
+	a8 tmp8 = fn8(tmp9);
+	a7 tmp7 = fn7(tmp8);
+	a6 tmp6 = fn6(tmp7);
+	a5 tmp5 = fn5(tmp6);
+	a4 tmp4 = fn4(tmp5);
+	a3 tmp3 = fn3(tmp4);
+	a2 tmp2 = fn2(tmp3);
+	a1 tmp1 = fn1(tmp2);
+	a0 tmp0 = fn0(tmp1);
+	int a = fn(tmp0);
+	return a;
+}

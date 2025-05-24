@@ -1,0 +1,9 @@
+//test memerror
+// default pointer value is null which can't be dereferenced
+
+int main() {
+  int*[] ints = alloc_array(int*, 10);
+  *ints[0] = 1;
+
+  return *ints[0];
+}

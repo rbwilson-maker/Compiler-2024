@@ -1,0 +1,9 @@
+//test error
+
+int half_price(int p) {
+    return p / 2;
+}
+
+int main() {
+    return half_price(half_price(half_price(half_price(10)));
+}

@@ -1,0 +1,23 @@
+//test error
+
+struct s {
+    int x;
+};
+
+int main() {
+    struct s *a = alloc(struct s);
+    struct s *b = alloc(struct s);
+    
+    // conditional expressions must have small type
+    // equality and disequality must compare expressions of small type
+    if (*a == *b) return 0;
+
+    // left and right sides of assignments must have small type
+    *a = *b;
+    *a = true ? *a : *b;
+
+    // expressions used as statements must have small type
+    *a;
+
+    return 1;
+}

@@ -1,0 +1,14 @@
+//test memerror
+//check null pointer dereferecne
+
+struct foo{
+    int a;
+    int b;
+};
+
+int main(){
+
+    struct foo * baz = NULL;
+    
+    return baz->a;
+}

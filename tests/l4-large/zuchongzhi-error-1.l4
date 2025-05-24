@@ -1,0 +1,16 @@
+//test error
+// struct field list cannot be initialized
+
+struct foo {
+    int bar = 0;
+};
+
+int main() {
+    struct foo f;
+    struct foo * p = alloc( struct foo );
+    f.bar = 1;
+    p->bar = f.bar + f.bar;
+    foo[] farr = alloc( struct foo , 1 );
+    farr[0] = *p;
+    return farr[0]->bar;
+}

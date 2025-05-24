@@ -1,0 +1,80 @@
+//test return 0
+// DFS
+
+typedef struct node node;
+typedef struct stack stack;
+
+
+struct node {
+  int id;
+  node*[] ns;
+};
+
+struct stack {
+  node *head;
+  stack *tail; 
+};
+
+stack *push(stack *s, node *x) {
+  stack *new_s = alloc(stack);
+  new_s->tail = s;
+  new_s->head = x;
+  return new_s;
+}
+
+node *peek(stack *s) {
+  return s->head;
+}
+
+stack *pop(stack *s) {
+  return s->tail;
+}
+
+
+bool dfs(node *graph, int x, int size) {
+  node *v = graph;
+  bool[] visited = alloc_array(bool, size);
+  stack *nexts = push(NULL, v);
+  while (nexts != NULL) {
+    v = peek(nexts);
+    nexts = pop(nexts);
+    if (!visited[v->id]) {
+      if (v->id == x) {
+        return true;
+      }
+      visited[v->id] = true;
+      for (int i = 0; i < size-1; i++) {
+        nexts = push(nexts, v->ns[i]);
+      }
+    }
+  }
+  return false;
+}
+
+int main() {
+  // create complete graph
+  node*[] V = alloc_array(node*, 10);
+  for (int i = 0; i < 10; i++) {
+    V[i] = alloc(node);
+    V[i]->id = i;
+    V[i]->ns = alloc_array(node*, 9);
+  }
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 9; j++) {
+      V[i]->ns[j] = j < i ? V[j] : V[j+1];
+    }
+  }
+
+  assert(dfs(V[0], 0, 10));
+  assert(dfs(V[0], 1, 10));
+  assert(dfs(V[0], 2, 10));
+  assert(dfs(V[0], 3, 10));
+  assert(dfs(V[0], 4, 10));
+  assert(dfs(V[0], 5, 10));
+  assert(dfs(V[0], 6, 10));
+  assert(dfs(V[0], 7, 10));
+  assert(dfs(V[0], 8, 10));
+  assert(dfs(V[0], 9, 10));
+  assert(!dfs(V[0], 10, 10));
+  return 0;
+}

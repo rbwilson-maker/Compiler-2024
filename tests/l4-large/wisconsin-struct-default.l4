@@ -1,0 +1,30 @@
+//test return 1
+
+struct B {
+    int b1;
+    bool b2;
+    int[] b3;
+};
+
+struct A {
+    int a1;
+    bool a2;
+    int* a3;
+    int** a4;
+    bool* a5;
+    struct A* a6;
+    struct B a7;
+};
+
+int main() {
+    struct A* x = alloc(struct A);
+    assert(x->a1 == 0);
+    assert(x->a2 == false);
+    assert(x->a3 == NULL);
+    assert(x->a4 == NULL);
+    assert(x->a5 == NULL);
+    assert(x->a7.b1 == 0);
+    assert(x->a7.b2 == false);
+    assert(x->a7.b3 != alloc_array(int, 0));
+    return 1;
+}

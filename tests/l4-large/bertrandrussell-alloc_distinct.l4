@@ -1,0 +1,11 @@
+//test abort
+
+int main() {
+    int* a;
+    int* b;
+    a = alloc(int);
+    b = alloc(int);
+    // should abort since alloc should give distinct addresses
+    assert(a == b);
+    return 0;
+}

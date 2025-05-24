@@ -1,0 +1,16 @@
+//test div-by-zero
+//test a program which raises SIGFPE
+int f(int n, int k);
+
+int g(int n, int k) {
+    if (k == 0 || n == 0) return 1;
+    return n * f(n-1,k-1);
+}
+
+int f(int n, int k) {
+    return g(n, k) / k;
+}
+
+int main() {
+    return f(10,3);
+}

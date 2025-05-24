@@ -1,0 +1,8 @@
+//test typecheck
+
+int main(){
+  int_struct *lol = alloc(struct tuple);
+  lol->a = 42;
+  lol->b = 0;
+  return lol->a;
+}

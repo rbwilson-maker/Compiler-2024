@@ -1,0 +1,10 @@
+//test return 2
+// Variable name can shadow the function name
+int f() {
+    int f = 2;
+    return f;
+}
+
+int main() {
+    return f();
+}

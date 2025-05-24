@@ -1,0 +1,12 @@
+//test return 0
+
+struct meh {
+  int thisTestIsLame;
+  int ikr;
+};
+
+int main() {
+  struct meh *b = alloc(struct meh);
+  b->ikr = 42;
+  return b->thisTestIsLame;
+}

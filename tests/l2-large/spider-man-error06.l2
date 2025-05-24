@@ -1,0 +1,21 @@
+//test error
+
+int main() 
+{
+    int x1; 
+    for (x1 = 0; x1 < 5; x1 += 2) {
+        int x2;
+        for (x2 = 1; x2 < 234; x2 += 3) {
+            int y1; 
+            for (y1 = 254; y1 < 256; y1 += 5) {
+                int x3; 
+                for (x3 = 541; x3 < x1; x3++) {
+                    int x4; 
+                    x4 = 234234;
+                }
+                x4 = 5679;
+            }
+        }
+    }
+    return x1;
+}

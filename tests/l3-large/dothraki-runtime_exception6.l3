@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int meep () {
+  int x = 93193;
+  int y = 10;
+  int z = 210;
+
+  if(x % (y / z) > 3){
+    return 1;
+  }
+  return 0;
+}
+
+int main() {
+  return meep();
+}

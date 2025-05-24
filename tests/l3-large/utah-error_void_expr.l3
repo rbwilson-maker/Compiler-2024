@@ -1,0 +1,12 @@
+//test error 
+// Tests that void expressions cannot appear in expressions
+
+void voidfn () {
+    return;
+}
+
+int main () {
+
+    return true ? 4 : voidfn();
+
+}

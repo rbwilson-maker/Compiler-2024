@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int main() {
+	int x = 0;
+	int y = 1;
+	while(x < 4) {
+		int z;
+		y = 2;
+		z = y*x;
+		x %= y;
+	}
+	return y;
+}

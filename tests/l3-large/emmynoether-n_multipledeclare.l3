@@ -1,0 +1,17 @@
+//test error
+
+int foo();
+
+int foo(int bar);
+
+int main() {
+    int x = 0;
+
+    if (x < 0) {
+        foo(0);
+    } else {
+        foo(x);
+    }
+
+    return foo();
+}

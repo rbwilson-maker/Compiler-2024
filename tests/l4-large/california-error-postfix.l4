@@ -1,0 +1,11 @@
+//test error
+
+struct test {
+    int a;
+};
+
+int main() {
+    struct test* icanhaserror = alloc(struct test);
+    *(icanhaserror).a++;
+    return 0;
+}

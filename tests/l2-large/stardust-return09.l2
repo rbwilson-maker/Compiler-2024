@@ -1,0 +1,18 @@
+//test return 1
+//test unop
+
+int main() {
+  int x = 21392;
+  int y = 834913743;
+  bool z;
+  if ((~x+y)!=0){
+    z = true;
+  } else {
+    z = false;
+  }
+  if (!!z) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

@@ -1,0 +1,10 @@
+//test return 8192
+// while, *= 
+int main () {
+    int a = 4;
+    int b = 7001; 
+    while (a < b) {
+        a *= 2;
+    }
+    return a; 
+}

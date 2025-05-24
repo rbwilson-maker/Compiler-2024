@@ -1,0 +1,17 @@
+//test return 5
+
+int parity (int n) {
+    return n % 2;
+}
+
+bool checkEven (int n) {
+    return 0 == parity(n);
+}
+
+int main () {
+    int x = 4;
+    int y = 6;
+    assert(checkEven(x));
+    assert(checkEven(y));
+    return 5;
+}

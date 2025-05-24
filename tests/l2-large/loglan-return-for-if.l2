@@ -1,0 +1,11 @@
+//test return 9901
+
+int main() {
+  int x = 1;
+  for (int i = 0; i < 200; i++) {
+    if (i % 2 == 0) {
+      x += i;
+    }
+  }
+  return x;
+}

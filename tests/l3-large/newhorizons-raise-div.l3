@@ -1,0 +1,11 @@
+//test div-by-zero
+// division happens inside a function call 
+
+int f(int x) {
+  return x/0;
+}
+
+int main () {
+  int y = f(411);
+  return 0;
+}

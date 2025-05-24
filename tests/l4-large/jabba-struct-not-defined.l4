@@ -1,0 +1,6 @@
+//test error
+
+int main() {
+  struct x[] = alloc_array(struct x, 0);
+  return 42;
+}

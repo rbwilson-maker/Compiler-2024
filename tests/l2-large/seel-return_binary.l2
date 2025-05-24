@@ -1,0 +1,13 @@
+//test return 3
+// Bitwise binary operators
+
+int main() {
+    int x = 1;
+    int y = 2;
+
+    int z1 = x & y;
+    int z2 = x | y;
+    int z3 = x ^ y;
+
+    return z2 - z1;
+}

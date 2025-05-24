@@ -1,0 +1,9 @@
+//test error
+// this program should fail to compile since it uses a key word as local
+// variable name
+
+int main() {
+    int x = 52;
+    int while = x + 52;
+    return while + x;
+}

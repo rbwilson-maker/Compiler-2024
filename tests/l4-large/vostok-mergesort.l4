@@ -1,0 +1,64 @@
+//test return 2084652
+// the sum of successive differences
+// runs mergesort
+
+void merge(int[] arr, int lo, int mid, int hi) {
+    int[] aux = alloc_array(int, hi - lo);
+    assert(lo < mid);
+    assert(mid < hi);
+    int idx1 = lo;
+    int idx2 = mid;
+    int overall = 0;
+    while (idx1 < mid && idx2 < hi) {
+        int e1 = arr[idx1];
+        int e2 = arr[idx2];
+        if (e1 <= e2) {
+            aux[overall] = e1;
+            idx1++;
+        } else {
+            aux[overall] = e2;
+            idx2++;
+        }
+        overall++;
+    }
+    while (idx1 < mid) {
+        aux[overall] = arr[idx1];
+        idx1++;
+        overall++;
+    }
+    while (idx2 < hi) {
+        aux[overall] = arr[idx2];
+        idx2++;
+        overall++;
+    }
+    for(int i = lo; i < hi; i++) {
+        arr[i] = aux[i - lo];
+    }
+    return;
+}
+
+void mergesort(int[] arr, int lo, int hi) {
+    if (hi - lo <= 1) {
+        return;
+    }
+    mergesort(arr, lo, (lo + hi) / 2);
+    mergesort(arr, (lo + hi) / 2, hi);
+    merge(arr, lo, (lo + hi) / 2, hi);
+}
+
+int main() {
+    int seed = 411;
+    int[] arr = alloc_array(int, 411);
+    arr[0] = seed;
+    for(int i = 1; i < 411; i++) {
+        seed = (1664525 * seed + 1013904223) % 1048576;
+        arr[i] = seed;
+    }
+    mergesort(arr, 0, 411);
+    int sum = 0;
+    for(int i = 1; i < 411; i++) {
+        assert(arr[i] >= arr[i - 1]);
+        sum += arr[i] - arr[i - 1];
+    }
+    return sum;
+}

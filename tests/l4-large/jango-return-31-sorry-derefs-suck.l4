@@ -1,0 +1,30 @@
+//test return 31
+
+struct last {
+  int winner;
+};
+
+struct innerinner2 {
+  int gap;
+  struct last* field; 
+};
+
+struct inner {
+  int gap;
+  struct innerinner2 innerinner;
+  int field2;
+}; 
+
+int main() {
+  struct inner[] A = alloc_array(struct inner, 4);
+  A[0].innerinner.gap = 20;
+  A[1].innerinner.field = alloc(struct last);
+  A[1].innerinner.field->winner = A[0].innerinner.gap;
+  A[1].innerinner.field->winner += 10;
+
+  A[1].innerinner.field->winner++;
+
+  int ret = A[1].innerinner.field->winner;
+
+  return ret;
+}

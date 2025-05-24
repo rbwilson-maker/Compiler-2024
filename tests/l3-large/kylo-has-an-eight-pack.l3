@@ -1,0 +1,60 @@
+//test return 2592005 
+
+typedef int poop;
+typedef poop butter;
+typedef butter potato;
+typedef potato what;
+
+
+butter main();
+
+butter cake(int a, int b, int c, int d, int e, int f, int g, int h, int i,
+  int j, int k, int l, int m, int n, int o, int p, int q, int r, int s,
+  int t, int u, int v, int w, int x, int y, int z) {
+  int aa = a + b + c + d % e - f ^ 0xFFFFFFFF | 0x0;
+  int bb = aa - j - k - l - m - n - o - p / 123;
+  return t*u*v*w*x*y*z*q*r*s*j*k*l / b;
+}
+
+void weh() {
+  int bloop = main();
+  return;
+}
+
+poop main() { 
+  int a=1;
+  int b=2;
+  int c=3;
+  int d=4;
+  int e=5;
+  int f=6;
+  int g=7;
+  int h=8;
+  int i=9;
+  int j=10;
+  int k=11;
+  int l=12;
+  int m=13;
+  int n=14;
+  int o=15;
+  int p=16;
+  int q=17;
+  int r=18;
+  int s=19;
+  int t=20;
+  int u=21;
+  int v=22;
+  int w=23;
+  int x=24;
+  int y=25;
+  int z=26;
+
+  potato thing = cake(1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5 , 6,
+   t, 2, 3, u, 5, 6, 1, 2, 3, 4 ,5 ,6 , 1,2);
+  
+  if (thing+a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+q+r+s+t+u+v+w+x+y+z > 1112312312) {
+    return 123;
+  } else{
+    return thing ^ k ^ t ^ z;
+  }
+}

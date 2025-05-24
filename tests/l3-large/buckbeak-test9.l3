@@ -1,0 +1,11 @@
+//test error
+int f1 (int z) {
+	int f2 (int a) {
+		return a * 2;
+	}
+	return f2(z);
+}
+
+int main() {
+	return f1(10);
+}

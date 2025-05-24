@@ -1,0 +1,19 @@
+//test return 1
+
+fpt compute_harmonic_series(fpt x) {
+	// computes harmonic series up to 1/x
+	fpt one = itof(1);
+	if (!fless(one, x))
+		return 1;
+	else {
+		fpt prev = fsub(x, one);
+		return fdiv(one, x) + compute_harmonic_series(prev);
+	}
+}
+
+int main() {
+	int x = 15411;
+	fpt ten = itof(10);
+	if (!(fless(compute_harmonic_series(itof(x)), ten))) return 1;
+	return 0;
+}

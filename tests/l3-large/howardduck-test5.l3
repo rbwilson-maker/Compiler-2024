@@ -1,0 +1,11 @@
+//test return 5050
+
+// sum the numbers from l to r with consecutive numbers separated by k
+int sum_prog(int l, int r, int k) {
+    int n = (r - l + 1) / k;
+    return n*(l+r) / 2;
+}
+
+int main() {
+    return sum_prog(0, 100, 1);
+}

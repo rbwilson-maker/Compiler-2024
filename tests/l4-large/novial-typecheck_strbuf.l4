@@ -1,0 +1,43 @@
+//test typecheck
+// use modified intbuf library
+
+int main()
+{
+  //correct versions
+  struct intbuf* testbuf1 = intbuf_new(5);
+  struct intbuf* testbuf2 = intbuf_new(8);
+
+  //emptiness test 1
+  assert(testbuf1 != NULL);
+  assert(testbuf1->limit == 5);
+  assert(testbuf1->len == 0);
+  assert(testbuf1->buf[testbuf1->len] == 0);
+  assert(is_intbuf(testbuf1) == true);
+
+  //emptiness test 2
+  assert(testbuf2 != NULL);
+  assert(testbuf2->limit == 8);
+  assert(testbuf2->len == 0);
+  assert(testbuf2->buf[testbuf2->len] == 0);
+  assert(is_intbuf(testbuf2) == true);
+
+  // construct and add elements
+  int initlim1 = testbuf1->limit;
+  for (int i = 0; i < initlim1-1; i++)
+  {
+    intbuf_add(testbuf1, 12, testbuf1->limit);
+    assert(is_intbuf(testbuf1) == true);
+    assert(testbuf1->buf[testbuf1->len] == 0);
+  }
+
+  // construct and add elements
+  int initlim2 = testbuf2->limit;
+  for (int i = 0; i < initlim1*2; i++)
+  {
+    intbuf_add(testbuf2, 12, testbuf2->limit);
+    assert(is_intbuf(testbuf2) == true);
+    assert(testbuf2->buf[testbuf2->len] == 0);
+  }
+
+  return 0;
+}

@@ -1,0 +1,13 @@
+//test return 6889
+
+int huge_args(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o)
+{
+    return (a*b+c-d << e + f >> g) - h / i % j * k - l >= m ? n * n : o >> a / 12;
+}
+
+
+int main(/**/)
+
+{
+    return huge_args(43,55,37,42,5,11,7,33,64,91,2,54,75,83,17);
+}

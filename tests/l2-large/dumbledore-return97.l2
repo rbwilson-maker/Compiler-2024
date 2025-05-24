@@ -1,0 +1,19 @@
+//test return 6
+
+int main() {
+
+    int a;
+    int b;
+    int c;
+
+    a = 4;
+    b = a - 2;
+
+    if (b == 2) {
+        c = 6;
+    } else {
+        c = 0;
+    }
+
+    return c;
+}

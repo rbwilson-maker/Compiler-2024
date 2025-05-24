@@ -1,0 +1,8 @@
+//test return 0
+
+int main() {
+    int abc = 3;
+    int efg = 4;
+
+    return (efg - abc - 1);
+}

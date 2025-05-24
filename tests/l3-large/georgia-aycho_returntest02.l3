@@ -1,0 +1,30 @@
+//test return 7776
+/* get power of 6 by calling pow2 and pow3 */
+
+int pow2(int n) {
+  if(n==0) {
+    return 0;
+  }
+  if(n==1) {
+    return 2;
+  }
+  return 2*pow2(n-1);
+}
+
+int pow3(int n) {
+  if(n==0) {
+    return 0;
+  }
+  if(n==1) {
+    return 3;
+  }
+  return 3*pow3(n-1);
+}
+
+int pow6(int n){
+  return pow2(n)*pow3(n);
+}
+
+int main() {
+  return pow6(5);
+}

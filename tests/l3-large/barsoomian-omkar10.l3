@@ -1,0 +1,23 @@
+//test return 5
+
+
+// calculates H_n
+fpt harmonic(int a) {
+    fpt zero = itof(0);
+    fpt one = itof(1);
+    fpt curr = itof(a);
+    fpt result = itof(0);
+    while(fless(0, curr)) {
+        // result += 1/curr
+        result = fadd(result, fdiv(one, curr));
+        // curr++
+        curr = fsub(curr, one);
+    }
+    return result;
+}
+
+int main() {
+    fpt h_100 = harmonic(100);
+    print_fpt(h_100);
+    return ftoi(h_100);
+}

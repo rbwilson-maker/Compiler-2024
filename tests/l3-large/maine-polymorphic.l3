@@ -1,0 +1,16 @@
+//test return 0
+//try differing declarations of functions
+
+typedef int baloo;
+
+int ha(int x, int y);
+
+int ha(int x, baloo a)
+{
+  return x * a;
+}
+
+int main()
+{
+   return ha(0,1337);
+}

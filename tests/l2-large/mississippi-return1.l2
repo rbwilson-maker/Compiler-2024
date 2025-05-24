@@ -1,0 +1,15 @@
+//test return 1445263496
+int main() {
+    int x = 1;
+    int y = 1;
+    int z = 2;
+    int i = 0;
+    while (i < 100) {
+        z = x + y;
+        x = y;
+        y = z;
+        i++;
+    }
+
+    return z;
+}

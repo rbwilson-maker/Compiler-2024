@@ -1,0 +1,19 @@
+//test return 7686
+
+int main()
+{
+  int a = 134;
+  int b = 20;
+  int c = 432 + a;
+  int d = 6789;
+  int e = 431;
+  int f = 34 + e;
+
+  if (a < 10) {
+    return 1;
+  }
+  if (b < 10) {
+    b = 0;
+  } 
+  return a % b % c - 13 + d + e + f;
+}

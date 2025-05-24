@@ -1,0 +1,13 @@
+//test return 1
+int main(){
+    int x = 5;
+    int y = 7;
+    if (x == 3 && y%(x-5)<x){
+        return 1;
+    }
+    else x++;
+    if (y == 7 || x/(y-7)==0){
+        return 1;
+    }
+    return 0;
+}

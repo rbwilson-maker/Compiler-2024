@@ -1,0 +1,60 @@
+//test return 0
+
+/**
+ * @brief This program tests the fast inverse square root.
+ *
+ * Code for fast inverse square root is obtained from Wikipedia:
+ * https://en.wikipedia.org/wiki/Fast_inverse_square_root
+ *
+ * Kevin Geng, Team Barsoomian
+ * 15-411 Fall 2020
+ */
+
+fpt Q_rsqrt(fpt number) {
+  fpt x2 = fdiv(number, itof(2));
+  fpt threehalfs = fdiv(itof(3), itof(2));
+
+  int i = number;  // reinterpret float -> int
+  i = 0x5f3759df - (i >> 1);
+
+  fpt y = i;  // reinterpret int -> float
+  y = fmul(y, fsub(threehalfs, fmul(x2, fmul(y, y))));
+  y = fmul(y, fsub(threehalfs, fmul(x2, fmul(y, y))));
+
+  return y;
+}
+
+// Uses Newton's method to compute sqrt
+fpt sqrt(fpt number) {
+  fpt x = number;
+  fpt half = fdiv(itof(1), itof(2));
+
+  for (int t = 0; t < 10; t++) {
+    x = fmul(fadd(x, fdiv(number, x)), half);
+  }
+
+  return x;
+}
+
+void check_values(fpt[] arr, int len) {
+  fpt target = itof(1);
+  fpt epsilon = fdiv(itof(1), itof(100));
+
+  for (int i = 0; i < len; i++) {
+    fpt res = fmul(Q_rsqrt(arr[i]), sqrt(arr[i]));
+    assert(fless(fsub(target, epsilon), res) &&
+           fless(res, fadd(target, epsilon)));
+  }
+}
+
+int main() {
+  int len = 5;
+  fpt[] arr = alloc_array(fpt, len);
+  arr[0] = fdiv(itof(1), itof(15411));
+  arr[1] = fdiv(itof(1), itof(4));
+  arr[2] = fdiv(itof(14142), itof(10000));
+  arr[3] = fdiv(itof(15411), itof(3));
+  arr[4] = itof(99999);
+  check_values(arr, len);
+  return 0;
+}

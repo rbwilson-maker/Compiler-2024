@@ -1,0 +1,16 @@
+//test return 0
+// Basic Function Test
+
+int add(int x, int y) {
+  return x - y;
+}
+
+
+int main() {
+  int w = 123;
+  int x = 456;
+  int y = 789;
+  int z = 0;
+  z = add(w, x) + add(y, z);
+  return 0;
+}

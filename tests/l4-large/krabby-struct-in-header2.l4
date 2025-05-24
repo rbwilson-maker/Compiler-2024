@@ -1,0 +1,13 @@
+//test return 7
+
+typedef struct point* pt;
+
+pt fun() {
+   return alloc(struct point);
+}
+
+int main() {
+    pt p = fun();
+    p->y = 7;
+    return p->y;
+}

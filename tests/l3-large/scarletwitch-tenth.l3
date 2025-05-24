@@ -1,0 +1,36 @@
+//test return -1865918196
+
+int complicate(int start){
+  while(start < 3000){
+    start += start * 23 - 20;
+  }
+  while(start > 3000){
+    start -= start * 23 - 20;
+  }
+  return start;
+}
+
+int main ()
+{
+  int result;
+  int x = 0;
+  int y = 0;
+
+  result = 0;
+  bool flag = false;
+  if (flag)
+    {
+      x++;
+      if (!flag)
+        y++;
+      else
+        y++;
+    }
+  else
+    x++;
+    if (flag)
+      x++;
+  result = complicate(result);
+  return result;
+}
+

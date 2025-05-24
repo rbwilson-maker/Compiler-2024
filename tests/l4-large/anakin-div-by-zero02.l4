@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int main() {
+    int[] A = alloc_array(int, 10);
+    A[0] = 42;
+    A[1] = -100;
+    A[2] = 55;
+    A[3] = 6;
+    A[4] = -3;
+    int sum = 0;
+    for (int i = 0; i < 10; i++) {
+        sum += A[i];
+    }
+    return sum / sum;
+}

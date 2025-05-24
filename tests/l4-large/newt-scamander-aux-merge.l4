@@ -1,0 +1,143 @@
+//test return 0
+
+// performs non-destructive merge sort with 1 auxiliary list.
+// also checks that the sortting is correct
+
+int get_len(int lo, int hi);
+int get_mid(int lo, int hi);
+void cp_array(int[] A, int[] B, int lo, int hi);
+void merge(int[] A, int[] B, int lo, int mid, int hi);
+void merge_sort_h(int[] L, int[] aux, int lo, int hi);
+int[] merge_sort(int[] L, int len);
+bool is_sorted_L(int[] A, int[] B, int len);
+bool is_sorted(int[] L, int len);
+bool have_same_elems(int[] A, int[] B, int len);
+int count_elem(int[] L, int elem, int len);
+
+int get_len(int lo, int hi) {
+	// lo inclusive, hi exclusive
+	return hi-lo;
+}
+
+int get_mid(int lo, int hi) {
+	// lo inclusive, hi exclusive
+	return lo + get_len(lo, hi)/2;
+}
+
+// copy A into B from lo to hi
+void cp_array(int[] A, int[] B, int lo, int hi) {
+	// lo inclusive, hi exlusive
+	for (int i = lo; i < hi; i++) {
+		B[i] = A[i];
+	}
+	return;
+}
+
+void merge(int[] A, int[] B, int lo, int mid, int hi) {
+	int i = lo;
+	int ai = lo;
+	int bi = mid;
+	while (ai < mid || bi < hi) {
+		if (ai >= mid) {
+			B[i] = A[bi];
+			bi++;
+		}
+		else if (bi >= hi) {
+			B[i] = A[ai];
+			ai++;
+		}
+		else {
+			int aelm = A[ai];
+			int belm = A[bi];
+			if (aelm < belm) {
+				B[i] = aelm;
+				ai++;
+			}
+			else {
+				B[i] = belm;
+				bi++;
+			}
+		}
+		i++;
+	}
+	return;
+}
+
+void merge_sort_h(int[] L, int[] aux, int lo, int hi) {
+	// lo inclusive, hi exclusive
+	int len = get_len(lo, hi);
+	if (len <= 1) { return ;}
+	int mid = get_mid(lo, hi);
+
+	cp_array(L, aux, lo, mid);
+	cp_array(L, aux, mid, hi);
+
+	merge_sort_h(aux, L, lo, mid);
+	merge_sort_h(aux, L, mid, hi);
+
+	merge(aux, L, lo, mid, hi);
+
+	return;
+}
+
+int[] merge_sort(int[] L, int len) {
+	int[] L_copy = alloc_array(int, len);
+	int[] aux = alloc_array(int, len);
+	cp_array(L, L_copy, 0, len);
+	merge_sort_h(L_copy, aux, 0, len);
+	return L_copy;
+}
+
+bool is_sorted(int[] L, int len) {
+	for (int i = 1; i < len; i++) {
+		if (L[i-1] > L[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+int count_elem(int[] L, int elem, int len) {
+	int count = 0;
+	for (int i = 0; i < len; i++) {
+		if (L[i] == elem) {
+			count++;
+		}
+	}
+	return count;
+}
+
+bool have_same_elems(int[] A, int[] B, int len) {
+	for (int i = 0; i < len; i++) {
+		int elem = A[i];
+		int act = count_elem(A, elem, len);
+		int bct = count_elem(B, elem, len);
+		if (act != bct) {
+			return false;
+		}
+	}
+	return true;
+}
+
+// checks if A is a sorted version of B
+bool is_sorted_L(int[] A, int[] B, int len) {
+	return is_sorted(A, len) && have_same_elems(A, B, len);
+}
+
+int main() {
+	int len = 1776;
+	int[] L = alloc_array(int, len);
+	int s = 31;
+	for (int i = 0; i < len; i++) {
+		L[i] = s;
+		s = ((s+631)*43)%257;
+	}
+	int[] res;
+	res = merge_sort(L, len);
+	if (is_sorted_L(res, L, len)) {
+		return 0;
+	}
+	else {
+		return 1;
+	}
+}

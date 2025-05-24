@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main() {
+  bool b = (2 == 1 + 1) && (3 > 2) && ((4 == 5) || true) && !false;
+  while (b) b = !b;
+  return b ? 10 : 10 << 99;
+}

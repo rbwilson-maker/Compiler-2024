@@ -1,0 +1,10 @@
+//test return 586746275
+int main () {
+  int x = 234;
+  int y = 333;
+  while (x << 3 > 20) {
+    y *= y | x;
+    x /= 2;
+  }
+  return y;
+}

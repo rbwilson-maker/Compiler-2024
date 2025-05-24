@@ -1,0 +1,20 @@
+//test return 0
+
+int main ()
+{
+  int x;
+  x = 0; 
+  x++;
+  x--;
+  int y = 7;
+
+  while (x >= -5) {
+    y -= 3;
+    x -= 2;
+  }
+
+  y--;
+  y = 3 + y;
+
+  return y;
+}

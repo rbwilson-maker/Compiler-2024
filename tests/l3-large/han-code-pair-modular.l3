@@ -1,0 +1,14 @@
+//test error
+
+int main() {
+  int left  = 1;
+  int right = 0;
+
+  int x = 21;
+  int y = 15;
+
+  assert(decodePair(left,  codePair(x, y)) == x);
+  assert(decodePair(right, codePair(x, y)) == y);
+
+  return codePair(x, y);
+}

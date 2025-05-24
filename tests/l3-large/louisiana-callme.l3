@@ -1,0 +1,18 @@
+//test return 64206
+//the FACE is the most important thing
+int max(int x, int y)
+{
+	if (x >= y)
+	{
+		return x;
+	}
+	else
+	{
+		return y;
+	}
+}
+
+int main()
+{
+	return max(0xBABE,0xFACE);
+}

@@ -1,0 +1,10 @@
+//test return 2304
+int main () {
+  int x = 323423;
+  int y = 2304;
+  bool a = (2 < 3) ? true : false;
+  bool b = x < y;
+  bool c = a || b;
+  int z = ~x;
+  return c ? y : x;
+}

@@ -1,0 +1,16 @@
+//test error
+
+int f(int decl1);
+bool f(int decl2);
+int f(int decl3);
+
+int f(int decl4) {
+	int x = 64;
+	return x * decl4;
+}
+
+int main()
+{
+	int x = 2;
+	return f(2);
+}

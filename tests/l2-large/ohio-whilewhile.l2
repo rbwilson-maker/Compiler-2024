@@ -1,0 +1,14 @@
+//test return 16
+int main () {
+  int result = 0;
+  int i = 0;
+  while (i < 4) {
+    int j = 0;
+    while (j < 4) {
+      result++;
+      j++;
+    }
+    i++;
+  }
+  return result;
+}

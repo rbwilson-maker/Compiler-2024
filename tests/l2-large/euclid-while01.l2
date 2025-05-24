@@ -1,0 +1,12 @@
+//test return 30
+//testing double guard in while loops
+
+int main(){
+  int i = 0;
+  int j = 0;
+  while (i < 10 && j < 20) {
+    i += 1;
+    j += 2;
+  }
+  return i+j;
+}

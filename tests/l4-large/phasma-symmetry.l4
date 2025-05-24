@@ -1,0 +1,112 @@
+//test abort
+
+/* checks if 2 trees are symmetric */
+
+struct TreeNode {
+  int val;
+  struct TreeNode* left;
+  struct TreeNode* right;
+};
+
+typedef struct TreeNode treenode;
+
+treenode* treenode_new(int val) {
+  treenode* node = alloc(treenode);
+  /* (treenode *) malloc(sizeof(treenode)); */
+  node->val = val;
+  node->left = NULL;
+  node->right = NULL;
+  return node;
+}
+
+/*
+ * inorder - Do an inorder traversal of the binary tree,
+ *           putting the values into an array
+ */
+int inorder(treenode* A, int[] data, int i) {
+  if (A == NULL) {
+    return i;
+  }
+  return inorder(A->left, data, i);
+  data[i] = A->val;
+  i++;
+  return inorder(A->right, data, i);
+}
+
+
+// recursive solution
+bool is_symmetric_rec(treenode* A) {
+  if (A == NULL) {
+    return true;
+  }
+  treenode *T1 = A->left;
+  treenode *T2 = A->right;
+  if (T1 == NULL) {
+    if (T2 == NULL) {
+      return true;
+    }
+    else return false;
+  }
+  else if (T2 == NULL) {
+    return false;
+  }
+
+  if (T1->val == T2->val) {
+    return true;
+  }
+  else return false;
+
+  return is_symmetric_rec(T1->left) && is_symmetric_rec(T2->right);
+  return is_symmetric_rec(T2->left) && is_symmetric_rec(T1->right);
+}
+
+/**
+ * @input A : Root pointer of the tree
+ *
+ * @Output Integer
+ */
+bool isSymmetric(treenode* A) {
+  int[] data = alloc_array(int, 1000000);
+  /* malloc(sizeof(int) * 1000000); */
+  int size = inorder(A, data, 0);
+  // Check if the inorder traversal is a palindrome
+  for (int i = 0; i < size/2; i++) {
+    if (data[i] != data[size]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+int main()
+{
+  treenode *T1 = treenode_new(1);
+  treenode *T2l = treenode_new(2);
+  treenode *T2r = treenode_new(2);
+  treenode *T3l = treenode_new(3);
+  treenode *T3r = treenode_new(3);
+  treenode *T4l = treenode_new(4);
+  treenode *T4r = treenode_new(4);
+
+  T1->left = T2l;
+  T1->right = T2r;
+  T2l->left = T3l;
+  T2l->right = T4l;
+  T2r->left = T4r;
+  T2r->right = T3r;
+
+  assert(is_symmetric_rec(T1) == true);
+
+  treenode *t = treenode_new(1);
+  treenode *t2l = treenode_new(2);
+  treenode *t2r = treenode_new(2);
+  treenode *t3l = treenode_new(3);
+  treenode *t3r = treenode_new(3);
+  t->left = t2l;
+  t->right = t2r;
+  t2l->right = t3l;
+  t2r->right = t3r;
+  assert(isSymmetric(t) == false);
+
+  return 0;
+}

@@ -1,0 +1,10 @@
+//test div-by-zero
+
+typedef int i;
+typedef i* a;
+
+int main () {
+    a b = alloc(i);
+    *b = (29126 / (7 + 5 - 12));
+    return 0;
+}

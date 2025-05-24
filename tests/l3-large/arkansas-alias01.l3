@@ -1,0 +1,11 @@
+//test error
+// should type error if the real type of alias is not match
+typedef int num;
+
+void f(num n) {
+}
+
+int main() {
+    f(true);
+    return 0;
+}

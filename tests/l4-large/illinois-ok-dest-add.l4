@@ -1,0 +1,9 @@
+//test return 100
+// it's okay to do (*d)++ however
+
+int main() {
+    int ret = 0;
+    for (int *d = alloc(int); *d < 100; (*d)++)
+        ret++;
+    return ret;
+}

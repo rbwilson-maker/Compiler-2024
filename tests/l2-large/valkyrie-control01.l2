@@ -1,0 +1,13 @@
+//test return 5
+// Count divisors
+
+int main(){
+    int x = 12;
+    int divs = 0;
+    for (int i = 1; i < x; i++){
+        if (x % i == 0){
+            divs += 1;
+        }
+    }
+    return divs;
+}

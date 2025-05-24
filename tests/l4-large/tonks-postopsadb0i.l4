@@ -1,0 +1,16 @@
+//test return 2
+
+int mess_everything_up(int *p) {
+  (*p) *= 2;
+  return 0;
+}
+
+int main() {
+  int[] arr = alloc_array(int, 10);
+  int *my_happy_pointer = alloc(int);
+  *my_happy_pointer = 1;
+  arr[mess_everything_up(my_happy_pointer)]++;
+  // if this elaborates into two function calls, the result would be 4!
+  
+  return *my_happy_pointer;
+}

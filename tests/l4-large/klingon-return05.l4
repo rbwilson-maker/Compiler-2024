@@ -1,0 +1,15 @@
+//test return 0;
+
+struct foo {
+  int bar;
+};
+
+int main() {
+  struct foo* test;
+  struct foo* t;
+  t = alloc(struct foo);
+  test = alloc(struct foo);
+  test->bar = 0;
+  (*t).bar = (*test).bar;
+  if (test == t) return 1; else return 0;
+}

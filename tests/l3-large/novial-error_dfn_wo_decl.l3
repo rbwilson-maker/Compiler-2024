@@ -1,0 +1,7 @@
+//test error
+
+int i_defined_a_nonexistent_fn(int x);
+
+int main() {
+  return i_defined_a_nonexistent_fn(2);
+}

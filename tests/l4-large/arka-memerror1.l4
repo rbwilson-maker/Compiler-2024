@@ -1,0 +1,11 @@
+//test memerror
+
+struct s {
+    int val;
+};
+
+int main() {
+    struct s* st = NULL;
+    (*st).val = 0;
+    return (*st).val;
+}

@@ -1,0 +1,9 @@
+//test return 1
+
+typedef int a;
+typedef a b;
+int main() {
+    a x = 0;
+    b y = 1;
+    return x + y;
+}

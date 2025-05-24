@@ -1,0 +1,81 @@
+//test return 68
+//implements matching 2-approx for min vertex cover
+//runs it on a graph w n=100, m =50, verifies it's a vertex cover,
+//and then returns the size
+
+
+struct e {
+    int v1;
+    int v2;
+};
+
+typedef struct e edge;
+
+void handle_covers(int v1, int v2, edge*[] edges, bool[] covered, int m) {
+
+	for (int i = 0; i < m; i ++){
+		 edge* e = edges[i];
+		 if(e->v1==v1 || e->v1 == v2 || e->v2 == v1 || e->v2 == v2) covered[i] = true;	
+	}
+
+}
+
+edge* next_uncovered(edge*[] edges, bool [] covered, int m) {
+	for (int i = 0; i < m; i++){
+		if (!covered[i]) return edges[i];
+	}
+	return NULL;
+}
+
+bool[] vertex_cover(int n, int m, edge*[] edges){
+	
+	bool[] covered = alloc_array(bool,m);
+	bool[] vcover = alloc_array(bool, n);
+ 	edge* x = next_uncovered(edges, covered, m);
+
+	while(x!=NULL) {
+		vcover[x->v1] = true;
+		vcover[x->v2] = true;
+		handle_covers(x->v1,x->v2, edges,covered,m);
+		x = next_uncovered(edges,covered, m);
+	}
+
+	return vcover;
+
+ }
+
+bool is_vc(int n, int m,  bool[] vc, edge* [] edges) {
+	for(int i =0; i<m; i++) {
+		edge* e = edges[i];
+		if(!(vc[e->v1] || vc[e->v2])) return false;
+	}
+
+	return true;
+
+}
+
+int main(){
+	int n = 100;
+	int m = 50;
+	edge* [] edges = alloc_array(edge*, 50);
+	edges[0] = alloc(edge);
+	edges[0]->v1 = 0;
+	edges[0]->v2 = 99;
+	for(int i =1; i < m; i++){
+		edges[i] = alloc(edge);
+		edges[i]->v1 = i;
+		edges[i]->v2 = 2*i;
+
+	}
+
+	bool[] vc = vertex_cover(n, m, edges);
+	assert(is_vc(n, m, vc, edges));
+
+	int num = 0;
+	for (int i =0; i < n; i++) {
+		if(vc[i]) num+=1;
+	}
+
+	return num;
+
+}

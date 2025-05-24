@@ -1,0 +1,10 @@
+//test return 1
+// test reuse variable
+int main() {
+	int a = 1;
+	for (int i = 0; i<9; i++) {
+		a++;
+		a--;
+	}
+	return a;
+}

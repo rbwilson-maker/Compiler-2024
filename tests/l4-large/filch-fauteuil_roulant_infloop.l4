@@ -1,0 +1,27 @@
+//test typecheck
+//test infloop
+
+int* interlace_system(int[] trial_size_dove_bar, int* maytag_dishmaster)
+{
+  int count = 0;
+  while(count % 2 == 0)
+  {
+    trial_size_dove_bar[0] *= 22;
+    count += 2;
+  }
+
+  return maytag_dishmaster;
+}
+
+int main()
+{
+  int* mario_incandenza = alloc(int);
+  *(mario_incandenza) = 12;
+
+  int[] les_assassins = alloc_array(int, 20);
+
+  int* psychologist = alloc(int);
+  psychologist = interlace_system(les_assassins, mario_incandenza);
+
+  return 0;
+}

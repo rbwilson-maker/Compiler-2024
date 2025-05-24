@@ -1,0 +1,28 @@
+//test return 4
+//test thistbh
+
+typedef int thistbh;
+struct thsibth {
+  thistbh thsitbh;
+  thistbh thisbth;
+  thistbh thisthb;
+  thistbh thisbht;
+};
+typedef struct thsibth tsihtbh;
+typedef tsihtbh* thitsbh;
+
+thitsbh thibsth(thitsbh thihstb) {
+  thihstb->thisthb = thihstb->thsitbh / thihstb->thisbth;
+  thihstb->thisbht = thihstb->thsitbh % thihstb->thisbth;
+  return thihstb;
+}
+
+thistbh main() {
+  thitsbh thsithb = alloc(tsihtbh);
+  thsithb->thsitbh = 10;
+  thsithb->thisbth = 3;
+  thsithb = thibsth(thsithb);
+  int tbhthis = thsithb->thisthb + thsithb->thisbht;
+
+  return tbhthis;
+}

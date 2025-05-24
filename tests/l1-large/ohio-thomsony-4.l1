@@ -1,0 +1,10 @@
+//test return 8888
+
+int main() {
+  int dao = 8;
+  int ming = dao * 10;
+  ming += dao;
+  dao = ming * 100;
+  dao += ming;
+  return dao;
+}

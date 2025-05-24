@@ -1,0 +1,28 @@
+//test typecheck
+// from 15122
+
+bool buflen(struct strbuf* sb)
+{
+  return true;
+}
+
+int main()
+{
+  struct strbuf* sb = NULL;
+  assert(!is_strbuf(sb));
+  sb = alloc(struct strbuf);
+  sb->limit = 2;
+  sb->buf = alloc_array(int,2);
+  sb->buf[0]=65;
+  sb->buf[1]=0;
+  sb->len = -1;
+  assert(!is_strbuf(sb));
+  sb->len = 1;
+  sb->limit = 0;
+  assert(!is_strbuf(sb));
+  
+  sb->limit = 2;
+  assert(is_strbuf(sb));
+  
+  return 0;
+}

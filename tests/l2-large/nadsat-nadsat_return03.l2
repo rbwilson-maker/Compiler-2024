@@ -1,0 +1,17 @@
+//test return 3
+
+// Test multiple return paths
+int main()
+{
+  int x;
+  int y;
+
+  x = 3;
+  y = 5;
+
+  if (x < y) {
+    return x;
+  } else {
+    return y;
+  }
+}

@@ -1,0 +1,24 @@
+//test return 2
+
+//Initialize a var by complicated flow path
+
+int main() {
+
+    int a;
+
+    if (true) {
+        if (true) {
+            a = 2;
+        } else {
+            a = 1;
+        }
+    } else {
+        if (true) {
+            a = 2;
+        } else {
+            a = 1;
+        }
+    }
+
+    return a;
+}

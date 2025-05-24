@@ -1,0 +1,345 @@
+//test return 1074808382
+
+// A solution to problem E from the ACM ICPC ECNA 2017 Regional
+
+// Since we don't have a good way of doing IO, the test case is hard-coded in
+// main.  In particular, each class name is replaced with a number, each "is-a"
+// relationship is replaced with a 0, and each "has-a" relationship is replaced
+// with a 1.
+
+/*
+Test case 1 input:
+
+13 23
+Zoo has-a Aviary
+Zoo has-a ElephantHouse
+ElephantHouse has-a Elephant
+Aviary has-a Ostrich
+Aviary has-a Mallard
+Duck is-a Bird
+Bird is-a Animal
+Mallard is-a Duck
+Ostrich is-a Bird
+Mammal is-a Animal
+Elephant is-a Mammal
+Bird has-a Beak
+Elephant has-a Trunk
+Aviary has-a Beak
+Elephant has-a Beak
+Mallard has-a Beak
+Trunk has-a Beak
+Ostrich is-a Animal
+Elephant is-a Animal
+Zoo has-a Ostrich
+Aviary is-a Zoo
+ElephantHouse has-a Trunk
+Zoo has-a Beak
+Mallard is-a Animal
+Mallard is-a Mallard
+Animal is-a Mammal
+Beak is-a Bird
+Duck is-a Animal
+Aviary has-a Mallard
+Aviary has-a Ostrich
+Bird has-a Duck
+Bird has-a Ostrich
+Mammal has-a Trunk
+Beak is-a Beak
+Bird has-a Bird
+Aviary has-a Bird
+
+
+Test case 1 output:
+
+Query 1: true
+Query 2: false
+Query 3: true
+Query 4: false
+Query 5: true
+Query 6: true
+Query 7: true
+Query 8: false
+Query 9: true
+Query 10: true
+Query 11: true
+Query 12: true
+Query 13: false
+Query 14: false
+Query 15: true
+Query 16: true
+Query 17: true
+Query 18: false
+Query 19: false
+Query 20: false
+Query 21: true
+Query 22: false
+Query 23: true
+*/
+
+void floyd_warshall(int[][] graph, int n);
+
+int main() {
+	int n = 13;
+	int m = 23;
+	int k = 12;
+
+	int[][] stmts = alloc_array(int[], n);
+	int[][] queries = alloc_array(int[], m);
+
+	int Zoo = 0;
+	int Aviary = 1;
+	int ElephantHouse = 2;
+	int Elephant = 3;
+	int Ostrich = 4;
+	int Mallard = 5;
+	int Duck = 6;
+	int Bird = 7;
+	int Animal = 8;
+	int Mammal = 9;
+	int Beak = 10;
+	int Trunk = 11;
+
+	int ISA = 0;
+	int HASA = 1;
+
+	int INFTY = 1000000000;
+
+	for (int i = 0; i < n; i++) {
+		stmts[i] = alloc_array(int, 3);
+	}
+
+	for (int i = 0; i < m; i++) {
+		queries[i] = alloc_array(int, 3);
+	}
+
+	stmts[0][0] = Zoo;
+	stmts[0][1] = HASA;
+	stmts[0][2] = Aviary;
+
+	stmts[1][0] = Zoo;
+	stmts[1][1] = HASA;
+	stmts[1][2] = ElephantHouse;
+
+	stmts[2][0] = ElephantHouse;
+	stmts[2][1] = HASA;
+	stmts[2][2] = Elephant;
+
+	stmts[3][0] = Aviary;
+	stmts[3][1] = HASA;
+	stmts[3][2] = Ostrich;
+
+	stmts[4][0] = Aviary;
+	stmts[4][1] = HASA;
+	stmts[4][2] = Mallard;
+
+	stmts[5][0] = Duck;
+	stmts[5][1] = ISA;
+	stmts[5][2] = Bird;
+
+	stmts[6][0] = Bird;
+	stmts[6][1] = ISA;
+	stmts[6][2] = Animal;
+
+	stmts[7][0] = Mallard;
+	stmts[7][1] = ISA;
+	stmts[7][2] = Duck;
+
+	stmts[8][0] = Ostrich;
+	stmts[8][1] = ISA;
+	stmts[8][2] = Bird;
+
+	stmts[9][0] = Mammal;
+	stmts[9][1] = ISA;
+	stmts[9][2] = Animal;
+
+	stmts[10][0] = Elephant;
+	stmts[10][1] = ISA;
+	stmts[10][2] = Mammal;
+
+	stmts[11][0] = Bird;
+	stmts[11][1] = HASA;
+	stmts[11][2] = Beak;
+
+	stmts[12][0] = Elephant;
+	stmts[12][1] = HASA;
+	stmts[12][2] = Trunk;
+
+	queries[0][0] = Aviary;
+	queries[0][1] = HASA;
+	queries[0][2] = Beak;
+
+	queries[1][0] = Elephant;
+	queries[1][1] = HASA;
+	queries[1][2] = Beak;
+
+	queries[2][0] = Mallard;
+	queries[2][1] = HASA;
+	queries[2][2] = Beak;
+
+	queries[3][0] = Trunk;
+	queries[3][1] = HASA;
+	queries[3][2] = Beak;
+
+	queries[4][0] = Ostrich;
+	queries[4][1] = ISA;
+	queries[4][2] = Animal;
+
+	queries[5][0] = Elephant;
+	queries[5][1] = ISA;
+	queries[5][2] = Animal;
+
+	queries[6][0] = Zoo;
+	queries[6][1] = HASA;
+	queries[6][2] = Ostrich;
+
+	queries[7][0] = Aviary;
+	queries[7][1] = ISA;
+	queries[7][2] = Zoo;
+
+	queries[8][0] = ElephantHouse;
+	queries[8][1] = HASA;
+	queries[8][2] = Trunk;
+
+	queries[9][0] = Zoo;
+	queries[9][1] = HASA;
+	queries[9][2] = Beak;
+
+	queries[10][0] = Mallard;
+	queries[10][1] = ISA;
+	queries[10][2] = Animal;
+
+	queries[11][0] = Mallard;
+	queries[11][1] = ISA;
+	queries[11][2] = Mallard;
+
+	queries[12][0] = Animal;
+	queries[12][1] = ISA;
+	queries[12][2] = Mammal;
+
+	queries[13][0] = Beak;
+	queries[13][1] = ISA;
+	queries[13][2] = Bird;
+
+	queries[14][0] = Duck;
+	queries[14][1] = ISA;
+	queries[14][2] = Animal;
+
+	queries[15][0] = Aviary;
+	queries[15][1] = HASA;
+	queries[15][2] = Mallard;
+
+	queries[16][0] = Aviary;
+	queries[16][1] = HASA;
+	queries[16][2] = Ostrich;
+
+	queries[17][0] = Bird;
+	queries[17][1] = HASA;
+	queries[17][2] = Duck;
+
+	queries[18][0] = Bird;
+	queries[18][1] = HASA;
+	queries[18][2] = Ostrich;
+
+	queries[19][0] = Mammal;
+	queries[19][1] = HASA;
+	queries[19][2] = Trunk;
+
+	queries[20][0] = Beak;
+	queries[20][1] = ISA;
+	queries[20][2] = Beak;
+
+	queries[21][0] = Bird;
+	queries[21][1] = HASA;
+	queries[21][2] = Bird;
+
+	queries[22][0] = Aviary;
+	queries[22][1] = HASA;
+	queries[22][2] = Bird;
+
+	int[][] is_fw = alloc_array(int[], k);
+	int[][] ishas_fw = alloc_array(int[], k);
+	bool[][] has = alloc_array(bool[], k);
+	bool[][] fin = alloc_array(bool[], k);
+
+	for (int i = 0; i < k; i++) {
+		is_fw[i] = alloc_array(int, k);
+		ishas_fw[i] = alloc_array(int, k);
+		has[i] = alloc_array(bool, k);
+		fin[i] = alloc_array(bool, k);
+
+		for (int j = 0; j < k; j++) {
+			is_fw[i][j] = i == j ? 0 : INFTY;
+			ishas_fw[i][j] = i == j ? 0 : INFTY;
+			has[i][j] = false;
+		}
+	}
+
+	for (int i = 0; i < n; i++) {
+		if (stmts[i][1] == ISA) {
+			if (ishas_fw[stmts[i][0]][stmts[i][2]] > 2) {
+				ishas_fw[stmts[i][0]][stmts[i][2]] = 2;
+			}
+			is_fw[stmts[i][0]][stmts[i][2]] = 1;
+		} else {
+			ishas_fw[stmts[i][0]][stmts[i][2]] = 1;
+		}
+	}
+
+	floyd_warshall(is_fw, k);
+	floyd_warshall(ishas_fw, k);
+
+	for (int i = 0; i < k; i++) {
+		for (int j = 0; j < k; j++) {
+			if (ishas_fw[i][j] == 1) {
+				for (int l = 0; l < k; l++) {
+					if (ishas_fw[j][l] < INFTY) {
+						has[i][l] = true;
+					}
+				}
+			}
+		}
+	}
+
+	for (int i = 0; i < k; i++) {
+		for (int j = 0; j < k; j++) {
+			if (is_fw[i][j] < INFTY) {
+				for (int l = 0; l < k; l++) {
+					if (has[j][l]) {
+						fin[i][l] = true;
+					}
+				}
+			}
+		}
+	}
+
+	int ret = 0;
+
+	for (int i = 0; i < m; i++) {
+		ret *= 3;
+
+		if (queries[i][1] == ISA) {
+			if (is_fw[queries[i][0]][queries[i][2]] < INFTY) {
+				ret++;
+			}
+		} else {
+			if (fin[queries[i][0]][queries[i][2]]) {
+				ret++;
+			}
+		}
+	}
+
+	return ret;
+}
+
+void floyd_warshall(int[][] graph, int n) {
+	for (int k = 0; k < n; k++) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				int d = graph[i][k] + graph[k][j];
+				if (d < graph[i][j]) {
+					graph[i][j] = d;
+				}
+			}
+		}
+	}
+}

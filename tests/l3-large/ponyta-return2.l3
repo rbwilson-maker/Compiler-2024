@@ -1,0 +1,10 @@
+//test return 42
+//extremely basic
+
+int inc(int n) {
+  return n+1;
+}
+
+int main() {
+  return inc(41);
+}

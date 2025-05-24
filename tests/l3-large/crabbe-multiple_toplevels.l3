@@ -1,0 +1,15 @@
+//test return 1
+
+typedef int JABBERWOCK;
+
+bool mimsy(JABBERWOCK a, bool b) { return b; }
+
+void slythy_toves(bool elephant, JABBERWOCK j)
+{
+    if (j > 3) j = elephant && mimsy(j, true) ? j+1 : j % 3;
+    return;
+}
+
+JABBERWOCK main () {
+    return 1;
+}

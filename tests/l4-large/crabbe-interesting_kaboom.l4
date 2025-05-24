@@ -1,0 +1,23 @@
+//test memerror
+// modify an array while it's being accessed. Always a good time.
+
+int kaboom (int[][] A) {
+    A[1] = alloc_array(int, 1);
+    return 1;
+}
+
+void fill(int[][] A, int rs, int cs) {
+    for (int r = 0; r < rs; r++) {
+        A[r] = alloc_array(int,cs);
+        for (int c = 0; c < cs; c++) {
+            A[r][c] = 7;
+        }
+    }
+}
+
+int main () {
+    int[][] A = alloc_array(int[], 3);
+    fill(A, 3, 3);
+    A[kaboom(A)][2] = 8;
+    return A[1][2];
+}

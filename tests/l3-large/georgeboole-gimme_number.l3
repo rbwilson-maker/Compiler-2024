@@ -1,0 +1,12 @@
+//test typecheck
+
+typedef int number;
+
+number gimme_number() {
+    return 123;
+}
+
+int main() {
+    number plz = gimme_number();
+    return 1 + plz;
+}

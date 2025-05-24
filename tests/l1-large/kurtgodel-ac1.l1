@@ -1,0 +1,12 @@
+//test return 0
+int main()
+{
+    int _ = 0x0BADD1E5;
+    _ /= _;
+    _ -= _;
+    int re = _ * _;
+    int urn = -_ - -_;
+    int zer = _ + _;
+    return re+urn *zer-0;
+    return 0 / 0; // unreachable
+}

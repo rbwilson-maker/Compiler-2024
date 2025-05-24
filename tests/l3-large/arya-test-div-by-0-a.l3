@@ -1,0 +1,7 @@
+//test div-by-zero
+void never_run(int r) {
+}
+int main() {
+  never_run(1 / 0);
+  return 0;
+}

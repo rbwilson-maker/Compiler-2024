@@ -1,0 +1,21 @@
+//test return 120
+
+bool is_acceptable()
+{
+  return 5==5;
+}
+
+int factorial(int x)
+{
+  if(x<=0){
+    return 1;
+  }
+  else {
+    return x * factorial(x-1);
+  }
+}
+
+int main()
+{
+  return is_acceptable() ? factorial(5) : 0;
+}

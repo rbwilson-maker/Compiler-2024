@@ -1,0 +1,17 @@
+//test div-by-zero
+//tests evaluation of passed parameters regardless of usage
+//Guard against hyper-optimization that doesn't evaluate unused parameters
+
+int add(int a, int b, int c);
+
+int main(){
+  int a = 3;
+  int b = 4;
+  int result = add(3, 4, 1/0);
+  return result;
+}
+
+int add(int a, int b, int c){
+  return a + b;
+}
+

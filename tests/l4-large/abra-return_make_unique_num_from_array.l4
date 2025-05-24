@@ -1,0 +1,78 @@
+//test return 0
+//represent an array of 5 numbers
+//as a number, and then decode that
+//number to reconstruct the array
+
+struct data {
+	int res;
+	int base;
+};
+
+int exp(int base, int exp) {
+	struct data* d = alloc(struct data);
+	d->base = base;
+	d->res = 1;
+
+	if (exp > 0)
+		for (int i = 0; i < exp; i++) {
+			d->res *= d->base;
+		}
+
+	return d->res;
+}
+
+int prime_factorise(int prime, int num) {
+	int count = 0;
+	while (num % prime == 0) {
+		count++;
+		num /= prime;
+	}
+	return count;
+}
+
+int make_number(int[] a) {
+	int[] primes = alloc_array(int, 5);
+	primes[0] = 2;
+	primes[1] = 3;
+	primes[2] = 5;
+	primes[3] = 7;
+	primes[4] = 11;
+
+	int res = 1;
+	for(int i = 0; i < 5; i++) {
+		res *= exp(primes[i], a[i]);
+	}
+	return res;
+}
+
+int[] decode_number(int num) {
+	int[] primes = alloc_array(int, 5);
+	primes[0] = 2;
+	primes[1] = 3;
+	primes[2] = 5;
+	primes[3] = 7;
+	primes[4] = 11;
+
+	int[] res = alloc_array(int, 5);
+	for (int i = 0; i < 5; i++) {
+		res[i] = prime_factorise(primes[i], num);
+		num /= exp(primes[i], res[i]);
+	}
+	return res;
+}
+
+int main() {
+	int[] mynums = alloc_array(int, 5);
+	mynums[0] = 0;
+	mynums[1] = 2;
+	mynums[2] = 4;
+	mynums[3] = 1;
+	mynums[4] = 3;
+
+	int[] res = decode_number(make_number(mynums));
+	for (int i = 0; i < 5; i++) {
+		assert(mynums[i] == res[i]);
+	}
+	return 0;
+
+}

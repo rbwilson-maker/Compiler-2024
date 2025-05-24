@@ -1,0 +1,13 @@
+//test return 0
+
+int main() {
+  int a = 0;
+  int b = 1;
+  int k = 100;
+  int d = 10;
+  int c = 30;
+  int ret = a + b / c / (a + d);
+  return ret;
+  c += 30;
+  return c;
+}

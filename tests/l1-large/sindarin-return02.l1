@@ -1,0 +1,12 @@
+//test return 6
+// test hex assignment
+int main()
+{
+  int x;
+  int y;
+
+  x = 0x3;
+  y = 0x2;
+
+  return x * y;
+}

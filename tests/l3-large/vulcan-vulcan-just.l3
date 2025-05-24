@@ -1,0 +1,14 @@
+//test typecheck
+typedef int b;
+
+a aa (int x) {
+	int d = x + x;
+	int e = x + x;
+	int f = x + x;
+	return false;
+}
+
+b main () {
+	bool res = aa(100000);
+	return 0;
+}

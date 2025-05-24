@@ -1,0 +1,19 @@
+//test error
+// from 15122
+
+struct strbuf {
+  int limit;
+  int len;
+  char[] buf;
+};
+bool is_strbuf(struct strbuf* sb);
+
+struct strbuf* strbuf_new(int init_limit);
+char[] strbuf_str(struct strbuf* sb);
+void strbuf_add(struct strbuf* sb, char[] str, int len);
+void strbuf_addstr(struct strbuf* sb, char[] str);
+
+int main() {
+    struct struct strbuf s;
+    return 0;
+}

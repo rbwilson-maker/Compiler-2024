@@ -1,0 +1,18 @@
+//test return 1
+typedef int haha;
+typedef haha hahaha;
+typedef hahaha lol;
+
+
+haha gcd(int a, int b);
+
+hahaha main(){
+  assert(gcd(4,2) == 2);
+  haha hahahaha = 1;
+  return hahahaha;
+}
+
+lol gcd(int x, int y){
+  if(y == 0) return x;
+  return gcd(y, x % y);
+}

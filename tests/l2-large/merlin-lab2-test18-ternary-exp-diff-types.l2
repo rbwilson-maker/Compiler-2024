@@ -1,0 +1,10 @@
+//test error
+
+// test to not compile due to distinct types in a ternary expression
+
+int main()
+{
+    int result = true ? 42 : (1 == 1);
+
+    return result;
+}

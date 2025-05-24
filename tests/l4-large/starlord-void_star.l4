@@ -1,0 +1,10 @@
+//test error
+
+int main() {
+  {
+    void *x;
+  }
+  int x = 150;
+  for(int i = 0; i < x; i++) alloc_array(int, x);
+  return 0;
+}

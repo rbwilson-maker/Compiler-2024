@@ -1,0 +1,11 @@
+//test return 12
+// variables reuse function name
+
+int main() {
+  int helper = 3;
+  int function = 4;
+  return helper * function;
+}
+
+int helper();
+int function();

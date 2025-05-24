@@ -1,0 +1,14 @@
+//test return 0
+
+// Test typechecking regarding NULL
+
+typedef struct s* foo;
+
+foo test(foo p) {
+    return NULL;
+}
+
+int main() {
+    struct s* s = test(NULL);
+    return 0;
+}

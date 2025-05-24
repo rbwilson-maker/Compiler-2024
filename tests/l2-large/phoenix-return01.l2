@@ -1,0 +1,13 @@
+//test return 1
+// branch conditional
+
+int main() {
+    int x = 1;
+    int y = 2;
+    int z = -100;
+    if (x - y > z) {
+        return x;
+    } else {
+        return y;
+    }
+}

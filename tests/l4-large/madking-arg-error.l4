@@ -1,0 +1,15 @@
+//test memerror
+
+// alloc initializes
+int foo (int* x, int y, int*[] z) {
+    y = *x;
+    z[0] = x;
+    *(z[0]) = y;
+    return *(z[0]);
+}
+
+int main () {
+    int* p = NULL;
+    int*[] q = alloc_array(int*, 10);
+    return foo (p, 10, q);
+}

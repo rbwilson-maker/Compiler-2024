@@ -1,0 +1,9 @@
+//test div-by-zero
+// I mean, there aren't a lot of ways to divide by 0.
+
+int main() {
+    while (1 / 0 == 0) {
+        return 0;
+    }
+    return 0;
+}

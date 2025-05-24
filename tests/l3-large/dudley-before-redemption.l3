@@ -1,0 +1,12 @@
+//test return 0
+int reccu(int aybb){
+    if (aybb == 0){
+        return 0;
+    }
+    int wansum = 1;
+    return reccu(aybb - wansum);
+}
+
+int main(){
+    return reccu(1 << 17);
+}

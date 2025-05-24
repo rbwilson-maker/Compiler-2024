@@ -1,0 +1,15 @@
+//test compile
+
+struct dub {
+	int c;
+	fpt e;
+	dub **f;
+};
+
+fpt main() {
+    dub a = alloc(struct dub );
+	print_dub(a);
+	struct dub [] g= alloc_array(struct dub, 4);
+	return dtoi(**(g[4].f));
+
+}

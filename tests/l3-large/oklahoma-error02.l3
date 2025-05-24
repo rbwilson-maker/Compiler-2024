@@ -1,0 +1,17 @@
+//test error
+//typechecking failure
+
+bool test(int x) {
+  while (false) {
+    if (false) {
+      for (int y = 0; false; y++) {
+        return 1;
+      }
+    }
+  }
+  return false;
+}
+
+int main () {
+  return 0;
+}

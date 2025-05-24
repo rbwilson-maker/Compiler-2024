@@ -1,0 +1,21 @@
+//test div-by-zero
+
+int double(int x) {
+	if (x < 32768) 
+		return double(2 * x);
+	else
+		return x;
+}
+
+int main()
+{
+  int TMIN = -2;
+  int x;
+  int overflow;
+
+  x = double(1);
+
+  TMIN = TMIN * x * x;
+  overflow = TMIN / -1;
+  return overflow;
+}

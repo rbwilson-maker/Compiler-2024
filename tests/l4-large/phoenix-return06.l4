@@ -1,0 +1,16 @@
+//test return 4098 
+//triple pointer fun
+
+int main() {
+  int x = 4098;
+  int* pointer_to_x = alloc(int);
+  *pointer_to_x = x;
+
+  int** pointer_to_pointer_to_x = alloc(int*);
+  *pointer_to_pointer_to_x = pointer_to_x;
+
+  int*** pointer_to_pointer_to_pointer_to_x = alloc(int**);
+  *pointer_to_pointer_to_pointer_to_x = pointer_to_pointer_to_x;
+
+  return ***pointer_to_pointer_to_pointer_to_x; 
+}

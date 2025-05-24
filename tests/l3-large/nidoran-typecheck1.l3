@@ -1,0 +1,11 @@
+//test error
+
+int h(int a, bool a);
+int h(int a, bool b);
+
+int h(int x, int y) { return 999;}
+
+
+int main() {
+    return 5;
+}

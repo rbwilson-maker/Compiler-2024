@@ -1,0 +1,19 @@
+//test return 0
+
+// Aliasing...
+
+void swap(int* a, int* b) {
+     *a ^= *b; *b ^= *a; *a ^= *b;
+}
+
+int main() {
+    int* i1 = alloc(int);
+    int* i2 = alloc(int);
+    *i1 += 20;
+    *i2 -= 20;
+    swap(i1, i2);
+    assert(*i1 == -20 && *i2 == 20);
+    swap(i1, i1);
+    assert(*i1 == 0);
+    return 0;
+}

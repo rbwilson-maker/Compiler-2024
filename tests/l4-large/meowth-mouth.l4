@@ -1,0 +1,14 @@
+//test return 0
+
+// It's okay for struct field names to shadow typedefs
+
+typedef struct nose * ears;
+struct nose {int eyes; struct nose *ears; struct nose **mouth;};
+
+int main(){
+    struct nose *mouth = alloc(struct nose);
+    mouth->mouth = NULL;
+    struct nose *nose = alloc(struct nose);
+    nose->ears = NULL;
+    return 0;
+}

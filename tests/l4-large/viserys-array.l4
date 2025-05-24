@@ -1,0 +1,21 @@
+//test return 101803160
+
+void random_fill(int[] array, int len) {
+  int seed = 0xFEED;
+  for (int i=0; i<len; i++) {
+    seed = (seed * 1103515245 + 12345) % 0x7FFFFFFF;
+    array[i] = seed;
+  }
+}
+
+int main() {
+  int[] b = alloc_array(int, 10000);
+
+  random_fill(b, 10000);
+  int overflow_sum = 0;
+  for (int i=0; i<10000; i++) {
+    overflow_sum += b[i];
+  }
+
+  return overflow_sum;
+}

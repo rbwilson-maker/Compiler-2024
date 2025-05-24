@@ -1,0 +1,12 @@
+typedef int INT;
+typedef int DWORD;
+typedef int QWORD;
+typedef int whatever_the_fancy_word_this_is;
+typedef whatever_the_fancy_word_this_is A;
+
+QWORD A124902(QWORD v);
+
+
+// cannot define a type that's used as a function name
+typedef A A124902;
+

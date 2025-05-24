@@ -1,0 +1,8 @@
+//test return 28
+
+// This is designed to test arithmetic left shift assignment
+int main() {
+  int a = 7;
+  a <<= 2;
+  return a;
+}

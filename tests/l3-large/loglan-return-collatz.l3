@@ -1,0 +1,21 @@
+//test return 5
+
+// this is computing the collatz function on input 5
+int col (int x) {
+  int i = 0;
+  while (x != 1) {
+    if ((x % 2) == 0) {
+        x = x / 2;
+    }
+    else {
+        x = (3 * x) + 1;
+    }
+    i = i + 1;
+  }
+  return i;
+}
+
+int main() {
+  int x = 5;
+  return col(5);
+}

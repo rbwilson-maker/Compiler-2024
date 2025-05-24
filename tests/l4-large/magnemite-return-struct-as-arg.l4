@@ -1,0 +1,19 @@
+//test return 25
+
+struct point;
+typedef struct point point;
+
+struct point {
+    int x;
+    int y;
+};
+
+int dist(point* x) {
+    return x->x * x->x + x->y * x->y;
+}
+int main() {
+    point* x = alloc(point);
+    x->x = 3;
+    x->y = 4;
+    return dist(x);
+}

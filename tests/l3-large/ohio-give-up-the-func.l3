@@ -1,0 +1,12 @@
+//test abort 
+
+int give_up(int m, int n) {
+  assert(m >= 0);
+  assert(n >= 0);
+  assert(false);
+  return 0;
+}
+
+int main() {
+  return give_up(4, 5);
+}  

@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+
+int main() {
+  int j = 3;
+  while(j>0) {
+    if(j % 2 == 0) {
+      j--;
+    }
+    else {
+      j++;
+    }
+  }
+  return j;
+}

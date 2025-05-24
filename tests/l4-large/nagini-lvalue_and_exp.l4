@@ -1,0 +1,11 @@
+//test error
+
+int[] gen() {
+    return alloc_array(int, 1);
+}
+
+int main() {
+    (gen())[10] = 10;
+    return 123;
+}
+

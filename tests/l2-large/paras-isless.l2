@@ -1,0 +1,17 @@
+//test return 0
+//datalab isless
+int main(){
+    int x = -42;
+    int y = 42;
+    int xNegYPos;
+    int yPosOrXNeg;
+    int difference;
+    y = ~y;
+    xNegYPos = x & y;
+    yPosOrXNeg = y | x;
+    difference = x + y + 1;
+    if (((xNegYPos | (yPosOrXNeg & difference)) >> 31 & 1) == 1){
+        return 0;
+    }
+    return 1;
+}

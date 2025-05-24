@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main()
+{
+  int js = 0;
+  int blnts = 84;
+  {
+    int wiz_snoop_ratio = js;
+    wiz_snoop_ratio = blnts / js;
+    return wiz_snoop_ratio;
+  }
+}

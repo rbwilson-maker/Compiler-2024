@@ -1,0 +1,21 @@
+//test return -1073741824
+
+/* Test all the precedences
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ *
+ * Mix and mingle.  
+ */
+
+int main()
+{
+    int x = 0x80000000; 
+    int y = 31; 
+    int z = 42; 
+
+    x += x << y % 32 | 2 * z << y % 70 % 32; 
+    y ^= y ^ z | 35 ^ 98 & x;
+
+    return x >> y % 3;
+}

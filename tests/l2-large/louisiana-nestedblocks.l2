@@ -1,0 +1,18 @@
+//test return 0
+
+int main()
+{
+    int z;
+    {
+        int y;
+        {
+            int x;
+            {
+                int a = 0;
+            }
+        }
+
+    }
+
+    return 0;
+}

@@ -1,0 +1,6 @@
+//test return 65535
+int main() {
+  int i = 0xFF;
+  int j = 0xFF00;
+  return i | j;
+}

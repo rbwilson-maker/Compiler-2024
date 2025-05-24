@@ -1,0 +1,11 @@
+//test return 0
+
+int main() {
+  int i = 0;
+  bool b = true;
+  for (; i<12345;) {
+    b != b;
+    i += 25;
+  }
+  return b ? 0 : i;
+}

@@ -1,0 +1,12 @@
+//test error 
+
+
+typedef int foo;
+typedef bool bar;
+
+int main() {
+  foo a = 1;
+  bar b = true;
+  what c = 10; // undeclared type
+  return c;
+}

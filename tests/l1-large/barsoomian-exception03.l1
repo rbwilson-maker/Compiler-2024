@@ -1,0 +1,34 @@
+//test div-by-zero
+int main() {
+    int o = 0;
+    int h = 14;
+    int p = 716;
+    int z = 756;
+    int e = 1088;
+    int y = 4095;
+    int v = 5832;
+    int n = 301;
+    int s = 2424;
+    int m = 4401;
+    int d = 4830;
+    int i = 7755;
+    int f = 3552;
+    int l = 5291;
+    int t = 280;
+    int b = 10020;
+    int k = 9696;
+    int j = 4624;
+    int c = 15102;
+    int a = 10982;
+    int q = 4146;
+    int w = 283;
+
+    int pwr0 = 2;               // 2**1
+    int pwr1 = pwr0 * pwr0;     // 2**2
+    int pwr2 = pwr1 * pwr1;     // 2**4
+    int pwr3 = pwr2 * pwr2;     // 2**8
+    int pwr4 = pwr3 * pwr3;     // 2**16
+
+    int pwr = pwr0 * pwr1 * pwr2 * pwr3 * pwr4;
+    return pwr / (p * e * y - z * v * t + c * k + a * q + f - pwr + h - w);
+}

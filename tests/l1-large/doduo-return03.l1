@@ -1,0 +1,15 @@
+//test return 68
+// test register allocation
+int main()
+{
+  int a = 2;
+  int b = 3;
+  int c = 4;
+  int d = 5;
+  int e = 2 * a;  // 4
+  int f = 3 * b;  // 9
+  int g = 4 * c;  // 16
+  int h = 5 * d;  // 25
+  int i = a + b + c + d + e + f + g + h;
+  return i;
+}

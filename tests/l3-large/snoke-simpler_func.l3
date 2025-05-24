@@ -1,0 +1,17 @@
+//test return 1
+
+bool hello() {
+	return main() > 0;
+}
+
+bool goodbye() {
+	assert(true);
+	return true;
+}
+
+int main() {
+	int a = 3;
+	int b = 4;
+	bool c = a < b ? goodbye() : hello();
+	return c ? 1 : 2;
+}

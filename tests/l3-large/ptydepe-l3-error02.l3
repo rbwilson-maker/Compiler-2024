@@ -1,0 +1,10 @@
+//test error
+// helper function syntax error
+
+int helper (int a)
+    return a;
+}
+
+int main (int x) {
+  return helper(x);
+}

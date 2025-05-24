@@ -1,0 +1,19 @@
+//test typecheck
+//struct definition in header
+
+int main() {
+    struct s1* e1 = alloc(struct s1);
+    struct s1* e2 = alloc(struct s1);
+    (*e1).val = 23;
+    (*e1).next = e2;
+    (*e2).val = 46;
+    (*e2).next = NULL;
+
+    int sum = 0;
+
+    for(struct s1* p = e1; p != NULL; p = (*p).next) {
+        sum += (*p).val;
+    }
+
+    return sum;
+}

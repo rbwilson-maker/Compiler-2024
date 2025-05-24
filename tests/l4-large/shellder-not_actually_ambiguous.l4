@@ -1,0 +1,11 @@
+//test return 1764
+int *foo(int bar) {
+    int *x = alloc(int);
+    *x = bar;
+    return x;
+}
+int main(){
+    int bar = 42;
+    int *foo = foo(bar * * foo(bar));
+    return *foo;
+}

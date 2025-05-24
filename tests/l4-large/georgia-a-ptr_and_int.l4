@@ -1,0 +1,17 @@
+//test return 6
+
+int pass_ptr(int * a, int b){
+  *a = b;
+  b = 0;
+  return 0;
+}
+
+int main(){
+  int * a;
+  a = alloc(int);
+  int b;
+  b = 3;
+  int c;
+  c = pass_ptr(a, b);
+  return (*a)+b;
+}

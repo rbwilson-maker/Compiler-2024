@@ -1,0 +1,11 @@
+//test return 2
+// Order of operations for divEquals
+int main() {
+    int x1 = 5;
+    int x2 = 5;
+    int y = 3;
+    int z = 1;
+    x1 /= y + z; // 1
+    x2 /= y / z; // 1
+    return x1 + x2;
+}

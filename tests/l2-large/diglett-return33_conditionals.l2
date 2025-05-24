@@ -1,0 +1,26 @@
+//test return 33
+
+int main()
+{
+bool a = true;
+bool b = false;
+bool c = a && b;
+bool d = a || b;
+bool e = a;
+bool f = b;
+bool g = !a;
+bool h = !b;
+bool i = true;
+bool j = false;
+bool k = true;
+bool l = false;
+bool m = true;
+bool n = false;
+bool o = true;
+bool p = false;
+bool q = a && b || c && d || e && f || g && h || i && j || k && l || m
+           && n || o && p;
+return 33;
+}
+
+

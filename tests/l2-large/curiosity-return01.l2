@@ -1,0 +1,14 @@
+//test return 542451256
+//test basic arithmetic operations, modular, min, max
+
+int main()
+{
+  int a=1;
+  int b=1;
+  for(int i = 1; i < 1000; i<<=1){
+    b++;
+    if((b & 0x1) == 1)
+      a *= (a^12345) | (a & 5 << 2);
+  }
+  return a;
+}

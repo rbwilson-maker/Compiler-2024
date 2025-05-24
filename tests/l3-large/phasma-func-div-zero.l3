@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int ret(int y) {
+  y = 0;
+  return y;
+}
+
+int main() {
+  int x = 8 / ret(2);
+  return 0;
+}

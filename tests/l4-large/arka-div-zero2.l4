@@ -1,0 +1,14 @@
+//test div-by-zero
+
+struct s {
+    int value;
+    int shift;
+};
+
+int main() {
+    struct s* ret = alloc(struct s);
+    (*ret).value = 1;
+    (*ret).shift = (*ret).value * 32;
+
+    return (*ret).value << (*ret).shift;
+}

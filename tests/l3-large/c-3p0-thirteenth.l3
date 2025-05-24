@@ -1,0 +1,35 @@
+//test return 8191
+
+bool recursivePrime(int p, int div, int i) {
+  if (p <= 3) return true;
+  if (i > div) return true;
+  if (p % i == 0) {
+    return false;
+  } else {
+    return recursivePrime(p, div, i+1);
+  }
+}
+
+bool isPrime(int p) {
+  int div = p / 2;
+  int i = 2;
+  return recursivePrime(p, div, i);
+}
+
+
+int largestMersennePrime(int k) {
+  if (k <= 2) {
+    return 3;
+  } else {
+    int tmp = 1;
+    tmp <<= k;
+    tmp--;
+    if (isPrime(tmp)) return tmp;
+    return largestMersennePrime(k-1); 
+  }
+}
+
+int main() {
+  return largestMersennePrime(15);
+}
+

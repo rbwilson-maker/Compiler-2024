@@ -1,0 +1,39 @@
+//test return 70
+//efficient representation of nats
+
+typedef struct nat* nat;
+
+struct nat {
+  nat prev;
+};
+
+int to_int(nat n) {
+  if (n == NULL) return 0;
+  return 1 + to_int(n->prev);
+}
+
+nat of_int(int i) {
+  if (i == 0) return NULL;
+  nat n = alloc(struct nat);
+  n->prev = of_int(i-1);
+  return n;
+}
+
+nat add(nat n1, nat n2) {
+  if (n1 == NULL) return n2;
+  nat n = alloc(struct nat);
+  n->prev = add(n1->prev, n2);
+  return n;
+}
+
+nat times(nat n1, nat n2) {
+  if (n1 == NULL) return NULL;
+  return add(n2,times(n1->prev,n2));
+}
+
+int main () {
+  nat n5 = of_int(5);
+  nat n7 = of_int(7);
+  return to_int(add(times(n5,n7),times(n7,n5)));
+
+}

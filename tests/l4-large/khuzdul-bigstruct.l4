@@ -1,0 +1,14 @@
+//test return 2786145
+
+struct thing {
+  int x;
+  bool y;
+  int z;
+  int a;
+  bool d;
+  bool b;
+};
+
+int main() {
+  return 2786145;
+}

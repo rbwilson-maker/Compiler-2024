@@ -1,0 +1,10 @@
+// math library 
+
+// computes n choose k
+int nck (int n, int k); 
+
+// returns fact(n)
+int fact (int n); 
+
+// returns inv(n) mod m
+int inv (int n, int m); 

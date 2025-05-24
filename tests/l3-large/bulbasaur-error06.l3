@@ -1,0 +1,9 @@
+//test error
+// tests using a type before its declared
+
+int main() {
+  test x = 5;
+  return x;
+}
+
+typedef int test;

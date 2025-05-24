@@ -1,0 +1,47 @@
+//test return 0
+// use lots of prints 
+
+int main () {
+  fpt x = itof(251);
+  fpt a = itof(122);
+  fpt b = itof(112);
+  fpt c = itof(411);
+  fpt d = itof(151);
+  fpt e = itof(210);
+  fpt f = itof(213);
+  fpt g = itof(410);
+
+  print_fpt(x);
+  print_hex(x);
+  print_int(ftoi(x));
+
+  print_fpt(a);
+  print_hex(a);
+  print_int(ftoi(a));
+
+  print_fpt(b);
+  print_hex(b);
+  print_int(ftoi(b));
+
+  print_fpt(c);
+  print_hex(c);
+  print_int(ftoi(c));
+
+  print_fpt(d);
+  print_hex(d);
+  print_int(ftoi(d));
+
+  print_fpt(e);
+  print_hex(e);
+  print_int(ftoi(e));
+
+  print_fpt(f);
+  print_hex(f);
+  print_int(ftoi(f));
+
+  print_fpt(g);
+  print_hex(g);
+  print_int(ftoi(g));
+
+  return 0;
+}

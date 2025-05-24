@@ -1,0 +1,21 @@
+//test error
+//checking scope of mutual recursion
+
+int arec(int i)
+{
+	if (i <= 0)
+		return 0;
+	return i+brec(i-1);
+}
+
+int brec(int i)
+{
+	if (i <= 0)
+		return 0;
+	return i-arec(i-1);
+}
+
+int main()
+{
+	return arec(5);
+}

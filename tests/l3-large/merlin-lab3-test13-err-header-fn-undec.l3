@@ -1,0 +1,6 @@
+//test error
+// missing function argument for function declared in header
+
+int main() {
+    return fn_declared_in_header();
+}

@@ -1,0 +1,14 @@
+//test div-by-zero
+int foo() {
+    int[] x = alloc_array(int, 10000);
+    return x[0];
+}
+
+int main() {
+    int x = 1;
+    for(int i = 0; i < 1000; i++) {
+        x = foo();
+    }
+    return 1/x;
+}
+

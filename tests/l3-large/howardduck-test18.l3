@@ -1,0 +1,15 @@
+//test return 35
+
+int f2 (int x, int y) {
+    return x * y;
+}
+
+int f3 (int x, int y) {
+    return f2(x % y, y);
+}
+
+int main() {
+    int m = f2(8, 12);
+    int z = f3(m, 7);
+    return z;
+}

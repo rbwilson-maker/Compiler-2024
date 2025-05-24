@@ -1,0 +1,15 @@
+//test return 3
+//Simple arithmetic and casting
+
+int main() {
+    int x;
+    int y; 
+    int z;
+
+    x = 1;
+    x = 2;
+    y = x+1;
+    z = y;
+
+    return z;
+}

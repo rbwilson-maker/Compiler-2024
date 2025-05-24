@@ -1,0 +1,21 @@
+//test return 0
+
+int main() {
+
+  int x;
+  int y;
+
+  bool z;
+
+  x = 10;
+  y = 17;
+
+  z = (x <= 17);
+
+  if (z) {
+    return 0;
+  } else {
+    return x;
+  }
+
+}

@@ -1,0 +1,14 @@
+//test abort
+//test abort within function calls
+
+void myfunc(int x) {
+    assert(x != 0);
+    if (x > 0) myfunc(- x + 1);
+    else myfunc(- x - 1);
+}
+
+int main()
+{
+  myfunc(5);
+  return 1;
+}

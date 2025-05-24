@@ -1,0 +1,31 @@
+//test return 3324
+
+bool is_it_safe_to_leave_the_bunker_and_begin_anew_in_a_twisted_radioactive_hellscape(int curies);
+int compute_radioactive_decay(int curies, int survivors, bool give_up);
+int survivors_still_holding_on_to_hope(int curies, int survivors);
+
+bool safe_to_leave_the_bunker_and_begin_anew_in_a_twisted_radioactive_hellscape(int curies) {
+  return curies < 10;
+}
+
+int main() {
+  int fourteen_hundred_megatons = 300000;
+  int got_out_while_there_was_still_time = 200;
+  return survivors_still_holding_on_to_hope(fourteen_hundred_megatons,
+      got_out_while_there_was_still_time);
+}
+
+int compute_radioactive_decay(int curies, int survivors, bool give_up) {
+  if (give_up)
+    return (curies / 3) - survivors;
+  else
+    return survivors_still_holding_on_to_hope(curies / 2, survivors - 20);
+}
+
+int survivors_still_holding_on_to_hope(int curies, int survivors) {
+  while (!safe_to_leave_the_bunker_and_begin_anew_in_a_twisted_radioactive_hellscape(curies)) {
+    curies = compute_radioactive_decay(curies, survivors, survivors > 10);
+    survivors = survivors - (3000000 / curies);
+  }
+  return survivors;
+}

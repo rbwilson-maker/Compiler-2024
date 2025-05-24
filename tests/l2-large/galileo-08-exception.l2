@@ -1,0 +1,9 @@
+//test div-by-zero
+// div by zero in dead code
+
+int main() {
+    int x = 100 / (0x1 >> 1);
+    int y = 100;
+    
+    return y + y + 100;
+}

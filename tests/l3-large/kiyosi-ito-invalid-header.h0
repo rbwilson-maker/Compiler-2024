@@ -1,0 +1,17 @@
+typedef int i1;
+typedef i1 i2;
+typedef i1 i3;
+typedef i2 i4;
+typedef i4 i8;
+typedef i8 i16;
+typedef i3 i9;
+typedef i9 i27;
+
+typedef bool i5;
+typedef i5 i25;
+
+i1 foo(i27 a, i9 b, i3 c, i16 d, i8 e, i4 f, i2 g);
+i2 foo(i27 a, i9 b, i3 c, i16 d, i8 e, i4 f, i2 g);
+i2 foo(i27 a, i9 b, i3 c, i16 d, i8 e, i4 f, i2 g);
+i2 foo(i27 a, i9 b, i3 c, i16 d, i8 e, i4 f, i2 g);
+i2 foo(i27 a, i9 b, i3 c, i16 d, i8 e, i4 f, i2 g);

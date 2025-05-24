@@ -1,0 +1,73 @@
+//test return 27078
+
+typedef struct matrix* matrix;
+struct matrix {
+  int[][] cells;
+  int w;
+  int h;
+};
+
+matrix A() {
+  int[][] res = alloc_array(int[], 7); 
+  for (int i = 0; i < 7; i++) {
+    res[i] = alloc_array(int, 10); 
+  }
+
+  for (int i = 0; i < 7; i++) {
+    for (int j = 0; j < 10; j++) {
+      res[i][j] = 7 * i * i + 2 * j + i * j;
+    }
+  }
+  matrix m = alloc(struct matrix);
+  m->w = 10;
+  m->h = 7;
+  m->cells = res;
+  return m;
+}
+
+matrix B() {
+  int[][] res = alloc_array(int[], 10); 
+  for (int i = 0; i < 10; i++) {
+    res[i] = alloc_array(int, 3); 
+  }
+
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 3; j++) {
+      res[i][j] = (i ^ j) * 3 + i * j - 3 * j;
+    }
+  }
+  matrix m = alloc(struct matrix);
+  m->w = 3;
+  m->h = 10;
+  m->cells = res;
+  return m;
+}
+
+matrix mult(matrix a, matrix b) {
+  assert(a->w == b->h);
+  int[][] res = alloc_array(int[], a->h); 
+  for (int i = 0; i < a->h; i++) {
+    res[i] = alloc_array(int, b->w); 
+  }
+
+  for (int i = 0; i < a->h; i++) {
+    for (int j = 0; j < b->w; j++) {
+      int total = 0;
+      for (int k = 0; k < a->w; k++) {
+        total += a->cells[i][k] * b->cells[k][j];
+      }
+      res[i][j] = total;
+    }
+  }
+
+  matrix m = alloc(struct matrix);
+  m->w = b->w;
+  m->h = a->h;
+  m->cells = res;
+  return m;
+}
+
+int main() {
+  matrix c = mult(A(), B()); 
+  return c->cells[4][2];
+}

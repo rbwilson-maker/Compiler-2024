@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main(){
+  int x = 0;
+  int y = 500;
+  x = (x > y)?(x/y):y/x;
+  return x;
+  
+}

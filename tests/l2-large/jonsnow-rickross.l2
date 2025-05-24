@@ -1,0 +1,15 @@
+//test return 0
+
+int main() {
+  bool deehoes = true;
+  int holdmebacknum = 0;
+  if(!deehoes)
+  {
+    holdmebacknum = 5;
+  }
+  else
+  {
+    holdmebacknum = 0;
+  }
+  return holdmebacknum;
+}

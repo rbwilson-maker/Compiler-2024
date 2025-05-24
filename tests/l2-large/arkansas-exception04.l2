@@ -1,0 +1,8 @@
+//test div-by-zero
+// overflow after shift
+int main() {
+    int a = 1;
+    int b = a << 31;
+    int c = -1;
+    return b / c;
+}

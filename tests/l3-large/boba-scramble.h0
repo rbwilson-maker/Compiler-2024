@@ -1,0 +1,4 @@
+// Byteswap for 32 bit integers from libgcc
+// https://gcc.gnu.org/onlinedocs/gccint/Integer-library-routines.html#Integer-library-routines
+int __bswapsi2 (int a);
+int putchar(int character);

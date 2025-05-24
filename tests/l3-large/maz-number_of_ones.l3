@@ -1,0 +1,18 @@
+//test return 0;
+
+// Counts the number of one bits in a 32-bit int
+int number_of_ones(int bits) {
+    bits = (bits & 0x55555555) + ((bits >> 1) & 0x55555555);
+    bits = (bits & 0x33333333) + ((bits >> 2) & 0x33333333);
+    bits = (bits & 0x0F0F0F0F) + ((bits >> 4) & 0x0F0F0F0F);
+    bits = (bits & 0x00FF00FF) + ((bits >> 8) & 0x00FF00FF);
+    bits = (bits & 0x0000FFFF) + ((bits >> 16) & 0x0000FFFF);
+
+    return bits;
+}
+
+int main() {
+    assert(number_of_ones(-1) == 32);
+    assert(number_of_ones(25) == 3);
+    return 0;
+}

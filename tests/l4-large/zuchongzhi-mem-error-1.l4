@@ -1,0 +1,10 @@
+//test memerror
+struct foo {
+    int bar;
+};
+
+int main() {
+    struct foo *[] f = alloc_array( struct foo * , 114514 );
+    f[114514] = alloc(struct foo);
+    return f[114513]->bar;
+}

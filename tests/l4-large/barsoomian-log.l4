@@ -1,0 +1,31 @@
+//test return 16
+
+struct log {
+    int current;
+    struct log* next;
+};
+
+struct log* recurse(struct log* in) {
+    if((*in).current == 0)
+        return NULL;
+    struct log *new = alloc(struct log);
+    new->current = in->current / 2;
+    in->next = recurse(new);
+    return in;
+}
+
+struct log* calc_log(int n)
+{
+    struct log* result = alloc(struct log);
+    result->current = n;
+    return recurse(result);
+}
+
+int main() {
+    struct log* chain = calc_log(0x15411);
+    int len = 0;
+    for(struct log* curr = chain; chain != NULL; chain = chain->next) {
+        len++;
+    }
+    return len - 1;
+}

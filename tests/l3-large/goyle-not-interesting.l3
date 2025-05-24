@@ -1,0 +1,17 @@
+//test return 125
+
+// Calculate the ackermann function on a small input.
+
+int ackermann(int m, int n) {
+  if (m == 0)
+    return n+1;
+  if (n == 0)
+    return ackermann(m-1, 1);
+  return ackermann(m-1, ackermann(m, n-1));
+}
+
+int main() {
+  int m = 3;
+  int n = 4;
+  return ackermann(m, n);
+}

@@ -1,0 +1,121 @@
+//test memerror
+
+// Did you know?
+// At the time of its construction, the Washington monument was the tallest
+// building in the world.
+
+// 8 bytes
+struct induct0 {
+    int x;
+    int y;
+};
+
+// 2 * 8 bytes
+struct induct1 {
+    struct induct0 x;
+    struct induct0 y;
+};
+
+// 2^2 * 8 bytes
+struct induct2 {
+    struct induct1 x;
+    struct induct1 y;
+};
+
+struct induct3 {
+    struct induct2 x;
+    struct induct2 y;
+};
+
+struct induct4 {
+    struct induct3 x;
+    struct induct3 y;
+};
+
+struct induct5 {
+    struct induct4 x;
+    struct induct4 y;
+};
+
+struct induct6 {
+    struct induct5 x;
+    struct induct5 y;
+};
+
+struct induct7 {
+    struct induct6 x;
+    struct induct6 y;
+};
+
+struct induct8 {
+    struct induct7 x;
+    struct induct7 y;
+};
+
+struct induct9 {
+    struct induct8 x;
+    struct induct8 y;
+};
+
+struct induct10 {
+    struct induct9 x;
+    struct induct9 y;
+};
+
+struct induct11 {
+    struct induct10 x;
+    struct induct10 y;
+};
+
+struct induct12 {
+    struct induct11 x;
+    struct induct11 y;
+};
+
+struct induct13 {
+    struct induct12 x;
+    struct induct12 y;
+};
+
+struct induct14 {
+    struct induct13 x;
+    struct induct13 y;
+};
+
+struct induct15 {
+    struct induct14 x;
+    struct induct14 y;
+};
+
+struct induct16 {
+    struct induct15 x;
+    struct induct15 y;
+};
+
+struct induct17 {
+    struct induct16 x;
+    struct induct16 y;
+};
+
+struct induct18 {
+    struct induct17 x;
+    struct induct17 y;
+};
+
+// 2^19 * 8 = 0x400000
+struct induct19 {
+    struct induct18 x;
+    struct induct18 y;
+};
+
+struct foo {
+    struct induct19 x;
+    // Guess what's at 0x400000? Valid memory, the .text section.
+    int y;
+};
+
+int main() {
+    struct foo *f = NULL;
+    f->y;
+    return 0;
+}

@@ -1,0 +1,40 @@
+//test return 4093
+
+struct memotable {
+  int rows;
+  int cols;
+  int[][] table;
+};
+
+/* Compute the ackerman function (memoized to make it "fast") */
+int acker(int x, int y, struct memotable* memo) {
+  if (x < memo->rows && y < memo-> cols && memo->table[x][y] > 0)
+    return memo->table[x][y];
+
+  return  (x > 0) ? acker(x-1, (y > 0) ? acker(x, y-1, memo) : 1, memo) : y+1; 
+}
+
+/* Faster computation of the third row of acker */
+int acker3(int y) {
+  return (1 << y + 3) - 3;
+}
+ 
+int main() {
+  /* Allocate memoization table */
+  struct memotable* memo = alloc(struct memotable);
+  memo->rows = 4;
+  memo->cols = 4096;
+  memo->table = alloc_array(int[], memo->rows);
+  
+  for (int i = 0; i < memo->rows; i++)
+    memo->table[i] = alloc_array(int, memo->cols);
+
+  assert(acker(3,3, memo) == acker3(3));
+  assert(acker(3,4, memo) == acker3(4));
+  assert(acker(3,5, memo) == acker3(5));
+  assert(acker(3,6, memo) == acker3(6));
+  assert(acker(3,7, memo) == acker3(7));
+  assert(acker(3,8, memo) == acker3(8));
+
+  return acker(3, 9, memo);
+}

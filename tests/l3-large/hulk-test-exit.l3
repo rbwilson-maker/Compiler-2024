@@ -1,0 +1,27 @@
+//test typecheck
+
+int inc(int a){
+  return a + 1;
+}
+
+int inc_5(int a){
+  return inc(inc(inc(inc(inc(a)))));
+}
+
+int all_ops(int a, int b, int c, int d){
+  return a + b - c * d;
+}
+
+int main() {
+
+  int a = inc_5(10);
+  int b = inc_5(a * 14);
+  int c = 1241 * 123;
+  int d = inc(c);
+
+  int abcd = all_ops(a,b,c,d);
+
+  exit(0);
+
+  return abcd;
+}

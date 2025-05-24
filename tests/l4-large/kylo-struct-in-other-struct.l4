@@ -1,0 +1,18 @@
+//test memerror
+
+struct T {
+  int *z;
+};
+
+struct S {
+  int a;
+  int b;
+  int *c;
+  int *d;
+  struct T e;
+};
+
+int main() {
+  struct S *B = alloc(struct S);
+  return *(B->e.z);
+}

@@ -1,0 +1,11 @@
+//test typecheck
+
+int f(int x, bool c){
+    do_nothing();
+    if(c && always_true()) return x;
+    else return -x;
+}
+
+int main(){
+    return f(3, false);
+}

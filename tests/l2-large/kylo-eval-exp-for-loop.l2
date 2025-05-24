@@ -1,0 +1,9 @@
+//test return 12
+
+int main(){
+  int x = 5;
+  for(x++; x < 10; x == 1){
+    x = x + 3;
+  }
+  return x;
+}

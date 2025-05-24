@@ -1,0 +1,19 @@
+//test return 0
+
+int main() {
+	
+	int x;
+	int y;
+	int z;
+	int i;
+	i = 0;
+
+	while(true) {
+	    x = 3;
+	    y = 2;
+	    if ((x + y) > 0) i--;
+	    if (i < 0) return 0;
+	}
+
+	return 0;
+}

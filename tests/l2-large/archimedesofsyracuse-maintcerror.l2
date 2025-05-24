@@ -1,0 +1,7 @@
+//test error
+// Error during type-check: returning bool for main
+
+int main() {
+  bool x = (42 >= 2);
+  return x;
+}

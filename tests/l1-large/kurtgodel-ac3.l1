@@ -1,0 +1,13 @@
+//test return 0
+/*
+    /*
+    // */ <- is this really balanced?
+*/
+int main()
+{{{
+    int x = 1;
+    {{{
+        (((x))) -= (((x))); // brackets around lvalue
+        {{{ return x; }}} // more brackets
+    }}}
+}}}

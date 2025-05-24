@@ -1,0 +1,30 @@
+//test return 1
+
+bool iseven (int x);
+
+bool isodd (int x) {
+    if (x == 1) {
+       return true;
+    }
+    if (x == 0) {
+       return false;
+    }   
+    return (iseven (x - 1));
+}
+
+bool iseven (int x) {
+    if (x == 0) {
+       return true;
+    }
+    if (x == 1) {
+       return false;
+    }
+    return isodd (x - 1);
+}
+
+int main () {
+    if (iseven (10)) {
+       return 1;
+    }
+    return 0;
+}

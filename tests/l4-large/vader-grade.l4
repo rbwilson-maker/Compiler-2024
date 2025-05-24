@@ -1,0 +1,26 @@
+//test return 100
+struct Grade {
+  int test;
+  int hw;
+};
+
+struct Class {
+  struct Grade* grade1;
+  struct Grade* grade2;
+};
+
+struct Student {
+  struct Class* class1;
+  struct Class* class2;
+};
+
+int main() {
+  struct Grade* grade = alloc(struct Grade);
+  grade->test = 100;
+  struct Class* class = alloc(struct Class);
+  class->grade1 = grade;
+  struct Student* student = alloc(struct Student);
+  student->class1 = class;
+  return student->class1->grade1->test;
+}
+

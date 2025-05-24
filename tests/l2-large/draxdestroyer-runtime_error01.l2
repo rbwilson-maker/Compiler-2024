@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+    int a = 0xffff;
+    if (true) {
+        while (a !=0) {
+            a >>= 2;
+            a &= 0x8000;
+        }
+        a /= a;
+    }
+    return a;
+}

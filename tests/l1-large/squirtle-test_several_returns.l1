@@ -1,0 +1,18 @@
+//test return 3
+//test several returns
+
+int main() {
+    int x1;
+    int x2;
+    int x3;
+    int x4;
+
+    x1 = 1;
+    x2 = 1;
+    x2 += x2;
+    x3 = x1 + x2;
+    return x3; /* should return 3 */
+    return x2; /* this should not execute */
+    x4 = 1 / (x2 - 2 * x1); /* division by 0, this should not execute */
+    return x4; /* should not execute */
+}

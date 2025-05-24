@@ -1,0 +1,21 @@
+//test typecheck
+
+int main(){
+
+  vertex[] v1 = alloc_array(vertex, 3);
+  vertex[] v2 = alloc_array(vertex, 3);
+  vertex[] v3 = alloc_array(vertex, 3);
+
+  v1[1] = 1;
+  v2[0] = 1;
+  v3[1] = 1;
+  v2[2] = 1;
+
+  graph g = alloc_array(vertex[], 3);
+  g[0] = v1;
+  g[1] = v2;
+  g[2] = v3;
+
+  return DFS(g, 0, 2);
+  
+}

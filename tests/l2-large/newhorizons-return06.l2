@@ -1,0 +1,9 @@
+//test return 100
+// basic while loop 
+int main() {
+    int x = 42; 
+    while (x < 100) {
+        x++;
+    }
+    return x; 
+}

@@ -1,0 +1,16 @@
+//test memerror
+
+int meep () {
+  int[] mop = alloc_array(int, 3);
+  mop[0] = 93193;
+  mop[1] = 10;
+  mop[2] = 210;
+
+  mop[3] = mop[0] + mop[1] - mop[2];
+
+  return mop[3];
+}
+
+int main() {
+  return meep();
+}

@@ -1,0 +1,9 @@
+//test return 2147483647
+// int max sum
+int main()
+{
+  int a = 1073741824;
+  int b = 1073741823;
+  int c = -2147483648 - 2147483648;
+  return a + b + c;
+}

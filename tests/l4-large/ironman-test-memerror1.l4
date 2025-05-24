@@ -1,0 +1,19 @@
+//test memerror 
+
+struct t{
+    int y;
+};
+
+struct s {
+    int x;
+    struct t* st;
+};
+
+
+int main(){
+    struct t* s1 = NULL;
+    struct s* s2 = alloc(struct s); 
+    s2->st = s1;
+    (*s2).st->y = 0;
+    return 1;
+}

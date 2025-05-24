@@ -1,0 +1,48 @@
+//test return 37
+
+/*
+    I was at the interview for a job as a TA for 15-411 Compiler Design. As soon
+    as I walked in, Jan told me, "You know what? For every month in the year -
+    of which there are twelve - I have met an applicant who was born in that
+    month." He seemed proud of his achievement. "Enough chitchat," he continued,
+    although I have not yet spoken a word, "Let's begin the interview."
+
+    I do not know what, if there were any, his intent was behind that
+    information, but I could tell he has quite a lot of applicants. But how many
+    exactly? The answer obviously has to be at least twelve, but twenty? Or
+    maybe thirty? Or perhaps even more? What is the expected number of
+    applicants he has talked to so far? To estimate my Teaching Assistantship
+    prospects, I decided to tackle this problem.
+*/
+
+/*  Returns the expectation of a geometric random variable with probability of
+    success `success_p`. The probability mass function for a geometric random
+    variable P(k) gives the probability that one obtains the first success after
+    k-1 failures carrying out an experiment repeatedly. */
+fpt geom_dist_exp(fpt success_p) {
+    return fdiv(itof(1), success_p);
+}
+
+/*  Returns the average number of applicants Jan has talked to. If we model the
+    number of applicants Jan has talked to as a random variable X, then X is the
+    sum of 12 geometric random variables X_i where each X_i represents the
+    number of applicants Jan has to talk to meet someone born in a different
+    month after having met people born in i distinct months, for 0 <= i < 12.
+    Expectation is linear. */
+fpt calc_exp() {
+    fpt res = itof(0);
+
+    for (int i = 0; i < 12; i++) {
+        fpt num_months = itof(12);
+        fpt remaining_months = fsub(num_months, itof(i));
+        fpt success_p = fdiv(remaining_months, num_months);
+
+        res = fadd(res, geom_dist_exp(success_p));
+    }
+
+    return res;
+}
+
+int main() {
+    return ftoi(calc_exp());
+}

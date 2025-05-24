@@ -1,0 +1,16 @@
+//test return 321
+// reverse the decimal representation of the number 123
+
+int flip(int n) {
+  int result = 0;
+  while (n > 0) {
+    result += n % 10;
+    result *= 10;
+    n /= 10;
+  }
+  return result / 10;
+}
+
+int main() {
+  return flip(123);
+}

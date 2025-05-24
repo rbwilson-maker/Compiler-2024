@@ -1,0 +1,26 @@
+//test return 1
+
+/* Zero-initialization check */
+struct someints {
+  int a;
+  int b;
+  int c;
+  int d;
+};
+
+int main() {
+  int[] arr = alloc_array(int, 10);
+  for(int i = 0; i < 10; i++) {
+    assert(arr[i] == 0);
+  }
+
+  struct someints[] arr2 = alloc_array(struct someints, 10);
+  for(int i = 0; i < 10; i++) {
+    assert(arr2[i].a == 0);
+    assert(arr2[i].b == 0);
+    assert(arr2[i].c == 0);
+    assert(arr2[i].d == 0);
+  }
+
+  return 1;
+}

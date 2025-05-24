@@ -1,0 +1,9 @@
+//test typecheck
+//test infloop
+
+int main(){
+    while(37 >= (1 + 1)){
+             int x = 37;
+    }
+    return 0;
+}

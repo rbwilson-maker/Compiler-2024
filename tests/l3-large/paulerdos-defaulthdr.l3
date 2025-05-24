@@ -1,0 +1,13 @@
+//test return 1077936128
+
+fpt newadd(int a, int b) {
+    return fadd(b, a);
+}
+
+int newdiv(fpt x, fpt y) {
+    return fdiv(y, x);
+}
+
+int main() {
+    return newdiv(newadd(1, 2), newadd(newadd(3, 3), 3));
+}

@@ -1,0 +1,12 @@
+//test error
+
+struct self {
+  bool flag;
+  struct self* me;
+};
+
+int main(){
+  struct self* self;
+  self->me->me->me->me->flag = true;
+  return self->flag ? 10 : 100;
+}

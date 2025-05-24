@@ -1,0 +1,14 @@
+//test div-by-zero
+
+typedef int iiti(int x, int z);
+
+int div(int x, int y)
+{
+  return x / y;
+}
+
+int main()
+{
+  iiti* p = (&div);
+  return (*p)(251,0);
+}

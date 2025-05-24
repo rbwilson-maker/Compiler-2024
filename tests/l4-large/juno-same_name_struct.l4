@@ -1,0 +1,12 @@
+//test error
+
+// Struct fields cannot have the same name
+
+struct a {
+    int b;
+    bool b;
+};
+
+int main () {
+    return 0;
+}

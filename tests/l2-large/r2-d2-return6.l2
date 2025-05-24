@@ -1,0 +1,15 @@
+//test return 32
+
+int main()
+{
+  int a = 1;
+  int b = 1;
+  int count = 5;
+  int i = 0;
+  while (i < count) {
+  	a = a + b; // 2,3,5,8,13
+	b = a;
+	i++;
+  }
+  return a;
+}

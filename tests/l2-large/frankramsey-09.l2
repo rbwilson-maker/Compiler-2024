@@ -1,0 +1,7 @@
+//test error
+//int as bool
+
+int main() {
+    int x = 15411;
+    return x ? 15 : 411;
+}

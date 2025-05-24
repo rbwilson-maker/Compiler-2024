@@ -1,0 +1,40 @@
+//test error
+// test that a "polymorphic" stack requires a type for certain operations
+//		"contents" does not commit to an exact form until needed
+
+/*    HEADER-polymorphic    */
+struct contents;	//"polymorphic" contents; exact type to be decided later
+struct _stackNode {
+	struct contents* val;
+	struct _stackNode* next;
+};
+struct stack {
+	struct _stackNode* top;
+};
+void push(struct stack* stack, struct contents* value);
+struct contents* pop(struct stack* stack);
+
+
+/*    MAIN-specific    */
+int main() {
+	struct stack* s = alloc(struct stack);
+	struct contents* c = alloc(struct contents);
+	push(s, c);
+	return 4;
+}
+
+
+/*    FUNCTIONS-polymorphic    */
+void push(struct stack* s, struct contents* v) {
+	struct _stackNode* newNode = alloc(struct _stackNode);
+	newNode->val = v;
+	newNode->next = s->top;
+	s->top = newNode;
+}
+struct contents* pop(struct stack* s) {
+	if (s->top == NULL)
+		return NULL;
+	struct contents* toReturn = s->top->val;
+	s->top = s->top->next;
+	return toReturn;
+}

@@ -1,0 +1,39 @@
+//test typecheck
+//test infloop
+
+
+int test(int var);
+int test(int va);
+int test(int v);
+int test(int var);
+int test(int v);
+int test(int vr);
+int test(int var);
+int test(int var);
+int test(int var);
+int test(int var);
+int four(int tes);
+int test(int a) {
+  return four(a);
+}
+
+int five(int tes);
+int six (int tes);
+
+int four(int tes) {
+  if (tes > 0)
+    return five(tes);
+  else
+    return six(tes);
+}
+
+int five(int tes) {
+  return four(-1 * tes);
+}
+
+int six (int tes) {
+  return test(-1 * tes);
+}
+int main() {
+  return four(1);
+}

@@ -1,0 +1,9 @@
+//test error
+
+int mainn() { 
+    int x=2;
+    int y=3*x-1;
+    int z=3/(x-2);
+    return 1;
+ }
+

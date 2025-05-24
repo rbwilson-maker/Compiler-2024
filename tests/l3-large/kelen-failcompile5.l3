@@ -1,0 +1,14 @@
+//test error
+
+// Try to reference typedef from inside scope
+
+bool helper(){
+    return true;
+}
+
+int main(){
+
+    int x = 1;
+    if (x == helper()) return 0;
+    return x;
+}

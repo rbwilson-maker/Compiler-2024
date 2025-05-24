@@ -1,0 +1,14 @@
+//test return 0;
+
+int addone(int* i){
+  (*i)++;
+  return *i;
+}
+
+int main() { 
+  int n = 5;
+  int[] arr = alloc_array(int, n);
+  int* i = alloc(int);
+  *i = 3;
+  return arr[4];
+ }

@@ -1,0 +1,39 @@
+//test return 10
+
+void swap(int[] array, int a, int b) {
+	int save = array[a];
+	array[a] = array[b];
+	array[b] = array[a];
+}
+
+int divide(int[] array, int a, int b) {
+	int pivot = (a+b)/2;
+	int pivotVal = array[pivot];
+	swap(array, pivot, b);
+	int where = a;
+	for (int i = a; i < b; i++) {
+		if(array[i] < pivotVal) {
+			swap(array, i, where);
+			where++;
+		}
+	}
+	swap(array, b, where);
+	return where;
+}
+
+void quicksort(int[] array, int a, int b) {
+	if (a < b) {
+		int p = divide(array, a, b);
+		quicksort(array, a, p-1);
+		quicksort(array, p+1, b);
+	}
+}
+
+int main() {
+	int[] list = alloc_array(int, 10);
+	for (int i = 0; i < 10; i++) {
+		list[i] = 10 - i;
+	}
+	quicksort(list, 0, 9);
+	return list[3];
+}

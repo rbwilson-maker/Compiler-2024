@@ -1,0 +1,9 @@
+//test error
+// illegal variable name
+int main()
+{
+  int 232x;
+  int ,;.y;
+  232x = 1;
+  return 232x;
+}

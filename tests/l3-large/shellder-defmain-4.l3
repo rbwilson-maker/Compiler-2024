@@ -1,0 +1,7 @@
+//test compile
+typedef int boolean;
+boolean main();
+
+int main() {
+  return main();
+}

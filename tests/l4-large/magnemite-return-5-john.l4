@@ -1,0 +1,17 @@
+//test return 23
+
+int *dereference(int **x) {
+  return *x;
+}
+
+int **why_would_you_ever_write_this_function(int ***x) {
+  return *x;
+}
+
+int main() {
+  int ***d = alloc(int **);
+  *d = alloc(int *);
+  **d = alloc(int);
+  ***d = 23;
+  return *dereference(why_would_you_ever_write_this_function(d));
+}

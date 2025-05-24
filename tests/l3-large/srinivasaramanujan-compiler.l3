@@ -1,0 +1,23 @@
+//test compile
+
+int sample(int a, int b, int c, int d);
+
+// No definition for sum
+
+int sample(int x, int y, int z, int w) {
+    if (x > y) {
+        return y + z + w;
+    } else {
+        return y + x + 2;
+    }
+}
+
+int sum(int a, int b) {
+    int val = a + b + (a * b) - (a - b);
+    return val;
+}
+
+int main() {
+    int val = sum(10, 20) + sample(5, 6, 7, 100000);
+    return val;
+}

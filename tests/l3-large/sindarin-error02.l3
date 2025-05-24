@@ -1,0 +1,16 @@
+//test error
+// Incorrect use of void type
+int main()
+{
+  int x;
+  int y;
+  void z;
+
+  x = 1;
+  y = 2;
+
+  if (x == y) 
+    return x;
+  
+  return y;
+}

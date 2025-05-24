@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main(){
+	
+	int a = 10;
+	int b = 5000;
+
+	while(b > 0){
+		b = b - 1;
+	}
+	return a/b;
+}

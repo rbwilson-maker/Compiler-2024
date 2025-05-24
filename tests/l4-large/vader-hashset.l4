@@ -1,0 +1,38 @@
+//test return 0
+
+// implements a rudimentary int hash set and tests it on a simple case.
+
+typedef int[] hashset;
+
+hashset init() {
+    return alloc_array(int, 37);
+}
+
+void put(hashset ht, int value) {
+    int ind = value % 37;
+    while (ht[ind] != 0) {
+        if (ht[ind] == value)
+            return;
+        ind += 1;
+    }
+    ht[ind] = value;
+}
+
+bool has(hashset ht, int value) {
+    int ind = value % 37;
+    while (ht[ind] != 0) {
+        if (ht[ind] == value)
+            return true;
+        ind += 1;
+    }
+    return false;
+}
+
+int main() {
+    hashset set = init();
+    put(set, 100);
+    assert(has(set, 100));
+    assert(!has(set, 10));
+    return 0;
+}
+

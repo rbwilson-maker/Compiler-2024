@@ -1,0 +1,22 @@
+//test return 10
+
+int main() {
+    int x = 5;
+    int y = x + 5;
+    int z = -(y * 2);
+    int q = -(-8);
+    int p = 3;
+    int mod = q % p; //comment
+
+    // this is a comment
+    /* this is also a comment */
+
+    // x = 5, y = 10, z = -20, q = 8, p = 3, mod = 2
+
+    p *= 12;
+    p /= 9;
+    y %= ((1 * 0) + (4 - 2));
+    x += 1;
+
+    return x + y + p;
+}

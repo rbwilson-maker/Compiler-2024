@@ -1,0 +1,13 @@
+//test error
+// stmt2 (step) of for loop may not be decl
+
+int main() {
+  int b = 22;
+
+  for (int i = 0; i < 14; int d = 3) {
+    bool b = true;
+  }
+
+  return b | 11;
+}
+

@@ -1,0 +1,9 @@
+//test div-by-zero
+// tests dynamic checking of shift amount
+
+int main() {
+  int x = 22;
+  int y = 10;
+  int z = 1 << (x + y);
+  return z >> (x + y);
+}

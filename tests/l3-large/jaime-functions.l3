@@ -1,0 +1,26 @@
+//test return 36
+
+int fun1(int a) 
+{
+    return 2*a;
+}
+
+int fun2(int a, int b)
+{
+    return fun1(a) + b;
+}
+
+int fun3(int a, int b, int c)
+{
+    return fun2(a, b) * c;
+}
+
+int fun4(int a, int b, int c, int d)
+{
+    return fun3(fun1(a) + fun2(b, c), fun1(a), fun3(a, b, c));
+}
+
+int main()
+{
+    return fun4(1, 1, 1, 1);
+}

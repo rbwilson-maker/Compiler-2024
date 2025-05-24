@@ -1,0 +1,13 @@
+//test return 9
+//finds p raised to the e
+
+int power(int p, int e) {
+	if (e==0) {
+		return 1;
+	}
+	return p*power(p, e-1);
+}
+
+int main() {
+	return power(3, 2);
+}

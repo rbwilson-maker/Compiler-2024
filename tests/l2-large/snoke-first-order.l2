@@ -1,0 +1,18 @@
+//test return 1
+
+int main() {
+	int snoke = 0x74420fa;
+	int ray;
+	int order = 0x735247f;
+	int first = 0;
+	int whatever = 0;
+	for (ray = 0; ray < snoke; ray += 1) {
+		if (ray == order) {
+			first += 1;
+		}
+		else {
+			whatever += 1;
+		}
+	}
+	return first;
+}

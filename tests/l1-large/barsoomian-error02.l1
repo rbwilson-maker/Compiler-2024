@@ -1,0 +1,11 @@
+//test error
+// use an uninitialized variable
+int main()
+{
+  int x;
+  int y;
+  int z;
+  x = 8 * (3 % 4);
+  z = x + y + 2;
+  return z;
+}

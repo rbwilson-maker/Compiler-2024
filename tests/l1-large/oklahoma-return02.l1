@@ -1,0 +1,20 @@
+//test return -2
+// testing moves
+
+int main()
+{
+  int a = 1;
+  int b = a;
+  b = 5;
+  int c = a;
+  int d = b;
+  int e = a + b;
+  d = e;
+  e = c + e;
+  a = e;
+  int h = 4;
+  int i = b;
+  b = i + h;
+  int k = b;
+  return (a - k);
+}

@@ -1,0 +1,14 @@
+//test error
+// most people implement parsing lvalues as 
+// expressions. This code should check that they did their
+// due diligence and also checked lvalues are in fact lvalues
+//
+//
+//
+int main() {
+    int hi;
+    (((((((((((
+               (hi+4)
+              ))))))))))) = 7;
+    return hi;
+}

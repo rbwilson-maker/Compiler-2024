@@ -1,0 +1,11 @@
+//test return 40
+// assign operations(+=, -=, *=)
+
+int main() {
+    int a;
+    a = 3;
+    a += 5;
+    a -= 3;
+    a *= 8;
+    return a;
+}

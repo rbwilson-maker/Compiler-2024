@@ -1,0 +1,151 @@
+//test return 1077828367
+//time: ~5s gcc O0, ~0.747s gcc O1
+
+typedef struct data Data;
+
+struct data {
+  int result;
+};
+
+int fib3(int n);
+
+
+int fib(int n, int* p){
+    if (n == 0 || n == 1){
+        return 1;
+    }
+
+    for(int i = 0; i < 100; i++){
+        if (n%2 == 0) {
+            2+2;
+        }
+        else {
+            5+5;
+        }
+
+    }
+    return fib3(n-1) + fib3(n-2);
+}
+
+int fib2(int n, int* p){
+    if (n == 0 || n == 1){
+        return 1;
+    }
+
+    for(int i = 0; i < 3; i++){
+        *p += 1;
+        if (n%2 == 0) {
+            2+2;
+        }
+        else {
+            5+5;
+        }
+
+    }
+    return fib2(n-1,p) + fib2(n-2,p);
+}
+
+int fib3(int n){
+    if (n == 0 || n == 1){
+        return 1;
+    }
+
+    for(int i = 0; i < 100; i++){
+        if (n%2 == 0) {
+            2+2;
+        }
+        else {
+            5+5;
+        }
+
+    }
+    return fib3(n-1) + fib3(n-2);
+}
+
+int loooooooooooops(){
+
+    int x = 20;
+    int a = 25;
+
+    int* q = alloc(int);
+    for(int i = 0; i < 200; i++) { 
+        if (fib(x,q) == 30) {
+            return a;
+        } 
+        else {
+            a += 1;
+        }
+    }
+    
+    int *b = alloc(int);
+    int *c = alloc(int);
+    int *d = alloc(int);
+    int *e = alloc(int);
+    int *f = alloc(int);
+
+    for(int i = 0; i < 50000000; i++) { 
+        *b += i;
+    }
+
+    for(int i = 0; i < 50000000; i++) { 
+        *c = i * *b + a;
+        fib2(4,c);
+    }
+
+    for(int i = 0; i < 50000000; i++) { 
+        *d = i;
+        i += *d;
+    }
+
+    for(int i = 0; i < 50000000; i++) { 
+        if (i%2 == 0){
+            *e = i*3;
+        } 
+    }
+
+    for(int i = 0; i < 50000000; i++) { 
+        int k = i+1;
+        int l = k+1;
+        int m = l+1;
+        int n = m+1;
+        int o = n+1;
+        *f += i + 2*k + l + 5*m + 3*n + 10*o;
+    }
+
+    int j = 0;
+    int g = 0;
+    int* p = alloc(int);
+    for(int i = 0; i < 20; i++) { 
+        j += 2;
+        g += fib2(j/2,p);
+        g += j * *c + *d + *e + i * *f;
+    }
+
+    return a + *b + *c + *d + *e + *f + g + *p;
+    
+}
+
+
+Data *init(int n) {
+  Data *x = alloc(Data);
+  return x;
+}
+
+void prepare(Data *d, int n) { return; }
+
+void run(Data *d, int n) {
+  int x = 11;
+  d->result = loooooooooooops();
+}
+
+int checksum(Data *d, int n) {
+  return d->result;
+}
+
+// Never actually called by the harness.
+int main(){
+  Data *p = init(0);
+  prepare(p, 0);
+  run(p, 0);
+  return checksum(p, 0);
+}

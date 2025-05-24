@@ -1,0 +1,20 @@
+//test typecheck
+
+// you like checking bounds?
+
+struct foo {
+    int bar;
+    int baz;
+};
+
+int main(){
+    struct foo *myFoo = alloc(struct foo);
+
+    myFoo->bar = 4;
+    (*myFoo).baz = 2;
+    for (int i = 0; i < 5; i++) {
+        myFoo->baz += myFoo->bar * myFoo->baz;
+    }
+
+    return 4;
+}

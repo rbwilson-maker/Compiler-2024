@@ -1,0 +1,160 @@
+//test return 9167
+
+/**
+ * This test performs a DFS on a 10x10 grid.
+ *
+ * Kevin Geng, Team Barsoomian
+ * 15-411 Fall 2019
+ */
+
+int array_get(int i, int j) {
+    if (i == 0) {
+        if (j == 0) return 0;
+        if (j == 1) return 0;
+        if (j == 2) return 0;
+        if (j == 3) return 0;
+        if (j == 4) return 0;
+        if (j == 5) return 0;
+        if (j == 6) return 0;
+        if (j == 7) return 0;
+        if (j == 8) return 0;
+        if (j == 9) return 0;
+    }
+    if (i == 1) {
+        if (j == 0) return 0;
+        if (j == 1) return 0;
+        if (j == 2) return 0;
+        if (j == 3) return 0;
+        if (j == 4) return 0;
+        if (j == 5) return 0;
+        if (j == 6) return 0;
+        if (j == 7) return 0;
+        if (j == 8) return 0;
+        if (j == 9) return 0;
+    }
+    if (i == 2) {
+        if (j == 0) return 0;
+        if (j == 1) return 0;
+        if (j == 2) return 0;
+        if (j == 3) return 0;
+        if (j == 4) return 0;
+        if (j == 5) return 0;
+        if (j == 6) return 0;
+        if (j == 7) return 0;
+        if (j == 8) return 0;
+        if (j == 9) return 0;
+    }
+    if (i == 3) {
+        if (j == 0) return 0;
+        if (j == 1) return 0;
+        if (j == 2) return 0;
+        if (j == 3) return 0;
+        if (j == 4) return 0;
+        if (j == 5) return 0;
+        if (j == 6) return 0;
+        if (j == 7) return 0;
+        if (j == 8) return 0;
+        if (j == 9) return 0;
+    }
+    if (i == 4) {
+        if (j == 0) return 0;
+        if (j == 1) return 0;
+        if (j == 2) return 0;
+        if (j == 3) return 0;
+        if (j == 4) return 0;
+        if (j == 5) return 0;
+        if (j == 6) return 0;
+        if (j == 7) return 0;
+        if (j == 8) return 0;
+        if (j == 9) return 0;
+    }
+    if (i == 5) {
+        if (j == 0) return 0;
+        if (j == 1) return 0;
+        if (j == 2) return 0;
+        if (j == 3) return 0;
+        if (j == 4) return 0;
+        if (j == 5) return 0;
+        if (j == 6) return 0;
+        if (j == 7) return 0;
+        if (j == 8) return 0;
+        if (j == 9) return 0;
+    }
+    if (i == 6) {
+        if (j == 0) return 0;
+        if (j == 1) return 0;
+        if (j == 2) return 0;
+        if (j == 3) return 0;
+        if (j == 4) return 0;
+        if (j == 5) return 0;
+        if (j == 6) return 0;
+        if (j == 7) return 0xBABE;
+        if (j == 8) return 0;
+        if (j == 9) return 0;
+    }
+    if (i == 7) {
+        if (j == 0) return 0;
+        if (j == 1) return 0;
+        if (j == 2) return 0;
+        if (j == 3) return 0;
+        if (j == 4) return 0;
+        if (j == 5) return 0;
+        if (j == 6) return 0;
+        if (j == 7) return 0;
+        if (j == 8) return 0;
+        if (j == 9) return 0;
+    }
+    if (i == 8) {
+        if (j == 0) return 0;
+        if (j == 1) return 0;
+        if (j == 2) return 0;
+        if (j == 3) return 0;
+        if (j == 4) return 0;
+        if (j == 5) return 0;
+        if (j == 6) return 0;
+        if (j == 7) return 0;
+        if (j == 8) return 0;
+        if (j == 9) return 0;
+    }
+    if (i == 9) {
+        if (j == 0) return 0;
+        if (j == 1) return 0xCAFE;
+        if (j == 2) return 0;
+        if (j == 3) return 0;
+        if (j == 4) return 0;
+        if (j == 5) return 0;
+        if (j == 6) return 0;
+        if (j == 7) return 0;
+        if (j == 8) return 0;
+        if (j == 9) return 0;
+    }
+    return 1 / 0;
+}
+
+int dfs(int i, int j, int width, int height, int target) {
+    if (i < 0 || i >= height) {
+        return -1;
+    }
+    if (j < 0 || j >= width) {
+        return -1;
+    }
+
+    int value = array_get(i, j);
+    if (value == target) {
+        return i * width + j;
+    }
+
+    int ret;
+
+    ret = dfs(i + 1, j, width, height, target);
+    if (ret != -1) return ret;
+
+    ret = dfs(i, j + 1, width, height, target);
+    if (ret != -1) return ret;
+
+    return -1;
+}
+
+int main() {
+    return dfs(0, 0, 10, 10, 0xCAFE) * 100 + dfs(0, 0, 10, 10, 0xBABE);
+}

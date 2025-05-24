@@ -1,0 +1,9 @@
+//test return 12
+int main() {
+    if (true && true) {
+        return 12;
+    }
+    return 13;
+}
+
+

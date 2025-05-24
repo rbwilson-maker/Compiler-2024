@@ -1,0 +1,28 @@
+//test return 0
+
+/* more typdef */
+
+typedef int integer;
+typedef bool boolean;
+
+bool func(integer r, boolean b)
+{
+  if (r>9)
+    return true;
+  else 
+    return func (r+1, b);
+}
+
+ 
+ int main()
+ {
+     integer a = 3;
+     boolean main = false;
+
+     a = 4;
+
+     if (func(a,main)==true)
+       return 0;
+     else 
+       return 1;
+ }

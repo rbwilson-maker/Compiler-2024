@@ -1,0 +1,14 @@
+//test abort
+
+int fib(int x){
+    assert(x >= 0);
+    if(x <= 2) return 2;
+
+    return fib(x - 1) + fib(x - 2); 
+}
+
+int main(){
+    assert(fib(10) == 55);
+    return 0;
+}
+

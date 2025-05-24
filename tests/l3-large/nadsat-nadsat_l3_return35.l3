@@ -1,0 +1,46 @@
+//test return 407
+
+int digcnt(int x) {
+  assert(x > 0);
+  int cnt = 0;
+  while (x > 0) {
+    x = x / 10;
+    cnt++;
+  }
+  return cnt;
+}
+
+
+int narcis(int n, int x) {
+  int upper = 9999;
+  int sum;
+  int temp;
+  int last = x;
+  while (n > 0) {
+    if (x > upper)
+      n = 0;
+    else {
+      x++;
+      int x_digit = digcnt(x);
+      int y = x;
+      sum = 0;
+      while (y > 0) {
+        int fact = y % 10;
+	temp = 1;
+        for (int ni = 0; ni < x_digit; ni++)
+	  temp *= fact;
+	sum += temp;
+	y = y / 10;
+      }
+      if (sum == x) {
+        last = x;
+	n--;
+      }
+    }
+  }
+  return last;
+}
+
+int main() {
+  return narcis(4, 10);
+}

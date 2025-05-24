@@ -1,0 +1,14 @@
+//test typecheck
+
+int s(int b);
+
+int s(int a) {
+    return a+1;
+}
+
+int main () {
+    int x = 1;
+    int y = s(1);
+    doit(x, y);
+    return 1;
+}

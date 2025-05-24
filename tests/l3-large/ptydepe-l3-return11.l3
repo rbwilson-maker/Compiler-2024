@@ -1,0 +1,21 @@
+//test return 450
+// simple test defines types t1 and t2
+
+int foo(int a, int b){
+    for(; a < b; a++){
+        return a + foo(a+1, b);
+    }
+    return b;
+}
+
+int main () {
+    int a = 5;
+    int b = 10;
+    int c = 10;
+    int res = 0;
+    while(c > 0){
+        res += foo(a, b);
+        c--;
+    }
+    return res;
+}

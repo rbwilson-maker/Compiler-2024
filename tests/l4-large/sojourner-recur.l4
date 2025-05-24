@@ -1,0 +1,31 @@
+//test div-by-zero
+
+struct foo;
+struct bar;
+
+struct foo {
+    struct bar *x;
+    int y;
+};
+
+struct bar {
+    struct foo *x;
+};
+
+struct foo * create(int n) {
+    if (n == 0)
+        return alloc(struct foo);
+    struct foo *x = create(n-1);
+    struct foo *y = create(n-1);
+    struct bar *z = alloc(struct bar);
+    x->x = z;
+    z->x = y;
+    return x;
+}
+
+int main() {
+    struct foo *x = create(10);
+    assert(NULL == x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x);
+    assert(NULL != x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x->x);
+    return 1 / x->y;
+}

@@ -1,0 +1,17 @@
+//test return 0                                                                 
+
+int main(){
+  int[] A = alloc_array(int, 10000);
+  for (int i = 0; i < 10000; i++){
+    A[i] = i*i;
+  }
+  int[] B;
+  B = A;
+  for (int i = 0; i < 10000; i++){
+    B[i] = i;
+  }
+  for (int i = 0; i < 10000; i++){
+    assert(A[i] == i);
+  }
+  return 0;
+}

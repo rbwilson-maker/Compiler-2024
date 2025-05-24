@@ -1,0 +1,19 @@
+//test return 40
+
+int sum(int a, int b);
+
+int sum(int x , int y);
+
+
+int sum(int a, int b){
+    int x = a + b;
+    
+    for(int j = 0;j < 10;j++){
+        x+= 1;
+    }
+    return x;
+}
+
+int main() {
+    return sum(10,20);
+}

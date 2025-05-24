@@ -1,0 +1,49 @@
+//test abort
+// pixels breaking assert contracts
+typedef int pixel;
+
+typedef pixel pixel_t;
+
+int get_red(pixel p) {
+    int res = (p & 0x00ff0000) >> 16;
+    assert(0 <= res && res <= 255);
+    return res;
+}
+
+int get_green(pixel p) {
+    int res = (p & 0xff00) >> 8;
+    assert(0 <= res && res <= 255);
+    return res;
+}
+
+int get_blue(pixel p) {
+    int res = p & 0xff;
+    assert(0 <= res && res <= 255);
+    return res;
+}
+int get_alpha(pixel p) {
+    int res = (p >> 24) & 0xff;
+    assert(0 <= res && res <= 255);
+    return res;
+}
+
+pixel make_pixel(int alpha, int red, int green, int blue)
+{
+    assert(0 <= alpha && alpha <= 255);
+    assert(0 <= red && red <= 255);
+    assert(0 <= green && green <= 255);
+    assert(0 <= blue && blue <= 255);
+    return ((alpha << 24) | (red << 16) | (green << 8) | (blue));
+}
+
+
+int main() {
+    pixel_t p = 0x23523353;
+    int alpha = get_alpha(p);
+    int red = get_red(p);
+    int green = get_green(p);
+    int blue = get_blue(p);
+    pixel_t newpixel = make_pixel(alpha + 202, red + 123, green + 94, blue + 231);
+    return newpixel;
+}
+

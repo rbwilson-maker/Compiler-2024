@@ -1,0 +1,14 @@
+//test error
+//definition shadow
+
+void f() {
+	int x = 1;
+	x = f();
+	return;
+}
+
+
+int main() {
+	f();
+	return 1;
+}

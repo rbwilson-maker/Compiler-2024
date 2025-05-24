@@ -1,0 +1,9 @@
+//test error
+// using unassigned variable
+
+int main() {
+  int x;
+  int y;
+
+  return x - y;
+}

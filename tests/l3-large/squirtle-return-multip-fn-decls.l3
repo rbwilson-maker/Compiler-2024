@@ -1,0 +1,29 @@
+//test return 1
+//tests that a function might be declared multiple times
+void omg(int x);
+void lol(int y);
+
+
+void omg(int haha) {
+  haha--;
+  if (haha > 0) {
+      lol(10);
+  } else {
+      lol(19);
+  }
+}
+
+void lol(int omg);
+
+void omg(int blah);
+
+
+void lol(int whatever) {
+    return;
+}
+
+int main() {
+    omg(19);
+    lol(21);
+    return 1;
+}

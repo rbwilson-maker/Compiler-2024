@@ -1,0 +1,23 @@
+//test div-by-zero
+int main ()
+{
+  int x;
+  int y;
+  int z;
+  {
+    int a = 0xfff;
+    x = a << 2;
+    y = ~a;
+    z = a * a;
+  }
+  int a = 0;
+  {
+      int b = x + y;
+      if (false) {
+          return b;
+      } else {
+          b = x - y;
+      }
+  }
+  return z % a;
+}

@@ -1,0 +1,27 @@
+//test error
+// Variable not declared earlier
+
+int main() {
+  int x;
+  x = 10;
+
+  x = x + x;
+
+  int y;
+  y = - 5;
+
+  y = x * y;
+  x = 5 * x;
+
+  int q;
+  q = 5;
+  int r;
+  r = 6;
+  int z;
+  z = 10;
+
+  q = r * z;
+  p = q * q;
+
+  return p;
+}

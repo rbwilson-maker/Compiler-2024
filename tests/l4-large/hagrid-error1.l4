@@ -1,0 +1,20 @@
+//test error
+//mutual structs
+struct b;
+
+struct a{
+  struct b *;
+};
+
+struct b{
+  struct a *;
+};
+
+int main(){
+  struct a b = alloc(struct a);
+  //shadowing error
+  struct b a = alloc(struct b);
+  return 1;
+}
+
+

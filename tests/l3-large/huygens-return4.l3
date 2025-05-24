@@ -1,0 +1,11 @@
+//test return 1
+
+int div(int x, int y) {
+    return x/y;
+}
+
+int main() {
+    assert(div(1,2) < div(5,4));
+    assert(div(3,2) > div(2,3));
+    return 1;
+}

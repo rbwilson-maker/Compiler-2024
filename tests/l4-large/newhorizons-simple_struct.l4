@@ -1,0 +1,13 @@
+//test return 5
+
+struct x {
+    int y;
+    bool z; 
+};
+
+int main() {
+    struct x* p = alloc(struct x);
+    p->y = 5; 
+    p->z = false; 
+    return p->y;
+}

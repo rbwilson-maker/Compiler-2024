@@ -1,0 +1,13 @@
+//test error
+
+int f(bool z);
+
+int f(int y)
+{
+  return 1;
+}
+
+int main()
+{
+  return 1;
+}

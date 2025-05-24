@@ -1,0 +1,9 @@
+//test return 15
+
+int main() {
+    if (3 >= 4 || 4 > 2 && 1 + 2 < 3)
+        return 10;
+    else {
+        return 15;
+    }
+}

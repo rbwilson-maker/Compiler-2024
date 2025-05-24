@@ -1,0 +1,27 @@
+//test typecheck
+//test infloop
+
+bool rec1(bool a);
+bool rec2(bool a);
+
+int main() {
+    rec1(false);
+
+    return 1;
+}
+
+bool rec1(bool a) {
+    if (!a) {
+        rec2(true);
+    }
+
+    return true;
+}
+
+bool rec2(bool a) {
+    if(a) {
+        rec1(false);
+    }
+
+    return true;
+}

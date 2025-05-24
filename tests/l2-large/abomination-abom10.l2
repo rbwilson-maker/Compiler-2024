@@ -1,0 +1,69 @@
+//test error
+
+int main() {
+    int a = 5 >> 2;
+    if(a > 3) {
+        a++;
+    }
+    int b = a % 5 + 2;
+    while(a > 0) {
+        a /= b;
+    }
+    bool c = a > (7 + 2);
+    if(c || false) {
+        while(5 > 7) {
+            return a - b;
+        }
+        b *= 6;
+    }
+    c = c && true;
+    a |= b;
+    for(int i = 0; i < 3; i++) {
+        a--;
+    }
+    for(bool i = true; i; i = i && false) {
+        int d = 2;
+        d *= 3;
+        a -= d;
+    }
+    int e = 3;
+    e++;
+    e--;
+    e++;
+    e--;
+    e++;
+    e--;
+    e++;
+    e--;
+    e += 3;
+    e--;
+    e++;
+    e--;
+    e *= 2;
+    if(e + e == 12) {
+        int d = 9;
+        bool f = false;
+        if(!f) {
+            if(!f){
+                if(!f){
+                    if(f){
+                        if(f){
+                            d *= 129873;
+                        }
+                    }
+                }
+            }
+            d++;
+        }
+        return a / d;
+    } else {
+        while(true){
+            while(true){
+                if(1 > 0){
+                    b++;
+                    return a + b;
+                }
+            }
+        }
+    }
+}

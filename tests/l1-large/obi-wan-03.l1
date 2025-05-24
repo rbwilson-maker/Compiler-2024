@@ -1,0 +1,7 @@
+//test error
+
+//this tests for a compile-time error
+int main() {
+    int for = 60; //for is a reserved keyword
+    return for;
+}

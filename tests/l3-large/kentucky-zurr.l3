@@ -1,0 +1,24 @@
+//test div-by-zero
+
+
+
+
+
+int main() {
+int j = 590;
+
+int d4 = 0;
+
+
+
+for(j = 499 /* AND THAT'S NOT ALL! */;j > 2; j--) {
+
+d4 += (59 / (j - 25));
+
+
+}
+
+return d4;
+
+
+}

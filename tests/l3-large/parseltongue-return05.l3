@@ -1,0 +1,23 @@
+//test return 267914295
+// Computing the sum of the first n fibonacci numbers
+
+int fib(int n) {
+  if (n == 0 || n == 1) return n;
+  return fib(n - 1) + fib(n - 2);
+}
+
+int fib_sum(int n) {
+  int res = 0;
+  for (int i = 0; i <= n; i++) {
+    res += fib(i);
+  }
+  return res;
+}
+
+int main() {
+  assert(fib(5) == 5);
+  assert(fib(13) == 233);
+  assert(fib_sum(5) == 12);
+  assert(fib_sum(13) == 609);
+  return fib_sum(40);
+}

@@ -1,0 +1,10 @@
+//test error
+//immediate struct vs pointer struct
+
+struct ayy_lmao {int elem; struct ayy_lmao* next;};
+int main()
+{
+	struct ayy_lmao* test;
+	test.elem = 0;
+	return 5;
+}

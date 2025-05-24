@@ -1,0 +1,13 @@
+//test abort
+
+int flyaway(int i) {
+  if (i < 2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2) {
+    return flyaway(i + 1);
+  }
+  assert(false);
+  return 1;
+}
+
+int main() {
+  return flyaway(1 << 31);
+}

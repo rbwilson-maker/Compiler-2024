@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+
+    int a = 4;
+    bool b = true || a;
+
+    return a;
+}

@@ -1,0 +1,54 @@
+//test return 1
+
+/*
+ * Basic tests of arrays
+ */
+
+
+typedef int a_int;
+
+struct just_an_array {
+    a_int[] an_array;
+    a_int size;
+};
+
+typedef struct just_an_array just_an_array_t;
+
+void set_array (int[] the_array, int size){
+
+    for (int i = 0; i < size; i++) the_array[i] = i;
+
+}
+
+int sum_array (int[] the_array, int size){
+    a_int sum = 0;
+
+    for (int i = size - 1; i >= 0; i--){
+        sum += the_array[i];
+    }
+    
+    return sum;
+}
+
+int main () {
+
+    struct just_an_array *the_struct = alloc(struct just_an_array);
+    int size = 10;
+
+    assert (the_struct != NULL);
+
+    the_struct->an_array = alloc_array (int, size);
+    the_struct->size = size;
+
+    set_array (the_struct->an_array, the_struct->size);
+
+    just_an_array_t *the_struct_t = alloc(just_an_array_t);
+
+    the_struct_t->an_array = alloc_array (int, size);
+    the_struct_t->size = size;
+
+    set_array (the_struct_t->an_array, the_struct_t->size);
+
+    return (sum_array(the_struct->an_array, the_struct->size) == sum_array(the_struct_t->an_array, the_struct_t->size)) ? 1 : 0;
+
+}

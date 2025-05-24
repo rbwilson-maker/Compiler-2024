@@ -1,0 +1,6 @@
+//test div-by-zero
+// modulo overflow
+
+int main() {
+    return -2147483648 % -1;
+}

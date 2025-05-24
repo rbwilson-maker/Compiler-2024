@@ -1,0 +1,13 @@
+//test return -1215722811
+
+//Fast fibonacci.  Should take a little while.  Array accesses should be
+//reasonably quick to pass this.  Will overflow.  Repeatedly.
+
+int main() {
+  int[] fibs = alloc_array(int, 50000000);
+  fibs[0] = 1;
+  fibs[1] = 1;
+  for (int i = 2; i < 50000000; i++)
+    fibs[i] = fibs[i-1] + fibs[i-2];
+  return fibs[49999999];
+}

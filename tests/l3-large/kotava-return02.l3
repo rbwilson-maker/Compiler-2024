@@ -1,0 +1,22 @@
+//test return 40
+
+int rec1 (int depth) {
+  if (depth == 0) {
+    return 1;
+  } else {
+    return rec1(depth - 1) * 2;
+  }
+}
+
+int rec2 (int depth) {
+  if (depth == 0) {
+    return rec1(5);
+  } else {
+    return rec2(depth - 1) + 1;
+  }
+}
+
+int main () {
+  int depth = 3;
+  return rec2(rec1(depth));
+}

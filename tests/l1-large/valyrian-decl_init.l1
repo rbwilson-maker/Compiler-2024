@@ -1,0 +1,19 @@
+//test return 12
+
+int main() {
+
+  int x;
+  int y;
+  x = 4;
+  int z;
+
+  // mix declaration and other statements
+  y = x + 4;
+  int w;
+
+  return x + y;
+
+  // no control flow path, doesn't matter if z is uninitialized
+  w = z + 4;
+  int a = 4;
+}

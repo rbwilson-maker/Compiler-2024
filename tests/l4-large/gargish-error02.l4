@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+    int* size = alloc(int);    
+    int[] a = alloc_array(int, size);
+    return 0;
+}

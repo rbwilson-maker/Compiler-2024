@@ -1,0 +1,17 @@
+//test error
+// tests using pointers to structs incorrectly 
+
+struct chipotle {
+    int protein;
+    bool queso;
+    bool guac;
+};
+
+int main() {
+    struct chipotle * bowl = alloc(struct chipotle);
+    bowl->protein = 0; //chicken
+    bowl.queso = false; //is this really how to reject queso?
+    bowl->guac = true;
+
+    return (*bowl).protein;
+}

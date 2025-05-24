@@ -1,0 +1,7 @@
+//test error
+int main(){
+    int[] *p = true ? (false ? NULL : NULL) : alloc(int[]);
+    *p[1/0];
+    return 0;
+}
+

@@ -1,0 +1,9 @@
+//test return 1
+
+int main () {
+  bool main = false;
+  if (main) {
+    return 0;
+  }
+  return 1;
+}

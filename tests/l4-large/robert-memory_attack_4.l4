@@ -1,0 +1,9 @@
+//test memerror
+
+int main() {
+	int[] a = alloc_array(int, 3); // Fastbin size
+	int[] b = alloc_array(int, 3); // Allocated next to each other in memory, with size in between
+	a[3]  = 1000;
+	b[20] = -1;
+	return 0;
+}

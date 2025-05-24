@@ -1,0 +1,47 @@
+//test return 3480540
+//passing struct on stack a lot!
+
+struct hi
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int f;
+  int g;
+  int h;
+  int i;
+  int j;
+  int k;
+  int l;
+  int m;
+  int n;
+  int o;
+  int p;
+  int q;
+  int r;
+  int s;
+  int t;
+  int u;
+  int v;
+  int w;
+  int x;
+  int y;
+  int z;
+};
+
+int func(int i, struct hi* coco) {
+  if (i == 0)
+    return coco->a;
+  else
+    coco->a += 20;
+    return func(i-1, coco);
+}
+
+int main()
+{
+    struct hi* mankey = alloc(struct hi);
+    return func(174027, mankey);
+}
+

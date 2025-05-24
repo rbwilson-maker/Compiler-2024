@@ -1,0 +1,13 @@
+//test return 12
+
+int main() {
+    int x = 3612;
+    int d1 = x % 10; // d1 = 2
+    x /= 10; // x = 361
+    int d2 = x % 10; // d2 = 1
+    x /= 10; // x = 36
+    int d3 = x % 10; // d3 = 6
+    x /= 10; // x = 3
+    int d4 = x % 10; // d4 = 3
+    return d1 + d2 + d3 + d4; // 12
+}

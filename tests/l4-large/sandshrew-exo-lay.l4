@@ -1,0 +1,12 @@
+//test error
+struct rob {
+    struct rob * rob;
+};
+
+int main(){
+    struct rob* rob = alloc(struct rob);
+    if (*rob == *rob){
+        return -1;
+    }
+    return 0;
+}

@@ -1,0 +1,13 @@
+//test error
+//functions referenced in unreachable call must be defined exactly once`
+int main() {
+    return 0;
+    f(22);
+}
+
+void f(int x) {
+    x += 1;
+    return;
+}
+
+

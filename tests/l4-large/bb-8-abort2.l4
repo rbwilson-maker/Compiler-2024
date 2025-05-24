@@ -1,0 +1,22 @@
+//test abort
+struct a
+{
+  int d;
+};
+
+int main()
+{
+  struct a* f = alloc(struct a);
+  f -> d = 0;
+  int x;
+  while(true)
+  {
+    int y = f -> d;
+    if (y > 42)
+    {
+      assert(false);
+    }
+    f -> d ++;
+  }
+  return 0;
+}

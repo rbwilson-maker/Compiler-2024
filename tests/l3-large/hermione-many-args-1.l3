@@ -1,0 +1,11 @@
+//test return 6
+
+int big_guy(int a, int b, int c, int d, int e, int f,
+            int h, int i, int j, int k, int l, int m) {
+  return h + i + j + k + l + m;
+}
+
+int main () {
+  return big_guy(-1,-1,-1,-1,-1,-1,
+                  1, 1, 1, 1, 1, 1);
+}

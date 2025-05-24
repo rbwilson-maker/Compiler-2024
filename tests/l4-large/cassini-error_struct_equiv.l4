@@ -1,0 +1,20 @@
+//test error
+
+struct same1 {
+    int x;
+    int y;
+};
+
+struct same2 {
+    int x;
+    int y;
+};
+
+typedef struct same1 * a;
+
+int main() {
+    a b = alloc(struct same2);
+    b->x = 5;
+    b->y = 10;
+    return b->x;
+}

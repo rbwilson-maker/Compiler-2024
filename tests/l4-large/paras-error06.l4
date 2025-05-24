@@ -1,0 +1,6 @@
+//test error
+int main() {
+    int[] bools = alloc_array(bool, 0);
+    bools[0] = 1 / 0;
+    return 0;
+}

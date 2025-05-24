@@ -1,0 +1,10 @@
+//test memerror
+int a(){
+    bool *x=NULL;
+    *x=true;
+    return 1;
+}
+int main(){
+    a();
+    return 1;
+}

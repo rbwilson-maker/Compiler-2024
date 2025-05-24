@@ -1,0 +1,8 @@
+//test return 0
+
+int main() {
+    int* size = alloc(int);
+    // *size is default value 0
+    int[] a = alloc_array(int, *size);
+    return 0;
+}

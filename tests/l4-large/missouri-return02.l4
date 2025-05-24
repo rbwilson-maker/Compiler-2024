@@ -1,0 +1,28 @@
+//test return 50266278
+//Adler32 hash function
+
+int adler32 (int[] buffer, int bl) {
+    int x1 = 1;
+    int x2= 0;
+
+    for (int i = 0; i < bl; i++) {
+        x1 = (x1 + buffer[i]) % 65521;
+        x2 = (x2 + x1) % 65521;
+    }
+    return (x2 << 16) | x1;
+}
+
+int main () {
+    int[] s = alloc_array(int, 10);
+    s[0] = 1;
+    s[1] = 1;
+    s[2] = 78;
+    s[3] = 1;
+    s[4] = 1;
+    s[5] = 15;
+    s[6] = 1;
+    s[7] = -23;
+    s[8] = 1;
+    s[9] = 89;
+    return adler32(s, 10);
+}

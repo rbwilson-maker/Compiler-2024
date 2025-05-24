@@ -1,0 +1,18 @@
+//test return -6
+// simple test, testing all arithmetic assignment
+
+int main() {
+    int a = 0;
+    a += 7;
+    // should be 7
+    a *= 4;
+    // should be 28
+    a -= 87;
+    // should be -59
+    a %= 23;
+    // should be -13
+    a /= 2;
+    // should be -6
+
+    return a;
+}

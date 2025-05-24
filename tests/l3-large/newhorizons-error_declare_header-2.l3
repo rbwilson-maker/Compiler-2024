@@ -1,0 +1,8 @@
+//test error
+// redeclares this function which was declared in header with non-matching args
+int super_cool_function(int i, int j);
+
+int main()
+{
+    return 0;
+}

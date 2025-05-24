@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int foo() {
+    assert(0 == 1);
+    return 1;
+}
+
+int main() {
+    int[] a = alloc_array(int, 0);
+    // evaluation order of a[i] = e; is a -> i -> e
+    // so, div-by-zero happens before the assert in foo
+    a[1 / 0 == 1 ? 0 : 1] = foo();
+    return 0;
+}
+

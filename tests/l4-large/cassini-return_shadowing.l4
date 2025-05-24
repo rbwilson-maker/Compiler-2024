@@ -1,0 +1,16 @@
+//test return 15122
+
+struct foo {
+    int x;
+};
+
+struct bar {
+    int x; // multiple structs with the same field name oK!
+};
+
+int main() {
+    struct foo *x = alloc(struct foo);
+    // variable names and struct fields can clash
+    x->x = 15122;
+    return x->x;
+}

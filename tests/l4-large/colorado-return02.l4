@@ -1,0 +1,32 @@
+//test return -338527113
+
+struct node {
+	int val;
+	struct node* next;
+};
+
+typedef struct node* list;
+
+int rand(int x) {
+	return 1103515245 * x + 12345;
+}
+
+int main() {
+	list hd = alloc(struct node);
+	list L = hd;
+	int sd = 902489;
+	L->val = sd;
+	for(int i = 0; i < 1025; i++) {
+		L->next = alloc(struct node);
+		L = L->next;
+		sd = rand(sd);
+		L->val = sd;
+	}
+	L = hd;
+	int sum = 0;
+	while (L != NULL) {
+		sum += L->val;
+		L = L->next;
+	}
+	return sum;
+}

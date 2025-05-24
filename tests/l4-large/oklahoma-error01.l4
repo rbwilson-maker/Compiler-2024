@@ -1,0 +1,8 @@
+//test error
+//can't determine type of any*
+
+int main () {
+  if (**(false ? NULL : NULL) == **(true ? NULL : NULL))
+    return 1;
+  return 0;
+}

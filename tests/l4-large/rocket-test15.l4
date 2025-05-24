@@ -1,0 +1,17 @@
+//test memerror
+
+struct s
+{
+    int j;
+};
+
+int main()
+{
+    struct s[] a;
+    a = alloc_array(struct s, 2000);
+    for (int i = 0; i < 2001; i ++)
+    {
+        a[i].j = i;
+    }
+    return 0;
+}

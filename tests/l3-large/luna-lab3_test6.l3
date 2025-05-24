@@ -1,0 +1,9 @@
+//test error
+// declares a library function in the same way.
+// Should compile properly.
+
+int srand(int x);
+
+int main() {
+    return srand(10);
+}

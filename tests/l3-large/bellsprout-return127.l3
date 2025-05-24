@@ -1,0 +1,22 @@
+//test return 127
+
+int log(int x, int b) {
+    int n = 0;
+    while (x > 0) {
+        x /= b;
+	n += 1;
+    }
+    return n;
+}
+
+int find_min_base_to_differentiate(int a, int b) {
+    int c = 2;
+    while (log(a, c) == log(b, c)) {
+	c++;
+    }
+    return c;
+}
+
+int main() {
+    return find_min_base_to_differentiate(127*127, 127*127-1);
+}

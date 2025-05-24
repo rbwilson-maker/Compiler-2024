@@ -1,0 +1,14 @@
+//test return 5
+
+void func(int x){
+  return;
+}
+
+int main(){
+  int x = 111111;
+  for(int i=0; i < 5; func(i)){
+    i++;
+    x = i;
+  }
+  return x;
+}

@@ -1,0 +1,17 @@
+//test error
+
+int main() {
+	int err = 0;
+	if (err == 1) {
+		int what = err;
+	}
+	else {
+		what = 2;
+		for (int what = 10; what < 20; what += 1) {
+			int now = what + 10;
+			now *= what;
+			now /= what - err;
+		}
+	}
+	return err;
+}

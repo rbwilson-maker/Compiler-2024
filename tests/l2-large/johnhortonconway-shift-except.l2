@@ -1,0 +1,10 @@
+//test div-by-zero
+int main() {
+    int a = 5;
+    int i = 1;
+    for (int j = 0; j < 5; j++) {
+        i <<= 1;
+    }
+    //@assert (i >= 32);
+    return a << i;
+}

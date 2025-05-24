@@ -1,0 +1,19 @@
+//test typecheck
+
+int distsq(point_ptr A, point_ptr B) {
+    int xsq = (A -> x - B -> x) * (A -> x - B -> x);
+    int ysq = (A -> y - B -> y) * (A -> y - B -> y);
+    return (xsq + ysq);
+}
+
+int main() {
+    point_ptr A = alloc(point);
+    point_ptr B = alloc(point);
+    A -> x = 0;
+    A -> y = 0;
+
+    B -> x = 5;
+    B -> y = 2;
+
+    return distsq(A, B);
+}

@@ -1,0 +1,77 @@
+//test return 8128
+
+
+bool isHappy(int x);
+bool isPerfect(int x);
+int  findNextHappyIter(int x);
+int  sq(int x);
+
+
+
+// A Mary Sue number (Not an official term) 
+// is a number that is both 
+// happy: https://en.wikipedia.org/wiki/Happy_number
+// and perfect: https://en.wikipedia.org/wiki/Perfect_number
+// In the range of integers
+// there are only three such numbers so we are limited to calling 
+// at most nMarySue(3)
+// at least if we want to return.
+
+int nthMarySue(int differentVariableName){
+    int curr = -1;
+    int count = 0;
+    while(count < differentVariableName && curr != 0x7fffffff){
+        curr++;
+        if (isPerfect(curr) && isHappy(curr)) count++;
+    }
+
+    return curr;
+}
+
+
+bool isPerfect(int n){
+    if (n < 2) return false;
+    int curr = 2;
+    int result = 1;
+    for (;sq(curr) < n;curr++){
+        if (n % curr == 0) result += curr + n/curr;
+    }
+    if (sq(curr) == n) result += curr;
+    return result == n;
+}
+
+
+bool isHappy(int x){
+    if (x == 4) return false;
+    if (x == 1) return true;
+    if (x < 1)  return false;
+    int iter = findNextHappyIter(x);
+    while (iter != 1 && iter != 4){
+        iter = findNextHappyIter(iter);
+    }
+    return iter == 1;
+}
+
+
+
+int findNextHappyIter(int x){
+    if (x <= 0) assert(false);
+    int result = 0;
+    int toStrip = x;
+    while (toStrip > 0){
+        result += sq(toStrip % 10);
+        toStrip /= 10;
+    }
+    return result;
+}
+
+int sq(int x){
+    return x * x;
+}
+
+
+int main(){
+    return nthMarySue(3);
+}
+
+

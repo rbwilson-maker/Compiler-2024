@@ -1,0 +1,17 @@
+//test error
+
+typedef int foo;
+
+int functionA(int a) {
+  int foo = a + 1; // type should not be used as ident 
+  return foo;
+}
+
+int functionB(foo b) {
+  foo c = functionA(b + 1);
+  return c;
+}
+
+int main() {
+  return functionB(1);
+}

@@ -1,0 +1,6 @@
+typedef int ptr;
+
+ptr make_array(int size);
+int read_index(ptr array, int idx);
+void write_index(ptr array, int idx, int val);
+void delete_array(ptr array);

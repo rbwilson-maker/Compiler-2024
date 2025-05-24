@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+//whoops, just missed the loop guard!
+
+int main()
+{
+  int total = 0;
+  for(int i = 1; i != 12; i += 2)
+  {
+    total += i;
+  }
+  return total;
+}

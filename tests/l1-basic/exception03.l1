@@ -1,0 +1,13 @@
+//test div-by-zero
+// division error due to overflow
+
+// you may fail this test if you used 64-bit moves/division.
+int main()
+{
+  int TMIN;
+  int overflow;
+
+  TMIN = -2147483648;
+  overflow = TMIN / -1;
+  return overflow;
+}

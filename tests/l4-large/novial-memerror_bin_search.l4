@@ -1,0 +1,26 @@
+//test memerror
+
+int main() {
+  int lo = 0;
+  int hi = 501;
+  int mid = 251;
+
+  int[] x = alloc_array(int, 66);
+
+  while (lo != hi) {
+    mid = (lo + hi)/2;
+    if (7567 > x[mid]) {
+      lo = mid;
+    }
+    else if (7567 < x[mid]) {
+      hi = mid;
+    }
+    else {
+      // break statement lol
+      lo = 0;
+      hi = 0;
+    }
+  }
+
+  return mid;
+}

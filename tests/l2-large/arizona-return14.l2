@@ -1,0 +1,20 @@
+//test return 0
+
+int main ()
+{
+  int x1;
+
+  if (1 > 0) {
+      x1 = 0;
+
+      return x1;
+  }
+  else {
+      while (true) x1 = 3;
+
+      return 2;
+  }
+
+  x1 = 5;
+  return x1;
+}

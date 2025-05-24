@@ -1,0 +1,22 @@
+//test return 2
+
+struct animal {
+  int d;
+  int e;
+};
+
+struct party {
+  int a;
+  int b;
+  struct animal c;
+};
+
+typedef struct party* party;
+
+int main() {
+  party[] my_parties = alloc_array(party, 10);
+  my_parties[7] = alloc(struct party);
+  my_parties[7]->c.e = 1;
+  my_parties[7]->c.e++;
+  return my_parties[7]->c.e;
+}

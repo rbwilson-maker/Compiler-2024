@@ -1,0 +1,57 @@
+//test return 65408
+//mergesort on bit vectors
+
+int merge(int A, int alen, int B, int blen) {
+    int reslen = alen + blen;
+    assert(reslen <= 32);
+    int ai = 0;
+    int bi = 0;
+    int result = 0;
+    int resi = 0;
+    while (ai < alen && bi < blen) {
+        int adig = (A >> ai) & 1;
+        int bdig = (B >> bi) & 1;
+        if (adig < bdig) {
+            result |= adig << resi;
+            ai++;
+        } else {
+            result |= bdig << resi;
+            bi++;
+        }
+        resi++;
+    }
+    while (ai < alen) {
+        int adig = (A >> ai) & 1;
+        result |= adig << resi;
+        ai++;
+        resi++;
+    }
+    while (bi < blen) {
+        int bdig = (B >> bi) & 1;
+        result |= bdig << resi;
+        bi++;
+        resi++;
+    }
+    return result;
+}
+
+int mergesort(int C, int len) {
+    assert(len <= 32);
+    int alen = len / 2;
+    int blen = len - alen;
+    int amask = (1 << alen) - 1;
+    int bmask = (1 << blen) - 1;
+    int A = C & amask;
+    int B = (C >> alen) & bmask;
+    if (alen > 1) {
+        A = mergesort(A, alen);
+    }
+    if (blen > 1) {
+        B = mergesort(B, blen);
+    }
+    return merge(A, alen, B, blen);
+}
+
+int main() {
+    return mergesort(0xD2E6, 16);
+}

@@ -1,0 +1,16 @@
+//test return 3
+
+int x(int y, int z);
+int x(int y, int z);
+int x(int y, int z);
+int x(int y, int z);
+int x(int y, int z);
+int x(int y, int z);
+
+int x(int y, int z) {
+    return y + z;
+}
+
+int main() {
+    return x(1,2);
+}

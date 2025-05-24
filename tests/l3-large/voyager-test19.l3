@@ -1,0 +1,16 @@
+//test typecheck
+//test functions used without declaration
+
+bool mycmp(int x, int y) {
+    assert(x >= 0);
+    assert(y >= 0);
+    if (x == 0) return rt();
+    if (y == 0) return rf();
+    return mycmp(x - 1, y - 1);
+}
+
+int main()
+{
+  bool res = mycmp(1, 2);
+  return (res ? 1 : 0);
+}

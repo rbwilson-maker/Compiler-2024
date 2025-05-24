@@ -1,0 +1,15 @@
+//test return 6
+// tests struct alignment/padding
+
+struct s {
+    int a;
+    int* b;
+};
+
+int main() {
+    struct s* pointer = alloc(struct s);
+    pointer->b = alloc(int);
+    pointer->a = 5;
+    *pointer->b += 6;
+    return *pointer->b;
+}

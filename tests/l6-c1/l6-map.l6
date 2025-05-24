@@ -1,0 +1,28 @@
+//test return 15813251
+
+typedef int iti(int x);
+
+int[] map(iti* f, int[] L, int l)
+{
+  int[] r = alloc_array(int, l);
+  for(int i = 0; i < l; i++)
+  {
+    r[i] = (*f)(L[i]);
+  }
+  return r;
+}
+
+int cube(int x)
+{
+  return x * x * x;
+}
+
+int main()
+{
+  iti* f = &cube;
+  int[] xs = alloc_array(int, 300);
+  for(int i = 0; i < 300; i++)
+    xs[i] = i;
+  int[] ys = map(f,xs,300);
+  return ys[251];
+}

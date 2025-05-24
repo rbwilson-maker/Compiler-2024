@@ -1,0 +1,16 @@
+//test return 5049
+
+int main () {
+    int yoooo = 0xffffffff;
+    int bybyyy = yoooo + 2;
+
+    for (int yo=0; (yo>100) ? (yo/bybyyy == 0) : true ; yo++)
+    {
+        yoooo += yo;
+        int x;
+        x = true ? yo : (10==yo) ? yo+1 : yo+2 ;
+        x = (x!= yo) ? yo : true ? yo+1 : yo+2 ;
+    }
+
+    return yoooo;
+}

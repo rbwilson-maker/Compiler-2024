@@ -1,0 +1,22 @@
+//test return 18
+
+int avg(int a, int b)
+{
+	return a + (b-a) / 2;
+}
+
+int avgavg(int a, int b)
+{
+	int ret = 0;
+	for(int i = a; i < b; i++)
+	{
+		for(int j = i; j < b; j++)
+			ret += avg(i, j);
+	}
+	return ret / ((b-a) * (b-a));
+}
+
+int main()
+{
+	return avgavg(27, 43);
+}

@@ -1,0 +1,19 @@
+//test return 2
+// dangling else
+
+int f() {
+    bool flag = true;
+    int ret = 0;
+
+    if (flag)
+        if (!flag)
+            ret = 1;
+        else ret = 2;
+    
+    return ret;
+}
+
+int main() {
+
+    return f();
+}

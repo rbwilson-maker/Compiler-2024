@@ -1,0 +1,9 @@
+//test return 1
+
+int lame(int a, int b, int c, int d, int e) {
+	return a;
+}
+
+int main() {
+	return lame(1, 2, 3, 4, 5);
+}

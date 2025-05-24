@@ -1,0 +1,14 @@
+//test return 2
+
+typedef int a;
+typedef int b;
+
+a f(int x) {
+  b y = x;
+  return y;
+}
+
+int main() {
+    b x = f(1);
+    return x + 1;
+}

@@ -1,0 +1,31 @@
+//test error
+
+struct s {
+  bool a;
+  int val;
+}
+
+struct t {
+  bool a;
+  int val;
+  struct s *ptr;
+}
+
+struct u {
+  int a;
+  struct t b;
+  struct s v;
+  struct u *w;
+}
+
+int main() {
+  struct u[] le_array = alloc_array(struct u, 5)
+  
+  for(int i = 0; le_array[i].w->ptr->val != 1; i++) {
+    le_array[i].w->ptr->val = 1;
+  }
+  
+  le_array[i].w->ptr->val = NULL;
+
+  return 0;
+}

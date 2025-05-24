@@ -1,0 +1,13 @@
+//test return 2
+
+struct point {
+       int x;
+       int y;
+};
+
+int main() {
+    int point = 1;
+    int f = 2;
+    point * f;
+    return f;
+}

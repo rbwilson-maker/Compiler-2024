@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int main ()
+{
+  int m = 130;
+  int n = 120;
+
+  while (m % n != 0) {
+    m = m % n;
+  }
+
+  return m;
+}

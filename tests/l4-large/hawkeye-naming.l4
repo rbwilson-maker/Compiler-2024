@@ -1,0 +1,24 @@
+//test return 15411
+
+typedef int foo;
+typedef bool bar;
+
+struct foobar {
+       foo foo;
+       bar bar;
+};
+
+typedef struct foobar foobar;
+
+void init(foobar* s) {
+    s->bar = true;
+    s->foo = 15411;
+}
+
+int main () {
+    foobar* s = alloc(foobar);
+    init(s);
+    if (s->bar)
+        return s->foo;
+    return 0;
+}

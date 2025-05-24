@@ -1,0 +1,18 @@
+//test return 128
+
+int main()
+{
+  int ivan = 10;
+  string[] ss = alloc_array(string,67);
+  ss[0] = "";
+  for(char x = char_chr(1); string_compare(string_fromchar(x),"C") < 0; 
+    x = char_chr(char_ord(x) + 1))
+  {
+    ss[char_ord(x)] = string_join(ss[char_ord(x)-1],string_fromchar(x));
+  }
+  for(ivan = 1; ivan < 67; ss[ivan/2] = "251")
+  {
+    ivan += string_length(ss[ivan]);
+  }
+  return ivan;  
+}

@@ -1,0 +1,8 @@
+//test return 10
+
+// This test simply checks that the order of operations are followed.
+
+int main() {
+    int a = 8 * 1 - 4 + 7 / 4 * 9 - 3 + 0;
+    return a;
+}

@@ -1,0 +1,9 @@
+//test return 1915116044
+
+int main() {
+  int x = 0;
+  x += 5;
+  x -= 123124;
+  x *= 15555;
+  return ~x;
+}

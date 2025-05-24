@@ -1,0 +1,16 @@
+//test return 10
+// pascal triangle
+
+int pascal(int r, int c);
+
+int main() {
+	return pascal(5, 3);
+}
+
+int pascal(int r, int c) {
+	assert(r >= 0 && c >= 0 && c <= r);
+	if (r == 0 || c == 0 || c == r) {
+		return 1;
+	}
+	return pascal(r-1, c-1) + pascal(r-1, c);
+}

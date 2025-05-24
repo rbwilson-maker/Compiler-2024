@@ -1,0 +1,26 @@
+//test return 0
+
+//test weird struct declarations
+
+typedef struct a aa;
+struct a{
+    struct aaa* h; //legal
+    aa* a1;
+};
+
+struct a2{
+    struct aa2[] arr; //legal
+    struct hello_world* hi;
+};
+
+int main(){
+    aa* x = alloc(struct a);
+    assert(x->h == NULL);
+
+    struct a2* y = alloc(struct a2);
+
+    struct hello_world* h;
+    struct aaa* a3;
+
+    return 0;
+}

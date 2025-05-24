@@ -1,0 +1,21 @@
+//test return 8605351
+
+typedef int amongus;
+struct amongus {
+  amongus* amongus;
+};
+
+amongus awongus(struct amongus*[] anongus, amongus *amomgus) {
+  *amomgus += 1;
+  return *(*anongus[*amomgus - 1]).amongus;
+}
+
+int main() {
+  amongus *amomgus = alloc(amongus);
+  *amomgus = 4302675;
+  *amomgus += *amomgus;
+  struct amongus*[] anongus = alloc_array(struct amongus*, *amomgus + 5);
+  anongus[*amomgus] = alloc(struct amongus);
+  (*anongus[*amomgus]).amongus = amomgus;
+  return awongus(anongus, amomgus);
+}

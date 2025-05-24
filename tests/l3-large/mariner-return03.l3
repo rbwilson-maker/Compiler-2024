@@ -1,0 +1,10 @@
+//test return 3
+//call a function which calls another function
+int foo(int a);
+int foo(int a) {return a;}
+int foog();
+int foog() {return foo(3);}
+int main() {
+  return foog();
+}
+

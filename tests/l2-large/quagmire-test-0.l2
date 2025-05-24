@@ -1,0 +1,8 @@
+//test return 2
+
+int main() {
+    int x = 15122;
+    if (x != 15122) return 0;
+    else if (x != 15150) return 2;
+    else return 1;
+}

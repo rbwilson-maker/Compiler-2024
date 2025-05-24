@@ -1,0 +1,14 @@
+//test return 69
+int main() {
+  int cnt = 0;
+  for (int i = 0; i < 69; i++) {
+    for (int j = 0; j < 69; j++) {
+      for (int k = 0; k < 69; k++) {
+        if (i == j && j == k) {
+          cnt++;
+        }
+      }
+    }
+  }
+  return cnt;
+}

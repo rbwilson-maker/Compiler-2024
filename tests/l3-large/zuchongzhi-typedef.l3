@@ -1,0 +1,8 @@
+//test return 3
+typedef int i32;
+
+int main() {
+  i32 x = 1;
+  i32 y = 2;
+  return x + y;
+}

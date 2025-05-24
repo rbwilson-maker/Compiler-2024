@@ -1,0 +1,18 @@
+//test typecheck
+//test infloop
+struct x
+{
+  int y;
+};
+
+int main()
+{
+  struct x* aha = alloc(struct x);
+  aha->y = 0;
+  while(aha->y == 0)
+  {
+    aha->y++;
+    aha->y--;
+  }
+  return 0;
+}

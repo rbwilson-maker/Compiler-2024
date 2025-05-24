@@ -1,0 +1,10 @@
+//test error
+
+int main() {
+    int x;
+    (x);
+    (true);
+    {{} x + 1;};
+    for (;true;) {} // should break on this i think bc it has no type?
+    return 1;
+}

@@ -1,0 +1,11 @@
+//test compile
+
+struct u* f(struct u* c) {
+    return c;
+}
+
+int main() {
+    struct s* a;
+    struct t[] b;
+    return 0;
+}

@@ -1,0 +1,11 @@
+//test return 25
+
+int modular_exponentiation(int x, int y, int N) {
+  if (y == 0) return 1;
+  int z = modular_exponentiation(x, y/2, N);
+  return (y % 2 == 0) ? (z * z) % N : (x * z * z) % N;
+}
+
+int main() {
+  return modular_exponentiation(5, 6, 100);
+}

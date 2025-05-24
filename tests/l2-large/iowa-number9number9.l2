@@ -1,0 +1,10 @@
+//test return 9
+
+int main() {
+	int i;
+	int y=9;
+	for (i=81; i>9; i-=9) {
+		y+=1;
+	}
+	return i&i;
+}

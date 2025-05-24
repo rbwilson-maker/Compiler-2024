@@ -1,0 +1,21 @@
+//test return 10041
+
+typedef int lol;
+
+struct lol
+{
+  lol u;
+  lol me;
+  lol us;
+  lol cat;
+};
+
+int main() {
+  struct lol* lmao = alloc(struct lol);
+  lmao->u = 0;
+  lmao->me = 9001;
+  lmao->us = lmao->u + lmao->me;
+  lmao->cat = 1337;
+
+  return lmao->u | lmao->me | lmao->us | lmao->cat;
+}

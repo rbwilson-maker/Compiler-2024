@@ -1,0 +1,27 @@
+//test return 24
+// leetcode 167 Two Sum II - Input array is sorted
+
+// simulate an array
+int a(int ix) {
+    return 1 << ix;
+}
+
+int main() {
+    int l = 0;
+    int r = 30;
+    int target = 0x10100;
+    bool found = false;
+    while (l < r && !found) {
+        int t = a(l) + a(r);
+        if (t == target) {
+            found = true;
+        } else if (t < target) {
+            l++;
+        } else {
+            r--;
+        }
+    }
+    assert(l == 8);
+    assert(r == 16);
+    return l + r;
+}

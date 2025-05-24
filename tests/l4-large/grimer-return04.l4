@@ -1,0 +1,17 @@
+//test return 1
+
+struct account {
+  int id;
+  int amount;
+};
+
+bool deposit(struct account *a, int id, int amount) {
+  a->amount += amount;
+  return true;
+}
+
+
+int main() {
+  struct account[] accounts = alloc_array(struct account, 100);
+  return 1;
+}

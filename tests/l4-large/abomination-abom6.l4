@@ -1,0 +1,15 @@
+//test return 1
+
+struct cooper;
+
+struct cooper {
+    bool wearingHat;
+    bool onFloor;
+    struct cooper *clone; // Now the cooper is a valid self-referencing struct
+};
+
+int main() {
+    struct cooper *theoneandonly;
+    theoneandonly = alloc(struct cooper); // Got it, fine, actual allocation, let's do it
+    return theoneandonly->wearingHat ? 0 : 1;
+}

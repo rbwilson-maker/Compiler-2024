@@ -1,0 +1,14 @@
+//test return 5
+// test multiple return statements
+int main()
+{
+  int x;
+  int y;
+
+  x = 5;
+  y = 2;
+
+  return x;
+  return y;
+  return 3;
+}

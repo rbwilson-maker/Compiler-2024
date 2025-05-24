@@ -1,0 +1,50 @@
+//test return 13;
+/* unbalanced binary trees */
+
+struct tree {
+	struct tree *left;
+	struct tree *right;
+	int key;
+	int value;
+};
+
+struct tree *insert(int key, int value, struct tree *t)
+{
+	if (t == NULL) {
+		struct tree *new = alloc(struct tree);
+		new->key = key;
+		new->value = value;
+		return new;
+	}
+	if (key < t->key) {
+		struct tree *new = alloc(struct tree);
+		new->left = insert(key, value, t->left);
+		new->right = t->right;
+		new->key = t->key;
+		new->value = t->value;
+		return new;
+	}
+	struct tree *new = alloc(struct tree);
+	new->left = t->left;
+	new->right = insert(key, value, t->right);
+	new->key = t->key;
+	new->value = t->value;
+	return new;
+}
+
+int find(int key, struct tree *t)
+{
+	if (t == NULL)
+		assert(false);
+	if (key < t->key)
+		return find(key, t->left);
+	if (key > t->key)
+		return find(key, t->right);
+	return t->value;
+}
+
+int main()
+{
+	struct tree *t = insert(1, 10, insert(2, 13, insert(3, 16, insert(4, 14, insert(5, 8, insert(6, 3, insert(7, 4, insert(8, 1, NULL))))))));
+	return find(2, t);
+}

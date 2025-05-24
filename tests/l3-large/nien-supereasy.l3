@@ -1,0 +1,13 @@
+//test return 0
+
+int func()
+{
+    return 0;
+}
+
+int main()
+{
+    int x;
+    x = func();
+    return x;
+}

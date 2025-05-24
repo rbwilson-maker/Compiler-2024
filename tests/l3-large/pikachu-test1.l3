@@ -1,0 +1,23 @@
+//test return 100
+
+bool isPrime(int n){
+  if (n < 2) return false;
+  for(int factor = 2; factor < n; factor++){
+    if (n % factor == 0) return true;
+  }
+  return false;
+}
+
+int main(){
+  bool a = isPrime(2);
+  bool b = isPrime(10);
+  int i; int j;
+  if (a) {
+    i = 10; j = 20;
+  }
+  else {
+    j = 100; i = 200;
+  }
+  if (a && b) return i;
+  else return j;
+}

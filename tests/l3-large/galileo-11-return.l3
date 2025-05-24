@@ -1,0 +1,18 @@
+//test return 146
+// validate 3x+1 problem, recursive version
+
+int f(int cur, int len) {
+    if (cur == 1) {
+        return len;
+    } else {
+        if (cur % 2 == 0) {
+            return f(cur / 2, len + 1);
+        } else {
+            return f(cur * 3 + 1, len + 1);
+        }
+    }
+}
+
+int main() {
+    return f(15411, 0);
+}

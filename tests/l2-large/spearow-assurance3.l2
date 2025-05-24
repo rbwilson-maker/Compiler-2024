@@ -1,0 +1,7 @@
+//test return 0
+
+int main () {
+    bool x = true;
+    for (; !x;) { int y = 1 / 0; }
+    return 0;
+}

@@ -1,0 +1,15 @@
+//test error
+
+int foo(int a, bool b){
+    if(b){
+        return a;
+    } else {
+        return -a;
+    }
+}
+
+int main(){
+    int x;
+    x = foo(6);
+    return x;
+}

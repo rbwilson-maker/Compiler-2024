@@ -1,0 +1,10 @@
+//test error
+void test();
+
+int main() {
+    if (5 > 3) {
+        return 1;
+        test();
+    }
+    return 0;
+}

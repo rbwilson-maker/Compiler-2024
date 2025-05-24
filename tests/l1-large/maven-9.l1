@@ -1,0 +1,15 @@
+//test return 74
+
+//multiple same variable use in a single statement
+
+int main() {
+  int s;
+  int m;
+  int t;
+
+  s = 2;
+  m = s * s * s * s * s * s;
+  t = s + s + s + s + s;
+
+  return m + t;
+}

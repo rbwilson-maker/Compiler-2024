@@ -1,0 +1,37 @@
+//test error
+// there's a difference between -> and .
+
+typedef struct list_node list;
+struct list_node {
+  int elem;
+  list* next;
+};
+
+
+bool isPrime(int n) {
+    for (int i = 2; i < n; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+bool goldbach(int n) {
+    for (int i = 2; i < n; i++) {
+        if (isPrime(i) && isPrime(n - i)) return true;
+    }
+    return false;
+}
+
+int main() {
+    int n = 3;
+    list* counterexamples = alloc(list);
+    while (true) {
+        if (!(goldbach(n))) {
+            counterexamples.elem = n;
+            counterexamples.next = alloc(list);
+            counterexamples = counterexamples.next;
+        }
+        n++;
+    }
+    return 0;
+}

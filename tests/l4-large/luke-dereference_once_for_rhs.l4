@@ -1,0 +1,17 @@
+//test abort
+
+int fail() {
+    assert(false);
+    return 8;
+}
+
+int divide_by_zero() {
+    int *x = alloc(int);
+    x = NULL;
+    *x = fail();
+    return *x;
+}
+
+int main() {
+    return divide_by_zero();
+}

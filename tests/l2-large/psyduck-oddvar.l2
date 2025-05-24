@@ -1,0 +1,21 @@
+//test div-by-zero
+
+int main() {
+bool a = false;
+bool b = true;
+int x = 42;
+int y = 29;
+int z = 147;
+int q = 14;
+while (a != ((((!b) && (x & y) != (z << q)) == q < x * y / q) != b && (x - y
+       + 37 - q & z + z << (q - x + 100)) != 107) && a != b)
+{
+int r = q + z;
+int l = x - y;
+x += l;
+y -= r;
+z |= (x+y);
+q %= z;
+}
+return q;
+}

@@ -1,0 +1,26 @@
+//test error
+
+bool itob(int i) {
+  if (i == 14)
+    return false;
+  if (i == 13)
+    return true;
+  assert(false);
+
+  return false;
+}
+
+int main() {
+  int i = 13;
+  bool b = itob(13);
+  for (; i < 26; i++) {
+    int j = btoi(b);
+    b = !itob(j);
+  }
+  return !b ? 1 : 0;
+}
+
+int btoi(bool b) {
+  return b ? 13 : 14;
+}
+

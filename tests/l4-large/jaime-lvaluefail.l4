@@ -1,0 +1,11 @@
+//test error
+
+int main()
+{
+  bool f = false;
+  int z = 1;
+  int[] p = alloc_array(int, 7);
+  p[f + z] = 15411;
+  return p[0];
+}
+

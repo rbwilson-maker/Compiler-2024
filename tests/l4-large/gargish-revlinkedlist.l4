@@ -1,0 +1,29 @@
+//test return 10
+
+struct node {
+    int val;
+    struct node *next;
+};
+
+struct node *prepend(struct node *front, int value) {
+    struct node *n = alloc(struct node);
+    n->val = value;
+    n->next = front;
+    return n;
+}
+
+struct node *rev(struct node *front) {
+    struct node *cur = front;
+    struct node *prev = NULL;
+    while(cur != NULL) {
+        struct node *next = cur->next;
+        cur->next = prev;
+        prev = cur;
+        cur = next;
+    }
+    return prev;
+}
+
+int main() {
+    return rev(prepend(prepend(NULL, 10), 2))->val;
+}

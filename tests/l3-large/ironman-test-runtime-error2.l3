@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int main() {
+    int x = 5;
+    bool y = true;
+    int z = 1;
+    while (y){
+        if (x == -1){
+            y = false;
+        }
+        x--;
+    }
+    z = z << x;
+    return 1;
+}

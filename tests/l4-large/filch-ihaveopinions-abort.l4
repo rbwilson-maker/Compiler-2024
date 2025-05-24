@@ -1,0 +1,12 @@
+//test abort
+
+int main()
+{
+  int* eta = alloc(int);
+
+  *eta = 2;
+
+  assert(*eta != 2);
+
+  return 2;
+}

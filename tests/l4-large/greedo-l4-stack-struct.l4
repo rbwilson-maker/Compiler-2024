@@ -1,0 +1,15 @@
+//test error
+
+typedef int i;
+
+struct t {
+    i * j;
+};
+
+int main(){
+
+    struct t* p = alloc(struct t);
+    struct t q = *p;
+
+    return q.j;
+}

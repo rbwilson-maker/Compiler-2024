@@ -1,0 +1,10 @@
+//test typecheck
+//returns the cuteness of Ame
+
+int main() {
+	cuteness ame = 100000;
+	while (true) {
+		ame += hic();
+	}
+	return ame;
+}

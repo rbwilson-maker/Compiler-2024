@@ -1,0 +1,9 @@
+//test error
+// causes a compile-time error due to using undeclared variable
+
+int main() {
+    int x = 3;
+    int y = 4;
+    z = x + y;
+    return z;
+}

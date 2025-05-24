@@ -1,0 +1,26 @@
+//test return 6
+
+int f(struct my_struct *s);
+
+int g(struct my_struct *s) {
+    return f(s);
+}
+
+struct my_struct {
+    int foo;
+};
+
+int f(struct my_struct *s) {
+    return (*s).foo+s->foo;
+}
+
+int main (){
+    struct my_struct *s = alloc(struct my_struct);
+    s->foo = 1;
+    int x = s->foo;
+    int y = (*s).foo;
+    (*s).foo = 2;
+    int z = s-> foo;
+    int z1 = (*s).foo;
+    return x+y+z+z1;
+}

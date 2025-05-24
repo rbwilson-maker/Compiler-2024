@@ -1,0 +1,37 @@
+//test return 4
+// Chill spill
+
+int main() {
+    int a = 1;
+
+    int* x1 = alloc(int);
+
+    int b = 3;
+    int c = 6;
+
+    bool* bl = alloc(bool);
+
+    int d = 12;
+
+    *x1 = 2048 | 4;
+
+    int e = 24;
+    int f = 48;
+
+    *bl = true;
+
+    int g = 96;
+    int h = 192;
+
+    int* x2 = alloc(int);
+
+    int i = 384;
+    int j = 768;
+
+    *x2 = 43;
+
+    int k = 1536;
+    int l = 3072;
+
+    return a ^ b ^ c ^ d ^ e ^ f ^ g ^ h ^ i ^ j ^ k ^ l ^ *(*bl ? x1 : x2);
+}

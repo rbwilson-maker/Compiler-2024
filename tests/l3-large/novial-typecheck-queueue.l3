@@ -1,0 +1,13 @@
+//test typecheck
+
+int main() {
+  push(1);
+  push(6);
+  push(0);
+  push(1);
+
+  assert(6 == pop());
+  assert(1 == pop());
+  assert(6 == pop());
+  return 0;
+}

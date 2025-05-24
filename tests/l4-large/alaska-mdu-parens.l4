@@ -1,0 +1,10 @@
+//test return 7
+
+int main()
+{
+
+  int* p = alloc(int);
+  ((*(p))) = ((3 + ((*(((p)))) + 4)));
+  
+  return *p;
+}

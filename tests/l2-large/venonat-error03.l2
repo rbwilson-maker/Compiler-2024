@@ -1,0 +1,10 @@
+//test div-by-zero
+// divide by i in for loop which starts at 0
+int main() {
+    int x;
+    x = 100;
+    for (int i = 0; i < 10; i++){
+        x /= i;
+    }
+    return x;
+}

@@ -1,0 +1,94 @@
+//test return 1141468713
+
+// Put things in a binary tree and get them back out again
+// Incurs a lot of memory costs and some pointy boiis
+
+struct contents{
+  int[] array;
+};
+
+typedef struct contents val;
+
+struct bst {
+  struct bst* left; 
+  struct bst* right;
+  int key;
+  val* values;
+};
+
+typedef struct bst* Tree;
+
+int getTreeSize(){
+  return 11;
+}
+
+int getVal(Tree node, int i)
+{
+  return node->values->array[i];
+}
+
+int totallyNotAFakeRandomNumber(int x) 
+{
+  x |= (x << 21);
+  x ^= ((x + 523) >> (53 % 31));
+  x &= (x << 4);
+  return x + 11;
+}
+
+Tree newNode(int key){
+  int TREE_ARRAY_SIZE = getTreeSize();
+
+  Tree node = alloc(struct bst);
+  node->key = key;
+  node->left = NULL;
+  node->right = NULL;
+
+  node->values = alloc(struct contents);
+  node->values->array = alloc_array(int,TREE_ARRAY_SIZE);
+  for (int i = 0; i < TREE_ARRAY_SIZE; i++){
+    node->values->array[i] = totallyNotAFakeRandomNumber((key + i) % 0x15411);
+  }
+
+  return node;
+}
+
+Tree insert(Tree node, int key) 
+{ 
+    if (node == NULL) return newNode(key); 
+  
+    if (key < node->key) 
+        node->left  = insert(node->left, key); 
+    else if (key > node->key) 
+        node->right = insert(node->right, key);    
+  
+    return node; 
+} 
+
+Tree search(Tree root, int key) 
+{ 
+    if (root == NULL || root->key == key) 
+       return root; 
+     
+    if (root->key < key) 
+       return search(root->right, key); 
+  
+    return search(root->left, key); 
+} 
+
+int main(){
+  int n = 15; //"hardness"
+  int STRIDE = 123;
+
+  Tree t = NULL;
+  for (int i = 0; i < (1 << n); i++){
+    t = insert(t,totallyNotAFakeRandomNumber(i));
+  }
+
+  int value = 0;
+  for (int i = 0; i < (1 << n); i += STRIDE){
+    Tree node = search(t,totallyNotAFakeRandomNumber(i));
+    value += node->values->array[i % getTreeSize()];
+  }
+
+  return value;
+}

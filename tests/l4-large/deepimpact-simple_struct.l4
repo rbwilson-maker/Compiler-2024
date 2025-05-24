@@ -1,0 +1,32 @@
+//test return 0
+
+typedef int a;
+
+struct simple {
+    int s1;
+    bool s2;
+    int *s3;
+    a s4;
+    a *s5;
+    int simple;
+};
+
+struct wrap {
+    struct simple s1;
+};
+
+typedef struct simple not_simple;
+typedef struct wrap wrap_t;
+
+int main() {
+    wrap_t *s = alloc(wrap_t);
+
+    assert(s->s1.s1 == 0);
+    assert(s->s1.s2 == false);
+    assert(s->s1.s3 == NULL);
+    assert(s->s1.s4 == 0);
+    assert(s->s1.s5 == NULL);
+    assert(s->s1.simple == 0);
+
+    return 0;
+}

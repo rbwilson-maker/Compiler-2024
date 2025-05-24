@@ -1,0 +1,31 @@
+//test return 13
+
+int main() {
+    // cause spilling and fill registers??
+    int a1 = 1;
+    int a2 = 1;
+    int a3 = 1;
+    int a4 = 1;
+    int a5 = 1;
+    int a6 = 1;
+    int a7 = 1;
+    int a8 = 1;
+    int a9 = 1;
+    int a10 = 1;
+    int a11 = 1;
+    int a12 = 1;
+    int a13 = 1;
+    int a14 = 1;
+    int a15 = 1;
+    int a16 = 1;
+    int a17 = 1;
+
+    // do some modding and division because idiv can probably cause problems
+    int modding = -20 % 8;
+
+    int twentyfive = 5 * 5;
+    // use all the registers so no optimizations??
+    int silly = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10 + a11 + a12 + a13 + a14+ a15 + a16 + a17;
+    // did we get the right thing
+    return silly + modding;
+}

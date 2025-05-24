@@ -1,0 +1,15 @@
+//test error
+//try a global
+
+int global = 1337;
+
+void really(int local)
+{
+   global << local;
+}
+
+int main()
+{
+   really(32);
+   return 0;
+}

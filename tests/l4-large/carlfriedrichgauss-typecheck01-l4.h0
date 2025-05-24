@@ -1,0 +1,9 @@
+struct IntWrapper {
+  int value;
+};
+
+typedef struct IntWrapper int_w;
+
+// Some crazy function that takes an integer and returns an integer
+// but cannot be implemented in C0 for some reason :)
+int_w* some_crazy_function(int_w* x);

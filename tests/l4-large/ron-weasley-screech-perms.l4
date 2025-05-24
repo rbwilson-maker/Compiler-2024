@@ -1,0 +1,139 @@
+//test return 0
+
+struct perm {
+    int[] arr;
+    int len;
+};
+typedef struct perm perm_t;
+
+perm_t *perm_new(int len) {
+    perm_t *new = alloc(perm_t);
+
+    new->arr = alloc_array(int, len);
+    new->len = len;
+
+    return new;
+}
+
+void reset_seen(bool[] seen, int len) {
+    for (int i = 0; i < len; i++) {
+        seen[i] = false;
+    }
+}
+
+bool is_perm(perm_t *p) {
+    int len = p->len;
+    bool[] seen = alloc_array(bool, len);
+    reset_seen(seen, len);
+
+    for (int i = 0; i < len; i++) {
+        if (p->arr[i] < 0 || p->arr[i] >= len) {
+            return false;
+        }
+
+        if (seen[p->arr[i]]) {
+            return false;
+        }
+
+        seen[p->arr[i]] = true;
+    }
+
+    return true;
+}
+
+int permute(perm_t *p, int x) {
+    if (x < 0 || x >= p->len) {
+        return -1;
+    }
+
+    return p->arr[x];
+}
+
+bool same_perm(perm_t *p, perm_t *t) {
+    if (p->len != t->len) {
+        return false;
+    }
+
+    for (int i = 0; i < p->len; i++) {
+        if (permute(p, i) != permute(t, i)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+perm_t *generate_cycle(int generator_dst, int len) {
+    if (len < 0 || generator_dst < 0) {
+        return NULL;
+    }
+
+    perm_t *p = perm_new(len);
+
+    for (int i = 0; i < len; i++) {
+        p->arr[i] = (generator_dst * i) % len;
+    }
+
+    return p;
+}
+
+int count_automorphisms(int len) {
+    perm_t*[] perms = alloc_array(perm_t*, len);
+    int count = 0;
+
+    for (int i = 0; i < len; i++) {
+        perm_t *maybe_new = generate_cycle(i + 1, len);
+
+        bool new = true;
+        for (int j = 0; new && j < count; j++) {
+            if (same_perm(maybe_new, perms[j])) {
+                new = false;
+            }
+        }
+
+        if (new) {
+            perms[count] = maybe_new;
+            count++;
+        }
+    }
+
+    return count;
+}
+
+//  from Wikipedia
+//  https://en.wikipedia.org/wiki/Euler's_totient_function
+int gcd(int a, int b) {
+    if (a < 0 || b < 0) {
+        return -1;
+    }
+
+    if (b == 0) {
+        return a;
+    }
+
+    return gcd(b, a % b);
+}
+
+int totient(int n) {
+    int count = 0;
+
+    for (int i = 1; i <= n; i++) {
+        if (gcd(i, n) == 1) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+bool check(int x) {
+    return count_automorphisms(x) >= totient(x);
+}
+
+int main() {
+    assert(check(1));
+    assert(check(5));
+    assert(check(15));
+    
+    return 0;
+}

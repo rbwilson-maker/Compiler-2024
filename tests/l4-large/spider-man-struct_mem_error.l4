@@ -1,0 +1,29 @@
+//test memerror
+
+struct bloop {
+    int[] blah;
+    int[] *blargh;
+    int[] **bleh;
+};
+
+void meme(struct bloop * zzz) {
+    int tot = 0;
+    for (int i = 0; i < 10; i += 1) {
+        for (int j = 0; j < 10; j += 1) {
+            for (int k = 0; k < 10; k += 1) {
+                (**(zzz->bleh))[(i + j + k) % 10] = i * j * k;
+            }
+        }
+    }
+
+}
+
+int main() {
+    struct bloop * zzz = alloc(struct bloop);
+    zzz->blargh = alloc(int[]);
+    *(zzz->blargh) = zzz->blah;
+    zzz->bleh = alloc(int[]*);
+    *(zzz->bleh) = zzz->blargh;
+    meme(zzz);
+    return -1;
+}

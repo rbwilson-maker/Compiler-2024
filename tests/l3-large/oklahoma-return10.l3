@@ -1,0 +1,10 @@
+//test return 33554432
+//recursive function
+
+int oi(int i) {
+  return (i > 0) ? oi(i-1) + oi(i-1) : 1;
+}
+
+int main () {
+  return oi(25);
+}

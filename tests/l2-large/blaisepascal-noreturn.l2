@@ -1,0 +1,15 @@
+//test error
+
+int main() {
+  if (false) {
+    int x;
+    int y;
+    int z;
+    int a;
+    int b;
+    a+b+x+y+z;
+  }
+  else {
+    return 5;
+  }
+}

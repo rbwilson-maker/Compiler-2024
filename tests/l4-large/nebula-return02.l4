@@ -1,0 +1,12 @@
+//test return 3
+
+struct a {
+  int aa;
+};
+
+typedef int a; // typedef overrides struct definition
+
+int main() {
+  a aa = 3;
+  return aa;
+}

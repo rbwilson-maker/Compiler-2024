@@ -1,0 +1,10 @@
+//test return 10
+
+int main() {
+	int a = 1;
+	a <<= 3;
+	a -= 2 * a;
+	a --;
+	a --;
+	return a > 0 ? a : -a;
+}

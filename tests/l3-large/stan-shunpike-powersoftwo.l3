@@ -1,0 +1,26 @@
+//test return 0
+
+int sqrt(int x) {
+    if (x <= 1) return x;
+    int root = 1;
+    while (root * root <= x) 
+	root++;
+    return root - 1;   
+}
+
+int num_divisors(int n) {
+    int res = 0;
+    for (int i = 1; i <= sqrt(n); i++) {
+        if (n % i == 0) {
+            res += (n / i == i) ? 1 : 2;
+        }
+    }
+    return res;
+}
+
+int main() {
+    for (int i = 0; i < 25; i++) {
+        assert(num_divisors(1 << i) == i + 1);
+    }
+    return 0;
+}

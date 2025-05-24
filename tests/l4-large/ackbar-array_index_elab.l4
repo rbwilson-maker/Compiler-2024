@@ -1,0 +1,19 @@
+//test return 30
+//elaborate A[f(x)] correctly (don't call f(x) twice)
+
+
+int f(int * foo){
+    *foo +=1;
+    return *foo;
+}
+
+int main(){
+
+    int[] A = alloc_array(int, 4);
+    int * x = alloc(int);
+
+    for(int i=0; i<4; i++){A[i] = (i)*10;}
+    (*x) = 2;
+
+    return A[f(x)];
+}

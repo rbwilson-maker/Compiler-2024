@@ -1,0 +1,8 @@
+//test div-by-zero
+
+//Making sure this doesn't short circuit
+
+int main() {
+	if ((1/0 == 0) || true) return 1;
+	return 0;
+}

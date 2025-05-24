@@ -1,0 +1,17 @@
+//test return 485100
+
+int main(){
+    int a = 5;
+    int b = 10; 
+    int c = 45;
+
+    int z = a + b + c;
+    z += a * b;
+
+    int y = z % (a + b) + c / a;
+
+    int k = y * z / a + b - c % 10;
+    k = k / k * k + 25 - 1 + -22;
+
+    return z * y * k;
+}

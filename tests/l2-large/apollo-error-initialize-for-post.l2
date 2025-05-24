@@ -1,0 +1,9 @@
+//test error
+// initialize in body but should be valid when used in post op
+int main () {
+  int y;
+  for (int x = 0; x < 150; y++) {
+    y = 0;
+  }
+  return y;
+}

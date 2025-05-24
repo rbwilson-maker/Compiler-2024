@@ -1,0 +1,31 @@
+//test return -121488367
+//Credits to 122 lab with lf function
+int LF_memo(int[] M, int i, int j, int k)
+{
+    assert(0 < j && j < k);
+
+    if(i < k) {
+        M[i] = i;
+        return i;
+    }
+    if(M[i] != 0)
+    {
+        return M[i];
+    }
+    else {
+        M[i] = LF_memo(M, i-j, j, k) + LF_memo(M, i - k, j, k);
+        return M[i];
+    }
+}
+
+int fast_LF(int i, int j, int k)
+{
+    assert(0 < j && j < k);
+    assert(0 <= i);
+    int[] fibArray = alloc_array(int, i + 1);
+    return LF_memo(fibArray, i, j, k);
+}
+int main()
+{
+    return fast_LF(150, 4, 5);
+}

@@ -1,0 +1,12 @@
+//test error
+
+struct fail {
+    int a;
+    int b;
+    int c;
+    bool a;
+}
+
+int main() {
+    return 0;
+}

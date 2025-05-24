@@ -1,0 +1,28 @@
+//test return 2;
+
+//Tests if you can check for returns correctly..
+
+
+void noRet(int x) {
+  int r;
+  r = 3;
+  x = x+r;
+  int y = x*x;
+}
+
+int main () {
+  int n = 0;
+  int i = 2;
+  int c = 1;
+
+  if (c<i)
+  {
+    return 2;
+  }  
+  else
+  {
+    noRet(3);
+  }
+  noRet(2);
+  return 2;
+}

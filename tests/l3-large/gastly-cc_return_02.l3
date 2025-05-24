@@ -1,0 +1,16 @@
+//test return 0
+//testing function names conflicting with variable names
+
+int what(int what) {
+	int wat = what + 10;
+
+	return wat;
+}
+
+int main() {
+	int wat = 0;
+	int inthebutt = -10;
+
+	return what(wat + inthebutt);
+}
+

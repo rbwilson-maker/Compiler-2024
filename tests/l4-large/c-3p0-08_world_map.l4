@@ -1,0 +1,42 @@
+//test return 130147000;
+//Multidimensional arrays
+
+struct map_t{
+    int x;
+    int y;
+    int z;
+    int[][][] m;
+};
+
+typedef struct map_t * world;
+
+int main(){ 
+    world map = alloc(struct map_t);
+    map->x = 20;
+    (*map).y = 20;
+    map->z = 20;
+        
+    map->m = alloc_array(int[][],map->x);
+
+    for(int i=0;i < map->x;i++){
+
+        map->m[i] = alloc_array(int[], map->y);
+
+        for(int j=0;j < map->y;j++){
+
+            map->m[i][j] = alloc_array(int, map->z);
+
+            for(int k=0;k < map->z;k++){
+                map->m[i][j][k] = i * j * k + 15411;
+            }
+        }
+    }
+
+    int sum = 0;
+    for(int i=0;i<map->x;i++) 
+    for(int j=0;j<map->y;j++) 
+    for(int k=0;k<map->z;k++)
+    sum += map->m[k][j][i];
+
+    return sum;
+}

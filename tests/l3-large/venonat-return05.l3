@@ -1,0 +1,13 @@
+//test return 0
+// Function prototype declared before used, but defined after.
+
+void declared();
+
+int main() {
+  declared();
+  return 0;
+}
+
+void declared() {
+  return;
+}

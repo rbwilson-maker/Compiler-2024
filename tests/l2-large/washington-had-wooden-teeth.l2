@@ -1,0 +1,13 @@
+//test return 0
+// Alright, I'm out of ideas.
+
+int main() {
+    int n = 79 * 33 * 109;
+    bool is_prime = true;
+    for (int i = 2; is_prime && i < n; i++) {
+        if (n % i == 0) {
+            is_prime = false;
+        }
+    }
+    return is_prime ? 1 : 0;
+}

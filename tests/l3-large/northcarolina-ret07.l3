@@ -1,0 +1,13 @@
+//test return 5
+// Let us add numbers, 15150-style!
+
+int add(int n, int m) {
+	if (m == 0) {
+		return n;
+	}
+	return add(n+1,m-1);
+}
+
+int main() {
+	return add(2,3);
+}

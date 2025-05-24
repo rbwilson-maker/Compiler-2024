@@ -1,0 +1,21 @@
+//test return 1000 
+
+// testing proper alignment of data inside structs
+
+struct blob {
+  int* somePtr1; // 8 bytes
+  int someVal1; // 4 bytes
+  int someVal2; // 4 bytes
+  bool someBool; // 4 bytes
+  int* somePtr2; // 8 bytes
+};
+
+
+int main() {
+  struct blob* myBlob = alloc(struct blob);
+  (*myBlob).someVal1 = 100;
+  (*myBlob).someVal2 = 200;
+  (*myBlob).somePtr2 = alloc(int);
+  *((*myBlob).somePtr2) = 1000;
+  return *((*myBlob).somePtr2);
+}

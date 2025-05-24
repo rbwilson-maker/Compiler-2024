@@ -1,0 +1,26 @@
+//test return 4
+
+struct t2 {
+    int*[] c;
+};
+
+struct t {
+    struct t2 b;
+};
+
+
+int main(){
+    struct t * a = alloc(struct t);
+
+    int*d = alloc(int);
+    *d = 2;
+    a->b.c = alloc_array(int*, 1);
+
+    a->b.c[0] = alloc(int);
+    *a->b.c[0] = 2;
+
+    *d = *d**a->b.c[0];
+
+
+    return *d;
+}

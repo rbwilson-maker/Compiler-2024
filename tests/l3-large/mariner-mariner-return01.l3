@@ -1,0 +1,9 @@
+//test return 1
+//tests typedef
+
+typedef int date;
+
+int main() {
+	date x = 1;
+	return x;
+}

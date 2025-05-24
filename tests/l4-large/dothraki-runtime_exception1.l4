@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+  int *a = alloc(int);
+  *a = 2;
+  int *b = alloc(int);
+  *b = -5;
+  return *a << *b;
+}

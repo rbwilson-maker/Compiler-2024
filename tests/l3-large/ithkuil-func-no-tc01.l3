@@ -1,0 +1,9 @@
+//test error
+
+int cond (bool x, int y, int z) {
+  return x ? y : z;
+}
+
+int main () {
+  return cond(1, 1, 2);
+}

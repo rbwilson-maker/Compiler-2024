@@ -1,0 +1,16 @@
+//test memerror
+// More complicated out-of-bounds access
+
+struct person {
+  int id;
+  int age;
+};
+typedef struct person* person;
+
+
+int main() {
+  person[] p = alloc_array(person, 5);  // Array of pointers
+  p[0]->id = 5;                         // p[0] not backed by memory!
+
+  return 0;
+}

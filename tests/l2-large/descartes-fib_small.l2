@@ -1,0 +1,20 @@
+//test return 5
+// calcualte the 5th fibonacci number
+
+int main() {
+  int x = 0;
+  int y = 1;
+
+  int i = 1;
+  int z = 0;
+
+  while (i < 5) {
+    z = x + y;
+    x = y;
+    y = z;
+
+    i++;
+  }
+
+  return z;
+}

@@ -1,0 +1,9 @@
+//test error
+// Invalid use of --
+
+int main()
+{
+	int x;
+	x = 3;
+	return x--100;
+}

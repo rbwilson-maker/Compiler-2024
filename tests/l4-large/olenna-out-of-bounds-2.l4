@@ -1,0 +1,12 @@
+//test memerror
+
+// arrays know their own size
+
+int[] create_array(){
+    return alloc_array(int, 42);
+}
+
+int main(){
+    create_array()[20];
+    return create_array()[42];
+}

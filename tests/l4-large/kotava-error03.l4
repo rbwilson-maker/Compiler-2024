@@ -1,0 +1,43 @@
+//test memerror
+
+typedef struct block* block;
+typedef struct wall* wall;
+
+struct block {
+  int weight;
+  block next_block;
+};
+
+struct wall {
+  block top_block;
+};
+
+int check(block x, int num_blocks) {
+  assert(x->weight >= 10);
+  return 1;
+}
+
+void build (block x, int num_blocks) {
+  while (true) {
+    if (num_blocks == 0) {
+      return;
+    }
+    x->next_block = alloc(struct block);
+    x->next_block->weight = x->weight * 2;
+    num_blocks -= check(x, num_blocks);
+  }
+}
+
+int main() {
+  wall[] building = alloc_array(wall, 1);
+  wall front = alloc(struct wall);
+  front->top_block = alloc(struct block);
+  front->top_block->weight = 10;
+  building[0] = front;
+  build(front->top_block, 10);
+  block x = front->top_block;
+  while (x != NULL) {
+    x = x->next_block;
+  }
+  return x->weight; // attempting to dereference NULL pointer
+}

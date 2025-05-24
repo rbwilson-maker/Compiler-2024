@@ -1,0 +1,17 @@
+//test error
+
+typedef bool bloom;
+
+bloom mystery(int x)
+{
+  if (x % 2 == 1) return 42;
+
+  return bloom(x - 1);
+}
+
+int main()
+{
+  bool b = mystery(3);
+
+  return 0;
+}

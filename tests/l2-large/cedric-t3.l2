@@ -1,0 +1,16 @@
+//test return 55
+
+int main()
+{
+    int first = 1;
+    int second = 1;
+
+    for (int i = 3;  i <= 10; i++)
+    {
+        int t = second;
+        second = first + second;
+        first = t;
+    }
+
+    return second;
+}

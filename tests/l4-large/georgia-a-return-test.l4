@@ -1,0 +1,47 @@
+//test return 36
+
+struct bar{
+  int val;
+  struct bar * next;
+};
+typedef struct bar bar;
+
+struct foo{
+  int present;
+  bar * foobar;
+};
+typedef struct foo foo;
+
+bar * create_bar(int i){
+  bar * retbar = alloc(bar);
+  retbar->val = i;
+  return retbar;
+}
+
+int main(){
+  foo[] fooarr = alloc_array(foo, 10);
+  int i;
+  for(i=0; i<10; i++){
+    fooarr[i].present=0;
+  }
+  fooarr[0].present = 1;
+  fooarr[0].foobar = alloc(bar);
+  (fooarr[0].foobar)->val = 0;
+
+  for(i=1; i<10; i++){
+    if(fooarr[i].present == 0){
+      fooarr[i].present = 1;
+      fooarr[i].foobar = create_bar(i);
+      (fooarr[i-1].foobar)->next = fooarr[i].foobar;
+    }
+  }
+  bar * ptr = fooarr[0].foobar;
+  int retsum = 0;
+  while(ptr->val!=9){
+    retsum = retsum + (ptr->val);
+    ptr = ptr->next;
+  }
+  return retsum;
+}
+
+

@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+
+int sumRange(int[] A, int start, int end) {
+    int sum = 0;
+    int i = start;
+    while (i < end) {
+        sum += A[i]; // Forget to update start!
+    }
+    return sum;
+}
+
+int main() {
+    int[] A = alloc_array(int, 10);
+    for (int i = 0; i < 10; i++) {
+        A[i] = i + 1;
+    }
+    return sumRange(A, 0, 10);
+}

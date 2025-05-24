@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+   bool[] bar;
+   bar = alloc_array(int,200);
+   return 0;
+}

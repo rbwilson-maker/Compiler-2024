@@ -1,0 +1,19 @@
+//test return 1001
+
+int subcall(int a) {
+  a = 1;
+  return 1;
+}
+
+int main () {
+  int a = 0;
+  int ctr = 0;
+
+  while (a == 0) {
+    ctr++;
+    subcall(a);
+    if (ctr > 1000) return ctr;
+  }
+
+  return 0;
+}

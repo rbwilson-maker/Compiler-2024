@@ -1,0 +1,12 @@
+//test return 11
+
+void modify(int *x) {
+  (*x)++;
+}
+
+int main() {
+  int *x = alloc(int);
+  *x = 10;
+  modify(x);
+  return *x;
+}

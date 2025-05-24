@@ -1,0 +1,20 @@
+//test return 6
+// Simple function to compute the recursive formula
+// f(n) = sum over all k (f(k) + f(n-k-1)), for 0 <= k < n-1
+// Such a pattern is commonly used in Dynamic Programming
+
+
+int f(int n) {
+	if (n == 0) {
+		return 1;
+	}
+	int ans = 0;
+	for (int k = 0; k < n; k++) {
+		ans += (f(k) + f(n-k-1));
+	}
+	return ans;
+}
+
+int main () {
+	return f(2);
+}

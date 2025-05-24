@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+
+int main() {
+  int j = 0;
+  int k = -234235235;
+
+  while(!(j == k)) {
+    for (int z = 42; z > 0; z++)
+      print_hex(z);
+  }
+
+  while(true && !false || false) {
+    assert(j == 0);
+  }
+  return 0;
+}

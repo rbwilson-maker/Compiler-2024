@@ -1,0 +1,9 @@
+//test return 0
+typedef int[] b;
+typedef int c;
+struct b{b x;};
+int main(){
+  struct b* a = alloc(struct b);
+  a -> x = alloc_array(c, 1);
+  return a->x[0];  
+}

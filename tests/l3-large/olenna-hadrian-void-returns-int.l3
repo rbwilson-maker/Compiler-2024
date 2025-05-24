@@ -1,0 +1,13 @@
+//test error
+//
+
+void f(int a);
+
+int main(){
+  f(3);
+  return 0;
+}
+
+void f(int a){
+  return a + 4;
+}

@@ -1,0 +1,31 @@
+//test return 10
+
+/*
+ * count - Counts the number of one bits in a given unsigned int.
+ *         Uses the fact that A - 1 flips all the bits up to and
+ *         including the least significant 1 bit in the number,
+ *         so A & (A-1) flips the least significant 1 bit.
+ *         It's faster than the easy solution because you only need
+ *         to run this function as many times as there are 1s in the
+ *         number, as opposed to 8 * sizeof(unsigned int) times.
+ */
+int count(int A, int num) {
+  if (A == 0) {
+    return num;
+  }
+  num++;
+  return count(A & (A-1), num);
+}
+
+int return_num() {
+  return 0;
+}
+
+int main() {
+  int[] A = alloc_array(int, 10);
+  for (int i = 0; i < 10; i++) {
+    A[i] = count(i * 3507 + 35064, 0);
+  }
+  A[return_num()] += 1;
+  return A[7];
+}

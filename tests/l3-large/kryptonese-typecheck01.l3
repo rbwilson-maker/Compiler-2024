@@ -1,0 +1,16 @@
+//test typecheck
+int main() {
+    return find_states(0) + 
+           find_states(1) + 
+           find_states(2) + 
+           find_states(3) + 
+           find_states(4) + 
+           find_states(5) + 
+           find_states(6) + 
+           find_states(7) + 
+           find_states(8) + 
+           find_states(9) + 
+           find_states(10) + 
+           find_states(12) + 
+           find_states(13); 
+}

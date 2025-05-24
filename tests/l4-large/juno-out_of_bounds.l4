@@ -1,0 +1,6 @@
+//test memerror
+
+int main () {
+    int[] a = alloc_array(int, 2);
+    return a[3];
+}

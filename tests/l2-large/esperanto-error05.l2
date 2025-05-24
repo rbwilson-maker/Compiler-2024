@@ -1,0 +1,18 @@
+//test error
+
+int main(){
+    int a;
+    int b;
+    int c;
+    c = 0;
+    {
+        a += 1;
+    }
+    {
+        b += 1;
+    }
+    {
+        c += 3;
+    }
+    return a + b;
+}

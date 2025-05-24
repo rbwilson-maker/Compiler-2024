@@ -1,0 +1,43 @@
+//test memerror
+
+//dereferences NULL pointer
+
+typedef struct rectangle rect;
+struct rectangle{
+    int x1;
+    int y1;
+    int x2;
+    int y2;
+    int* area;
+};
+
+rect* new_rect(int x1, int y1, int x2, int y2){
+    rect* r = alloc(rect);
+    r->x1 = x1;
+    r->y1 = y1;
+    r->x2 = x2;
+    r->y2 = y2;
+    // area is never initialized correctly
+
+    return r;
+}
+
+int largest_area(rect*[] arr, int len){
+    int max = 0;
+    for(int i = 0; i < len; i++){
+        int area = *(arr[i]->area);
+        if(area > max) max = area;
+    }
+    return max;
+}
+
+int main(){
+    rect*[] arr = alloc_array(rect*, 4);
+    arr[0] = new_rect(1,2,3,4);
+    arr[1] = new_rect(0, 100, 5, 6);
+    arr[2] = new_rect(0, 10, 5, 6);
+    arr[3] = new_rect(5, 5, 5, 5);
+
+    return largest_area(arr, 4);
+}
+

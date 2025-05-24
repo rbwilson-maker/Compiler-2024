@@ -1,0 +1,12 @@
+//test div-by-zero
+//division by 0
+int main()
+{
+    int a = 1;
+    int b = 5;
+    int c = a << b; // 32
+    int d = a >> 1; // 0
+    int e = c/d;
+
+    return b;
+}

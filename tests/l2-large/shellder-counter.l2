@@ -1,0 +1,30 @@
+//test return 42
+int main(){
+    int counter = 0;
+    bool a = false;
+    bool b = false;
+    bool c = false;
+    bool d = false;
+    bool e = false;
+    bool f = false;
+    while (!(a&&!b&&c&&!d&&e&&!f)) {
+        if (f) {
+            if (e) {
+                if (d) {
+                    if (c) {
+                        if (b) {
+                            a = !a;
+                        }
+                        b = !b;
+                    }
+                    c = !c;
+                }
+                d = !d;
+            }
+            e = !e;
+        }
+        f = !f;
+        counter++;
+    }
+    return counter;
+}

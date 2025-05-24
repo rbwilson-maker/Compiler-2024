@@ -1,0 +1,11 @@
+//test typecheck
+
+int main() {
+    int*[]**[] a = alloc_array(int*[]**, 1);
+    a[0] = alloc(int*[]*);
+    *a[0] = alloc(int*[]);
+    **a[0] = alloc_array(int*, 1);
+    (**a[0])[0] = alloc(int);
+    *(**a[0])[0] = 10;
+    return *(**a[0])[0];
+}

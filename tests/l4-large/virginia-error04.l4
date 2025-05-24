@@ -1,0 +1,8 @@
+//test error
+//ensure struct reserved names properly fail
+struct bool { int lel; bool lulz; };
+
+int main()
+{
+	return 5;
+}

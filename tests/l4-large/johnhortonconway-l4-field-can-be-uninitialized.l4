@@ -1,0 +1,19 @@
+//test memerror
+
+struct ss {
+    int a;
+    int **b;
+    struct bb *cc;
+};
+
+struct bb {
+    struct ss *t;
+    struct ss tt;
+};
+
+int main() {
+    struct bb *tmp = alloc(struct bb);
+
+    tmp = tmp->tt.cc;
+    return tmp->tt.a;
+}

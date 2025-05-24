@@ -1,0 +1,29 @@
+//test return 0
+
+// boolean matrix
+typedef bool[] col;
+typedef col[] matrix;
+
+int main() {
+  // create a 1000x1000 matrix
+  int w = 1000;
+  int h = 1000;
+  matrix m = alloc_array(col, w);
+  for (int i = 0; i < w; i++) {
+    m[i] = alloc_array(bool, h);
+    for(int j = 0; j < w; j++) {
+      if(i==j) m[i][j] = true;
+      else m[i][j] = false;
+    }
+  }
+
+  // count the number of cells where i=j
+  int count = 0;
+  for (int i = 0; i < w; i++) {
+    for (int j = 0; j < h; j++) {
+      if(m[i][j]) count++;
+    }
+  }
+  if(count==w) return 0;
+  else return 1;
+}

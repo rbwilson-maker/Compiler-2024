@@ -1,0 +1,33 @@
+//test typecheck
+
+struct a {
+	int** arg1;
+	int* arg2;
+	int arg3;
+};
+
+int **g(int** arg) {
+	int** res = alloc(int*);
+	*res = *arg;
+	return res;
+}
+
+int** f(int arg) {
+	int** res = alloc(int*);
+	*res = alloc(int);
+	**res = arg;
+	return res;
+}
+
+bool h(int** arg) {
+	struct a * temp = alloc(struct a);
+	(*temp).arg1 = arg;
+	(*temp).arg2 = *arg;
+	(*temp).arg3 = **arg;
+
+	return *temp->arg1 == temp->arg2 && *temp->arg2 == temp->arg3;
+}
+
+int main() {
+	return h(g(f(0x15411))) ? 1 : 0;
+}

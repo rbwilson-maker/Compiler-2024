@@ -1,0 +1,11 @@
+//test error
+
+int x(int x){
+    int a = 1;
+    int x = 2;
+    return a + x;
+}
+
+int main(){
+    return x(1);
+}

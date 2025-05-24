@@ -1,0 +1,15 @@
+//test return 10
+int main(){
+int x = 1;
+int y = 1;
+int z = 0;
+int w = 10;
+if(w > 0 || x + y / z < 1){
+	if(w > 5){
+	   return w;
+	}
+	else return x;
+}
+return w/2;
+
+}

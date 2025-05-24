@@ -1,0 +1,56 @@
+//test return 8008135
+// the classic test case, new and improved
+
+typedef bool swag;
+
+struct bigSwag {
+    swag torture;
+};
+
+struct hugeSwag {
+    struct bigSwag *huge;
+    int[] result;
+};
+
+swag helpMe (swag b) {
+    return ((((b && true) || true) && true) || false) && true;
+}
+
+int[] help (swag b, int x) {
+    int[] useless = alloc_array(int, 1);
+    while (b) {
+            if (x == 8008135) {
+                useless[0] = x;
+                return useless;
+            } else {
+                x += 1000000;
+            }
+        }
+    useless[0] = 42;
+    return useless;
+}
+
+int main () {
+    struct bigSwag *nightmare = alloc(struct bigSwag);
+    struct hugeSwag *abjectHorror = alloc(struct hugeSwag);
+    abjectHorror -> huge = nightmare;
+    nightmare -> torture = helpMe(false);
+    int x = 0;
+    if (nightmare -> torture) {
+        for (int i = 0; i < 8000; i++) {
+            int y;
+            y = 0;
+            y += 10;
+            y -= 9;
+            y *= 2;
+            y /= 1;
+            y %= 3;
+            x += y;
+        }
+        x += 135;
+        abjectHorror -> result = help(nightmare -> torture, x);
+        return (abjectHorror -> result)[0];
+    } else {
+        return 42;
+    }
+}

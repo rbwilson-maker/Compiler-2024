@@ -1,0 +1,12 @@
+//test error
+//cannot get the address of main
+
+typedef int foo();
+typedef int iti(int x);
+
+int main()
+{
+  foo* m = &main;
+  iti* f = fn (int z) {(*m)()};
+  return (*f)(251);
+}

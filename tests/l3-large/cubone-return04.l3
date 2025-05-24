@@ -1,0 +1,12 @@
+//test return 10
+
+int tail(int x, int sum) {
+  if (x == 0)
+    return sum;
+  else
+    return tail(x - 1, sum + x);
+}
+
+int main () {
+  return tail(4, 0);
+}

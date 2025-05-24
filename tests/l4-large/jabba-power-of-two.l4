@@ -1,0 +1,33 @@
+//test return 2147483647
+// this is a super-efficient way of calculating 2^n - 1...
+
+int sum(int[] a, int acc, int s, int e) {
+  if (s == e) return acc;
+  return sum(a, acc + a[s], s + 1, e);
+}
+
+int[][] pascal(int n) {
+  int[][] p = alloc_array(int[], n);
+  for (int i = 0; i < n; i++) {
+    p[i] = alloc_array(int, i + 1);
+    for (int j = 0; j < i + 1; j++) {
+      p[i][j] = 1;
+    }
+  }
+  for (int i = 0; i < n; i++) {
+    for (int j = 1; j < i; j++) {
+      p[i][j] = p[i-1][j-1] + p[i-1][j];
+    }
+  }
+  return p;
+}
+
+int main() {
+  int n = 31;
+  int[][] p = pascal(n);
+  int[] p2 = alloc_array(int, n);
+  for (int i = 0; i < n; i++) {
+    p2[i] = sum(p[i], 0, 0, i + 1);
+  }
+  return sum(p2, 0, 0, n);
+}

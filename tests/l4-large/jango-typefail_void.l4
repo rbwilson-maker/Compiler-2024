@@ -1,0 +1,15 @@
+//test error
+
+void take_pointer(void* toreturn) {
+  if (toreturn != NULL) {
+    return 0;
+  } else {
+    return *toreturn;
+  }
+}
+
+int main() {
+  void* five = alloc(void);
+  five = NULL;
+  return take_pointer(NULL);
+}

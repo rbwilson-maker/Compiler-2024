@@ -1,0 +1,14 @@
+//test return 0
+// test comment behavior
+
+int main()
+{
+    int x;
+    int y;
+    // This is not the start of a block comment
+    // /*
+    x = 0;
+    return x;
+    // /* */ */ unmatched
+    return ((y) * 5);
+}

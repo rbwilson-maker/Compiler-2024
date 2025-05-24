@@ -1,0 +1,14 @@
+//test div-by-zero
+// Divide by zero with some extra arithmetic
+
+int main()
+{
+  int x;
+  int y;
+
+  x = 5;
+  y = 8 + 4 * (3 +- 5); // y==0
+  x = y%x;              // x==0
+  int z = 4/x;          // failure
+  return z;
+}

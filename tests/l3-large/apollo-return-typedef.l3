@@ -1,0 +1,15 @@
+//test return 0
+typedef int tau1;
+typedef	tau1 tau2;
+typedef	tau2 tau3;
+typedef	tau3 tau4;	
+
+tau4 main()
+{
+	tau3 j = 0;
+	for(tau2 i = 0; i < 1;i++)
+	{
+		tau4 k = i + j;
+	}
+	return 0;
+}

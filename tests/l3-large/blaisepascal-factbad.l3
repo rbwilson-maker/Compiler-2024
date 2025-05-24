@@ -1,0 +1,16 @@
+//test abort
+
+int fact_help(int acc, int n) {
+  assert(n >= 0);
+  if (n == 0) return acc;
+  return fact_help(acc * n, n - 1);
+}
+
+int fact(int n) {
+  return fact_help(1, n);
+}
+
+int main() {
+  int x = fact(-5);
+  return 0;
+}

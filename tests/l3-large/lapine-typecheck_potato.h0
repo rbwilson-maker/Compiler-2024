@@ -1,0 +1,11 @@
+typedef int potato;
+
+potato new_potato();
+potato grow_potato(potato p);
+potato eat_potato(potato p);
+void consume_potato(potato p);
+void print_potato(potato p);
+
+typedef bool mashed_potatoes;
+
+mashed_potatoes mash(potato p);

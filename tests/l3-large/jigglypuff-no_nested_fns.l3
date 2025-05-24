@@ -1,0 +1,21 @@
+//test error
+
+/* No Nested Functions Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, October 11, 2015 at 10:14:10 PM EDT
+ *
+ * Tests that function definitions inside of functions are not permitted
+ * in the Lab 3 syntax.
+ */
+
+int main()
+{
+    int test()
+    {
+        return 42;
+    }
+
+    return test();
+}

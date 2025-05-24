@@ -1,0 +1,44 @@
+//test return 1
+
+struct bad_queue {
+  int[] contents;
+  int size;
+};
+
+typedef struct bad_queue* bad_queue;
+
+bad_queue empty_queue(int size) {
+  bad_queue bq = alloc(struct bad_queue);
+  bq->contents = alloc_array(int, size);
+  bq->size = size;
+  return bq;
+}
+
+void enqueue(int n, bad_queue bq) {
+  for (int i = 0; i < bq->size - 1; i++) {
+    bq->contents[i] = bq->contents[i+1];
+  }
+  bq->contents[bq->size - 1] = n;
+}
+
+int dequeue(bad_queue bq) {
+  int result = bq->contents[0];
+  for (int i = 0; i < bq->size - 1; i++) {
+    bq->contents[i] = bq->contents[i+1];
+  }
+  bq->contents[bq->size - 1] = 0;
+  return result;
+}
+
+int collatz(int n) {
+  return 1; // genius-level optimization
+}
+
+int main() {
+  int size = 64;
+  bad_queue bq = empty_queue(size);
+  for (int i = 0; i < size; i++) {
+    enqueue(collatz(i), bq);
+  }
+  return dequeue(bq);
+}

@@ -1,0 +1,41 @@
+//test return 5935899
+
+int main() {
+  int result = 0;
+  bool isNegative = false;
+  for (int i = 1; i <= 6; i++) {
+    int temp = i;
+    while (temp > 1) {
+      result = (result << 1) + (result << 2);
+      temp = (temp >> 1) + (temp >> 2);
+    }
+    result = (result << 1) + (result << 2) + (result << 3) - (result << 4);
+    isNegative = (!isNegative && (i % 2 == 0)) ? true : (isNegative && (i % 2 == 1)) ? false : isNegative;
+    for (int j = 3; j <= i; j++) {
+      int innerTemp = j;
+      while (innerTemp > 1) {
+        result = isNegative ? (result - (i << 1)) : (result + (i << 1));
+        innerTemp = (innerTemp >> 1) + (innerTemp >> 2);
+      }
+      for (int k = 1; k <= j; k++) {
+        result = isNegative ? (result - (j << 2)) : (result + (j << 2));
+      }
+      result = (result << 1) + (result << 2) - (result >> 1);
+      for (int l = 1; l <= 2; l++) {
+        result = isNegative ? (result >> 1) : (result << 1);
+        for (int m = 1; m <= l; m++) {
+          result = isNegative ? (result - (l << 1)) : (result + (l << 1));
+          for (int n = 1; n <= 3; n++) {
+            result = isNegative ? (result >> 1) : (result << 1);
+            for (int o = 1; o <= n; o++) {
+              result = isNegative ? (result - (n << 2)) : (result + (n << 2));
+            }
+            result = (result << 1) + (result << 2) - (result >> 1);
+          }
+        }
+      }
+    }
+    isNegative = (i % 3 == 0) ? !isNegative : isNegative;
+  }
+  return result;
+}

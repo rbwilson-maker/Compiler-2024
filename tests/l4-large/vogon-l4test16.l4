@@ -1,0 +1,18 @@
+//test return 36
+
+int main() { 
+  int[][] arr = alloc_array(int[], 3);
+  for (int i = 0; i < 3; i++) {
+    arr[i] = alloc_array(int, 3);
+    for (int j = 0; j < 3; j++) {
+      arr[i][j] = i * 3 + j;
+    }
+  }
+  int sum = 0;
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      sum += arr[i][j];
+    }
+  }
+  return sum;
+}

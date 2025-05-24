@@ -1,0 +1,17 @@
+//test return 0
+
+struct point {
+  int x;
+  int y;
+};
+
+struct line {
+  struct point A;
+  struct point B;
+};
+
+int main() {
+  struct line* L = alloc(struct line);
+  int x = (*L).B.y;
+  return x;
+}

@@ -1,0 +1,6 @@
+//test error
+// ill-formed hex literal
+
+int main() {
+	return 0xgabcdef
+}

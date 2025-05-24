@@ -1,0 +1,71 @@
+//test return 4444;
+
+/* The fouriest number is the 32-bit signed integer,
+   made by pressing the 4 key at most 4+4+4-4/4 times on a
+   4-function calculator (with +,-,*,/ in between),
+   with the most 4s.
+*/
+
+int abs(int x) {
+  if (x >= 0) {
+    return x;
+  } else {
+    return -x;
+  }
+}
+
+int num_fours_help(int n) {
+  assert(n >= 0);
+  if (n == 0) {
+    return 0;
+  }
+  int digit = n % 10;
+  return num_fours_help(n/10) + (digit == 4 ? 1 : 0);
+}
+
+int num_fours(int n) {
+  int a = abs(n);
+  if (a < 0) {
+    // ahhh! not good!
+    // but we know it's -2,147,483,648
+    return 3;
+  } else
+    return num_fours_help(a);
+}
+
+/* Returns the new best number. */
+// requires: len >= 0
+int check_fouriest_help(int len, int acc, int best) {
+  if (len == 0) {
+    int cur_num = num_fours(acc);
+    int best_num = num_fours(best);
+    if (cur_num > best_num) {
+      return acc;
+    } else {
+      return best;
+    }
+  } else {
+    int best1 = check_fouriest_help(len - 1, acc + 4, best);
+    int best2 = check_fouriest_help(len - 1, acc - 4, best1);
+    int best3 = check_fouriest_help(len - 1, acc * 4, best2);
+    int best4 = check_fouriest_help(len - 1, acc / 4, best3);
+    return best4;
+  }
+}
+
+// requires: len > 0
+int check_fouriest(int len) {
+  assert(len > 0);
+  return check_fouriest_help(len - 1, 4, 4);
+}
+
+int main() {
+  int best = 4;
+  for (int i = 2; i <= 4+4+4-4/4; i++) {
+    int next = check_fouriest(i);
+    if (num_fours(next) > num_fours(best)) {
+      best = next;
+    }
+  }
+  return best;
+}

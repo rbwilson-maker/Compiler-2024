@@ -1,0 +1,26 @@
+//test return 0
+// prints an integer out in binary
+// does NOT use 2's complement, but rather places a '-' in front if the value is negative
+//this should print "-1\n0\n0\n1\n1\n".  Sadly, I can't remove the '\n's without restricting the range of allowed values.  Shouldn't really matter.
+
+void printAsBinary(int x) {
+	//first print leading digits
+	if (x>1 || x<-1)
+		printAsBinary(x/2);
+	
+	//then print this digit
+	if (x%2 == 0)
+		print_int(0);
+	else
+		//only the innermost function call should add a '-'
+		//therefore, we check for equality, not just sign
+		if (x==-1)
+			print_int(-1);
+		else
+			print_int(1);
+}
+
+int main() {
+  printAsBinary(-19);
+  return 0;
+}

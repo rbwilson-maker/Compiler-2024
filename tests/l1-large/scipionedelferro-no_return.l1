@@ -1,0 +1,8 @@
+//test error
+// causes a compile-time error due to no return 
+
+int main() {
+    int x = 3;
+    int y = 4;
+    int z = x + y;
+}

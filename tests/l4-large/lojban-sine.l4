@@ -1,0 +1,46 @@
+//test return 4
+
+int pow(int x, int y)
+{
+  int r = 1;
+  while (y > 1) {
+    if (y % 2 == 1) {
+      r = x * r;
+    }
+    x = x * x;
+    y = y / 2;
+  }
+  return r * x;
+}
+
+int fact(int n) {
+   if (n == 0) return 1;
+   return n * fact(n - 1);
+}
+
+int sin(int num, int denom, int mag) {
+   int len = 7;
+   int[] nums = alloc_array(int, len);
+   int[] denoms = alloc_array(int, len);
+   int[] frac = alloc_array(int, len);
+
+   for (int i = 0; i < len; i++) {
+      int num_i =  pow(num, 1 + i * 2);
+      int denom_i = pow(denom, 1 + i * 2) * fact(1 + i * 2);
+      frac[i] = num_i * mag / denom_i;
+   }
+
+   int result = 0;
+   int sign = 1;
+   for (int i = 0; i < len; i++) {
+      result += sign * frac[i];
+      sign *= 1;
+   }
+
+   return result;
+}
+
+int main() {
+   return sin(1, 2, 8);
+}
+

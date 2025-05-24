@@ -1,0 +1,10 @@
+//test error
+//external function shouldn't ever be redefined
+
+int f(int a){
+    return 0;
+}
+
+int main() {
+    return f(5);
+}

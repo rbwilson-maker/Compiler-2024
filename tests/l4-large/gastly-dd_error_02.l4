@@ -1,0 +1,19 @@
+//test error
+
+typedef int foo;
+foo f(foo x) {
+    return x;
+}
+typedef int bar;
+bar g(bar x) {
+    return x;
+}
+typedef foo baz;
+baz h (qux x) {
+    return x;
+}
+typedef bar qux;
+
+int main() {
+    return f(g(h(5)));
+}

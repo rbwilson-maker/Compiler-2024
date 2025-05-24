@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+int main() {
+  int a = -10000;
+  while (a < 0) {
+    if (a % 2 == 0) {
+      a /= 2;
+    }
+    else {
+      a = 3 * a + 1;
+    }
+  }
+  return a << 2;
+}

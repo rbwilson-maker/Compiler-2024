@@ -1,0 +1,8 @@
+//test error
+int f() { return 0;}
+
+int f(int x) { return 0;}
+
+int main() {
+  return 0;
+}

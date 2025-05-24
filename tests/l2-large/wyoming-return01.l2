@@ -1,0 +1,19 @@
+//test return 1000
+/*
+a comment
+/*
+more comment
+*/
+*/
+
+int
+main(){
+  int base = 10;
+  int exp = 3;
+  int ret = 1;
+  while(exp>0){
+    ret*=base;
+    exp--;
+  }
+  return ret;
+}

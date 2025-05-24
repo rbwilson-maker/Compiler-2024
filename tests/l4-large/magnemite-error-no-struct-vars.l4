@@ -1,0 +1,12 @@
+//test error
+//can't define struct variable
+
+struct point {
+    int x;
+    int y;
+};
+
+int main() {
+    struct point x;
+    return 0;
+}

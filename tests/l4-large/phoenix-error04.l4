@@ -1,0 +1,8 @@
+//test error
+//try to typedef something inside a struct
+
+struct malformatted {
+  typedef int pi;
+};
+
+int main() { return 0; }

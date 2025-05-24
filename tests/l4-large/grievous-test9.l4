@@ -1,0 +1,18 @@
+//test typecheck
+//test infloop
+
+struct inception{
+    struct inception* inception;
+};
+
+struct inception* make(){
+    int inception = 0;
+    struct inception* result = alloc(struct inception);
+    result->inception = make();
+    return result;
+}
+
+int main(){
+    struct inception* inception = make();
+    return 0;
+}

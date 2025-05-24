@@ -1,0 +1,9 @@
+//test return 2
+
+int f(int x) {
+    return x;
+}
+
+int main() {
+    return 1 << f(1);
+}

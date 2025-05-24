@@ -1,0 +1,12 @@
+//test return 20
+// Simple integer operations
+int main() {
+    int a = 5;
+    int b = 10;
+    int c = 15;
+    int d = 20;
+    int e = 25;
+
+    e -= (b + c);
+    return e + d;
+}

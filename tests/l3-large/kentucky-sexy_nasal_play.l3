@@ -1,0 +1,32 @@
+//test return -29997
+
+
+
+
+bool is_a_nose(int b, int c, bool bitflip){
+			int trab = b | ~c;	
+int tempy = bitflip ? ~trab : trab;
+	return tempy > 0;
+}
+
+
+int fir(int v) {
+	return ~~~~~~~~~~~~~~v * (v & -v);
+
+
+}
+
+
+
+int main() {
+
+int noses = 0;
+
+for(int x = 0; x < 30000; x++)
+	noses += (is_a_nose(x, fir(x), (noses & 1) == 0)) ? 2 : -1;
+
+
+
+
+
+return noses;}

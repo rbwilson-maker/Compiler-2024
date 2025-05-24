@@ -1,0 +1,47 @@
+//test return 9 
+
+/* trailing zero Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, September 28, 2015 at 09:45:38 PM EDT
+ *
+ * Find trailing zeros of 0xcecece00
+ * if v is 1101000 (base 2), then c will be 3
+ * NOTE: if 0 == v, then c = 31.
+ */
+
+int main()
+{
+    int v = 0xcecece00;     // 32-bit word input to count zero bits on right
+    int c = 0;              // c will be the number of zero bits on the right,
+    
+    if ((v & 0x1) != 0) {
+        // special case for odd v (assumed to happen half of the time)
+        c = 0;
+    } else {
+        c = 1;
+        if ((v & 0xffff) == 0) {  
+            v >>= 16;  
+            c += 16;
+        }
+
+        if ((v & 0xff) == 0) {  
+            v >>= 8;  
+            c += 8;
+        }
+    
+        if ((v & 0xf) == 0) {  
+            v >>= 4;
+            c += 4;
+        }
+    
+        if ((v & 0x3) == 0) {  
+            v >>= 2;
+            c += 2;
+        }
+        c -= v & 0x1;
+    }
+
+    return c; 
+}

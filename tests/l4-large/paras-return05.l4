@@ -1,0 +1,14 @@
+//test return 42
+
+struct foo{
+  int x;
+  int y;
+};
+
+int main(){
+  struct foo*[] x = alloc_array(struct foo*, 4);
+  x[0] = alloc(struct foo);
+  x[0] -> x = 6;
+  x[0] -> y = 7;
+  return x[0] -> x * x[0] -> y;
+}

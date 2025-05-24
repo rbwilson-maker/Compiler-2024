@@ -1,0 +1,24 @@
+//test return 150
+
+int counter(int *c, int i) {
+  1 / (*c);
+  *c = *c - 1;
+  return i;
+}
+
+int main() {
+  int n = 10;
+  int *c = alloc(int);
+  *c = 21;
+  int[] A = alloc_array(int, n);
+
+  for (int i = 0; i < n; i++) {
+    A[i] = 75;
+  }
+
+  for (int j = 0; j < n; j++) {
+    A[counter(c, j)] += A[counter(c, j)];
+  }
+
+  return A[0];
+}

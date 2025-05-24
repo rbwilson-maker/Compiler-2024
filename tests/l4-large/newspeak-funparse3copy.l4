@@ -1,0 +1,17 @@
+//test error
+// test the non-context free parsing
+
+// typedef bool ty;
+
+void f(bool *x) {
+  *x = true;
+}
+
+int main() {
+  int ty = 3; // typedef used as variable name
+  int ret = 4;
+  ty * ret = alloc(bool);
+  *ret = false;
+  f(ret);
+  return *ret ? 0 : 1;
+}

@@ -1,0 +1,23 @@
+//test return 12345678
+
+int main() {
+
+  int a = -58;
+  int b = 10;
+  int eight = (a % b) * -1;
+
+  int c = -53;
+  int d = 7;
+  int seventy = (c / d) + 77;
+
+  int e = -1;
+  int f = -6;
+  int six_hundred = e * f * 20 * 5;
+
+  int g = 6000;
+  int h = -(-1000);
+  int five_grand = g - h;
+
+  return (10000000 + 2000000 + 300000 + 40000 + five_grand + six_hundred +
+    seventy + eight);
+}

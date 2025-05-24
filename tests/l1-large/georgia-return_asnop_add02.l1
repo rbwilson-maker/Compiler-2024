@@ -1,0 +1,12 @@
+//test return -2147483648
+// Test integer overflow
+int main()
+{
+  int int_max;
+
+  int_max = 0x7fffffff;
+
+  int_max += 1;
+
+  return int_max;
+}

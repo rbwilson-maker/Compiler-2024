@@ -1,0 +1,8 @@
+//test error
+// checking typechecking issues
+
+int main() {
+    x bool = true;
+    y int = 0;
+    return x + y;
+}

@@ -1,0 +1,10 @@
+//test error
+
+// Error: undeclared variables
+int main() {
+  a = 10 * 2;
+  b = 20 % 3;
+  c = b * 2;
+
+  return a + b + c;
+}

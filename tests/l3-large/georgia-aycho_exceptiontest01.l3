@@ -1,0 +1,12 @@
+//test div-by-zero
+/*  divide by zero */
+
+int div (int n, int m) {
+  int k = n/m;
+  return k;
+}
+
+int main () {
+  return div(1, 0);
+}
+

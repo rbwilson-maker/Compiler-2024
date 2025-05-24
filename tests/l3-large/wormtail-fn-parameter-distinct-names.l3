@@ -1,0 +1,8 @@
+//test error
+int main() {
+
+  fn(1, true, false);
+  return 0;
+}
+
+void fn(int a; bool b; bool a);

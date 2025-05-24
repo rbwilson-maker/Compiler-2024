@@ -1,0 +1,12 @@
+//test return 1
+int main() {
+  int i = 0;
+  bool f = (i == 69);
+  bool t = (i < 420);
+  if (f && t) return 0;
+  while (t) {
+    t = (i != 0);
+  }
+  if (!t) return 1;
+  else return 0;
+}

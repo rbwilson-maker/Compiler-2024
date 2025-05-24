@@ -1,0 +1,16 @@
+//test return 1
+/* Function name shadowing */
+
+typedef int whywouldyoueverwanttoredefineint;
+typedef whywouldyoueverwanttoredefineint thisisgettinghilarious;
+
+whywouldyoueverwanttoredefineint good_divide(thisisgettinghilarious a, whywouldyoueverwanttoredefineint b) {
+	assert(a!=0);
+	thisisgettinghilarious x = a+b-a;
+	return x/a;
+}
+
+int main() {
+	int good_divide = 1;
+	return good_divide;
+}

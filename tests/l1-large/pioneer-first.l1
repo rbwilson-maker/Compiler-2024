@@ -1,0 +1,9 @@
+//test return -204
+
+int main() {
+  int x = 15;
+  int y = 122;
+  int z = 15;
+  int q = 112;
+  return (x - y) + (z - q);
+}

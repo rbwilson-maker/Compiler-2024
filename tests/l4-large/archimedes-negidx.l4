@@ -1,0 +1,8 @@
+//test memerror
+// Access negative-index element
+
+int main() {
+  int n = 1 << 31 - 1;
+  int[] arr = alloc_array(int, n);
+  return arr[~0];
+}

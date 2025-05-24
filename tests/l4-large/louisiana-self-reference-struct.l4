@@ -1,0 +1,15 @@
+//test error
+
+struct s1;
+
+struct s1 {
+    int first;
+    struct s1 next;
+};
+
+
+
+int main() {
+    struct s1 *s = alloc(struct s1);
+    return s->first;
+}

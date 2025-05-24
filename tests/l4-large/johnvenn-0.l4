@@ -1,0 +1,21 @@
+//test div-by-zero
+
+typedef int chipichipi;
+typedef int chapachapa;
+typedef int dubidubi;
+typedef int dabadaba;
+
+struct cat {chipichipi chapachapa; dubidubi dabadaba;};
+
+int inc (struct cat* name) {
+    name -> dabadaba += 1;
+    return 0;
+}
+
+int main() {
+    struct cat* cat1 = alloc(struct cat);
+    cat1 -> dabadaba = -1;
+    int[] A = alloc_array(int, 3);
+    A[inc(cat1)] /= cat1->dabadaba;
+    return cat1-> dabadaba;
+}

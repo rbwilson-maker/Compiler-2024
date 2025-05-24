@@ -1,0 +1,57 @@
+//test return 0
+struct odd;
+
+struct even {
+    struct odd *next;
+};
+
+struct odd {
+    struct even *next;
+};
+
+bool is_odd(struct odd *n);
+
+bool is_even(struct even *n) {
+    if (n->next == NULL) return true;
+    return !is_odd(n->next);
+}
+
+bool is_odd(struct odd *n) {
+    if (n->next == NULL) return true;
+    return !is_even(n->next);
+}
+
+struct odd *make_odd(int n);
+
+struct even *make_even(int n) {
+    struct even *res = alloc(struct even);
+    if (n == 0) 
+        return res; 
+    res->next = make_odd(n - 1);
+    return res;
+}
+
+struct odd *make_odd(int n) {
+    struct odd *res = alloc(struct odd);
+    if (n == 0) 
+        return res; 
+    res->next = make_even(n - 1);
+    return res;
+}
+
+struct even *make_num(int n) {
+    if (n < 0) { 1/0; return NULL; }
+    return make_even(n);    
+}
+
+int main() {
+    for (int i = 0; i < 100; i++) {
+        if (i % 2 == 0) {
+            assert(is_even(make_num(i)));
+        } else {
+            assert(!is_even(make_num(i)));
+        }
+    }
+
+    return 0;
+}

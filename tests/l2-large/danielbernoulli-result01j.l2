@@ -1,0 +1,17 @@
+//test return 1
+int main() {
+    bool v = true;
+    int stopper = 5;
+    int start = 0;
+    if (v ? (17 == 35 / 2) : v) {
+        for (bool t = false; t != true; t = t && v) {
+            start += 3;
+            t = start >= stopper;
+        }
+    }
+    else {
+        {{{{{}}}}}
+        return 5;
+    }
+    return 6 / start;
+}

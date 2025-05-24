@@ -1,0 +1,9 @@
+//test return 8
+//divide by 0
+
+int main () {
+  int x = 3;
+  return x + 5;
+  int y = x / 0;
+  return 4;
+}

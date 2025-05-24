@@ -1,0 +1,25 @@
+//test memerror
+
+struct index {
+  int idx;
+};
+
+int main() {
+  int size = 100;
+  struct index*[] indices = alloc_array(struct index*, size);
+
+  int lol = 1;
+  for(int i = 0; i < size; i++) {
+    struct index* new = alloc(struct index);
+    new->idx = lol % (size + 7);
+    lol = new->idx * 12;
+    indices[i] = new;
+  }
+
+  int sum = 0;
+  for(int i = 0; i < size; i++) {
+    sum += indices[indices[i]->idx]->idx;
+  }
+
+  return 0;
+}

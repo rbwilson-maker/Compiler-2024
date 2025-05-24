@@ -1,0 +1,16 @@
+//test return 3
+
+int main() {
+    bool boo = true;
+    bool boo1 = false;
+    int a = 1;
+
+    a++;
+    a--;
+    a--;
+    a++;
+    a++;
+    a++;
+
+    return a;
+}

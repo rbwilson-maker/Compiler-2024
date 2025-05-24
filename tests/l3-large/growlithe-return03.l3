@@ -1,0 +1,48 @@
+//test return 5
+
+/*
+ * This program tests mutual recursion
+ *
+ */
+
+bool is_odd(int n);
+bool is_even(int n)
+{
+    if (n == 0)
+        return true;
+    else
+        return is_odd(n - 1);
+}
+
+bool is_odd(int n)
+{
+    if (n == 0)
+        return false;
+    else
+        return is_even(n - 1);
+}
+
+int main()
+{
+    int x;
+    int y;
+
+    x = 5;
+    y = 6;
+
+    if(is_odd(x) && is_even(y))
+    {
+        if(is_odd(x+y))
+            return x;
+        else
+            return y;
+    }
+    else
+    {
+        if(is_even(y-x))
+            return x;
+        else
+            return y;
+    }
+    return x<<y;
+}

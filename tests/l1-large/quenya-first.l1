@@ -1,0 +1,13 @@
+//test return 55
+// do a bunch of addition (non-SSA)
+int main() {
+  int a = 5;
+  int b = 6;
+  int c = 11;
+
+  a = b + 7;
+  c = a + 3;
+  b = c + 10;
+
+  return a + b + c;
+}

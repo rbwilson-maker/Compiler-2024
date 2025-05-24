@@ -1,0 +1,31 @@
+//test return 1078530032
+// Source: https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80
+// Leibniz's formula for pi is an infinite sum which slowly converges to
+// pi.  This is a naive way of computing it using C0's hacky floating
+// point support.
+// Note the backwards iteration in order to minimize floating point error
+// (doing it forwards actually makes the accumulator stop converging after
+//  less than 2500 iterations, if I checked correct).
+// The return result is approximately equivalent to the IEEE 754 32 bit float
+// 3.1415977 casted to a 32 bit integer.
+
+fpt mk_inv(int denom)
+{
+  return fdiv(itof(1), itof(denom));
+}
+
+int main()
+{
+  int iterations = 100000;
+  fpt acc = itof(0);
+  for (int i = iterations; i >= 1; i--)
+  {
+    fpt first = mk_inv((i << 2) - 1);
+    fpt second = mk_inv((i << 2) + 1);
+    fpt diff = fsub(second, first);
+    acc = fadd(acc, diff);
+  }
+  acc = fadd(acc, itof(1));
+  fpt pi = fmul(acc, itof(4));
+  return pi;
+}

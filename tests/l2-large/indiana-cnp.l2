@@ -1,0 +1,45 @@
+//test return 1
+
+//expects all parts to be true
+
+int main(){
+
+    bool a1;
+    bool a2;
+    bool a3;
+    bool a4;
+    bool a5;
+    bool a6;
+    bool a7;
+
+    a1 = true;
+    a2 = false || true;
+    a3 = a1 && a2;
+    a4 = false;
+    for(int i = 0; i < 2; i++){
+       a4 = true;
+       if(i == 2) a4 = false;
+    }
+    int j = 0;
+    for(j = 0; j < 2; j++){
+       a5 = false;
+    }
+    a5 = j == 2;
+
+    a6 = false;
+    if(a1) if(a2) if(a3) if(a4) if(a5) a6 = true;
+
+    a7 = true;
+    while(a7){
+        a7 = false;
+    }
+    a7 = true;
+
+
+
+    return a1 && a2 && a3 && a4 && a5
+        && a6 && a7
+           ? 1
+           : 0;
+
+}

@@ -1,0 +1,28 @@
+//test return 900
+
+// compute the sum of a matrix
+
+int sum(int[][] array, int rows, int cols) {
+    
+    int total = 0;
+    for (int r = 0; r < rows; r++) {
+        for (int c = 0; c < cols; c++) {
+            total += array[r][c];
+        }
+    }
+    return total;
+}
+
+int main() {
+    int rows = 10;
+    int cols = 10;
+    int[][] arr = alloc_array(int[], rows);
+    for (int i = 0; i < rows; i++) {
+        arr[i] = alloc_array(int, cols);
+        for (int j = 0; j < cols; j++) {
+            arr[i][j] = i+j;
+        }
+    } 
+    return sum(arr, rows, cols);
+}
+

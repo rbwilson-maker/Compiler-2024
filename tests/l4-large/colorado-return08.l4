@@ -1,0 +1,21 @@
+//test return 21967344
+
+int main() {
+	int* t1 = alloc(int);
+	int** t2 = alloc(int*);
+	int*** t3 = alloc(int**);
+	int**** t4 = alloc(int***);
+	int***** t5 = alloc(int****);
+	int****** t6 = alloc(int*****);
+	*t1 = 666;
+	*t2 = t1;
+	*t3 = t2;
+	*t4 = t3;
+	*t5 = t4;
+	*t6 = t5;
+	int l = 0;
+	for(int i = 0; i < 32984; i++) {
+		l += ******t6;
+	}
+	return l;
+}

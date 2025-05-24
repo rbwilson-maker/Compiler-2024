@@ -1,0 +1,16 @@
+//test return 1
+
+int main()
+{
+    int x = 2;
+    bool y = false;
+
+    if (~(~x) == x && !(!y) == y)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}

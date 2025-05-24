@@ -1,0 +1,11 @@
+//test error
+int main(){
+    bool x = true;
+    if (x){
+        return x;
+    }
+    else{
+        return 1;
+    }
+    return 0;
+}

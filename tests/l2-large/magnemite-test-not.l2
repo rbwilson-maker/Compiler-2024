@@ -1,0 +1,7 @@
+//test return 55
+
+int main() {
+  if (!true) return 44;
+  if (!false) return 55;
+  return 66;
+}

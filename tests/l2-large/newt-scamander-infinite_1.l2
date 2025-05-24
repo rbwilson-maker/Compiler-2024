@@ -1,0 +1,22 @@
+//test typecheck
+//test infloop
+
+int main() {
+
+	int a = 0;
+
+	while (a < 100) {
+		int b = 50;
+		int c = 25;
+		int d = 12;
+		int e = 6;
+		int f = 3;
+		int g = 1;
+		
+		a = b + c + d + e + f + g; 	
+	
+	}
+
+	return a;
+
+}

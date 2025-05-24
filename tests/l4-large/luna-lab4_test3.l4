@@ -1,0 +1,7 @@
+//test memerror
+
+int main() {
+    bool[][][] b = alloc_array(bool[][], 1);
+    b[0][10] = alloc_array(bool, 10);
+    return 0;
+}

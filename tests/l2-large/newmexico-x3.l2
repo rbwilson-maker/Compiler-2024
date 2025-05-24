@@ -1,0 +1,9 @@
+//test div-by-zero
+// shift overflow
+
+int main()
+{
+	int x = 1;
+	x <<= 133535;
+	return x;
+}

@@ -1,0 +1,10 @@
+//test abort
+void abort_here() {
+  int i = 213;
+  for (; i > 0; i++) {}
+  assert(i != 2147483648);
+}
+int main() {
+  abort_here();
+  return 0;
+}

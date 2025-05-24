@@ -1,0 +1,7 @@
+//test div-by-zero
+// Divide by zero
+int main() {
+  int x = 5;
+  x -= 5;
+  return 2/x;
+}

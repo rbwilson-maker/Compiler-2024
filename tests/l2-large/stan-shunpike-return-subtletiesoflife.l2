@@ -1,0 +1,9 @@
+//test return 37
+
+int main(){
+	bool a = true == false;
+	bool b = true != false;
+	bool c = 1 == 2;
+	bool d = 1 != 37;
+	return 37;
+}

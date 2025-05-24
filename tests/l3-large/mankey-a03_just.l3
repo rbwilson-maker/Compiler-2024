@@ -1,0 +1,35 @@
+//test div-by-zero
+//i call foo
+
+int main();
+
+int foo() {
+  return 1/0;
+}
+
+bool bar ();
+
+int main() {
+  if (false) {
+    1/0;
+  }
+  if (bar()) {
+    1/0;
+  }
+  if (!(1 > 2) && bar()){
+    return foo();
+  } else {
+    foo();
+    return foo();
+  }
+}
+
+bool bar () {
+  return false;
+}
+
+int main();
+
+int foo();
+
+bool bar();

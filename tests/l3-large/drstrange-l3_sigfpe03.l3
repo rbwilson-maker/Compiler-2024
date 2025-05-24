@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int func1(int x){
+    if (x < 0){
+        return x;
+    }
+    return x << func1(x - 1);
+}
+
+int main() {
+    return func1(5);
+}

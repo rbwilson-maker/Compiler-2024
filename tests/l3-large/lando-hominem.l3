@@ -1,0 +1,14 @@
+//test abort
+
+int lcg(int n) {
+  return (n * 1664525) + 1013904223;
+}
+
+int main() {
+  int n = 0;
+  while (true) {
+    assert(n > (-2147481000));
+    n = lcg(n);
+  }
+  return 0;
+}

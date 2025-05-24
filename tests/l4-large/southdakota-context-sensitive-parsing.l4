@@ -1,0 +1,19 @@
+//test return 3
+
+int foo(int bizzle) {
+	int bozzle = 3;
+	bizzle* bozzle;
+	return bizzle * 3;
+}
+
+struct bumble {
+	int bobo;
+};
+
+typedef struct bumble bizzle;
+
+int main() {
+	bizzle* bozzle = alloc(bizzle);
+	bozzle->bobo = 1;
+	return foo(bozzle->bobo);
+}

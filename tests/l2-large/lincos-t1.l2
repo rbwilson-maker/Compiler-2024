@@ -1,0 +1,14 @@
+//test return 1
+int main() {
+	int a = 1;
+  int b;
+	for (int i = 0; i<9; i++) {
+		a++;
+		a--;
+    for (int j = 0; j < 10000000; j++) {
+      b = 0;
+      b = a;
+    }
+	}
+	return a;
+}

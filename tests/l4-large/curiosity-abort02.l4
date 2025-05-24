@@ -1,0 +1,31 @@
+//test abort
+
+int fac(int x){
+  if(x==0){return 1;}
+  return x*fac(x-1);
+}
+
+int choose(int x, int y){
+  int x_fac = fac(x);
+  int y_fac = fac(y);
+  int diff_fac = fac(x-y);
+  return (x/(y_fac*diff_fac));
+}
+
+
+int main(){
+  int* p = alloc(int);
+  *p = 5;
+
+  int[] args = alloc_array(int, 2);
+  args[0] = 2;
+  args[1] = 3;
+
+  int res1 = choose(*p, args[0]);
+  int res2 = choose(*p, args[1]);
+  
+  assert(res1 == res2);
+  assert(res1 == 10);
+  assert(res1 == 100);
+  return 0;
+}

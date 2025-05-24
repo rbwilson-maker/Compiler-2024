@@ -1,0 +1,10 @@
+//test error
+// functions referenced in dead code should still be defined
+
+int test();
+
+int main() {
+    bool e = false;
+    if (e) return test();
+    return 1;
+}

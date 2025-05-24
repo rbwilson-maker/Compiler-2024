@@ -1,0 +1,22 @@
+//test typecheck
+typedef bool cowboy_emoji;
+
+
+bool emoji(cowboy_emoji yeehaw) {
+  return (yeehaw && !yeehaw) || yeehaw;
+}
+
+bool cowboy (cowboy_emoji yeehaw) {
+  return emoji(yeehaw);
+}
+
+int main () {
+  cowboy_emoji howdy = howdy(true, true, false || true, true && false);
+  return howdy ? 0 : 1;
+}
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+//test return 7
+struct bun {
+  int quality;
+};
+typedef struct bun * bun;
+
+struct condiment {
+  int quality;
+};
+typedef struct condiment * condiment;
+
+struct meat {
+  int type;
+};
+typedef struct meat * meat;
+
+struct veggie {
+  int type;
+};
+typedef struct veggie * veggie;
+
+struct sandwich {
+  bun top_bun;
+  condiment[] condiments;
+  veggie[] veggies;
+  meat bison;
+  bun bottom_bun;
+};
+typedef struct sandwich * sandwich;
+
+int main() {
+  sandwich from_five_guys = alloc(struct sandwich);
+
+  from_five_guys->top_bun = alloc(struct bun);
+  from_five_guys->condiments = alloc_array(condiment, 3);
+  from_five_guys->condiments[0] = alloc(struct condiment);
+  from_five_guys->condiments[1] = alloc(struct condiment);
+  from_five_guys->condiments[2] = alloc(struct condiment);
+  
+  from_five_guys->bison = alloc(struct meat);
+  from_five_guys->bison->type = 2; // bison meat
+  from_five_guys->veggies = alloc_array(veggie, 1);
+  from_five_guys->veggies[0] = alloc(struct veggie);
+  from_five_guys->veggies[0]->type = 0; // lettuce
+
+  from_five_guys->condiments[0]->quality = 0; // definitely not farm to table
+  from_five_guys->condiments[1]->quality = 1; // out of 10?
+  from_five_guys->condiments[2]->quality = 6; // lettuce
+
+  return (from_five_guys->condiments[0]->quality + from_five_guys->condiments[1]->quality + from_five_guys->condiments[2]->quality);
+}

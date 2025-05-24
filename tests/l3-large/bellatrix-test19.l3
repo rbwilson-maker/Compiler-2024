@@ -1,0 +1,21 @@
+//test return 15411
+
+
+int f(int y) {
+
+  return 15410 * y;
+  
+}
+
+
+int main(){
+
+  assert(15411 > 15410);
+
+  int y = -3;
+
+  f(f(f(f(f(y)))));
+
+  return 15411;
+  
+}

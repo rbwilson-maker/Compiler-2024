@@ -1,0 +1,23 @@
+//test typecheck
+//test infloop
+
+int main(){
+
+  int x = 1;
+
+  if (x >= 1){
+    x = 0;
+    while(x == 0){
+      while(x < 1000){
+        x++;
+      }
+      while (x > 0){
+        x--;
+      }
+    }
+    return x;
+  }
+  
+
+  return 11;
+}

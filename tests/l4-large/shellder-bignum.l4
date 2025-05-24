@@ -1,0 +1,29 @@
+//test return 2
+// Bignums are unsigned hi<<32 + lo
+struct bignum {
+    int hi;
+    int lo;
+};
+typedef struct bignum *bignum_t;
+
+bignum_t add(bignum_t a, bignum_t b) {
+    bignum_t c = alloc(struct bignum);
+    c->lo = a->lo + b->lo;
+    bool overflow = (((a->lo | b->lo) & ~c->lo) & 0x80000000) != 0;
+    c->hi = a->hi + b->hi + (overflow ? 1 : 0);
+    return c;
+}
+
+bignum_t small_to_big(int a) {
+    bignum_t a_big = alloc(struct bignum);
+    a_big->lo = a;
+    return a_big;
+}
+
+int main() {
+    bignum_t a = small_to_big(0xDEADBEEF);
+    bignum_t b = small_to_big(0xC0C0A);
+    for (int i = 0; i < 10000; i++)
+        a = add(a, b);
+    return a->hi;
+}

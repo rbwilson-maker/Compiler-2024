@@ -1,0 +1,27 @@
+//test return 16
+//test arithmetic operation, more than one return statement
+
+int main()
+{
+  int a;
+  int b;
+  int c;
+
+  a = 1;
+  b = 2;
+  c = 4;
+
+  a = b*b; /* a=4 */
+  b = c*c; /* b=16 */
+  c = a*a; /* c=16 */
+
+  return c;
+
+  int d;
+  int e;
+  d = 1;
+  e = 2;
+  d = e+1;
+  e = d*d;
+  return e;
+}

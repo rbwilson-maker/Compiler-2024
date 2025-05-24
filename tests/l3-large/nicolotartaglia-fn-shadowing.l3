@@ -1,0 +1,8 @@
+//test div-by-zero
+int div_by_zero(int i);
+int main() {
+    return div_by_zero(5);
+}
+int div_by_zero(int i) {
+    return i / 0;
+}

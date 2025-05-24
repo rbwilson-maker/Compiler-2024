@@ -1,0 +1,30 @@
+//test return 1538115
+int main(){
+  int sum = 0;
+  int a = 5;
+  for (; a < 707; a++) {
+     sum += a;
+     sum++;
+  }
+  int aa = 1;
+  for (; aa < 258; aa++) {
+     sum += a;
+     sum++;
+  }
+  int aaa = 5;
+  for (; aaa < 126; aaa++) {
+     sum += a;
+     sum++;
+  }
+  int aaaa = 10;
+  for (; aaaa < 667; aaaa++) {
+     sum += a;
+     sum++;
+  }
+  int aaaaa = 4;
+  for (; aaaaa < 788; aaaaa++) {
+     sum += a;
+     sum++;
+  }
+  return sum;
+}

@@ -1,0 +1,12 @@
+//test abort
+int ab() {
+  assert(false);
+  return -1;
+}
+
+void fun(int a, int b, int c) {a+b+c;}
+
+int main() {
+  fun(ab(), 1 >> 256, 39 / 0);
+  return -5;
+}

@@ -1,0 +1,21 @@
+//test div-by-zero
+// test basic operations
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int f;
+
+  d = 1;
+  c = -2147483648;
+  b = c/d;
+  a = c*d;
+  e = c-d;
+
+  f = d-1;
+  f = f/f;
+  return f;
+}

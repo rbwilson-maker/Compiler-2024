@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int main(){
+	int z = 1;
+    int x = 4;
+	int y = 0;
+    while(false)
+    {
+        return 3;
+    }
+	// int oh_no = z / y;
+	// woah that was close
+	// jk can't stop me
+	int too_bad = z / y;
+	return 0;
+}

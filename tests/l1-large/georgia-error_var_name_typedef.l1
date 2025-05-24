@@ -1,0 +1,14 @@
+//test error
+//test invalid variable name
+int main()
+{
+  int typedef;
+  int b;
+  int c;
+
+  typedef = 11;
+  b = 3;
+  c= typedef + b;
+ 
+  return c;
+}

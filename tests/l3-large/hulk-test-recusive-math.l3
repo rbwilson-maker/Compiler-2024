@@ -1,0 +1,24 @@
+//test return 1977810675
+
+int pow(int x, int y){
+    assert( y >= 0);
+    if(y == 0) return 1;
+    return x * pow(x, y-1);
+}
+int even_fib(int n){
+    assert(n >= 0);
+    if(n == 0) return 0;
+    if(n == 1) return 2;
+
+    return(4 * even_fib(n-1)) + even_fib(n-2);
+}
+
+int main(){
+    int even_fib7 = even_fib(7);
+    int pow22 = pow(2,2);
+    int pow55 = pow(5,5);
+
+    int powd = pow(pow55, pow22);
+
+    return powd | even_fib7;
+}

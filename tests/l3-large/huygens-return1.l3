@@ -1,0 +1,12 @@
+//test return 0
+typedef int x;
+typedef int y;
+typedef int z;
+
+int main() {
+    x a = 1;
+    y b = 2;
+    z c = 3;
+    assert(a < b);
+    return a + b + c - a - b - c;
+}

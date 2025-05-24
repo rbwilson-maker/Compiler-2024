@@ -1,0 +1,27 @@
+//test error
+
+typedef bool every;
+typedef bool belonging;
+typedef bool me;
+typedef bool belongs;
+
+struct i_contain_multitudes
+{
+  every atom;
+  belonging to;
+  me as_good;
+  belongs to_you;
+};
+
+int main() {
+  struct i_contain_multitudes* song_of_myself =
+    alloc(struct i_contain_multitudes);
+
+  song_of_myself->atom = true;
+  song_of_myself->to = false;
+  song_of_myself->as_good = true;
+  song_of_myself->to__you = false;
+
+  return (song_of_myself->atom || song_of_myself->to)
+    && song_of_myself->as_good ? 51 : 1;
+}

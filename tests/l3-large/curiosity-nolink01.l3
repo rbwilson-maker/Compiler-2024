@@ -1,0 +1,8 @@
+//test typecheck
+//header not impelmented
+int main(){
+  int x = 5;
+  int y;
+  y = fact(x);
+  return y;
+}

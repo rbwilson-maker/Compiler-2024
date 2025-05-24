@@ -1,0 +1,12 @@
+//test error
+
+void helper(int p)
+//@ensures \result == 5
+{
+    assert(p == 5);
+}
+
+int main() {
+    helper(5);
+    return 0;
+}

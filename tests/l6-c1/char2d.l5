@@ -1,0 +1,24 @@
+//test return 45
+
+int main() {
+  char [][]css = alloc_array(char[], 3);
+  css[0] = alloc_array(char, 3);
+  css[1] = alloc_array(char, 3);
+  css[2] = alloc_array(char, 3);
+  css[0][0] = char_chr(1);
+  css[0][1] = char_chr(2);
+  css[0][2] = char_chr(3);
+  css[1][0] = char_chr(4);
+  css[1][1] = char_chr(5);
+  css[1][2] = char_chr(6);
+  css[2][0] = char_chr(7);
+  css[2][1] = char_chr(8);
+  css[2][2] = char_chr(9);
+  int sum = 0;
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      sum += char_ord(css[i][j]);
+    }
+  }
+  return sum;
+}

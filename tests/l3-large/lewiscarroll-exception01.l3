@@ -1,0 +1,12 @@
+//test abort
+
+bool flip (bool b) {
+	return !b;
+}
+ 
+int main () {
+	bool b = true;
+	bool c = flip (b);
+	assert (c);
+	return 0;
+}

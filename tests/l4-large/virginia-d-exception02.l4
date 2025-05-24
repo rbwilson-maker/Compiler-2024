@@ -1,0 +1,16 @@
+//test memerror
+//null struct
+struct l {
+	struct l* next;
+	int blah;
+};
+
+
+int main()
+{
+	struct l* wut = alloc(struct l);
+ 	struct l* wut2 = wut->next;
+ 	wut2->blah = 1;
+	
+	return 0;
+}

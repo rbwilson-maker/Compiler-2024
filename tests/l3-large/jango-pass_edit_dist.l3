@@ -1,0 +1,38 @@
+//test return 10
+int log10(int x) {
+  if (x == 0) {
+    return 0;
+  }
+  return 1 + log10(x/10);
+}
+int edit_dist(int x, int y) {
+  if (x == y) {
+    return 0;
+  }
+
+  if (x <= 0) {
+    return log10(y); 
+  }
+
+  if (y <= 0) {
+    return log10(x);
+  }
+
+  int replace = edit_dist(x/10, y/10);
+  int insert = edit_dist(x/10, y);
+  int delete = edit_dist(x, y/10);
+
+  int min = replace;
+  if (insert < min) {
+    min = insert;
+  }
+  if (delete < min) {
+    min = delete;
+  }
+  return 1 + min;
+}
+int main() {
+  int x = 1180929082;
+  int y = 50985902;
+  return edit_dist(x,y);
+}

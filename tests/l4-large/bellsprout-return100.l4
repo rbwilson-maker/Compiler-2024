@@ -1,0 +1,44 @@
+//test return 6325479
+
+int rand(int seed) {
+  return seed * 193193 + 99391331;
+}
+
+void merge_sort(int[] a, int len) {
+  if (len <= 1) return;
+  int mid = len / 2;
+  int[] left = alloc_array(int, mid);
+  for (int i = 0; i < mid; i++) left[i] = a[i];
+  merge_sort(left, mid);
+  int[] right = alloc_array(int, len - mid);
+  for (int i = mid; i < len; i++) right[i - mid] = a[i];
+  merge_sort(right, len - mid);
+  
+  int p = 0;
+  int i = 0;
+  int j = 0;
+  while (i < mid && j + mid < len) {
+    if (left[i] <= right[j]) {
+      a[p] = left[i]; i++;
+    } else {
+      a[p] = right[j]; j++;
+    }
+    p++;
+  }
+  while (i < mid) { a[p] = left[i]; i++; p++; }
+  while (j + mid < len) {a[p] = right[j]; j++; p++; }
+}
+
+int main() {
+  int len = 10000;
+  int[] array = alloc_array(int, len);
+  array[0] = 123;
+  for (int i = 1; i < len; i++) {
+    array[i] = rand(array[i - 1]);
+  }
+  merge_sort(array, len);
+  for (int i = 1; i < len; i++) {
+    assert (array[i] >= array[i - 1]);
+  }
+  return array[len / 2];
+}

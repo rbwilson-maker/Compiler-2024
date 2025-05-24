@@ -1,0 +1,14 @@
+//test error
+//Precedence
+
+struct s{
+	int *x;
+}
+
+int main(){
+	int *x = alloc(int);
+	*x++;
+	struct s* s = alloc(struct s);
+	*s->x++;
+	return *x;
+}

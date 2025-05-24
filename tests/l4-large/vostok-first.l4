@@ -1,0 +1,64 @@
+//test return 4
+// most tests in l4 will be a direct upgrade of those
+// in L3; instead of using tricks with ints, we will
+// actually implement graph algorithms and the like
+
+// here we implement DFS to find the max depth
+
+struct node {
+    int val;
+    struct node* next;
+};
+typedef struct node node_t;
+
+struct vertex {
+    int val;
+    struct node* head;
+};
+typedef struct vertex vertex_t;
+
+void addEdge(vertex_t*[] graph, int v1, int v2) {
+    node_t *newNode1 = alloc(node_t);
+    newNode1->next = graph[v1]->head;
+    graph[v1]->head = newNode1;
+    newNode1->val = v2;
+
+    node_t *newNode2 = alloc(node_t);
+    newNode2->next = graph[v2]->head;
+    graph[v2]->head = newNode2;
+    newNode2->val = v1;
+}
+
+int dfs(vertex_t*[] graph, bool[] visited, int src, int i) {
+    int max = i;
+    for(node_t *curr = graph[src]->head; curr != NULL; curr = curr->next) {
+        int currNode = curr->val;
+        if(!visited[currNode]) {
+            visited[currNode] = true;
+            int result = dfs(graph, visited, currNode, i + 1);
+            if(result > max)
+                max = result;
+        }
+    }
+    return max;
+}
+
+int main() {
+    int length = 6;
+    vertex_t*[] graph = alloc_array(vertex_t*, length);
+    for(int i = 0; i < length; i++) {
+        graph[i] = alloc(vertex_t);
+        graph[i]->val = i;
+    }
+
+    addEdge(graph, 0, 1);
+    addEdge(graph, 1, 5);
+    addEdge(graph, 1, 2);
+    addEdge(graph, 2, 3);
+    addEdge(graph, 3, 4);
+    addEdge(graph, 2, 5);
+
+    bool[] visited = alloc_array(bool, length);
+    visited[0] = true;
+    return dfs(graph, visited, 0, 0);
+}

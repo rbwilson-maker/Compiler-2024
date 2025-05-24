@@ -1,0 +1,10 @@
+//test memerror
+/* some null shenanigans */
+int main() {
+  int x = 1;
+  int* p = alloc(int);
+  *p = x;
+  p = NULL;
+  int y = *p; // this part segfaults
+  return y;
+}

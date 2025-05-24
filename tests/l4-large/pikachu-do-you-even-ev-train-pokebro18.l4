@@ -1,0 +1,30 @@
+//test return 38503
+// tests dereferencing inside an array indexing op
+
+int main()
+{
+  // steamrolling whismurs in rusturf tunnel is best HP EV training tactic
+  // who even super trains anyway, what are you, playing gen6?
+  int[] whismur = alloc_array(int, 279);
+  int* briney = alloc(int);
+  int** peeko = alloc(int*);
+  *peeko = briney;
+  **peeko = 278; // why 278? well, what is peeko?
+
+  for (int i = 0; i < 279; i++) {
+    whismur[**peeko] = **peeko;
+    **peeko -= 1;
+  }
+  **peeko = 0;
+
+  for (int j = 278; j > 0; j--) {
+    whismur[278-**peeko] = **peeko;
+    **peeko += 1;
+  }
+
+  int sum = 0;
+  for (int i = 0; i < 279; i++) {
+    sum += whismur[i];
+  }
+  return sum;
+}

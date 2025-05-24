@@ -1,0 +1,15 @@
+//test error
+//cannot treat bool as int
+int main ()
+{
+    int i = 0;
+    while (i < 20) {
+        int j = 3;
+        while (j < 20)) {
+            i += (j % 2 == 0);
+            j = i % j;
+        }
+        i++;
+    }
+    return i;
+}

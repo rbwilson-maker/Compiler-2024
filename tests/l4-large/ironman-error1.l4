@@ -1,0 +1,7 @@
+//test error
+
+int main(){
+    struct s* x;
+    x->t = 1;
+    return 0;
+}

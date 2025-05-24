@@ -1,0 +1,27 @@
+//test return -1559842816
+
+typedef int array;
+typedef array _;
+
+struct ____array{
+    _ t;
+};
+
+typedef struct ____array ____array;
+
+array func(int void_array){
+  ____array[] e_ = alloc_array(____array,4);
+  ____array* _e = alloc(____array);
+  _* t = alloc(_);
+  for (int i = 0; i < 4; i++){
+    e_[i].t += 2;
+    *t = *t * *t + e_[i].t;
+    _e->t = *t;
+  }
+  return e_[0].t * _e->t * *t * void_array;
+}
+
+int main(){
+  return func(func(func(func(11))));
+}
+

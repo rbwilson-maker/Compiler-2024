@@ -1,0 +1,39 @@
+//test return 8
+// struct with fields of different types
+
+struct mystruct {
+  int i1;
+  bool b1;
+  int i2;
+  int i3;
+  bool b2;
+  int i4;
+  bool b3;
+  bool b4;
+  int i5;
+  bool b5;
+};
+
+int main(){
+  struct mystruct* s = alloc(struct mystruct);
+  s->i1 = 1;
+  s->i2 = 2;
+  s->i3 = 3;
+  s->b1 = true;
+  s->b2 = false;
+  s->i4 = 4;
+  s->b3 = true;
+  s->i5 = 5;
+  s->b4 = false;
+  s->b5 = true;
+  if (s->b1 && s->b3){
+    if (s->b2 && s->b5){
+      return s->i2;
+    } else{
+      s->b3 && s->b4;
+      return s->i3 + s->i5;
+    }
+  } else{
+    return s->i1;
+  }
+}

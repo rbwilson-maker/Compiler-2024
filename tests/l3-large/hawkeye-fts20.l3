@@ -1,0 +1,15 @@
+//test compile
+
+int add (int x, int y) {
+    return x + y;
+}
+
+int mul (int u, int v) {
+    return u * v;
+}
+
+int main () {
+    int a = 4;
+    int b = 3;
+    return add(mul(mul(add(a, b), b), a), mul(a, b));
+}

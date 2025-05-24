@@ -1,0 +1,11 @@
+//test return 33
+
+bool best_judge(bool guilty) {
+	bool *innocent = NULL;
+	return guilty? *innocent : guilty;
+}
+
+int main () {
+	assert(!best_judge(false));
+	return 33;
+}

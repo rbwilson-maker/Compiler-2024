@@ -1,0 +1,29 @@
+//test return 981
+// many variables
+
+int foo(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j,
+        int k, int l, int m, int n, int o, int p, int q, int r, int s, int t,
+        int u, int v, int w, int x, int y, int z) {
+  if (a == 0 || b == 0 || c == 0 || d == 0 || e == 0 || f == 0 || g == 0 ||
+      h == 0 || i == 0 || j == 0 || k == 0 || l == 0 || m == 0 || n == 0 ||
+      o == 0 || p == 0 || q == 0 || r == 0 || s == 0 || t == 0 || u == 0 ||
+      v == 0 || w == 0 || x == 0 || y == 0 || z == 0)
+    return a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z;
+  return foo(a-1,b-1,c-1,d-1,e-1,f-1,g-1,h-1,i-1,j-1,k-1,l-1,m-1,n-1,o-1,p-1,
+             q-1,r-1,s-1,t-1,u-1,v-1,w-1,x-1,y-1,z-1);
+}
+
+int max(int a, int b) { return a > b ? a : b; }
+
+int main() {
+  int x1 = foo(43,30,88,90,30,39,77,74,94,85,76,57,36,
+               68,74,69,87,50,58,33,73,97,78,99,51,27);
+
+  int x2 = foo(31,80,51,49,38,61,34,51,69,43,27,33,76,
+               72,80,39,75,70,82,37,28,34,47,87,85,35);
+
+  int x3 = foo(69,33,61,44,91,46,57,64,41,91,80,33,45,
+               66,73,28,34,70,76,33,85,94,98,33,63,100);
+
+  return max(x1, max(x2, x3));
+}

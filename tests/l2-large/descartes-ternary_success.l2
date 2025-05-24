@@ -1,0 +1,11 @@
+//test return 0
+// Div-by-zero in ternary branch that isn't executed
+
+int main() {
+  int x = 1;
+  {
+    int y = 0;
+    (false ? x / y : 0);
+    return 0;
+  }
+}

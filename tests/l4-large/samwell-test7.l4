@@ -1,0 +1,14 @@
+//test error
+
+struct foo{
+  int i;
+  int j;
+}
+
+int main() {
+  foo* x = alloc(foo);
+  return 0;
+}
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

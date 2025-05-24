@@ -1,0 +1,10 @@
+//test error
+// Multiple function declarations (see .h0 file)
+int main() {
+    foo();
+    return 0;
+}
+
+int foo() {
+    return 0xFACEB00C;
+}

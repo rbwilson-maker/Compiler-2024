@@ -1,0 +1,49 @@
+#!/bin/bash
+
+fn_name=$1
+shift
+
+# Find files relative to location of the script, regardless
+# of where the script is run from.
+script_directory=$(dirname "$(python3 -c "import os; print(os.path.realpath('$0'))")")
+
+UNAME=$(uname)
+export UNAME
+
+# stack size for the compiler is unlimited.
+ulimit -s unlimited || {
+  echo 1>&2 "
+WARNING: call to ulimit failed, and so the stack size for the compiler
+  is not unlimited. If you're getting stack overflows when running your
+  compiler, you should try running on a Docker container instead, as documented
+  in dist/README.md
+"
+}
+
+if command -v sml; then
+  echo "Using SML/NJ..."
+  if command -v molasses; then
+    make -C "$script_directory" update-nj
+  else
+    echo "Molasses is not installed! The SML/NJ version of the autograder is potentially out of date!"
+    echo "  Install Molasses: https://github.com/T-Brick/molasses"
+  fi
+  printf 'val () = OS.Process.exit (Grader.'"$fn_name"' "%s\\n");' "$*" |
+  sml \
+    -Cbasic.print-warnings=false \
+    -Cprint.signatures=0 \
+    -Ccm.verbose=false \
+    -Cparser.primary-prompt='' \
+    "$script_directory/.molasses/molasses-sources1.cm"
+elif command -v mlton; then
+  echo "Using MLton..."
+  make -C "$script_directory" driver
+  "$script_directory/driver" "$fn_name" "$@"
+else
+  echo "The grading script requires either SML/NJ or MLton to be installed."
+  echo "  If you are using a Ubuntu subsystem for Windows, installing MLton is preferred (sudo apt install mlton)."
+  echo "  Otherwise, install whichever you prefer."
+  echo "  Install SML/NJ: http://www.smlnj.org/install/"
+  echo "  Install MLton: Use your package manager, or download the binary package from http://www.mlton.org/guide/20210117/Release20210117"
+  exit 1
+fi

@@ -1,0 +1,19 @@
+//test return 86
+
+int party(int[] A, int i) {
+  A[i]++;
+  return i;
+}
+
+int main() {
+  int n = 64;
+  int[] A = alloc_array(int, n);
+
+  for (int i = 0; i < n; i++)
+    A[i] = i;
+
+  for (int i = 0; i < n; i++)
+    A[party(A, i)] *= 2;
+
+  return A[42];
+}

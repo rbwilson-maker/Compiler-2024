@@ -1,0 +1,14 @@
+//test return 1 
+
+int main ()
+{
+  int addr = 4100;
+  int align = 4096;
+  int res = 0;
+  while(addr >= align) {
+    res++;
+    addr -= align;
+  }
+
+  return res;
+}

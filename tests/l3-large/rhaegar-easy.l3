@@ -1,0 +1,10 @@
+//test return 0
+
+int myfunc() {
+	return 1;
+}
+
+int main() {
+	myfunc();
+	return 0;
+}

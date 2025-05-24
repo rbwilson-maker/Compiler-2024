@@ -1,0 +1,10 @@
+//test div-by-zero
+// checking evalation order of asnop and array access
+
+int main() {
+    int* p = NULL;
+    int[] A = alloc_array(int, 0);
+
+    A[1/0] += *p;
+    return 0;
+}

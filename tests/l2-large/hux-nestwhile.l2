@@ -1,0 +1,25 @@
+//test return 1
+
+int main() {
+  /*
+    while (true) {
+      return false;
+    }
+  */
+  bool done = false;
+  int sum = 0;
+  while (!done) {
+    int i = 0;
+    while (i < 10) {
+      sum += i;
+      i++;
+    }
+    if (sum >= 100) {
+      done = true;
+    }
+  }
+  // return sum;
+  return 1;
+}
+
+

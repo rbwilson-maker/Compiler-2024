@@ -1,0 +1,28 @@
+//test return 65
+
+void def() {
+    int omg = 0;
+    int this = 1;
+    int is = 2;
+    int a = 3;
+    int void1 = 4;
+    int function = 5;
+    omg + this + is + a + void1 + function;
+}
+int main(){
+    def ();
+    int x = 55;
+    int y = 66;
+    for(int i = 0; i < y - x; i++){
+        y--;
+    }
+    if(x > y)
+        y = x;
+    else
+        x = y;
+    int z = 202;
+    z += x;
+    z >>= 2;
+    def();
+    return z;
+}

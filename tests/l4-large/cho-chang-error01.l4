@@ -1,0 +1,12 @@
+//test error
+
+struct Student {
+	int midterm1;
+	int midterm2;
+	struct Homework h;
+};
+
+int main() {
+	struct Student *s = alloc(struct Student);
+	return s->midterm1;
+}

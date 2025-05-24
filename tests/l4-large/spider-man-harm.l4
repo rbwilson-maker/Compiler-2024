@@ -1,0 +1,23 @@
+//test abort
+
+typedef struct myf z;
+struct myf {
+    int sad;
+    int bad;
+};
+
+int main() {
+    z* [] zz = alloc_array(z*, 10);
+    for (int i = 0; i < 5; i += 1) {
+      zz[i] = alloc(z);
+      zz[9-i] = alloc(z);
+      zz[i]->sad = i;
+      zz[i]->bad = 9-i;
+      zz[9-i]->sad = i;
+      zz[9-i]->bad = (i == 4) ? 9 - i : 8 - i;
+    }
+    for (int i = 0; i < 5; i += 1) {
+      assert(zz[9-i]->sad + zz[i]->bad == zz[9-i]->bad + zz[i]->sad);
+    }
+    return zz[0]->sad;
+}

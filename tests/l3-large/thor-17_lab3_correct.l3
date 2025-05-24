@@ -1,0 +1,27 @@
+//test return 1
+//power with FP
+
+
+// powers but with for loop
+
+bool geq (fpt a, fpt b) {return !fless(a, b); }
+
+fpt abs (fpt in) {if (fless(in, 0)) return fsub(0, in); else return in;}
+
+fpt power_help (fpt base, fpt exp) {
+int exp_int = ftoi(exp);
+assert (exp_int > 0);
+fpt out = itof(1);
+for (int i = 0; i < exp; i++) {
+out = fmul(base, out);
+}
+return out;
+}
+
+fpt power (fpt base, fpt exp) {
+fpt power_pos = power_help(base, abs(exp));
+if (geq(exp, 0)) return power_pos; else return fdiv(itof(1), power_pos);
+}
+
+int main() 
+{return 1;}

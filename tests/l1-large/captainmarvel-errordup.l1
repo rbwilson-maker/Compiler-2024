@@ -1,0 +1,17 @@
+//test error
+int main()
+{
+    int x;
+    x = 3;
+    int y;
+    y = 40;
+    int z;
+    z = -40;
+    int a;
+    a = (x + y + z) / (y + z);
+    int b;
+    b = 20;
+    int x;
+    x = 50;
+    return a;
+}

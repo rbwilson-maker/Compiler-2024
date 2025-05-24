@@ -1,0 +1,20 @@
+//test return 4
+struct arr{
+	int* idx;
+	int val;
+	struct arr* next;
+};
+
+int main()
+{
+	struct arr* head = alloc(struct arr);
+	struct arr* tail = alloc(struct arr);
+	head -> val = 0;
+	head -> next = tail;
+	tail -> val = 4;
+
+	return head -> next -> val;
+
+
+}
+

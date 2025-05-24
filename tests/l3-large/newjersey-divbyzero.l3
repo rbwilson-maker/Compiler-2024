@@ -1,0 +1,18 @@
+//test div-by-zero
+
+int breaker(int i){
+  return i/(i-1);
+}
+
+int main(){
+  breaker(10);
+  breaker(9);
+  breaker(8);
+  breaker(7);
+  breaker(6);
+  breaker(5);
+  breaker(4);
+  breaker(3);
+  breaker(2);
+  return breaker(1);
+}

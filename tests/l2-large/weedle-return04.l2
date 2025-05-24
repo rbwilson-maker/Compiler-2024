@@ -1,0 +1,18 @@
+//test div-by-zero
+// test that divide by zero's whose value isn't used aren't
+// optimized out
+
+int main()
+{
+  int x = 5;
+  int y = 7;
+
+  y += x << 2;
+  y = y >> 1;
+  x += y;
+
+  int z = 0;
+  z = 1 / z;
+
+  return x + y;
+}

@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int one_hundred () {
+    return 100;
+}
+
+int fifty () {
+    return 50;
+}
+
+int main () {
+    return one_hundred() << fifty();
+}
+

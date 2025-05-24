@@ -1,0 +1,19 @@
+//test return 42
+//computes the 5th catalan number
+
+int catalan(int n) {
+  int sum = 0;
+  if (n == 0) {
+    return 1;
+  }
+  else {
+    for (int i = 0; i <= n - 1; i++) {
+      sum += catalan(i) * catalan(n - i - 1);
+    }
+  }
+  return sum;
+}
+
+int main() {
+  return catalan(5);
+}

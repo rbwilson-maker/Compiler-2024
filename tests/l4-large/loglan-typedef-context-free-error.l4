@@ -1,0 +1,15 @@
+//test return 1
+typedef int foo;
+foo f() {
+    return 1;
+}
+
+typedef foo fooo;
+foo g() {
+    return 2;
+}
+
+int main() {
+    fooo x  = g();
+    return f();
+}

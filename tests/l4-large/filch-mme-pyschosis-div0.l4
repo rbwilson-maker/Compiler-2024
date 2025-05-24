@@ -1,0 +1,25 @@
+//test div-by-zero
+
+int pgoat(int x)
+{
+  return x * 1000000;
+}
+
+int main()
+{
+  int[][] improbably_deformed = alloc_array(int[], 10);
+
+  for(int i = 0; i < 10; i++)
+  {
+    improbably_deformed[i] = alloc_array(int, 10);
+
+    for(int j = 0; j < 10; j ++) 
+    {
+      improbably_deformed[i][j] = pgoat(i * j);
+    }
+  }
+
+  improbably_deformed[1/0][2] = 2000;
+
+  return 1;
+}

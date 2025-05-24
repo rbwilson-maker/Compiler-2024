@@ -1,0 +1,15 @@
+//test memerror
+
+struct yes;
+
+typedef struct yes yes_t;
+
+struct yes {
+    yes_t * yes;
+};
+
+int main() {
+    yes_t * yes = alloc(yes_t);
+    yes->yes->yes->yes->yes;
+    return 0;
+}

@@ -1,0 +1,11 @@
+//test error
+
+struct foo {
+  int bar;
+};
+
+int main() {
+  struct foo test;
+  test = *alloc(struct foo);
+  return test.bar;
+}

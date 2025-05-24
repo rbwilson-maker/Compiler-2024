@@ -1,0 +1,10 @@
+//test error
+// should be (1 < 2) && (2 < 3) etc
+
+int main() {
+    if (1 < 2 < 3 < 4) {
+        return 1;
+    } else {
+        return 0;
+    }
+}

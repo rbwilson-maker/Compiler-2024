@@ -1,0 +1,16 @@
+//test return -15
+// Basic lshift test
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+
+  a = 7;
+  b = 15^a;
+  c = a&b;
+  d= a|b;
+
+  return c-d;
+}

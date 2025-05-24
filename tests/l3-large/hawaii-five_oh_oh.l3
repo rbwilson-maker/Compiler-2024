@@ -1,0 +1,14 @@
+//test return 519
+
+int x(int x) {
+  int save = 0;
+  for(int i = x; i > 0; i--){
+    save++;
+  }
+  return save % 37;
+}
+
+int main() {
+  int y = 500;
+  return y + x(y);
+}

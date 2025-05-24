@@ -1,0 +1,12 @@
+//test typecheck
+// simple header test
+
+int square(int i){
+    return i * i;
+}
+
+int main () {
+    int a = 10;
+    int b = square(a);
+    return b/a;
+}

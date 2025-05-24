@@ -1,0 +1,20 @@
+//test return 1631127553
+
+// Exponentiates a matrix A, computes A^n through matrix multiplication, returns trace of final matrix
+
+int matExp (int a11, int a12, int a21, int a22, int n) {
+  assert(n > 0);
+  if (n == 1) {
+    return a11 + a22;
+  }
+  a11 = a11*a11 + a12*a21;
+  a12 = a11*a12 + a12*a22;
+  a21 = a21*a11 + a22*a21;
+  a22 = a21*a12 + a22*a22;
+  return matExp(a11, a12, a21, a22, n-1);
+}
+
+int main() {
+  int identity = matExp(1, 2, 3, 4, 10);
+  return identity;
+}

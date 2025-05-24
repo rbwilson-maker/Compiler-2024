@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int too_large_shift(int y) {
+  assert(y > 0);
+  return y*138-23;
+}
+
+int main() {
+  int x = 1023;
+  return x << too_large_shift(2);
+}

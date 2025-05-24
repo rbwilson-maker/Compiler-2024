@@ -1,0 +1,15 @@
+//test return 2
+struct node {
+  int data;
+  struct node* next;
+};
+
+int main() {
+  struct node* n = alloc(struct node);
+  n->data = 2;
+  n->next = NULL;
+  struct node[] ns = alloc_array(struct node, 2);
+  ns[0].data = 1;
+  ns[0].next = n;
+  return ns[0].next->data;
+}

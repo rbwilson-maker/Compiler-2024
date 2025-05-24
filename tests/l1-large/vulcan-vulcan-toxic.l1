@@ -1,0 +1,43 @@
+//test return 45
+int main(){
+    int a1 = 1;
+    int a2 = 2;
+    int a3 = 3;
+    int a4 = 4;
+    int a5 = 5;
+    int a6 = 6;
+    int a7 = 7;
+    int a8 = 8;
+    int a9 = 9;
+    int a10 = 10;
+    int a11 = 11;
+    int a12 = 12;
+    int a13 = 13;
+    int a14 = 14;
+    int a15 = 15;
+    int a16 = 16;
+    int a17 = 17;
+    int a18 = 18;
+    int a19 = 19;
+    int b0 = 0;
+    int b1 = a1 - b0;
+    int b2 = a2 - b1;
+    int b3 = a3 - b2;
+    int b4 = a4 - b3;
+    int b5 = a5 - b4;
+    int b6 = a6 - b5;
+    int b7 = a7 - b6;
+    int b8 = a8 - b7;
+    int b9 = a9 - b8;
+    int b10 = a10 - b9;
+    int b11 = a11 - b10;
+    int b12 = a12 - b11;
+    int b13 = a13 - b12;
+    int b14 = a14 - b13;
+    int b15 = a15 - b14;
+    int b16 = a16 - b15;
+    int b17 = a17 - b16;
+    int b18 = a18 - b17;
+    int b19 = a19 - b18;
+    return b0 + b2 + b4 + b6 + b8 + b10 + b12 + b14 + b16 + b18;
+}

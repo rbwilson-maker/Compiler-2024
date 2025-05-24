@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+// hug your broken constant folding
+
+void set(bool * x) {
+    *x = true;
+}
+
+int main() {
+    bool * b = alloc(bool);
+    set(b);
+    int i = 0;
+    while(*b) i++;
+    return i;
+}

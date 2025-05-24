@@ -1,0 +1,36 @@
+//test error
+/* Approximates PI */
+
+//Cannot declare function declared in library
+bool in_circle(coord_x x, coord_y y, int radius) {
+	int abs_x;
+	int abs_y;
+	if (x < 0) abs_x = -x;
+	else abs_x = x;
+
+	if (y < 0) abs_y = -y;
+	else abs_y = y;
+
+	assert(x == 0 || abs_x <= 0x7FFFFFFF/abs_x);
+	assert(y == 0 || abs_y <= 0x7FFFFFFF/abs_y);
+	assert(radius <= 0x7FFFFFFF/radius);
+	assert(x*x <= 0x7FFFFFFF - (y*y));
+
+	return x*x + y*y < radius*radius;
+}
+
+int calculation(int squarewidth) {
+	int acc = 0;
+	for (coord_x i = -squarewidth; i < squarewidth; i++) {
+		for (coord_y j = -squarewidth; j < squarewidth; j++) {
+			if (in_circle(i, j, squarewidth)) {
+				acc++;
+			}
+		}
+	}
+	return acc/squarewidth*100/squarewidth;
+}
+
+int main() {
+	return calculation(500);
+}

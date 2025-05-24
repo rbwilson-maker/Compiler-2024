@@ -1,0 +1,26 @@
+//test return 6
+
+int main()
+{
+	int x = 999;
+	int y = 15;
+
+	while (x < 3000)
+	{
+		if (y > 25)
+		{
+
+		}
+		else
+		{
+			while (y < 500)
+			{
+				x++;
+				y++;
+			}
+		}
+		x++;
+		y--;
+	}
+	return x/y;
+}

@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+	int[] A = alloc_array(int, 10);
+	int* p = alloc(bool);
+	return A[0];
+}

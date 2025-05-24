@@ -1,0 +1,5 @@
+//test error
+int main() {
+    int abc[64] = alloc_array(int, 64);
+    return 0;
+}

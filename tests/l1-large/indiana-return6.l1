@@ -1,0 +1,14 @@
+//test return -443
+//Tests all asnops
+
+int main(){
+    int x = 123;
+    int y = 321;
+    x += y;
+    x *= y;
+    x -= y;
+    int z = x;
+    z /= y;
+    x %= z;
+    return -z;
+}

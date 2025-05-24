@@ -1,0 +1,11 @@
+//test memerror
+
+void allowed() {
+    int *x = NULL;
+    *(false ? x : NULL);
+}
+
+int main() {
+    allowed();
+    return 8;
+}

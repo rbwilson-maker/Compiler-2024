@@ -1,0 +1,7 @@
+//test error
+// invalid L1 (should fail to compile)
+
+int main() {
+    int x = --5;
+    return x;
+}

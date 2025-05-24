@@ -1,0 +1,40 @@
+//test div-by-zero
+
+int[] incrd(int[] inp, int n) {
+    assert(n >= 0);
+    int[] new = alloc_array(int, n);
+
+    for (int i = 0; i < n; i++) {
+        new[i] /= inp[i];
+        new[i] += new[i];
+    }
+
+    return new;
+}
+
+int main() {
+    int[] arr = alloc_array(int, 5);
+    arr[0] = 4;
+    arr[1] = -432;
+    arr[2] = 1243;
+    arr[3] = 222;
+    arr[4] = 0xFF;
+
+    int[] news = incrd(arr, 5);
+    int *p = NULL;
+    for (int i = 0; i < 5; i++) {
+        if (news[i] != 0) {
+            *p = 10;
+        }
+    }
+
+    arr[3] = 0;
+    int[] news2 = incrd(arr, 5);
+    for (int i = 0; i < 5; i++) {
+        if (news2[i] != 2 * arr[i]) {
+            *p = 10;
+        }
+    }
+
+    return 0;
+}

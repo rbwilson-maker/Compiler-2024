@@ -1,0 +1,34 @@
+//test return 7
+
+// approximate squareroot and find hypotenuse of a triangle
+// given its sides as input. then casts it to an int (lol)
+
+fpt diff(fpt x, fpt y) {
+	if (fless(x, y)) return fsub(y, x);
+	return fsub(x, y);
+}
+
+fpt hypotenuse(int x, int y) {
+	fpt err = fdiv(itof(1), itof(1000));
+	fpt tot = fadd(itof(x*x), itof(y*y));
+	fpt hi  = tot;
+	fpt lo  = itof(0);
+	fpt mid = fdiv(fadd(hi, lo), itof(2));
+	fpt est = fmul(mid, mid);
+	while(diff(est, tot) > err) {
+		if (fless(est, tot)) {
+			lo = mid;
+			mid = fdiv(fadd(hi, lo), itof(2));
+		}
+		else {
+			hi = mid;
+			mid = fdiv(fadd(hi, lo), itof(2));
+		}
+		est = fmul(mid, mid);
+	}
+	return mid;
+}
+
+int main() {
+	return  ftoi(hypotenuse(5,5));
+}

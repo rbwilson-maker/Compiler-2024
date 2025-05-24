@@ -1,0 +1,23 @@
+//test return 3
+typedef int pixel;
+typedef pixel banana;
+
+int f();
+pixel g(int x);
+banana h(pixel y);
+int i(int x, pixel y, banana z);
+
+int f() { return 0;}
+pixel g(int x) { return x + 1; }
+banana h(pixel y) { return y * 2; }
+int i (int x, pixel y, banana z) { return x + y + z; }
+
+int main() {
+  int x;
+  pixel y;
+  banana z;
+  x = f();
+  y = g(x);
+  z = h(y);
+  return i(x,y,z);
+}

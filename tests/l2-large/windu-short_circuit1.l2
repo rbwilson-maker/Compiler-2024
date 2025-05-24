@@ -1,0 +1,11 @@
+//test return 1
+
+int main() {
+    int x = 0;
+    int y = 0;
+    if (true || x / 0 == 0) {
+        y = 1;
+    }
+
+    return y;
+}

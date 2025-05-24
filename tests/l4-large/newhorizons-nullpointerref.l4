@@ -1,0 +1,10 @@
+//test memerror
+/* dereference a null int pointer */
+
+int main() {
+    int* p; 
+    p = NULL;
+    int a = *p;
+    return a;
+}
+

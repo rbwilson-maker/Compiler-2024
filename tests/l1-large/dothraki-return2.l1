@@ -1,0 +1,18 @@
+//test return 50
+
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+
+  a = 50;
+  b = 0;
+  c = 1;
+  d = 100;
+  e = -1;
+  
+  return (a + b - d) * c / e;
+}

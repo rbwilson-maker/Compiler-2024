@@ -1,0 +1,19 @@
+//test return 42
+// test binary search
+
+int main() {
+    int x = 42;
+    int l = 0;
+    int r = 100;
+    while (l <= r) {
+        int m = (r - l) / 2 + l;
+        if (m == x) 
+          return m;
+        if (m > x) {
+            r = m - 1;
+        } else {
+            l = m + 1;
+        }
+    }
+    return l;
+}

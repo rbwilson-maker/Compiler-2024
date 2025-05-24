@@ -1,0 +1,29 @@
+//test return 0
+
+void mountain()
+{
+    {
+        {
+            {
+                {}
+            }
+        }
+    }
+}
+
+void mountain_range() {
+    mountain();
+        mountain();
+            mountain();
+        mountain();
+    mountain();
+}
+
+int main() {
+    // Hike on the trail!
+    mountain_range();
+    int you_did_it = 0;
+    return you_did_it;
+}
+
+

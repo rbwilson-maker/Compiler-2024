@@ -1,0 +1,12 @@
+//test error
+int main() {
+    int* x = alloc(int); 
+    int** y = alloc(int*);
+    int*** z = alloc(int*);
+    // all pointers are the same type right? so theyre the same size???? 
+
+    *z = y; 
+    *y = x; 
+    *x = 3;
+    return 0; 
+}

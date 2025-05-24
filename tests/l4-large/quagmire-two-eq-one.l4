@@ -1,0 +1,29 @@
+//test return 0
+// Tests elaboration of asnops to ensure computation on LHS happens just once
+
+int* incr(int* p) {
+    *p += 1;
+    return p;
+}
+
+int main() {
+    int* p = alloc(int);
+    *p = 0;
+
+    int[] arr = alloc_array(int, 3);
+    arr[0] = 10;
+    arr[1] = 11;
+    arr[2] = 12;
+
+    /*
+    This sets arr[1] to arr[2] + 100:
+
+    arr[*incr(p)] = arr[*incr(p)] + 100;
+
+    This sets arr[1] to arr[1] + 100:
+    */
+    arr[*incr(p)] += 100;
+
+    assert(arr[1] == 111);
+    return 0;
+}

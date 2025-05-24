@@ -1,0 +1,12 @@
+//test return 20
+typedef int INTEGER;
+
+INTEGER mult(INTEGER x) {
+  return x*2;
+}
+
+typedef int WHAT;
+
+WHAT main() {
+  return mult(10);
+}

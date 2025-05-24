@@ -1,0 +1,31 @@
+//test return 1060
+int f1(int x);
+int f2(int x);
+int f3(int x);
+int f4(int x);
+int f5(int x);
+
+int f2(int x) {
+  if (x < 0) return 33;
+  return 2 + f4(f2(-1));
+}
+
+int f1(int x) {
+  return f2(x) + f2(x + 1);
+}
+
+int f3(int x) {
+  return f5(12) / 2;
+}
+
+int f5(int x) {
+  return x + x + x + x + x + x + x + x + x + x + x + x + x + x + x;
+}
+
+int f4(int x) {
+  return f5(x) + f2(-3);
+}
+
+int main() {
+  return f1(100);
+}

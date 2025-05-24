@@ -1,0 +1,137 @@
+//test error
+
+int main() {
+int x = 31;
+int y;
+
+if(x != 0) {
+	if(x != 1) {
+		if(x != 2) {
+			if(x != 3) {
+				if(x != 4) {
+					if(x != 5) {
+						if(x != 6) {
+							if(x != 7) {
+								if(x != 8) {
+									if(x != 9) {
+										if(x != 10) {
+											if(x != 11) {
+												if(x != 12) {
+													if(x != 13) {
+														if(x != 14) {
+															if(x != 15) {
+																if(x != 16) {
+																	if(x != 17) {
+																		if(x != 18) {
+																			if(x != 19) {
+																				if(x != 20) {
+																					if(x != 21) {
+																						if(x != 22) {
+																							if(x != 23) {
+																								if(x != 24) {
+																									if(x != 25) {
+																										if(x != 26) {
+																											if(x != 27) {
+																												if(x != 28) {
+																													if(x != 29) {
+																														if(x != 30) {
+																															if(x != 31) {
+                                                                                                                                x = 32; 
+                                                                                                                            } else { 
+																																y = 31;
+																															}
+																														} else { 
+																															y = 30;
+																														}
+																													} else { 
+																														y = 29;
+																													}
+																												} else { 
+																													y = 28;
+																												}
+																											} else { 
+																												y = 27;
+																											}
+																										} else { 
+																											y = 26;
+																										}
+																									} else { 
+																										y = 25;
+																									}
+																								} else { 
+																									y = 24;
+																								}
+																							} else { 
+																								y = 23;
+																							}
+																						} else { 
+																							y = 22;
+																						}
+																					} else { 
+																						y = 21;
+																					}
+																				} else { 
+																					y = 20;
+																				}
+																			} else { 
+																				y = 19;
+																			}
+																		} else { 
+																			y = 18;
+																		}
+																	} else { 
+																		y = 17;
+																	}
+																} else { 
+																	y = 16;
+																}
+															} else { 
+																y = 15;
+															}
+														} else { 
+															y = 14;
+														}
+													} else { 
+														y = 13;
+													}
+												} else { 
+													y = 12;
+												}
+											} else { 
+												y = 11;
+											}
+										} else { 
+											y = 10;
+										}
+									} else { 
+										y = 9;
+									}
+								} else { 
+									y = 8;
+								}
+							} else { 
+								y = 7;
+							}
+						} else { 
+							y = 6;
+						}
+					} else { 
+						y = 5;
+					}
+				} else { 
+					y = 4;
+				}
+			} else { 
+				y = 3;
+			}
+		} else { 
+			y = 2;
+		}
+	} else { 
+		y = 1;
+	}
+} else { 
+	y = 0;
+}
+return y;
+}

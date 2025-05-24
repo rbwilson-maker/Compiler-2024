@@ -1,0 +1,6 @@
+//test typecheck
+int external();
+
+int main() {
+    return 1/0;
+}

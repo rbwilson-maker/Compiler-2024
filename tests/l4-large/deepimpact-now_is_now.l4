@@ -1,0 +1,17 @@
+//test return -1
+
+int * good () {
+    return NULL;
+}
+
+int * evil () {
+    return NULL;
+}
+
+int main() {
+    if (good() == evil()) {
+        return -1;
+    } else {
+        return 0;
+    }
+}

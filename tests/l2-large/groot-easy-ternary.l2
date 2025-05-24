@@ -1,0 +1,9 @@
+//test return 239
+
+int main() {
+  bool a = true;
+  bool b = false;
+  bool c = true;
+
+  return (a ? false : true) ? 0xAB : b ? c ? 0 : 1 : 0xEF;
+}

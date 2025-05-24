@@ -1,0 +1,17 @@
+//test return 8
+
+int pow(int n,int exp) {
+    if (exp==0) return 1;
+
+    return n*pow(n,exp-1);
+}
+
+int main() {
+    int n;
+    int e;
+
+    n = 2;
+    e = 3;
+
+    return pow(2,3);
+}

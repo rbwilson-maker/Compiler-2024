@@ -1,0 +1,10 @@
+//test return 1
+typedef int y;
+y* foo();
+int* foo() {
+    return NULL;
+}
+int main() {
+    foo();
+    return 1;
+}

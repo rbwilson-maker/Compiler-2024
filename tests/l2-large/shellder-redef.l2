@@ -1,0 +1,10 @@
+//test return 100
+int main(){
+    {
+        bool a = true;
+    }
+    {
+        int a = 100;
+        return a;
+    }
+}

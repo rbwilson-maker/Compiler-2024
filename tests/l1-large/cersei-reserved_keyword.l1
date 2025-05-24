@@ -1,0 +1,9 @@
+//test error
+
+/* This program should fail to compile because it uses a reserved keyword as a
+   variable name */
+
+int main() {
+    int false = 13;
+    return 0;
+}

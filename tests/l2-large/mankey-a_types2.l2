@@ -1,0 +1,14 @@
+//test return 5
+//type-checking
+int main()
+{
+  int n = 3;
+  int d;
+  d = 5;
+  bool b = (3 == 3 && false || 5 != 5 || d > n);
+  bool c = (~d | n) >= -5 && (n - 4 & 7) >= 4;
+  if (c || b || true && (n & 0 | 15) > 14) {
+    return 5;
+  }
+  return 0;
+}

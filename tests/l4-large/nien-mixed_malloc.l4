@@ -1,0 +1,13 @@
+//test error
+
+int main() {
+    bool *a;
+    int i = 9;
+    if (i < 10) {
+      *a = i;
+    }
+    else {
+      *a = true;
+    }
+    return i;
+}

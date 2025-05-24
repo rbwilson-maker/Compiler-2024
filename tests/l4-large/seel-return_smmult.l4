@@ -1,0 +1,385 @@
+//test return 0
+// Matrix multiplication! Everyone's favorite. This time with sparse matrices,
+// because why not?
+
+struct elem {
+  int row;
+  int col;
+  int value;
+  struct elem *next_in_row;
+  struct elem *next_in_col;
+};
+
+struct mat {
+  int n_rows;
+  int n_cols;
+  struct elem*[] rows;
+  struct elem*[] cols;
+};
+
+struct mat* mat_new(int rows, int cols) {
+  struct mat* mat = alloc(struct mat);
+  mat->n_rows = rows;
+  mat->n_cols = cols;
+  mat->rows = alloc_array(struct elem*, rows);
+  mat->cols = alloc_array(struct elem*, cols);
+  return mat;
+}
+
+void mat_set_elem(struct mat* mat, int row, int col, int value) {
+  struct elem* cur_row = mat->rows[row];
+  struct elem* cur_col = mat->cols[col];
+  struct elem* prev_row = NULL;
+  struct elem* prev_col = NULL;
+
+  while (cur_row != NULL && cur_row->col < col) {
+    prev_row = cur_row;
+    cur_row = cur_row->next_in_row;
+  }
+
+  while (cur_col != NULL && cur_col->row < row) {
+    prev_col = cur_col;
+    cur_col = cur_col->next_in_col;
+  }
+
+  if (value == 0) {
+    if (cur_row != NULL && cur_row == cur_col) {
+      // deletion
+      if (prev_row == NULL) {
+        mat->rows[row] = cur_row->next_in_row;
+      } else {
+        prev_row->next_in_row = cur_row->next_in_row;
+      }
+      if (prev_col == NULL) {
+        mat->cols[col] = cur_col->next_in_col;
+      } else {
+        prev_col->next_in_col = cur_col->next_in_col;
+      }
+    } else {
+      // not in matrix, do nothing
+    }
+  } else {
+    if (cur_row != NULL && cur_row == cur_col) {
+      // replacement
+      cur_row->value = value;
+    } else {
+      // insertion
+      struct elem* new = alloc(struct elem);
+      new->row = row;
+      new->col = col;
+      new->value = value;
+      new->next_in_row = cur_row;
+      new->next_in_col = cur_col;
+      if (prev_row == NULL) {
+        mat->rows[row] = new;
+      } else {
+        prev_row->next_in_row = new;
+      }
+      if (prev_col == NULL) {
+        mat->cols[col] = new;
+      } else {
+        prev_col->next_in_col = new;
+      }
+    }
+  }
+}
+
+int mat_get_elem(struct mat* mat, int row, int col) {
+  struct elem* e = mat->rows[row];
+  while (e != NULL) {
+    if (e->col == col) {
+      return e->value;
+    } else if (e->col > col) {
+      return 0;
+    }
+    e = e->next_in_row;
+  }
+  return 0;
+}
+
+int vec_dot(struct mat* A, struct mat* B, int row, int col) {
+  struct elem* a = A->rows[row];
+  struct elem* b = B->cols[col];
+  int result = 0;
+  while (a != NULL && b != NULL) {
+    if (a->col == b->row) {
+      result += a->value * b->value;
+      a = a->next_in_row;
+      b = b->next_in_col;
+    } else if (a->col < b->row) {
+      a = a->next_in_row;
+    } else {
+      b = b->next_in_col;
+    }
+  }
+  return result;
+}
+
+// X = A * B
+struct mat* mat_mult(struct mat* A, struct mat* B) {
+  struct mat* X = mat_new(B->n_rows, B->n_cols);
+  for (int i = 0; i < X->n_rows; i++) {
+    for (int j = 0; j < X->n_cols; j++) {
+      mat_set_elem(X, i, j, vec_dot(A, B, i, j));
+    }
+  }
+  return X;
+}
+
+int main() {
+  struct mat* A = mat_new(15, 15);
+  struct mat* B = mat_new(15, 15);
+
+  // *** start generated ***
+  mat_set_elem(A, 0, 0, 1);
+  mat_set_elem(A, 1, 1, 1);
+  mat_set_elem(A, 2, 1, 1);
+  mat_set_elem(A, 2, 3, 1);
+  mat_set_elem(A, 4, 1, 1);
+  mat_set_elem(A, 4, 2, 1);
+  mat_set_elem(A, 6, 5, 2);
+  mat_set_elem(A, 7, 4, 1);
+  mat_set_elem(A, 10, 3, 2);
+  mat_set_elem(A, 12, 14, 6);
+  mat_set_elem(B, 0, 0, 1);
+  mat_set_elem(B, 1, 1, 1);
+  mat_set_elem(B, 1, 3, 1);
+  mat_set_elem(B, 2, 3, 1);
+  mat_set_elem(B, 3, 7, 3);
+  mat_set_elem(B, 3, 8, 3);
+  mat_set_elem(B, 4, 8, 3);
+  mat_set_elem(B, 14, 12, 2);
+  // *** end generated ***
+
+  struct mat* X = mat_mult(A, B);
+
+  // *** start generated ***
+  assert(mat_get_elem(X, 0, 0) == 1);
+  assert(mat_get_elem(X, 0, 1) == 0);
+  assert(mat_get_elem(X, 0, 2) == 0);
+  assert(mat_get_elem(X, 0, 3) == 0);
+  assert(mat_get_elem(X, 0, 4) == 0);
+  assert(mat_get_elem(X, 0, 5) == 0);
+  assert(mat_get_elem(X, 0, 6) == 0);
+  assert(mat_get_elem(X, 0, 7) == 0);
+  assert(mat_get_elem(X, 0, 8) == 0);
+  assert(mat_get_elem(X, 0, 9) == 0);
+  assert(mat_get_elem(X, 0, 10) == 0);
+  assert(mat_get_elem(X, 0, 11) == 0);
+  assert(mat_get_elem(X, 0, 12) == 0);
+  assert(mat_get_elem(X, 0, 13) == 0);
+  assert(mat_get_elem(X, 0, 14) == 0);
+  assert(mat_get_elem(X, 1, 0) == 0);
+  assert(mat_get_elem(X, 1, 1) == 1);
+  assert(mat_get_elem(X, 1, 2) == 0);
+  assert(mat_get_elem(X, 1, 3) == 1);
+  assert(mat_get_elem(X, 1, 4) == 0);
+  assert(mat_get_elem(X, 1, 5) == 0);
+  assert(mat_get_elem(X, 1, 6) == 0);
+  assert(mat_get_elem(X, 1, 7) == 0);
+  assert(mat_get_elem(X, 1, 8) == 0);
+  assert(mat_get_elem(X, 1, 9) == 0);
+  assert(mat_get_elem(X, 1, 10) == 0);
+  assert(mat_get_elem(X, 1, 11) == 0);
+  assert(mat_get_elem(X, 1, 12) == 0);
+  assert(mat_get_elem(X, 1, 13) == 0);
+  assert(mat_get_elem(X, 1, 14) == 0);
+  assert(mat_get_elem(X, 2, 0) == 0);
+  assert(mat_get_elem(X, 2, 1) == 1);
+  assert(mat_get_elem(X, 2, 2) == 0);
+  assert(mat_get_elem(X, 2, 3) == 1);
+  assert(mat_get_elem(X, 2, 4) == 0);
+  assert(mat_get_elem(X, 2, 5) == 0);
+  assert(mat_get_elem(X, 2, 6) == 0);
+  assert(mat_get_elem(X, 2, 7) == 3);
+  assert(mat_get_elem(X, 2, 8) == 3);
+  assert(mat_get_elem(X, 2, 9) == 0);
+  assert(mat_get_elem(X, 2, 10) == 0);
+  assert(mat_get_elem(X, 2, 11) == 0);
+  assert(mat_get_elem(X, 2, 12) == 0);
+  assert(mat_get_elem(X, 2, 13) == 0);
+  assert(mat_get_elem(X, 2, 14) == 0);
+  assert(mat_get_elem(X, 3, 0) == 0);
+  assert(mat_get_elem(X, 3, 1) == 0);
+  assert(mat_get_elem(X, 3, 2) == 0);
+  assert(mat_get_elem(X, 3, 3) == 0);
+  assert(mat_get_elem(X, 3, 4) == 0);
+  assert(mat_get_elem(X, 3, 5) == 0);
+  assert(mat_get_elem(X, 3, 6) == 0);
+  assert(mat_get_elem(X, 3, 7) == 0);
+  assert(mat_get_elem(X, 3, 8) == 0);
+  assert(mat_get_elem(X, 3, 9) == 0);
+  assert(mat_get_elem(X, 3, 10) == 0);
+  assert(mat_get_elem(X, 3, 11) == 0);
+  assert(mat_get_elem(X, 3, 12) == 0);
+  assert(mat_get_elem(X, 3, 13) == 0);
+  assert(mat_get_elem(X, 3, 14) == 0);
+  assert(mat_get_elem(X, 4, 0) == 0);
+  assert(mat_get_elem(X, 4, 1) == 1);
+  assert(mat_get_elem(X, 4, 2) == 0);
+  assert(mat_get_elem(X, 4, 3) == 2);
+  assert(mat_get_elem(X, 4, 4) == 0);
+  assert(mat_get_elem(X, 4, 5) == 0);
+  assert(mat_get_elem(X, 4, 6) == 0);
+  assert(mat_get_elem(X, 4, 7) == 0);
+  assert(mat_get_elem(X, 4, 8) == 0);
+  assert(mat_get_elem(X, 4, 9) == 0);
+  assert(mat_get_elem(X, 4, 10) == 0);
+  assert(mat_get_elem(X, 4, 11) == 0);
+  assert(mat_get_elem(X, 4, 12) == 0);
+  assert(mat_get_elem(X, 4, 13) == 0);
+  assert(mat_get_elem(X, 4, 14) == 0);
+  assert(mat_get_elem(X, 5, 0) == 0);
+  assert(mat_get_elem(X, 5, 1) == 0);
+  assert(mat_get_elem(X, 5, 2) == 0);
+  assert(mat_get_elem(X, 5, 3) == 0);
+  assert(mat_get_elem(X, 5, 4) == 0);
+  assert(mat_get_elem(X, 5, 5) == 0);
+  assert(mat_get_elem(X, 5, 6) == 0);
+  assert(mat_get_elem(X, 5, 7) == 0);
+  assert(mat_get_elem(X, 5, 8) == 0);
+  assert(mat_get_elem(X, 5, 9) == 0);
+  assert(mat_get_elem(X, 5, 10) == 0);
+  assert(mat_get_elem(X, 5, 11) == 0);
+  assert(mat_get_elem(X, 5, 12) == 0);
+  assert(mat_get_elem(X, 5, 13) == 0);
+  assert(mat_get_elem(X, 5, 14) == 0);
+  assert(mat_get_elem(X, 6, 0) == 0);
+  assert(mat_get_elem(X, 6, 1) == 0);
+  assert(mat_get_elem(X, 6, 2) == 0);
+  assert(mat_get_elem(X, 6, 3) == 0);
+  assert(mat_get_elem(X, 6, 4) == 0);
+  assert(mat_get_elem(X, 6, 5) == 0);
+  assert(mat_get_elem(X, 6, 6) == 0);
+  assert(mat_get_elem(X, 6, 7) == 0);
+  assert(mat_get_elem(X, 6, 8) == 0);
+  assert(mat_get_elem(X, 6, 9) == 0);
+  assert(mat_get_elem(X, 6, 10) == 0);
+  assert(mat_get_elem(X, 6, 11) == 0);
+  assert(mat_get_elem(X, 6, 12) == 0);
+  assert(mat_get_elem(X, 6, 13) == 0);
+  assert(mat_get_elem(X, 6, 14) == 0);
+  assert(mat_get_elem(X, 7, 0) == 0);
+  assert(mat_get_elem(X, 7, 1) == 0);
+  assert(mat_get_elem(X, 7, 2) == 0);
+  assert(mat_get_elem(X, 7, 3) == 0);
+  assert(mat_get_elem(X, 7, 4) == 0);
+  assert(mat_get_elem(X, 7, 5) == 0);
+  assert(mat_get_elem(X, 7, 6) == 0);
+  assert(mat_get_elem(X, 7, 7) == 0);
+  assert(mat_get_elem(X, 7, 8) == 3);
+  assert(mat_get_elem(X, 7, 9) == 0);
+  assert(mat_get_elem(X, 7, 10) == 0);
+  assert(mat_get_elem(X, 7, 11) == 0);
+  assert(mat_get_elem(X, 7, 12) == 0);
+  assert(mat_get_elem(X, 7, 13) == 0);
+  assert(mat_get_elem(X, 7, 14) == 0);
+  assert(mat_get_elem(X, 8, 0) == 0);
+  assert(mat_get_elem(X, 8, 1) == 0);
+  assert(mat_get_elem(X, 8, 2) == 0);
+  assert(mat_get_elem(X, 8, 3) == 0);
+  assert(mat_get_elem(X, 8, 4) == 0);
+  assert(mat_get_elem(X, 8, 5) == 0);
+  assert(mat_get_elem(X, 8, 6) == 0);
+  assert(mat_get_elem(X, 8, 7) == 0);
+  assert(mat_get_elem(X, 8, 8) == 0);
+  assert(mat_get_elem(X, 8, 9) == 0);
+  assert(mat_get_elem(X, 8, 10) == 0);
+  assert(mat_get_elem(X, 8, 11) == 0);
+  assert(mat_get_elem(X, 8, 12) == 0);
+  assert(mat_get_elem(X, 8, 13) == 0);
+  assert(mat_get_elem(X, 8, 14) == 0);
+  assert(mat_get_elem(X, 9, 0) == 0);
+  assert(mat_get_elem(X, 9, 1) == 0);
+  assert(mat_get_elem(X, 9, 2) == 0);
+  assert(mat_get_elem(X, 9, 3) == 0);
+  assert(mat_get_elem(X, 9, 4) == 0);
+  assert(mat_get_elem(X, 9, 5) == 0);
+  assert(mat_get_elem(X, 9, 6) == 0);
+  assert(mat_get_elem(X, 9, 7) == 0);
+  assert(mat_get_elem(X, 9, 8) == 0);
+  assert(mat_get_elem(X, 9, 9) == 0);
+  assert(mat_get_elem(X, 9, 10) == 0);
+  assert(mat_get_elem(X, 9, 11) == 0);
+  assert(mat_get_elem(X, 9, 12) == 0);
+  assert(mat_get_elem(X, 9, 13) == 0);
+  assert(mat_get_elem(X, 9, 14) == 0);
+  assert(mat_get_elem(X, 10, 0) == 0);
+  assert(mat_get_elem(X, 10, 1) == 0);
+  assert(mat_get_elem(X, 10, 2) == 0);
+  assert(mat_get_elem(X, 10, 3) == 0);
+  assert(mat_get_elem(X, 10, 4) == 0);
+  assert(mat_get_elem(X, 10, 5) == 0);
+  assert(mat_get_elem(X, 10, 6) == 0);
+  assert(mat_get_elem(X, 10, 7) == 6);
+  assert(mat_get_elem(X, 10, 8) == 6);
+  assert(mat_get_elem(X, 10, 9) == 0);
+  assert(mat_get_elem(X, 10, 10) == 0);
+  assert(mat_get_elem(X, 10, 11) == 0);
+  assert(mat_get_elem(X, 10, 12) == 0);
+  assert(mat_get_elem(X, 10, 13) == 0);
+  assert(mat_get_elem(X, 10, 14) == 0);
+  assert(mat_get_elem(X, 11, 0) == 0);
+  assert(mat_get_elem(X, 11, 1) == 0);
+  assert(mat_get_elem(X, 11, 2) == 0);
+  assert(mat_get_elem(X, 11, 3) == 0);
+  assert(mat_get_elem(X, 11, 4) == 0);
+  assert(mat_get_elem(X, 11, 5) == 0);
+  assert(mat_get_elem(X, 11, 6) == 0);
+  assert(mat_get_elem(X, 11, 7) == 0);
+  assert(mat_get_elem(X, 11, 8) == 0);
+  assert(mat_get_elem(X, 11, 9) == 0);
+  assert(mat_get_elem(X, 11, 10) == 0);
+  assert(mat_get_elem(X, 11, 11) == 0);
+  assert(mat_get_elem(X, 11, 12) == 0);
+  assert(mat_get_elem(X, 11, 13) == 0);
+  assert(mat_get_elem(X, 11, 14) == 0);
+  assert(mat_get_elem(X, 12, 0) == 0);
+  assert(mat_get_elem(X, 12, 1) == 0);
+  assert(mat_get_elem(X, 12, 2) == 0);
+  assert(mat_get_elem(X, 12, 3) == 0);
+  assert(mat_get_elem(X, 12, 4) == 0);
+  assert(mat_get_elem(X, 12, 5) == 0);
+  assert(mat_get_elem(X, 12, 6) == 0);
+  assert(mat_get_elem(X, 12, 7) == 0);
+  assert(mat_get_elem(X, 12, 8) == 0);
+  assert(mat_get_elem(X, 12, 9) == 0);
+  assert(mat_get_elem(X, 12, 10) == 0);
+  assert(mat_get_elem(X, 12, 11) == 0);
+  assert(mat_get_elem(X, 12, 12) == 12);
+  assert(mat_get_elem(X, 12, 13) == 0);
+  assert(mat_get_elem(X, 12, 14) == 0);
+  assert(mat_get_elem(X, 13, 0) == 0);
+  assert(mat_get_elem(X, 13, 1) == 0);
+  assert(mat_get_elem(X, 13, 2) == 0);
+  assert(mat_get_elem(X, 13, 3) == 0);
+  assert(mat_get_elem(X, 13, 4) == 0);
+  assert(mat_get_elem(X, 13, 5) == 0);
+  assert(mat_get_elem(X, 13, 6) == 0);
+  assert(mat_get_elem(X, 13, 7) == 0);
+  assert(mat_get_elem(X, 13, 8) == 0);
+  assert(mat_get_elem(X, 13, 9) == 0);
+  assert(mat_get_elem(X, 13, 10) == 0);
+  assert(mat_get_elem(X, 13, 11) == 0);
+  assert(mat_get_elem(X, 13, 12) == 0);
+  assert(mat_get_elem(X, 13, 13) == 0);
+  assert(mat_get_elem(X, 13, 14) == 0);
+  assert(mat_get_elem(X, 14, 0) == 0);
+  assert(mat_get_elem(X, 14, 1) == 0);
+  assert(mat_get_elem(X, 14, 2) == 0);
+  assert(mat_get_elem(X, 14, 3) == 0);
+  assert(mat_get_elem(X, 14, 4) == 0);
+  assert(mat_get_elem(X, 14, 5) == 0);
+  assert(mat_get_elem(X, 14, 6) == 0);
+  assert(mat_get_elem(X, 14, 7) == 0);
+  assert(mat_get_elem(X, 14, 8) == 0);
+  assert(mat_get_elem(X, 14, 9) == 0);
+  assert(mat_get_elem(X, 14, 10) == 0);
+  assert(mat_get_elem(X, 14, 11) == 0);
+  assert(mat_get_elem(X, 14, 12) == 0);
+  assert(mat_get_elem(X, 14, 13) == 0);
+  assert(mat_get_elem(X, 14, 14) == 0);
+  // *** end generated ***
+
+  return 0;
+}

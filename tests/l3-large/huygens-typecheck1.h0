@@ -1,0 +1,9 @@
+/*
+A Friedman number is a positive integer which can be written 
+in some non-trivial way using its own digits, together with 
+the symbols + – × / ^ ( ) and concatenation.
+For example, 25 = 52 and 126 = 21 × 6. 
+*/
+
+// calculate the max Friedman number smaller than a threshold
+int Friedman(int threshold);

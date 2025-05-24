@@ -1,0 +1,18 @@
+//test typecheck
+//test infloop
+
+bool f() {
+	if (f()) {
+		return true;
+	}
+	return false;
+}
+
+int main(){
+    	bool a = true;
+    	int x =5;
+    	if (f()) {
+    		return 0;
+	}
+	return 0;
+}

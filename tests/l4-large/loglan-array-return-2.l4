@@ -1,0 +1,10 @@
+//test return 4
+int main() {
+    int[][] lst = alloc_array(int[], 4);
+    lst[0] = alloc_array(int, 2);
+    lst[1] = alloc_array(int, 2);
+    lst[2] = alloc_array(int, 2);
+    lst[3] = alloc_array(int, 2);
+    lst[0][1] = 4;
+    return lst[0][1];
+}

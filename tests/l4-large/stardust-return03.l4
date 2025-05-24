@@ -1,0 +1,15 @@
+//test return 1
+//test int pointer
+
+void incr(int* x) {
+	*x += 1;
+}
+
+int main() {
+	int* x = alloc(int);
+	*x = 1;
+	while (*x < 2) {
+		incr(x);
+	}
+	return *x-1;
+}

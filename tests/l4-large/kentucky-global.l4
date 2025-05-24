@@ -1,0 +1,16 @@
+//test error
+
+
+// because who doesn't love an adorable little segfault?
+
+int global;
+
+int main() {
+
+global = 336;
+
+return global;
+
+
+
+}

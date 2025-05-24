@@ -1,0 +1,13 @@
+//test error
+// functions declared but not defined
+
+int undefined_helper(bool b, int i);
+
+int helper(bool b, int i) {
+  return i + 1;
+}
+
+int main() {
+  int result = helper(false, 2);
+  return result + undefined_helper(true, 3);
+}

@@ -1,0 +1,20 @@
+//test return 0
+
+// tests basic nesting calls.
+
+int call3(int val) {
+    return val;
+}
+
+int call2(int val) {
+    return call3(val);
+}
+
+int call(int val) {
+    return call2(val);
+}
+
+int main() {
+    int fun = 0;
+    return call(fun);
+}

@@ -1,0 +1,10 @@
+//test error
+
+struct Foo {
+	struct Foo *bar;
+};
+
+int main() {
+	struct Bar *foo = alloc(struct Foo);
+	return 0;
+}

@@ -1,0 +1,16 @@
+//test return 0
+// test all operators related to bool
+
+int main() {
+  bool flag1 = false;
+  bool flag2 = true;
+  bool flag3 = !flag1;
+  bool flag4 = flag1 && flag2;
+  bool flag5 = flag1 || flag2;
+  bool flag6 = flag1 == flag2;
+  bool flag7 = flag1 != flag2;
+  if (flag3 && !flag4 && flag5 && !flag6 && flag7) {
+	return 0;
+  }
+  return 1;
+}

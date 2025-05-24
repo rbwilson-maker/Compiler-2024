@@ -1,0 +1,34 @@
+//test error
+
+typedef struct list_node list;
+struct list_node {
+    int data;
+    list* next;
+    list* meh;
+};
+
+int main() {
+    list * bloop = alloc(list);
+    list * start = alloc(list);
+    *start = *bloop;
+    for (int i = 1; i < 100; i += 1) {
+        bloop->data = 55 * i;
+        bloop->next = alloc(list);
+        if (i == 39) {
+            bloop->meh = NULL;
+        }
+        else {
+            bloop->meh = alloc(list);
+        }
+        bloop = bloop->next;
+    }
+    int tot = 0;
+    for (int i = 1; i < 100; i += 1) {
+        tot += start->data;
+        start = start->next;
+        if (i == 39) {
+            tot += start->meh->data;
+        }
+    }
+    return tot;
+}

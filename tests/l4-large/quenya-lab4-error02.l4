@@ -1,0 +1,15 @@
+//test error
+// direct struct access
+
+struct person {
+  int id;
+};
+
+struct person foo(len) {
+  struct person[] ps = alloc_array(struct person, len);
+  return ps[0];
+};
+
+int main() {
+  return foo(1).id;
+}

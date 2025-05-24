@@ -1,0 +1,7 @@
+//test error
+// invalid operators
+int main() {
+    int x = 1;
+    int y = x++ + ++x + x-- + --x;
+    return y;
+}

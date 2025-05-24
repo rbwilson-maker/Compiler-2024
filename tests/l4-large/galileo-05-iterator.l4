@@ -1,0 +1,41 @@
+//test return 9702
+// mimic an iterator
+
+struct iterator {
+  int cur;
+  int upper_bound;
+};
+typedef struct iterator iterator_t;
+
+void init_iter(iterator_t * this, int n) {
+  this->cur = 0;
+  this->upper_bound = n;
+}
+
+void reset(iterator_t * this) {
+  this->cur = 0;
+}
+
+bool has_next(iterator_t * this) {
+  return this->cur < this->upper_bound;
+}
+
+int next(iterator_t * this) {
+  int res = this->cur;
+  this->cur++;
+  return res;
+}
+
+int main() {
+  int res = 0;
+  iterator_t * iter = alloc(iterator_t);
+  init_iter(iter, 100);
+  for (int x = next(iter); has_next(iter); x = next(iter)) {
+    res += x;
+  }
+  reset(iter);
+  for (int x = next(iter); has_next(iter); x = next(iter)) {
+    res += x;
+  }
+  return res;
+}

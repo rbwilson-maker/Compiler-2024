@@ -1,0 +1,21 @@
+//test return 100
+
+void updateMax(int *curr_max, int new_val){
+	int val = *curr_max;
+	if (val <= new_val) {
+		*curr_max = new_val;
+	}
+}
+
+int main(){
+	int[] A = alloc_array(int,10);
+	A[0] = 1;
+	A[1] = 2;
+	A[2] = 100;
+	int *max = alloc(int);
+	*max = 0;
+	for (int i = 0; i < 10; i++){
+		updateMax(max, A[i]);
+	}
+	return *max;
+}

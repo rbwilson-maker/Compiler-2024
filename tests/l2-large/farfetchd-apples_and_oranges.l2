@@ -1,0 +1,9 @@
+//test error
+
+int main()
+{
+  if (1 == true)
+    return 5;
+  else
+    return 6;
+}

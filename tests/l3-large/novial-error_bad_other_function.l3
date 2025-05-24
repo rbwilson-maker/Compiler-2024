@@ -1,0 +1,10 @@
+//test error
+
+// Not called, but still not well-typed
+bool badFunction() {
+  return 2;
+}
+
+int main() {
+  return 0;
+}

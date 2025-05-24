@@ -1,0 +1,28 @@
+//test memerror
+
+//this test has 1 line difference with a return test
+//but i believe the behavior difference should justify it
+struct foo{
+  int * bar;
+  int a;
+};
+
+typedef struct foo foo;
+
+int main(){
+  foo[] fooarr = alloc_array(foo, 10);
+  int * ptr;
+
+  ptr = fooarr[3].bar;
+  
+  int i;
+  for(i=0; i<10; i++){
+    fooarr[i].bar = alloc(int);
+    *(fooarr[i].bar) = i;
+  }
+
+  *ptr = 1234;
+
+  return *(fooarr[3].bar);
+}
+

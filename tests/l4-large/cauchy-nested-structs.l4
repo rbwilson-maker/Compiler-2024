@@ -1,0 +1,5 @@
+//test typecheck
+int main() {
+    struct s3* container = alloc(struct s3);
+    return 0;
+}

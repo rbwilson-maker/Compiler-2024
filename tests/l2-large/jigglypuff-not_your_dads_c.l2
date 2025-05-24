@@ -1,0 +1,20 @@
+//test return 2
+
+/* Not Your Dad's C Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Tuesday, September 29, 2015 at 12:30:02 AM EDT
+ *
+ * This test tests the C0 variant on the C ternary operator. As opposed to
+ * C, the C0 ternary operator only evaluates the expression that corresponds
+ * to the condition being true or false, not both. In C0, the ternary operator
+ * is just syntactic sugar for an if statement.
+ */
+
+int main()
+{
+    int x = 4;
+
+    return (x == 4) ? 2 : x / 0;
+}

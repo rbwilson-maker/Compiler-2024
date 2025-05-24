@@ -1,0 +1,13 @@
+//test return 3
+
+int f(int *k) {
+    *k = 3;
+    return 0;
+}
+
+int main() {
+    int *k = alloc(int);
+    int[] A = alloc_array(int, 2000);
+    A[f(k)] = *k;
+    return A[0];
+}

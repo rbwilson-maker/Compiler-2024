@@ -1,0 +1,12 @@
+//test return 42
+int main() {
+  int all = 0;
+  int elems = 0;
+  for(int i = 1; i <= 50; i++) {
+    all ^= i;
+    if (i != 42) {
+      elems ^= i;
+    }
+  }
+  return elems ^ all;
+}

@@ -1,0 +1,10 @@
+//test error
+// Used functions (even in dead code) should always be defined
+
+void foo();
+
+int main()
+{
+  return 0;
+  foo();
+}

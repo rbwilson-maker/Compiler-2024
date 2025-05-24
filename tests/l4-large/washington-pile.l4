@@ -1,0 +1,255 @@
+//test return 0
+
+// A classic data structure, the pile.
+
+struct pile_elem {
+    int priority;
+    int data;
+};
+
+typedef struct pile_elem pile_elem_t;
+
+struct pile {
+    pile_elem_t[] elems;
+    // the actual length of the elems array
+    int true_length;
+    // the number of elements in the pile
+    int num_elems;
+};
+
+typedef struct pile pile_t;
+
+void pile_init(pile_t *p);
+void pile_push(pile_t *p, int data, int priority);
+int pile_pop(pile_t *p);
+int pile_peek(pile_t *p);
+int pile_length(pile_t *p);
+
+
+void pile_init(pile_t *p) {
+    p->elems = alloc_array(pile_elem_t, 100);
+    p->true_length = 100;
+    p->num_elems = 0;
+}
+
+/* returns parent index, or -1 if root */
+int get_parent(pile_t *p, int i) {
+    return i > 1 ? i / 2 : -1;
+}
+
+/* returns left child, or -1 if no left child */
+int get_left(pile_t *p, int i) {
+    return i*2 <= p->num_elems ? i*2 : -1;
+}
+
+/* returns right child, or -1 if no right child */
+int get_right(pile_t *p, int i) {
+    return i*2 + 1 <= p->num_elems ? i*2 + 1 : -1;
+}
+
+/* swap indices i and j in the pile */
+void swap(pile_t *p, int i, int j) {
+    int temp;
+    temp = p->elems[i].priority;
+    p->elems[i].priority = p->elems[j].priority;
+    p->elems[j].priority = temp;
+
+    temp = p->elems[i].data;
+    p->elems[i].data = p->elems[j].data;
+    p->elems[j].data = temp;
+}
+
+bool is_pile(pile_t *p) {
+
+    int i;
+    if (p->true_length <= 0 || p->num_elems < 0) {
+        return false;
+    }
+
+
+    for (i = 1; i <= p->num_elems; i++) {
+        // check left, right, and parent for priority bounds
+        int x = get_left(p, i);
+        if (x != -1 &&
+            p->elems[i].priority > p->elems[get_left(p, i)].priority) {
+            return false;
+        }
+        if (get_right(p, i) != -1 &&
+            p->elems[i].priority > p->elems[get_right(p, i)].priority) {
+            return false;
+        }
+        if (get_parent(p, i) != -1 &&
+            p->elems[i].priority < p->elems[get_parent(p, i)].priority) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void copy_elems(pile_elem_t[] dst, pile_elem_t[] src, int n) {
+    int i;
+    for (i = 0; i < n; i++) {
+        dst[i].priority = src[i].priority;
+        dst[i].data = src[i].data;
+    }
+}
+
+void pile_push(pile_t *p, int data, int priority) {
+    int node;
+    int parent;
+
+    assert(is_pile(p));
+
+    // if pile is 100% full, expand it
+    while (p->true_length <= p->num_elems + 1) {
+        pile_elem_t[] new_elems =
+            alloc_array(pile_elem_t, p->true_length * 10);
+        copy_elems(new_elems, new_elems, p->true_length * 10);
+        copy_elems(new_elems, p->elems, p->true_length);
+        p->elems = new_elems;
+        p->true_length *= 10;
+    }
+
+    // now insert the element and propogate up
+    p->num_elems += 1;
+    p->elems[p->num_elems].data = data;
+    p->elems[p->num_elems].priority = priority;
+    node = p->num_elems;
+    parent = get_parent(p, node);
+    while (parent != -1 &&
+           p->elems[node].priority < p->elems[parent].priority) {
+        swap(p, node, parent);
+        node = parent;
+        parent = get_parent(p, node);
+    }
+
+    assert(is_pile(p));
+}
+
+/* return the child with the priority lower than the ith, or -1 if no such
+ * child exists, or we don't need to swap at all. */
+int get_lesser_child(pile_t *p, int i) {
+
+    int left;
+    int right;
+
+    left = get_left(p, i);
+    right = get_right(p, i);
+
+    int result;
+
+    // both valid
+    if (left != -1 && right != -1) {
+        if (p->elems[left].priority <= p->elems[right].priority) {
+            result = left;
+        } else {
+            result = right;
+        }
+
+        // only left valid
+    } else if (left != -1) {
+        result = left;
+    } else if (right != -1) {
+        result = right;
+    } else {
+        return -1;
+    }
+    if (p->elems[i].priority > p->elems[result].priority) {
+        return result;
+    } else {
+        return -1;
+    }
+
+}
+
+int pile_pop(pile_t *p) {
+
+    int data;
+    int node;
+    int lesser_child;
+
+    assert(is_pile(p));
+
+    data = p->elems[1].data;
+    // swap bottom to top
+    swap(p, 1, p->num_elems);
+    p->num_elems--;
+
+    // now propogate downward
+    node = 1;
+    lesser_child = get_lesser_child(p, node);
+    while (lesser_child != -1) {
+        swap(p, node, lesser_child);
+        node = lesser_child;
+        lesser_child = get_lesser_child(p, node);
+    }
+
+    assert(is_pile(p));
+
+    // too small, so resize
+    if (p->num_elems >= 100 &&
+        p->num_elems * 10 * 20 < p->true_length) {
+        pile_elem_t[] new_elems =
+            alloc_array(pile_elem_t, p->true_length / 10);
+        copy_elems(new_elems, p->elems, p->true_length / 10);
+        p->elems = new_elems;
+        p->true_length /= 10;
+    }
+
+    assert(is_pile(p));
+
+    return data;
+
+}
+
+int pile_peek(pile_t *p) {
+    return p->elems[1].data;
+}
+
+int pile_length(pile_t *p) {
+    return p->num_elems;
+}
+
+int main() {
+    int data1;
+    int data2;
+    pile_t *p = alloc(pile_t);
+
+    data1 = 1;
+    data2 = 2;
+
+    pile_init(p);
+
+
+    pile_push(p, data1, 5);
+    pile_push(p, data2, 4);
+
+    int len = pile_length(p); // 2
+    assert(len == 2);
+
+    int data3 = pile_peek(p); // data2
+    assert(data3 == data2);
+
+    int data4 = pile_pop(p); // data2
+    assert(data4 == data2);
+    int data5 = pile_pop(p); // data1
+    assert(data5 == data1);
+
+    int i;
+
+
+    pile_init(p);
+    int n = 1000;
+
+    for (i = 0; i < n; i++) {
+        pile_push(p, i, i);
+    }
+
+    int last = pile_pop(p);
+    for (i = 1; i < n; i++) {
+        int current = pile_pop(p);
+        assert(current >= last);
+        last = current;
+    }
+    return 0;
+}

@@ -1,0 +1,10 @@
+//test error
+
+// Tests using variables not in scope
+int main() {
+
+    {int a = 1;}
+    {int b = 2;}
+    return a + b;
+
+}

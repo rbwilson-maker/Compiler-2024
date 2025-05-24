@@ -1,0 +1,22 @@
+//test return 3
+// test mod
+int main()
+{
+  int n1;
+  int r1;
+  int n2;
+  int r2;
+  int n3;
+  int n4;
+
+  n1 = 42;
+  r1 = 2;
+
+  n2 = 15;
+  r2 = 4;
+
+  n3 = n1%r1;
+  n4 = n2%r2;
+
+  return n3+n4;            
+}

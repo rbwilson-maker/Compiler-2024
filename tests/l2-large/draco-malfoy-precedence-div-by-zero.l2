@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main ()
+{
+  int x = 0x80000000;
+  return x / (x << 1);
+}

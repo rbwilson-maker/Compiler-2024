@@ -1,0 +1,14 @@
+//test return 2
+// test bool assignment and test
+int main() {
+	bool a = true;
+	bool b = false;
+	bool c = a || b;
+	bool d = a && b;
+	int res = 0;
+	if (a) res++;
+	if (b) res++;
+	if (c) res++;
+	if (d) res++;
+	return res;
+}

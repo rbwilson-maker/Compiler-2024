@@ -1,0 +1,237 @@
+//test return 288
+
+/**
+ * @brief This program solves Day 10, Star 1 of Advent of Code 2019.
+ *
+ * Writeup: https://adventofcode.com/2019/day/10
+ *
+ * Kevin Geng, Team Barsoomian
+ * 15-411 Fall 2020
+ */
+
+typedef struct grid grid_t;
+struct grid {
+  int width;
+  int height;
+  bool[][] values;
+};
+
+typedef struct ipair ipair_t;
+struct ipair {
+  int x;
+  int y;
+};
+
+typedef struct ipair_array ipair_array_t;
+struct ipair_array {
+  int len;
+  ipair_t*[] values;
+};
+
+grid_t* make_grid();
+
+ipair_t* ipair_new(int x, int y) {
+  ipair_t* d = alloc(ipair_t);
+  d->x = x;
+  d->y = y;
+  return d;
+}
+
+bool ipair_eq(ipair_t* a, ipair_t* b) {
+  return a->x == b->x && a->y == b->y;
+}
+
+ipair_array_t* ipair_array_new(int len) {
+  ipair_array_t* out = alloc(ipair_array_t);
+  out->len = len;
+  out->values = alloc_array(ipair_t*, len);
+  return out;
+}
+
+int abs(int x) {
+  return x < 0 ? -x : x;
+}
+
+int gcd(int a, int b) {
+  a = abs(a);
+  b = abs(b);
+  while (b > 0) {
+    int c = a % b;
+    a = b;
+    b = c;
+  }
+  return a;
+}
+
+ipair_array_t* compute_line(ipair_t* a, ipair_t* b) {
+  int diff_x = b->x - a->x;
+  int diff_y = b->y - a->y;
+
+  int g = gcd(diff_x, diff_y);
+  assert(g > 0);
+
+  int d_x = diff_x / g;
+  int d_y = diff_y / g;
+
+  ipair_array_t* out = ipair_array_new(g - 1);
+  for (int i = 0; i < g - 1; i++) {
+    out->values[i] = ipair_new(
+      a->x + d_x * (i + 1),
+      a->y + d_y * (i + 1)
+    );
+  }
+  return out;
+}
+
+// Returns true if the two arrays have a non-zero intersection
+bool ipair_array_has_intersect(ipair_array_t* a, ipair_array_t* b) {
+  for (int i = 0; i < a->len; i++) {
+    for (int j = 0; j < b->len; j++) {
+      if (ipair_eq(a->values[i], b->values[j])) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+int main() {
+  grid_t* grid = make_grid();
+
+  // Make list of all asteroids
+  ipair_array_t* asteroids = ipair_array_new(grid->width * grid->height);
+  int num_asteroids = 0;
+  for (int i = 0; i < grid->height; i++) {
+    for (int j = 0; j < grid->width; j++) {
+      if (grid->values[i][j]) {
+        asteroids->values[num_asteroids] = ipair_new(j, i);
+        num_asteroids++;
+      }
+    }
+  }
+  asteroids->len = num_asteroids;
+
+  // Loop through all pair of asteroids
+  int best_cnt = 0;
+
+  for (int p = 0; p < num_asteroids; p++) {
+    int cnt = 0;
+    for (int q = 0; q < num_asteroids; q++) {
+      if (p != q) {
+        ipair_array_t* med = compute_line(
+          asteroids->values[p], asteroids->values[q]);
+        if (!ipair_array_has_intersect(asteroids, med)) {
+          cnt++;
+        }
+      }
+    }
+
+    if (cnt > best_cnt) {
+      best_cnt = cnt;
+    }
+  }
+
+  return best_cnt;
+}
+
+struct grid* make_grid() {
+  grid_t* grid = alloc(grid_t);
+  grid->height = 31;
+  grid->width = 31;
+  grid->values = alloc_array(bool[], grid->height);
+  bool[] row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = false; row[3] = false; row[4] = true; row[5] = true; row[6] = false; row[7] = true; row[8] = true; row[9] = true; row[10] = true; row[11] = false; row[12] = true; row[13] = false; row[14] = false; row[15] = false; row[16] = false; row[17] = false; row[18] = false; row[19] = false; row[20] = true; row[21] = false; row[22] = true; row[23] = true; row[24] = false; row[25] = false; row[26] = true; row[27] = true; row[28] = false; row[29] = true; row[30] = false; 
+  grid->values[0] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = true; row[3] = true; row[4] = false; row[5] = true; row[6] = false; row[7] = false; row[8] = true; row[9] = false; row[10] = false; row[11] = true; row[12] = false; row[13] = false; row[14] = false; row[15] = true; row[16] = true; row[17] = false; row[18] = false; row[19] = true; row[20] = true; row[21] = false; row[22] = true; row[23] = true; row[24] = false; row[25] = true; row[26] = false; row[27] = false; row[28] = false; row[29] = false; row[30] = false; 
+  grid->values[1] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = false; row[3] = true; row[4] = true; row[5] = true; row[6] = true; row[7] = true; row[8] = false; row[9] = true; row[10] = false; row[11] = false; row[12] = false; row[13] = false; row[14] = false; row[15] = false; row[16] = true; row[17] = false; row[18] = false; row[19] = true; row[20] = false; row[21] = false; row[22] = false; row[23] = false; row[24] = true; row[25] = false; row[26] = true; row[27] = true; row[28] = true; row[29] = false; row[30] = true; 
+  grid->values[2] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = false; row[2] = false; row[3] = true; row[4] = false; row[5] = true; row[6] = false; row[7] = true; row[8] = false; row[9] = false; row[10] = false; row[11] = true; row[12] = false; row[13] = false; row[14] = true; row[15] = false; row[16] = false; row[17] = false; row[18] = false; row[19] = false; row[20] = true; row[21] = false; row[22] = false; row[23] = true; row[24] = false; row[25] = false; row[26] = true; row[27] = false; row[28] = true; row[29] = false; row[30] = false; 
+  grid->values[3] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = true; row[2] = false; row[3] = false; row[4] = false; row[5] = false; row[6] = false; row[7] = true; row[8] = true; row[9] = false; row[10] = false; row[11] = true; row[12] = false; row[13] = false; row[14] = false; row[15] = true; row[16] = false; row[17] = false; row[18] = true; row[19] = false; row[20] = true; row[21] = false; row[22] = false; row[23] = false; row[24] = true; row[25] = true; row[26] = false; row[27] = false; row[28] = false; row[29] = false; row[30] = false; 
+  grid->values[4] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = true; row[2] = false; row[3] = false; row[4] = false; row[5] = false; row[6] = false; row[7] = true; row[8] = false; row[9] = false; row[10] = false; row[11] = false; row[12] = false; row[13] = false; row[14] = false; row[15] = false; row[16] = false; row[17] = false; row[18] = true; row[19] = true; row[20] = false; row[21] = false; row[22] = true; row[23] = false; row[24] = false; row[25] = false; row[26] = false; row[27] = false; row[28] = false; row[29] = true; row[30] = true; 
+  grid->values[5] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = true; row[2] = true; row[3] = false; row[4] = false; row[5] = true; row[6] = true; row[7] = false; row[8] = true; row[9] = false; row[10] = true; row[11] = false; row[12] = false; row[13] = false; row[14] = false; row[15] = true; row[16] = true; row[17] = false; row[18] = false; row[19] = true; row[20] = true; row[21] = false; row[22] = false; row[23] = false; row[24] = false; row[25] = false; row[26] = false; row[27] = false; row[28] = true; row[29] = false; row[30] = false; 
+  grid->values[6] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = true; row[3] = true; row[4] = false; row[5] = true; row[6] = true; row[7] = false; row[8] = false; row[9] = false; row[10] = false; row[11] = true; row[12] = true; row[13] = true; row[14] = false; row[15] = false; row[16] = true; row[17] = false; row[18] = false; row[19] = false; row[20] = true; row[21] = true; row[22] = false; row[23] = false; row[24] = false; row[25] = true; row[26] = true; row[27] = false; row[28] = false; row[29] = false; row[30] = false; 
+  grid->values[7] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = true; row[2] = false; row[3] = true; row[4] = false; row[5] = true; row[6] = false; row[7] = false; row[8] = false; row[9] = false; row[10] = false; row[11] = false; row[12] = false; row[13] = false; row[14] = false; row[15] = false; row[16] = false; row[17] = false; row[18] = true; row[19] = true; row[20] = false; row[21] = false; row[22] = true; row[23] = false; row[24] = false; row[25] = false; row[26] = true; row[27] = true; row[28] = false; row[29] = false; row[30] = true; 
+  grid->values[8] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = true; row[2] = true; row[3] = false; row[4] = false; row[5] = true; row[6] = true; row[7] = false; row[8] = true; row[9] = true; row[10] = true; row[11] = false; row[12] = false; row[13] = false; row[14] = false; row[15] = false; row[16] = true; row[17] = false; row[18] = true; row[19] = true; row[20] = false; row[21] = false; row[22] = false; row[23] = true; row[24] = true; row[25] = true; row[26] = true; row[27] = false; row[28] = false; row[29] = false; row[30] = false; 
+  grid->values[9] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = false; row[2] = false; row[3] = true; row[4] = true; row[5] = false; row[6] = false; row[7] = true; row[8] = false; row[9] = false; row[10] = false; row[11] = true; row[12] = true; row[13] = false; row[14] = false; row[15] = false; row[16] = true; row[17] = true; row[18] = false; row[19] = false; row[20] = true; row[21] = false; row[22] = true; row[23] = false; row[24] = false; row[25] = true; row[26] = false; row[27] = false; row[28] = false; row[29] = true; row[30] = false; 
+  grid->values[10] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = false; row[2] = true; row[3] = false; row[4] = true; row[5] = false; row[6] = true; row[7] = true; row[8] = false; row[9] = true; row[10] = false; row[11] = true; row[12] = false; row[13] = true; row[14] = true; row[15] = true; row[16] = true; row[17] = true; row[18] = false; row[19] = true; row[20] = false; row[21] = false; row[22] = false; row[23] = false; row[24] = true; row[25] = true; row[26] = true; row[27] = true; row[28] = false; row[29] = true; row[30] = false; 
+  grid->values[11] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = false; row[3] = false; row[4] = false; row[5] = false; row[6] = false; row[7] = true; row[8] = true; row[9] = true; row[10] = false; row[11] = true; row[12] = true; row[13] = false; row[14] = false; row[15] = false; row[16] = false; row[17] = true; row[18] = false; row[19] = false; row[20] = false; row[21] = true; row[22] = false; row[23] = false; row[24] = false; row[25] = true; row[26] = false; row[27] = false; row[28] = false; row[29] = true; row[30] = true; 
+  grid->values[12] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = false; row[2] = false; row[3] = false; row[4] = false; row[5] = true; row[6] = false; row[7] = false; row[8] = false; row[9] = true; row[10] = false; row[11] = true; row[12] = false; row[13] = true; row[14] = false; row[15] = true; row[16] = false; row[17] = false; row[18] = false; row[19] = false; row[20] = true; row[21] = false; row[22] = false; row[23] = false; row[24] = true; row[25] = false; row[26] = false; row[27] = false; row[28] = false; row[29] = false; row[30] = false; 
+  grid->values[13] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = false; row[3] = true; row[4] = false; row[5] = true; row[6] = false; row[7] = true; row[8] = false; row[9] = false; row[10] = true; row[11] = false; row[12] = false; row[13] = false; row[14] = false; row[15] = true; row[16] = false; row[17] = false; row[18] = true; row[19] = false; row[20] = false; row[21] = false; row[22] = true; row[23] = false; row[24] = false; row[25] = true; row[26] = false; row[27] = false; row[28] = true; row[29] = true; row[30] = false; 
+  grid->values[14] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = false; row[3] = false; row[4] = false; row[5] = false; row[6] = true; row[7] = false; row[8] = false; row[9] = true; row[10] = true; row[11] = false; row[12] = false; row[13] = false; row[14] = false; row[15] = false; row[16] = true; row[17] = false; row[18] = false; row[19] = false; row[20] = true; row[21] = true; row[22] = true; row[23] = false; row[24] = false; row[25] = true; row[26] = false; row[27] = false; row[28] = true; row[29] = false; row[30] = true; 
+  grid->values[15] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = false; row[2] = false; row[3] = false; row[4] = false; row[5] = true; row[6] = true; row[7] = true; row[8] = true; row[9] = false; row[10] = true; row[11] = false; row[12] = false; row[13] = true; row[14] = false; row[15] = false; row[16] = false; row[17] = true; row[18] = true; row[19] = false; row[20] = false; row[21] = true; row[22] = false; row[23] = false; row[24] = true; row[25] = false; row[26] = false; row[27] = true; row[28] = false; row[29] = false; row[30] = true; 
+  grid->values[16] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = false; row[2] = true; row[3] = false; row[4] = false; row[5] = false; row[6] = false; row[7] = false; row[8] = true; row[9] = false; row[10] = true; row[11] = false; row[12] = false; row[13] = false; row[14] = false; row[15] = false; row[16] = false; row[17] = false; row[18] = false; row[19] = true; row[20] = false; row[21] = true; row[22] = false; row[23] = true; row[24] = true; row[25] = false; row[26] = false; row[27] = true; row[28] = true; row[29] = true; row[30] = true; 
+  grid->values[17] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = true; row[2] = false; row[3] = false; row[4] = false; row[5] = false; row[6] = false; row[7] = true; row[8] = true; row[9] = false; row[10] = false; row[11] = true; row[12] = false; row[13] = true; row[14] = true; row[15] = false; row[16] = false; row[17] = false; row[18] = false; row[19] = false; row[20] = true; row[21] = false; row[22] = false; row[23] = false; row[24] = true; row[25] = true; row[26] = true; row[27] = false; row[28] = false; row[29] = false; row[30] = false; 
+  grid->values[18] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = true; row[2] = true; row[3] = false; row[4] = true; row[5] = true; row[6] = true; row[7] = false; row[8] = false; row[9] = false; row[10] = false; row[11] = true; row[12] = false; row[13] = false; row[14] = true; row[15] = false; row[16] = false; row[17] = true; row[18] = false; row[19] = false; row[20] = false; row[21] = false; row[22] = false; row[23] = true; row[24] = true; row[25] = true; row[26] = true; row[27] = true; row[28] = false; row[29] = false; row[30] = false; 
+  grid->values[19] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = false; row[3] = true; row[4] = true; row[5] = false; row[6] = true; row[7] = true; row[8] = false; row[9] = false; row[10] = true; row[11] = true; row[12] = false; row[13] = true; row[14] = false; row[15] = true; row[16] = false; row[17] = false; row[18] = false; row[19] = false; row[20] = true; row[21] = false; row[22] = true; row[23] = false; row[24] = false; row[25] = false; row[26] = false; row[27] = false; row[28] = false; row[29] = true; row[30] = false; 
+  grid->values[20] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = true; row[2] = false; row[3] = false; row[4] = false; row[5] = false; row[6] = true; row[7] = false; row[8] = true; row[9] = true; row[10] = false; row[11] = false; row[12] = true; row[13] = false; row[14] = true; row[15] = false; row[16] = true; row[17] = false; row[18] = false; row[19] = false; row[20] = false; row[21] = false; row[22] = false; row[23] = false; row[24] = true; row[25] = true; row[26] = false; row[27] = false; row[28] = false; row[29] = false; row[30] = false; 
+  grid->values[21] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = true; row[2] = false; row[3] = true; row[4] = true; row[5] = false; row[6] = false; row[7] = false; row[8] = true; row[9] = false; row[10] = false; row[11] = false; row[12] = true; row[13] = false; row[14] = false; row[15] = false; row[16] = false; row[17] = true; row[18] = true; row[19] = true; row[20] = false; row[21] = true; row[22] = false; row[23] = false; row[24] = false; row[25] = false; row[26] = true; row[27] = false; row[28] = false; row[29] = false; row[30] = false; 
+  grid->values[22] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = false; row[2] = false; row[3] = false; row[4] = false; row[5] = true; row[6] = false; row[7] = true; row[8] = true; row[9] = true; row[10] = true; row[11] = true; row[12] = true; row[13] = false; row[14] = true; row[15] = false; row[16] = true; row[17] = false; row[18] = false; row[19] = true; row[20] = false; row[21] = false; row[22] = true; row[23] = false; row[24] = true; row[25] = false; row[26] = false; row[27] = false; row[28] = false; row[29] = false; row[30] = true; 
+  grid->values[23] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = true; row[2] = false; row[3] = false; row[4] = true; row[5] = false; row[6] = true; row[7] = true; row[8] = false; row[9] = true; row[10] = false; row[11] = false; row[12] = false; row[13] = false; row[14] = true; row[15] = false; row[16] = true; row[17] = true; row[18] = false; row[19] = false; row[20] = true; row[21] = false; row[22] = true; row[23] = false; row[24] = false; row[25] = false; row[26] = true; row[27] = true; row[28] = false; row[29] = false; row[30] = true; 
+  grid->values[24] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = true; row[2] = true; row[3] = false; row[4] = true; row[5] = true; row[6] = true; row[7] = false; row[8] = false; row[9] = true; row[10] = false; row[11] = false; row[12] = true; row[13] = false; row[14] = false; row[15] = true; row[16] = false; row[17] = true; row[18] = true; row[19] = true; row[20] = false; row[21] = false; row[22] = false; row[23] = true; row[24] = true; row[25] = true; row[26] = true; row[27] = true; row[28] = false; row[29] = true; row[30] = false; 
+  grid->values[25] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = false; row[3] = false; row[4] = true; row[5] = false; row[6] = false; row[7] = false; row[8] = false; row[9] = false; row[10] = false; row[11] = false; row[12] = false; row[13] = false; row[14] = false; row[15] = false; row[16] = true; row[17] = false; row[18] = false; row[19] = false; row[20] = false; row[21] = false; row[22] = true; row[23] = false; row[24] = false; row[25] = false; row[26] = false; row[27] = false; row[28] = false; row[29] = false; row[30] = true; 
+  grid->values[26] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = false; row[3] = false; row[4] = false; row[5] = true; row[6] = true; row[7] = false; row[8] = true; row[9] = false; row[10] = true; row[11] = false; row[12] = false; row[13] = true; row[14] = true; row[15] = false; row[16] = false; row[17] = false; row[18] = true; row[19] = false; row[20] = false; row[21] = true; row[22] = true; row[23] = true; row[24] = true; row[25] = false; row[26] = false; row[27] = false; row[28] = true; row[29] = false; row[30] = false; 
+  grid->values[27] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = true; row[3] = true; row[4] = true; row[5] = true; row[6] = false; row[7] = false; row[8] = false; row[9] = false; row[10] = false; row[11] = false; row[12] = true; row[13] = true; row[14] = true; row[15] = true; row[16] = true; row[17] = false; row[18] = false; row[19] = false; row[20] = false; row[21] = false; row[22] = true; row[23] = false; row[24] = true; row[25] = true; row[26] = false; row[27] = false; row[28] = true; row[29] = false; row[30] = false; 
+  grid->values[28] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = false; row[1] = true; row[2] = false; row[3] = false; row[4] = false; row[5] = true; row[6] = false; row[7] = false; row[8] = false; row[9] = false; row[10] = true; row[11] = false; row[12] = false; row[13] = false; row[14] = true; row[15] = true; row[16] = false; row[17] = false; row[18] = true; row[19] = true; row[20] = false; row[21] = true; row[22] = false; row[23] = true; row[24] = false; row[25] = false; row[26] = false; row[27] = false; row[28] = false; row[29] = false; row[30] = true; 
+  grid->values[29] = row;
+  row = alloc_array(bool, grid->width);
+  row[0] = true; row[1] = false; row[2] = false; row[3] = true; row[4] = true; row[5] = true; row[6] = false; row[7] = false; row[8] = false; row[9] = false; row[10] = false; row[11] = true; row[12] = true; row[13] = false; row[14] = true; row[15] = false; row[16] = false; row[17] = false; row[18] = false; row[19] = false; row[20] = false; row[21] = false; row[22] = true; row[23] = false; row[24] = true; row[25] = true; row[26] = false; row[27] = false; row[28] = false; row[29] = true; row[30] = true; 
+  grid->values[30] = row;
+  return grid;
+}

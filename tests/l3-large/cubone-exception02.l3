@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int mod(int x, int y) {
+  return x % y;
+}
+
+int main () {
+  return mod(1, 0);
+}

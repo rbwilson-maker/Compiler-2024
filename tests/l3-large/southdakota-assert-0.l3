@@ -1,0 +1,15 @@
+//test return 3
+
+bool foo(int x) {
+	assert(x != 0);
+	return x != 0;
+}
+
+int main() {
+	int x = 0;
+	if (false && foo(x)) {
+		return 2;
+	} else {
+		return 3;
+	}
+}

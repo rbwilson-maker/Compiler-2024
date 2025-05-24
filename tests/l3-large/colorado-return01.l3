@@ -1,0 +1,13 @@
+//test return 1
+
+int modulo (int n, int k) {
+	if (n < 0) return -modulo(-n, k);
+	if (k < 0) return modulo(n, -k);
+	if (k == 0) return 1 / 0;
+	if (n >= k) return modulo (n - k, k);
+	else return n;
+}
+
+int main () {
+	return modulo(modulo(15, -12), modulo(-12, 10));
+}

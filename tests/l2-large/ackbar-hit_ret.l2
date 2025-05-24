@@ -1,0 +1,10 @@
+//test return 15
+//A test of not having a return hit
+int main() {
+    bool test = true;
+    if(test == false){
+        return 16;
+    }else{
+        return 15;
+    }
+}

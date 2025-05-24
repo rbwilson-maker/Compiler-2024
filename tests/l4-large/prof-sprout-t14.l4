@@ -1,0 +1,13 @@
+//test return 9
+// test passing pointers into functions
+
+void f(int *x) {
+  *x *= *x;
+}
+
+int main() {
+  int* x = alloc(int);
+  *x = 3;
+  f(x);
+  return *x;
+}

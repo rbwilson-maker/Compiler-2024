@@ -1,0 +1,78 @@
+//test return 2
+
+typedef int foo;
+
+typedef struct foo* sfoos;
+
+struct foo {
+  struct foo* a;
+  sfoos b;
+  foo foo;
+  foo[] zz;
+};
+
+typedef foo I;
+
+typedef I the;
+
+typedef the my;
+
+typedef my steel;
+typedef my fire;
+
+struct blade {
+  int sharp;
+};
+
+typedef struct blade* Thousand;
+typedef steel Blade;
+
+
+foo Ea() {
+  Thousand Blades = alloc(struct blade);
+  Blades->sharp = 9001;
+  return (*Blades).sharp;
+}
+
+foo Kansho() {
+  I* am = alloc (my);
+  the bone_of = 52;
+  my sword;
+  sword = bone_of * Ea() + *am;
+  return sword * 1;
+}
+
+foo Bakuya() {
+  steel is;
+  my body;
+  fire is_;
+  my blood; 
+  is = 0;
+  is_ = 1;
+  is/is_;
+  body = Kansho();
+  blood = Kansho();
+  return body + blood;
+}
+
+the Unlimited(Blade Works) {
+  int systems = 213;
+  foo u = 1;
+  int i;
+  for (i =0; i< 4; i++){
+    u*2;
+    u*=2;
+  }
+  u = systems * (u * (42 - Works) + 2);
+  return (u / 1000)*10000 + u % 1000 + 1000 * i;
+}
+
+foo main() {
+  sfoos zz = alloc(struct foo);
+  zz->zz = alloc_array(foo, 9001);
+  zz->zz[Ea()-1] = Kansho() + Bakuya();
+  sfoos aa = zz;
+  return aa->zz[Ea()-1] - Unlimited(1);
+}
+
+struct foo;

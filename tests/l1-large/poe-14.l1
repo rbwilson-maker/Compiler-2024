@@ -1,0 +1,10 @@
+//test return 1
+
+// Making sure that nested blocks work correctly
+
+int main()
+{
+	{
+		return 1;
+	}
+}

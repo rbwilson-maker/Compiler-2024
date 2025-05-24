@@ -1,0 +1,14 @@
+//test return 0
+
+//tests redeclarations of functions with different argument names
+
+int f(int x, int y);
+int f(int y, int x);
+
+int f(int a, int b){
+	return a + b;
+}
+int main(){
+
+	return f(0,0);
+}

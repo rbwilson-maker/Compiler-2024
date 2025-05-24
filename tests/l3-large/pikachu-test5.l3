@@ -1,0 +1,12 @@
+//test abort
+
+bool assertsfalse(){
+  assert(false);
+  return false;
+}
+
+int main(){
+  assert(!false);
+  assert(assertsfalse());
+  return 0;
+}

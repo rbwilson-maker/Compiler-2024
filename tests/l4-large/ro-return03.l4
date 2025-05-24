@@ -1,0 +1,55 @@
+//test return 0
+// simple queue
+
+
+struct queue_link{
+  struct queue_link* prev;
+  int val;
+};
+
+typedef struct queue_link link_t;
+
+struct queue {
+  link_t* front;
+  link_t* back;
+};
+
+typedef struct queue* queue_t;
+
+void push(queue_t s, int x){
+  link_t* new_link = alloc(link_t);
+  new_link->val = x;
+  if (s->front == NULL){
+    s->front = new_link;
+    s->back = new_link;
+  } else {
+    s->back->prev = new_link;
+    s->back = new_link;
+  }
+}
+
+int take(queue_t s){
+  int outval = s->front->val;
+  s->front = s->front->prev;
+  return outval;
+}
+
+
+int main() {
+  queue_t s = alloc(struct queue);
+
+  int i = 0;
+
+  while (i < 10) {
+    push(s, i);
+    i++;
+  }
+
+  i = 0;
+  while (i < 10) {
+    assert(take(s) == i);
+    i++;
+  }
+
+  return 0;
+}

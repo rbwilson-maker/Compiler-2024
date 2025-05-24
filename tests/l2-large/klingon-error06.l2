@@ -1,0 +1,14 @@
+//test error
+
+int main() {
+
+  int x;
+
+  {
+  	int x = 4 + 7 / 2;
+  	int y = x * 2;
+  	int z = x + y;
+  }
+  return x;
+
+}

@@ -1,0 +1,21 @@
+//test memerror
+// Maniacal Memory
+
+int main() {
+    int n = 1337;
+
+    int[] A = alloc_array(int, n);
+
+    for(int i = 0; i < n; i++) {
+        A[i] = i + 1;
+    }
+
+    int x = 1;
+    int y = 0;
+    while(x != 0) {
+        x = A[x];
+        y += A[A[x]];
+    }
+
+    return y;
+}

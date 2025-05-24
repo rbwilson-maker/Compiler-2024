@@ -1,0 +1,8 @@
+//test return 456789
+int main () {
+	int y = 0;
+	for ( int x = 456789; x > 0; x--) {
+		y++;
+	}
+	return y;
+}

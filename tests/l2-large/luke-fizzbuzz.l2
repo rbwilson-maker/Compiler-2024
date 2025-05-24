@@ -1,0 +1,14 @@
+//test return 1180320346
+
+int main() {
+    int x = 300;
+    if (x % 15 == 0) {
+        return 0x465a425a;
+    } else if (x % 3 == 0) {
+        return 0x46495a5a;
+    } else if (x % 5 == 0) {
+        return 0x42555a5a;
+    } else {
+        return 0x5f3759df;
+    }
+}

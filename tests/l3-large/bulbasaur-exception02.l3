@@ -1,0 +1,15 @@
+//test div-by-zero
+// recursive function calls that result in a divide by zero
+// tests over-eagerness of constant folding
+int bad_rec(int n)
+{
+  if (n == 0) return 5/n;
+  return bad_rec(n-1);
+}
+
+int main()
+{
+  assert(bad_rec(10) == 5);
+
+  return bad_rec(5);
+}

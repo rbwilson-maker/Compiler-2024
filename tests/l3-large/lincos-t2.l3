@@ -1,0 +1,18 @@
+//test return 3
+// test bool assignment and test
+// simple recursive function
+int g(int a) {
+  if (a < 0) return 0;
+  if (a == 1) return 2;
+  if (a == 2) return 3;
+  else return g(a-1);
+}
+
+int main() {
+  int b = g(0);
+  int a = 1;
+  int hey = g(a); // hey = 2
+  int heyhey = g(hey); //heyhey = 3
+  int lol = g(heyhey); //lol = 3
+	return lol;
+}

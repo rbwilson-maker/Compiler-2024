@@ -1,0 +1,26 @@
+//test error
+int main()
+{
+   	 int p;
+   	 int q;
+   			 
+   	 {
+   		 p = 0;
+   		 q = 1;
+   	 }
+   	 {
+   		 int sum = 0;
+   		 sum = p + q;
+   		 sum ++;
+   	 }
+   	 {
+   		 p <<= sum;
+   		 q = p + 0xff;
+   	 }
+   	 {
+   		 if(p)
+   			 return p;
+   		 else
+   			 return q;
+   	 }
+}

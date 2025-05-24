@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main() {
+    int* x = alloc(int);
+    assert(*x == 0);
+    return 1 / (*x);
+}

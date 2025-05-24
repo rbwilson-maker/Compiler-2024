@@ -1,0 +1,21 @@
+//test error
+
+// This is all fine...
+struct list_node;
+struct list_node;
+struct list_node;
+
+// NONONONONONONONO
+
+struct list_node {
+    int data;
+    list_node* next;
+};
+struct list_node {
+    int data;
+    list_node* next;
+};
+
+int main() {
+    return 1;
+}

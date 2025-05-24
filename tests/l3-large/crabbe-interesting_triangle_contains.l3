@@ -1,0 +1,540 @@
+//test return 0
+
+// Tests containment of some points within some
+// arbitrarily generated triangles.
+
+int abs(int num){
+  return num >= 0 ? num : -num;
+}
+
+int area(int a0, int a1,
+         int b0, int b1,
+         int c0, int c1)
+{
+    return abs((a0 - c0)*(b1 - a1) - (a0 - b0)*(c1 - a1));
+}
+
+bool contains(int x, int y,
+             int a0, int a1,
+             int b0, int b1,
+             int c0, int c1)
+{
+      return
+        area(a0,a1,b0,b1,c0,c1) ==
+        area(a0,a1,b0,b1,x,y) +
+        area(a0,a1,x,y,b0,b1) +
+        area(x,y,b0,b1,c0,c1);
+}
+
+//L3 might have functions, but it don't have no arrays.
+int list_contains(int x, int y)
+{
+  int result = 0;
+  int a1_0 =62;  int a2_0 =-771;
+  int b1_0 =-546;  int b2_0 =241;
+  int c1_0 =-192;  int c2_0 =-917;
+
+  int a1_1 =-590;  int a2_1 =-351;
+  int b1_1 =-159;  int b2_1 =630;
+  int c1_1 =-432;  int c2_1 =396;
+
+  int a1_2 =514;  int a2_2 =-856;
+  int b1_2 =668;  int b2_2 =105;
+  int c1_2 =-634;  int c2_2 =243;
+
+  int a1_3 =-108;  int a2_3 =420;
+  int b1_3 =-780;  int b2_3 =-454;
+  int c1_3 =871;  int c2_3 =772;
+
+  int a1_4 =-512;  int a2_4 =-117;
+  int b1_4 =-667;  int b2_4 =516;
+  int c1_4 =-797;  int c2_4 =-578;
+
+  int a1_5 =238;  int a2_5 =-809;
+  int b1_5 =981;  int b2_5 =-147;
+  int c1_5 =-419;  int c2_5 =486;
+
+  int a1_6 =-425;  int a2_6 =-730;
+  int b1_6 =315;  int b2_6 =772;
+  int c1_6 =-801;  int c2_6 =939;
+
+  int a1_7 =-136;  int a2_7 =154;
+  int b1_7 =711;  int b2_7 =-554;
+  int c1_7 =44;  int c2_7 =-234;
+
+  int a1_8 =468;  int a2_8 =694;
+  int b1_8 =366;  int b2_8 =926;
+  int c1_8 =932;  int c2_8 =-765;
+
+  int a1_9 =-60;  int a2_9 =99;
+  int b1_9 =282;  int b2_9 =-219;
+  int c1_9 =-271;  int c2_9 =-18;
+
+  int a1_10 =-391;  int a2_10 =286;
+  int b1_10 =743;  int b2_10 =-681;
+  int c1_10 =911;  int c2_10 =-979;
+
+  int a1_11 =-713;  int a2_11 =953;
+  int b1_11 =-929;  int b2_11 =156;
+  int c1_11 =965;  int c2_11 =836;
+
+  int a1_12 =-494;  int a2_12 =57;
+  int b1_12 =249;  int b2_12 =-443;
+  int c1_12 =474;  int c2_12 =-988;
+
+  int a1_13 =-487;  int a2_13 =-962;
+  int b1_13 =-713;  int b2_13 =333;
+  int c1_13 =506;  int c2_13 =-620;
+
+  int a1_14 =58;  int a2_14 =136;
+  int b1_14 =725;  int b2_14 =-214;
+  int c1_14 =647;  int c2_14 =-385;
+
+  int a1_15 =-899;  int a2_15 =745;
+  int b1_15 =481;  int b2_15 =-128;
+  int c1_15 =-221;  int c2_15 =502;
+
+  int a1_16 =52;  int a2_16 =-645;
+  int b1_16 =-191;  int b2_16 =-411;
+  int c1_16 =-487;  int c2_16 =532;
+
+  int a1_17 =-834;  int a2_17 =356;
+  int b1_17 =444;  int b2_17 =-917;
+  int c1_17 =-791;  int c2_17 =574;
+
+  int a1_18 =-592;  int a2_18 =-263;
+  int b1_18 =741;  int b2_18 =-152;
+  int c1_18 =968;  int c2_18 =107;
+
+  int a1_19 =-187;  int a2_19 =-246;
+  int b1_19 =613;  int b2_19 =667;
+  int c1_19 =-870;  int c2_19 =-121;
+
+  int a1_20 =480;  int a2_20 =-685;
+  int b1_20 =431;  int b2_20 =750;
+  int c1_20 =-568;  int c2_20 =680;
+
+  int a1_21 =-96;  int a2_21 =390;
+  int b1_21 =1;  int b2_21 =849;
+  int c1_21 =287;  int c2_21 =702;
+
+  int a1_22 =149;  int a2_22 =429;
+  int b1_22 =161;  int b2_22 =366;
+  int c1_22 =-467;  int c2_22 =193;
+
+  int a1_23 =-798;  int a2_23 =450;
+  int b1_23 =-175;  int b2_23 =-702;
+  int c1_23 =-978;  int c2_23 =21;
+
+  int a1_24 =402;  int a2_24 =81;
+  int b1_24 =271;  int b2_24 =963;
+  int c1_24 =-286;  int c2_24 =-805;
+
+  int a1_25 =450;  int a2_25 =-24;
+  int b1_25 =-468;  int b2_25 =714;
+  int c1_25 =-363;  int c2_25 =291;
+
+  int a1_26 =840;  int a2_26 =-229;
+  int b1_26 =-673;  int b2_26 =639;
+  int c1_26 =-253;  int c2_26 =-828;
+
+  int a1_27 =467;  int a2_27 =638;
+  int b1_27 =-177;  int b2_27 =418;
+  int c1_27 =951;  int c2_27 =407;
+
+  int a1_28 =326;  int a2_28 =732;
+  int b1_28 =230;  int b2_28 =-882;
+  int c1_28 =380;  int c2_28 =936;
+
+  int a1_29 =786;  int a2_29 =428;
+  int b1_29 =879;  int b2_29 =38;
+  int c1_29 =-717;  int c2_29 =384;
+
+  int a1_30 =-840;  int a2_30 =646;
+  int b1_30 =-418;  int b2_30 =446;
+  int c1_30 =-533;  int c2_30 =849;
+
+  int a1_31 =-719;  int a2_31 =891;
+  int b1_31 =-951;  int b2_31 =287;
+  int c1_31 =-835;  int c2_31 =895;
+
+  int a1_32 =-426;  int a2_32 =203;
+  int b1_32 =-3;  int b2_32 =172;
+  int c1_32 =-341;  int c2_32 =40;
+
+  int a1_33 =-727;  int a2_33 =727;
+  int b1_33 =-169;  int b2_33 =-838;
+  int c1_33 =-134;  int c2_33 =261;
+
+  int a1_34 =350;  int a2_34 =514;
+  int b1_34 =-174;  int b2_34 =117;
+  int c1_34 =-350;  int c2_34 =-608;
+
+  int a1_35 =-441;  int a2_35 =-502;
+  int b1_35 =-632;  int b2_35 =-292;
+  int c1_35 =15;  int c2_35 =-335;
+
+  int a1_36 =-917;  int a2_36 =-363;
+  int b1_36 =-819;  int b2_36 =511;
+  int c1_36 =-980;  int c2_36 =842;
+
+  int a1_37 =134;  int a2_37 =-974;
+  int b1_37 =4;  int b2_37 =-262;
+  int c1_37 =-835;  int c2_37 =-240;
+
+  int a1_38 =-868;  int a2_38 =-468;
+  int b1_38 =-99;  int b2_38 =440;
+  int c1_38 =-351;  int c2_38 =-719;
+
+  int a1_39 =-102;  int a2_39 =415;
+  int b1_39 =-892;  int b2_39 =-676;
+  int c1_39 =761;  int c2_39 =-737;
+
+  int a1_40 =996;  int a2_40 =-90;
+  int b1_40 =945;  int b2_40 =-695;
+  int c1_40 =-634;  int c2_40 =-452;
+
+  int a1_41 =700;  int a2_41 =421;
+  int b1_41 =628;  int b2_41 =557;
+  int c1_41 =574;  int c2_41 =-92;
+
+  int a1_42 =-954;  int a2_42 =-637;
+  int b1_42 =-534;  int b2_42 =-797;
+  int c1_42 =64;  int c2_42 =61;
+
+  int a1_43 =667;  int a2_43 =-309;
+  int b1_43 =307;  int b2_43 =587;
+  int c1_43 =725;  int c2_43 =519;
+
+  int a1_44 =-715;  int a2_44 =924;
+  int b1_44 =370;  int b2_44 =76;
+  int c1_44 =-784;  int c2_44 =431;
+
+  int a1_45 =-834;  int a2_45 =961;
+  int b1_45 =756;  int b2_45 =-82;
+  int c1_45 =93;  int c2_45 =-280;
+
+  int a1_46 =893;  int a2_46 =508;
+  int b1_46 =-84;  int b2_46 =-110;
+  int c1_46 =-986;  int c2_46 =315;
+
+  int a1_47 =642;  int a2_47 =-830;
+  int b1_47 =-351;  int b2_47 =397;
+  int c1_47 =-500;  int c2_47 =761;
+
+  int a1_48 =502;  int a2_48 =844;
+  int b1_48 =513;  int b2_48 =-345;
+  int c1_48 =611;  int c2_48 =668;
+
+  int a1_49 =-854;  int a2_49 =-80;
+  int b1_49 =-417;  int b2_49 =-754;
+  int c1_49 =15;  int c2_49 =-386;
+
+  int a1_50 =-464;  int a2_50 =-367;
+  int b1_50 =898;  int b2_50 =-672;
+  int c1_50 =-851;  int c2_50 =-152;
+
+  int a1_51 =-625;  int a2_51 =-746;
+  int b1_51 =697;  int b2_51 =-524;
+  int c1_51 =562;  int c2_51 =-647;
+
+  int a1_52 =-245;  int a2_52 =747;
+  int b1_52 =621;  int b2_52 =-403;
+  int c1_52 =330;  int c2_52 =67;
+
+  int a1_53 =-916;  int a2_53 =-687;
+  int b1_53 =98;  int b2_53 =489;
+  int c1_53 =214;  int c2_53 =679;
+
+  int a1_54 =-968;  int a2_54 =427;
+  int b1_54 =-838;  int b2_54 =425;
+  int c1_54 =-431;  int c2_54 =-581;
+
+  int a1_55 =189;  int a2_55 =73;
+  int b1_55 =739;  int b2_55 =643;
+  int c1_55 =-803;  int c2_55 =-583;
+
+  int a1_56 =699;  int a2_56 =39;
+  int b1_56 =-107;  int b2_56 =410;
+  int c1_56 =-162;  int c2_56 =-276;
+
+  int a1_57 =-798;  int a2_57 =-646;
+  int b1_57 =-956;  int b2_57 =800;
+  int c1_57 =205;  int c2_57 =428;
+
+  int a1_58 =450;  int a2_58 =-563;
+  int b1_58 =326;  int b2_58 =-578;
+  int c1_58 =768;  int c2_58 =221;
+
+  int a1_59 =-588;  int a2_59 =356;
+  int b1_59 =348;  int b2_59 =681;
+  int c1_59 =-274;  int c2_59 =-162;
+
+  int a1_60 =-164;  int a2_60 =227;
+  int b1_60 =841;  int b2_60 =-140;
+  int c1_60 =-883;  int c2_60 =906;
+
+  int a1_61 =-120;  int a2_61 =325;
+  int b1_61 =-744;  int b2_61 =158;
+  int c1_61 =770;  int c2_61 =793;
+
+  int a1_62 =-690;  int a2_62 =163;
+  int b1_62 =-960;  int b2_62 =65;
+  int c1_62 =260;  int c2_62 =-19;
+
+  int a1_63 =-262;  int a2_63 =938;
+  int b1_63 =626;  int b2_63 =91;
+  int c1_63 =-130;  int c2_63 =338;
+
+  int a1_64 =291;  int a2_64 =-511;
+  int b1_64 =-708;  int b2_64 =-848;
+  int c1_64 =865;  int c2_64 =-424;
+
+  int a1_65 =-408;  int a2_65 =-352;
+  int b1_65 =-59;  int b2_65 =-468;
+  int c1_65 =526;  int c2_65 =-95;
+
+  int a1_66 =388;  int a2_66 =-954;
+  int b1_66 =-180;  int b2_66 =-602;
+  int c1_66 =-463;  int c2_66 =-445;
+
+  int a1_67 =940;  int a2_67 =99;
+  int b1_67 =-924;  int b2_67 =-32;
+  int c1_67 =-631;  int c2_67 =452;
+
+  int a1_68 =645;  int a2_68 =625;
+  int b1_68 =325;  int b2_68 =881;
+  int c1_68 =-497;  int c2_68 =-332;
+
+  int a1_69 =-259;  int a2_69 =-488;
+  int b1_69 =-301;  int b2_69 =19;
+  int c1_69 =-735;  int c2_69 =-173;
+
+  int a1_70 =200;  int a2_70 =-706;
+  int b1_70 =387;  int b2_70 =-138;
+  int c1_70 =-392;  int c2_70 =585;
+
+  int a1_71 =-733;  int a2_71 =872;
+  int b1_71 =-399;  int b2_71 =808;
+  int c1_71 =411;  int c2_71 =870;
+
+  int a1_72 =-245;  int a2_72 =405;
+  int b1_72 =974;  int b2_72 =-877;
+  int c1_72 =-920;  int c2_72 =552;
+
+  int a1_73 =628;  int a2_73 =206;
+  int b1_73 =251;  int b2_73 =-303;
+  int c1_73 =-727;  int c2_73 =-199;
+
+  int a1_74 =-954;  int a2_74 =-434;
+  int b1_74 =-64;  int b2_74 =-123;
+  int c1_74 =614;  int c2_74 =891;
+
+  int a1_75 =756;  int a2_75 =8;
+  int b1_75 =-112;  int b2_75 =-597;
+  int c1_75 =299;  int c2_75 =409;
+
+  int a1_76 =-222;  int a2_76 =-970;
+  int b1_76 =-284;  int b2_76 =604;
+  int c1_76 =-165;  int c2_76 =-640;
+
+  int a1_77 =98;  int a2_77 =-678;
+  int b1_77 =-425;  int b2_77 =-429;
+  int c1_77 =-32;  int c2_77 =446;
+
+  int a1_78 =321;  int a2_78 =201;
+  int b1_78 =-286;  int b2_78 =-995;
+  int c1_78 =567;  int c2_78 =109;
+
+  int a1_79 =918;  int a2_79 =309;
+  int b1_79 =221;  int b2_79 =801;
+  int c1_79 =-386;  int c2_79 =-746;
+
+  int a1_80 =-420;  int a2_80 =-791;
+  int b1_80 =-588;  int b2_80 =-929;
+  int c1_80 =749;  int c2_80 =-377;
+
+  int a1_81 =-660;  int a2_81 =724;
+  int b1_81 =-264;  int b2_81 =-873;
+  int c1_81 =389;  int c2_81 =-279;
+
+  int a1_82 =-691;  int a2_82 =-995;
+  int b1_82 =967;  int b2_82 =-859;
+  int c1_82 =837;  int c2_82 =546;
+
+  int a1_83 =337;  int a2_83 =57;
+  int b1_83 =788;  int b2_83 =-845;
+  int c1_83 =-243;  int c2_83 =966;
+
+  int a1_84 =72;  int a2_84 =935;
+  int b1_84 =361;  int b2_84 =-195;
+  int c1_84 =-229;  int c2_84 =-537;
+
+  int a1_85 =-786;  int a2_85 =-291;
+  int b1_85 =-925;  int b2_85 =-180;
+  int c1_85 =-744;  int c2_85 =460;
+
+  int a1_86 =745;  int a2_86 =-711;
+  int b1_86 =186;  int b2_86 =-975;
+  int c1_86 =-874;  int c2_86 =701;
+
+  int a1_87 =-196;  int a2_87 =17;
+  int b1_87 =165;  int b2_87 =208;
+  int c1_87 =-372;  int c2_87 =679;
+
+  int a1_88 =949;  int a2_88 =-798;
+  int b1_88 =811;  int b2_88 =-765;
+  int c1_88 =270;  int c2_88 =292;
+
+  int a1_89 =346;  int a2_89 =886;
+  int b1_89 =249;  int b2_89 =936;
+  int c1_89 =714;  int c2_89 =40;
+
+  int a1_90 =489;  int a2_90 =249;
+  int b1_90 =-381;  int b2_90 =-205;
+  int c1_90 =-782;  int c2_90 =-671;
+
+  int a1_91 =-775;  int a2_91 =86;
+  int b1_91 =669;  int b2_91 =62;
+  int c1_91 =-123;  int c2_91 =551;
+
+  int a1_92 =591;  int a2_92 =-160;
+  int b1_92 =-518;  int b2_92 =97;
+  int c1_92 =614;  int c2_92 =932;
+
+  int a1_93 =82;  int a2_93 =640;
+  int b1_93 =-843;  int b2_93 =800;
+  int c1_93 =-642;  int c2_93 =-146;
+
+  int a1_94 =-979;  int a2_94 =590;
+  int b1_94 =-495;  int b2_94 =794;
+  int c1_94 =720;  int c2_94 =-803;
+
+  int a1_95 =224;  int a2_95 =748;
+  int b1_95 =138;  int b2_95 =629;
+  int c1_95 =722;  int c2_95 =-584;
+
+  int a1_96 =-264;  int a2_96 =-779;
+  int b1_96 =9;  int b2_96 =-50;
+  int c1_96 =-615;  int c2_96 =581;
+
+  int a1_97 =-670;  int a2_97 =-52;
+  int b1_97 =140;  int b2_97 =-985;
+  int c1_97 =-646;  int c2_97 =-637;
+
+  int a1_98 =736;  int a2_98 =-920;
+  int b1_98 =-408;  int b2_98 =-770;
+  int c1_98 =736;  int c2_98 =710;
+
+  int a1_99 =723;  int a2_99 =-530;
+  int b1_99 =708;  int b2_99 =998;
+  int c1_99 =-231;  int c2_99 =-934;
+
+  result += (contains(x,y,a1_0,a2_0,b1_0,b2_0,c1_0,c2_0) ? 1 : 0);
+  result += (contains(x,y,a1_1,a2_1,b1_1,b2_1,c1_1,c2_1) ? 1 : 0);
+  result += (contains(x,y,a1_2,a2_2,b1_2,b2_2,c1_2,c2_2) ? 1 : 0);
+  result += (contains(x,y,a1_3,a2_3,b1_3,b2_3,c1_3,c2_3) ? 1 : 0);
+  result += (contains(x,y,a1_4,a2_4,b1_4,b2_4,c1_4,c2_4) ? 1 : 0);
+  result += (contains(x,y,a1_5,a2_5,b1_5,b2_5,c1_5,c2_5) ? 1 : 0);
+  result += (contains(x,y,a1_6,a2_6,b1_6,b2_6,c1_6,c2_6) ? 1 : 0);
+  result += (contains(x,y,a1_7,a2_7,b1_7,b2_7,c1_7,c2_7) ? 1 : 0);
+  result += (contains(x,y,a1_8,a2_8,b1_8,b2_8,c1_8,c2_8) ? 1 : 0);
+  result += (contains(x,y,a1_9,a2_9,b1_9,b2_9,c1_9,c2_9) ? 1 : 0);
+  result += (contains(x,y,a1_10,a2_10,b1_10,b2_10,c1_10,c2_10) ? 1 : 0);
+  result += (contains(x,y,a1_11,a2_11,b1_11,b2_11,c1_11,c2_11) ? 1 : 0);
+  result += (contains(x,y,a1_12,a2_12,b1_12,b2_12,c1_12,c2_12) ? 1 : 0);
+  result += (contains(x,y,a1_13,a2_13,b1_13,b2_13,c1_13,c2_13) ? 1 : 0);
+  result += (contains(x,y,a1_14,a2_14,b1_14,b2_14,c1_14,c2_14) ? 1 : 0);
+  result += (contains(x,y,a1_15,a2_15,b1_15,b2_15,c1_15,c2_15) ? 1 : 0);
+  result += (contains(x,y,a1_16,a2_16,b1_16,b2_16,c1_16,c2_16) ? 1 : 0);
+  result += (contains(x,y,a1_17,a2_17,b1_17,b2_17,c1_17,c2_17) ? 1 : 0);
+  result += (contains(x,y,a1_18,a2_18,b1_18,b2_18,c1_18,c2_18) ? 1 : 0);
+  result += (contains(x,y,a1_19,a2_19,b1_19,b2_19,c1_19,c2_19) ? 1 : 0);
+  result += (contains(x,y,a1_20,a2_20,b1_20,b2_20,c1_20,c2_20) ? 1 : 0);
+  result += (contains(x,y,a1_21,a2_21,b1_21,b2_21,c1_21,c2_21) ? 1 : 0);
+  result += (contains(x,y,a1_22,a2_22,b1_22,b2_22,c1_22,c2_22) ? 1 : 0);
+  result += (contains(x,y,a1_23,a2_23,b1_23,b2_23,c1_23,c2_23) ? 1 : 0);
+  result += (contains(x,y,a1_24,a2_24,b1_24,b2_24,c1_24,c2_24) ? 1 : 0);
+  result += (contains(x,y,a1_25,a2_25,b1_25,b2_25,c1_25,c2_25) ? 1 : 0);
+  result += (contains(x,y,a1_26,a2_26,b1_26,b2_26,c1_26,c2_26) ? 1 : 0);
+  result += (contains(x,y,a1_27,a2_27,b1_27,b2_27,c1_27,c2_27) ? 1 : 0);
+  result += (contains(x,y,a1_28,a2_28,b1_28,b2_28,c1_28,c2_28) ? 1 : 0);
+  result += (contains(x,y,a1_29,a2_29,b1_29,b2_29,c1_29,c2_29) ? 1 : 0);
+  result += (contains(x,y,a1_30,a2_30,b1_30,b2_30,c1_30,c2_30) ? 1 : 0);
+  result += (contains(x,y,a1_31,a2_31,b1_31,b2_31,c1_31,c2_31) ? 1 : 0);
+  result += (contains(x,y,a1_32,a2_32,b1_32,b2_32,c1_32,c2_32) ? 1 : 0);
+  result += (contains(x,y,a1_33,a2_33,b1_33,b2_33,c1_33,c2_33) ? 1 : 0);
+  result += (contains(x,y,a1_34,a2_34,b1_34,b2_34,c1_34,c2_34) ? 1 : 0);
+  result += (contains(x,y,a1_35,a2_35,b1_35,b2_35,c1_35,c2_35) ? 1 : 0);
+  result += (contains(x,y,a1_36,a2_36,b1_36,b2_36,c1_36,c2_36) ? 1 : 0);
+  result += (contains(x,y,a1_37,a2_37,b1_37,b2_37,c1_37,c2_37) ? 1 : 0);
+  result += (contains(x,y,a1_38,a2_38,b1_38,b2_38,c1_38,c2_38) ? 1 : 0);
+  result += (contains(x,y,a1_39,a2_39,b1_39,b2_39,c1_39,c2_39) ? 1 : 0);
+  result += (contains(x,y,a1_40,a2_40,b1_40,b2_40,c1_40,c2_40) ? 1 : 0);
+  result += (contains(x,y,a1_41,a2_41,b1_41,b2_41,c1_41,c2_41) ? 1 : 0);
+  result += (contains(x,y,a1_42,a2_42,b1_42,b2_42,c1_42,c2_42) ? 1 : 0);
+  result += (contains(x,y,a1_43,a2_43,b1_43,b2_43,c1_43,c2_43) ? 1 : 0);
+  result += (contains(x,y,a1_44,a2_44,b1_44,b2_44,c1_44,c2_44) ? 1 : 0);
+  result += (contains(x,y,a1_45,a2_45,b1_45,b2_45,c1_45,c2_45) ? 1 : 0);
+  result += (contains(x,y,a1_46,a2_46,b1_46,b2_46,c1_46,c2_46) ? 1 : 0);
+  result += (contains(x,y,a1_47,a2_47,b1_47,b2_47,c1_47,c2_47) ? 1 : 0);
+  result += (contains(x,y,a1_48,a2_48,b1_48,b2_48,c1_48,c2_48) ? 1 : 0);
+  result += (contains(x,y,a1_49,a2_49,b1_49,b2_49,c1_49,c2_49) ? 1 : 0);
+  result += (contains(x,y,a1_50,a2_50,b1_50,b2_50,c1_50,c2_50) ? 1 : 0);
+  result += (contains(x,y,a1_51,a2_51,b1_51,b2_51,c1_51,c2_51) ? 1 : 0);
+  result += (contains(x,y,a1_52,a2_52,b1_52,b2_52,c1_52,c2_52) ? 1 : 0);
+  result += (contains(x,y,a1_53,a2_53,b1_53,b2_53,c1_53,c2_53) ? 1 : 0);
+  result += (contains(x,y,a1_54,a2_54,b1_54,b2_54,c1_54,c2_54) ? 1 : 0);
+  result += (contains(x,y,a1_55,a2_55,b1_55,b2_55,c1_55,c2_55) ? 1 : 0);
+  result += (contains(x,y,a1_56,a2_56,b1_56,b2_56,c1_56,c2_56) ? 1 : 0);
+  result += (contains(x,y,a1_57,a2_57,b1_57,b2_57,c1_57,c2_57) ? 1 : 0);
+  result += (contains(x,y,a1_58,a2_58,b1_58,b2_58,c1_58,c2_58) ? 1 : 0);
+  result += (contains(x,y,a1_59,a2_59,b1_59,b2_59,c1_59,c2_59) ? 1 : 0);
+  result += (contains(x,y,a1_60,a2_60,b1_60,b2_60,c1_60,c2_60) ? 1 : 0);
+  result += (contains(x,y,a1_61,a2_61,b1_61,b2_61,c1_61,c2_61) ? 1 : 0);
+  result += (contains(x,y,a1_62,a2_62,b1_62,b2_62,c1_62,c2_62) ? 1 : 0);
+  result += (contains(x,y,a1_63,a2_63,b1_63,b2_63,c1_63,c2_63) ? 1 : 0);
+  result += (contains(x,y,a1_64,a2_64,b1_64,b2_64,c1_64,c2_64) ? 1 : 0);
+  result += (contains(x,y,a1_65,a2_65,b1_65,b2_65,c1_65,c2_65) ? 1 : 0);
+  result += (contains(x,y,a1_66,a2_66,b1_66,b2_66,c1_66,c2_66) ? 1 : 0);
+  result += (contains(x,y,a1_67,a2_67,b1_67,b2_67,c1_67,c2_67) ? 1 : 0);
+  result += (contains(x,y,a1_68,a2_68,b1_68,b2_68,c1_68,c2_68) ? 1 : 0);
+  result += (contains(x,y,a1_69,a2_69,b1_69,b2_69,c1_69,c2_69) ? 1 : 0);
+  result += (contains(x,y,a1_70,a2_70,b1_70,b2_70,c1_70,c2_70) ? 1 : 0);
+  result += (contains(x,y,a1_71,a2_71,b1_71,b2_71,c1_71,c2_71) ? 1 : 0);
+  result += (contains(x,y,a1_72,a2_72,b1_72,b2_72,c1_72,c2_72) ? 1 : 0);
+  result += (contains(x,y,a1_73,a2_73,b1_73,b2_73,c1_73,c2_73) ? 1 : 0);
+  result += (contains(x,y,a1_74,a2_74,b1_74,b2_74,c1_74,c2_74) ? 1 : 0);
+  result += (contains(x,y,a1_75,a2_75,b1_75,b2_75,c1_75,c2_75) ? 1 : 0);
+  result += (contains(x,y,a1_76,a2_76,b1_76,b2_76,c1_76,c2_76) ? 1 : 0);
+  result += (contains(x,y,a1_77,a2_77,b1_77,b2_77,c1_77,c2_77) ? 1 : 0);
+  result += (contains(x,y,a1_78,a2_78,b1_78,b2_78,c1_78,c2_78) ? 1 : 0);
+  result += (contains(x,y,a1_79,a2_79,b1_79,b2_79,c1_79,c2_79) ? 1 : 0);
+  result += (contains(x,y,a1_80,a2_80,b1_80,b2_80,c1_80,c2_80) ? 1 : 0);
+  result += (contains(x,y,a1_81,a2_81,b1_81,b2_81,c1_81,c2_81) ? 1 : 0);
+  result += (contains(x,y,a1_82,a2_82,b1_82,b2_82,c1_82,c2_82) ? 1 : 0);
+  result += (contains(x,y,a1_83,a2_83,b1_83,b2_83,c1_83,c2_83) ? 1 : 0);
+  result += (contains(x,y,a1_84,a2_84,b1_84,b2_84,c1_84,c2_84) ? 1 : 0);
+  result += (contains(x,y,a1_85,a2_85,b1_85,b2_85,c1_85,c2_85) ? 1 : 0);
+  result += (contains(x,y,a1_86,a2_86,b1_86,b2_86,c1_86,c2_86) ? 1 : 0);
+  result += (contains(x,y,a1_87,a2_87,b1_87,b2_87,c1_87,c2_87) ? 1 : 0);
+  result += (contains(x,y,a1_88,a2_88,b1_88,b2_88,c1_88,c2_88) ? 1 : 0);
+  result += (contains(x,y,a1_89,a2_89,b1_89,b2_89,c1_89,c2_89) ? 1 : 0);
+  result += (contains(x,y,a1_90,a2_90,b1_90,b2_90,c1_90,c2_90) ? 1 : 0);
+  result += (contains(x,y,a1_91,a2_91,b1_91,b2_91,c1_91,c2_91) ? 1 : 0);
+  result += (contains(x,y,a1_92,a2_92,b1_92,b2_92,c1_92,c2_92) ? 1 : 0);
+  result += (contains(x,y,a1_93,a2_93,b1_93,b2_93,c1_93,c2_93) ? 1 : 0);
+  result += (contains(x,y,a1_94,a2_94,b1_94,b2_94,c1_94,c2_94) ? 1 : 0);
+  result += (contains(x,y,a1_95,a2_95,b1_95,b2_95,c1_95,c2_95) ? 1 : 0);
+  result += (contains(x,y,a1_96,a2_96,b1_96,b2_96,c1_96,c2_96) ? 1 : 0);
+  result += (contains(x,y,a1_97,a2_97,b1_97,b2_97,c1_97,c2_97) ? 1 : 0);
+  result += (contains(x,y,a1_98,a2_98,b1_98,b2_98,c1_98,c2_98) ? 1 : 0);
+  result += (contains(x,y,a1_99,a2_99,b1_99,b2_99,c1_99,c2_99) ? 1 : 0);
+  return result;
+}
+
+
+int main(){
+  int result = list_contains(162,-859) + list_contains(288,587) + list_contains(621,-641) + list_contains(-10,-312) + list_contains(-635,-861) + list_contains(443,281) + list_contains(-982,-710) + list_contains(-331,-1) + list_contains(79,-380) + list_contains(380,-597) + list_contains(65,-719) + list_contains(-177,797) + list_contains(-36,648) + list_contains(-671,202) + list_contains(-721,450) + list_contains(-594,696) + list_contains(735,256) + list_contains(-668,549) + list_contains(30,-1000) + list_contains(-919,34) + list_contains(564,17) + list_contains(75,125) + list_contains(-721,-19) + list_contains(180,615) + list_contains(-219,-166) + list_contains(-975,-258) + list_contains(760,-622) + list_contains(-841,375) + list_contains(-137,-842) + list_contains(-792,703) + list_contains(-786,469) + list_contains(-22,-139) + list_contains(-586,-231) + list_contains(583,771) + list_contains(973,216) + list_contains(758,-294) + list_contains(-565,-113) + list_contains(679,-999) + list_contains(-466,-843) + list_contains(-608,254) + list_contains(227,-738) + list_contains(-888,221) + list_contains(894,42) + list_contains(-518,-985) + list_contains(57,-995) + list_contains(-871,458) + list_contains(-935,748) + list_contains(-231,671) + list_contains(-270,233) + list_contains(233,409) + list_contains(-368,-629) + list_contains(131,874) + list_contains(-34,688) + list_contains(-62,231) + list_contains(-73,-885) + list_contains(106,-765) + list_contains(-762,-397) + list_contains(910,-469) + list_contains(285,590) + list_contains(1,-807) + list_contains(577,-848) + list_contains(-490,-712) + list_contains(-987,364) + list_contains(685,294) + list_contains(701,-804) + list_contains(-510,724) + list_contains(907,581) + list_contains(-973,155) + list_contains(-502,908) + list_contains(383,-125) + list_contains(310,-861) + list_contains(-484,-27) + list_contains(-717,-530) + list_contains(373,-941) + list_contains(585,224) + list_contains(59,747) + list_contains(781,-427) + list_contains(-739,-528) + list_contains(525,454) + list_contains(-451,75) + list_contains(-396,401) + list_contains(765,654) + list_contains(-985,69) + list_contains(-330,-345) + list_contains(164,-299) + list_contains(959,534) + list_contains(-713,692) + list_contains(222,440) + list_contains(531,-541) + list_contains(609,-580) + list_contains(-336,-527) + list_contains(-693,-565) + list_contains(352,-790) + list_contains(135,522) + list_contains(-19,-757) + list_contains(-108,-411) + list_contains(476,902) + list_contains(81,-762) + list_contains(442,19) + list_contains(-33,-267);
+  return result;
+}

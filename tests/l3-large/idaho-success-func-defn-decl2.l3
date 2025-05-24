@@ -1,0 +1,12 @@
+//test return -5517841
+int make_pixel(int r, int g, int b, int a);
+
+typedef int pixel;
+
+pixel make_pixel(int a, int r, int g, int b) {
+  return (a << 24) | (r << 16) | (g << 8) | b;
+}
+
+pixel main() {
+  return make_pixel(0xFF, 0xAB, 0xCD, 0xEF);
+}

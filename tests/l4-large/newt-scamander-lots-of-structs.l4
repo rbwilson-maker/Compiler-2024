@@ -1,0 +1,55 @@
+//test return 1319
+
+
+struct p {
+	int i;
+	int j;
+	int k;
+};
+
+struct q {
+	int * a;
+	int * b;
+	bool * c;
+	struct p d;
+	struct p * e;
+};
+
+struct r {
+	int[] a;
+	int* b;
+	int c;
+	bool d;
+	struct q q;
+};
+
+struct s {
+	struct r r;
+	int x;
+	int y;
+};
+
+int f(struct s* mine){
+	// 1225 + 50 + 1 + 43 + -1
+	return mine->r.q.d.i + mine->r.q.e->j + mine->x + mine->y + mine->r.c;
+}
+
+int main() {
+	struct s * mine = alloc(struct s);
+	mine->r.q.e = alloc(struct p);
+	mine->r.q.e->j = 50;
+	mine->x = 2;
+	mine->y = 43;
+	mine->r.c = -1;
+	mine->r.a = alloc_array(int, 50);
+	for(int i = 0; i<50; i++) {
+		mine->r.a[i] += i;
+	}
+	int accum = 0;
+	for(int i = 0; i<50; i++) {
+		accum += mine->r.a[i];
+	}
+	mine->r.q.d.i = accum;
+
+	return f(mine);
+}

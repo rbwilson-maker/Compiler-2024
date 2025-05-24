@@ -1,0 +1,23 @@
+//test typecheck
+
+typedef int have_you_ever;
+
+struct creature
+{
+  int life;
+  int spirit;
+  int name;
+};
+
+struct nature
+{
+  int blue_corn_moon;
+  struct creature* [] earth;
+};
+
+void come(int things_to_do);
+
+void can_you(int things_to_do, struct creature* creature);
+
+void cry(struct creature* creature, int subject);
+void grin(struct creature* creature, int subject);

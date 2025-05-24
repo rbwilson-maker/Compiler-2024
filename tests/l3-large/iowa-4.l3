@@ -1,0 +1,26 @@
+//test abort
+
+bool isPrime(int n) {
+    int d = 2;
+    while (d < n) {
+        if (n % d == 0)
+            return false;
+        d++;
+    }
+
+    return true;
+}
+
+int main() {
+    int i = 0;
+    
+    if (!isPrime(101))
+        return 0;
+
+    if (!isPrime(17))
+        return 0;
+
+    assert(isPrime(101 * 17));
+
+    return 0;
+}

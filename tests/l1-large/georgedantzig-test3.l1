@@ -1,0 +1,19 @@
+//test error
+
+int main(){
+    int x;
+    int y;
+
+    x = 800;
+    x+=x;
+    x+=x;
+    x+=x;
+    x+=x;
+    x+=x;
+    x+=x;
+    x-=x;
+    x-=x;
+    int 5=3;
+
+    return x;
+}

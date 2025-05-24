@@ -1,0 +1,12 @@
+//test abort
+
+int main() {
+  int[] blah = alloc_array(int, 3);
+  blah[0] = 3;
+  blah[1] = 4;
+  blah[2] = 6;
+  
+  assert((blah[0] * blah[0] + blah[1] * blah[1]) == (blah[2] * blah[2]));
+
+  return blah[2];
+}

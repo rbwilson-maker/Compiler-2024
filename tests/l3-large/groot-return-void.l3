@@ -1,0 +1,21 @@
+//test error
+
+void check_positive(int x) {
+  assert(x > 0);
+}
+
+void check_smallish(int x) {
+  assert(x < 10000);
+}
+
+void check_good(int x) {
+  check_positive(x);
+  return check_smallish(x);
+}
+
+int main() {
+  check_good(4);
+  check_good(2);
+
+  return 4 + 2;
+}

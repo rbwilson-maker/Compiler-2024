@@ -1,0 +1,9 @@
+//test error
+// while loop technically might not enter
+
+int main ()
+{
+  int x;
+  while (true) x = 0;
+  return x;
+}

@@ -1,0 +1,10 @@
+//test typecheck
+//test infloop
+
+int main() {
+    while(0 < 5) {
+        int a = 5;
+    }
+    
+    return 7; 
+}

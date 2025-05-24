@@ -1,0 +1,8 @@
+
+typedef int ptr;
+
+void enable_canary();
+
+void check_canary();
+
+int read(ptr buffer);

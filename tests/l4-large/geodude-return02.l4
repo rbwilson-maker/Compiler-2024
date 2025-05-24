@@ -1,0 +1,24 @@
+//test return 9900
+// test ref and exp
+struct node {
+    int v;
+    int b;
+};
+
+int main(){
+    int c = 0;
+    struct node*[] arr = alloc_array(struct node*, 100);
+    for(int i = 0; i < 100; i++){
+        arr[i] = NULL;
+    }
+    for(int i = 0; i < 100; i++){
+        arr[i] = alloc(struct node);
+        arr[i]->v = 99 - i;
+        (*arr[i]).b = 1000 * i;
+    }
+    int x = 0;
+    for(int i = 0; i < 100; i++){
+        x += arr[i]->v + (arr[i]->b > 50 ? arr[i] : arr[i/2])->v;
+    }
+    return x;
+}

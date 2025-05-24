@@ -1,0 +1,10 @@
+//test return 5
+
+struct empty{
+
+};
+
+int main() {
+    struct empty *h = alloc(struct empty);
+    return 5;
+}

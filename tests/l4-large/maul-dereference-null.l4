@@ -1,0 +1,41 @@
+//test memerror
+//tests innermost struct is defaulted to null
+typedef struct val* C;
+struct val{bool a;};
+
+typedef struct pair* B;
+struct pair
+{
+  C c;
+  int x;
+  int y;
+};
+
+typedef struct outer* A;
+struct outer
+{
+  B b;
+  A next;
+  int x;
+};
+
+int sum(int a, int b, int c, int d, int e, int f, int g, int h)
+{
+  return a + b + c + d + e + f + g + h;
+}
+
+int main()
+{
+  A a = alloc(struct outer);
+  a->x = 0;
+  a->next = alloc(struct outer);
+  B b1 = alloc(struct pair);
+  b1->x = 0; // allow for the repetition of field names
+  b1->y = sum(0, 0, 0, 0, 0, 0, 0, 1);
+  a->b = b1;
+
+  C c1 = alloc(struct val);
+  (*c1).a = true;
+  if(a->b->c->a) return 0;
+  return 1;
+}

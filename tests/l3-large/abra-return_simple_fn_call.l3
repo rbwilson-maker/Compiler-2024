@@ -1,0 +1,25 @@
+//test return 1
+typedef int james;
+typedef james bond;
+typedef bool q;
+
+
+q how_are_you(int a, int b);
+
+typedef q moneypenny;
+
+bond main() {
+	moneypenny call;
+	call = how_are_you(25, 31);
+	if (call) {
+	 	return 1;
+	} else {
+		return -1;
+	}
+}
+
+q how_are_you(james j, bond b) {
+	return j < b ? true : false;
+} 
+	
+

@@ -1,0 +1,6 @@
+struct List {
+  struct List l;
+};
+typedef struct List* list;
+
+struct thing;

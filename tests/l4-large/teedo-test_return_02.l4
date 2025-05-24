@@ -1,0 +1,39 @@
+//test return 4
+
+// https://leetcode.com/problems/majority-element/
+
+int findMajority(int[] A, int n) {
+    assert(n > 0);
+    int majority = A[0];
+    int cnt = 1;
+
+    for (int i = 1; i < n; i++) {
+        if (A[i] == majority) {
+            cnt++;
+        }
+        else {
+            cnt--;
+        }
+        if (cnt == 0) {
+            majority = A[i];
+            cnt = 1;
+        }
+    }
+    return majority;
+}
+
+int main() {
+    int[] A = alloc_array(int, 10);
+    
+    A[0] = 1;
+    A[1] = 0;
+    A[2] = 4;
+    A[3] = 2;
+    A[4] = 4;
+    A[5] = 4;
+    A[6] = 3;
+    A[7] = 4;
+    A[8] = 4;
+    A[9] = 4;
+    return findMajority(A, 10);
+}

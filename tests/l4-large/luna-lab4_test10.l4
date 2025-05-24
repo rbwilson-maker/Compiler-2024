@@ -1,0 +1,16 @@
+//test return 0
+
+//Test if empty structs are handled correctly. If one implements empty
+//structs using zero byte representations, then alloc(malloc) would
+//return null on most systems.
+
+struct s {};
+
+int main() {
+    struct s* p = alloc(struct s);
+    struct s* q = alloc(struct s);
+    assert (p != q);
+    assert (p != NULL);
+    assert (q != NULL);
+    return 0;
+}

@@ -1,0 +1,9 @@
+//test error
+// missing r-value
+
+int main()
+{
+  int x;
+  x = ;
+  return x;
+}

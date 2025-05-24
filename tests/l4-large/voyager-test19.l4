@@ -1,0 +1,17 @@
+//test return 5
+
+struct s {int num; bool b; int* p;};
+
+int main()
+{
+    struct s* str = alloc(struct s);
+    str -> num = 5;
+    str -> b = true;
+    str->p = NULL;
+    if (str->b)
+    {
+        return str->num;
+    }
+    else
+        return *(str->p);
+}

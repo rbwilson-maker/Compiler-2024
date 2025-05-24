@@ -1,0 +1,8 @@
+//test div-by-zero
+// mods illegal numbers
+int main()
+{
+  int x = 0x80000000; // INT_MIN
+  int y = 10;
+  return x % (y - 11);
+}

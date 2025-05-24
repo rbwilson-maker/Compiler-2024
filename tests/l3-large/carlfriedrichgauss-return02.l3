@@ -1,0 +1,28 @@
+//test return 35
+// multiple function calls
+
+int add1(int x) {
+    return x + 1;
+}
+
+int sub1(int x) {
+    return x - 1;
+}
+
+int mul2(int x) {
+    int res = x;
+    for (int i = 0; i < x; i += 1) {
+        res += 1;
+    }
+    return res;
+}
+
+int div2(int x) {
+    return x / 2;
+}
+
+int main() {
+    int x = 37;
+    int res = add1(mul2(sub1(div2(x))));
+    return res;
+}

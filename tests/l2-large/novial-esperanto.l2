@@ -1,0 +1,14 @@
+//test error
+// cannot return boolean from main
+
+int main() {
+
+  int x = 5;
+  int k = 4;
+  int z = 2 + x + k;
+  bool p = true;
+
+  z += 2;
+
+  return false;
+}

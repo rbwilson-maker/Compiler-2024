@@ -1,0 +1,13 @@
+//test error
+//Can function return pointers?
+
+int* func(bool *b){
+  int *i = alloc(int);
+  *i = *b;
+  return i;
+}
+
+int main(){
+  bool *b = alloc(bool);
+  return *func(b);
+}

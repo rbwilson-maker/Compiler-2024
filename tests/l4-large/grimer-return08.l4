@@ -1,0 +1,36 @@
+//test return 22
+
+// testing nesting structs - name spaces should not clash
+
+struct A {
+  struct B * myInsides;
+};
+
+struct B {
+  struct C * myInsides;
+};
+
+struct C {
+  struct D * myInsides;
+};
+
+struct D {
+  int mySecretVal;
+};
+
+int main() {
+  struct A* a = alloc(struct A);
+  struct B* b = alloc(struct B);
+  struct C* c = alloc(struct C);
+  struct D* d = alloc(struct D);
+  
+  (*d).mySecretVal = 22;
+  (*a).myInsides = b;
+  (*b).myInsides = c;
+  (*c).myInsides = d;
+  
+  struct B* bb = (*a).myInsides;
+  struct C* cc = (*bb).myInsides;
+  struct D* dd = (*cc).myInsides;
+  return (*dd).mySecretVal;
+}

@@ -1,0 +1,15 @@
+//test return -2
+
+int fun(int *x) {
+  *x += 2;
+  return 0;
+}
+
+int main() {{
+  int[] ints = alloc_array(int, 8);
+  int *x = alloc(int);
+  *x = -4;
+  ints[0] = 0;
+  ints[fun(x)] += 5;
+  return *x;
+}}

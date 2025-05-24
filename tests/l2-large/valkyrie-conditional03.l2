@@ -1,0 +1,10 @@
+//test return 1
+int main(){
+    int x = 1;
+    int y;
+    if (x % 2 == 0){
+        return 0;
+    } else {
+        return x;
+    }
+}

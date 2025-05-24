@@ -1,0 +1,39 @@
+//test return 2043231
+
+typedef struct btree tree;
+struct btree {
+    int val;
+    tree *l;
+    tree *r;
+};
+
+int main() {
+    tree * root = alloc(tree);
+    tree * start = root;
+    for (int i = 2021; i >= 0; i -= 1) {
+        root->val = i;
+        if (i % 2 == 0) {
+            root->r = alloc(tree);   
+            root = root->r;
+        }
+        else {
+            root->l = alloc(tree);
+            root = root->l;
+        }
+    }
+
+    int tot = 0;
+    while (true) {
+        if (start->l == NULL && start->r == NULL) {
+            return tot;
+        }
+        tot += start->val;
+        if (start->l != NULL) {
+            start = start->l;
+        }
+        else {
+            start = start->r;
+        }
+    }
+    return 0;
+}

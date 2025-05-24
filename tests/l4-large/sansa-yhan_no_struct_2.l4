@@ -1,0 +1,27 @@
+//test error
+
+struct A;
+
+struct B {
+    struct * A a1;
+    struct * A a2;
+    bool b;
+};
+
+struct C {
+    struct B b;
+};
+typedef struct C * c_ptr;
+
+int main() {
+    c_ptr c = alloc(struct C);
+    (c -> b).b = true;
+    (c -> b).a1 = (c -> b).a2;
+    //should fail here
+    (c -> b).a1 = alloc(struct A);
+    return -1;
+}
+
+struct A {
+    int a;
+};

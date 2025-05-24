@@ -1,0 +1,21 @@
+//test return 3
+
+int main() {
+  int x = 8;
+  if (x == 4) return x;
+  else {
+    if (x > 6)
+      x -= 5;
+    
+    // x == 3
+    if (x < 4) {
+      x *= 2;
+      if (x > 4) 
+        if (x == 5)
+          return 0;
+      // binds to if in line 14
+      else return 3;
+    }
+  }
+  return 6;
+}

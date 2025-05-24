@@ -1,0 +1,11 @@
+//test abort
+
+int main() {
+  int a = 3;
+  int b = 4;
+  int c = 6;
+  
+  assert((a * a + b * b) == (c * c));
+
+  return b;
+}

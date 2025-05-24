@@ -1,0 +1,29 @@
+//test return 15
+
+struct node {
+    int data;
+    struct node* next;
+};
+
+
+int sum(struct node* p) {
+    struct node* q = p;
+    int val = 0;
+    while (q != NULL) {
+        val = val +  q->data;
+	q = q->next;
+    }
+
+    return val;
+}
+
+int main() {
+    struct node* p = alloc(struct node);
+    p->data = 5;
+    struct node * q = alloc(struct node);
+    q->data = 10;
+    p->next = q;
+    q->next = NULL;
+
+    return sum(p);
+}

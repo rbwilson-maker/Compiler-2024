@@ -1,0 +1,37 @@
+//test abort
+//don't pop if there is nothing there
+
+typedef int stack;
+
+typedef int elem;
+
+elem get(stack S) {
+  return S % 10;
+}
+
+stack pop(stack S) {
+  assert(S > 0);
+  return S / 10;
+}
+
+stack push(stack S, int n) {
+  return S * 10 + n;
+}
+
+int main() {
+  stack S = 0;
+  S = push(S, 1);
+  S = push(S, 2);
+  S = push(S, 3);
+  S = push(S, 4);
+  assert(get(S) == 4);
+  S = pop(S);
+  assert(get(S) == 3);
+  S = pop(S);
+  assert(get(S) == 2);
+  S = pop(S);
+  assert(get(S) == 1);
+  S = pop(S);
+  pop(S);
+  return 0;
+}

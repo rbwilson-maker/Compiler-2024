@@ -1,0 +1,10 @@
+//test typecheck
+
+int main() {
+  fpt x = itof(10);
+  fpt y = itof(1);
+  x = fadd(fsub(x, y), fmul(fdiv(x, y), x));
+  print_fpt(x);
+  bool b = fless (x, y);
+  return ftoi(x);
+}

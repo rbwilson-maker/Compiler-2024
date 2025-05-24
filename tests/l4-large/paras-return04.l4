@@ -1,0 +1,15 @@
+//test return 42
+typedef int Int;
+int main(){
+
+  Int **x = alloc(Int*);
+  *x = alloc(Int);
+  **x = 6;
+  Int ****y = alloc(Int***);
+  *y = alloc(Int**);
+  **y = alloc(Int*);
+  ***y = alloc(Int);
+  ****y = 7;
+  return **x*****y;
+
+}

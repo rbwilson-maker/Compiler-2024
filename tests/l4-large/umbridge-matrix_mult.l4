@@ -1,0 +1,76 @@
+//test return 0
+
+typedef int[] Vec;
+typedef int[][] Mat;
+
+// utility functions
+Mat new_mat(int r, int c) {
+    Mat m = alloc_array(Vec, r);
+    for (int i = 0; i < r; i++) {
+        m[i] = alloc_array(int, c);
+        for (int j = 0; j < c; j++) {
+            m[i][j] = 0;
+        }
+    }
+    return m;
+}
+
+Mat eye(int n) {
+    Mat m = new_mat(n,n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            m[i][j] = i == j ? 1 : 0;
+        }
+    }
+    return m;
+}
+
+Mat scale_square(Mat m, int dimen, int factor) {
+    for (int i = 0; i < dimen; i++) {
+        for (int j = 0; j < dimen; j++) {
+            m[i][j] *= factor;
+        }
+    }
+    return m;
+}
+
+Vec Vec3D(int v1, int v2, int v3) {
+    Vec v = alloc_array(int, 3);
+    v[0] = v1;
+    v[1] = v2;
+    v[2] = v3;
+    return v;
+}
+
+Mat RowVec2Mat(Vec v) {
+    Mat m = alloc_array(Vec, 1);
+    m[0] = v;
+    return m;
+}
+
+Mat mat_mult(Mat m1, Mat m2, int r1, int c1, int r2, int c2) {
+    assert(c1 == r2);
+    int r3 = r1;
+    int c3 = c2;
+    Mat m3 = new_mat(r3,c3);
+    for (int r = 0; r < r3; r++) {
+        for (int c = 0; c < c3; c++) {
+            for (int i = 0; i < c1; i++) {
+                m3[r][c] += m1[r][i] * m2[i][c];
+            }
+        }
+    }
+    return m3;
+}
+
+// calculations
+int main() {
+    Mat identity = eye(3);
+    Mat identity2 = scale_square(identity, 3, 2);
+    Mat k = RowVec2Mat(Vec3D(1,2,3));
+    Mat product = mat_mult(k,identity2,1,3,3,3);
+    assert(product[0][0] == 2);
+    assert(product[0][1] == 4);
+    assert(product[0][2] == 6);
+    return 0;
+}

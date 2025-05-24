@@ -1,0 +1,14 @@
+//test return 607500
+
+ // In the past, we had to generate the list of primes every time... but no // more! This time, we'll precompute the number of primes we need, and use
+// that instead!																																		
+                                      struct mudblood {																				  int[] potion; };
+													typedef struct mudblood* muggleborn;																																				bool isPrime(int n) {													  if (n <= 1) return false;																					  for (int i = 2 ; i < n ; i += 1) {															    if (n % i == 0) { return false; }														  }   return true; }																																bool setup(int p, int n, int len, muggleborn hermione) {  if (n >= len) return true;   if (p < 0) return false;
+  if (isPrime(p)) {     hermione->potion[n] = p;			    return setup(p+1, n+1, len, hermione);   }																							  return setup(p+1, n, len, hermione);																										} 					int hd(int l, muggleborn hermione) {								  int p = hermione->potion[0];																								   int i;		  for (i = 0 ; l % p == 0 ; i += 1) {								    l /= p;
+  }																																  return i;																									} 																							int tl(int l, muggleborn hermione) {											  int result = 1;																											   for (; l % hermione->potion[0] == 0 ; l /= hermione->potion[0]) { }																													   for (int i = 1 ; l > 1 ; i += 1) {
+    int p = hermione->potion[i];     while (l % p == 0) {      l /= p;       result *= hermione->potion[i-1];     }																			  }																												  return result; }
+		int main() {			  // n = [3, 2, 5, 4]   
+                                        int n = (2*2*2) * (3*3) * (5*5*5*5*5) * (7*7*7*7);    muggleborn lily = alloc(struct mudblood);								  lily->potion = alloc_array(int, 4);   // This has effects!   
+                            assert(setup(1,0,4,lily));
+																								  int h = hd(n, lily);
+  int t = tl(n, lily);																	  assert (h == 3);																														  return t;										} 

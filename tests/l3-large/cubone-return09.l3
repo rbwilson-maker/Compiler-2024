@@ -1,0 +1,52 @@
+//test return 28
+//longest(x) returns the longest palindromic substring in the bitwise
+//representation of x
+
+int longest_even(int x, int pos) {
+  pos = pos / 2;
+
+  int left = pos - 1;
+  int right = pos;
+
+  while ((left >= 0) && (right < 32) &&
+         (((x >> (31 - left)) & 1) ==
+          ((x >> (31 - right)) & 1))) {
+    left -= 1;
+    right += 1;
+  }
+
+  return (right - left) - 1;
+}
+
+int longest_odd(int x, int pos) {
+  pos = pos / 2;
+
+  int left = pos;
+  int right = pos;
+
+  while ((left >= 0) && (right < 32) &&
+         (((x >> (31 - left)) & 1) ==
+          ((x >> (31 - right)) & 1))) {
+    left -= 1;
+    right += 1;
+  }
+
+  return (right - left) - 1;
+}
+
+int longest(int x) {
+  int max = 0;
+  for (int i = 0; i <= 64; i++) {
+    int length = 0;
+    if ((i % 2) == 0)
+      length = longest_even(x, i);
+    else
+      length = longest_odd(x, i);
+    max = (length > max) ? length : max;
+  }
+  return max;
+}
+
+int main () {
+  return longest(0x00108008);
+}

@@ -1,0 +1,19 @@
+//test typecheck
+
+int test(int var);
+int test(int va);
+int test(int v);
+int test(int var);
+int test(int v);
+int test(int vr);
+int test(int var);
+int test(int var);
+int test(int var);
+int test(int var);
+int test(int a) {
+  return test(0);
+}
+
+int main() {
+  return four(1);
+}

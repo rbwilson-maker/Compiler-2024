@@ -1,0 +1,11 @@
+//test error
+
+struct yeehaw {
+  int yeet;
+};
+
+int main()
+{
+  struct yeehaw *y = alloc_array(struct yeehaw, 227);
+  return -238497;
+}

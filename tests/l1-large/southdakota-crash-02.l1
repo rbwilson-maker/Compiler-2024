@@ -1,0 +1,5 @@
+//test div-by-zero
+
+int main() {
+	return 0 * (5 / (4 - (2 * 2)));
+}

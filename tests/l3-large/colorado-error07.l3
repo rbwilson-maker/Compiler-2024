@@ -1,0 +1,14 @@
+//test error
+
+int mkBS();
+
+int main() {
+  	return 1;
+}
+
+int mkBS() {
+	return 0;
+}
+
+
+typedef int mkBS;

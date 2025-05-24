@@ -1,0 +1,11 @@
+//test error
+
+// A simple function call
+
+bool wont_parse (a, b) {
+  if (a) return true;
+  else return b
+}
+int main(){
+  return wont_parse (3, 0);
+}

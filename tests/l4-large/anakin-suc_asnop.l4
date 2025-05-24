@@ -1,0 +1,14 @@
+//test return 1
+
+// should be called only once
+int update_x (int *x) {
+    (*x)++;
+    return 0;
+}
+
+int main() {
+    int[] arr = alloc_array(int, 2);
+    int *x = alloc(int);
+    arr[update_x(x)] += 2;
+    return *x;
+}

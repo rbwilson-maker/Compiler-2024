@@ -1,0 +1,15 @@
+//test error
+//reserved keywords 
+
+int main() {
+    int x = 0;
+    for (int i = 0; i < 100; i ++) {
+        if (i > 30) {
+            x += i;
+        }
+        if (x % 10 == 2) {
+            break;
+        }
+    }
+    return x;
+}

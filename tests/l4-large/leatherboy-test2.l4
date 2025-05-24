@@ -1,0 +1,25 @@
+//test return 3007
+
+struct g {
+    int b;
+};
+
+int func(){
+    struct g* f = alloc(struct g);
+    f->b = 10;
+    int t1 = 21;
+    int t2 = t1 + 43;
+    int t3 = t1 - t1 + t2;
+    int t5 = 0;
+    for(int i = 0; i<1; i++){
+        t5 = t3 - t2 + 323;
+    }
+    int t6 = t2+t5-t3;
+    int t7 = t6 *2 +t3 - 2*t1;
+    return t7*4+t6 + 2 + f->b; 
+}
+
+int main() { 
+    return func();
+}
+

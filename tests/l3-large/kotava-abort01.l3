@@ -1,0 +1,15 @@
+//test abort
+
+typedef int dog;
+
+dog div(int a, int b) {
+  dog c = a / b;
+  return c;
+}
+
+int main() {
+  int a = 10;
+  int b = 1;
+  assert(div(a, b) == 0);
+  return a;
+}

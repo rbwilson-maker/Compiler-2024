@@ -1,0 +1,18 @@
+//test return 1
+
+
+bool check_is_null(struct a *aa) { // implicit struct declaration
+  if (aa == NULL) {
+    return true;
+  }
+  return false;
+}
+
+struct a {
+  int aaa;
+};
+
+int main() {
+  struct a *aa = NULL;
+  return (check_is_null(aa)? 1: 0);
+}

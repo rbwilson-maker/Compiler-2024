@@ -1,0 +1,9 @@
+//test return 5
+int main() {
+    int x = 5;
+    if (x > 6) {
+        return 1;
+    } else {
+        return x;
+    }
+}

@@ -1,0 +1,14 @@
+//test return 0
+typedef struct s past_typedef;
+
+int do_thing(past_typedef *s);
+
+struct s {
+    int foo;
+};
+
+int do_thing(past_typedef *t) {
+    return t->foo;
+}
+
+int main(){return 0;}

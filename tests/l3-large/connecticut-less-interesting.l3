@@ -1,0 +1,13 @@
+//test return 10
+
+int a(int b, int c) {
+	return b + c;
+}
+
+int c(int x, bool y) {
+	return y ? x : x + 1;
+}
+
+int main() {
+	return a(c(4, true), c(5, false));
+}

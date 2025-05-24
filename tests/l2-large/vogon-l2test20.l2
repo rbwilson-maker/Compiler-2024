@@ -1,0 +1,14 @@
+//test return 1292928
+
+int main() { 
+  int i = 0;
+  int x = 23;
+  while(i * 12 < 2344444) {
+    i += 2;
+    x = i * 32;
+    x /= i;
+    x *= 323232;
+    x >>= 3;
+  }
+  return x;
+}

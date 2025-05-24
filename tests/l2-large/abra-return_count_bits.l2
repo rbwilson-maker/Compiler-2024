@@ -1,0 +1,11 @@
+//test return 4
+// count num bits in 110101 (= 53)
+int main() {
+	int count = 0;
+	int num = 53;
+	while (num > 0) {
+		num &= (num - 1);
+		count++;
+	}
+	return count;
+}

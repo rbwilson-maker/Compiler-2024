@@ -1,0 +1,11 @@
+//test div-by-zero
+/* Divison error in a function call */
+
+int bad_divide(int a, int b) {
+	int x = a+b-a;
+	return x/a;
+}
+
+int main() {
+	return bad_divide(0,bad_divide(1,1));
+}

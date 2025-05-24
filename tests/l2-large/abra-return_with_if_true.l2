@@ -1,0 +1,9 @@
+//test return 3
+// test declaration and assignment
+int main() {
+	int z = 1;
+	if (true) {
+		return 3;
+	}
+	return z;
+}

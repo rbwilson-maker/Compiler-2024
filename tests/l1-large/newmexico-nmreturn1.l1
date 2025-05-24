@@ -1,0 +1,26 @@
+//test return -243
+// arithmetic operations with parentheses at the end
+
+int main()
+{
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+	int f;
+	int g;
+	int h;
+	a = 3;
+	b = a;
+	c = a + b;
+	d = 4;
+	d *= c;
+	e = d / 0x2;
+	f = d % 3;
+	g = f - a;
+	h = e / a;
+	a -= d - e;
+	h = (a - b) * ((c + d) - (e + f + g)) - a;
+	return h;
+}

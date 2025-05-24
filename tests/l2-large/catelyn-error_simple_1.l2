@@ -1,0 +1,74 @@
+//test error
+
+int main()
+{
+	int x = 1;
+	int acc0 = x;
+	int acc1 = x;
+	int acc2 = x;
+	int acc3 = x;
+	int acc4 = x;
+	int acc5 = x;
+	int acc6 = x;
+	int acc7 = x;
+	int acc8 = x;
+	int acc9 = x;
+	int acca = x;
+	int accb = x;
+	int accc = x;
+	int accd = x;
+	int acce = x;
+	int accf = x;
+	int accg = x;
+	int acch = x;
+	int acci = x;
+	int accj = x;
+	int acck = x;
+	int accl = x;
+	int accm = x;
+	int accn = x;
+	int acco = x;
+	int accp = x;
+	int accq = x;
+
+	for (int i = 0; i < 1; i=0)
+	{
+		for (int j = 0; j > -1; j++)
+		{
+			for (int k = 0x7FFFFFF0; k >= 0x80000000; k++)
+			{
+				j = k;
+			}
+
+			acc0 += k;
+			acc1 -= k;
+			acc2 *= k;
+			acc3 /= j;
+			acc4 %= j;
+			acc5 = j;
+			acc6 ^= j;
+			acc7 &= j;
+			acc8 |= j;
+			acc9 >>= (j & 0xF);
+			acca <<= (j & 0xF);
+			accb = (1 == 0) ? j : -1;
+			accc = (0x7FFFFFF0 >= 0x80000000) ? 2 : -2;
+			accd = (0x7FFFFFF0 < 0x7FFFFFF0) ? 3 : -4;
+			acce = ~j;
+			accf = (!(1 == 0)) ? 5 : 6;
+			accg = j;
+			acch = j;
+			acci = j;
+			accj = j;
+			acck = j;
+			accl = j;
+			accm = j;
+			accn = j;
+			acco = j;
+			accp = j;
+			accq = j;
+		}
+	}
+
+	return 15411;
+}

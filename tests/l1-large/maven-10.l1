@@ -1,0 +1,11 @@
+//test return 41
+
+//test binding priority
+
+int main() {
+  int s = 7;
+
+  s += 10 + 4 - 41 % 7 / 3 + 11 * 2;
+
+  return s;
+}

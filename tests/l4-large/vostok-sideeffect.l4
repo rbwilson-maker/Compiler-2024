@@ -1,0 +1,13 @@
+//test return 1
+
+int f(int* b) {
+    (*b)++;
+    return 0;
+}
+
+int main() {
+    int* b = alloc(int);
+    int[] arr = alloc_array(int, 2);
+    arr[f(b)]+=3;
+    return *b;
+}

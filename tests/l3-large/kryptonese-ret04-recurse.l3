@@ -1,0 +1,34 @@
+//test return -25
+
+// 5 mutually recursive functions 
+
+int a(int i);
+
+int e(int i) {
+    if (i < -24) {
+        return i;
+    }
+    else {
+        return a(i);
+    }
+}
+
+int d(int i) {
+    return e(i%28);
+}
+int c(int i) {
+    return d(i*395);
+}
+
+int b(int i) {
+    return c(i - 124512);
+}
+int a(int i ) {
+    return b(i + 234);
+}
+
+int main() {
+    return a(9493423);
+
+}
+

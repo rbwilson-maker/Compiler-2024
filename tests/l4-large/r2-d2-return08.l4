@@ -1,0 +1,24 @@
+//test error
+
+
+int main()
+{
+	list *head = NULL;
+	list *second = NULL;
+	list *third = NULL;
+
+	head = alloc(list);
+	second = alloc(list);
+	third = alloc(list);
+
+	head->data = 1;
+	head->next = second;
+
+	second->data = 2;
+	second->next = third;
+
+	third->data = 3;
+	third->next = NULL;
+
+	return sumlist(head);
+}

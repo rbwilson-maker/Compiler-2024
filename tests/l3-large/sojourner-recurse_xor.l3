@@ -1,0 +1,23 @@
+//test typecheck
+
+//x xor'ed with any number even amount of times is x
+int xor_(int x, int y, int depth) {
+  if (depth == 0) {
+    return x;
+  }
+  return xor_(x ^ y, y, depth - 1);
+}
+
+
+int main() {
+  srand(15411);
+  int x = rand();
+  int y = rand();
+  int depth = rand() % 1000;
+  if (depth % 2 != 0) {
+    depth++;
+  }
+  int res = xor_(x, y, depth);
+  assert(res == x);
+  return 0;
+}

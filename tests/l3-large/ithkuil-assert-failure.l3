@@ -1,0 +1,14 @@
+//test return 5
+
+int func2(int x) {
+  return x+3;
+}
+
+int func1(int x) {
+  return func2(x+2);
+}
+
+int main () {
+  assert(func1(0) == 5);
+  return func1(0);
+}

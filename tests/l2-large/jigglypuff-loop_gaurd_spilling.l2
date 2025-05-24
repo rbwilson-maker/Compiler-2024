@@ -1,0 +1,44 @@
+//test return 79650
+
+/* Loop Guard Spilling Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, September 28, 2015 at 06:39:09 PM EDT
+ *
+ * This tests exercises spilling when applied to the variables that are used in
+ * the loop guard. Assuming no dead-code elimination or constant-propogation,
+ * this test ensures that the loop variable is spilled onto the stack.
+ */
+
+int main()
+{
+    int eax = 0;
+    int ebx = 1;
+    int ecx = 2;
+    int edx = 3;
+    int esi = 5;
+    int edi = 6;
+    int ebp = 7;
+    int esp = 8;
+    int r9d = 9;
+    int r10d = 10;
+    int r11d = 11;
+    int r12d = 12;
+    int r13d = 13;
+    int r14d = 14;
+    int r15d = 15;
+
+    int x = 200;
+    int y = 100;
+    int z = x+y;
+    int sum = 0;
+
+    for (int i = 0; i < z; i++)
+    {
+        sum += eax + ebx + ecx + edx + esi + edi + ebp + esp + r9d + r10d +
+               r11d + r12d + r13d + r14d + r15d + i;
+    }
+
+    return sum;
+}

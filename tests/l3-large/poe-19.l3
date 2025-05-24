@@ -1,0 +1,12 @@
+//test return 1
+
+// hehehe
+// This seems like it should break a few things
+
+int _c0_main() {
+	return 1;
+}
+
+int main () {
+	return _c0_main();
+}

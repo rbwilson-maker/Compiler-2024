@@ -1,0 +1,15 @@
+//test return 20
+
+int main() { 
+    int y = (2);
+    y %= 2;
+    y += 2;
+    int x = y;
+    y = x;
+    x = y;
+    y = x;
+    y >>= 1;
+    y = 10;
+    y *= 2;
+    return y;
+}

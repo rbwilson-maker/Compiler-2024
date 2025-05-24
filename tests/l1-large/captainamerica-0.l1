@@ -1,0 +1,11 @@
+//test return ~2147483648
+
+
+int main() { 
+    int i=0;
+    i += 2147483648;
+    int j=i*10;
+    return i; 
+}
+
+

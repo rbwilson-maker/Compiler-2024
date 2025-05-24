@@ -1,0 +1,24 @@
+//test return 0
+
+int main()
+{
+  // SOS = 010100110100111101010011
+        int * *  ** *  **** * *  **x;
+
+  // Superman with a poorly braided patch will come to the rescue!
+  x = alloc(int*   * * * * * * * * * * *);
+  *x = alloc(int* *   * * * * * * * *   *);
+  **x = alloc(int*    * * * * * * * *    *);
+  ***x = alloc(int** **** *            **);
+  ****x = alloc(int*  * * * * * *      *);
+  *****x = alloc(int*   * *  * * *    *);
+  ******x = alloc(int*         ***  **);
+  *******x = alloc(int*       ***  *);
+  ********x = alloc(int*      ** *);
+  *********x = alloc(int*     **);
+  **********x = alloc(int*    *);
+  ***********x = alloc(int   *);
+  ************x = alloc(int);
+  *************x = 42;
+  return 0;
+}

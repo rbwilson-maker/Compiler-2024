@@ -1,0 +1,16 @@
+//test error
+
+typedef int hello;
+
+int func2(int x) {
+  if (x == 10) return x;
+  return func1(x+3);
+}
+
+int func1(int x) {
+  return func2(x+2);
+}
+
+int main () {
+  return func1(0);
+}

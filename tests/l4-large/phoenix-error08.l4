@@ -1,0 +1,24 @@
+//test error
+//second bool*[] uninitialized
+
+typedef bool rockets;
+
+int main() {
+    rockets*[] nasa = alloc_array(rockets*, 999);
+    *nasa[234] = false;
+    *nasa[998] = true;
+    nasa[101] = alloc(rockets);
+    nasa[999] = alloc(rockets);
+    *nasa[999] = *nasa[998];
+
+    bool*[] second;
+    if (*nasa[998] || *second[101]) {
+        return 0;
+    } else {
+        if (*second[101] && *nasa[234]) {
+            return 1;
+        } else {
+            return 324;
+        }
+    }
+}

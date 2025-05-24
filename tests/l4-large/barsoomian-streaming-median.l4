@@ -1,0 +1,178 @@
+//test return 431
+
+typedef struct heap* heap;
+
+struct heap {
+    int size;
+    int capacity;
+    int[] contents;
+    bool is_min_heap;
+};
+
+void resize_heap(heap H) {
+    int[] currContents = H->contents;
+    int currCapacity = H->capacity;
+    H->capacity *= 2;
+    H->contents = alloc_array(int, H->capacity);
+    for(int i = 0; i < currCapacity; i++) {
+        H->contents[i] = currContents[i];
+    }
+}
+
+void swap(int[] arr, int a, int b) {
+    int temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+}
+
+void heap_up(heap H) {
+    int curr = H->size;
+    while(curr > 1 && (H->is_min_heap ? H->contents[curr / 2] > H->contents[curr] : H->contents[curr / 2] < H->contents[curr])) {
+        swap(H->contents, curr, curr / 2);
+        curr /= 2;
+    }
+}
+
+int get_best_child(heap H, int parent) {
+    int best_child = parent * 2;
+    if(best_child + 1 <= H->size && (H->is_min_heap ? H->contents[best_child] > H->contents[best_child + 1] : H->contents[best_child] < H->contents[best_child + 1]))
+        best_child++;
+    return best_child;
+}
+
+void heap_down(heap H) {
+    int curr = 1;
+    int best_child = get_best_child(H, curr);
+    while(curr <= H->size && best_child <= H->size && (H->is_min_heap ? H->contents[curr] > H->contents[best_child] : H->contents[curr] < H->contents[best_child])) {
+        swap(H->contents, curr, best_child);
+        curr = best_child;
+        best_child = get_best_child(H, curr);
+    }
+}
+
+void insert(heap H, int elt) {
+    if (H->size + 1 >= H->capacity) {
+        resize_heap(H);
+    }
+    H->size += 1;
+    H->contents[H->size] = elt;
+    heap_up(H);
+}
+
+int peek(heap H) {
+    assert(H->size >= 1);
+    return H->contents[1];
+}
+
+int pop(heap H) {
+    assert(H->size >= 1);
+    int result = H->contents[1];
+    swap(H->contents, 1, H->size);
+    H->size--;
+    heap_down(H);
+    return result;
+}
+
+heap init_heap(bool is_min_heap) {
+    heap H = alloc(struct heap);
+    H->size = 0;
+    H->capacity = 1;
+    H->contents = alloc_array(int, H->capacity);
+    H->is_min_heap = is_min_heap;
+    return H;
+}
+
+int get_median_floored(heap left, heap right) {
+    // the two heaps represent a balanced tree, with a max heap on the right
+    // and a min heap on the left, which means the middle two elements will
+    // always be at the top of the heaps
+    assert(left->size >= right->size);
+    if(left->size == right->size) {
+        return (peek(left) + peek(right)) / 2;
+    }
+    return peek(left);
+}
+
+void update_balanced_tree(heap left, heap right, int elt) {
+    // default to inserting it into the left heap
+    heap to_insert = left;
+    // if it should go in the right half of the array,
+    // then switch insertion side
+    if(right->size > 0 && elt > peek(right)) {
+        to_insert = right;
+    }
+    insert(to_insert, elt);
+    if(left->size > right->size + 1) {
+        insert(right, pop(left));
+    }
+    if(right->size > left->size) {
+        insert(left, pop(right));
+    }
+}
+
+int[] create_inputs() {
+    int[] inputs = alloc_array(int, 20);
+    inputs[0] = 97;
+    inputs[1] = 787;
+    inputs[2] = 859;
+    inputs[3] = 655;
+    inputs[4] = 510;
+    inputs[5] = 822;
+    inputs[6] = 155;
+    inputs[7] = 251;
+    inputs[8] = 328;
+    inputs[9] = 501;
+    inputs[10] = 9;
+    inputs[11] = 622;
+    inputs[12] = 66;
+    inputs[13] = 879;
+    inputs[14] = 239;
+    inputs[15] = 263;
+    inputs[16] = 32;
+    inputs[17] = 836;
+    inputs[18] = 361;
+    inputs[19] = 691;
+    return inputs;
+}
+
+int[] correct_answers() {
+    int[] outputs = alloc_array(int, 20);
+    outputs[0] = 97;
+    outputs[1] = 442;
+    outputs[2] = 787;
+    outputs[3] = 721;
+    outputs[4] = 655;
+    outputs[5] = 721;
+    outputs[6] = 655;
+    outputs[7] = 582;
+    outputs[8] = 510;
+    outputs[9] = 505;
+    outputs[10] = 501;
+    outputs[11] = 505;
+    outputs[12] = 501;
+    outputs[13] = 505;
+    outputs[14] = 501;
+    outputs[15] = 414;
+    outputs[16] = 328;
+    outputs[17] = 414;
+    outputs[18] = 361;
+    outputs[19] = 431;
+    return outputs;
+}
+
+int main() {
+    // we will maintain a balanced tree using two heaps (one max and one min)
+    // the left one is a max heap
+    // the right one is a min heap
+    // this allows the middle two elements seen so far to be accessed in O(1)
+    // while keeping insertion at O(log n)
+    heap left = init_heap(false);
+    heap right = init_heap(true);
+    int[] inputs = create_inputs();
+    int[] answers = correct_answers();
+    for(int i = 0; i < 20; i++) {
+        update_balanced_tree(left, right, inputs[i]);
+        assert(get_median_floored(left, right) == answers[i]);
+    }
+    return get_median_floored(left, right);
+}

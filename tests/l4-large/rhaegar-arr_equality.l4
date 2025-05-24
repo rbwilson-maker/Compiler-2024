@@ -1,0 +1,21 @@
+//test error
+
+struct Pixel {
+	int x;
+	int y;
+	int data;
+};
+
+struct Voxel {
+	int x;
+	int y;
+	int z;
+	int data;
+};
+
+int main() {
+	struct Pixel[] p = alloc_array(struct Pixel, 0);
+	struct Voxel[] v = alloc_array(struct Voxel, 0);
+	assert(p == v);
+	return 0;
+}

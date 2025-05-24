@@ -1,0 +1,14 @@
+//test error
+
+bool isOdd (int x) {
+  return x%2;
+}
+
+int main () {
+  if isOdd(20) {
+    return 4;
+  }
+  else {
+    return 5;
+  }
+}

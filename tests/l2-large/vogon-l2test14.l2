@@ -1,0 +1,9 @@
+//test return 16382
+
+int main() { 
+  int x = 1;
+  for (int i = 1; i < 10000; i *= 2) {
+    x ^= i;
+  }
+  return x;
+}

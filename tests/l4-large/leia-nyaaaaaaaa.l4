@@ -1,0 +1,11 @@
+//test typecheck
+//test infloop
+
+int main() {
+  int* x;
+  for (int i = 0; i < 2147483647; i++) {
+    x = alloc(int);
+    *x = i;
+  }
+  return 0;
+}

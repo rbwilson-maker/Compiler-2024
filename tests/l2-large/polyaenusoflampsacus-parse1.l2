@@ -1,0 +1,16 @@
+//test return 0
+//Checks that you are able to correctly parse a lot of things
+
+int main () {
+  while ((((false)))) 
+    if ((false))
+      for(((2+3));((((((((((true!=false))))))))));((true))?((3*4)):2147483648)
+      {{{{{{{{{{{{{{{}}}}}}}}}}}}}}}
+    else{
+     {
+       bool b = true && true == true;
+     }
+    }
+  if (true) if (true) if (true) if (true) if (true) if (true) if (true) if (true) return 0;
+  else return 1; else return 2; else return 3; else return 4; else return 5; else return 6; else return 7; else return 8;
+}

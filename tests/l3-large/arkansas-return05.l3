@@ -1,0 +1,11 @@
+//test return 10
+// assert pass
+
+int f(int n) {
+    assert(n > 0);
+    return 10;
+}
+
+int main() {
+    return f(1000);
+}

@@ -1,0 +1,5 @@
+//test return 70
+
+int main () {
+  return ftoi(fadd(itof(30),itof(40)));
+}

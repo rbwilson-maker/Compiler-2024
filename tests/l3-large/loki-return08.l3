@@ -1,0 +1,13 @@
+//test return -1
+
+int moo(int n) {
+    if (n <= 0) {
+        return -1;
+    }
+
+    return moo(n - 1);
+}
+
+int main() {
+    return moo(5);
+}

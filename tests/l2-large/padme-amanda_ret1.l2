@@ -1,0 +1,14 @@
+//test return 67305985
+
+int main() {
+    int x = 0x01020304;
+    int y = x & 0xFF;
+    int z = (x >> 8) & 0xFF;
+    int a = (x >> 16) & 0xFF;
+    int b = (x >> 24) & 0xFF;
+    y = (y << 24);
+    z = (z << 16);
+    a = (a << 8);
+    //returns 0x04030201, but the script doesn't understand that
+    return (y | z | a | b);
+}

@@ -1,0 +1,14 @@
+//test memerror
+// dereference null pointer
+
+struct mystruct {
+  int x;
+};
+
+int foo(struct mystruct* s){
+  return s->x;
+}
+
+int main(){
+  return foo(NULL);
+}

@@ -1,0 +1,33 @@
+//test return 34
+// a bit of a stress test for stack space and allocation
+
+void splash(int magikarp)
+{
+  int SPLASH = 0;
+  int MAGIKARP = 1;
+  SPLASH;
+  SPLASH;
+  SPLASH;
+  MAGIKARP; SPLASH;
+  SPLASH;
+
+  // time to waste some space by being a magikarp
+  int[] nogyarados = alloc_array(int, 200);
+
+  if (magikarp < 0) {
+    // no more magikarps :(
+    return;
+  }
+  splash(magikarp - 2);
+}
+
+
+int main()
+{
+  int splashtries = 2000;
+  for (int i = 0; i < splashtries; i++) {
+    splash(i);
+  }
+  return 34;
+}
+

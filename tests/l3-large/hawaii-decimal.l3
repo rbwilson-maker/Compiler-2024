@@ -1,0 +1,114 @@
+//test return 56739
+
+int concat(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p, int q,int r,int s,int t,int u,int v,int w,int x,int y,int z,int aa, int ab,int ac,int ad, int ae, int af,int ag,int ah, int ai, int aj, int ak, int al, int am, int an, int ao, int ap, int aq, int ar, int as, int at, int au, int av, int aw, int ax, int ay, int az)
+{
+  int res = a;
+  res = b + res * 10;
+  if (res < 0) res = 0;
+  res = c + res * 10;
+  if (res < 0) res = 0;
+  res = d + res * 10;
+  if (res < 0) res = 0;
+  res = e + res * 10;
+  if (res < 0) res = 0;
+  res = f + res * 10;
+  if (res < 0) res = 0;
+  res = g + res * 10;
+  if (res < 0) res = 0;
+  res = h + res * 10;
+  if (res < 0) res = 0;
+  res = i + res * 10;
+  if (res < 0) res = 0;
+  res = j + res * 10;
+  if (res < 0) res = 0;
+  res = k + res * 10;
+  if (res < 0) res = 0;
+  res = l + res * 10;
+  if (res < 0) res = 0;
+  res = m + res * 10;
+  if (res < 0) res = 0;
+  res = n + res * 10;
+  if (res < 0) res = 0;
+  res = o + res * 10;
+  if (res < 0) res = 0;
+  res = p + res * 10;
+  if (res < 0) res = 0;
+  res = q + res * 10;
+  if (res < 0) res = 0;
+  res = r + res * 10;
+  if (res < 0) res = 0;
+  res = s + res * 10;
+  if (res < 0) res = 0;
+  res = t + res * 10;
+  if (res < 0) res = 0;
+  res = u + res * 10;
+  if (res < 0) res = 0;
+  res = v + res * 10;
+  if (res < 0) res = 0;
+  res = w + res * 10;
+  if (res < 0) res = 0;
+  res = x + res * 10;
+  if (res < 0) res = 0;
+  res = y + res * 10;
+  if (res < 0) res = 0;
+  res = z + res * 10;
+  if (res < 0) res = 0;
+  res = aa + res * 10;
+  if (res < 0) res = 0;
+  res = ab + res * 10;
+  if (res < 0) res = 0;
+  res = ac + res * 10;
+  if (res < 0) res = 0;
+  res = ad + res * 10;
+  if (res < 0) res = 0;
+  res = ae + res * 10;
+  if (res < 0) res = 0;
+  res = af + res * 10;
+  if (res < 0) res = 0;
+  res = ag + res * 10;
+  if (res < 0) res = 0;
+  res = ah + res * 10;
+  if (res < 0) res = 0;
+  res = ai + res * 10;
+  if (res < 0) res = 0;
+  res = aj + res * 10;
+  if (res < 0) res = 0;
+  res = ak + res * 10;
+  if (res < 0) res = 0;
+  res = al + res * 10;
+  if (res < 0) res = 0;
+  res = am + res * 10;
+  if (res < 0) res = 0;
+  res = an + res * 10;
+  if (res < 0) res = 0;
+  res = ao + res * 10;
+  if (res < 0) res = 0;
+  res = ap + res * 10;
+  if (res < 0) res = 0;
+  res = aq + res * 10;
+  if (res < 0) res = 0;
+  res = ar + res * 10;
+  if (res < 0) res = 0;
+  res = as + res * 10;
+  if (res < 0) res = 0;
+  res = at + res * 10;
+  if (res < 0) res = 0;
+  res = au + res * 10;
+  if (res < 0) res = 0;
+  res = av + res * 10;
+  if (res < 0) res = 0;
+  res = aw + res * 10;
+  if (res < 0) res = 0;
+  res = ax + res * 10;
+  if (res < 0) res = 0;
+  res = ay + res * 10;
+  if (res < 0) res = 0;
+  res = az + res * 10;
+
+  return res;
+}
+
+int main()
+{
+  return concat(9,2,5,2,9,4,6,1,0,4,7,10,3,5,3,7,3,9,4,8,4,4,4,4,4,4,1,0,3,7,3,4,8,9,7,6,5,4,3,2,1,2,3,4,8,3,7,5,6,7,3,9);
+}

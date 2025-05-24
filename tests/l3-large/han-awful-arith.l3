@@ -1,0 +1,31 @@
+//test return 1000000
+// Primitives, where we're going we don't need no stinking primitives.
+// Somewhere, somehow, a C programmer is crying over this.
+
+int add(int a, int b){
+    if(a == 0) {
+      return b;
+    } else {
+      return 1 + add(a - 1, b);
+    }
+}
+
+int mult(int a, int b){
+    if(a == 0) {
+      return 0;
+    } else {
+      return add(b, mult(a - 1, b));
+    }
+}
+
+int pow(int a, int b){
+    if(b == 0) {
+      return 1;
+    } else {
+      return mult(a, pow(a, b - 1));
+    }
+}
+
+int main() {
+    return pow(10, 6);
+}

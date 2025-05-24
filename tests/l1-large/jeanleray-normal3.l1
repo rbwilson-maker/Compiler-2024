@@ -1,0 +1,14 @@
+//test return 997
+// normal program 3, also test comments
+
+int main(){
+    int x = 997;
+    int k = 8;
+    /*
+        abcd
+    */
+    int m1 = x/k;
+    m1 *= k;
+    int m2 = x%k;
+    return m1 + m2;
+}

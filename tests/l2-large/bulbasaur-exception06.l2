@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+// tests scope
+
+int main() {
+  int x = 0;
+  for (; x < 2; x++) {
+    for (; x > -50; x--) {
+      x *= 2;
+    }
+  }
+  return 1;
+}

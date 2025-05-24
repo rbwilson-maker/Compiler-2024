@@ -1,0 +1,30 @@
+//test return 0
+
+bool isSubString(string str, string pattern) {
+  char []s = string_to_chararray(str);
+  int sl = string_length(str);
+  char []p = string_to_chararray(pattern);
+  int pl = string_length(pattern);
+  for (int start = 0; start < sl - pl + 1; start++) {
+    int numMatch = 0;
+    for (int i = 0; i < pl; i++) {
+      if (s[start + i] == p[i]) {
+        numMatch += 1;
+      }
+    }
+    if (numMatch == pl) {
+      return true;
+    }
+  }
+  return false;
+}
+
+int main() {
+  bool b0 = isSubString("father", "fath");
+  bool b1 = isSubString("apple", "app");
+  bool b2 = isSubString("pokemon", "pikachu");
+  if ((b0 && b1) && (!b2)) {
+    return 0;
+  }
+  return 1;
+}

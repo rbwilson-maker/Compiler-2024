@@ -1,0 +1,13 @@
+//test error
+
+int another_thing(){
+    return this_one_doesnt_exist();
+}
+
+int other_function(){
+    return another_thing();
+}
+
+int main(){
+    return other_function();
+}

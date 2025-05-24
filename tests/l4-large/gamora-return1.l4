@@ -1,0 +1,48 @@
+//test return -8
+// test struct aliasing
+
+struct red {
+  int color;
+};
+
+typedef struct red red;
+
+typedef red orange;
+
+typedef orange yellow;
+
+typedef yellow green;
+
+typedef green blue;
+
+typedef blue indigo;
+
+typedef indigo violet;
+
+typedef violet color;
+
+int color_to_color(color *c)
+{
+  c->color--;
+  violet *v = c;
+  c->color--;
+  indigo *i = v;
+  c->color--;
+  blue *b = i;
+  c->color--;
+  green *g = b;
+  c->color--;
+  yellow *y = g;
+  c->color--;
+  orange *o = y;
+  c->color--;
+  red *r = y;
+  c->color--;
+  return b->color;
+}
+
+int main()
+{
+  struct red *c = alloc(red);
+  return color_to_color(c);
+}

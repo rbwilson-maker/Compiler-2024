@@ -1,0 +1,50 @@
+//test return 65536
+// Very slow addition, multiplication, exponentiation, and tetration
+
+int sign(int x) {
+  return x > 0 ? 1 : -1;
+}
+
+int add(int x, int y) {
+  int delta = sign(y);
+  while (y != 0) {
+    x += delta;
+    y -= delta;
+  }
+  return x;
+}
+
+int mul(int x, int y) {
+  int res = 0;
+  int delta = sign(y);
+  x = delta > 0 ? x : -x;
+  while (y != 0) {
+    res = add(x, res);
+    y -= delta;
+  }
+  return res;
+}
+
+int exp(int x, int y) {
+  int res = 1;
+  int delta = sign(y);
+  while (y != 0) {
+    res = mul(x, res);
+    y -= delta;
+  }
+  return res;
+}
+
+int tet(int x, int y) {
+  int res = 1;
+  int delta = sign(y);
+  while (y != 0) {
+    res = exp(x, res);
+    y -= delta;
+  }
+  return res;
+}
+
+int main() {
+  return tet(2, 4);
+}

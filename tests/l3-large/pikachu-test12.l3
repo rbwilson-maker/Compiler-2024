@@ -1,0 +1,13 @@
+//test error
+// test mismatching functions in header/compiled code
+
+int random()
+{
+  return 2; // randomly decided by toss of die
+}
+
+int main()
+{
+  int x = random();
+  return x;
+}

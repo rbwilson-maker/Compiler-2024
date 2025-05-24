@@ -1,0 +1,11 @@
+//test error
+// Equality on different types
+
+int main() {
+  int x = 10;
+  bool test = (x == x);
+
+  if (test == x) return 1;
+
+  return 0;
+}

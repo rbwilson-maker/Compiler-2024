@@ -1,0 +1,18 @@
+//test error
+/*
+Compile error.
+Cannot assign functions.
+*/
+
+int c(int r) {
+  return r + 1;
+}
+
+int d(int r) {
+  return r + 2
+}
+
+int main() {
+  c = d;
+  return 3;
+}

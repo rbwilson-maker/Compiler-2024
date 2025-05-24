@@ -1,0 +1,18 @@
+//test return 27
+
+int main() {
+    int result = 0;
+
+    /**
+     * test if there's a if-else mismatch
+     */
+
+    for ( int x = 0; x < 10; x++ ) {
+        if (x % 2 == 0)
+            if (x % 3 == 0)
+                result += 6;
+        else result += 5;
+    }
+
+    return result;
+}

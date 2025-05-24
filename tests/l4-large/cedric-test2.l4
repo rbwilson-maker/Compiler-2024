@@ -1,0 +1,53 @@
+//test return 8086
+bool is_sorted(int[] x, int len)
+{
+    for (int i = 0; i < len - 1; i++)
+    {
+        if (x[i+1] < x[i]) return false;
+    }
+    return true;
+}
+
+void swap(int[] x, int i, int j)
+{
+    int t = x[i];
+    x[i] = x[j];
+    x[j] = t;
+}
+
+int min(int y, int x)
+{
+    if (x<=y) return x;
+    else return y;
+}
+void selection_sort(int[] x, int len)
+{
+    for (int i = 0; i < len; i++)
+    {
+        int mini = x[i]; 
+        int index = i;
+        for (int j = i ; j < len; j++)
+        {
+            if (x[j] < mini) index = j;
+            mini = min(mini,x[j]);
+        }
+        swap(x,i,index);
+    }
+
+}
+
+
+int main()
+{
+    int[] x = alloc_array(int,5);
+    x[0] = 3;
+    x[1] = 7;
+    x[2] = 0;
+    x[3] = 4;
+    x[4] = 9;
+    selection_sort(x,5);
+    assert(is_sorted(x,5));
+
+    return 8086;
+
+}

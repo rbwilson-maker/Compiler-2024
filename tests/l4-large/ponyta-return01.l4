@@ -1,0 +1,13 @@
+//test return 9
+
+int main() {
+    int[] a;
+    int[] b;
+    a = alloc_array(int, 42);
+    b = alloc_array(int, 42);
+    a[b[0]] = 30;
+    b[15*2] = 7;
+    a[b[a[b[0]]]] = 9;
+
+    return a[7];
+}

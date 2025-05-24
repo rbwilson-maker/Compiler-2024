@@ -1,0 +1,15 @@
+//test error
+//what is foo?
+
+int foo();
+
+int main() {
+  if (false) {
+    main();
+  }
+  int n = 0;
+  if (false) {
+    foo();
+  }
+  return 0;
+}

@@ -1,0 +1,17 @@
+//test abort
+
+void add(int *dst, int a, int b) {
+    *dst = a + b;
+}
+
+int main() {
+    int x = 15000;
+    int y = 411;
+
+    int *d = alloc(int);
+    *d = 10;
+    add(d, x, y);
+
+    assert(*d == 10);
+    return(0);
+}

@@ -1,0 +1,21 @@
+//test return 20
+
+int f2 (int x, int y);
+
+int f1 (int x, int y)
+{
+	if (x == 0)
+		return y;
+	else
+		return f2(x-1, y-1);
+}
+
+int f2 (int x, int y)
+{
+	return f1(y,x);
+}
+
+int main()
+{
+	return f1(20,40);
+}

@@ -1,0 +1,27 @@
+//test return 8
+
+// operations on an array of pointers to structs
+
+struct package {
+    bool international;
+    int height;
+    int width;
+    int depth;
+};
+
+typedef struct package box ;
+
+int main () {
+    box * [] arr = alloc_array(box *, 100) ;
+    int i = 0 ;
+    while (i<3 ) {
+       arr[i] = alloc(box) ;
+       arr[i]->height = i*4;
+       arr[i]->width = i*3;
+       arr[i]->depth = i*2;
+       arr[i]->international = true;
+       i++ ;
+    }
+
+    return (*arr[2]).height ;
+}

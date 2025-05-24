@@ -1,0 +1,17 @@
+//test memerror
+
+int fail() {
+    assert(false);
+    return 8;
+}
+
+int dereference_null() {
+    int **x = alloc(int *);
+    x = NULL;
+    **x = fail();
+    return **x;
+}
+
+int main() {
+    return dereference_null();
+}

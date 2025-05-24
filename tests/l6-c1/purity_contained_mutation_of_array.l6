@@ -1,0 +1,24 @@
+//test return 0
+
+void mutate_array() {
+    int[] xs = alloc_array(int, 1);
+    xs[0] = 10;
+}
+
+bool check(int[] xs) {
+    mutate_array();
+    return xs[0] == xs[1];
+}
+
+int[] make_array()
+/*@ ensures check(\result)
+        && \result[0] == 0 && \result[1] == 0
+        && \length(\result) == 2;
+ @*/
+{
+    return alloc_array(int, 2);
+}
+
+int main() {
+    return make_array()[0];
+}

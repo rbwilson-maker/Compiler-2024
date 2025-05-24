@@ -1,0 +1,16 @@
+//test memerror
+
+struct hi
+{
+  int a;
+};
+
+int main()
+{
+    struct hi* [] hey;
+    hey = alloc_array(struct hi *, 1000);
+    hey[500];
+    hey[500]->a = 5;
+    return hey[500]->a;
+}
+

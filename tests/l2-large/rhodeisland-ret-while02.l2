@@ -1,0 +1,25 @@
+//test return 660
+
+int main()
+{
+    int n;
+    int ret;
+    int i;
+
+    n = 10;
+    ret = 0;
+    i = 0;
+    while (i <= n) {
+        int m = 10;
+        int j = 0;
+        while (j <= 10)
+        {
+            ret += j;
+            j = j + 1;
+        }
+
+        ret += i;
+        i += 1;
+    }
+    return ret;
+}

@@ -1,0 +1,19 @@
+//test div-by-zero
+
+bool foo(int x);
+
+int main() {
+    int x = 1;
+    for (int i = 0; i < 64; i++) {
+        x <<= foo(i) ? 0 : i;
+    }
+
+    return x;
+}
+
+bool foo(int x) {
+    bool b1 = x < 0;
+    bool b2 = x > 0 && x < 128;
+
+    return !(b1 || !b1);
+}

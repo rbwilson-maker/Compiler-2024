@@ -1,0 +1,15 @@
+//test error
+
+typedef bool unit_option;
+
+// Negative numbers aren't real
+typedef int unit_list;
+
+unit_option unit_option(unit_option unit_option) {
+    return unit_option;
+}
+
+unit_list main() {
+    unit_list unit_list = 1;
+    return unit_list;
+}

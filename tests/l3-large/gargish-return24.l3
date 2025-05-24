@@ -1,0 +1,17 @@
+//test return 0
+
+void fun (int a, bool flag) {
+    if (flag) {
+        a = a + 1;
+        return;
+    }
+    a = a - 1;
+    // implicit return
+}
+
+int main () {
+    fun(1, true);
+    fun(1, false);
+    fun(4, true);
+    return 0;
+}

@@ -1,0 +1,6 @@
+//test return 5
+int main(){{{
+	{if(true){} else {}}
+	{while(false){}}
+	{{{{return 5;}}}}
+}}}

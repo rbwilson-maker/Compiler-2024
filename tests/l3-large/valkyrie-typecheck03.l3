@@ -1,0 +1,13 @@
+//test typecheck
+
+int main(){
+	bar();
+	return 0;
+}
+
+num foo(int x){
+	if(x == 0){
+		return 1;
+	}
+	return foo(2 * foo(x - 1));
+}

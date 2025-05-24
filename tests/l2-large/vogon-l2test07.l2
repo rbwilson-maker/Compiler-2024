@@ -1,0 +1,12 @@
+//test return -969831325
+
+int main() { 
+  int x = -1212983742;
+  int y = 32;
+  int k = 1;
+  while (k < 23234) {
+    x = x * y + 3;
+    k <<= 2;
+  }
+  return x;
+}

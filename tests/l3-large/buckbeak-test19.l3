@@ -1,0 +1,10 @@
+//test abort
+bool f1 (int a, int target)
+{
+  if (a < target) return f1(a+1, target); else return (a%2==0)?true:false;
+}
+int main()
+{
+  assert(f1(0, 99));
+  return 0;
+}

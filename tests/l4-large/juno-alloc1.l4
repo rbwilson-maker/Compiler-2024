@@ -1,0 +1,17 @@
+//test return 4950
+
+int main() {
+    int*[] arr = alloc_array(int*, 100);
+    for (int i = 0; i < 100; i++) {
+        int *x = alloc(int);
+        *x = i;
+        arr[i] = x;
+    }
+
+    int res = 0;
+    for (int i = 0; i < 100; i++) {
+        res += *arr[i];
+    }
+
+    return res;
+}

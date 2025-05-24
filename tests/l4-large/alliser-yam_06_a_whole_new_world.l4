@@ -1,0 +1,11 @@
+//test div-by-zero
+
+// I'm history! No, I'm mythology! Nah, I don't care what I am. I'm free-hee!
+//the basic testcase in lecture note 15.5
+
+int main(){
+  int* I_can_show_you_the_world = NULL;
+  *I_can_show_you_the_world = 1/0;
+  return *I_can_show_you_the_world;
+}
+

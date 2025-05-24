@@ -1,0 +1,8 @@
+//test error
+
+int alt_main();
+
+int main() {
+    int a = 1;
+    return ((a + a) - (a + a)) / alt_main();
+}

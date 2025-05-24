@@ -1,0 +1,14 @@
+//test return -1
+
+//buggy calculates the 10th triangle number iteratively
+
+int main(){
+    int i = 0;
+    int k = ~ 0 >> 29;
+    while(k > 0){
+     int j = (i >= 10) ? 1 : 0;
+     k--;
+     i+=j;
+    }
+    return k;
+}

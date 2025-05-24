@@ -1,0 +1,27 @@
+//test return 0
+
+int collatz(int i)
+//@requires i > 0;
+{
+  if (i == 1) {
+    return 1;
+  }
+  if (i % 2 == 0) {
+    return collatz(i / 2);
+  } else {
+    return collatz(3 * i + 1);
+  }
+}
+
+int checkForOne(int i)
+//@ensures \result == 1;
+{
+  return collatz(i);
+}
+
+int main() {
+  for (int i = 5; i < 42; i++) {
+    checkForOne(i);
+  }
+  return 0;
+}

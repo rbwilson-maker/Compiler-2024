@@ -1,0 +1,84 @@
+//test return 1362469773
+// A hashing algorithm loosely based on MD5. Not cryptographically secure.
+
+int leftrotate(int x, int c) {
+	c = c % 32;
+	if (c == 0) {
+		return x;
+	} else {
+		return (x << c) | ((x >> (32 - c)) & ~(0x80000000 >> (32 - c)));
+	}
+}
+
+int hash_block(int m0, int m1, int m2, int m3) {
+	int s0 = 7;
+	int s1 = 12;
+	int s2 = 17;
+	int s3 = 22;
+
+	int k0 = 0xd76aa478;
+	int k1 = 0xe8c7b756;
+	int k2 = 0x242070db;
+	int k3 = 0xc1bdceee;
+
+	int a0 = 0x67452301;
+	int b0 = 0xefcdab89;
+	int c0 = 0x98badcfe;
+	int d0 = 0x10325476;
+
+	int A = a0;
+	int B = b0;
+	int C = c0;
+	int D = d0;
+
+	for (int i = 0; i < 4; i++) {
+		int F = (B & C) | ((~B) & D);
+		if (i == 0) {
+			F = F + A + k0 + m0;
+		} else if (i == 1) {
+			F = F + A + k1 + m1;
+		} else if (i == 2) {
+			F = F + A + k2 + m2;
+		} else if (i == 3) {
+			F = F + A + k3 + m3;
+		}
+		A = D;
+		D = C;
+		C = B;
+		if (i == 0) {
+			B = B + leftrotate(F, s0);
+		} else if (i == 1) {
+			B = B + leftrotate(F, s1);
+		} else if (i == 2) {
+			B = B + leftrotate(F, s2);
+		} else if (i == 3) {
+			B = B + leftrotate(F, s3);
+		}
+	}
+
+	a0 = a0 + A;
+	b0 = b0 + B;
+	c0 = c0 + C;
+	d0 = d0 + D;
+
+	return a0 ^ b0 ^ c0 ^ d0;
+}
+
+int hash_message(int m0, int m1, int m2, int m3,
+	int m4, int m5, int m6, int m7,
+	int m8, int m9, int m10, int m11,
+	int m12, int m13, int m14, int m15) {
+
+	return hash_block(m0, m1, m2, m3) ^
+		hash_block(m4, m5, m6, m7) ^
+		hash_block(m8, m9, m10, m11) ^
+		hash_block(m12, m13, m14, m15);
+}
+
+int main() {
+	int hash = hash_message(0xf57c0faf, 0x4787c62a, 0xa8304613, 0xfd469501,
+		0x698098d8, 0x8b44f7af, 0xffff5bb1, 0x895cd7be,
+		0x6b901122, 0xfd987193, 0xa679438e, 0x49b40821,
+		0xf61e2562, 0xc040b340, 0x265e5a51, 0xe9b6c7ab);
+	return hash;
+}

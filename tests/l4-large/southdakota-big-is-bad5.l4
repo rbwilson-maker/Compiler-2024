@@ -1,0 +1,14 @@
+//test error
+
+struct biiiiiiiig {
+  int so;
+  int very;
+  int large;
+};
+
+int main() {
+  bool x = true;
+  struct biiiiiiiig big1;
+  struct biiiiiiiig big2;
+  return (x ? big1 : big2).large;
+}

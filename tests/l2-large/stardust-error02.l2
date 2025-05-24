@@ -1,0 +1,13 @@
+//test error
+//variable use out of scope
+
+int main()
+{
+	bool b = true
+	for(int i=0; i<273894; i++){
+		for(int j=0; j<239634; j++) {
+			b = !b;
+		}
+	}
+	return i + j;
+}

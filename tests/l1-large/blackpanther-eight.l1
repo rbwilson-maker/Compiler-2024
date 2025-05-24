@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+	int k = 3 + 4 + 5;
+	int z = k - 1;
+	k = k - z;
+	k = k / (z / z / z);
+	return k;
+}

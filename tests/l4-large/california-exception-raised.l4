@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+    int[] arr = alloc_array(int,100);
+    for(int i = 0; i < 100; i++) {
+        arr[i] = (99-i) * (99-i) / (99 - i);
+    }
+    return arr[0];
+}

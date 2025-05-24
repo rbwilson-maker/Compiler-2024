@@ -1,0 +1,17 @@
+//test return -2147483648
+
+int main() {
+
+  int a_very_big_number = 0x7FFFFFFF;
+
+  /* oh whoa look it's a comment
+  	/* with another comment inside */
+     !!!!
+  */
+
+  int a_much_smaller_number = 1;
+
+  int oh_no_its_overflowing = a_very_big_number + a_much_smaller_number;
+
+  return oh_no_its_overflowing;
+}

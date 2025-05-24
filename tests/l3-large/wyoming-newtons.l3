@@ -1,0 +1,23 @@
+//test return -1082130432
+typedef int float;
+float next(float x){
+	return fsub(x,fdiv(fsub(fmul(fmul(x,x),x),fmul(itof(5),x)),fsub(fmul(itof(3),fmul(x,x)),itof(5))));
+}
+float next2(float x){
+	return next(next(x));
+}
+float next4(float x){
+	return next2(next2(x));
+}
+float next8(float x){
+	return next4(next4(x));
+}
+float next16(float x){
+	return next8(next8(x));
+}
+float next20(float x){
+	return next16(next4(x));
+}
+int main(){
+	return next20(itof(-1));
+}

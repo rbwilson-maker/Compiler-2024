@@ -1,0 +1,12 @@
+//test return 60
+
+int main () {
+  int i = 8;
+  int j = 3;
+  int result = 0;
+  while(i > 0) {
+    result += j * i;
+    i-= 2;
+  }
+  return result;
+}

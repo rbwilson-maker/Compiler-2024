@@ -1,0 +1,31 @@
+//test return 1000000
+// Cube a number and convert to octal inefficiently
+
+int pow(int b, int x) {
+  if (x == 0) {
+    return 1;
+  }
+  return pow(b, x-1) * b;
+}
+
+int octal(int x) {
+  if (x < 8) {
+    return x;
+  }
+  int p = 0;
+  while (x / pow(8, p) >= 8) {
+    p++;
+  }
+  return (x / pow(8, p)) * pow(10, p) + octal(x % (pow(8, p)));
+}
+
+int cube(int x) {
+  return x * x * x;
+}
+
+int main() {
+  int x = 64;
+  x = cube(x);
+  x = octal(x);
+  return x;
+}

@@ -1,0 +1,36 @@
+//test return 5555;
+
+typedef int f;
+
+f ff(f fff);
+
+f ff(f fff) {
+    main();
+    return 12345;
+}
+
+f fff(f ffff);
+
+f fff(f ffff) {
+    main();
+    main();
+    return 123456789;
+}
+
+f main() {
+	f ffff = 55555;
+    if (ffff % 17 == 0) {
+        ff(ffff);
+    }
+    else {
+        if (ffff % 19 == 0) {
+            fff(ffff);
+        }
+        else {
+            if (ffff % 41 == 0) {
+                ffff /= 10;
+            }
+        }
+    }
+	return ffff;
+}

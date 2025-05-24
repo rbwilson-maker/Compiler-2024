@@ -1,0 +1,8 @@
+//test div-by-zero
+
+typedef int clint;
+
+int main() {
+  1 / *(alloc(clint));
+  return 0;
+}

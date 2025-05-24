@@ -1,0 +1,35 @@
+//test return 350
+//computes the number of steps in the collatz sequence in a round about manner
+
+struct state{
+    int n;
+    int steps;
+};
+
+
+void step(struct state* s);
+void even(struct state* s){
+    s->n /= 2;
+    step(s);
+}
+void odd(struct state* s){
+    s->n *= 3;
+    s->n += 1;
+    step(s);
+}
+void step(struct state* s){
+    if (s->n == 1){return;}
+    s->steps++;
+    if (s->n % 2 == 0){even(s);}
+    else{ odd(s);}
+}
+
+int main(){
+
+    struct state *s =alloc(struct state);
+    // most steps for n under 100k
+    s->n=77031;
+    step(s);
+    return s->steps;
+
+}

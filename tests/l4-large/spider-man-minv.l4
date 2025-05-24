@@ -1,0 +1,17 @@
+//test return 807
+
+// cp code for generating modular inverse
+int[] gen_inv() {
+    int m = 2017;
+    int[] invs = alloc_array(int, m+1);
+    invs[1] = 1;
+    for (int i = 2; i <= m; i += 1) {
+        invs[i] = m - (m/i) * invs[m % i] % m;
+    }
+    return invs;
+}
+
+int main() {
+    int[] invs = gen_inv();
+    return invs[5];
+}

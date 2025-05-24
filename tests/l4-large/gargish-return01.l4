@@ -1,0 +1,12 @@
+//test return 0
+
+// t is undefined
+struct s {
+    int x;
+    struct t* y;
+};
+
+int main() {
+    struct s* x = alloc(struct s);
+    return x->x;
+}

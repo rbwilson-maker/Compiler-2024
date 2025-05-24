@@ -1,0 +1,11 @@
+//test error
+
+int main () {
+    while (false)
+        return -1;
+    while (true)
+        return 0;
+    return 0;
+    { x--; }
+    return 0;
+}

@@ -1,0 +1,11 @@
+//test return 7
+
+typedef int a;
+
+a sum(int x, int y) {
+  return x + y;
+}
+
+a main() {
+  return sum(3,4);
+}

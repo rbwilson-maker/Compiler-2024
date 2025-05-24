@@ -1,0 +1,10 @@
+//test typecheck
+// struct multiple declarations of same name
+
+struct mystruct;
+struct mystruct;
+struct mystruct;
+
+int main(){
+  return 0;
+}

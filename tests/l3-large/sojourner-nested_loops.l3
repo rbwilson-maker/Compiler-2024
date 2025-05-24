@@ -1,0 +1,45 @@
+//test return 0
+
+//this is symmetric so the final result will be 0
+int calc(int x, int y, int z) {
+    return (x-y) * (x-z) * (y-z);
+}
+
+int loop(int depth) {
+  int accum = 0;
+  for (int a = 1; a < depth; a++) {
+    if (a > 5) {
+        for (int b = 1; b < depth; b++) {
+          for (int c = 1; c < depth; c++) {
+            accum += calc(a, b, c);
+          }
+        }
+    }
+    else {
+        if (a > 3) {
+            for (int b = 1; b < depth; b++) {
+              for (int c = 1; c < depth; c++) {
+                accum += 5 * calc(a, b, c);
+              }
+            }
+        }
+        else {
+            for (int b = 1; b < depth; b++) {
+              for (int c = 1; c < depth; c++) {
+                accum += 2 * calc(a, b, c);
+              }
+            }
+        }
+    }
+    
+  }
+  return accum;
+}
+
+int main() {
+  int res = 0; 
+  for(int i = 1; i < 50; i++) {
+    res += loop(i);
+  } 
+  return res;
+}

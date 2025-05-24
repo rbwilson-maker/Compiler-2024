@@ -1,0 +1,22 @@
+//test return 0
+
+/* shift arithmetic Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ *
+ * Uses shift and test if it's shifting arithmetically. 
+ */
+
+int main()
+{
+    int x = 0x80000000; 
+    int y = 31; 
+    int min = x; 
+
+    x = x >> y; 
+    x += 2;
+
+    int z = (x == 0) ? min : 0x7fffffff; 
+    return (z >> y);
+}

@@ -1,0 +1,15 @@
+//test error
+int main()
+{
+	int x = 1;
+	{	
+		if (false) {
+			int x = 500;
+		};
+		while (false) {
+			int x = 5;
+		}
+		{{}}
+	}
+	return x;
+}

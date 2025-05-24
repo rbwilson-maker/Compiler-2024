@@ -1,0 +1,20 @@
+//test memerror
+
+int f1(){
+    return 6;
+}
+
+int f2(){
+    return 0;
+}
+
+int f3(){
+    return -7;
+}
+
+int main(){
+    int[] a1 = alloc_array(int, f1());
+    int[] a2 = alloc_array(int, f2());
+    int[] a3 = alloc_array(int, f3());
+    return 0;
+}

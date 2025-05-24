@@ -1,0 +1,11 @@
+//test return 2
+// test reassignment of variables
+int main() {
+    int x = 10;
+    x *= 5;
+    x -= 8;
+    x /= 6;
+    x += 19;
+    x %= 4;
+    return x;
+}

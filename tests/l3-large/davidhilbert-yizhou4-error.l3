@@ -1,0 +1,9 @@
+//test error
+
+int arg_err(int x) {
+  return x*2;
+}
+
+int main () {
+  return arg_err(1,2,3);
+}

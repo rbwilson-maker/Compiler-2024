@@ -1,0 +1,25 @@
+//test return 15150
+
+void set(int[] map, int length, int key, int val) {
+    map[key % length] = val;
+    return; 
+    // who needs to keep track of dupes? not the terrible map! 
+}
+int get(int[] map, int length, int key) {
+    return map[key % length]; 
+    // hash collisions? what are those? 
+}
+
+int main() {
+    int len = 100;
+    int[] map = alloc_array(int, len);
+    set(map, len, 110, 15210); 
+    set(map, len, 10, 15150); 
+    set(map, len, 20, 15122); 
+    set(map, len, 30, 15151); 
+    set(map, len, 32, 15112); 
+    set(map, len, 12, 15251); 
+    set(map, len, 21342, 15213); 
+
+    return get(map, len, 110); 
+}

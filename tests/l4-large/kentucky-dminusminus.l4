@@ -1,0 +1,14 @@
+//test error
+
+int main() {
+
+int *d = alloc(int);
+
+*d = 5;
+
+*d--;
+
+return 0;
+
+
+}

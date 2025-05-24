@@ -1,0 +1,33 @@
+//test return 9
+
+void puupuu();
+
+void paapaa(int i) {
+  i;
+  return;
+  paapaa(i);
+}
+
+int peepee(int i) {
+  paapaa(i);
+  return i * i;
+}
+
+int poopoo() {
+  puupuu();
+  return peepee(3);
+}
+
+void puupuu() {}
+
+int main() {
+  paapaa(1);
+  paapaa(peepee(1));
+  paapaa(poopoo());
+  peepee(1);
+  peepee(peepee(1));
+  peepee(poopoo());
+  poopoo();
+  puupuu();
+  return poopoo();
+}

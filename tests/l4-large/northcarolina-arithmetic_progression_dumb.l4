@@ -1,0 +1,46 @@
+//test return 66
+//Computes a pseudorandom array, then finds the length of the longest arithmetic
+//progression contained in that array
+//Not an evil test.  Really.  North Carolina is a reasonable-ish place.
+//Come to the South.  We have cookies.  And butter.
+int randomize(int seed, int A, int B, int max) {
+  int C = seed * A;
+  C = (C % 7) < 4 ? A*C + B : B*C - A;
+  C++;
+  C = (C % 9) < 5 ? C + 1 : C;
+  return C > 0 ? ((C + 3) % max) + 1 : ((-C) % max) + 1;
+}
+
+int best_from(int[] input, int i, int j, int length) {
+  int offset = input[j] - input[i];
+  int max = 2;
+  for (int k = j+1; k < length; k++)
+    if (((input[k] - input[i]) % offset) == 0)
+      max++;
+  return max;
+}
+
+int main () {
+  // First we build a strictly increasing array
+  int[] input_arr = alloc_array(int, 100);
+  int seed = 10;
+  int randomA = 4;
+  int randomB = 3;
+  int max = 15;
+  int lastval = 0;
+  for (int i = 0; i < 100; i++) {
+    seed = randomize(seed, randomA, randomB, max);
+    lastval = lastval + seed;
+    input_arr[i] = lastval;
+  }
+  // Now we find the length of the longest arithmetic progression
+  int retval = 0;
+  for (int i = 0; i < 100; i++) {
+    for (int j = i + 1; j < 100; j++) {
+      if (best_from(input_arr, i, j, 100) > retval)
+        retval = best_from(input_arr, i, j, 100);
+    }
+  }
+  return retval;
+}
+

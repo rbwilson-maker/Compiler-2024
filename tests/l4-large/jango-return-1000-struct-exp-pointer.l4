@@ -1,0 +1,16 @@
+//test return 10000
+
+struct integer {
+  int *fieldInt;
+};
+
+int main() {
+  struct integer *a = alloc(struct integer);
+  a->fieldInt = alloc(int);
+  *(a->fieldInt) = 10;
+  for (int i = 0; i < 3; i++) {
+    *(a->fieldInt) *= 10;
+  }
+
+  return *(a->fieldInt);
+}

@@ -1,0 +1,28 @@
+//test return 1
+// implement sqrt using recursion and binary search
+
+int recursive_sqrt(int x, int h, int l);
+
+int main() {
+	return recursive_sqrt(99 * 99, 99 * 99, 0) - 98;
+}
+
+int recursive_sqrt(int x, int high, int low) {
+    if(x <= 1) return x;
+    int mid = (low + high) >> 1;
+    int product = mid*mid;
+    int greater = (mid+1)*(mid+1);
+    if (low <= high) {
+        if((product <= x) && (greater > x)) {
+            return mid;
+        }
+        else if(product > x) {
+            high = mid - 1;
+        }
+        else {
+            low = mid + 1;
+        }
+        mid = recursive_sqrt(x, high, low);
+    }
+    return mid;
+}

@@ -1,0 +1,8 @@
+//test return 2
+// test reuse variable
+int main() {
+	int a;
+	a = 1;
+	a = 2;
+	return a;
+}

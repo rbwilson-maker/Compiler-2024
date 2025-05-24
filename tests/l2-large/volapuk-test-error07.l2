@@ -1,0 +1,19 @@
+//test error
+
+// Declaring a variable that has already been declared
+
+int main() {
+  int j = 85;
+  int u = 85;
+  int n = 135;
+  int g = 105;
+  int l = 100;
+  int e = 100;
+
+  int d = 130;
+  int i = 142;
+  int f = 315;
+  int f = 500;
+
+  return 0;
+}

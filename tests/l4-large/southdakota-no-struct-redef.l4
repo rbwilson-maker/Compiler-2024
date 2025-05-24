@@ -1,0 +1,16 @@
+//test error
+
+struct pickled {
+	int eggs;
+};
+
+struct pickled {
+	int eggs;
+};
+
+int main() {
+	struct pickled * p = alloc(struct pickled);
+	p->eggs = 4;
+	return (*p).eggs;
+}
+

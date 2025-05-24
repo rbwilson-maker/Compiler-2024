@@ -1,0 +1,45 @@
+//test return 20
+typedef struct list_node list;
+struct list_node {
+  int data;
+  list* next;
+};
+
+typedef struct queue_header queue;
+struct queue_header {
+  list* front;
+  list* back;
+};
+
+queue* queue_new()
+{
+  queue* Q = alloc(queue);
+  list* l = alloc(list);
+  Q->front = l;
+  Q->back = l;
+  return Q;
+}
+
+void enq(queue* Q, int s)
+{
+  list* l = alloc(list);
+  Q->back->data = s;
+  Q->back->next = l;
+  Q->back = l;
+  return;
+}
+
+int deq(queue* Q)
+{
+  int s = Q->front->data;
+  Q->front = Q->front->next;
+  return s;
+}
+
+int main() {
+	queue* q = queue_new();
+	enq(q, 10);
+	enq(q, 20);
+	deq(q);
+	return deq(q);
+}

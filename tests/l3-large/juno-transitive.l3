@@ -1,0 +1,10 @@
+//test abort
+
+typedef int Integer;
+typedef Integer Boolean;
+
+Boolean main() {
+    assert(false);
+
+    return 1;
+}

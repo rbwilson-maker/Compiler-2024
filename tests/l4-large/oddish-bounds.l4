@@ -1,0 +1,30 @@
+//test memerror
+
+int[][] transpose(int[][] M, int n, int m) {
+  int[][] out = alloc_array(int[], m);
+  for (int i=0; i < n; i++)
+    out[i] = alloc_array(int, n);
+
+  for (int i=0; i < m; i++) {
+    for (int j=0; j < n; j++) {
+      out[i][j] = M[j][i];
+    }
+  }
+
+  return out;
+}
+
+int main() {
+  int[][] M = alloc_array(int[], 5);
+  
+  for (int i=0; i < 500; i++) {
+    M[i] = alloc_array(int, i);
+
+    for (int j=0; j < i; j++)
+      M[i][j] = i - j;
+  }
+
+  transpose(M, 500, 500);
+
+  return 0;
+}

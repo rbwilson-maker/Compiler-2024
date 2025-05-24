@@ -1,0 +1,76 @@
+//test return -487732
+
+// generate random points, find bounding box
+
+struct point {
+  int x;
+  int y;
+};
+
+typedef struct point point;
+
+struct box {
+  point top_left;
+  point bottom_right;
+};
+
+typedef struct box box;
+
+typedef int rand;
+
+rand init_random() {
+  return 0xDEAD;
+}
+
+rand next_random(rand n) {
+  return (n * 1103515245 + 12345) % 0x7FFFFFFF;
+}
+
+void generate_points(point[] pts, int len) {
+  rand seed = init_random();
+  for (int i=0; i<len; i++) {
+    seed = next_random(seed);
+    pts[i].x = seed;
+    seed = next_random(seed);
+    pts[i].y = seed;
+  }
+}
+
+box* get_bounding_box(point[] pts, int len) {
+  box *bbox = alloc(box);
+
+  point *top_left = alloc(point);
+  top_left->x = pts[0].x;
+  top_left->y = pts[0].y;
+
+  point *bottom_right = alloc(point);
+  bottom_right->x = pts[0].x;
+  bottom_right->y = pts[0].y;
+
+  for (int i=0; i<len; i++) {
+    if (pts[i].x < top_left->x || (pts[i].x == top_left->x && pts[i].y < top_left->y)) {
+      top_left->x = pts[i].x;
+      top_left->y = pts[i].y;
+    }
+    if (pts[i].x > bottom_right->x || (pts[i].x == bottom_right->x && pts[i].y > bottom_right->y)) {
+      bottom_right->x = pts[i].x;
+      bottom_right->y = pts[i].y;
+    }
+  }
+
+  bbox->top_left.x = top_left->x;
+  bbox->top_left.y = top_left->y;
+  bbox->bottom_right.x = bottom_right->x;
+  bbox->bottom_right.y = bottom_right->y;
+
+  return bbox;
+}
+
+int main() {
+  point[] points = alloc_array(point, 10000);
+  generate_points(points, 10000);
+
+  box *bbox = get_bounding_box(points, 10000);
+
+  return (bbox->bottom_right.x) - (bbox->top_left.x);
+}

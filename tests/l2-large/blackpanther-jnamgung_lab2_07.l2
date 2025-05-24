@@ -1,0 +1,11 @@
+//test return 15
+
+int main() {
+	int temp = 1;
+	while (true)
+	{
+		temp++;
+		if (temp == 15) return temp;
+	}
+	return 0;
+}

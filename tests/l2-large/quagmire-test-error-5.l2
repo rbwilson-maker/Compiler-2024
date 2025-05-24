@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+    bool a = true;
+    int b = 1;
+    bool c = false;
+
+    if (a || b && c)
+        return 1;
+    return 0;
+}

@@ -1,0 +1,11 @@
+//test typecheck
+// function that divides by zero, but typechecks
+
+int div_by_zero() {
+    return 1/0;
+}
+
+int main() {
+    int result = div_by_zero();
+    return result;
+}

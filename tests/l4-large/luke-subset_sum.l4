@@ -1,0 +1,76 @@
+//test return 15411
+
+typedef int size_t;
+
+/*
+ * Recursive subset-sum algorithm. Made a bit trickier by C0's lack of
+ * pointer--array duality, so is a bit more like O(n 2^n) than O(2^n).
+ */
+bool[] *subset_sum(int[] xs, size_t n_xs, int target) {
+    bool any_nonzero = false;
+    for (int i = 0; !any_nonzero && i < n_xs; i++) {
+        if (xs[i] != 0) {
+            any_nonzero = true;
+            int old_xi = xs[i];
+            xs[i] = 0;
+            bool[] *without_xi = subset_sum(xs, n_xs, target);
+            if (without_xi != NULL) {
+                bool[] *result = without_xi;
+                xs[i] = old_xi;
+                (*result)[i] = true;
+                return result;
+            } else {
+                bool[] *with_xi = subset_sum(xs, n_xs, target - old_xi);
+                if (with_xi != NULL) {
+                    bool[] *result = with_xi;
+                    xs[i] = old_xi;
+                    (*result)[i] = false;  // redundant; just for emphasis
+                    return result;
+                }
+            }
+            xs[i] = old_xi;
+        }
+    }
+    if (target == 0 && !any_nonzero) {
+        bool[] *result = alloc(bool[]);
+        *result = alloc_array(bool, n_xs);
+        for (int i = 0; i < n_xs; i++) {
+            (*result)[i] = false;
+        }
+        return result;
+    } else {
+        return NULL;
+    }
+}
+
+void test(int[] xs, size_t n_xs, int target, int expected_mask) {
+    bool[] *result = subset_sum(xs, n_xs, target);
+    if (expected_mask < 0) {
+        assert(result == NULL);
+    } else {
+        assert(result != NULL);
+        bool[] result_array = *result;
+        for (int i = 0; i < n_xs; i++) {
+            assert(result_array[i] == (((expected_mask >> i) & 1) == 0));
+        }
+    }
+}
+
+int main() {
+    int[] xs = alloc_array(int, 10);
+    xs[0] = 7;
+    xs[1] = 169;
+    xs[2] = 98;
+    xs[3] = 76;
+    xs[4] = 106;
+    xs[5] = 18;
+    xs[6] = 26;
+    xs[7] = 244;
+    xs[8] = 58;
+    xs[9] = 172;
+    int target = 169 + 244 + 58;
+    test(xs, 10, 169 + 244 + 58, (1 << 1) | (1 << 7) | (1 << 8));
+    test(xs, 10, 3, -1);
+    test(xs, 10, 0, 0);
+    return 15411;
+}

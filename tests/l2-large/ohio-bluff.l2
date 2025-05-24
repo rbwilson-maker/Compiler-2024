@@ -1,0 +1,14 @@
+//test div-by-zero
+int main() {
+  int result = 81;
+  if (result > 0) {
+    result /= 9;
+  }
+  if (result > 81) {
+    result /= 0;
+  }
+  if (result > 0) {
+    result /= 0;
+  }
+  return result;
+}

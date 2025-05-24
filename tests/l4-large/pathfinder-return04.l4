@@ -1,0 +1,27 @@
+//test return 169
+
+int main() {
+    int []initial_array = alloc_array(int, 10);
+    initial_array[0] = 5;
+    initial_array[1] = 10;
+    initial_array[2] = 18;
+    initial_array[3] = 32;
+    initial_array[4] = 14;
+    initial_array[5] = 15;
+    initial_array[6] = 3;
+    initial_array[7] = 62;
+    initial_array[8] = 5;
+    initial_array[9] = 5;
+
+    int []copied_array = alloc_array(int, 15);
+    for (int i = 0; i < 10; i++) {
+        copied_array[i] = initial_array[i];
+    }
+
+    int sum = 0;
+    for (int i = 0; i < 15; i++) {
+        sum += copied_array[i];
+    }
+
+    return sum;
+}

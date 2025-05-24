@@ -1,0 +1,19 @@
+//test abort
+//function names and variable names can be the same
+
+bool is_this_allowed(bool is_this_allowed)
+{
+  return !is_this_allowed;
+}
+
+int main()
+{
+  int main = 6;
+  if(is_this_allowed(false))
+  {
+    assert(!is_this_allowed(false) || is_this_allowed(is_this_allowed(false)));
+    return 24;
+  }
+  else
+    return 0;
+}

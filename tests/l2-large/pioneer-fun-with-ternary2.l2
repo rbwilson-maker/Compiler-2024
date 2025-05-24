@@ -1,0 +1,7 @@
+//test return 1
+
+int main()
+{
+  int x = 0;
+  return x == -1 ? 0 : (x < 15 ? 1 : 2);
+}

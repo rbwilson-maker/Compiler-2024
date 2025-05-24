@@ -1,0 +1,12 @@
+//test return 500
+
+// Tests integer operators including subtracting a negative number
+
+int main() {
+    int i;
+    i = 1380;
+    i = i - 1350;
+    i = i - -1820;
+    i = i - 1350;
+    return i;
+}

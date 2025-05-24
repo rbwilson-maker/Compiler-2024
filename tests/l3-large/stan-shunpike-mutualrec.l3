@@ -1,0 +1,23 @@
+//test return 1
+
+int abs(int x);
+bool even(int x);
+bool odd(int x);
+
+int abs(int x) {
+    return (x >= 0) ? x : -x;
+}
+
+bool even(int x) {
+    if (x == 0) return true;
+    return odd(abs(x) - 1);
+}
+
+bool odd(int x) {
+    if (x == 0) return false;
+    return even(abs(x) - 1);
+}
+
+int main() {
+    return odd(-37) ? 1 : 0;
+}

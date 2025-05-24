@@ -1,0 +1,31 @@
+//test typecheck
+//test infloop
+
+struct list_node {
+  int data;
+  struct list_node *next;
+};
+
+typedef struct list_node list;
+
+int main() {
+  // [1, 2, 3, 4]
+  list *list_node1 = alloc(list);
+  list *list_node2 = alloc(list);
+  list *list_node3 = alloc(list);
+  list *list_node4 = alloc(list);
+  list_node1->data = 1;
+  list_node1->next = list_node2;
+  list_node2->data = 2;
+  list_node2->next = list_node3;
+  list_node3->data = 3;
+  list_node3->next = list_node4;
+  list_node4->data = 4;
+  list_node4->next = list_node1;
+
+  int total = 0;
+  for (list *curr = list_node1; curr != NULL; curr = curr->next) {
+    total += curr->data;
+  }
+  return total;
+}

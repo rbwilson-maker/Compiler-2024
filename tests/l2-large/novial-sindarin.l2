@@ -1,0 +1,10 @@
+//test div-by-zero
+// shift by too large a value
+
+int main() {
+  int x = 1;
+  x <<= 4; // OK
+  x >>= 2; // OK
+  x <<= 33428;
+  return 0;
+}

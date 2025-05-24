@@ -1,0 +1,16 @@
+//test return 1234
+// structs may be empty
+// also tests namespacing
+
+struct a {
+};
+
+struct b {
+	struct a a;
+	struct a b;
+	struct a c;
+};
+
+int main() {
+	return 1234;
+}

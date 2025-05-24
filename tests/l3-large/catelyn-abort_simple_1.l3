@@ -1,0 +1,22 @@
+//test abort
+
+int sqrt(int base, int acc)
+{
+	// overflow check
+	assert(acc * acc >= 0);
+
+	if (acc*acc > base)
+	{
+		return sqrt(base, acc - 1);
+	}
+	else if (acc*acc < base)
+	{
+		return sqrt(base, acc + 1);
+	}
+	return acc;
+}
+
+int main()
+{
+	return sqrt(100, 0x3FFFFFFF);
+}

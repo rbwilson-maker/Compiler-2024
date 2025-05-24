@@ -1,0 +1,13 @@
+//test return 4
+
+bool check(int x) {
+    return x != 4;
+}
+
+int main() {
+    int x = 3;
+    while (check(x)) {
+        x++;
+    }
+    return x;
+}

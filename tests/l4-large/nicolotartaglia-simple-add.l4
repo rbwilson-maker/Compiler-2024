@@ -1,0 +1,7 @@
+//test return 3
+typedef int Nt;
+int main() {
+    int *i = alloc(Nt);
+    *i = 3;
+    return *i;
+}

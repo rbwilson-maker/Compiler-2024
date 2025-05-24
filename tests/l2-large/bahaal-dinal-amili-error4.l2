@@ -1,0 +1,9 @@
+//test error
+// variables declared and used after a return statement should still be defined
+
+int main()
+{
+  return 0;
+  int x;
+  return x;
+}

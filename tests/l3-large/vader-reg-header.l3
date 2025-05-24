@@ -1,0 +1,7 @@
+//test return 5
+int main() {
+  fpt frac = itof(10);
+  fpt two = itof(2);
+  frac = fdiv(frac, two);
+  return ftoi(frac);
+}

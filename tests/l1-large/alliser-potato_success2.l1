@@ -1,0 +1,13 @@
+//test return 5
+
+int main() { 
+    int t1 = 1;
+    int t2 = 1;
+    int t3 = t2 + t1; // 2
+    int t4 = t3 + t2; // 3 
+    int t5 = t4 + t3; // 5
+    /* this is a block comment
+        /* woohoo */
+        // whee
+    */
+    return t5; }

@@ -1,0 +1,17 @@
+//test error
+
+// Error: multiple variable declaration
+int main() {
+  int a;
+  int b;
+  int c;
+
+  a = 10 * 2;
+  b = 20 % 3;
+  c = b * 2;
+
+  int b;
+  b = 16 % 3;
+  
+  return a + b + c;
+}

@@ -1,0 +1,22 @@
+//test error
+
+struct bar;
+struct foo {
+  struct bar* a;
+};
+
+struct bar {
+  struct foo* a;
+};
+
+typedef struct bar bar_s;
+typedef struct foo foo_s;
+
+int main() {
+  bar_s * b = alloc(struct bar);
+  foo_s *f = alloc(struct foo);
+  *b.a = f; // need parens here bc precedence 
+  f->a = b;
+  return 0;
+}
+

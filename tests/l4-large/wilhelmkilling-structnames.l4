@@ -1,0 +1,16 @@
+//test error
+
+// this is valid according to the writeup
+struct meow { int meow; };
+
+// What isn't valid?
+
+// Surely this isn't allowed, something about namespaces
+typedef int meow;
+
+// surprisingly enough, function inputs can shadow the function themself
+void meow (int meow) {
+    struct meow *bigMeow = alloc(struct meow);
+    bigMeow -> meow = 3;
+    return bigMeow -> meow;
+}

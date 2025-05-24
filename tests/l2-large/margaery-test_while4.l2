@@ -1,0 +1,42 @@
+//test return 26
+// state machine
+
+int main() {
+
+    int state = 0;
+    int d1 = 60;
+    int d2 = -2 >> 2;
+    int d3 = 256;
+    int res = 0;
+
+    while (state != 3) {
+        if (state == 0) {
+            if (d1 > 12) {
+                res += d1 ^ 0xf;
+                state = 1;
+            } else {
+                res -= d1 ^ 0xf;
+                state = 3;
+            }
+        }
+        if (state == 1) {
+            if (d2 < 0) {
+                res -= d2 >> 12;
+                state = 2;
+            } else {
+                res += d2 >> 12;
+                state = 3;
+            }
+        }
+        if (state == 2) {
+            if (d3 % 356 > 356 / 2) {
+                res >>= 1;
+            } else {
+                res <<= 1;
+            }
+            state = 3;
+        }
+    }
+
+    return res;
+}

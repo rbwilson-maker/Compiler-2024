@@ -1,0 +1,16 @@
+//test return 0
+
+typedef int myint;
+typedef myint another_int;
+
+void unused_function(bool arg1, int arg2);
+// Function signature
+another_int done(myint status, myint another_status);
+
+another_int done(myint status, myint another_status) {
+  return status + another_status;
+}
+
+myint main() {
+  return done(1, -1);
+}

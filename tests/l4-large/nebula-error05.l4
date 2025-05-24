@@ -1,0 +1,11 @@
+//test error 
+
+struct a {
+  int aa;
+};
+
+int main() {
+  struct a *p1;
+  *p1 = alloc(struct a); // lhs of assignment must be a small type
+  return p1->aa;
+}

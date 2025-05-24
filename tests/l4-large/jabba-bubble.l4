@@ -1,0 +1,34 @@
+//test return 10
+//Use bubble sort to return the max element in a list
+
+void swap(int[] a, int i, int j);
+
+void bubbleSort(int[] a, int n) {
+	int end = n;
+	bool swapped = true;
+	while (swapped) {
+		swapped = false;
+		for(int i = 1; i < end; i++) {
+			if (a[i-1] > a[i]) {
+				swap(a, i-1, i);
+				swapped = false;
+			}
+		}
+		end--;
+	}
+}
+
+int main() {
+	int[] a = alloc_array(int, 10);
+	for(int i = 0; i < 10; i++) {
+		a[i] = 10 - i;
+	}
+	bubbleSort(a, 10);
+	return a[9];
+}
+
+void swap(int[] a, int i, int j) {
+	int temp = a[i];
+	a[i] = a[j];
+	a[j] = temp;
+}

@@ -1,0 +1,22 @@
+//test error
+
+typedef int char;
+
+struct string_header {
+    char[] data;
+    int length;
+}
+typedef struct string_header str;
+typedef struct string_header* string;
+string string_new(int size) {
+    string x = alloc(str);
+    str->data = alloc_array(char, size);
+    str->length = size;
+    return str;
+}
+
+
+int main() {
+    string w = string_new(20);
+    return 7;
+}

@@ -1,0 +1,7 @@
+//test typecheck
+
+int main () {
+    assert(collatz(1) == 0);
+    assert(collatz(2) == 1);
+    return collatz(5);
+}

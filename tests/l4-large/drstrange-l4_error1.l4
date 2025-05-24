@@ -1,0 +1,7 @@
+//test error
+/// Pointer arithmetic is not allowed
+
+int main() {
+    int* x = alloc(int);
+    return *(x+1);
+}

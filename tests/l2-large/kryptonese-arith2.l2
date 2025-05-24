@@ -1,0 +1,11 @@
+//test return 12670 
+int main() {
+    int a = 41;
+    int b = a >> 2;
+    int c = b << 3;
+    int d = 294;
+    int e = c ^ d;
+    int f = e | 12412;
+    int g = 122 | f;
+    return g;
+}

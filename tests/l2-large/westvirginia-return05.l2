@@ -1,0 +1,10 @@
+//test return 1
+//check shift operators
+int main () {
+    int x = 31;
+    int y = -987219;
+    
+    int z = (y >> 31) * y * -1;
+    
+    return y == z ? 1 : 0;
+}

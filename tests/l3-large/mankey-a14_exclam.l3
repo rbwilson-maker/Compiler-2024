@@ -1,0 +1,16 @@
+//test error
+//return the void
+
+void bar() {
+  return;
+}
+
+void foo() {
+  return bar();
+}
+
+int main() {
+  bar();
+  foo();
+  return;
+}

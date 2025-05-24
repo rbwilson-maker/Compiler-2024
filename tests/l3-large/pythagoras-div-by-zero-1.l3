@@ -1,0 +1,14 @@
+//test div-by-zero
+typedef int x;
+
+bool divide(int num){
+    int bum = 1/num;
+    bool res = (bum == 1) ? true : false;
+    return res;
+}
+
+int main(){
+    bool result = divide(0);
+    bool result2 = divide(1);
+    return 1;
+}

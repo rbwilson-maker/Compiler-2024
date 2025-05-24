@@ -1,0 +1,15 @@
+//test error
+int main(){
+
+	int x = 5;
+	while (false){
+		while (true){
+			bool x = false;
+			if (x){
+			}
+		}
+	}
+
+	return x;
+
+}

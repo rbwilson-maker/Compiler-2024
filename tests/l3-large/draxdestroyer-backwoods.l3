@@ -1,0 +1,29 @@
+//test return 1496 
+
+int recur(int i);
+
+int tual(int i) {
+    return 2 * i + recur(i);
+}
+
+
+int mut(int i) {
+    return 3 * i + tual(i);
+}
+
+int sion(int i) {
+    if (i == 0) {
+        return 0;
+    }
+    return 5 * i + mut(i-1);
+}
+
+
+int recur(int i) {
+    return i + sion(i);
+}
+
+
+int main() {
+    return mut(16);
+}

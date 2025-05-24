@@ -1,0 +1,14 @@
+//test typecheck
+
+
+int main() {
+  int hi = urk(true);
+  bool murky = murk();
+  if (murky) {
+    transduction(12312);
+  } else {
+    transduction(543245);
+  }
+  return hi*122121;
+}
+

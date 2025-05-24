@@ -1,0 +1,16 @@
+//test error
+// Can't declare functions in the source file.
+
+int multiply(int x, int y);
+
+int factorial(int x) {
+  int final_res = 1;
+  for (int i = 1; i < y; i++) {
+    final_res = multiply(final_res, i);
+  }
+  return final_res;
+}
+
+int main() {
+  return factorial(10);
+}

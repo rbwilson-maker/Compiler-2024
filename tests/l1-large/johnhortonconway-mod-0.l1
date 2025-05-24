@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+    // Hex numbers;
+    int t = 0Xa;    // 10
+    int y = 0xAf;   // 175
+
+    t %= t;         // 0
+    y %= y;         // 0
+
+    // 0 % 0 -> divide error
+    return t % y;
+}

@@ -1,0 +1,16 @@
+//test return 69
+
+int main() {
+	int t1 = 1;
+	int t2 = 2;
+	int t3 = 3;
+	int t4 = 4;
+	int t5 = 5;
+	int t6 = 6;
+
+	t1 = t1 + t1 + t1 + t1;
+	t2 = t2 + t2 + t2 + t2;
+	t3 = t1 + t2;
+
+	return 69;
+}

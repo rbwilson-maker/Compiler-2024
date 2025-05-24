@@ -1,0 +1,11 @@
+//test return 10
+typedef int a;
+
+int main() {
+  a* b = alloc(int);
+  bool* c = alloc(bool);
+  if(!(*c))
+    *b = 5;
+  int d = (*b) * 2;
+  return d;
+}  

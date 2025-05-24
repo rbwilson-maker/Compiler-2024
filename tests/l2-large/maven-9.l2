@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+  int bool;
+  bool = 12345; // typechecking
+  if (bool < 0xfffff) {
+    return 0;
+  } if {
+    return 1;
+  }
+}

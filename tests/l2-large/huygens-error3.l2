@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+    while (y > 0) {
+        int y = 2;
+        y--;
+    }
+    return 0;
+}

@@ -1,0 +1,9 @@
+//test return 0
+
+// A simple if statement
+
+int main(){
+  int a = 3;
+  if (a<4) return 0;
+  else return 1;
+}

@@ -1,0 +1,14 @@
+//test abort
+// Test invalid assertion in function
+
+int div100(int divby);
+
+int main() {
+  int ans = 0;
+  return div100(ans);
+}
+
+int div100(int divby) {
+  assert(divby != 0);
+  return 100 / divby;
+}

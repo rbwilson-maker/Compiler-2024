@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+// Recurses infinitely with the goal of running out of stack space
+
+int tree_size(int branch_factor) {
+    int size = 1;
+    for (int i = 0; i < branch_factor; i++) {
+        size += tree_size(branch_factor);
+    }
+    return size;
+}
+
+int main(){
+    return tree_size(2);
+}

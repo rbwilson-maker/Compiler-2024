@@ -1,0 +1,15 @@
+//test return 23426421
+
+int b(int c);
+int b(int c);
+int b(int c);
+int b(int c);
+int b(int c);
+int b(int c);
+int b(int c) {
+  return 23 + 123 *23 + 213 - 67 + c;
+}
+
+int main() { 
+  return b(23423423);
+}

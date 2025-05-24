@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+
+int main() {
+    int x = 670617279;
+    int count = 111;
+    while (x != 1) {
+        if ((x & 1) == 0) {
+            x >>= 2;
+        } else {
+            x *= 3;
+            x++;
+        }
+        count--;
+    }
+    return count;
+}

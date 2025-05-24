@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int get_exception(int x, int y)
+{
+	x/y;
+	return get_exception(x,y-1);
+}
+
+int main()
+{
+	return get_exception(1000,500);
+}

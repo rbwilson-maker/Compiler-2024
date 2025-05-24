@@ -1,0 +1,14 @@
+//test abort
+
+typedef int pen;
+
+pen pretty(int a) {
+	assert(false || (a > 0));
+	return a+1;
+}
+
+int main() {
+	int b = 3;
+    int d = 4;
+    return pretty(b - d);
+}

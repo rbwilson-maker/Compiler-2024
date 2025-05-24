@@ -1,0 +1,11 @@
+//test return 150
+// test addition and subtraction
+
+int main()
+{
+  int x = 300;
+  int y = 500;
+  int z = y - x;
+  int w = z + 50;
+  return w - 100;
+}

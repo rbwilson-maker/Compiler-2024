@@ -1,0 +1,8 @@
+//test return 1337
+
+int main() {
+	for (int i = 0; i < 1000000; i++) {
+		int x = 5;
+	}
+	return 1337;
+}

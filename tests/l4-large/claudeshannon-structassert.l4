@@ -1,0 +1,18 @@
+//test abort
+
+struct S {
+    int f;
+    int g;
+};
+
+int f (struct S* s) {
+    assert(s->f == 0);
+    return s->f;
+}
+
+int main() {
+    struct S* s = alloc(struct S);
+    s->f = -1;
+
+    return f(s);
+}

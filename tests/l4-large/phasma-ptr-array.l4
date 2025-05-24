@@ -1,0 +1,6 @@
+//test return 0
+
+int main() {
+  int[]* p = alloc(int[]);
+  return 0;
+}

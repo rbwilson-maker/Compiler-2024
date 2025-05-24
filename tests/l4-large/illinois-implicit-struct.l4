@@ -1,0 +1,46 @@
+//test return 0
+// implicit struct declaration & misc structs
+
+bool is_null(struct list_node* n) {
+  return n == NULL;
+}
+
+struct list_node {
+  int val;
+  struct list_node* next;
+};
+
+struct list_node* make_node(int val) {
+  struct list_node* n = alloc(struct list_node);
+  n->val = val;
+  assert(is_null(n->next));
+  return n;
+}
+
+struct list_node* insert(struct list_node* L, int val) {
+  while (!is_null(L->next)) {
+    L = L->next;
+  }
+
+  struct list_node* n = make_node(val);
+  L->next = n;
+  return n;
+}
+
+int main() {
+  struct list_node* L = make_node(0);
+
+  for (int i = 1; i < 1000; i++) {
+    insert(L, i);
+  }
+
+  for (int i = 0; i < 1000; i++) {
+    assert(!is_null(L));
+    assert(L->val == i);
+    L = L->next;
+  }
+
+  assert(is_null(L));
+
+  return 0;
+}

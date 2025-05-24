@@ -1,0 +1,12 @@
+//test return 120
+
+int fact(int x, int prod) {
+  if (x == 0)
+    return prod;
+  else
+    return fact(x - 1, prod * x);
+}
+
+int main () {
+  return fact(5, 1);
+}

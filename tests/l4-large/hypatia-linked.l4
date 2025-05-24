@@ -1,0 +1,112 @@
+//test return 45
+
+// My undergrad Linked List :)
+
+//Struct declarations
+struct Node {
+    int key;
+    int val;
+    struct Node *next;
+};
+
+typedef struct Node Node;
+
+struct linkedList {
+    Node *head;
+    int length;
+};
+
+typedef struct linkedList linkedList;
+
+//Function prototypes
+linkedList* create_linked_list();
+Node* append(linkedList* a, int b);
+int get(linkedList* a, int b);
+void delete(linkedList* a,int b);
+void delete_value(linkedList* a,int b);
+void reverse_list(linkedList* a);
+
+//Function definition
+linkedList* create_linked_list() {
+    linkedList* list = alloc(linkedList);
+    list->length = 0;
+    list->head = NULL;
+    return list;
+}
+
+Node* append(linkedList* list,int value) {
+    if(list->length == 0){
+        Node* newnode = alloc(Node);
+        newnode->val = value;
+        newnode->next = NULL;
+        list->length += 1;
+        list->head = newnode;
+        return list->head;
+    }
+
+    Node* head = list->head;
+    Node* curr = head;
+    while(curr->next != NULL){
+        curr  = curr->next;
+    }
+
+    Node* newnode = alloc(Node);
+    newnode->val = value;
+    newnode->next = NULL;
+    curr->next = newnode;
+    list->length += 1;
+    return newnode;
+}
+
+int get(linkedList* list,int index){
+    int cnt = 0;
+    Node *head = list->head;
+    while(cnt < index && head != NULL){
+        head = head->next;
+        cnt += 1;
+    }
+    if(head == NULL){
+        return -234;
+    }
+    else{
+        return head->val;
+    }
+}
+
+void delete(linkedList * list,int index){
+    int cnt = 0;
+    Node *head = list->head;
+    Node *prev = head;
+    while(cnt < index && head != NULL){
+        prev = head;
+        head = head->next;
+        cnt += 1;
+    }
+    if(head == NULL){
+        return;
+    }
+    else{
+        prev->next = head->next;
+        head->next = NULL;
+        list->length -= 1;
+    }
+}
+
+int main() {
+  linkedList *list = create_linked_list();
+  int *result = alloc(int);
+
+  for (int i = 0; i < 10; i++) {
+    Node *ptr = append(list, i);
+    *result += ptr->val;
+
+    assert(ptr->val == i);
+  }
+ 
+  assert(list->length == 10);
+ 
+  delete(list, 0);
+  assert(list->length == 9);
+
+  return *result;
+}

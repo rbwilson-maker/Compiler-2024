@@ -1,0 +1,6 @@
+//test error
+// improper assignment (would not be valid in C)
+int main () {
+  int x = y + 3 = 5;
+  return 0;
+}

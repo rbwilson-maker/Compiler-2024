@@ -1,0 +1,16 @@
+//test error
+
+int main() {
+  int* x = alloc(int);
+  for (int i = 0; i < 100; i++) {
+    if (i < 50) {
+      continue;
+      (*x)++;
+    }
+    else {
+      break;
+      (*x)++;
+    }
+  }
+  return x;
+}

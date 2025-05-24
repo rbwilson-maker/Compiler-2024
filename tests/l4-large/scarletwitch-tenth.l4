@@ -1,0 +1,25 @@
+//test div-by-zero 
+
+struct list{
+    int value; 
+    struct list *next; 
+};
+
+typedef struct list ll; 
+
+int length(struct list* list){
+    int len = 0; 
+    while(list != NULL){
+        len++;
+        list = list->next; 
+    }
+    return len;
+}
+int main(){
+    ll *first = alloc(struct list); 
+    first->value = 2; 
+    ll *second = alloc(struct list); 
+    first->next = second; 
+    second->value = 3; 
+    return length(first) / length(NULL);
+}

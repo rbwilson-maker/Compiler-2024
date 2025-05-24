@@ -1,0 +1,17 @@
+//test return 87
+
+int sum_of_array(int[] nums, int len) {
+  int sum = 0;
+  for (int i = 0; i < len; i++) {
+    sum += nums[i];
+  }
+  return sum;
+}
+
+int main() {
+  int[] some_nums = alloc_array(int, 6*4);
+  for (int i = 1; i <= 6; i++) {
+    some_nums[i-1] = i*3 + 4;
+  }
+  return sum_of_array(some_nums, 6);
+}

@@ -1,0 +1,13 @@
+//test return 101010
+// decimal to binary conversion (without chars/strings, great!)
+
+int dtob(int n) {
+	if (n == 0) return 0;
+	if (n < 0) return -dtob(-n);
+
+	return n % 2 + 10*dtob(n/2);
+}
+
+int main() {
+	return dtob(42);
+}

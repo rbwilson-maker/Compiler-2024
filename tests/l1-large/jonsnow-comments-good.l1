@@ -1,0 +1,108 @@
+//test return 2
+
+/* Block comments should work above the main
+ * method. */
+
+/*
+ *
+ * You should be able to have a main method within the comments
+ * that doesn't execute:
+
+ int main() {
+   return 1;
+ }
+
+ */
+
+// Line comments should work above the main method
+
+/* You should be able to /* nest comments */ above the main method */
+/* Even /* more */ /* ne /* st */ ing */
+
+  // Single line nesting
+
+*/
+
+// Crazy comments
+/**/
+/*/*/*/**/*/*/*/
+/*/*/*/**/* /**/*/*/*/
+
+//@ C0 comments should cause no problems
+
+/*@ Multiline C0 comments should cause no problems
+  @
+  @
+  @
+  @*/
+int main() {
+  // Line comment in main method
+  int x = 0;
+
+  /* Block comment in main method */
+  /* Multiline block comment in main method
+   * Code that doesn't execute
+
+      x = 3;
+
+   */
+
+   x /* inline comment */ += /* inline comment */ 2 /* inline comment */; /* trailing comment */
+
+   /* Nested /* block comment */ */
+
+  // Crazy comments
+  /**/
+  /*/*/*/**/*/*/*/
+  /*/*/*/**/* /**/*/*/*/
+
+  return /* inline comment */ x;
+  // comment after return statement
+
+  /* Block comment after return statement */
+
+  //@ C0 comments should cause no problems
+
+  /*@ Multiline C0 comments should cause no problems
+    @
+    @
+    @
+    @*/
+}
+
+
+/* Block comments should work below the main
+ * method. */
+
+/*
+ *
+ * You should be able to have a main method within the comments
+ * that doesn't execute:
+
+ int main() {
+   return 1;
+ }
+
+ */
+
+// Line comments should work below the main method
+
+/* You should be able to /* nest comments */ below the main method */
+/* Even /* more */ /* ne /* st */ ing */
+
+  // Single line nesting
+
+*/
+
+// Crazy comments
+/**/
+/*/*/*/**/*/*/*/
+/*/*/*/**/* /**/*/*/*/
+
+//@ C0 comments should cause no problems
+
+/*@ Multiline C0 comments should cause no problems
+  @
+  @
+  @
+  @*/

@@ -1,0 +1,10 @@
+//test memerror
+// allocating arrays in a loop
+
+int main() {
+  for (int i = 0; i < 5; i++) {
+    int[] arr = alloc_array(int, i);
+    arr[i];
+  }
+  return 0;
+}

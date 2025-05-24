@@ -1,0 +1,12 @@
+//test memerror
+
+typedef int* int1;
+typedef int1* int2;
+typedef int2[] int3;
+
+int main()
+{
+    int3 x = alloc_array(int2, 0);
+    x[0] = alloc(int1);
+    return 0; 
+}

@@ -1,0 +1,9 @@
+//test error
+
+int foo(int x, int y, bool z, int m);
+
+int main() {
+  return 0;
+}
+
+int foo(int x, int y, int z, int m);

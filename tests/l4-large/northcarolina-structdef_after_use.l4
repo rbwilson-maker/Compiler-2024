@@ -1,0 +1,13 @@
+//test error
+
+//Must handle gdecls one-by-one
+struct foo;
+
+int main() {
+  struct foo * bar = alloc(struct foo);
+  return foo->x;
+}
+
+struct foo {
+  int x;
+};

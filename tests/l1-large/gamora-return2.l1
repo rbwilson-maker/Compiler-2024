@@ -1,0 +1,17 @@
+//test return 41
+// test pre-declaring variables
+
+int main()
+{
+  int x;
+  int y;
+  int z;
+  x = 20;
+  y = x;
+  z = x + y;
+  int a;
+  int b;
+  a = 1;
+  b = a + z;
+  return b;
+}

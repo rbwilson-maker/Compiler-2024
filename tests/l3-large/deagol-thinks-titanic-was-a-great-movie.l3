@@ -1,0 +1,6 @@
+//test div-by-zero
+// SPOILER ALERT: the boat sinks
+
+int main() {
+  return itof(5)/itof(0);
+}

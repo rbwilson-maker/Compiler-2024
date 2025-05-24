@@ -1,0 +1,14 @@
+//test return 1
+struct A{
+    int a;
+    struct A[] arr;
+};
+
+int main(){
+    struct A* a = alloc(struct A);
+    struct A* b = alloc(struct A);
+    if(a->arr == b->arr){
+        return 1;
+    }else
+        return 0;
+}

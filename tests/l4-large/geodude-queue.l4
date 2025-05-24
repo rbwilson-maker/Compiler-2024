@@ -1,0 +1,66 @@
+//test return 75
+
+struct node {
+    int v;
+    struct node *next;
+};
+struct queue {
+    struct node *head;
+};
+
+
+int pop(struct queue *q){
+    int v = q->head->v;
+    q->head = q->head->next;
+    return v;
+}
+void push(struct queue *q, int v){
+    struct node *n = q->head;
+    if(n == NULL){
+        q->head = alloc(struct node);
+        q->head->v = v;
+        return;
+    }
+    while(NULL != n->next){
+        n = n->next;
+    }
+    n->next = alloc(struct node);
+    n->next->v = v;
+}
+
+int main(){
+    struct queue *q = alloc(struct queue);
+    push(q, 10);
+    push(q, 11);
+    push(q, 12);
+    push(q, 13);
+    push(q, 14);
+    push(q, 15);
+    int x = 0;
+    int a;
+    a = pop(q);
+    x += a;
+    assert(a == 10);
+
+    a = pop(q);
+    x += a;
+    assert(a == 11);
+
+    a = pop(q);
+    x += a;
+    assert(a == 12);
+
+    a = pop(q);
+    x += a;
+    assert(a == 13);
+
+    a = pop(q);
+    x += a;
+    assert(a == 14);
+
+    a = pop(q);
+    x += a;
+    assert(a == 15);
+
+    return x;
+}

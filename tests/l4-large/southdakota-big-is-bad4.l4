@@ -1,0 +1,18 @@
+//test error
+
+struct biiiiiiiig {
+  int so;
+  int very;
+  int large;
+};
+
+struct bigger {
+  struct biiiiiiiig big;
+};
+
+int main() {
+  struct biiiiiiiig *bigPtr = alloc(struct biiiiiiiig);
+  struct bigger b;
+  b.big = *bigPtr;
+  return 0;
+}

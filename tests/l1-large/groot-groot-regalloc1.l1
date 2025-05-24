@@ -1,0 +1,23 @@
+//test return 15115
+
+int main() {
+  int a = 3;
+  int b = a;
+  int c = a;
+  int d = b;
+  int e = a + 7;
+  int f = b / 2;
+  int g = c * e;
+  int h = 1 + a;
+  int i = f;
+  int j = 2 + d;
+  int k = 100 + b;
+  int l = -1 + g;
+  int m = 0x123 - e;
+  int n = 0x531 + c;
+
+  e *= n;
+  f -= c;
+
+  return a + b + c + d  +e  +f + g  +h + i + j + k + l + m + n;
+}

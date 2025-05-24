@@ -1,0 +1,19 @@
+//test div-by-zero
+//tests precedence, should check left value of equality (==) before going in to in_floop
+//and before failing the assert
+int in_floop();
+
+
+int main(){
+  assert((1/0) == in_floop());
+  return 0;
+}
+
+int in_floop(){
+  int result = 0;
+  while(true){
+    result ++;
+  }
+  return result;
+}
+

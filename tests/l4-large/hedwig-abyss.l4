@@ -1,0 +1,11 @@
+//test typecheck
+//test infloop
+
+int rec(int x){
+    return rec(x);
+}
+
+int main(){
+    int * x = alloc(int);
+    return rec(*x);
+}

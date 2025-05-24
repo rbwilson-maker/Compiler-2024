@@ -1,0 +1,27 @@
+//test return 1
+
+int fun1(int a, bool b, int c, int d, int e, int f, bool g);
+int fun2(int a, int b, int c, bool d);
+
+int main() {
+  return fun1(1, true, 2, 3, 4, 5, false);
+}
+
+int fun1(int a, bool b, int c, int d, int e, int f, bool g) {
+  int r = fun2(1, c, d, b);
+  r *= 2;
+  r /= 2;
+  return r;
+}
+
+int fun2(int a, int b, int c, bool d) {
+  while (a > b) {
+    b += c;
+  }
+
+  if (d)
+    return a;
+  else
+    return b; 
+}
+

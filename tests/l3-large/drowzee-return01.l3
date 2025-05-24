@@ -1,0 +1,9 @@
+//test return 1
+
+int main() {
+   bool x = true;
+   bool y = true;
+   assert(x && y);
+   assert(3 < 4);
+   return 1;
+}

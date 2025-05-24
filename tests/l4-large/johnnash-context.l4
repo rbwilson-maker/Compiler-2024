@@ -1,0 +1,14 @@
+//test typecheck
+
+typedef int hello;
+hello add(int x, int y);
+
+hello add(int x, int y) {
+    return x + y;
+}
+
+int main() {
+    hello* x = alloc(int);
+    *x = 500;
+    return (*x) / 2 - 40;
+}

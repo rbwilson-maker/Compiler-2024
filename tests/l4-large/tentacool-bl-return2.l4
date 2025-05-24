@@ -1,0 +1,15 @@
+//test return 8889
+typedef int* bigint;
+typedef bigint* massiveint;
+
+int tentacles (int **long, int **hard, bigint* fast) {
+    return 8889;
+}
+
+int main () {
+    int** abc = alloc(int*);
+    bigint* def = alloc(bigint);
+    massiveint* ghi = alloc(massiveint);
+
+    return tentacles(abc,def, *ghi);
+}

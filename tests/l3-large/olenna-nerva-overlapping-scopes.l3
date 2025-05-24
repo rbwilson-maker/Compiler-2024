@@ -1,0 +1,17 @@
+//test error
+//
+//L3 source error because function parameters and local variables
+//with overlapping scope may not have the same name
+//
+//
+
+int scope_error(int a);
+
+int main(){
+  return scope_error(5);
+}
+
+int scope_error(int a){
+  int a = 45;
+  return a;
+}

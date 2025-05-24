@@ -1,0 +1,36 @@
+//test memerror
+
+/* struct 04 Test 
+ *  
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * 
+ * Test various places for struct definitions and usages
+ */
+
+struct b {
+    int a; 
+    int *b; 
+};
+
+struct c {
+    int a; 
+    struct b* b; 
+    int c; 
+    int d; 
+};
+
+struct a {
+    struct c c; 
+    int *a;
+};
+
+int main()
+{
+    struct a *stuff = alloc(struct a);
+    stuff->c.b = alloc(struct b);
+    stuff->a;
+    *(stuff->c.b->b);
+    return 0;
+}
+

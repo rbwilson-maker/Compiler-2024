@@ -1,0 +1,15 @@
+//test div-by-zero
+// void functions should not be optimized out
+
+void g() {
+  1 / (1 >> 42);
+}
+
+int f() {
+  g();
+  return 1;
+}
+
+int main() {
+    return f();
+}

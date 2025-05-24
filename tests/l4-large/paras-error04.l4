@@ -1,0 +1,12 @@
+//test error
+// inside struct must be declared
+
+struct bar;
+
+struct foo {
+    struct bar baz;
+};
+
+int main() {
+    return 0;
+}

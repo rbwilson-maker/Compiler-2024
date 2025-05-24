@@ -1,0 +1,26 @@
+//test return 2047
+struct tree {
+    struct tree* left;
+    struct tree* right;
+    int value;
+};
+
+struct tree *balanced(int depth) {
+    struct tree* res = alloc(struct tree);
+    if (depth > 0) {
+        res->left = balanced(depth - 1);
+        res->right = balanced(depth - 1);
+    }
+    res->value = -1;
+    return res;
+}
+
+int size(struct tree *t) {
+    if (t == NULL) return 0;
+    else return 1 + size(t->left) + size(t->right);
+}
+
+int main() {
+    struct tree* big = balanced(10);
+    return size(big);
+}

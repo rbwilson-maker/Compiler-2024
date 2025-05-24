@@ -1,0 +1,20 @@
+//test abort
+
+void f() {
+    if(true) {
+        assert(true);
+    }
+    if(false) {
+        assert(false);
+    }
+    int i;
+    for(i = 0; i < 10; i++) {
+        assert(true);
+    }
+    assert(i > 10);
+}
+
+int main() {
+    f();
+    return 0;
+}

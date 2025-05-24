@@ -1,0 +1,17 @@
+//test return 1101
+
+int main() 
+{
+  int****** ptr;
+  ptr = alloc(int*****);
+  *ptr = alloc(int****);
+  **ptr = alloc(int***);
+  ***ptr = alloc(int**);
+  ****ptr = alloc(int*);
+  *****ptr = alloc(int);
+  ******ptr = 100;
+
+  ******ptr += 1001;
+
+  return ******ptr;
+}

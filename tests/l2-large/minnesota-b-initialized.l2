@@ -1,0 +1,18 @@
+//test return 2
+
+int main() {
+  int x;
+  if (false) {
+    x = 1;
+  }
+  else if (true) {
+    x = 2;
+  }
+  else if (true) {
+    x = 3;
+  }
+  else {
+    x = 4;
+  }
+  return x;
+}

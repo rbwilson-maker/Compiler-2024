@@ -1,0 +1,11 @@
+//test return 1
+
+// Recursive hypothetical judgements for parity
+bool odd(int y);
+
+bool even(int x) { return x == 0 || odd(x - 1);}
+bool odd(int x) { return even(x - 1);}
+
+int main() {
+	return even(6) ? 1 : 0;
+}

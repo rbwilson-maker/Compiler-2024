@@ -1,0 +1,13 @@
+//test return 4
+
+int id(int x) {
+	return x;
+}
+
+int main() {
+	int x;
+	x = 4;
+	assert(id(id(id(id(4)))) == id(id(id(x))));
+	return x;
+	x = 5;
+}

@@ -1,0 +1,14 @@
+//test error
+
+//void* is not a valid type
+
+void test_void_pointer(int x, int y, void* z){
+    z;
+    return x + y;
+}
+
+int main(){
+    void* v;
+    test_void_pointer(4, 5, v);
+    return 0;
+}

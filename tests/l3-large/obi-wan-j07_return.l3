@@ -1,0 +1,45 @@
+//test return 52
+
+int reverse_int(int x)
+{
+    int y = 0;
+
+    while(x > 0)
+    {
+        y *= 10;
+        y += x % 10;
+        x /= 10;
+    }
+
+    return y;
+}
+
+
+
+
+bool is_palindrome(int x)
+{
+    int rev = reverse_int(x);
+
+    return rev == x;
+
+    bool eq = true;
+
+    while(x > 0)
+    {
+        if(x%10 != rev%10)
+            return false;
+
+        x /= 10;
+        rev /= 10;
+    }
+
+    return true;
+}
+
+int main()
+{
+    if(is_palindrome(123321))
+        return 52;
+    return -1;
+}

@@ -1,0 +1,10 @@
+//test error
+
+// tests that parser rejects nested functions
+
+int main() {
+	int nested(int x) {
+		return x + 1;
+	}
+	return nested(3);
+}

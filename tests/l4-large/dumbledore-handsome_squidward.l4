@@ -1,0 +1,62 @@
+//test return 10
+
+struct why {
+  int * squidward;
+};
+
+struct am {
+  struct why * squidward;
+};
+
+struct i {
+  struct am * squidward;
+};
+
+struct so {
+  struct i * squidward;
+};
+
+struct handsome {
+  struct so * squidward;
+};
+
+
+
+int e(struct why *w) {
+    return *w->squidward;
+}
+
+int d(struct am *a) {
+    return e(a->squidward);
+}
+
+int c(struct i *e) {
+    return d(e->squidward);
+}
+
+int b(struct so *s) {
+    return c(s->squidward);
+}
+
+int a(struct handsome *h) {
+    return b(h->squidward);
+}
+
+int main() {
+  int             * temp     = alloc(int);
+  struct why      * im       = alloc(struct why);
+  struct am       * just     = alloc(struct am);
+  struct i        * far      = alloc(struct i);
+  struct so       * too      = alloc(struct so);
+  struct handsome * chiseled = alloc(struct handsome);
+
+  *temp = 10;
+  im->squidward = temp;
+  just->squidward = im;
+  far->squidward = just;
+  too->squidward = far;
+  chiseled->squidward = too;
+
+  return a(chiseled);
+
+}

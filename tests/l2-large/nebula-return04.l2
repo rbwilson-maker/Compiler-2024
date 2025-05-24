@@ -1,0 +1,14 @@
+//test return 150
+int main ()
+{
+    int a;
+    int b;
+    int c;
+    int d;
+    {
+        b = 15;
+        c = b << 3;
+        d = c >> 3;
+    }    
+    return b + c + d;
+}

@@ -1,0 +1,25 @@
+//test abort
+
+void abort_the_mission(bool x, bool y)
+{
+  bool z = x && y;
+  assert(z);
+}
+
+int abort_the_mission_in_10(int j)
+{
+  for(int i = 0; i < 11; i++)
+  {
+    if (i == 10)
+    {
+      abort_the_mission(true,false);
+    }
+  }
+  return j;
+}
+int main()
+{
+  int j = 5;
+  abort_the_mission_in_10(j);
+  return 0;
+}

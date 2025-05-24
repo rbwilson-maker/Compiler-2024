@@ -1,0 +1,25 @@
+//test return 0
+// Mutually recursive functions through function declarations
+
+int foo(int i);
+int bar(int i);
+
+int main() {
+  foo(5);
+  bar(5);
+  return 0;
+}
+
+int foo(int i) {
+  if (i <= 0)
+    return 0;
+
+  return bar(i - 1);
+}
+
+int bar(int i) {
+  if (i <= 0)
+    return 0;
+
+  return foo(i - 1);
+}

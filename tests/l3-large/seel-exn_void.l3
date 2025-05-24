@@ -1,0 +1,36 @@
+//test div-by-zero
+// Tests that void functions are indeed called, and don't need returns in every
+// path
+
+void a() {
+  1/0;
+}
+
+void b() {
+  int x;
+  int y;
+
+  if (false) {
+    return;
+    y = x;
+  } else {
+    a();
+  }
+}
+
+int c() {
+  return 3;
+}
+
+void d() {
+  int x = 2;
+  x += c();
+  b();
+}
+
+int main() {
+  for (int i = 0; i < 5; d()) {
+    i++;
+  }
+  return 4;
+}

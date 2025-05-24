@@ -1,0 +1,28 @@
+//test typecheck
+/*
+Typechecks.
+Make sure this entire program typechecks.
+*/
+
+int f(int x) {
+  return 1 / x;
+}
+
+int g(bool r) {
+  return r ? 1 : 4;
+}
+
+void h(int x) {
+  if (x == 0) return;
+  if (g(x == 3) == 0) return;
+  if (f(x) == 0) return;
+  assert(false);
+}
+
+int main() {
+  int x = 100;
+  while (x >= 0) {
+    x = f(x);
+  }
+  return x;
+}

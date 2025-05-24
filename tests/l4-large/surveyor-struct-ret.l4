@@ -1,0 +1,14 @@
+//test error
+
+struct heh {
+  int x;
+};
+
+struct heh foo() {
+  struct heh ret;
+  return ret;
+}
+
+int main() {
+  return 123;
+}

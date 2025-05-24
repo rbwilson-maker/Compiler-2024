@@ -1,0 +1,16 @@
+//test return 1
+//void functions don't need control flow paths to end in returns
+
+
+void hi(int z){
+	if (true) return;
+	else {
+	  1+1;
+	}
+}
+
+int main() {
+	hi(0);
+	return 1;
+
+}

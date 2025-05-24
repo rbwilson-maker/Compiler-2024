@@ -1,0 +1,13 @@
+//test return 10
+int rec_fun(int n) {
+  if(n == 0)
+  {
+    return n;
+  }
+  return rec_fun(n-1) + n;
+}
+
+int main() {
+  int a = 4;
+  return rec_fun(a);
+}

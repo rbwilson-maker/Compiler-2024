@@ -1,0 +1,25 @@
+//test return 2
+/* simple struct math */
+
+struct line {int x; int y;};
+
+typedef struct line line_t;
+
+int lineinterset(line_t * l1, line_t * l2) {
+  int xdiff = l2->x - l1->x;
+  int ydiff = l2->y - l1->y;
+  int total = xdiff + ydiff;
+  return total;
+}
+
+int main() {
+  line_t * l1;
+  line_t * l2;
+  l1 = alloc(struct line);
+  l2 = alloc(struct line);
+  l1->x = 4;
+  l1->y = 8;
+  l2->x = 5;
+  l2->y = 9;
+  return lineinterset(l1,l2);
+}

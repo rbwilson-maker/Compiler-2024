@@ -1,0 +1,55 @@
+//test return 31
+
+struct prelist {
+  int x;
+  struct prelist *xs;
+};
+typedef struct prelist* list;
+
+struct pretree {
+  int x;
+  struct pretree *l;
+  struct pretree *r;
+};
+typedef struct pretree* tree;
+
+tree growTree(int n) {
+  if (n == 0)
+    return NULL;
+  
+  tree t = alloc(struct pretree);
+  t->x = 1;
+  t->l = growTree(n-1);
+  t->r = growTree(n-1);
+
+  return t;
+}
+
+list nil() {
+  return NULL;
+}
+
+list cons(int x, list xs) {
+  list l = alloc(struct prelist);
+  l->x = x;
+  l->xs = xs;
+  return l;
+}
+
+list traverse(tree t, list acc) {
+  if (t == NULL)
+    return acc;
+
+  return cons(t->x, traverse(t->l, traverse(t->r, acc)));
+}
+
+int sum(list l) {
+  if (l == NULL)
+    return 0;
+  
+  return l->x + sum(l->xs);
+}
+
+int main() {
+  return sum(traverse(growTree(5), nil()));
+}

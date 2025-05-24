@@ -1,0 +1,17 @@
+//test error
+
+void function(int x, bool y, int z);
+
+int function(int x, bool y, int z) {
+    if (x + z > 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+
+int main() {
+    int x = function(1, true, -1);
+    return 1;
+}

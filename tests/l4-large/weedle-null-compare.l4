@@ -1,0 +1,9 @@
+//test error
+// null cannot be compared to non-pointer types
+
+int main() {
+	if (3 == NULL)
+		return 3;
+
+	return 2;
+}

@@ -1,0 +1,501 @@
+//test return 1
+struct exponential1{};
+struct exponential2{
+	struct exponential1 field12;
+	struct exponential1 field22;
+};
+
+struct exponential3{
+	struct exponential2 field13;
+	struct exponential2 field23;
+};
+
+struct exponential4{
+	struct exponential3 field14;
+	struct exponential3 field24;
+};
+
+struct exponential5{
+	struct exponential4 field15;
+	struct exponential4 field25;
+};
+
+struct exponential6{
+	struct exponential5 field16;
+	struct exponential5 field26;
+};
+
+struct exponential7{
+	struct exponential6 field17;
+	struct exponential6 field27;
+};
+
+struct exponential8{
+	struct exponential7 field18;
+	struct exponential7 field28;
+};
+
+struct exponential9{
+	struct exponential8 field19;
+	struct exponential8 field29;
+};
+
+struct exponential10{
+	struct exponential9 field110;
+	struct exponential9 field210;
+};
+
+struct exponential11{
+	struct exponential10 field111;
+	struct exponential10 field211;
+};
+
+struct exponential12{
+	struct exponential11 field112;
+	struct exponential11 field212;
+};
+
+struct exponential13{
+	struct exponential12 field113;
+	struct exponential12 field213;
+};
+
+struct exponential14{
+	struct exponential13 field114;
+	struct exponential13 field214;
+};
+
+struct exponential15{
+	struct exponential14 field115;
+	struct exponential14 field215;
+};
+
+struct exponential16{
+	struct exponential15 field116;
+	struct exponential15 field216;
+};
+
+struct exponential17{
+	struct exponential16 field117;
+	struct exponential16 field217;
+};
+
+struct exponential18{
+	struct exponential17 field118;
+	struct exponential17 field218;
+};
+
+struct exponential19{
+	struct exponential18 field119;
+	struct exponential18 field219;
+};
+
+struct exponential20{
+	struct exponential19 field120;
+	struct exponential19 field220;
+};
+
+struct exponential21{
+	struct exponential20 field121;
+	struct exponential20 field221;
+};
+
+struct exponential22{
+	struct exponential21 field122;
+	struct exponential21 field222;
+};
+
+struct exponential23{
+	struct exponential22 field123;
+	struct exponential22 field223;
+};
+
+struct exponential24{
+	struct exponential23 field124;
+	struct exponential23 field224;
+};
+
+struct exponential25{
+	struct exponential24 field125;
+	struct exponential24 field225;
+};
+
+struct exponential26{
+	struct exponential25 field126;
+	struct exponential25 field226;
+};
+
+struct exponential27{
+	struct exponential26 field127;
+	struct exponential26 field227;
+};
+
+struct exponential28{
+	struct exponential27 field128;
+	struct exponential27 field228;
+};
+
+struct exponential29{
+	struct exponential28 field129;
+	struct exponential28 field229;
+};
+
+struct exponential30{
+	struct exponential29 field130;
+	struct exponential29 field230;
+};
+
+struct exponential31{
+	struct exponential30 field131;
+	struct exponential30 field231;
+};
+
+struct exponential32{
+	struct exponential31 field132;
+	struct exponential31 field232;
+};
+
+struct exponential33{
+	struct exponential32 field133;
+	struct exponential32 field233;
+};
+
+struct exponential34{
+	struct exponential33 field134;
+	struct exponential33 field234;
+};
+
+struct exponential35{
+	struct exponential34 field135;
+	struct exponential34 field235;
+};
+
+struct exponential36{
+	struct exponential35 field136;
+	struct exponential35 field236;
+};
+
+struct exponential37{
+	struct exponential36 field137;
+	struct exponential36 field237;
+};
+
+struct exponential38{
+	struct exponential37 field138;
+	struct exponential37 field238;
+};
+
+struct exponential39{
+	struct exponential38 field139;
+	struct exponential38 field239;
+};
+
+struct exponential40{
+	struct exponential39 field140;
+	struct exponential39 field240;
+};
+
+struct exponential41{
+	struct exponential40 field141;
+	struct exponential40 field241;
+};
+
+struct exponential42{
+	struct exponential41 field142;
+	struct exponential41 field242;
+};
+
+struct exponential43{
+	struct exponential42 field143;
+	struct exponential42 field243;
+};
+
+struct exponential44{
+	struct exponential43 field144;
+	struct exponential43 field244;
+};
+
+struct exponential45{
+	struct exponential44 field145;
+	struct exponential44 field245;
+};
+
+struct exponential46{
+	struct exponential45 field146;
+	struct exponential45 field246;
+};
+
+struct exponential47{
+	struct exponential46 field147;
+	struct exponential46 field247;
+};
+
+struct exponential48{
+	struct exponential47 field148;
+	struct exponential47 field248;
+};
+
+struct exponential49{
+	struct exponential48 field149;
+	struct exponential48 field249;
+};
+
+struct exponential50{
+	struct exponential49 field150;
+	struct exponential49 field250;
+};
+
+struct exponential51{
+	struct exponential50 field151;
+	struct exponential50 field251;
+};
+
+struct exponential52{
+	struct exponential51 field152;
+	struct exponential51 field252;
+};
+
+struct exponential53{
+	struct exponential52 field153;
+	struct exponential52 field253;
+};
+
+struct exponential54{
+	struct exponential53 field154;
+	struct exponential53 field254;
+};
+
+struct exponential55{
+	struct exponential54 field155;
+	struct exponential54 field255;
+};
+
+struct exponential56{
+	struct exponential55 field156;
+	struct exponential55 field256;
+};
+
+struct exponential57{
+	struct exponential56 field157;
+	struct exponential56 field257;
+};
+
+struct exponential58{
+	struct exponential57 field158;
+	struct exponential57 field258;
+};
+
+struct exponential59{
+	struct exponential58 field159;
+	struct exponential58 field259;
+};
+
+struct exponential60{
+	struct exponential59 field160;
+	struct exponential59 field260;
+};
+
+struct exponential61{
+	struct exponential60 field161;
+	struct exponential60 field261;
+};
+
+struct exponential62{
+	struct exponential61 field162;
+	struct exponential61 field262;
+};
+
+struct exponential63{
+	struct exponential62 field163;
+	struct exponential62 field263;
+};
+
+struct exponential64{
+	struct exponential63 field164;
+	struct exponential63 field264;
+};
+
+struct exponential65{
+	struct exponential64 field165;
+	struct exponential64 field265;
+};
+
+struct exponential66{
+	struct exponential65 field166;
+	struct exponential65 field266;
+};
+
+struct exponential67{
+	struct exponential66 field167;
+	struct exponential66 field267;
+};
+
+struct exponential68{
+	struct exponential67 field168;
+	struct exponential67 field268;
+};
+
+struct exponential69{
+	struct exponential68 field169;
+	struct exponential68 field269;
+};
+
+struct exponential70{
+	struct exponential69 field170;
+	struct exponential69 field270;
+};
+
+struct exponential71{
+	struct exponential70 field171;
+	struct exponential70 field271;
+};
+
+struct exponential72{
+	struct exponential71 field172;
+	struct exponential71 field272;
+};
+
+struct exponential73{
+	struct exponential72 field173;
+	struct exponential72 field273;
+};
+
+struct exponential74{
+	struct exponential73 field174;
+	struct exponential73 field274;
+};
+
+struct exponential75{
+	struct exponential74 field175;
+	struct exponential74 field275;
+};
+
+struct exponential76{
+	struct exponential75 field176;
+	struct exponential75 field276;
+};
+
+struct exponential77{
+	struct exponential76 field177;
+	struct exponential76 field277;
+};
+
+struct exponential78{
+	struct exponential77 field178;
+	struct exponential77 field278;
+};
+
+struct exponential79{
+	struct exponential78 field179;
+	struct exponential78 field279;
+};
+
+struct exponential80{
+	struct exponential79 field180;
+	struct exponential79 field280;
+};
+
+struct exponential81{
+	struct exponential80 field181;
+	struct exponential80 field281;
+};
+
+struct exponential82{
+	struct exponential81 field182;
+	struct exponential81 field282;
+};
+
+struct exponential83{
+	struct exponential82 field183;
+	struct exponential82 field283;
+};
+
+struct exponential84{
+	struct exponential83 field184;
+	struct exponential83 field284;
+};
+
+struct exponential85{
+	struct exponential84 field185;
+	struct exponential84 field285;
+};
+
+struct exponential86{
+	struct exponential85 field186;
+	struct exponential85 field286;
+};
+
+struct exponential87{
+	struct exponential86 field187;
+	struct exponential86 field287;
+};
+
+struct exponential88{
+	struct exponential87 field188;
+	struct exponential87 field288;
+};
+
+struct exponential89{
+	struct exponential88 field189;
+	struct exponential88 field289;
+};
+
+struct exponential90{
+	struct exponential89 field190;
+	struct exponential89 field290;
+};
+
+struct exponential91{
+	struct exponential90 field191;
+	struct exponential90 field291;
+};
+
+struct exponential92{
+	struct exponential91 field192;
+	struct exponential91 field292;
+};
+
+struct exponential93{
+	struct exponential92 field193;
+	struct exponential92 field293;
+};
+
+struct exponential94{
+	struct exponential93 field194;
+	struct exponential93 field294;
+};
+
+struct exponential95{
+	struct exponential94 field195;
+	struct exponential94 field295;
+};
+
+struct exponential96{
+	struct exponential95 field196;
+	struct exponential95 field296;
+};
+
+struct exponential97{
+	struct exponential96 field197;
+	struct exponential96 field297;
+};
+
+struct exponential98{
+	struct exponential97 field198;
+	struct exponential97 field298;
+};
+
+struct exponential99{
+	struct exponential98 field199;
+	struct exponential98 field299;
+};
+
+struct exponential100{
+	struct exponential99 field1100;
+	struct exponential99 field2100;
+};
+
+int main(){
+struct exponential100 *c = alloc(struct exponential100);
+return 1;
+}

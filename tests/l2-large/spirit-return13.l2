@@ -1,0 +1,15 @@
+//test return 248
+int main() {
+    bool x = false;
+    int y = 10;
+    int six = 6;
+    if (x && true) y += 5;
+    y *= - -six << 1 + 22 / 7 / 3;
+    x = x==false && x || !x;
+    if (x) {
+        six++;
+        (six)++;
+        return y + six;
+    }
+    else return y;
+} 

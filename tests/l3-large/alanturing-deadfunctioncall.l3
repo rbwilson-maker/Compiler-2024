@@ -1,0 +1,11 @@
+//test error
+
+int main () {
+    if (true) {
+       return 0;
+    } else {
+       g(251);
+    }
+    return 0;
+    f(15);
+ }

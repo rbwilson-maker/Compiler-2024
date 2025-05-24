@@ -1,0 +1,42 @@
+//test return 0
+typedef bool a;
+typedef int b;
+typedef int* k;
+
+bool check_a (a[] lol) {
+    int i = 0;
+    for (;i < 64; i++) {
+        assert(lol[i] == false);
+    }
+    return true;
+}
+
+bool check_b (b[] lol) {
+    int i = 0;
+    for (;i < 64; i++) {
+        assert(lol[i] == 0);
+    }
+    return true;
+}
+
+bool check_k (k[] lol) {
+    int i = 0;
+    for (;i < 64; i++) {
+        assert(lol[i] == NULL);
+    }
+    return true;
+}
+
+
+int main () {
+    a[] a1 = alloc_array(a, 64);
+    b[] b1 = alloc_array(b, 64);
+    k[] k1 = alloc_array(k, 64);
+
+    assert(check_a(a1));
+    assert(check_b(b1));
+    assert(check_k(k1));
+
+    return 0;
+
+}

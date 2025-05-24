@@ -1,0 +1,10 @@
+//test error
+
+struct a {
+    struct c b;
+};
+
+int main()
+{
+    return a->b;
+}

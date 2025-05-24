@@ -1,0 +1,10 @@
+//test error
+//parameters don't match function's parameters
+
+bool helper(bool b, int a, bool c){
+    return b && c;
+}
+
+int main() {
+    helper(0);
+}

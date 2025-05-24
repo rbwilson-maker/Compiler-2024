@@ -1,0 +1,12 @@
+//test return 6
+// Parens around ident
+
+int main () {
+    int x = 5;
+    int y;
+    int z = (4);
+    (z) = (x);
+    (z) = x;
+    z = (x);
+    return x > 5 ? (x > 6 ? 20 : 5) : 6;
+}

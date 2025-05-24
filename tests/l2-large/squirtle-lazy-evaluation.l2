@@ -1,0 +1,14 @@
+//test return 0
+
+int main() {
+  int x = 1;
+  x /= 1;
+  x *= 1;
+  x -= 1;
+  bool val = (x !=0) && (x/x != 1);
+  if (val) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

@@ -1,0 +1,15 @@
+//test error
+//181
+
+int main(){
+  int[][] internet = alloc_array(int[], 5);
+  int i = 0;
+  for(; i < 5; i++){
+    bool[] j = alloc_array(bool, 5);
+    internet[i] = j;
+  }
+
+  return 0;
+
+}
+

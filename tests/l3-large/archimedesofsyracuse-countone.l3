@@ -1,0 +1,16 @@
+//test return 24
+// Count the number of 1's in a number iteratively
+
+int count_ones(int val) {
+  int cnt = 0;
+  for (int i = 0; i < 32; i++) {
+    cnt += val & 1;
+    val >>= 1;
+  }
+  return cnt;
+}
+
+int main() {
+  int num = 0xdeadbeef;
+  return count_ones(num);
+}

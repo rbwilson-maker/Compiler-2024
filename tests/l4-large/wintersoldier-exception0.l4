@@ -1,0 +1,8 @@
+//test memerror
+
+
+int main() {
+    int **y = alloc(int*);
+    *y = NULL;
+	return **y;
+}

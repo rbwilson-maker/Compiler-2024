@@ -1,0 +1,27 @@
+//test return 0
+
+/*
+ * This program tests head recursion
+ *
+ */
+
+int head_recursion(int n)
+{
+    int a;
+    a = 1;
+
+    if(n == 0)
+        return 0;
+    else
+        return head_recursion(n-1);
+
+    a *= 5;
+    print_int(a);
+}
+
+int main()
+{
+    int x;
+    x = head_recursion(5);
+    return x;
+}

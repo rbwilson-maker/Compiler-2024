@@ -1,0 +1,19 @@
+//test error
+
+// big type in array
+
+struct s {
+    int v;
+    int * p;
+};
+
+typedef struct s ints ;
+
+int main () {
+    ints * sptr = alloc(ints);
+    sptr->v = 1;
+    *(sptr->p) = 8;
+    ints [] arr = alloc_array(ints, 2 );
+    arr[0] = *sptr ;
+    return *arr[0].p ;
+}

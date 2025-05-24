@@ -1,0 +1,16 @@
+//test return 100
+
+int increment_counter(int* counter) {
+    if (*counter > 99) assert(false);
+    (*counter)++;
+    return 0;
+}
+
+int main() {
+    int* counter = alloc(int);
+    int[] buf = alloc_array(int, 1);
+    for (int i = 0; i < 100; i++) {
+        buf[increment_counter(counter)] += 1;
+    }
+    return buf[0];
+}

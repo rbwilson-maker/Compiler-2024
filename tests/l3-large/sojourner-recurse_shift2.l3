@@ -1,0 +1,22 @@
+//test return 1073741824
+
+int shift_right(int x, int depth);
+
+int shift_left(int x, int depth) {
+  if (depth == 0) {
+    return x;
+  }
+  return shift_right(x << 30, depth - 1);
+}
+
+int shift_right(int x, int depth) {
+  if (depth == 0) {
+    return x;
+  }
+  return shift_left(x >> 30, depth - 1);
+}
+
+int main() {
+  int res = shift_left(1, 999);
+  return res;
+}

@@ -1,0 +1,24 @@
+//test return 17
+
+void add5(int * x) {
+
+  *x = *x + 5;
+  
+}
+
+
+int main(){
+
+  bool * b = alloc(bool);
+  int * x = alloc(int);
+  int * y = alloc(int);
+
+  *b = true;
+  *y = *b ? 7 : 9;
+  *x = *y > 8 ? -12 : 12;
+
+  add5(x);
+
+  return *x;
+  
+}

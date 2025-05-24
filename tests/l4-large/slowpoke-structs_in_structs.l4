@@ -1,0 +1,24 @@
+//test return 17
+
+struct foo {
+  int a;
+  int b;
+};
+
+struct bar {
+  struct foo a;
+  struct foo* b;
+};
+
+int f(struct bar* x) {
+  return x->a.a + x->b->b;
+}
+
+int main() {
+  struct bar* x = alloc(struct bar);
+  x->a.a = 5;
+  struct foo* y = alloc(struct foo);
+  y->b = 12;
+  x->b = y;
+  return f(x);
+}

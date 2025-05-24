@@ -1,0 +1,12 @@
+//test return 42069
+
+int main() {
+    int x;
+    int y;
+    int z;
+    z = 6;
+    y = z + z * z + (1 + -z);
+    z /= 2;
+    x = (y * 55 % 1000 + 2) * 10 + 9;
+    return y * z * x / 2 * 20 / 10 + 1;
+}

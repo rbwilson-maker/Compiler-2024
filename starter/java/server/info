@@ -1,0 +1,96 @@
+********************************************************************************************
+**                                Server - Important Info                                 **
+********************************************************************************************
+
+== Overview ==
+
+To run compiler tests without booting up the JVM for each test, we start a server
+and specify jobs through a client. Each job is sandboxed as necessary, and we prevent 
+resources from being leaked across multiple jobs (to the best of our knowledge)
+
+You specify resources to use in
+  ./makeserver.sh
+
+Which creates the server and prepares resources to perform compiler tests. The 
+server automatically shuts down after not receiving jobs after ~20 seconds.
+
+== makeserver.sh ==
+
+In order to run tests, we must create remote classloaders to load your compiler under. 
+A classloader is used to properly sandbox a test. The client prepares remote loaders 
+using the client, e.g
+  client/client -n 0 -r <my-classloader-resources>
+
+Creates a new remote loader with an integer ID 0, and with <my-classloader-resources> 
+local to the remote loader. Each job sent to the remote loader will also have 
+<my-classloader-resources>
+
+In the 411-f14 infrastructure, makeserver.sh should be called from the Makefile in 
+preparation of running tests.
+
+== sending a job ==
+
+Jobs are specified using the -j command. Resources are also be specified for an 
+individual instance, and the user specifies the entry point and the args. e.g.
+  
+  client/client -j 0 -r <my-job-resources> -m <entryclass#entrymethod> -a <args...>
+
+Creates a job under classloader 0. The job has <my-classloader-resources> as well
+as <my-job-resources>. We run the method <entryclass#entrymethod> with args <args...>
+
+lxc should be a script that calls the client. 
+
+== Running With Scala ==
+
+Run ./makeserver.sh with the --SCALA flag. This simply creates the initial server instance 
+by using scala instead of java.
+
+
+
+
+********************************************************************************************
+**                                Server - Extra Info                                     **
+********************************************************************************************
+== Making your Compiler Performant ==
+
+The compiler is running on a server now. Sweet! It's totally fast! But what's 
+changed?
+
+Before, we would load an entirely new JVM for each time we wanted to run a test. 
+This would properly sandbox all compiler information per test, but it was slow.
+Now, we properly sandbox each instance under a new instance, which is faster, 
+but there still are some areas where the compiler can be slow due to 
+accumulated garbage over a large number of tests. Specifically, we will talk 
+about static variables and the classloader.
+
+Suppose you wrote your compiler using a simulated turing machine in java. You
+have
+
+    public static final byte[] TAPE = new byte[40 * 1000];
+
+You always assume that TAPE is going to be zeroed out when the compiler is 
+called, and you exit with a dirty tape (some bytes in TAPE are not zero)
+
+In order to support your compiler, we create a new ClassLoader for each test, 
+and load your compiler under this new ClassLoader. This makes a completely new 
+and unique TAPE for each test -- sweet! 
+
+The catch is that we allocate space for TAPE, along with your .class files 
+in your compiler for each test. This has to be garbage collected later.
+
+If you wanted to have 'supreme optimization' do not to rely on static state, or 
+guarantee the static state is reset before exiting the compiler. The compiler 
+can then be loaded once instead of once per test. 
+
+To try this, change ./makeserver so your compiler is loaded once under
+a classloader. Then, remove the additional resources from the lxc script.
+
+==
+
+Note: we ensure that all objects under each classloader are demolished by the 
+time a test completes, which implies there are no classloader leaks.
+
+We've done medium-rigorous tests to ensure to the best of my knowledge that
+there are no server leaks. This includes running several multithreaded tests
+in java, as well as testing the server with the entire testing suite and 
+monitering the classes, threads, and threadgroups using a profiler.

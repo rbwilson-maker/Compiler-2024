@@ -1,0 +1,43 @@
+//test return 0
+// reverses a list by reassigning to pointers
+
+int*[] popFirst(int*[] arr, int n) {
+  int*[] newArr = alloc_array(int*, n-1);
+
+  int i;
+  for (i = 1; i < n; i++) {
+    newArr[i-1] = arr[i];
+  }
+  return newArr;
+}
+
+void reverse(int*[] arr, int n) {
+  if (n < 2) {
+    return;
+  }
+
+  int tmp;
+  tmp = *arr[0];
+  *arr[0] = *arr[n-1];
+  *arr[n-1] = tmp;
+  reverse(popFirst(arr, n), n-2);
+}
+
+int main() {
+  int n = 600;
+  int*[] x1 = alloc_array(int*, n);
+  int i;
+
+  for (i = 0; i < n; i++) {
+    x1[i] = alloc(int);
+    *x1[i] = i;
+  } 
+
+  reverse(x1, n);
+
+  for (i = 0; i < n; i++) {
+    assert(*x1[i] == n-i-1);
+  }
+
+  return 0;
+}

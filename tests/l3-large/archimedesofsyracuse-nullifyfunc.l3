@@ -1,0 +1,19 @@
+//test div-by-zero
+// Function that nullifies everything messes up the computation
+
+void is30 (int v);
+
+int nullify (int x) {
+  return x & 0;
+}
+
+int main() {
+  int val = 30;
+  is30(val);
+  val /= nullify(val);
+  return 0;
+}
+
+void is30 (int v) {
+  assert (v == 30);
+}

@@ -1,0 +1,11 @@
+//test error
+
+//Uses uninit variable in for loop that doesn't run.
+int main(){
+    int k = 0;
+    int l;
+    for(l = 100; l > 1000; l++){
+        return i;
+    }
+    return k;
+}

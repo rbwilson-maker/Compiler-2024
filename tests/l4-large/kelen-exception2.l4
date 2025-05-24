@@ -1,0 +1,16 @@
+//test memerror
+
+int main(){
+    int length = 10000;
+    int[] a = alloc_array(int, length);
+    for (int i = 0; i < length-1; i++) {
+        a[i] = i + 1;
+    }
+    a[length-1] = -1;
+
+    int idx = a[0];
+    while(true) {
+        idx = a[idx]; // out-of-bound when idx = 01
+    }
+    return 0;
+}

@@ -1,0 +1,27 @@
+//test div-by-zero
+
+int sumSquares(int N) {
+  if(N == 0) return 0;
+  else if(N == 1) return 1;
+  else return sumSquares(N - 1) + N * N;
+}
+
+void fakeassert(bool b) {
+  int x = 1;
+  if(b) return; else x/0;
+  return;
+}
+
+int die_assert(int N) {
+  assert (sumSquares(N) != N * (N + 1) * (2*N + 1) / 6);
+  return 1;
+}
+
+int die_fakeassert(int N) {
+  fakeassert (sumSquares(N) != N * (N + 1) * (2*N + 1) / 6);
+  return 2;
+}
+
+int main() {
+  return die_fakeassert(4) * die_assert(6);
+}

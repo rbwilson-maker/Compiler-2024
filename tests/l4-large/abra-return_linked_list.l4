@@ -1,0 +1,20 @@
+//test return 10
+
+struct node {
+	struct node *next;
+	int data;
+};
+
+int main () {
+	struct node *prev = alloc(struct node);
+	prev->data = 0;
+	int i = 0;
+	while (i<10) {
+		struct node *new = alloc(struct node);
+		prev->next = new;
+		new->data = i;
+		prev = new;
+		i++;
+	}
+	return i;
+}

@@ -1,0 +1,14 @@
+//test return 8
+int main() {
+  int w = 6;
+  int x = 4;
+  bool y;
+  bool z;
+  y = x < 5;
+  z = 5 >= w;
+  if (y && !z) {
+    x -= 2;
+  } 
+  w = x << 2;
+  return w;
+}

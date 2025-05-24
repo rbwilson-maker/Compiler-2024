@@ -1,0 +1,6 @@
+//test error
+
+int main(){
+    if(less(true, 2)) return 0;
+    return -1;
+}

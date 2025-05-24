@@ -1,0 +1,226 @@
+//test return 7
+
+struct person_struct {};
+
+typedef struct person_struct* person;
+
+typedef person[] pref_list;
+
+person first_free_good_guy(person[] good_guys, int number_of_pairs, person[] good_guys_matches) {
+
+    for (int i = 0; i < number_of_pairs; i++){
+        if (good_guys_matches[i] == NULL) return good_guys[i];
+    }
+
+    return NULL;
+}
+
+pref_list get_prefs(person p, person[] people, pref_list[] preferences){
+
+    int i = 0;
+
+    while (people[i] != p) {
+        i++;
+    }
+
+    return preferences[i];
+}
+
+person top_love_interest(pref_list love_interests){
+
+    int i = 0;
+
+    while (love_interests[i] == NULL) {
+        i++;
+    }
+
+    person love_interest = love_interests[i];
+
+    love_interests[i] = NULL;
+
+    return love_interest;
+}
+
+person get_current_match_for_evil(person p, person[] good_guys, person[] matches, int number_of_pairs) {
+
+    for (int i = 0; i < number_of_pairs; i++) {
+        if (matches[i] == p) return good_guys[i];
+    }
+
+    return NULL;
+}
+
+void set_match(person good, person evil, person[] good_guys, person[] matches) {
+
+    int i = 0;
+
+    while (good_guys[i] != good) {
+        i++;
+    }
+
+    matches[i] = evil;
+}
+
+bool is_better_match(person p, person potential_match, person current_match, pref_list prefs) {
+
+    int i = 0;
+
+    while (true) {
+        if (prefs[i] == potential_match) return true;
+
+        if (prefs[i] == current_match) return false;
+
+        i++;
+    }
+
+    return false;
+}
+
+void match_em(person[] good_guys, person[] bad_guys, int number_of_pairs, pref_list[] good_guy_preferences,
+             pref_list[] bad_guy_preferences, person[] good_guys_matches) {
+
+    person proposer = first_free_good_guy(good_guys, number_of_pairs, good_guys_matches);
+
+    if (proposer == NULL) return;
+
+    pref_list prefs = get_prefs(proposer, good_guys, good_guy_preferences);
+
+    person proposee = top_love_interest(prefs);
+
+    pref_list proposee_prefs = get_prefs(proposee, bad_guys, bad_guy_preferences);
+
+    person current_proposee_match = get_current_match_for_evil(proposee, good_guys, good_guys_matches, number_of_pairs);
+
+    if (current_proposee_match == NULL) {
+        set_match(proposer, proposee, good_guys, good_guys_matches);
+    } else if (is_better_match(proposee, proposer, current_proposee_match, proposee_prefs)) {
+        set_match(proposer, proposee, good_guys, good_guys_matches);
+        set_match(current_proposee_match, NULL, good_guys, good_guys_matches);
+    }
+
+    match_em(good_guys, bad_guys, number_of_pairs, good_guy_preferences, bad_guy_preferences, good_guys_matches);
+}
+
+int main() {
+    person aberforth = alloc(struct person_struct);
+    person buckbeak = alloc(struct person_struct);
+    person cho_chang = alloc(struct person_struct);
+    person dobby = alloc(struct person_struct);
+    person elphias_doge = alloc(struct person_struct);
+
+    person fudge = alloc(struct person_struct);
+    person goyle = alloc(struct person_struct);
+    person hopkirk = alloc(struct person_struct);
+    person igor = alloc(struct person_struct);
+    person jorkins = alloc(struct person_struct);
+
+    person[] good_guys = alloc_array(person, 5);
+    good_guys[0] = aberforth;
+    good_guys[1] = buckbeak;
+    good_guys[2] = cho_chang;
+    good_guys[3] = dobby;
+    good_guys[4] = elphias_doge;
+
+    person[] bad_guys = alloc_array(person, 5);
+    bad_guys[0] = fudge;
+    bad_guys[1] = goyle;
+    bad_guys[2] = hopkirk;
+    bad_guys[3] = igor;
+    bad_guys[4] = jorkins;
+
+    pref_list aberforth_prefs = alloc_array(person, 5);
+    aberforth_prefs[0] = fudge;
+    aberforth_prefs[1] = goyle;
+    aberforth_prefs[2] = hopkirk;
+    aberforth_prefs[3] = igor;
+    aberforth_prefs[4] = jorkins;
+
+    pref_list buckbeak_prefs = alloc_array(person, 5);
+    buckbeak_prefs[0] = goyle;
+    buckbeak_prefs[1] = igor;
+    buckbeak_prefs[2] = jorkins;
+    buckbeak_prefs[3] = fudge;
+    buckbeak_prefs[4] = hopkirk;
+
+    pref_list cho_chang_prefs = alloc_array(person, 5);
+    cho_chang_prefs[0] = igor;
+    cho_chang_prefs[1] = goyle;
+    cho_chang_prefs[2] = fudge;
+    cho_chang_prefs[3] = jorkins;
+    cho_chang_prefs[4] = hopkirk;
+
+    pref_list dobby_prefs = alloc_array(person, 5);
+    dobby_prefs[0] = igor;
+    dobby_prefs[1] = goyle;
+    dobby_prefs[2] = fudge;
+    dobby_prefs[3] = jorkins;
+    dobby_prefs[4] = hopkirk;
+
+    pref_list elphias_doge_prefs = alloc_array(person, 5);
+    elphias_doge_prefs[0] = hopkirk;
+    elphias_doge_prefs[1] = jorkins;
+    elphias_doge_prefs[2] = fudge;
+    elphias_doge_prefs[3] = goyle;
+    elphias_doge_prefs[4] = igor;
+
+    pref_list[] good_guy_prefs = alloc_array(pref_list, 5);
+    good_guy_prefs[0] = aberforth_prefs;
+    good_guy_prefs[1] = buckbeak_prefs;
+    good_guy_prefs[2] = cho_chang_prefs;
+    good_guy_prefs[3] = dobby_prefs;
+    good_guy_prefs[4] = elphias_doge_prefs;
+
+    pref_list fudge_prefs = alloc_array(person, 5);
+    fudge_prefs[0] = dobby;
+    fudge_prefs[1] = aberforth;
+    fudge_prefs[2] = cho_chang;
+    fudge_prefs[3] = elphias_doge;
+    fudge_prefs[4] = buckbeak;
+
+    pref_list goyle_prefs = alloc_array(person, 5);
+    goyle_prefs[0] = elphias_doge;
+    goyle_prefs[1] = buckbeak;
+    goyle_prefs[2] = aberforth;
+    goyle_prefs[3] = dobby;
+    goyle_prefs[4] = cho_chang;
+
+    pref_list hopkirk_prefs = alloc_array(person, 5);
+    hopkirk_prefs[0] = elphias_doge;
+    hopkirk_prefs[1] = dobby;
+    hopkirk_prefs[2] = cho_chang;
+    hopkirk_prefs[3] = buckbeak;
+    hopkirk_prefs[4] = aberforth;
+
+    pref_list igor_prefs = alloc_array(person, 5);
+    igor_prefs[0] = cho_chang;
+    igor_prefs[1] = dobby;
+    igor_prefs[2] = aberforth;
+    igor_prefs[3] = elphias_doge;
+    igor_prefs[4] = buckbeak;
+
+    pref_list jorkins_prefs = alloc_array(person, 5);
+    jorkins_prefs[0] = aberforth;
+    jorkins_prefs[1] = buckbeak;
+    jorkins_prefs[2] = elphias_doge;
+    jorkins_prefs[3] = cho_chang;
+    jorkins_prefs[4] = dobby;
+
+    pref_list[] bad_guy_prefs = alloc_array(pref_list, 5);
+    bad_guy_prefs[0] = fudge_prefs;
+    bad_guy_prefs[1] = goyle_prefs;
+    bad_guy_prefs[2] = hopkirk_prefs;
+    bad_guy_prefs[3] = igor_prefs;
+    bad_guy_prefs[4] = jorkins_prefs;
+
+    person[] matches = alloc_array(person, 5);
+
+    match_em(good_guys, bad_guys, 5, good_guy_prefs, bad_guy_prefs, matches);
+
+    assert(matches[0] == jorkins);
+    assert(matches[1] == goyle);
+    assert(matches[2] == igor);
+    assert(matches[3] == fudge);
+    assert(matches[4] == hopkirk);
+
+    return 7;
+}

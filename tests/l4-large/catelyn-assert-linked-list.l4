@@ -1,0 +1,54 @@
+//test abort
+
+struct list_node {
+	int val;
+	struct list_node* next;
+};
+typedef struct list_node* node;
+
+// using dummy node convention from 122
+struct linked_list {
+	node start;
+	node end;
+};
+typedef struct linked_list* llist;
+
+void insert(llist l, int val) {
+	node old = l->end;
+	node new = alloc(struct list_node);
+	old->val = val;
+	old->next = new;
+	l->end = new;
+}
+int remove(llist l) {
+	assert(l->start != l->end);
+	assert(l->start != NULL);
+	node before = l->start;
+	while (before->next != l->end) {
+		before = before->next;
+	}
+	l->end = before;
+	return l->end->val;
+}
+
+int main() {
+	llist a_list = alloc(struct linked_list);
+	node dummy = alloc(struct list_node);
+	a_list->start = dummy;
+	a_list->end = dummy;
+
+	insert(a_list, 1);
+	insert(a_list, 2);
+	insert(a_list, 3);
+	insert(a_list, 4);
+	insert(a_list, 5);
+
+	assert(remove(a_list) == 5);
+	assert(remove(a_list) == 4);
+	assert(remove(a_list) == 3);
+	assert(remove(a_list) == 2);
+	assert(remove(a_list) == 1);
+	assert(remove(a_list) == 0);
+
+	return 0;
+}

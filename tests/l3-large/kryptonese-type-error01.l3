@@ -1,0 +1,12 @@
+//test error
+
+// using the type wrong from header 
+
+int main() {
+    if (rand(false)) {
+        return 0;
+    }
+    else {
+        return 1;
+    }
+}

@@ -1,0 +1,7 @@
+//test div-by-zero
+// multiplication is commutative ...unless?
+int main()
+{
+    int x = 2;
+    return x / (x / x / x * x * x);
+}

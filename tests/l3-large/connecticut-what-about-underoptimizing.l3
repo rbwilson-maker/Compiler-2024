@@ -1,0 +1,32 @@
+//test return 1
+
+int terrible_function_that_should_be_optimized(int argument_with_long_name_because_l3_needed_to_be_more_like_java) {
+	if(false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false ||
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || false || 
+	argument_with_long_name_because_l3_needed_to_be_more_like_java == 0) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+int main() {
+	int x = terrible_function_that_should_be_optimized(0);
+	return x;
+}

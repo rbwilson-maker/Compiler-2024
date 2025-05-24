@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int main() { 
+    int x = 0;
+    for (int i = 0; i < -1; i++) {
+        x += 1;
+    }
+    x += 1;
+    x <<= 2;
+    bool y = false;
+    if (y) {
+        x++;
+    }
+    return x / (y ? 1 : 0);
+}

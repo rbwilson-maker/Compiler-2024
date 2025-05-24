@@ -1,0 +1,18 @@
+//test error
+// Redefinition of compute function
+
+int compute(int x) {
+  return 2 * x;
+}
+
+int helper() {
+  return compute(2);
+}
+
+int compute(int x) {
+  return 3 * x;
+}
+
+int main() {
+  return compute(2) + helper();
+}

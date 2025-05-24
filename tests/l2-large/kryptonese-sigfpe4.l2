@@ -1,0 +1,9 @@
+//test div-by-zero
+int main() {
+    while (true) {
+        for (int i = 0; i < 10; i++) {
+            return i / i;
+        }
+    }
+    return 1;
+}

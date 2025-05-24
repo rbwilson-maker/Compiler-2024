@@ -1,0 +1,15 @@
+//test return 0
+
+struct s1 { int f1; int f2; };
+
+struct s2 {
+    int i; 
+    struct s1* t; 
+    int* p; 
+};
+
+int main() {
+    struct s2* s = alloc(struct s2); 
+    s->t = alloc(struct s1); 
+    return s->t->f1; 
+}

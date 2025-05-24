@@ -1,0 +1,17 @@
+//test return 0
+
+typedef int A;
+typedef A* B;
+typedef B[] C;
+typedef C* D;
+typedef D[] E;
+
+int main() {
+    A a = 15411;
+    B b = alloc(A);
+    C c = alloc_array(B, 15);
+    D d = alloc(C);
+    E e = alloc_array(D, 4);
+
+    return 0;
+}

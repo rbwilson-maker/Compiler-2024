@@ -1,0 +1,21 @@
+//test return 1318412525
+
+//modified fib to use recursion while still being linear
+
+int fib_helper(int x2, int x1, int n, int nto) {
+	int next = x2 + x1;
+	
+	if (n == nto) {
+		return next;
+	}
+	
+	return fib_helper(x1, next, n+1, nto);
+}
+
+int fib(int x) {
+	return fib_helper(1, 1, 2, x);
+}
+
+int main() {
+	return fib(1000);
+}

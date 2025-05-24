@@ -1,0 +1,12 @@
+//test div-by-zero
+//tests while loop with int
+
+int main() {
+	int x = 10;
+	int y = 0;
+	int i = 0;
+	while (i < x) {
+		i += (x / y);
+	}
+	return i;
+}

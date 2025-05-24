@@ -1,0 +1,17 @@
+//test return 495
+
+int main() {
+  int n = 12;
+  int k = 4;
+  int combi = 1;
+  for (int i = n; i >= 1; i--) {
+    combi *= i;
+  }
+  for (int i = k; i >= 1; i--) {
+    combi /= i;
+  }
+  for (int i = n - k; i >= 1; i--) {
+    combi /= i;
+  }
+  return combi;
+}

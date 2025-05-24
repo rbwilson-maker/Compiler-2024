@@ -1,0 +1,15 @@
+//test return 5
+//simple if
+
+int main()
+{
+  {
+    if (false){
+
+    }
+    else{
+      return 5;
+    }
+    return 0;
+  }
+}

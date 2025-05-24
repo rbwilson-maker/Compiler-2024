@@ -1,0 +1,14 @@
+//test return 8
+int foo(int[] A, int x) {
+      if (x == 0) return 0;
+      A[foo(A, x-1)] += foo(A, x-1);
+      return x;
+}
+
+int main() {
+    int[] A = alloc_array(int, 10);
+    A[0] = 1;
+    A[1] = 2;
+    A[foo(A, 5)] += A[foo(A, 5)];
+    return A[4];
+}

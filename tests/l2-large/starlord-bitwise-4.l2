@@ -1,0 +1,15 @@
+//test return 1
+
+int main () {
+  int x = 0;
+  int i = 0;
+
+  while(i < 32) {
+    x <<= 2;
+    x |= 1;
+    i++;
+  }
+  int y = -1 ^ x;
+
+  return ((x & y) + 1);
+}

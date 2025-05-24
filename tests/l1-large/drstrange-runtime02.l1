@@ -1,0 +1,15 @@
+//test div-by-zero
+// overflow by multiplying
+// INT_MAX is 0x7FFFFFFF
+// INT_MIN is 0x80000000
+// -1 is 0xFFFFFFFF
+
+int main()
+{
+  int value1 = 0xFFFFFF;
+  value1 *= -3;
+  int value2 = 0x0;
+  value2 = -value2;
+  value1 %= value2;
+  return value1;
+}

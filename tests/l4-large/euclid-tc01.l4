@@ -1,0 +1,16 @@
+//test error
+/* incorrect type of field */
+
+struct s {
+    int x;
+};
+
+int main() {
+    struct s * test;
+    test = alloc(struct s);
+    s->x = 1;
+    if (s->x) {
+        return 1;
+    }
+    return 0;
+}

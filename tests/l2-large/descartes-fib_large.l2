@@ -1,0 +1,20 @@
+//test return 1836311903
+// calcualte the 46th fibonacci number (largest before int_max())
+
+int main() {
+  int x = 0;
+  int y = 1;
+
+  int i = 1;
+  int z = 0;
+
+  while (i < 46) {
+    z = x + y;
+    x = y;
+    y = z;
+
+    i++;
+  }
+
+  return z;
+}

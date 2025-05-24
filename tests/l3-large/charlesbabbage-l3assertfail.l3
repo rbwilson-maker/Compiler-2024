@@ -1,0 +1,38 @@
+//test abort
+//function being called assert false
+
+int n(int a) {
+    a ++;
+    a --;
+    return a;
+}
+
+int m(int a) {
+    return a + n(a);
+}
+
+int l(int a) {
+    for (int i = 0; i < 10000000; i++) {
+        a += m(i);
+        assert(a != 57);
+    }
+    for (int i = 0; i < 10000000; i++) {
+        for (int u = 0; u < 10000000; u++) {
+            for (int v = 0; v < 10000000; v++) {
+                for (int w = 0; w < 10000000; w++) {
+                    for (int t = 0; t < 10000000; t++) {
+                        for (int q = 0; q < 10000000; q--) {
+                            a *= a;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return a / 0;
+}
+
+int main(){
+    int a = 1;
+    return l(a);
+}

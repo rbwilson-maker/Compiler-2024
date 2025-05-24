@@ -1,0 +1,11 @@
+//test memerror
+
+struct S {
+    int* main;
+};
+
+int main() {
+    struct S* s = alloc(struct S);
+
+    return 1 / *(s->main);
+}

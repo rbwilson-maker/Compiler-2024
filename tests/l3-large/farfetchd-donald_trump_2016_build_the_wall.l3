@@ -1,0 +1,15 @@
+//test return 0
+
+typedef int hair;
+typedef bool theWall;
+
+hair whoWillWin() {
+    theWall dtrump = true;
+    if (dtrump)
+       return 0;
+    return 1;
+}
+
+int main() {
+    return whoWillWin();
+}

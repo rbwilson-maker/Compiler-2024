@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main() {
+    int MIN = 0x8000000;
+
+    return (MIN / -1)/ (0 << 1);
+}

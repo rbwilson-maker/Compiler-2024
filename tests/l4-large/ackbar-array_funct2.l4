@@ -1,0 +1,13 @@
+//test return 0
+
+int foo(int * val){
+    (*val)--;
+    return *val;
+}
+
+int main(){
+    int[] test = alloc_array(int, 10);
+    int * index = alloc(int);
+    *index = 1;   
+    return test[foo(index)];
+}

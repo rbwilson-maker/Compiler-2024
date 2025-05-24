@@ -1,0 +1,16 @@
+//test memerror
+
+int foo(int[] arr, int len, int *x) {
+	if (*x < len) {
+		(*x)++;
+		return foo(arr, len, x);
+	} else {
+		return arr[*x];
+	}
+}
+
+int main() {
+	int *x = alloc(int);
+	int[] arr = alloc_array(int, 5);
+	return foo(arr, 5, x);
+}

@@ -1,0 +1,10 @@
+//test return 0
+
+int main() {
+    int[] a = alloc_array(int, 5);
+    int[]* p = alloc(int[]);
+    *p = a;
+    int[]** pp = alloc(int[]*);
+    *pp = p;
+    return (**pp)[0];
+}

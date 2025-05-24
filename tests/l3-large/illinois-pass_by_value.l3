@@ -1,0 +1,20 @@
+//test return 111111
+// pass by value
+
+void f(int b) {
+  b = b + 1;
+  assert(b < 6);
+}
+
+int main() {
+  int b = 1;
+  int x = 0;
+
+  x += b; x *= 10; f(b);
+  x += b; x *= 10; f(b);
+  x += b; x *= 10; f(b);
+  x += b; x *= 10; f(b);
+  x += b; x *= 10; f(b);
+  x += b;
+  return x;
+}

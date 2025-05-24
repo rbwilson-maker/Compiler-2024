@@ -1,0 +1,32 @@
+//test return 42
+// lots of nesting
+
+int f(int x) {
+  return 42;
+}
+
+int main() {
+  return f(f(f(f(f(f(f(f(f(f(f(f(
+  	 f(f(f(f(f(f(f(f(f(f(f(f(
+	 f(f(f(f(f(f(f(f(f(f(f(f(
+	 f(f(f(f(f(f(f(f(f(f(f(f(
+	 f(f(f(f(f(f(f(f(f(f(f(f(
+	 f(f(f(f(f(f(f(f(f(f(f(f(
+	 f(f(f(f(f(f(f(f(f(f(f(f(
+	 f(f(f(f(f(f(f(f(f(f(f(f(
+	 f(f(f(f(f(f(f(f(f(f(f(f(
+	 f(f(f(f(f(f(f(f(f(f(f(f(
+	 f(f(f(f(f(f(f(f(f(f(f(f(
+	 0
+	 ))))))))))))
+	 ))))))))))))
+	 ))))))))))))
+	 ))))))))))))
+	 ))))))))))))
+	 ))))))))))))
+	 ))))))))))))
+	 ))))))))))))
+	 ))))))))))))
+	 ))))))))))))
+	 ))))))))))));
+}

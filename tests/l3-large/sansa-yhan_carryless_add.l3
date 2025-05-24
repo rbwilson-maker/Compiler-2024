@@ -1,0 +1,31 @@
+//test return 0
+// carrylessAdd from 15112
+int fast_exp(int base, int e) {
+  int r = 1;
+  while (e > 1) {
+    if (e % 2 == 1) {
+      r = base * r;
+    }
+    base = base * base;
+    e = e / 2;
+  }
+  return r * base;
+}
+
+int carryLessAdd(int x, int y) {
+  int result = 0;
+  int count = 0;
+  while (x > 0 || y > 0) {
+    result += ((x % 10 + y % 10) % 10) * (fast_exp(10, count));
+    x /= 10;
+    y /= 10;
+    count += 1;
+  }
+  return result;
+}
+
+int main() {
+  int x = 100;
+  int y = 900;
+  return carryLessAdd(x, y);
+}

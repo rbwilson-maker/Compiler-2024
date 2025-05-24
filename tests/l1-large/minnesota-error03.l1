@@ -1,0 +1,8 @@
+//test error
+// used reserved word as  a variable name
+
+int main() {
+  int while = 1;
+  while += 2;
+  return while;
+}

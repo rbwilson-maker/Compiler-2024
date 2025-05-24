@@ -1,0 +1,14 @@
+//test error
+
+typedef struct ValueArray_t valArr;
+struct ValueArray_t{
+    int id;
+    int[] vals;
+    int size;
+};
+
+int main(){
+    valArr* x = alloc_array(bool, 3);
+    return 1;
+
+}

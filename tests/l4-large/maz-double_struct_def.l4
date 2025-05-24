@@ -1,0 +1,15 @@
+//test error
+
+struct s {
+    int a;
+    bool b;
+}
+
+struct s {
+    bool b;
+    int a;
+}
+
+int main() {
+    return 0; 
+}

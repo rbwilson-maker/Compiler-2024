@@ -1,0 +1,27 @@
+//test return 20
+// anyone watched 3blue1brown's new video?
+
+bool is_prime(int x) {
+  for (int y = 2; y < x; y++) {
+    if (x % y == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+int phi(int n) {
+  int ret = n;
+  for (int y = 2; y < n; y++) {
+    if (is_prime(y)) {
+      if (n % y == 0) {
+        ret = ret - ret/y;
+      }
+    }
+  }
+  return ret;
+}
+
+int main() {
+  return phi(44);
+}

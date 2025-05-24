@@ -1,0 +1,19 @@
+struct node
+{
+	int data;
+	struct node *next;
+};
+
+typedef struct node list;
+
+int sumlist(list *head)
+{
+	if (head == NULL) {
+		return 0;
+	}
+	else {
+		return (head->data) + sumlist(head->next);
+	}
+}
+
+

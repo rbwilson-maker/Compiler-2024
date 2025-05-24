@@ -1,0 +1,8 @@
+//test return 96
+
+int main() {
+    int a = 1;
+    int cs = a << 1 << 5;
+    int principles_of_imperative_computation = a << 1 << 2 << 2;
+    return cs | principles_of_imperative_computation;
+}

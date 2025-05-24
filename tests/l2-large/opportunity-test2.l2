@@ -1,0 +1,11 @@
+//test return 80
+
+int main(){
+  
+  int x;
+  int y=0;
+  for(x=0;x<9;x++)
+    while(y<10*x)
+      y++;
+  return y;
+}

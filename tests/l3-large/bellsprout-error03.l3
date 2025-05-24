@@ -1,0 +1,23 @@
+//test error
+
+bool is_red(int red);
+bool is_green(int green);
+bool is_blue(int blue);
+
+int get_red_rgb() { return 0xFF0000;}
+int get_green_rgb() { return 0x00FF00;}
+int get_blue_rgb() {return 0x0000FF;}
+bool is_red(int rgb) { return get_red_rgb() == rgb;}
+bool is_green(int rgb) {return get_green_rgb() == rgb;}
+
+bool is_green_or_blue(int color) {return is_green(color) || is_blue(color);}
+
+int main() {
+    if (is_red(rand() << 16)) {
+        return get_red_rgb();
+    } else {
+	// dead code block
+        return get_blue_rgb();
+    }
+}
+

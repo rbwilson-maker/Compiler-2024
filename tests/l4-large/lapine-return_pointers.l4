@@ -1,0 +1,14 @@
+//test return 24
+int main()
+{
+  int *main = alloc(int);
+  bool *hello = alloc(bool);
+  *main = 24;
+  *main;
+  *hello = true;
+  if (!(*hello))
+  {
+    return 4;
+  }
+  return *main;
+}

@@ -1,0 +1,15 @@
+//test abort
+// False assertion using typedef'd bool
+
+typedef bool myBool;
+
+int main() {
+
+  myBool myFalse = false;
+  myBool myTrue = true;
+
+  myBool cond = 1 == 3 ? myTrue : myFalse;
+  assert(cond);
+
+  return 0;
+}

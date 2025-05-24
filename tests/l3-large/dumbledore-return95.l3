@@ -1,0 +1,13 @@
+//test return 10
+// Overwrite argument values, check to make sure they're the same
+
+int jan(int x) {
+    x = 5;
+    return x;
+}
+
+int main() {
+    int y = 4;
+    y = jan(y);
+    return y + jan(y);
+}

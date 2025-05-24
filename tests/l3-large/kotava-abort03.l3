@@ -1,0 +1,27 @@
+//test abort
+
+typedef bool alien;
+typedef bool human;
+
+human catch(alien exists) {
+  assert ((false || exists) && (!exists)); // same as assert(false)
+  return true;
+}
+
+alien search(human present) {
+  assert(!present || present); // same as assert(true)
+  return true;
+}
+
+int main() {
+  alien is_searching;
+  if (false) {
+    is_searching = search(false);
+  } else {
+    is_searching = search(true);
+  }
+  if (catch(is_searching)) {
+    return 42;
+  }
+  return 0;
+}

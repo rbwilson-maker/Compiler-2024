@@ -1,0 +1,22 @@
+//test error
+
+/* Argument Single Parenthesis Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, October 12, 2015 at 02:23:02 PM EDT
+ *
+ * This test tests that the compiler only permits an argument list (list of
+ * expressions passed into a function call) to be surrouned by only a single
+ * pair of parenthesis.
+ */
+
+int test()
+{
+    return 42;
+}
+
+int main()
+{
+    return test((((((((((((((((((()))))))))))))))))));
+}

@@ -1,0 +1,21 @@
+//test return 458330
+
+//computes the last number you get where each
+//next number in a set is equal to the previous number squared + 1
+//this is similar to the mandelbrot set but c is always equal to 1
+//recursively (and returns the last number)
+
+int compute_m(int prev, int calc) {
+    if (calc < 0) return prev;
+    int new = (prev * prev) + 1;
+    return compute_m(new, calc-1);
+}
+
+int mandelbrot(int calc) {
+    return compute_m(0, calc);
+}
+
+int main() {
+    int calc = 5;
+    return mandelbrot(calc);
+}

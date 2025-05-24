@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+//Test function in infloop
+
+int foo(int n) {
+  for (int x = 0; x < 400; x++) {
+    n++;
+  }
+  return 0;
+}
+
+int main() {
+  int n = 0;
+
+  while(n < 1) {
+    n = foo(n);
+  }
+  return 0;
+}

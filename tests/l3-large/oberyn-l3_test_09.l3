@@ -1,0 +1,28 @@
+//test div-by-zero
+
+// tests make sure function arguments evaluate left to right
+
+int g(int a, int b) {
+	return a / b;
+}
+
+int h(int a, int b) {
+	assert(a == b);
+
+	return 0;
+}
+
+int f(int a, int b) {
+	return a + b;
+}
+
+int main() {
+	int x = 0;
+	int y = 0;
+
+	f(g(5, 0), h(0, 1));
+
+	assert(x == 0 && y == 0);
+
+	return 0;
+}

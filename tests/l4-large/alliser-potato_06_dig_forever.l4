@@ -1,0 +1,20 @@
+//test memerror
+
+void bury_bone(bool[] yard) {
+    int plot = 0;
+    bool has_bone = yard[plot];
+    while(has_bone)
+    {
+        plot++;
+        has_bone = yard[plot];
+    }
+    yard[plot] = true;
+}
+
+int main() {
+    bool[] yard = alloc_array(bool, 100);
+    bool urge_to_bury_stuff = true;
+    while (urge_to_bury_stuff) bury_bone(yard);
+
+    return 0;
+}

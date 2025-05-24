@@ -1,0 +1,44 @@
+//test return 0
+
+// (NOT) In-place qsort 
+void qsort(int[] arr, int b, int e) {
+     if (b >= e) return;
+     int size = e - b;
+     int[] temp = alloc_array(int, size);
+     int p = 0;
+     int q = size - 1;
+     int piv = arr[b];
+     for (int i = b + 1; i < e; i++) {
+         if (arr[i] <= piv) {
+            temp[p] = arr[i];
+            p += 1;
+         } else {
+            temp[q] = arr[i];
+            q -= 1;
+         }
+     }
+     assert(p == q);
+     temp[p] = piv;
+     for (int i = 0; i < size; i++) {
+         arr[b + i] = temp[i];
+     }
+     qsort(arr, b, b + p);
+     qsort(arr, b + p + 1, e);
+}
+
+void check(int[] arr, int s) {
+     for (int i = 0; i + 1 < s; i++) 
+         assert(arr[i] <= arr[i + 1]);
+}
+
+int main() {
+    int[] a = alloc_array(int, 100);
+    int s = 1;
+    for (int i = 0; i < 90; i ++) {
+        a[i] = s;
+        s = (s * 79) % 101;
+    }
+    qsort(a, 0, 100);
+    check(a, 100);
+    return 0;
+}

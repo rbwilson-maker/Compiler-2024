@@ -1,0 +1,17 @@
+//test error
+
+typedef int pixel;
+typedef int pixel2;
+
+int pixel1(pixel input) {
+  return input - 4;
+}
+
+int pixel2(pixel2 input) {
+  // This function should cause a typecheck error
+  return input + 4;
+}
+
+int main() {
+  return 0;
+}

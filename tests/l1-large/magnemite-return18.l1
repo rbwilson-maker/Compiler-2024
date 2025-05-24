@@ -1,0 +1,12 @@
+//test return 8
+// parenthesis( in lval, in rval, in expressions)
+
+int main() {
+    int a;
+    int b;
+    int c;
+    (a) = 3;
+    b = (a+1);
+    c = (a + b) - (a - b);
+    return c;//c=8
+}

@@ -1,0 +1,19 @@
+(* utils/Either.sig : 1.1-9.1 *)
+(* molasses-file3.sml *)
+local
+	infix 5 **
+	infix 5 //
+	infixr <|
+	infix |>
+	open InternalMolassesStructure0
+in
+signature EITHER =
+  sig
+    datatype ('a, 'b) t = ERR of 'a | OK of 'b
+    val map : ('a1 -> 'a2) -> ('b1 -> 'b2) -> ('a1, 'b1) t -> ('a2, 'b2) t
+    val partition : ('a -> ('b, 'c) t) -> 'a list -> 'b list * 'c list
+    val toValue : (JSON.value, JSON.value) t -> JSON.value
+    val fromValue : JSON.value -> (JSON.value, JSON.value) t
+  end
+
+end

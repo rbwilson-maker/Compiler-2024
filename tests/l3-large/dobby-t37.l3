@@ -1,0 +1,17 @@
+//test return 10
+
+bool is_good_test() {
+  return false;
+}
+
+bool is_short_test() {
+  return true;
+}
+
+int main() {
+  if (!is_good_test() && is_short_test()) {
+    return 10;
+  } else {
+    return -1;
+  }
+}

@@ -1,0 +1,10 @@
+//test return 10
+
+int main () {
+	int a = 20;
+	int b = 40;
+	a = b - a;
+	a /= 2;
+	return a;
+}
+

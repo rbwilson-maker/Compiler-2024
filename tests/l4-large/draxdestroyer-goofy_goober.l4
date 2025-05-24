@@ -1,0 +1,47 @@
+//test return 0
+//
+//
+struct linked_list {
+    struct linked_list * next;
+    struct linked_list  *prev;
+};
+
+
+typedef struct linked_list*  linked_list;
+
+
+struct linked_list * create() {
+    linked_list jesus = NULL;
+    linked_list head = alloc(struct linked_list);
+    /*
+     * Originally this was this
+     * but C0 is cringe and doesn't allow
+     * me to do jesus && 0xff ?????
+     * and worse 
+     * alloc 
+     * actually
+     * calls calloc
+     * meaning
+     * memory 
+     * isn't just random nonsese
+     * I'm so sad :(
+     * anwyays alexa
+     * play return_0 by illiano
+    jesus = head;
+    while (jesus & 0xff) {
+        linked_list jesus2 = alloc(struct linked_list);
+        jesus -> next = jesus2;
+        jesus = jesus2;
+    }
+    return head;
+    */
+        return head; // ;)
+}
+
+int main() {
+    linked_list uhm = create();
+    while(uhm != NULL) {
+        uhm = uhm -> next;
+    }
+    return 0;
+}

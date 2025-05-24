@@ -1,0 +1,12 @@
+//test error
+
+struct voidvoid {
+  void x;
+  void y;
+  int* z;
+}
+
+int main()
+{
+  return 1;
+}

@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+    bool a = true && false;
+    int b = 456&&324||345;
+    return b;
+}

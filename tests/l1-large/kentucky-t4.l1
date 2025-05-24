@@ -1,0 +1,28 @@
+//test error
+
+// Missing semicolon
+
+int main () {
+
+    int q = 0;
+    int w = q + 1;
+    int e = w + 1;
+    int r = e + 1
+    int t = r + 1;
+    int y = t + 1;
+    int u = y + 1;
+    int i = u + 1;
+    int o = i + 1;
+    int p = o + 1;
+    int a = p + 1;
+    int s = a + 1;
+    int d = s + 1;
+    int f = d + 1;
+    int g = f + 1;
+    int h = g + 1;
+    int j = h + 1;
+    int k = j + 1;
+    return k;
+
+}
+

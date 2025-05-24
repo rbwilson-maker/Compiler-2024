@@ -1,0 +1,19 @@
+//test div-by-zero
+
+void foo(int x);
+int bar(int y);
+
+int main() {
+    foo(1);
+    return 42;
+}
+
+void foo(int x) {
+    int z = bar(x & (x + 69));
+    return;
+}
+
+int bar(int y) {
+    int yy = y / y;
+    return y;
+}

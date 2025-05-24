@@ -1,0 +1,21 @@
+//test return 0
+
+// another recursion test.
+
+int tRecursion(int n)
+{
+    if(n>0)
+      return tRecursion(n-1);
+    else
+    {
+      assert (ftoi(itof(n))==0);
+      return n;
+    }
+}
+
+int main()
+{
+    int x;
+    x = tRecursion(5);
+    return x;
+}

@@ -1,0 +1,28 @@
+//test return -25
+
+void swap(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+void swapp(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int *a = alloc(int);
+    *a = 5;
+    int *b = alloc(int);
+    *b = 10;
+
+    swap(*a, *b);
+    int c = *a - *b;
+
+    swapp(a, b);
+    int d = *a - *b;
+
+    return c * d;
+}

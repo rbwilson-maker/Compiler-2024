@@ -1,0 +1,16 @@
+//test return 0
+
+void fall_into_darkness(int x, int y){
+    if (x < y){
+        int z = y / x;
+    }
+    else if (y < x){
+        return;
+    }
+    int a = x/y;
+}
+
+int main(){
+    fall_into_darkness(7,3);
+    return 0;
+}

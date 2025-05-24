@@ -1,0 +1,9 @@
+//test typecheck
+
+int main() {
+   int x = 3; 
+   if(isprime(x)) {
+    return 0; 
+   }
+   return 1; 
+}

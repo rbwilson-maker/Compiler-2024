@@ -1,0 +1,18 @@
+//test return 3
+
+int main()
+{
+  int a = 3;
+  int b = a * a * a;
+  bool c = (b % 2 == 0); 
+  
+  if (c)
+    return 1;
+  else
+  {
+    if (a >= 4)
+      return 4;
+  }
+
+  return a;
+}

@@ -1,0 +1,10 @@
+//test return -1337
+// Basic unary minus test
+int main()
+{
+  int a;
+  int b;
+
+  a = 1337;
+  return -a;
+}

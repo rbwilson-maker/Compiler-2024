@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+    int cnt = 5;
+    int large = 100000;
+    while (cnt >= 0) {
+        large = large / cnt;
+        cnt --;
+    }
+    return large;
+}

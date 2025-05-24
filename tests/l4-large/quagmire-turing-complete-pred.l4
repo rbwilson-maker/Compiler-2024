@@ -1,0 +1,87 @@
+//test abort
+
+// Runs a Turing machine that computes pred(0) but then asserts that the tape changed (it did not)
+
+typedef bool symbol;
+symbol SYM_ZRO() { return false; }
+symbol SYM_ONE() { return true; }
+
+typedef bool dir;
+dir DIR_LEFT() { return false; }
+dir DIR_RGHT() { return true; }
+
+typedef int state; // only supports 2^30 states sadly :/
+state HALT() { return 0x3FFFFFFF; }
+bool is_halted(state s) { return s == 0x3FFFFFFF; }
+
+typedef int instr;
+
+instr make_instr(symbol write, dir move, state new_s) {
+    return (write ? 0x80000000 : 0) | (move ? 0x40000000 : 0) | (new_s & 0x3FFFFFFF);
+}
+
+symbol instr_write(instr i) { return (i & 0x80000000) != 0; }
+dir instr_move(instr i) { return (i & 0x40000000) != 0; }
+state instr_new_s(instr i) { return i & 0x3FFFFFFF; }
+
+
+typedef instr[] tm;
+
+instr tm_fetch(tm m, state s, symbol read) {
+    return m[2*s + (read ? 1 : 0)];
+}
+
+
+struct cfg {
+    bool[] tape;
+    int ts;
+    int head;
+    state s;
+};
+typedef struct cfg* config;
+
+void step(tm m, config c) {
+    assert(!is_halted(c->s));
+
+    instr i = tm_fetch(m, c->s, c->tape[c->head]);
+
+    c->tape[c->head] = instr_write(i);
+    c->head += instr_move(i) ? 1 : -1;
+    c->s = instr_new_s(i);
+}
+
+int eval(tm m, int in, int ts) {
+    // Set up config
+    config c = alloc(struct cfg);
+    c->ts = ts;
+    c->tape = alloc_array(bool, ts);
+    for (int i = 0; i < in; i++) c->tape[i] = true;
+    c->head = 0;
+    c->s = 0;
+
+    // Run until halts
+    while (!is_halted(c->s)) {
+        step(m,c);
+    }
+
+    // Calc output & return
+    int ret = 0;
+    while (c->tape[ret] && ret < ts) ret++;
+    return ret;
+}
+
+tm pred() {
+    tm m = alloc_array(instr, 6);
+    m[2*0 ] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*0 ] = make_instr(SYM_ONE(),DIR_RGHT(),1     );
+    m[2*1 ] = make_instr(SYM_ZRO(),DIR_LEFT(),2     ); m[1+2*1 ] = make_instr(SYM_ONE(),DIR_RGHT(),1     );
+    m[2*2 ] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*2 ] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+
+    return m;
+}
+
+int main() {
+    // Calculate pred(0)
+    int p0 = eval(pred(),0,10000);
+    assert(p0 != 0);
+    return 0;
+}

@@ -1,0 +1,9 @@
+//test div-by-zero
+// division by zero with precedence of operators
+
+int main() {
+    int x = 4;
+    int y = 2;
+    int z = x - y * 2;
+    return 10 / z;
+}

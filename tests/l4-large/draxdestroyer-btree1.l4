@@ -1,0 +1,33 @@
+//test typecheck
+
+
+int min(BT* tree) {
+
+    if (tree->left == NULL) {
+        return tree->value;
+    }
+
+    return min(tree->left);
+}
+
+int main() {
+
+    BT* root = alloc(BT);
+    BT* L = alloc(BT);
+    BT* R = alloc(BT);
+    
+    root->value = 10;
+    root->left = L;
+    root->right = R;
+
+    L->left = alloc(BT);
+    L->left->left = alloc(BT);
+    L->left->left->value = -100;
+   
+
+    L->value = 69;
+    root->left = L;
+
+
+    return min(root);
+}

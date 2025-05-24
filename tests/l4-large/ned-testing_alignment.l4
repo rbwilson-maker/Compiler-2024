@@ -1,0 +1,50 @@
+//test error
+
+struct point {
+	int x;
+	int y;
+}
+
+struct size {
+	int height;
+	int width;
+}
+
+struct boxgroup {
+	int designation;
+	size totalDims;
+	bool active;
+	point[] topLeft;
+	size[] dims;
+}
+
+
+(struct boxgroup)* makeBoxgroup() {
+	struct boxGroup g;
+	
+	return g;
+}
+	
+
+int main() {
+	struct point p;
+	p.x = 0;
+	p.y = 0;
+	
+	struct size s;
+	s.height = 100;
+	s.width = 200;
+	
+	struct boxGroup g;
+	g.designation = 20;
+	g.size = s;
+	
+	assert(g.active == false);
+	assert(g.dims.size.width == 200);
+	assert(g.totalDims.width == 0);
+	assert(g.topLeft.x == 0);
+	
+	struct boxGroup* gp = &g;
+	
+	return 0;
+}

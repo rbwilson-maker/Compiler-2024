@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int main() {
+    int a = 0xdead;
+    int b = 0xbeef;
+
+    while (b > 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+
+    return b / 0;
+}

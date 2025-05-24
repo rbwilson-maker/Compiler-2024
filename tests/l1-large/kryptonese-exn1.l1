@@ -1,0 +1,12 @@
+//test div-by-zero
+//mod 0
+int main() {
+    int x1 = 17;
+    int x2 = 61;
+    int x3 = 18;
+    int x4 = 0;
+    int x5 = x3 * 2311;
+    int x6 = x4 + x5;
+    int x7 = x6 % x4;
+    return x7;
+}

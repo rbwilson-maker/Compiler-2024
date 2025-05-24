@@ -1,0 +1,32 @@
+//test return 8
+
+int main(){
+  int h = 0xFF0;
+  int ans = 0;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  h /= 2;
+  ans += h%2;
+  return ans;
+}

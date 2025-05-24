@@ -1,0 +1,15 @@
+//test return 0
+//Simple usage of mod with various variables
+
+int main () {
+    int x = 16;
+    int d = 2;
+    int y = x%d;
+    x = 18;
+    d = 9;
+    y = x%d;
+    x = 49;
+    d = 7;
+    y = x%d;
+    return y;
+}

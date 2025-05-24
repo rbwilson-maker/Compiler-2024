@@ -1,0 +1,15 @@
+//test memerror
+
+struct abc {
+	int[] a;
+};
+
+int main () {
+	struct abc *a = alloc(struct abc);
+	a->a = alloc_array(int, 4);
+	a->a[0] = 0;
+	a->a[1] = 1;
+	a->a[a->a[1]+a->a[1]] = a->a[a->a[1]-a->a[0]];
+	a->a[a->a[2]+a->a[1]] = a->a[a->a[2]-a->a[(a->a[0]-a->a[1])-1]];
+	return a->a[3];
+}

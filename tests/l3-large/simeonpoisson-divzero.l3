@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int f() {
+  return 4;
+  return f();
+}
+
+int g() {
+  return f();
+}
+
+int main() {
+  2 + 2 - f() + g() / (g() - f());
+  return (g() - f()) / (g() + f());
+}

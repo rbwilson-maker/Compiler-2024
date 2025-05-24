@@ -1,0 +1,75 @@
+//test error
+
+int f(int s);
+int fo(int s);
+int foo(int s);
+int fooo(int s);
+int foooo(int s);
+int fooooo(int s);
+int foooooo(int s);
+int fooooooo(int s);
+int foooooooo(int s);
+
+
+int f(int s) {
+    if (s == 0) return s;
+    return foooo(s);
+}
+
+int fo(int s) {
+    if (s == 0) return s;
+    s++;
+    return fooooo(s);
+}
+
+int foo(int s) {
+    if (s == 0) return s;
+    s+=2;
+    return foooooo(s);
+}
+
+int fooo(int s) {
+    if (s == 0) return s;
+    s+=3;
+    return fooooooo(s);
+}
+
+int foooo(int s) {
+    if (s == 0) return s;
+    s+=4;
+    return foooooooo(s);
+}
+
+int fooooo(int s) {
+    if (s == 0) return s;
+    s--;
+    return fooooooooo(s);
+}
+
+int foooooo(int s) {
+    if (s == 0) return s;
+    s-=2;
+    return fooo(s);
+}
+
+int fooooooo(int s) {
+    if (s == 0) return s;
+    s-=3;
+    return foo(s);
+}
+
+int foooooooo(int s) {
+    if (s == 0) return s;
+    s-=4;
+    return fo(s);
+}
+
+int fooooooooo(int s) {
+    if (s == 0) return s;
+    s++;
+    return f(s);
+}
+
+int main() {
+    return f(1);
+}

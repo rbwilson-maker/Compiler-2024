@@ -1,0 +1,6 @@
+//test memerror
+//Array index out of bounds
+
+int main() {
+    return alloc_array(int, 10000)[10000];
+}

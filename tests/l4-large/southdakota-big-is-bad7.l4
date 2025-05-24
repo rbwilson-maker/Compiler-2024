@@ -1,0 +1,17 @@
+//test error
+
+struct biiiiiiiig {
+  int so;
+  int very;
+  int large;
+};
+
+int main() {
+  struct biiiiiiiig big1;
+  struct biiiiiiiig big2;
+  if (big1 != big2) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

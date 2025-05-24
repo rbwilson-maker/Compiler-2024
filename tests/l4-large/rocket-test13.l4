@@ -1,0 +1,33 @@
+//test return 0
+
+struct hungry {
+    bool breakfast;
+    bool lunch;
+    bool dinner;
+    bool dessert;
+};
+
+int main()
+{
+    struct hungry* hungry_pointer = alloc(struct hungry);
+    hungry_pointer->breakfast = false;
+    hungry_pointer->lunch = true;
+    hungry_pointer->dinner = false;
+    hungry_pointer->dessert = false;
+
+    if (hungry_pointer->dessert)
+    {
+        return 1;
+    }
+    else
+    {
+        if (hungry_pointer->dinner)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+}

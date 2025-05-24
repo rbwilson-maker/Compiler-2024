@@ -1,0 +1,12 @@
+//test return 0
+// if statement in for loop
+int main() {
+    int x;
+    x = 0;
+    for (int i = 0; i < 10; i++){
+        if (x > 0){
+            x += i;
+        }
+    }
+    return x;
+}

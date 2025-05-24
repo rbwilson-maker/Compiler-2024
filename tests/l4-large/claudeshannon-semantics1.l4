@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main() {
+    int* p = alloc(int);
+    *p = 36 / 0;
+    return 0;
+}

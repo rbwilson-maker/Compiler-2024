@@ -1,0 +1,11 @@
+//test return 10 
+//braces dependencies
+int main() {
+    int x = 0;
+    if (true)
+        if (true)
+            if (true) 
+                while (x < 10) 
+                    for ( ; x < 9; ) if (false) {} else x+=2;
+    return x;
+}

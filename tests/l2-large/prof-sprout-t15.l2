@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+  int a = 6;
+  int b = 5;
+  bool k = a - b;
+  if (k) return 0;
+  return 1;
+}

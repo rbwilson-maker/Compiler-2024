@@ -1,0 +1,7 @@
+//test return -2147483648
+// test negation defined in modulo 2 (-INT_MIN = INT_MIN)
+
+int main() {
+    int INT_MIN = -2147483648;
+    return -INT_MIN;
+}

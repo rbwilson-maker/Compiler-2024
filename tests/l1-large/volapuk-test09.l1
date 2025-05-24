@@ -1,0 +1,9 @@
+//test error
+
+// Tests error on variable redeclaration
+
+int main() {
+    int i = 15150;
+    int i = 15251;
+    return i;
+}

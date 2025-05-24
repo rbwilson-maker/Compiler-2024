@@ -1,0 +1,22 @@
+//test error
+
+int a(int b);
+int a(int c);
+int a(int d);
+int a(int e);
+int a(int f);
+int a(int g);
+int a(int b);
+int a(int b);
+
+int main(){
+    return a(0);
+}
+
+int a(int h){
+    return h*h+h*h;
+}
+int a(int h){
+    return h*h+h*h;
+}
+

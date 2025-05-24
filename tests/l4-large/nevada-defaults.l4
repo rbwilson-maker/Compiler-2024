@@ -1,0 +1,30 @@
+//test return 0
+
+struct s {
+    int x;
+    int y;
+};
+
+int main() {
+    int *i = alloc(int);
+    assert(*i == 0);
+
+    bool *b = alloc(bool);
+    assert(*b == false);
+
+    struct s *s = alloc(struct s);
+    assert(s->x == 0);
+    assert((*s).y == 0);
+
+    int[] A = alloc_array(int, 5);
+    assert(A[0] == 0);
+    assert(A[1] == 0);
+    assert(A[2] == 0);
+    assert(A[3] == 0);
+    assert(A[4] == 0);
+
+    int **p = alloc(int*);
+    assert(*p == NULL);
+
+    return 0;
+}

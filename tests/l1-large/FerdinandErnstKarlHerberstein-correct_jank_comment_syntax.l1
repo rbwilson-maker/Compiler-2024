@@ -1,0 +1,198 @@
+//test return 1
+// jank syntax
+
+int main() {
+    /*
+    #use <string>
+#use <conio>
+#use <parse>
+
+typedef struct prof prof_t;
+struct prof {
+	string name;
+	string title;
+	string office;
+	string email;
+	int area_code; // 0 if no phone number
+	int phone; // 0 if no phone number
+};
+
+int hash_string(string s) {
+	int len = string_length(s);
+	int res = 0;
+	for (int i = 0; i < len; i++) {
+	  char c1 = string_charat(s, i);
+	  int val = char_ord(c1);
+	  res = res * 32 + val;
+	}
+
+    return res; // IMPLEMENT ME
+}
+
+
+int hash_prof(prof_t* prof) {
+  int res = hash_string(prof->name) + hash_string(prof->title) +
+  hash_string(prof->office) + hash_string(prof->email) + 
+  prof->area_code + prof->phone;
+  return res;
+}
+    */
+
+    /*
+    #use <string>
+#use <parse>
+#use <file>
+#use <conio>
+
+prof_t* parse_prof(string str)
+//@ensures \result != NULL;
+{
+  prof_t* prof = alloc(prof_t);
+  int i = 0;
+  while(string_charat(str, i) != '\t') {
+    i++;
+  }
+  prof->name = string_sub(str, 0, i);
+  
+  i++;
+  int j = i;
+  while(string_charat(str, j) != '\t') {
+    j++;
+  }
+  prof->title = string_sub(str, i, j);
+  j++;
+  
+  i = j;
+  while(string_charat(str, j) != '\t') {
+    j++;
+  }
+  prof->office = string_sub(str, i, j);
+  j++;
+  
+  i = j;
+  while(string_charat(str, j) != '\t') {
+    j++;
+  }
+  prof->email = string_sub(str, i, j);
+  j++;
+  
+  string phone = string_sub(str, j, string_length(str)-1);
+  if(string_length(phone) > 0) {
+    int* p = parse_int(string_sub(phone, 0, 3), 10);
+    if(p == NULL) {
+      error("profs.txt is malformed");
+    }
+    prof->area_code = *p;
+    
+    p = parse_int(string_sub(phone, 3, 10), 10);
+    if(p == NULL) {
+      error("profs.txt is malformed");
+    }
+    prof->phone = *p;
+  }
+  
+  return prof;
+}
+
+int[] hash_counts(int buckets)
+//@requires buckets > 0;
+//@ensures \length(\result) == buckets;
+{
+  file_t stud = file_read("profs.txt");
+  if(stud == NULL) {
+    error("profs.txt does not exist");
+  }
+  
+  int[] result = alloc_array(int, buckets);
+  
+  print("Starting hash of profs...");
+  while(!file_eof(stud)) {
+    string line = file_readline(stud);
+    prof_t* prof = parse_prof(line);
+    int h = hash_prof(prof);
+    int i = h % buckets;
+    if(i < 0) {
+      i += buckets;
+    }
+    result[i]++;
+  }
+  println("");
+  
+  // Close the file!
+  file_close(stud);
+  
+  return result;
+}    
+    
+    @*/
+    return /*ri ifawfjawdwanjskc sajbfawijfasbajskaif askcbshkd san chsajn dawh
+    afsfjsjksbfsdvv
+    vndkjvjnvjid \geg\ag\e\av\dg\twa\fas\fawf
+    
+#use <conio>
+#use <string>
+#use <args>
+#use <parse>
+#use <img>
+
+int main() {
+  string *output = alloc(string);
+  int *buckets = alloc(int);
+  
+  args_string("-o", output);
+  args_int("-n", buckets);
+  
+  if(args_parse() == NULL || string_equal("", *output)) {
+    error("Usage: visualize -o <output image> [-n <num buckets>]");
+  }
+  
+  if(*buckets <= 0) {
+    *buckets = 512;
+  }
+  
+  int[] hashed = hash_counts(*buckets);
+  
+  int max = 0;
+  int count = hashed[max];
+  for(int i = 1; i < *buckets; i++) {
+    if(hashed[i] > hashed[max]) {
+      max = i;
+    }
+    count += hashed[i];
+  }
+  
+  int maxhash = hashed[max];
+  print("The maximum bucket size is ");
+  printint(maxhash);
+  println("");
+  
+  for(int i = 0; i < *buckets; i++) {
+    hashed[i] *= *buckets;
+    hashed[i] /= maxhash;
+  }
+  
+  // Draw the image
+  image_t out = image_create(*buckets, *buckets);
+  int[] data = image_data(out);
+  
+  print("Generating graph...");
+  for(int x = 0; x < *buckets; x++) {
+    for(int y = 0; y < hashed[x] && y < *buckets; y++) {
+      data[(image_height(out) - y - 1) * (*buckets) + x] = 0xFFFF0000;
+    }
+  }
+  println("");
+  
+  print("Saving output...");
+  image_save(out, *output);
+  println("");
+  
+  print("Success! Graph saved to ");
+  print(*output);
+  println("");
+  
+  return 0;
+}
+    */ 1
+;
+}

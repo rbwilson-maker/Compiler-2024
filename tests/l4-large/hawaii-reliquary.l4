@@ -1,0 +1,32 @@
+//test div-by-zero
+
+struct horse {
+  int rot_l;
+  int rot_r;
+};
+
+typedef struct horse* neigh;
+typedef int fourteen;
+
+neigh autocorrect(neigh thirteen, fourteen fifteen)
+{
+  if (thirteen->rot_l > 31)
+  {
+    return thirteen;
+  }
+  
+  int rotated = (fifteen << thirteen->rot_l) >> thirteen->rot_r;
+  thirteen->rot_l += 1;
+  thirteen->rot_r -= 1;
+  
+  return autocorrect(thirteen, rotated);
+}
+
+int main()
+{
+  neigh quite = alloc(struct horse);
+  quite->rot_l = 16;
+  quite->rot_r = 5;
+  
+  return autocorrect(quite, 525600)->rot_r;
+}

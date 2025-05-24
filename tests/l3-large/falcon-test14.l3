@@ -1,0 +1,17 @@
+//test error
+typedef int i;
+typedef i like;
+typedef like to;
+typedef to move;
+typedef move it;
+
+int main () {
+    int x = 69;
+
+    // variable name cannot collide with typedef name
+    for(int i = 0; i < 10; i++) {
+        x = (i < 11) ? x : 1 / 0;
+    }
+
+    return x;
+}

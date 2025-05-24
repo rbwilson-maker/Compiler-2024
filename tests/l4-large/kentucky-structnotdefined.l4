@@ -1,0 +1,17 @@
+//test error
+
+
+int main() {
+
+struct bees * flargel = alloc(struct bees);
+
+
+
+  return 0;
+}
+
+struct bees {
+int harold;
+int scurvy;
+bool egg_dip;
+};

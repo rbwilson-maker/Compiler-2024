@@ -1,0 +1,12 @@
+/*
+
+The number 3252 has the property that it can be written with its digits in order
+using only plus signs and a squaring operator: 3252 = 3+((22)2+52+(22)2)2
+
+Call numbers with the above squaring property S-numbers
+*/
+
+// calculate the max S-number smaller than a threshold
+int Snumber(int threshold);
+
+typedef int x;

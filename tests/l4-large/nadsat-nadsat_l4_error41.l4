@@ -1,0 +1,9 @@
+//test error
+
+/* Pointer typechecking */
+int main() {
+  int** a = alloc(int*);
+  int*** b = alloc(int**);
+  
+  return a == b; 
+}

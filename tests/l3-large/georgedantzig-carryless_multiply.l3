@@ -1,0 +1,79 @@
+//test return 1
+// From 15-112 CSAcademy
+
+int pow(int base, int exp) {
+    int result = 1;
+    for (int i = 0; i < exp; i++) {
+        result = result * base;
+    }
+    return result;
+}
+
+int digitCount(int n) {
+    if (n == 0) return 1;
+    int count = 0;
+    while (n > 0) {
+        count ++;
+        n /= 10;
+    }
+    return count;
+}
+
+int getKthDigit(int n, int k) {
+    return n / pow(10, k) % 10;
+}
+
+int setKthDigit(int n, int k, int d) {
+    n -= getKthDigit(n, k) * pow(10, k);
+    return n + d * pow(10, k);
+}
+
+int carrylessAdd(int x, int y) {
+    int result = 0;
+    int longer;
+    if (digitCount(x) > digitCount(y)) {
+        longer = digitCount(x);
+    } else {
+        longer = digitCount(y);
+    }
+    for (int k = 0; k < longer; k++) {
+        int carrylessSum = (getKthDigit(x, k) + getKthDigit(y, k)) % 10;
+        result = setKthDigit(result, k, carrylessSum);
+    }
+
+    return result;
+}
+
+int carrylessMultiply(int x, int y) {
+    int xLen = digitCount(x);
+    int yLen = digitCount(y);
+
+    int result = 0;
+    for (int i = 0; i < xLen; i++) {
+        int subResult = 0;
+        for (int j = 0; j < yLen; j++) {
+            int product = getKthDigit(x, i) * getKthDigit(y, j);
+            subResult += product % 10 * pow(10, i + j);
+        }
+
+        result = carrylessAdd(subResult, result);
+    }
+
+    return result;
+}
+
+void testCarrylessMultiply() {
+    assert(carrylessMultiply(3, 3) == 9);
+    assert(carrylessMultiply(4, 4) == 6);
+    assert(carrylessMultiply(643, 59) == 417);
+    assert(carrylessMultiply(10, 411) == 4110);
+    assert(carrylessMultiply(10, 411) == carrylessMultiply(411, 10));
+    assert(carrylessMultiply(1234, 25) == 29630);
+    assert(carrylessMultiply(6412, 387) == 807234);
+    assert(carrylessMultiply(15213, 15210) == 109279730);
+}
+
+int main() {
+    testCarrylessMultiply();
+    return 1;
+}

@@ -1,0 +1,44 @@
+//test div-by-zero
+//we test the various sum formulas
+
+int sum(int low, int high) {
+  if (low == high) return low;
+  if (low == high - 1) return low + high;
+  int mid = low + (high - low) / 2;
+  return sum(low, mid) + sum(mid+1, high);
+}
+
+int sum_2(int low, int high) {
+  if (low == high) return low * low;
+  if (low == high - 1) return low * low + high * high;
+  int mid = low + (high - low) / 2;
+  return sum_2(low, mid) + sum_2(mid+1, high);
+}
+
+int sum_3(int low, int high) {
+  if (low == high) return low * low * low;
+  if (low == high - 1) return low * low * low + high * high * high;
+  int mid = low + (high - low) / 2;
+  return sum_3(low, mid) + sum_3(mid+1, high);
+}
+
+int main() {
+  int n = 100;
+  int sum1 = sum(1, n);
+  int form1 = n * (n+1) / 2;
+  if (sum1 != form1) {
+    assert(false);
+  }
+  int sum2 = sum_2(1, n);
+  int form2 = n * (n+1) * (2*n+1) / 6;
+  if (sum2 != form2) {
+    assert(false);
+  }
+  
+  int sum3 = sum_3(1, n);
+  int form3 = n * n * (n+1) * (n+1) / 4;
+  if (sum3 == form3) {
+    int err = 1/0;
+  }
+  return 0;
+}

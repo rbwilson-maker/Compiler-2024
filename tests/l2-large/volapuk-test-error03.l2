@@ -1,0 +1,12 @@
+//test error
+
+// Syntax error in if condition
+
+int main() {
+  int i = 12;
+  bool cond = 3 >= i;
+  if cond {
+    return i;
+  }
+  else return 3;
+}

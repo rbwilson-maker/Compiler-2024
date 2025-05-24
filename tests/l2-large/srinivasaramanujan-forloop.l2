@@ -1,0 +1,19 @@
+//test return 12
+
+int main() {
+    int x;
+    int y;
+
+    int total;
+    total = 0;
+    x = 0;
+    y = 0;
+
+    for (x = 2; x <= 5; x++) {
+        for (y = 3; y < 6; y++) {
+            total++;
+        }
+    }
+
+    return total;
+}

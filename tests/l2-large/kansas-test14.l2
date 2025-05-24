@@ -1,0 +1,29 @@
+//test return 83
+
+// This is designed to test logical and, or, equality, and disequality
+int main() {
+  int a = 5;
+  int b = 10;
+  int c = 2;
+  int d = 2;
+  if (a == 5 || false) {
+    a = 7;
+  }
+  if (b != 11 && true) {
+    b = 11;
+  }
+  if (!(a != 7) && b == 10) {
+    c = 50;
+  }
+  if (a == 7 || b == 2000) {
+    d = 3;
+  }
+  d += c + a * b;
+  if (c == 2 && a != 10) {
+    d++;
+  }
+  if (false || a == 10) {
+    d = d + 10;
+  }
+  return d;
+}

@@ -1,0 +1,7 @@
+//test return 1
+
+//This should short circuit
+
+int main() {
+	return false ? 1/0 : 1;
+}

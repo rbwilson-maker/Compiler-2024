@@ -1,0 +1,47 @@
+//test return -1
+// sign doesn't even matter in modular arithmetic...
+int main() {
+    // all of these are -1
+    int v = 0x7FFFFFFF; v += v + 1;int w=0;w-=1;int x=1024*1024*1024*3 
+
+
+
+
+
+
+
+
+ 
+  
+    
+     
+         + 1024*1024*1023 + 1024*1023 + 1023;
+    int y = 0xFFFFFFFF;
+    int z = -1;int 
+four = v*(w+x+y+z)*x
+*v                 
+
+ 
+
+;int 
+        minus3=w*(x+x+ 
+    z ) /** *y* 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    **/ *y* v
+    
+    *-1;
+    return                                                                                                                                                                                     four*x-minus3;
+}

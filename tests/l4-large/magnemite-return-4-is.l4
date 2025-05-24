@@ -1,0 +1,16 @@
+//test return 23
+
+void swap(int* x, int* y) {
+  int temp = *x;
+  *x = *y;
+  *y = temp;
+}
+
+int main() {
+  int *x = alloc(int);
+  *x = 42;
+  int *y = alloc(int);
+  *y = 23;
+  swap(x, y);
+  return *x;
+}

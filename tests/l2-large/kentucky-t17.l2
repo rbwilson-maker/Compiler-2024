@@ -1,0 +1,8 @@
+//test error
+
+// try to put a bool in an int
+
+int main () {
+    int fgfg = (4 != 5);
+    return 0xBADC0DE;
+}

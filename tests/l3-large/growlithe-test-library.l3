@@ -1,0 +1,18 @@
+//test return 10
+//tests using float functions from 15411-l3.h0.
+
+int main () {
+  int x = 5;
+  int y = 10;
+  
+  if( fless(itof(ftoi(itof(x))), itof(ftoi(itof(y)))) )
+  {
+    return 10;
+  }
+  else
+  {
+    x = 10;
+  }
+
+  return itof(ftoi(itof(x)));
+}

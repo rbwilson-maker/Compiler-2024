@@ -1,0 +1,9 @@
+//test div-by-zero
+// shift right out of range
+
+int main()
+{
+  int x = 5;
+  int k = 32;
+  return x >> k;
+}

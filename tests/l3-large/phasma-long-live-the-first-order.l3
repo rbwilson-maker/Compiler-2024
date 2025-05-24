@@ -1,0 +1,14 @@
+//test return 9
+
+int hello() {
+  int y = 2;
+  while(y > -2) {
+    y--;
+  }
+  return y;
+}
+
+int main() {
+  assert(hello() == -2);
+  return 9;
+}

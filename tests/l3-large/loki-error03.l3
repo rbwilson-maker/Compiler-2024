@@ -1,0 +1,10 @@
+//test error
+
+int moo(int x) {
+    return 2;
+}
+
+int main() {
+    int moo = 2;
+    return moo(moo);
+}

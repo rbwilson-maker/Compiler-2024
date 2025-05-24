@@ -1,0 +1,9 @@
+//test div-by-zero
+// raises a divide by 0 exception
+
+int main() {
+    int denominator = 15 - 3*5;
+    int numerator = 12;
+    int x = numerator % denominator;
+    return x;
+}

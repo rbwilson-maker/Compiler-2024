@@ -1,0 +1,22 @@
+//test typecheck
+//test infloop
+
+int sectumsempra(int n, int k) {
+	
+	if (k == 1) return n;
+	else {
+		int ohno = sectumsempra(n,(k-1));
+		if (ohno > 0){
+			return sectumsempra(ohno,k) - 1;
+		}
+		else {
+			return 0;
+		}
+ 	}
+}
+
+int main () {
+	int ow = sectumsempra(54,72);
+	
+	return 0;
+}

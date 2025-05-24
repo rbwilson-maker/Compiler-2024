@@ -1,0 +1,24 @@
+//test return 4
+//simple typedef
+
+
+typedef int magic_int;
+typedef int average_magic;
+
+average_magic average_magic_calc(magic_int p1, magic_int p2, magic_int p3, magic_int p4);
+
+int main(){
+
+  magic_int harry = 4;
+  magic_int hermione = 5;
+  magic_int ron = 4;
+  magic_int malfoy = 3;
+
+  average_magic res = average_magic_calc(harry, hermione, ron, malfoy);
+  return res;
+
+}
+
+average_magic average_magic_calc(magic_int p1, magic_int p2, magic_int p3, magic_int p4){
+  return ((p1 + p2 + p3 + p4) /4);
+}

@@ -1,0 +1,22 @@
+//test typecheck
+
+bool harshad_number(int n) {
+
+  int x = sum(n);
+
+  return n % x == 0;
+  
+}
+
+int main(){
+
+  int y = 100;
+
+  while (!harshad_number(y)) {
+    y--;
+  }
+
+  return y;
+  
+  
+}

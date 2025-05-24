@@ -1,0 +1,13 @@
+//test typecheck
+
+int idk(int c) {
+  if (c == 234) {
+    return 1;
+  }
+  else {
+    return idk(1);
+  }
+}
+int main() { 
+  return idk(2);
+}

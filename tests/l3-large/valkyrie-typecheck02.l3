@@ -1,0 +1,16 @@
+//test typecheck
+
+int main(){
+	return foo(10);
+}
+
+int f(int n){
+	if(n > 0){
+		return 2 * bar(n);
+	}
+	return 1;
+}
+
+int g(int n){
+	return foo(n-1);
+}

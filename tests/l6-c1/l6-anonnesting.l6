@@ -1,0 +1,39 @@
+//test return 4096
+
+typedef int iti(int x);
+typedef iti* itti(iti* x);
+typedef itti* ittti(itti* x);
+
+int cube(int x)
+{
+  return x*x*x;
+}
+
+iti* fsquare(iti* f)
+{
+  return (fn (int x) {
+    int fx = (*f)(x); 
+    return fx * fx;
+  });
+}
+
+itti* ff(itti* f)
+{
+  return (fn (iti* g) {
+    iti* h = (*f)(g); 
+    return (*f)(h);
+    return h;
+  });
+}
+
+int main()
+{
+  iti* f = &cube;
+  itti* g = &fsquare;
+  ittti* h = &ff;
+  return (*((*((*h)(g)))(f)))(2);
+}
+
+
+
+

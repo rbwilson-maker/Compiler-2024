@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int main()
+{
+	bool b = true;
+	int x = 1;
+	int y = 2;
+	while(b) {
+		x *= y;
+		y++;
+		if(x/x != 1) {
+			b = false;
+		}
+	}
+	return x;
+}

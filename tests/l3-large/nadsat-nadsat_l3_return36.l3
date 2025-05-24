@@ -1,0 +1,13 @@
+//test return 60
+
+int overwrite(int a, int b) {
+  return a + b;
+}
+
+int main() {
+  int x = overwrite(30, 20);
+
+  int overwrite = x + 10;
+
+  return overwrite;
+}

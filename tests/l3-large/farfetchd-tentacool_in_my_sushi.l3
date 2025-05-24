@@ -1,0 +1,10 @@
+//test return 1
+
+int eatme(bool tentacool) {
+   return 1;
+}
+
+int main() {
+  bool please = true;
+  return eatme(please);
+}

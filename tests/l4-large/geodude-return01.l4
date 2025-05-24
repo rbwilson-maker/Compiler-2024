@@ -1,0 +1,73 @@
+//test return 0
+struct node {
+    int v;
+    int b;
+};
+
+void swap(struct node*[] arr, int a, int b){
+    struct node *tmp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = tmp;
+}
+
+struct node*[] _c0_sort(struct node*[] arr, int len){
+    int l = 0;
+    int r = 0;
+    for(int i = 1; i < len; i++){
+        if(arr[i]->v <= arr[0]->v){
+            l++;
+        }else{
+            r++;
+        }
+    }
+    struct node*[] left_arr = alloc_array(struct node*, l);
+    struct node*[] right_arr = alloc_array(struct node*, r);
+    l = 0;
+    r = 0;
+    for(int i = 1; i < len; i++){
+        if(arr[i]->v <= arr[0]->v){
+            left_arr[l] = arr[i];
+            l++;
+        }else{
+            right_arr[r] = arr[i];
+            r++;
+        }
+    }
+    if(l != 0)
+        _c0_sort(left_arr, l);
+
+    if(r != 0)
+        _c0_sort(right_arr, r);
+
+    struct node* t = arr[0];
+
+    for(int i = 0; i != l; i++){
+        arr[i] = left_arr[i];
+    }
+    assert(l + r == len - 1);
+    for(int i = 0; i != r; i++){
+        arr[i + l + 1] = right_arr[i];
+    }
+    arr[l] = t;
+    return arr;
+}
+int main(){
+    int c = 0;
+    struct node*[] arr = alloc_array(struct node*, 100);
+    for(int i = 0; i < 100; i++){
+        arr[i] = NULL;
+    }
+    for(int i = 0; i < 100; i++){
+        arr[i] = alloc(struct node);
+        arr[i]->v = 99 - i;
+        arr[i]->b = arr[i]->v * 1000;
+    }
+    arr = _c0_sort(arr, 100);
+
+    for(int i = 0; i < 100; i++){
+        assert(arr[i]->v == i);
+        assert(arr[i]->b == 1000 * i);
+    }
+
+    return 0;
+}

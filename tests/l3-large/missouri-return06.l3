@@ -1,0 +1,22 @@
+//test return 30
+//log
+
+int exp(int x, int y) {
+  if (y == 0)
+    return 1;
+  y--;
+  return x * exp(x, y);
+}
+
+int log(int n, int base) {
+  int i = 0;
+  while (exp(base, i) < n) {
+    i++;
+  }
+  return i;
+}
+
+int main() {
+  return log(0x34230944, 0x2);
+}
+

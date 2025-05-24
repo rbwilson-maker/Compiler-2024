@@ -1,0 +1,9 @@
+//test return 54149
+// shift right
+
+int main()
+{
+  int x = 1732783;
+  int k = 5;
+  return x >> k;
+}

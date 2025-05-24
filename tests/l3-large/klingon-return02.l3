@@ -1,0 +1,8 @@
+//test return 6
+//testing typedef
+
+typedef int y;
+
+y foo (y x) {return x + x;}
+
+int main () {return foo (3);}

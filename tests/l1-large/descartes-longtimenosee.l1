@@ -1,0 +1,82 @@
+//test return 15411
+//Tests that temps that are far apart in the program are still stored 
+//properly (eg. not evicted from stack or overwritten)
+
+int main() {
+    int t1; 
+    int t2;
+    int t3;
+    int t4;
+    int t5;
+    int t6;
+    int t7;
+    int t8;
+    int t9;
+    int t10;
+    int t11;
+    int t12;
+    int t13;
+    int t14;
+    int t15;
+    int t16;
+    int t17;
+    int t18;
+    int t19;
+    int t20;
+    int t21;
+    int t22;
+    int t23;
+    int t24;
+    int t25;
+
+    t1 = 15000; 
+    t2 = 1;
+    t3 = 1;
+    t4 = 1;
+    t5 = 1;
+    t6 = 1;
+    t7 = 1;
+    t8 = 1;
+    t9 = 1;
+    t10 = 1;
+    t11 = 1;
+    t12 = 1;
+    t13 = 1;
+    t14 = 1;
+    t15 = 1;
+    t16 = 1;
+    t17 = 1;
+    t18 = 1;
+    t19 = 1;
+    t20 = 1;
+    t21 = 1;
+    t22 = 1;
+    t23 = 1;
+    t24 = 1;
+    t25 = 1;
+
+    t2 = t2;
+    t3 = t2+t3;
+    t4 = t2+t3;
+    t5 = t2+t3+t4;
+    t6 = t2+t3+t4+t5;
+    t7 = t2+t3+t4+t5+t6;
+    t8 = t2+t3+t4+t5+t6+t7;
+    t9 = t2+t3+t4+t5+t6+t7+t8;
+    t10 = t11;
+    t12 = t12;
+    t13 = t12+t13;
+    t14 = t12+t13;
+    t15 = t12+t13+t14;
+    t16 = t12+t13+t14+t15;
+    t17 = t12+t13+t14+t15+t16;
+    t18 = t12+t13+t14+t15+t16+t17;
+    t19 = t12+t13+t14+t15+t16+t17+t18;
+    t20 = t21;
+    t22 = t22;
+    t23 = t22+t23;
+    t24 = t22+t23;
+    t25 = t22+t23+t24;
+    
+    return (t1+411);
+}

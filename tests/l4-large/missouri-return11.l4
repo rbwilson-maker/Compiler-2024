@@ -1,0 +1,19 @@
+//test return 0
+//You evaluate array indices twice
+
+
+int add (int * x) {
+  (*x)++;
+  return *x;
+}
+
+
+int main () {
+  int[] A = alloc_array(int, 20);
+  int* x = alloc(int);
+
+  A[add(x)] +=1;
+
+  assert(*x == 1);
+  return A[2];
+}

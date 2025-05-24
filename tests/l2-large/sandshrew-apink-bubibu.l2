@@ -1,0 +1,14 @@
+//test return 6
+int main(){
+  bool t = true;
+  bool f = false;
+  int x = 3;
+  if (t && f){
+    x = 0;
+  }
+  else{
+    x += 3;
+  }
+  return x;
+}
+

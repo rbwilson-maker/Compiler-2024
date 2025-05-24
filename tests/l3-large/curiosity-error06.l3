@@ -1,0 +1,12 @@
+//test error
+//reuse typedef variable x
+
+typedef int x;
+
+x mult(int x, int y) {
+  return x * y;
+}
+
+int main() {
+	return 0;
+}

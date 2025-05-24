@@ -1,0 +1,16 @@
+//test return 9
+
+typedef int int_alias;
+
+int sum(int_alias i, int_alias j) {
+    return i + j;
+}
+
+int main() {
+	int i = 4;
+	int_alias j = 5;
+
+	return sum(i, j);
+}
+
+

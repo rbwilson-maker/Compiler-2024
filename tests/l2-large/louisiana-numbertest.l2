@@ -1,0 +1,10 @@
+//test return -3753345
+int main()
+{
+    int t = 234590;
+    t >>= 3;
+    t <<= 7;
+
+    return (~t);
+
+}

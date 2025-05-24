@@ -1,0 +1,11 @@
+//test error
+
+//  declaration in for statement
+
+int main() {
+    int result = 0;
+    for (int i = 0; i < 10; i++, int x = 3) {
+        result++;
+    }
+    return 0;
+}

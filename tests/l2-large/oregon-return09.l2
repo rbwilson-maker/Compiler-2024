@@ -1,0 +1,18 @@
+//test return 64
+int main()
+{
+	 int x = 1;
+	int y = (x << 5);
+	int z = (y << x);
+	if (y > z)
+		x++;
+	else
+		if (y!=0)
+			for (;y<z;y++)
+			{}
+		else
+		{
+			z--;
+		}
+	return y;
+}

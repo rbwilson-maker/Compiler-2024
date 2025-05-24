@@ -1,0 +1,6 @@
+//test return 1
+int main()
+{
+    int x = 0x80000001;
+    return (x << 1) >> 1;
+}

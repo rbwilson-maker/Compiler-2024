@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int moo(int x) {
+    return 2 << x;
+}
+
+int main() {
+    return moo(-1);
+}

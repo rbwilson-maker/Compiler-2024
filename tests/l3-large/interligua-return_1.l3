@@ -1,0 +1,10 @@
+//test return 3
+
+int mean (int a, int b, int c, int d, int e){
+    return (a + b + c + d + e) / 5;
+}
+
+int main() {
+    int m = mean(1,2,3,4,5);
+    return m;
+}

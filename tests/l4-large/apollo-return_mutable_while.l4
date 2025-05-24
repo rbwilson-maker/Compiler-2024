@@ -1,0 +1,16 @@
+//test return 0
+
+bool foo(int *a)
+{
+	(*a) += 32;
+	return *a > 0;
+}
+
+int main()
+{
+	int *a = alloc(int);
+	*a = 1;
+	while(foo(a)) {}
+
+	return 0;
+}

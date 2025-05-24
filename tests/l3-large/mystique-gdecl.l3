@@ -1,0 +1,14 @@
+//test error
+
+int x = 1;
+
+void f(bool x) {
+    x || true;
+    x && false;
+    bool y = x;
+}
+
+int main() {
+    f(false);
+    return 1;
+}

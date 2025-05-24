@@ -1,0 +1,76 @@
+//test typecheck
+
+//test compile and
+//test return 694
+
+
+int  nthHappyFinder(int n);
+bool isHappy(int x);
+int  findNextHappyIter(int x);
+int  sq(int x);
+
+// reverses the order in which the functions
+// are defined so that the header makes compilation
+// possible by previously declaring functions
+
+int nthHappyFinder(int differentVariableName){
+    int curr = -1;
+    int count = 0;
+    while(count < differentVariableName){
+        curr++;
+        if (isHappy(curr)) count++;
+    }
+
+    return curr;
+}
+
+// like the example of nthHappyFider but more
+// generlalized. Since, I can't take in a function
+// pointer I just used an implemented outside function
+// is property.
+int nthNumberFinder(int n){
+    int curr = -1;
+    int count = 0;
+    while(count < n){
+        curr++;
+        if (isProperty(curr)) count++;
+    }
+
+    return curr;
+}
+
+
+bool isHappy(int x){
+    if (x == 4) return false;
+    if (x == 1) return true;
+    if (x < 1)  return false;
+    int iter = findNextHappyIter(x);
+    while (iter != 1 && iter != 4){
+        iter = findNextHappyIter(iter);
+    }
+    return iter == 1;
+}
+
+
+
+int findNextHappyIter(int x){
+    if (x <= 0) assert(false);
+    int result = 0;
+    int toStrip = x;
+    while (toStrip > 0){
+        result += sq(toStrip % 10);
+        toStrip /= 10;
+    }
+    return result;
+}
+
+int sq(int x){
+    return x * x;
+}
+
+
+int main(){
+    return nthHappyFinder(100);
+}
+
+

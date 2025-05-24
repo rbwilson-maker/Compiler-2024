@@ -1,0 +1,31 @@
+//test return 44
+
+//1, 7, 10, 13, 19, 23, 28, 31, 32, 44
+//https://mathworld.wolfram.com/HappyNumber.html
+bool isHappy(int a){
+  int sum = 0;
+  while(a>0){
+    int digit = a%10;
+    a/=10;
+    sum += digit*digit;
+  }
+  if(sum==1){
+    return true;
+  }
+  if(sum==4){
+    return false;
+  }
+  return isHappy(sum);
+}
+
+int main(){
+  int counter = 1;
+  int i = 1;
+  for(; counter<10;){
+    i++;
+    if(isHappy(i)){
+      counter++;
+    }
+  }
+  return i;
+}

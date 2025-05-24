@@ -1,0 +1,25 @@
+//test abort
+
+int f(int x)
+{
+  assert(x >= 1);
+  
+  if (x == 1)
+  {
+    return 1;
+  }
+  
+  int sum = 0;
+  
+  for (int i=1; i<x; i++)
+  {
+    sum += f(i);
+  }
+  
+  return sum;
+}
+
+int main()
+{
+  return f(f(5) - 2 * f(4));
+}

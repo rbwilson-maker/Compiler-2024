@@ -1,0 +1,10 @@
+//test return 1024
+
+int main () {
+  int x = 1;
+
+  for(int i = 0; (i >= 10) ? false : true; i++) {
+    x *= 2;
+  }
+  return x;
+}

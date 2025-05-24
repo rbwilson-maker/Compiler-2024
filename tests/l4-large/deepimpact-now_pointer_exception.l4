@@ -1,0 +1,9 @@
+//test memerror
+int* zero() {
+    return NULL;
+}
+
+int main() {
+    int *p = zero();
+    return *p;
+}

@@ -1,0 +1,17 @@
+//test memerror
+
+struct B {
+	int c;
+};
+
+struct A {
+	struct B[] b;
+};
+
+int main() {
+	struct A **a = alloc(struct A*);
+	//*a = alloc(struct A);
+	(*a)->b = alloc_array(struct B, 1);
+	(*a)->b[0].c = 15;
+	return (*a)->b[0].c;
+}

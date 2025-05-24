@@ -1,0 +1,13 @@
+//test return 2
+
+int multiply(int foo, int bar) {
+  return foo * bar;
+}
+
+typedef int foo;
+
+int main() {
+  foo one = 1;
+  foo two = 2;
+  return multiply(one, two);
+}

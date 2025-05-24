@@ -1,0 +1,25 @@
+//test return -2939447
+//computes integer division x/y for reasonably large numbers (|x| < 2^30)
+
+int div(int x, int y) {
+  if (x < y) {
+    return 0;
+  }
+  int n = 0;
+  while (x >= (y << n)){
+    n++;
+  }
+  return (1 << (n-1)) + div(x - (y << (n-1)), y);
+}
+
+int divide(int x, int y){
+  int sign = x * y < 0 ? -1 : 1;
+  int dividend = x < 0 ? -x : x;
+  int divisor = y < 0 ? -y : y;
+  
+  return sign * div(dividend, divisor);
+}
+
+int main() { 
+  return divide(-123456789, 42);
+}

@@ -1,0 +1,29 @@
+//test return 45
+
+typedef int elem;
+
+struct node {
+    elem data;
+    struct node* next;
+};
+
+typedef struct node* list;
+
+list cons(elem x, list xs){
+    list new = alloc(struct node);
+    new->data = x;
+    new->next = xs;
+    return new;
+}
+
+int main() {
+    list head = NULL;
+    for (int i = 0; i < 10; i++) {
+        head = cons(i, head);
+    }
+    int res = 0;
+    for (; head != NULL; head = head->next) {
+        res += head->data;
+    }
+    return res;
+}

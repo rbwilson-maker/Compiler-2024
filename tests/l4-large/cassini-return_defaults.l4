@@ -1,0 +1,23 @@
+//test return 0
+
+struct foo {
+    int i;
+    int *p;
+    bool b;
+};
+
+int main() {
+    int *ip = alloc(int);
+    int **pp = alloc(int*);
+    bool *bp = alloc(bool);
+    struct foo *f = alloc(struct foo);
+
+    if (*ip != 0) return -1;
+    if (*pp != NULL) return -1;
+    if (*bp != false) return -1;
+    if (f->i != 0) return -1;
+    if (f->p != NULL) return -1;
+    if (f->b != false) return -1;
+
+    return 0;
+}

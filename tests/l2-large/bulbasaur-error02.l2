@@ -1,0 +1,13 @@
+//test error
+// only return in one branch of if statement
+int main ()
+{
+  int x = 5;
+
+  if (x > 0)
+  {
+    return x + 5;
+  } else {
+    x -= 5;
+  }
+}

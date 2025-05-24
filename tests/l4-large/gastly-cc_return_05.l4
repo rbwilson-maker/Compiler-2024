@@ -1,0 +1,38 @@
+//test return 10
+//YAY FOR LINKED LISTS <3
+
+struct list_node;
+
+typedef struct list_node* node;
+typedef node* linked_list;
+
+struct list_node {
+  int value;
+  node next;
+};
+
+void push(linked_list list, int v) {
+  node n = alloc(struct list_node);
+  n->value = v;
+  n->next = *list;
+
+  (*list) = n;
+} 
+int pop(linked_list list) {
+  int v = (*list)->value;
+  *list = (*list)->next;
+  return v;
+}
+
+int main() {
+  int num = 100;
+  linked_list list = alloc(node);
+
+  for(int i = 0; i < num; i++) {
+    push(list, (i+10));
+  }
+  for(int i = 0; i < num - 1; i++) {
+    pop(list);
+  }
+  return pop(list);
+}

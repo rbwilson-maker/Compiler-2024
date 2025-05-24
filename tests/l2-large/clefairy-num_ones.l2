@@ -1,0 +1,14 @@
+//test return 21
+
+int main() {
+    int x = 0xF0F96BED;
+    int count = 0;
+    int i;
+    for (i = 0; i < 32; i++) {
+        if ((x & 1) == 1) {
+            count++;
+        }
+        x >>= 1;
+    }
+    return count;
+}

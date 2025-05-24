@@ -1,0 +1,13 @@
+//test error
+// typedef taking on unrestricted identifier
+
+typedef int true;
+typedef int give;
+
+true friends(give some) {
+  return some;
+}
+
+int main() {
+  return friends(0);
+}

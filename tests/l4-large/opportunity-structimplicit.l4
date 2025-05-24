@@ -1,0 +1,18 @@
+//test return 1
+//checks that you can use structs before their definitions when size info not required
+
+int f(struct e[] hi) { 
+	return 1;
+}
+
+struct e {
+	int x;
+};
+
+
+int main(){
+
+	struct e[] h = alloc_array(struct e, 1);
+	return (f(h));
+
+}

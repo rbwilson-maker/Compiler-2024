@@ -1,0 +1,20 @@
+//test return 0;
+
+// tests nested structs to see if the syntactic sugar works out
+
+struct l1 {
+    int bar;
+};
+
+struct l2 {
+    struct l1 bar;
+};
+
+struct l3 {
+    struct l2 bar;
+};
+
+int main() {
+    struct l3 * testval = alloc(struct l3);
+    return testval->bar.bar.bar;
+}

@@ -1,0 +1,7 @@
+//test return 42
+// main can be shadowed
+
+int main() {
+  int main = 42;
+  return main;
+}

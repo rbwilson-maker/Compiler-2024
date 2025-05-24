@@ -1,0 +1,9 @@
+//test error
+//Uninitialized variable ('recursive' definition)
+
+int main () {
+
+  bool b = false && b;
+  return 4;
+
+}

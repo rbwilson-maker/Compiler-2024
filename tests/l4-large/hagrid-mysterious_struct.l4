@@ -1,0 +1,18 @@
+//test return 1
+//some structs have to remain a mystery...
+
+struct mystery* f (struct mystery* x) {
+  return x;
+}
+
+struct mystery* g (struct mystery* y, struct mystery* z) {
+  return (y == NULL) ? y : z;
+}
+
+int h (struct mystery* w) {
+  return 1;
+}
+
+int main() {
+  return h(NULL);
+}

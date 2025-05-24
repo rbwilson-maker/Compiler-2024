@@ -1,0 +1,13 @@
+//test return 7
+
+int main() {
+  int p = 1;
+  int i = 1;
+  int k = 1;
+  int a = 1;
+  int c = 1;
+  int h = 1;
+  int u = 1;
+  int res = p                   + i +         k + a   +                                                                                   c +         h + u;
+  return res;
+}

@@ -1,0 +1,11 @@
+//test return 0
+
+int main() {
+  int a = 5;
+  int b = 8;
+  if (a*b % 9 == 0){
+    return 1;
+  } else {
+    return 0;
+  }
+}

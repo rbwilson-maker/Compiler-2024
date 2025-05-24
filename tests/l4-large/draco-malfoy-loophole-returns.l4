@@ -1,0 +1,30 @@
+//test return 5
+
+struct basicallyalong {
+	int leastsig;
+	int mostsig;
+};
+
+typedef struct basicallyalong * longnum;
+
+bool longlt(longnum a, longnum b){
+	if (a->mostsig < b -> mostsig){
+		return true;
+	}
+	if (a->mostsig > b -> mostsig){
+		return false;
+	}
+	return (a->leastsig < b->leastsig);
+}
+
+int main(){
+	longnum l1 = alloc(struct basicallyalong);
+	longnum l2 = alloc(struct basicallyalong);
+
+	l1 -> leastsig = 5;
+	l2 -> leastsig = 7;
+	l1 -> mostsig = 10;
+	l2 -> mostsig = 11;
+
+	return ((*(longlt(l1,l2) ? l1 : l2)).leastsig);
+}

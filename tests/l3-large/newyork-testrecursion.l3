@@ -1,0 +1,12 @@
+//test return 50
+
+int rec(int n) {
+    if (n == 0)
+        return 0;
+    else
+        return 1 + rec(n - 1);
+}
+
+int main() {
+    return rec(50);
+}

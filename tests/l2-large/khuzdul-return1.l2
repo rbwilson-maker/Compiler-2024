@@ -1,0 +1,17 @@
+//test return 144
+
+int main(){
+
+	int f0 = 0;
+	int f1 = 1;
+	int f2 = f0 + f1;
+    int loop = 0;
+    while(loop < 10)
+    {
+        f0 = f1;
+        f1 = f2;
+        f2 = f0 + f2;
+        loop = 1 + loop;
+    }
+	return f2;
+}

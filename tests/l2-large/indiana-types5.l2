@@ -1,0 +1,7 @@
+//test error
+
+//very evil ternary typechecking
+
+int main(){
+    return true?false:true?1:0;
+}

@@ -1,0 +1,32 @@
+//test div-by-zero
+
+int get_operand(int n) {
+	n *= 73;
+	n += 31;
+	n %= 32;
+	n += 32; // avoid div by zero ;)
+	return n;
+}
+
+int dumb_hash(int seed) {
+	return 97*seed+41;
+}
+
+int main() {
+	int h = 9295;
+	int res = 0;
+	for (int i = 0; i < 100; i++) {
+		h = dumb_hash(h);
+		int h_choice = h%4;
+		if (h_choice == 0) {
+			res += get_operand(h);
+		} else if (h_choice == 1) {
+			res *= get_operand(h);
+		} else if (h_choice == 2) {
+			res /= get_operand(h);
+		} else {
+			res << get_operand(h);
+		}
+	}
+	return res;
+}

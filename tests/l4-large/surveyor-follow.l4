@@ -1,0 +1,39 @@
+//test return 3
+int rand(int seed) {
+  return 1103515245 * seed + 12345;
+}
+
+int mod(int v, int count) {
+  int ret = v % count;
+  if (ret < 0) {
+    ret += count;
+  }
+  return ret;
+}
+
+int initialize(int seed, int[] items) {
+  for (int i = 0; i < 200; i++) {
+    seed = rand(seed);
+    items[i] = mod(seed, 15);
+  }
+  return seed;
+}
+
+int main() {
+  int[] items = alloc_array(int, 200);
+  int seed = -732534;
+
+  bool found_fix = false;
+  int i = 0;
+  while (!found_fix) {
+    seed = initialize(seed, items);
+    i = 0;
+    for (int j = 0; j < 200; j++) {
+      i = items[i];
+    }
+    if (items[i] == i) {
+      found_fix = true;
+    }
+  }
+  return i;
+}

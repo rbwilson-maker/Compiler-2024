@@ -1,0 +1,24 @@
+//test error
+
+/* True Keyword Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, September 13, 2015 at 09:27:08 AM 
+ *
+ * This test tests whether the compiler detects that the keyword 'true'
+ * is being used as an identifier.
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int true;
+
+    x = 4;
+    y = 3;
+    true = x + y;
+
+    return true;
+}

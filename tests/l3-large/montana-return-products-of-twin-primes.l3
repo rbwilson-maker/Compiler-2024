@@ -1,0 +1,29 @@
+//test return 35
+
+bool isprime(int n) {
+  for (int i = 2; i < n; i++) {
+    if (n % i == 0)
+      return false;
+  }
+  return true;
+}
+
+int nth_product_of_twin_primes(int n) {
+  int p1 = 0;
+  int p2 = 0;
+  int nfound = 0;
+  int i = 3;
+  while (nfound < n) {
+    if (isprime(n) && isprime(n + 2)) {
+      p1 = n;
+      p2 = n + 2;
+      nfound++;
+    }
+    i += 2;
+  }
+  return p1 * p2;
+}
+
+int main() {
+  return nth_product_of_twin_primes(5);
+}

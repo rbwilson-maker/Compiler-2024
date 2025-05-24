@@ -1,0 +1,25 @@
+//test error
+
+
+// wrong type order is used here
+typedef typA int;
+
+int f(int x){
+    return f(x);
+}
+
+
+
+int main(){
+    int x = 0;
+    return x;
+}
+
+
+
+
+
+
+
+
+

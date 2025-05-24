@@ -1,0 +1,8 @@
+//test error
+//compare pointer with non-pointer
+
+int main() {
+    int* a = alloc(int);
+    int b = 3;
+    return a == b;
+}

@@ -1,0 +1,15 @@
+//test error 
+
+typedef int ff;
+void f(ff fff);
+void g(ff fff);
+void h(ff fff);
+
+int main() {
+    ff void;
+    ff void = 6;
+    f(void);
+    g(void);
+    h(void);
+    return 0;
+}

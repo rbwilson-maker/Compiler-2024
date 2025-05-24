@@ -1,0 +1,14 @@
+//test abort
+
+int foo() {
+  assert(false);
+  return 1;
+}
+
+int sneak(int x, int y) {
+  return x + y;
+}
+
+int main () {
+  return sneak(foo(), 1 / 0);
+}

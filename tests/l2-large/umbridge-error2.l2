@@ -1,0 +1,12 @@
+//test error
+
+int main()
+{
+    // recursive declaration is not allowed
+    int x = 99999 + x;
+    int y = x * x;
+    int z = y * y;
+    return z;
+    y = x / z / z;
+    return y;
+}

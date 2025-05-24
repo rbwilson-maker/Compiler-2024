@@ -1,0 +1,30 @@
+//test return 42
+
+void partitions(int target, int curr, int[] array, int idx)
+{
+    if(curr + array[idx] == target) {
+        for(int i=0; i <= idx; i++)
+            print_int(array[i]);
+
+	print_hex(0xdeadbeef);
+        return;
+    }
+    else if (curr + array[idx] > target) return;
+    else {
+        for(int i = array[idx]+1; i < target; i++) {
+            array[idx+1] = i;
+            partitions(target, curr + array[idx], array, idx+1);
+        }
+    }
+}
+
+int main(){
+    int[] array = alloc_array(int, 100);
+    int n = 6;
+    for(int i = 1; i < n; i++)
+    {
+        array[0] = i;
+        partitions(n, 0, array, 0);
+    }
+    return 42;
+}

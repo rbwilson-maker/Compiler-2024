@@ -1,0 +1,14 @@
+//test error
+// Test missing function body
+
+int hash(int code, int idx);
+
+int main() {
+  int i = 0;
+  while (true) {
+    hash(0x1023, i);  // Missing hash body
+    i++;
+  }
+
+  return 0;
+}

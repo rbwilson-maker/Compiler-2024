@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+  int x = 41325;
+  int y = 2;
+  int z = 4;
+
+  if (x < y) {
+    return 0;
+  }
+
+  return x % (y / z);
+}

@@ -1,0 +1,9 @@
+//test return 60
+// test for loop
+int main() {
+	int x = 0;
+	for (int i = -2; i < 28; i += 2) {
+		x += 4;
+	}
+	return x;
+}

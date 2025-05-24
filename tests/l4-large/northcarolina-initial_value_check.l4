@@ -1,0 +1,26 @@
+//test return 0
+//checks that you're initializing variables to the right defaults
+
+typedef struct foo baz;
+
+struct foo
+{
+  int x;
+  int y;
+};
+
+int arrmax(baz[] input, int length) {
+  int max = -99999999;
+  for (int i = 0; i < length; i++) {
+    if (input[i].x > max)
+      max = input[i].x;
+    if (input[i].y > max)
+      max = input[i].y;
+  }
+  return max;
+}
+
+int main() {
+  baz[] bar = alloc_array(baz, 10);
+  return arrmax(bar, 10);
+}

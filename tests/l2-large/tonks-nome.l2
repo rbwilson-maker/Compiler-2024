@@ -1,0 +1,8 @@
+//test return -2
+int main() {
+  int curr = 10;
+  while (curr > 0) {
+    curr = curr - 4;
+  }
+  return curr;
+}

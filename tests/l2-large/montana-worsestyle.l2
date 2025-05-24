@@ -1,0 +1,14 @@
+//test return 12
+
+int main() {
+  int x = ~0xf1F1c1;
+  int z = ~x;
+  if (!!((x ^ 0xf00) > 100))
+    for (int y; !((0xf & x) < 12); y -= 1) {
+      y = x / 2;
+      x = y & 0xff;
+      x >>= 1;
+    }
+  else while (z != 0) for (int y = 12; (y ^ 0xa) > 1; x = 0) if (x != 15) return y;
+  return -1;
+}

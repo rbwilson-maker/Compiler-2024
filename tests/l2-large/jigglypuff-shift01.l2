@@ -1,0 +1,26 @@
+//test div-by-zero
+
+/* Shift by large number Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ *
+ * Shift by a big number
+ */
+
+
+int main()
+{
+    int x; 
+    int y; 
+    int z;
+
+    // x = 16
+    x = 2 * 8;
+    y = x + 1;
+    z = 0xffffffe0; 
+    
+    z = z >> (x + y);
+
+    return 0;
+}

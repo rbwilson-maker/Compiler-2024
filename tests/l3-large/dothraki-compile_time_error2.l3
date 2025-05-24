@@ -1,0 +1,16 @@
+//test error
+
+int brokenLoop(int b) {
+  while (b > 0) {
+    x = b + 1;
+    b -= 1;
+  }
+  return x;
+}
+
+int main() {
+  int b = 3;
+  int x = brokenLoop(b)
+
+  return x;
+}

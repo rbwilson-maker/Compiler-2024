@@ -1,0 +1,10 @@
+//test typecheck
+
+
+int main()
+{
+    int turing_machine = encode_tm_from_int(15411);
+    bool is_halting = halting(turing_machine, 15411);
+
+    return (is_halting)? 1 : 0; 
+}

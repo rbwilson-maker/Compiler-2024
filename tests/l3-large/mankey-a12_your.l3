@@ -1,0 +1,33 @@
+//test return 125
+//ackermann is merciful
+
+int main();
+
+int foo(int n, int m);
+
+bool bar () {
+  if (false)
+  return true;
+  return false;
+}
+
+int main() {
+  if (bar()) {
+    return 1;
+  }
+  return foo(3, 4);
+}
+
+int main();
+
+int foo(int n, int m) {
+  if (n == 0) {
+    return m + 1;
+  }
+  if (n > 0 && m == 0) {
+    return foo(n - 1, 1);
+  }
+  return foo(n - 1, foo(n, m - 1));
+}
+
+int foo(int n, int m);

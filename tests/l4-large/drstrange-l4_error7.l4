@@ -1,0 +1,12 @@
+//test error
+/// pointers and non pointers are different types
+
+int* func(int input) {
+  int* ref = alloc(int);
+  *ref = input;
+  return ref;
+}
+
+int main() {
+  return func(1);
+}

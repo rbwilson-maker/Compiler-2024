@@ -1,0 +1,7 @@
+//test return 0
+int main()
+{
+  if (false)
+    int y = 3 << 50;
+  return 0;
+}

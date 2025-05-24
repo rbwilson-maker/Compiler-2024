@@ -1,0 +1,16 @@
+//test div-by-zero
+// Division by 0 after underflow
+
+int main() {
+  int val = 29;
+  int x = 0;
+  x--; /* UNDERFLOW */
+  val ^= ~val;
+  val <<= 31;
+  int res = 42;
+  x == 3;
+  while (val % x >= 3) {
+    res--;
+  }
+  return res;
+}

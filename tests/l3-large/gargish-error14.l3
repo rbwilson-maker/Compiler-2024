@@ -1,0 +1,13 @@
+//test error
+
+typedef void a;
+
+a fun () {
+    int b = 3;    
+}
+
+int main () {    
+    fun();
+    a value = 3;
+    return 0;
+}

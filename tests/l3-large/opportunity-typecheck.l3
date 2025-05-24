@@ -1,0 +1,14 @@
+//test error
+//incorrectly calls function after return statement
+
+int hi(int x, bool y) {
+	return 0;
+}
+
+int main(){
+	
+	return 0;
+	hi(false);
+
+
+}

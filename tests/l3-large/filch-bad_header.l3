@@ -1,0 +1,12 @@
+//test typecheck
+
+int main() {
+
+  lets_do_nothing();
+
+  lets_keep_doing_nothing(true);
+
+  wow_still_doing_nothing(7);
+
+  return 5;
+}

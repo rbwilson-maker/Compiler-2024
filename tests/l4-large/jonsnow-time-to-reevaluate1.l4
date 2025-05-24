@@ -1,0 +1,29 @@
+//test return 1018570571
+
+int sum(int[] A, int n) {
+  int sum = 0;
+  for (int i = 0; i < n; i++) {
+    sum += A[i];
+  }
+  return sum;
+}
+
+// Dammit! Dammit!
+int recurse(int[] A, int an, int[] B, int bn, int x) {
+  if (x == 0) return 0;
+  A[recurse(B, bn, A, an, x-1) % an] += B[x % bn];
+  return sum(A, an) + sum(B, bn);
+}
+
+int main() {
+  int an = 100;
+  int[] A = alloc_array(int, an);
+
+  int bn = 200;
+  int[] B = alloc_array(int, bn);
+
+  for (int i = 0; i < an; i++) A[i] = i;
+  for (int i = 0; i < bn; i++) B[i] = bn - i;
+
+  return recurse(A, an, B, bn, 3000);
+}

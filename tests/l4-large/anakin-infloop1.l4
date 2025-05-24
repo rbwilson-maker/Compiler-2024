@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+// a lot of array accesses should not fail
+
+int main() {
+    int len = 42;
+    int dummyvalue;
+    int[] arr = alloc_array(int, len);
+    int x = 9999;
+    // should not fail here for many array accesses
+    for (int i = 0; i < x; i++) {
+        int j = (len * i) / x;
+        dummyvalue = arr[j];
+    }
+    while (true) {}
+    return 0;
+}

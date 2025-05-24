@@ -1,0 +1,31 @@
+//test return 1
+
+struct abcd {
+  int a;
+  int b;
+  bool c;
+  bool d;
+};
+
+struct abcde {
+  struct abcd a;
+  struct abcd b;
+  struct abcd c;
+};
+
+struct abcdef {
+  struct abcde a;
+  struct abcde b;
+};
+
+int main()
+{
+  struct abcdef* a = alloc(struct abcdef);
+  (*a).a.b.c = false;
+  a->a.b.a = 7;
+  a->a.b.b = 5;
+  struct abcdef* b = alloc(struct abcdef);
+  b->b.c.d = true;
+  assert(a->b.b.b == 0);
+  return 1;
+}

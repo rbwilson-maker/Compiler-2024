@@ -1,0 +1,8 @@
+//test error
+void nothing() {
+  int x = 0;
+}
+
+int main() {
+  return nothing();
+}

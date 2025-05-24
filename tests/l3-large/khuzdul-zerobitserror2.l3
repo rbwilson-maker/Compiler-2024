@@ -1,0 +1,20 @@
+//test div-by-zero
+
+//still not able to fix the bug
+
+//we're just zeroing the bits one by one
+int makezerointoone(int x, int pos){
+  return x ^ (1<<pos);
+}
+
+int f(int x){
+  for(int i = 0; !(x==0); i++){
+    if((x&(1<<i))==0)
+      x=makezerointoone(x,i);
+  }
+  return x;
+}
+
+int main(){
+  return f(39485);
+}

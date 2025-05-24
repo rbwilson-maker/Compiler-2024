@@ -1,0 +1,51 @@
+//test error
+// reserved keywords
+
+int main() {
+	int cf = 0; // carry flag
+	int b1 = 1; // reserved
+	int pf = 0; // parity flag
+	int b3 = 0; // reserved
+	int af = 0; // adjust flag
+	int b5 = 0; // reserved
+	int zf = 0; // zero flag
+	int sf = 0; // sign flag
+	int tf = 0; // trap flag
+	int if = 0; // interrupt flag
+	int df = 0; // direction flag
+	int of = 0; // overflow flag
+	int iopl = 1; // io privilege level
+	int nt = 1; // nested task flag
+	int b15 = 0; // reserved
+	int rf = 0; // resume flag
+	int vm = 0; // virtual 8086 mode
+	int ac = 0; // alignment check
+	int vif = 0; // virtual interrupt flag
+	int vip = 0; // virtual interrupt pending
+	int id = 0; // cpuid
+	
+  // l1 doesn't support << or |
+  int eflags = id;
+  eflags *= 2; eflags += vip;
+  eflags *= 2; eflags += vif;
+  eflags *= 2; eflags += ac;
+  eflags *= 2; eflags += vm;
+  eflags *= 2; eflags += rf;
+  eflags *= 2; eflags += b15;
+  eflags *= 2; eflags += nt;
+  eflags *= 4; eflags += iopl;
+  eflags *= 2; eflags += of;
+  eflags *= 2; eflags += df;
+  eflags *= 2; eflags += if;
+  eflags *= 2; eflags += tf;
+  eflags *= 2; eflags += sf;
+  eflags *= 2; eflags += zf;
+  eflags *= 2; eflags += b5;
+  eflags *= 2; eflags += af;
+  eflags *= 2; eflags += b3;
+  eflags *= 2; eflags += pf;
+  eflags *= 2; eflags += b1;
+  eflags *= 2; eflags += cf;
+
+	return eflags; 
+}

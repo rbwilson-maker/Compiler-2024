@@ -1,0 +1,29 @@
+//test memerror
+
+typedef int str;
+
+struct person {
+    int id;
+    str name;
+};
+typedef struct person person;
+struct lyft {
+    person passenger;
+    person driver;
+};
+struct party {
+    person*[] invited;
+    int capacity;
+};
+typedef struct party* p;
+
+int main() {
+    p party = alloc(struct party);
+    party->capacity = 89;
+    
+    person*[] invited = alloc_array(person*, 90);
+    invited[0] = alloc(person);
+    (*invited[0]).name = 8432;
+    return (*invited[1]).id;
+}
+

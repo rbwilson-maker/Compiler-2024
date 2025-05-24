@@ -1,0 +1,48 @@
+//test return 1
+
+typedef struct Node Node;
+
+struct Node {
+    int value;
+    struct Node* next;
+};
+
+int sum_list(Node* a) {
+    if (a==NULL) return 0;
+
+    return a->value + sum_list(a->next);
+}
+
+void asgn_sum(Node* a) {
+    if (a==NULL) return;
+
+    a->value = sum_list(a->next);
+
+    asgn_sum(a->next);
+}
+
+
+int main() {
+    struct Node* a = alloc(struct Node);
+    struct Node* b = alloc(struct Node);
+    struct Node* c = alloc(struct Node);
+    struct Node* d = alloc(struct Node);
+
+    a->next = b;
+    b->next = c;
+    c->next = d;
+
+    a->value = 1;
+    b->value = 2;
+    c->value = 3;
+    d->value = 4;
+
+    asgn_sum(a);
+
+    assert(a->value==9);
+    assert(b->value==7);
+    assert(c->value==4);
+    assert(d->value==0); 
+
+    return 1;
+}

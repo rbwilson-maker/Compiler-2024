@@ -1,0 +1,10 @@
+//test memerror
+
+int main() {
+    int *x;
+    x = NULL;
+
+    *x = *x;
+
+    return 0;
+}

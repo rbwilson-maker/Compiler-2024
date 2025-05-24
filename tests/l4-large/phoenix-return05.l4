@@ -1,0 +1,13 @@
+//test return 666
+
+struct fake {
+    int x;
+};
+
+int main(){
+    int x = 666;
+    struct fake* fake = alloc(struct fake);
+    (*fake).x = x;
+    x = 5;
+    return fake->x;
+}

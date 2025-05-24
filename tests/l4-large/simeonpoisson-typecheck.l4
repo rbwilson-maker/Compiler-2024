@@ -1,0 +1,18 @@
+//test typecheck
+
+struct a {
+  int a;
+};
+
+typedef struct a a;
+
+int main()
+{
+  a* aa = alloc(a);
+  aa->a = 0;
+  while(aa->a == 0) {
+    aa->a++;
+    aa->a--;
+  }
+  return aa->a;
+}

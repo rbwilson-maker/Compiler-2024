@@ -1,0 +1,12 @@
+//test return 100000
+
+int foo(int step){ 
+    if (step == 0){
+        return 0;
+    }
+    return foo(step-1)+1; 
+}
+
+int main() {
+    return foo(100000);
+}

@@ -1,0 +1,15 @@
+//test error
+
+int fun(int a, int b, int c) {
+  if (a == 0 && b == 0 && c == 0) return 0;
+  return fun(a/2, b/2, c/2) + a/2 + b/2 + c/2;
+}
+
+int fun(int a, int b, int c, bool d) {
+  if (d) return a + b + c;
+  return a;
+}
+
+int main() {
+  return fun(100, 50, 25) - fun(123, 145, 1677, true);
+}

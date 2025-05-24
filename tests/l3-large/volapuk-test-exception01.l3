@@ -1,0 +1,10 @@
+//test abort
+//function computes n choose k recursively
+int choose(int n, int k) {
+  assert(n >= k);
+  if (k == 0) return 1;
+  if (k == n) return 1;
+  return choose(n - 1, k) + choose(n - 1, k - 1);
+}
+
+int main() { return choose(5, 7); }

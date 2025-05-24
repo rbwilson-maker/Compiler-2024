@@ -1,0 +1,13 @@
+//test memerror
+
+struct hi {
+  int* a; 
+  bool b;
+  int c;
+};
+
+int main() {
+  struct hi *b = alloc(struct hi);
+  *(b->a);
+  return 0;
+}

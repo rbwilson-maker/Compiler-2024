@@ -1,0 +1,13 @@
+//test error
+
+int main() {
+    {
+        int[] a = alloc_array(int, 5);
+        //@assert \length(a) == 5;
+    }
+    {
+        int a = 5;
+        //@assert \length(a) == 5;
+    }
+    return 1;
+}

@@ -1,0 +1,13 @@
+//test div-by-zero
+// mod by zero when using some hex numbers and various arithmetic
+
+int main()
+{
+  int x = 0x00000;
+  int y = 0xF;
+  y += 0x5555;
+  x *= 20;
+  int z = y;
+  y = z % x;
+  return 1;
+}

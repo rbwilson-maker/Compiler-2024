@@ -1,0 +1,17 @@
+//test div-by-zero
+// division by 0
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+
+  a = 5;
+  b = a-3;
+  c = b/0;
+  d = c*2;
+  e = 1;
+  return a+b+c+d+e;
+}

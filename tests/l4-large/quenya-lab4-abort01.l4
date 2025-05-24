@@ -1,0 +1,12 @@
+//test abort
+// assert default array value for bools
+
+int main() {
+  bool[] arr = alloc_array(bool, 5);
+  bool flag = false;
+  for (int i = 0; i < 5; i++) {
+    flag = flag || arr[i];
+  }
+  assert(flag);
+  return 0;
+}

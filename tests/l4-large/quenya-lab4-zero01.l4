@@ -1,0 +1,11 @@
+//test div-by-zero
+// divide by default array value
+
+int main() {
+  int[] arr = alloc_array(int, 5);
+  int sum = 0;
+  for (int i = 0; i < 5; i++) {
+    sum += arr[i];
+  }
+  return 77 / sum;
+}

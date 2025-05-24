@@ -1,0 +1,12 @@
+//test error
+// use undefined variables in a path
+int main() {
+    int a;
+    int b = 100;
+    if (b > 100) {
+        a = 1;
+        return 1;
+    } else {
+        return a;
+    }
+}

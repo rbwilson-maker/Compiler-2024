@@ -1,0 +1,166 @@
+//test return 0
+// Extension of des_encrypt.l3 to incorporate CBC
+// https://www.cs.uri.edu/cryptography/dessimplified.htm
+
+int leftrotate(int x, int c) {
+	c = c % 32;
+	if (c == 0) {
+		return x;
+	} else {
+		return (x << c) | (x >> (32 - c));
+	}
+}
+
+int expand(int r) {
+	return ((r << 2) & 0xc0) | ((r << 3) & 0x20) | ((r << 1) & 0x18) |
+		((r >> 3) & 0x04) | (r & 0x02);
+}
+
+int s1_box(int i) {
+	if (i == 0) {
+		return 5;
+	} else if (i == 1) {
+		return 2;
+	} else if (i == 2) {
+		return 1;
+	} else if (i == 3) {
+		return 6;
+	} else if (i == 4) {
+		return 3;
+	} else if (i == 5) {
+		return 4;
+	} else if (i == 6) {
+		return 7;
+	} else if (i == 7) {
+		return 0;
+	} else if (i == 8) {
+		return 1;
+	} else if (i == 9) {
+		return 4;
+	} else if (i == 10) {
+		return 6;
+	} else if (i == 11) {
+		return 2;
+	} else if (i == 12) {
+		return 0;
+	} else if (i == 13) {
+		return 7;
+	} else if (i == 14) {
+		return 5;
+	} else if (i == 15) {
+		return 3;
+	}
+
+	return 0;
+}
+
+int s2_box(int i) {
+	if (i == 0) {
+		return 4;
+	} else if (i == 1) {
+		return 0;
+	} else if (i == 2) {
+		return 6;
+	} else if (i == 3) {
+		return 5;
+	} else if (i == 4) {
+		return 7;
+	} else if (i == 5) {
+		return 1;
+	} else if (i == 6) {
+		return 3;
+	} else if (i == 7) {
+		return 2;
+	} else if (i == 8) {
+		return 5;
+	} else if (i == 9) {
+		return 3;
+	} else if (i == 10) {
+		return 0;
+	} else if (i == 11) {
+		return 7;
+	} else if (i == 12) {
+		return 6;
+	} else if (i == 13) {
+		return 2;
+	} else if (i == 14) {
+		return 1;
+	} else if (i == 15) {
+		return 4;
+	}
+
+	return 0;
+}
+
+int feistel_function(int r, int key) {
+	return s1_box(((expand(r) ^ key) >> 4)) << 3 |
+		s2_box(((expand(r) ^ key) & 0xf));
+}
+
+int sdes_encrypt(int msg, int key) {
+	int l = msg >> 6;
+	int r = msg & 0x3f;
+
+	for (int i = 0; i < 4; i++) {
+		int ll = r;
+		int rr = l ^ feistel_function(r, leftrotate(key, i));
+		l = ll;
+		r = rr;
+	}
+
+	return (r << 6) | l;
+}
+
+int sdes_decrypt(int msg, int key) {
+	int l = msg >> 6;
+	int r = msg & 0x3f;
+
+	for (int i = 0; i < 4; i++) {
+		int ll = r;
+		int rr = l ^ feistel_function(r, leftrotate(key, 3 - i));
+		l = ll;
+		r = rr;
+	}
+
+	return (r << 6) | l;
+}
+
+void cbc_encrypt(int[] plaintext, int[] ciphertext, int len, int iv, int key) {
+	for (int i = 0; i < len; i++) {
+		if (i == 0) {
+			ciphertext[i] = sdes_encrypt(plaintext[i] ^ iv, key);
+		} else {
+			ciphertext[i] = sdes_encrypt(plaintext[i] ^ ciphertext[i - 1], key);
+		}
+	}
+}
+
+void cbc_decrypt(int[] ciphertext, int[] plaintext, int len, int iv, int key) {
+	for (int i = 0; i < len; i++) {
+		if (i == 0) {
+			plaintext[i] = sdes_decrypt(ciphertext[i], key) ^ iv;
+		} else {
+			plaintext[i] = sdes_decrypt(ciphertext[i], key) ^ ciphertext[i - 1];
+		}
+	}
+}
+
+int main() {
+	int len = 11;
+	int[] plaintext = alloc_array(int, len);
+	int[] ciphertext = alloc_array(int, len);
+	int[] decrypttext = alloc_array(int, len);
+	int iv = 82;
+	int key = 455;
+	for (int i = 0; i < len; i++) {
+		plaintext[i] = (1976 ^ (81 << i)) & 0xfff;
+	}
+
+	cbc_encrypt(plaintext, ciphertext, len, iv, key);
+	cbc_decrypt(ciphertext, decrypttext, len, iv, key);
+	for (int i = 0; i < len; i++) {
+		assert(plaintext[i] == decrypttext[i]);
+	}
+
+	return 0;
+}

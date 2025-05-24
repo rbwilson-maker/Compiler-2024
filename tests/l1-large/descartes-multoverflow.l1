@@ -1,0 +1,12 @@
+//test return -2
+//Tests multiplication that results in overflow (with wrapping)
+
+int main() {
+    int max;
+    max = 2147483647;
+
+    int temp;
+    temp = max * 2;
+
+    return temp;
+}

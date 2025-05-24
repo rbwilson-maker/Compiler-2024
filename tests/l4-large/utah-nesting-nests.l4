@@ -1,0 +1,39 @@
+//test return 42
+//Can have many dots in an lvalue.
+
+struct baz {
+    struct node [] n;
+};
+
+struct bar4 {
+    struct baz e;
+};
+
+struct bar2 {
+    struct bar4 d;
+};
+
+struct bar {
+    struct bar2 c;
+};
+
+struct foo {
+    struct bar b;
+};
+
+struct node {
+    struct foo [] a;
+};
+
+
+int main () {
+    struct node *n = alloc(struct node);
+    n->a = alloc_array(struct foo, 1);
+    n->a[0].b.c.d.e.n = alloc_array(struct node, 1);
+    n->a[0].b.c.d.e.n[0].a = alloc_array(struct foo, 1);
+    n->a[0].b.c.d.e.n[0].a[0].b.c.d.e.n = alloc_array(struct node, 1);
+    n->a[0].b.c.d.e.n[0].a[0].b.c.d.e.n[0].a = alloc_array(struct foo, 1);
+    n->a[0].b.c.d.e.n[0].a[0].b.c.d.e.n[0].a[0].b.c.d.e.n = alloc_array(struct node, 1);
+    n->a[0].b.c.d.e.n[0].a[0].b.c.d.e.n[0].a[0].b.c.d.e.n[0].a = alloc_array(struct foo, 1);
+    return 42;
+}

@@ -1,0 +1,15 @@
+//test error
+//too many arguments in function call mult
+
+int mult (int* x, int* y) {
+	return (*x) * (*y);
+}
+
+int main() {
+	int res;
+	int* pt = alloc(int);
+	*pt = 1;
+	res = mult(pt, pt, pt);
+	return res;
+}
+

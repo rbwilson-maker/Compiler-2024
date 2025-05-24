@@ -1,0 +1,13 @@
+//test return ~2147483648
+
+int main() {
+  int x = 1;
+
+  // overflow to 0
+  int y = x + 2147483647;
+
+  int z = y - 1;
+  int w = z * 1;
+
+  return y;
+}

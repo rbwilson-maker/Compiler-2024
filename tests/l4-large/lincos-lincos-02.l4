@@ -1,0 +1,16 @@
+//test error
+// Test dereference must be surrounded by parens
+
+int main() {
+    int[] a = alloc_array(int, 100);
+    int* val = alloc(int);
+    *val = 42;
+    for (int i = 0; i < 100; i++) {
+        a[i] = *val;
+        *val++;
+    }
+    int* sum = alloc(int);
+    for (int i = 0; i < 100; i++)
+        *sum += a[i];
+    return *sum;
+}

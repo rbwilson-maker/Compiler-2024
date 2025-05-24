@@ -1,0 +1,28 @@
+//test return 15411
+//adapted from 15122 recitation 5
+
+struct a {
+  int a;
+  struct b* b;
+};
+
+struct b {
+  int* a;
+  int b;
+  struct a* c;
+};
+
+int main()
+{
+  struct a* this = alloc(struct a);
+  struct b* that = alloc(struct b);
+
+  this->b = that;
+  that->c = this;
+  that->c->a = 15;
+  this->b->a = alloc(int);
+  *(that->a) = this->a * 27 + 6;
+  this->b->b = 1000 * this->a + *(this->b->a);
+
+  return that->b;
+}

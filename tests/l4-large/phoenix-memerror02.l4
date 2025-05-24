@@ -1,0 +1,12 @@
+//test memerror
+
+struct fake {
+    int x;
+    struct fake* y;
+};
+
+int main(){
+    struct fake* f = alloc(struct fake);
+    
+    return f->y->x;
+}

@@ -1,0 +1,30 @@
+//test return 15210
+//Structs with alignment
+
+struct Node {
+	int x;
+	struct Node *next;
+    int y;
+};
+
+struct Node *makeNode(int x, int y, struct Node *next){
+	struct Node *new_node = alloc(struct Node);
+	new_node->x = x;
+    new_node->y = y;
+	new_node->next = next;
+	return new_node;
+}
+
+int main(){
+	struct Node *node_1 = makeNode(10, 1, NULL);
+	struct Node *node_2 = makeNode(20, 10, node_1);
+	struct Node *node_3 = makeNode(15, 1000, node_2);
+
+	struct Node *curr = node_3;
+	int sum = 0;
+	while (curr != NULL){
+		sum += curr->x*curr->y;
+		curr = curr->next;
+	}
+	return sum;
+}

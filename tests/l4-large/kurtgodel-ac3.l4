@@ -1,0 +1,28 @@
+//test return 965601742
+// space-efficient DP by using aliasing
+
+int main() {
+    int mod = 1000000007;
+    int size = 1000;
+    int[] r0 = alloc_array(int, size + 1);
+    int[] r1 = alloc_array(int, size + 1);
+    int[][] g = alloc_array(int[], size + 1);
+
+    for (int i = 0; i <= size; i++) {
+        if (i % 2 == 0)
+            g[i] = r0;
+        else
+            g[i] = r1;
+    }
+
+    for (int i = 1; i <= size; i++) {
+        for (int j = 1; j <= size; j++) {
+            if (i == 1 && j == 1)
+                g[i][j] = 1;
+            else
+                g[i][j] = (g[i - 1][j] + g[i][j - 1]) % mod;
+        }
+    }
+
+    return g[size][size];
+}

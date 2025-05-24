@@ -1,0 +1,9 @@
+//test return 4
+
+int main() {
+    int a = 7;
+    bool t = false || true;
+
+    //@assert (a < 5 ? (a + 2) : ((t && (a == 7)) ? 4 : 0)) == 4;
+    return a < 5 ? (a + 2) : ((t && (a == 7)) ? 4 : 0);
+}

@@ -1,0 +1,15 @@
+//test abort
+
+int helper (int x, int target) {
+    if (x == 12512) {
+        assert(false);
+    }
+    if (x == target) {
+        return target;
+    }
+    return (helper(x+1, target));
+}
+
+int main() {
+    return helper(0, 0x7FFFFFFF);
+}

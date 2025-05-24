@@ -1,0 +1,11 @@
+//test return 6
+//A test of the simple use of the +, -, *, /, and %
+int main() { 
+    int a = 5;
+    a += 10;    //15
+    a -= 5;     //10
+    a *= 10;    //100
+    a /= 5;     //20
+    a %= 7;     //6
+    return a;
+}

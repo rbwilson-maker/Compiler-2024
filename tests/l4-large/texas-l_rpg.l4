@@ -1,0 +1,46 @@
+//test return 1
+
+struct Player {
+	int id;
+	int life;
+	int hit_points;
+	bool alive;
+};
+typedef struct Player Player;
+
+void check_life(Player* player) {
+	if (player->life <= 0) {
+		player->life = 0;
+		player->alive = false;
+	}
+}
+
+void attack(Player* attacker, Player* defender) {
+	defender->life -= attacker->hit_points;
+	check_life(defender);
+}
+
+int main() {
+	Player* p1 = alloc(Player);
+	Player* p2 = alloc(Player);
+
+	p1->id = 1;
+	p1->life = 10;
+	p1->hit_points = 2;
+	p1->alive = true;
+	p2->id = 2;
+	p2->life = 9;
+	p2->hit_points = 3;
+	p2->alive = true;
+
+	while (p1->alive && p2->alive) {
+		attack(p1, p2);
+		attack(p2, p1);
+	}
+
+	if (!(p1->alive)) {
+		return 1;
+	} else {
+		return 2;
+	}
+}

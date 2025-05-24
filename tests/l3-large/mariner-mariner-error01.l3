@@ -1,0 +1,14 @@
+//test error
+//tests typedef
+
+typedef int month;
+
+int main() {
+	date x = 1;
+	date y = 10;
+	date z = 0;
+	for (date i = 0; i < y; i++) {
+		z += i;
+	}
+	return z;
+}

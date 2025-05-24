@@ -1,0 +1,8 @@
+//test error
+//Test incorrect hexadecimal
+int main()
+{
+    int blue;
+    blue = 0x00WW0000;
+    return blue;
+}

@@ -1,0 +1,36 @@
+//test typecheck
+//test return 0;
+
+/*
+  This is the beginning of my new, high-tech crypto library c0penSSL.
+  Right now it can only perform a simple one-time-pad operation, but I'm
+  planning on adding Elliptic Curve support soon.
+
+  See you in L4.
+*/
+
+ciphertext encrypt(plaintext p, key k) {
+  return p ^ k;
+}
+
+plaintext decrypt(ciphertext c, key k) {
+  return c ^ k;
+}
+
+key crack(plaintext p, ciphertext c) {
+  return p ^ c;
+}
+
+int main() {
+  plaintext m1 = 0xDEADBEEF;
+  key k1 = 0x10101010;
+  ciphertext c1 = encrypt(m1, k1);
+  assert(c1 != 0);
+  plaintext d1 = decrypt(c1, k1);
+  if(d1 == 0xDEADBEEF) {
+    return 0;
+  }
+  else {
+    return 0x0FEDBEEF;
+  }
+}

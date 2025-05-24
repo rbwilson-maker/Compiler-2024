@@ -1,0 +1,13 @@
+//test return 314
+// calculate some digits of pi
+
+int main() {
+  dub pi = itod(0);
+  dub acc = itod(-1);
+  for (int i = 0; i <= 1000; i++) {
+    acc = dmul(acc, itod(-1));
+    pi = dadd(pi, dmul(itod(4), ddiv(acc, dadd(dmul(itod(2), itod(i)), itod(1)))));
+  }
+  pi = dmul(itod(100), pi);
+  return dtoi(pi);
+}

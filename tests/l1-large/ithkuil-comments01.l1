@@ -1,0 +1,18 @@
+//test error
+// test comment behavior
+
+int main()
+{
+    int x;
+    // should fail to compile as comments are not matched.
+    x = /*
+    This is a comment.
+    Line comment should not comment a block comment start
+    // /*
+    This is another comment.
+    This is still a comment.
+    */
+    20;
+    // */
+    return x * 5;
+}

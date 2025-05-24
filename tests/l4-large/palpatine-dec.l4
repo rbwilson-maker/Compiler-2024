@@ -1,0 +1,10 @@
+//test div-by-zero
+int dec(int* i) {
+	(*i)--;
+	return *i;
+}
+int main(){
+	int* a = alloc(int);
+	*a=2;
+	return (dec(a))/(dec(a));
+}

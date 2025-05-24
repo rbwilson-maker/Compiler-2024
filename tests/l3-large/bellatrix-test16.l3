@@ -1,0 +1,75 @@
+//test error
+
+int f1(bool x) {
+
+  return x ? 5 : -5;
+  
+}
+
+int f2(bool x) {
+
+  return x ? 5 : -5;
+  
+}
+
+int f3(bool x) {
+
+  return x ? 5 : -5;
+  
+}
+
+int f4(bool x) {
+
+  return x ? 5 : -5;
+  
+}
+
+int f5(bool x) {
+
+  return x ? 5 : -5;
+  
+}
+
+int f6(bool x) {
+
+  return x ? 5 : -5;
+  
+}
+
+int f7(bool x) {
+
+  return x ? 5 : -5;
+  
+}
+
+int f8(bool x) {
+
+  return x ? 5 : -5;
+  
+}
+
+int f9(bool x) {
+
+  return x ? 5 : -5;
+  
+}
+
+int f10(bool x) {
+
+  return x ? 5 : -5;
+  
+}
+
+int f1(int x) {
+
+  return x > 5 ? 5 : -x;
+  
+}
+
+
+int main(){
+
+
+  return f1(7);
+
+}

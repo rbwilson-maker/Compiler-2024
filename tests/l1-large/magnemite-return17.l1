@@ -1,0 +1,7 @@
+//test return -1
+// test modulus has the same sign with dividend(negative number modulo operations)
+
+int main() {
+    int a = -3;
+    return a % (-2);
+}

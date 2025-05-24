@@ -1,0 +1,23 @@
+//test typecheck
+//test infloop
+
+int mutual_recursion1(int acc);
+int mutual_recursion(int acc);
+
+int main() {
+    int acc = 0;
+    mutual_recursion(acc);
+    return 0;
+}
+
+int mutual_recursion(int acc) {
+    acc++;
+    mutual_recursion1(acc);
+    return acc;
+}
+
+int mutual_recursion1(int acc) {
+    acc++;
+    mutual_recursion(acc);
+    return acc;
+}

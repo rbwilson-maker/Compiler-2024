@@ -1,0 +1,234 @@
+//target 7
+[
+ {
+  "Uses": [], 
+  "Defines": [ "%t39" ],
+  "Live_out": [ "%t39" ],
+  "Move": false,
+  "Line": 0
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t42" ],
+  "Live_out": [ "%t42", "%t39" ],
+  "Move": false,
+  "Line": 1
+ },
+ {
+  "Uses": [ "%t39" ], 
+  "Defines": [ "%t45" ],
+  "Live_out": [ "%t42", "%t39", "%t45" ],
+  "Move": false,
+  "Line": 2
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%edx" ],
+  "Live_out": [ "%t42", "%t39", "%t45" ],
+  "Move": true,
+  "Line": 3
+ },
+ {
+  "Uses": [ "%t45" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t42", "%t39", "%t45" ],
+  "Move": true,
+  "Line": 4
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t42", "%t39", "%t45" ],
+  "Move": false,
+  "Line": 5
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t48" ],
+  "Live_out": [ "%t42", "%t39", "%t48", "%t45" ],
+  "Move": true,
+  "Line": 6
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%edx" ],
+  "Live_out": [ "%t42", "%t39", "%t48", "%t45" ],
+  "Move": true,
+  "Line": 7
+ },
+ {
+  "Uses": [ "%t45" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t42", "%t39", "%t48" ],
+  "Move": true,
+  "Line": 8
+ },
+ {
+  "Uses": [ "%t48" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t42", "%t39" ],
+  "Move": false,
+  "Line": 9
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t51" ],
+  "Live_out": [ "%t51", "%t42", "%t39" ],
+  "Move": true,
+  "Line": 10
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%edx" ],
+  "Live_out": [ "%t51", "%t42", "%t39" ],
+  "Move": true,
+  "Line": 11
+ },
+ {
+  "Uses": [ "%t39" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t51", "%t42", "%t39" ],
+  "Move": true,
+  "Line": 12
+ },
+ {
+  "Uses": [ "%t42" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t51", "%t42", "%t39" ],
+  "Move": false,
+  "Line": 13
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t54" ],
+  "Live_out": [ "%t51", "%t42", "%t39" ],
+  "Move": true,
+  "Line": 14
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%edx" ],
+  "Live_out": [ "%t51", "%t42", "%t39" ],
+  "Move": true,
+  "Line": 15
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t51", "%t42", "%t39" ],
+  "Move": true,
+  "Line": 16
+ },
+ {
+  "Uses": [ "%t42" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t51", "%t39" ],
+  "Move": false,
+  "Line": 17
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t57" ],
+  "Live_out": [ "%t51", "%t39", "%t57" ],
+  "Move": true,
+  "Line": 18
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%edx" ],
+  "Live_out": [ "%t51", "%t39", "%t57" ],
+  "Move": true,
+  "Line": 19
+ },
+ {
+  "Uses": [ "%t57" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t51", "%t39" ],
+  "Move": true,
+  "Line": 20
+ },
+ {
+  "Uses": [ "%t51" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t39" ],
+  "Move": false,
+  "Line": 21
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t60" ],
+  "Live_out": [ "%t60", "%t39" ],
+  "Move": true,
+  "Line": 22
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%edx" ],
+  "Live_out": [ "%t60", "%t39" ],
+  "Move": true,
+  "Line": 23
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t60", "%t39" ],
+  "Move": true,
+  "Line": 24
+ },
+ {
+  "Uses": [ "%t60" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t39" ],
+  "Move": false,
+  "Line": 25
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t64" ],
+  "Live_out": [ "%t64", "%t39" ],
+  "Move": true,
+  "Line": 26
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%edx" ],
+  "Live_out": [ "%t64", "%t39" ],
+  "Move": true,
+  "Line": 27
+ },
+ {
+  "Uses": [ "%t64" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t39" ],
+  "Move": true,
+  "Line": 28
+ },
+ {
+  "Uses": [ "%t39" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": false,
+  "Line": 29
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t67" ],
+  "Live_out": [ "%t67" ],
+  "Move": true,
+  "Line": 30
+ },
+ {
+  "Uses": [ "%t67" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": true,
+  "Line": 31
+ },
+ {
+  "Uses": [], 
+  "Defines": [],
+  "Live_out": [],
+  "Move": false,
+  "Line": 32
+ }
+]

@@ -1,0 +1,19 @@
+//test return 6
+//var named main
+int main()
+{
+  int sum = 0;
+  {
+    int main = 3;
+    int c0_main = 4;
+    sum += main + c0_main;
+  }
+  {
+    bool main = true;
+    bool c0_main = false;
+    if (main || c0_main) {
+      sum --;
+    }
+  }
+  return sum;
+}

@@ -1,0 +1,67 @@
+//test return 0
+// Computes prefix inclusive (of addition) (see 210).  Obviously not actually
+// parallel because this is c0.  Compares it against the trivial serial scan
+// implementation for correctness.
+// Note the parallel scan only works with powers of 2 arrays.  I'm lazy!
+int[] scanl_serial(int[] ints, int len)
+{
+  int[] res = alloc_array(int, len);
+  if (len < 1)
+    return res;
+  else
+  {
+    res[0] = ints[0];
+    for(int i = 1; i < len; i++)
+      res[i] = res[i - 1] + ints[i];
+  }
+  return res;
+}
+
+int[] scanl_par(int[] ints, int len)
+{
+  // Base case
+  if(len == 1)
+    return ints;
+
+  // Compute contraction
+  int[] contract = alloc_array(int, len / 2);
+  for(int i = 0; i < len; i += 2)
+    contract[i / 2] = ints[i] + ints[i + 1];
+
+  // Recursive scan
+  int[] recurse = scanl_par(contract, len / 2);
+
+  // Need to map recursion to odd numbered positions
+  int[] ret = alloc_array(int, len);
+  for(int i = 1; i < len; i += 2)
+    ret[i] = recurse[(i - 1) / 2];
+
+  // Add previous for even numbered positions
+  ret[0] = ints[0];
+  for(int i = 2; i < len; i += 2)
+    ret[i] = ret[i - 1] + ints[i];
+
+  return ret;
+}
+
+bool all_equal(int[] ints1, int[] ints2, int len)
+{
+  for(int i = 0; i < len; i++)
+  {
+    if(ints1[i] != ints2[i])
+      return false;
+  }
+  return true;
+}
+
+
+int main()
+{
+  int[] input = alloc_array(int, 8);
+  for (int i = 1; i <= 8; i++)
+    input[i - 1] = i;
+
+  assert(all_equal(scanl_serial(input, 8), scanl_par(input, 8), 8));
+
+  return 0;
+}

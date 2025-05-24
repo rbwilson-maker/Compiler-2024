@@ -1,0 +1,29 @@
+//test return 100
+
+/* makes sure function declarations with typedefs works
+   correctly. Also, that propagation of type defs is working */
+
+typedef int a;
+typedef a b;
+typedef bool x;
+typedef x y;
+typedef y z;
+
+int omg(int wow, bool cool);
+a omg(b wow, bool what);
+a omg(int wow, z wait);
+a omg(a wow, y lolwut);
+
+typedef z c;
+
+a omg(b lol, c wtf) {
+    return lol + (wtf ? lol : 2*lol);
+}
+
+a main() {
+    a type_a = 50;
+    b type_b = 100;
+    type_b = type_a;
+    z type_z = true;
+    return omg(type_b, type_z);
+}

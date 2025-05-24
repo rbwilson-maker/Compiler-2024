@@ -1,0 +1,19 @@
+//test return 1
+
+int unused(int foo);
+
+int forward(int newtype) {
+    if (newtype == 0)
+        newtype = main();
+    return newtype;
+}
+
+typedef int newtype;
+typedef newtype supernewtype;
+
+supernewtype unused(newtype bar);
+
+int main() {
+    newtype nt = 1;
+    return forward(nt);
+}

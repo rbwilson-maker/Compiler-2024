@@ -1,0 +1,12 @@
+//test return 42
+
+
+int main() {
+    int[] a;
+    int[] b;
+    a = alloc_array(int, 1);
+    b = alloc_array(int, 1);
+    a[0] = 42;
+
+    return a[b[0]];
+}

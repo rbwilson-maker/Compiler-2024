@@ -1,0 +1,8 @@
+//test error
+// i wish we had pointer arithmetic...
+
+int main() {
+    int* x = NULL;
+    x = x + 8000;
+    return *x;
+}

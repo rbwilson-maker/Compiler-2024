@@ -1,0 +1,45 @@
+//test return 1
+
+bool subset_sum_helper(int value, int[] list, int length, int index, int sum) {
+  if (index == length) {
+    if (value == sum) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  } else {
+    if ((sum + value == sum) || (value == sum)) {
+      return true;
+    }
+    return subset_sum_helper(value, list, length, index+1, sum) ||
+           subset_sum_helper(value, list, length, index+1, sum+value); 
+  }
+
+}
+
+bool subset_sum(int value, int[] list, int length) {
+  return subset_sum_helper(value, list, length, 0, 0);
+}
+
+int main() {
+  int[] subset1 = alloc_array(int, 8);
+  for (int i = 0; i < 8; i++) {
+    subset1[i] = i+1;
+  }
+  if (subset_sum(21, subset1, 8)) {
+    int[] subset2 = alloc_array(int, 6);
+    for (int i = 0; i < 6; i++) {
+      subset2[i] = i*2 + 3;
+    }
+    if (subset_sum(17, subset2, 8)) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+  else {
+    return -1;
+  }
+}

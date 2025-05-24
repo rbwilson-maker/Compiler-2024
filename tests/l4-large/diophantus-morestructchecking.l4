@@ -1,0 +1,31 @@
+//test error
+
+struct a {
+    struct a* b;
+};
+
+struct b {
+    struct a* a;
+};
+
+struct c {
+    struct b* c;
+};
+
+struct d {
+    struct e* e;
+};
+
+struct e {
+    struct a* a;
+};
+
+struct g;
+
+struct f {
+    struct g f;
+};
+
+int main() {
+    return 1;
+}

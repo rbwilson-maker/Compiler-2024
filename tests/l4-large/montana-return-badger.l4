@@ -1,0 +1,17 @@
+//test return -8
+typedef int mushroom;
+
+struct badger {
+  mushroom badger;
+  mushroom mushroom;
+  mushroom snake;
+  mushroom badger_;
+};
+
+mushroom main() {
+  struct badger *badger = alloc(struct badger);
+  struct badger *badger_ = alloc(struct badger);
+  mushroom snake = ~badger->snake + ~badger->mushroom + ~badger->badger + ~badger->badger_;
+  mushroom type = ~badger_->snake + ~badger_->mushroom + ~badger_->badger + ~badger_->badger_;
+  return snake + type;
+}

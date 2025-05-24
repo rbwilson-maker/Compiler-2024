@@ -1,0 +1,5 @@
+//test return 10
+int main() {
+    string s = "\t\r\f\a\b\n\v\'\"\\";
+    return string_length(s);
+}

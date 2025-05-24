@@ -1,0 +1,16 @@
+//test return 4
+
+int add(int x, int y);
+
+typedef int bar;
+typedef bar foo;
+
+bar add(int x, int y);
+
+bar add(bar a, int b) {
+  return a + b;
+}
+
+int main() {
+  return add(3, 1);
+}

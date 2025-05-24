@@ -1,0 +1,15 @@
+//test error
+
+struct foo {
+    int x;
+}
+
+typedef struct foo foo;
+
+int main() {
+    struct foo* a = alloc(struct foo);
+    a.x = 1;
+    struct foo* b = alloc(struct foo);
+    b.x = 2;
+    return (true ? a : b).x;
+}

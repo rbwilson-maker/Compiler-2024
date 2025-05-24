@@ -1,0 +1,31 @@
+//test return 0
+
+// Determine whether an integer is a numeric palindrome.
+
+bool palindrome(int x) {
+  int hi = 31;
+  bool seen = false;
+  while (hi >= 0 && !seen) {
+    if ((x & (1 << hi)) > 0)
+      seen = true;
+    hi--;
+  }
+  hi++;
+  if (!seen)
+    return true;
+
+  int y = 0;
+  for (int i = 0; i <= hi; i++) {
+    if ((x & (1 << (hi-i))) > 0)
+      y |= 1 << i;
+  }
+  return x == y;
+}
+
+int main() {
+  assert(palindrome(0x0));
+  assert(palindrome(0x1));
+  assert(palindrome(0x1B));
+  assert(!palindrome(0xF0));
+  return 0;
+}

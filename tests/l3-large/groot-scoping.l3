@@ -1,0 +1,23 @@
+//test return 9
+
+int bar(int c, int d) {
+  int a; int b;
+
+  if (true) {
+    a = 0;
+    b = 0;
+  } else {
+    a = 1; 
+    b = 1;
+  }
+
+  return a + c + b + d;
+}
+
+int foo(int a, int b) {
+  return bar(a, b);
+}
+
+int main() {
+  return foo(5, 4);
+}

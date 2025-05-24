@@ -1,0 +1,72 @@
+//test return 4
+//If statement parsing check
+
+int main () {
+
+  int a = 1 + 1;
+  int b = a * a;
+  int c = a + b;
+  int d = c - a;
+
+  if (a * a == b) {
+    if (d > b) {
+      if (b < c) {
+        if (true) {
+          return 0;
+        } else {
+          return 1;
+        }
+      } else {
+        if (true) {
+          return 2;
+        } else {
+          return 3;
+        }
+      }
+    } else {
+      if (b < c) {
+        if (true) {
+          return 4;
+        } else {
+          return 5;
+        }
+      } else {
+        if (true) {
+          return 6;
+        } else {
+          return 7;
+        }
+      }
+    }
+  } else {
+    if (d > b) {
+      if (b < c) {
+        if (true) {
+          return 8;
+        } else {
+          return 9;
+        }
+      } else {
+        if (true) {
+          return 10;
+        } else {
+          return 11;
+        }
+      }
+    } else {
+      if (b < c) {
+        if (true) {
+          return 12;
+        } else {
+          return 13;
+        }
+      } else {
+        if (true) {
+          return 14;
+        } else {
+          return 15;
+        }
+      }
+    }
+  }
+}

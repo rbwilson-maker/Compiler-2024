@@ -1,0 +1,50 @@
+//test return 0
+
+typedef struct Node* tree;
+struct Node {
+    int data;
+    tree left;
+    tree right;
+};
+
+tree makeLeaf(int data) {
+    tree res = alloc(struct Node);
+    res->data = data;
+    return res;
+}
+
+int inorderTraversal(tree t, int[] res, int index) {
+    if (t == NULL) return index;
+
+    index = inorderTraversal(t->left, res, index);
+
+    res[index] = t->data;
+    index++;
+
+    return inorderTraversal(t->right, res, index);
+}
+
+int main () {
+    tree root = makeLeaf(3);
+
+    root->left = makeLeaf(1);
+
+    root->left->left = makeLeaf(0);
+
+    root->left->right = makeLeaf(2);
+
+    root->right = makeLeaf(5);
+
+    root->right->left = makeLeaf(4);
+
+    root->right->right = makeLeaf(6);
+
+    int[] inorder = alloc_array(int, 7);
+
+    inorderTraversal(root, inorder, 0);
+
+    for (int i = 1; i < 7; i++) {
+        if (inorder[i-1] > inorder[i]) return -1;
+    }
+    return 0;
+}

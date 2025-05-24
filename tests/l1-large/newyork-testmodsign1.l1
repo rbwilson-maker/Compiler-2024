@@ -1,0 +1,7 @@
+//test return 10
+int main() {
+    int i = 10;
+    int k = 3;
+
+    return (i / k) * k + (i % k);
+}

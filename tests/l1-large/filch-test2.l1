@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main() {
+  int cake = 8;
+  int slices = 0;
+  int piece = cake / slices;
+  return piece;
+}

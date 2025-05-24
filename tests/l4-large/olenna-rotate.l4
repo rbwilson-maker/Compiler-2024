@@ -1,0 +1,187 @@
+//test return 4
+
+//Runs pixels assignment code from 15-112
+
+typedef int pixel;
+
+int int_max(){
+  return 2147483647;
+}
+
+// Checks whether width and height are valid dimensions. To be valid
+// dimensions, width and height must be strictly positive, and
+// multiplying width*height must not cause overflow.
+bool is_valid_imagesize(int width, int height)
+//@ensures \result == true || \result == false;
+{
+  return width > 0
+    && height > 0
+    && width <= int_max() / height;
+}
+
+// Returns the row number of a pixel in an image of size width*
+// height stored as a one-dimensional array given the index of the
+// pixel in the one-dimensional array.
+// PRECONDITION: width and height are valid dimensions and index is
+// in-bounds for an array of length width*height.
+// POSTCONDITION: returned value is between 0 (inclusive) and height
+// (exclusive).
+int get_row(int index, int width, int height)
+  //@requires is_valid_imagesize(width, height);
+  //@requires 0 <= index && index < width*height;
+  //@ensures 0 <= \result && \result <= height;
+{
+  return index / width;
+}
+
+// Returns the column number of a pixel in an image of size width*
+// height stored as a one-dimensional array given the index of the
+// pixel in the one-dimensional array.
+// PRECONDITION: width and height are valid dimensions and index is
+// in-bounds for an array of length width*height.
+// POSTCONDITION: returned value is between 0 (inclusive) and width
+// (exclusive).
+int get_column(int index, int width, int height)
+  //@requires is_valid_imagesize(width, height);
+  //@requires 0 <= index && index < width*height;
+  //@ensures 0 <= \result && \result <= width;
+{
+  return index % width;
+}
+
+// Given a width and height that are valid for an image, returns true
+// if the given row and column represent a valid pixel location in an
+// image of size width*height and false otherwise.
+// PRECONDITION: width and height are valid dimensions
+bool is_valid_pixel(int row, int col, int width, int height)
+  //@requires is_valid_imagesize(width, height);
+{
+  return row < height && col < width && 0 <= row && 0 <= col;
+}
+
+// Returns the index of a pixel in a one-dimensional array of pixels
+// representing a two-dimensional image of size width*height, given
+// the row and column of the pixel in the two-dimensional image.
+// PRECONDITION: width and height are valid dimensions
+// PRECONDITION: (row, col) is a valid pixel for an image of that
+// width and height
+// POSTCONDITION: returned value is in-bounds for an array of length
+// width*height.
+int get_index(int row, int col, int width, int height)
+  //@requires is_valid_imagesize(width, height);
+  //@requires is_valid_pixel(row, col, width, height);
+  //@ensures 0 <= \result && \result < width*height;
+{
+  assert(is_valid_imagesize(width, height));
+  assert(is_valid_pixel(row, col, width, height));
+  return row * width + col;
+}
+
+// Returns the red component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_red(pixel p)
+  //@ensures \result >= 0 && \result <= 255;
+{
+  return (p >> 16) & 0x000000FF;
+}
+
+// Returns the green component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_green(pixel p)
+  //@ensures \result >= 0 && \result <= 255;
+{
+  return (p >> 8) & 0x000000FF;
+}
+
+// Returns the blue component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_blue(pixel p)
+  //@ensures \result >= 0 && \result <= 255;
+{
+  return p & 0x000000FF;
+}
+
+// Returns the alpha component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_alpha(pixel p)
+  //@ensures \result >= 0 && \result <= 255;
+{
+  return (p >> 24) & 0x000000FF;
+}
+
+// Returns an int representing an RGB pixel consisting of the given
+// alpha, red, green and blue intensity values.
+// PRECONDITION: all intensity values must be between 0 and 255,
+// inclusive.
+pixel make_pixel(int alpha, int red, int green, int blue)
+  //@requires 0 <= alpha && 0 <= red && 0 <= green && 0 <= blue;
+  //@requires 256 > alpha && 256 > red && 256 > green && 256 > blue;
+  /*@ensures alpha == get_alpha(\result) && blue == get_blue(\result)
+    @ && green == get_green(\result) && red == get_red(\result); @*/
+{
+  assert(0 <= alpha && 0 <= red && 0 <= green && 0 <= blue);
+  assert(256 > alpha && 256 > red && 256 > green && 256 > blue);
+  int a = alpha;
+  int b = blue;
+  int r = red;
+  int g = green;
+  a = (a << 24) & 0xFF000000;
+  r = (r << 16) & 0x00FF0000;
+  g = (g << 8) & 0x0000FF00;
+  b = (b << 0) & 0x000000FF;
+  pixel result = a | r | g | b;
+  return result;
+}
+
+pixel[] rotate(pixel[] pixels, int width, int height)
+  //@requires width == height;
+  //@requires is_valid_imagesize(width, height);
+  //@requires \length(pixels) == width*height;
+  //@ensures \length(\result) == 4*\length(pixels);
+{
+  int side = width + height;
+  int copyIndex;
+  int pixelsIndex;
+  pixel[] copy = alloc_array(pixel, side*side);
+  for (int row = 0; row < height; row++)
+    //@loop_invariant 0 <= row && row <= height;
+  {
+    for (int col = 0; col < width; col++)
+      //@loop_invariant 0 <= col && col <= width;
+    {
+      // makes top right corner
+      pixelsIndex = get_index(row, col, width, height);
+      copyIndex = get_index(row, col + width, side, side);
+      copy[copyIndex] = pixels[pixelsIndex];
+      // makes top left corner
+      copyIndex = get_index(width - col - 1, row, side, side);
+      copy[copyIndex] = pixels[pixelsIndex];
+
+      //makes bottem left corner
+      copyIndex = get_index(height + height - row-1, width - col-1, side, side);
+      copy[copyIndex] = pixels[pixelsIndex];
+
+      //makes bottom right corner
+      copyIndex = get_index(height + col, 2*width - row -1, side, side);
+      copy[copyIndex] = pixels[pixelsIndex];
+    }
+  }
+
+  //loop for making the image on the top lefth corner
+  return copy;
+}
+
+bool test(int width, int height) {
+  pixel[] test = alloc_array(pixel, width * height);
+  for (int i = 0; i < width * height; i++) {
+    test[i] = make_pixel(i % 113, i % 13, i % 24, i % 256);
+  }
+  return true;
+}
+
+int main(){
+  for (int i = 100; i < 140; i++)
+    for (int j = 100; j < 140; j++)
+      test(i, j);
+  return 4;
+}

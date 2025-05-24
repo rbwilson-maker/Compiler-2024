@@ -1,0 +1,35 @@
+//test error
+//tests function overloading i.e. allows you to define same function with different
+//argument types.
+
+int omg(int whatever) {
+    int i_dont_care = 0;
+    while(whatever > 0) {
+        whatever--;
+    }
+
+    return i_dont_care;
+}
+
+void omg() {
+  int lala = 10;
+  omg(lala);
+}
+
+
+
+bool omg(bool cond) {
+    if (cond) {
+        omg();
+    } else {
+        omg(10);
+    }
+    return false;
+}
+
+int main () {
+  omg();
+  omg(1);
+  omg(1==0);
+  return omg(2);
+}

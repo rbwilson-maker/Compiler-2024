@@ -1,0 +1,25 @@
+//test return 0
+//1376
+
+struct s{
+  int* height;
+  int count;
+};
+
+void jump(struct s* s);
+typedef int s;
+
+int main(){
+  s * height = alloc(int); //I can't actually modify this value
+  struct s* ss= alloc(struct s);
+  while(*height > 0){
+    jump(ss);
+  }
+  return *height;
+}
+
+void jump(struct s* ss){
+  *(ss->height)*=2;
+  ss->count++;
+}
+

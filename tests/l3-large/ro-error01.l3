@@ -1,0 +1,12 @@
+//test error
+// Test if main function can be found
+
+int not_main() {
+  int ans = 50;
+
+  while (ans < 100) {
+    ans *= 2;
+  }
+
+  return ans;
+}

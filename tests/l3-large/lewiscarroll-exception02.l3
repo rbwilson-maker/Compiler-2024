@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int hmm (bool b) {
+	if (b) {
+		return 1 / 0;
+	}
+	else {
+		return 2;
+	}
+}
+
+int main () {
+	int res = hmm (23 % 10 == 3);
+	return res;
+} 

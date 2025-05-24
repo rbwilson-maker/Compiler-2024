@@ -1,0 +1,12 @@
+//test error
+
+wrong_alias fn() {
+	return true;
+}
+
+int main() {
+	if (wrong_alias())
+		return 0;
+
+	return 1;
+}

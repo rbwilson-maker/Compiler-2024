@@ -1,0 +1,27 @@
+//test return 1
+
+int collatz(int n) {
+  if (n == 1) {
+    return 1;
+  } else if (n % 2 == 0) {
+    return collatz(n / 2);
+  } else {
+    return collatz(n * 3 + 1);
+  }
+}
+
+bool solve_collatz(int enough_to_be_sure) {
+  for (int i = 1; i <= enough_to_be_sure; i++) {
+    collatz(i);
+  }
+  return true;
+}
+
+int main() {
+  int my_turing_award_collection = 0;
+  // a revolutionary new result in discrete math
+  if (solve_collatz(1000)) { // ought to be enough for the pedants
+    my_turing_award_collection++;
+  }
+  return my_turing_award_collection;
+}

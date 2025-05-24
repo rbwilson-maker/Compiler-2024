@@ -1,0 +1,21 @@
+//test abort
+
+int exp(int b, int e) {
+    if (e == 0) {
+        return 1;
+    }
+    if (e == 1) {
+        return b;
+    }
+    return b * exp(b, e - 1);
+}
+
+int n_to_the_n(int n) {
+    return exp(n, n);
+}
+
+int main() {
+    int n = 5;
+    assert(n_to_the_n(n) == 0);
+    return 1;
+}

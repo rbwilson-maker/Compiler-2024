@@ -1,0 +1,20 @@
+//test return 1275
+
+// Computes recursively the sum of i for i from 1 to max
+// tests that the implementation is correct with the theory at each step
+
+int aux (int acc,int n,int max) {
+    assert (n>=0);
+    if (n>0) {
+        assert(acc == ((n-1)*n)/2);
+    }
+    if (n > max) {
+        return acc;
+    } else {
+        return aux(acc + n,n+1,max);
+    }
+}
+
+int main () {
+    return aux(0,0,50);
+}

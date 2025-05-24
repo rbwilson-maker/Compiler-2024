@@ -1,0 +1,54 @@
+//test return 0
+//imagelab!
+
+typedef int pixel;
+typedef pixel[] image;
+
+pixel[] remove_red (pixel[] A, int width, int height)
+{
+  int i;
+  int j;
+  pixel[] B = alloc_array(pixel, width*height);
+
+  for (j = 0; j < height; j++)
+    //@loop_invariant 0 <= j && j <= height;
+    {
+      for (i = 0; i < width; i++)
+        //@loop_invariant 0 <= i && i <= width;
+        {
+          // Clear the bits corresponding to the red component
+          B[j*width+i] = A[j*width+i] & 0xFF00FFFF;
+        }
+    }
+
+  return B;
+}
+
+int main() {
+  pixel p1 = 0xffefa564;
+  pixel p2 = 0x12345678;
+  int width = 10;
+  int height = 10;
+  int i;
+  int j;
+  image A = alloc_array(pixel, width * height);
+  for (i = 0; i < height; i++) {
+    for (j = 0; j < width; j++) {
+      if (((i * j) % 2) == 0) {
+        A[i * height + j] = p1;
+      }
+      else {
+        A[i * height + j] = p2;
+      }
+    }
+  }
+
+  image B = remove_red(A, width, height);
+  for (i = 0; i < height; i++) {
+    for (j = 0; j < width; j++) {
+      assert( (i*j) % 2 == 0 ? B[i * height + j] == 0xff00a564 : B[i * height + j] == 0x12005678);
+    }
+  }
+
+  return 0;
+}

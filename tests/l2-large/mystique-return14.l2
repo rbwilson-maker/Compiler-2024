@@ -1,0 +1,19 @@
+//test return 14
+
+int main() { 
+    bool x = true;
+    bool y = false; 
+    if (!x && y) {
+        return 1;
+    }
+    if (!x && !y) {
+        return 1;
+    }
+    if (x == y) {
+        return 1;
+    }
+    if (x && !y) {
+        return 14;
+    }
+    return 1;
+ }

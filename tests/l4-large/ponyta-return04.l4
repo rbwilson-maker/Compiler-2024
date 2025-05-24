@@ -1,0 +1,10 @@
+//test return 21
+
+int main() {
+    int [][] a;
+    a = alloc_array(int [], 1);
+    a[0] = alloc_array(int, 4);
+    a[0][3] = 7*3;
+
+    return a[0][3];
+}

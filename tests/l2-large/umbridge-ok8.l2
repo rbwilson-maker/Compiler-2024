@@ -1,0 +1,16 @@
+//test return 101
+
+int main() {
+    int x = 5;
+    int y = 3;
+    bool z = x > 0;
+
+    (x + y) / x;
+
+    for (3; z; x += y ) {
+        if (x > 100)
+            return x;
+    }
+
+    return -1;
+}

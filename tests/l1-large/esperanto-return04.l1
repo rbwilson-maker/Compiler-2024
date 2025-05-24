@@ -1,0 +1,22 @@
+//test return 42
+
+int main(){
+	int a1;
+	int a2;
+	int a3;
+	int a4;
+	int a5;
+	int a6;
+	int a7;
+	int a8;
+	
+	a1 = 1;
+	a2 = 1;
+	a3 = a1 + a2;
+	a4 = a2 + a3;
+	a5 = a3 + a4;
+	a6 = a4 + a5;
+	a7 = a5 + a6;
+	a8 = a6 + a7;
+	return a6 + a7 + a8;
+}

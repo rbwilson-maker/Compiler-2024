@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+
+void foo() {
+  main();
+}
+
+int main() {
+  foo();
+  return 0;
+}
+

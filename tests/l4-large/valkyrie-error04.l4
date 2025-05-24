@@ -1,0 +1,11 @@
+//test error
+//illegal field name
+
+struct s{
+	int bool;
+};
+
+int main(){
+	struct s* x = alloc(struct s);
+	return s.bool;
+}

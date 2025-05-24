@@ -1,0 +1,30 @@
+//test error
+
+struct card;
+struct card_ptr;
+struct card_random;
+
+typedef struct card card;
+typedef card* card_ptr;
+
+struct card {
+  bool reveal;
+  int number;
+  struct card_random* random;
+};
+
+void flip_card (card_ptr x, int num) {
+  x->reveal = true;
+  x->number = num;
+}
+
+void flip (int num) {
+  while (num > 0)
+    flip_card(alloc(card), num - 1);
+    continue; // continue outside of loop
+}
+
+int main() {
+  flip(52);
+  return 15411;
+}

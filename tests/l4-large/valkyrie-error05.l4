@@ -1,0 +1,7 @@
+//test error
+//Struct size relevant
+
+int main(){
+	struct s* x = alloc(struct s);
+	return 0;
+}

@@ -1,0 +1,18 @@
+//test return 1;
+
+typedef int num;
+typedef bool voidnull;
+struct bs {
+	num voidnull;
+	voidnull num;
+};
+
+int main(){
+	struct bs * b = alloc(struct bs);
+	(*b).voidnull = 3;
+	(*b).num = true;
+	if (b->num){
+		return (b->voidnull - 2);
+	}
+	return 2;
+}

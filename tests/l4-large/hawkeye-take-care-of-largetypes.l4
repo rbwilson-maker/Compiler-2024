@@ -1,0 +1,17 @@
+//test error
+
+struct point {
+    int x;
+    int y;
+};
+
+int f(struct point p) {
+    p.x = 4;
+    p.y = 3;
+    return p.x;
+}
+
+int main () {
+    struct point p;
+    return f(p);
+}

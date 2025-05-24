@@ -1,0 +1,17 @@
+//test return 0
+// test addition and subtraction
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+
+  a = 5;
+  b = a+10;
+  c = b+15;
+  d = c-20;
+  e = d-10;
+  return a+b+c+d+e-60;
+}

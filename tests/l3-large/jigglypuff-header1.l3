@@ -1,0 +1,32 @@
+//test error
+
+/* Header1 Tests
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, October 11, 2015 at 10:00:18 PM EDT
+ *
+ * Tests that header declaration passes typechecking
+ * Note: redeclaration of library function is allowed if we just call cc0 by 
+ * hand; but the auto-grader doesn't allow it
+ */
+
+thing oneThing() {
+    return 1; 
+}
+
+
+thing howMany(int num) {
+    return num; 
+}
+
+thing addThings(thing a, thing b){
+    return (a + b);
+}
+
+
+int main() {
+    thing one = oneThing();
+    thing many = howMany(42);
+    return (addThings(one, many));
+}

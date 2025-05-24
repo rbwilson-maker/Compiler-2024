@@ -1,0 +1,78 @@
+//test return 0
+
+// Prime sieve algorithm.
+
+int[] prime_sieve(int low, int high) {
+  bool[] a = alloc_array(bool, high+1);
+
+  for (int i = 2; i < high+1; i++) {
+    a[i] = true;
+  }
+
+  for (int i = 2; i*i < high+2; i++) {
+    if (a[i]) {
+      for (int j = 2*i; j < high+1; j += i) {
+        a[j] = false;
+      }
+    }
+  }
+
+  int num_primes = 0;
+  for (int i = 0; i < high+1; i++) {
+    if (a[i]) {
+      num_primes += 1;
+    }
+  }
+
+  int[] primes = alloc_array(int, num_primes);
+  int idx = 0;
+  for (int i = low; i < high+1; i++) {
+    if (a[i]) {
+      primes[idx] = i;
+      idx++;
+    }
+  }
+
+  return primes;
+}
+
+int main() {
+  int[] primes0_100 = prime_sieve(0, 100);
+  int[] expected0_100 = alloc_array(int, 25);
+  expected0_100[0] = 2;
+  expected0_100[1] = 3;
+  expected0_100[2] = 5;
+  expected0_100[3] = 7;
+  expected0_100[4] = 11;
+  expected0_100[5] = 13;
+  expected0_100[6] = 17;
+  expected0_100[7] = 19;
+  expected0_100[8] = 23;
+  expected0_100[9] = 29;
+  expected0_100[10] = 31;
+  expected0_100[11] = 37;
+  expected0_100[12] = 41;
+  expected0_100[13] = 43;
+  expected0_100[14] = 47;
+  expected0_100[15] = 53;
+  expected0_100[16] = 59;
+  expected0_100[17] = 61;
+  expected0_100[18] = 67;
+  expected0_100[19] = 71;
+  expected0_100[20] = 73;
+  expected0_100[21] = 79;
+  expected0_100[22] = 83;
+  expected0_100[23] = 89;
+  expected0_100[24] = 97;
+
+  for (int i = 0; i < 24; i++) {
+    assert(primes0_100[i] == expected0_100[i]);
+  }
+
+  int[] primes50_100 = prime_sieve(50, 100);
+  for (int i = 0; i < 10; i++) {
+    assert(primes50_100[i] == expected0_100[i+15]);
+  }
+
+  return 0;
+}

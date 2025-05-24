@@ -1,0 +1,6 @@
+//test typecheck
+
+int main() {
+    foo * p = alloc( struct foo );
+    return not_exist(p);
+}

@@ -1,0 +1,11 @@
+//test typecheck
+
+int main(){
+  pl();
+    pl();
+      pl();
+        return pl();
+      pl();
+    pl();
+  pl();
+}

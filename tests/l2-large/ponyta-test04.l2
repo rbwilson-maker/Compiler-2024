@@ -1,0 +1,48 @@
+//test return -1351186488;
+
+// it's lab 2! do you know where your temps are spilling?
+// 1010110011100001
+int main () {
+	bool a1 = true;
+	bool a2 = false;
+	bool a3 = true;
+	bool a4 = false;
+	bool a5 = true;
+	bool a6 = true;
+	bool a7 = false;
+	bool a8 = false;
+	bool a9 = true;
+	bool a10 = true;
+	bool a11 = true;
+	bool a12 = false;
+	bool a13 = false;
+	bool a14 = false;
+	bool a15 = false;
+	bool a16 = true;
+	int res = 0;
+
+	for (int i = 0; i < 100; i++) {
+		bool fst = (a11 || a13) && !(a11 && a13);
+		bool snd = (a14 || a16) && !(a14 && a16);
+		bool tmp = (fst || snd) && !(fst && snd);
+		a16 = a15;
+		a15 = a14;
+		a14 = a13;
+		a13 = a12;
+		a12 = a11;
+		a11 = a10;
+		a10 = a9;
+		a9 = a8;
+		a8 = a7;
+		a7 = a6;
+		a6 = a5;
+		a5 = a4;
+		a4 = a3;
+		a3 = a2;
+		a2 = a1;
+		a1 = tmp;
+		res <<= 1;
+		if (a1) res++;
+	}
+	return res;
+}

@@ -1,0 +1,13 @@
+//test return 1
+// make sure to parse all kinds of whitespace in new operators!
+
+struct point {
+    int x;
+    int y;
+};
+
+int main() {
+    struct point[ ] x = alloc_array(struct point, 5);
+    x [ 0 ] . x ++;
+    return x[0].x;
+}

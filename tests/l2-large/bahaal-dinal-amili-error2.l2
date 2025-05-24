@@ -1,0 +1,15 @@
+//test error
+// should not use integer in boolean condition
+
+int main()
+{
+  int flag = 1;
+  int x;
+  if (flag) {
+    x = 1;
+  } else {
+    x = 2;
+  }
+
+  return x;
+}

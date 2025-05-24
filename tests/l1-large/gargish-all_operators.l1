@@ -1,0 +1,14 @@
+//test return 14
+// test that all operators work
+
+int main() {
+    int a;
+    int b;
+    int c;
+
+    a = 10;
+    b = 30;
+    c = -4;
+    
+    return ((a * b / c) % 3) + a - c;
+}

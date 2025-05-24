@@ -1,0 +1,38 @@
+//test return 4
+//reverse a linked list
+
+struct node;
+
+typedef struct node node;
+
+struct node {
+  int val;
+  node* next;
+};
+
+
+node* reverse(node* x) {
+  node* prev = NULL;
+  node* next;
+  while (x != NULL) {
+    next = x->next;
+    x->next = prev;
+    prev = x;
+    x = next;
+  }
+  return prev;
+}
+
+int main() {
+  node* start = alloc(node);
+  start->val = 0;
+  node* prev = start;
+  for (int i = 1; i < 5; i++) {
+    node* next = alloc(node);
+    next->val = i;
+    prev->next = next;
+    prev = next;
+  }
+  node* rev = reverse(start);
+  return rev->val;
+}

@@ -1,0 +1,13 @@
+//test return 2147483633
+
+int main() {
+	int temp;
+	temp = 27;
+	if (temp > 0) temp--;
+	temp -= 10;
+	for (int i = 0; i < temp; i++) {
+		temp++;
+	}
+	temp -= 15;
+	return temp;
+}

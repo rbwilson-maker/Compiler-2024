@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+   int x = 5;
+   x <<= 2;
+   if (x >= 5) {
+      x = x >> 34;
+   } else {
+      x <<= 31;
+   }
+   return 0;
+}

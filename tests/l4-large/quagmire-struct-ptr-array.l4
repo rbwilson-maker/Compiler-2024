@@ -1,0 +1,31 @@
+//test return 1000
+
+// Tests out proper implementation of arrays of structs
+
+struct test {
+  int a;
+  int b;
+};
+
+int main() {
+  struct test*[] s_a = alloc_array(struct test*, 4);
+  
+  for (int i = 0; i < 4; i++)
+    s_a[i] = alloc(struct test);
+
+  s_a[0]->a = 2;
+  s_a[0]->b = 125;
+  s_a[1]->a = 5;
+  s_a[1]->b = 50;
+  s_a[2]->a = 10;
+  s_a[2]->b = 25;
+  s_a[3]->a = 1;
+  s_a[3]->b = 250;
+
+  int total = 0;
+
+  for (int i = 0; i < 4; i++)
+    total += s_a[i]->a * s_a[i]->b;
+
+  return total;
+}

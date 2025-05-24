@@ -1,0 +1,10 @@
+//test return 49999
+
+//order of ops with ~+>>
+
+int main(){
+    int i = 0;
+    int counter = 1;
+    int k = 100000+~0>>~0+1>>1;
+    return k;
+}

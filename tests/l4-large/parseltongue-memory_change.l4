@@ -1,0 +1,19 @@
+//test abort
+
+/*
+ * memory change in a function
+ */
+
+void change_a (int *a){
+    *a = 1;
+}
+
+int main() {
+    int *a = alloc(int);
+
+    change_a(a);
+
+    assert (*a == 0);
+
+    return 1;
+}

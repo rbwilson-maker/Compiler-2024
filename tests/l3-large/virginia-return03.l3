@@ -1,0 +1,27 @@
+//test return 0
+// double recursion
+
+
+int fun1(int n);
+int fun2(int n);
+
+int fun1(int n)
+{
+	if(n == 0)
+		return 0;
+  return fun2(n - 1);
+
+}
+
+int fun2(int n)
+{
+	if(n == 0)
+		return 0;
+  return fun1(n - 1);
+
+}
+
+
+int main () {
+  return fun1(100);
+}

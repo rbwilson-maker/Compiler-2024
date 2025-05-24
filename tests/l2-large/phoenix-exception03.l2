@@ -1,0 +1,9 @@
+//test div-by-zero
+// shift by a non shiftable amount
+
+int main() {
+  int x = -2147483648;
+  int y = -1;
+
+  return 154 << (x / y);
+}

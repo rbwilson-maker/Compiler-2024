@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+
+bool divthree(int x) {return x % 3 == 0;}
+bool divfour(int x) {return x % 4 == 0;}
+bool divtwelve(int x) {return x % 12 == 0;}
+
+int main() {
+    int i = 0;
+    // Search for a nonzero number divisible by three and four but not twelve
+    while (i == 0 || !divthree(i) || !divfour(i) || divtwelve(i)) {
+        i ++;
+    }
+    return i;
+}
+
+

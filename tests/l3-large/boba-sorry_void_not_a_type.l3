@@ -1,0 +1,13 @@
+//test error
+
+void effect()
+{
+  int x = 0;
+  x *= 3451234;
+}
+
+int main()
+{
+  itof(0) == 0 ? effect() : effect();
+  return 3;
+}

@@ -1,0 +1,15 @@
+//test return 1
+// test arithmetic operations
+int main(){
+    int a;
+    int b;
+    int c;
+    int d;
+
+    a = 10001 * 100;
+    b = a + 10001;
+    c = b / 101;
+    d = c - 10000;
+
+    return d;
+}

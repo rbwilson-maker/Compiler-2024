@@ -1,0 +1,15 @@
+//test return 8
+
+int main() {
+    int k = 0;
+    int i = 0;
+    while (i > -16) {
+        if (!(i % 2 == 0)) {
+            k -= 1;
+        } else {
+            k += 1;
+        }
+        i -= 2;
+    }
+    return k;
+}

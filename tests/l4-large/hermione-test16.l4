@@ -1,0 +1,23 @@
+//test return 1003592395
+
+struct a {
+    int x;
+};
+
+struct b {
+    struct a[] a;
+};
+
+int main () {
+    struct b *wag = alloc(struct b);
+    wag->a = alloc_array(struct a, 1000);
+    for (int i = 0; i < 1000; i++) {
+        for (int j = 1; j < 1000; j++) {
+            wag->a[i % j].x += i + j;
+        }
+    }
+    for (int i = 0; i < 1000; i++) {
+        wag->a[0].x += wag->a[i].x;
+    }
+    return wag->a[0].x;
+}

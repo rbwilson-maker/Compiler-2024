@@ -1,0 +1,9 @@
+//test return 872415232
+int main() {
+  int x = 0x23507;
+  int y = x << 31;
+  int z = y >> 0;
+  y = x >> 9;
+  z = y << 25;
+  return z;
+}

@@ -1,0 +1,12 @@
+//test error
+
+int main(){
+
+    struct t {
+        int t;
+    } a;
+
+    a.t = 1;
+
+    return a.t;
+}

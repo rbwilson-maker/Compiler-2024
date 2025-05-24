@@ -1,0 +1,10 @@
+//test return 77
+
+int main() {
+  int count = 1;
+  for(int i = -10; i < 20; i++) {
+    if (i % 2 == 1) count += i;
+    else if (i % 3 == 2) count -= i;
+  }
+  return count;
+}

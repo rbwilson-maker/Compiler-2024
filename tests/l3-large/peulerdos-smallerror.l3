@@ -1,0 +1,11 @@
+//test div-by-zero
+
+bool f() {
+    return false;
+}
+
+int main() {
+    bool f = !f();
+    if (f) return 4 / 0;
+    return 1;
+}

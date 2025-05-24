@@ -1,0 +1,15 @@
+//test return 0
+
+struct singleton {
+  int val;
+};
+typedef struct singleton singleton;
+
+int main() {
+  int len = 10;
+  singleton[] arr = alloc_array(singleton, len);
+  for(int i = 0; i < len; i++) {
+    arr[i].val = i;
+  }
+  return arr[0].val;
+}

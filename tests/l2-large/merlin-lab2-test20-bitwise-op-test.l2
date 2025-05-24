@@ -1,0 +1,9 @@
+//test return -43
+
+// test that bitwise operator works
+
+int main()
+{
+    int res = ~((42 ^ 42) | 42) & 42;
+    return -43;
+}

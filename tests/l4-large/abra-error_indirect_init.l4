@@ -1,0 +1,9 @@
+//test error
+// indirect init
+int main() {
+	int * p ;
+	int ** p2 = alloc(int *);
+	*p2 = p;
+	**p2 = 1;
+	return 0;
+}

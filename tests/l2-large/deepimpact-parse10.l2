@@ -1,0 +1,14 @@
+//test error
+int main() {
+
+  int x = 0;
+
+  int y = x++--;
+
+  x = x == y ? x : y;
+
+  if (x==y)
+    x -= y-- + y--;
+
+  return x;
+}

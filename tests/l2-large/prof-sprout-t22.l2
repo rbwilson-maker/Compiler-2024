@@ -1,0 +1,9 @@
+//test error
+// test using variables in for loop conditional without initialization
+
+int main() {
+    for (int x; x < 10;) {
+        int y = 2;
+    }
+    return 0;
+}

@@ -1,0 +1,10 @@
+//test error
+
+typedef int foo();
+
+foo retfoo(int x);
+
+int main()
+{
+  return 251;
+}

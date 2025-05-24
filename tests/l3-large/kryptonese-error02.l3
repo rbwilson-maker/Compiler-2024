@@ -1,0 +1,7 @@
+//test error 
+typedef notabool bool;
+// test typedef not typechecking 
+int main() {
+    notabool a = true;
+    return a + 1;
+}

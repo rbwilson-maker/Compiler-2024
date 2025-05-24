@@ -1,0 +1,24 @@
+//test return 0
+
+int abs(int x) {
+  if (x < 0) return -x;
+  return x;
+}
+
+int main() {
+  bool[] arr = alloc_array(bool, 25000);
+
+  int seed = 0x5ADB01;
+  int mult = 1103515245;
+  int add = 12345;
+  int mod = 0x7FFFFFFF;
+  for (int i=0; i<100000; i++) {
+    if (i % 2 == 0) {
+      arr[abs((seed * mult + add) % mod) % 25000] = false;
+    } else {
+      arr[abs((seed * mult + add) % mod) % 25000] = true;
+    }
+    seed = (seed * mult + add) % mod;
+  }
+  return 0;
+}

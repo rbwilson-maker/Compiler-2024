@@ -1,0 +1,21 @@
+//test return 1165511
+// some fun multiplication and division work
+int main()
+{
+    int sevens = 7*7*7;
+    int fives = 5*5*5*5*5;
+    int threes = 3*3*3; 
+
+    int digits = 2*2 * threes * fives * sevens;
+
+    int fs = fives * sevens;
+    int r1 = (digits / threes) - 3 * fs;
+
+    int ts = threes * sevens;
+    int r2 = (digits / fives) - 3 * ts;
+
+    int tf = threes * fives;
+    int r3 = (digits / sevens) - 3 * tf;
+
+    return r1 + r2 + r3; // fs + tf + ts
+}

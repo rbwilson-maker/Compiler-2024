@@ -1,0 +1,10 @@
+//test return 5050
+int main() {
+  int result = 0;
+  int i = 100;
+  while (i > 0) {
+    result += i;
+    i -= 1;
+  }
+  return result;
+}

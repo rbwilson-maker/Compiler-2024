@@ -1,0 +1,38 @@
+//test return 1755675
+//matrix math
+
+typedef int v00; typedef int v01; typedef int v02;
+typedef int v10; typedef int v11; typedef int v12;
+typedef int v20; typedef int v21; typedef int v22;
+
+int mmAndSum(v00 a00, v01 a01, v02 a02,
+             v10 a10, v11 a11, v12 a12,
+             v20 a20, v21 a21, v22 a22,
+             v00 b00, v01 b01, v02 b02,
+             v10 b10, v11 b11, v12 b12,
+             v20 b20, v21 b21, v22 b22) {
+    
+    return (a00 * b00 + a01 * b10 + a02 * b20) +
+           (a00 * b01 + a01 * b11 + a02 * b21) +
+           (a00 * b02 + a01 * b12 + a02 * b22) +
+           (a10 * b00 + a11 * b10 + a12 * b20) +
+           (a10 * b01 + a11 * b11 + a12 * b21) +
+           (a10 * b02 + a11 * b12 + a12 * b22) +
+           (a20 * b00 + a21 * b10 + a22 * b20) +
+           (a20 * b01 + a21 * b11 + a22 * b21) +
+           (a20 * b02 + a21 * b12 + a22 * b22);
+}
+
+int main() {
+    
+    return mmAndSum(0xFF, 0xFF, 0xFF,
+             0xFF, 0xFF, 0xFF,
+             0xFF, 0xFF, 0xFF,
+             0xFF, 0xFF, 0xFF,
+             0xFF, 0xFF, 0xFF,
+             0xFF, 0xFF, 0xFF);
+
+}
+
+
+

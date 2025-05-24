@@ -1,0 +1,37 @@
+//test return 3
+//Tree descendants
+
+struct Node {
+    int value;
+    struct Node*[] children;
+    int child_count;
+};
+
+struct Node* new_node(int value, struct Node*[] children, int child_count) {
+    struct Node* node = alloc(struct Node);
+    node->value = value;
+    node->children = children;
+    node->child_count = child_count;
+    return node;
+}
+
+int descendants(struct Node* root) {
+    int d = root->child_count;
+    for (int i = 0; i < root->child_count; i++)
+    {
+        d += descendants(root->children[i]);
+    }
+    return d;
+}
+
+int main() {
+    struct Node*[] empty = alloc_array(struct Node*, 0);
+    struct Node*[] AC = alloc_array(struct Node*, 2);
+    AC[0] = new_node(10, empty, 0);
+    AC[1] = new_node(9, empty, 0);
+    struct Node* A = new_node(15, AC, 2);
+    struct Node*[] BC = alloc_array(struct Node*, 1);
+    BC[0] = A;
+    struct Node* B = new_node(9, BC, 1);
+    return descendants(B);
+}

@@ -1,0 +1,10 @@
+//test error
+// test multiple illegal input in statement
+int main()
+{
+  int x;
+  x = 1;
+  int y;
+  y = 123 = (--x);
+  return y;
+}

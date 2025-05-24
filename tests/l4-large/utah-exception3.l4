@@ -1,0 +1,14 @@
+//test div-by-zero
+// Tests that Rvals are evaluated before Lvals
+
+void foozle(int*[] barzy) {
+    *(barzy[0]) = 1/0;
+}
+
+int main () {
+    int*[] bazzle = alloc_array(int*, 4);
+
+    foozle(bazzle);
+
+    return 0xDEADF00;
+}

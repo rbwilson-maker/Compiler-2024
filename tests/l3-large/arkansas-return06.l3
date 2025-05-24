@@ -1,0 +1,35 @@
+//test return 12
+// ugly number, all numbers with the factorization: 2^a * 3^b * 5^c
+
+int max_divide(int a, int b)
+{
+  while (a % b == 0)
+   a = a / b;
+  return a;
+}
+
+bool is_ugly(int no) {
+  no = max_divide(no, 2);
+  no = max_divide(no, 3);
+  no = max_divide(no, 5);
+
+  return (no == 1)? true : false;
+}
+
+int get_nth_ugly(int n) {
+  int i = 1;
+  int count = 1;
+
+  while (n > count) {
+    i++;
+    if (is_ugly(i)) {
+      count++;
+    }
+  }
+  return i;
+}
+
+
+int main() {
+    return get_nth_ugly(10);
+}

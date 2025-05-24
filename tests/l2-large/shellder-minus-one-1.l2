@@ -1,0 +1,10 @@
+//test return -1
+int main() {
+    int result = 0;
+    int k = 1;
+    for (int c = 0; c < 32; c++) {
+        result += k;
+        k *= 2;
+    }
+    return result;
+}

@@ -1,0 +1,13 @@
+//test return 0 
+struct array
+{
+    int x;
+    struct array[] arrays;
+};
+
+int main(){
+    struct array *array = alloc(struct array);
+    array->arrays = alloc_array(struct array, 3);
+    return 0;
+}
+

@@ -1,0 +1,14 @@
+//test error
+
+typedef int t;
+
+int f(t x) {
+    return x;
+}
+
+int main() {
+    int x = 15;
+    int y = 411;
+    if (x < y) return f(x + y);
+    else return f(x, y);
+}

@@ -1,0 +1,13 @@
+//test error
+
+struct point {
+       int x;
+       int y;
+};
+
+int main() {
+    int point = 4;
+    point * f;
+    f->x = 3;
+    return f->x;
+}

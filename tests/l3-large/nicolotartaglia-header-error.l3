@@ -1,0 +1,12 @@
+//test error
+
+int main() {
+    int a = sqrt(54);
+    bool b = (a == 7);
+
+    assert(b == isPrime(2));
+    bool c = sqrt(22);
+    assert(c == isPrime(7));
+
+    return 0;
+}

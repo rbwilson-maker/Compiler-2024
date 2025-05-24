@@ -1,0 +1,17 @@
+//test return 55
+
+int fib(int n){
+	if(n == 0 || n == 1){
+		return 1;
+	} else {
+		return fib(n-1) + fib(n-2);
+	}
+}
+
+int main(){
+		int[] b = alloc_array(int,10);
+		for(int a = 0; a < 10; a++){
+			b[a] = fib(a);
+		}
+		return b[9];
+}

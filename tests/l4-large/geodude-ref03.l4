@@ -1,0 +1,43 @@
+//test return 10
+int main(){
+    int********* a9;
+    int******** a8;
+    int******* a7;
+    int****** a6;
+    int***** a5;
+    int**** a4;
+    int*** a3;
+    int** a2;
+    int* a1;
+    int a;
+    a = 10;
+
+    a1 = alloc(int);
+    *a1 = a;
+
+    a2 = alloc(int*);
+    *a2 = a1;
+
+    a3 = alloc(int**);
+    *a3 = a2;
+    
+    a4 = alloc(int***);
+    *a4 = a3;
+
+    a5 = alloc(int****);
+    *a5 = a4;
+
+    a6 = alloc(int*****);
+    *a6 = a5;
+
+    a7 = alloc(int******);
+    *a7 = a6;
+
+    a8 = alloc(int*******);
+    *a8 = a7;
+
+    a9 = alloc(int********);
+    *a9 = a8;
+
+    return *********a9;
+}

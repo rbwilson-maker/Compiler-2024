@@ -1,0 +1,16 @@
+//test error
+// Functions aren't values
+
+int return_zero() {
+  return 0;
+}
+
+void function(return_zero x) {
+  return x;
+}
+
+int main() {
+  return_zero y;
+  function(y);
+  return 0;
+}

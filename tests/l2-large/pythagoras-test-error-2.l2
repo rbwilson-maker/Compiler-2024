@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+    bool guard = true;
+    if(guard){
+        return x; // error because not in the scope
+    }
+    return 0;
+}

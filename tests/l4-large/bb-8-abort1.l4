@@ -1,0 +1,11 @@
+//test abort
+
+typedef int foo;
+
+foo main() {
+	foo * bar = alloc(foo);
+	*bar = 2;
+	(*bar) ++;
+	assert(*bar == 4);
+	return *bar;
+}

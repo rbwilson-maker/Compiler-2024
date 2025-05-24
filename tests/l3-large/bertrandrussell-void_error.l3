@@ -1,0 +1,12 @@
+//test error
+/* Using void as a type */
+
+void temps(int x) {
+  void t = 5;
+  return;
+}
+
+int main () {
+  temps (3);
+  return 1;
+}

@@ -1,0 +1,7 @@
+//test error
+// Too big hex number
+
+int main() {
+    int a = 0x12341234abcdabcd;
+    return a;
+}

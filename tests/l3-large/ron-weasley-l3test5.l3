@@ -1,0 +1,8 @@
+//test return 15411
+
+void f(int x, int y, int z);
+void f(int a, int b, int c);
+
+int main() {
+    return 15411;
+}

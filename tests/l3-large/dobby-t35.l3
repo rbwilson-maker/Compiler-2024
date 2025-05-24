@@ -1,0 +1,13 @@
+//test return 45
+int sum_all_digits(int i) {
+  int res = 0;
+  while(i > 0) {
+    res += (i % 10);
+    i /= 10;
+  }
+  return res;
+}
+
+int main() {
+  return sum_all_digits(123456789);
+}

@@ -1,0 +1,18 @@
+//test abort
+
+void literally_void_not_unit() {
+    assert(false);
+}
+
+void literally_unit_not_void() {
+    return;
+}
+
+int main () {
+    if (10000000 == -10000000) {
+        literally_void_not_unit();
+    } else {
+        literally_void_not_unit();
+    }
+    return 100;
+}

@@ -1,0 +1,8 @@
+//test return 5
+// Simple integer operations
+int main() {
+    int x = 5;
+    int tmpX = x;
+    x %= 1;
+    return x + tmpX;
+}

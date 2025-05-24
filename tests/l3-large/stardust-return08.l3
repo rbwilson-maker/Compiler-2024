@@ -1,0 +1,31 @@
+//test return 0
+//findSmallest returns the smallest number out of the 4 inputs
+//as given 48, 12, 1, 0, function will return 0
+
+int findSmallest(int a, int b, int c, int d){
+  if (a < b) {
+    return findSmallest(a, a, c, d);
+  } else if (a > b) {
+    return findSmallest(b, b, c, d);
+  } else {
+    if (a < c) {
+      return findSmallest(a, a, a, d);
+    } else if (a > c) {
+      return findSmallest(c, c, c, d);
+    } else {
+      if (c < d) {
+        return c;
+      } else {
+        return d;
+      }
+    }
+  }
+}
+
+int main() {
+  int a = 48;
+  int b = 12;
+  int c = 1;
+  int d = 0;
+  return findSmallest(a, b, c, d);
+}

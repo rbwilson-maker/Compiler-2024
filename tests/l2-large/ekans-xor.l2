@@ -1,0 +1,13 @@
+//test return 123;
+
+int main()
+{
+  int xor = 0;
+  int i;
+  for (i = 0; i < (1 << 9); i++)
+  {
+    if (i != 123)
+	  xor ^= i;
+  }
+  return xor;
+}

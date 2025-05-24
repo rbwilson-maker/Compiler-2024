@@ -1,0 +1,17 @@
+//test abort
+int rec_fun(int i)
+{
+  if(i==0) {
+    return i;
+  }
+  else {
+    int b = rec_fun(i-1);
+    assert(b >= i);
+    return b;
+  }
+}
+
+int main()
+{
+  return rec_fun(6);
+}

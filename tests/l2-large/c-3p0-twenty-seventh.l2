@@ -1,0 +1,28 @@
+//test typecheck
+//test infloop
+
+int main(){
+	int i = 0;
+	int j = 0;
+	int di = 1;
+	int dj = -1;
+
+	while(i < 10 || j < 10){
+		i += di;
+		j += dj;
+
+		if(i == 10){
+			int temp = di;
+			di = dj;
+			dj = temp;
+		}
+
+		if(j == 10){
+			int temp = di;
+			di = dj;
+			dj = temp;		
+		}
+	}
+
+	return 0;
+}

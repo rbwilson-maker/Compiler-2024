@@ -1,0 +1,52 @@
+//test memerror
+/*
+    spaghettifault: Dereferences a bunch of pointers in an array, but one of
+    them is NULL, because there is a bug.
+
+    Tests:
+    - Arrays of pointers
+    - Writing to memory
+    - Code produces SIGUSR2 for NULL-pointer dereference
+*/
+
+void shiftUp(int*[] arr, int arrLen) {
+    for (int i = arrLen - 1; i > 0; i--) {
+        *(arr[i]) = *(arr[i - 1]);
+    }
+}
+
+int main() {
+    int arrLen = 6;
+    int*[] courses = alloc_array(int*, arrLen);
+    courses[0] = alloc(int);
+    *(courses[0]) = 15122;
+    courses[1] = alloc(int);
+    *(courses[1]) = 15150;
+    courses[2] = alloc(int);
+    *(courses[2]) = 15210;
+    courses[3] = alloc(int);
+    *(courses[3]) = 15213;
+    courses[4] = alloc(int);
+    *(courses[4]) = 15411;
+
+    /*
+        Insert another course at the front. First, shift up the existing
+        courses.
+    */
+   shiftUp(courses, arrLen);
+
+   /*
+        Add the course at the front. There is already a pointer there so this
+        should be okay!
+   */
+   *(courses[0]) = 15112;
+
+   assert(*(courses[0]) == 15112);
+   assert(*(courses[1]) == 15122);
+   assert(*(courses[2]) == 15150);
+   assert(*(courses[3]) == 15210);
+   assert(*(courses[4]) == 15213);
+   assert(*(courses[5]) == 15411);
+
+   return 0;
+}

@@ -1,0 +1,48 @@
+//test return 1113122112
+// 5th look-and-say number with seed "2"
+
+// say n adjacent occurences of d, i.e. say(5, 3) == 53
+int say_digit(int n, int d) {
+  assert(0 <= d);
+  assert(d < 10);
+  return n * 10 + d;
+}
+
+int closestPow10Above(int n) {
+  assert(n >= 1); 
+  int pow10 = 1;
+  while (pow10 <= n) {
+    pow10 *= 10;
+  }
+  return pow10;
+}
+
+// speak a number
+// examples:
+//   1311 -> one one, one three, two ones -> 111321
+//   22   -> two twos                     -> 22
+//   221  -> two twos, one one            -> 2211
+int say_number(int n) {
+  int dig = n % 10;
+  int count = 0;
+  while (n > 0 && (n % 10 == dig)) {
+    count += 1;
+    n /= 10;
+  }
+  int bottom = say_digit(count, dig);
+  int top = 0;
+  if (n > 0) top = closestPow10Above(bottom) * say_number(n);
+  return top + bottom;
+}
+
+// return the nth look-and-say number with seed x.
+// x does not have to be a digit.
+int las(int n, int x) {
+  if (n == 0) return x;
+  int prev = las(n-1, x);
+  return say_number(prev);
+}
+
+int main() {
+  return las(5, 2);
+}

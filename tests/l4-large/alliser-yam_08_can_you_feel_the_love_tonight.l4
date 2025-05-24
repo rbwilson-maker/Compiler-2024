@@ -1,0 +1,40 @@
+//test return 70275
+
+// Disaster's in the air
+// Pointers......
+
+struct addr
+{
+  int * home;
+  int ** state;
+  int *** country;
+  int **** plannet;
+  int ***** solar_system;
+};
+
+int send_mail(struct addr* addr){
+  return (*****(addr -> solar_system)) 
+       + (****(addr -> plannet))
+       + (***(addr -> country)) 
+       + (**(addr -> state))
+       + (*(addr -> home));
+}
+
+int main()
+{
+  struct addr* my_address;
+  my_address = alloc(struct addr);
+  my_address -> solar_system = alloc(int****);
+  my_address -> plannet = alloc(int***);
+  my_address -> country = alloc(int**);
+  my_address -> state = alloc(int*);
+  my_address -> home = alloc(int);
+  *(my_address -> home) = 15289 - 1234;
+  *(my_address -> state) = my_address -> home;
+  *(my_address -> country) = my_address -> state;
+  *(my_address -> plannet) = my_address -> country;
+  *(my_address -> solar_system) = my_address -> plannet;
+  /* code */
+  return send_mail(my_address);
+  // return send_mail(my_address);
+}

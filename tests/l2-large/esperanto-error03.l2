@@ -1,0 +1,22 @@
+//test error
+
+int main(){
+    int a;
+    int b;
+    int c;
+    int f;
+    int g;
+
+    a = 15;
+    b = 10;
+    e = 5;
+    for(c = 0; c < a; c++){
+        for(d = 0; d < b; d++){
+            for(f = 0; f < e; f++){
+                g += 100;
+            }
+        }
+    }
+
+    return g;
+}

@@ -1,0 +1,17 @@
+//test return 20
+//Testing whether your parser correctly differentiates mult * and deref *
+//
+//
+typedef int cat;
+typedef int dog;
+
+int main(){
+  cat** doge = alloc(cat*);
+  dog** cade = alloc(dog*);
+  *doge = alloc(dog);
+  *cade = alloc(cat);
+  **doge = 4;
+  **cade = 5;
+  int mult = **doge * **cade;
+  return mult;
+}

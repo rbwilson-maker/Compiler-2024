@@ -1,0 +1,18 @@
+//test error
+// mismatch return type
+
+typedef int dog;
+typedef bool cat;
+
+cat get_result (int x) {
+  if (x > 5) { 
+    return true;
+  } else {
+    return false;
+  }
+}
+
+int main () {
+  int x = 0xFF;
+  return get_result(x);
+}

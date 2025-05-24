@@ -1,0 +1,24 @@
+//test return 7
+/* Function returns number if prime else smallest div */
+
+int div(int num) {
+  for (int i = 2; i < num; i++) {
+    if (num % i == 0) return i;
+  }
+  return num;
+}
+
+bool prime(int num) {
+  if (div(num) == num) return true;
+  return false;
+}
+
+int main () {
+  int c = 7;
+  bool val = prime(c);
+  if (val) {
+    return c;
+  }
+  return div(c);
+}
+

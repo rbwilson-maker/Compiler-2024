@@ -1,0 +1,18 @@
+//test error
+
+struct Tree {
+    int data;
+    struct Tree *tree;
+};
+
+typedef struct Tree tree;
+
+struct Tree {
+    int data;
+    struct Tree *tree;
+};
+
+int main() {
+    tree x = alloc(tree);
+    return 0;
+}

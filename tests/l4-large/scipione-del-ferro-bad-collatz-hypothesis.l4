@@ -1,0 +1,19 @@
+//test abort
+// 101 also reaches one
+
+int collatz(int n) {
+    if (n % 2 == 0) {
+        return n/2;
+    }
+    return 3*n + 1;
+}
+
+bool reachesOne(int n) {
+    if (n == 1) return true;
+    return reachesOne(collatz(n));
+}
+
+int main() {
+    assert(!(reachesOne(101)));
+    return 0;
+}

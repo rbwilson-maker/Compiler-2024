@@ -1,0 +1,23 @@
+//test return 4
+
+struct a {
+    struct b *b;
+    int x;
+};
+
+struct b {
+    struct a *a;
+    int y;
+};
+
+int main () {
+    struct a *hmm = alloc(struct a);
+    hmm->x = 1;
+    hmm->b = alloc(struct b);
+    hmm->b->y = hmm->x;
+    hmm->b->a = alloc(struct a);
+    hmm->b->a->x = hmm->b->y;
+    hmm->b->a->b = alloc(struct b);
+    hmm->b->a->b->y = hmm->b->a->x;
+    return hmm->x + hmm->b->y + hmm->b->a->x + hmm->b->a->b->y;
+}

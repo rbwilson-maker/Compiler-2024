@@ -1,0 +1,46 @@
+//test return -48201451
+int main() {
+  bool loop = true;
+  bool do_loop = true;
+  bool do_do_loop = true;
+  bool do_do_do_loop = true;
+  bool do_do_do_do_loop = true;
+  int _ = 1;
+  int i = 0;
+  while (do_do_do_do_loop) {
+    int __ = _ + 1;
+    do_do_do_loop = true;
+    while (do_do_do_loop) {
+      int ___ = __ + 1;
+      do_do_loop = true;
+      while (do_do_loop) {
+        int ____ = ___ + 1;
+        do_loop = true;
+        while (do_loop) {
+          int _____ = ____ + 1;
+          if (_____ > 10000) {
+            do_loop = false;
+          }
+          ____++;
+          i++;
+        }
+        if (____ > 100) {
+          do_do_loop = false;
+        }
+        ___++;
+        i++;
+      }
+      if (___ > 100) {
+        do_do_do_loop = false;
+      }
+      __++;
+      i++;
+    }
+    if (__ > 100) {
+      do_do_do_do_loop = false;
+    }
+    _++;
+    i++;
+  }
+ 	return-i;
+}

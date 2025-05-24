@@ -1,0 +1,10 @@
+//test error
+int min(int i, int j)
+{
+	return i < j ? i : j;
+}
+
+int main()
+{
+	return min(1,0);
+}

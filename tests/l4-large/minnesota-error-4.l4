@@ -1,0 +1,11 @@
+//test error
+// *x++ is ambiguous
+
+typedef int* intPtr;
+
+int main() {
+  intPtr[] x = alloc_array(intPtr, 1);
+  x[0] = alloc(int);
+  *x[*x[0]]++;
+  return *x[0];
+}

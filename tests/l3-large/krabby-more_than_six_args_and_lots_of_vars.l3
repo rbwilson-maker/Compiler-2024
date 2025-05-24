@@ -1,0 +1,17 @@
+//test return 6
+
+int sumArgs(int a, int b, int c, int d, int e, int f, int g, int h) {
+    return a + b + c + d + e + f + g + h;
+    }
+
+int main() {
+    int x = 5;
+    int y = 3;
+    int z = 10;
+    int a = -1;
+    int b = x * a;
+    int c = sumArgs(x, y, z, a*z, a*x, a*y, y, y);
+    return c;
+}
+
+

@@ -1,0 +1,19 @@
+//test error
+
+int main () {
+  int[] A;
+  bool[] B;
+  int[] C;
+  A = alloc_array(int, 3);
+  B = alloc_array(bool, 2);
+  A[2] = 3;
+  B[1] = false;
+  B[0] = true;
+  *B[1] = true;
+  C = alloc_array(int, 1);
+  B[0] = false;
+  if (B[1]) C[0] = 7;
+  else C[0] = 3;
+  return C[0]/0 + A[1];
+}
+

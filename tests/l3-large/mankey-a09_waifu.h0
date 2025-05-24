@@ -1,0 +1,17 @@
+//header file for a09_waifu
+
+typedef int tm;
+
+typedef tm tape;
+
+typedef int ptr;
+
+bool isOne(tape TM);
+
+bool putOne(tape TM);
+
+bool putZero(tape TM);
+
+bool moveLeft(tape TM);
+
+bool moveRight(tape TM);

@@ -1,0 +1,15 @@
+//test return 1
+// test dead return statements
+
+int main()
+{
+    int x;
+    int y;
+    x = 1;
+    return x;
+    
+    // no control flow path connecting the use
+    // of a variable to its declaration, so
+    // y need not be initialized.
+    y += 1;
+}

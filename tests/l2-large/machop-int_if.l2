@@ -1,0 +1,9 @@
+//test error
+// Conditionals must take bools, not ints
+int main () {
+
+  // Allegedy returns 1 if 1023 is composite,
+  // 0 if prime witnessed by (341,3)
+  if (1023 - 341 * 3) return 1;
+  else return 0;
+}

@@ -1,0 +1,20 @@
+//test return 4000
+
+int main() {
+    int y = 0; 
+    bool done = false;
+
+    while (!done) {
+        y = y + 1;
+        while(!done) {
+            y = y + 1; 
+            if (y >= 2000) {
+                done = true;    
+            }
+        }
+        if(y < 4000) {
+            done = false;    
+        }
+    }
+    return y;
+}

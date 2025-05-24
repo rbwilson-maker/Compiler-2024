@@ -1,0 +1,11 @@
+//test error
+// Mismatching return types for declaration and definition.
+
+int foo() {
+  return 4;
+}
+
+int main() {
+  int x = foo();
+  return 0;
+}

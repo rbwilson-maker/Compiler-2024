@@ -1,0 +1,11 @@
+//test return 7
+// test operator precedence
+
+int main()
+{
+    int x;
+    x = 0;
+    // unary negation should have higher precedence than all ops
+    x += 5 - - 1 * 2;
+    return x;
+}

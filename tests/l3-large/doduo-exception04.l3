@@ -1,0 +1,5 @@
+//test div-by-zero
+int main() {
+	assert((5 % 0) > 0);
+	return -1;
+}

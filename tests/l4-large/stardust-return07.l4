@@ -1,0 +1,22 @@
+//test return 0
+//numberOfRoots return the number of roots in function y = ax^2 + bx + c
+//as the inputs are 231,4,4432, function has no roots, thus return 0
+
+int numberOfRoots(int a, int b, int c){
+  int x = b * b - 4 * a * c;
+  if (x > 0) {
+    return 2;
+  } else if (x == 0) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+int main() {
+  int[] l = alloc_array(int, 3);
+  l[0] = 231;
+  l[1] = 4;
+  l[2] = 4432;
+  return numberOfRoots(l[0], l[1], l[2]);
+}

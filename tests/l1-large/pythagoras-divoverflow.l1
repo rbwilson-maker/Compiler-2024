@@ -1,0 +1,8 @@
+//test div-by-zero
+// runtime error
+
+int main() {
+    int INT_MIN = 0x80000000;
+    int neg_one = 0xFFFFFFFF;
+    return INT_MIN / neg_one;
+}

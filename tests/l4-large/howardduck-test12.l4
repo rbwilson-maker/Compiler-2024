@@ -1,0 +1,21 @@
+//test return 4
+
+struct A {
+    int x1;
+    int y1;
+    int x2;
+    int y2;
+};
+
+int midpoint (int a, int b, int c, int d) {
+    return (a - b) / (c - d);
+}
+
+int main () {
+    struct A *a = alloc(struct A);
+    a->x1 = 20;
+    a->x2 = 40;
+    a->y1 = 10;
+    a->y2 = 15;
+    return midpoint (a->x2, a->x1, a->y2, a->y1);
+}

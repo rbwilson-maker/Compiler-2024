@@ -1,0 +1,12 @@
+//test error
+// Uses an illegal operator '=+'
+
+int main()
+{
+  int a = 15;
+  int b = 123;
+
+  b =+ a;
+
+  return b;
+}

@@ -1,0 +1,11 @@
+//test typecheck
+//test infloop
+int main() {
+  int total = 1;
+
+  int curr = 7;
+  while (curr > 0) {
+    total = total * curr;
+  }
+  return total;
+}

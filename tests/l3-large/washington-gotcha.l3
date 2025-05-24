@@ -1,0 +1,15 @@
+//test return 2
+
+int yoo(int x);
+int yoo(int y);
+
+typedef int foo;
+
+foo yoo(foo yoo) {
+    return yoo;
+}
+
+int main() {
+    foo yoo = yoo(2);
+    return yoo;
+}

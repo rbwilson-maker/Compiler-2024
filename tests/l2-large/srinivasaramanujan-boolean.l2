@@ -1,0 +1,15 @@
+//test return 15
+
+int main() {
+    bool x = true;
+    bool y = false;
+    int z = 5;
+
+    if (x && y) {
+        z = 10;
+    } else {
+        z = 15;
+    }
+
+    return 15;
+}

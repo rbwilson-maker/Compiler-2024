@@ -1,0 +1,12 @@
+//test memerror
+/* Test evaluation order of array assign */
+
+int f() {
+  return -1;
+}
+
+int main () {
+  int[] A = alloc_array(int, 1);
+  A[f()] = 1/0;
+  return 0;
+}

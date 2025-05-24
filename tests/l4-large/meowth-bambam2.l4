@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+// Overflow into other bits of contiguous memory?
+
+int main(){
+    int[] tester = alloc_array(int, 3);
+    tester[1] = 1;
+    while (tester[0] == 0 && tester[2] == 0){
+        tester[1] = tester[1] * 3;
+    }
+    return 0;
+}

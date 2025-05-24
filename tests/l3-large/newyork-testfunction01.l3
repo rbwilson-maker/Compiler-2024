@@ -1,0 +1,13 @@
+//test return 1
+int bad(){
+	return (1 / 0);
+}
+
+int main(){
+	if (false){
+		return bad();
+	}
+	else{
+		return 1;
+	}
+}

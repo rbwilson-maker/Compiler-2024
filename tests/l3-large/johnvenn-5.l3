@@ -1,0 +1,10 @@
+//test typecheck
+
+typedef int happyhappyhappy;
+
+int main() {
+    int x = 0;
+    happyhappyhappy y = 1;
+    x = y;
+    return x;
+}

@@ -1,0 +1,53 @@
+//test return 37122908
+
+typedef int c0_float;
+
+// Iteratively compute Mandelbrot set membership by seeing if c diverges
+int mandel(c0_float c_re, c0_float c_im, int count) {
+  c0_float z_re = c_re;
+  c0_float z_im = c_im;
+  int i;
+
+  for(i = 0; i < count; i++) {
+    if(fless(itof(4), fadd(fmul(z_re, z_re), fmul(z_im, z_im)))) {
+      return i;
+    }
+
+    c0_float new_re = fsub(fmul(z_re, z_re), fmul(z_im, z_im));
+    c0_float new_im = fmul(itof(2), fmul(z_re, z_im));
+    z_re = fadd(c_re, new_re);
+    z_im = fadd(c_im, new_im);
+  }
+
+  return i;
+}
+
+// Determine the number of total iterations needed in an image visualizing
+// the Mandelbrot set before the complex number corresponding to a pixel 
+// could be rejected from the set
+int mandelbrotSerial(c0_float x0, c0_float y0, c0_float x1, c0_float y1,
+                     int width, int height, int maxIterations) {
+  c0_float dx = fdiv(fsub(x1, x0), itof(width));
+  c0_float dy = fdiv(fsub(y1, y0), itof(height));
+  int out = 0;
+
+  for(int j = 0; j < height; j++) {
+    for(int i = 0; i < width; i++) {
+      c0_float x = fadd(x0, fmul(itof(i), dx));
+      c0_float y = fadd(y0, fmul(itof(j), dy));
+
+      int index = j * width + i;
+      out += mandel(x, y, maxIterations);
+    }
+  }
+
+  return out;
+}
+
+int main() {
+  c0_float x0 = fdiv(itof(-13), itof(6)); // -2.167
+  c0_float x1 = fdiv(itof(7), itof(6)); // 1.167
+  c0_float y0 = itof(-1); // -1
+  c0_float y1 = itof(1); // 1
+  return mandelbrotSerial(x0, y0, x1, y1, 640, 480, 512);
+}

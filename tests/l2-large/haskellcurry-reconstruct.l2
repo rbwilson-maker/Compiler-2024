@@ -1,0 +1,28 @@
+//test return 626078197
+/*
+    reconstruct: Reconstructs a random big number using the successive division
+    by two algorithm.
+
+    Tests:
+    - Loops
+    - Conditionals
+    - Shift operator (<<)
+    - Ternary expressions
+    - Increment operator (++)
+*/
+
+int main() {
+    int n = 626078197;
+    int result = 0;
+    int position = 0;
+
+    while (n > 0) {
+        int digit = (n % 2 == 1) ? 1 : 0;
+        result += (digit) << position;
+        
+        n /= 2;
+        position++;
+    }
+
+    return result;
+}

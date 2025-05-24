@@ -1,0 +1,13 @@
+//test return 13 
+
+typedef int* happy_halloween;
+
+happy_halloween spooky(int seven) {
+    return NULL;
+}
+
+int main() {
+    int* spooooky_pointer = spooky(13);
+
+    return 13;
+}

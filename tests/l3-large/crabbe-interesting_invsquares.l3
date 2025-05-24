@@ -1,0 +1,22 @@
+//test return 1666878132
+
+//Quick, fast, "inverse square root" approximation (1/sqrt(x))
+int quickISqrt ( int number )
+{
+	int i;
+	int x2;
+  int y;
+	int threehalfs = 2;
+
+	x2 = number * 1;
+	y  = number;                     
+	y  = 0x5f3759df - ( y >> 1 );               // evil bit-level hacking
+	y  = y * ( threehalfs - ( x2 * y * y ) );   // 1st iteration
+  y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
+
+	return y;
+}
+
+int main(){
+    return quickISqrt(0x15411) + quickISqrt(0x48105);
+}

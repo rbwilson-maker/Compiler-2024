@@ -1,0 +1,12 @@
+//test return 1
+
+int main() {
+    int x = 0xf0f0f0f0;
+    int y = 0x0f0f0f0f;
+    
+    if (x > 0 && y > 0) {
+        return ~(x | y);
+    } else {
+        return (x & y) + 1;
+    }
+}

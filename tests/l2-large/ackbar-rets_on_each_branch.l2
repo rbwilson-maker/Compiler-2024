@@ -1,0 +1,12 @@
+//test return 1
+//Tests that returns in both control paths are accepted
+
+int main() {
+    int x = 0;
+    if (x < 42){
+        return 1;
+    } 
+    else {
+        return 42;
+    }
+}

@@ -1,0 +1,78 @@
+//test return 5
+
+//source: http://stackoverflow.com/questions/21897554/design-dfa-accepting-binary-strings-divisible-by-a-number-n
+
+struct state {
+   struct state* trans0;
+   struct state* trans1;
+   int val;
+};
+typedef struct state* state;
+
+int find_end_state(state[] dfa, int[] input, int length) {
+   state ptr = dfa[0];
+   for(int i = 0; i < length; i++) {
+      if(input[i] == 0) {
+         ptr = ptr->trans0;
+      } else {
+         ptr = ptr->trans1;
+      }
+   }
+   return ptr->val;
+}
+
+int main() {
+   state state0 = alloc(struct state);
+   state state1 = alloc(struct state);
+   state state2 = alloc(struct state);
+   state state3 = alloc(struct state);
+   state state4 = alloc(struct state);
+   state state5 = alloc(struct state);
+   state state6 = alloc(struct state);
+
+   state0->val = 0;
+   state1->val = 1;
+   state2->val = 2;
+   state3->val = 3;
+   state4->val = 4;
+   state5->val = 5;
+   state6->val = 6;
+
+   state0->trans0 = state0;
+   state0->trans1 = state1;
+   state1->trans0 = state2;
+   state1->trans1 = state3;
+   state2->trans0 = state4;
+   state2->trans1 = state5;
+   state3->trans0 = state6;
+   state3->trans1 = state0;
+   state4->trans0 = state1;
+   state4->trans1 = state2;
+   state5->trans0 = state3;
+   state5->trans1 = state4;
+   state6->trans0 = state5;
+   state6->trans1 = state6;
+
+   int[] input = alloc_array(int, 10);
+   input[0] = 1;
+   input[1] = 0;
+   input[2] = 0;
+   input[3] = 0;
+   input[4] = 0;
+   input[5] = 1;
+   input[6] = 1;
+   input[7] = 0;
+   input[8] = 0;
+   input[9] = 1;
+
+   state[] dfa = alloc_array(state, 7);
+   dfa[0] = state0;
+   dfa[1] = state1;
+   dfa[2] = state2;
+   dfa[3] = state3;
+   dfa[4] = state4;
+   dfa[5] = state5;
+   dfa[6] = state6;
+
+   return find_end_state(dfa, input, 10);
+}

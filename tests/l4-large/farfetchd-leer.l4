@@ -1,0 +1,19 @@
+//test return 2;
+
+int a() {
+  int T = 1;
+  int b = 2;
+  int c;
+  int d;
+  return T * b;
+}
+
+typedef int T;
+
+int main() {
+  int c;
+  int d;
+  int e;
+  T * b;
+  return a();
+}

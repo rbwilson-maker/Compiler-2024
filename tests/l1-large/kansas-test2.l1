@@ -1,0 +1,12 @@
+//test return 3
+
+// This is designed to test the arithmetic operations.
+int main()
+{
+  int x = 25 * 4;
+  int y = x / 20;
+  int z = y / 2;
+  x = 83 % 10;
+  y = x - z;
+  return x * y + x / z - y % z;
+}

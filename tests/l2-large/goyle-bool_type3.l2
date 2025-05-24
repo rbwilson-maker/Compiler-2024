@@ -1,0 +1,13 @@
+//test error
+
+int main ()  {
+    int x;
+    int y;
+    x = 0;
+    bool z = true;
+    bool z1 = (x == z);
+    for (int a = 0; a < 5; a++) {
+        x++;
+    }
+    return 10;
+}

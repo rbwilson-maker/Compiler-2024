@@ -1,0 +1,13 @@
+//test return 34
+
+int main() {
+    int a = 0;
+    int b = 1;
+    
+    // Correct for-loop elaboration should cause this not to execute
+    for(int k = b; k < b; k++) {
+        int c = b / 0;
+    }
+
+    return 34;
+}

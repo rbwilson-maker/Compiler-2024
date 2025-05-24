@@ -1,0 +1,27 @@
+//test abort
+
+int count_1_bits(int n) {
+    assert(n >= 0);
+
+    if (n < 2) {
+        return n;
+    }
+    int bits = 0;
+    while (n > 0) {
+        if (n % 2 == 1)
+            bits++;
+        n >>= 1;
+    }
+    return bits;
+}
+
+int main() {
+    int all_count = 0;
+    int n = 0x80000001;
+    int c = count_1_bits(n);
+    while (c > 0) {
+        all_count += c;
+        c = count_1_bits(c);
+    }
+    return all_count;
+}

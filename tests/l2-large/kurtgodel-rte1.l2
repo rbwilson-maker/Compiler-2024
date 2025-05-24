@@ -1,0 +1,13 @@
+//test div-by-zero
+int main()
+{
+    int v = 0;
+    int x = 0;
+
+    for (;true;) {
+        v <<= x;
+        x++;
+    }
+
+    return v;
+}

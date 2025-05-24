@@ -1,0 +1,16 @@
+//test return 1
+
+bool a() {
+    return true;
+}
+int b() {
+    return 1;
+}
+int c() {
+    return 2;
+}
+
+int main() {
+    // function call in ternary
+    return (a() ? b() : c());
+}

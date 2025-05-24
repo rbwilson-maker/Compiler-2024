@@ -1,0 +1,12 @@
+//test error
+
+typedef int foo;
+
+struct foo {
+    int x;
+};
+
+int main() {
+    foo* test = alloc(foo);
+    return test->x;
+}

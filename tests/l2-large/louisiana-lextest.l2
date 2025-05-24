@@ -1,0 +1,17 @@
+//test return 12
+
+int main()
+{
+    int a = 2;
+    {
+        int b = a + 2;
+        {
+            int c = b + 2;
+            {
+                int d = a + b + c;
+                return d;
+            }
+        }
+    }
+    return a;
+}

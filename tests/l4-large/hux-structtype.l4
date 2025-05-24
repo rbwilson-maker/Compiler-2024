@@ -1,0 +1,16 @@
+//test return 0
+
+struct s {
+	int a;
+	int b;
+	int c;
+};
+
+int main() {
+	struct s *s0 = alloc(struct s);
+	s0 -> a = 5;
+	s0 -> b = 10;
+	s0 -> c = -15;
+
+	return s0 -> a + s0 -> b + s0 -> c;
+}

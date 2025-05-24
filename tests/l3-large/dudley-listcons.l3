@@ -1,0 +1,38 @@
+//test return 540225000
+
+// Encodes a list into a product of prime powers. Cons
+
+bool isPrime(int n) {
+  for (int i = 2 ; i < n ; i += 1) {
+    if (n % i == 0) { return false; }
+  }
+  return true;
+}
+
+int cons(int x, int n) {
+  int i = 2;
+  int result = 1;
+
+  for (int j = 0 ; j < x ; j += 1) {
+    result *= 2;
+  }
+
+  for (int p = 3 ; n > 1 ; p += 1) {
+    if (isPrime(p)) {
+      while (n % i == 0) {
+        n /= i;
+        result *= p;
+      }
+      i = p;
+    }
+  }
+  return result;
+}
+
+int main() {
+  // n = [2, 5, 4]
+  int n = (2*2) * (3*3*3*3*3) * (5*5*5*5);
+
+  return cons(3,n);
+}
+

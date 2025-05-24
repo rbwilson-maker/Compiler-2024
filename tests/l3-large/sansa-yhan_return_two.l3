@@ -1,0 +1,11 @@
+//test return 2
+typedef int long;
+
+int long_long_time_ago(int x) {
+  long y = x;
+  return y;
+}
+
+long main() {
+  return long_long_time_ago(2);
+}

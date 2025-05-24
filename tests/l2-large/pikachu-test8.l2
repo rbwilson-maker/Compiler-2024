@@ -1,0 +1,9 @@
+//test return -1
+
+int main() {
+  int a = 20;
+  while (a != -1) {
+    a--;
+  }
+  return a;
+}

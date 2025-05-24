@@ -1,0 +1,11 @@
+//test return 10006
+
+int main()
+{
+  int r = 1;
+  for(int i = 1; i < 10007; i++)
+  {
+    r = (r * i) % 10007;
+  }
+  return r;
+}

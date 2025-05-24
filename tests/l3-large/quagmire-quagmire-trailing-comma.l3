@@ -1,0 +1,9 @@
+//test error
+
+int poop (int x, int y, int z,) {
+    return x + y + z;
+}
+
+int main () {
+    return poop (3, 4, 5);
+}

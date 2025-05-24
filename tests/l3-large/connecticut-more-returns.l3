@@ -1,0 +1,15 @@
+//test return 1
+
+int a() {
+	return 1;
+}
+
+int f() {
+	assert(false);
+	return -1;
+}
+
+int main() {
+	int x = a();
+	return ((x == 0) ? f() : x);
+}

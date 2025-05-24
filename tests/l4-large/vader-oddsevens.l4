@@ -1,0 +1,20 @@
+//test typecheck
+void evens(int count, int i, int len, int[] odd_a, int[] even_a); 
+void odds(int count, int i, int len, int[] odd_a, int[] even_a) {
+  if (i >= len)
+    return;
+  odd_a[i] = count;
+  evens(count+1, i, len, odd_a, even_a);
+}
+
+void evens(int count, int i, int len, int[] odd_a, int[] even_a) {
+  even_a[i] = count;
+  odds(count+1, i+1, len, odd_a, even_a);
+}
+
+int main() {
+  int[] odd_a = alloc_array(int, 6);
+  int[] even_a = alloc_array(int, 6);
+  odds(1, 0, 6, odd_a, even_a);
+  return 0;
+}

@@ -1,0 +1,11 @@
+//test error
+
+struct bruh {
+  int x;
+}
+
+int main() {
+  struct bruh* S = alloc(struct bruh);
+  S.x = 1;
+  return S.x;
+}

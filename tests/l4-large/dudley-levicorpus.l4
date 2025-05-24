@@ -1,0 +1,10 @@
+//test return 1
+
+			struct wand {																  int val;									};												int f(struct wand *w) {																									  if (w->val == 0) {						    return 0;   }   if (w->val == 1) {																										    struct wand* v = NULL;																						    return v->val;
+  }							  return 0;											}																		
+int main() {
+  struct wand *w = alloc(struct wand);						  int[] a = alloc_array(int, 1);																						  // gotta make sure that f(w) only is executed once!   
+  a[f(w)] += 1;
+
+  return a[0];
+}																

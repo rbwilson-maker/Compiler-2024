@@ -1,0 +1,22 @@
+//test return 5
+
+struct Wrapper {
+  int val;
+};
+
+struct Wrapper* wrap(int val) {
+  struct Wrapper* w = alloc(struct Wrapper);
+  w->val = val;
+  return w;
+}
+
+// stop most constant prop implementations
+bool False() { return false; }
+
+int main() {
+  int x = *(False() ? NULL : alloc(int));
+
+  int v = (False() ? NULL : wrap(5))->val;
+
+  return v;
+}

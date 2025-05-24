@@ -1,0 +1,13 @@
+//test compile
+
+typedef int ooga;
+typedef bool booga;
+
+ooga f() {
+    booga b = true;
+    return 1;
+}
+
+int main() {
+    return f();
+}

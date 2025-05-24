@@ -1,0 +1,10 @@
+//test error
+// out of scope variable init
+
+
+int main() {
+    int j = 0;
+    return j;
+}
+
+int k = 8;

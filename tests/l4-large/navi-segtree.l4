@@ -1,0 +1,57 @@
+//test return 14
+
+struct segtree {
+    int identity;
+	int SZ;
+    int[] tree;	
+};
+typedef struct segtree* Tree;
+
+int comb(int l, int r) {
+	return l + r;
+}
+void updLeaf(Tree T, int l, int val) {
+	T->tree[l] = val;
+}
+Tree new(int SZ) {
+	Tree T = alloc(struct segtree); 
+	T->SZ = SZ;
+	T->tree = alloc_array(int, 2*SZ + 2);
+	return T;
+}
+void upd(Tree T, int pos, int val) {
+	pos += T->SZ+1;
+	updLeaf(T, pos, val);
+	for(pos >>= 1; pos >= 1; pos >>= 1) {
+		T->tree[pos] = comb(T->tree[2*pos], T->tree[2*pos+1]);
+	}
+}
+int query(Tree T, int l, int r) {
+	l += T->SZ+1;
+	r += T->SZ+1;
+	int res = T->identity;
+	while(l <= r) {
+		if((l&1)!=0) {
+			res = comb(res, T->tree[l]);
+			l++;
+		}
+		if(!((r&1)!=0)) { 
+			res = comb(res, T->tree[r]);
+			r--;
+		}
+		l >>= 1; r >>= 1;
+	}
+	return res;
+}
+
+int main() {
+	Tree T = new(5);
+	upd(T, 0, 1);
+	upd(T, 1, 2);
+	upd(T, 2, 3);
+	upd(T, 3, 4);
+	upd(T, 4, 5);
+	assert(15 == query(T, 0, 4));
+	upd(T, 0, 5);
+	return query(T, 0, 3);
+}

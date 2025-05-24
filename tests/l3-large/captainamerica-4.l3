@@ -1,0 +1,16 @@
+//test div-by-zero
+int mainy(int a);
+
+int mainy(int a){
+    int i=10;
+    int j=a;
+    while(i>~2) {
+        j+=10/i;
+        i--;
+    }
+    return j;
+}
+int main()
+{
+    return mainy(0);
+}

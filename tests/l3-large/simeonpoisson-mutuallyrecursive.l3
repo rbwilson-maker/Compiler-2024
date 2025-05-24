@@ -1,0 +1,18 @@
+//test return 9
+
+int dog(int n);
+int cat(int n);
+ 
+int dog(int n) {
+  if (n <= 0) return 1;
+  return n - cat(dog(n - 1));
+}
+ 
+int cat(int n) {
+  if (n <= 0) return 0;
+  return n - dog(cat(n - 1));
+}
+
+int main() {
+  return dog(15);
+}

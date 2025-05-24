@@ -1,0 +1,14 @@
+//test error
+// Bad arg list
+
+int random(int x, int y, bool z) {
+  return 765432;
+}
+
+int main() {
+  int x = 1234;
+  int y = 5678;
+  bool z = false;
+  int x = random(x, y);
+  return x;
+}

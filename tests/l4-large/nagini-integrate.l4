@@ -1,0 +1,16 @@
+//test return 3283
+
+fpt f(fpt x) {
+    return fmul(x, x);
+}
+
+int main() {
+    // sample 0...(len-1)
+    int len = 100;
+    fpt sum = itof(0);
+    for (int i = 0; i < len; i++) {
+        fpt x = itof(i);
+        sum = fadd(sum, f(x));
+    }
+    return ftoi(fdiv(sum, itof(len)));
+}

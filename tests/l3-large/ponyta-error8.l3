@@ -1,0 +1,8 @@
+//test error
+// can't redefine bool
+
+typedef int bool;
+
+int main() {
+  return 1;
+}

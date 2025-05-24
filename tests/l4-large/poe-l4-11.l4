@@ -1,0 +1,13 @@
+//test return 0
+
+// basic struct test
+
+struct derp {
+	int i0;
+	int* i0_p;
+};
+
+int main () {
+	struct derp[] derp_arr = alloc_array(struct derp, 67108863);
+	return derp_arr[0].i0;
+}

@@ -1,0 +1,48 @@
+//test return 255
+int main() {
+    int result = 0;
+
+    if (5 < 10)
+        result |= 1;
+
+    if (5 <= 10)
+        result |= 2;
+
+    if (5 <= 5)
+        result |= 4;
+
+    if (5 > 3)
+        result |= 8;
+
+    if (5 >= 3)
+        result |= 16;
+
+    if (5 >= 5)
+        result |= 32;
+
+    if (5 == 5)
+        result |= 64;
+
+    if (5 != 10)
+        result |= 128;
+
+    if (5 > 10)
+        return 0;
+
+    if (5 >= 10)
+        return 0;
+
+    if (5 < 3)
+        return 0;
+
+    if (5 <= 3)
+        return 0;
+
+    if (5 == 10)
+        return 0;
+
+    if (5 != 5)
+        return 0;
+
+    return result;
+}

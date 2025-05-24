@@ -1,0 +1,14 @@
+//test return 20
+
+int main()
+{
+  int x = 30;
+  int y = 50;
+  if (x > y) {
+     x = x + y;
+  }
+  else {
+     x = y - x;
+  }
+  return x;
+}

@@ -1,0 +1,58 @@
+//test return 10
+
+typedef struct bloom_filter* bloom_t;
+struct bloom_filter {
+  bool[] data;
+  int capacity;
+};
+
+typedef int[] str;
+
+int hash_mul31(str s, int len)
+{
+  int result = 0;
+  for (int i = 0; i < len; i++)
+    {
+      result = result*31 + s[i];
+    }
+  return result;
+}
+
+bool is_bloom(bloom_t B)
+{
+  if (B == NULL || B->capacity <= 0) return false;
+  return true;
+}
+
+bloom_t bloom_new(int capacity)
+{
+  bloom_t B = alloc(struct bloom_filter);
+  B->data = alloc_array(bool,capacity);
+  B->capacity = capacity;
+  return B;
+}
+
+void bloom_add(bloom_t B, str x)
+{
+  int index = hash_mul31(x, B-> capacity)%B->capacity;
+  B->data[index] = true;
+  assert(is_bloom(B));
+}
+
+int main() {
+	bloom_t B = bloom_new(10);
+	str s1 = alloc_array(int,11);
+	s1[0] = 87;
+	s1[1] = 104;
+	s1[2] = 101;
+	s1[3] = 114;
+	s1[4] = 101;
+	s1[5] = 115;
+	s1[6] = 72;
+	s1[7] = 97;
+	s1[8] = 114;
+	s1[9] = 114;
+	s1[10] = 121;
+	bloom_add(B, s1);
+	return B->capacity;
+}

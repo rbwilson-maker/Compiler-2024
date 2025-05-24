@@ -1,0 +1,15 @@
+//test error
+
+//pointer vs array
+int* init_p (int* p) {
+  *p = 5;
+  return p;
+}
+
+int main() {
+  int* p = alloc(int);
+  int[] q = alloc_array(int, 10);
+  p = init_p(p);
+  q = p;
+  return 0;
+}

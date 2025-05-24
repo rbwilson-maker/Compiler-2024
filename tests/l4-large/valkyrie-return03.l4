@@ -1,0 +1,18 @@
+//test return 210
+//Struct namespace
+
+struct str{
+	int x;
+	int str;
+};
+
+int str(int x){
+	return 21 * x;
+}
+
+int main(){
+	struct str *x = alloc(struct str);
+	x->str = 10;
+	x->x = str(x->str);
+	return x->x;
+}

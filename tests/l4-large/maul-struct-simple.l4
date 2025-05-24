@@ -1,0 +1,29 @@
+//test return 45
+struct point {
+  int x;
+  int y;
+};
+
+typedef struct point* pt;
+pt init_point(int x, int y)
+{
+  pt s = alloc(struct point);
+  s->x = x;
+  s->y = y;
+  return s;
+}
+
+int main()
+{
+  pt[] arr = alloc_array(pt, 10);
+  for (int i = 0; i < 10; i++)
+  {
+    arr[i] = init_point(i, i);
+  }
+  int sum = 0;
+  for (int j = 0; j < 10; j++)
+  {
+    sum += arr[j]->x;
+  }
+  return sum;
+}

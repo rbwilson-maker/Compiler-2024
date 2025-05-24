@@ -1,0 +1,11 @@
+//test div-by-zero
+int main() {
+    int x = 0;
+    for (int i = 0; i < 200; i++) {
+        x += i;
+    }
+    for (int i = 199; i >= 0; i--) {
+        x -= i;
+    }
+    return 0 / 0;
+}

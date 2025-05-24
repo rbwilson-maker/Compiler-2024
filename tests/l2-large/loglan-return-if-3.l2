@@ -1,0 +1,19 @@
+//test return 1
+
+int main() {
+  bool t = false;
+  if (t) {
+    return 1;
+  }
+  else {
+    bool t1 = true;
+    int y = 0;
+    if (t1) {
+        y = 1;
+    }
+    else {
+        y = 0;
+    }
+    return y;
+  }
+}

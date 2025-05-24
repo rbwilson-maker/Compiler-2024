@@ -1,0 +1,17 @@
+//test abort
+
+int boringFun(bool bop) {
+  assert(bop);
+  return 5;
+}
+
+int main() {
+  int *x = alloc(int);
+  *x = 444;
+  int *y = alloc(int);
+  *y = 0; 
+  bool *beep = alloc(bool);
+  *beep = (*x == *y);
+
+  return boringFun(*beep);
+}

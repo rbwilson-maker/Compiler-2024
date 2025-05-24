@@ -1,0 +1,18 @@
+//test div-by-zero
+
+int main() {
+    int x;
+    for (x=5;x<20;x+=2) {
+        int z;
+        z=x-2;
+        if (x==19) {
+            int y=x+2;
+            while (x > 17) {
+                if ((6/x/5+1)/(((y-z)>>2)-1) == 15411){
+                    return 2;
+                }
+            }
+        }
+    }
+    return 3;
+}

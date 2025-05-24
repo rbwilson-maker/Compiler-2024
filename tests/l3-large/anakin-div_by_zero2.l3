@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int evilRecursion(int x, int y) {
+    if (y <= 0) {
+        return x / y;
+    }
+    return evilRecursion(x-1, y-1);
+}
+
+int main() {
+    evilRecursion(9999, 101);
+    return 0;
+}

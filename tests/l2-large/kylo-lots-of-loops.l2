@@ -1,0 +1,36 @@
+//test typecheck
+//test infloop
+
+int main() {
+  while (true) {
+    while (true) {
+      for (int i = 0; true; ) {
+        while (true) {
+          while (true) {
+            for (int j = 1; true; ) {
+              while (true) {
+                while (true) {
+                  for (int k = 2; true; ) {
+                    while (true) {
+                      while (true) {
+                        for (int l = 0; true; ) {
+                          while (true) {
+                            while (true) {
+                              for (int m = 2; true; ) {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return 20;
+}

@@ -1,0 +1,16 @@
+//test error
+
+int test();
+
+typedef int verb;
+verb test();
+
+int main () {
+return 11190;
+}
+
+typedef int noun;
+
+noun fun () {
+return test();
+}

@@ -1,0 +1,16 @@
+//test return 0
+
+bool isPositive(int a){
+  return (a > 0);
+}
+
+bool isNeg(int a){
+  return (a < 0);
+}
+
+int main(){
+  int a = -3;
+  int b = 10;
+  bool c = isPositive(-3) && isNeg(b);
+  return 0;
+}

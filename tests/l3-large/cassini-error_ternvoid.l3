@@ -1,0 +1,11 @@
+//test error
+
+void ternup() {
+    // do nothing
+    3 + 5 == 7;
+}
+
+// Can't call void functions in ternaries in C0
+int main() {
+    true ? (false ? ternup() : ternup()) : ternup();
+}

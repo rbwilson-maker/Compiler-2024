@@ -1,0 +1,7 @@
+//test return 0
+// check assignment operator -=
+int main() {
+  int x = 1;
+  x -= 42;
+  return x + 41;
+}

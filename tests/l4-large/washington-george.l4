@@ -1,0 +1,25 @@
+//test return 1337
+
+// "george" doesn't even look like a word anymore.
+
+struct george {
+    int america;
+    bool commander_in_chief;
+    bool badass;
+    struct george *george;
+};
+
+
+struct george *george() {
+    struct george *george = alloc(struct george);
+    george->america = 1337;
+    george->commander_in_chief = true;
+    george->badass = true;
+    george->george = george;
+    return george;
+}
+
+int main() {
+    struct george *george = george();
+    return george->america;
+}

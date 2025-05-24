@@ -1,0 +1,14 @@
+//test return 1
+int main() {
+  int[] x = alloc_array(int, 15);
+  for (int i = 0; i < 15; i++) {
+    assert(x[i] == 0);
+  }
+  bool[] x1 = alloc_array(bool, 10);
+  for (int i = 0; i < 10; i++) {
+    assert(x1[i] == false);
+  }
+  int* pt1 = alloc(int);
+  *pt1 += 1;
+  return *pt1;
+}

@@ -1,0 +1,13 @@
+//test error
+struct a
+{
+   int x;
+};
+
+typedef struct a alloc;
+
+int main()
+{
+   struct a p = alloc(alloc(struct a));
+   return 0
+}

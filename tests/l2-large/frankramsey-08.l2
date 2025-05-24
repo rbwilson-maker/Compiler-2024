@@ -1,0 +1,6 @@
+//test return 411
+int main()
+{
+  bool x = false;
+  return x ? 15 : 411; 
+}

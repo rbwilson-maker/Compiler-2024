@@ -1,0 +1,15 @@
+//test error
+
+int main() {
+  int x = 2;
+  int y = 3;
+  int z = 5;
+  while (z >= 0) {
+    x = x / z;
+    x += y;
+    z--;
+  }
+  if (z > 0) {
+    return 3;
+  }
+}

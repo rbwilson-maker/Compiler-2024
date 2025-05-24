@@ -1,0 +1,39 @@
+//test return 4
+
+// Let's try some floating point!
+// Square roots by newtons method until some degree of convergence.
+// Returns number of iterations until convergence.
+
+fpt fabs(fpt f) {
+	f &= ~0x80000000;
+	return f;
+}
+
+int sqrt(int n) {
+	fpt two = itof(2);
+	fpt convergence = fdiv(itof(1), itof(1000));
+
+	fpt x = itof(n);
+	fpt res = itof(10);
+	int iters = 0;
+	fpt residual = fdiv(fsub(x, fmul(res, res)), fmul(two, x));
+
+	// While (x - res^2)/2*x > convergence
+	while(fless(convergence, residual)) {
+		fpt res_squared = fmul(res, res);
+		fpt numerator = fsub(res_squared, x);
+		fpt denominator = fmul(two, res);
+		fpt fractional = fdiv(numerator, denominator);
+
+		res = fsub(res, fractional);
+		residual = fabs(fdiv(fsub(x, fmul(res, res)), fmul(two, x)));
+		iters++;
+	}
+
+	print_fpt(res);
+	return iters;
+}
+
+int main () {
+	return sqrt(612);
+}

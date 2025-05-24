@@ -1,0 +1,11 @@
+//test return 5
+int main()
+{
+    int x;
+    x = true ? 0 : -10;
+    x += false ? 2 : 1;
+    x += true ? 1 : 2;
+    x += true ? 1 : 2;
+    x += false ? (-1) : (true ? 2 : 1);
+    return x;
+}

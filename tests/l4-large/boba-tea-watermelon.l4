@@ -1,0 +1,8 @@
+//test return 78
+int main()
+{
+  int* x = alloc(int);
+  *x = 3;
+  int y = 5;
+  return y * *x * y + * x + * alloc(int);
+}

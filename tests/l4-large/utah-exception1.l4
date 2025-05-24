@@ -1,0 +1,12 @@
+//test memerror
+// Tests that LVals are evaluated in the correct order.
+
+int main () {
+
+    int[]* foo = NULL;
+
+	(*foo)[1/0] = 0;
+
+	return 3;
+
+}

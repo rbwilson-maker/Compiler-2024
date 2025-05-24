@@ -1,0 +1,45 @@
+//test abort
+
+
+int sq(int x){
+    return x*x;
+}
+
+int findNextHappyIter(int x){
+    if (x <= 0) assert(false);
+    int result = 0;
+    int toStrip = x;
+    while (toStrip > 0){
+        result += sq(toStrip % 10);
+        toStrip /= 10;
+    }
+    return result;
+}
+
+
+bool isHappy(int x){
+    if (x == 4) return false;
+    if (x == 1) return true;
+    if (x < 1)  return false;
+    int iter = findNextHappyIter(x);
+    while (iter != 1 && iter != 4){
+        iter = findNextHappyIter(iter);
+    }
+    return iter == 1;
+}
+
+int main(){
+
+    
+    assert(!isHappy(15411));
+    // did you know that 15411 is happy?
+    return 0;
+}
+
+
+
+
+
+
+
+

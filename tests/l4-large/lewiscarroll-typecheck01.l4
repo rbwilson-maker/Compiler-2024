@@ -1,0 +1,25 @@
+//test typecheck
+
+struct location {int x; int y;};
+
+bool wya (int x, int y) {
+	for(int i = 0; true;) {
+		x-=1;
+		y-=1;
+	}
+	if (x == 0 && y == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}	
+}	
+
+int main () {
+	struct location * l;
+	l = alloc(struct location);
+	l->x = 3;
+	l->y = 100;
+	// wya(l->x, l->y);
+	return 0;
+}

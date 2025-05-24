@@ -1,0 +1,12 @@
+//test return 1738
+
+int main() {
+    int x;
+    x = 0x500;
+    x += 30;
+    x -= 10000;
+    x *= -1;
+    x /= 10;
+    x *= 2;
+    return x;
+}

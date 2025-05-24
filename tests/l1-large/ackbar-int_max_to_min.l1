@@ -1,0 +1,9 @@
+//test return ~2147483648
+//Tests integer wrap around from int max to int min
+//2^31 - 1 = 2147483647 = int max
+
+int main() {
+    int a = 2147483647;
+    int b = 1;
+    return a + 1;
+}

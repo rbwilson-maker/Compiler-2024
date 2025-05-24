@@ -1,0 +1,12 @@
+//test return 33
+// test complex loop guard
+int main()
+{
+  int x = 42;
+  int count = 0;
+  while (x >> 1 > 1 << 2) {
+    count++;
+    x -= 1;
+  }
+  return count;
+}

@@ -1,0 +1,24 @@
+//test return 1
+int main() {
+  bool isEven;
+  bool is3Factor;
+
+  int i = 6;
+  if (i % 2 == 0) {
+    isEven = true;
+  } else {
+    isEven = false;
+  }
+
+  if (i % 3 == 0) {
+    is3Factor = true;
+  } else {
+    is3Factor = false;
+  }
+
+  if (isEven && is3Factor) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

@@ -1,0 +1,19 @@
+//test return 1
+
+int f() {
+    int blah = 5;
+    int x = 2;
+    blah * x;
+    return 1;
+}
+
+typedef int blah;
+
+int main() {
+    blah * bleh;
+    bleh = NULL;
+    int bluh = 1;
+    int bloh = 2;
+    bluh * bluh;
+    return f();
+}

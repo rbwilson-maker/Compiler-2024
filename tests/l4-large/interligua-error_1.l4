@@ -1,0 +1,8 @@
+//test error
+// invalid array access
+
+int main(){
+    int[] a = alloc_array(int, 5);
+    a(2) = 3;
+    return 0;
+}

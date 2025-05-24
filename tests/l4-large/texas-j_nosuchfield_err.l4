@@ -1,0 +1,15 @@
+//test error
+// attempting to access a nonexistant field
+
+struct s {
+	int a;
+	bool b;
+	struct s* c;
+	int* d;
+	bool* e;
+};
+
+int main() {
+	struct s* st = alloc(struct s);
+	return st->f;
+}

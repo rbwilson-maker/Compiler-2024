@@ -1,0 +1,57 @@
+//test return 4950
+
+struct Node {
+    struct Node *next;
+    int val;
+};
+typedef struct Node Node;
+
+struct List {
+    Node *head;
+    Node *tail;
+};
+typedef struct List List;
+
+List *list_new() {
+    List *result = alloc(List);
+    result->head = NULL;
+    result->tail = NULL;
+    return result;
+}
+
+void list_append(List *list, int x) {
+    Node *node = alloc(Node);
+    node->val = x;
+    node->next = NULL;
+
+    if (list->head == NULL) {
+        list->head = node;
+        list->tail = node;
+    } else {
+        list->tail->next = node;
+        list->tail = node;
+    }
+}
+
+int list_sum(List *list) {
+    int sum = 0;
+    Node *cur = list->head;
+
+    while (cur != NULL) {
+        sum += cur->val;
+        cur = cur->next;
+    }
+
+    return sum;
+}
+
+int main() {
+    List *list = list_new();
+    int size = 100;
+
+    for (int i = 0; i < 100; i++) {
+        list_append(list, i);
+    }
+
+    return list_sum(list);
+}

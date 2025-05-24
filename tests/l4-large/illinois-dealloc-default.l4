@@ -1,0 +1,13 @@
+//test div-by-zero
+// deallocation checks (arith exception)
+
+bool test1() {
+  return *alloc(int*) == NULL;
+}
+
+int main() {
+  test1();
+  int* p = NULL;
+  *p = 1/0;
+  return 0;
+}

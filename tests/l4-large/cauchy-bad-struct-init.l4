@@ -1,0 +1,14 @@
+//test error
+
+struct big_struct {
+    struct small_struct inner;
+};
+
+int main() {
+    struct big_struct* bs = alloc(struct big_struct);
+    return 0;
+}
+
+struct small_struct {
+    int secret_code;
+};

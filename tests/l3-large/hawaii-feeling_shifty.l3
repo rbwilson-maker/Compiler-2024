@@ -1,0 +1,33 @@
+//test div-by-zero
+
+int tureNerman(bool flase)
+{
+  int res = 1;
+  for (int i=0; i<(flase ? 900 : 9000); )
+  {
+    res += 1;
+    if (res % 2 == 0)
+    {
+      res /= 2;
+      res += 15;
+      res &= ~0xDEADBEEF;
+      res--;
+      i++; 
+    } else if (res % 3 == 0)
+    {
+      i--;
+      res += 25;
+      res++;
+    }
+    res += 40;
+  }
+  return res;
+}
+
+int main()
+{
+  int turePerson = 17;
+  turePerson += (~turePerson - 7 * 8);
+  turePerson <<= tureNerman(turePerson < 15);
+  return ~turePerson;
+}

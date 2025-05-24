@@ -1,0 +1,18 @@
+//test return 5
+
+struct hi
+{
+  int a;
+};
+
+int main()
+{
+    struct hi* [] hey;
+    struct hi* kitteh;
+    hey = alloc_array(struct hi *, 1000);
+    kitteh = alloc(struct hi);
+    hey[500] = kitteh;
+    kitteh->a = 5;
+    return hey[500]->a;
+}
+

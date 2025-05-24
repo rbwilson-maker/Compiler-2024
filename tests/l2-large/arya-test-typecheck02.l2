@@ -1,0 +1,8 @@
+//test return 0
+int main(){
+  int a = 0x2333;
+  int b = 1 + a;
+  bool c = a>b;
+  int d = c&&c||c ? a^b : a/b;
+  return 0;
+}

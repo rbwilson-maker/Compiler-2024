@@ -1,0 +1,9 @@
+//test abort
+
+int main() {
+    int a = 5;
+    int b = -5;
+    assert(a == b);
+    int d = a / (a + b);
+    return d;
+}

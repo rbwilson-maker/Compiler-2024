@@ -1,0 +1,22 @@
+//test return 3
+/*
+AC. (returns 3)
+Chain of typedefs all resolve to the same type
+*/
+
+typedef int a;
+typedef a b;
+typedef b c;
+typedef c d;
+
+a r();
+
+d r() {
+  return 3;
+}
+
+b main();
+
+c main() {
+  return r();
+}

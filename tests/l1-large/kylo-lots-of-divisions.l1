@@ -1,0 +1,18 @@
+//test return 40
+
+int main(){
+  int y = 2;
+  int x = 3;
+  int a = x + y;
+  x = x + y;
+  int z = a + y;
+  y = z / y;
+  y = z / y;
+  int l = a / x;
+  int m = 500 / x;
+  int m1 = m / y;
+  int k = 10000;
+  m1 = k / m1;
+  m1 = m1 / a;
+  return m1;
+}

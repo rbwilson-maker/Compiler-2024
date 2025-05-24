@@ -1,0 +1,17 @@
+//test div-by-zero
+//shifts by at least 32
+
+int main ()
+{
+  int x;
+  int y;
+  int z;
+
+  x = 0x10; //2
+  y = 33;
+  z = 1;
+  if (x > z) {
+    return x >> y; //executes this statement
+  }
+  return x >> z; //does not execute this statement
+}

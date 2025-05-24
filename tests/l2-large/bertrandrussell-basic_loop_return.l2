@@ -1,0 +1,10 @@
+//test return 234
+// basic while loop
+
+int main () {
+    int x = 1;
+    while (x<234) {
+        x++;
+    }
+    return x;
+}

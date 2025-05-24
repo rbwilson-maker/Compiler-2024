@@ -1,0 +1,12 @@
+//test div-by-zero
+int foo();
+int may(){
+ 
+ return foo();
+}
+int main(){
+	return 3/may();
+}
+int foo(){
+	return itof(0);
+}

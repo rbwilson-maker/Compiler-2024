@@ -1,0 +1,20 @@
+//test error
+// test mutually recursive functions without a header
+int chicken(int num) {
+    if (num <= 0) {
+        return num;
+    }
+    return egg(chicken(num - 1));
+}
+
+int egg(int num) {
+    if (num <= 0) {
+        return num;
+    }
+    return chicken(egg( num- 7));
+}
+
+int main() {
+    int first = egg(1000);
+    return first;
+}

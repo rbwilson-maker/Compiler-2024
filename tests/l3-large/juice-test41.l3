@@ -1,0 +1,35 @@
+//test abort
+
+typedef int fakeInt;
+
+fakeInt foo(fakeInt x) {
+  x++;
+  return x;
+}
+
+fakeInt bar(fakeInt x) {
+  x = foo(foo(x));
+  return x;
+}
+
+fakeInt yay(fakeInt x, fakeInt y, fakeInt z, bool a, bool b, bool c) {
+  if (a && b && c) {
+    return 1 + yay(x - 1, y - 1, z - 1, x > 0, b && c, b || c);
+  }
+  return 0;
+}
+
+fakeInt main() {
+  fakeInt x = 2;
+  fakeInt y = 3;
+  fakeInt z = 5;
+  while (z > 0) {
+    assert(z > 0);
+    x = bar(x);
+    y = foo(y);
+    z--;
+  }
+  fakeInt w = yay(x, y, z, true, true, true);
+  assert(w < 0);
+  return x;
+}

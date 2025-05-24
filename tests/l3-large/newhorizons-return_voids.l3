@@ -1,0 +1,33 @@
+//test return 0
+
+void nop() {
+}
+
+void not_much(int x) {
+    int y = 7;
+    int z = x * y; 
+    return;
+}
+
+void nop2(){
+    return;
+}
+
+void uses_fpt(int x){
+    fpt g = itof(x);
+    return;
+}
+
+void uses_assert() {
+  assert(true);
+  return;
+}
+
+int main() {
+  nop();
+  not_much(411);
+  nop2();
+  uses_fpt(251);
+  uses_assert();
+  return 0;
+}

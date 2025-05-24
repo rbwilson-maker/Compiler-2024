@@ -1,0 +1,17 @@
+//test typecheck
+/* fun properties of exponentials and logs */
+
+int main () {
+  // These are probably definitely false due to floating point errors
+  // But they are mathematically valid!
+  for (int a = 1; a < 50; a++) {
+    assert(exp2(a) == exp(a * log(2)));
+    assert(log10(a) == log(a) / log (10));
+
+    for (int b = 1; b < 50; b++) {
+      assert(exp(a+b) == exp(a) * exp(b));
+      assert(a == log(exp(a)) && a == exp(log(a)));
+    }
+  }
+  return 0;
+}

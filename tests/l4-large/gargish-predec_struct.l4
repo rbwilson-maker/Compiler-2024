@@ -1,0 +1,14 @@
+//test return 10
+// test struct declared before function, defined after
+
+struct foo;
+
+struct foo {
+    int member;
+};
+
+int main() {
+    struct foo *f = alloc(struct foo);
+    f->member = 5 + 5;
+    return f->member;
+}

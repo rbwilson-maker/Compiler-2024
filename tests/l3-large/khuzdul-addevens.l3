@@ -1,0 +1,19 @@
+//test return 20
+
+int add(int a, int b){
+  return a+b;
+}
+
+int addallevens(int n){
+  int res = 0;
+  for(int i = 0; i<n; i++){
+    if(i%2==0){
+      res = add(res,i);
+    }
+  }
+  return res;
+}
+
+int main(){
+  return addallevens(10);
+}

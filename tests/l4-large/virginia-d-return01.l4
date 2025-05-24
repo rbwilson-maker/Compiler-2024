@@ -1,0 +1,12 @@
+//test return 0
+//empty struct
+struct l {
+};
+
+
+int main()
+{
+	for(int i = 0; i < 50000; i++)
+		struct l* wut = alloc(struct l);
+	return 0;
+}

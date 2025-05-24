@@ -1,0 +1,14 @@
+//test abort
+
+int recursive(int a) {
+  if (a == 0) {
+    assert(false);
+    return 0;
+  } else {
+    return recursive(a / 2);
+  }
+}
+
+int main() {
+  return recursive(2147483647);
+}

@@ -1,0 +1,5 @@
+//test return 100
+int main() {
+  fpt x = itof(10);
+  return ftoi(fmul(x,x));
+}

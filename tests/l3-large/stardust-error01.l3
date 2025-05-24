@@ -1,0 +1,16 @@
+//test error
+//inconsistent type
+
+bool f(int x) 
+{
+	return x == 1;
+}
+
+
+int main()
+{
+	int a = 2;
+	bool b = f(a);
+	int c = f(b);
+	return c;
+}

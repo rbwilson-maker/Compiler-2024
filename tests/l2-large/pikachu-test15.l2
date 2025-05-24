@@ -1,0 +1,17 @@
+//test div-by-zero
+int main()
+{
+  int four = 4;
+  int two = 2;
+  while (true) {
+    int one = two - four;
+    int three = four - two;
+    four = three - one;
+    two = one - three;
+    two << four;
+    four << two;
+    two >> four;
+    four << two;
+  }
+  return 9;
+}

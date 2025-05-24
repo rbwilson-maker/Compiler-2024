@@ -1,0 +1,11 @@
+//test return 0
+
+int main() { 
+    int x = /* -1 */ 0xFFFFFFFF - /* -1 */ -(-0xFFFFFFFF);
+    return 0;
+}
+
+/*
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.
+*/

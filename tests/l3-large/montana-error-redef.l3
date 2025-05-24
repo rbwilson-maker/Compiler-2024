@@ -1,0 +1,12 @@
+//test error
+int n(int z) { return z; }
+
+int n(int z);
+
+int n(int y);
+
+int main() {
+  return n(3);
+}
+
+int n(int a, int b);

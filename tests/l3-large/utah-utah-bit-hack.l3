@@ -1,0 +1,22 @@
+//test return 0
+// Find msb two ways.
+
+int _msb(int foo) {
+    int r = 0;
+    for (; foo > 0; foo >>= 1) {
+        r++;
+    }
+    return r;
+}
+
+int _msb_(int foo) {
+    if (foo == 0)
+        return 0;
+    foo >>= 1;
+    return 1 + _msb_(foo);
+}
+
+int main() {
+    int i = 2173712;
+    return _msb_(i) ==  _msb(i) ? 0 : 1;
+}

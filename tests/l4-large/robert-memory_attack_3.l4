@@ -1,0 +1,10 @@
+//test memerror
+
+int main() {
+	int length = -1;
+	int[] a = alloc_array(int, 1);
+	a[0]      = 0;
+	a[length] = 2;
+	a[1]      = 1111;
+	return 0;
+}

@@ -1,0 +1,17 @@
+//test return 0
+// Tests the elaboration of a[f(x)] += 3.
+
+int f(int *n) {
+  *n += 1;
+  return 0;
+}
+
+int main() {
+  int *n = alloc(int);
+  int[] arr = alloc_array(int, 1);
+
+  arr[f(n)] += 100;
+  assert(arr[0] == 100);
+  assert(*n == 1);
+  return 0;
+}

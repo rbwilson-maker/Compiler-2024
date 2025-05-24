@@ -1,0 +1,17 @@
+//test error
+
+struct biiiiiiiig {
+  int so;
+  int very;
+  int large;
+};
+
+struct bigger {
+  struct biiiiiiiig big;
+};
+
+int main() {
+  struct bigger b;
+  b.big;
+  return 0;
+}

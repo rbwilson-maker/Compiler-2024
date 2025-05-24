@@ -1,0 +1,39 @@
+//test return 8
+typedef bool tf;
+typedef int i;
+
+int gcd(i a, i b)
+{
+  tf eq = a == b;
+  if(eq)
+    return a;
+  tf azero = a == 0;
+  if(azero)
+    return b;
+  tf bzero = b == 0;
+  if(bzero)
+    return a;
+    int check = ~a & 1;
+    if (check != 0){
+        int check1 = b & 1;
+        if (check1 != 0)             
+            return gcd(a >> 1, b);
+        else
+            return gcd(a >> 1, b >> 1) << 1;
+    }
+    int check2 = ~b & 1;
+    if (check2 != 0)
+        return gcd(a, b >> 1);
+ 
+    
+    if (a > b)
+        return gcd((a - b) >> 1, b);
+ 
+    return gcd((b - a) >> 1, a);
+}
+
+int main()
+{
+  return gcd(32, 24);
+}
+

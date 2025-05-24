@@ -1,0 +1,11 @@
+//test error
+
+typedef int foo;
+
+int foo(int a) {
+  return foo(a);
+}
+
+int main() {
+  return 0;
+}

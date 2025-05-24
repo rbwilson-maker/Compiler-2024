@@ -1,0 +1,20 @@
+//test error
+// as a responsible typechecker, you should say NO to dereferencing NULL
+
+int foo(int a) {
+    int x = a;
+    for(int i = 1; i <= 10; i++) {
+        x *= i;
+        if(i > 10) {
+            *NULL;
+        }
+    }   
+}
+
+
+int main() {
+    for(int i = 0; i < 10; i *= 2) {
+        return foo(a);
+    }
+    return -1;
+}

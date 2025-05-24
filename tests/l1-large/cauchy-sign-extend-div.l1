@@ -1,0 +1,6 @@
+//test return -60
+// tests that division is correctly sign extended
+int main() {
+    int a = -300;
+    return a / 5;
+}

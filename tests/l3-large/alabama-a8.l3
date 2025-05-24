@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int f(int x, int y) { 
+  return x + y * x;
+}
+int main() {
+  int x = 2;
+  int y = -1;
+  return (f(f(f(y,x),f(x,y)), f(f(x,y),f(y,x)))) / (f(f(f(x,y),f(y,x)), f(f(y,x),f(x,y)))); 
+}

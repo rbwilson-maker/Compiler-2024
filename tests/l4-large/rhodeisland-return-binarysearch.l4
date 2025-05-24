@@ -1,0 +1,32 @@
+//test return 1
+
+int search(int[] arr, int i, int start, int end) {
+	if(start > end) assert(false);//not found
+	int n = start + (end - start)/2;
+	if(arr[n] == i) return n;
+	else if(arr[n] > i) return search(arr, i, start, n-1);
+	else return search(arr, i, n+1, end);
+}
+
+void insertionsort(int[] arr, int length) {
+	for(int n = 0; n < length; n++) {
+		int i = arr[n];
+		int m;
+		for(m = n - 1; m >= 0 && arr[m] > i; m--) {
+			arr[m+1] = arr[m];
+		}
+		arr[m+1] = i;
+	}
+}
+
+int main() {
+	int[] arr = alloc_array(int, 6);
+	arr[0] = 3;
+	arr[1] = 1;
+	arr[2] = 77;
+	arr[3] = 12;
+	arr[4] = 6;
+	arr[5] = 9;
+	insertionsort(arr, 6);
+	return search(arr, 3, 0, 5);
+}

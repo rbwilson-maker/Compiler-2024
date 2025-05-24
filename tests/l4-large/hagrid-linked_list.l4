@@ -1,0 +1,36 @@
+//test return 5
+//who needs arrays when you have linked lists?
+
+struct linked_list {
+  int data;
+  struct linked_list* next;
+};
+
+struct linked_list* empty () {
+  return NULL;
+}
+
+struct linked_list* add_to_front (struct linked_list* L, int x) {
+  struct linked_list* new_front = alloc(struct linked_list);
+  new_front->data = x;
+  new_front->next = L;
+  return new_front;
+}
+
+int last_element (struct linked_list* L) {
+  assert(L != NULL);
+  if (L -> next == NULL) {
+    return L->data;
+  } else {
+    return last_element (L->next);
+  }
+}
+
+int main() {
+  struct linked_list* L = empty();
+  L = add_to_front (L, 5);
+  L = add_to_front (L, 2);
+  L = add_to_front (L, 7);
+  L = add_to_front (L, 0);
+  return last_element (L);
+}

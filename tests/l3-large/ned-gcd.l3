@@ -1,0 +1,32 @@
+//test return 0
+
+
+int gcd(int a, int b) {
+	if (a == b) return b;
+	if (a == 0) return b;
+	if (b == 0) return a;
+	
+	bool aEven = (a % 2) == 0;
+	bool bEven = (b & 1) == 0;
+	if (aEven && bEven) return 2 * gcd(a >> 1, b / 2);
+	else if (aEven) return gcd(a/2, b);
+	else if (bEven) return gcd(a, b/2);
+	else {
+		int big = a > b ? a : b;
+		int small = big == a ? b : a;
+		return gcd((big - small) / 2, small);
+	}
+	
+}
+
+int main() {
+	bool legit = gcd(2, 2) == 2;
+	legit = legit && (gcd(8, 4) == 4);
+	legit = legit && (gcd(352435342, 2435890) == 2);
+	legit = legit && (gcd(39043425, 234985) == 5);
+	legit = legit && (gcd(390434253, 234985) == 1);
+	legit = legit && (gcd(390434253, 0) == 390434253);
+	legit = legit && (gcd(1337, 191 * 45) == 191);
+	
+	return legit ? 0 : 1;
+}

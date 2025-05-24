@@ -1,0 +1,10 @@
+//test return 0                                                                 
+
+int main(){
+  bool* b = alloc(bool);
+  *b = true;
+  bool* a = b;
+  *a = false;
+  assert(!*b);
+  return 0;
+}

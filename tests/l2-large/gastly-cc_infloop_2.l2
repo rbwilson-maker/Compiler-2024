@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int main() {
+	int i;
+	int a = 100000;
+
+	for (i = 0; i < 1; i *= a) {
+		//simple simple infinite loop
+		a *= i;
+	}
+
+	return a;
+}

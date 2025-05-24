@@ -1,0 +1,17 @@
+//test error
+
+int main() {
+	bool[] A = alloc_array(bool, 5);
+  A[0] = true;
+  A[1] = false;
+  A[2] = true;
+  A[3] = true;
+  A[4] = 5;
+  int count = 0;
+  for (int i = 0; i < 5; i++) {
+    if (A[i]) {
+      count = count + i;
+    }
+  }
+  return count;
+}

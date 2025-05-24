@@ -1,0 +1,19 @@
+//test return 1
+// tests that nothing is evaluated after a return, but that multiple returns
+// are allowed.
+int main() {
+    int x = 5;
+    int y = 42;
+    int z = 0;
+    int a = 42;
+    a /= -a;
+    a /= a;
+    // 42 / 42 == 1 -> -1 / -1 == 1. And make sure comments don't matter while.
+    return a;
+    
+    int b = 7;
+    int c = 8;
+    int d = 9;
+
+    return d / (b - b);
+}

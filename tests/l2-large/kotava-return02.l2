@@ -1,0 +1,16 @@
+//test return 3
+
+int main ()
+{
+  int x;
+  int y = 0;
+
+  x = 6;
+  for (x = 0; x < 3; x = x+1) {
+  	if (x == 6)
+  	  return x / y; // should never enter
+  	else
+      y += x;
+  }
+  return y;
+}

@@ -1,0 +1,8 @@
+ //test typecheck
+
+   //uses termite.ho header file which cannot be implemented
+
+   int main()
+   {
+             return termite(3,3);
+   }

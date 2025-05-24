@@ -1,0 +1,13 @@
+//test error
+
+// Tests using variable not in current scope
+int main(){
+    int a = 0;
+    for (a = 0; a < 999; a++) {
+        {int b = 1;}
+        {int c = 2;}
+        {int d = 3;}
+        return a > 3 ? true : a == b;
+    }
+    return a;
+}

@@ -1,0 +1,11 @@
+//test error
+/// pointers of different types are different
+
+int main() {
+  int* x = alloc(int);
+  x = 1;
+  bool* y = alloc(bool);
+  y = true;
+  assert(x == y);
+  return 0;
+}

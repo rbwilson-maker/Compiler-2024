@@ -1,0 +1,12 @@
+//test return 2
+//function computes the fixed point for f(x) = ax^2+bx+c
+
+int quadratic_map(int a, int b, int c, int x) { return a * x * x + b * x + c; }
+int fixedPoint(int aa, int bb, int cc);
+int fixedPoint(int a, int b, int c) {
+  int x = 1;
+  while (x != quadratic_map(a, b, c, x)) x = quadratic_map(a, b, c, x);
+  return x;
+}
+
+int main() { return fixedPoint(1, -3, 4); }

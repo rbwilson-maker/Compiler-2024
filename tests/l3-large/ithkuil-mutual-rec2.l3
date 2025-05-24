@@ -1,0 +1,15 @@
+//test return 5
+
+typedef int hello;
+
+int func2(int x) {
+  return x+3;
+}
+
+int func1(int x) {
+  return func2(x+2);
+}
+
+int main () {
+  return func1(0);
+}

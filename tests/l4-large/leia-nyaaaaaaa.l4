@@ -1,0 +1,17 @@
+//test return 13
+
+int id(int x, int* nya) {
+    *nya += 1;
+    return x;
+}
+
+int main() {
+    int* n = alloc(int);
+    int[] arr = alloc_array(int, id(5, n));
+    arr[id(3, n)] = id(id(4, n) << id(2, n), n);
+    // Notice only one of the branches of the ternary should be evaluated
+    arr[id(2, n)] = id(1 + (id(3, n) > id(2, n) ? id(1, n) : id(2, n)), n);
+    arr[id(1, n)] = 4 / (id (3, n));
+    arr[id(0, n)] += 1;
+    return *n;
+}

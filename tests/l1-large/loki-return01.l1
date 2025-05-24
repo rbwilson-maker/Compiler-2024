@@ -1,0 +1,13 @@
+//test return 27
+
+int main() {
+  int a;
+  int b;
+  int c;
+
+  a = 10 * 2;
+  b = 20 % 3;
+  c = 15 / 3;
+
+  return a + b + c;
+}

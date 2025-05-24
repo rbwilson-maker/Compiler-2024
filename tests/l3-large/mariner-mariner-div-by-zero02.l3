@@ -1,0 +1,16 @@
+//test div-by-zero
+//tests typedef and fdefn
+
+typedef int date;
+
+date dividedate (date d1, date d2) {
+	date d = d1 / d2;
+	return d;
+}
+
+int main() {
+	date x = 1;
+	date y = 0;
+	date z = dividedate(x, y);
+	return z;
+}

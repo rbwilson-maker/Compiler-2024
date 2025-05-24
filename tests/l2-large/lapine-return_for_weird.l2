@@ -1,0 +1,16 @@
+//test return 13527
+
+int main() {
+  int CYCLES = 27;
+
+  int x = 0;
+  int y = CYCLES;
+
+  for (int i = 0; i < CYCLES; i++) {
+    for (int j = 1; j < CYCLES; j *= 2)
+      x++;
+    y << 1;
+  }
+
+  return x < y ? 0 : 100 * x + y;
+}

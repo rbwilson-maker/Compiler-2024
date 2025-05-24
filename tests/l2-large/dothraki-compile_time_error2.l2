@@ -1,0 +1,12 @@
+//test error
+
+int main() {
+  int b = 3;
+  
+  while (b > 0) {
+    x = b + 1;
+    b -= 1;
+  }
+
+  return x;
+}

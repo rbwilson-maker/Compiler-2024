@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main()
+{
+  int x = 0;
+
+  if (5 % x == 0) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

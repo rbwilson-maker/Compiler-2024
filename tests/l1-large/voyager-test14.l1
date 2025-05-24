@@ -1,0 +1,10 @@
+//test return -4
+
+// test space in negate operation
+
+int main() {
+    int a = - 9;
+    int b = - a;
+    int c = -b;
+    return c / 2;
+}

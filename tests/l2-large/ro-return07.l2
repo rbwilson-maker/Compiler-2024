@@ -1,0 +1,21 @@
+//test return 6
+// If chaining and else
+
+int main() {
+  int test = 11;
+
+  if (test > 1)
+  if (test > 2)
+  if (test > 3)
+  if (test > 4)
+  if (test > 5)
+  if (test > 6)
+  if (test > 7)
+  if (test > 8)
+  if (test > 9)
+  if (test > 10)
+  if (test > 11) return 5;
+  else return 6;
+
+  return 0;
+}

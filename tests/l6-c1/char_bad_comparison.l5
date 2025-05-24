@@ -1,0 +1,5 @@
+//test abort
+int main() {
+    assert('\b' < '\a');
+    return 0;
+}

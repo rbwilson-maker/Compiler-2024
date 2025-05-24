@@ -1,0 +1,13 @@
+//test error
+
+typedef int foo;
+
+struct foo {
+    foo int;
+}
+
+int main () {
+    int * z = NULL;
+    *z = 1 / 0;
+    return 2;
+}

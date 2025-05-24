@@ -1,0 +1,19 @@
+//test error
+// Tests that a void function cannot "return" a void type!
+// lol we actually fail this
+
+void nada () {
+    int x = 3;
+    int y = 4;
+    int a = x + y;
+}
+
+void returns_void () {
+    return nada();
+}
+
+int main () {
+    int y = 3;
+    returns_void();
+    return y;
+}

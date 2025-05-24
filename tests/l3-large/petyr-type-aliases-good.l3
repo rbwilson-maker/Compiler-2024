@@ -1,0 +1,8 @@
+//test typecheck
+
+// t39 is equivalent to int so this should typecheck, compile, run and return 0.
+
+int main () {
+    t39 x = 0;
+    return x;
+}

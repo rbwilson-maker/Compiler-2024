@@ -1,0 +1,13 @@
+//test return 0
+
+int main() {
+  while(false){
+    int h = 0;
+  }
+  int a = 1;
+  int b = 0;
+  int c = b-a;
+
+  return a+c;
+}
+

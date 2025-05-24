@@ -1,0 +1,18 @@
+//test return 0
+
+int main()
+{
+    int x = 0;
+    int y = 0;
+    int z = 0;
+
+    if(x == 0)              //true
+        if(y == 0)          //true
+            if(z == 1)      //false
+                return 15;
+            else {}
+        else
+            return 411;
+
+    return x;               //here - return 0
+}

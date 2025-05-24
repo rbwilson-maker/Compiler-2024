@@ -1,0 +1,12 @@
+//test div-by-zero
+//all these typedefs
+
+typedef int t1;
+typedef t1 t2;
+typedef t2 t3;
+typedef t2 t4;
+typedef t3 t5;
+
+t5 main () {
+  return (1/0);
+}

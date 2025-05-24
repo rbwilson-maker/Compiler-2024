@@ -1,0 +1,109 @@
+//test return 0
+
+struct z {
+  int x;
+};
+
+struct y {
+  struct z z;
+};
+
+struct x {
+  struct y y;
+};
+
+struct w {
+  struct x x;
+};
+
+struct v {
+  struct w w;
+};
+
+struct u {
+  struct v v;
+};
+
+struct t {
+  struct u u;
+};
+
+struct s {
+  struct t t;
+};
+
+struct r {
+  struct s s;
+};
+
+struct q {
+  struct r r;
+};
+
+struct p {
+  struct q q;
+};
+
+struct o {
+  struct p p;
+};
+
+struct n {
+  struct o o;
+};
+
+struct m {
+  struct n n;
+};
+
+struct l {
+  struct m m;
+};
+
+struct k {
+  struct l l;
+};
+
+struct j {
+  struct k k;
+};
+
+struct i {
+  struct j j;
+};
+
+struct h {
+  struct i i;
+};
+
+struct g {
+  struct h h;
+};
+
+struct f {
+  struct g g;
+};
+
+struct e {
+  struct f f;
+};
+
+struct d {
+  struct e e;
+};
+
+struct c {
+  struct d d;
+};
+
+struct b {
+  struct c c;
+};
+
+struct a {
+  struct b b;
+};
+
+int main() {
+  return 0;
+}

@@ -1,0 +1,15 @@
+//test return 0
+// test the non-context free parsing
+
+typedef bool ty;
+
+void f(bool *x) {
+  *x = true;
+}
+
+int main() {
+  ty * ret = alloc(bool);
+  *ret = false;
+  f(ret);
+  return *ret ? 0 : 1;
+}

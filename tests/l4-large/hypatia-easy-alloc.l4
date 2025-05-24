@@ -1,0 +1,8 @@
+//test return 0
+
+int main() {
+  int * a = alloc(int);
+  assert(*a == 0);
+  
+  return *a;
+}

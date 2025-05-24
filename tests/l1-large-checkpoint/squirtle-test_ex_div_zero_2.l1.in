@@ -1,0 +1,129 @@
+//target 4
+[
+ {
+  "Uses": [], 
+  "Defines": [ "%t34" ],
+  "Live_out": [ "%t34" ],
+  "Move": false,
+  "Line": 0
+ },
+ {
+  "Uses": [ "%t34" ], 
+  "Defines": [ "%t37" ],
+  "Live_out": [ "%t37" ],
+  "Move": false,
+  "Line": 1
+ },
+ {
+  "Uses": [ "%t37" ], 
+  "Defines": [ "%t40" ],
+  "Live_out": [ "%t40" ],
+  "Move": false,
+  "Line": 2
+ },
+ {
+  "Uses": [ "%t40" ], 
+  "Defines": [ "%t43" ],
+  "Live_out": [ "%t43" ],
+  "Move": false,
+  "Line": 3
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%edx" ],
+  "Live_out": [ "%t43" ],
+  "Move": true,
+  "Line": 4
+ },
+ {
+  "Uses": [ "%t43" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t43" ],
+  "Move": true,
+  "Line": 5
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%eax" ],
+  "Live_out": [ "%t43" ],
+  "Move": false,
+  "Line": 6
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t47" ],
+  "Live_out": [ "%t47", "%t43" ],
+  "Move": true,
+  "Line": 7
+ },
+ {
+  "Uses": [ "%t43", "%t47" ], 
+  "Defines": [ "%t48" ],
+  "Live_out": [ "%t48" ],
+  "Move": false,
+  "Line": 8
+ },
+ {
+  "Uses": [ "%t48" ], 
+  "Defines": [ "%t52" ],
+  "Live_out": [ "%t52", "%t48" ],
+  "Move": false,
+  "Line": 9
+ },
+ {
+  "Uses": [ "%t48", "%t52" ], 
+  "Defines": [ "%t53" ],
+  "Live_out": [ "%t53" ],
+  "Move": false,
+  "Line": 10
+ },
+ {
+  "Uses": [ "%t53" ], 
+  "Defines": [ "%t56" ],
+  "Live_out": [ "%t56" ],
+  "Move": false,
+  "Line": 11
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%edx" ],
+  "Live_out": [ "%t56" ],
+  "Move": true,
+  "Line": 12
+ },
+ {
+  "Uses": [ "%t56" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": true,
+  "Line": 13
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": false,
+  "Line": 14
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t59" ],
+  "Live_out": [ "%t59" ],
+  "Move": true,
+  "Line": 15
+ },
+ {
+  "Uses": [ "%t59" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": true,
+  "Line": 16
+ },
+ {
+  "Uses": [], 
+  "Defines": [],
+  "Live_out": [],
+  "Move": false,
+  "Line": 17
+ }
+]

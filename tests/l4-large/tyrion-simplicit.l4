@@ -1,0 +1,13 @@
+//test return 0
+
+bool isNull(struct s* dude) {
+    if (dude == NULL) {
+        return true;
+    } else {
+        return dude != NULL;
+    }
+}
+
+int main() {
+    return isNull(NULL) ? 0 : 1;
+}

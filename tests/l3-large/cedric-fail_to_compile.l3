@@ -1,0 +1,7 @@
+//test error
+int eq(int x, bool y) {
+  return (x == y)
+}
+int main() {
+  return eq(0, true);
+}

@@ -1,0 +1,30 @@
+//test return 7
+
+int kedane(int[] a, int n) {
+    int cur_max = -1000000;
+    int end_max = 0;
+    for (int i = 0; i < n; i++) {
+        end_max = end_max + a[i];
+        if (cur_max < end_max) {
+            cur_max = end_max;
+        }
+        if (end_max < 0) {
+            end_max = 0;
+        }
+    }
+    return cur_max;
+}
+
+int main() {
+    int []a = alloc_array(int, 8);
+    a[0] = -2;
+    a[1] = -3;
+    a[2] = 4;
+    a[3] = -1;
+    a[4] = -2;
+    a[5] = 1;
+    a[6] = 5;
+    a[7] = -3;
+    int max_sum = kedane(a, 8);
+    return max_sum;
+}

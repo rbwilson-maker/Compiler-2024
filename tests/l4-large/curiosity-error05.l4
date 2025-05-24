@@ -1,0 +1,15 @@
+//test error
+//student defined more than once
+
+typedef struct student_header student;
+struct student_header{
+  int id;
+};
+
+typedef int student;
+
+int main () {
+	bool x;
+	x = true;
+	return 0;
+}

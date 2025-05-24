@@ -1,0 +1,17 @@
+//test memerror
+
+int main() {
+  bool[] b = alloc_array(bool, 10);
+
+  for (int i = 0; i < 10; i++) {
+    b[i] = i % 2 == 0;
+  }
+
+  for (int i = 0; i < 10; i++) {
+    if (b[i]) {
+      return b[i - 2] ? 0 : 1;
+    }
+  }
+
+  return -1;
+}

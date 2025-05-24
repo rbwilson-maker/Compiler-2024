@@ -1,0 +1,14 @@
+//test return 1
+
+int main();
+
+bool test(bool test, int x, int y){
+    bool main = x < y;
+    bool main2 = y < x;
+    return (test ? main : main2);
+}
+
+int main(){
+    int main = 2;
+    return (test(true,main,main*main-main) ? main : main / 2);
+}

@@ -1,0 +1,10 @@
+//test return 0
+
+int helper(bool callmain) {
+    if (callmain) return main();
+    return 0;
+}
+
+int main() {
+    return helper(false);
+}

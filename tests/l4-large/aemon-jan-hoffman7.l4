@@ -1,0 +1,30 @@
+//test return 1564778624
+
+typedef struct hoffman jan;
+typedef struct jan hoffman;
+
+struct jan {
+    struct hoffman *jan;
+    int hoffman;
+};
+
+struct hoffman {
+    int *jan;
+    int hoffman;
+};
+
+int main() {
+    hoffman *j = alloc(struct jan);
+    j->jan = alloc(jan);
+    j->jan->jan = alloc(int);
+    j->jan->hoffman = 0;
+    *j->jan->jan -= 1;
+    j->hoffman = j->jan->hoffman + *j->jan->jan;
+    int count = 0;
+    for (int i = 0; i < 180000000; i++) {
+        (*(((*j).jan)->jan))++;
+        count += *((*((*j).jan)).jan) + j->hoffman + (*j).jan->hoffman;
+    }
+    return count;
+}
+

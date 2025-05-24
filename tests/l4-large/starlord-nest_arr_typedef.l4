@@ -1,0 +1,49 @@
+//test return 321
+
+typedef int one;
+typedef one[] two;
+typedef two[] three;
+typedef three[] four;
+typedef four[] five;
+typedef five[] six;
+typedef six[] seven;
+typedef seven[] eight;
+typedef eight[] nine;
+typedef nine[] ten;
+typedef ten[] eleven;
+typedef eleven[] twelve;
+typedef twelve[] thirteen;
+typedef thirteen[] fourteen;
+typedef fourteen[] fifteen;
+typedef fifteen[] sixteen;
+typedef sixteen[] seventeen;
+typedef seventeen[] eighteen;
+typedef eighteen[] nineteen;
+typedef nineteen[] twenty;
+
+
+int main () {
+  twenty[] arr;
+  arr = alloc_array(twenty, 1);
+  arr[0] = alloc_array(nineteen, 1);
+  arr[0][0] = alloc_array(eighteen, 1);
+  arr[0][0][0] = alloc_array(seventeen, 1);
+  arr[0][0][0][0] = alloc_array(sixteen, 1);
+  arr[0][0][0][0][0] = alloc_array(fifteen, 1);
+  arr[0][0][0][0][0][0] = alloc_array(fourteen, 1);
+  arr[0][0][0][0][0][0][0] = alloc_array(thirteen, 1);
+  arr[0][0][0][0][0][0][0][0] = alloc_array(twelve, 1);
+  arr[0][0][0][0][0][0][0][0][0] = alloc_array(eleven, 1);
+  arr[0][0][0][0][0][0][0][0][0][0] = alloc_array(ten, 1);
+  arr[0][0][0][0][0][0][0][0][0][0][0] = alloc_array(nine, 1);
+  arr[0][0][0][0][0][0][0][0][0][0][0][0] = alloc_array(eight, 1);
+  arr[0][0][0][0][0][0][0][0][0][0][0][0][0] = alloc_array(seven, 1);
+  arr[0][0][0][0][0][0][0][0][0][0][0][0][0][0] = alloc_array(six, 1);
+  arr[0][0][0][0][0][0][0][0][0][0][0][0][0][0][0] = alloc_array(five, 1);
+  arr[0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0] = alloc_array(four, 1);
+  arr[0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0] = alloc_array(three, 1);
+  arr[0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0] = alloc_array(two, 1);
+  arr[0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0] = alloc_array(one, 1);
+  arr[0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0] = 321;
+  return arr[0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0][0];
+}

@@ -1,0 +1,24 @@
+//test return 4574
+//tests correct handling of 4/8 byte quantities
+int foo(int x){
+    return ~x;
+}
+int main(){
+    int[] a=alloc_array(int,100);
+    for(int i=0;i<100;i++)
+        a[i]=i;
+    a[10]/=10;
+    a[20]*=10;
+    a[30]+=10;
+    a[40]-=10;
+    a[50]=foo(a[50]);
+    a[60]|=10;
+    a[70]&=10;
+    a[80]^=10;
+    int t=0;
+    for(int i=0;i<100;i++){
+        t+=a[i];
+        a[i]=t;
+    }
+    return a[95];
+}

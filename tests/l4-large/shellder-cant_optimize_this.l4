@@ -1,0 +1,9 @@
+//test return 68272350
+int main() {
+    int *x = alloc(int);
+
+    for (int i = 0; i < 0x411C0DE; i++)
+        *x += 1;
+
+    return *x;
+}

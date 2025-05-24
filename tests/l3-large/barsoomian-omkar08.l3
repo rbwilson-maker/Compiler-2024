@@ -1,0 +1,18 @@
+//test typecheck
+
+void add_1(int_arr array) {
+    for(int i = 0; i < array_len(array); i++) {
+        int curr = array_at(array, i);
+        curr += 1;
+        array_set(array, i, curr);
+    }
+}
+
+int main() {
+    int_arr my_array = make_int_array(20);
+    for(int i = 0; i < array_len(my_array); i++) {
+        array_set(my_array, i, i);
+    }
+    add_1(my_array);
+    return array_at(my_array, 4);
+}

@@ -1,0 +1,20 @@
+//test div-by-zero
+// one of the bits is zero
+
+typedef struct threeBitBinary bin;
+struct threeBitBinary {
+    int foursplace;
+    int twosplace;
+    int onesplace;
+};
+
+int main() {
+    int n = 6;
+
+    bin* b = alloc(bin);
+    b->onesplace = n % 2;
+    b->twosplace = (n / 2) % 2;
+    b->foursplace = (n / 4) % 2;
+
+    return (1/(b->onesplace) + 1/(b->twosplace) + 1/(b->foursplace));
+}

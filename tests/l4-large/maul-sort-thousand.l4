@@ -1,0 +1,34 @@
+//test return 0
+
+// taken from 15122 s15 lab-gsort
+void swap(int[] A, int i, int j)
+{
+  int tmp = A[i];
+  A[i] = A[j];
+  A[j] = tmp;
+}
+
+void sort(int[] A, int n)
+{
+  for (int i = 0; i < n; i++) {
+    int min = i;
+    for (int j = i + 1; j < n; j++) {
+      if (A[j] < A[min]) {
+        min = j;
+      }
+    }
+    swap(A, i, min);
+  }
+}
+
+int main() {
+  int[] A = alloc_array(int, 1000);
+  for (int i = 0; i < 1000; i++) {
+    A[i] = 1000 - i - 1;
+  }
+  sort(A, 1000);
+  for (int i = 0; i < 1000; i++) {
+    assert(A[i] == i);
+  }
+  return 0;
+}

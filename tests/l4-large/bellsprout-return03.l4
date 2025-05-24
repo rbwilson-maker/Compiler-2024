@@ -1,0 +1,30 @@
+//test return 3
+
+struct data;
+typedef struct data data;
+
+struct data {
+  data* data;
+};
+
+data* create_data_p() {
+  return alloc(data);
+}
+
+data** create_data_pp() {
+  return alloc(data*);
+}
+
+int main() {
+  data* a = create_data_p();
+  data** b = create_data_pp();
+  *b = a;
+  data* c = create_data_p();
+  a->data = c;
+  if ((*b)->data == c) {
+    return 3;
+  } else if ((*b)->data == NULL) {
+    return 2;
+  }
+  return 0;
+}

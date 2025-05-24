@@ -1,0 +1,12 @@
+//test typecheck
+
+void whatever() {
+  assert(false);
+  return;
+}
+
+int main() {
+  whatever();
+  fail();
+  return 0;
+}

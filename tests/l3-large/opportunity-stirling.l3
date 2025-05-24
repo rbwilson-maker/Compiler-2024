@@ -1,0 +1,14 @@
+//test return 980
+//computes stirling numbers of the second kind
+
+int stir(int n, int k) {
+	if (n==0 && k == 0) return 1;
+	if (n==0 || k==0) return 0;
+
+	return stir(n-1, k-1) + k * stir(n-1, k);
+}
+
+int main(){
+
+	return stir(7,5) + stir(6,3) + stir(10,8);
+}

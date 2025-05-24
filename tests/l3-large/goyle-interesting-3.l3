@@ -1,0 +1,37 @@
+//test return 0
+
+// Simulate a DFA that accepts if the number of ones in the input
+// is congruent to 2 mod 3.
+
+bool state1(int input, int idx);
+bool state2(int input, int idx);
+
+bool state0(int input, int idx) {
+  if (idx < 0) return false;
+  if ((input & 1 << idx) > 0)
+    return state1(input, idx-1);
+  else
+    return state0(input, idx-1);
+}
+
+bool state1(int input, int idx) {
+  if (idx < 0) return false;
+  if ((input & 1 << idx) > 0)
+    return state2(input, idx-1);
+  else
+    return state1(input, idx-1);
+}
+
+bool state2(int input, int idx) {
+  if (idx < 0) return true;
+  if ((input & 1 << idx) > 0)
+    return state0(input, idx-1);
+  else
+    return state2(input, idx-1);
+}
+
+int main() {
+  assert(state0(0xF3A14D62, 31) == false);
+  assert(state0(0xF3A14D67, 31) == true);
+  return 0;
+}

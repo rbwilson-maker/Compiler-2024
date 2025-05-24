@@ -1,0 +1,16 @@
+//test return 0
+
+int main() {
+  char[] alphabet = alloc_array(char, 26);
+  for (int i = 65; i < 91; i++) {
+    alphabet[i-65] = char_chr(i);
+  }
+  for (int i = 0; i < 25; i++) {
+    assert(alphabet[i] < alphabet[i+1]);
+    assert(alphabet[i] <= alphabet[i+1]);
+    assert(alphabet[i+1] > alphabet[i]);
+    assert(alphabet[i+1] >= alphabet[i]);
+    assert(alphabet[i+1] != alphabet[i]);
+  }
+  return 0;
+}

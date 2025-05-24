@@ -1,0 +1,6 @@
+int pure (int x);
+int bind (int x, int fun);
+
+int map (int fun, int x);
+int join (int doubleboxed);
+

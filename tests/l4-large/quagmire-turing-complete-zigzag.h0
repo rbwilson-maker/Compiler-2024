@@ -1,0 +1,10 @@
+// Subset of the conio print library
+
+//struct string;
+
+//void print(string s);
+void printint(int i);
+//void println(string s);
+
+// Function that is easy to implement if we had strings
+void printbool_arr(bool[] arr);

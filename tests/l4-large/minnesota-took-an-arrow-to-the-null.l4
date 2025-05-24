@@ -1,0 +1,17 @@
+//test memerror
+
+struct haha {
+  int data;
+};
+
+struct haha* Luke_I_am_your_father() {
+  struct haha* NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO = NULL;
+  return NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO;
+}
+
+int main() {
+  struct haha* p = alloc(struct haha);
+  p->data = 12345;
+  p = Luke_I_am_your_father();
+  return p->data;
+}

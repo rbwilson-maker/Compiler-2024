@@ -1,0 +1,7 @@
+//test memerror
+
+int main() {
+    int[] william_m_buttlicker = alloc_array(int, 3);
+    int x = william_m_buttlicker[3];
+    return 0;
+}

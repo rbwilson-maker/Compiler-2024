@@ -1,0 +1,10 @@
+//test error
+// x+= 6 is not an expression
+
+int main()
+{
+  int x;
+  x = 5;
+
+  return x+= 6;
+}

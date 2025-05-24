@@ -1,0 +1,11 @@
+void noop();
+int add(int a, int b); 
+int sub(int a, int b); 
+int mult(int a, int b);
+int div(int a, int b); 
+int mod(int a, int b); 
+bool and(bool a, bool b);
+bool or(bool a, bool b); 
+bool xor(int a, int b);
+bool equal(int a, int b);
+bool not(bool a);

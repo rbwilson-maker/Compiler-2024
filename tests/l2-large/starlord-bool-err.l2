@@ -1,0 +1,20 @@
+//test div-by-zero
+
+int main ()
+{
+  int i = 0;
+  int j = 0;
+  bool out = false;
+  while(j < 2) {
+    bool x = i % 2 == 1;
+    bool y = j % 2 == 1;
+    out = out || (x && y);
+    i++;
+    if (i >= 2) {
+      i = 0;
+      j += 1;
+    }
+  }
+  int k = (out) ? (1 / 0) : 1;
+  return k;
+}

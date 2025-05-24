@@ -1,0 +1,22 @@
+//test typecheck
+//test infloop
+
+int recursive(int a) {
+  int aprime = 0;
+  for (int i = 0; aprime < a; i++) {
+    aprime++;
+  }
+
+  if (a < aprime) {
+    for (int i = 0; aprime > a; i++) {
+      aprime--;
+    }
+  }
+  recursive(aprime - 1);
+  return 0;
+}
+
+int main() {
+  recursive(5 + 2);
+  return 0;
+}

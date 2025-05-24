@@ -1,0 +1,14 @@
+//test abort
+
+void count_down(int n) {
+  while (n > 0) {
+    print_int(n);
+    n--;
+  }
+  assert(n > 0);
+}
+
+int main() {
+  count_down(10);
+  return 0;
+}

@@ -1,0 +1,17 @@
+//test return 42
+// test that unit array works
+
+struct unit {
+};
+typedef struct unit unit_t;
+
+int main() {
+  unit_t[] arr1 = alloc_array(unit_t, 1000);
+  unit_t[] arr2 = alloc_array(unit_t, 1000);
+
+  if (arr1 == arr2) {
+    return 0;
+  }
+
+  return 42;
+}

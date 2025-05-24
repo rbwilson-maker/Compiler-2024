@@ -1,0 +1,21 @@
+//test abort
+
+struct ew {};
+
+struct eww {};
+
+struct dah {};
+
+struct doo {
+    struct dah _;
+};
+
+bool dadadoo(struct dah* dadada) {
+    return dadada != NULL;
+}
+
+int main() {
+    struct dah **dah = alloc(struct dah*);
+    assert(dadadoo(*dah));
+    return 0;
+}

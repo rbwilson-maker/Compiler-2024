@@ -1,0 +1,6 @@
+//test return 0
+//examine jump target arrangement for nested conditionals
+int main()
+{
+    return true ? (false ? (true ? (false ? 1 : 0) : (false ? 1 : 0)) : (true ? (false ? 1 : 0) : (false ? 1 : 0))) : (false ? (true ? (false ? 1 : 0) : (false ? 1 : 0)) : (true ? (false ? 1 : 0) : (false ? 1 : 0)));
+}

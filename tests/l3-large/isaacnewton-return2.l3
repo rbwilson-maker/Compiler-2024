@@ -1,0 +1,12 @@
+//test return 2
+
+int sum(int a, int b) {
+    int val = a + b; 
+    return val; 
+}
+
+int main() {
+    int a = 1; 
+    int b = 1; 
+    return sum(a, b); 
+}

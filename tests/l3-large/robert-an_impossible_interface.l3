@@ -1,0 +1,19 @@
+//test error
+
+typedef int turing_machine
+typedef int program
+
+void run(turing_machine T, turing_machine I) {
+	// Uhh uhh uhh
+
+
+	// Here we go!
+	return T ^ I;
+} 
+
+void main () {
+	turing_machine infloop = 1; // Why not?
+	program empty = 0;
+
+	return run(infloop, empty);
+}

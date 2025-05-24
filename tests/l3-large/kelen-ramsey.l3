@@ -1,0 +1,27 @@
+//test typecheck
+
+int main() {
+   // check most of known values for ramsey's theorem
+   for (int i = 1; i <= 100; i++) {
+      assert(ramsey(1, i) == 1);
+      assert(ramsey(2, i) == i);
+   }
+   assert(ramsey(3, 3) == 6);
+   assert(ramsey(3, 4) == 9);
+   assert(ramsey(3, 5) == 14);
+   assert(ramsey(3, 6) == 18);
+   assert(ramsey(3, 7) == 23);
+   assert(ramsey(3, 8) == 28);
+   assert(ramsey(3, 9) == 36);
+   assert(ramsey(4, 4) == 18);
+   assert(ramsey(4, 5) == 25);
+   assert(ramsey(5, 5) >= 43 && ramsey(5, 5) <= 48);
+
+   // check the inequality hold for (r, s) with r and s <= 100
+   for (int r = 1; r <= 100; r++) {
+      for (int s = r; s <= 100; s++) {
+         assert(ramsey(r, s) <= ramsey(r-1, s) + ramsey(r, s-1));
+      }
+   }
+   return 0;
+}

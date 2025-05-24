@@ -1,0 +1,20 @@
+//test div-by-zero
+
+int main(){
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+    a = 3;
+    b = a + 3;
+    c = 4 - 589;
+    d = 12; // what's up
+    e = c / (d - 12);
+    c += d;
+    a *= a;
+    a = a*5;
+
+    return e+a;
+
+}

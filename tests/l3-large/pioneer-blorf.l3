@@ -1,0 +1,16 @@
+//test typecheck
+//blorf? blorf
+
+void blorf(int blorf)
+{
+  blorf = 5;
+  blorf += 12;
+  blorf %= 6;
+}
+
+int main()
+{
+  blorf(2);
+  blorf(19);
+  return bolrf(69);
+}

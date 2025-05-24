@@ -1,0 +1,11 @@
+//test return 100
+
+int foo(int a, int b) {
+  return a * a + b * b;
+}
+
+typedef int a;
+
+a main() {
+  return foo(6, 8);
+}

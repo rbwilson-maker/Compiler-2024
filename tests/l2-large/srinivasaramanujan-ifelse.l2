@@ -1,0 +1,13 @@
+//test return 3
+
+int main() {
+    int x = 0;
+
+    if (x > 5) {
+        x = x + 1;
+    } else {
+        int y = 3;
+        x = x + y;
+    }
+    return x;
+}

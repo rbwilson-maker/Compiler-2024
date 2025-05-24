@@ -1,0 +1,14 @@
+//test return 671088640
+
+int main ()
+{
+  int origin = 20;
+  int reverse = 0;
+
+  for (int i = 0; i < 32; i++) {
+    if ((origin & (1 << i)) != 0)
+      reverse += 1 << (31 - i);
+  }
+
+  return reverse;
+}

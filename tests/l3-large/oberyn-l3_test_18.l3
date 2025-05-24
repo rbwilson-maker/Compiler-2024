@@ -1,0 +1,7 @@
+//test typecheck
+
+// tests redecl of header file function after main
+
+int main() { return 0; }
+
+int canttouchthis();

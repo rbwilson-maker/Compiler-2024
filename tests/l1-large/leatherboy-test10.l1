@@ -1,0 +1,11 @@
+//test error
+
+int main() { 
+    int t1 = 10/5;
+    int t2 = -32*t1 + -2+1+2;
+    int t3 = t2 - 4*t1 + t1*t2;
+    int t5 = (t1 * t3) - t2 - t3+ 65;
+    int t6 = t1*t2-t3+"dds";
+    int t7 = 3*t5 *-4 +t2 -4*t5;
+    return t3*2-t7 + 4*t2;
+}

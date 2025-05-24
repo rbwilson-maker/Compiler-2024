@@ -1,0 +1,16 @@
+//test return 3010349
+
+// because these are far better than fibonacci numbers
+
+int lucas(int n) {
+    if (n == 0) return 2;
+    if (n == 1) return 1;
+    return lucas(n - 1) + lucas(n - 2);
+}
+
+int main() {
+    assert(lucas(0) == 2);
+    assert(lucas(8) == 47);
+    assert(lucas(20) == 15127);
+    return lucas(31);
+}

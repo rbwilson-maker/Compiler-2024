@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+// Overflow into other bits of contiguous memory?
+
+int main(){
+    dub[] tester = alloc_array(dub, 3);
+    tester[1] = itod(1);
+    while (tester[0] == NULL && tester[2] == NULL){
+        tester[1] = dmul(tester[1], itod(3));
+    }
+    return 0;
+}

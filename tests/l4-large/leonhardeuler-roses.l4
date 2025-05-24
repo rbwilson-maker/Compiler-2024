@@ -1,0 +1,77 @@
+//test return 9864100
+typedef struct rose rose;
+
+struct rose {
+    int data;
+    int num_branches;
+    rose*[] branches;
+};
+
+rose *leaf(int data) {
+    rose *r = alloc(rose);
+    r->data = data;
+    return r;
+}
+
+rose *node(int data, int num_branches, rose*[] branches) {
+    rose *r = alloc(rose);
+    r->data = data;
+    r->num_branches = num_branches;
+    r->branches = branches;
+    return r;
+}
+
+int size(rose *r) {
+    int s = 1;
+    for (int i = 0; i < r->num_branches; i++) {
+        s += size(r->branches[i]);
+    }
+    return s;
+}
+
+void preorder_helper(rose *r, int[] res, int *idx) {
+    res[*idx] = r->data;
+    (*idx)++;
+    for (int i = 0; i < r->num_branches; i++) {
+        preorder_helper(r->branches[i], res, idx);
+    }
+}
+
+int[] preorder(rose *r, int* length) {
+    *length = size(r);
+    int[] res = alloc_array(int, *length);
+    int *idx = alloc(int);
+    preorder_helper(r, res, idx);
+    return res;
+}
+
+int array_sum(int[] arr, int length) {
+    int s = 0;
+    for (int i = 0; i < length; i++) {
+        s += arr[i];
+    }
+    return s;
+}
+
+rose * rose_builder(int n) {
+    if (n == 0) {
+        return leaf(0);
+    }
+    rose *r = alloc(rose);
+    r->data = n;
+    r->num_branches = n;
+    r->branches = alloc_array(rose*, n);
+    for (int i = 0; i < n; i++) {
+        r->branches[i] = rose_builder(n - 1);
+    }
+    return r;
+}
+
+int main()
+{
+    int n = 10;
+    rose *r = rose_builder(n);
+    int *length = alloc(int);
+    int[] res = preorder(r, length);
+    return array_sum(res, *length);
+}

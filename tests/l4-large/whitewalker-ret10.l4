@@ -1,0 +1,18 @@
+//test return 10
+
+struct a {
+    int e;
+    int b;
+    int c;
+    struct a *d;
+};
+
+struct a *f() {
+    return alloc(struct a);
+}
+
+int main () {
+    struct a *b = f();
+    b->e = 10;
+    return b->e;
+}

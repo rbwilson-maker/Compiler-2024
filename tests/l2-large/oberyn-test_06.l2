@@ -1,0 +1,11 @@
+//test return -5
+
+// tests unary operators
+
+int main() {
+	int i = 5;
+	i = -i;
+	i++; i--; i--; i++;
+
+	return i;
+}

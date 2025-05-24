@@ -1,0 +1,12 @@
+//test div-by-zero
+// one branch of conditional divides by zero
+
+int main() {
+    int x = 0;
+    int y = 9;
+    if (x % 9 == 0) {
+        return y % x;
+    } else {
+        return y;
+    }
+}

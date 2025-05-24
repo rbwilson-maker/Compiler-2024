@@ -1,0 +1,10 @@
+//test abort
+
+int main() {
+  int[] A = alloc_array(int, 42);
+  for (int i = 0; i < 42; i++) {
+    A[i] = i;
+  }
+  //@assert \exists {A} (\element < 0);
+  return 0;
+}

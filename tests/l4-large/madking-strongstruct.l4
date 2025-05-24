@@ -1,0 +1,18 @@
+//test return 20
+
+struct induction {
+       int Strong;
+       int Weak;
+       struct induction* Structural;
+};
+
+typedef struct induction* induction_t;
+
+int main () {
+    induction_t onefifty = alloc(struct induction);
+    onefifty->Strong = 5;
+    onefifty->Weak = 5;
+    onefifty->Structural = alloc(struct induction);
+    onefifty->Structural->Strong = 10 + onefifty->Strong + onefifty->Weak;
+    return onefifty->Structural->Strong;
+}

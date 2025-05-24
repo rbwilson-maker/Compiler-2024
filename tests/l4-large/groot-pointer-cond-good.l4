@@ -1,0 +1,17 @@
+//test return 747
+
+struct wrapper { int value; };
+typedef struct wrapper wrapper;
+
+int main() {
+  wrapper***** p = alloc(wrapper****);
+  *p = alloc(wrapper***);
+  **p = alloc(wrapper**);
+  ***p = alloc(wrapper*);
+  ****p = alloc(wrapper);
+  (****p)->value = 747;
+
+  int v = true ? (*****p).value : 123;
+
+  return v;
+}

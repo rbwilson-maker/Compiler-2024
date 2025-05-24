@@ -1,0 +1,21 @@
+//test div-by-zero
+// order of array stuff
+
+int dollar_sign_rip() {
+  return 1 / 0;
+}
+
+int abort_o_clock() {
+  assert(false);
+  return 0;
+}
+
+int main() {
+  int* i = alloc(int);
+  *i = 1;
+  int[] A = alloc_array(int,1);
+  A[dollar_sign_rip()] = abort_o_clock();
+
+  return A[0];
+}
+

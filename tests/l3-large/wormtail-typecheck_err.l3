@@ -1,0 +1,13 @@
+//test error
+
+bool buzz() {
+  return true;
+}
+
+int foo() {
+  return 1;
+}
+
+int main() {
+  return foo() * buzz();
+}

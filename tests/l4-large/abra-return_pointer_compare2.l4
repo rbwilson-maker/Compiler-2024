@@ -1,0 +1,14 @@
+//test return 8
+
+int main () {
+	int *p = alloc(int);
+	*p = 5;
+	int *q = p;
+	*q = 5;
+	if (p==q) {
+		return 8;
+	}
+	else {
+		return 5;
+	}
+}

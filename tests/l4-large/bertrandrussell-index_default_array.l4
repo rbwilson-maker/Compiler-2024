@@ -1,0 +1,12 @@
+//test memerror
+// struct has default values, and you memerror on indexing into a default array
+
+struct foo {
+    int[] a;
+};
+
+int main() {
+    struct foo* a = alloc(struct foo);
+    return a->a[0];
+}
+

@@ -1,0 +1,6 @@
+//test return -1
+int main()
+{
+  int a = (-1) % 4;
+  return a;
+}

@@ -1,0 +1,14 @@
+//test error
+
+int main()
+{
+  int x = 0;
+  
+  for (int i=0; i<17; i++)
+  {
+    int from_space = 17*i - x;
+    x *= from_space;
+  }
+  
+  return from_space;
+}

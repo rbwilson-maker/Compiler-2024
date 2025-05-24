@@ -1,0 +1,183 @@
+//test return 1
+// Nested structs
+
+struct container {
+  int val;
+};
+
+struct x1 {
+  int val;
+  struct container cont;
+  int val2;
+};
+
+struct x2 {
+  int val;
+  struct x1 cont;
+  int val2;
+};
+
+struct x3 {
+  int val;
+  struct x2 cont;
+  int val2;
+};
+
+struct x4 {
+  int val;
+  struct x3 cont;
+  int val2;
+};
+
+struct x5 {
+  int val;
+  struct x4 cont;
+  int val2;
+};
+
+struct x6 {
+  int val;
+  struct x5 cont;
+  int val2;
+};
+
+struct x7 {
+  int val;
+  struct x6 cont;
+  int val2;
+};
+
+struct x8 {
+  int val;
+  struct x7 cont;
+  int val2;
+};
+
+struct x9 {
+  int val;
+  struct x8 cont;
+  int val2;
+};
+
+struct x10 {
+  int val;
+  struct x9 cont;
+  int val2;
+};
+
+struct x11 {
+  struct x10 val;
+  struct x10 cont;
+  struct x10 val2;
+};
+
+struct x12 {
+  struct x11 val;
+  struct x11 cont;
+  struct x11 val2;
+};
+
+struct x13 {
+  struct x12 val;
+  struct x12 cont;
+  struct x12 val2;
+};
+
+struct x14 {
+  struct x13 val;
+  struct x13 cont;
+  struct x13 val2;
+};
+
+struct x15 {
+  struct x14 val;
+  struct x14 cont;
+  struct x14 val2;
+};
+
+struct x16 {
+  struct x15 val;
+  struct x15 cont;
+  struct x15 val2;
+};
+
+struct x17 {
+  struct x16 val;
+  struct x16 cont;
+  struct x16 val2;
+};
+
+struct x18 {
+  struct x17 val;
+  struct x17 cont;
+  struct x17 val2;
+};
+
+struct x19 {
+  struct x18 val;
+  struct x18 cont;
+  struct x18 val2;
+};
+
+struct x20 {
+  struct x19 val;
+  struct x18 cont;
+  struct x17 val2;
+};
+
+struct x21 {
+  struct x20 val;
+  struct x19 cont;
+  struct x18 val2;
+};
+
+struct x22 {
+  struct x21 val;
+  struct x20 cont;
+  struct x19 val2;
+};
+
+struct x23 {
+  struct x22 val;
+  struct x21 cont;
+  struct x20 val2;
+};
+
+struct x24 {
+  struct x23 val;
+  struct x22 cont;
+  struct x21 val2;
+};
+
+struct x25 {
+  struct x24 val;
+  struct x23 cont;
+  struct x22 val2;
+};
+
+int main() {
+  struct x25* a25 = alloc(struct x25);
+  struct x24* a24 = alloc(struct x24);
+  struct x23* a23 = alloc(struct x23);
+  struct x22* a22 = alloc(struct x22);
+  struct x21* a21 = alloc(struct x21);
+  struct x20* a20 = alloc(struct x20);
+  struct x19* a19 = alloc(struct x19);
+  struct x18* a18 = alloc(struct x18);
+  struct x17* a17 = alloc(struct x17);
+  struct x16* a16 = alloc(struct x16);
+  struct x15* a15 = alloc(struct x15);
+  struct x14* a14 = alloc(struct x14);
+  struct x13* a13 = alloc(struct x13);
+  struct x12* a12 = alloc(struct x12);
+  struct x11* a11 = alloc(struct x11);
+  struct x10* a10 = alloc(struct x10);
+  struct x9* a9 = alloc(struct x9);
+  struct x8* a8 = alloc(struct x8);
+  struct x7* a7 = alloc(struct x7);
+  struct x6* a6 = alloc(struct x6);
+  struct x5* a5 = alloc(struct x5);
+  struct x4* a4 = alloc(struct x4);
+
+  return 1;
+}

@@ -1,0 +1,21 @@
+//test return 3
+// simple mutual recursion
+
+bool odd(int n);
+
+bool even(int n) {
+    return (n == 0) || odd(n - 1);
+}
+
+bool odd(int n) {
+    return (n != 0) && even(n - 1);
+}
+
+int main() {
+    if (odd(42)) {
+        return 42;
+    } else if (even(96)) {
+        return 3;
+    }
+    return -1;
+}

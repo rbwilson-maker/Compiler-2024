@@ -1,0 +1,17 @@
+//test return 13
+// Empty struct
+
+struct empty {};
+
+struct empty;
+
+int pointless (struct empty* x) {
+  return 13;
+}
+
+int main () {
+  struct empty* x = alloc(struct empty);
+  struct empty* y = alloc(struct empty);
+  assert (x != y);
+  return pointless(x);
+}

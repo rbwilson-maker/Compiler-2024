@@ -1,0 +1,27 @@
+//test typecheck
+//test infloop
+//#use <conio>
+//113382
+int main(){
+  int len =0;
+  int i=0;
+  while (len<950){
+    //int ii=++i;
+    //int ii=i++;
+    i++;
+    int ii=i;
+    len=1;
+    while(ii!=1){
+      ii = ii%2 == 0?ii/2:1+3*ii;
+      len++;
+    }
+    /*
+      print(": ");
+      printint(len);
+      print("\n");
+    */ 	
+    
+    
+  }
+  return 0;
+}

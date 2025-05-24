@@ -1,0 +1,22 @@
+//test return 4
+//checks for correct elaboration of A[f(x)] += y
+
+int f(int* p) {
+	*p+=1;
+	return *p;
+}
+
+int main(){
+	int *p = alloc(int);
+
+	int[] A = alloc_array(int, 4);
+
+	A[1] = 1;
+	A[2] = 2;
+	A[3] = 3;
+	A[f(p)] += 3;
+	return A[1];
+}
+
+
+	

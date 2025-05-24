@@ -1,0 +1,8 @@
+//test return 234
+
+// Should fail on the type checker 
+
+int main() {
+    int badbad;
+    return 234;
+}

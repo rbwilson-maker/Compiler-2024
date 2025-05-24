@@ -1,0 +1,9 @@
+//test return -1;
+// No return statement in void function.
+
+void no_return() {}
+
+int main() {
+  no_return();
+  return -1;
+}

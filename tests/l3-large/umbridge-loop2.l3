@@ -1,0 +1,23 @@
+//test typecheck
+//test infloop
+
+typedef int integer;
+
+void ok();
+void oops();
+
+void ok() {
+    oops();
+    return;
+}
+
+void oops() {
+    ok();
+}
+
+
+int main() {
+    // infinite loop because of recursive calling
+    ok();
+    return 1;
+}

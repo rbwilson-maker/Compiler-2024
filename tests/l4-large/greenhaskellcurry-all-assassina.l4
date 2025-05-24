@@ -1,0 +1,34 @@
+//test return 15213
+/*
+    all'assassina: Enforces correct treatment of asnops with an indexing
+    expression as the lvalue.
+
+    With the reference compiler,
+        A[f(state)] += 1;
+
+    works fine. But
+        A[f(state)] = A[f(state)] + 1
+
+    does not.
+*/
+
+int f(int *state) {
+    if (*state < 15411) {
+        *state = *state + 1;
+    } else {
+        state = NULL;
+    }
+
+    return *state;
+}
+
+int main() {
+    int[] A = alloc_array(int, 15412);
+    int *state = alloc(int);
+
+    for (int i = 0; i < 15411; i++) {
+        A[f(state)] += 1;
+    }
+
+    return 15213;
+}

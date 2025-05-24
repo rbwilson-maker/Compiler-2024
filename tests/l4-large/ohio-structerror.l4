@@ -1,0 +1,13 @@
+//test error
+
+struct struckt {
+  struct struckt* s;
+};
+
+typedef struct struckt* s;
+
+int main() {
+  s *s1 = alloc(s);
+  s s2 = (*s1).s;
+  return 0;
+}

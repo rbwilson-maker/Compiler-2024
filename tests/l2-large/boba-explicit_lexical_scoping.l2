@@ -1,0 +1,14 @@
+//test return 0
+int main()
+{
+  {
+    int x = 0;
+    x += (x + 2) * 3;
+  }
+  {
+    int x = 3;
+    x <<= 5;
+  }
+  return 0;
+}
+

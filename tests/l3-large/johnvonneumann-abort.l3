@@ -1,0 +1,10 @@
+//test abort
+
+int f(int x) {
+    assert (x == 32);
+    return 4;
+}
+
+int main() {
+    return f(f(32));
+}

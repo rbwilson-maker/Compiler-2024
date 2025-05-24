@@ -1,0 +1,11 @@
+//test return 1
+int main()
+{
+	int x1 = 5;
+  int x2 = 6;
+  bool y1 = false;
+  bool y2 = false;
+  bool y3 = (y1 == y2) && (x1 == x2);
+  if (y3) return 0; else return 1;
+
+}

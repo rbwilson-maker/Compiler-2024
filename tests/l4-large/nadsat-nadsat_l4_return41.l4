@@ -1,0 +1,17 @@
+//test return 20
+
+/* Parser context check */
+
+int mult10(int* x) {
+  int foo = 10;
+  return foo * (*x);
+}
+
+typedef int foo;
+
+foo main() {
+  foo* num = alloc(foo);
+  *num = 2;
+
+  return mult10(num);
+}

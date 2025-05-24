@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+// loops don't need explicit {} if its one statement
+
+int main() {
+    int x = 1;
+    int y = 0;
+    while (x > 0)
+        if (x % 2 == 0)
+            y++;
+    return y;
+}

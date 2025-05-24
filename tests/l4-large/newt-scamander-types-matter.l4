@@ -1,0 +1,14 @@
+//test error
+
+// size isn't all that matters
+
+int main() {
+	int[][] L;
+	L = alloc_array(int[][][][], 16);
+	L[0] = alloc_array(int, 1);
+	for (int i = 1; i < 16; i++) {
+		L[i] = alloc_array(int, 1);
+		L[i][0] = i + L[i-1][0];
+	}
+	return L[15][0];
+}

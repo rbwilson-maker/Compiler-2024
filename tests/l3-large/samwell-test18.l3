@@ -1,0 +1,17 @@
+//test return 70
+
+int foo(int x, int y){
+  {
+    int foo = 2;
+    y += foo;
+  }
+  {
+    int foo = 3;
+    x+=foo;
+  }
+  return x * y;
+}
+
+int main() { 
+  return foo(4,8);
+ }

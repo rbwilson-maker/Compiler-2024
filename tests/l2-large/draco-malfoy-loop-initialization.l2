@@ -1,0 +1,15 @@
+//test error
+int main(){
+    int x;
+    int y = 5;
+    for (int i = 0; i<y-5; i++){
+        x = y + 1;
+    }
+    while (y % 2 != 1){
+        x = (y == 0) ? 7<<y : 11-y;
+    }
+    if (y + y < 8){
+        x = 2;
+    }
+    return x;
+}

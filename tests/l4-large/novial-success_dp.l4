@@ -1,0 +1,47 @@
+//test return 70
+
+struct A {
+  int height;
+  int width;
+  int[] contents;
+};
+
+typedef struct A matrix;
+
+matrix* init_matrix (int h, int w) {
+  int[] contents = alloc_array(int, h*w);
+  matrix* matr = alloc(matrix);
+  matr->height = h;
+  matr->width = w;
+  matr->contents = contents;
+  return matr;
+}
+
+int get(matrix* M, int row, int col) {
+  int index = (M->width * row) + col;
+  return M->contents[index];
+}
+void set(matrix* M, int row, int col, int val) {
+  int index = (M->width * row) + col;
+  M->contents[index] = val;
+}
+
+int main() {
+  int n = 5;
+  matrix* M = init_matrix (n,n);
+
+  for (int i = 0; i < n; i++) {
+    set(M, i, 0, 1);
+    set(M, 0, i, 1);
+  }
+
+  for (int i = 1; i < n; i++) {
+    for (int j = 1; j < n; j++) {
+      int up = get(M, i-1, j);
+      int left = get(M, i, j-1);
+      set(M, i, j, up+left);
+    }
+  }
+
+  return get(M, n-1, n-1);
+}

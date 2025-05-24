@@ -1,0 +1,14 @@
+//test error
+struct a {
+    struct b *ptr1;
+    struct a *ptr2;
+}
+
+struct b {
+    struct a *ptr1;
+    struct b *ptr2;
+}
+
+int main () {
+    return 0;
+}

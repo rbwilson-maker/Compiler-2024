@@ -1,0 +1,35 @@
+//test return 1
+// should be optimized to just 1 register and 1/2 statements.
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int f;
+  int g;
+  int h;
+  int i;
+  int j;
+  int k;
+  int l;
+  int m;
+
+
+  a = 0;
+  b = a;
+  c = b;
+  d = c;
+  e = d;
+  f = e;
+  g = f;
+  h = g;
+  i = h;
+  j = i;
+  k = j;
+  l = k;
+  m = l;
+
+  return m + 1;
+}

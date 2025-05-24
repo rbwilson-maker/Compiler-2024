@@ -1,0 +1,9 @@
+//test return 42
+
+typedef int foo;
+
+int main() {
+    foo * bar = alloc(int);
+    * bar = 1;
+    return 42;
+}

@@ -1,0 +1,17 @@
+//test return 0
+
+int main() {
+    bool b0 = true;
+    bool b1 = false;
+
+    int x0 = 1;
+    int x1 = 0x80000000;
+
+    bool b2 = b0 && b1;
+    bool b3 = b0 || b1;
+
+    int x2 = x0 << 31;
+    int x3 = x1 ^ x2;
+
+    return x3;
+}

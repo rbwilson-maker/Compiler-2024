@@ -1,0 +1,14 @@
+//test error
+
+// i see that this test is disallowed, so please don't count it. we think it's a useful test, but we've included 20 tests other than this
+int fib(int n) {
+  if (n <= 1) {
+    return 1;
+  } else {
+    return fact(n-1) + fact(n-2)
+  }
+}
+
+int main() {
+  return fib(6);
+}

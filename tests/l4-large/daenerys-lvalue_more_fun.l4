@@ -1,0 +1,16 @@
+//test return 15411
+
+struct node {
+  int val;
+  struct node *next;
+};
+typedef struct node node_t;
+
+int main()
+{
+  node_t[] nodes = alloc_array(node_t,5);
+  node_t* start = alloc(node_t);
+  start->val = 4;
+  nodes[start->val].val = 15411;
+  return nodes[4].val;
+}

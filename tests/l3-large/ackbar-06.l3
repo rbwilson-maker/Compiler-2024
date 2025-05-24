@@ -1,0 +1,12 @@
+//test error
+//A function referenced in a call must be defined exactly once
+
+// must be defined even if unreachable
+int retX(int x);
+
+int ret7(){ return 7;}
+
+int main(){
+    if(true){ return ret7(); }
+    else    { return retX(42);}
+}

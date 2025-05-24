@@ -1,0 +1,56 @@
+//test memerror
+//hashtables are hard....
+struct node{
+    int val;
+    struct node* next;
+};
+
+typedef struct node* node;
+
+struct hashtable{
+    int size;
+    node[] lists;
+};
+typedef struct hashtable* hash;
+
+hash createhash(int thesize){
+    hash ok = alloc(struct hashtable);
+    ok->size = thesize;
+    ok->lists = alloc_array(node, thesize);
+    return ok;
+}
+
+hash inserthash(int key, hash ok, int value){
+    node start = ok->lists[key];
+    if(start == NULL){
+        ok->lists[key] = alloc(struct node);
+        ok->lists[key]->val = value;
+        ok->lists[key]->next = NULL;
+        return ok;
+    }
+
+    while(start->next != NULL){
+        start = start->next;
+    }
+
+    start->next = alloc(struct node);
+    start->next->val = value;
+    start->next->next = NULL;
+    start = start->next;
+    return ok;
+}
+int hashfn(int a, hash h){
+    return (a*  0xDEADBEEF) % (h -> size);
+}
+
+int main(){
+    hash ok = createhash(14);
+    for(int i = 0; i < 100; i++){
+        inserthash(hashfn(i, ok),ok, i);
+    }
+    node l = ok->lists[3];
+    while(l!= NULL && l->next != NULL){
+        l = l->next;
+    }
+    return l->val;
+}

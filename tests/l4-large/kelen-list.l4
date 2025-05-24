@@ -1,0 +1,61 @@
+//test return 0
+
+// create a doubly linked list struct
+typedef int data;
+
+struct node {
+    struct node * next;
+    struct node * prev;
+    data value;
+};
+
+struct list {
+    struct node* head;
+    struct node* tail;
+};
+
+void init(struct list* l) {
+    l->head = NULL;
+    l->tail = NULL;
+}
+
+void push_back(struct list* l, data value) {
+    if (l->head == NULL) {
+        l->head = alloc(struct node);
+        l->head->value = value;
+        l->head->next = NULL;
+        l->head->prev = NULL;
+
+        l->tail = l->head;
+    } else {
+        struct node * newNode = alloc(struct node);
+        newNode->value = value;
+        newNode->prev = l->tail;
+        l->tail->next = newNode;
+        l->tail = newNode;
+    }
+}
+
+data pop_back(struct list* l) {
+    struct node * tail = l->tail;
+    l->tail = l->tail->prev;
+    if (l->tail != NULL) {
+        l->tail->next = NULL;
+    } else {
+        l->head = NULL;
+    }
+    return tail->value;
+}
+
+// Tests list operations
+int main(){
+    struct list* l = alloc(struct list);
+    init(l);
+    for(data i = 0; i < 1000000; i++) {
+        push_back(l, i);
+    }
+    for(int i = 0; i < 999999; i++) {
+        assert(pop_back(l) == (1000000-1-i));
+    }
+    return pop_back(l);
+}

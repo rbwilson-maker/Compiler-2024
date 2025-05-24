@@ -1,0 +1,16 @@
+//test error
+// Undefined struct
+
+struct mini;
+
+struct maxi
+{
+  int name;
+  struct mini* next;
+};
+
+
+int main () {
+  struct maxi* x = alloc(struct maxi);
+  return (x->next)->name;
+}

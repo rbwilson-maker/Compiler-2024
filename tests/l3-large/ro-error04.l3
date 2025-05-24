@@ -1,0 +1,9 @@
+//test error
+//test that it will check uninitialized vars with lib functions
+
+int main() {
+  int x;
+  fpt y = itof(x);
+  print_fpt(y);
+  return 3;
+}

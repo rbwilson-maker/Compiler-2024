@@ -1,0 +1,13 @@
+//test return 5
+//Tests having the same name variable as a function
+
+int function() {
+  bool function = true;
+  if (function) {
+    return 5;
+  }
+  return 6;
+}
+int main() {
+  return function();
+}

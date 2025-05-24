@@ -1,0 +1,12 @@
+//test return 1048576
+
+int super_dumb(int i) {
+  if (i > 20) {
+    return 1;
+  } else {
+    return super_dumb(i + 1) + super_dumb(i + 1);
+  }
+}
+int main() { 
+  return super_dumb(1);
+}

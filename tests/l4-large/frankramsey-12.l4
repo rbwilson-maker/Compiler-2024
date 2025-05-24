@@ -1,0 +1,21 @@
+//test return 10
+
+struct A {
+    int a;
+    int b;
+    int c;
+    int d;
+};
+
+int add_struct(struct A* x) {
+    return x->a + x->b + x->c + x->d;
+}
+
+int main() {
+    struct A* x = alloc(struct A);
+    x->a = 1;
+    x->b = 2;
+    x->c = 3;
+    x->d = 4;
+    return add_struct(x);
+}

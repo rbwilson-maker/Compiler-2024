@@ -1,0 +1,14 @@
+//test return ~1456230344
+//Standard C compiler gives 56
+
+int main() {
+    int sum = 0;
+    int i;
+    int j;
+    for (i = 0; i < 10000; i++)
+        for (j = 1; j < 200; i++) {
+            j <<= 1;
+            sum = sum + j * i;
+        }
+    return sum;
+}

@@ -1,0 +1,14 @@
+//test return 1
+
+int[] squares_array(int n)
+{
+	int[] a=alloc_array(int, n);
+	int i;
+	for(i=0;i<n;i++) a[i]=i*i;
+	return a;		
+}
+int main(){
+	int[] a=alloc_array(int, 10);
+	a = squares_array(10);
+	return a[1];
+}

@@ -1,0 +1,14 @@
+//test error 
+typedef int my_int;
+typedef my_int my_int2;
+typedef my_int2 my_int3;
+
+typedef bool my_bool;
+typedef my_bool my_bool2;
+typedef my_bool2 my_bool3;
+
+int main() {
+	my_int3 my_int3 = 1;
+	my_bool3 my_bool3 = true;
+	return my_int3;
+}

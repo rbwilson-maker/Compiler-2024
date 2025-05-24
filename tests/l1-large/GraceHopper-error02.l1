@@ -1,0 +1,8 @@
+//test div-by-zero
+// division by zero, with modulus operator
+
+int main() {
+    int x = 1;
+    int y = 0;
+    return x % y;
+}

@@ -1,0 +1,68 @@
+//test return 8706
+
+typedef bool ghoul;
+typedef ghoul alghoul;
+
+bool bella(int a, ghoul x, ghoul y);
+alghoul bella(int x, alghoul f, ghoul t);
+
+ghoul bella(int a, bool b, bool c)
+{
+  return (a > 1) && (b || c);
+}
+
+typedef ghoul drool;
+
+typedef int clint;
+
+int buffalo(int x, int y, ghoul z, int n);
+clint hint(int mint);
+
+alghoul ana(int banana)
+{
+  int lint = 67204;
+  clint print = hint(lint);
+  return !(print <= lint) && lint < buffalo(0, lint, lint != lint, lint);
+}
+
+drool bella(int f, drool g, ghoul h);
+
+int buffalo(int x, int y, ghoul z, int n)
+{
+  return ((x + y > n) && bella(x, z, false)) ? 1 : 0;
+}
+
+clint hint(int sprint)
+{
+  return (sprint - buffalo(2, 5, true, 10));
+}
+
+void bhijella(int bhar, bool var)
+{
+  if (true)
+  {
+    return;
+  }
+}
+
+int main()
+{
+  clint flint = 9000;
+  clint blint = 298;
+
+  bool hella = bella(49, (50 < 450) && ((22 & 2) < 20), bella(0, true, false) || false);
+  bool anabella = !(ana(flint > blint ? flint : blint) && bella(flint, hella, hella && (flint & blint | flint) <= (blint / flint)));
+  bool fella = (anabella && hella ? hint(flint) > blint : ((hint(blint)) & flint ^ blint | (flint != blint ? flint - blint : flint + blint)) != flint);
+
+  bhijella(buffalo(
+               buffalo(1, 2, bella(flint ^ blint, anabella, fella != hella), 4),
+               0,
+               flint > 9099 && 980 < blint,
+               flint != blint && blint > flint || hint(flint) != hint(blint) ? flint : blint),
+           bella(hella != fella ? flint & blint : flint | blint, hella && anabella, hella ? fella : anabella || hella ? anabella : fella));
+
+  assert(bella(blint & flint ^ flint >> 2, anabella, fella) || true);
+
+  return hella ? bella(blint & flint ^ flint >> 2, anabella, fella) ? flint ^ blint : ~flint : ~blint;
+}
+

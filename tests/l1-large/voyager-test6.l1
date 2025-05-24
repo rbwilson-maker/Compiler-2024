@@ -1,0 +1,11 @@
+//test error
+
+//test invalid arthmetic syntax
+
+int main() { 
+	int x = 3;
+	int y = 4;
+	y = y-+x;
+	int z = 2 / (y-1);
+	return z;
+}

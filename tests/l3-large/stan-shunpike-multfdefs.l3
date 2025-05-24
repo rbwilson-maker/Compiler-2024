@@ -1,0 +1,27 @@
+//test error
+
+int f(int x, int y);
+int f(int a, int b);
+
+int g(int x, int y);
+void h(int x, int y);
+
+int f(int x, int y) {
+    return x * y;
+}
+
+int g(int x, int y) {
+    return x + y;
+}
+
+int g(int a, int b) {
+    return a - b;
+}
+
+void h(int x, int y) {
+    return g(x, y);
+}
+
+int main() {
+    return f(0, 1);
+}

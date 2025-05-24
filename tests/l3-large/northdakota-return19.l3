@@ -1,0 +1,18 @@
+//test return 0
+
+int test(int x, int y);
+
+typedef int a;
+
+int test(a x, int y);
+
+typedef int b;
+
+int test(int x, b y);
+
+int main()
+{
+	return test(1,0);
+}
+
+int test(b x, a y){ return x < y ? x : y;}

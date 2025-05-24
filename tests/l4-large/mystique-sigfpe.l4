@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int f(int *p) {
+    if (p != NULL) {
+        return 1/0;
+    } else {
+        return 1/0;
+    }
+}
+
+int main() {
+    int *p = alloc(int);
+    return f(p);
+}

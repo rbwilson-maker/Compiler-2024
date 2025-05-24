@@ -1,0 +1,36 @@
+//test return 0
+// reverse a linked list
+struct node {
+  int val;
+  struct node* next;
+};
+
+typedef struct node node_t;
+
+node_t* reverse_list(node_t* head) {
+  node_t* new_head = NULL;
+  while (head != NULL) {
+    node_t* temp = head->next;
+    head->next = new_head;
+    new_head = head;
+    head = temp;
+  }
+  return new_head;
+}
+
+int main()
+{
+  node_t* head = alloc(struct node);
+  head->val = 1;
+  head->next = alloc(struct node);
+  head->next->val = 2;
+  head->next->next = alloc(struct node);
+  head->next->next->val = 3;
+
+  head = reverse_list(head);
+  assert(head->val == 3);
+  assert(head->next->val == 2);
+  assert(head->next->next->val == 1);
+
+  return 0;
+}

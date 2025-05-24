@@ -1,0 +1,30 @@
+//test return 0
+// what is the size of any of these structs
+
+struct a {
+};
+
+struct b {
+  struct a a;
+};
+
+struct c {
+  struct b b;
+};
+
+struct d {
+  struct c c;
+};
+
+struct e {
+  struct d d;
+};
+
+struct f {
+  struct e e;
+};
+
+int main(){
+  struct f* x = alloc(struct f);
+  return 0;
+}

@@ -1,0 +1,6 @@
+//test return 7
+// Check precedence
+
+int main() {
+    return (1+2)*(3+4)%5+6;
+}

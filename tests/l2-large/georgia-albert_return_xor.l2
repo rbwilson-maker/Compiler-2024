@@ -1,0 +1,11 @@
+//test return 0
+// Basic lshift test
+int main()
+{
+  int a;
+  int b;
+
+  a = 20;
+  b = a^a;
+  return b;
+}

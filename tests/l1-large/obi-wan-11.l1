@@ -1,0 +1,13 @@
+//test error
+
+// oops, forgot a semi-colon!
+int main()
+{
+    int x = 0x0fffffff;
+    x = -x;
+    x = x - 1
+    x += 0x80000005;
+
+    return x;
+}
+

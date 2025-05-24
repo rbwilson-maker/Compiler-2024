@@ -1,0 +1,29 @@
+//test return 43588
+// Square root with binary search
+
+
+int sqrt (int n)
+//@requires n >= 0;
+//@ensures 0 <= \result && \result * \result <= n;
+//@ensures 2 * \result + 1 > n - \result * \result;
+{
+  if (n==0 || n == 1) return n;
+
+  int lower = 0;
+  int upper = n;
+  while (lower + 1 < upper)
+  //@loop_invariant 0 <= lower && lower < upper && upper <= n;
+  //@loop_invariant lower * lower <= n;
+  //@loop_invariant (upper >= (n - 1) / upper + 1);
+  {
+    int mid = lower + (upper - lower) / 2;
+    if (mid <= n / mid) lower = mid;
+    else upper = mid;
+  }
+  return lower;
+}
+
+
+int main() {
+  return sqrt(1900000000);
+}

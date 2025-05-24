@@ -1,0 +1,23 @@
+//test return -2147483648
+
+int foo (int b, int c, int d, int e, int f) {
+  return b - c + e * f + d;
+}
+
+int main () {
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int f;
+
+  b = 12;
+  c = 210;
+  d = 0x80000000;
+  e = 1;
+  f = 198;
+
+  a = foo (b, c, d, e, f);
+  return a;
+}

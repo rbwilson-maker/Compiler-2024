@@ -1,0 +1,14 @@
+//test return 45
+
+struct test {
+  int sum;
+};
+
+int main() {
+  struct test* a = alloc(struct test);
+  
+  for (int i = 0; i < 10; i++)
+    a -> sum += i;
+
+  return a -> sum;
+}

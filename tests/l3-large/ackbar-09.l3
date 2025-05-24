@@ -1,0 +1,9 @@
+//test error
+//mutually recursive functions require a forward declaration
+
+int before(){ return after();}
+int after() { return before();}
+
+int main(){
+    return before();
+}

@@ -1,0 +1,25 @@
+//test return 42
+
+int main()
+{
+int k = 42;
+int[][][][] x = alloc_array(int[][][], k);
+for (int i1 = 0; i1<k; i1++)
+{
+x[i1] = alloc_array(int[][], k);
+for (int i2 = 0; i2<k; i2++)
+{
+x[i1][i2] = alloc_array(int[], k);
+for (int i3 = 0; i3<k; i3++)
+{
+x[i1][i2][i3] = alloc_array(int, k);
+for (int i4 = 0; i4<k; i4++)
+{
+x[i1][i2][i3][i4] = i1+i2+i3+i4;
+}
+}
+}
+}
+
+return k;
+}

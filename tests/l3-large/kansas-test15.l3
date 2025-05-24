@@ -1,0 +1,18 @@
+//test return 12
+
+// This is designed to test typedef
+typedef bool boo;
+typedef int in;
+
+in func(boo x, in y, boo z) {
+  return x || z ? y : 10;
+}
+
+void bar() {
+}
+
+int main() {
+  bar();
+  in y = func(true, 12, false);
+  return y;
+}

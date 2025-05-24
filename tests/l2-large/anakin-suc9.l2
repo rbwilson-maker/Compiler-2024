@@ -1,0 +1,4 @@
+//test return 19
+int main() {
+    return 0x11 ^ ~~8 >> 2;
+}

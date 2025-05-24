@@ -1,0 +1,11 @@
+//test error
+// local variables are allowed to shadow function names
+
+int x(int x, int y) {
+    return x + y;
+}
+
+int main() {
+    int x = 5;
+    return x(1,2);
+}

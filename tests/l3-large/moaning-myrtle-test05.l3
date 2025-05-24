@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+int rec(int x){
+    if(x > 0) return rec(x);
+    else return x;
+}
+
+int main(){
+    int x = 1;
+    int y = rec(x);
+    return y;
+}

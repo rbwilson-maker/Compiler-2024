@@ -1,0 +1,12 @@
+//test memerror
+
+int main() {
+  /* You're probably storing your array size at arr[-1].  Are you making sure
+     that we can't overflow and write over it? */
+  int *[] empty_array_plus_empty_object_equals_empty_string = alloc_array(int *, 10);
+  int i = 0xffffffff >> 3;
+  empty_array_plus_empty_object_equals_empty_string[i] = alloc(int);
+  empty_array_plus_empty_object_equals_empty_string[100] = alloc(int); /* D: */
+  return -1;
+}
+

@@ -1,0 +1,9 @@
+//test typecheck
+//Returns 100 if p is prime, 0 otherwise
+
+int main()
+{
+  int start = 2;
+  bool f = is_prime(13, start);
+  return f ? 100 : 0;
+}

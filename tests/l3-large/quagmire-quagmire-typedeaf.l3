@@ -1,0 +1,12 @@
+//test typecheck
+
+typedef int one;
+typedef one two;
+typedef two three;
+typedef three four;
+
+
+four main() {
+    return 0;
+}
+

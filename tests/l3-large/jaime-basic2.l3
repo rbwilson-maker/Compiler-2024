@@ -1,0 +1,22 @@
+//test return 0
+
+typedef int c137;
+typedef bool evil;
+
+int main()
+{
+    c137 rick = 100;
+    evil morty = (rick > 99);
+    int dead = 0;
+    int alive = 1;
+    c137 birdperson;
+    if(morty)
+    {
+        birdperson = dead;
+    }
+    else
+    {
+        birdperson = alive;
+    }
+    return birdperson;
+}

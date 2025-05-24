@@ -1,0 +1,28 @@
+//test return 15
+
+// Test many function call chain inside parameters
+
+int addOne(int a){
+    return a + 1;
+}
+
+int addTwo(int a){
+    return a + 2;
+}
+
+int addThree(int a){
+    return a + 3;
+}
+
+int addFour(int a){
+    return a + 4;
+}
+
+int addFive(int a){
+    return a + 5;
+}
+
+int main(){
+    int x = 0;
+    return addFive(addFour(addThree(addTwo(addOne(x)))));
+}

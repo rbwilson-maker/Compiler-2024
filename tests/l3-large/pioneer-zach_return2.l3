@@ -1,0 +1,17 @@
+//test return 12
+
+int c(int x) {
+  return x == 0 ? 1 : 1 + c(x-1);
+}
+
+int b() {
+  return c(5);
+}
+
+int a() {
+  return b() + b();
+}
+
+int main() {
+  return a();
+}

@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+    int a = 100;
+
+    for (;a>0;int b = 7) {
+        a--;
+    }
+
+    return 1;
+}

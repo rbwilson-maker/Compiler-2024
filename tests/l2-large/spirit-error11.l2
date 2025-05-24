@@ -1,0 +1,10 @@
+//test error
+int main() {
+    
+    int sum = 0;
+    int num = 121;
+    for (int i; i < 121; i++) {
+        if (num % i == 0) sum += i;
+    }    
+    return sum;
+}

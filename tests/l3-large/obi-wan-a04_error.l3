@@ -1,0 +1,11 @@
+//test error
+
+int sillyTest(int silly)
+{
+    return false ? silly : true;
+}
+
+int main()
+{
+    return sillyTest(15411);
+}

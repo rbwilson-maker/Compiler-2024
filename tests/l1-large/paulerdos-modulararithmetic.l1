@@ -1,0 +1,19 @@
+//test return 2147483647
+// test correct modular arithmetic behavior
+int main()
+{
+  int TMIN;
+  int TMAX;
+  int TMIN2;
+  int result1;
+  int result2;
+  int result3;
+
+  TMIN = -2147483648;		/* TMIN == 2^31 */
+  TMAX = TMIN-1;		/* TMAX == 2147483647 */
+  TMIN2 = -TMIN;		/* TMIN2 == TMIN */
+  result1 = (TMIN+TMIN2)+TMAX;
+  result2 = TMIN+(TMIN2+TMAX);
+  result3 = (TMIN+TMAX)+TMIN2;
+  return result1-result2+result3;
+}

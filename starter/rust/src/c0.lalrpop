@@ -1,0 +1,151 @@
+// L1 Compiler
+//! Parser Grammar
+// Author: Miles Conn <mconn@andrew.cmu.edu>
+
+// Initial grammar for L1 
+
+// Grammar 
+grammar<'input>;
+
+use crate::ast::{Program, Stmt, Expr, BinOp, UnOp, Typ, AsnOp};
+use lalrpop_util::ParseError;
+use crate::lex::Token;
+
+use std::str::FromStr;
+
+extern {
+    type Location = usize;
+    type Error = String;
+
+    enum Token<'input> {
+        "int" => Token::Int,
+        ";" => Token::Semicolon,
+        "=" => Token::Assgn,
+        "+" => Token::Plus,
+        "-" => Token::Minus,
+        "*" => Token::Asterisk,
+        "/" => Token::Div,
+        "%" => Token::Mod,
+        "+=" => Token::PlusEq,
+        "-=" => Token::MinusEq,
+        "*=" => Token::TimesEq,
+        "/=" => Token::DivEq,
+        "%=" => Token::ModEq,
+        "return" => Token::Return,
+        "ident" => Token::Ident(<&'input str>),
+        "number" => Token::Number(i64),
+        "{" => Token::LBrace,
+        "}" => Token::RBrace,
+        "(" => Token::LParen,
+        ")" => Token::RParen,
+    }
+}
+
+pub Program: Program = {
+    "int" <i:Ident> "(" ")" <block:Block> =>? {
+        match i.as_str() {
+            "main" => Ok(block),
+            _ => Err(ParseError::User{error: "Missing main in parser".to_string()})
+        } 
+    }
+};
+
+
+Block: Vec<Stmt> = {
+    "{" <Stmts> "}" => <>
+}
+
+Stmts: Vec<Stmt> = {
+    => vec![], // Handle an empty sequence of statements
+    <stmt:Stmt> <rest:Stmts> => {
+        let mut all_stmts = vec![stmt];
+        all_stmts.extend(rest);
+        all_stmts
+    },
+    <Block> => <>,
+}
+
+Stmt: Stmt = {
+    <d:Decl> => <>,
+    <s:Simp> => <>,
+    "return" <e:Expr> ";" => Stmt::Ret(e),
+};
+
+Decl : Stmt = {
+    <t:Typ> <v:Ident> ";" => Stmt::Decl(t, v),
+    <t:Typ> <v:Ident> "=" <e:Expr> ";" => Stmt::Defn(t, v, e),
+    // Technically this is a case of simp however in ast.rs
+    // = is not defined as an AsnOp so to keep backwards compatibility
+    // we define it as a Decl
+    <l:LValue> "=" <e:Expr> ";" => Stmt::Asgn(l, None, e),
+}
+
+Simp: Stmt = {
+    <l:LValue> <o:AsnOp> <e:Expr> ";" => Stmt::Asgn(l, Some(o), e),
+}
+
+LValue : String = {
+    <v:Ident> => <>,
+    "(" <l:LValue> ")" => <>
+}
+
+SubExp : Expr = {
+    "(" <Expr> ")" => <>,
+    <n:Number> => Expr::Number(n as i32),
+    <v:Ident> => Expr::Variable(v),
+}
+
+Expr: Expr = {
+    #[precedence(level="0")]
+    SubExp => <>,
+
+    #[precedence(level="1")]
+    #[assoc(side="right")]
+    <o:UnOp> <e:Expr> => match (o,&e) {
+        (UnOp::Neg, Expr::Number(a)) => Expr::Number((-1 * (*a as i64)) as i32),
+        _ => Expr::Unop(o, Box::new(e)),
+    },
+
+    #[precedence(level="2")]
+    #[assoc(side="left")]
+    <l:Expr> <o:Order0BinOp> <r:Expr> => Expr::Binop(Box::new(l), o, Box::new(r)),
+
+    #[precedence(level="3")]
+    #[assoc(side="left")]
+    <l:Expr> <o:Order1BinOp> <r:Expr> => Expr::Binop(Box::new(l), o, Box::new(r)),
+};
+
+Typ: Typ = {
+    "int" => Typ::Int,
+};
+
+UnOp: UnOp = {
+    "-" => UnOp::Neg,
+};
+
+Order0BinOp : BinOp = {
+    "*" => BinOp::Mul,
+    "/" => BinOp::Div,
+    "%" => BinOp::Mod,
+}
+
+Order1BinOp : BinOp = {
+    "+" => BinOp::Add,
+    "-" => BinOp::Sub,
+}
+
+AsnOp: AsnOp = {
+    "+=" => AsnOp::PlusEq,
+    "-=" => AsnOp::MinusEq,
+    "*=" => AsnOp::TimesEq,
+    "/=" => AsnOp::DivEq,
+    "%=" => AsnOp::ModEq,
+};
+
+Ident: String = {
+    <i: "ident"> => i.to_owned(),
+};
+
+Number: i64 = {
+    <n: "number"> => n.into_number().unwrap(),
+};

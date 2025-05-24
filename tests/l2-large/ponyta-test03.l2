@@ -1,0 +1,19 @@
+//test return 228
+
+// a shift feedback register
+int main () {
+    int res = 0;
+    int reg = 0xCDE1;
+    for (int i = 0; i < 100; i++) {
+        int tmp = 0;
+        tmp ^= 1 & reg >> 11;
+        tmp ^= 1 & reg >> 13;
+        tmp ^= 1 & reg >> 14;
+        tmp ^= 1 & reg >> 16;
+        reg >>= 1;
+        reg |= tmp << 15;
+        res ^= reg;
+    }
+    return res;
+}
+

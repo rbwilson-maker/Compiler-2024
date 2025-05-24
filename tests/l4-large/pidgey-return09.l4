@@ -1,0 +1,6 @@
+//test typecheck
+int main() {
+   struct s * s = alloc(struct s);
+   func(s);
+   return 0; 
+}

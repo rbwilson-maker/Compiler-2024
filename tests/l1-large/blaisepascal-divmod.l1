@@ -1,0 +1,16 @@
+//test return 12341234
+
+int main() {
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+
+  a = 12341234;
+  b = 9175;
+  c = a / b;
+  d = a % b;
+  e = b * c + d;
+  return e;
+}

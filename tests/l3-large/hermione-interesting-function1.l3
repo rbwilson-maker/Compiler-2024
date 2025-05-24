@@ -1,0 +1,16 @@
+//test return 20
+
+// implement multiply recursively.
+// extremely interesting!!!
+int mul(int wei, int hello);
+
+int main () {
+  return mul(5, 4); 
+}
+
+int mul(int m, int n) {
+  if (n == 1) {
+    return m;
+  }
+  return m + mul(m, n - 1);
+}

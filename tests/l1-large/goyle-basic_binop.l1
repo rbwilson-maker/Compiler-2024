@@ -1,0 +1,15 @@
+//test return -129600000
+
+int main() {
+    int x;
+    x = 3+7;
+    int y =(6)*x;
+    int z = y * x;
+    int z1 = z / x; 
+    int z2 = (y+100)/z1;
+    int b = 13;
+    int z4 = z2 % 13;
+    int z5 = 2*z4-x;
+    return z5 * x * y * z * z1;
+}
+

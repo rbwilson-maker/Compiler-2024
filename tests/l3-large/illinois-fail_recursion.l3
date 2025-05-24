@@ -1,0 +1,12 @@
+//test error
+// failed recursion
+
+int f(int f) {
+  if (f == 0)
+    return 0;
+  return f(f - 1);
+}
+
+int main() {
+  return f(31);
+}

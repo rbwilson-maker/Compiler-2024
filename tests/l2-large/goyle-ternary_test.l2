@@ -1,0 +1,7 @@
+//test return 5
+
+int main () {
+    bool z = true;
+    int x = z ? 5 : 10;
+    return x;
+}

@@ -1,0 +1,12 @@
+//test return 9
+
+int* c(int* x) {
+*x += 1;
+return x;
+}
+
+int main() {
+int* x = alloc(int);
+x = c(c(c(c(c(c(c(c(c(x)))))))));
+return *x;
+}

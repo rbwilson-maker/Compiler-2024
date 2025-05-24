@@ -1,0 +1,66 @@
+//test return 20000
+
+/*
+ * overly compensating linked lists
+ * big recursion so probably stack overflow
+ * (found the limit on notolab by submitting several times :P)
+ */
+
+
+struct tree {
+    int val;
+
+    struct tree* left;
+    struct tree* right;
+};
+
+typedef struct tree tree_l;
+
+tree_l* init_tree_node(int val){
+
+    tree_l* root = alloc(struct tree);
+
+    root->val = val;
+
+    return root;
+}
+
+void insert_tree(tree_l* root, int val){
+
+    if (root == NULL) return;
+
+    if (root->val > val){
+        if (root->left == NULL){
+            root->left = init_tree_node(val);
+        } else {
+            insert_tree(root->left, val);
+        }
+    } else {
+        if (root->right == NULL){
+            root->right = init_tree_node(val);
+        } else {
+            insert_tree(root->right, val);
+        }
+    }
+
+}
+
+int max (int a, int b){
+    if (a > b) return a;
+    return b;
+}
+
+int h_tree (tree_l* root){
+    if (root == NULL) return 0;
+
+    return 1 + max(h_tree(root->right), h_tree(root->left));
+}
+
+int main() {
+    
+    tree_l* root = init_tree_node(0);
+
+    for (int i = 1; i < 20000; i++) insert_tree(root, i);
+
+    return h_tree(root);
+}

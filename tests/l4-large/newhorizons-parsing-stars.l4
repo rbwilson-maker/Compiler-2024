@@ -1,0 +1,16 @@
+//test return 251
+
+int main(){
+    int *x; 
+    int * y; 
+    int* z; 
+
+    x = alloc(int);
+    y = alloc(int);
+    z = alloc(int);
+
+    *x = 2;
+    *y = 5;
+    *z = 1; 
+    return *x*100 + *y*10 + *z;
+}

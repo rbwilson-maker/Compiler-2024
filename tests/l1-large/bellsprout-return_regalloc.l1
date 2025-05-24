@@ -1,0 +1,20 @@
+//test return 21
+// test register allocation
+int main(){
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+
+    a = 1;
+    b = 1;
+    c = a + b;
+    d = b + c;
+    e = c + d;
+    a = d + e;
+    b = e + a;
+    c = a + b;
+    
+    return c;
+}

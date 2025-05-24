@@ -1,0 +1,14 @@
+//test return 100
+int test(int y);
+
+int test2(int x) {
+  return test(x);
+}
+
+int test(int y) {
+  return 10*y;
+}
+
+int main() {
+  return test2(10);
+}

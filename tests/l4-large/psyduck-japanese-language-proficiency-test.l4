@@ -1,0 +1,20 @@
+//test typecheck
+//test infloop
+struct nooo;
+typedef struct nooo no;
+struct nooo {
+ no* noo;
+};
+
+int main() {
+no* n0 = alloc(no);
+no* n1 = alloc(no);
+no* n2 = alloc(no);
+n0->noo = n1;
+n1->noo = n2;
+n2->noo = n0;
+no* n = n0;
+while (n->noo != n)
+n = n->noo;
+return 0;
+}

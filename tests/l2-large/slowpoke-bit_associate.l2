@@ -1,0 +1,9 @@
+//test return -1
+// Test associativity of bitwise operator.
+
+int main() {
+  int x = 0xFFFFFFFF;
+  int y = 0xFFFF;
+  int z = 0xDEADBEEF;
+  return x & y ^ z | x;
+}

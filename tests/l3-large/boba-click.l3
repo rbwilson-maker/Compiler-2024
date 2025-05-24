@@ -1,0 +1,15 @@
+//test error
+
+int do_nothing();
+
+int main() {
+    if (false)
+        do_nothing();
+    assert (false);
+    return 1;
+}
+
+int do_nothing()
+/*{
+    return 1;
+}*/;

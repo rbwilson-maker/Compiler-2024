@@ -1,0 +1,25 @@
+//test return 19
+// alloc_array taking a type and a big expression
+
+int f(int* c, int i) {
+  *c = *c + 1;
+  return i;
+}
+
+int main() {
+  int* counter = alloc(int);
+  *counter = 0;
+  int[] A = alloc_array(int,
+    1 + f(counter,1)  - f(counter,2)
+      + f(counter,3)  - f(counter,4)
+      + f(counter,5)  - f(counter,6)
+      + f(counter,7)  - f(counter,8)
+      + f(counter,9)  - f(counter,10)
+      + f(counter,11) - f(counter,12)
+      + f(counter,13) - f(counter,14)
+      + f(counter,15) - f(counter,16)
+      + f(counter,17) - f(counter,18)
+      + f(counter,19) );
+
+  return *counter;
+}

@@ -1,0 +1,12 @@
+//test return 1
+//test asop
+
+int main() {
+  int x = 21392;
+  int y = 3943343;
+  if ((y-x) == 0) {
+    return 0;
+  } else {
+    return 1;
+  }
+}

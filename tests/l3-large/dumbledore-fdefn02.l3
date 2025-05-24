@@ -1,0 +1,26 @@
+//test return 12
+
+//test to verify scoping of functions
+void foo (int a, int b, int c) {
+  a = 2001;
+  b = 2002;
+  c = 2003;
+  return;
+}
+
+int main () {
+  int a;
+  int b;
+  int c;
+  int d;
+  
+  a = 3;
+  b = 2;
+  c = 2;
+
+  foo (a, b, c);
+  
+  d = a * b * c;
+
+  return d;
+}

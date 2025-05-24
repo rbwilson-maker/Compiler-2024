@@ -1,0 +1,12 @@
+//test memerror
+
+struct s {
+    int[] wow;
+    int* poo;
+};
+
+int main() {
+    struct s* bow = alloc(struct s);
+    bow->wow = alloc_array(int, 10);
+    return bow->wow[9] + bow->wow[10];
+}

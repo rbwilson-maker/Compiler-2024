@@ -1,0 +1,22 @@
+//test return 53
+int main() {
+    int x = 100;
+    int y = 0;
+    int z = 2;
+    while (y == 0 || x / y == 10) {
+        y += 10;
+        z--;
+    }
+    // z is 0 here
+    if (z != 0 && x / z > 0) {
+        // do some stuff
+        return 100;
+    } else {
+        for (; z < 6; z++) {
+            x++;
+        }
+    }
+
+    /* return some stuff */
+    return x / 2;
+}

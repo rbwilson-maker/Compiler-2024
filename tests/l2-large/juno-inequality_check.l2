@@ -1,0 +1,15 @@
+//test return 2
+
+// Tests that equality is overloaded, and works for both ints and bools
+
+int main () {
+    int a = 1;
+    int b = 2;
+    bool c = true;
+    bool d = false;
+    if (a != b && c != d) {
+        a = 2;
+    }
+
+    return a;
+}

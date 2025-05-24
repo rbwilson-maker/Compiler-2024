@@ -1,0 +1,19 @@
+//test abort
+//Test that the function arguments are evaluated left to right.
+
+int divide(int p, int q) {
+  return p/q;
+}
+
+int abort() {
+  assert(false);
+  return 0;
+}
+
+int f(int a, int b) {
+    return a + b;
+}
+
+int main() {
+  return f(abort(), divide(1, 0));
+}

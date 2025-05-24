@@ -1,0 +1,15 @@
+//test return 5
+
+struct offers {
+	bool bogo;
+	bool discount;
+	int rate;
+};
+
+int main() {
+	struct offers* disc = alloc(struct offers);
+	disc->bogo = false;
+	disc->discount = true;
+	disc->rate = 5;
+	return disc->rate;
+}

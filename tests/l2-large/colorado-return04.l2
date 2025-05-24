@@ -1,0 +1,12 @@
+//test return 2 
+int main(){
+	int j = -123;
+	int k = 40;
+	while((j >> 31) == -1){
+		k+=7;
+		if((k&782)>399){
+			return 2;
+		}
+	}
+	return 0;
+}

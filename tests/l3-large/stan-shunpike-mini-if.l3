@@ -1,0 +1,11 @@
+//test return 23
+
+int f(int x, int y);
+int g(int x, int y);
+
+int f(int x, int y) { return x ^ y; }
+int g(int x, int y) { return f(x, y) ^ f(x, y); }
+
+int main() {
+    return f(17, 6) ^ g(2, 5);
+}

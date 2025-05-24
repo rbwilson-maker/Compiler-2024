@@ -1,0 +1,32 @@
+//test return 32
+
+typedef int a1;
+typedef a1 a;
+typedef a b;
+typedef int c1;
+typedef c1 c2;
+typedef c2 c;
+
+int myfun ( c x, b y) {
+    return x+y;
+}
+
+int main () 
+{
+    c arg1 = 1;
+    c arg2 = 3;
+    c arg3 = 3;
+    c arg4 = 3;
+    c arg5 = 3;
+    c arg6 = 3;
+    c arg7 = 3;
+    c arg8 = 3;
+    c arg9 = 3;
+    c arg10= 3;
+
+    int arg1923 = arg1 + arg2 + arg3 + arg4 + arg5 + arg6 + arg7 + arg8 + arg9
+        + arg10;
+
+    return arg1923 + myfun(arg1, arg2);
+
+}

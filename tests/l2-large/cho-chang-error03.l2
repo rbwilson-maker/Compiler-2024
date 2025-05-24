@@ -1,0 +1,13 @@
+//test error
+//improper brackets
+
+int main()
+{
+    int y = 0;
+    int z = 2;
+    int a = 1;
+    {
+        int a = 2;
+    }
+    return a;
+}

@@ -1,0 +1,18 @@
+//test return 5
+
+int F(int f){
+    return f + 2;
+}
+
+int G(int g){
+    return g + 3;
+}
+
+int main(){
+
+    int a=1;
+    int b=2;
+
+    return a == b ? F (a < b ? a : b ) : G ( a > b ? a : b );
+
+}

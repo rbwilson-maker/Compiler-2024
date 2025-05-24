@@ -1,0 +1,24 @@
+//test error
+
+/* Return Keyword Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, September 13, 2015 at 09:27:04 AM 
+ *
+ * This test tests whether the compiler detects that the keyword 'return'
+ * is being used as an identifier.
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int return;
+
+    x = 4;
+    y = 3;
+    return = x + y;
+
+    return return;
+}

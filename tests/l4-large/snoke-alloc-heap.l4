@@ -1,0 +1,44 @@
+//test return 2968
+
+int [] get_arr() {
+    int [] arr = alloc_array(int, 10);
+    for (int i = 0; i < 10; i++) {
+        arr[i] = i;
+    }
+    return arr;
+}
+
+int [] get_revarr() {
+    int [] arr = alloc_array(int, 10);
+    for (int i = 0; i < 10; i++) {
+        arr[i] = 10 - i;
+    }
+    return arr;
+}
+
+int [] randarr() {
+    int [] arr = alloc_array(int, 10);
+    arr[0] = 123;
+    arr[1] = 244;
+    arr[2] = 1001;
+    arr[3] = 599;
+    arr[4] = 99;
+    arr[5] = 100;
+    arr[6] = 49;
+    arr[7] = 58;
+    arr[8] = 200;
+    arr[9] = 395;
+    return arr;
+}
+
+int main() {
+    int [] arr = get_arr();
+    int [] revarr = get_revarr();
+    int [] randarr = randarr();
+
+    int sum = 0;
+    for (int i = 0; i < 10; i++) {
+        sum += arr[i] + revarr[i] + randarr[i];
+    }
+    return sum;
+}

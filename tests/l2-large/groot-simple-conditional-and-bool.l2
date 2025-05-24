@@ -1,0 +1,16 @@
+//test return 1
+
+int main() { 
+  bool b = true;
+  int ret;
+  if (b) {
+    bool c = false;
+    if (c) {
+      return 0;
+    } else {
+      return 1;
+    }
+  } else {
+    return 2;
+  }
+}

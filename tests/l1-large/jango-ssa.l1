@@ -1,0 +1,8 @@
+//test return 30
+int main() {
+    int x = 3;
+    int y = 10;
+    int z = (x+3)*(y-5);
+
+    return z;
+}

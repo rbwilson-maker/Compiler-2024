@@ -1,0 +1,16 @@
+//test return 1092
+int main(){
+  int i = 84;
+  int j = 156;
+  int mul = i*j;
+  while (j>i){
+    int k = j-i;
+    if (k>i)
+      j = k;
+    else{
+      j = i;
+      i = k;
+    }
+  }
+  return mul/i;
+}

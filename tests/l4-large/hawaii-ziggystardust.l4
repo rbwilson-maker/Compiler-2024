@@ -1,0 +1,48 @@
+//test return 1000000
+
+struct ziggy
+{
+  bool zig;
+  struct ziggy* left;
+  struct ziggy* right;
+};
+
+int main() {
+  struct ziggy* dust;
+
+  dust = alloc(struct ziggy);
+  struct ziggy* spiders = dust;
+
+  for(int i = 0; i < 2000000; i++) {
+    if (i % 2 == 0) {
+      spiders->zig = true;
+      spiders->left = alloc(struct ziggy);
+      spiders->right = NULL;
+      spiders = spiders->left;
+    }
+    else {
+      spiders->zig = false;
+      spiders->left = NULL;
+      spiders->right = alloc(struct ziggy);
+      spiders = spiders->right;
+    }
+  }
+
+  struct ziggy* bowie = dust;
+  int zigcount = 0;
+  int zagcount = 0;
+  while(bowie != spiders) {
+    if (bowie->zig) {
+      zigcount++;
+      bowie = bowie->left;
+    }
+    else {
+      zagcount++;
+      bowie = bowie->right;
+    }
+  }
+
+  assert(zigcount == zagcount);
+
+  return zigcount;
+}

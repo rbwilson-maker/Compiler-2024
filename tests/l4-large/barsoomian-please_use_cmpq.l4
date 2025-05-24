@@ -1,0 +1,23 @@
+//test return 15411
+
+/**
+ * @brief Ensures that the compiler uses cmpq for pointers, not cmpl.
+ *
+ * (There is a test for this, but it is not really obvious what the cause of
+ * failure is. Hopefully this will help!)
+ *
+ * Kevin Geng, Team Barsoomian
+ * 15-411 Fall 2020
+ */
+
+int main() {
+  for (int i = 1; i < 1000; i++) {
+    dub uno = itod(i);
+    dub dos = dmul(uno, itod(16));
+
+    print_dub(dos);
+    assert(uno != dos);
+  }
+
+  return 15411;
+}

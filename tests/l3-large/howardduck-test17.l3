@@ -1,0 +1,19 @@
+//test return 0
+
+int f1 (int x, int y) {
+    return x * y;
+}
+
+int f2 (int x, int y) {
+    return f1(x % 2, y);
+}
+
+int f3 (int x, int y) {
+    return f1(x * y, y);
+}
+
+int main() {
+    int m = f1(8, 12);
+    int x = f2(m, 3);
+    return f3(x, 7);
+}

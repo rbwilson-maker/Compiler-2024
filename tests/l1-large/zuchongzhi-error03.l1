@@ -1,0 +1,8 @@
+//test error
+// invalid operator
+
+int main() {
+  int x = 0;
+  x = x---x;
+  return 0;
+}

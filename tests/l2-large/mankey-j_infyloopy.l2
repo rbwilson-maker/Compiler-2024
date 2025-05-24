@@ -1,0 +1,8 @@
+//test typecheck
+//test infloop
+//infloop
+int main ()
+{
+    while(true) int k = 0;
+    return 1;
+}

@@ -1,0 +1,54 @@
+//test return ~922825919
+
+// Make sure you're respecting calling conventions!
+
+int do_stuff(bool a, int b) {
+  a = !a;
+  b += 200;
+  return a ? b : b + 1;
+}
+
+int mess_around_with(int x, bool y, int z, int w, int a) {
+  x += 1;
+  y = !y;
+  w += a - z;
+  z -= w * a;
+  return x + z + w + a + (y ? 600 : 700);
+}
+
+int f(int a1, int a2, int a3, int a4, int a5, int a6,
+      int a7, int a8, bool a9, bool a10, int a11, int a12,
+      int a13, int a14, int a15, int a16, bool a17, int a18, int a19,
+      int a20, bool a21, int a22) {
+  int x = mess_around_with(a14, a17, a1, a16, a19);
+  x ^= ~~~(a1 >> a2 + a3 << a4 | a5 & a6);
+  x += a11 + a12 + a13 + a14;
+  x *= a15 * a16 - (a17 ? a18 : a19) / a20 + do_stuff(a21, a22);
+  return (a7 == a8 ? a9 : a10) ? x : x + 1;
+}
+
+int main() {
+  return f(449204,
+           3,
+           4,
+           1,
+           1238923,
+           -23849,
+           18694,
+           10205,
+           true,
+           false,
+           12849,
+           -230920,
+           1240492,
+           43130941,
+           43592438,
+           -423950,
+           true,
+           1940,
+           483932,
+           1425093,
+           true,
+           3019);
+
+}

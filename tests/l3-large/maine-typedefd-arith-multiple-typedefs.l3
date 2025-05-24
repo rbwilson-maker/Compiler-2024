@@ -1,0 +1,19 @@
+//test return 0
+//try typedefd args
+
+typedef int foo;
+typedef int bar;
+typedef bool baz;
+
+bar f(foo a, bar b, baz c)
+{
+   if (c)
+      return a + b;
+   return 0;
+}
+
+int main()
+{
+  foo a = 0;
+  return f(a, 1, false);
+}

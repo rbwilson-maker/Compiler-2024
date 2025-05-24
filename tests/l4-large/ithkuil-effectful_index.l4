@@ -1,0 +1,14 @@
+//test return 0
+// order of execution of effectful lvalues
+
+int f(int[] A) {
+    A[5] = 0;
+    return 5;
+}
+
+int main() {
+    int[] A = alloc_array(int, 10);
+    A[5] = 1;
+    A[f(A)] *= 5;
+    return A[5];
+}

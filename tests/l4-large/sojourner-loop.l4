@@ -1,0 +1,12 @@
+//test memerror
+
+int loop() {
+    while (true) 
+        return loop();
+    return loop();
+}
+
+int main() {
+    int[] *arr = NULL;
+    return (*arr)[loop()];
+}

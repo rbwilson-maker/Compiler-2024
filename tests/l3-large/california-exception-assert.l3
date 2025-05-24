@@ -1,0 +1,9 @@
+//test abort
+
+
+int main() {
+    int x = 5;
+    x += 1;
+    assert(x != 6);
+    return 0;
+}

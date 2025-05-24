@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int main()
+{
+  int x;
+  int y;
+
+  x = 3;
+  y = 50;
+
+  // shift too high
+  x <<= y;
+
+  return x;
+}

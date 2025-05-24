@@ -1,0 +1,17 @@
+//test return 99990000
+
+
+
+int main() {
+    int x;
+    int y = 0;
+    int z = 0;
+    int t = 0;
+    for(x = 0; x < 9999; x++) {
+        assert(x < 9999);
+        y++;
+        z++;
+        t += y + z;
+    }
+    return t;
+}

@@ -1,0 +1,161 @@
+//test return 0
+
+typedef int a;
+typedef bool b;
+typedef b c;
+typedef c d;
+typedef d e;
+typedef e f;
+typedef f g;
+typedef g h;
+typedef h i;
+typedef i k;
+typedef a l;
+typedef l m;
+typedef m n;
+typedef n o;
+typedef o p;
+typedef p q;
+typedef q r;
+typedef r s;
+typedef s t;
+typedef b u;
+typedef u v;
+typedef v w;
+typedef w x;
+typedef x y;
+typedef y z;
+
+g yes();
+g no();
+
+m yes2();
+m no2();
+
+a main()
+{
+	d yea = yes();
+	d nah = no();
+
+	r ok = yes2();
+	r uhuh = no2();
+
+	return ((yea == nah) || (ok == uhuh) ? yes2() : no2());
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+g yes(){return (0 == 0);}
+g no(){return (0 == 1);}
+
+m yes2(){return yes() ? 1 : 0;}
+m no2(){return no() ? 1 : 0;}

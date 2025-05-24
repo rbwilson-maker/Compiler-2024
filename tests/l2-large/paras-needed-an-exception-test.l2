@@ -1,0 +1,12 @@
+//test div-by-zero
+// it's only a matter of time...
+
+int main() {
+    int final_countdown = 1000;
+    int big = 1000000;
+    while (true) {
+        big / final_countdown;
+        final_countdown--;
+    }
+    return 0;
+}

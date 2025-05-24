@@ -1,0 +1,13 @@
+//test error
+/*
+Compile error.
+Void function cannot return void function call.
+*/
+
+void fun() {
+  return fun();
+}
+
+int main() {
+  return 3;
+}

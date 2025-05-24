@@ -1,0 +1,17 @@
+//test return 1124017
+
+
+int main() {
+    int a = 7;
+    int b = 1123981;
+    int c = 29;
+    int d = 0;
+    while (true) {  
+        d = a + b + c;
+        c = d * 2 + b / 2;
+        if (d > 100) {
+            return d;
+        }
+    }
+    return d+200;
+}  

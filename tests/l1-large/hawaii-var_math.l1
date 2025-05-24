@@ -1,0 +1,8 @@
+//test return 44
+
+int main()
+{
+  int size = 2;
+  int len = 15;
+  return size * len + (len - 1);
+}

@@ -1,0 +1,21 @@
+//test return 14
+
+struct person {
+    int month_of_birth;
+    int age;
+};
+
+typedef struct person* person;
+
+int main() {
+    person a = alloc(struct person);
+    person j = alloc(struct person);
+
+    a->month_of_birth = 11;
+    j->month_of_birth = 3;
+
+    a->age = 20;
+    j->age = a->age;
+
+    return a->month_of_birth + j->month_of_birth;
+}

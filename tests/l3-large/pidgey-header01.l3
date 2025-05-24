@@ -1,0 +1,7 @@
+//test typecheck
+
+int main() {
+    func(1,2);
+
+    return func2(1,2);
+}

@@ -1,0 +1,11 @@
+//test abort
+//Test when an assert fails
+
+bool are_these_equal(int n, int m) {
+    return n == m;
+}
+
+int main() {
+    assert(are_these_equal(4, 5));
+    return 1/0;
+}

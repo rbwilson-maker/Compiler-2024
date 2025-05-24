@@ -1,0 +1,11 @@
+//test error
+
+int main()
+{
+  bool a = true;
+  bool b = false;
+  int c = 0;
+  int d = 299;
+  
+  return !a && ~b && ~c || !d;
+}

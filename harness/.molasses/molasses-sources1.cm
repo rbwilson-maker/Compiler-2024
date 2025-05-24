@@ -1,0 +1,71 @@
+Library
+	library($/basis.cm)
+	library($/smlnj-lib.cm)
+	library($/json-lib.cm)
+	structure Option	(* utils/TopUtils.sml : 20.11-20.17 *)
+	structure InternalMolassesStructure0
+	structure MultiDict	(* utils/Maps.sml : 18.11-18.20 *)
+	structure StringMap	(* utils/Maps.sml : 9.11-9.20 *)
+	structure StringSet	(* utils/Maps.sml : 1.11-1.20 *)
+	structure Config	(* config/Config.sml : 5.11-5.17 *)
+	signature EITHER	(* utils/Either.sig : 1.11-1.17 *)
+	structure Either	(* utils/Either.sml : 4.11-4.17 *)
+	structure InternalMolassesStructure1
+	signature UTIL	(* utils/Util.sig : 1.11-1.15 *)
+	structure Util	(* utils/Util.sml : 3.11-3.15 *)
+	structure MapReduce	(* utils/MapReduce.sml : 1.11-1.20 *)
+	structure Args	(* config/Args.sml : 4.11-4.15 *)
+	structure Outcome	(* score/Outcome.sml : 4.11-4.18 *)
+	signature SUMMARY	(* score/Summary.sig : 1.11-1.18 *)
+	structure Summary	(* score/Summary.sml : 1.11-1.18 *)
+	signature RUNNER	(* drive/Runner.sig : 1.11-1.17 *)
+	structure Runner	(* drive/Runner.sml : 1.11-1.17 *)
+	signature COMPILER	(* drive/Compiler.sig : 1.11-1.19 *)
+	structure Compiler	(* drive/Compiler.sml : 4.11-4.19 *)
+	signature STATS	(* score/Stats.sig : 1.11-1.16 *)
+	structure Stats	(* score/Stats.sml : 4.11-4.16 *)
+	structure Score	(* score/Scoring.sml : 4.11-4.16 *)
+	structure TestFile	(* grader/TestFile.sml : 2.11-2.19 *)
+	structure Suite	(* grader/Suite.sml : 1.11-1.16 *)
+	structure GeneralTest	(* grader/GeneralTest.sml : 2.11-2.22 *)
+	structure Checkpoint	(* grader/Checkpoint.sml : 1.11-1.21 *)
+	structure General	(* grader/General.sml : 1.11-1.18 *)
+	structure Bench	(* grader/Bench.sml : 1.11-1.16 *)
+	structure StaticAnalysis	(* top/StaticAnalysis.sml : 1.11-1.25 *)
+	signature GRADER	(* top/Grader.sig : 6.11-6.17 *)
+	structure Grader	(* top/Grader.sml : 2.11-2.17 *)
+	structure InternalMolassesStructure2
+is
+	$/basis.cm
+	$/smlnj-lib.cm
+	$/json-lib.cm
+	molasses-file0.sml
+	molasses-file1.sml
+	molasses-file2.sml
+	molasses-file3.sml
+	molasses-file4.sml
+	molasses-file5.sml
+	molasses-file6.sml
+	molasses-file7.sml
+	molasses-file8.sml
+	molasses-file9.sml
+	molasses-file10.sml
+	molasses-file11.sml
+	molasses-file12.sml
+	molasses-file13.sml
+	molasses-file14.sml
+	molasses-file15.sml
+	molasses-file16.sml
+	molasses-file17.sml
+	molasses-file18.sml
+	molasses-file19.sml
+	molasses-file20.sml
+	molasses-file21.sml
+	molasses-file22.sml
+	molasses-file23.sml
+	molasses-file24.sml
+	molasses-file25.sml
+	molasses-file26.sml
+	molasses-file27.sml
+	molasses-file28.sml
+	molasses-file29.sml

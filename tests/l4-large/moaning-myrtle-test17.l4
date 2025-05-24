@@ -1,0 +1,24 @@
+//test return 1153133052
+
+struct cyc {
+    struct cyc* ptr;
+    int n;
+};
+
+typedef struct cyc* cyc;
+
+int main() {
+    cyc x = alloc(struct cyc);
+    cyc y = alloc(struct cyc);
+    cyc z = alloc(struct cyc);
+    x->ptr = y;
+    y->ptr = z;
+    z->ptr = x;
+    int c = 0;
+    for (cyc i = x; i->n >= 0; i = i->ptr) {
+        i->ptr->n += i->n;
+        x->n++;
+        c++;
+    }
+    return y->n + c;
+}

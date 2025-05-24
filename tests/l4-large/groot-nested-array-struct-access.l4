@@ -1,0 +1,32 @@
+//test return 1035
+
+struct Wrapper {
+  int v;
+};
+
+struct Inner {
+  struct Wrapper a;
+  int x; int* y;
+  struct Wrapper b;
+};
+
+struct Outer {
+  struct Inner[] A;
+};
+
+int main() {
+  struct Outer* o = alloc(struct Outer);
+  o->A = alloc_array(struct Inner, 10);
+
+  o->A[0].a.v = 123;
+  o->A[5].b.v = 912;
+  
+  int sum = 0;
+  for (int i = o->A[3].x; i < 10; i++) {
+    assert(o->A[i].y == NULL);
+    sum += o->A[i].a.v + o->A[i].b.v;
+  }
+
+  return sum;
+}
+

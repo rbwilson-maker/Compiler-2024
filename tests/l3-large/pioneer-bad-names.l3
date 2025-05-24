@@ -1,0 +1,18 @@
+//test error
+//function names and typedef names cannot be the same
+
+typedef bool is_this_allowed;
+
+is_this_allowed is_this_allowed(is_this_allowed is_this_allowed)
+{
+  return !is_this_allowed;
+}
+
+int main()
+{
+  int main = 6;
+  if(is_this_allowed(false))
+    return 24;
+  else
+    return 0;
+}

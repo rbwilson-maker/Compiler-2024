@@ -1,0 +1,57 @@
+//test return 11
+
+/* Struct Namespaces Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, October 26, 2015 at 05:10:24 PM EDT
+ *
+ * This tests verifiers that struct names and field names do not clobber
+ * the global namespace.
+ */
+
+struct test1 {
+    int test1;
+    struct test2* test2;
+};
+
+struct test2 {
+    int test2;
+    struct test1* test1;
+};
+
+int test1(struct test1* test1, int depth);
+int test2(struct test2* test2, int depth);
+
+int test1(struct test1* test, int depth)
+{
+    if (test == NULL) {
+        return depth;
+    }
+
+    return test2(test->test2, depth+1);
+}
+
+int test2(struct test2* test, int depth)
+{
+    if (test == NULL) {
+        return depth;
+    }
+
+    return test1(test->test1, depth+1);
+}
+
+int main()
+{
+    struct test1* t = alloc(struct test1);
+    struct test1* tmp = t;
+
+    for (int i = 0; i < 11/2; i++)
+    {
+        tmp->test2 = alloc(struct test2);
+        tmp->test2->test1 = alloc(struct test1);
+        tmp = tmp->test2->test1;
+    }
+
+    return test1(t, 0);
+}

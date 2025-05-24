@@ -1,0 +1,21 @@
+//test div-by-zero
+
+int main() {
+    int x1 = 1;
+    int x2 = 2;
+    int x3 = 3;
+
+    int y1 = 1;
+    int y2 = 2;
+    int y3 = 3;
+
+    int z1 = 1;
+    int z2 = 2;
+    int z3 = 3;
+
+    int t1 = (x1 + y1) - z2;
+    int t2 = (x2 + z1) - x3;
+    int t3 = y2 + y3 + z3;
+
+    return (t3 / (t1 + t2));
+}

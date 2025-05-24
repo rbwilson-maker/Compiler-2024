@@ -1,0 +1,34 @@
+//test return 0
+
+typedef int * intp;
+typedef intp * intpp;
+typedef intpp * intppp;
+typedef intppp * intpppp;
+
+int main() {
+  intpppp pppp = alloc(intppp);
+  *pppp = alloc(intpp);
+  **pppp = alloc(intp);
+  ***pppp = alloc(int);
+  intppp ppp = *pppp;
+  intpp pp = *ppp;
+  intp p = *pp;
+  int x = 5;
+  *p = x;
+  assert(**pp == 5);
+  assert(***ppp == 5);
+  assert(****pppp == 5);
+  ****pppp = 10;
+  assert(*p == 10);
+  p = alloc(int);
+  *p = 5;
+  assert(*p == 5);
+  assert(**pp == 10);
+  assert(***ppp == 10);
+  assert(****pppp == 10);
+  *ppp = alloc(intp);
+  **ppp = p;
+  assert(***ppp == 5);
+  assert(**pp == 10);
+  return 0;
+} 

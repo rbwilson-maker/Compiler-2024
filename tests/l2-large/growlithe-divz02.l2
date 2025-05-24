@@ -1,0 +1,23 @@
+//test div-by-zero
+int main()
+{
+   	 int sum;
+   	 int x;
+   	 int y;
+
+   	 sum = 0;
+   	 for(x = 0; x < 50; x++)
+   	 {
+   		   y = x % 10;
+   		   if((x >> 2) < y)
+   		   {
+   		  		  x >>= 2;
+   				  sum += x;
+   		   }
+   		   else
+   		   {
+   		  		x = x / sum;
+   		   }
+   	 }
+   	 return sum;
+}

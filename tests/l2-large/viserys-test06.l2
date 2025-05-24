@@ -1,0 +1,22 @@
+//test typecheck
+//test infloop
+int main() {
+  int a = -1;
+  while (a < 0) {
+    if (a % 2 == 0) {
+      a /= 2;
+    }
+    else {
+      a = 0 * a - 1;
+    }
+    a += (a - 1);
+    int b = a;
+    int c = b;
+    int d = b + c + a;
+    int e = d / 1;
+    int f = a + b + c + d + e;
+    int t = a + b + c  + d - e - f;
+    t %= 3;
+  }
+  return a;
+}

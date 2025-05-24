@@ -1,0 +1,16 @@
+//test compile
+
+fpt fastpow_fpt(fpt b, int e) {
+    fpt half = fastpow_fpt(b, e / 2);
+    if(e % 2 == 1) {
+        return fmul(b, fmul(half, half));
+    }
+    return fmul(half, half);
+}
+
+int main() {
+    fpt x = itof(2);
+    print_fpt(x);
+    print_int(x);
+    return x;
+}

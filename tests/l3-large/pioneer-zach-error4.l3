@@ -1,0 +1,13 @@
+//test error
+
+bool a() {
+  return true && false || false && true || true;
+}
+
+bool b() {
+  return a() || !a() && !b();
+}
+
+int main() {
+  return b() || !b();
+}

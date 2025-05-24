@@ -1,0 +1,35 @@
+//test return 321
+
+int trans(int x, bool t) {
+
+  int y;
+
+  y = x;
+
+  if (t) {
+    y += 100;
+  } else {
+    y -= 50;
+  }
+
+  y *= 3;
+
+  return y;
+  
+}
+
+int main() {
+
+  int x;
+  bool t;
+
+  bool t2 = false;
+
+  t = true;
+
+  x = 7;
+
+  return trans(x, t || t2);
+
+  
+}

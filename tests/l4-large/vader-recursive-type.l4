@@ -1,0 +1,10 @@
+//test error
+
+// attempt to define a recursive type
+
+typedef mytype[] mytype;
+
+int main() {
+    return 0;
+}
+

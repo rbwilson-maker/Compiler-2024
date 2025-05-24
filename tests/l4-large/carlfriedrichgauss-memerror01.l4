@@ -1,0 +1,8 @@
+//test memerror
+// test evaluation order and memory safety checking
+
+int main() {
+    int* a = NULL;
+    assert(*a == 0);
+    return 0;
+}

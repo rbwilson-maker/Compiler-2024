@@ -1,0 +1,15 @@
+//test return 20703
+
+int main()
+{
+    int a = 100;
+    
+    int b = 3 + a;
+    int c = 0;
+    
+    
+    c = 42;
+    b += a;
+    c = (((b)) + a) + (a) + (a * b);
+    return c;
+}

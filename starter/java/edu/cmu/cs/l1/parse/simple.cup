@@ -1,0 +1,177 @@
+package edu.cmu.cs.l1.parse;
+
+import edu.cmu.cs.l1.absyn.*;
+import edu.cmu.cs.l1.symbol.Symbol;
+import edu.cmu.cs.l1.errormsg.*;
+
+action code {: static Symbol sym(String s) {
+	         return Symbol.symbol(s);
+	        }
+
+            public boolean hasReturn = false;
+
+	    :};
+
+parser code  {:
+  public ASStatement parseResult;
+  Lexer lexer;
+
+
+  public void syntax_error(java_cup.runtime.Symbol current) {
+   report_error("Syntax error (" + current.sym + ")", current);
+  }
+
+  ErrorMsg errorMsg;
+
+  public void report_error(String message,
+			   java_cup.runtime.Symbol info) {
+      errorMsg.error(info.left, message);
+  }
+
+  public parser(Lexer l, ErrorMsg err) {
+    this();
+    errorMsg=err;
+    lexer=l;
+  }
+:};
+
+scan with {: return lexer.nextToken(); :};
+
+terminal String ID;
+terminal String INT;
+terminal String HEX;
+terminal LBRACE, RBRACE, LPAREN, RPAREN, SEMICOL,
+	 PLUS, MINUS, TIMES, DIVIDE, ASSIGN, MOD, NEG,
+	 PLUSASSIGN, MINUSASSIGN, TIMESASSIGN, DIVIDEASSIGN, MODASSIGN,
+	 RETURN, INTTYPE;
+
+non terminal program, return, declorstmt, declsorstms, decl, stmt, simp, expr, lval;
+
+precedence left PLUS, MINUS;
+precedence left TIMES, DIVIDE, MOD;
+precedence right NEG;
+
+start with program;
+
+program ::=
+    INTTYPE:tau ID:main LPAREN RPAREN LBRACE declsorstms:a RBRACE
+	{: 
+	   ASStatementList stms = new ASStatementList(tauleft);
+	   stms = stms.join((ASStatementList)a);
+	   parser.parseResult = stms;
+
+      if(!main.equals("main")) {
+         System.out.println("Main function must be named \"main\"");
+         System.exit(-1);
+      }
+
+       /* NOTE: you'll need to remove this and write some real
+          program analysis code in the second lab */ 
+       if (hasReturn == false)
+       {
+           System.out.println("No return in program");
+           System.exit(-1);
+       }
+	:}
+   ;
+
+declsorstms ::=
+   declorstmt:d
+   {: RESULT = new ASStatementList(dleft, (ASStatement)d); :}
+  | declorstmt:d declsorstms:ds
+   {: ASStatementList tail = new ASStatementList(dleft, (ASStatement)ds);
+      RESULT = tail.prepend((ASStatement)d);
+   :}
+  ;
+
+declorstmt ::=
+    decl:d
+   {: RESULT = d; :}
+  | stmt:s
+   {: RESULT = s; :}
+  ;
+
+decl ::=
+  INTTYPE ID:i ASSIGN expr:e SEMICOL
+   {: RESULT = new ASDeclStatement(ileft, Symbol.symbol(i), (ASExpression)e); :}
+  |  INTTYPE ID:i SEMICOL
+	{: RESULT = new ASDeclStatement(ileft, Symbol.symbol(i)); :}
+	;
+
+stmt ::=
+    simp:s SEMICOL
+	{: RESULT = s; :}
+	;
+
+lval ::=
+    ID:i
+        {: RESULT = new ASSimpleLval(ileft, Symbol.symbol(i)); :}
+   | LPAREN lval:l RPAREN
+        {: RESULT = l; :}
+        ;
+
+simp ::=
+    RETURN expr:e 
+	{: hasReturn = true;
+       RESULT = new ASReturnStatement(eleft, (ASExpression)e); :}
+  | lval:i ASSIGN expr:e
+	{: RESULT = new ASAssignStatement(ileft, (ASLval)i, (ASExpression)e); :}
+  | lval:i PLUSASSIGN:o expr:e
+	{: RESULT =
+	   new ASAssignStatement(ileft,(ASLval)i, new ASOpExpression(oleft,ASOpExpression.PLUS,
+	       new ASLvalExpression(ileft, (ASLval)i), (ASExpression)e));
+	:}
+  | lval:i MINUSASSIGN:o expr:e
+	{: RESULT =
+	   new ASAssignStatement(ileft,(ASLval)i, new ASOpExpression(oleft,ASOpExpression.MINUS,
+	       new ASLvalExpression(ileft, (ASLval)i), (ASExpression)e));
+	:}
+  | lval:i TIMESASSIGN:o expr:e
+	{: RESULT =
+	   new ASAssignStatement(ileft,(ASLval)i, new ASOpExpression(oleft,ASOpExpression.MUL,
+	       new ASLvalExpression(ileft, (ASLval)i), (ASExpression)e));
+	:}
+  | lval:i DIVIDEASSIGN:o expr:e
+	{: RESULT =
+	   new ASAssignStatement(ileft,(ASLval)i, new ASOpExpression(oleft,ASOpExpression.DIV,
+	       new ASLvalExpression(ileft, (ASLval)i), (ASExpression)e));
+	:}
+  | lval:i MODASSIGN:o expr:e
+	{: RESULT =
+	   new ASAssignStatement(ileft,(ASLval)i, new ASOpExpression(oleft,ASOpExpression.MOD,
+	       new ASLvalExpression(ileft, (ASLval)i), (ASExpression)e));
+	:}
+	;
+
+expr ::=
+    LPAREN expr:e RPAREN
+	{: RESULT = e; :}
+  | INT:n
+	{: RESULT = new ASIntConstant(nleft, Long.parseLong(n)); :}
+  | HEX:n
+   {: if (n.replaceFirst("^0x0*", "").length() > 8) {
+         parser.report_error("Hex constant " + n + " is too big.", n);
+      }
+      RESULT = new ASHexConstant(nleft, Long.parseLong(n.substring(2, n.length()), 16)); :}
+  | ID:i
+	{: RESULT = new ASLvalExpression(ileft, new ASSimpleLval(ileft, Symbol.symbol(i))); :}
+  | MINUS:o expr:e
+	{: if (e instanceof ASIntConstant)
+	   {
+	     RESULT = new ASIntConstant(oleft, -1 * ((ASIntConstant)e).getValue());
+	   }
+	   else
+	     RESULT = new ASOpExpression(oleft, ASOpExpression.NEG, (ASExpression)e, null); :} %prec NEG
+  | expr:e1 PLUS:o expr:e2
+	{: RESULT = new ASOpExpression(oleft, ASOpExpression.PLUS, (ASExpression)e1, (ASExpression)e2); :}
+  | expr:e1 MINUS:o expr:e2
+	{: RESULT = new ASOpExpression(oleft, ASOpExpression.MINUS, (ASExpression)e1, (ASExpression)e2); :}
+  | expr:e1 TIMES:o expr:e2
+	{: RESULT = new ASOpExpression(oleft, ASOpExpression.MUL, (ASExpression)e1, (ASExpression)e2); :}
+  | expr:e1 DIVIDE:o expr:e2
+	{: RESULT = new ASOpExpression(oleft, ASOpExpression.DIV, (ASExpression)e1, (ASExpression)e2); :}
+  | expr:e1 MOD:o expr:e2
+	{: RESULT = new ASOpExpression(oleft, ASOpExpression.MOD, (ASExpression)e1, (ASExpression)e2); :}
+	;
+    
+

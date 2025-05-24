@@ -1,0 +1,17 @@
+//test return 55
+
+//correctly calculates the 10th triangle number iteratively
+
+int main(){
+    int i = 0;
+    int counter = 1;
+    int k = 1000000+~0>>~0+1>>1; //k = 100000
+    while(k > 0){
+     int j = (counter > 10) ? 0 : counter;
+     k--;
+     counter ++;
+     i+=j;
+    }
+    return i;
+
+}

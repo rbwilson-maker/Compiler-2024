@@ -1,0 +1,26 @@
+//test return 1
+//build a linked list
+
+struct node;
+
+typedef struct node node;
+
+struct node {
+  int val;
+  node* next;
+};
+
+int main() {
+  node* start = alloc(node);
+  start->val = 0;
+  node* prev = start;
+  for (int i = 1; i < 5; i++) {
+    node* next = alloc(node);
+    next->val = i;
+    prev->next = next;
+    prev = next;
+  }
+  return start->next->val;
+}
+
+

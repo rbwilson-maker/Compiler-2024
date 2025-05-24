@@ -1,0 +1,8 @@
+//test return 1
+// some boolean logic
+int main() {
+  bool t = true;
+  bool f = false;
+  bool res = (t || f && !f);
+  return res ? 1 : 0;
+}

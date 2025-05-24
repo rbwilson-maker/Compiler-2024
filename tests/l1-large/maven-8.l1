@@ -1,0 +1,19 @@
+//test return 6
+
+//variable reassignment and self-assignment
+
+int main() {
+  int a;
+  int b;
+
+  a = 0;
+  b = 1;
+  a = a + b;
+  a += 7; // a = 1
+  a *= 4; // a = 8
+  b -= a; // a = 32
+  a = a * (7 - b % 6); // b = -31 (modulo then subtraction)
+  a %= 10; // a = 256
+
+  return a;
+}

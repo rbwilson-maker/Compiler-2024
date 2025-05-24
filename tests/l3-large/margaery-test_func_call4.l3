@@ -1,0 +1,14 @@
+//test return 50005000
+
+int rec(int i) {
+    if (i == 0) {
+        return i;
+    } else {
+        return i + rec(i - 1);
+    }
+}
+
+int main() {
+    return rec(10000);
+}
+

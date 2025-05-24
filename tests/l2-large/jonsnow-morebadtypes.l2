@@ -1,0 +1,10 @@
+//test error
+
+int main(){
+  int x = 5 + 3;
+  if(x >= false)
+  {
+    x+=3;
+  }
+  return x;
+}

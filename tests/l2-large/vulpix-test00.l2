@@ -1,0 +1,10 @@
+//test typecheck
+//test infloop
+int main() {
+  bool x = true;
+  while (x) {
+    x = !x  && !x;
+    x = x || true;
+  }
+  return x ? 1 : 5;
+}

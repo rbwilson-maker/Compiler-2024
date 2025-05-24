@@ -1,0 +1,30 @@
+//test error
+
+int f1() {
+    return 123/5;
+}
+
+int f2(int t1) {
+    return -3*t1;
+}
+
+int f3(int t2, int t7) {
+    return t2*5-t7;
+}
+
+int foo(){
+    int t1 = f1();
+    int t2 = f2(t1) + -402+11+1;
+    int t3 = 0;
+    for(int i = 0; i<1;i++){
+        t3 = t1 - 3*t2 + t2*t2;
+    }
+    int t5 = (t2 * t4) - t3 - t2+ 312;
+    int t6 = 54*t3-t4+5;
+    int t7 = 2*t6 *-3 +t1 -3*t2;
+    return f3(t2, t7) + 2*t3;
+}
+
+int main() { 
+    return foo();
+}

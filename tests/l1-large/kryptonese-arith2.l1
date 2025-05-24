@@ -1,0 +1,34 @@
+//test return 6115
+
+/* meaning 
+   less
+   multi-line
+   comment
+*/
+
+int main() {
+    int x1 = 17;
+    int x2 = 6481;
+    int x3 = 181081;
+    //i'm a on-line comenet
+    int x4 = x3 % x2;
+    int x5 = x3 * 2311;
+    int x6 = x4 + x5;
+    int x7 = x6 % x2;
+    /* i'm
+       another
+       meaningless
+       multi-line
+       comment
+       yeet
+    */
+
+    /* i'm a meaningful mutiline comment
+       test dynamic semantics
+    */
+    x3 /= x2 % x1;
+    x3 += x6;
+    x3 -= x7;
+
+    return x7;
+}

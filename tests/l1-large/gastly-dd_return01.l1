@@ -1,0 +1,12 @@
+//test return 20
+
+int main()
+{
+  int x = 5;
+  int y = 3;
+
+  x += y*y;
+  y *= x+x;
+
+  return y/x + x%y;
+}

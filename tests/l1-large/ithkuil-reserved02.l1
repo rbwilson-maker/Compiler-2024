@@ -1,0 +1,12 @@
+//test return 1
+// test reserved keywords
+
+int main()
+{
+    int x;
+    x = 0;
+    // should succeed
+    // -- can occur in comments
+    x = x- -1;
+    return x;
+}

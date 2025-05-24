@@ -1,0 +1,16 @@
+//test memerror
+// pointer args can be modified
+
+int func(int** by_ref){
+  int value = **by_ref;
+  *by_ref = NULL;
+  return value;
+}
+
+int main() {
+  int** ref = alloc(int*);
+  **ref = 1;
+  assert(func(ref) == 1);
+
+  return **ref;
+}

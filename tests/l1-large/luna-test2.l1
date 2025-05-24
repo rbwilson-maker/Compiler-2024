@@ -1,0 +1,10 @@
+//test error
+// out of range
+
+int main()
+{
+  int x = 0xffffffff;
+  int y = 2147483649;
+
+  return y - x;
+}

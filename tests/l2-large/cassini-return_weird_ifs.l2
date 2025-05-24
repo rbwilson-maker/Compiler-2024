@@ -1,0 +1,22 @@
+//test return 5;
+
+int main() {
+    bool b1 = true;
+    bool b2 = false;
+
+    // These are all useless but legal
+    if(b1) int x = 5;
+    else if(b2) int y = 2;
+    else int z = 1;
+
+    int x = 4;
+    int y;
+    // Testing precedence
+    if(b1 && !b2 && (x >> 2) == 1) {
+        return 5;
+    } else {
+        return 1;
+    }
+
+    return y + 1;
+}

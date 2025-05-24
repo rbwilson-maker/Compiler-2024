@@ -1,0 +1,64 @@
+//test return 0
+
+struct tree {
+	struct tree* left;
+	int value;
+	struct tree* right;
+};
+
+bool valid_tree_helper(struct tree* T, int lower, bool lower_real, int upper, bool upper_real) {
+  if(T == NULL) return true;
+  bool value_valid = (lower < T->value || !lower_real) && (upper > T->value || !upper_real);
+  bool left_valid = valid_tree_helper(T->left, lower, lower_real, T->value, true);
+  bool right_valid = valid_tree_helper(T->right, T->value, true, upper, upper_real);
+  return value_valid && left_valid && right_valid;
+}
+
+bool valid_tree(struct tree* T) {
+  if(T == NULL) return true;
+  int root_val = T->value;
+  bool left_valid = valid_tree_helper(T->left, 0, false, root_val, true);
+  bool right_valid = valid_tree_helper(T->right, root_val, true, 0, false);
+  return left_valid && right_valid;
+}
+
+int main() {
+  struct tree *Root = alloc(struct tree);
+	struct tree *L = alloc(struct tree);
+	struct tree *R = alloc(struct tree);
+	struct tree *LL = alloc(struct tree);
+	struct tree *LR = alloc(struct tree);
+	struct tree *RL = alloc(struct tree);
+	struct tree *RR = alloc(struct tree);
+
+	Root->left = L;
+	Root->right = R;
+	Root->value = 4;
+
+	L->left = LL;
+  L->right = LR;
+  L->value = 2;
+
+  LL->left = NULL;
+  LL->right = NULL;
+  LL->value = 1;
+
+  LR->left = NULL;
+  LR->right = NULL;
+  LR->value = 3;
+
+  R->left = RL;
+  R->right = RR;
+  R->value = 6;
+
+  RL->left = NULL;
+  RL->right = NULL;
+  RL->value = 5;
+
+  RR->left = NULL;
+  RR->right = NULL;
+  RR->value = 7;
+
+  if(valid_tree(R)) return 0;
+	else return 1;
+}

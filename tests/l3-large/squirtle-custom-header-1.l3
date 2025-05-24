@@ -1,0 +1,15 @@
+//test typecheck
+
+int main() {
+    int fd = open(1000);
+    assert(fd != -1);
+    int sum = 0;
+    int ret_read = read(fd);
+    while( ret_read != -1) {
+        sum += ret_read;
+        ret_read = read(fd);
+    }
+    int ret_close = close(fd);
+    assert(ret_close != -1);
+    return sum;
+}

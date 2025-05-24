@@ -1,0 +1,38 @@
+//test return 5
+struct tree
+{
+	int value;
+	struct tree* b1;
+	struct tree* b2;
+};
+
+int getLeft(struct tree* node)
+{
+	return node -> b1 -> value;
+}
+
+int getRight(struct tree* node)
+{
+	return node -> b2 -> value;
+}
+
+int main()
+{
+	struct tree *start = alloc(struct tree);
+
+	start -> value = 1;
+
+	struct tree *b1 = alloc(struct tree);
+	struct tree *b2 = alloc(struct tree);
+
+	b1 -> value = 2;
+	b2 -> value = 3;
+
+	start -> b1 = b1;
+	start -> b2 = b2;
+
+	int test = getLeft(start);
+	int failed = getRight(start);
+	return test + failed;
+}
+

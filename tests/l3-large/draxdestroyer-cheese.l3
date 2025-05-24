@@ -1,0 +1,63 @@
+//test typecheck
+
+/*
+ * So I didn't know that we didn't need to provide implementations so
+ * ..... so
+ *
+
+/* Cheese .c0 file */
+cheese get_cheese() {
+    // many times I wonder to myself
+    // .... ...... .... ... 
+    /*
+     * how 
+     *  do
+     *          i 
+     *  get algebraic data types 
+     *  in   C :( 
+     */
+    cheese not_mozarella = 1;
+    return not_mozarella;
+}
+
+void set_cheese(cheese c) {
+    cheese not_mozarella = 1;
+    if (c != not_mozarella) {
+        return;
+    }
+    exit(1);
+}
+
+bool is_mozarella(cheese c) {
+    return false;
+} bool has_holes(cheese c) {
+    // No cheese has holes
+    return false;
+}
+bool holes_are_big(cheese c) {
+    /* 
+     * If it doesn't have holes 
+     * then it's vacuosuly true 
+     * that the holes aren't big 
+     * */
+    return false;
+}
+bool holes_are_square(cheese c) {
+    // The holes were square all along muahhahhahahah
+    return true;
+}
+*/
+
+
+int main() {
+    cheese not_mozarella = 1;
+    cheese internal_cheese = get_cheese();
+    if (is_mozarella(internal_cheese)) {
+        return 0;
+    } else {
+        if (has_holes(2)) {
+            return 1;
+        }
+        return 1;
+    }
+}

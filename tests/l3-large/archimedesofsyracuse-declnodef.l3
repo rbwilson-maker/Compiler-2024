@@ -1,0 +1,18 @@
+//test error
+// Function declared, but not defined
+
+void foo(){}
+
+void bar();
+
+int baz(int x) {
+  if (x == 0) return 1;
+  else return 0;
+}
+
+int main(int argc) {
+  foo();
+  bar(); // ERROR HERE
+  int ans = baz(3);
+  return 1;
+}

@@ -1,0 +1,22 @@
+//test typecheck
+
+
+int evalY(int slope, int intercept, int x) {
+  // given the slope and y-intercept, and an x-coordinate,
+  // return the y-value at that x-coordinate  
+  return slope*x + intercept;
+}
+
+int main(){
+
+  props b;
+
+  b = true || false;
+
+  if (b) {
+    return evalY(5, 3, 17);
+  } else {
+    return evalY(2, 7, 100);
+  }
+  
+}

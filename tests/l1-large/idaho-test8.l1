@@ -1,0 +1,7 @@
+//test return 16
+int main() {
+  int i;
+  int x = 2;
+  i = x * (5 + x);
+  return i + 2;
+}

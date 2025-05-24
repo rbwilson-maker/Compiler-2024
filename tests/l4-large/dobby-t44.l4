@@ -1,0 +1,76 @@
+//test return 200
+
+typedef int[] pixel;
+
+pixel make_pixel(int alpha, int red, int green, int blue)
+//Not including other contracts here as this is part of assignment
+//@ensures \length(\result) == 4;
+{
+    pixel p = alloc_array(int, 4);
+    p[0] = alpha;
+    p[1] = red;
+    p[2] = green;
+    p[3] = blue;
+    return p;
+}
+
+int get_alpha(pixel p)
+//@requires \length(p) == 4;
+//Not including other contracts here as this is part of assignment
+{
+    return p[0];
+}
+
+int get_red(pixel p)
+//@requires \length(p) == 4;
+//Not including other contracts here as this is part of assignment
+{
+    return p[1];
+}
+
+int get_green(pixel p)
+//@requires \length(p) == 4;
+//Not including other contracts here as this is part of assignment
+{
+    return p[2];
+}
+
+int get_blue(pixel p)
+//@requires \length(p) == 4;
+//Not including other contracts here as this is part of assignment
+{
+    return p[3];
+}
+
+void count_zeroes(pixel[] A, int length, int[] results)
+//@requires \length(A) == length;
+//@requires \length(results) == 3;
+{
+  results[0] = 0;
+  results[1] = 0;
+  results[2] = 0;
+  for(int i = 0; i < length; i++)
+  //@loop_invariant 0 <= i;
+  //@loop_invariant results[0] < length;
+  //@loop_invariant results[1] < length;
+  //@loop_invariant results[2] < length;
+  {
+    if (get_red(A[i]) == 0)
+      results[0] = results[0] + 1;
+    if (get_green(A[i]) == 0)
+      results[1] = results[1] + 1;
+    if (get_blue(A[i]) == 0)
+      results[2] = results[2] + 1;
+  }
+}
+
+int main() {
+  pixel[] pixels = alloc_array(pixel, 200);
+  for(int i = 0; i < 200; i++) {
+    pixels[i] = make_pixel(0, 0, 0, 0);
+  }
+
+  int[] Z = alloc_array(int, 3);
+  count_zeroes(pixels, 200, Z);
+  return Z[1];
+}

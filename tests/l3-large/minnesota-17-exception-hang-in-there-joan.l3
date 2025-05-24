@@ -1,0 +1,10 @@
+//test div-by-zero
+//shift by an invalid amount
+
+int rotateR(int n, int bits) {
+  return (n >> bits) | (n << (31 - bits));
+}
+
+int main() {
+  return rotateR(0xdeadbeef, 42);
+}

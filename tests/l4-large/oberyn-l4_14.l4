@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+// more unnecessary typedefs
+
+typedef int a;
+typedef int e;
+typedef int o;
+typedef int u;
+
+o w_o (a w_a, e w_e) {
+  return w_a - w_o (w_e, w_a);
+}
+
+int main() {
+  u w_u = w_o (10, 5);
+  return w_u;
+}

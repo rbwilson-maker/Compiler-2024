@@ -1,0 +1,60 @@
+//test return 0
+
+typedef int pixel;
+
+int get_row(int index, int width, int height) {
+  return (index / width);
+}
+
+int get_column(int index, int width, int height) {
+  return (index % width);
+}
+
+int get_index(int row, int col, int width, int height) {
+  return (row * width + col);
+}
+
+pixel[] rotate(pixel[] pixels, int width, int height) {
+  int x = width;//also equal to height
+  pixel[] rotated = alloc_array(pixel, 4*x*x);
+  int n = 0; //to count the number of locations being filled in array rotated
+  for(int i = 0; i < x*x; i++) {
+    int r = get_row(i, x, x);
+    int c = get_column(i, x, x);
+    //for upper left
+    rotated[get_index(x-c-1, r, 2*x, 2*x)] = pixels[i];
+    n++;
+    //for upper right
+    rotated[get_index(r, x+c, 2*x, 2*x)] = pixels[i];
+    n++;
+    //for lower left
+    rotated[get_index(2*x-r-1, x-c-1, 2*x, 2*x)] = pixels[i];
+    n++;
+    //for lower right
+    rotated[get_index(x+c, 2*x-r-1, 2*x, 2*x)] = pixels[i];
+    n++;
+  }
+  return rotated;
+}
+
+bool array_equal(pixel[] A, pixel[] B, int n) {
+  for (int i = 0; i < n; i++) {
+    if (A[i] != B[i]) return false;
+  }
+  return true;
+}
+
+int main() {
+  pixel[] A = alloc_array(pixel, 1);
+  pixel[] B = alloc_array(pixel, 4);
+  A[0] = 9;
+  B[0] = 9;
+  B[1] = 9;
+  B[2] = 9;
+  B[3] = 9;
+  if (array_equal(rotate(A, 1, 1), B, 4)) {
+    return 0;
+  } else {
+    return 1;
+  }
+}

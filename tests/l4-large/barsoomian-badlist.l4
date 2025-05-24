@@ -1,0 +1,262 @@
+//test abort
+
+// 15-122 Lab from Fall 2019
+
+/*** Interface ***/
+
+typedef struct list_node list;
+struct list_node {
+  int data;
+  list* next;
+};
+
+bool is_segment(list* start, list* end);
+
+typedef struct sortedlist_header sortedlist;
+struct sortedlist_header {
+  list* start;
+};
+
+bool no_circularity(sortedlist* L);
+bool is_sortedlist(sortedlist* L);
+
+sortedlist* array_to_linkedlist(int[] A, int n);
+int list_length(sortedlist* L);
+int[] linkedlist_to_array(sortedlist* L);
+bool arr_eq(int[] A, int[] B, int n);
+
+/* Checks if a given sortedlist is valid */
+bool is_sortedlist(sortedlist* L) {
+  if (L == NULL) return false;
+  if (!no_circularity(L)) return false;
+
+  //check for sortedness
+  list* cur = L->start;
+  if (cur == NULL) return true; //empty list is sorted
+
+  int prev_elem = cur->data;
+  while (cur->next != NULL) {
+    cur = cur->next;
+    if (prev_elem >= cur->data) {
+      return false;
+    } else {
+      prev_elem = cur->data;
+    }
+  }
+
+  return true;
+}
+
+bool is_segment(list* start, list* end) {
+  list* cur = start;
+  while (cur != end) {
+    if (cur->next == NULL) return false;
+    cur = cur->next;
+  }
+  return true;
+}
+
+bool no_circularity(sortedlist* L)
+//@requires L != NULL;
+{
+  if (L->start == NULL) return true; //if the list is empty, it's not circular
+  list* tortoise = L->start;
+  list* hare = L->start->next;
+  while(tortoise != NULL && hare != NULL) {
+    if(hare == tortoise) return false;
+    tortoise = tortoise->next;
+    if(hare->next == NULL) {
+      return true;
+    }
+    hare = hare->next->next;
+  }
+  return true;
+}
+
+sortedlist* array_to_linkedlist(int[] A, int n)
+//@requires n <= \length(A);
+{
+  sortedlist* ret = alloc(sortedlist);
+  if(n > 0) {
+    list* curr = alloc(list);
+    ret->start = curr;
+    for(int i = 0; i < n - 1; i ++) {
+        curr->data = A[i];
+        curr->next = alloc(list);
+        curr = curr->next;
+    }
+    curr->data = A[n-1];
+    curr->next = NULL;
+  }
+  return ret;
+}
+
+int list_length(sortedlist* L)
+//@requires L != NULL && no_circularity(L);
+{
+  int len = 0;
+  list* curr = L->start;
+  while(curr != NULL) {
+    len++;
+    curr = curr->next;
+  }
+  return len;
+}
+int[] linkedlist_to_array(sortedlist* L)
+//@requires L != NULL && no_circularity(L);
+//@ensures list_length(L) == \length(\result);
+{
+  int len = list_length(L);
+  int[] ret = alloc_array(int, len);
+  list *curr = L->start;
+  for(int i = 0; i < len; i++) {
+    ret[i] = curr->data;
+    curr = curr->next;
+  }
+  return ret;
+}
+
+bool arr_eq(int[] A, int[] B, int n)
+//@requires n <= \length(A) && n <= \length(B);
+{
+  for(int i = 0; i < n; i++) {
+    if(A[i] != B[i]) return false;
+  }
+  return true;
+}
+
+
+bool is_in(sortedlist* L, int n)
+//@requires is_sortedlist(L);
+{
+  list* cur = L->start;
+  while (cur != NULL) {
+    if (cur->data == n) {
+      return true;
+    } else if (cur->data >= n+1) {
+      return false;
+    } else {
+      cur = cur->next;
+    }
+  }
+  return false;
+}
+
+void insert(sortedlist* L, int n)
+//@requires is_sortedlist(L);
+//@ensures is_sortedlist(L);
+//@ensures is_in(L, n);
+{
+  if (L->start == NULL || L->start->data > n) {
+    //list is empty
+    list* node = alloc(struct list_node);
+    node->data = n;
+    node->next = L->start;
+    L->start = node;
+  } else {
+    list* cur = L->start;
+    while (cur->data < n) {
+      if (cur->next == NULL || cur->next->data > n) {
+        list* node = alloc(struct list_node);
+        node->data = n;
+        node->next = cur->next;
+        cur->next = node;
+      }
+      cur = cur->next;
+    }
+  }
+}
+
+void delete_recursive(list* prev, list* cur, int n) {
+  if(cur != NULL) {
+    //if there's an element to delete remove it
+    if(cur->data == n) {
+      prev->next = cur->next;
+      return;
+    }
+    // otherwise just keep it the same
+    else {
+      prev->next = cur;
+    }
+  }
+  else {
+     return;
+  }
+  list* newprev = prev->next;
+  list* newcur = cur->next;
+//   delete_recursive(newprev, newcur, n);
+}
+
+
+void delete(sortedlist* L, int n)
+//@requires is_sortedlist(L);
+//@ensures is_sortedlist(L);
+//@ensures !is_in(L, n);
+{
+  list* prev = L->start;
+  if(prev == NULL) {
+    return;
+  }
+  list* cur = L->start->next;
+  delete_recursive(prev, cur, n);
+}
+
+int testIsIn() {
+  // Here's an example
+  // Remember that parse ints takes a list of integers separated by spaces
+  //   as well as a base (here, 10) in which to interpret the integers
+  int[] arr = alloc_array(int, 3);
+  arr[0] = -2;
+  arr[1] = 6;
+  arr[2] = 12;
+  sortedlist* S = array_to_linkedlist(arr, 3);
+
+  /* Test 1 */
+  if (!is_in(S, 6)) {
+      assert(false);
+  }
+  /* TODO : Add more tests for is_in here! */
+  return 0;
+}
+
+int testInsert() {
+
+  // Here's an example
+  sortedlist* S = array_to_linkedlist(alloc_array(int, 0), 0);
+
+  /* Test 1 */
+  insert(S, 5);
+  if(!is_in(S, 5)) {
+      assert(false);
+  }
+
+  /* TODO : Add more tests for insert here! */
+  return 0;
+}
+
+
+int testDelete() {
+  // Here's an example
+  int[] arr = alloc_array(int, 3);
+  arr[0] = -2;
+  arr[1] = 6;
+  arr[2] = 12;
+  sortedlist* S = array_to_linkedlist(arr, 3);
+
+  /* Test 1 */
+  delete(S, 12);
+  if (is_in(S, 12)) {
+      assert(false);
+  }
+
+  /* TODO : Add more tests for delete here! */
+  return 0;
+}
+
+
+int main() {
+  testIsIn();
+  testInsert();
+  testDelete();
+  return 0;
+}

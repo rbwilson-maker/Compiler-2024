@@ -1,0 +1,40 @@
+//test return 0
+// check if an element is in a tree
+
+struct tree {
+  int val;
+  struct tree* left;
+  struct tree* right;
+};
+
+bool contains(struct tree* t, int v){
+  if (t == NULL){
+    return false;
+  } else if (t->val == v){
+    return true;
+  } else {
+    return contains(t->left, v) || contains(t->right, v);
+  }
+}
+
+struct tree* create_tree(int v){
+  struct tree* t = alloc(struct tree);
+  t->val = v;
+  return t;
+}
+
+int main(){
+  struct tree* t1 = create_tree(4);
+  t1->left = create_tree(6);
+  t1->right = create_tree(5);
+  struct tree* t2 = create_tree(3);
+  t2->left = t1;
+  t2->right = create_tree(1);
+  struct tree* t3 = create_tree(9);
+  t3->right = t2;
+  assert(contains(t3,5));
+  assert(!contains(t3,7));
+  assert(contains(t1,5));
+  assert(!contains(t1,1));
+  return 0;
+}

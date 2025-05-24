@@ -1,0 +1,16 @@
+//test error
+
+
+struct sturct {
+ int tin;
+ bool bolo;
+};
+
+
+int main() {
+
+  struct sturct * stcurt = alloc(struct sturct);
+
+
+ return stcurt[0];
+}

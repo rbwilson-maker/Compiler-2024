@@ -1,0 +1,6 @@
+//test div-by-zero
+
+// This is designed to test an invalid shift
+int main() {
+  return 30 >> 32;
+}

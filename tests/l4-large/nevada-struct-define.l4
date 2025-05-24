@@ -1,0 +1,21 @@
+//test return 1
+// can declare a struct before defining it
+
+struct s;
+
+void f() {
+}
+
+struct s {
+    int x;
+    int y;
+    bool z;
+};
+
+int main() {
+    struct s *st = alloc(struct s);
+    st->x = 0;
+    st->y = 1;
+    st->z = false;
+    return (st->z ? st->x : st->y);
+}

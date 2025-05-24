@@ -1,0 +1,8 @@
+//test return 2
+
+// tests associativity of operations;
+// should not raise div-by-zero error.
+
+int main() {
+	return 2 / (0 + 1);
+}

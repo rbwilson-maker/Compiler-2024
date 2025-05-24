@@ -1,0 +1,14 @@
+//test return 21
+
+int[] foo(int[] a, int i, int x, int y) {
+  a[i] = x;
+  a[i] += y;
+  return a;
+}
+
+int main() {
+  int[] a = alloc_array(int, 1234);
+  int i = 3;
+  a = foo(a, i, 14, 7);
+  return a[i];
+}

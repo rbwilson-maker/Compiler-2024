@@ -1,0 +1,13 @@
+//test div-by-zero
+
+void crunch() {
+    /* Compiler should not optimize this out */
+    1 / 0;
+}
+
+int main() {
+    crunch();
+    crunch();
+
+    return 123456;
+}

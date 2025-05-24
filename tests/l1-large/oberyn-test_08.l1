@@ -1,0 +1,13 @@
+//test return 2
+
+// tests division and modulus
+
+int main() {
+	int a = 10000;
+	int b = 10;
+	int c = 7;
+	int d = 1;
+	int e = 5;
+
+	return a / b / c / d % e;
+}

@@ -1,0 +1,11 @@
+//test error
+
+int dummyfunc(int x) {
+    return 1;
+}
+
+int main() {
+    int x;
+    dummyfunc(x);
+    return 0;
+}

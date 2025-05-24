@@ -1,0 +1,39 @@
+//test return 1689574054
+
+int main(){
+    
+    int res = 1;
+
+    for(int a = 0; a < 100; a++){
+        int b = 0;
+        while(b < 100){
+            for(int c = 100; c > 0; c--){
+                int d = -15;
+                
+                while(d < 5){
+                    if(a + b == c + d){
+                        res += a + b;
+                    }
+                    d++;
+                }
+            }
+            b += 1;
+        }
+    }
+
+    for(int x = res; x >= 0; x -= 1){
+        int b = 1;
+
+        for(b; b <= x; b *= 2){
+            
+            bool d = true;
+            while(d){
+                res += x * b;
+                if(res > 0){
+                    d = false;
+                }
+            }
+        }
+    }
+    return res;
+}

@@ -1,0 +1,7 @@
+//test abort
+// test assert and abort the program
+
+int main() {
+  assert(1 == 0);
+  return 0;
+}

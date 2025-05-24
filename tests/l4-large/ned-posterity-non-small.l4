@@ -1,0 +1,16 @@
+//test error
+
+struct nonSmall {
+  int x;
+  int y;
+  bool b;
+}
+
+int main() {
+  struct nonSmall foo;
+  foo.x = 10;
+  foo.y = 50;
+  foo.b = false;
+
+  return foo.y;
+}

@@ -1,0 +1,16 @@
+//test error
+//missing main
+
+int foo() {
+  return 1;
+}
+
+bool bar() {
+  return false;
+}
+
+int Main() {
+  if (bar())
+    return foo();
+  return 5;
+}

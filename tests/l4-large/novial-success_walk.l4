@@ -1,0 +1,80 @@
+//test return 0
+
+struct A {
+  int val;
+  struct A* next;
+};
+
+typedef struct A ll_node;
+
+struct B {
+  ll_node* start;
+  ll_node* end;
+};
+
+typedef struct B ll;
+
+typedef ll*[] graph; // Adjacency list
+
+void add_node(ll* list, int node) {
+  ll_node* new_node = alloc(ll_node);
+  new_node->val = node;
+  new_node->next = NULL;
+
+  if (list->start == NULL) {
+    list->start = new_node;
+    list->end = new_node;
+  }
+  else {
+    list->end->next = new_node;
+    list->end = new_node;
+  }
+}
+
+void add_edge (graph G, int i, int j, int* counter) {
+  assert(i != j);
+
+  *counter += 1;
+  add_node(G[i], j);
+  add_node(G[j], i);
+}
+
+int neighbor (graph G, int vertex) {
+  ll* neighbors = G[vertex];
+  assert (neighbors != NULL);
+
+  return neighbors->start->val;
+}
+
+int main() {
+  int n = 5;
+  int* m = alloc(int);
+
+  /*
+   *    0 ------- 1
+   *    |         |\
+   *    |         | 4
+   *    |         |/
+   *    3 ------- 2
+   */
+
+  graph G = alloc_array(ll*, n);
+  for (int i = 0; i < n; i++) {
+    G[i] = alloc(ll);
+  }
+
+  add_edge(G, 0, 1, m);
+  add_edge(G, 1, 2, m);
+  add_edge(G, 2, 3, m);
+  add_edge(G, 3, 0, m);
+  add_edge(G, 2, 4, m);
+  add_edge(G, 1, 4, m);
+
+  // Take a non-random walk starting at node 4 for 5 steps
+  int cur = 4;
+
+  for (int i = 0; i < 5; i++) {
+    cur = neighbor(G, cur);
+  }
+  return cur;
+}

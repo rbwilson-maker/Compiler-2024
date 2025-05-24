@@ -1,0 +1,21 @@
+//test typecheck
+//argument and dead code type testing
+
+bool foo(int a, int b, int c, bool d, bool e, bool f) {
+    return (((((a + b) == 5) ? d : e) ? b : c) > a) || f;
+
+    a + b;
+    d || e;
+    e && f;
+    a | b | c;
+}
+
+int main(){
+    int a = 1;
+    int b = 0xa5ed3;
+    int c = 123;
+    bool d = false && false;
+    bool e = true || true;
+    bool f = false;
+    return foo(a, b, c, d, e, f) ? 3 : 9876;
+}

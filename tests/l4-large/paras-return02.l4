@@ -1,0 +1,22 @@
+//test return 0
+
+typedef int Int;
+int foo(int[] x){
+  x[0] = -1;
+  x[1] = 1;
+  x[2] = -1;
+  x[3] = 1;
+  x[4] = 0;
+  print_int(x[1]);
+  print_int(x[2]);
+  print_int(x[3]);
+  print_int(x[4]);
+  return 0;
+}
+
+int main(){
+  int[] x = alloc_array(Int, 5);
+  Int * ans = alloc(int);
+  *ans = foo(x);
+  return *ans + x[foo(x)] + x[1] + x[2] + x[3] + x[4];
+}

@@ -1,0 +1,23 @@
+//test error
+// syntax error
+
+int sum(int*[] S, int n){
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+        sum += *(S[i]);
+    return sum;
+}
+
+int main() {
+    int*[] foo = alloc_array(bool*, 100);
+    int* ptr = alloc(int);
+    *ptr = 42 / 0;
+    for (int i = 0; i < 100; i++)
+        foo[i] = ptr;
+    assert(sum(foo, 100) == 4200);
+    *ptr = 0; // null out all the array
+    assert(sum(foo, 100) == 0);
+
+
+    return 0;
+}

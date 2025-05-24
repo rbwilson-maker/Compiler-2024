@@ -1,0 +1,19 @@
+//test return 6
+
+int cliffside() {
+    if (0 < 1)
+        if (1 > 2) {
+            if (2 > 3)
+                return 5;
+        }
+        else
+            if (3 < 4)
+                if (4 < 5)
+                    return 6;
+                else return 7;
+    return 10;
+}
+
+int main() {
+    return cliffside();
+}

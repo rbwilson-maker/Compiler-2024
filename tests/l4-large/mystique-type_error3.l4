@@ -1,0 +1,12 @@
+//test error
+
+int f(int *x, int *y) {
+    return *x + *y;
+}
+
+int main() {
+    int *x = alloc(int);
+    int *y = alloc(int);
+    bool *z = alloc(bool);
+    return f(x, z);
+}

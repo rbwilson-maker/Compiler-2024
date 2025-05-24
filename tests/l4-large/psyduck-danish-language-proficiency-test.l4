@@ -1,0 +1,10 @@
+//test typecheck
+//test infloop
+
+int main() {
+while (true)
+{
+int** x = alloc(int*);
+}
+return 1;
+}

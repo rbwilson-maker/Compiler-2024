@@ -1,0 +1,13 @@
+//test compile
+
+int jason(david x, ryan y){
+    return x + y;
+}
+
+int main(){
+    david wang = 3;
+    ryan tang = 3;
+
+    int z = jason(wang, tang);
+    return z;
+}

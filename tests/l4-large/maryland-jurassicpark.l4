@@ -1,0 +1,49 @@
+//test return 80085
+// Top down DP solution for CLRS rod cutting example
+
+int max(int x, int y) {
+  return x > y ? x : y;
+}
+
+int cutRodAux(int[] p, int n, int[] r) {
+  if(r[n] >= 0) return r[n];
+  
+  int q;
+  if(n == 0) q = 0;
+  else {
+    q = -1;
+
+    for(int i = 1; i <= n; i++)
+      q = max(q, p[i - 1] + cutRodAux(p, n - i, r));
+  }
+
+  r[n] = q;
+  return q;
+}
+
+int cutRod(int[] p, int n) {
+  int[] r = alloc_array(int, n + 1);
+
+  for(int i = 0; i <= n; i++) {
+    r[i] = -1;
+  }
+
+  return cutRodAux(p, n, r);
+}
+
+int main() {
+  int[] p = alloc_array(int, 10);
+
+  p[0] = 5;
+  p[1] = 40005;
+  p[2] = 40080;
+  p[3] = 40000;
+  p[4] = 10;
+  p[5] = 17;
+  p[6] = 17;
+  p[7] = 20;
+  p[8] = 24;
+  p[9] = 30;
+
+  return cutRod(p, 5);
+}

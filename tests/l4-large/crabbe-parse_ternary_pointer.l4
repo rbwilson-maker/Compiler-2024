@@ -1,0 +1,10 @@
+//test return 253
+
+int main () {
+    bool[] A = alloc_array(bool, 2);
+    A[0] = true;
+    bool *funp = alloc(bool);
+    *funp = A[0];
+    int result = *funp ? 253 : 97;
+    return result;
+}

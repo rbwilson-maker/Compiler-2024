@@ -1,0 +1,19 @@
+//test return 10
+
+int main ()
+{
+  int a = 0;
+  int i = 0;
+
+  while (i < 10) {
+    if (i == 5) {
+      return a;
+    }
+    else {
+      a += 2;
+      i += 1;
+    }
+  }
+
+  return a;
+}

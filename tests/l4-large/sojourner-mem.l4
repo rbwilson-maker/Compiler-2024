@@ -1,0 +1,35 @@
+//test return 7735
+
+struct abcd {
+    int x;
+    bool *y;
+    struct abcd *[] z;
+};
+
+struct abcd *foo(struct abcd[] arr) {
+    int acc = 1;
+    for (int i = 0; i < 100; i++) {
+        arr[i].z = alloc_array(struct abcd *, 100);
+        arr[i].z[i] = alloc(struct abcd);
+        arr[i].z[i]->x = i;
+        arr[i].z[i]->x ^= i * i + 1;
+        if ((i & 1) == 0) {
+            acc *= arr[i].z[i]->x;
+        } else {
+            acc %= arr[i].z[i]->x;
+        }
+    }
+    struct abcd *res = alloc(struct abcd);
+    res->x = acc;
+    return res;
+}
+
+int main() {
+    struct abcd[] blah = alloc_array(struct abcd, 100);
+    if (NULL != blah[99].y) {
+        return alloc(struct abcd)->x / alloc(struct abcd)->x;
+    } else {
+        assert(blah[37].x == 0);
+        return (foo(blah))->x;
+    }
+}

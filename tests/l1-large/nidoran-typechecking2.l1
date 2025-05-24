@@ -1,0 +1,10 @@
+//test return 0
+// Tests that y is initialized
+
+int main()
+{
+    int y;
+    // Compiles because return 0 initializes y
+    return 0;
+    return y;
+}

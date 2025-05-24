@@ -1,0 +1,22 @@
+//test return 110
+
+void double (int[] arr, int len) {
+    for (int i = 0; i < len; i++) {
+        arr[i] *= 2;
+    }
+}
+
+int main() {
+    int[] arr = alloc_array(int, 10);
+    for (int i = 0; i < 10; i++) {
+        arr[i] = i + 1;
+    }
+
+    double(arr, 10);
+
+    int sum = 0;
+    for (int i = 0; i < 10; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}

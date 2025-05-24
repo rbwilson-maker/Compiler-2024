@@ -1,0 +1,56 @@
+//test return 0
+
+struct s1 {
+  int a;
+  int b;
+  int c;
+};
+
+struct s2 {
+  struct s1 d;
+  int e;
+  struct s1 f;
+};
+
+struct s3 {
+  struct s2 g;
+  int h;
+  struct s2 i;
+};
+
+int main () {
+  struct s3* x = alloc(struct s3);
+  x->g.d.a = 1;
+  x->g.d.b = 2;
+  x->g.d.c = 3;
+  x->g.e   = 4;
+  x->g.f.a = 5;
+  x->g.f.b = 6;
+  x->g.f.c = 7;
+  x->h     = 8;
+  x->i.d.a = 9;
+  x->i.d.b = 10;
+  x->i.d.c = 11;
+  x->i.e   = 12;
+  x->i.f.a = 13;
+  x->i.f.b = 14;
+  x->i.f.c = 15;
+
+  assert(x->g.d.a == 1);
+  assert(x->g.d.b == 2);
+  assert(x->g.d.c == 3);
+  assert(x->g.e   == 4);
+  assert(x->g.f.a == 5);
+  assert(x->g.f.b == 6);
+  assert(x->g.f.c == 7);
+  assert(x->h     == 8);
+  assert(x->i.d.a == 9);
+  assert(x->i.d.b == 10);
+  assert(x->i.d.c == 11);
+  assert(x->i.e   == 12);
+  assert(x->i.f.a == 13);
+  assert(x->i.f.b == 14);
+  assert(x->i.f.c == 15);
+
+  return 0;
+}

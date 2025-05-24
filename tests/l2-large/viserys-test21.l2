@@ -1,0 +1,9 @@
+//test div-by-zero
+
+// raise runtime error for shift quantity out of range
+
+int main() {
+  int x = 32;
+  int y = 1;
+  return y >> x;
+}

@@ -1,0 +1,30 @@
+//test error
+
+/* big type Test 
+ *  
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * 
+ * test declaratio for for loop
+ */
+
+struct a {
+    int a1;
+    bool a2; 
+    int a3;
+};
+
+typedef struct a t;
+
+int main()
+{
+    int i = 0; 
+    for(t t1; i < 1; i++) {
+        t1 = alloc(struct a); 
+        t1.a1 = 1; 
+        t1.a3 = 2; 
+    }
+
+    return 0;
+}
+

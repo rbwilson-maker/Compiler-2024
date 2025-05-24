@@ -1,0 +1,7 @@
+//test div-by-zero
+int main()
+{
+    int shift = 42;
+    int ret = 1 >> shift;
+    return ret;
+}

@@ -1,0 +1,13 @@
+//test return 5
+int useless(int x);
+int useful(int x);
+int useful(int y);
+int useful(int x){
+  return x;
+}
+
+
+int main(){
+  int x = 5;
+  return useful(5);
+}

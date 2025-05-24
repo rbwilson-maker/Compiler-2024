@@ -1,0 +1,14 @@
+//test abort
+
+typedef bool good_type;
+
+good_type isEven(int x) {
+   if (x % 2 == 0) return true;
+   return false;
+}
+
+int main() {
+   good_type result = isEven(5);
+   assert(result == true);
+   return 1;
+}

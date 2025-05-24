@@ -1,0 +1,10 @@
+//test div-by-zero
+// turns out you need constant folding to correctly optimize out unused results
+
+int main() {
+	int a = 42;
+	int b = 1;
+	int c = b-b;
+	1 / c;
+	return a;
+}

@@ -1,0 +1,16 @@
+//test return 0
+
+void foo() {
+	int i = 0;
+	while (i < 7) {
+		i++;
+		if (i % 3 == 0) {
+			return;
+		}
+	}
+}
+
+int main() {
+	foo();
+	return 0;
+}

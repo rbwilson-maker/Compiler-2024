@@ -1,0 +1,10 @@
+//test error
+
+int main() {
+    int i;
+    int acc;
+    for (i = 5; i >= 0; i--) {
+        acc += 120 / i;
+    }
+    return acc;
+}

@@ -1,0 +1,19 @@
+//test error
+
+typedef struct lol lolomg;
+
+struct lol {
+  lolomg * lolomg;
+  lolwut * lol;
+  struct lol * lol2;
+};
+
+struct lolomg {
+  lolomg * wow;
+};
+
+int main() {
+  // type of wow is incorrect
+  struct lolomg * wow = alloc(lolomg);
+  return 1;
+}

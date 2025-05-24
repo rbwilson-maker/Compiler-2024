@@ -1,0 +1,103 @@
+//test return 1
+
+//And this is why we use functional languages.
+
+struct list_pair {
+	int[] l1;
+	int len1;
+	int[] l2;
+	int len2;
+};
+
+typedef struct list_pair ilp;
+
+int[] merge(ilp* ls);
+ilp* split(int[] x, int n);
+int[] mergesort(int [] arr, int n);
+
+int [] merge(ilp* ls) {
+	int len1 = ls -> len1;
+	int len2 = ls -> len2;
+	int i1 = 0;
+	int i2 = 0;
+	int [] result = alloc_array(int, len1 + len2);
+	while(len1 > i1 && len2 > i2) {
+		int e1 = (ls -> l1)[i1];
+		int e2 = (ls -> l2)[i2];
+		if(e1 < e2) {
+			result[i1 + i2] = e1;
+			i1++;
+		}
+		else {
+			result[i1 + i2] = e2;
+			i2++;
+		}
+	}
+	if(len1 == i1) {
+		while (len2 > i2) {
+			result[i1 + i2] = (ls -> l2)[i2];
+			i2++;
+		}
+	}
+	else {
+		while (len1 > i1) {
+			result[i1 + i2] = (ls -> l1)[i1];
+			i1++;
+		}
+	}
+	return result;
+}
+
+ilp* split(int[] x, int n) {
+	int len1 = n / 2;
+	int len2 = n - (n / 2);
+	int[] l1 = alloc_array(int, len1);
+	int[] l2 = alloc_array(int, len2);
+	for(int i = 0; i < n; i++) {
+		if(i < len1) {
+			l1[i] = x[i];
+		}
+		else {
+			l2[i - len1] = x[i];
+		}
+	}
+	ilp* retval = alloc(ilp);
+	retval -> len1 = len1;
+	retval -> len2 = len2;
+	retval -> l1 = l1;
+	retval -> l2 = l2;
+	return retval;
+}
+
+int[] mergesort(int[] x, int n) {
+	if(n <= 1) {
+		return x;
+	}
+	ilp* halves = split(x, n);
+	int[] left = mergesort(halves -> l1, halves -> len1);
+	int[] right = mergesort(halves -> l2, halves -> len2);
+	assert(n == (halves -> len1) + (halves -> len2));
+	ilp* new_halves = alloc(ilp);
+	new_halves -> l1 = left;
+	new_halves -> l2 = right;
+	new_halves -> len1 = halves -> len1;
+	new_halves -> len2 = halves -> len2;
+	int [] result = merge(new_halves);
+	return result;
+}
+
+int main() {
+	int[] arr = alloc_array(int, 5);
+	arr[0] = 5;
+	arr[1] = 6;
+	arr[2] = 2;
+	arr[3] = 8;
+	arr[4] = 1;
+	int[] sorted = mergesort(arr, 5);
+	assert(sorted[0] == 1);
+	assert(sorted[1] == 2);
+	assert(sorted[2] == 5);
+	assert(sorted[3] == 6);
+	assert(sorted[4] == 8);
+	return 1;
+}

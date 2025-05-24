@@ -1,0 +1,10 @@
+//test error
+//Params cannot be initialized
+
+int asdf(int a = 0;) {
+    return 0;
+}
+
+int main() {
+    return asdf();
+}

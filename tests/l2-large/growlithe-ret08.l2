@@ -1,0 +1,13 @@
+//test return 100
+int main()
+{
+   	 int sum = 0;
+	 int i;
+	 int j;   	 
+
+	 for(i=0; i<10; i++)
+	   for(j=0; j<10; j++) 
+	     sum++;
+
+	 return sum; //rand comment?
+}

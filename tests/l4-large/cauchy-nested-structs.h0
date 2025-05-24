@@ -1,0 +1,15 @@
+typedef struct s2 st2;
+typedef st2 st2_t;
+typedef st2_t pls_help;
+struct s1 {
+    pls_help* yessir;
+};
+struct s2 {
+    struct s1 yeehaw;
+};
+typedef struct s3 s3_t;
+struct s3 {
+    struct s1 thing_one;
+    struct s2 thing_two;
+    s3_t* meta;
+};

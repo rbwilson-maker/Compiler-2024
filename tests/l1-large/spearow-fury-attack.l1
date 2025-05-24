@@ -1,0 +1,38 @@
+//test return 2049
+int main () {
+    int a = 0x1;
+    int b = 0x2;
+    int c = 0x4;
+    int d = 0x8;
+    int e = 0x10;
+    int f = 0x20;
+    int g = 0x40;
+    int h = 0x80;
+    int i = 0x100;
+    int j = 0x200;
+    int k = 0x400;
+    int l = 0x800;
+    int m = 0x1000;
+    int n = 0x2000;
+    int o = 0x4000;
+    int p = 0x8000;
+    int q = 0x10000;
+    int r = 0x20000;
+    int s = 0x40000;
+    int t = 0x80000;
+
+    int u = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q;
+    int v = r - u; // 1
+    int w = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + v;
+    int x = q + r + s + t - u; // r + s + t
+    int y = u / v; // u
+    int z = y + r + s + t + u % v * v % v % v % v % v % v % v % v % v % v % v;
+    int A = z + 1; // 0x100000
+    int B = A / 2 + A % 2; // 0x80000
+    B /= 2 + b % 2; // 0x40000
+    B /= 2 + t % 2; // 0x20000
+    B /= 4 + c % 2; // 0x8000
+    B /= a + b + c + d + e + z % 2; // 0x400
+    B *= 2; B += 1; // 0x801
+    return B;
+}

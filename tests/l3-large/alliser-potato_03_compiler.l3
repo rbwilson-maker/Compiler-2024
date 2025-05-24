@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int wow(int y) {
+  int x = 5 << 300;
+  x++;
+  return x;
+}
+
+int main () {
+  wow(wow(wow(wow(wow(2)))));
+  return 1;
+}

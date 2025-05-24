@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int foo(int a, int b);
+
+int main() {
+    return foo(42, 0);
+}
+
+int foo(int a, int b) {
+    return a % b;
+}
+

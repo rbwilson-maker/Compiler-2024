@@ -1,0 +1,40 @@
+//test return 50
+
+// Here we build an array-based stack.
+
+struct stack {
+  int[] data;
+  int sp;
+  int bound;
+};
+
+typedef struct stack *stack;
+
+stack init_stack(int limit) {
+  stack S = alloc(struct stack);
+  S->data = alloc_array(int, limit);
+  S->sp = 0;
+  S->bound = limit;
+  return S;
+}
+
+void push(stack S, int e) {
+  assert(S->sp < S->bound);
+  // It's now safe to put stuff on the stack!
+  S->data[S->sp] = e;
+  S->sp += 1;
+}
+
+int pop(stack S) {
+  assert(S->sp > 0);
+  S->sp -= 1;
+  return S->data[S->sp];
+}
+
+int main() {
+  stack foo = init_stack(500);
+  for(int i = 0; i < 51; i++) {
+    push(foo, i);
+  }
+  return pop(foo);
+}

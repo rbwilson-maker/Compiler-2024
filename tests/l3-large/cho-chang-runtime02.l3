@@ -1,0 +1,17 @@
+//test abort
+
+int main()
+{
+    fpt x = 2;
+    fpt y = 3;
+
+    if(fless(x, y))
+    {
+        assert(false);
+        return ftoi(fadd(x, y));
+    }
+    else
+    {
+        return ftoi(fsub(x, y));
+    }
+}

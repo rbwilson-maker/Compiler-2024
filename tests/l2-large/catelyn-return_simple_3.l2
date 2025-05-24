@@ -1,0 +1,20 @@
+//test return 0
+
+int main()
+{
+	int a = 0;
+	int b = a;
+	int c = b + a;
+	int d = c + a;
+	int e = c + d + 0x7FFFFFFF;
+
+	int acc = 0;
+
+	while (a != 0)
+	{
+		a = 1;
+		acc++;
+	}
+
+	return acc;
+}

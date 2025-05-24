@@ -1,0 +1,9 @@
+//test div-by-zero
+// division assignment by 0
+int main()
+{
+  int a;
+  a = -2147483648;
+  a /= -1;
+  return 1;
+}

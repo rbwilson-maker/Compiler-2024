@@ -1,0 +1,20 @@
+//test div-by-zero 
+
+int main() {
+	
+	int x;
+    int y;
+    int z;
+    int w;
+
+    x = 80;
+    z = 1;
+
+    while(true) {
+        x = x-2;
+        if (x == 0) y = z/x;
+    }
+
+    return 3;
+
+}

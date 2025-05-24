@@ -1,0 +1,8 @@
+//test error
+// can only use typedefs after declaration
+
+magic wand() {};
+typedef void magic;
+int main() {
+    wand();
+}

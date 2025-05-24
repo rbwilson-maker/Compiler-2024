@@ -1,0 +1,23 @@
+//test typecheck
+
+bool x() {
+    return true;
+}
+
+int main() {
+    bool y = false;
+    bool x = x();
+    if (y) {
+        return 3;
+    }
+    if (!x) {
+        return 2;
+    }
+    if (x && y) {
+        return 1;
+    }
+    if (x || y) {
+        return 0;
+    }
+    return -1;
+}

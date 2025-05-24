@@ -1,0 +1,23 @@
+//test error
+
+/* Main Declared Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, October 11, 2015 at 10:06:50 PM EDT
+ *
+ * This test tests that compiler detects the case when main is declared but not
+ * defined in the file.
+ */
+
+int main();
+
+int test(int x)
+{
+    return x;
+}
+
+int test2(int x, int y)
+{
+    return x + y;
+}

@@ -1,0 +1,11 @@
+//test typecheck
+//test infloop
+struct s {
+  int*[] a;
+};
+int loop() {while (true) {}return 0;}
+int main() {
+  struct s* a = alloc(struct s);
+  *(a->a[loop()]) = 1/0;
+  return 0;
+}

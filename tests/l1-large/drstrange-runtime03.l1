@@ -1,0 +1,23 @@
+//test div-by-zero
+// INT_MAX is 0x7FFFFFFF
+// INT_MIN is 0x80000000
+// -1 is 0xFFFFFFFF
+
+int main()
+{
+  int max_int = 0x7FFFFFFF;
+  int temp1 = max_int + 0x8000000; // now -1
+  temp1 /= max_int;
+  temp1 *= -1;
+
+  int min_int = -max_int;
+  min_int %= min_int;
+  int temp_min = -min_int;
+  min_int = temp_min;
+  min_int += 1;
+  min_int %= temp1;
+  int temp2 = max_int;
+  int temp3 = -max_int;
+  min_int *= (temp2 + temp3); // multiply by zero
+  return min_int;
+}

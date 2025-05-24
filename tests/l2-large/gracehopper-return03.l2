@@ -1,0 +1,48 @@
+//test return 128
+
+int main() {
+    int a1 = 1;
+    int a2 = 2;
+    int a3 = 3;
+    int a4 = 4;
+    int a5 = 5;
+    int b1 = 6;
+    int b2 = 7;
+    int b3 = 8;
+    int b4 = 9;
+    int b5 = 10;
+    int c1 = 11;
+    int c2 = 12;
+    int c3 = 13;
+    int c4 = 14;
+    int c5 = 15;
+    int d1 = 16;
+    int d2 = 17;
+    int d3 = 18;
+    int d4 = 19;
+    int d5 = 20;
+    int e1 = 21;
+    int e2 = 22;
+    int e3 = 23;
+    int e4 = 24;
+    int e5 = 25;
+    int f1 = 26;
+    int f2 = 27;
+    int f3 = 28;
+    int f4 = 29;
+    int f5 = 30;
+    int ret = 0;
+    
+    bool run = true;
+
+    while (run) {
+        a1 += b1;
+
+        if (a1 > 100) {
+            run = false;
+            ret = a1 + e5;
+        }
+    }
+
+    return ret;
+}

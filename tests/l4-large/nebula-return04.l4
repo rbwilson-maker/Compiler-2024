@@ -1,0 +1,20 @@
+//test return 3
+
+struct a {
+  int aaa;
+};
+
+struct b {
+  struct a *aa;
+};
+
+int main() {
+  struct a *a_p = alloc(struct a);
+  struct b *b_p1 = alloc(struct b);
+  struct b *b_p2 = alloc(struct b);
+  b_p1->aa = a_p;
+  b_p2->aa = a_p;
+  b_p1->aa->aaa = 3;
+
+  return b_p2->aa->aaa;
+}

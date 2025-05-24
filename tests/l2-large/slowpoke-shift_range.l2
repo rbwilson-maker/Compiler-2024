@@ -1,0 +1,8 @@
+//test div-by-zero
+// A SIGFPE needs to be raised for shift quantity that's not in range [0, 32).
+
+int main() {
+  int x = 1 << 32;
+  int y = 1 << -1;
+  return 1;
+}

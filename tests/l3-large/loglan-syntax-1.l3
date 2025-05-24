@@ -1,0 +1,9 @@
+//test error
+
+f (x : int) : int {
+  return x + 1
+}
+
+int main() {
+  return f(5)
+}

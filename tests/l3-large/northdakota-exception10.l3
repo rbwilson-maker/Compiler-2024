@@ -1,0 +1,14 @@
+//test div-by-zero
+//hiding problems in functions
+
+int div(int x, int y);
+int divdiv(int x, int y)
+{
+	return x / div(x,y);
+}
+int div(int x, int y){return x / y;}
+
+int main()
+{
+	return divdiv(1,0);
+}

@@ -1,0 +1,24 @@
+//test memerror
+struct bars {};
+
+typedef struct bars* bar;
+
+int foos(bar[] a,int *i)
+{
+	(*i)++;
+	a[*i] = alloc(struct bars);
+	return *i;
+}
+
+int main()
+{
+	bool *b = alloc(bool);
+	*b = true;
+	int *i = alloc(int);
+	*i = -1;
+	for(bar[] a = alloc_array(bar,42); *b;)
+	{
+		a[foos(a,i)] = alloc(struct bars);
+	}
+	return 0; 
+}

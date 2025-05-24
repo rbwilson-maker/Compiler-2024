@@ -1,0 +1,12 @@
+//test return 7
+int main() {
+  int******* p = alloc(int******);
+  if (p == NULL) {
+    return 0;
+  }
+  if (*p != NULL) {
+    return 0;
+  }
+  return 7;
+}
+  

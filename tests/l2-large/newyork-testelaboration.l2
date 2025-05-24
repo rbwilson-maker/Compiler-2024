@@ -1,0 +1,18 @@
+//test return -16843018
+int main() {
+    int x = 0;
+
+    x++;
+    x--;
+    x += 3;
+    x -= 1;
+    x *= 5;
+    x /= 2;
+    x %= 3;
+    x <<= 4;
+    x >>= 2;
+    x |= 0x01010101;
+    x ^= 0xFFFFFFFF;
+
+    return x;
+}

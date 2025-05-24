@@ -1,0 +1,12 @@
+//test error
+
+int main() {
+  int x = 5;
+  int y = 6;
+  int z = x + y;
+  int a = z;
+  int b = z + 1;
+  int c = (x /) * y;
+  z = (x +) y;
+  return z;
+}

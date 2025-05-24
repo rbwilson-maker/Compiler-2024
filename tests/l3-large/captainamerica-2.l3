@@ -1,0 +1,14 @@
+//test return ~1
+void main_exn()
+{
+    return;
+}
+
+int main() { 
+    int j=-9;
+    int s=(j<0) ? ((j % 2)) : (j);
+    bool i=true && (-1==1);
+    main_exn();
+    if(i) return j; return s; 
+
+}

@@ -1,0 +1,14 @@
+//test error
+// Catch that main doesn't end in return
+
+int main() {
+    if (true) {
+        int a = 0xffff;
+        while (a !=0) {
+            a >>= 2;
+            a &= 0x8000;
+        }
+        a /= a;
+        return a;
+    }
+}

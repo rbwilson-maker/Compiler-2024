@@ -1,0 +1,20 @@
+//test return 17
+
+// checks that you can hanlde derefs from lists in ternary ops
+
+int foo(int b) {
+	return b-1;
+}
+
+int main() {
+	int*[] L;
+	int*[] M;
+	L = alloc_array(int*,4);
+	L[2] = alloc(int);
+	*L[2] = 17;
+	M = alloc_array(int*,4);
+	M[2] = alloc(int);
+	int b = 4;
+	int a = *((foo(b) > 5) ? M : L)[2];
+	return a;
+}

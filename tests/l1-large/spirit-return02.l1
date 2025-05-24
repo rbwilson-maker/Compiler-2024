@@ -1,0 +1,5 @@
+//test return 1
+int main() {
+    int x = 1001;
+    return x % (((1000 / 10) - 99) * 20);
+}

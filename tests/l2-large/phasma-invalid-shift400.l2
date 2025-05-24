@@ -1,0 +1,5 @@
+//test div-by-zero
+int main() {
+  int x = 8 << 400;
+  return 0;
+}

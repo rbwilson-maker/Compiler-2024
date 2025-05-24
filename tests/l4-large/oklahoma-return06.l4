@@ -1,0 +1,44 @@
+//test return 4950
+//tree
+
+struct tree {
+  int data;
+  struct tree* left;
+  struct tree* right;
+};
+
+typedef struct tree* tree;
+
+tree insert(tree t, int i)
+{
+  if (t == NULL) {
+    tree new_t = alloc(struct tree);
+    new_t->data = i;
+    return new_t;
+  } else {
+    if (i < t->data) {
+      t->left = insert(t->left, i);
+      return t;
+    } else {
+      t->right = insert(t->right, i);
+      return t;
+    }
+  }
+}
+
+int sum(tree t)
+{
+  if (t == NULL) {
+    return 0;
+  } else {
+    return t->data + sum(t->left) + sum(t->right);
+  }
+}
+
+int main() {
+  tree t = NULL;
+  for (int i = 0; i < 100; i++) {
+    t = insert(t, i);
+  }
+  return sum(t);
+}

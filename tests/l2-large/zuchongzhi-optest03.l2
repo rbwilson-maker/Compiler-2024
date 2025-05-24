@@ -1,0 +1,19 @@
+//test return 0
+// test all operators that takes int and return bool
+
+int main() {
+  int x = 1;
+  int y = 2;
+  int z = 1;
+
+  bool flag1 = x < y;
+  bool flag2 = x <= z;
+  bool flag3 = y > z;
+  bool flag4 = x >= z;
+  bool flag5 = x == z;
+  bool flag6 = x != y;
+  if (flag1 && flag2 && flag3 && flag4 && flag5 && flag6) {
+	return 0;
+  }
+  return 1;
+}

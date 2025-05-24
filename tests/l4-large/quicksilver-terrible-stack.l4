@@ -1,0 +1,39 @@
+//test return 399 
+int terrible_pop (int[] arr) { 
+    int i = 0;
+    int ans = arr[0];
+    while (arr[i] != -1) {
+        arr[i] = arr[i+1];
+        i++;
+    }
+    return ans; 
+}
+
+void terrible_push (int[] arr, int val) { 
+    int i = 0;
+    int tmp1; 
+    int tmp2; 
+    tmp2 = val;
+    while (arr[i] != -1) {
+        tmp1 = arr[i]; 
+        arr[i] = tmp2;
+        tmp2 = tmp1;
+        i += 1; 
+    }
+    arr[i] = tmp2; 
+    arr[i+1] = -1;
+    return; 
+}
+
+int main() {
+    int[] terrible_stack = alloc_array(int, 1000); 
+
+    terrible_stack[0] = -1; 
+    for (int i=0; i<900; i++) {
+        terrible_push(terrible_stack, i);
+    } 
+    for (int i=0; i<500; i++) {
+        int unused = terrible_pop(terrible_stack);
+    }
+    return terrible_pop(terrible_stack);
+}

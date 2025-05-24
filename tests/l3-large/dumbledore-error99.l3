@@ -1,0 +1,13 @@
+//test error
+
+int main() {
+
+    int x;
+    x = foo();
+    return x;
+
+}
+
+int foo() {
+    return 1;
+}

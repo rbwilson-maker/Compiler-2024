@@ -1,0 +1,23 @@
+//test typecheck
+//test infloop
+
+typedef int foo;
+
+typedef struct foo* sfoos;
+
+struct foo {
+  struct foo* a;
+  sfoos b;
+  foo foo;
+};
+
+foo main() {
+  sfoos a = alloc(struct foo);
+  a->a = a;
+  while (a->a != NULL) {
+    a = a->a;
+  }
+  return 0;
+}
+
+struct foo;

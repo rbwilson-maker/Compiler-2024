@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+	int a = 64;
+	int b = 8;
+	while (a > 0) {
+		a = a / b;
+		b >>= 1;
+	}
+	return b;
+}

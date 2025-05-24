@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int main() {
+    int a;
+    int b;
+
+    a = 10;
+
+    for (b = 15; b >= 0; b--) {
+        a--;
+    }
+
+    return b << a;
+}

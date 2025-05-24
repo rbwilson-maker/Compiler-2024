@@ -1,0 +1,12 @@
+//test error
+// I don't know why but it seems void value is not a first-class one...
+
+// Shouldn't return a void as a void type return value be ok?
+void f(void x) {
+    return x;
+}
+
+int main() {
+    f();
+    return 0;
+}

@@ -1,0 +1,14 @@
+//test div-by-zero
+// loop until we div by zero.
+
+int main () {
+  int x = 12345;
+  int y = 120;
+
+  while (x != 0) {
+    y /= x;
+    x--;
+  }
+
+  return y / x;
+}

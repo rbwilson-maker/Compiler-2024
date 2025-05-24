@@ -1,0 +1,27 @@
+//test return 161
+
+int[] collatz(int n) {
+   int i = 0;
+   int len = 10;
+   int[] result = alloc_array(int, len);
+   while (n > 1) {
+      result[i] = n;
+
+      i++;
+      if (n % 2 == 0) n = n / 2;
+      else n = 3 * n + 1;
+
+      if (i >= len) {
+         int[] new_result = alloc_array(int, len * 2);
+         for (int j = 0; j < len; j++) new_result[j] = result[j];
+         result = new_result;
+         len *= 2;
+      }
+   }
+   return result;
+}
+
+int main() {
+   int[] collatz_arr = collatz(27);
+   return collatz_arr[13];
+}

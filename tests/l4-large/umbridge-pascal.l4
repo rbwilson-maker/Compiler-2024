@@ -1,0 +1,52 @@
+//test return 126
+
+int[] make_ints(int N)
+{
+     int[] ints = alloc_array(int, N);
+
+     for (int i = 1; i < N; i++) {
+         ints[i] = ints[i-1] + 1;
+     }
+     return ints;
+}
+
+typedef int[] int_array;
+typedef int[][] array_of_array;
+
+int max(array_of_array A, int m, int n)
+{
+     int result = 0;
+     for (int i = 0; i < m; i++) {
+         for (int j = 0; j < n; j++) {
+             if (A[i][j] > result) {
+                result = A[i][j];
+             }
+         }
+     }
+     return result;
+}
+
+
+int main()
+{
+     int n = 10;
+
+     // make a 10 x 10 two dimensional array
+     array_of_array A = alloc_array(int_array, n);
+
+     for (int i = 0; i < n; i++) {
+         A[i] = alloc_array(int, n);
+     }
+
+     A[0][0] = 1;
+     A[1][0] = 1;
+     A[1][1] = 1;
+     for (int len = 3; len <= n; len++) {
+         A[len-1][0] = 1;
+         for (int i = 1; i < len; i++) {
+             A[len-1][i] = A[len-2][i-1] + A[len-2][i];
+         }
+     }
+
+     return max(A, n, n);
+}

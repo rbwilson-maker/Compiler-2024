@@ -1,0 +1,42 @@
+//test div-by-zero
+//function being called eventually divides something by 0
+
+int m(int a) {
+    return a + a;
+}
+
+int l(int a) {
+    for (int i = 0; i < 10000; i++) {
+        a += m(i);
+    }
+    return a / 0;
+}
+
+int k(int a) {
+    return l(a);
+}
+
+int j(int a) {
+    return k(a);
+}
+
+int i(int a) {
+    return j(a);
+}
+
+int h(int a) {
+    return i(a);
+}
+
+int g(int a) {
+    return h(a);
+}
+
+int f(int a) {
+    return g(a);
+}
+
+int main(){
+    int x = 123;
+    return f(x);
+}

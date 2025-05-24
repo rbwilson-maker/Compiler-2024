@@ -1,0 +1,18 @@
+//test div-by-zero
+
+int f() {
+  return 1 / 0;
+}
+
+int g() {
+  assert(false);
+  return 5;
+}
+
+int h(int x, int y) {
+  return x + y;
+}
+
+int main() {
+  return h(f(), g());
+}

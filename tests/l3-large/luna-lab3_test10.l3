@@ -1,0 +1,17 @@
+//test return 0
+
+// This should beable to return.
+
+int test(int x);
+
+int test(int y);
+
+int main() {
+    return test(0x7FFFFF00);
+}
+
+int test(int z) {
+    if (z < 0) return 0;
+    else return 2 * test(z + 1);
+}
+    

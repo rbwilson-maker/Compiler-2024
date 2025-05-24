@@ -1,0 +1,14 @@
+//test error
+// undeclared variable
+int main()
+{
+  int a;
+  int b;
+  int c;
+
+  a = 5;
+  b = a+1;
+  c = b+2;
+  x = a+b+c;
+  return x;
+}

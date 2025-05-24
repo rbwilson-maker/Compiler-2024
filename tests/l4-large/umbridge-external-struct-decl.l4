@@ -1,0 +1,30 @@
+//test typecheck
+
+void set(struct s* data);
+int get(struct s* data);
+
+int middleman(struct s *info) {
+    set(info);
+    return get(info);
+}
+
+struct s {
+    bool c;
+    int *m;
+    int u;
+};
+
+void set(struct s* data) {
+    data->u = 11;
+    data->c = true;
+    data->m = alloc(int);
+}
+
+int get(struct s* data) {
+    return data->u;
+}
+
+int main() {
+    struct s *info = alloc(struct s);
+    return middleman(info);
+}

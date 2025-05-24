@@ -1,0 +1,19 @@
+//test return 4
+
+struct data;
+typedef struct data data;
+
+struct data {
+  data* data1;
+  data** data2;
+};
+
+int main() {
+  data** a = alloc(data*);
+  *a = alloc(data);
+  (**a).data1 = *a;
+  (**a).data2 = a;
+  if (a == (*a)->data2) return 4;
+  if ((*a)->data1 == (**a).data1) return 3; 
+  return 0;
+}

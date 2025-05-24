@@ -1,0 +1,482 @@
+//test div-by-zero
+
+/**
+ * @brief Tests a large number of groups of variables, where each of the
+ *        groups conflicts with each of the other in the interference graph.
+ *
+ * Kevin Geng, Team Barsoomian
+ * 15-411 Fall 2019
+ */
+
+int recur(int level, int val) {
+  if (level < 0) {
+    return val;
+  }
+  val = recur(level - 1, val);
+
+  int var_0_0 = 14;
+  int var_0_1 = 25;
+  int var_0_2 = 51;
+  int var_0_3 = 57;
+  int var_0_4 = 21;
+  int var_0_5 = 58;
+  int var_0_6 = 46;
+  int var_0_7 = 28;
+  int var_0_8 = 54;
+  int var_0_9 = 2;
+
+  int var_1_0 = 27;
+  int var_1_1 = 4;
+  int var_1_2 = 24;
+  int var_1_3 = 51;
+  int var_1_4 = 44;
+  int var_1_5 = 10;
+  int var_1_6 = 28;
+  int var_1_7 = 20;
+  int var_1_8 = 31;
+  int var_1_9 = 0;
+
+  int var_2_0 = 52;
+  int var_2_1 = 9;
+  int var_2_2 = 32;
+  int var_2_3 = 28;
+  int var_2_4 = 55;
+  int var_2_5 = 6;
+  int var_2_6 = 31;
+  int var_2_7 = 6;
+  int var_2_8 = 52;
+  int var_2_9 = 41;
+
+  int var_3_0 = 5;
+  int var_3_1 = 60;
+  int var_3_2 = 52;
+  int var_3_3 = 55;
+  int var_3_4 = 34;
+  int var_3_5 = 30;
+  int var_3_6 = 36;
+  int var_3_7 = 13;
+  int var_3_8 = 25;
+  int var_3_9 = 17;
+
+  int var_4_0 = 14;
+  int var_4_1 = 36;
+  int var_4_2 = 27;
+  int var_4_3 = 36;
+  int var_4_4 = 12;
+  int var_4_5 = 6;
+  int var_4_6 = 39;
+  int var_4_7 = 28;
+  int var_4_8 = 10;
+  int var_4_9 = 32;
+
+  int var_5_0 = 5;
+  int var_5_1 = 6;
+  int var_5_2 = 55;
+  int var_5_3 = 38;
+  int var_5_4 = 3;
+  int var_5_5 = 26;
+  int var_5_6 = 22;
+  int var_5_7 = 51;
+  int var_5_8 = 7;
+  int var_5_9 = 41;
+
+  int var_6_0 = 10;
+  int var_6_1 = 11;
+  int var_6_2 = 10;
+  int var_6_3 = 29;
+  int var_6_4 = 6;
+  int var_6_5 = 53;
+  int var_6_6 = 9;
+  int var_6_7 = 57;
+  int var_6_8 = 25;
+  int var_6_9 = 43;
+
+  int var_7_0 = 10;
+  int var_7_1 = 29;
+  int var_7_2 = 16;
+  int var_7_3 = 39;
+  int var_7_4 = 40;
+  int var_7_5 = 34;
+  int var_7_6 = 28;
+  int var_7_7 = 36;
+  int var_7_8 = 25;
+  int var_7_9 = 52;
+
+  int var_8_0 = 38;
+  int var_8_1 = 29;
+  int var_8_2 = 28;
+  int var_8_3 = 28;
+  int var_8_4 = 24;
+  int var_8_5 = 5;
+  int var_8_6 = 34;
+  int var_8_7 = 45;
+  int var_8_8 = 60;
+  int var_8_9 = 11;
+
+  int var_9_0 = 1;
+  int var_9_1 = 35;
+  int var_9_2 = 23;
+  int var_9_3 = 0;
+  int var_9_4 = 58;
+  int var_9_5 = 61;
+  int var_9_6 = 1;
+  int var_9_7 = 54;
+  int var_9_8 = 26;
+  int var_9_9 = 57;
+
+  int var_10_0 = 21;
+  int var_10_1 = 28;
+  int var_10_2 = 9;
+  int var_10_3 = 16;
+  int var_10_4 = 37;
+  int var_10_5 = 49;
+  int var_10_6 = 13;
+  int var_10_7 = 49;
+  int var_10_8 = 52;
+  int var_10_9 = 39;
+
+  int var_11_0 = 31;
+  int var_11_1 = 33;
+  int var_11_2 = 31;
+  int var_11_3 = 40;
+  int var_11_4 = 9;
+  int var_11_5 = 52;
+  int var_11_6 = 26;
+  int var_11_7 = 0;
+  int var_11_8 = 3;
+  int var_11_9 = 35;
+
+  int var_12_0 = 26;
+  int var_12_1 = 19;
+  int var_12_2 = 40;
+  int var_12_3 = 7;
+  int var_12_4 = 57;
+  int var_12_5 = 63;
+  int var_12_6 = 6;
+  int var_12_7 = 19;
+  int var_12_8 = 2;
+  int var_12_9 = 16;
+
+  int var_13_0 = 2;
+  int var_13_1 = 1;
+  int var_13_2 = 35;
+  int var_13_3 = 45;
+  int var_13_4 = 61;
+  int var_13_5 = 14;
+  int var_13_6 = 3;
+  int var_13_7 = 4;
+  int var_13_8 = 32;
+  int var_13_9 = 14;
+
+  int var_14_0 = 27;
+  int var_14_1 = 35;
+  int var_14_2 = 12;
+  int var_14_3 = 35;
+  int var_14_4 = 24;
+  int var_14_5 = 20;
+  int var_14_6 = 35;
+  int var_14_7 = 3;
+  int var_14_8 = 28;
+  int var_14_9 = 34;
+
+  int var_15_0 = 34;
+  int var_15_1 = 21;
+  int var_15_2 = 32;
+  int var_15_3 = 10;
+  int var_15_4 = 31;
+  int var_15_5 = 2;
+  int var_15_6 = 29;
+  int var_15_7 = 7;
+  int var_15_8 = 36;
+  int var_15_9 = 18;
+
+  int var_16_0 = 57;
+  int var_16_1 = 6;
+  int var_16_2 = 16;
+  int var_16_3 = 39;
+  int var_16_4 = 10;
+  int var_16_5 = 42;
+  int var_16_6 = 30;
+  int var_16_7 = 21;
+  int var_16_8 = 54;
+  int var_16_9 = 55;
+
+  int var_17_0 = 63;
+  int var_17_1 = 27;
+  int var_17_2 = 53;
+  int var_17_3 = 18;
+  int var_17_4 = 20;
+  int var_17_5 = 37;
+  int var_17_6 = 22;
+  int var_17_7 = 26;
+  int var_17_8 = 19;
+  int var_17_9 = 60;
+
+  int var_18_0 = 34;
+  int var_18_1 = 40;
+  int var_18_2 = 55;
+  int var_18_3 = 62;
+  int var_18_4 = 35;
+  int var_18_5 = 21;
+  int var_18_6 = 9;
+  int var_18_7 = 34;
+  int var_18_8 = 62;
+  int var_18_9 = 4;
+
+  int var_19_0 = 53;
+  int var_19_1 = 6;
+  int var_19_2 = 45;
+  int var_19_3 = 46;
+  int var_19_4 = 4;
+  int var_19_5 = 17;
+  int var_19_6 = 42;
+  int var_19_7 = 51;
+  int var_19_8 = 57;
+  int var_19_9 = 55;
+
+  var_0_3 /= var_0_6;
+  var_0_5 ^= var_0_8;
+  var_0_2 >>= var_0_2;
+  var_0_7 ^= var_0_8;
+  var_0_4 >>= var_0_5;
+  var_0_1 -= var_0_6;
+  var_0_0 |= var_0_8;
+  var_0_8 -= var_0_7;
+  var_0_6 |= var_0_9;
+  var_0_9 <<= var_0_3;
+  val <<= var_0_8;
+
+  var_1_6 &= var_1_5;
+  var_1_2 >>= var_1_9;
+  var_1_8 <<= var_1_5;
+  var_1_7 &= var_1_1;
+  var_1_5 <<= var_1_0;
+  var_1_0 += val;
+  var_1_9 /= var_1_0;
+  var_1_3 &= var_1_2;
+  var_1_4 &= var_1_4;
+  var_1_1 *= var_1_5;
+  val *= var_1_6;
+
+  var_2_0 += var_2_2;
+  var_2_6 /= var_2_5;
+  var_2_2 -= var_2_3;
+  var_2_9 &= var_2_9;
+  var_2_3 ^= var_2_3;
+  var_2_5 >>= var_2_0;
+  var_2_1 /= var_2_0;
+  var_2_4 /= var_2_0;
+  var_2_7 -= var_2_7;
+  var_2_8 |= var_2_6;
+  val -= var_2_1;
+
+  var_3_2 *= var_3_0;
+  var_3_1 &= var_3_8;
+  var_3_3 >>= var_3_7;
+  var_3_6 /= var_3_7;
+  var_3_9 += var_3_9;
+  var_3_8 >>= var_3_0;
+  var_3_0 += var_3_8;
+  var_3_4 += val;
+  var_3_5 <<= val;
+  var_3_7 /= var_3_8;
+  val <<= var_3_5;
+
+  var_4_3 /= var_4_0;
+  var_4_0 >>= var_4_3;
+  var_4_5 *= var_4_8;
+  var_4_4 /= var_4_0;
+  var_4_9 <<= var_4_1;
+  var_4_1 /= var_4_8;
+  var_4_8 *= var_4_9;
+  var_4_6 |= val;
+  var_4_7 >>= var_4_9;
+  var_4_2 *= var_4_3;
+  val ^= var_4_8;
+
+  var_5_9 ^= var_5_0;
+  var_5_4 ^= var_5_9;
+  var_5_3 *= var_5_9;
+  var_5_8 ^= val;
+  var_5_7 |= var_5_4;
+  var_5_6 |= var_5_5;
+  var_5_1 -= var_5_6;
+  var_5_5 <<= var_5_2;
+  var_5_2 <<= var_5_3;
+  var_5_0 *= var_5_6;
+  val |= val;
+
+  var_6_8 ^= var_6_3;
+  var_6_5 >>= var_6_0;
+  var_6_2 <<= var_6_5;
+  var_6_1 *= var_6_1;
+  var_6_0 /= var_6_9;
+  var_6_3 >>= var_6_6;
+  var_6_7 >>= var_6_3;
+  var_6_4 += val;
+  var_6_9 |= var_6_5;
+  var_6_6 += var_6_5;
+  val ^= var_6_9;
+
+  var_7_7 *= var_7_7;
+  var_7_2 *= var_7_1;
+  var_7_4 >>= var_7_6;
+  var_7_1 <<= var_7_3;
+  var_7_0 |= var_7_8;
+  var_7_3 <<= var_7_9;
+  var_7_9 <<= var_7_2;
+  var_7_5 &= var_7_3;
+  var_7_6 &= var_7_2;
+  var_7_8 >>= var_7_8;
+  val *= var_7_2;
+
+  var_8_1 ^= var_8_4;
+  var_8_8 -= var_8_3;
+  var_8_7 <<= var_8_0;
+  var_8_5 |= var_8_8;
+  var_8_4 >>= var_8_3;
+  var_8_0 >>= var_8_1;
+  var_8_6 &= var_8_4;
+  var_8_3 &= var_8_0;
+  var_8_2 += var_8_4;
+  var_8_9 /= var_8_3;
+  val /= var_8_3;
+
+  var_9_8 &= var_9_7;
+  var_9_4 >>= var_9_5;
+  var_9_2 |= var_9_1;
+  var_9_3 /= var_9_6;
+  var_9_0 += var_9_0;
+  var_9_6 -= var_9_1;
+  var_9_7 &= var_9_1;
+  var_9_1 -= var_9_7;
+  var_9_9 *= var_9_8;
+  var_9_5 -= var_9_0;
+  val -= var_9_6;
+
+  var_10_1 &= var_10_6;
+  var_10_0 -= var_10_5;
+  var_10_8 >>= var_10_7;
+  var_10_5 >>= var_10_9;
+  var_10_7 *= var_10_2;
+  var_10_3 += var_10_8;
+  var_10_2 += var_10_6;
+  var_10_6 += var_10_2;
+  var_10_4 &= var_10_8;
+  var_10_9 ^= var_10_5;
+  val |= var_10_0;
+
+  var_11_2 &= var_11_7;
+  var_11_8 += var_11_5;
+  var_11_0 *= var_11_1;
+  var_11_3 |= var_11_1;
+  var_11_4 ^= var_11_8;
+  var_11_5 ^= var_11_0;
+  var_11_6 &= var_11_3;
+  var_11_9 -= var_11_3;
+  var_11_1 &= var_11_9;
+  var_11_7 &= var_11_7;
+  val *= var_11_5;
+
+  var_12_9 |= var_12_8;
+  var_12_7 >>= var_12_9;
+  var_12_1 <<= var_12_8;
+  var_12_6 /= var_12_5;
+  var_12_3 -= var_12_9;
+  var_12_5 -= var_12_3;
+  var_12_2 += var_12_7;
+  var_12_0 &= var_12_4;
+  var_12_4 <<= var_12_5;
+  var_12_8 ^= var_12_5;
+  val /= var_12_9;
+
+  var_13_1 *= var_13_5;
+  var_13_5 -= var_13_2;
+  var_13_2 -= var_13_2;
+  var_13_8 += var_13_2;
+  var_13_0 >>= var_13_0;
+  var_13_4 >>= var_13_5;
+  var_13_6 ^= var_13_8;
+  var_13_7 /= var_13_1;
+  var_13_9 ^= var_13_1;
+  var_13_3 *= var_13_1;
+  val *= var_13_2;
+
+  var_14_3 /= var_14_7;
+  var_14_4 ^= var_14_3;
+  var_14_6 &= var_14_3;
+  var_14_5 <<= var_14_8;
+  var_14_2 ^= var_14_6;
+  var_14_7 >>= var_14_3;
+  var_14_8 *= var_14_4;
+  var_14_9 |= var_14_7;
+  var_14_0 -= val;
+  var_14_1 *= var_14_2;
+  val &= var_14_2;
+
+  var_15_5 <<= var_15_6;
+  var_15_6 -= var_15_6;
+  var_15_2 |= val;
+  var_15_4 &= var_15_8;
+  var_15_9 |= var_15_3;
+  var_15_8 |= var_15_0;
+  var_15_0 /= var_15_7;
+  var_15_7 >>= var_15_8;
+  var_15_1 *= var_15_3;
+  var_15_3 *= var_15_2;
+  val >>= val;
+
+  var_16_9 &= var_16_5;
+  var_16_0 *= var_16_6;
+  var_16_6 &= var_16_7;
+  var_16_1 *= var_16_9;
+  var_16_5 |= var_16_0;
+  var_16_8 &= val;
+  var_16_7 &= var_16_5;
+  var_16_4 ^= var_16_1;
+  var_16_3 >>= var_16_0;
+  var_16_2 *= var_16_1;
+  val <<= var_16_4;
+
+  var_17_8 |= var_17_9;
+  var_17_7 += var_17_8;
+  var_17_9 -= val;
+  var_17_5 >>= var_17_7;
+  var_17_1 /= var_17_2;
+  var_17_4 -= var_17_3;
+  var_17_2 >>= var_17_5;
+  var_17_0 += val;
+  var_17_6 -= var_17_4;
+  var_17_3 ^= val;
+  val ^= var_17_6;
+
+  var_18_6 ^= var_18_5;
+  var_18_7 |= var_18_2;
+  var_18_9 *= var_18_0;
+  var_18_3 *= var_18_9;
+  var_18_8 /= var_18_9;
+  var_18_1 *= val;
+  var_18_5 += var_18_2;
+  var_18_0 -= var_18_7;
+  var_18_2 &= var_18_8;
+  var_18_4 |= var_18_4;
+  val <<= var_18_1;
+
+  var_19_1 -= var_19_6;
+  var_19_4 >>= var_19_5;
+  var_19_5 >>= var_19_5;
+  var_19_8 |= var_19_3;
+  var_19_3 += var_19_7;
+  var_19_2 *= var_19_8;
+  var_19_0 |= var_19_9;
+  var_19_9 /= var_19_9;
+  var_19_6 /= var_19_4;
+  var_19_7 -= var_19_0;
+  val |= var_19_1;
+
+  return val;
+}
+
+int main() {
+  return recur(4000, 0);
+}

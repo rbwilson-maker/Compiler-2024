@@ -1,0 +1,33 @@
+//test typecheck
+//test infloop
+/* Test infinite loop on a circular linked list */
+
+struct list {
+  int data;
+  struct list * next;
+};
+
+struct list* makeloop () {
+  struct list * start;
+  start = alloc(struct list);
+  struct list * mid;
+  mid = alloc(struct list);
+  struct list * end;
+  end = alloc(struct list);
+  start->data = 0;
+  start->next = mid;
+  mid->data = 0;
+  mid->next = end;
+  end->data = 0;
+  end->next = start;
+  return start;
+}
+
+int main () {
+  struct list * loop;
+  loop = makeloop();
+  while (loop->data == 0) {
+    loop = loop->next;
+  }
+  return -1;
+}

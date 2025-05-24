@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int main() {
+    int y = 0;
+
+    for (int i = 1; i < 1000; i <<= 1) {
+        y *= i;
+    }
+    return y % y;
+}

@@ -1,0 +1,10 @@
+//test error
+int main() {
+    bool x = true;
+    while (x) {
+        if(x || true) {
+            else return 4;
+        }
+    }
+    return x ? 4 : 5;
+}

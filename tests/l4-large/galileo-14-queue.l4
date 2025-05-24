@@ -1,0 +1,43 @@
+//test return 0
+// a circular queue
+
+struct queue {
+  int[] elem;
+  int len;
+  int head;
+  int tail;
+};
+typedef struct queue queue_t;
+
+void init(queue_t * this, int len) {
+  this->elem = alloc_array(int, len);
+  this->len = len;
+  int head = 0;
+  int tail = 0;
+}
+
+void push(queue_t * this, int e) {
+  this->elem[this->tail] = e;
+  this->tail++;
+  this->tail %= this->len;
+}
+
+int pop(queue_t * this) {
+  int res = this->elem[this->head];
+  this->head++;
+  this->head %= this->len;
+  return res;
+}
+
+int main() {
+  queue_t * q = alloc(queue_t);
+  init(q, 100);
+  for (int i = 0; i < 100; i++) {
+    push(q, i);
+  }
+  for (int i = 100; i < 200; i++) {
+    assert(pop(q) == i - 100);
+    push(q, i);
+  }
+  return 0;
+}

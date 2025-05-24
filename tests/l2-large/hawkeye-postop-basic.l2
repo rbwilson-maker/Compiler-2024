@@ -1,0 +1,15 @@
+//test return 11
+int main() {
+	bool b = false;
+    b = !b; // should be true
+
+    int a = 0;
+    a += 2;
+    a = a * 5;
+
+    a = a + ~-1;
+    a++;
+    //(a++)--;
+	return a;
+
+}

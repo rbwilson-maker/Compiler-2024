@@ -1,0 +1,8 @@
+//test return 5
+// division by zero after return statement
+int main()
+{
+  int x = 5;
+  return x;
+  x = 1/0;
+}

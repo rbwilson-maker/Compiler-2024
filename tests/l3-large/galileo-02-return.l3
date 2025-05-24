@@ -1,0 +1,36 @@
+//test return -1253113856
+// recursive calls
+
+int f1(int x) { return x + 1; }
+int f2(int x) { return f1(x) + 1; }
+int f3(int x) { return f2(x) + 2; }
+int f4(int x) { return f3(x) + 4; }
+int f5(int x) { return f4(x) + 4; }
+int f6(int x) { return f5(x) + 9; }
+int f7(int x) { return f6(x) + 22; }
+int f8(int x) { return f7(x) + 2; }
+int f9(int x) { return f8(x) + 7; }
+
+int g1(int x) { return f9(x) * 1; }
+int g2(int x) { return g1(x) * 2; }
+int g3(int x) { return g2(x) * f2(x); }
+int g4(int x) { return g3(x) * f3(x); }
+int g5(int x) { return g4(x) * f4(x); }
+int g6(int x) { return g5(x) * f5(x); }
+int g7(int x) { return g6(x) * f6(x); }
+int g8(int x) { return g7(x) * f7(x); }
+int g9(int x) { return g8(x) * f8(x); }
+
+int h1(int x) { return f9(x) * 1; }
+int h2(int x) { return h1(x) * 2; }
+int h3(int x) { return h2(x) * g2(x) * f2(x); }
+int h4(int x) { return h3(x) * g3(x) * f3(x); }
+int h5(int x) { return h4(x) * g4(x) * f4(x); }
+int h6(int x) { return h5(x) * g5(x) * f5(x); }
+int h7(int x) { return h6(x) * g6(x) * f6(x); }
+int h8(int x) { return h7(x) * g7(x) * f7(x); }
+int h9(int x) { return h8(x) * g8(x) * f8(x); }
+
+int main() {
+    return h9(134145);
+}

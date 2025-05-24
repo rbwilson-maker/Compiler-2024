@@ -1,0 +1,16 @@
+//test return 3
+
+// testing use of typedef and void
+
+typedef int dubidubi;
+typedef bool chipichipi;
+
+chipichipi chapachapa (dubidubi dabadaba) {
+    dabadaba;
+    return false;
+}
+
+int main() {
+    chapachapa(3);
+    return 3;
+}

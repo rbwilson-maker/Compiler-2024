@@ -1,0 +1,10 @@
+//test error
+//
+int main() {
+    // Ghee wihz
+    // I sure hope my lexer doesn't parse
+    // emojis :0
+    int 😃 = 4;
+    int 🙃 = 7;
+    return 😃 & 🙃 ;
+}

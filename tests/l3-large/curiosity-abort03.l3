@@ -1,0 +1,8 @@
+//test abort
+
+int main() {
+	int x = 1;
+	assert(x*2/2 == x);
+	assert(x/2*2 == x);
+	return x;
+}

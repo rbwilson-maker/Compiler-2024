@@ -1,0 +1,13 @@
+//test return 123
+
+int main () {
+  int x = 123;
+
+  while(false) return (1 / 0);
+
+  while(false) { return (1 / 0); }
+
+  while(false) if (false) return (1 / 0);
+
+  return x;
+}

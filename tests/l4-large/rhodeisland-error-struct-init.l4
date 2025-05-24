@@ -1,0 +1,11 @@
+//test error
+typedef struct foo foo;
+struct foo {
+	int x;
+};
+
+int main() {
+	struct foo* b;
+	foo * c;
+	return c->x;
+}

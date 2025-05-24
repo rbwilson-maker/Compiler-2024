@@ -1,0 +1,9 @@
+//test error 
+
+int add(int x, int y);
+
+// functions must be defined even if called, even from unrechable code
+int main() {
+    return 1+1;
+    return add(2, 2);
+}

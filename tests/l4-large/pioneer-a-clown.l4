@@ -1,0 +1,37 @@
+//test return 15122
+//not the entire circus! use pointers!
+
+struct clown {
+  int m;
+  int o;
+  int e;
+};
+
+struct circus {
+  struct clown* moe;
+  struct clown* curly;
+  struct clown* larry;
+};
+
+typedef struct clown clown;
+typedef struct circus circus;
+
+circus* create_circus (clown* first, clown* second, clown* third)
+{
+  circus* threestooges = alloc(circus);
+  first->e = second->o;
+  threestooges->moe = first;
+  threestooges->curly = third;
+  threestooges->larry = second;
+  return threestooges;
+}
+
+int main()
+{
+  clown* moe = alloc(clown);
+  clown* larry = alloc(clown);
+  larry->o = 15122;
+  clown* curly = alloc(clown);
+  circus* berrybigcircus = create_circus(moe,larry,curly);
+  return berrybigcircus->moe->e;
+}

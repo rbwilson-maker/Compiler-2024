@@ -1,0 +1,8 @@
+//test typecheck
+//although function call has not effect, still shouldn't link
+
+int main(){
+  int x = 5;
+  fact(1);
+  return x;
+}

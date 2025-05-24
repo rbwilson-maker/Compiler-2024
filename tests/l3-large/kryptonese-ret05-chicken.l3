@@ -1,0 +1,23 @@
+//test return -1
+// test good version of mutually recursive functions 
+int chicken(int num);
+int egg(int num);
+
+int chicken(int num) {
+    if (num <= 0) {
+        return num;
+    }
+    return egg(chicken(num - 1));
+}
+
+int egg(int num) {
+    if (num <= 0) {
+        return num;
+    }
+    return chicken(egg( num- 7));
+}
+
+int main() {
+    int first = egg(1000);
+    return first;
+}

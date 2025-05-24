@@ -1,0 +1,13 @@
+//test return 37
+int main(){
+    int nine = 9;
+    int eleven = 11;
+
+    int rdx = eleven % nine;
+    int rax = eleven / rdx;
+    int rcx = 3;
+    rcx = rcx << rcx;
+    int rax2 = 6;
+    rax2 = rax2 + rdx + rax + rcx;
+    return rax2;
+}

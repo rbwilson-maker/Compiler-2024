@@ -1,0 +1,10 @@
+//test memerror
+
+struct my_struct {
+  int[] my_arr;
+};
+
+int main() {
+  struct my_struct *s = alloc(struct my_struct);
+  return s->my_arr[0];
+}

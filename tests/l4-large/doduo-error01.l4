@@ -1,0 +1,6 @@
+//test error
+int main() {
+  int** a;
+  (*a) = alloc(int);
+  return (*a);
+}

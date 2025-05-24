@@ -1,0 +1,14 @@
+//test return 3
+
+// Checks whether re-declaration is being handled properly
+
+int main() {
+    int x = 2;
+    int y = x;
+    x = 3;
+    y = x;
+    return y; 
+}
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

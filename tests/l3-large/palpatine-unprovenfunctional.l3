@@ -1,0 +1,10 @@
+//test abort
+
+// A number is useful if we can get the square of it (aka zero is special)
+
+int bland(int y) { assert(y > 0); return y * y; }
+int main() {
+	int x = 10;
+	assert(bland(x) != 0 && x == 0 && (x / 0) > 0);
+	return 0;
+}

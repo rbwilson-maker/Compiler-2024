@@ -1,0 +1,18 @@
+//test return 298
+//CRT(n1, .., n4, r1, ..., r4) finds x s.t. x % ni = ri
+
+int CRT(int n1, int n2, int n3, int n4, 
+        int r1, int r2, int r3, int r4) {
+    int x = 1;
+    while (true) {
+        if (x % n1 == r1 && x % n2 == r2 
+            && x % n3 == r3 && x % n4 == r4) return x;
+        x++;
+    }
+    assert(false);
+    return x;
+}
+
+int main() {
+    return CRT(3, 4, 5, 7, 1, 2, 3, 4);
+}

@@ -1,0 +1,18 @@
+//test return 541
+int main() {
+    int n = 100;
+    int x = 1;
+    for (int ctr = 0; ctr < n;) {
+        x++;
+        int f = 2;
+        bool prime = true;
+        while (f * f <= x) {
+            if ((x % f) == 0) {
+                prime = false;
+            }
+            f++;
+        }
+        if (prime) ctr++;
+    }
+    return x;
+}

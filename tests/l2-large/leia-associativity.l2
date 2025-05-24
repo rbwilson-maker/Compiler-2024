@@ -1,0 +1,4 @@
+//test return 1
+int main() {
+    if (false == true || false) return 0; else return 1;
+}

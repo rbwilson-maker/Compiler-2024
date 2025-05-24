@@ -1,0 +1,9 @@
+//test error
+
+//typedef inside a function
+
+int main () {
+    typedef int integer;
+    integer x = 1;
+    return x;
+}

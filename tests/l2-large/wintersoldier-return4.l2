@@ -1,0 +1,15 @@
+//test return 778
+
+int main ()
+{
+    int a = 0;
+    int b = 1;
+    int c = 2;
+    while (c < 500) {
+        int d = a + b + c;
+        a = b;
+        b = c;
+        c = d;
+    }
+    return c;
+}

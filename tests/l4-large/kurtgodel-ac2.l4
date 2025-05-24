@@ -1,0 +1,36 @@
+//test return 1634103308
+//xorshift implementation from wikipedia
+
+struct xorshift128_state {
+    int[] x;
+};
+
+typedef struct xorshift128_state state;
+
+int xorshift128(state *st) {
+    int t = st->x[3];
+    int s = st->x[0];
+    st->x[3] = st->x[2];
+    st->x[2] = st->x[1];
+    st->x[1] = s;
+
+    t ^= t << 11;
+    t ^= t >> 8;
+
+    st->x[0] = t ^ s ^ (s >> 19);
+    return st->x[0];
+}
+
+int main() {
+    state *st = alloc(state);
+    st->x = alloc_array(int, 4);
+    (*st).x[0] = 0xFACADE;
+    (*st).x[1] = 0xCAFEBABE;
+    (*st).x[2] = 0xDEADBEEF;
+    (*st).x[3] = 0x0D15EA5E;
+
+    for (int i = 0; i < 100; i++) {
+        xorshift128(st);
+    }
+    return xorshift128(st);
+}

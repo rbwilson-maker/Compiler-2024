@@ -1,0 +1,22 @@
+//test error
+
+
+
+
+
+int main(){
+    int[] a = alloc_array(int, 10);
+    // should not typecheck
+    int[] b = alloc(int);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+

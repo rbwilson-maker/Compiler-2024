@@ -1,0 +1,29 @@
+//test return 10061
+// calculates the nth prime
+
+bool isprime(int x) {
+    for (int y = 2; y < x / 2; y++) {
+        if (x % y == 0) return false;
+    }
+    return true;
+}
+
+int nthprime(int n) {
+    if (n == 0) {
+        return 2;
+    }
+    int last_prime = nthprime(n - 1);
+    int next_prime = last_prime;
+    bool done = false;
+    while (!done) {
+        next_prime++;
+        if (isprime(next_prime)) {
+            done = true;
+        }
+    }
+    return next_prime;
+}
+
+int main() {
+    return nthprime(1234);
+}

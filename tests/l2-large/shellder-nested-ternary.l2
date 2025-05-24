@@ -1,0 +1,12 @@
+//test return 23
+int main(){
+    int a = 4;
+    int b = 8;
+    int c = 15;
+    int d = 16;
+    int e = 23;
+    int f = 42;
+    bool x = true;
+    bool y = false;
+    return x ? y ? x ? a : y ? b : c : x ? y ? d : e : f : a;
+}

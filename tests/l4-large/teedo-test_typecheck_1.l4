@@ -1,0 +1,55 @@
+//test typecheck
+
+// Merge sort
+
+/*void merge(int[] A, int lo, int mid, int hi) {
+    int[] B = alloc_array(int, hi-lo);
+    int i = lo;
+    int j = mid;
+    int k = 0;
+
+    while (i < mid && j < hi)
+    {
+        if (A[i] <= A[j]) {
+            B[k] = A[i];
+            i++;
+        } else {
+            B[k] = A[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < mid) {
+        B[k] = A[i];
+        i++;
+        k++;
+    }
+    while (j < hi) {
+        B[k] = A[j];
+        j++;
+        k++;
+    }
+    for (k = 0; k < hi-lo; k++) {
+        A[lo+k] = B[k]; 
+    }
+}*/
+
+void sort(int[] A, int lo, int hi) {
+    if (hi-lo <= 1) return;
+    int mid = lo + (hi-lo)/2;
+    sort(A, lo, mid);
+    sort(A, mid, hi);
+    merge(A, lo, mid, hi);
+    return;
+}
+
+int main() {
+    int[] A = alloc_array(int, 10);
+
+    for (int i = 10; i >= 1; i--) {
+        A[10 - i] = i;
+    }
+    sort(A, 0, 10);
+    return 0;
+}

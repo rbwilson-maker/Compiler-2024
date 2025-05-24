@@ -1,0 +1,8 @@
+//test return -6
+// ~ twidDLE
+int main()
+{
+    int y = 0x5;
+    int z = ~y;
+    return z;
+}

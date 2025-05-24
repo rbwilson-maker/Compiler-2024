@@ -1,0 +1,32 @@
+//test error
+
+struct hair {
+  bool isblue;
+  bool isred;
+  bool isyellow;
+};
+
+struct thing {
+  int id;
+  bool hasbluehair;
+  struct hair hair;
+};
+
+bool possible(struct hair *h1, struct hair h2) {
+  if (thing1->id == thing2.id) return false;
+  return thing2.hasbluehair;
+}
+
+int main() {
+  struct thing *thing1 = alloc(struct thing);
+  thing->id = 1;
+  thing->hasbluehair = true;
+  (thing->hair).isblue = true;
+  (thing->hair).isyellow = false;
+  (thing->hair).isred = false;
+  struct hair *hair2 = alloc(struct hair);
+  hair2->isblue = false;
+  hair2->isred = true;
+  hair2->isyellow = true;
+  return possible(hair2, thing->hair) ? 17 : -17;
+}

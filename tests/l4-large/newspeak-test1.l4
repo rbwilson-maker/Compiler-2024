@@ -1,0 +1,7 @@
+//test error
+// test that elaboration of asnops is done correctly
+
+int main() {
+  int *x;
+  return *x;
+}

@@ -1,0 +1,11 @@
+//test error
+// type mismatch
+
+int main()
+{
+  bool b;
+  b = true;
+  b = false;
+  b = 3;
+  return b;
+}

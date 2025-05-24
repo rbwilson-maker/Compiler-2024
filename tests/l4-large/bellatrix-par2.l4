@@ -1,0 +1,10 @@
+//test error 
+int main() {
+    int* k = alloc(int);
+    *k = 1;
+    int** foo = alloc(int*);
+    *foo = k;
+    1 **foo;
+    return 0;
+}
+

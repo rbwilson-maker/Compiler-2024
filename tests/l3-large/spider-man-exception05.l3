@@ -1,0 +1,27 @@
+//test abort
+
+typedef int f;
+typedef bool g;
+
+f fff(f ff) {
+    return ff;
+}
+
+f main() {
+    f ffgg = 0;
+    g ggff = false;
+    f fg = 0;
+    g gf = true;
+    f fgfg = 123412432;
+    if (ggff || gf) {
+        fgfg = fg >> ffgg << fg;
+    }
+    if (gf) {
+        assert(fgfg != fg && fgfg != ffgg && fg != fgfg);
+    }
+    return ggff && gf ? ffgg + fg / ffgg : fgfg;
+}
+
+g ggg(g gg) {
+    return gg;
+}

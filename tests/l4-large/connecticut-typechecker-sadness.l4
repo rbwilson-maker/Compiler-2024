@@ -1,0 +1,16 @@
+//test return 1
+
+struct foo {
+	int foo;
+};
+
+typedef struct foo foo;
+
+typedef foo* foofoo;
+foo* foofoofoo() {
+	return NULL;
+}
+
+int main() {
+	return 1;
+}

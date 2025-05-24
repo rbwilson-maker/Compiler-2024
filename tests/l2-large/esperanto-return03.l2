@@ -1,0 +1,25 @@
+//test return 750
+
+int main(){
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+    int f;
+    int g;
+
+    a = 15;
+    b = 10;
+    e = 5;
+    g = 0;
+    for(c = 0; c < a; c++){
+        for(d = 0; d < b; d++){
+            for(f = 0; f < e; f++){
+                g += 1;
+            }
+        }
+    }
+
+    return g;
+}

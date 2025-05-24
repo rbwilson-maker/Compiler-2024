@@ -1,0 +1,14 @@
+//test return 0
+int what(int x) {
+  if (x > 100) {
+    return x - 10;
+  } else {
+    return what(what(x + 11));
+  }
+}
+
+int main() {
+  int x = what(34);
+  int y = what(86);
+  return x - y;
+}

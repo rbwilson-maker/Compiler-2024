@@ -1,0 +1,9 @@
+//test error
+//parse
+//lvalue is not a identifier
+
+int main() {
+    int x = 5;
+    -x = x;
+    return x;
+}

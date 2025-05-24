@@ -1,0 +1,24 @@
+//test div-by-zero
+//here we basically test 1/0 through using array accesses in a struct
+
+typedef struct ValueArray_t valArr;
+struct ValueArray_t{
+    int id;
+    int[] vals;
+    int size;
+};
+
+
+int main() {
+    valArr* x = alloc(valArr);
+    x->id = 0;
+    x->vals = alloc_array(int, 3);
+    x->size = 3;
+
+    x->vals[0] = 0;
+    x->vals[1] = 1;
+    x->vals[2] = 2;
+
+    return x->vals[1]/x->vals[0];
+
+}

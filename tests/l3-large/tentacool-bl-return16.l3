@@ -1,0 +1,12 @@
+//test return 3
+int f1() {
+    return 3;
+}
+
+
+int main () {
+    { 
+        int f1 = 1;
+    }
+    return f1();
+}

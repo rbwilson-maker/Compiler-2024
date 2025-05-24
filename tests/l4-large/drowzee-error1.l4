@@ -1,0 +1,17 @@
+//test error
+
+struct s;
+
+int f(struct s* stuff) {
+  return stuff->val;
+}
+
+struct s {
+  int val;
+};
+
+int main() {
+  struct s* stuff = alloc(struct s);
+  s->val = 3;
+  return f(stuff);
+}

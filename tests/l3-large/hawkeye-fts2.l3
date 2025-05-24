@@ -1,0 +1,14 @@
+//test return 1
+
+int reverse(int n) {
+    if (n < 10 && n > 5)
+        return 1;
+
+    if (n <= 5)
+        return reverse(n+1);
+
+    return 0;
+}
+int main () {
+    return reverse(-100);
+}

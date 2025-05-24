@@ -1,0 +1,11 @@
+//test error
+//Test that void function calls are only allowed as top level statements
+
+void f(int x) {
+  int y = x + 5;
+}
+
+int main() {
+  true ? f(0) : f(1);
+  return 0;
+}

@@ -1,0 +1,16 @@
+//test memerror
+// outside the end of an array
+
+int main() {
+  int[] A = alloc_array(int, 4);
+  for (int i = 0; i < 4; i++) {
+    A[i] = i;
+  }
+  assert(A[0] == 0);
+  assert(A[1] == 1);
+  assert(A[2] == 2);
+  assert(A[3] == 3);
+  assert(A[4] == 4);
+  return 0;
+}
+

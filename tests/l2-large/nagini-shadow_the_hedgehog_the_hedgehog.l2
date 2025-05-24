@@ -1,0 +1,10 @@
+//test error
+// ...the hedgehog the hedgehog the hedgehog the hedgehog...
+int main() {
+    int x = 1;
+    for (int i; i < 10; i++) {{{{{{
+        int x = 2;
+        x++;
+    }}}}}}
+    return x;
+}

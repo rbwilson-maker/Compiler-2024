@@ -1,0 +1,10 @@
+//test return 20000
+
+int add_4000(int x) {
+    if (x >= 20000) return x;
+    return add_4000(x + 4000);
+}
+
+int main () {
+  return add_4000(0);
+}

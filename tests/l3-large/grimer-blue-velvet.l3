@@ -1,0 +1,13 @@
+//test return 1 
+
+
+// Large branching factor
+int f1(int a, int b) {
+  if (a + b < 15) return 1;
+  return f1(f1(a / 2, a), f1(b, b / 2));
+}
+
+int main() {
+  return f1(5, 5);
+}
+

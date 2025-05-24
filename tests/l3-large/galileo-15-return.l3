@@ -1,0 +1,30 @@
+//test return 92
+// n queens, recursive version
+
+int dfs(int res, int row, int diag1, int diag2, int depth, int n) {
+    if (depth == n) {
+        return res + 1;
+    } else {
+        for (int r = 0; r < n; r++) {
+            if (((1 << r) & row) == 0 &&
+                    ((1 << (r + depth)) & diag1) == 0 &&
+                    ((1 << (r - depth + n - 1)) & diag2) == 0) {
+                res = dfs(res, row | (1 << r), diag1 | (1 << (r + depth)),
+                    diag2 | (1 << (r - depth + n - 1)), depth + 1, n);
+            }
+        }
+        return res;
+    }
+}
+
+int queens(int n) {
+    int res = 0;
+    int row = 0;
+    int diag1 = 0;
+    int diag2 = 0;
+    return dfs(res, row, diag1, diag2, 0, n);
+}
+
+int main() {
+    return queens(8);
+}

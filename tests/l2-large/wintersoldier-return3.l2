@@ -1,0 +1,19 @@
+//test return 4
+
+int main ()
+{
+    int a = 0;
+    while (a != 4) {
+        while (a != 3) {
+            while (a != 2) {
+                while (a != 1) {
+                    a = 1;
+                }
+                a = 2;
+            }
+            a = 3;
+        }
+        a = 4;
+    }
+    return a;
+}

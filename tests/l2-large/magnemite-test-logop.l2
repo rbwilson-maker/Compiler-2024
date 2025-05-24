@@ -1,0 +1,11 @@
+//test return 24
+
+int main() {
+  bool a = true;
+  bool b = false;
+
+  int x = 12;
+  if (a || b) x += 12;
+  if (a && b) x += 13;
+  return x;
+}

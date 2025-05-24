@@ -1,0 +1,18 @@
+//test return 1
+
+struct s;
+
+struct t{
+    struct s* x;
+};
+
+struct p{
+    struct s* x;
+    struct t* y;
+};
+
+
+int main(){
+    int s = 1;
+    return s;
+}

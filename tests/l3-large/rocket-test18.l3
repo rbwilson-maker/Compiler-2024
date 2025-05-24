@@ -1,0 +1,18 @@
+//test return 2147483647
+
+int shift(int x, int k, bool shift_left) {
+    if (shift_left) {
+        return x << k;
+    }
+    else {
+        return x >> k;
+    }
+}
+
+int main()
+{
+    int num = shift(1, 31, true);
+    int res = num >> 31;
+    res ^= num;
+    return res;
+}

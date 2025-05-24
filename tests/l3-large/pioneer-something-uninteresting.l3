@@ -1,0 +1,19 @@
+//test error
+//this actually isn't a Collatz sequence because it doesn't compile
+
+int interesting_function(int x)
+{
+  if (x == 1) return 1;
+  if (x % 2 == 0)
+    return interesting_function(x / 2);
+  else
+    return interesting_function(3x + 1);
+}
+
+int main()
+{
+  int interesting_result = interesting_function(62);
+  if (interesting_result == 1)
+    return false;
+  return interesting_result;
+}

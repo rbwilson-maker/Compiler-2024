@@ -1,0 +1,12 @@
+//test error
+
+struct cooper {
+    bool wearingHat;
+    bool onFloor;
+    struct cooper clone; // Oh no - the cooper's definition has a cycle
+};
+
+int main() {
+    struct cooper theoneandonly;
+    return -3;
+}

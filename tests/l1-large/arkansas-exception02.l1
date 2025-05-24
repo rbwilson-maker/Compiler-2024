@@ -1,0 +1,7 @@
+//test div-by-zero
+// can not directly simplfy the return rexpression
+int main() {
+    int a = 1;
+    int b = -1;
+    return 0 / (a + b);
+}

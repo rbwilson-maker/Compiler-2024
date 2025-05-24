@@ -1,0 +1,13 @@
+//test return 0
+
+typedef int tau;
+
+struct tau{
+	tau t;
+	struct tau* t2;
+	tau* t3;
+};
+
+int main(){
+	return 0;
+}

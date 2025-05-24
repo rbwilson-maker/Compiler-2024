@@ -1,0 +1,38 @@
+//test return 0
+
+fpt f(fpt x) {
+  fpt x_square = fmul(x, x);
+  fpt x_cube = fmul(x_square, x);
+  return fsub(x_cube, x_square);
+}
+
+fpt fprime(fpt x) {
+  fpt x_square = fmul(x,x);
+  return fsub(fmul(itof(3), x_square), fmul(itof(2),x));
+}
+
+fpt newton(fpt x0, fpt tol, fpt epsilon, int max_iters) {
+  fpt y;
+  fpt yprime;
+  fpt x1;
+  for (int i=0; i<max_iters; i++) {
+    y = f(x0);
+    yprime = fprime(x0);
+    x1 = fsub(x0, fdiv(y, yprime));
+    if (fless(fsub(x1, x0), tol) || fless(itof(0), fadd(fsub(x1, x0), tol))) {
+      return x1;
+    }
+    x0 = x1;
+  }
+  return 0;
+}
+
+int main () {
+  // tolerance, epsilon of 0.2
+  fpt result = newton(itof(5), fdiv(itof(1), itof(5)), fdiv(itof(1), itof(5)), 100);
+  // roots are 0 and 1
+  if (fless(result, itof(2))) {
+    return 1/0;
+  }
+  return 0;
+}

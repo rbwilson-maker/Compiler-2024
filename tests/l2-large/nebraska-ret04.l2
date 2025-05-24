@@ -1,0 +1,15 @@
+//test return 14
+
+int main()
+{
+  int x = 0;
+  int i;
+  for (i = 5; i > 0; i--) {
+    x += i;
+
+    if (i == 2) {
+      i=0;
+    }
+  }
+  return x;
+}

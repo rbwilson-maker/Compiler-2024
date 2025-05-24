@@ -1,0 +1,17 @@
+//test error
+// Cannot typedef a void
+
+typedef bool foo;
+typedef foo bar;
+typedef int baz;
+
+baz main() {
+  foo a = 1 > 2;
+  bar b = 5 <= 0;
+  if (foo && bar) {
+    return 0;
+  } else {
+    return 1;
+  }
+  typedef void foobar;
+}

@@ -1,0 +1,13 @@
+//test return -1
+
+int main(){
+    int x;
+    int y;
+
+    x = 500+750+430;
+    y = x-2502;
+    x+=y;
+    x/=y;
+
+    return x;
+}

@@ -1,0 +1,80 @@
+//test return 0
+
+/* Tests:
+ *  - Different structs can share field names!
+ *  - Aliased pointers
+ *  - Nested accesses
+ */
+
+typedef struct paper paper_t;
+
+struct paper {
+    int pages;
+};
+
+typedef struct textbook textbook_t;
+
+struct textbook {
+    int pages;
+};
+
+typedef struct computer_scientist computer_scientist_t;
+
+struct computer_scientist {
+    computer_scientist_t* advisor;
+    computer_scientist_t*[] doctoral_students;
+    paper_t*[] papers;
+    textbook_t*[] textbooks;
+};
+
+int main () {
+    // Karl Crary
+    computer_scientist_t* crary = alloc(computer_scientist_t);
+
+    // Robert Harper
+    computer_scientist_t* harper = alloc(computer_scientist_t);
+
+    // Robert Lee Constable
+    computer_scientist_t* constable = alloc(computer_scientist_t);
+
+    // Alonzo Church
+    computer_scientist_t* church = alloc(computer_scientist_t);
+
+    // Set up family tree
+    crary->advisor = constable;
+    harper->advisor = constable;
+    constable->advisor = church;
+
+    church->doctoral_students = alloc_array(computer_scientist_t*, 1);
+    church->doctoral_students[0] = constable;
+
+    constable->doctoral_students = alloc_array(computer_scientist_t*, 2);
+    constable->doctoral_students[0] = harper;
+    constable->doctoral_students[1] = crary;
+
+    // Constable writes a paper
+    paper_t* a_programming_logic_I = alloc(paper_t);
+    a_programming_logic_I->pages = 18;
+    constable->papers = alloc_array(paper_t*, 1);
+    constable->papers[0] = a_programming_logic_I;
+
+    // Everyone should be able to reach this paper
+    assert(constable->papers[0] == a_programming_logic_I);
+    assert(crary->advisor->papers[0] == a_programming_logic_I);
+    assert(harper->advisor->papers[0] == a_programming_logic_I);
+    assert(church->doctoral_students[0]->papers[0] == a_programming_logic_I);
+
+    // Harper writes a textbook
+    textbook_t* pfpl = alloc(textbook_t);
+    pfpl->pages = 494;
+    harper->textbooks = alloc_array(textbook_t*, 1);
+    harper->textbooks[0] = pfpl;
+
+    // Everyone should be able to reach this textbook
+    assert(harper->textbooks[0] == pfpl);
+    assert(crary->advisor->doctoral_students[0]->textbooks[0] == pfpl);
+    assert(constable->doctoral_students[0]->textbooks[0] == pfpl);
+    assert(church->doctoral_students[0]->doctoral_students[0]->textbooks[0] == pfpl);
+
+    return 0;
+}

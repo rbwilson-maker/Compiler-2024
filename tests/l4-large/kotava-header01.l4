@@ -1,0 +1,16 @@
+//test typecheck
+
+struct lab4 {
+  lab3_report prev;
+  int hours;
+  int score;
+  bool is_happy;
+};
+
+int main() {
+  lab1_report my_lab1 = alloc(struct lab1);
+  lab2_report my_lab2 = alloc(struct lab2);
+  lab3_report my_lab3 = alloc(struct lab3);
+  lab4_report my_lab4 = alloc(struct lab4);
+  return my_lab4->score;
+}

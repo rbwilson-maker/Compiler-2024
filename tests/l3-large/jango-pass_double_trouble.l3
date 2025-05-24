@@ -1,0 +1,16 @@
+//test return 10
+
+typedef int INTEGER;
+
+INTEGER returnInt(int x);
+
+INTEGER returnInt(int y);
+
+INTEGER returnInt(int y) {
+  return y;
+}
+
+int main() {
+  int x = returnInt(10);
+  return x;
+}

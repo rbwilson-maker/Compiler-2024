@@ -1,0 +1,7 @@
+//test return -2
+
+int main ()
+{
+  int x = 0xdeadbeef;
+  return x ^ - x;
+}

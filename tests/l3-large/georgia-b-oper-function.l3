@@ -1,0 +1,15 @@
+//test return 150
+//Test using function results as expression operands
+
+int square(int x) {
+    return x * x;
+}
+
+int cube(int x) {
+    return x * x * x;
+}
+
+int main() {
+    int x = 5;
+    return square(x) + cube(x);
+}

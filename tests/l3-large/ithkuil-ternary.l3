@@ -1,0 +1,16 @@
+//test return 20000
+
+int f1(int x) {
+    if (x == 0) return 1;
+
+    return x > 0 ? f1(x - 1) : f1(x + 1);
+}
+
+int main() {
+    int result = 0;
+    for (int i = -10000; i < 10000; i++) {
+        result += f1(i);
+    }
+
+    return result;
+}

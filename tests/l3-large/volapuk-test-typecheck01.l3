@@ -1,0 +1,6 @@
+//test typecheck
+int main() {
+  int mod = 1000000007;
+  return mod_add(mod_mul(500000004, 2, mod),
+                 mod_sub(mod_div(3, 2, mod), 1, mod), mod);
+}

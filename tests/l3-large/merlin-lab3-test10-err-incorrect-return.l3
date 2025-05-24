@@ -1,0 +1,11 @@
+//test error
+// error on attempt to assign to incorrect type
+
+bool returns_a_bool() {
+    return true;
+}
+
+int main() {
+    int res = returns_a_bool();
+    return res;
+}

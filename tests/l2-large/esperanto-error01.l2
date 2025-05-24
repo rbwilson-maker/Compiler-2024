@@ -1,0 +1,13 @@
+//test error
+
+int main(){
+    int x1;
+    int x2;
+
+    x1 = 1;
+    while( x2 > 0){
+        x1 += 1;
+        x2 -= 1;
+    }
+    return -1;
+}

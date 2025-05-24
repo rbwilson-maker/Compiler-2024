@@ -1,0 +1,153 @@
+//test error
+
+/* A branch that misses a return test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ *
+ * One of the control path doesn't have return
+ *
+ */
+
+
+int main() 
+{
+
+    int x = 5; 
+    int y = 500; 
+    int z = (x > y) ? 250 : 255; 
+
+    if ((z % x) != (y % x)) {
+        x = 3; 
+        if ((y / z) != 2) {
+            // y = 0
+            y = 0;
+            if (x > y) {
+                z = 2;
+                if ((x == y) && (y == z) && (x == 0)) {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 42; 
+                } else {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 43; 
+                }
+            } else {
+                // z = 0
+                z = 0;
+                if ((x == y) && (y == z) && (x == 0)) {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 42; 
+                } else {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 43; 
+                }
+            }
+        } else {
+            y = 5;
+            if (x > y) {
+                z = 2;
+                if ((x == y) && (y == z) && (x == 0)) {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 42; 
+                } else {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 43; 
+                }
+            } else {
+                // z = 0
+                z = 0;
+                if ((x == y) && (y == z) && (x == 0)) {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 42; 
+                } else {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 43; 
+                }
+            }
+        }
+    } else {
+        // x = 0
+        x = 0; 
+        if ((y / z) != 2) {
+            // y = 0
+            y = 0;
+            if (x > y) {
+                z = 2;
+                if ((x == y) && (y == z) && (x == 0)) {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 42; 
+                } else {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 43; 
+                }
+            } else {
+                // z = 0
+                z = 0;
+                if ((x == y) && (y == z) && (x == 0)) {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 45; 
+                } else {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 43; 
+                }
+            }
+        } else {
+            y = 5;
+            if (x > y) {
+                z = 2;
+                if ((x == y) && (y == z) && (x == 0)) {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 42; 
+                } else {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 43; 
+                }
+            } else {
+                // z = 0
+                z = 0;
+                if ((x == y) && (y == z) && (x == 0)) {
+                    // this cause the error
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    //return 42; 
+                } else {
+                    x = 1; 
+                    y = 1; 
+                    z = 1; 
+                    return 43; 
+                }
+            }
+        }
+    }
+}
+
+

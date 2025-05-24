@@ -1,0 +1,13 @@
+//test error
+
+
+int main() {
+  int i;
+  i = zeno(i, i);
+  return i;
+}
+
+
+int err2(fpt v, fpt eps) {
+  return 1;
+}

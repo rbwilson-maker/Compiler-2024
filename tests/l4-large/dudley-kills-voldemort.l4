@@ -1,0 +1,22 @@
+//test return 1282
+
+																// Returns the first number n such that										//   ((p-1)*^n + (p+1)^n) % (p^2) > 10^8
+// where p is the nth prime (project euler 123)
+
+struct cauldron {   int[] ingredients;
+};
+																											bool isPrime(int n) {																		  if (n <= 1) return false;   for (int i = 2 ; i < n ; i += 1) {											    if (n % i == 0) { return false; }
+  }   return true;
+}																											
+bool setup(int p, int n, int len, struct cauldron* pot) {   if (n >= len) return true;
+  if (p < 0) return false;
+  if (isPrime(p)) {																					    pot->ingredients[n] = p;																											    return setup(p+1, n+1, len, pot);
+  }
+  return setup(p+1, n, len, pot);
+}  int pow(int b, int e, int m) {																											  if (e == 0) return 1;																						  return (b * pow(b, e-1, m)) % m;																						}																																			
+// i'm really sad that the actual project euler problems are too big to fit // in our 4 byte integers							
+int solve(int n, struct cauldron* pot) {																											  int p = pot->ingredients[n-1];								  if ((pow(p-1, n, p*p) + pow(p+1, n, p*p)) % (p*p) > 100000000) {     return n;
+  }
+  return solve(n+1, pot); }
+
+int main() {																										  struct cauldron *p = alloc(struct cauldron);   p->ingredients = alloc_array(int, 7000);   setup(2,0,7000,p); 									  return solve(1, p);															}																							

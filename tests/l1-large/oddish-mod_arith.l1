@@ -1,0 +1,7 @@
+//test return 122
+int main() {
+  int max = 0x7fffffff;
+  int magic = 0x3e;
+
+  return (max + magic) * 2;
+}

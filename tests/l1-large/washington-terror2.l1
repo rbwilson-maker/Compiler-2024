@@ -1,0 +1,10 @@
+//test error
+//Testing error - Define Variable before Declare variable
+int main()
+{
+  int x = 0;
+  int y = 0;
+  s = 5;
+  int s;
+  return x;
+}

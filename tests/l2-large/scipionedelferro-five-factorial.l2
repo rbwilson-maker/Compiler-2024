@@ -1,0 +1,13 @@
+//test return 120
+// computes 5!
+
+int main()
+{
+	int total = 1;
+	int n = 5;
+	while (n > 1) {
+		total *= n;
+		n--;
+	}
+	return total;
+}

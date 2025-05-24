@@ -1,0 +1,421 @@
+//test return 0
+// Let's write some expressions!
+// A small lambda calculus interpreter
+// No macros / no global variables means that everything is ugly
+
+struct binop;
+struct expr;
+struct lam;
+struct app;
+struct value;
+struct mtch;
+struct cons_expr;
+struct list_val;
+
+typedef struct expr expr;
+typedef struct bop bop;
+typedef struct lam lam;
+typedef struct app app;
+typedef struct value value;
+typedef struct mtch mtch;
+typedef struct cons_expr cons_expr;
+typedef struct list_val list_val;
+
+typedef struct array array;
+
+typedef int vr;
+typedef array vars;
+typedef int src;
+typedef int op;
+typedef int expr_type;
+typedef int type;
+
+struct expr {
+  bop *binop;
+  int num;
+  lam *lambda;
+  app *fn_app;
+  vr var;
+  mtch *match;
+  cons_expr *cons_expr;
+  expr_type expr_ty;
+};
+
+struct bop {
+  expr *left;
+  expr *right;
+  op op;
+};
+
+struct lam {
+  vr param;
+  expr *body;
+};
+
+struct app {
+  expr *fn;
+  expr *arg;
+};
+
+struct array {
+  value*[] arr;
+  int n;
+};
+
+struct value {
+  int num;
+  lam *fn; 
+  list_val *list;
+  vars *ctx;
+  type ty;
+};
+
+struct cons_expr {
+  expr *hd;
+  expr *tl;
+};
+
+struct list_val {
+  bool is_nil;
+  value *hd;
+  value *tl;
+};
+
+struct mtch {
+  expr *switchE;
+  expr *case0;
+  expr *caseN;
+};
+
+vr next(src *s) {
+  int prev = *s;
+  (*s)++;
+  return prev;
+}
+
+vars *ctx_of_src(src *fresh_vars) {
+  vars *v = alloc(vars);
+  int n = *fresh_vars;
+  v->n = n;
+  v->arr = alloc_array(value*, n);
+  return v;
+}
+
+vars *replace(vars *ctx, vr i, value *x) {
+  vars *new = alloc(vars);
+
+  int n = ctx->n;
+  new->n = n;
+
+  value*[] arr = ctx->arr;
+  value*[] new_arr = alloc_array(value*, n);
+
+  for (int j = 0; j < n; j++) {
+    new_arr[j] = arr[j];
+  }
+  new_arr[i] = x;
+
+  new->arr = new_arr;
+  return new;
+}
+
+value *get(vars *ctx, vr i) {
+  return ctx->arr[i];
+}
+
+expr *num(int num) {
+  expr *e = alloc(expr);
+  e->num = num;
+  e->expr_ty = 0;
+  return e;
+}
+
+expr *binop(expr *left, op o, expr *right) {
+  expr *e = alloc(expr);
+  bop *b = alloc(bop);
+  b->op = o;
+  b->left = left;
+  b->right = right;
+  e->binop = b;
+  e->expr_ty = 1;
+  return e;
+}
+
+expr *lambda(vr param, expr *body) {
+  expr *e = alloc(expr);
+  lam *bda = alloc(lam);
+  bda->param = param;
+  bda->body = body;
+  e->lambda = bda;
+  e->expr_ty = 2;
+  return e;
+}
+
+expr *apply(expr *fn, expr *arg) {
+  expr *e = alloc(expr);
+  app *lication = alloc(app);
+  lication->fn = fn;
+  lication->arg = arg;
+  e->fn_app = lication;
+  e->expr_ty = 3;
+  return e;
+}
+
+expr *var(vr x) {
+  expr *e = alloc(expr);
+  e->var = x;
+  e->expr_ty = 4;
+  return e;
+}
+
+expr *match(expr *switchE, expr *e1, expr *e2) {
+  expr *e = alloc(expr);
+  mtch *m = alloc(mtch);
+  m->switchE = switchE;
+  m->case0 = e1;
+  m->caseN = e2;
+  e->match = m;
+  e->expr_ty = 5;
+  return e;
+}
+
+expr *nil() {
+  expr *e = alloc(expr);
+  e->expr_ty = 7;
+  return e;
+}
+
+expr *cons(expr *hd, expr *tl) {
+  cons_expr *xs = alloc(cons_expr);
+  xs->hd = hd;
+  xs->tl = tl;
+  expr *e = alloc(expr);
+  e->cons_expr = xs;
+  e->expr_ty = 6;
+  return e;
+}
+
+expr *plus(expr *left, expr *right) {
+  return binop(left, 0, right);
+}
+
+expr *minus(expr *left, expr *right) {
+  return binop(left, 1, right);
+}
+
+expr *times(expr *left, expr *right) {
+  return binop(left, 2, right);
+}
+
+expr *div(expr *left, expr *right) {
+  return binop(left, 3, right);
+}
+
+expr *mod(expr *left, expr *right) {
+  return binop(left, 4, right);
+}
+
+value *eval(expr *e, vars *ctx);
+value *eval_binop(bop *b, vars *ctx);
+
+// Hypothetically could extend this to fn-fn binops
+value *eval_binop(bop *b, vars *ctx) {
+  value *left = eval(b->left, ctx);
+  value *right = eval(b->right, ctx);
+  value *v = alloc(value);
+  op o = b->op;
+  if (o == 0) {
+    assert(left->ty == 0 && right->ty == 0);
+    v->num = left->num + right->num;
+    v->ty = 0;
+    return v;
+  } else if (o == 1) {
+    assert(left->ty == 0 && right->ty == 0);
+    v->num = left->num - right->num;
+    v->ty = 0;
+    return v;
+  } else if (o == 2) {
+    assert(left->ty == 0 && right->ty == 0);
+    v->num = left->num * right->num;
+    v->ty = 0;
+    return v;
+  } else if (o == 3) {
+    assert(left->ty == 0 && right->ty == 0);
+    v->num = left->num / right->num;
+    v->ty = 0;
+    return v;
+  } else if (o == 4) {
+    assert(left->ty == 0 && right->ty == 0);
+    v->num = left->num % right->num;
+    v->ty = 0;
+    return v;
+  }
+
+  assert(false);
+  return NULL;
+}
+
+value *eval_app(value *fn, value *arg) {
+  lam *bda = fn->fn;
+  vars *new_ctx = replace(fn->ctx, bda->param, arg);
+  return eval(bda->body, new_ctx);
+}
+
+value *eval(expr *e, vars *ctx) {
+  expr_type et = e->expr_ty;
+
+  if (et == 0) { // Number
+    value *v = alloc(value);
+    v->num = e->num;
+    v->ty = 0;
+    return v;
+  } else if (et == 1) { // Binop
+    return eval_binop(e->binop, ctx);
+  } else if (et == 2) { // Lambda abstraction
+    value *v = alloc(value);
+    v->fn = e->lambda;
+    v->ty = 1;
+    v->ctx = ctx;
+    return v;
+  } else if (et == 3) { // Function application
+    app *lication = e->fn_app;
+
+    value *fn = eval(lication->fn, ctx);
+    if (fn->ty != 1) assert(false);
+
+    value *arg = eval(lication->arg, ctx); 
+    return eval_app(fn, arg);
+  } else if (et == 4) { // Variable
+    value *v = get(ctx, e->var);
+    assert(v != NULL);
+    return v;
+  } else if (et == 5) { // match
+    mtch *m = e->match;
+    value *switchE = eval(m->switchE, ctx);
+
+    if (switchE->ty == 0) { // match on int
+      if (switchE->num == 0) {
+        return eval(m->case0, ctx);
+      } else {
+        return eval(m->caseN, ctx);
+      }
+    }
+
+    if (switchE->ty == 1) assert(false);
+
+    if (switchE->ty == 2) { // match on list
+      if (switchE->list->is_nil) {
+        return eval(m->case0, ctx);
+      } else {
+        value *fn = eval(m->caseN, ctx);
+        assert(fn->ty == 1);
+        value *fn2 = eval_app(fn, switchE->list->hd);
+        assert(fn->ty == 1);
+        return eval_app(fn2, switchE->list->tl);
+      }
+    }
+  } else if (et == 6) { // cons
+    cons_expr *xs = e->cons_expr;
+    value *v = alloc(value);
+    v->list = alloc(list_val);
+    value *hd = eval(xs->hd, ctx);
+    value *tl = eval(xs->tl, ctx);
+    if (tl->ty != 2) assert(false);
+    v->list->hd = hd;
+    v->list->tl = tl;
+    v->ty = 2;
+    return v;
+  } else if (et == 7) { // nil
+    value *v = alloc(value);
+    v->list = alloc(list_val);
+    v->list->is_nil = true;
+    v->ty = 2;
+    return v;
+  }
+
+  assert(false);
+  return NULL;
+}
+
+int main() {
+  src *fresh_vars = alloc(src);
+
+  vr x = next(fresh_vars);
+  vr y = next(fresh_vars);
+
+  vr f = next(fresh_vars);
+  vr g = next(fresh_vars);
+
+  vr xs = next(fresh_vars);
+
+  vars *ctx = ctx_of_src(fresh_vars);
+
+  // baby expression test
+  expr *e =
+    times(
+      plus(num(4), num(3)),
+      div(num(900), num(7))
+    );
+  value *v1 = eval(e, ctx);
+  assert(v1->ty == 0);
+  assert(v1->num == 896);
+
+  
+  // baby function test
+  expr *succ = lambda(x, plus(var(x), num(1)));
+  value *v2 = eval(apply(succ, num(4)), ctx);
+  assert(v2->ty == 0); // make sure we returned a number
+  assert(v2->num == 5);
+
+  // baby match test
+  expr *m = match(num(0), num(1), num(2));
+  value *v3 = eval(m, ctx);
+  assert(v3->ty == 0);
+  assert(v3->num == 1);
+
+  // Y combinator, baby
+  expr *tmp = lambda(x, lambda(y, apply(apply(var(f), apply(var(x), var(x))), var(y))));
+  expr *Y = lambda(f, apply(tmp, tmp));
+  expr *fact = apply(Y, lambda(f, lambda(x, match(var(x), num(1), times(var(x), apply(var(f), minus(var(x), num(1))))))));
+  value *v4 = eval(apply(fact, num(10)), ctx);
+  assert(v4->ty == 0);
+  assert(v4->num == 3628800); // oh baby
+
+  // small list test
+  expr *list = cons(num(3), cons(num(4), nil()));
+  value *v5 = eval(match(list, num(0), lambda(x, lambda(xs, var(x)))), ctx);
+  assert(v5->ty == 0);
+  assert(v5->num == 3);
+
+  // higher order functions
+  expr *map =
+    apply(Y,
+      lambda(f,
+      lambda(g,
+      lambda(x,
+        match(var(x),
+          nil(),
+          lambda(x,
+          lambda(xs,
+            cons(apply(var(g), var(x)), apply(apply(var(f), var(g)), var(xs))))))))));
+
+  expr *sum =
+    apply(Y,
+      lambda(f,
+      lambda(x,
+        match(var(x),
+          num(0),
+          lambda(x,
+          lambda(xs,
+            plus(var(x), apply(var(f), var(xs)))))))));
+
+  expr *fnlist = cons(lambda(x, div(var(x), num(2))), cons(lambda(x, mod(var(x), num(2))), nil()));
+  expr *fnlist_apped = apply(apply(map, map), fnlist);
+  expr *num_list = cons(num(17), cons(num(200), cons(num(0), nil())));
+  expr *apped_to_list = apply(apply(map, lambda(f, apply(var(f), num_list))), fnlist_apped);
+  value *v6 = eval(apply(sum, apply(apply(map, sum), apped_to_list)), ctx);
+  assert(v6->ty == 0);
+  assert(v6->num == 109);
+
+  return 0;
+}

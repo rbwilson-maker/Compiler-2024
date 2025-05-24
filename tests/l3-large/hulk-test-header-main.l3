@@ -1,0 +1,22 @@
+//test error
+
+int fib(int n){
+  if(n <= 1) return 1;
+  return fib(n-1) + fib(n-2);
+}
+
+int main() {
+  
+  int first = 1;
+  int second = 1;
+
+  for(int i = 0; i < 20; i++){
+      int num = second + first;
+      first = second;
+      second = num;
+  }
+
+  assert(fib(20) == second);
+
+  return 0;
+}

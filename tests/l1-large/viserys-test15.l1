@@ -1,0 +1,12 @@
+//test return -2147482353
+
+// test lvalue definition and two's complement arithmetic underflow
+
+int main() {
+  int x;
+  x = 4 + 4 - 3;
+  int y = -5;
+  (((x))) -= y * ((-(x + 0XFF)));
+
+  return -(0x80000000) - x;
+}

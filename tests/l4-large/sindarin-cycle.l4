@@ -1,0 +1,34 @@
+//test return 42
+// find the cycle in a linked list
+
+struct ListNode {
+  int val;
+  struct ListNode *next;
+};
+
+bool hasCycle(struct ListNode* head)
+{
+  if(head == NULL || head->next == NULL) return false;
+  struct ListNode *slow = head;
+  struct ListNode *fast = head->next;
+  while(fast != NULL && fast->next != NULL)
+  {
+    slow = slow->next;
+    fast = fast->next->next;
+    if(slow == fast)
+      return true;
+  }
+  return false;
+}
+
+int main(){
+  struct ListNode *head = alloc(struct ListNode);
+  struct ListNode *next = alloc(struct ListNode);
+  head->next = next;
+  next->next = head;
+
+  if (hasCycle(head))
+    return 42;
+  else
+    return 0;
+}

@@ -1,0 +1,32 @@
+//test return 15
+
+struct C {
+	int c;
+};
+
+struct A {
+	struct C cs;
+};
+
+struct A_ {
+	struct C *cs;
+};
+
+struct A__ {
+	struct C **cs;
+};
+
+
+int main() {
+	struct A__ *a__ = alloc(struct A__);
+	a__->cs = alloc(struct C *);
+	*a__->cs = alloc(struct C);
+	struct A_ *a_ = alloc(struct A_);
+	a_->cs = *a__->cs;
+	struct A *a = alloc(struct A);
+
+	a_->cs->c = 15;
+
+
+	return (*a__->cs)->c;
+}

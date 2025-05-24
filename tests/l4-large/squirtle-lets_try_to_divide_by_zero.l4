@@ -1,0 +1,15 @@
+//test memerror
+
+int[] f(int *p) {
+  return alloc_array(int, *p);
+}
+
+int main() {
+  int * x = NULL;
+
+  while(true) {
+    int []f = f(x);
+    return f[0]/0;
+  }
+  return 0;
+}

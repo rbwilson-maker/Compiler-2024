@@ -1,0 +1,55 @@
+//test return -2007001299
+// Prefix sum/can you return arrays?
+
+typedef int[] prefixsum;
+
+// Returns an integer, not necessarily positive
+int hash (int key) {
+    int a = 1664525; int b = 1013904223;
+    int r = key;
+    int h = 0;
+    for (int i = 0; i < 30; i++){
+        h = r*h + i;
+        r = r*a + b;
+    }
+    return h;
+}
+
+
+int[] someRandomArray(int length) {
+    int[] randos = alloc_array(int, length);
+    for (int i = 0; i < length; i++) {
+        randos[i] = hash(i);
+    }
+    return randos;
+}
+
+prefixsum compute(prefixsum input, int length) {
+    if (length == 2) {
+        int[] base = alloc_array(int, 2);
+        base[0] = input[0];
+        base[1] = input[0] + input[1];
+        return base;
+    }
+
+    int[] partials = alloc_array(int, length >> 1);    
+    for (int i = 0; i < (length >> 1); i++) {
+        partials[i] = input[2*i] + input[(2*i) + 1];
+    }
+    prefixsum partialSum = compute(partials, length >> 1);
+    
+    for (int i = 1; i < length; i++) {
+        if (i % 2 == 1) {
+            input[i] = partialSum[i / 2];
+        } else {
+            input[i] += partialSum[(i - 1) / 2];
+        }
+    }
+    return input;
+}
+
+int main() {
+    int[] inthemorninghour = someRandomArray(1 << 10);
+    prefixsum shecallsme = compute(inthemorninghour, 1 << 10);
+    return (shecallsme[1 << 9]);
+}

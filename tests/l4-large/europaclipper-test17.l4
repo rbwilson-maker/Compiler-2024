@@ -1,0 +1,19 @@
+//test error
+//test inspired by 15410
+
+void invade(int[] arr, int len) {
+	size_t i;
+	for(i = 0; i < len; i++) {
+		arr[i] = i;
+	}
+}
+
+void do_test() {
+	int[] ca = alloc_array(int, 100);
+	invade(ca + 100, 100);
+}
+
+int main() {
+  do_test();
+  return 0;
+}

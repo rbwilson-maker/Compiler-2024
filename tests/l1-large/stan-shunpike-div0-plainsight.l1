@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main(){
+    int f0 = 1;
+    int f1 = 1;
+    int f2 = f0 + f1;
+    int f3 = f1 + f2;
+    int f4 = f2 + f3;
+    int f5 = f3 + f4;
+    int f6 = (f4 + f5) / 0;
+    return f6 + f5;
+}

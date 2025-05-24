@@ -1,0 +1,14 @@
+//test div-by-zero
+
+void divmachine(int a, int b) {
+	a / b;
+}
+
+int f(int a, int b) {
+	return a + b;
+}
+
+int main() {
+	divmachine(f(3,4),f(-3,3));
+	return 0;
+}		

@@ -1,0 +1,48 @@
+//test return 2097152
+
+/* struct 03 Test 
+ *  
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * 
+ * Test various places for struct definitions and usages
+ * Test memory efficiency without running for too long
+ * Takes too long to exhaust the heap.. 
+ *
+ */
+
+typedef struct a t;
+struct a {
+    int a1;
+    bool a2; 
+    int *a3;
+    bool *a4;
+    int[] a5;
+};
+
+int main()
+{
+    int iter = 0; 
+    int i = 0; 
+    int j = 0;
+    t*[] t1 = alloc_array(struct a *, 25); 
+    for (; iter < 1000; iter++) {
+        i = 1;
+        j = 0;
+        t1[0] = alloc(t); 
+        int[] arr = alloc_array(int, i); 
+
+        while(t1[j] != NULL && j < 21) {
+            i *= 2; 
+            j++;
+            arr = alloc_array(int, i); 
+            t1[j] = alloc(t); 
+        }
+    }
+
+    if (t1[j] == NULL) {
+        return 0; 
+    }
+    return i;    
+}
+

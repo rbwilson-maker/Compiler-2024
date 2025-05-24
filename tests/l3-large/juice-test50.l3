@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+  testBool tb = true;
+  testBool tB = false;
+  testInt result = 123 + btoi(tB);
+  return itob(result);
+}

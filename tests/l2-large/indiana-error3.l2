@@ -1,0 +1,12 @@
+//test error
+
+//scope
+
+int main(){
+    int y = 0;
+    for(int x = 1; true; x<<=y){
+      y++;
+    }
+
+    return x;
+}

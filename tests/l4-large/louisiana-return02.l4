@@ -1,0 +1,70 @@
+//test return 3
+
+struct option
+{
+	bool is_some;
+	int data;
+};
+
+//why can't i match in c :(
+struct option* merge_opt(struct option* o1, struct option* o2)
+{
+	struct option* new = alloc(struct option); //oh, that's why... memory
+	if (o1->is_some && o2->is_some)
+	{
+		new->is_some = true;
+		new->data = o1->data + o2->data;
+	}
+	else
+	{
+		new->is_some = false;
+	}
+	return new;
+}
+
+int virtual_fold(struct option*[] opts, int size)
+{
+	if (size == 0)
+	{
+		return 0; //initializes is_some to 0
+	}
+	else if (size == 1)
+	{
+		return opts[0]->data;
+	}
+	else
+	{
+		struct option* current = opts[0];
+		for(int i = 1; i < size; i++)
+		{
+			struct option* next = merge_opt(current,opts[i]);
+            current = next;
+		}
+        if (current->is_some)
+        {
+            return current->data;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+}
+
+int main()
+{
+	struct option* o1 = alloc(struct option);
+	struct option* o2 = alloc(struct option);
+	struct option* o3 = alloc(struct option);
+	o1->is_some = true;
+	o2->is_some = true;
+	o3->is_some = true;
+	o1->data = 1;
+	o1->data = 2;
+	o1->data = 3;
+	struct option*[] os = alloc_array(struct option*, 3);
+	os[0] = o1;
+	os[1] = o2;
+	os[2] = o3;
+	return virtual_fold(os,3);
+}

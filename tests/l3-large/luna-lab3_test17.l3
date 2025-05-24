@@ -1,0 +1,25 @@
+//test div-by-zero
+
+// Tests for a correct evaluation order.
+// Both arguments has (different effects)
+// Evaluation order raises different errors
+
+// Function 0/0 no matter what x
+int divzero(int x) {
+    return x / (x / x - 1);
+}
+
+int infloop(int y) {
+    while (y > 0 || y <= 0) {
+          y += 20;
+    }
+    return y;
+}
+
+int foo(int x, int y) {
+    return x + y;
+}
+
+int main() {
+    return foo(divzero(20), infloop(10));
+}

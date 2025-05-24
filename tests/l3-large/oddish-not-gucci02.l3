@@ -1,0 +1,9 @@
+//test error
+
+void foo() {}
+
+int main() {
+  int x = 7;
+  void t;
+  return x;
+}

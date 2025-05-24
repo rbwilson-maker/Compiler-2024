@@ -1,0 +1,14 @@
+//test error
+/*
+Compile error.
+Function name shadowed in body.
+*/
+
+int r() {
+  int r = 3;
+  return r();
+}
+
+int main() {
+  return r();
+}

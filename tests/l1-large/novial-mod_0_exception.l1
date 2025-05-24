@@ -1,0 +1,12 @@
+//test div-by-zero
+// modulus by 0 altered variable
+
+int main() {
+    int a = 1;
+    int c = 2;
+    c *= 0;
+
+    int d = a%c;
+    int result = 4;
+    return result;
+}

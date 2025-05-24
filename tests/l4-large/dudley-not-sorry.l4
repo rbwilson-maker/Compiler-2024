@@ -1,0 +1,18 @@
+//test return 0
+
+
+struct dud {
+    int i;
+    int am;
+    int not;
+    int sorry;
+    int for_my;
+    int tests;
+};
+
+typedef struct dud i_am_not_sorry_at_all_for_my_tests;
+
+int main(){
+    i_am_not_sorry_at_all_for_my_tests * x = alloc(struct dud);
+    return (x->i + x->am + x->not + x->sorry + x->for_my + x->tests);
+}

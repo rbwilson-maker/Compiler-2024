@@ -1,0 +1,10 @@
+//test div-by-zero
+
+void senzawa(int []x, int n) {
+	senzawa(alloc_array(int, 10 / n), n - 1);
+}
+
+int main() {
+	senzawa(alloc_array(int, 0), 100000);
+	return 0;
+}

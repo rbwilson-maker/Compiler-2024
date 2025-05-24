@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+    int i = 0;
+    int mul = 1;
+    for(; i < 32; i++) {
+        mul *= 2;
+    }
+
+    return 10 / (mul >> 31);
+}

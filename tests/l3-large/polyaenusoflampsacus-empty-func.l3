@@ -1,0 +1,9 @@
+//test return 0
+//Checks that a void function with no body is allowed
+
+void voidy_boi() {}
+
+int main () {
+  voidy_boi();
+  return 0;
+}

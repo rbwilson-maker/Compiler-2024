@@ -1,0 +1,16 @@
+//test return 0
+// anonymous struct parsing / collision
+
+int other(int a) {
+    return a;
+}
+
+struct f {
+    int a;
+};
+
+int main() {
+    struct f * f = alloc(struct f);
+    f->a = 0;
+    return other(f->a);
+}

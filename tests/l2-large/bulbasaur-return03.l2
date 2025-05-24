@@ -1,0 +1,12 @@
+//test return 5
+// tests optional statements in for loop
+
+int main() {
+  int x = 5;
+  int y = 0;
+  for(; x > 0; ) {
+    x--;
+    y++;
+  }
+  return y;
+}

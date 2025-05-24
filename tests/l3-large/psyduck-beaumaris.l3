@@ -1,0 +1,11 @@
+//test error
+
+int 0xDEADBEEF();
+
+int main () {
+return 0xDEADBEEF();
+}
+
+int 0xDEADBEEF() {
+return 5;
+}

@@ -1,0 +1,60 @@
+//test return 3
+//add two linked lists
+
+struct node;
+
+typedef struct node node;
+
+struct node {
+  int val;
+  node* next;
+};
+
+node* add(node* x, node* y){
+	if (x == NULL || y == NULL) {
+		return NULL;
+	}
+
+	node* start = alloc(node);
+	start->val = x->val + y->val;
+	node* p1 = x->next;
+	node* p2 = y->next;
+	node* prevnode = start;
+
+	while (p1 != NULL && p2 != NULL) {
+		node* newnode = alloc(node);
+		newnode->val = p1->val + p2->val;
+        prevnode->next = newnode;
+        p1 = p1->next;
+        p2 = p2->next;
+		prevnode = newnode;
+	}
+
+	return start;
+}
+
+int main() {
+	node* x = alloc(node);
+    x->val = 0;
+    node* prev = x;
+    node* next;
+    for (int i = 1; i < 5; i++) {
+        next = alloc(node);
+        next->val = i;
+        prev->next = next;
+        prev = next;
+    }
+    
+    node* y = alloc(node);
+    y->val = 1;
+    prev = y;
+    for (int i = 1; i < 5; i++) {
+        next = alloc(node);
+        next->val = i+1;
+        prev->next = next;
+        prev = next;
+    }
+
+    node* z = add(x, y);
+    return z->next->val;
+}

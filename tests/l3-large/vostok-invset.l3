@@ -1,0 +1,62 @@
+//test abort
+// as a devout student of 15-122, I must make sure my set accesses/
+// deletes/contains must be called with valid inserts! let us use
+// ASSERTS as contracts to ensure safety!
+
+/* alias for sets */
+typedef int bitset;
+
+bitset newSet() {
+    return 0;
+}
+
+int size(bitset set) {
+    int currNum = set;
+    int size = 0;
+    for(int i = 0; i < 32; i++) {
+        size += (0x1 & currNum);
+        currNum = currNum >> 1;
+    }
+    return size;
+}
+
+bitset insert(bitset set, int i) {
+    assert(i >= 0 && i < 32);
+    return set | (0x1 << i);
+}
+
+bitset delete(bitset set, int i) {
+    assert(i >= 0 && i < 32);
+    return set & (~(0x1 << i));
+}
+
+bool contains(bitset set, int i) {
+    assert(i >= 0 && i < 32);
+    return (((set >> i) & 0x1) == 1);
+}
+
+bitset intersection(bitset set1, bitset set2) {
+    return set1 & set2;
+}
+
+bitset union(bitset set1, bitset set2) {
+    return set1 | set2;
+}
+
+int main() {
+    bitset set1 = newSet();
+    set1 = insert(set1, 30);
+    set1 = insert(set1, 29);
+    set1 = insert(set1, 15);
+    set1 = insert(set1, 15);
+
+    bitset set2 = newSet();
+    set2 = insert(set2, 15);
+    set2 = insert(set2, 28);
+    set2 = insert(set2, 10);
+
+    bitset set3 = union(set1, set2);
+    set3 = delete(set3, 10);
+    set3 = delete(set3, 32); // uh oh...
+    return size(set3);
+}

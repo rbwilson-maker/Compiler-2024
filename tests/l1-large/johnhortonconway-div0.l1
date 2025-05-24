@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main()
+{
+  int a = 1 / 2 / 3 / 4;
+  int b = 4 / 3 / 2 / 1;
+
+  return b / a;
+}

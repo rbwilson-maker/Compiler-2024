@@ -1,0 +1,6 @@
+//test return 0
+typedef struct s oops_im_unpopulated;
+int main() {
+    oops_im_unpopulated * rip = NULL;
+    return 0;
+}

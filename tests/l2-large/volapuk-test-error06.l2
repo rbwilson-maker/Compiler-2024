@@ -1,0 +1,28 @@
+//test error
+
+// Compiler should error when checking proper returns
+
+int main() {
+  int a = 76;
+  int b = 389;
+  int c = 98;
+  int d = 3;
+  if (a < b) {
+    if (a < c) {
+      if (a < d) {
+        if (b < c) {
+          if (b < d) {
+            if (c < d) {
+              return c;
+            }
+            return b;
+          }
+          return b;
+        }
+        return a;
+      }
+      return a;
+    }
+    return d;
+  }
+}

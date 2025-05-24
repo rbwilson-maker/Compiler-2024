@@ -1,0 +1,10 @@
+/* i'm a comment */
+
+typedef int my_int;
+
+typedef bool my_bool;
+
+
+my_int whacky_function(my_bool a, my_bool b, my_int c);
+
+my_int whacky_function(my_bool x, my_bool y, my_int z);

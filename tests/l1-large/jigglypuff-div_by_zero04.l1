@@ -1,0 +1,23 @@
+//test div-by-zero
+
+/* Divide By Zero Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Saturday, September 12, 2015 at 04:26:53 PM EDT
+ *
+ * Test the case for a more subtle 0/0 => return 0 # for mod #
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int z;
+
+    x = 5;
+    y = x + 5;
+    z = 0;
+
+    return (z % (y - 2 * x));
+}

@@ -1,0 +1,20 @@
+//test return 15
+
+struct foo {
+    int x;
+    int y;
+};
+
+struct bar {
+    struct foo *f;
+    int z;
+};
+
+int main() {
+    struct bar *b = alloc(struct bar);
+    b->z = 3;
+    b->f = alloc(struct foo);
+    b->f->x = 5;
+    b->f->y = 7;
+    return b->f->x + b->f->y + b->z;
+}

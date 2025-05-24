@@ -1,0 +1,55 @@
+//test return -40340448
+// runs selection sort
+
+/* alias for arrays */
+typedef int array;
+
+array newArray() {
+    return 0;
+}
+
+array insert(array arr, int i, int val) {
+    // if val is not a valid number, don't insert
+    if(val < 0 || val > 16) {
+        return arr;
+    }
+    int zeroedI = arr & ~(0xF << (i * 4));
+    return zeroedI | (val << (i * 4));
+}
+
+int get(array arr, int i) {
+    return (arr >> (i * 4)) & 0xF;
+}
+
+array selectionSort(array arr, int size) {
+    for(int i = 0; i < size; i++) {
+        int min = get(arr, i);
+        int swapIndex = i;
+        for(int j = i; j < size; j++) {
+            if(get(arr, j) < min) {
+                swapIndex = j;
+                min = get(arr, j);
+            }
+        }
+
+        if(swapIndex != i) {
+            arr = insert(arr, swapIndex, get(arr, i));
+            arr = insert(arr, i, min);
+        }
+    }
+    return arr;
+}
+
+int main() {
+    array arr = newArray();
+    arr = insert(arr, 0, 15);
+    arr = insert(arr, 1, 0);
+    arr = insert(arr, 2, 4);
+    arr = insert(arr, 3, 7);
+    arr = insert(arr, 4, 2);
+    arr = insert(arr, 5, 8);
+    arr = insert(arr, 6, 9);
+    arr = insert(arr, 7, 13);
+
+    return selectionSort(arr, 8);
+}

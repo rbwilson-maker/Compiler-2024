@@ -1,0 +1,16 @@
+//test return 0
+
+bool isPrime(int n) {
+	for (int i = 2; i < n; i++) {
+		if (n % i == 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+int main() {
+	int somePrime = 15485863;
+	assert(isPrime(somePrime));
+	return 0;
+}

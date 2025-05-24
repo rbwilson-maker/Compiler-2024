@@ -1,0 +1,21 @@
+//test return 0
+
+int main(){
+    int x;
+
+    x = 800-700;
+    x+=x;
+    x+=x;
+    x+=x;
+    x+=x;
+    x+=x;
+    x+=x;
+    x-=x;
+    x-=x;
+    x-=x;
+    x-=x;
+    x-=x;
+    x-=x;
+
+    return x;
+}

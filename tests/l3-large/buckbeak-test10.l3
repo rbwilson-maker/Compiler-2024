@@ -1,0 +1,19 @@
+//test return 10101
+int f1(int a) {
+	if (a == 0) {
+		return 1;
+	} else if (a == 1) {
+		return 1;
+	} else {
+		return f1(a-1) + f1(a-2);
+	}
+}
+
+int f2 () {
+	return f1(10) + f1(11) + f1(12);
+}
+
+int main () {
+	assert (f2() == 466);
+	return 10101;
+}

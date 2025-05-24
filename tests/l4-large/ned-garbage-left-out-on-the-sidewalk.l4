@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+
+// Why the heck don't we have a free() function again?
+
+struct forgottenData {
+  int x;
+  int y;
+};
+
+int main() {
+  while(true) {
+    struct forgottenData *foo = alloc(struct forgottenData);
+    foo->x = 10;
+    foo->y = 100;
+    foo->x+foo->y;
+  }
+  return 0x00000001;
+}

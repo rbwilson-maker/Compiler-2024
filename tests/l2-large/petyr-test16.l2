@@ -1,0 +1,11 @@
+//test error
+
+// The testing harness will expect this program to not compile.
+
+// Test 16: invalid lhs
+
+int main() {
+    int x= 0 ;
+    x + 1 = 2 ;
+    return x ;
+   }

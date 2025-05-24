@@ -1,0 +1,17 @@
+//test return 1
+//test if & while
+
+int main() {
+  int x = 21392;
+  int y = 21400;
+  int z;
+  if (x > 0) {
+    z = y - x;
+    while (z > 1){
+      z--;
+    }
+    return z;
+  } else {
+    return x+y;
+  }
+}

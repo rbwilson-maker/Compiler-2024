@@ -1,0 +1,21 @@
+//test return 1
+
+typedef struct potato tomato;
+struct potato {
+	int x;
+	int[] y;
+};
+
+typedef struct tomato potato;
+struct tomato {
+	int[] x;
+	int y;
+};
+
+int main() {
+	tomato* totato = alloc(tomato);
+	potato* pomato = alloc(potato);
+	totato->x = 1;
+	pomato->y = 2;
+	return totato->x;
+}

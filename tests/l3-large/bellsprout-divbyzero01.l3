@@ -1,0 +1,40 @@
+//test div-by-zero
+
+typedef int Vector;
+
+int abs(int x) {
+    return x >= 0 ? x : -x;
+}
+
+int get_x(Vector p) {
+    return p >> 16;
+}
+
+int get_y(Vector p) {
+    return (p << 16) >> 16;
+}
+
+Vector set_x(Vector p, int x) {
+    return (p & 0xFFFF) | (x << 16);
+}
+
+Vector set_y(Vector p, int y) {
+    return (p & 0xFFFF0000) | (y & 0xFFFF);
+}
+
+Vector create_vector(int x, int y) {
+    Vector v = 0;
+    v = set_x(v, x);
+    return set_y(v, y);
+}
+
+int L1_norm(Vector v) {
+    int x = get_x(v);
+    int y = get_y(v);
+    return (x - y) / abs(x - y);
+}
+
+int main() {
+    Vector v = create_vector(3, 3);
+    return L1_norm(v);
+}

@@ -1,0 +1,29 @@
+//test return 3
+
+struct x {
+  int x;
+  int n;
+  int ana;
+  int xanax;
+}; 
+
+struct r {
+  int x;
+  int n;
+  int ana;
+  int xanax;
+};
+
+typedef struct r r;
+
+struct x* wow(struct x *h) {
+  return h;
+}
+
+int main() {
+  struct x*[] hi = alloc_array(struct x*, 3);
+  hi[1] = alloc(struct x);
+  hi[2] = wow(hi[1]);
+  return 3;
+}
+

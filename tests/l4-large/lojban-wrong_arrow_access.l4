@@ -1,0 +1,25 @@
+//test error
+
+struct cat {
+  int a;
+  bool b;
+};
+
+struct bar {
+   struct cat** c;
+};
+
+struct foo {
+   struct bar b;
+};
+
+int main() {
+   struct foo* a = alloc(struct foo);
+   a->b = alloc(struct cat*);
+   *a->b.c = alloc(struct cat);
+   (*a->b.c)->a = 15122;
+   (*a->b.c)->b = false;
+
+   return (*a->b.c)->a;
+}
+

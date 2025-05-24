@@ -1,0 +1,12 @@
+//test return 0
+
+void foo() {
+    2+2;
+    return;
+}
+
+int main() {
+    foo();
+    return 0;
+}
+

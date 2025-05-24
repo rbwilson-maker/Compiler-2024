@@ -1,0 +1,12 @@
+//test return 1
+
+int foofoofoofooofoofofofofofofof(){
+    return 1;
+}
+
+int foofoofoofooofoofofofofofofof();
+int foofoofoofooofoofofofofofofof();
+
+int main(){
+    return foofoofoofooofoofofofofofofof();
+}

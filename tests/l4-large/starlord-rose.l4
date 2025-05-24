@@ -1,0 +1,30 @@
+//test return 1
+
+typedef struct node rose;
+struct node {
+  int data;
+  int n;
+  rose *[] next;
+};
+
+bool is_empty(rose *r) {
+  return r == NULL;
+}
+
+int size(rose *r) {
+  if(is_empty(r)) return 0;
+
+  int s = 0;
+  for(int i = 0; i < r->n; i++) {
+    s += size(r->next[i]);
+  }
+  return s + 1;
+}
+
+int main() {
+  rose *r = alloc(rose);
+  r->data = 0;
+  r->n = 0;
+  r->next = alloc_array(rose *, 0);
+  return size(r);
+}

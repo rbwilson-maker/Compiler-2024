@@ -1,0 +1,11 @@
+//test return 5
+
+void pretty_print_int(int a) {
+  return;
+}
+
+int main() {
+  int my_int = 5;
+  pretty_print_int(my_int);
+  return my_int;
+}

@@ -1,0 +1,13 @@
+//test error
+//function names can't collide with type names
+
+typedef int foo;
+
+//not even called
+int foo(){
+    return 42;
+}
+
+int main(){
+    return 42;
+}

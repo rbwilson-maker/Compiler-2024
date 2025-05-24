@@ -1,0 +1,51 @@
+//test return 1
+
+typedef struct node node;
+
+struct node {
+    int value;
+    struct node* next;
+};
+
+
+int sum_list(node* a) {
+    if (a==NULL) return 0;
+
+    return a->value + sum_list(a->next);
+}
+
+
+node* find(int n, node* a) {
+    if (a==NULL) return NULL;
+    if (a->value==n) return a;
+
+    return find(n,a->next);
+}
+
+int main() {
+    struct node* a = alloc(struct node);
+    a->value = 1;
+    
+    struct node* b = alloc(struct node);
+    b->value = 2;
+
+    a->next = b;
+
+    int sum_a = sum_list(a);
+
+    a->next = NULL;
+    b->next = a;
+
+    int sum_b = sum_list(b);
+
+    assert(sum_a==sum_b);
+
+
+    struct node* c = alloc(struct node);
+    c->value = 3;
+    a->next = c;
+
+    assert(find(3,a)==c);
+
+    return 1;
+}

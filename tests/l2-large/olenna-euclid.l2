@@ -1,0 +1,16 @@
+//test return 4718
+//using Euclid's Algorithm
+//
+int main () {
+  int larger = 93048396;
+  int smaller = 401030;
+
+  int x;
+  while (smaller != 0) {
+    x = larger % smaller;
+    larger = smaller;
+    smaller = x;
+  }
+
+  return larger;
+}

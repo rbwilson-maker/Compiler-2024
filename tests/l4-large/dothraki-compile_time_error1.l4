@@ -1,0 +1,26 @@
+//test error
+
+struct randomStruct {
+	int how;
+	int are;
+	int you;
+}
+
+int brokenCheck(int b) {
+  struct randomStruct s;
+  if (b == 3) {
+    s.how = 2;
+  }
+  else {
+    s.you = 3;
+  }
+}
+
+int main() {
+  int a = 6;
+  int b = 3;
+  
+  int x = brokenCheck(b);
+
+  return x;
+}

@@ -1,0 +1,13 @@
+//test error
+
+struct A {
+	int x;
+};
+
+struct A f(struct A y) {
+	return y;
+}
+
+int main() {
+	return 0;
+}

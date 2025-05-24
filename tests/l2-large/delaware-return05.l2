@@ -1,0 +1,10 @@
+//test return 4
+// == and != overloaded?
+
+int main() {
+  if ((1 == 1) && (true == false)) {
+     return 3;
+  } else {
+     return 4;
+  }
+}

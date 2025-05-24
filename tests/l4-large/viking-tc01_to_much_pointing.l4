@@ -1,0 +1,12 @@
+//test error
+
+int main(){
+int * * * * * five = NULL;
+int * * * * four = *five;
+int * * * three = *four;
+int * * two = *three;
+int * oops = *four;
+return 1;
+	
+
+}

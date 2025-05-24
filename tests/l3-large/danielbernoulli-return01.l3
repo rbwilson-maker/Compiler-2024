@@ -1,0 +1,38 @@
+//test return 10
+
+int succ(int x) {
+    return x+1; 
+}
+
+int pred(int x) {
+    if(x == 0) {
+        return 0; 
+    }
+    int prev = 0;
+    int curr = 1;
+    while(curr < x) {
+        prev = succ(prev); 
+        curr = succ(curr); 
+    }
+    return prev; 
+}
+
+int plus(int x, int y) {
+    if(y == 0) {
+        return x; 
+    }
+    return plus(x, pred(y)) + 1; 
+}
+
+int mul(int x, int y) {
+    if(y == 0) {
+        return 0; 
+    } 
+    
+    int prev = mul(x, pred(y)); 
+    return plus(prev, x); 
+}
+
+int main() {
+    return mul(2,5);
+}

@@ -1,0 +1,14 @@
+//test return 0
+
+int main() {
+    int x = 0x12345678; // x should not be negative.
+    int y = 0xf0f0f0f0;
+    int z = ~y;
+    int x2 = ((x & y) >> 4) | ((x & z) << 4);
+    int y2 = 0xff00ff00;
+    int z2 = ~y2;
+    int x3 = ((x2 & y2) >> 8) | ((x2 & z2) << 8);
+    int w = 0x21436587;
+    int w2 = 0x43218765;
+    return x3 ^ w2 ^ x2 ^ w;
+}

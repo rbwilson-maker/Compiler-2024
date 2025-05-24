@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main(){
+
+    if(false){
+        return 1;
+    } else {
+        int x = 2 << 34;
+        return 0;
+    }
+
+}

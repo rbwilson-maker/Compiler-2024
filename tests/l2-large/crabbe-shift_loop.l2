@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int main(){
+
+  int x = 0;
+
+  while(true){
+    int y; 
+    y = x + 1;
+    y <<= y; // goes out of range after 31 iterations
+    x++;
+  }
+
+  return 1;
+}

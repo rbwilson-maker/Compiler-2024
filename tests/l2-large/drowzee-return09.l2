@@ -1,0 +1,24 @@
+//test return ~1287
+
+
+int main() {
+    int i;
+
+    int n = 1;
+
+    for (i=0; i<24; i++) {
+        int j;
+        if (i%2==0) {
+            for (j=0; j<i; j++) {
+                n += j;
+            }
+        }
+        else {
+            for (j=i; j<24; j++) {
+                n -= j;
+            }
+        }
+    }
+
+    return n;
+}

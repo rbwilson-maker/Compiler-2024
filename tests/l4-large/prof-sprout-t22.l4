@@ -1,0 +1,52 @@
+//test return 0
+
+typedef struct arraylist list;
+
+struct arraylist {
+  int size;
+  int cap;
+  int[] arr;
+};
+
+list *create_list() {
+  list *L = alloc(list);
+  L->size = 0;
+  L->cap = 2;
+  L->arr = alloc_array(int, L->cap);
+  return L;
+}
+
+list *append(list *L, int x) {
+  L->arr[L->size] = x;
+  L->size++;
+  if (L->size * 2 >= L->cap) {
+    int newcap = L->cap * 2;
+    int[] newarr = alloc_array(int, newcap);
+    for (int i = 0; i < L->size; i++) {
+      newarr[i] = L->arr[i];
+    }
+    L->arr = newarr;
+    L->cap = newcap;
+  }
+  return L;
+}
+
+int size(list *L) {
+  return L->size;
+}
+
+int main() {
+  int[] arr = alloc_array(int, 10);
+  for (int i = 0; i < 10; i++) {
+    arr[i] = 2 * i + i * i;
+  }
+  list *filtered = create_list();
+  for (int i = 0; i < 10; i++) {
+    if (arr[i] % 2 == 0) {
+      filtered = append(filtered, arr[i]);
+    }
+  }
+  assert(size(filtered) == 5);
+  assert(filtered->cap == 16);
+  return 0;
+}

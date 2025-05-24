@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int main()
+{
+  bool x = true;
+  int y = 42;
+  int z = 0;
+  if (x)
+  {
+      return y/z;
+  }
+  else
+  {
+    return 42;
+  }
+}

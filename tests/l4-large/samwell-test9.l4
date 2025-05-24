@@ -1,0 +1,9 @@
+//test error
+
+struct foo;
+
+int main() { 
+  return 1;
+  foo* x = alloc(foo);
+  x->f1;
+}

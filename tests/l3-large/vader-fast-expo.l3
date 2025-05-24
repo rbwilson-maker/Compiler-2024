@@ -1,0 +1,13 @@
+//test return 0
+
+// use fast exponentiation to compute 3^8
+
+int pow(int a, int b) {
+    if (b == 0) return 0;
+    if (b % 2 == 0) return pow(a*a, b/2);
+    return a * pow(a*a, b/2);
+}
+int main() {
+    return pow(3,8);
+}
+

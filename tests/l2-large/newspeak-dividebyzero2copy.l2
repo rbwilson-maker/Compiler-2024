@@ -1,0 +1,7 @@
+//test div-by-zero
+int main() {
+    int a = 1 / 0;
+    int b = 2 + a;
+    if (true) return b;
+    else return 3;
+}

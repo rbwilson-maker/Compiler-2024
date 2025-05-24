@@ -1,0 +1,15 @@
+//test abort
+// A funny function that doesn't think -1+1 = 0
+
+void checker(int x);
+
+int main() {
+  checker(0xffffffff);
+  return 0;
+}
+
+void checker( int x ) {
+  // This function doesn't think that -1 + 1 = 0
+  assert (x == -1);
+  assert (x + 1 != 0);
+}

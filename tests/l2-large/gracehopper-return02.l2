@@ -1,0 +1,32 @@
+//test return 18
+// many loops and if statements
+
+int main() {
+    int x;
+    int y = 0;
+    for (x = 0; x < 10; x++)
+    {
+        y += 5;
+    }
+    if (y < 10)
+        return 5;
+    int z = 32;
+    while (z > 4)
+    {
+        y *= 2;
+        z = z / 2;
+    }
+    if (x % z == 2)
+        y = y - 100 * 3;
+    else
+        return 15;
+    while (y > 20)
+    {
+        y = y / 3;
+        y += x;
+    }
+    if (y % 4 == 0)
+        return z;
+    else
+        return y;
+}

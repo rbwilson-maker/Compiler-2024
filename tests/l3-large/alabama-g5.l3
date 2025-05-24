@@ -1,0 +1,20 @@
+//test return 52
+
+int fact(int n) {
+    if (n<2) return 1;
+    else return n*fact(n-1);
+}
+
+int choose(int n, int k) {
+    return fact(n)/fact(n-k)/fact(k);
+}
+
+int bell(int n) {
+    if (n<2) return 1;
+    int sum = 0;
+    for (int k=0; k<n; k++) sum += choose(n-1,k)*bell(k);
+    return sum;
+}
+
+// woot bell numbers
+int main() { return bell(5); }

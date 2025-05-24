@@ -1,0 +1,22 @@
+//test div-by-zero
+
+int foo(){
+  assert(false);
+  return 0;
+}
+
+int foo1(){
+  1/0;
+  return 1;
+}
+
+int bar(int x, int y){
+  return 1;
+}
+
+int main() {
+  return bar(foo1(), foo());
+}
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

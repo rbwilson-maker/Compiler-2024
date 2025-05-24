@@ -1,0 +1,20 @@
+//test return 0
+
+int main() {
+  int w = 0xAAAAAAAA;
+  int x = 0xA7B200C3;
+  int y = 0x8BDE0F11;
+  int z = 0x7FFFFFFF;
+
+  bool a = (~(x & y) & ~(~x & ~y)) == (x ^ y);
+
+  int mask8 = 0xAA;
+  int mask16 = mask8 | (mask8 << 8);
+  int mask32 = mask16 | (mask16 << 16);
+  int b = (mask32 ^ (mask32 & w));
+  if (a) {
+    return b;
+  } else {
+    return 2000;
+  }
+}

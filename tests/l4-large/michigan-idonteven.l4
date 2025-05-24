@@ -1,0 +1,13 @@
+//test return 0
+
+int *noob(int *blah) {
+    if(blah == NULL) return alloc(int);
+    return NULL;
+}
+
+int main() {
+    int *count = true ? NULL : NULL;
+    int *haha = noob(count);
+    return *haha;
+}
+

@@ -1,0 +1,16 @@
+//test return 17
+
+int something(int a){
+  int x;
+  for(x = 0; x < a; x++){
+    if(x > a/2){
+      x *= 2;
+    }
+  }
+  return x;
+}
+
+int main(){
+  int a = something(something(13));
+  return a;
+}

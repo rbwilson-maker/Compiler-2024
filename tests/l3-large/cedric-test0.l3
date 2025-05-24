@@ -1,0 +1,17 @@
+//test return 536854528
+//novel way of adding up from 0 to 2**n - 1
+
+int traverse(int n)
+{
+    assert (n > 0);
+    if (n == 1) return 1;
+    return (traverse(n-1) << 1) + (1 << ((n-1) << 1));
+}
+
+int main()
+{
+    int n = 15;
+    int x = traverse(n);
+    assert (x == ((1 << n) - 1) * (1<<n) / 2);
+    return x;
+}

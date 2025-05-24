@@ -1,0 +1,31 @@
+//test return 10
+
+int l0() {
+    return 0;
+}
+
+int l1() {
+    return 1;
+}
+
+int L0() {
+    return 2;
+}
+
+int L1() {
+    return 3;
+}
+
+int _c0_main() {
+    return 4;
+}
+
+int main() {
+    // Enough if statements to generate a few labels.
+    if (true) {
+        if (true) {
+            return l0() + l1() + L0() + L1() + _c0_main();
+        }
+    }
+    return -1;
+}

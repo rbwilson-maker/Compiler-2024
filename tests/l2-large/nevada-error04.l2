@@ -1,0 +1,13 @@
+//test error
+// redeclaring variable
+
+int main()
+{
+	int a;
+	
+  {
+    int a;
+  }
+
+	return a;
+}

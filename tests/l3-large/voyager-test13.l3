@@ -1,0 +1,11 @@
+//test error
+//functions with void return cannot appear in expression
+
+void myfunc() {}
+
+int main()
+{
+   int x = 10;
+   x += myfunc();
+   return x;
+}

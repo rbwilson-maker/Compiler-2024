@@ -1,0 +1,14 @@
+//test error
+
+int main() {
+  int x;
+  int y = 10;
+
+  if (y == 0) {
+    x = y;
+  } else {
+    y = 11;
+  }
+
+  return x;
+}

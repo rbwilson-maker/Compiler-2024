@@ -1,0 +1,75 @@
+//test return 14
+
+typedef bool cool;
+int big_funt(bool aunt,
+             bool bunt,
+             cool censored,
+             int dunt,
+             int eunt,
+             int funt,
+             int gunt,
+             bool hunt,
+             int iunt,
+             int junt,
+             cool kensored,
+             int lunt,
+             int munt,
+             int nunt,
+             int ount,
+             bool punt,
+             cool qensored,
+             bool runt,
+             int sunt,
+             int tunt,
+             int uunt,
+             int vunt,
+             int wunt,
+             int xunt,
+             int yunt,
+             int zunt)
+{
+  cool tool = !censored && kensored || !qensored;
+  if (tool)
+    return dunt + eunt + funt + gunt + iunt + junt;
+  else
+    if (runt && punt && censored)
+      return lunt + munt + nunt;
+    else
+      if (!hunt)
+        if (runt)
+          return zunt - yunt / xunt;
+  return 0;
+}
+
+bool t() { return true; }
+bool f() { return false; }
+
+int main() {
+  int bigboy = big_funt(t(),
+                        f(),
+                        t(),
+                        0,
+                        1,
+                        2,
+                        3,
+                        t(),
+                        4,
+                        5,
+                        f(),
+                        6,
+                        7,
+                        8,
+                        9,
+                        t(),
+                        f(),
+                        t(),
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17);
+  return bigboy - 1;
+}

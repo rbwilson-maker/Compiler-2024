@@ -1,0 +1,13 @@
+//test return 1049760000
+// test multiple arithmetic operations in a single line
+int main()
+{
+  int x;
+  int y;
+  int z;
+
+  x = (3 + 7) * (5 - 14) / 5;
+  y = (2 * 5) * (5 / 3);
+  z = (x * y * x) * y;
+  return z * z;
+}

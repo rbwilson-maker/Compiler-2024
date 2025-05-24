@@ -1,0 +1,63 @@
+//test return 101
+
+struct link {
+  struct link *next;
+  // Let's store the data in between the "next" and "prev" pointers just to see
+  // what happens to the data >:-)
+  int data;
+  struct link *prev;
+};
+
+typedef struct link *link;
+
+link init_link(int data) {
+  link l = alloc(struct link);
+  l->next = NULL;
+  l->prev = NULL;
+  l->data = data;
+  return l;
+}
+
+// Inserts lp just after l
+void insert_link(link l, link lp) {
+  if(l->next != NULL) {
+    assert(l->next->prev == l);
+    l->next->prev = lp;
+  }
+  lp->next = l->next;
+  l->next = lp;
+  lp->prev = l;
+}
+
+// "Sews" the "prev" and "next" links of l together
+void remove_link(link l) {
+  if(l->next != NULL) {
+    assert(l->next->prev == l);
+    l->next->prev = l->prev;
+  }
+  if(l->prev != NULL) {
+    assert(l->prev->next == l);
+    l->prev->next = l->next;
+  }
+
+  // l gets thrown away, so we don't care what its "next" or "prev" values were
+  // Also, we don't have any way to free memory (It smells like garbage in here!
+  // I really wish someone would come and collect it!), so I guess we just
+  // terminate the function here...
+  return;
+}
+
+int main() {
+  link l = init_link(1);
+  for(int i = 0; i < 100; i++) {
+    link lp = init_link(1);
+    insert_link(l, lp);
+  }
+
+  int running_sum = 0;
+  while(l->next != NULL) {
+    running_sum += l->next->data;
+    remove_link(l->next);
+  }
+  return running_sum + l->data;
+}

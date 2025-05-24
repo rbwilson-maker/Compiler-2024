@@ -1,0 +1,43 @@
+//test return 4
+
+// perform binary search on a list of 8 values for the passed in val 
+// assumes parameters are sorted from left to right and that the val 
+// is definitely in the list of parameters
+
+int binary_search_without_arrays(int val, int t1, int t2, int t3, int t4, 
+int t5, int t6, int t7, int t8) {
+  if (val < t4) {
+    if (val < t2) {
+      return 1;
+    } else {
+      if (val < t3) {
+        return 2;
+      } else {
+        return 3;
+      }
+    }
+  } else {
+    if (val < t6) {
+      if (val < t5) {
+        return 4;
+      } else {
+        return 5;
+      } 
+    } else {
+      if (val < t7) {
+      	return 6;
+      } else {
+        if (val < t8) {
+          return 7;
+        } else {
+          return 8;
+        }
+      }
+    }
+  }
+}
+
+int main() {
+	int idx = binary_search_without_arrays(4, 1, 2, 3, 4, 5, 6, 7, 8);
+	return idx;
+}

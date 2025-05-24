@@ -1,0 +1,76 @@
+//test return 1
+
+// conway's game of life
+
+typedef bool[][] board;
+
+
+board new_board() {
+  board b = alloc_array(bool[], 5);
+  for (int i = 0; i < 5; i++) {
+    b[i] = alloc_array(bool, 5);
+    for (int j = 0; j < 5; j++) {
+      b[i][j] = false;
+    }
+  }
+  return b;
+}
+
+bool get(board b, int row, int col) {
+  return b[(row + 200) % 5][(col + 200) % 5];
+}
+
+int neighbors_live(board b, int row, int col) {
+  int num = 0;
+  if (get(b, row-1, col - 1)) num++;
+  if (get(b, row-1, col)) num++;
+  if (get(b, row-1, col + 1)) num++;
+  if (get(b, row, col - 1)) num++;
+  if (get(b, row, col + 1)) num++;
+  if (get(b, row + 1, col - 1)) num++;
+  if (get(b, row + 1, col)) num++;
+  if (get(b, row + 1, col + 1)) num++;
+  return num;
+}
+
+bool next_square(board b, int row, int col) {
+  return neighbors_live(b, row, col) == 3 || neighbors_live(b, row, col) == 2 && get(b, row, col);
+}
+
+board next_board(board b) {
+  board next = new_board();
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 5; j++) {
+      next[i][j] = next_square(b, i, j);
+    }
+  }
+  return next;
+}
+
+board evolve(board b, int time) {
+  for (int i = 0; i < time; i++) {
+    b = next_board(b);
+  }
+  return b;
+}
+
+bool equal(board a, board b) {
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 5; j++) {
+      if (a[i][j] != b[i][j]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+int main() {
+  board a = new_board();
+  a[1][1] = true;
+  a[1][2] = true;
+  a[2][1] = true;
+  a[2][2] = true;
+  board b = evolve(a, 100);
+  return equal(a, b) ? 1 : 0;
+}

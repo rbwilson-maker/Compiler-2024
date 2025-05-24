@@ -1,0 +1,16 @@
+//test return 20100
+//for loop
+int main()
+{
+    int n;
+    int sum;
+    int i;
+
+    n = 200;
+    sum = 0;
+    i = 0;
+    for (i; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
+}

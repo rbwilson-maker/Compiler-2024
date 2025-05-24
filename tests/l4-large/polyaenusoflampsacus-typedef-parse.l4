@@ -1,0 +1,13 @@
+//test error
+//Checks how you lex/parse typedefs to ensure it is done properly
+//If you are failing, probably a problem with how you lex this
+
+struct x {
+  int x;
+};
+
+typedef struct struct x y;
+
+int main () {
+  return 0;
+}

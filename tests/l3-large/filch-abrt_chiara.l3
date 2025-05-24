@@ -1,0 +1,10 @@
+//test abort
+
+int main()
+{
+  int orwell = 4;
+
+  assert(orwell == 5);
+
+  return 2;
+}

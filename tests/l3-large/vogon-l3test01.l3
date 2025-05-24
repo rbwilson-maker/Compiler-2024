@@ -1,0 +1,6 @@
+//test typecheck
+
+int main() { 
+  int i = random_header_function(3, 3, false);
+  return i * 324 + 234 - 12 / 245 + 221213;
+}

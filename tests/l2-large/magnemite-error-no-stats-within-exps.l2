@@ -1,0 +1,7 @@
+//test error
+//no statements within expressions
+
+int main() {
+    int x = 3;
+    return (x = 6;) + 9;
+}

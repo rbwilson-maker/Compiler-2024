@@ -1,0 +1,30 @@
+//test return 0
+//no error!
+
+int main()
+{
+  int x;
+  while(true){
+    while(true){
+      while(true){
+        while(true){
+          while(true){
+            while(true){
+              while(true){
+                while(true){
+                  while(true){
+                    while(true){
+                      return 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return 1;
+
+}

@@ -1,0 +1,54 @@
+//test return 0
+
+struct node {
+	struct node *next;
+	struct node *prev;
+	int val;
+};
+
+typedef struct node node_t;
+
+void bubble(node_t *node) {
+	if (node->next != NULL) {
+		if (node->next->val < node->val) {
+			if(node->prev != NULL) {
+				node->prev->next = node->next;
+			}
+			node->next->prev = node->prev;
+			node->prev = node->next;
+			node->next = node->next->next;
+			node->next->next = node;
+			bubble(node);
+		} else {
+			bubble(node->next);
+		}
+	}
+}
+
+bool is_sorted(node_t *node) {
+	if (node->next == NULL) {
+		return true;
+	} else if (node->next->val >= node-> val){
+		return is_sorted(node->next);
+	} else {
+		return true;
+	}
+}
+
+int main() {
+	node_t *list = alloc(node_t);
+	for(int i = 1; i < 100; i++) {
+		node_t *new = alloc(node_t);
+		list->next = new;
+		new->prev = list;
+		new->val = i;
+	}
+	while(!is_sorted(list)) {
+		bubble(list);
+	}
+	if(is_sorted(list)) {
+		return 0;
+	} else {
+		return 1;
+	}
+}

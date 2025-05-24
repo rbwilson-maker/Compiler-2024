@@ -1,0 +1,12 @@
+//test return 16
+
+int main ()
+{
+  int k = 1;
+  int n = 4;
+  while (n > 0) {
+    k <<= 1;
+    n--;
+  }
+  return k;
+}

@@ -1,0 +1,12 @@
+//test return 0
+
+void useless() {}
+
+void hehe() {
+     int a = 1 / 0;
+}
+
+int main() {
+    useless();
+    return 0;
+}

@@ -1,0 +1,35 @@
+//test return 1
+// checks whether the four points create a square.
+
+bool is_square(int x0, int y0, int x1, int y1, int x2, int y2, int x3, int y3)
+{
+  // every edge distance is squared, since floating point is inaccurate
+  int e1 = (y0 - y2) * (y0 - y2) + (x0 - x2) * (x0 - x2);
+  int e2 = (y0 - y3) * (y0 - y3) + (x0 - x3) * (x0 - x3);
+  int e3 = (y1 - y2) * (y1 - y2) + (x1 - x2) * (x1 - x2);
+  int e4 = (y1 - y3) * (y1 - y3) + (x1 - x3) * (x1 - x3);
+
+  int diag1 = (x1 - x0) * (x1 - x0) + (y1 - y0) * (y1 - y0);
+  int diag2 = (x2 - x3) * (x2 - x3) + (y2 - y3) * (y2 - y3);
+
+  return (diag1 == diag2) && (e1 == e2) && (e1 == e3) && (e1 == e4);
+}
+
+int main() {
+  int x0 = 1;
+  int y0 = 0;
+
+  int x1 = -1;
+  int y1 = 0;
+
+  int x2 = 0;
+  int y2 = 1;
+  
+  int x3 = 0;
+  int y3 = -1;
+
+  if (is_square(x0, y0, x1, y1, x2, y2, x3, y3)) {
+    return 1;
+  }
+  return -1111;
+}

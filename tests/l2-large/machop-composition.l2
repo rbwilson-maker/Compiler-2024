@@ -1,0 +1,28 @@
+//test return 1000
+// Tests the theorem (P => Q) => (Q => R) => (P => R)
+int main () {
+  int x;
+  int y;
+  int z;
+
+  bool p;
+  bool q;
+  bool r;
+
+  for(x=0; x < 2; x++){
+    for(y=0; y < 2; y++){
+      for(z=0; z < 2; z++){
+
+        p = x == 1;
+        q = y == 1;
+        r = z == 1;
+
+        if ( !( !( !(!p || q) || (!q || r)) || (!p || r) ) ) {
+          return 10*(z + 10*(y + 10*x));
+        }
+
+      }
+    }
+  }
+  return 0;
+}

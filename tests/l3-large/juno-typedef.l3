@@ -1,0 +1,10 @@
+//test return 4
+
+// Tests typedef
+
+typedef int integer;
+
+int main () {
+    integer a = 4;
+    return a;
+}

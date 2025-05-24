@@ -1,0 +1,17 @@
+//test return 0
+//logical right shift
+
+int logical_shift(int x, int y)
+{
+	x >>= y;
+	int z = 0xFFFFFFFF << (32-y);
+	return x & ~z;
+}
+
+int main()
+{
+	if(logical_shift(0xF3F3F3F3, 7) != 0x1E7E7E7)
+		return -1;
+	else
+		return 0;
+}

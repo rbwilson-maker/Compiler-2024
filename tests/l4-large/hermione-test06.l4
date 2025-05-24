@@ -1,0 +1,11 @@
+//test return 0
+
+int* calloc(int size, int count) {
+  return alloc(int);
+}
+
+int main () {
+  int* x = calloc(0x90, 0x90);
+  *x = 0;
+  return *x;
+}

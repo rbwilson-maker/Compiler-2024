@@ -1,0 +1,14 @@
+//test abort
+
+typedef bool loves;
+typedef bool hates;
+
+int main() {
+    loves me = true;
+    loves her = true;
+    assert(me && her);
+    hates us = false;
+    hates them = false;
+    assert(us && them);
+    return 0;
+}

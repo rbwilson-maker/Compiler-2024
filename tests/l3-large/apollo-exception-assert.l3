@@ -1,0 +1,11 @@
+//test abort
+
+int main()
+{
+	bool b = true || false;
+	while(b)
+	{
+		assert(!b);
+	}
+	return 0;
+}

@@ -1,0 +1,88 @@
+//test return 69420
+// computes 69420 ayy lmao
+
+bool  b0(int x) { return x == 0; }
+bool  b1(int x) { return x == 0; }
+bool  b2(int x) { return x == 1; }
+bool  b3(int x) { return x == 1; }
+bool  b4(int x) { return x == 0; }
+bool  b5(int x) { return x == 1; }
+bool  b6(int x) { return x == 0; }
+bool  b7(int x) { return x == 0; }
+bool  b8(int x) { return x == 1; }
+bool  b9(int x) { return x == 1; }
+bool b10(int x) { return x == 1; }
+bool b11(int x) { return x == 1; }
+bool b12(int x) { return x == 0; }
+bool b13(int x) { return x == 0; }
+bool b14(int x) { return x == 0; }
+bool b15(int x) { return x == 0; }
+bool b16(int x) { return x == 1; }
+bool b17(int x) { return x == 0; }
+bool b18(int x) { return x == 0; }
+bool b19(int x) { return x == 0; }
+bool b20(int x) { return x == 0; }
+bool b21(int x) { return x == 0; }
+bool b22(int x) { return x == 0; }
+bool b23(int x) { return x == 0; }
+bool b24(int x) { return x == 0; }
+bool b25(int x) { return x == 0; }
+bool b26(int x) { return x == 0; }
+bool b27(int x) { return x == 0; }
+bool b28(int x) { return x == 0; }
+bool b29(int x) { return x == 0; }
+bool b30(int x) { return x == 0; }
+bool b31(int x) { return x == 0; }
+
+bool validate(int x) {
+    return true
+        &&  b0((x >>  0) & 1)
+        &&  b1((x >>  1) & 1)
+        &&  b2((x >>  2) & 1)
+        &&  b3((x >>  3) & 1)
+        &&  b4((x >>  4) & 1)
+        &&  b5((x >>  5) & 1)
+        &&  b6((x >>  6) & 1)
+        &&  b7((x >>  7) & 1)
+        &&  b8((x >>  8) & 1)
+        &&  b9((x >>  9) & 1)
+        && b10((x >> 10) & 1)
+        && b11((x >> 11) & 1)
+        && b12((x >> 12) & 1)
+        && b13((x >> 13) & 1)
+        && b14((x >> 14) & 1)
+        && b15((x >> 15) & 1)
+        && b16((x >> 16) & 1)
+        && b17((x >> 17) & 1)
+        && b18((x >> 18) & 1)
+        && b19((x >> 19) & 1)
+        && b20((x >> 20) & 1)
+        && b21((x >> 21) & 1)
+        && b22((x >> 22) & 1)
+        && b23((x >> 23) & 1)
+        && b24((x >> 24) & 1)
+        && b25((x >> 25) & 1)
+        && b26((x >> 26) & 1)
+        && b27((x >> 27) & 1)
+        && b28((x >> 28) & 1)
+        && b29((x >> 29) & 1)
+        && b30((x >> 30) & 1)
+        && b31((x >> 31) & 1)
+    ;
+}
+
+int main() {
+    int heres = 1;
+    int my = 2;
+    int number = 3;
+    int i = 0;
+    for (i = 0; true; i++) {
+        if (validate(i)) {
+            assert(heres == 1);
+            assert(2 == my);
+            assert(number <= 3 && 3 <= number);
+            return i;
+        }
+    }
+    return 0xBAD;
+}

@@ -1,0 +1,10 @@
+//test div-by-zero
+// div by zero in the middle
+
+int main() {
+    int x = 100;
+    int y = 10;
+    
+    return (x + y) * (x + (x % (x - 10 * y)));
+}
+

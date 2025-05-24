@@ -1,0 +1,19 @@
+//test return -1
+
+int main() {
+    int tat;
+    for (tat = 0; tat == 12; tat += 12) {
+        if (tat < 12) {
+            return 0;
+        } else {
+            int tit = 0;
+            for (tit = 0; tat == 14; tat += 1) {
+                return tat;
+            }
+            while (tat > 0) {
+                return tat;
+            }
+        }
+    }
+    return -1;
+}

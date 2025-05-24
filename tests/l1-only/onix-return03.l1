@@ -1,0 +1,12 @@
+//test return 2
+// test comments and division by zero done at runtime
+int main()
+//@requires 1 > 0
+{
+  /* Comment one */
+  //Comment Two
+  int a;
+  a = 2;
+  return a;
+  a = a / 0;
+}

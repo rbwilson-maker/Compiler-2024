@@ -1,0 +1,22 @@
+//test abort
+
+int abs(int b) {
+	int x;
+	x = b+b;
+	assert(false);
+	return b;
+}
+
+int spa(int a, int b){
+	int c = 2;
+	return 3;
+}
+
+int main() {
+	int a = 3;
+	if (a == 0){
+		return spa(a,a);
+	} else {
+		return abs(a);
+	}
+}

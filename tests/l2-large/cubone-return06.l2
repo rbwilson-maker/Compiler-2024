@@ -1,0 +1,16 @@
+//test return 1
+
+int main ()
+{
+  int n = 7;
+  n &= 6;
+  n |= 3;
+  n ^= 2;
+
+  if (n == 5 || (1 / 0 > 1)) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}

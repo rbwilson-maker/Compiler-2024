@@ -1,0 +1,13 @@
+//test return 10
+
+struct S {
+       struct S* s;
+       int w;
+};
+
+int main() {
+    struct S* circle = alloc(struct S);
+    circle->s = circle;
+    circle->w = 10;
+    return circle->s->s->s->s->s->s->s->s->s->w;
+}

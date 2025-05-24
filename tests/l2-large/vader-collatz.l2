@@ -1,0 +1,13 @@
+//test return 1
+
+// Collatz function that eventually returns 1.
+int main() {
+    int init = 100;
+    int value = init;
+
+    while (value != 1) {
+        value = (value % 2 == 0) ? value / 2 : (3*value + 1);
+    }
+    return value;
+}
+

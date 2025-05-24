@@ -1,0 +1,26 @@
+//test return 27
+
+//tests that arrays indices are evaluated in the correct order
+
+int foo(int*a) {
+	(*a)++;
+	return *a;
+}
+
+int main() {
+	int *a;
+	a = alloc(int);
+	*a = 0;
+	int[][][] L;
+	L = alloc_array(int[][], 4);
+	for (int i = 0; i < 4; i++) {
+		L[i] = alloc_array(int[], 4);
+		for (int j = 0; j < 4; j++) {
+			L[i][j] = alloc_array(int, 4);
+			for (int k = 0; k < 4; k++) {
+				L[i][j][k] = 16*i + 4*j + k;
+			}
+		}
+	}
+	return L[foo(a)][foo(a)][foo(a)];
+}

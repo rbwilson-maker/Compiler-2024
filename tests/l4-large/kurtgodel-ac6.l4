@@ -1,0 +1,13 @@
+//test typecheck
+
+int main() {
+    int []*[]*[]* i;
+    i = alloc(int []*[]*[]);
+    *i = alloc_array(int []*[]*, 0);
+    (*i)[-1] = alloc(int []*[]);
+    *((*i)[-1]) = alloc_array(int []*, 0);
+    (*((*i)[-1]))[-1] = alloc(int []);
+    *((*((*i)[-1]))[-1]) = alloc_array(int, 0);
+
+    return 0;
+}

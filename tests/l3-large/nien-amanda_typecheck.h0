@@ -1,0 +1,6 @@
+//this is the header file for the typecheck test
+
+bool addb(bool b1, bool b2); //adds 2 bools together (i.e. true=1, false=0)
+bool subb(bool b1, bool b2); //b1 - b2
+bool mulb(bool b1, bool b2); //b1 * b2
+bool divb(bool b1, bool b2); //b1 / b2

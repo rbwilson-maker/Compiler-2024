@@ -1,0 +1,11 @@
+//test return 2
+//shift
+
+int main()
+{
+  int x = 1 << 5;
+  int y = 1 << 4;
+  int z = 1 << 3;
+  int a = 56 << 4;
+  return x/y;
+}

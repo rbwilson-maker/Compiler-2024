@@ -1,0 +1,10 @@
+//test return 100
+
+int main()
+{
+  int a = 0;
+  { int b = a; }
+  { a = 100; }
+  { int c = a; }
+  return a;
+}

@@ -1,0 +1,14 @@
+//test return 0
+bool equals(int[] l, int[] r, int i, int length) {
+  return length == i || (l[i] == r[i] && equals(l, r, i + 1, length));
+}
+
+int main() {
+  int[] l = alloc_array(int, 10);
+  int[] r = alloc_array(int, 10);
+  for(int i = 0; i < 10; i++) {
+    l[i] = i;
+    r[i] = i + 1;
+  }
+  return equals(l, r, 0, 10) ? 1 : 0;
+}

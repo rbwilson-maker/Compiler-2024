@@ -1,0 +1,21 @@
+//test div-by-zero
+// arrays should be intialized
+
+
+int main(){
+
+  int[] i_a = alloc_array(int, 20);
+  bool[] b_a = alloc_array(bool, 20);
+
+  int sum = 0;
+  int i = 0;
+  while (i<20) {
+    if (!!!!b_a[i]){
+      return -1;
+    }
+    sum += i_a[i];
+    i++;
+  }
+  1 / sum;
+  return -2;
+}

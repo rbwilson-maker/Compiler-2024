@@ -1,0 +1,13 @@
+//test memerror
+//don't go indexing out of bounds now sonny
+
+int main() {
+  int[] A = alloc_array (int, 9);
+  for (int i=0; i < 9; i++) {
+    A[i] = i + 1;
+  }
+  for (int i=0; i < 9; i++) {
+    A[A[i]] = 0;
+  }
+  return 0;
+}

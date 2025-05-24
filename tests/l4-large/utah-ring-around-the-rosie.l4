@@ -1,0 +1,21 @@
+//test typecheck
+//test infloop
+
+struct ring {
+    struct ring* ringring;
+};
+
+int main () {
+    struct ring* ringring = alloc(struct ring);
+    struct ring* ringringring = ringring;
+    for (int ring = 0; ring < 1000; ring++) {
+        ringringring->ringring = alloc(struct ring);
+        ringringring = ringringring->ringring;
+    }
+    ringringring->ringring = ringring;
+    for (int wrong = 0; wrong == wrong; wrong++) {
+		ringringring = ringringring->ringring;
+	}	
+
+    return 97;
+}

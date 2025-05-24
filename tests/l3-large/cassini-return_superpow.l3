@@ -1,0 +1,23 @@
+//test return 5
+
+int POW(int a, int b) {
+    assert(b >= 0);
+    if (b == 0) {
+        return 1;
+    }
+    return a * POW(a, b - 1);
+}
+
+// Computes 3^(4^(...^x))
+int SUPERPOW(int x) {
+    assert(x >= 3);
+    int res = x;
+    for (int i = x-1; i >= 3; i--) {
+        res = POW(i, res);
+    }
+    return x;
+}
+
+int main() {
+    return SUPERPOW(5);
+}

@@ -1,0 +1,14 @@
+//test return 7
+//A test of declaring a function many times
+
+// many declarations (with differently named args)
+int ret7(int x);
+int ret7(int y);
+int ret7(int z);
+
+// single definition
+int ret7(int a){ return 7;}
+
+int main(){
+    return ret7(42);
+}

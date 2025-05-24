@@ -1,0 +1,10 @@
+//test error
+
+int main() {
+    // else branch does not return
+    if (true)
+        if (false)
+            return 0;
+        else
+            return 1;
+}

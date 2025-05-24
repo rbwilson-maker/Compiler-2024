@@ -1,0 +1,15 @@
+//test error
+//calls a function that doesn't exist
+
+int magic_func(int a, int b)
+{
+    return (a + b) * (a - b);
+}
+int main()
+{
+    int x = 4;
+    int y = 5;
+    int z;
+    z = magic_function(4, 5);
+    return z;
+}

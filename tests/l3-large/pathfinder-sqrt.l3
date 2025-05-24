@@ -1,0 +1,13 @@
+//test return 0
+int sqrt(int x, int guess) {
+    int guess1 = guess - 1 - (guess * guess - x) / (2 * guess);
+    if (guess1 * guess1 == x) return guess1;
+    return sqrt(x, guess1);
+}
+
+int main() {
+    for (int i = 1; i <= 20; i++) {
+        assert(sqrt(i * i, i + 10) == i);
+    }
+    return 0;
+}

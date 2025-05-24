@@ -1,0 +1,21 @@
+//test div-by-zero
+
+struct rect {
+    int width;
+    int height;
+};
+
+int main() {
+    struct rect * r1 = alloc(struct rect);
+
+    r1->width = 4;
+    r1->height = 3;
+
+    int area = r1->width * r1->height;
+    
+    r1->height = 0;
+
+    int h = r1->height;
+    int w = area / r1->height;
+    return w;
+}

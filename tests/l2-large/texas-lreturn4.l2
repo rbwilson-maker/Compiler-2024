@@ -1,0 +1,7 @@
+//test return -1
+// Neg number shift by 31
+int main() {
+	int x = -2497;
+	int s = 31;
+	return x >> s;
+}

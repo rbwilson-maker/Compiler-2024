@@ -1,0 +1,13 @@
+//test return 76
+
+int main()
+{
+  int x = 0x124;
+  int y = x << 6;
+  if (y > x) //and it is
+  {
+    int z = x == 0x124 ? 76 : (128 / 0); //div by 0 shouldn't evaluate
+    return z;
+  }
+  return x == 0 ? 0 : (x > -49 ? 1 : 2);
+}

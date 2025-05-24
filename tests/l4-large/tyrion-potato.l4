@@ -1,0 +1,47 @@
+//test return 21
+//KMP
+
+typedef int[] str;
+
+int[] bP(str s, int len) {
+	int[] pi = alloc_array(int, len);
+	int k = -2;
+	for(int i = 0; i < len; i++) {
+		while(k >= -1 && s[k+1] != s[i]) {
+			k = (k == -1) ? -2 : pi[k];
+		}
+		k++;
+		pi[i] = k;
+	}
+	return pi;
+}
+
+int[] KMP(str t, str p, int tl, int pl) {
+	int[] res = alloc_array(int, tl);
+	int ri = 0;
+	int[] pi = bP(p, pl);
+	int k = -1;
+	for(int i = 0; i < tl; i++) {
+		while( k >= -1 && p[k+1] != t[i]) {
+			k = (k==-1) ? -2 : pi[k];
+		}
+		k++;
+		if(k == pl - 1) {
+			res[ri] = i-k;
+			ri++;
+			k = (k==-1)?-2:pi[k];
+		}
+	}
+	return res;
+}
+
+int main() {
+	str s = alloc_array(int, 16);
+	s[0] = 1; s[1] = 1; s[2] = 2; s[3] = 1; s[4] = 1; s[5] = 3; s[6] = 1; s[7] = 1;
+	s[8] = 4; s[9] = 1; s[10] = 1; s[11] = 2; s[12] = 1; s[13] = 1; s[14] = 2; s[15] = 1;
+	str p = alloc_array(int, 4);
+	p[0] = 1; p[1] = 1; p[2] = 2; p[3] = 1;
+	int[] res = KMP(s, p, 16, 4);
+	return res[0] + res[1] + res[2];
+	//return 0;
+}

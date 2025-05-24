@@ -1,0 +1,15 @@
+//test return 3
+
+int nonexistent();
+
+int returnOne() {
+    return 1;
+}
+
+int returnTwo() {
+    return 2;
+}
+
+int main () {
+    return returnOne() + returnTwo();
+}

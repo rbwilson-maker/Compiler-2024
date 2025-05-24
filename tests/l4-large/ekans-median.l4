@@ -1,0 +1,110 @@
+//test typecheck
+//test infloop
+struct pair {
+    struct M * left;
+    struct M * right;
+};
+
+struct M {
+    int[] list;
+    int n;
+};
+
+struct M * copy(struct M * m, int a, int n) {
+    int[] in = m->list;
+    int[] out = alloc_array(int, n);
+    for(int i = 0; i < n; i++) {
+        out[i] = in[i+a];
+    }
+    m = alloc(struct M);
+    m->n = n;
+    m->list = out;
+    return m;
+}
+
+
+struct pair * split(struct M * m) {
+    int n = m->n;
+    int l = n/2;
+    int r = n-n/2;
+    struct pair * p = alloc(struct pair);
+    p->left = copy(m, 0, l);
+    p->right = copy(m, l, r);
+    return p;
+}
+
+struct M * filter(struct M * m, int x, bool bigger) {
+    int[] out = alloc_array(int, m->n);
+    int next = 0;
+    for(int i = 0; i < m->n; i++) {
+        if(m->list[i] > x == bigger) {
+            out[next] = m->list[i];
+            next++;
+        }
+    }
+
+    m = alloc(struct M);
+    m->list = out;
+    m->n = next;
+    return m;
+}
+
+struct M * bigger(struct M * m, int x) {
+    return filter(m, x, true);
+}
+
+struct M * leq(struct M * m, int x) {
+    return filter(m, x, false);
+}
+
+struct M * merge(struct M * l, struct M * r) {
+    int length = l->n + r->n;
+    int[] out = alloc_array(int, length);
+    int i;
+    for(i = 0; i < l->n; i++) {
+        out[i] = l->list[i];
+    }
+    for(; i < length; i++) {
+        out[i] = r->list[i];
+    }
+    struct M * m = alloc(struct M);
+    m->n = length;
+    m->list = out;
+    return m;
+}
+
+int median(struct M * m) {
+    struct pair * p = split(m);
+    int ml = median(p->left);
+    int mr = median(p->right);
+    struct M *lower = ml < mr ? p->left : p->right;
+    struct M * upper = ml < mr ? p->right : p->left;
+    struct M * lm = alloc(struct M);
+    struct M * rm = alloc(struct M);
+    lm= lower;
+    rm= upper;
+    lm->n = m->n / 2;
+    rm->n = m->n / 2;
+    return median(merge(bigger(lm, ml), leq(rm, mr)));
+}
+    
+
+int main() {
+    int [] list = alloc_array(int, 12);
+    list[0] = 1;
+    list[1] = 4;
+    list[2] = 2;
+    list[3] = 5;
+    list[4] = 6;
+    list[5] = -1;
+    list[6] = -4;
+    list[7] = -3;
+    list[8] = -12;
+    list[9] = 4;
+    list[10] = 1;
+    list[11] = 3;
+    struct M * m = alloc(struct M);
+    m->list = list;
+    m->n = 12;
+    return median(m);
+}

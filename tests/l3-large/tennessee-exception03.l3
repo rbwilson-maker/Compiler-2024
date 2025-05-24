@@ -1,0 +1,19 @@
+//test div-by-zero
+// divide by zero and infinite loop
+
+int divide(int x, int y) {
+  return x / y;
+}
+
+int main() {
+  int x = 4;
+  int i;
+
+  for (i = 4; i < 5; i--) {
+    if (divide(x, i) == 5) {
+      return i;
+    }
+  }
+
+  return 0;
+}

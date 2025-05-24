@@ -1,0 +1,12 @@
+//test error
+// Tests that a struct cannot reference itself.
+
+struct foobar {
+    struct foobar foobaz;
+    int value;
+};
+
+int main () {
+    struct foobar* baz = alloc(struct foobar);
+    return baz->foobar.foobar.foobar.foobar.foobar.foobar.foobar.foobar.foobar.foobar.value;
+}

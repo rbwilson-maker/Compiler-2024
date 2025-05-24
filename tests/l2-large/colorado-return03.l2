@@ -1,0 +1,9 @@
+//test return 5500
+int main(){
+	int tot = 0;
+	for(int i1 = 1; i1<=10; i1++)
+		for(int i2 = 1; i2<=10; i2++)
+			for(int i3 = 1; i3<=10; i3++)
+				tot+=i3;
+	return tot;
+}

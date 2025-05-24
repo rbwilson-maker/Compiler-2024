@@ -1,0 +1,52 @@
+//test return 0
+
+struct TreeNode{
+    int val;
+    struct TreeNode* left;
+    struct TreeNode* right;
+};
+
+int get_sum(struct TreeNode* tree) {
+    if (tree == NULL) {
+        return 0;
+    }
+    return tree->val + get_sum(tree->left) + get_sum(tree->right);
+}
+
+struct TreeNode* sortedArrayToBST(int[] nums, int numsSize) {
+    if (numsSize == 0) return NULL;
+    if (numsSize == 1){
+        struct TreeNode* root = alloc(struct TreeNode);
+        root->val = nums[0];
+        root->left = NULL;
+        root->right = NULL;
+        return root;
+    }
+    
+    int middle = numsSize/2;
+    struct TreeNode* root = alloc(struct TreeNode);
+    root->val = nums[middle];
+    
+    int[] left_nums = alloc_array(int, middle);
+    for (int i = 0; i < middle; i++){
+        left_nums[i] = nums[i];
+    }
+    int[] right_nums = alloc_array(int, numsSize - middle - 1);
+    for (int i = middle+1; i < numsSize; i++){
+        right_nums[i - middle - 1] = nums[i];
+    }
+    
+    root->left = sortedArrayToBST(left_nums, middle);
+    root ->right = sortedArrayToBST(right_nums, numsSize - middle - 1);
+    
+    return root;
+}
+
+int main(){
+    int[] nums = alloc_array(int, 10);
+    for (int i = 0; i < 10; i++){
+    	nums[i] = i;
+    }
+    assert(get_sum(sortedArrayToBST(nums, 10)) == 45);
+    return 0;
+}

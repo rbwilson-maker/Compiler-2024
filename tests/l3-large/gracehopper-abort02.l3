@@ -1,0 +1,12 @@
+//test abort
+
+void f (int a, int b) {
+    assert (a == b);
+}
+
+int main () {
+    int x = 0;
+    int y = 1;
+    f(x, y);
+    return 1;
+}

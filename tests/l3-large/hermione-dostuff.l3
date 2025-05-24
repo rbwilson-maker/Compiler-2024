@@ -1,0 +1,16 @@
+//test abort
+
+bool check (int key) {
+    return key != -key;
+}
+
+void yikes (int safe) {
+    assert(check(safe));
+}
+
+int main () {
+    for (int i = 0x7FFFFFFF; i != 0; i++) {
+        yikes(i);
+    }
+    return 82;
+}

@@ -1,0 +1,18 @@
+//test return 7680
+
+int main ()
+{
+    int x = 0;
+    for (int a0 = 0; a0 < 4; a0++) {
+        for (int a1 = 0; a1 < 4; a1++) {
+            for (int a2 = 0; a2 < 4; a2++) {
+                for (int a3 = 0; a3 < 4; a3++) {
+                    for (int a4 = 0; a4 < 4; a4++) {
+                        x += a0 + a1 + a2 + a3 + a4;
+                    }
+                }
+            }
+        }
+    }
+    return x;
+}

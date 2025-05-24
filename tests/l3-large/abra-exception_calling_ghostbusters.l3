@@ -1,0 +1,14 @@
+//test error
+typedef void ghost
+
+ghost busters() {
+}
+
+int slimer(bool green, bool icky) {
+	return green == icky ? 1 : 0
+}
+
+int main () {
+	return	slimer(true, busters());
+}
+	

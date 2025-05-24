@@ -1,0 +1,8 @@
+//test return 0
+
+int main() {
+	int *a = NULL;
+	bool *b = NULL;
+	assert(a == NULL && b == NULL);
+	return 0;
+}

@@ -1,0 +1,28 @@
+//test return 15210
+// Struct test traversing and adding up things in linked list
+
+struct Node {
+	int val;
+	struct Node *next;
+};
+
+struct Node *makeNode(int val, struct Node *next){
+	struct Node *new_node = alloc(struct Node);
+	new_node->val = val;
+	new_node->next = next;
+	return new_node;
+}
+
+int main(){
+	struct Node *node_1 = makeNode(10, NULL);
+	struct Node *node_2 = makeNode(200, node_1);
+	struct Node *node_3 = makeNode(15000, node_2);
+
+	struct Node *curr = node_3;
+	int sum = 0;
+	while (curr != NULL){
+		sum += curr->val;
+		curr = curr->next;
+	}
+	return sum;
+}

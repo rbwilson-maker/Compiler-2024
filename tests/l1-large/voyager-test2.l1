@@ -1,0 +1,22 @@
+//test div-by-zero
+
+int main() { 
+    // test space delimeters here
+    int 
+        a = 0x1F;
+    int b 
+        = 90;
+    int c = 
+        3;int d = -1
+        ;
+
+    // value of f is not important,
+    // just test consecutive arithmetic operation
+    int f = a + b - c;
+    f += c + d * 2;
+
+    // g = 0
+    int g = a - b / c + d;
+
+    return f / g; 
+}

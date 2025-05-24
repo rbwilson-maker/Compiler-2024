@@ -1,0 +1,13 @@
+//test error
+
+
+struct foo {
+    int bar;
+};
+typedef struct foo foo;
+
+int main() {
+    foo foo;
+    foo.int = 1
+    return foo.bar;
+}

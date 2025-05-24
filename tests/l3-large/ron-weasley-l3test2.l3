@@ -1,0 +1,21 @@
+//test return 62634
+
+/*  Converts a decimal integer to a septal representation. I do not know if this
+    handles two's complement well, probably not. */
+int conv_to_septal(int n) {
+    int res = n % 7;
+    n /= 7;
+    int pow = 10;
+
+    while (n > 0) {
+        res += (n % 7) * pow;
+        n /= 7;
+        pow *= 10;
+    }
+
+    return res;
+}
+
+int main() {
+    return conv_to_septal(15411);
+}

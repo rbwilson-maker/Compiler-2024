@@ -1,0 +1,7 @@
+//test return 14
+// test operator precedence
+int main()
+{
+  int a = 3 + 4 << 1;
+  return a;
+}

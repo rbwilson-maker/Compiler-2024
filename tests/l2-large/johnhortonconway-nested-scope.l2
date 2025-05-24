@@ -1,0 +1,21 @@
+//test return 219887648
+
+int main()
+{
+  int a = -722741792;
+  int x;
+  {
+    int b = -85365964;
+    int c = 27485956;
+    {
+      int d = 622518899;
+      int e = a / b * c;
+      {
+        a = e;
+        x = e % d;
+      }
+    }
+  }
+  
+  return x;
+}

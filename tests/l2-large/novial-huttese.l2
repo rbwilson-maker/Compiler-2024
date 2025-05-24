@@ -1,0 +1,13 @@
+//test return 29
+// for loop without instantiation
+
+int main() {
+  int k = 1;
+  bool l = true;
+
+  for (; k < 2 && l && true && true;) {
+    k += 28;
+  }
+
+  return k;
+}

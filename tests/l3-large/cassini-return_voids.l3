@@ -1,0 +1,17 @@
+//test return 10
+
+void assertgt(int x) {
+    assert(x > 0);
+}
+
+int main() {
+    for(int i = 1; i <= 10; i++) {
+        assertgt(i);
+        if (i >= 10) {
+            return i;
+        }
+    }
+    // Shouldn't get here
+    assert(false);
+    return -1;
+}

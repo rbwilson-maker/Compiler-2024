@@ -1,0 +1,14 @@
+//test return -1
+// wrap-around
+int main()
+{
+  int x;
+  int y;
+
+  x = 0x7FFFFFFF;
+  y = 1;
+
+  x += x;
+  x += y;
+  return x;
+}

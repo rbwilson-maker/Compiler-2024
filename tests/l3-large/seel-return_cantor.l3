@@ -1,0 +1,23 @@
+//test return 9
+// Given a numerator and a denominator, return the index of the fraction
+// when counting diagonally.
+// Numerator and Denominator should be positive
+
+int index(int numerator, int denominator) {
+    if (numerator == 1 && denominator == 1) {
+        return 1;
+    }
+
+    else if (numerator == 1 && denominator != 1) {
+        return denominator - 1 + index(1, denominator - 1);
+    }
+
+    else {
+        return numerator - 1 + index(1, numerator + denominator - 1);
+    }
+}
+
+
+int main() {
+    return index(3, 2);
+}

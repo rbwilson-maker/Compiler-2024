@@ -1,0 +1,32 @@
+//test return 0
+
+// recursion and loops.
+
+int mTwo(int r)
+{
+  return r*2;
+}
+
+int dTwo(int r)
+{
+  return r/2;
+}
+
+
+int main() {
+     int x = 1;
+     int i = 1;
+
+     for(int k = 0; k<30; k++)
+     {
+       i = mTwo(i);
+     }
+    
+     for(int k = 0; k <30; k++)
+     {
+       i = dTwo(i);
+     }
+     assert (i==1);
+
+     return dTwo(dTwo(mTwo(x)));
+ }

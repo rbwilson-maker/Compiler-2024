@@ -1,0 +1,11 @@
+//test return 5
+//tests using float functions from 15411-l3.h0.
+
+int main () {
+  int x = 5;
+  int y = 10;
+  
+  assert (ftoi(fadd(itof(x), itof(y))) == 15);
+
+  return 5;
+}

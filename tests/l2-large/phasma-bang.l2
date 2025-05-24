@@ -1,0 +1,15 @@
+//test return 17
+int main() {
+  bool x = false;
+  x = !x;
+  bool y = true;
+  y = !y;
+  int r = 9;
+  if (x) {
+    r += 8;
+  }
+  if (y) {
+    r += 3;
+  }
+  return r;
+}

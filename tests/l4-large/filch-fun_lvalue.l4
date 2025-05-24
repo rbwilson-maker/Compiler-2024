@@ -1,0 +1,20 @@
+//test memerror
+
+struct fun_struct{
+    int a;
+    int[] b;
+    bool c;
+};
+
+struct even_more_fun_struct{
+    struct fun_struct a;
+    struct fun_struct b;
+};
+
+int main() {
+    struct even_more_fun_struct* emfs = alloc(struct even_more_fun_struct);
+
+    emfs->a.b[4] = 3;
+
+    return 7;
+}

@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int kill() {
+  assert(false);
+  return 0;
+}
+
+int main() {
+  int[] arr = alloc_array(int, 10);
+  // &(arr[10 / 0]) is evaluated first, so we should get a div-by-zero error
+  // instead of an abort
+  arr[10 / 0] = kill();
+  return 0;
+}

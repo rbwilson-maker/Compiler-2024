@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main () {
+    int i;
+    for (i = -2147483640; i < 2147483647; i--) {
+        i/-1;
+    }
+    return i;
+}

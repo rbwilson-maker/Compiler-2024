@@ -1,0 +1,24 @@
+//test return 1
+
+/* Side effect elaboration check */
+int incr(int* i) {
+  (*i)++;
+  return *i;
+}
+
+int main() {
+  int[] arr = alloc_array(int, 10);
+  for(int i = 0; i < 10; i++) {
+    arr[i] = i;
+  }
+
+  int* index = alloc(int);
+  *index = 1;
+  arr[incr(index)] = 20;
+  arr[incr(index)]++;
+
+  assert(arr[2] == 20);
+  assert(arr[3] == 4);
+
+  return 1;
+}

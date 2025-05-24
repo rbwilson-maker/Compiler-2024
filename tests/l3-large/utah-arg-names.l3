@@ -1,0 +1,19 @@
+//test return 90
+// function names are not reserved
+int g(int g, int f);
+int f(int g, int f);
+int h(int y);
+
+int g(int h, int g) {
+    return g + h;
+}
+
+int f(int f, int g) {
+    return f + g + 20;
+}
+
+int main() {
+    int h = g(10, 10);
+    int g = f(20, 30);
+    return h + g;
+}

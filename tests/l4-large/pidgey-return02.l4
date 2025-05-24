@@ -1,0 +1,12 @@
+//test return 2
+
+int main() {
+    int[] *p = alloc(int[]);
+    int[] *q = alloc(int[]);
+
+    if (p == q) {
+        return 1;
+    } else {
+        return 2;
+    }
+}

@@ -1,0 +1,19 @@
+//test return 6
+
+// tests basic struct operation
+
+struct ooh {
+    int *x;
+    int y;
+    int *z;
+};
+
+int main() {
+    struct ooh *ahh = alloc(struct ooh);
+    ahh->x = alloc(int);
+    ahh->z = alloc(int);
+    *(ahh->x) = 1;
+    ahh->y = 2;
+    *(ahh->z) = 3;
+    return *(ahh->x)  + ahh->y + *(ahh->z);
+}

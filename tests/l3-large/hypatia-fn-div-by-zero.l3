@@ -1,0 +1,10 @@
+//test div-by-zero
+bool ghoul(int fool) {
+  assert(false);
+  return true;
+}
+
+int main() {
+  ghoul(1/0);
+  return -1;
+}

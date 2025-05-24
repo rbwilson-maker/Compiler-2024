@@ -1,0 +1,8 @@
+//test return 1
+int recus(int i) {
+    if (i == 3) return 1;
+    else return main();
+}
+int main() {
+    return recus(3);
+}

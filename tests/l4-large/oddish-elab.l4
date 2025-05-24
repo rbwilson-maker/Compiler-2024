@@ -1,0 +1,23 @@
+//test return 20
+
+int foo(int i, int** x) {
+	**x = 5;
+	*x = NULL;
+
+	return i;
+}
+
+int main() {
+	int *x = alloc(int);
+	*x = 0;
+
+	int[] y = alloc_array(int, 1);
+	y[0] = 15;
+
+	int **z = alloc(int *);
+    *z = x;
+
+	y[foo(0, z)] += 5;
+
+	return y[0];
+}

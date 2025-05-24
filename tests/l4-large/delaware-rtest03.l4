@@ -1,0 +1,10 @@
+//test error
+struct foo {
+  int bar;
+};
+
+void badfunc (struct foo* fo) {
+  fo->bar = true;
+}
+
+int main() { return 2; }

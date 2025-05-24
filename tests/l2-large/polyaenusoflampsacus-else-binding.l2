@@ -1,0 +1,12 @@
+//test return 5
+
+//Checks that else binds to the most recent if statement 
+
+int main() {
+  if (true)
+    if (false)
+      return 0;
+    else 
+      return 5;
+  return 4;
+}

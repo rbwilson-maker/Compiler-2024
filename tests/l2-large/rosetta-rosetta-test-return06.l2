@@ -1,0 +1,15 @@
+//test return 0
+//tests else statement with int
+
+int main() {
+	int x = 10;
+	int y = 45;
+	int i = 0;
+	if (i > x) {
+		return y;
+	}
+	else
+	{
+		return 0;
+	}
+}

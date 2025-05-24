@@ -1,0 +1,24 @@
+//test return -41
+//testing a collection of arithmetic operations!
+int main()
+{
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+	int f;
+
+	int result;
+
+	a = 0;
+	b = 1;
+	c = 2;
+	d = 3;
+	e = 4;
+	f = -50;
+
+	result = (((a + f) - (e + b)) * d)/e;
+
+	return result;
+}

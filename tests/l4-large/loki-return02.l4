@@ -1,0 +1,34 @@
+//test return 0
+
+typedef struct point point_t;
+struct point {
+  int x;
+  int y;
+};
+
+void mirror_x(point_t *p) {
+  p->x *= -1;
+}
+
+void mirror_y(point_t *p) {
+  p->y *= -1;
+}
+
+int manhattan_dist(point_t *p) {
+  int y = p->y;
+  if (y < 0) 
+    y = -y;
+  int x = p->x;
+  if (x < 0)
+    x = -x;
+  return x + y;
+}
+
+int main() {
+  point_t *p = alloc(point_t);
+  int orig_dist = manhattan_dist(p); 
+  mirror_x(p);
+  mirror_y(p);
+  int new_dist = manhattan_dist(p);
+  return orig_dist - new_dist;
+}

@@ -1,0 +1,57 @@
+//test return 17438
+
+ int a (int one) { return one - 100; }
+
+ int b (int one) { return a(one) + 90; }
+
+ int c (int one) { return a(one) > 100 ? a(one) + 20 : b(one) - 10; }
+
+ int d (int one) { return c(one) > 100 ? c(one) + 20 : b(one) - 10; }
+
+ int e (int one) { return c(one) > 100 ? c(one) + 20 : d(one) - 10; }
+
+ int f (int one) { return e(one) > 100 ? e(one) + 20 : d(one) - 10; }
+
+ int g (int one) { return e(one) > 100 ? e(one) + 20 : f(one) - 10; }
+
+ int h (int one) { return g(one) > 100 ? g(one) + 20 : f(one) - 10; }
+
+ int i (int one) { return g(one) > 100 ? g(one) + 20 : h(one) - 10; }
+
+ int j (int one) { return i(one) > 100 ? i(one) + 20 : h(one) - 10; }
+
+ int k (int one) { return i(one) > 100 ? i(one) + 20 : j(one) - 10; }
+
+ int l (int one) { return k(one) > 100 ? k(one) + 20 : j(one) - 10; }
+
+ int m (int one) { return k(one) > 100 ? k(one) + 20 : l(one) - 10; }
+
+ int n (int one) { return m(one) > 100 ? m(one) + 20 : l(one) - 10; }
+
+ int o (int one) { return m(one) > 100 ? m(one) + 20 : n(one) - 10; }
+
+ int p (int one) { return o(one) > 100 ? o(one) + 20 : n(one) - 10; }
+
+ int q (int one) { return o(one) > 100 ? o(one) + 20 : p(one) - 10; }
+
+ int r (int one) { return q(one) > 100 ? q(one) + 20 : p(one) - 10; }
+
+ int s (int one) { return q(one) > 100 ? q(one) + 20 : r(one) - 10; }
+
+ int t (int one) { return s(one) > 100 ? s(one) + 20 : r(one) - 10; }
+
+ int u (int one) { return s(one) > 100 ? s(one) + 20 : t(one) - 10; }
+
+ int v (int one) { return u(one) > 100 ? u(one) + 20 : t(one) - 10; }
+
+ int w (int one) { return u(one) > 100 ? u(one) + 20 : v(one) - 10; }
+
+ int x (int one) { return w(one) > 100 ? w(one) + 20 : v(one) - 10; }
+
+ int y (int one) { return w(one) > 100 ? w(one) + 20 : x(one) - 10; }
+
+ int z (int one) { return y(one) > 100 ? y(one) + 20 : x(one) - 10; }
+
+int main () {
+	return a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(a(b(c(d(e(f(g(h(i(j(k(l(m(n(o(p(q(r(s(t(u(v(w(x(y(128)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))));
+}

@@ -1,0 +1,31 @@
+//test memerror
+
+struct arr1 {
+  int[] A1;
+};
+
+struct arr2 {
+  struct arr1 * a1;
+};
+
+struct arr3 {
+  struct arr2 * a2;
+};
+
+struct arr4 {
+  struct arr3 * a3;
+};
+
+int main() {
+  struct arr4 * a4 = alloc (struct arr4);
+
+  a4->a3 = alloc (struct arr3);
+
+  a4->a3->a2 = alloc (struct arr2);
+
+  a4->a3->a2->a1 = alloc (struct arr1);
+  
+  a4->a3->a2->a1->A1[0] = 2;
+
+  return 4;
+}

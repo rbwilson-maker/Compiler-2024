@@ -1,0 +1,11 @@
+//test return 87
+
+// Test that bools can be properly lexed and parsed, but does not test
+// anything about how they are used.
+
+int main() {
+    bool b1;
+    bool b2 = true;
+    b1 = false;
+    return 87;
+}

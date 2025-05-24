@@ -1,0 +1,11 @@
+//test error
+
+void stuff(void var)
+{
+	return;
+}
+
+int main() {
+	stuff(void)
+	return 0;
+}

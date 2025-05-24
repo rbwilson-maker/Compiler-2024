@@ -1,0 +1,12 @@
+//test return 0
+
+int main() {
+    bool goodSound = false;
+    bool goodMaterial = false;
+    bool worthMoney = goodSound || goodMaterial;
+    if(worthMoney) {
+        return 1;
+    } else {
+        return 0;
+    }
+}

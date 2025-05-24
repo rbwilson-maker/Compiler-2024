@@ -1,0 +1,42 @@
+//test memerror
+
+// indexing error coming from choosing list out of a ternarry operator
+
+int main() {
+	int [][] a;
+	int [][] b;
+	int [][] c;
+
+	a = alloc_array(int[], 10);
+	for (int i = 0; i < 10; i++) {
+		a[i] = alloc_array(int, 10);
+	}
+	b = alloc_array(int[], 9);
+	for (int i = 0; i < 9; i++) {
+		b[i] = alloc_array(int, 9);
+	}
+	c = alloc_array(int[], 8);
+	for (int i = 0; i < 8; i++) {
+		c[i] = alloc_array(int, 8);
+	}
+
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			a[i][j] = 10*i + j;
+			if (i < 10 && j < 10) {
+				b[i][j] = 9*i + j;
+			}
+			if (i < 9 && j < 9) {
+				c[i][j] = 8*i + j;
+			}
+		}
+	}
+
+	int* d = alloc(int);
+
+	for (int i = 0; i < 10; i++) {
+		*d += ((i % 3 == 0) ? a : ((i % 3 == 1) ? b : c))[i][i];
+	}
+
+	return *d;
+}

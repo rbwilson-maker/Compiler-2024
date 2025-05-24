@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main()
+{
+int i;
+int x = 1;
+	for(i = 0; i > -1; i ++)
+	{}
+    return (x  >> i);
+
+	}

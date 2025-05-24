@@ -1,0 +1,89 @@
+//test return 57
+
+int global();
+int _start(int one);
+bool globl();
+int start(int LOOP);
+
+int bottom (int a, int b, int c);
+
+int main () {
+return bottom (37, 114, 42);
+}
+
+int L1 (int x) {
+return x + 47;
+}
+
+int _c0_main (bool flase, int z) {
+if (flase) return z;
+return 3 * z;
+}
+
+int c0_main (int garf, bool ield) {
+while (ield) {
+return garf;
+}
+return ield ? garf - 2 : garf + 2;
+}
+
+void MAIN (int Main) {
+Main += Main;
+}
+
+int Main (int LOOP, int main) {
+if (main < 0) main = -main;
+while (main > 100) {
+MAIN (main - 1);
+main--;
+}
+if (LOOP > main) return Main (LOOP - 3, main + 4);
+else return LOOP;
+}
+
+bool IF () {
+return true;
+if (IF()) return IF();
+else return IF();
+}
+
+bool LOOP () {
+if (IF()) return true;
+while (LOOP()) {
+return LOOP() ? IF() : LOOP();
+}
+return false;
+}
+
+int LOOP1 () {
+return 13 % 8;
+}
+
+void puts () {
+int a = L1(37);
+int b = _c0_main(a == 14, a);
+int c = c0_main(b, a == b);
+}
+
+int _start (int ascii) {
+if (ascii % 2 == 1) return Main (ascii, ascii);
+puts();
+return 0;
+}
+
+int start (int zero) {
+if (zero == 0)
+   return 0;
+return 0 - zero;
+}
+
+int bottom (int d, int e, int f) {
+int zz = start (d);
+int yy = _start (e);
+bool xx = LOOP();
+bool ww = IF();
+if (xx || ww) puts();
+int vv = Main(zz, yy) - c0_main(yy, xx);
+MAIN(vv);
+return L1(_c0_main(ww, f+LOOP1())+vv);
+}

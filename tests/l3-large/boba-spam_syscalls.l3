@@ -1,0 +1,15 @@
+//test typecheck
+// Should really be test abort.
+
+int main()
+{
+  pid_t p = getpid();
+  for (int i = 0; i < 10000; i++)
+  {
+    // Spam context switches!
+    // Although glibc might cache?
+    p = getpid();
+  }
+  kill(p, 6);
+  return 0; // Unreachable
+}

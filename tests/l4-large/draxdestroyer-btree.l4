@@ -1,0 +1,13 @@
+//test typecheck
+int main() {
+
+    BT* root = alloc(BT);
+    BT* L = alloc(BT);
+    BT* R = alloc(BT);
+    
+    L->value = 69;
+    root->left = L;
+
+
+    return root->left->value;
+}

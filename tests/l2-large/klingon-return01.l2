@@ -1,0 +1,16 @@
+//test return 15
+
+int main() {
+
+  int x;
+  int y;
+  int z;
+  bool f = true;
+
+  x = 5;
+  y = x * 2;
+  z = x + y;
+  if (f) return z;
+  else return 0;
+
+}

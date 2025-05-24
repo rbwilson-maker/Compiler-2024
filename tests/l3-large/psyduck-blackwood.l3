@@ -1,0 +1,32 @@
+//test return 2024
+
+typedef int cup;
+typedef int glass;
+typedef cup bowl;
+typedef glass pot;
+
+bowl carrots () {
+return 116;
+}
+
+cup potatoes () {
+return 14;
+}
+
+bowl mix (bowl b, cup p) {
+return b * p;
+}
+
+pot heat (cup c) {
+return c + 400;
+}
+
+cup cook (glass g, bowl b) {
+pot p = mix (g, b);
+return heat (p);
+}
+
+int main () {
+return cook(carrots(), potatoes());
+}
+

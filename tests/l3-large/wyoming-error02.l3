@@ -1,0 +1,7 @@
+//test error
+int (foo)(int b){
+	return b;
+}
+int main(){
+	return foo(2);
+}

@@ -1,0 +1,109 @@
+//test error
+
+// a naive version before implementing kNN
+
+struct Point2D {
+  int x;
+  int y;
+};
+
+int l1_distance(struct Point2D *a, struct Point2D *b) {
+  if (a->x > b->x) {
+    if (a->y > b->y) {
+      return a->x-b->x+a->y-b->y;
+    } else {
+      return a->x-b->x+b->y-a->y;
+    }
+  } else {
+    if (a->y > b->y) {
+      return b->x-a->x+a->y-b->y;
+    } else {
+      return b->x-a->x+b->y-a->y;
+    }
+  }
+}
+
+int find_nearest_neibor(struct Point2D[] dataset, struct Point2D *x, int size) {
+  int i;
+  int current_minimal_distance = 0x7FFFFFFF;  // INT_MAX
+  int current_nn = 0;
+  for (i = 0; i < size; i++) {    
+    int d = l1_distance(dataset+i, x);
+    if (current_minimal_distance > d) {
+      current_minimal_distance = d;
+      current_nn = i;
+    }
+  }
+  return current_nn;
+}
+
+
+int main() {
+  int size = 20;
+  struct Point2DWithLabel[] dataset = alloc_array(struct Point2DWithLabel, size);
+  dataset[0].x = 0;
+  dataset[0].y = 1;
+
+  dataset[1].x = 2;
+  dataset[1].y = 3;
+
+  dataset[2].x = 4;
+  dataset[2].y = 25;
+
+  dataset[3].x = 234;
+  dataset[3].y = 546;
+
+  dataset[4].x = 547;
+  dataset[4].y = 345;
+
+  dataset[5].x = 234;
+  dataset[5].y = 45645;
+
+  dataset[6].x = 754;
+  dataset[6].y = 56756;
+
+  dataset[7].x = 20;
+  dataset[7].y = 21;
+
+  dataset[8].x = 32;
+  dataset[8].y = 33;
+
+  dataset[9].x = 44;
+  dataset[9].y = 4025;
+
+  dataset[10].x = 50234;
+  dataset[10].y = 30546;
+
+  dataset[11].x = 20547;
+  dataset[11].y = 20345;
+
+  dataset[12].x = 50234;
+  dataset[12].y = 7045645;
+
+  dataset[13].x = 60754;
+  dataset[13].y = 3056756;
+
+  dataset[14].x = 567;
+  dataset[14].y = 75;
+
+  dataset[15].x = 34;
+  dataset[15].y = 645;
+
+  dataset[16].x = 54;
+  dataset[16].y = 9756;
+
+  dataset[17].x = 204;
+  dataset[17].y = 231;
+
+  dataset[18].x = 342;
+  dataset[18].y = 23333;
+
+  dataset[19].x = 444;
+  dataset[19].y = 40255;
+
+  struct Point2D *target = alloc(struct Point2D);
+  target->x = 444;
+  target->y = 23333;
+
+  return find_nearest_neibor(dataset, target, size);
+}

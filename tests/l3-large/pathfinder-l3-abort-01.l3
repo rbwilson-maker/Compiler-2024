@@ -1,0 +1,18 @@
+//test abort
+
+int another_func() {
+    assert(false);
+    return 0;
+}
+
+int some_func() {
+    another_func();
+    return 123;
+}
+
+int main() {
+    for (int x = 0; x < 10; x++) {
+        some_func();
+    }
+    return 1;
+}

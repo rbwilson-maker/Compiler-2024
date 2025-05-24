@@ -1,0 +1,7 @@
+//test error
+//missing whitespace between tokens, undefined token "--"
+
+int main()
+{
+  return 5--2;
+}

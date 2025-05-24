@@ -1,0 +1,21 @@
+//test return 37
+
+int *g(){
+    return NULL;
+}
+
+int f(int *x){
+    (*x)++;
+    // int **y = alloc(int *)
+    // **y++;
+    return 0;   
+}
+
+int main(){
+    int *x = alloc(int);
+    int[] a = alloc_array(int, 1);
+    a[f(x)] += 1;
+    assert(*x == 1);
+    assert(a[0] == 1);
+    return 37;
+}

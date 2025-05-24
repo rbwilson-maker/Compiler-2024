@@ -1,0 +1,15 @@
+//test return 0
+/* Test func arg parsing and more than 6 args. */
+int func(int a, int b, bool c, bool d, int e, int f, int g, bool h) {
+  return a + b + e + f + g;
+}
+
+int main() {
+  int z = 3; int y = 4;
+  int u = 5; int x = 8;
+  bool c = true; bool d = false;
+
+  func(((((z)))), ((((y)) + (z) + (y))), (c || d) || d || c, d && c && (d || c), y + (z + u * (x * x * y) / u), 
+      (((z + y))), (z) + (y), c || d || (d && c));
+  return 0;
+}

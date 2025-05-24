@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+    int x = 12345;
+    int y = 3;
+    while (x > 0) {
+        x <<= y;
+        y--;
+    }
+    return x;
+}

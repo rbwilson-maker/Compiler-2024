@@ -1,0 +1,8 @@
+//test error 
+int main(){
+	bool b = true;
+	bool k = false;
+	
+	b = (k && b);
+	return b;
+}

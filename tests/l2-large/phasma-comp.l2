@@ -1,0 +1,6 @@
+//test return -77912
+int main() {
+  int e = 0x13057;
+  e = ~e;
+  return e;
+}

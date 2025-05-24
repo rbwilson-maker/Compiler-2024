@@ -1,0 +1,27 @@
+//test error
+
+/* Unbalanced Oneline Comment
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Saturday, September 12, 2015 at 04:17:17 PM EDT
+ *
+ * This test tests that the compiler can detect an unbalanced nested comment
+ * that occupies only a single line.
+ */
+
+/* Uh-oh /* This /* isn't /* balanced */ At all */ ... */
+
+int main()
+{
+    int x;
+    int y;
+    int z;
+
+    x = 7;
+    y = 42;
+    z = x + y;
+
+    return z;
+}
+

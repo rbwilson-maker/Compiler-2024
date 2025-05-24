@@ -1,0 +1,27 @@
+//test abort
+int pow(int x, int y) {
+    if (y == 0)
+        return 1;
+    return x * pow(x, y - 1);
+}
+
+int exp(int x, int n) {
+    int r = 1;
+    while (n > 1) {
+        if (n  % 2 == 1) {
+            r = x * r;
+        }
+        x = x * x;
+        n = n / 2;
+    }
+    return r * x;
+}
+
+int main() {
+    for (int x = 0; x < 10; x++)  {
+        for (int y = 0; y < 10; y++)  {
+            assert(pow(x, y) == exp(x, y));
+        }
+    }
+    return 0;
+}

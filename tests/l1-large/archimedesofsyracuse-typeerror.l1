@@ -1,0 +1,6 @@
+//test error
+// Fails to comply with L1 syntax - float not defined
+int main() {
+  float x = 1.1;
+  return x * 0;
+}

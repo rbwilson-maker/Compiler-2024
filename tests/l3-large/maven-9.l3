@@ -1,0 +1,22 @@
+//test return 362880
+// Test factorial with custom multiply
+
+int multiply(int x, int y) {
+  int final_res = 0;
+  for (int i = 0; i < y; i++) {
+    final_res += x;
+  }
+  return final_res;
+}
+
+int factorial(int x) {
+  int final_res = 1;
+  for (int i = 1; i < x; i++) {
+    final_res = multiply(final_res, i);
+  }
+  return final_res;
+}
+
+int main() {
+  return factorial(10);
+}

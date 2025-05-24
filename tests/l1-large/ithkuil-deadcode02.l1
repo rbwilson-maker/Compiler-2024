@@ -1,0 +1,14 @@
+//test return 1
+// test dead return statements
+
+int main()
+{
+    int x;
+    x = 1;
+    return x;
+    
+    // div by zero shouldn't trigger compile errors,
+    // since this code is dead
+    x = x / 0;
+    return x;
+}

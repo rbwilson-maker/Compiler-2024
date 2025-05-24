@@ -1,0 +1,11 @@
+//test return 1000
+
+typedef int money;
+
+money profit () {
+    return 100 + 100 + 800;
+}
+
+int main () {
+    return profit();
+}

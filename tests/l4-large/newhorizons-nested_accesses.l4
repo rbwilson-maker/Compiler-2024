@@ -1,0 +1,18 @@
+//test return 26
+
+// wacky ternary + array access combos
+// tfw you return 27 instead of 26: you are not a clown, you are the entire circus
+
+int arr_incr(int[] A, int n) {
+    for (int i = 0; i < n; i++) {
+        A[i]++;
+    }
+    return 2;
+}
+
+int main() {
+    int[] A = alloc_array(int, 10);
+    A[ (A[ A[4] > 4 ? A[10] : A[1] ] + 1) * 2 ] += 15;
+    A[arr_incr(A, 10)] += 10;
+    return A[2];
+}

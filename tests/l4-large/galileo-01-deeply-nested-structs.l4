@@ -1,0 +1,63 @@
+//test return 0
+// check that structs can be nested
+
+struct e {
+  int val;
+};
+
+struct d {
+  struct e e1;
+  struct e e2;
+};
+
+struct c {
+  struct d d1;
+  struct d d2;
+};
+
+struct b {
+  struct c c1;
+  struct c c2;
+};
+
+struct a {
+  struct b b1;
+  struct b b2;
+};
+
+int main() {
+  struct a * p = alloc(struct a);
+  p->b1.c1.d1.e1.val = 0;
+  p->b1.c1.d1.e2.val = 1;
+  p->b1.c1.d2.e1.val = 2;
+  p->b1.c1.d2.e2.val = 3;
+  p->b1.c2.d1.e1.val = 4;
+  p->b1.c2.d1.e2.val = 5;
+  p->b1.c2.d2.e1.val = 6;
+  p->b1.c2.d2.e2.val = 7;
+  p->b2.c1.d1.e1.val = 8;
+  p->b2.c1.d1.e2.val = 9;
+  p->b2.c1.d2.e1.val = 10;
+  p->b2.c1.d2.e2.val = 11;
+  p->b2.c2.d1.e1.val = 12;
+  p->b2.c2.d1.e2.val = 13;
+  p->b2.c2.d2.e1.val = 14;
+  p->b2.c2.d2.e2.val = 15;
+  assert(p->b1.c1.d1.e1.val == 0);
+  assert(p->b1.c1.d1.e2.val == 1);
+  assert(p->b1.c1.d2.e1.val == 2);
+  assert(p->b1.c1.d2.e2.val == 3);
+  assert(p->b1.c2.d1.e1.val == 4);
+  assert(p->b1.c2.d1.e2.val == 5);
+  assert(p->b1.c2.d2.e1.val == 6);
+  assert(p->b1.c2.d2.e2.val == 7);
+  assert(p->b2.c1.d1.e1.val == 8);
+  assert(p->b2.c1.d1.e2.val == 9);
+  assert(p->b2.c1.d2.e1.val == 10);
+  assert(p->b2.c1.d2.e2.val == 11);
+  assert(p->b2.c2.d1.e1.val == 12);
+  assert(p->b2.c2.d1.e2.val == 13);
+  assert(p->b2.c2.d2.e1.val == 14);
+  assert(p->b2.c2.d2.e2.val == 15);
+  return 0;
+}

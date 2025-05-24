@@ -1,0 +1,7 @@
+//test error
+// foo is not a type name, foo * bar is a multiplication expression
+int main()
+{
+  foo * bar;
+  return 0;
+}

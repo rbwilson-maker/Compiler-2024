@@ -1,0 +1,17 @@
+//test return 1
+// comparison of pointers and things referenced at pointers
+int main() {
+  int* x = alloc(int);
+  int* y = alloc(int);
+  assert(x != y);
+  y = x;
+  assert(x == y);
+
+  x = alloc(int);
+  y = alloc(int);
+  *x = 1;
+  *y = 1;
+  assert(*x == *y);
+
+  return 1;
+}

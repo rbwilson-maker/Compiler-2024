@@ -1,0 +1,15 @@
+//test div-by-zero
+//division by 0 error triggered by int_min div -1
+
+int main()
+{
+  int TMAX;
+  int wrong;
+  int a;
+
+  a = -1;
+  TMAX = 2147483647;
+
+  wrong = (TMAX - a) / a;
+  return wrong;
+}

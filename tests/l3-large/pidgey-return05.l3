@@ -1,0 +1,13 @@
+//test return 0
+typedef int a;
+typedef a b;
+typedef a c;
+
+c hello(b param);
+int hello(a param) {
+    return 0;
+}
+
+int main() {
+    return hello(0);
+}

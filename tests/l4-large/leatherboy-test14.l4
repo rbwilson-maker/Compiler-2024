@@ -1,0 +1,29 @@
+//test error
+
+int f1() {
+    return 21/4;
+}
+
+int f2(int t2, int t1) {
+    int t3 = 0;
+    for(int i = 0; i<1;i++){
+        t3 = t2 - t1 +53 + t1;
+    }
+    return t3;
+}
+
+int f3(int t7, int t6, int t5) {
+    return t7*-23+t6 + t5;
+}
+
+int main(){
+    int* A = NULL;
+    A = *NULL;
+    int t1 = f1();
+    int t2 = t1 - t1 + 432*34;
+    int t3 = f2(t2, t1);
+    int t5 = t2 * t3 - t1 - t2 - 1;
+    int t6 = t5-t3+t1;
+    int t7 = t6 *23 +t1 - 2*t5;
+    return f3(t7, t6, t5);
+}

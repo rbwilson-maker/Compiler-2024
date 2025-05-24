@@ -1,0 +1,12 @@
+//test typecheck
+
+int sum(int i, int j);
+
+int main ()
+{
+  return sum(15150, 261);
+}
+
+int sum (int x, int y) {
+  return x + y;
+}

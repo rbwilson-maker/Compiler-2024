@@ -1,0 +1,10 @@
+//test abort
+typedef bool ab;
+
+bool falsehood(){ return 0 < -1;}
+int main()
+{
+	ab abort = falsehood();
+	assert(abort);
+	return 0;
+}

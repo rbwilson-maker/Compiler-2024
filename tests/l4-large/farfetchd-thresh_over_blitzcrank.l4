@@ -1,0 +1,17 @@
+//test return 5;
+
+struct Feeder {
+    int thresh; 
+};
+
+typedef struct Feeder h;
+
+h* Feeder(int target) {
+    h* p = alloc(h);
+    p -> thresh = 5;
+    return p;
+}
+
+int main() {
+    return Feeder(5)->thresh;
+}

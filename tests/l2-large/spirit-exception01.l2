@@ -1,0 +1,7 @@
+//test div-by-zero
+int main() {
+    for (int i = 0; i <= 69; i++) {
+        10 % (69 - i);
+    }
+    return 2;
+}

@@ -1,0 +1,12 @@
+//test error
+//really really can't cast a bool to an int
+int main() {
+
+    int x;
+    if (true) {
+        x = 0;
+    } else {
+        x = 2;
+    }
+    return x + true;
+}

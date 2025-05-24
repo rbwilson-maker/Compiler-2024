@@ -1,0 +1,10 @@
+//test return 3
+
+void f(int a, int b, int c, int d, int e, int f, int g) {
+	int x = a + b - c;
+}
+
+int main() {
+	f(1, 2, 3, 4, 5, 6, 7);
+	return 3;
+}

@@ -1,0 +1,24 @@
+//test return 123
+
+int bar(int a, bool b);
+
+typedef int num;
+typedef bool tf;
+
+num bar(num heh, tf wtf);
+
+int bar(num b, bool ha);
+
+num bar(int ha, tf thing) {
+  bool hm = !thing;
+  if (hm) {
+    return ha;
+  } else {
+    int ret = ha + 1;
+    return ret;
+  }
+}
+
+num main() {
+  return bar(122, true);
+}

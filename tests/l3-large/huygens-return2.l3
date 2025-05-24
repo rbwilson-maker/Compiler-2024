@@ -1,0 +1,20 @@
+//test return -1
+
+int main() {
+    int x = 2;
+    int y = 3;
+    int z = 100;
+    int re = 0;
+
+    if (x > 1)
+      if (y > 2)
+        if (z < 10)
+            re += 1;
+        else
+            re -= 1;
+      else
+        re = 0;
+    else
+      re--;
+    return re;
+}

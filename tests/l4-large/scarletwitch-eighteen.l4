@@ -1,0 +1,22 @@
+//test return 1
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+typedef struct Node node;
+
+int dfs(node *x, int y) {
+    if (x->data == y) {
+        return x->data;
+    } else {
+        return dfs((*x).next, y);
+    }
+}
+
+int main() {
+    node *x = alloc(node);
+    x->data = 1;
+    return dfs(x, 1);
+}

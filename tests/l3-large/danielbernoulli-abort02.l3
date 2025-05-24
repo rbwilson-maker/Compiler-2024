@@ -1,0 +1,16 @@
+//test abort 
+// defines an internal function with name abort
+
+void call1() {
+    assert(1 == 1); 
+}
+
+void abort(int x, int y) {
+    int z = x + y;
+}
+
+int main() {
+    call1(); 
+    assert(1 == 2);
+    return 0; 
+}

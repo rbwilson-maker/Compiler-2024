@@ -1,0 +1,11 @@
+//test error 
+
+struct a {
+  int aa;
+};
+
+typedef A a; // must specify struct 
+
+int main() {
+  return 0;
+}

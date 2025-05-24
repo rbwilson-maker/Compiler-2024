@@ -1,0 +1,29 @@
+//test return 40
+
+int somethingelse(int b);
+
+int something(int a){
+  int x;
+  for(x = 0; x < a; x++){
+    if(x > a/2){
+      x *= 2;
+    }
+  }
+  return somethingelse(x);
+}
+
+int somethingelse(int b){
+  int y;
+  for(y = 0; y < b; y++){
+    if(y > b/2){
+      y *= 3;
+    }
+  }
+  if(b < 100) return y;
+  return something(y);
+}
+
+int main(){
+  int a = something(somethingelse(13));
+  return a;
+}

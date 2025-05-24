@@ -1,0 +1,15 @@
+//test return 1025
+//same name for var and function
+
+int swexn(int stack_size)
+{
+    int fooled_you_once_fooled_you_twice = stack_size;
+    int check_yo_typechecker = 1;
+    return fooled_you_once_fooled_you_twice + check_yo_typechecker;
+}
+
+int main()
+{
+   int swexn = swexn(1024);
+   return swexn;
+}

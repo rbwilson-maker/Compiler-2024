@@ -1,0 +1,18 @@
+//test return 20540
+
+//computes total area of squares with sides length 1 - 39
+
+int compute_area(int a) {
+    int a2 = a*a;
+    assert(a2 > 0);
+    return a2;
+}
+
+int main() {
+    int number = 40;
+    int total_area = 0;
+    for (int i = 1; i < number; i++) {
+        total_area += compute_area(i);
+    }
+    return total_area;
+}

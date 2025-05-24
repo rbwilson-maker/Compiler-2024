@@ -1,0 +1,8 @@
+//test div-by-zero 
+int main(){
+	int i = 7;
+	while((32>>i) <= 1000/(i-1)){
+		i = i-1;
+	}
+	return i;
+}

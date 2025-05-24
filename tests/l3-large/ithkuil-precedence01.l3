@@ -1,0 +1,14 @@
+//test div-by-zero
+
+typedef int hello;
+
+int cond (hello x, hello y, hello z) {
+  if (x > 0) cond (x-1, y, z);
+
+  return x + y + z;
+}
+
+int main () {
+  int x = 0;
+  return cond(x+1, x+2/0, x/0) + x;
+}

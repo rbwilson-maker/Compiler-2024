@@ -1,0 +1,32 @@
+//test return -2
+
+
+struct s1 {
+    int a;
+    int b;
+};
+
+struct s2 {
+    bool a;
+    bool b;
+};
+
+struct s3 {
+    int a;
+    bool b;
+};
+
+int main() {
+    struct s1 *s1 = alloc(struct s1);
+    struct s2 *s2 = alloc(struct s2);
+    struct s3 *s3 = alloc(struct s3);
+
+    s1->a = 5;
+    s3->a = 3;
+    s1->b = s3->a - s1->a;
+    s2->a = s1->a > s3->a;
+    s2->b = !s3->b;
+
+
+    return s2->b ? s1->b : s3->a;
+}

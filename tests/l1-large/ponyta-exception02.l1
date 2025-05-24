@@ -1,0 +1,11 @@
+//test div-by-zero
+// divide by zero variable
+
+int main()
+{
+	int x;
+
+	x = 42 - 42;
+
+	return 1/x;
+}

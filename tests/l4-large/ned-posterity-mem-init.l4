@@ -1,0 +1,13 @@
+//test return 0
+
+// Check that memory is initialized to 0
+
+int main() {
+  int[] arr = alloc_array(int, 1 << 16);
+
+  int running_sum = 0;
+  for(int i = 0; i < (1 << 16); i++) {
+    running_sum += arr[i];
+  }
+  return running_sum;
+}

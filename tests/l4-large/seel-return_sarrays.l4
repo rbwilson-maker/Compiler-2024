@@ -1,0 +1,32 @@
+//test return 42
+
+struct arrays {
+  int*[] arr1;
+  int[] arr2;
+};
+
+struct sarrays {
+  struct arrays* s1;
+  struct arrays* s2;
+};
+
+int main() {
+  struct arrays *a = alloc(struct arrays);
+  a -> arr1 = alloc_array(int*, 10);
+  a -> arr2 = alloc_array(int, 10);
+
+  struct arrays *b = alloc(struct arrays);
+  b -> arr1 = alloc_array(int*, 10);
+  b -> arr2 = alloc_array(int, 10);
+
+  struct sarrays *c = alloc(struct sarrays);
+  c -> s1 = a;
+  c -> s2 = b;
+
+  if (c->s1->arr2[0] == 0) {
+    return 42;
+  }
+  else {
+    return 43;
+  }
+}

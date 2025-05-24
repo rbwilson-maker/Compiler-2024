@@ -1,0 +1,19 @@
+//test return 31
+int pascal(int n, int k){
+  if(k == 0 || n == k)
+    return 1;
+  return pascal(n-1,k-1) + pascal(n-1,k);
+}
+
+int firstFiveRow(){
+  int sum = 0;
+  for(int n=0; n < 5; n++){
+    for(int k = 0; k<=n; k ++){
+      sum += pascal(n,k);
+    }
+  }
+  return sum;
+}
+int main(){
+  return firstFiveRow();
+}

@@ -1,0 +1,15 @@
+//test return 5041
+
+int main() {
+    int a = 1;
+    int i = 1;
+
+    while(i < 5040) {
+        i++;
+        i++;
+        i++;
+        i--;
+    }
+
+    return i * a;
+}

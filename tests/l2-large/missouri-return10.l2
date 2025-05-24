@@ -1,0 +1,15 @@
+//test return -5
+// Decrementing in for loops
+
+int main () {
+    1;
+    2;
+    3;
+    4;
+    5;
+    int k;
+    for (k = 15; k > -5; k -= 2) {
+        k++;
+    }
+    return k;
+}

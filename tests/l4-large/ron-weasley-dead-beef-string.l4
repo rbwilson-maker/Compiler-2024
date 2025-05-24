@@ -1,0 +1,134 @@
+//test return 0
+
+
+typedef struct db_string_node db_str_n; // deadbeef string type
+
+struct db_string_node {
+    int letter;
+    db_str_n *next;
+};
+
+struct db_str_ct {
+    db_str_n *head;
+    db_str_n *tail;
+    int len;
+};
+
+typedef struct db_str_ct db_str;
+
+
+db_str* getStr(int letter){
+    // assert we have a valid value
+    assert(letter > 9 || letter == 0);
+    assert(letter < 16);
+    
+    // allocate data structs
+    db_str* new = alloc(db_str);
+    db_str_n* node = alloc(db_str_n);
+    
+    // set the data for the node
+    node->letter = letter;
+
+    // point to it using the string holder
+    new->head = node;
+    new->tail = node;
+
+    return new;
+}
+
+
+void appendStr(db_str* s1, db_str* s2){
+    
+    // gather the tail of the first and the
+    // head and tail of the second
+    db_str_n* tail1 = s1->tail;
+    db_str_n* head2 = s2->head;
+    db_str_n* tail2 = s2->tail;
+    
+
+    // connect the head of the second to the
+    // tail of the first
+    tail1->next = head2;
+    s1->tail = tail2;
+
+}
+
+
+void disconnectHolder(db_str* string_holder){
+    string_holder->head = NULL;
+    string_holder->tail = NULL;
+    return;
+}
+
+
+void appendStrAndDc(db_str* s1, db_str* s2){
+    appendStr(s1, s2);
+    disconnectHolder(s2);
+}
+
+
+void freeHolder(db_str* holder){
+    
+    db_str_n* node = holder->head;
+    while(node != holder->tail){
+        // retrive next
+        db_str_n* next = node->next;
+        
+        // release the reference
+        node->next = NULL;
+
+        // change node to next
+        node = next;
+    }
+    
+    return;
+}
+
+
+void printHolder(db_str* holder){
+    
+    int word = 0;
+    db_str_n* node = holder->head;
+    bool break_bool = false;
+    int upper_byte_mask = 0xFF000000;
+    while (!break_bool) {
+        if (node->letter == 0 || (word & upper_byte_mask) != 0){
+            // "print word" and load the next
+            print_hex(word);
+            word = 0;
+        } else {
+            // shift the hex and add the letter 
+            word *= 16;
+            word += node->letter;
+        }
+
+        if (node == holder->tail) break_bool = true;
+        node = node->next;
+
+    }
+
+    // finally check if the last word was emptied out, if not, print
+    if (word != 0) print_hex(word);
+
+    return;
+}
+
+
+typedef db_str* str_t; 
+
+
+int main(){
+  str_t s = getStr(0xF);
+  appendStrAndDc(s, getStr(0xE));
+  appendStrAndDc(s, getStr(0xE));
+  appendStrAndDc(s, getStr(0xD));
+  appendStrAndDc(s, getStr(0));
+  appendStrAndDc(s, getStr(0xB));
+  appendStrAndDc(s, getStr(0xE));
+  appendStrAndDc(s, getStr(0xE));
+  appendStrAndDc(s, getStr(0xF));
+
+  printHolder(s);
+  return 0;
+}
+

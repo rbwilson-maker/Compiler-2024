@@ -1,0 +1,71 @@
+//test return 55
+
+/*
+ * simple trees
+ */
+
+
+struct tree {
+    int val;
+
+    struct tree* left;
+    struct tree* right;
+};
+
+typedef struct tree tree_l;
+
+tree_l* init_tree_node(int val){
+
+    tree_l* root = alloc(struct tree);
+
+    root->val = val;
+
+    return root;
+}
+
+void insert_tree(tree_l* root, int val){
+
+    if (root == NULL) return;
+
+    if (root->val > val){
+        if (root->left == NULL){
+            root->left = init_tree_node(val);
+        } else {
+            insert_tree(root->left, val);
+        }
+    } else {
+        if (root->right == NULL){
+            root->right = init_tree_node(val);
+        } else {
+            insert_tree(root->right, val);
+        }
+    }
+
+}
+
+int sum_tree (tree_l* root){
+    if (root == NULL) return 0;
+
+    return root->val + sum_tree(root->right) + sum_tree(root->left);
+}
+
+int main() {
+    
+    tree_l* root = init_tree_node(5);
+
+    insert_tree(root, 2);
+    insert_tree(root, 3);
+    insert_tree(root, 4);
+    insert_tree(root, 1);
+    insert_tree(root, 8);
+    insert_tree(root, 7);
+    insert_tree(root, 9);
+    insert_tree(root, 10);
+    insert_tree(root, 6);
+
+    assert(root->val == 5);
+    assert (sum_tree(root->left) == 10);
+    assert (sum_tree(root->right) == 40);
+
+    return sum_tree(root);
+}

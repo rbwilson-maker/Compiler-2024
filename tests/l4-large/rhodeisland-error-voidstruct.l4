@@ -1,0 +1,9 @@
+//test error
+struct foo {
+	void y;
+	void* z;
+};
+
+int main() {
+	return 2;
+}

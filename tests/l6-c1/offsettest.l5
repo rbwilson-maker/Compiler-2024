@@ -1,0 +1,20 @@
+//test return 42
+
+struct Mess {
+  bool isMessy;
+  string messyMsg;
+  int messyDegree;
+};
+
+int main() {
+  struct Mess * mess = alloc(struct Mess);
+  mess->isMessy = true;
+  mess->messyMsg = "hello world";
+  mess->messyDegree = 42;
+  if (mess->isMessy) {
+    if (string_equal(mess->messyMsg, "hello world")) {
+      return mess->messyDegree;
+    }
+  }
+  return 1;
+}

@@ -1,0 +1,15 @@
+//test div-by-zero
+// division by 0
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+
+  a = -2147483648;
+  a = a - a;
+  b = 10;
+  return b/a;
+}

@@ -1,0 +1,30 @@
+//test return 19
+
+// compute a to the power of b naively, not that interesting
+int power(int a, int b) {
+    int r = 1;
+    for(int i = 0; i < b; i++) {
+        r *= a;
+    }
+    return r;
+}
+
+// compute the ith integer root of x, i.e. the smallest k such that k**i <= x
+int iroot(int x, int i) {
+    int lo = 0;
+    int hi = x;
+
+    while(lo < hi) {
+        int mid = lo + (hi - lo) / 2;
+        if(power(mid + 1, i) > x)
+            hi = mid;
+        else
+            lo = mid + 1;
+    }
+    return lo;
+}
+
+int main() {
+    // the integer square root of 100 is 10, but the integer square root of 99 is 9 since 9 is the smallest number with k**2 <= 99
+    return iroot(100, 2) + iroot(99, 2);
+}

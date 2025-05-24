@@ -1,0 +1,12 @@
+//test div-by-zero
+
+/* This test should raise a SIGFPE because it is illegal to 
+   use the modulus instruction when k = 0
+*/
+
+int main ()
+  {
+    int k = 0;
+    int i = 12;
+    return (i % k);
+  }

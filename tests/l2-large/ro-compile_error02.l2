@@ -1,0 +1,14 @@
+//test error
+// checking typechecking issues, with operations
+
+int main() {
+    a bool = true;
+    b bool = false;
+    c int = 0;
+    d int = 1;
+
+    x = c && d;
+    y = a & b;
+
+    return 1
+}

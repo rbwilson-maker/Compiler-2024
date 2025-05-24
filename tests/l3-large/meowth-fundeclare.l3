@@ -1,0 +1,26 @@
+//test return 1
+/* Test typechecking function decls and defns */
+
+int declare_me_once(int x);
+int declare_me_twice(bool one);
+int declare_me_twice(bool two);
+int declare_me_thrice(int a, bool b);
+
+int declare_me_once(int y) {
+  return y;
+}
+
+int declare_me_twice(bool three) {
+  return 1;
+}
+
+int main () {
+  int x = 0;
+  bool one = true;
+  int declare_me_thrice = declare_me_once(x) + declare_me_twice(one);
+  return declare_me_thrice;
+}
+
+// I'm declared but never defined
+int declare_me_thrice(int a, bool b);
+int declare_me_thrice(int b, bool a);

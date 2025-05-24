@@ -1,0 +1,20 @@
+//test abort
+
+/* assert fails test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, October 11, 2015 at 10:00:18 PM EDT
+ *
+ * Tests that assert is compiled correctly
+ */
+
+int main()
+{
+    if (false) {
+        assert(false); 
+    } else {
+        assert(false); 
+    }
+    return -1; 
+}

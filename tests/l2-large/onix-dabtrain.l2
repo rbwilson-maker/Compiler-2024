@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+int main()
+{
+  int choo = 0;
+  while (choo == 0)
+  {
+    choo = 0;
+    choo = 0;
+  }
+  return 1;
+}

@@ -1,0 +1,17 @@
+//test error
+//void fn can only have "return;" statements (even if value reterned is type void) 
+
+void hi(int x){
+	1 + 1;
+}
+
+void bye(int z){
+	return hi(z);
+}
+
+int main(){
+
+	bye(0);
+	return 0;
+}
+

@@ -1,0 +1,22 @@
+//test return 211
+
+int main() {
+    int result = 1;
+    bool found = false;
+
+    while (!found) {
+
+     if (result % 7 == 0) {
+    	if (result % 5 == 0) {
+	   if (result % 3 == 0) {
+	   	if (result % 2 == 0) {
+		    found = true;
+		}
+	    }
+	}
+      }
+      result++;
+    }
+
+    return result;
+}

@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main ()
+{
+  int x = 100000;
+  int i = 3;
+  while(i >= 0) {
+    i--;
+    x >>= i;
+  }
+  return x;
+}

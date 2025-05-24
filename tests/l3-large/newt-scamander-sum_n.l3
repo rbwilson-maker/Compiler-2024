@@ -1,0 +1,14 @@
+//test return 1275
+
+int sum_n(int n, int accum) {
+	if (n == 0) return accum;
+	else {
+		return sum_n(n-1, accum+n);
+	}
+}
+
+int main() {
+	int n = 50;
+	int sum = sum_n(n, 0);
+	return sum;
+}

@@ -1,0 +1,24 @@
+//test return 100
+
+typedef int d;
+typedef d e;
+
+d four(e v);
+d five(d f);
+e six(e f);
+
+d four(e v) {
+  return five(v + 0 + 0 + 0 + 0 + 0 + 0 + 0x00);
+}
+
+d five(d f) {
+  return six(100);
+}
+
+e six(e f) {
+  return f;
+}
+
+int main() {
+  return four(400000);
+}

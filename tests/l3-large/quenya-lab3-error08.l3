@@ -1,0 +1,14 @@
+//test error
+// Function definition within function definition
+
+int foo() {
+  int bar() {
+    return 0;
+  }
+
+  return bar();
+}
+
+int main() {
+  return foo();
+}

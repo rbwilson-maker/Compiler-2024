@@ -1,0 +1,14 @@
+//test return 0
+
+int f(int[] x) {
+    x[1] = 2;
+    x = alloc_array(int, 1);
+    return 0;
+}
+
+int main() {
+    int[] x = alloc_array(int, 2);
+    x[f(x)] = x[1];
+    assert(x[0] == 2 && x[1] == 2);
+    return 0;
+}

@@ -1,0 +1,10 @@
+//test return 25
+
+typedef int x1;
+
+int main() {
+  x1* bar = alloc(int);
+  *bar = 5;
+  *bar = *bar**bar;
+  return *bar;
+}

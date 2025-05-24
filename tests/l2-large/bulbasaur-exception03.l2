@@ -1,0 +1,8 @@
+//test div-by-zero
+// tests bounds on bit-shifting
+
+int main() {
+  int x = 50;
+  int y = 51;
+  return 5 << (x - y);
+}

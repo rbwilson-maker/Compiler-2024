@@ -1,0 +1,10 @@
+//test error
+/* recursive struct */
+
+struct s {
+    struct s exe;
+};
+
+int main() {
+    return 0;
+}

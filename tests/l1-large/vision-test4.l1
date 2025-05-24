@@ -1,0 +1,8 @@
+//test return 9
+
+int main() {
+    int a = 65; 
+    int b = 12; 
+    int c = 9; 
+    return (a + b + c) / c; 
+}

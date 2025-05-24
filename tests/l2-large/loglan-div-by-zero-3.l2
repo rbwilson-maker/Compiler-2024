@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+    int x = 5;
+    int y = 2;
+    int z = 3;
+    for (int i = 10; i >= 0; i--){
+        if (x == i){
+            z = y / (x-5);
+        }
+    }
+    return x;
+}

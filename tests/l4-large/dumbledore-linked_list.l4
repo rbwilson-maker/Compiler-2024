@@ -1,0 +1,43 @@
+//test return 12;
+
+struct list {
+  int data;
+  struct list* next;
+};
+typedef struct list* list;
+
+list nil() {
+  return NULL;
+}
+
+list cons (int x, list l) {
+  list p = alloc (struct list);
+  p->data = x;
+  p->next = l;
+  return p;
+}
+
+int main() {
+  list all = alloc (struct list);
+
+  list last = alloc (struct list);
+  last->data = 0;
+
+  for (int i = 1; i < 13; i++) {
+    all = cons (i, all);
+  }
+  
+  int i = 12;
+  while (all->next != NULL) {
+    assert(all->data == i);
+    all = all->next;
+    i--;
+  }
+
+  if (all->next == NULL) {
+    return 12;
+  }
+  else {
+    return 0;
+  }
+}

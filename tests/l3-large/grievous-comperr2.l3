@@ -1,0 +1,8 @@
+//test typecheck
+
+int f(int x){
+    return main();
+}
+int main() {
+    return f(100);
+}

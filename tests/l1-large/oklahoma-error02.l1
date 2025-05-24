@@ -1,0 +1,14 @@
+//test error
+// immediate on left side of assignment
+
+int main()
+{
+  int a = 4;
+  int b = a / 1;
+  int c = a + b;
+  b = a * b * c;
+  c = b * a * c;
+  a = c - b;
+  int 5 = a;
+  return (c / a);
+}

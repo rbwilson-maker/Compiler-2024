@@ -1,0 +1,30 @@
+//test return 31
+// find the smallest prime greater than a number
+
+bool is_prime(int k)
+{
+  if (k == 1) {
+    return false;
+  }
+  else if (k == 2) {
+    return true;
+  }
+  
+  int i;
+  for (i = 2; i*i < k; i++) {
+    if (k % i == 0) {
+       return false;
+    }
+  }
+  return true;
+}
+
+int main()
+{
+  int n = 30;
+  int p = n;
+  while (!is_prime(p)) {
+    p++;
+  }
+  return p;
+}

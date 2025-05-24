@@ -1,0 +1,19 @@
+//test return 3
+
+void f()
+{
+  int x = 3;
+  return;
+}
+
+int g()
+{
+  int y = 3;
+  return y;
+}
+
+int main()
+{
+  f();
+  return g();
+}

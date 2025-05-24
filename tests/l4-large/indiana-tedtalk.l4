@@ -1,0 +1,23 @@
+//test return 1
+//541
+typedef int conference;
+typedef conference[] conferences;
+
+bool banned(conference c,  conferences C, int s){
+  for(int i = 0; i <= s; i++){ //shadowing
+    if(C[i] == i) return true;
+  }
+  return false;
+}
+
+int main(){
+  conference[] confs = alloc_array(int, 541);
+    for(int i = 0; i < 541; i++){
+    confs[i] = i;
+  }
+  bool FBOOL = false;
+  for(int i = 0; i < 541; i++){
+    FBOOL = FBOOL &&  banned(i, confs, 541);
+  }
+  return FBOOL ? 0 : 1;
+}

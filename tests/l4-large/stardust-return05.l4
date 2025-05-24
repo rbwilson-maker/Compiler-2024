@@ -1,0 +1,30 @@
+//test return 1
+//isPrime returns true if input is a prime number
+//as input is 199, which is a prime number, function will return true
+
+typedef int myint;
+
+bool isPrime(int x) {
+  if (x < 2) {
+    return false;
+  } else {
+    int y = 2;
+    while (y < x) {
+      if (x % y == 0) {
+        return false;
+      }
+      y++;
+    }
+    return true;
+  }
+}
+
+int main() {
+  myint* y = alloc(myint);
+  *y = 199;
+  if (isPrime(*y)) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

@@ -1,0 +1,15 @@
+//test return 0
+// Tests that code properly evaluates ternary instructions. (i.e. doesn't evaluate them!)
+
+int main () {
+
+    int x = 3;
+    int y = 4;
+
+    for (; x < y; x++) { }
+
+    int z = x == y ? x : x / (x - y);
+
+    return z - y;
+}
+

@@ -1,0 +1,13 @@
+//test div-by-zero
+// even if division not used, must be evaluated in function argument 
+
+int f(int a, int b)
+{
+    return a;
+    // ignores b 
+}
+
+int main()
+{
+  return f(411, 1 / 0);
+}

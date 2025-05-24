@@ -1,0 +1,12 @@
+//test return 1836
+
+int main(){
+	bool[] compte_d_artois = alloc_array(bool, 1830);
+    bool charles_x = true;
+	compte_d_artois[1824] = charles_x;
+	if(compte_d_artois[1824]){
+        return 1836;
+    } else {
+        return -1;
+    }
+}

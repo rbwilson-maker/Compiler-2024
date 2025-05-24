@@ -1,0 +1,13 @@
+//test memerror
+int testy(int x, int y);
+int testy(int x, int y);
+
+int main() { 
+    int i=10;
+    int j=0;
+    int[] s=alloc_array(int, 5);
+    for(;i>~2;i--) {
+        s[i % 5]=j+i;
+    }
+    return j;
+}

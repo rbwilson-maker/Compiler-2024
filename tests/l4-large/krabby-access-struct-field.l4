@@ -1,0 +1,15 @@
+//test return 5
+
+struct point {
+       int x;
+       int y;
+};
+
+typedef struct point pt;
+
+int main() {
+    pt* p = alloc(pt);
+    p->x = 4;
+    p->y = 3;
+    return p->x + p->y - 2;
+}

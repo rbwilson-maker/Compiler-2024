@@ -1,0 +1,15 @@
+//test return 0
+// chain them typedefs
+
+typedef int the;
+typedef the raven;
+typedef raven once;
+typedef once upon;
+typedef upon a;
+typedef a midnight;
+typedef midnight dreary;
+
+dreary main() {
+    raven edgar_allen_poe = 0;
+    return edgar_allen_poe;
+}

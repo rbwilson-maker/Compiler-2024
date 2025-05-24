@@ -1,0 +1,56 @@
+//test return 5040
+
+typedef int int1;
+typedef int * int2;
+typedef int ** int3;
+typedef int *** int4;
+typedef int **** int5;
+typedef int ***** int6;
+typedef int ****** int7;
+
+int main() {
+  int * p1 = alloc(int1);
+
+  int ** p2 = alloc(int2);
+  *p2 =       alloc(int1);
+
+  int *** p3 = alloc(int3);
+  *p3        = alloc(int2);
+  **p3       = alloc(int1);
+
+  int **** p4 = alloc(int4);
+  *p4         = alloc(int3);
+  **p4        = alloc(int2);
+  ***p4       = alloc(int1);
+
+  int ***** p5 = alloc(int5);
+  *p5          = alloc(int4);
+  **p5         = alloc(int3);
+  ***p5        = alloc(int2);
+  ****p5       = alloc(int1);
+
+  int ****** p6 = alloc(int6);
+  *p6           = alloc(int5);
+  **p6          = alloc(int4);
+  ***p6         = alloc(int3);
+  ****p6        = alloc(int2);
+  *****p6       = alloc(int1);
+
+  int ******* p7 = alloc(int7);
+  *p7            = alloc(int6);
+  **p7           = alloc(int5);
+  ***p7          = alloc(int4);
+  ****p7         = alloc(int3);
+  *****p7        = alloc(int2);
+  ******p7       = alloc(int1);
+
+  *p1 = 1;
+  **p2 = 2;
+  ***p3 = 3;
+  ****p4 = 4;
+  *****p5 = 5;
+  ******p6 = 6;
+  *******p7 = 7;
+
+  return *p1***p2****p3*****p4******p5*******p6********p7;
+}

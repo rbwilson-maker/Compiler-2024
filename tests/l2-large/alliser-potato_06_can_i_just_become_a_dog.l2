@@ -1,0 +1,28 @@
+//test typecheck
+//test infloop
+
+
+//      ,                    ," e`--o
+//     ((                   (  | __,'
+//      \\~----------------' \_;/
+//      (                      /
+//      /) ._______________.  )     <-- a happy and talented boy!!
+//     (( (               (( (
+//      ``-'               ``-'
+
+
+int main () {
+
+  int woof = 3005;
+  int bark = 8427;
+
+  bool barking = true;
+
+  while (barking) {
+    woof = woof + bark;
+  }
+
+  return woof / woof / bark / bark / woof;
+
+
+}

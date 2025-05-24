@@ -1,0 +1,5789 @@
+//test return 55
+// tests allocating a large struct. a very large struct. plus, handling a lot
+// of struct decls/defns and typedefs.
+
+struct Bulbasaur
+{
+  bool isPikachu;
+};
+
+struct Ivysaur
+{
+  bool isPikachu;
+};
+
+struct Venusaur
+{
+  bool isPikachu;
+};
+
+struct Charmander
+{
+  bool isPikachu;
+};
+
+struct Charmeleon
+{
+  bool isPikachu;
+};
+
+struct Charizard
+{
+  bool isPikachu;
+};
+
+struct Squirtle
+{
+  bool isPikachu;
+};
+
+struct Wartortle
+{
+  bool isPikachu;
+};
+
+struct Blastoise
+{
+  bool isPikachu;
+};
+
+struct Caterpie
+{
+  bool isPikachu;
+};
+
+struct Metapod
+{
+  bool isPikachu;
+};
+
+struct Butterfree
+{
+  bool isPikachu;
+};
+
+struct Weedle
+{
+  bool isPikachu;
+};
+
+struct Kakuna
+{
+  bool isPikachu;
+};
+
+struct Beedrill
+{
+  bool isPikachu;
+};
+
+struct Pidgey
+{
+  bool isPikachu;
+};
+
+struct Pidgeotto
+{
+  bool isPikachu;
+};
+
+struct Pidgeot
+{
+  bool isPikachu;
+};
+
+struct Rattata
+{
+  bool isPikachu;
+};
+
+struct Raticate
+{
+  bool isPikachu;
+};
+
+struct Spearow
+{
+  bool isPikachu;
+};
+
+struct Fearow
+{
+  bool isPikachu;
+};
+
+struct Ekans
+{
+  bool isPikachu;
+};
+
+struct Arbok
+{
+  bool isPikachu;
+};
+
+struct Pikachu
+{
+  bool isPikachu;
+};
+
+struct Raichu
+{
+  bool isPikachu;
+};
+
+struct Sandshrew
+{
+  bool isPikachu;
+};
+
+struct Sandslash
+{
+  bool isPikachu;
+};
+
+struct NidoranF
+{
+  bool isPikachu;
+};
+
+struct Nidorina
+{
+  bool isPikachu;
+};
+
+struct Nidoqueen
+{
+  bool isPikachu;
+};
+
+struct NidoranM
+{
+  bool isPikachu;
+};
+
+struct Nidorino
+{
+  bool isPikachu;
+};
+
+struct Nidoking
+{
+  bool isPikachu;
+};
+
+struct Clefairy
+{
+  bool isPikachu;
+};
+
+struct Clefable
+{
+  bool isPikachu;
+};
+
+struct Vulpix
+{
+  bool isPikachu;
+};
+
+struct Ninetales
+{
+  bool isPikachu;
+};
+
+struct Jigglypuff
+{
+  bool isPikachu;
+};
+
+struct Wigglytuff
+{
+  bool isPikachu;
+};
+
+struct Zubat
+{
+  bool isPikachu;
+};
+
+struct Golbat
+{
+  bool isPikachu;
+};
+
+struct Oddish
+{
+  bool isPikachu;
+};
+
+struct Gloom
+{
+  bool isPikachu;
+};
+
+struct Vileplume
+{
+  bool isPikachu;
+};
+
+struct Paras
+{
+  bool isPikachu;
+};
+
+struct Parasect
+{
+  bool isPikachu;
+};
+
+struct Venonat
+{
+  bool isPikachu;
+};
+
+struct Venomoth
+{
+  bool isPikachu;
+};
+
+struct Diglett
+{
+  bool isPikachu;
+};
+
+struct Dugtrio
+{
+  bool isPikachu;
+};
+
+struct Meowth
+{
+  bool isPikachu;
+};
+
+struct Persian
+{
+  bool isPikachu;
+};
+
+struct Psyduck
+{
+  bool isPikachu;
+};
+
+struct Golduck
+{
+  bool isPikachu;
+};
+
+struct Mankey
+{
+  bool isPikachu;
+};
+
+struct Primeape
+{
+  bool isPikachu;
+};
+
+struct Growlithe
+{
+  bool isPikachu;
+};
+
+struct Arcanine
+{
+  bool isPikachu;
+};
+
+struct Poliwag
+{
+  bool isPikachu;
+};
+
+struct Poliwhirl
+{
+  bool isPikachu;
+};
+
+struct Poliwrath
+{
+  bool isPikachu;
+};
+
+struct Abra
+{
+  bool isPikachu;
+};
+
+struct Kadabra
+{
+  bool isPikachu;
+};
+
+struct Alakazam
+{
+  bool isPikachu;
+};
+
+struct Machop
+{
+  bool isPikachu;
+};
+
+struct Machoke
+{
+  bool isPikachu;
+};
+
+struct Machamp
+{
+  bool isPikachu;
+};
+
+struct Bellsprout
+{
+  bool isPikachu;
+};
+
+struct Weepinbell
+{
+  bool isPikachu;
+};
+
+struct Victreebel
+{
+  bool isPikachu;
+};
+
+struct Tentacool
+{
+  bool isPikachu;
+};
+
+struct Tentacruel
+{
+  bool isPikachu;
+};
+
+struct Geodude
+{
+  bool isPikachu;
+};
+
+struct Graveler
+{
+  bool isPikachu;
+};
+
+struct Golem
+{
+  bool isPikachu;
+};
+
+struct Ponyta
+{
+  bool isPikachu;
+};
+
+struct Rapidash
+{
+  bool isPikachu;
+};
+
+struct Slowpoke
+{
+  bool isPikachu;
+};
+
+struct Slowbro
+{
+  bool isPikachu;
+};
+
+struct Magnemite
+{
+  bool isPikachu;
+};
+
+struct Magneton
+{
+  bool isPikachu;
+};
+
+struct Farfetchd
+{
+  bool isPikachu;
+};
+
+struct Doduo
+{
+  bool isPikachu;
+};
+
+struct Dodrio
+{
+  bool isPikachu;
+};
+
+struct Seel
+{
+  bool isPikachu;
+};
+
+struct Dewgong
+{
+  bool isPikachu;
+};
+
+struct Grimer
+{
+  bool isPikachu;
+};
+
+struct Muk
+{
+  bool isPikachu;
+};
+
+struct Shellder
+{
+  bool isPikachu;
+};
+
+struct Cloyster
+{
+  bool isPikachu;
+};
+
+struct Gastly
+{
+  bool isPikachu;
+};
+
+struct Haunter
+{
+  bool isPikachu;
+};
+
+struct Gengar
+{
+  bool isPikachu;
+};
+
+struct Onix
+{
+  bool isPikachu;
+};
+
+struct Drowzee
+{
+  bool isPikachu;
+};
+
+struct Hypno
+{
+  bool isPikachu;
+};
+
+struct Krabby
+{
+  bool isPikachu;
+};
+
+struct Kingler
+{
+  bool isPikachu;
+};
+
+struct Voltorb
+{
+  bool isPikachu;
+};
+
+struct Electrode
+{
+  bool isPikachu;
+};
+
+struct Exeggcute
+{
+  bool isPikachu;
+};
+
+struct Exeggutor
+{
+  bool isPikachu;
+};
+
+struct Cubone
+{
+  bool isPikachu;
+};
+
+struct Marowak
+{
+  bool isPikachu;
+};
+
+struct Hitmonlee
+{
+  bool isPikachu;
+};
+
+struct Hitmonchan
+{
+  bool isPikachu;
+};
+
+struct Lickitung
+{
+  bool isPikachu;
+};
+
+struct Koffing
+{
+  bool isPikachu;
+};
+
+struct Weezing
+{
+  bool isPikachu;
+};
+
+struct Rhyhorn
+{
+  bool isPikachu;
+};
+
+struct Rhydon
+{
+  bool isPikachu;
+};
+
+struct Chansey
+{
+  bool isPikachu;
+};
+
+struct Tangela
+{
+  bool isPikachu;
+};
+
+struct Kangaskhan
+{
+  bool isPikachu;
+};
+
+struct Horsea
+{
+  bool isPikachu;
+};
+
+struct Seadra
+{
+  bool isPikachu;
+};
+
+struct Goldeen
+{
+  bool isPikachu;
+};
+
+struct Seaking
+{
+  bool isPikachu;
+};
+
+struct Staryu
+{
+  bool isPikachu;
+};
+
+struct Starmie
+{
+  bool isPikachu;
+};
+
+struct MrMime
+{
+  bool isPikachu;
+};
+
+struct Scyther
+{
+  bool isPikachu;
+};
+
+struct Jynx
+{
+  bool isPikachu;
+};
+
+struct Electabuzz
+{
+  bool isPikachu;
+};
+
+struct Magmar
+{
+  bool isPikachu;
+};
+
+struct Pinsir
+{
+  bool isPikachu;
+};
+
+struct Tauros
+{
+  bool isPikachu;
+};
+
+struct Magikarp
+{
+  bool isPikachu;
+};
+
+struct Gyarados
+{
+  bool isPikachu;
+};
+
+struct Lapras
+{
+  bool isPikachu;
+};
+
+struct Ditto
+{
+  bool isPikachu;
+};
+
+struct Eevee
+{
+  bool isPikachu;
+};
+
+struct Vaporeon
+{
+  bool isPikachu;
+};
+
+struct Jolteon
+{
+  bool isPikachu;
+};
+
+struct Flareon
+{
+  bool isPikachu;
+};
+
+struct Porygon
+{
+  bool isPikachu;
+};
+
+struct Omanyte
+{
+  bool isPikachu;
+};
+
+struct Omastar
+{
+  bool isPikachu;
+};
+
+struct Kabuto
+{
+  bool isPikachu;
+};
+
+struct Kabutops
+{
+  bool isPikachu;
+};
+
+struct Aerodactyl
+{
+  bool isPikachu;
+};
+
+struct Snorlax
+{
+  bool isPikachu;
+};
+
+struct Articuno
+{
+  bool isPikachu;
+};
+
+struct Zapdos
+{
+  bool isPikachu;
+};
+
+struct Moltres
+{
+  bool isPikachu;
+};
+
+struct Dratini
+{
+  bool isPikachu;
+};
+
+struct Dragonair
+{
+  bool isPikachu;
+};
+
+struct Dragonite
+{
+  bool isPikachu;
+};
+
+struct Mewtwo
+{
+  bool isPikachu;
+};
+
+struct Mew
+{
+  bool isPikachu;
+};
+
+struct Chikorita
+{
+  bool isPikachu;
+};
+
+struct Bayleef
+{
+  bool isPikachu;
+};
+
+struct Meganium
+{
+  bool isPikachu;
+};
+
+struct Cyndaquil
+{
+  bool isPikachu;
+};
+
+struct Quilava
+{
+  bool isPikachu;
+};
+
+struct Typhlosion
+{
+  bool isPikachu;
+};
+
+struct Totodile
+{
+  bool isPikachu;
+};
+
+struct Croconaw
+{
+  bool isPikachu;
+};
+
+struct Feraligatr
+{
+  bool isPikachu;
+};
+
+struct Sentret
+{
+  bool isPikachu;
+};
+
+struct Furret
+{
+  bool isPikachu;
+};
+
+struct Hoothoot
+{
+  bool isPikachu;
+};
+
+struct Noctowl
+{
+  bool isPikachu;
+};
+
+struct Ledyba
+{
+  bool isPikachu;
+};
+
+struct Ledian
+{
+  bool isPikachu;
+};
+
+struct Spinarak
+{
+  bool isPikachu;
+};
+
+struct Ariados
+{
+  bool isPikachu;
+};
+
+struct Crobat
+{
+  bool isPikachu;
+};
+
+struct Chinchou
+{
+  bool isPikachu;
+};
+
+struct Lanturn
+{
+  bool isPikachu;
+};
+
+struct Pichu
+{
+  bool isPikachu;
+};
+
+struct Cleffa
+{
+  bool isPikachu;
+};
+
+struct Igglybuff
+{
+  bool isPikachu;
+};
+
+struct Togepi
+{
+  bool isPikachu;
+};
+
+struct Togetic
+{
+  bool isPikachu;
+};
+
+struct Natu
+{
+  bool isPikachu;
+};
+
+struct Xatu
+{
+  bool isPikachu;
+};
+
+struct Mareep
+{
+  bool isPikachu;
+};
+
+struct Flaaffy
+{
+  bool isPikachu;
+};
+
+struct Ampharos
+{
+  bool isPikachu;
+};
+
+struct Bellossom
+{
+  bool isPikachu;
+};
+
+struct Marill
+{
+  bool isPikachu;
+};
+
+struct Azumarill
+{
+  bool isPikachu;
+};
+
+struct Sudowoodo
+{
+  bool isPikachu;
+};
+
+struct Politoed
+{
+  bool isPikachu;
+};
+
+struct Hoppip
+{
+  bool isPikachu;
+};
+
+struct Skiploom
+{
+  bool isPikachu;
+};
+
+struct Jumpluff
+{
+  bool isPikachu;
+};
+
+struct Aipom
+{
+  bool isPikachu;
+};
+
+struct Sunkern
+{
+  bool isPikachu;
+};
+
+struct Sunflora
+{
+  bool isPikachu;
+};
+
+struct Yanma
+{
+  bool isPikachu;
+};
+
+struct Wooper
+{
+  bool isPikachu;
+};
+
+struct Quagsire
+{
+  bool isPikachu;
+};
+
+struct Espeon
+{
+  bool isPikachu;
+};
+
+struct Umbreon
+{
+  bool isPikachu;
+};
+
+struct Murkrow
+{
+  bool isPikachu;
+};
+
+struct Slowking
+{
+  bool isPikachu;
+};
+
+struct Misdreavus
+{
+  bool isPikachu;
+};
+
+struct Unown
+{
+  bool isPikachu;
+};
+
+struct Wobbuffet
+{
+  bool isPikachu;
+};
+
+struct Girafarig
+{
+  bool isPikachu;
+};
+
+struct Pineco
+{
+  bool isPikachu;
+};
+
+struct Forretress
+{
+  bool isPikachu;
+};
+
+struct Dunsparce
+{
+  bool isPikachu;
+};
+
+struct Gligar
+{
+  bool isPikachu;
+};
+
+struct Steelix
+{
+  bool isPikachu;
+};
+
+struct Snubbull
+{
+  bool isPikachu;
+};
+
+struct Granbull
+{
+  bool isPikachu;
+};
+
+struct Qwilfish
+{
+  bool isPikachu;
+};
+
+struct Scizor
+{
+  bool isPikachu;
+};
+
+struct Shuckle
+{
+  bool isPikachu;
+};
+
+struct Heracross
+{
+  bool isPikachu;
+};
+
+struct Sneasel
+{
+  bool isPikachu;
+};
+
+struct Teddiursa
+{
+  bool isPikachu;
+};
+
+struct Ursaring
+{
+  bool isPikachu;
+};
+
+struct Slugma
+{
+  bool isPikachu;
+};
+
+struct Magcargo
+{
+  bool isPikachu;
+};
+
+struct Swinub
+{
+  bool isPikachu;
+};
+
+struct Piloswine
+{
+  bool isPikachu;
+};
+
+struct Corsola
+{
+  bool isPikachu;
+};
+
+struct Remoraid
+{
+  bool isPikachu;
+};
+
+struct Octillery
+{
+  bool isPikachu;
+};
+
+struct Delibird
+{
+  bool isPikachu;
+};
+
+struct Mantine
+{
+  bool isPikachu;
+};
+
+struct Skarmory
+{
+  bool isPikachu;
+};
+
+struct Houndour
+{
+  bool isPikachu;
+};
+
+struct Houndoom
+{
+  bool isPikachu;
+};
+
+struct Kingdra
+{
+  bool isPikachu;
+};
+
+struct Phanpy
+{
+  bool isPikachu;
+};
+
+struct Donphan
+{
+  bool isPikachu;
+};
+
+struct Porygon2
+{
+  bool isPikachu;
+};
+
+struct Stantler
+{
+  bool isPikachu;
+};
+
+struct Smeargle
+{
+  bool isPikachu;
+};
+
+struct Tyrogue
+{
+  bool isPikachu;
+};
+
+struct Hitmontop
+{
+  bool isPikachu;
+};
+
+struct Smoochum
+{
+  bool isPikachu;
+};
+
+struct Elekid
+{
+  bool isPikachu;
+};
+
+struct Magby
+{
+  bool isPikachu;
+};
+
+struct Miltank
+{
+  bool isPikachu;
+};
+
+struct Blissey
+{
+  bool isPikachu;
+};
+
+struct Raikou
+{
+  bool isPikachu;
+};
+
+struct Entei
+{
+  bool isPikachu;
+};
+
+struct Suicune
+{
+  bool isPikachu;
+};
+
+struct Larvitar
+{
+  bool isPikachu;
+};
+
+struct Pupitar
+{
+  bool isPikachu;
+};
+
+struct Tyranitar
+{
+  bool isPikachu;
+};
+
+struct Lugia
+{
+  bool isPikachu;
+};
+
+struct HoOh
+{
+  bool isPikachu;
+};
+
+struct Celebi
+{
+  bool isPikachu;
+};
+
+struct Treecko
+{
+  bool isPikachu;
+};
+
+struct Grovyle
+{
+  bool isPikachu;
+};
+
+struct Sceptile
+{
+  bool isPikachu;
+};
+
+struct Torchic
+{
+  bool isPikachu;
+};
+
+struct Combusken
+{
+  bool isPikachu;
+};
+
+struct Blaziken
+{
+  bool isPikachu;
+};
+
+struct Mudkip
+{
+  bool isPikachu;
+};
+
+struct Marshtomp
+{
+  bool isPikachu;
+};
+
+struct Swampert
+{
+  bool isPikachu;
+};
+
+struct Poochyena
+{
+  bool isPikachu;
+};
+
+struct Mightyena
+{
+  bool isPikachu;
+};
+
+struct Zigzagoon
+{
+  bool isPikachu;
+};
+
+struct Linoone
+{
+  bool isPikachu;
+};
+
+struct Wurmple
+{
+  bool isPikachu;
+};
+
+struct Silcoon
+{
+  bool isPikachu;
+};
+
+struct Beautifly
+{
+  bool isPikachu;
+};
+
+struct Cascoon
+{
+  bool isPikachu;
+};
+
+struct Dustox
+{
+  bool isPikachu;
+};
+
+struct Lotad
+{
+  bool isPikachu;
+};
+
+struct Lombre
+{
+  bool isPikachu;
+};
+
+struct Ludicolo
+{
+  bool isPikachu;
+};
+
+struct Seedot
+{
+  bool isPikachu;
+};
+
+struct Nuzleaf
+{
+  bool isPikachu;
+};
+
+struct Shiftry
+{
+  bool isPikachu;
+};
+
+struct Taillow
+{
+  bool isPikachu;
+};
+
+struct Swellow
+{
+  bool isPikachu;
+};
+
+struct Wingull
+{
+  bool isPikachu;
+};
+
+struct Pelipper
+{
+  bool isPikachu;
+};
+
+struct Ralts
+{
+  bool isPikachu;
+};
+
+struct Kirlia
+{
+  bool isPikachu;
+};
+
+struct Gardevoir
+{
+  bool isPikachu;
+};
+
+struct Surskit
+{
+  bool isPikachu;
+};
+
+struct Masquerain
+{
+  bool isPikachu;
+};
+
+struct Shroomish
+{
+  bool isPikachu;
+};
+
+struct Breloom
+{
+  bool isPikachu;
+};
+
+struct Slakoth
+{
+  bool isPikachu;
+};
+
+struct Vigoroth
+{
+  bool isPikachu;
+};
+
+struct Slaking
+{
+  bool isPikachu;
+};
+
+struct Nincada
+{
+  bool isPikachu;
+};
+
+struct Ninjask
+{
+  bool isPikachu;
+};
+
+struct Shedinja
+{
+  bool isPikachu;
+};
+
+struct Whismur
+{
+  bool isPikachu;
+};
+
+struct Loudred
+{
+  bool isPikachu;
+};
+
+struct Exploud
+{
+  bool isPikachu;
+};
+
+struct Makuhita
+{
+  bool isPikachu;
+};
+
+struct Hariyama
+{
+  bool isPikachu;
+};
+
+struct Azurill
+{
+  bool isPikachu;
+};
+
+struct Nosepass
+{
+  bool isPikachu;
+};
+
+struct Skitty
+{
+  bool isPikachu;
+};
+
+struct Delcatty
+{
+  bool isPikachu;
+};
+
+struct Sableye
+{
+  bool isPikachu;
+};
+
+struct Mawile
+{
+  bool isPikachu;
+};
+
+struct Aron
+{
+  bool isPikachu;
+};
+
+struct Lairon
+{
+  bool isPikachu;
+};
+
+struct Aggron
+{
+  bool isPikachu;
+};
+
+struct Meditite
+{
+  bool isPikachu;
+};
+
+struct Medicham
+{
+  bool isPikachu;
+};
+
+struct Electrike
+{
+  bool isPikachu;
+};
+
+struct Manectric
+{
+  bool isPikachu;
+};
+
+struct Plusle
+{
+  bool isPikachu;
+};
+
+struct Minun
+{
+  bool isPikachu;
+};
+
+struct Volbeat
+{
+  bool isPikachu;
+};
+
+struct Illumise
+{
+  bool isPikachu;
+};
+
+struct Roselia
+{
+  bool isPikachu;
+};
+
+struct Gulpin
+{
+  bool isPikachu;
+};
+
+struct Swalot
+{
+  bool isPikachu;
+};
+
+struct Carvanha
+{
+  bool isPikachu;
+};
+
+struct Sharpedo
+{
+  bool isPikachu;
+};
+
+struct Wailmer
+{
+  bool isPikachu;
+};
+
+struct Wailord
+{
+  bool isPikachu;
+};
+
+struct Numel
+{
+  bool isPikachu;
+};
+
+struct Camerupt
+{
+  bool isPikachu;
+};
+
+struct Torkoal
+{
+  bool isPikachu;
+};
+
+struct Spoink
+{
+  bool isPikachu;
+};
+
+struct Grumpig
+{
+  bool isPikachu;
+};
+
+struct Spinda
+{
+  bool isPikachu;
+};
+
+struct Trapinch
+{
+  bool isPikachu;
+};
+
+struct Vibrava
+{
+  bool isPikachu;
+};
+
+struct Flygon
+{
+  bool isPikachu;
+};
+
+struct Cacnea
+{
+  bool isPikachu;
+};
+
+struct Cacturne
+{
+  bool isPikachu;
+};
+
+struct Swablu
+{
+  bool isPikachu;
+};
+
+struct Altaria
+{
+  bool isPikachu;
+};
+
+struct Zangoose
+{
+  bool isPikachu;
+};
+
+struct Seviper
+{
+  bool isPikachu;
+};
+
+struct Lunatone
+{
+  bool isPikachu;
+};
+
+struct Solrock
+{
+  bool isPikachu;
+};
+
+struct Barboach
+{
+  bool isPikachu;
+};
+
+struct Whiscash
+{
+  bool isPikachu;
+};
+
+struct Corphish
+{
+  bool isPikachu;
+};
+
+struct Crawdaunt
+{
+  bool isPikachu;
+};
+
+struct Baltoy
+{
+  bool isPikachu;
+};
+
+struct Claydol
+{
+  bool isPikachu;
+};
+
+struct Lileep
+{
+  bool isPikachu;
+};
+
+struct Cradily
+{
+  bool isPikachu;
+};
+
+struct Anorith
+{
+  bool isPikachu;
+};
+
+struct Armaldo
+{
+  bool isPikachu;
+};
+
+struct Feebas
+{
+  bool isPikachu;
+};
+
+struct Milotic
+{
+  bool isPikachu;
+};
+
+struct Castform
+{
+  bool isPikachu;
+};
+
+struct Kecleon
+{
+  bool isPikachu;
+};
+
+struct Shuppet
+{
+  bool isPikachu;
+};
+
+struct Banette
+{
+  bool isPikachu;
+};
+
+struct Duskull
+{
+  bool isPikachu;
+};
+
+struct Dusclops
+{
+  bool isPikachu;
+};
+
+struct Tropius
+{
+  bool isPikachu;
+};
+
+struct Chimecho
+{
+  bool isPikachu;
+};
+
+struct Absol
+{
+  bool isPikachu;
+};
+
+struct Wynaut
+{
+  bool isPikachu;
+};
+
+struct Snorunt
+{
+  bool isPikachu;
+};
+
+struct Glalie
+{
+  bool isPikachu;
+};
+
+struct Spheal
+{
+  bool isPikachu;
+};
+
+struct Sealeo
+{
+  bool isPikachu;
+};
+
+struct Walrein
+{
+  bool isPikachu;
+};
+
+struct Clamperl
+{
+  bool isPikachu;
+};
+
+struct Huntail
+{
+  bool isPikachu;
+};
+
+struct Gorebyss
+{
+  bool isPikachu;
+};
+
+struct Relicanth
+{
+  bool isPikachu;
+};
+
+struct Luvdisc
+{
+  bool isPikachu;
+};
+
+struct Bagon
+{
+  bool isPikachu;
+};
+
+struct Shelgon
+{
+  bool isPikachu;
+};
+
+struct Salamence
+{
+  bool isPikachu;
+};
+
+struct Beldum
+{
+  bool isPikachu;
+};
+
+struct Metang
+{
+  bool isPikachu;
+};
+
+struct Metagross
+{
+  bool isPikachu;
+};
+
+struct Regirock
+{
+  bool isPikachu;
+};
+
+struct Regice
+{
+  bool isPikachu;
+};
+
+struct Registeel
+{
+  bool isPikachu;
+};
+
+struct Latias
+{
+  bool isPikachu;
+};
+
+struct Latios
+{
+  bool isPikachu;
+};
+
+struct Kyogre
+{
+  bool isPikachu;
+};
+
+struct Groudon
+{
+  bool isPikachu;
+};
+
+struct Rayquaza
+{
+  bool isPikachu;
+};
+
+struct Jirachi
+{
+  bool isPikachu;
+};
+
+struct Deoxys
+{
+  bool isPikachu;
+};
+
+struct Turtwig
+{
+  bool isPikachu;
+};
+
+struct Grotle
+{
+  bool isPikachu;
+};
+
+struct Torterra
+{
+  bool isPikachu;
+};
+
+struct Chimchar
+{
+  bool isPikachu;
+};
+
+struct Monferno
+{
+  bool isPikachu;
+};
+
+struct Infernape
+{
+  bool isPikachu;
+};
+
+struct Piplup
+{
+  bool isPikachu;
+};
+
+struct Prinplup
+{
+  bool isPikachu;
+};
+
+struct Empoleon
+{
+  bool isPikachu;
+};
+
+struct Starly
+{
+  bool isPikachu;
+};
+
+struct Staravia
+{
+  bool isPikachu;
+};
+
+struct Staraptor
+{
+  bool isPikachu;
+};
+
+struct Bidoof
+{
+  bool isPikachu;
+};
+
+struct Bibarel
+{
+  bool isPikachu;
+};
+
+struct Kricketot
+{
+  bool isPikachu;
+};
+
+struct Kricketune
+{
+  bool isPikachu;
+};
+
+struct Shinx
+{
+  bool isPikachu;
+};
+
+struct Luxio
+{
+  bool isPikachu;
+};
+
+struct Luxray
+{
+  bool isPikachu;
+};
+
+struct Budew
+{
+  bool isPikachu;
+};
+
+struct Roserade
+{
+  bool isPikachu;
+};
+
+struct Cranidos
+{
+  bool isPikachu;
+};
+
+struct Rampardos
+{
+  bool isPikachu;
+};
+
+struct Shieldon
+{
+  bool isPikachu;
+};
+
+struct Bastiodon
+{
+  bool isPikachu;
+};
+
+struct Burmy
+{
+  bool isPikachu;
+};
+
+struct Wormadam
+{
+  bool isPikachu;
+};
+
+struct Mothim
+{
+  bool isPikachu;
+};
+
+struct Combee
+{
+  bool isPikachu;
+};
+
+struct Vespiquen
+{
+  bool isPikachu;
+};
+
+struct Pachirisu
+{
+  bool isPikachu;
+};
+
+struct Buizel
+{
+  bool isPikachu;
+};
+
+struct Floatzel
+{
+  bool isPikachu;
+};
+
+struct Cherubi
+{
+  bool isPikachu;
+};
+
+struct Cherrim
+{
+  bool isPikachu;
+};
+
+struct Shellos
+{
+  bool isPikachu;
+};
+
+struct Gastrodon
+{
+  bool isPikachu;
+};
+
+struct Ambipom
+{
+  bool isPikachu;
+};
+
+struct Drifloon
+{
+  bool isPikachu;
+};
+
+struct Drifblim
+{
+  bool isPikachu;
+};
+
+struct Buneary
+{
+  bool isPikachu;
+};
+
+struct Lopunny
+{
+  bool isPikachu;
+};
+
+struct Mismagius
+{
+  bool isPikachu;
+};
+
+struct Honchkrow
+{
+  bool isPikachu;
+};
+
+struct Glameow
+{
+  bool isPikachu;
+};
+
+struct Purugly
+{
+  bool isPikachu;
+};
+
+struct Chingling
+{
+  bool isPikachu;
+};
+
+struct Stunky
+{
+  bool isPikachu;
+};
+
+struct Skuntank
+{
+  bool isPikachu;
+};
+
+struct Bronzor
+{
+  bool isPikachu;
+};
+
+struct Bronzong
+{
+  bool isPikachu;
+};
+
+struct Bonsly
+{
+  bool isPikachu;
+};
+
+struct MimeJr
+{
+  bool isPikachu;
+};
+
+struct Happiny
+{
+  bool isPikachu;
+};
+
+struct Chatot
+{
+  bool isPikachu;
+};
+
+struct Spiritomb
+{
+  bool isPikachu;
+};
+
+struct Gible
+{
+  bool isPikachu;
+};
+
+struct Gabite
+{
+  bool isPikachu;
+};
+
+struct Garchomp
+{
+  bool isPikachu;
+};
+
+struct Munchlax
+{
+  bool isPikachu;
+};
+
+struct Riolu
+{
+  bool isPikachu;
+};
+
+struct Lucario
+{
+  bool isPikachu;
+};
+
+struct Hippopotas
+{
+  bool isPikachu;
+};
+
+struct Hippowdon
+{
+  bool isPikachu;
+};
+
+struct Skorupi
+{
+  bool isPikachu;
+};
+
+struct Drapion
+{
+  bool isPikachu;
+};
+
+struct Croagunk
+{
+  bool isPikachu;
+};
+
+struct Toxicroak
+{
+  bool isPikachu;
+};
+
+struct Carnivine
+{
+  bool isPikachu;
+};
+
+struct Finneon
+{
+  bool isPikachu;
+};
+
+struct Lumineon
+{
+  bool isPikachu;
+};
+
+struct Mantyke
+{
+  bool isPikachu;
+};
+
+struct Snover
+{
+  bool isPikachu;
+};
+
+struct Abomasnow
+{
+  bool isPikachu;
+};
+
+struct Weavile
+{
+  bool isPikachu;
+};
+
+struct Magnezone
+{
+  bool isPikachu;
+};
+
+struct Lickilicky
+{
+  bool isPikachu;
+};
+
+struct Rhyperior
+{
+  bool isPikachu;
+};
+
+struct Tangrowth
+{
+  bool isPikachu;
+};
+
+struct Electivire
+{
+  bool isPikachu;
+};
+
+struct Magmortar
+{
+  bool isPikachu;
+};
+
+struct Togekiss
+{
+  bool isPikachu;
+};
+
+struct Yanmega
+{
+  bool isPikachu;
+};
+
+struct Leafeon
+{
+  bool isPikachu;
+};
+
+struct Glaceon
+{
+  bool isPikachu;
+};
+
+struct Gliscor
+{
+  bool isPikachu;
+};
+
+struct Mamoswine
+{
+  bool isPikachu;
+};
+
+struct PorygonZ
+{
+  bool isPikachu;
+};
+
+struct Gallade
+{
+  bool isPikachu;
+};
+
+struct Probopass
+{
+  bool isPikachu;
+};
+
+struct Dusknoir
+{
+  bool isPikachu;
+};
+
+struct Froslass
+{
+  bool isPikachu;
+};
+
+struct Rotom
+{
+  bool isPikachu;
+};
+
+struct Uxie
+{
+  bool isPikachu;
+};
+
+struct Mesprit
+{
+  bool isPikachu;
+};
+
+struct Azelf
+{
+  bool isPikachu;
+};
+
+struct Dialga
+{
+  bool isPikachu;
+};
+
+struct Palkia
+{
+  bool isPikachu;
+};
+
+struct Heatran
+{
+  bool isPikachu;
+};
+
+struct Regigigas
+{
+  bool isPikachu;
+};
+
+struct Giratina
+{
+  bool isPikachu;
+};
+
+struct Cresselia
+{
+  bool isPikachu;
+};
+
+struct Phione
+{
+  bool isPikachu;
+};
+
+struct Manaphy
+{
+  bool isPikachu;
+};
+
+struct Darkrai
+{
+  bool isPikachu;
+};
+
+struct Shaymin
+{
+  bool isPikachu;
+};
+
+struct Arceus
+{
+  bool isPikachu;
+};
+
+struct Victini
+{
+  bool isPikachu;
+};
+
+struct Snivy
+{
+  bool isPikachu;
+};
+
+struct Servine
+{
+  bool isPikachu;
+};
+
+struct Serperior
+{
+  bool isPikachu;
+};
+
+struct Tepig
+{
+  bool isPikachu;
+};
+
+struct Pignite
+{
+  bool isPikachu;
+};
+
+struct Emboar
+{
+  bool isPikachu;
+};
+
+struct Oshawott
+{
+  bool isPikachu;
+};
+
+struct Dewott
+{
+  bool isPikachu;
+};
+
+struct Samurott
+{
+  bool isPikachu;
+};
+
+struct Patrat
+{
+  bool isPikachu;
+};
+
+struct Watchog
+{
+  bool isPikachu;
+};
+
+struct Lillipup
+{
+  bool isPikachu;
+};
+
+struct Herdier
+{
+  bool isPikachu;
+};
+
+struct Stoutland
+{
+  bool isPikachu;
+};
+
+struct Purrloin
+{
+  bool isPikachu;
+};
+
+struct Liepard
+{
+  bool isPikachu;
+};
+
+struct Pansage
+{
+  bool isPikachu;
+};
+
+struct Simisage
+{
+  bool isPikachu;
+};
+
+struct Pansear
+{
+  bool isPikachu;
+};
+
+struct Simisear
+{
+  bool isPikachu;
+};
+
+struct Panpour
+{
+  bool isPikachu;
+};
+
+struct Simipour
+{
+  bool isPikachu;
+};
+
+struct Munna
+{
+  bool isPikachu;
+};
+
+struct Musharna
+{
+  bool isPikachu;
+};
+
+struct Pidove
+{
+  bool isPikachu;
+};
+
+struct Tranquill
+{
+  bool isPikachu;
+};
+
+struct Unfezant
+{
+  bool isPikachu;
+};
+
+struct Blitzle
+{
+  bool isPikachu;
+};
+
+struct Zebstrika
+{
+  bool isPikachu;
+};
+
+struct Roggenrola
+{
+  bool isPikachu;
+};
+
+struct Boldore
+{
+  bool isPikachu;
+};
+
+struct Gigalith
+{
+  bool isPikachu;
+};
+
+struct Woobat
+{
+  bool isPikachu;
+};
+
+struct Swoobat
+{
+  bool isPikachu;
+};
+
+struct Drilbur
+{
+  bool isPikachu;
+};
+
+struct Excadrill
+{
+  bool isPikachu;
+};
+
+struct Audino
+{
+  bool isPikachu;
+};
+
+struct Timburr
+{
+  bool isPikachu;
+};
+
+struct Gurdurr
+{
+  bool isPikachu;
+};
+
+struct Conkeldurr
+{
+  bool isPikachu;
+};
+
+struct Tympole
+{
+  bool isPikachu;
+};
+
+struct Palpitoad
+{
+  bool isPikachu;
+};
+
+struct Seismitoad
+{
+  bool isPikachu;
+};
+
+struct Throh
+{
+  bool isPikachu;
+};
+
+struct Sawk
+{
+  bool isPikachu;
+};
+
+struct Sewaddle
+{
+  bool isPikachu;
+};
+
+struct Swadloon
+{
+  bool isPikachu;
+};
+
+struct Leavanny
+{
+  bool isPikachu;
+};
+
+struct Venipede
+{
+  bool isPikachu;
+};
+
+struct Whirlipede
+{
+  bool isPikachu;
+};
+
+struct Scolipede
+{
+  bool isPikachu;
+};
+
+struct Cottonee
+{
+  bool isPikachu;
+};
+
+struct Whimsicott
+{
+  bool isPikachu;
+};
+
+struct Petilil
+{
+  bool isPikachu;
+};
+
+struct Lilligant
+{
+  bool isPikachu;
+};
+
+struct Basculin
+{
+  bool isPikachu;
+};
+
+struct Sandile
+{
+  bool isPikachu;
+};
+
+struct Krokorok
+{
+  bool isPikachu;
+};
+
+struct Krookodile
+{
+  bool isPikachu;
+};
+
+struct Darumaka
+{
+  bool isPikachu;
+};
+
+struct Darmanitan
+{
+  bool isPikachu;
+};
+
+struct Maractus
+{
+  bool isPikachu;
+};
+
+struct Dwebble
+{
+  bool isPikachu;
+};
+
+struct Crustle
+{
+  bool isPikachu;
+};
+
+struct Scraggy
+{
+  bool isPikachu;
+};
+
+struct Scrafty
+{
+  bool isPikachu;
+};
+
+struct Sigilyph
+{
+  bool isPikachu;
+};
+
+struct Yamask
+{
+  bool isPikachu;
+};
+
+struct Cofagrigus
+{
+  bool isPikachu;
+};
+
+struct Tirtouga
+{
+  bool isPikachu;
+};
+
+struct Carracosta
+{
+  bool isPikachu;
+};
+
+struct Archen
+{
+  bool isPikachu;
+};
+
+struct Archeops
+{
+  bool isPikachu;
+};
+
+struct Trubbish
+{
+  bool isPikachu;
+};
+
+struct Garbodor
+{
+  bool isPikachu;
+};
+
+struct Zorua
+{
+  bool isPikachu;
+};
+
+struct Zoroark
+{
+  bool isPikachu;
+};
+
+struct Minccino
+{
+  bool isPikachu;
+};
+
+struct Cinccino
+{
+  bool isPikachu;
+};
+
+struct Gothita
+{
+  bool isPikachu;
+};
+
+struct Gothorita
+{
+  bool isPikachu;
+};
+
+struct Gothitelle
+{
+  bool isPikachu;
+};
+
+struct Solosis
+{
+  bool isPikachu;
+};
+
+struct Duosion
+{
+  bool isPikachu;
+};
+
+struct Reuniclus
+{
+  bool isPikachu;
+};
+
+struct Ducklett
+{
+  bool isPikachu;
+};
+
+struct Swanna
+{
+  bool isPikachu;
+};
+
+struct Vanillite
+{
+  bool isPikachu;
+};
+
+struct Vanillish
+{
+  bool isPikachu;
+};
+
+struct Vanilluxe
+{
+  bool isPikachu;
+};
+
+struct Deerling
+{
+  bool isPikachu;
+};
+
+struct Sawsbuck
+{
+  bool isPikachu;
+};
+
+struct Emolga
+{
+  bool isPikachu;
+};
+
+struct Karrablast
+{
+  bool isPikachu;
+};
+
+struct Escavalier
+{
+  bool isPikachu;
+};
+
+struct Foongus
+{
+  bool isPikachu;
+};
+
+struct Amoonguss
+{
+  bool isPikachu;
+};
+
+struct Frillish
+{
+  bool isPikachu;
+};
+
+struct Jellicent
+{
+  bool isPikachu;
+};
+
+struct Alomomola
+{
+  bool isPikachu;
+};
+
+struct Joltik
+{
+  bool isPikachu;
+};
+
+struct Galvantula
+{
+  bool isPikachu;
+};
+
+struct Ferroseed
+{
+  bool isPikachu;
+};
+
+struct Ferrothorn
+{
+  bool isPikachu;
+};
+
+struct Klink
+{
+  bool isPikachu;
+};
+
+struct Klang
+{
+  bool isPikachu;
+};
+
+struct Klinklang
+{
+  bool isPikachu;
+};
+
+struct Tynamo
+{
+  bool isPikachu;
+};
+
+struct Eelektrik
+{
+  bool isPikachu;
+};
+
+struct Eelektross
+{
+  bool isPikachu;
+};
+
+struct Elgyem
+{
+  bool isPikachu;
+};
+
+struct Beheeyem
+{
+  bool isPikachu;
+};
+
+struct Litwick
+{
+  bool isPikachu;
+};
+
+struct Lampent
+{
+  bool isPikachu;
+};
+
+struct Chandelure
+{
+  bool isPikachu;
+};
+
+struct Axew
+{
+  bool isPikachu;
+};
+
+struct Fraxure
+{
+  bool isPikachu;
+};
+
+struct Haxorus
+{
+  bool isPikachu;
+};
+
+struct Cubchoo
+{
+  bool isPikachu;
+};
+
+struct Beartic
+{
+  bool isPikachu;
+};
+
+struct Cryogonal
+{
+  bool isPikachu;
+};
+
+struct Shelmet
+{
+  bool isPikachu;
+};
+
+struct Accelgor
+{
+  bool isPikachu;
+};
+
+struct Stunfisk
+{
+  bool isPikachu;
+};
+
+struct Mienfoo
+{
+  bool isPikachu;
+};
+
+struct Mienshao
+{
+  bool isPikachu;
+};
+
+struct Druddigon
+{
+  bool isPikachu;
+};
+
+struct Golett
+{
+  bool isPikachu;
+};
+
+struct Golurk
+{
+  bool isPikachu;
+};
+
+struct Pawniard
+{
+  bool isPikachu;
+};
+
+struct Bisharp
+{
+  bool isPikachu;
+};
+
+struct Bouffalant
+{
+  bool isPikachu;
+};
+
+struct Rufflet
+{
+  bool isPikachu;
+};
+
+struct Braviary
+{
+  bool isPikachu;
+};
+
+struct Vullaby
+{
+  bool isPikachu;
+};
+
+struct Mandibuzz
+{
+  bool isPikachu;
+};
+
+struct Heatmor
+{
+  bool isPikachu;
+};
+
+struct Durant
+{
+  bool isPikachu;
+};
+
+struct Deino
+{
+  bool isPikachu;
+};
+
+struct Zweilous
+{
+  bool isPikachu;
+};
+
+struct Hydreigon
+{
+  bool isPikachu;
+};
+
+struct Larvesta
+{
+  bool isPikachu;
+};
+
+struct Volcarona
+{
+  bool isPikachu;
+};
+
+struct Cobalion
+{
+  bool isPikachu;
+};
+
+struct Terrakion
+{
+  bool isPikachu;
+};
+
+struct Virizion
+{
+  bool isPikachu;
+};
+
+struct Tornadus
+{
+  bool isPikachu;
+};
+
+struct Thundurus
+{
+  bool isPikachu;
+};
+
+struct Reshiram
+{
+  bool isPikachu;
+};
+
+struct Zekrom
+{
+  bool isPikachu;
+};
+
+struct Landorus
+{
+  bool isPikachu;
+};
+
+struct Kyurem
+{
+  bool isPikachu;
+};
+
+struct Keldeo
+{
+  bool isPikachu;
+};
+
+struct Meloetta
+{
+  bool isPikachu;
+};
+
+struct Genesect
+{
+  bool isPikachu;
+};
+
+struct Chespin
+{
+  bool isPikachu;
+};
+
+struct Quilladin
+{
+  bool isPikachu;
+};
+
+struct Chesnaught
+{
+  bool isPikachu;
+};
+
+struct Fennekin
+{
+  bool isPikachu;
+};
+
+struct Braixen
+{
+  bool isPikachu;
+};
+
+struct Delphox
+{
+  bool isPikachu;
+};
+
+struct Froakie
+{
+  bool isPikachu;
+};
+
+struct Frogadier
+{
+  bool isPikachu;
+};
+
+struct Greninja
+{
+  bool isPikachu;
+};
+
+struct Bunnelby
+{
+  bool isPikachu;
+};
+
+struct Diggersby
+{
+  bool isPikachu;
+};
+
+struct Fletchling
+{
+  bool isPikachu;
+};
+
+struct Fletchinder
+{
+  bool isPikachu;
+};
+
+struct Talonflame
+{
+  bool isPikachu;
+};
+
+struct Scatterbug
+{
+  bool isPikachu;
+};
+
+struct Spewpa
+{
+  bool isPikachu;
+};
+
+struct Vivillon
+{
+  bool isPikachu;
+};
+
+struct Litleo
+{
+  bool isPikachu;
+};
+
+struct Pyroar
+{
+  bool isPikachu;
+};
+
+struct Flabebe
+{
+  bool isPikachu;
+};
+
+struct Floette
+{
+  bool isPikachu;
+};
+
+struct Florges
+{
+  bool isPikachu;
+};
+
+struct Skiddo
+{
+  bool isPikachu;
+};
+
+struct Gogoat
+{
+  bool isPikachu;
+};
+
+struct Pancham
+{
+  bool isPikachu;
+};
+
+struct Pangoro
+{
+  bool isPikachu;
+};
+
+struct Furfrou
+{
+  bool isPikachu;
+};
+
+struct Espurr
+{
+  bool isPikachu;
+};
+
+struct Meowstic
+{
+  bool isPikachu;
+};
+
+struct Honedge
+{
+  bool isPikachu;
+};
+
+struct Doublade
+{
+  bool isPikachu;
+};
+
+struct Aegislash
+{
+  bool isPikachu;
+};
+
+struct Spritzee
+{
+  bool isPikachu;
+};
+
+struct Aromatisse
+{
+  bool isPikachu;
+};
+
+struct Swirlix
+{
+  bool isPikachu;
+};
+
+struct Slurpuff
+{
+  bool isPikachu;
+};
+
+struct Inkay
+{
+  bool isPikachu;
+};
+
+struct Malamar
+{
+  bool isPikachu;
+};
+
+struct Binacle
+{
+  bool isPikachu;
+};
+
+struct Barbaracle
+{
+  bool isPikachu;
+};
+
+struct Skrelp
+{
+  bool isPikachu;
+};
+
+struct Dragalge
+{
+  bool isPikachu;
+};
+
+struct Clauncher
+{
+  bool isPikachu;
+};
+
+struct Clawitzer
+{
+  bool isPikachu;
+};
+
+struct Helioptile
+{
+  bool isPikachu;
+};
+
+struct Heliolisk
+{
+  bool isPikachu;
+};
+
+struct Tyrunt
+{
+  bool isPikachu;
+};
+
+struct Tyrantrum
+{
+  bool isPikachu;
+};
+
+struct Amaura
+{
+  bool isPikachu;
+};
+
+struct Aurorus
+{
+  bool isPikachu;
+};
+
+struct Sylveon
+{
+  bool isPikachu;
+};
+
+struct Hawlucha
+{
+  bool isPikachu;
+};
+
+struct Dedenne
+{
+  bool isPikachu;
+};
+
+struct Carbink
+{
+  bool isPikachu;
+};
+
+struct Goomy
+{
+  bool isPikachu;
+};
+
+struct Sliggoo
+{
+  bool isPikachu;
+};
+
+struct Goodra
+{
+  bool isPikachu;
+};
+
+struct Klefki
+{
+  bool isPikachu;
+};
+
+struct Phantump
+{
+  bool isPikachu;
+};
+
+struct Trevenant
+{
+  bool isPikachu;
+};
+
+struct Pumpkaboo
+{
+  bool isPikachu;
+};
+
+struct Gourgeist
+{
+  bool isPikachu;
+};
+
+struct Bergmite
+{
+  bool isPikachu;
+};
+
+struct Avalugg
+{
+  bool isPikachu;
+};
+
+struct Noibat
+{
+  bool isPikachu;
+};
+
+struct Noivern
+{
+  bool isPikachu;
+};
+
+struct Xerneas
+{
+  bool isPikachu;
+};
+
+struct Yveltal
+{
+  bool isPikachu;
+};
+
+struct Zygarde
+{
+  bool isPikachu;
+};
+
+struct Diancie
+{
+  bool isPikachu;
+};
+
+struct Hoopa
+{
+  bool isPikachu;
+};
+
+struct Volcanion
+{
+  bool isPikachu;
+};
+
+typedef struct Bulbasaur Bulbasaur;
+typedef struct Ivysaur Ivysaur;
+typedef struct Venusaur Venusaur;
+typedef struct Charmander Charmander;
+typedef struct Charmeleon Charmeleon;
+typedef struct Charizard Charizard;
+typedef struct Squirtle Squirtle;
+typedef struct Wartortle Wartortle;
+typedef struct Blastoise Blastoise;
+typedef struct Caterpie Caterpie;
+typedef struct Metapod Metapod;
+typedef struct Butterfree Butterfree;
+typedef struct Weedle Weedle;
+typedef struct Kakuna Kakuna;
+typedef struct Beedrill Beedrill;
+typedef struct Pidgey Pidgey;
+typedef struct Pidgeotto Pidgeotto;
+typedef struct Pidgeot Pidgeot;
+typedef struct Rattata Rattata;
+typedef struct Raticate Raticate;
+typedef struct Spearow Spearow;
+typedef struct Fearow Fearow;
+typedef struct Ekans Ekans;
+typedef struct Arbok Arbok;
+typedef struct Pikachu Pikachu;
+typedef struct Raichu Raichu;
+typedef struct Sandshrew Sandshrew;
+typedef struct Sandslash Sandslash;
+typedef struct NidoranF NidoranF;
+typedef struct Nidorina Nidorina;
+typedef struct Nidoqueen Nidoqueen;
+typedef struct NidoranM NidoranM;
+typedef struct Nidorino Nidorino;
+typedef struct Nidoking Nidoking;
+typedef struct Clefairy Clefairy;
+typedef struct Clefable Clefable;
+typedef struct Vulpix Vulpix;
+typedef struct Ninetales Ninetales;
+typedef struct Jigglypuff Jigglypuff;
+typedef struct Wigglytuff Wigglytuff;
+typedef struct Zubat Zubat;
+typedef struct Golbat Golbat;
+typedef struct Oddish Oddish;
+typedef struct Gloom Gloom;
+typedef struct Vileplume Vileplume;
+typedef struct Paras Paras;
+typedef struct Parasect Parasect;
+typedef struct Venonat Venonat;
+typedef struct Venomoth Venomoth;
+typedef struct Diglett Diglett;
+typedef struct Dugtrio Dugtrio;
+typedef struct Meowth Meowth;
+typedef struct Persian Persian;
+typedef struct Psyduck Psyduck;
+typedef struct Golduck Golduck;
+typedef struct Mankey Mankey;
+typedef struct Primeape Primeape;
+typedef struct Growlithe Growlithe;
+typedef struct Arcanine Arcanine;
+typedef struct Poliwag Poliwag;
+typedef struct Poliwhirl Poliwhirl;
+typedef struct Poliwrath Poliwrath;
+typedef struct Abra Abra;
+typedef struct Kadabra Kadabra;
+typedef struct Alakazam Alakazam;
+typedef struct Machop Machop;
+typedef struct Machoke Machoke;
+typedef struct Machamp Machamp;
+typedef struct Bellsprout Bellsprout;
+typedef struct Weepinbell Weepinbell;
+typedef struct Victreebel Victreebel;
+typedef struct Tentacool Tentacool;
+typedef struct Tentacruel Tentacruel;
+typedef struct Geodude Geodude;
+typedef struct Graveler Graveler;
+typedef struct Golem Golem;
+typedef struct Ponyta Ponyta;
+typedef struct Rapidash Rapidash;
+typedef struct Slowpoke Slowpoke;
+typedef struct Slowbro Slowbro;
+typedef struct Magnemite Magnemite;
+typedef struct Magneton Magneton;
+typedef struct Farfetchd Farfetchd;
+typedef struct Doduo Doduo;
+typedef struct Dodrio Dodrio;
+typedef struct Seel Seel;
+typedef struct Dewgong Dewgong;
+typedef struct Grimer Grimer;
+typedef struct Muk Muk;
+typedef struct Shellder Shellder;
+typedef struct Cloyster Cloyster;
+typedef struct Gastly Gastly;
+typedef struct Haunter Haunter;
+typedef struct Gengar Gengar;
+typedef struct Onix Onix;
+typedef struct Drowzee Drowzee;
+typedef struct Hypno Hypno;
+typedef struct Krabby Krabby;
+typedef struct Kingler Kingler;
+typedef struct Voltorb Voltorb;
+typedef struct Electrode Electrode;
+typedef struct Exeggcute Exeggcute;
+typedef struct Exeggutor Exeggutor;
+typedef struct Cubone Cubone;
+typedef struct Marowak Marowak;
+typedef struct Hitmonlee Hitmonlee;
+typedef struct Hitmonchan Hitmonchan;
+typedef struct Lickitung Lickitung;
+typedef struct Koffing Koffing;
+typedef struct Weezing Weezing;
+typedef struct Rhyhorn Rhyhorn;
+typedef struct Rhydon Rhydon;
+typedef struct Chansey Chansey;
+typedef struct Tangela Tangela;
+typedef struct Kangaskhan Kangaskhan;
+typedef struct Horsea Horsea;
+typedef struct Seadra Seadra;
+typedef struct Goldeen Goldeen;
+typedef struct Seaking Seaking;
+typedef struct Staryu Staryu;
+typedef struct Starmie Starmie;
+typedef struct MrMime MrMime;
+typedef struct Scyther Scyther;
+typedef struct Jynx Jynx;
+typedef struct Electabuzz Electabuzz;
+typedef struct Magmar Magmar;
+typedef struct Pinsir Pinsir;
+typedef struct Tauros Tauros;
+typedef struct Magikarp Magikarp;
+typedef struct Gyarados Gyarados;
+typedef struct Lapras Lapras;
+typedef struct Ditto Ditto;
+typedef struct Eevee Eevee;
+typedef struct Vaporeon Vaporeon;
+typedef struct Jolteon Jolteon;
+typedef struct Flareon Flareon;
+typedef struct Porygon Porygon;
+typedef struct Omanyte Omanyte;
+typedef struct Omastar Omastar;
+typedef struct Kabuto Kabuto;
+typedef struct Kabutops Kabutops;
+typedef struct Aerodactyl Aerodactyl;
+typedef struct Snorlax Snorlax;
+typedef struct Articuno Articuno;
+typedef struct Zapdos Zapdos;
+typedef struct Moltres Moltres;
+typedef struct Dratini Dratini;
+typedef struct Dragonair Dragonair;
+typedef struct Dragonite Dragonite;
+typedef struct Mewtwo Mewtwo;
+typedef struct Mew Mew;
+typedef struct Chikorita Chikorita;
+typedef struct Bayleef Bayleef;
+typedef struct Meganium Meganium;
+typedef struct Cyndaquil Cyndaquil;
+typedef struct Quilava Quilava;
+typedef struct Typhlosion Typhlosion;
+typedef struct Totodile Totodile;
+typedef struct Croconaw Croconaw;
+typedef struct Feraligatr Feraligatr;
+typedef struct Sentret Sentret;
+typedef struct Furret Furret;
+typedef struct Hoothoot Hoothoot;
+typedef struct Noctowl Noctowl;
+typedef struct Ledyba Ledyba;
+typedef struct Ledian Ledian;
+typedef struct Spinarak Spinarak;
+typedef struct Ariados Ariados;
+typedef struct Crobat Crobat;
+typedef struct Chinchou Chinchou;
+typedef struct Lanturn Lanturn;
+typedef struct Pichu Pichu;
+typedef struct Cleffa Cleffa;
+typedef struct Igglybuff Igglybuff;
+typedef struct Togepi Togepi;
+typedef struct Togetic Togetic;
+typedef struct Natu Natu;
+typedef struct Xatu Xatu;
+typedef struct Mareep Mareep;
+typedef struct Flaaffy Flaaffy;
+typedef struct Ampharos Ampharos;
+typedef struct Bellossom Bellossom;
+typedef struct Marill Marill;
+typedef struct Azumarill Azumarill;
+typedef struct Sudowoodo Sudowoodo;
+typedef struct Politoed Politoed;
+typedef struct Hoppip Hoppip;
+typedef struct Skiploom Skiploom;
+typedef struct Jumpluff Jumpluff;
+typedef struct Aipom Aipom;
+typedef struct Sunkern Sunkern;
+typedef struct Sunflora Sunflora;
+typedef struct Yanma Yanma;
+typedef struct Wooper Wooper;
+typedef struct Quagsire Quagsire;
+typedef struct Espeon Espeon;
+typedef struct Umbreon Umbreon;
+typedef struct Murkrow Murkrow;
+typedef struct Slowking Slowking;
+typedef struct Misdreavus Misdreavus;
+typedef struct Unown Unown;
+typedef struct Wobbuffet Wobbuffet;
+typedef struct Girafarig Girafarig;
+typedef struct Pineco Pineco;
+typedef struct Forretress Forretress;
+typedef struct Dunsparce Dunsparce;
+typedef struct Gligar Gligar;
+typedef struct Steelix Steelix;
+typedef struct Snubbull Snubbull;
+typedef struct Granbull Granbull;
+typedef struct Qwilfish Qwilfish;
+typedef struct Scizor Scizor;
+typedef struct Shuckle Shuckle;
+typedef struct Heracross Heracross;
+typedef struct Sneasel Sneasel;
+typedef struct Teddiursa Teddiursa;
+typedef struct Ursaring Ursaring;
+typedef struct Slugma Slugma;
+typedef struct Magcargo Magcargo;
+typedef struct Swinub Swinub;
+typedef struct Piloswine Piloswine;
+typedef struct Corsola Corsola;
+typedef struct Remoraid Remoraid;
+typedef struct Octillery Octillery;
+typedef struct Delibird Delibird;
+typedef struct Mantine Mantine;
+typedef struct Skarmory Skarmory;
+typedef struct Houndour Houndour;
+typedef struct Houndoom Houndoom;
+typedef struct Kingdra Kingdra;
+typedef struct Phanpy Phanpy;
+typedef struct Donphan Donphan;
+typedef struct Porygon2 Porygon2;
+typedef struct Stantler Stantler;
+typedef struct Smeargle Smeargle;
+typedef struct Tyrogue Tyrogue;
+typedef struct Hitmontop Hitmontop;
+typedef struct Smoochum Smoochum;
+typedef struct Elekid Elekid;
+typedef struct Magby Magby;
+typedef struct Miltank Miltank;
+typedef struct Blissey Blissey;
+typedef struct Raikou Raikou;
+typedef struct Entei Entei;
+typedef struct Suicune Suicune;
+typedef struct Larvitar Larvitar;
+typedef struct Pupitar Pupitar;
+typedef struct Tyranitar Tyranitar;
+typedef struct Lugia Lugia;
+typedef struct HoOh HoOh;
+typedef struct Celebi Celebi;
+typedef struct Treecko Treecko;
+typedef struct Grovyle Grovyle;
+typedef struct Sceptile Sceptile;
+typedef struct Torchic Torchic;
+typedef struct Combusken Combusken;
+typedef struct Blaziken Blaziken;
+typedef struct Mudkip Mudkip;
+typedef struct Marshtomp Marshtomp;
+typedef struct Swampert Swampert;
+typedef struct Poochyena Poochyena;
+typedef struct Mightyena Mightyena;
+typedef struct Zigzagoon Zigzagoon;
+typedef struct Linoone Linoone;
+typedef struct Wurmple Wurmple;
+typedef struct Silcoon Silcoon;
+typedef struct Beautifly Beautifly;
+typedef struct Cascoon Cascoon;
+typedef struct Dustox Dustox;
+typedef struct Lotad Lotad;
+typedef struct Lombre Lombre;
+typedef struct Ludicolo Ludicolo;
+typedef struct Seedot Seedot;
+typedef struct Nuzleaf Nuzleaf;
+typedef struct Shiftry Shiftry;
+typedef struct Taillow Taillow;
+typedef struct Swellow Swellow;
+typedef struct Wingull Wingull;
+typedef struct Pelipper Pelipper;
+typedef struct Ralts Ralts;
+typedef struct Kirlia Kirlia;
+typedef struct Gardevoir Gardevoir;
+typedef struct Surskit Surskit;
+typedef struct Masquerain Masquerain;
+typedef struct Shroomish Shroomish;
+typedef struct Breloom Breloom;
+typedef struct Slakoth Slakoth;
+typedef struct Vigoroth Vigoroth;
+typedef struct Slaking Slaking;
+typedef struct Nincada Nincada;
+typedef struct Ninjask Ninjask;
+typedef struct Shedinja Shedinja;
+typedef struct Whismur Whismur;
+typedef struct Loudred Loudred;
+typedef struct Exploud Exploud;
+typedef struct Makuhita Makuhita;
+typedef struct Hariyama Hariyama;
+typedef struct Azurill Azurill;
+typedef struct Nosepass Nosepass;
+typedef struct Skitty Skitty;
+typedef struct Delcatty Delcatty;
+typedef struct Sableye Sableye;
+typedef struct Mawile Mawile;
+typedef struct Aron Aron;
+typedef struct Lairon Lairon;
+typedef struct Aggron Aggron;
+typedef struct Meditite Meditite;
+typedef struct Medicham Medicham;
+typedef struct Electrike Electrike;
+typedef struct Manectric Manectric;
+typedef struct Plusle Plusle;
+typedef struct Minun Minun;
+typedef struct Volbeat Volbeat;
+typedef struct Illumise Illumise;
+typedef struct Roselia Roselia;
+typedef struct Gulpin Gulpin;
+typedef struct Swalot Swalot;
+typedef struct Carvanha Carvanha;
+typedef struct Sharpedo Sharpedo;
+typedef struct Wailmer Wailmer;
+typedef struct Wailord Wailord;
+typedef struct Numel Numel;
+typedef struct Camerupt Camerupt;
+typedef struct Torkoal Torkoal;
+typedef struct Spoink Spoink;
+typedef struct Grumpig Grumpig;
+typedef struct Spinda Spinda;
+typedef struct Trapinch Trapinch;
+typedef struct Vibrava Vibrava;
+typedef struct Flygon Flygon;
+typedef struct Cacnea Cacnea;
+typedef struct Cacturne Cacturne;
+typedef struct Swablu Swablu;
+typedef struct Altaria Altaria;
+typedef struct Zangoose Zangoose;
+typedef struct Seviper Seviper;
+typedef struct Lunatone Lunatone;
+typedef struct Solrock Solrock;
+typedef struct Barboach Barboach;
+typedef struct Whiscash Whiscash;
+typedef struct Corphish Corphish;
+typedef struct Crawdaunt Crawdaunt;
+typedef struct Baltoy Baltoy;
+typedef struct Claydol Claydol;
+typedef struct Lileep Lileep;
+typedef struct Cradily Cradily;
+typedef struct Anorith Anorith;
+typedef struct Armaldo Armaldo;
+typedef struct Feebas Feebas;
+typedef struct Milotic Milotic;
+typedef struct Castform Castform;
+typedef struct Kecleon Kecleon;
+typedef struct Shuppet Shuppet;
+typedef struct Banette Banette;
+typedef struct Duskull Duskull;
+typedef struct Dusclops Dusclops;
+typedef struct Tropius Tropius;
+typedef struct Chimecho Chimecho;
+typedef struct Absol Absol;
+typedef struct Wynaut Wynaut;
+typedef struct Snorunt Snorunt;
+typedef struct Glalie Glalie;
+typedef struct Spheal Spheal;
+typedef struct Sealeo Sealeo;
+typedef struct Walrein Walrein;
+typedef struct Clamperl Clamperl;
+typedef struct Huntail Huntail;
+typedef struct Gorebyss Gorebyss;
+typedef struct Relicanth Relicanth;
+typedef struct Luvdisc Luvdisc;
+typedef struct Bagon Bagon;
+typedef struct Shelgon Shelgon;
+typedef struct Salamence Salamence;
+typedef struct Beldum Beldum;
+typedef struct Metang Metang;
+typedef struct Metagross Metagross;
+typedef struct Regirock Regirock;
+typedef struct Regice Regice;
+typedef struct Registeel Registeel;
+typedef struct Latias Latias;
+typedef struct Latios Latios;
+typedef struct Kyogre Kyogre;
+typedef struct Groudon Groudon;
+typedef struct Rayquaza Rayquaza;
+typedef struct Jirachi Jirachi;
+typedef struct Deoxys Deoxys;
+typedef struct Turtwig Turtwig;
+typedef struct Grotle Grotle;
+typedef struct Torterra Torterra;
+typedef struct Chimchar Chimchar;
+typedef struct Monferno Monferno;
+typedef struct Infernape Infernape;
+typedef struct Piplup Piplup;
+typedef struct Prinplup Prinplup;
+typedef struct Empoleon Empoleon;
+typedef struct Starly Starly;
+typedef struct Staravia Staravia;
+typedef struct Staraptor Staraptor;
+typedef struct Bidoof Bidoof;
+typedef struct Bibarel Bibarel;
+typedef struct Kricketot Kricketot;
+typedef struct Kricketune Kricketune;
+typedef struct Shinx Shinx;
+typedef struct Luxio Luxio;
+typedef struct Luxray Luxray;
+typedef struct Budew Budew;
+typedef struct Roserade Roserade;
+typedef struct Cranidos Cranidos;
+typedef struct Rampardos Rampardos;
+typedef struct Shieldon Shieldon;
+typedef struct Bastiodon Bastiodon;
+typedef struct Burmy Burmy;
+typedef struct Wormadam Wormadam;
+typedef struct Mothim Mothim;
+typedef struct Combee Combee;
+typedef struct Vespiquen Vespiquen;
+typedef struct Pachirisu Pachirisu;
+typedef struct Buizel Buizel;
+typedef struct Floatzel Floatzel;
+typedef struct Cherubi Cherubi;
+typedef struct Cherrim Cherrim;
+typedef struct Shellos Shellos;
+typedef struct Gastrodon Gastrodon;
+typedef struct Ambipom Ambipom;
+typedef struct Drifloon Drifloon;
+typedef struct Drifblim Drifblim;
+typedef struct Buneary Buneary;
+typedef struct Lopunny Lopunny;
+typedef struct Mismagius Mismagius;
+typedef struct Honchkrow Honchkrow;
+typedef struct Glameow Glameow;
+typedef struct Purugly Purugly;
+typedef struct Chingling Chingling;
+typedef struct Stunky Stunky;
+typedef struct Skuntank Skuntank;
+typedef struct Bronzor Bronzor;
+typedef struct Bronzong Bronzong;
+typedef struct Bonsly Bonsly;
+typedef struct MimeJr MimeJr;
+typedef struct Happiny Happiny;
+typedef struct Chatot Chatot;
+typedef struct Spiritomb Spiritomb;
+typedef struct Gible Gible;
+typedef struct Gabite Gabite;
+typedef struct Garchomp Garchomp;
+typedef struct Munchlax Munchlax;
+typedef struct Riolu Riolu;
+typedef struct Lucario Lucario;
+typedef struct Hippopotas Hippopotas;
+typedef struct Hippowdon Hippowdon;
+typedef struct Skorupi Skorupi;
+typedef struct Drapion Drapion;
+typedef struct Croagunk Croagunk;
+typedef struct Toxicroak Toxicroak;
+typedef struct Carnivine Carnivine;
+typedef struct Finneon Finneon;
+typedef struct Lumineon Lumineon;
+typedef struct Mantyke Mantyke;
+typedef struct Snover Snover;
+typedef struct Abomasnow Abomasnow;
+typedef struct Weavile Weavile;
+typedef struct Magnezone Magnezone;
+typedef struct Lickilicky Lickilicky;
+typedef struct Rhyperior Rhyperior;
+typedef struct Tangrowth Tangrowth;
+typedef struct Electivire Electivire;
+typedef struct Magmortar Magmortar;
+typedef struct Togekiss Togekiss;
+typedef struct Yanmega Yanmega;
+typedef struct Leafeon Leafeon;
+typedef struct Glaceon Glaceon;
+typedef struct Gliscor Gliscor;
+typedef struct Mamoswine Mamoswine;
+typedef struct PorygonZ PorygonZ;
+typedef struct Gallade Gallade;
+typedef struct Probopass Probopass;
+typedef struct Dusknoir Dusknoir;
+typedef struct Froslass Froslass;
+typedef struct Rotom Rotom;
+typedef struct Uxie Uxie;
+typedef struct Mesprit Mesprit;
+typedef struct Azelf Azelf;
+typedef struct Dialga Dialga;
+typedef struct Palkia Palkia;
+typedef struct Heatran Heatran;
+typedef struct Regigigas Regigigas;
+typedef struct Giratina Giratina;
+typedef struct Cresselia Cresselia;
+typedef struct Phione Phione;
+typedef struct Manaphy Manaphy;
+typedef struct Darkrai Darkrai;
+typedef struct Shaymin Shaymin;
+typedef struct Arceus Arceus;
+typedef struct Victini Victini;
+typedef struct Snivy Snivy;
+typedef struct Servine Servine;
+typedef struct Serperior Serperior;
+typedef struct Tepig Tepig;
+typedef struct Pignite Pignite;
+typedef struct Emboar Emboar;
+typedef struct Oshawott Oshawott;
+typedef struct Dewott Dewott;
+typedef struct Samurott Samurott;
+typedef struct Patrat Patrat;
+typedef struct Watchog Watchog;
+typedef struct Lillipup Lillipup;
+typedef struct Herdier Herdier;
+typedef struct Stoutland Stoutland;
+typedef struct Purrloin Purrloin;
+typedef struct Liepard Liepard;
+typedef struct Pansage Pansage;
+typedef struct Simisage Simisage;
+typedef struct Pansear Pansear;
+typedef struct Simisear Simisear;
+typedef struct Panpour Panpour;
+typedef struct Simipour Simipour;
+typedef struct Munna Munna;
+typedef struct Musharna Musharna;
+typedef struct Pidove Pidove;
+typedef struct Tranquill Tranquill;
+typedef struct Unfezant Unfezant;
+typedef struct Blitzle Blitzle;
+typedef struct Zebstrika Zebstrika;
+typedef struct Roggenrola Roggenrola;
+typedef struct Boldore Boldore;
+typedef struct Gigalith Gigalith;
+typedef struct Woobat Woobat;
+typedef struct Swoobat Swoobat;
+typedef struct Drilbur Drilbur;
+typedef struct Excadrill Excadrill;
+typedef struct Audino Audino;
+typedef struct Timburr Timburr;
+typedef struct Gurdurr Gurdurr;
+typedef struct Conkeldurr Conkeldurr;
+typedef struct Tympole Tympole;
+typedef struct Palpitoad Palpitoad;
+typedef struct Seismitoad Seismitoad;
+typedef struct Throh Throh;
+typedef struct Sawk Sawk;
+typedef struct Sewaddle Sewaddle;
+typedef struct Swadloon Swadloon;
+typedef struct Leavanny Leavanny;
+typedef struct Venipede Venipede;
+typedef struct Whirlipede Whirlipede;
+typedef struct Scolipede Scolipede;
+typedef struct Cottonee Cottonee;
+typedef struct Whimsicott Whimsicott;
+typedef struct Petilil Petilil;
+typedef struct Lilligant Lilligant;
+typedef struct Basculin Basculin;
+typedef struct Sandile Sandile;
+typedef struct Krokorok Krokorok;
+typedef struct Krookodile Krookodile;
+typedef struct Darumaka Darumaka;
+typedef struct Darmanitan Darmanitan;
+typedef struct Maractus Maractus;
+typedef struct Dwebble Dwebble;
+typedef struct Crustle Crustle;
+typedef struct Scraggy Scraggy;
+typedef struct Scrafty Scrafty;
+typedef struct Sigilyph Sigilyph;
+typedef struct Yamask Yamask;
+typedef struct Cofagrigus Cofagrigus;
+typedef struct Tirtouga Tirtouga;
+typedef struct Carracosta Carracosta;
+typedef struct Archen Archen;
+typedef struct Archeops Archeops;
+typedef struct Trubbish Trubbish;
+typedef struct Garbodor Garbodor;
+typedef struct Zorua Zorua;
+typedef struct Zoroark Zoroark;
+typedef struct Minccino Minccino;
+typedef struct Cinccino Cinccino;
+typedef struct Gothita Gothita;
+typedef struct Gothorita Gothorita;
+typedef struct Gothitelle Gothitelle;
+typedef struct Solosis Solosis;
+typedef struct Duosion Duosion;
+typedef struct Reuniclus Reuniclus;
+typedef struct Ducklett Ducklett;
+typedef struct Swanna Swanna;
+typedef struct Vanillite Vanillite;
+typedef struct Vanillish Vanillish;
+typedef struct Vanilluxe Vanilluxe;
+typedef struct Deerling Deerling;
+typedef struct Sawsbuck Sawsbuck;
+typedef struct Emolga Emolga;
+typedef struct Karrablast Karrablast;
+typedef struct Escavalier Escavalier;
+typedef struct Foongus Foongus;
+typedef struct Amoonguss Amoonguss;
+typedef struct Frillish Frillish;
+typedef struct Jellicent Jellicent;
+typedef struct Alomomola Alomomola;
+typedef struct Joltik Joltik;
+typedef struct Galvantula Galvantula;
+typedef struct Ferroseed Ferroseed;
+typedef struct Ferrothorn Ferrothorn;
+typedef struct Klink Klink;
+typedef struct Klang Klang;
+typedef struct Klinklang Klinklang;
+typedef struct Tynamo Tynamo;
+typedef struct Eelektrik Eelektrik;
+typedef struct Eelektross Eelektross;
+typedef struct Elgyem Elgyem;
+typedef struct Beheeyem Beheeyem;
+typedef struct Litwick Litwick;
+typedef struct Lampent Lampent;
+typedef struct Chandelure Chandelure;
+typedef struct Axew Axew;
+typedef struct Fraxure Fraxure;
+typedef struct Haxorus Haxorus;
+typedef struct Cubchoo Cubchoo;
+typedef struct Beartic Beartic;
+typedef struct Cryogonal Cryogonal;
+typedef struct Shelmet Shelmet;
+typedef struct Accelgor Accelgor;
+typedef struct Stunfisk Stunfisk;
+typedef struct Mienfoo Mienfoo;
+typedef struct Mienshao Mienshao;
+typedef struct Druddigon Druddigon;
+typedef struct Golett Golett;
+typedef struct Golurk Golurk;
+typedef struct Pawniard Pawniard;
+typedef struct Bisharp Bisharp;
+typedef struct Bouffalant Bouffalant;
+typedef struct Rufflet Rufflet;
+typedef struct Braviary Braviary;
+typedef struct Vullaby Vullaby;
+typedef struct Mandibuzz Mandibuzz;
+typedef struct Heatmor Heatmor;
+typedef struct Durant Durant;
+typedef struct Deino Deino;
+typedef struct Zweilous Zweilous;
+typedef struct Hydreigon Hydreigon;
+typedef struct Larvesta Larvesta;
+typedef struct Volcarona Volcarona;
+typedef struct Cobalion Cobalion;
+typedef struct Terrakion Terrakion;
+typedef struct Virizion Virizion;
+typedef struct Tornadus Tornadus;
+typedef struct Thundurus Thundurus;
+typedef struct Reshiram Reshiram;
+typedef struct Zekrom Zekrom;
+typedef struct Landorus Landorus;
+typedef struct Kyurem Kyurem;
+typedef struct Keldeo Keldeo;
+typedef struct Meloetta Meloetta;
+typedef struct Genesect Genesect;
+typedef struct Chespin Chespin;
+typedef struct Quilladin Quilladin;
+typedef struct Chesnaught Chesnaught;
+typedef struct Fennekin Fennekin;
+typedef struct Braixen Braixen;
+typedef struct Delphox Delphox;
+typedef struct Froakie Froakie;
+typedef struct Frogadier Frogadier;
+typedef struct Greninja Greninja;
+typedef struct Bunnelby Bunnelby;
+typedef struct Diggersby Diggersby;
+typedef struct Fletchling Fletchling;
+typedef struct Fletchinder Fletchinder;
+typedef struct Talonflame Talonflame;
+typedef struct Scatterbug Scatterbug;
+typedef struct Spewpa Spewpa;
+typedef struct Vivillon Vivillon;
+typedef struct Litleo Litleo;
+typedef struct Pyroar Pyroar;
+typedef struct Flabebe Flabebe;
+typedef struct Floette Floette;
+typedef struct Florges Florges;
+typedef struct Skiddo Skiddo;
+typedef struct Gogoat Gogoat;
+typedef struct Pancham Pancham;
+typedef struct Pangoro Pangoro;
+typedef struct Furfrou Furfrou;
+typedef struct Espurr Espurr;
+typedef struct Meowstic Meowstic;
+typedef struct Honedge Honedge;
+typedef struct Doublade Doublade;
+typedef struct Aegislash Aegislash;
+typedef struct Spritzee Spritzee;
+typedef struct Aromatisse Aromatisse;
+typedef struct Swirlix Swirlix;
+typedef struct Slurpuff Slurpuff;
+typedef struct Inkay Inkay;
+typedef struct Malamar Malamar;
+typedef struct Binacle Binacle;
+typedef struct Barbaracle Barbaracle;
+typedef struct Skrelp Skrelp;
+typedef struct Dragalge Dragalge;
+typedef struct Clauncher Clauncher;
+typedef struct Clawitzer Clawitzer;
+typedef struct Helioptile Helioptile;
+typedef struct Heliolisk Heliolisk;
+typedef struct Tyrunt Tyrunt;
+typedef struct Tyrantrum Tyrantrum;
+typedef struct Amaura Amaura;
+typedef struct Aurorus Aurorus;
+typedef struct Sylveon Sylveon;
+typedef struct Hawlucha Hawlucha;
+typedef struct Dedenne Dedenne;
+typedef struct Carbink Carbink;
+typedef struct Goomy Goomy;
+typedef struct Sliggoo Sliggoo;
+typedef struct Goodra Goodra;
+typedef struct Klefki Klefki;
+typedef struct Phantump Phantump;
+typedef struct Trevenant Trevenant;
+typedef struct Pumpkaboo Pumpkaboo;
+typedef struct Gourgeist Gourgeist;
+typedef struct Bergmite Bergmite;
+typedef struct Avalugg Avalugg;
+typedef struct Noibat Noibat;
+typedef struct Noivern Noivern;
+typedef struct Xerneas Xerneas;
+typedef struct Yveltal Yveltal;
+typedef struct Zygarde Zygarde;
+typedef struct Diancie Diancie;
+typedef struct Hoopa Hoopa;
+typedef struct Volcanion Volcanion;
+
+struct BillsPC
+{
+  Bulbasaur bulbasaur;
+  Ivysaur ivysaur;
+  Venusaur venusaur;
+  Charmander charmander;
+  Charmeleon charmeleon;
+  Charizard charizard;
+  Squirtle squirtle;
+  Wartortle wartortle;
+  Blastoise blastoise;
+  Caterpie caterpie;
+  Metapod metapod;
+  Butterfree butterfree;
+  Weedle weedle;
+  Kakuna kakuna;
+  Beedrill beedrill;
+  Pidgey pidgey;
+  Pidgeotto pidgeotto;
+  Pidgeot pidgeot;
+  Rattata rattata;
+  Raticate raticate;
+  Spearow spearow;
+  Fearow fearow;
+  Ekans ekans;
+  Arbok arbok;
+  Pikachu pikachu;
+  Raichu raichu;
+  Sandshrew sandshrew;
+  Sandslash sandslash;
+  NidoranF nidoranF;
+  Nidorina nidorina;
+  Nidoqueen nidoqueen;
+  NidoranM nidoranM;
+  Nidorino nidorino;
+  Nidoking nidoking;
+  Clefairy clefairy;
+  Clefable clefable;
+  Vulpix vulpix;
+  Ninetales ninetales;
+  Jigglypuff jigglypuff;
+  Wigglytuff wigglytuff;
+  Zubat zubat;
+  Golbat golbat;
+  Oddish oddish;
+  Gloom gloom;
+  Vileplume vileplume;
+  Paras paras;
+  Parasect parasect;
+  Venonat venonat;
+  Venomoth venomoth;
+  Diglett diglett;
+  Dugtrio dugtrio;
+  Meowth meowth;
+  Persian persian;
+  Psyduck psyduck;
+  Golduck golduck;
+  Mankey mankey;
+  Primeape primeape;
+  Growlithe growlithe;
+  Arcanine arcanine;
+  Poliwag poliwag;
+  Poliwhirl poliwhirl;
+  Poliwrath poliwrath;
+  Abra abra;
+  Kadabra kadabra;
+  Alakazam alakazam;
+  Machop machop;
+  Machoke machoke;
+  Machamp machamp;
+  Bellsprout bellsprout;
+  Weepinbell weepinbell;
+  Victreebel victreebel;
+  Tentacool tentacool;
+  Tentacruel tentacruel;
+  Geodude geodude;
+  Graveler graveler;
+  Golem golem;
+  Ponyta ponyta;
+  Rapidash rapidash;
+  Slowpoke slowpoke;
+  Slowbro slowbro;
+  Magnemite magnemite;
+  Magneton magneton;
+  Farfetchd farfetchd;
+  Doduo doduo;
+  Dodrio dodrio;
+  Seel seel;
+  Dewgong dewgong;
+  Grimer grimer;
+  Muk muk;
+  Shellder shellder;
+  Cloyster cloyster;
+  Gastly gastly;
+  Haunter haunter;
+  Gengar gengar;
+  Onix onix;
+  Drowzee drowzee;
+  Hypno hypno;
+  Krabby krabby;
+  Kingler kingler;
+  Voltorb voltorb;
+  Electrode electrode;
+  Exeggcute exeggcute;
+  Exeggutor exeggutor;
+  Cubone cubone;
+  Marowak marowak;
+  Hitmonlee hitmonlee;
+  Hitmonchan hitmonchan;
+  Lickitung lickitung;
+  Koffing koffing;
+  Weezing weezing;
+  Rhyhorn rhyhorn;
+  Rhydon rhydon;
+  Chansey chansey;
+  Tangela tangela;
+  Kangaskhan kangaskhan;
+  Horsea horsea;
+  Seadra seadra;
+  Goldeen goldeen;
+  Seaking seaking;
+  Staryu staryu;
+  Starmie starmie;
+  MrMime mrMime;
+  Scyther scyther;
+  Jynx jynx;
+  Electabuzz electabuzz;
+  Magmar magmar;
+  Pinsir pinsir;
+  Tauros tauros;
+  Magikarp magikarp;
+  Gyarados gyarados;
+  Lapras lapras;
+  Ditto ditto;
+  Eevee eevee;
+  Vaporeon vaporeon;
+  Jolteon jolteon;
+  Flareon flareon;
+  Porygon porygon;
+  Omanyte omanyte;
+  Omastar omastar;
+  Kabuto kabuto;
+  Kabutops kabutops;
+  Aerodactyl aerodactyl;
+  Snorlax snorlax;
+  Articuno articuno;
+  Zapdos zapdos;
+  Moltres moltres;
+  Dratini dratini;
+  Dragonair dragonair;
+  Dragonite dragonite;
+  Mewtwo mewtwo;
+  Mew mew;
+  Chikorita chikorita;
+  Bayleef bayleef;
+  Meganium meganium;
+  Cyndaquil cyndaquil;
+  Quilava quilava;
+  Typhlosion typhlosion;
+  Totodile totodile;
+  Croconaw croconaw;
+  Feraligatr feraligatr;
+  Sentret sentret;
+  Furret furret;
+  Hoothoot hoothoot;
+  Noctowl noctowl;
+  Ledyba ledyba;
+  Ledian ledian;
+  Spinarak spinarak;
+  Ariados ariados;
+  Crobat crobat;
+  Chinchou chinchou;
+  Lanturn lanturn;
+  Pichu pichu;
+  Cleffa cleffa;
+  Igglybuff igglybuff;
+  Togepi togepi;
+  Togetic togetic;
+  Natu natu;
+  Xatu xatu;
+  Mareep mareep;
+  Flaaffy flaaffy;
+  Ampharos ampharos;
+  Bellossom bellossom;
+  Marill marill;
+  Azumarill azumarill;
+  Sudowoodo sudowoodo;
+  Politoed politoed;
+  Hoppip hoppip;
+  Skiploom skiploom;
+  Jumpluff jumpluff;
+  Aipom aipom;
+  Sunkern sunkern;
+  Sunflora sunflora;
+  Yanma yanma;
+  Wooper wooper;
+  Quagsire quagsire;
+  Espeon espeon;
+  Umbreon umbreon;
+  Murkrow murkrow;
+  Slowking slowking;
+  Misdreavus misdreavus;
+  Unown unown;
+  Wobbuffet wobbuffet;
+  Girafarig girafarig;
+  Pineco pineco;
+  Forretress forretress;
+  Dunsparce dunsparce;
+  Gligar gligar;
+  Steelix steelix;
+  Snubbull snubbull;
+  Granbull granbull;
+  Qwilfish qwilfish;
+  Scizor scizor;
+  Shuckle shuckle;
+  Heracross heracross;
+  Sneasel sneasel;
+  Teddiursa teddiursa;
+  Ursaring ursaring;
+  Slugma slugma;
+  Magcargo magcargo;
+  Swinub swinub;
+  Piloswine piloswine;
+  Corsola corsola;
+  Remoraid remoraid;
+  Octillery octillery;
+  Delibird delibird;
+  Mantine mantine;
+  Skarmory skarmory;
+  Houndour houndour;
+  Houndoom houndoom;
+  Kingdra kingdra;
+  Phanpy phanpy;
+  Donphan donphan;
+  Porygon2 porygon2;
+  Stantler stantler;
+  Smeargle smeargle;
+  Tyrogue tyrogue;
+  Hitmontop hitmontop;
+  Smoochum smoochum;
+  Elekid elekid;
+  Magby magby;
+  Miltank miltank;
+  Blissey blissey;
+  Raikou raikou;
+  Entei entei;
+  Suicune suicune;
+  Larvitar larvitar;
+  Pupitar pupitar;
+  Tyranitar tyranitar;
+  Lugia lugia;
+  HoOh hoOh;
+  Celebi celebi;
+  Treecko treecko;
+  Grovyle grovyle;
+  Sceptile sceptile;
+  Torchic torchic;
+  Combusken combusken;
+  Blaziken blaziken;
+  Mudkip mudkip;
+  Marshtomp marshtomp;
+  Swampert swampert;
+  Poochyena poochyena;
+  Mightyena mightyena;
+  Zigzagoon zigzagoon;
+  Linoone linoone;
+  Wurmple wurmple;
+  Silcoon silcoon;
+  Beautifly beautifly;
+  Cascoon cascoon;
+  Dustox dustox;
+  Lotad lotad;
+  Lombre lombre;
+  Ludicolo ludicolo;
+  Seedot seedot;
+  Nuzleaf nuzleaf;
+  Shiftry shiftry;
+  Taillow taillow;
+  Swellow swellow;
+  Wingull wingull;
+  Pelipper pelipper;
+  Ralts ralts;
+  Kirlia kirlia;
+  Gardevoir gardevoir;
+  Surskit surskit;
+  Masquerain masquerain;
+  Shroomish shroomish;
+  Breloom breloom;
+  Slakoth slakoth;
+  Vigoroth vigoroth;
+  Slaking slaking;
+  Nincada nincada;
+  Ninjask ninjask;
+  Shedinja shedinja;
+  Whismur whismur;
+  Loudred loudred;
+  Exploud exploud;
+  Makuhita makuhita;
+  Hariyama hariyama;
+  Azurill azurill;
+  Nosepass nosepass;
+  Skitty skitty;
+  Delcatty delcatty;
+  Sableye sableye;
+  Mawile mawile;
+  Aron aron;
+  Lairon lairon;
+  Aggron aggron;
+  Meditite meditite;
+  Medicham medicham;
+  Electrike electrike;
+  Manectric manectric;
+  Plusle plusle;
+  Minun minun;
+  Volbeat volbeat;
+  Illumise illumise;
+  Roselia roselia;
+  Gulpin gulpin;
+  Swalot swalot;
+  Carvanha carvanha;
+  Sharpedo sharpedo;
+  Wailmer wailmer;
+  Wailord wailord;
+  Numel numel;
+  Camerupt camerupt;
+  Torkoal torkoal;
+  Spoink spoink;
+  Grumpig grumpig;
+  Spinda spinda;
+  Trapinch trapinch;
+  Vibrava vibrava;
+  Flygon flygon;
+  Cacnea cacnea;
+  Cacturne cacturne;
+  Swablu swablu;
+  Altaria altaria;
+  Zangoose zangoose;
+  Seviper seviper;
+  Lunatone lunatone;
+  Solrock solrock;
+  Barboach barboach;
+  Whiscash whiscash;
+  Corphish corphish;
+  Crawdaunt crawdaunt;
+  Baltoy baltoy;
+  Claydol claydol;
+  Lileep lileep;
+  Cradily cradily;
+  Anorith anorith;
+  Armaldo armaldo;
+  Feebas feebas;
+  Milotic milotic;
+  Castform castform;
+  Kecleon kecleon;
+  Shuppet shuppet;
+  Banette banette;
+  Duskull duskull;
+  Dusclops dusclops;
+  Tropius tropius;
+  Chimecho chimecho;
+  Absol absol;
+  Wynaut wynaut;
+  Snorunt snorunt;
+  Glalie glalie;
+  Spheal spheal;
+  Sealeo sealeo;
+  Walrein walrein;
+  Clamperl clamperl;
+  Huntail huntail;
+  Gorebyss gorebyss;
+  Relicanth relicanth;
+  Luvdisc luvdisc;
+  Bagon bagon;
+  Shelgon shelgon;
+  Salamence salamence;
+  Beldum beldum;
+  Metang metang;
+  Metagross metagross;
+  Regirock regirock;
+  Regice regice;
+  Registeel registeel;
+  Latias latias;
+  Latios latios;
+  Kyogre kyogre;
+  Groudon groudon;
+  Rayquaza rayquaza;
+  Jirachi jirachi;
+  Deoxys deoxys;
+  Turtwig turtwig;
+  Grotle grotle;
+  Torterra torterra;
+  Chimchar chimchar;
+  Monferno monferno;
+  Infernape infernape;
+  Piplup piplup;
+  Prinplup prinplup;
+  Empoleon empoleon;
+  Starly starly;
+  Staravia staravia;
+  Staraptor staraptor;
+  Bidoof bidoof;
+  Bibarel bibarel;
+  Kricketot kricketot;
+  Kricketune kricketune;
+  Shinx shinx;
+  Luxio luxio;
+  Luxray luxray;
+  Budew budew;
+  Roserade roserade;
+  Cranidos cranidos;
+  Rampardos rampardos;
+  Shieldon shieldon;
+  Bastiodon bastiodon;
+  Burmy burmy;
+  Wormadam wormadam;
+  Mothim mothim;
+  Combee combee;
+  Vespiquen vespiquen;
+  Pachirisu pachirisu;
+  Buizel buizel;
+  Floatzel floatzel;
+  Cherubi cherubi;
+  Cherrim cherrim;
+  Shellos shellos;
+  Gastrodon gastrodon;
+  Ambipom ambipom;
+  Drifloon drifloon;
+  Drifblim drifblim;
+  Buneary buneary;
+  Lopunny lopunny;
+  Mismagius mismagius;
+  Honchkrow honchkrow;
+  Glameow glameow;
+  Purugly purugly;
+  Chingling chingling;
+  Stunky stunky;
+  Skuntank skuntank;
+  Bronzor bronzor;
+  Bronzong bronzong;
+  Bonsly bonsly;
+  MimeJr mimeJr;
+  Happiny happiny;
+  Chatot chatot;
+  Spiritomb spiritomb;
+  Gible gible;
+  Gabite gabite;
+  Garchomp garchomp;
+  Munchlax munchlax;
+  Riolu riolu;
+  Lucario lucario;
+  Hippopotas hippopotas;
+  Hippowdon hippowdon;
+  Skorupi skorupi;
+  Drapion drapion;
+  Croagunk croagunk;
+  Toxicroak toxicroak;
+  Carnivine carnivine;
+  Finneon finneon;
+  Lumineon lumineon;
+  Mantyke mantyke;
+  Snover snover;
+  Abomasnow abomasnow;
+  Weavile weavile;
+  Magnezone magnezone;
+  Lickilicky lickilicky;
+  Rhyperior rhyperior;
+  Tangrowth tangrowth;
+  Electivire electivire;
+  Magmortar magmortar;
+  Togekiss togekiss;
+  Yanmega yanmega;
+  Leafeon leafeon;
+  Glaceon glaceon;
+  Gliscor gliscor;
+  Mamoswine mamoswine;
+  PorygonZ porygonZ;
+  Gallade gallade;
+  Probopass probopass;
+  Dusknoir dusknoir;
+  Froslass froslass;
+  Rotom rotom;
+  Uxie uxie;
+  Mesprit mesprit;
+  Azelf azelf;
+  Dialga dialga;
+  Palkia palkia;
+  Heatran heatran;
+  Regigigas regigigas;
+  Giratina giratina;
+  Cresselia cresselia;
+  Phione phione;
+  Manaphy manaphy;
+  Darkrai darkrai;
+  Shaymin shaymin;
+  Arceus arceus;
+  Victini victini;
+  Snivy snivy;
+  Servine servine;
+  Serperior serperior;
+  Tepig tepig;
+  Pignite pignite;
+  Emboar emboar;
+  Oshawott oshawott;
+  Dewott dewott;
+  Samurott samurott;
+  Patrat patrat;
+  Watchog watchog;
+  Lillipup lillipup;
+  Herdier herdier;
+  Stoutland stoutland;
+  Purrloin purrloin;
+  Liepard liepard;
+  Pansage pansage;
+  Simisage simisage;
+  Pansear pansear;
+  Simisear simisear;
+  Panpour panpour;
+  Simipour simipour;
+  Munna munna;
+  Musharna musharna;
+  Pidove pidove;
+  Tranquill tranquill;
+  Unfezant unfezant;
+  Blitzle blitzle;
+  Zebstrika zebstrika;
+  Roggenrola roggenrola;
+  Boldore boldore;
+  Gigalith gigalith;
+  Woobat woobat;
+  Swoobat swoobat;
+  Drilbur drilbur;
+  Excadrill excadrill;
+  Audino audino;
+  Timburr timburr;
+  Gurdurr gurdurr;
+  Conkeldurr conkeldurr;
+  Tympole tympole;
+  Palpitoad palpitoad;
+  Seismitoad seismitoad;
+  Throh throh;
+  Sawk sawk;
+  Sewaddle sewaddle;
+  Swadloon swadloon;
+  Leavanny leavanny;
+  Venipede venipede;
+  Whirlipede whirlipede;
+  Scolipede scolipede;
+  Cottonee cottonee;
+  Whimsicott whimsicott;
+  Petilil petilil;
+  Lilligant lilligant;
+  Basculin basculin;
+  Sandile sandile;
+  Krokorok krokorok;
+  Krookodile krookodile;
+  Darumaka darumaka;
+  Darmanitan darmanitan;
+  Maractus maractus;
+  Dwebble dwebble;
+  Crustle crustle;
+  Scraggy scraggy;
+  Scrafty scrafty;
+  Sigilyph sigilyph;
+  Yamask yamask;
+  Cofagrigus cofagrigus;
+  Tirtouga tirtouga;
+  Carracosta carracosta;
+  Archen archen;
+  Archeops archeops;
+  Trubbish trubbish;
+  Garbodor garbodor;
+  Zorua zorua;
+  Zoroark zoroark;
+  Minccino minccino;
+  Cinccino cinccino;
+  Gothita gothita;
+  Gothorita gothorita;
+  Gothitelle gothitelle;
+  Solosis solosis;
+  Duosion duosion;
+  Reuniclus reuniclus;
+  Ducklett ducklett;
+  Swanna swanna;
+  Vanillite vanillite;
+  Vanillish vanillish;
+  Vanilluxe vanilluxe;
+  Deerling deerling;
+  Sawsbuck sawsbuck;
+  Emolga emolga;
+  Karrablast karrablast;
+  Escavalier escavalier;
+  Foongus foongus;
+  Amoonguss amoonguss;
+  Frillish frillish;
+  Jellicent jellicent;
+  Alomomola alomomola;
+  Joltik joltik;
+  Galvantula galvantula;
+  Ferroseed ferroseed;
+  Ferrothorn ferrothorn;
+  Klink klink;
+  Klang klang;
+  Klinklang klinklang;
+  Tynamo tynamo;
+  Eelektrik eelektrik;
+  Eelektross eelektross;
+  Elgyem elgyem;
+  Beheeyem beheeyem;
+  Litwick litwick;
+  Lampent lampent;
+  Chandelure chandelure;
+  Axew axew;
+  Fraxure fraxure;
+  Haxorus haxorus;
+  Cubchoo cubchoo;
+  Beartic beartic;
+  Cryogonal cryogonal;
+  Shelmet shelmet;
+  Accelgor accelgor;
+  Stunfisk stunfisk;
+  Mienfoo mienfoo;
+  Mienshao mienshao;
+  Druddigon druddigon;
+  Golett golett;
+  Golurk golurk;
+  Pawniard pawniard;
+  Bisharp bisharp;
+  Bouffalant bouffalant;
+  Rufflet rufflet;
+  Braviary braviary;
+  Vullaby vullaby;
+  Mandibuzz mandibuzz;
+  Heatmor heatmor;
+  Durant durant;
+  Deino deino;
+  Zweilous zweilous;
+  Hydreigon hydreigon;
+  Larvesta larvesta;
+  Volcarona volcarona;
+  Cobalion cobalion;
+  Terrakion terrakion;
+  Virizion virizion;
+  Tornadus tornadus;
+  Thundurus thundurus;
+  Reshiram reshiram;
+  Zekrom zekrom;
+  Landorus landorus;
+  Kyurem kyurem;
+  Keldeo keldeo;
+  Meloetta meloetta;
+  Genesect genesect;
+  Chespin chespin;
+  Quilladin quilladin;
+  Chesnaught chesnaught;
+  Fennekin fennekin;
+  Braixen braixen;
+  Delphox delphox;
+  Froakie froakie;
+  Frogadier frogadier;
+  Greninja greninja;
+  Bunnelby bunnelby;
+  Diggersby diggersby;
+  Fletchling fletchling;
+  Fletchinder fletchinder;
+  Talonflame talonflame;
+  Scatterbug scatterbug;
+  Spewpa spewpa;
+  Vivillon vivillon;
+  Litleo litleo;
+  Pyroar pyroar;
+  Flabebe flabebe;
+  Floette floette;
+  Florges florges;
+  Skiddo skiddo;
+  Gogoat gogoat;
+  Pancham pancham;
+  Pangoro pangoro;
+  Furfrou furfrou;
+  Espurr espurr;
+  Meowstic meowstic;
+  Honedge honedge;
+  Doublade doublade;
+  Aegislash aegislash;
+  Spritzee spritzee;
+  Aromatisse aromatisse;
+  Swirlix swirlix;
+  Slurpuff slurpuff;
+  Inkay inkay;
+  Malamar malamar;
+  Binacle binacle;
+  Barbaracle barbaracle;
+  Skrelp skrelp;
+  Dragalge dragalge;
+  Clauncher clauncher;
+  Clawitzer clawitzer;
+  Helioptile helioptile;
+  Heliolisk heliolisk;
+  Tyrunt tyrunt;
+  Tyrantrum tyrantrum;
+  Amaura amaura;
+  Aurorus aurorus;
+  Sylveon sylveon;
+  Hawlucha hawlucha;
+  Dedenne dedenne;
+  Carbink carbink;
+  Goomy goomy;
+  Sliggoo sliggoo;
+  Goodra goodra;
+  Klefki klefki;
+  Phantump phantump;
+  Trevenant trevenant;
+  Pumpkaboo pumpkaboo;
+  Gourgeist gourgeist;
+  Bergmite bergmite;
+  Avalugg avalugg;
+  Noibat noibat;
+  Noivern noivern;
+  Xerneas xerneas;
+  Yveltal yveltal;
+  Zygarde zygarde;
+  Diancie diancie;
+  Hoopa hoopa;
+  Volcanion volcanion;
+};
+
+int main()
+{
+  struct BillsPC *billspokemon = alloc(struct BillsPC);
+  billspokemon->bulbasaur.isPikachu = false;
+  billspokemon->ivysaur.isPikachu = false;
+  billspokemon->venusaur.isPikachu = false;
+  billspokemon->charmander.isPikachu = false;
+  billspokemon->charmeleon.isPikachu = false;
+  billspokemon->charizard.isPikachu = false;
+  billspokemon->squirtle.isPikachu = false;
+  billspokemon->wartortle.isPikachu = false;
+  billspokemon->blastoise.isPikachu = false;
+  billspokemon->caterpie.isPikachu = false;
+  billspokemon->metapod.isPikachu = false;
+  billspokemon->butterfree.isPikachu = false;
+  billspokemon->weedle.isPikachu = false;
+  billspokemon->kakuna.isPikachu = false;
+  billspokemon->beedrill.isPikachu = false;
+  billspokemon->pidgey.isPikachu = false;
+  billspokemon->pidgeotto.isPikachu = false;
+  billspokemon->pidgeot.isPikachu = false;
+  billspokemon->rattata.isPikachu = false;
+  billspokemon->raticate.isPikachu = false;
+  billspokemon->spearow.isPikachu = false;
+  billspokemon->fearow.isPikachu = false;
+  billspokemon->ekans.isPikachu = false;
+  billspokemon->arbok.isPikachu = false;
+  billspokemon->pikachu.isPikachu = true;
+  billspokemon->raichu.isPikachu = false;
+  billspokemon->sandshrew.isPikachu = false;
+  billspokemon->sandslash.isPikachu = false;
+  billspokemon->nidoranF.isPikachu = false;
+  billspokemon->nidorina.isPikachu = false;
+  billspokemon->nidoqueen.isPikachu = false;
+  billspokemon->nidoranM.isPikachu = false;
+  billspokemon->nidorino.isPikachu = false;
+  billspokemon->nidoking.isPikachu = false;
+  billspokemon->clefairy.isPikachu = false;
+  billspokemon->clefable.isPikachu = false;
+  billspokemon->vulpix.isPikachu = false;
+  billspokemon->ninetales.isPikachu = false;
+  billspokemon->jigglypuff.isPikachu = false;
+  billspokemon->wigglytuff.isPikachu = false;
+  billspokemon->zubat.isPikachu = false;
+  billspokemon->golbat.isPikachu = false;
+  billspokemon->oddish.isPikachu = false;
+  billspokemon->gloom.isPikachu = false;
+  billspokemon->vileplume.isPikachu = false;
+  billspokemon->paras.isPikachu = false;
+  billspokemon->parasect.isPikachu = false;
+  billspokemon->venonat.isPikachu = false;
+  billspokemon->venomoth.isPikachu = false;
+  billspokemon->diglett.isPikachu = false;
+  billspokemon->dugtrio.isPikachu = false;
+  billspokemon->meowth.isPikachu = false;
+  billspokemon->persian.isPikachu = false;
+  billspokemon->psyduck.isPikachu = false;
+  billspokemon->golduck.isPikachu = false;
+  billspokemon->mankey.isPikachu = false;
+  billspokemon->primeape.isPikachu = false;
+  billspokemon->growlithe.isPikachu = false;
+  billspokemon->arcanine.isPikachu = false;
+  billspokemon->poliwag.isPikachu = false;
+  billspokemon->poliwhirl.isPikachu = false;
+  billspokemon->poliwrath.isPikachu = false;
+  billspokemon->abra.isPikachu = false;
+  billspokemon->kadabra.isPikachu = false;
+  billspokemon->alakazam.isPikachu = false;
+  billspokemon->machop.isPikachu = false;
+  billspokemon->machoke.isPikachu = false;
+  billspokemon->machamp.isPikachu = false;
+  billspokemon->bellsprout.isPikachu = false;
+  billspokemon->weepinbell.isPikachu = false;
+  billspokemon->victreebel.isPikachu = false;
+  billspokemon->tentacool.isPikachu = false;
+  billspokemon->tentacruel.isPikachu = false;
+  billspokemon->geodude.isPikachu = false;
+  billspokemon->graveler.isPikachu = false;
+  billspokemon->golem.isPikachu = false;
+  billspokemon->ponyta.isPikachu = false;
+  billspokemon->rapidash.isPikachu = false;
+  billspokemon->slowpoke.isPikachu = false;
+  billspokemon->slowbro.isPikachu = false;
+  billspokemon->magnemite.isPikachu = false;
+  billspokemon->magneton.isPikachu = false;
+  billspokemon->farfetchd.isPikachu = false;
+  billspokemon->doduo.isPikachu = false;
+  billspokemon->dodrio.isPikachu = false;
+  billspokemon->seel.isPikachu = false;
+  billspokemon->dewgong.isPikachu = false;
+  billspokemon->grimer.isPikachu = false;
+  billspokemon->muk.isPikachu = false;
+  billspokemon->shellder.isPikachu = false;
+  billspokemon->cloyster.isPikachu = false;
+  billspokemon->gastly.isPikachu = false;
+  billspokemon->haunter.isPikachu = false;
+  billspokemon->gengar.isPikachu = false;
+  billspokemon->onix.isPikachu = false;
+  billspokemon->drowzee.isPikachu = false;
+  billspokemon->hypno.isPikachu = false;
+  billspokemon->krabby.isPikachu = false;
+  billspokemon->kingler.isPikachu = false;
+  billspokemon->voltorb.isPikachu = false;
+  billspokemon->electrode.isPikachu = false;
+  billspokemon->exeggcute.isPikachu = false;
+  billspokemon->exeggutor.isPikachu = false;
+  billspokemon->cubone.isPikachu = false;
+  billspokemon->marowak.isPikachu = false;
+  billspokemon->hitmonlee.isPikachu = false;
+  billspokemon->hitmonchan.isPikachu = false;
+  billspokemon->lickitung.isPikachu = false;
+  billspokemon->koffing.isPikachu = false;
+  billspokemon->weezing.isPikachu = false;
+  billspokemon->rhyhorn.isPikachu = false;
+  billspokemon->rhydon.isPikachu = false;
+  billspokemon->chansey.isPikachu = false;
+  billspokemon->tangela.isPikachu = false;
+  billspokemon->kangaskhan.isPikachu = false;
+  billspokemon->horsea.isPikachu = false;
+  billspokemon->seadra.isPikachu = false;
+  billspokemon->goldeen.isPikachu = false;
+  billspokemon->seaking.isPikachu = false;
+  billspokemon->staryu.isPikachu = false;
+  billspokemon->starmie.isPikachu = false;
+  billspokemon->mrMime.isPikachu = false;
+  billspokemon->scyther.isPikachu = false;
+  billspokemon->jynx.isPikachu = false;
+  billspokemon->electabuzz.isPikachu = false;
+  billspokemon->magmar.isPikachu = false;
+  billspokemon->pinsir.isPikachu = false;
+  billspokemon->tauros.isPikachu = false;
+  billspokemon->magikarp.isPikachu = false;
+  billspokemon->gyarados.isPikachu = false;
+  billspokemon->lapras.isPikachu = false;
+  billspokemon->ditto.isPikachu = false;
+  billspokemon->eevee.isPikachu = false;
+  billspokemon->vaporeon.isPikachu = false;
+  billspokemon->jolteon.isPikachu = false;
+  billspokemon->flareon.isPikachu = false;
+  billspokemon->porygon.isPikachu = false;
+  billspokemon->omanyte.isPikachu = false;
+  billspokemon->omastar.isPikachu = false;
+  billspokemon->kabuto.isPikachu = false;
+  billspokemon->kabutops.isPikachu = false;
+  billspokemon->aerodactyl.isPikachu = false;
+  billspokemon->snorlax.isPikachu = false;
+  billspokemon->articuno.isPikachu = false;
+  billspokemon->zapdos.isPikachu = false;
+  billspokemon->moltres.isPikachu = false;
+  billspokemon->dratini.isPikachu = false;
+  billspokemon->dragonair.isPikachu = false;
+  billspokemon->dragonite.isPikachu = false;
+  billspokemon->mewtwo.isPikachu = false;
+  billspokemon->mew.isPikachu = false;
+  billspokemon->chikorita.isPikachu = false;
+  billspokemon->bayleef.isPikachu = false;
+  billspokemon->meganium.isPikachu = false;
+  billspokemon->cyndaquil.isPikachu = false;
+  billspokemon->quilava.isPikachu = false;
+  billspokemon->typhlosion.isPikachu = false;
+  billspokemon->totodile.isPikachu = false;
+  billspokemon->croconaw.isPikachu = false;
+  billspokemon->feraligatr.isPikachu = false;
+  billspokemon->sentret.isPikachu = false;
+  billspokemon->furret.isPikachu = false;
+  billspokemon->hoothoot.isPikachu = false;
+  billspokemon->noctowl.isPikachu = false;
+  billspokemon->ledyba.isPikachu = false;
+  billspokemon->ledian.isPikachu = false;
+  billspokemon->spinarak.isPikachu = false;
+  billspokemon->ariados.isPikachu = false;
+  billspokemon->crobat.isPikachu = false;
+  billspokemon->chinchou.isPikachu = false;
+  billspokemon->lanturn.isPikachu = false;
+  billspokemon->pichu.isPikachu = false;
+  billspokemon->cleffa.isPikachu = false;
+  billspokemon->igglybuff.isPikachu = false;
+  billspokemon->togepi.isPikachu = false;
+  billspokemon->togetic.isPikachu = false;
+  billspokemon->natu.isPikachu = false;
+  billspokemon->xatu.isPikachu = false;
+  billspokemon->mareep.isPikachu = false;
+  billspokemon->flaaffy.isPikachu = false;
+  billspokemon->ampharos.isPikachu = false;
+  billspokemon->bellossom.isPikachu = false;
+  billspokemon->marill.isPikachu = false;
+  billspokemon->azumarill.isPikachu = false;
+  billspokemon->sudowoodo.isPikachu = false;
+  billspokemon->politoed.isPikachu = false;
+  billspokemon->hoppip.isPikachu = false;
+  billspokemon->skiploom.isPikachu = false;
+  billspokemon->jumpluff.isPikachu = false;
+  billspokemon->aipom.isPikachu = false;
+  billspokemon->sunkern.isPikachu = false;
+  billspokemon->sunflora.isPikachu = false;
+  billspokemon->yanma.isPikachu = false;
+  billspokemon->wooper.isPikachu = false;
+  billspokemon->quagsire.isPikachu = false;
+  billspokemon->espeon.isPikachu = false;
+  billspokemon->umbreon.isPikachu = false;
+  billspokemon->murkrow.isPikachu = false;
+  billspokemon->slowking.isPikachu = false;
+  billspokemon->misdreavus.isPikachu = false;
+  billspokemon->unown.isPikachu = false;
+  billspokemon->wobbuffet.isPikachu = false;
+  billspokemon->girafarig.isPikachu = false;
+  billspokemon->pineco.isPikachu = false;
+  billspokemon->forretress.isPikachu = false;
+  billspokemon->dunsparce.isPikachu = false;
+  billspokemon->gligar.isPikachu = false;
+  billspokemon->steelix.isPikachu = false;
+  billspokemon->snubbull.isPikachu = false;
+  billspokemon->granbull.isPikachu = false;
+  billspokemon->qwilfish.isPikachu = false;
+  billspokemon->scizor.isPikachu = false;
+  billspokemon->shuckle.isPikachu = false;
+  billspokemon->heracross.isPikachu = false;
+  billspokemon->sneasel.isPikachu = false;
+  billspokemon->teddiursa.isPikachu = false;
+  billspokemon->ursaring.isPikachu = false;
+  billspokemon->slugma.isPikachu = false;
+  billspokemon->magcargo.isPikachu = false;
+  billspokemon->swinub.isPikachu = false;
+  billspokemon->piloswine.isPikachu = false;
+  billspokemon->corsola.isPikachu = false;
+  billspokemon->remoraid.isPikachu = false;
+  billspokemon->octillery.isPikachu = false;
+  billspokemon->delibird.isPikachu = false;
+  billspokemon->mantine.isPikachu = false;
+  billspokemon->skarmory.isPikachu = false;
+  billspokemon->houndour.isPikachu = false;
+  billspokemon->houndoom.isPikachu = false;
+  billspokemon->kingdra.isPikachu = false;
+  billspokemon->phanpy.isPikachu = false;
+  billspokemon->donphan.isPikachu = false;
+  billspokemon->porygon2.isPikachu = false;
+  billspokemon->stantler.isPikachu = false;
+  billspokemon->smeargle.isPikachu = false;
+  billspokemon->tyrogue.isPikachu = false;
+  billspokemon->hitmontop.isPikachu = false;
+  billspokemon->smoochum.isPikachu = false;
+  billspokemon->elekid.isPikachu = false;
+  billspokemon->magby.isPikachu = false;
+  billspokemon->miltank.isPikachu = false;
+  billspokemon->blissey.isPikachu = false;
+  billspokemon->raikou.isPikachu = false;
+  billspokemon->entei.isPikachu = false;
+  billspokemon->suicune.isPikachu = false;
+  billspokemon->larvitar.isPikachu = false;
+  billspokemon->pupitar.isPikachu = false;
+  billspokemon->tyranitar.isPikachu = false;
+  billspokemon->lugia.isPikachu = false;
+  billspokemon->hoOh.isPikachu = false;
+  billspokemon->celebi.isPikachu = false;
+  billspokemon->treecko.isPikachu = false;
+  billspokemon->grovyle.isPikachu = false;
+  billspokemon->sceptile.isPikachu = false;
+  billspokemon->torchic.isPikachu = false;
+  billspokemon->combusken.isPikachu = false;
+  billspokemon->blaziken.isPikachu = false;
+  billspokemon->mudkip.isPikachu = false;
+  billspokemon->marshtomp.isPikachu = false;
+  billspokemon->swampert.isPikachu = false;
+  billspokemon->poochyena.isPikachu = false;
+  billspokemon->mightyena.isPikachu = false;
+  billspokemon->zigzagoon.isPikachu = false;
+  billspokemon->linoone.isPikachu = false;
+  billspokemon->wurmple.isPikachu = false;
+  billspokemon->silcoon.isPikachu = false;
+  billspokemon->beautifly.isPikachu = false;
+  billspokemon->cascoon.isPikachu = false;
+  billspokemon->dustox.isPikachu = false;
+  billspokemon->lotad.isPikachu = false;
+  billspokemon->lombre.isPikachu = false;
+  billspokemon->ludicolo.isPikachu = false;
+  billspokemon->seedot.isPikachu = false;
+  billspokemon->nuzleaf.isPikachu = false;
+  billspokemon->shiftry.isPikachu = false;
+  billspokemon->taillow.isPikachu = false;
+  billspokemon->swellow.isPikachu = false;
+  billspokemon->wingull.isPikachu = false;
+  billspokemon->pelipper.isPikachu = false;
+  billspokemon->ralts.isPikachu = false;
+  billspokemon->kirlia.isPikachu = false;
+  billspokemon->gardevoir.isPikachu = false;
+  billspokemon->surskit.isPikachu = false;
+  billspokemon->masquerain.isPikachu = false;
+  billspokemon->shroomish.isPikachu = false;
+  billspokemon->breloom.isPikachu = false;
+  billspokemon->slakoth.isPikachu = false;
+  billspokemon->vigoroth.isPikachu = false;
+  billspokemon->slaking.isPikachu = false;
+  billspokemon->nincada.isPikachu = false;
+  billspokemon->ninjask.isPikachu = false;
+  billspokemon->shedinja.isPikachu = false;
+  billspokemon->whismur.isPikachu = false;
+  billspokemon->loudred.isPikachu = false;
+  billspokemon->exploud.isPikachu = false;
+  billspokemon->makuhita.isPikachu = false;
+  billspokemon->hariyama.isPikachu = false;
+  billspokemon->azurill.isPikachu = false;
+  billspokemon->nosepass.isPikachu = false;
+  billspokemon->skitty.isPikachu = false;
+  billspokemon->delcatty.isPikachu = false;
+  billspokemon->sableye.isPikachu = false;
+  billspokemon->mawile.isPikachu = false;
+  billspokemon->aron.isPikachu = false;
+  billspokemon->lairon.isPikachu = false;
+  billspokemon->aggron.isPikachu = false;
+  billspokemon->meditite.isPikachu = false;
+  billspokemon->medicham.isPikachu = false;
+  billspokemon->electrike.isPikachu = false;
+  billspokemon->manectric.isPikachu = false;
+  billspokemon->plusle.isPikachu = false;
+  billspokemon->minun.isPikachu = false;
+  billspokemon->volbeat.isPikachu = false;
+  billspokemon->illumise.isPikachu = false;
+  billspokemon->roselia.isPikachu = false;
+  billspokemon->gulpin.isPikachu = false;
+  billspokemon->swalot.isPikachu = false;
+  billspokemon->carvanha.isPikachu = false;
+  billspokemon->sharpedo.isPikachu = false;
+  billspokemon->wailmer.isPikachu = false;
+  billspokemon->wailord.isPikachu = false;
+  billspokemon->numel.isPikachu = false;
+  billspokemon->camerupt.isPikachu = false;
+  billspokemon->torkoal.isPikachu = false;
+  billspokemon->spoink.isPikachu = false;
+  billspokemon->grumpig.isPikachu = false;
+  billspokemon->spinda.isPikachu = false;
+  billspokemon->trapinch.isPikachu = false;
+  billspokemon->vibrava.isPikachu = false;
+  billspokemon->flygon.isPikachu = false;
+  billspokemon->cacnea.isPikachu = false;
+  billspokemon->cacturne.isPikachu = false;
+  billspokemon->swablu.isPikachu = false;
+  billspokemon->altaria.isPikachu = false;
+  billspokemon->zangoose.isPikachu = false;
+  billspokemon->seviper.isPikachu = false;
+  billspokemon->lunatone.isPikachu = false;
+  billspokemon->solrock.isPikachu = false;
+  billspokemon->barboach.isPikachu = false;
+  billspokemon->whiscash.isPikachu = false;
+  billspokemon->corphish.isPikachu = false;
+  billspokemon->crawdaunt.isPikachu = false;
+  billspokemon->baltoy.isPikachu = false;
+  billspokemon->claydol.isPikachu = false;
+  billspokemon->lileep.isPikachu = false;
+  billspokemon->cradily.isPikachu = false;
+  billspokemon->anorith.isPikachu = false;
+  billspokemon->armaldo.isPikachu = false;
+  billspokemon->feebas.isPikachu = false;
+  billspokemon->milotic.isPikachu = false;
+  billspokemon->castform.isPikachu = false;
+  billspokemon->kecleon.isPikachu = false;
+  billspokemon->shuppet.isPikachu = false;
+  billspokemon->banette.isPikachu = false;
+  billspokemon->duskull.isPikachu = false;
+  billspokemon->dusclops.isPikachu = false;
+  billspokemon->tropius.isPikachu = false;
+  billspokemon->chimecho.isPikachu = false;
+  billspokemon->absol.isPikachu = false;
+  billspokemon->wynaut.isPikachu = false;
+  billspokemon->snorunt.isPikachu = false;
+  billspokemon->glalie.isPikachu = false;
+  billspokemon->spheal.isPikachu = false;
+  billspokemon->sealeo.isPikachu = false;
+  billspokemon->walrein.isPikachu = false;
+  billspokemon->clamperl.isPikachu = false;
+  billspokemon->huntail.isPikachu = false;
+  billspokemon->gorebyss.isPikachu = false;
+  billspokemon->relicanth.isPikachu = false;
+  billspokemon->luvdisc.isPikachu = false;
+  billspokemon->bagon.isPikachu = false;
+  billspokemon->shelgon.isPikachu = false;
+  billspokemon->salamence.isPikachu = false;
+  billspokemon->beldum.isPikachu = false;
+  billspokemon->metang.isPikachu = false;
+  billspokemon->metagross.isPikachu = false;
+  billspokemon->regirock.isPikachu = false;
+  billspokemon->regice.isPikachu = false;
+  billspokemon->registeel.isPikachu = false;
+  billspokemon->latias.isPikachu = false;
+  billspokemon->latios.isPikachu = false;
+  billspokemon->kyogre.isPikachu = false;
+  billspokemon->groudon.isPikachu = false;
+  billspokemon->rayquaza.isPikachu = false;
+  billspokemon->jirachi.isPikachu = false;
+  billspokemon->deoxys.isPikachu = false;
+  billspokemon->turtwig.isPikachu = false;
+  billspokemon->grotle.isPikachu = false;
+  billspokemon->torterra.isPikachu = false;
+  billspokemon->chimchar.isPikachu = false;
+  billspokemon->monferno.isPikachu = false;
+  billspokemon->infernape.isPikachu = false;
+  billspokemon->piplup.isPikachu = false;
+  billspokemon->prinplup.isPikachu = false;
+  billspokemon->empoleon.isPikachu = false;
+  billspokemon->starly.isPikachu = false;
+  billspokemon->staravia.isPikachu = false;
+  billspokemon->staraptor.isPikachu = false;
+  billspokemon->bidoof.isPikachu = false;
+  billspokemon->bibarel.isPikachu = false;
+  billspokemon->kricketot.isPikachu = false;
+  billspokemon->kricketune.isPikachu = false;
+  billspokemon->shinx.isPikachu = false;
+  billspokemon->luxio.isPikachu = false;
+  billspokemon->luxray.isPikachu = false;
+  billspokemon->budew.isPikachu = false;
+  billspokemon->roserade.isPikachu = false;
+  billspokemon->cranidos.isPikachu = false;
+  billspokemon->rampardos.isPikachu = false;
+  billspokemon->shieldon.isPikachu = false;
+  billspokemon->bastiodon.isPikachu = false;
+  billspokemon->burmy.isPikachu = false;
+  billspokemon->wormadam.isPikachu = false;
+  billspokemon->mothim.isPikachu = false;
+  billspokemon->combee.isPikachu = false;
+  billspokemon->vespiquen.isPikachu = false;
+  billspokemon->pachirisu.isPikachu = false;
+  billspokemon->buizel.isPikachu = false;
+  billspokemon->floatzel.isPikachu = false;
+  billspokemon->cherubi.isPikachu = false;
+  billspokemon->cherrim.isPikachu = false;
+  billspokemon->shellos.isPikachu = false;
+  billspokemon->gastrodon.isPikachu = false;
+  billspokemon->ambipom.isPikachu = false;
+  billspokemon->drifloon.isPikachu = false;
+  billspokemon->drifblim.isPikachu = false;
+  billspokemon->buneary.isPikachu = false;
+  billspokemon->lopunny.isPikachu = false;
+  billspokemon->mismagius.isPikachu = false;
+  billspokemon->honchkrow.isPikachu = false;
+  billspokemon->glameow.isPikachu = false;
+  billspokemon->purugly.isPikachu = false;
+  billspokemon->chingling.isPikachu = false;
+  billspokemon->stunky.isPikachu = false;
+  billspokemon->skuntank.isPikachu = false;
+  billspokemon->bronzor.isPikachu = false;
+  billspokemon->bronzong.isPikachu = false;
+  billspokemon->bonsly.isPikachu = false;
+  billspokemon->mimeJr.isPikachu = false;
+  billspokemon->happiny.isPikachu = false;
+  billspokemon->chatot.isPikachu = false;
+  billspokemon->spiritomb.isPikachu = false;
+  billspokemon->gible.isPikachu = false;
+  billspokemon->gabite.isPikachu = false;
+  billspokemon->garchomp.isPikachu = false;
+  billspokemon->munchlax.isPikachu = false;
+  billspokemon->riolu.isPikachu = false;
+  billspokemon->lucario.isPikachu = false;
+  billspokemon->hippopotas.isPikachu = false;
+  billspokemon->hippowdon.isPikachu = false;
+  billspokemon->skorupi.isPikachu = false;
+  billspokemon->drapion.isPikachu = false;
+  billspokemon->croagunk.isPikachu = false;
+  billspokemon->toxicroak.isPikachu = false;
+  billspokemon->carnivine.isPikachu = false;
+  billspokemon->finneon.isPikachu = false;
+  billspokemon->lumineon.isPikachu = false;
+  billspokemon->mantyke.isPikachu = false;
+  billspokemon->snover.isPikachu = false;
+  billspokemon->abomasnow.isPikachu = false;
+  billspokemon->weavile.isPikachu = false;
+  billspokemon->magnezone.isPikachu = false;
+  billspokemon->lickilicky.isPikachu = false;
+  billspokemon->rhyperior.isPikachu = false;
+  billspokemon->tangrowth.isPikachu = false;
+  billspokemon->electivire.isPikachu = false;
+  billspokemon->magmortar.isPikachu = false;
+  billspokemon->togekiss.isPikachu = false;
+  billspokemon->yanmega.isPikachu = false;
+  billspokemon->leafeon.isPikachu = false;
+  billspokemon->glaceon.isPikachu = false;
+  billspokemon->gliscor.isPikachu = false;
+  billspokemon->mamoswine.isPikachu = false;
+  billspokemon->porygonZ.isPikachu = false;
+  billspokemon->gallade.isPikachu = false;
+  billspokemon->probopass.isPikachu = false;
+  billspokemon->dusknoir.isPikachu = false;
+  billspokemon->froslass.isPikachu = false;
+  billspokemon->rotom.isPikachu = false;
+  billspokemon->uxie.isPikachu = false;
+  billspokemon->mesprit.isPikachu = false;
+  billspokemon->azelf.isPikachu = false;
+  billspokemon->dialga.isPikachu = false;
+  billspokemon->palkia.isPikachu = false;
+  billspokemon->heatran.isPikachu = false;
+  billspokemon->regigigas.isPikachu = false;
+  billspokemon->giratina.isPikachu = false;
+  billspokemon->cresselia.isPikachu = false;
+  billspokemon->phione.isPikachu = false;
+  billspokemon->manaphy.isPikachu = false;
+  billspokemon->darkrai.isPikachu = false;
+  billspokemon->shaymin.isPikachu = false;
+  billspokemon->arceus.isPikachu = false;
+  billspokemon->victini.isPikachu = false;
+  billspokemon->snivy.isPikachu = false;
+  billspokemon->servine.isPikachu = false;
+  billspokemon->serperior.isPikachu = false;
+  billspokemon->tepig.isPikachu = false;
+  billspokemon->pignite.isPikachu = false;
+  billspokemon->emboar.isPikachu = false;
+  billspokemon->oshawott.isPikachu = false;
+  billspokemon->dewott.isPikachu = false;
+  billspokemon->samurott.isPikachu = false;
+  billspokemon->patrat.isPikachu = false;
+  billspokemon->watchog.isPikachu = false;
+  billspokemon->lillipup.isPikachu = false;
+  billspokemon->herdier.isPikachu = false;
+  billspokemon->stoutland.isPikachu = false;
+  billspokemon->purrloin.isPikachu = false;
+  billspokemon->liepard.isPikachu = false;
+  billspokemon->pansage.isPikachu = false;
+  billspokemon->simisage.isPikachu = false;
+  billspokemon->pansear.isPikachu = false;
+  billspokemon->simisear.isPikachu = false;
+  billspokemon->panpour.isPikachu = false;
+  billspokemon->simipour.isPikachu = false;
+  billspokemon->munna.isPikachu = false;
+  billspokemon->musharna.isPikachu = false;
+  billspokemon->pidove.isPikachu = false;
+  billspokemon->tranquill.isPikachu = false;
+  billspokemon->unfezant.isPikachu = false;
+  billspokemon->blitzle.isPikachu = false;
+  billspokemon->zebstrika.isPikachu = false;
+  billspokemon->roggenrola.isPikachu = false;
+  billspokemon->boldore.isPikachu = false;
+  billspokemon->gigalith.isPikachu = false;
+  billspokemon->woobat.isPikachu = false;
+  billspokemon->swoobat.isPikachu = false;
+  billspokemon->drilbur.isPikachu = false;
+  billspokemon->excadrill.isPikachu = false;
+  billspokemon->audino.isPikachu = false;
+  billspokemon->timburr.isPikachu = false;
+  billspokemon->gurdurr.isPikachu = false;
+  billspokemon->conkeldurr.isPikachu = false;
+  billspokemon->tympole.isPikachu = false;
+  billspokemon->palpitoad.isPikachu = false;
+  billspokemon->seismitoad.isPikachu = false;
+  billspokemon->throh.isPikachu = false;
+  billspokemon->sawk.isPikachu = false;
+  billspokemon->sewaddle.isPikachu = false;
+  billspokemon->swadloon.isPikachu = false;
+  billspokemon->leavanny.isPikachu = false;
+  billspokemon->venipede.isPikachu = false;
+  billspokemon->whirlipede.isPikachu = false;
+  billspokemon->scolipede.isPikachu = false;
+  billspokemon->cottonee.isPikachu = false;
+  billspokemon->whimsicott.isPikachu = false;
+  billspokemon->petilil.isPikachu = false;
+  billspokemon->lilligant.isPikachu = false;
+  billspokemon->basculin.isPikachu = false;
+  billspokemon->sandile.isPikachu = false;
+  billspokemon->krokorok.isPikachu = false;
+  billspokemon->krookodile.isPikachu = false;
+  billspokemon->darumaka.isPikachu = false;
+  billspokemon->darmanitan.isPikachu = false;
+  billspokemon->maractus.isPikachu = false;
+  billspokemon->dwebble.isPikachu = false;
+  billspokemon->crustle.isPikachu = false;
+  billspokemon->scraggy.isPikachu = false;
+  billspokemon->scrafty.isPikachu = false;
+  billspokemon->sigilyph.isPikachu = false;
+  billspokemon->yamask.isPikachu = false;
+  billspokemon->cofagrigus.isPikachu = false;
+  billspokemon->tirtouga.isPikachu = false;
+  billspokemon->carracosta.isPikachu = false;
+  billspokemon->archen.isPikachu = false;
+  billspokemon->archeops.isPikachu = false;
+  billspokemon->trubbish.isPikachu = false;
+  billspokemon->garbodor.isPikachu = false;
+  billspokemon->zorua.isPikachu = false;
+  billspokemon->zoroark.isPikachu = false;
+  billspokemon->minccino.isPikachu = false;
+  billspokemon->cinccino.isPikachu = false;
+  billspokemon->gothita.isPikachu = false;
+  billspokemon->gothorita.isPikachu = false;
+  billspokemon->gothitelle.isPikachu = false;
+  billspokemon->solosis.isPikachu = false;
+  billspokemon->duosion.isPikachu = false;
+  billspokemon->reuniclus.isPikachu = false;
+  billspokemon->ducklett.isPikachu = false;
+  billspokemon->swanna.isPikachu = false;
+  billspokemon->vanillite.isPikachu = false;
+  billspokemon->vanillish.isPikachu = false;
+  billspokemon->vanilluxe.isPikachu = false;
+  billspokemon->deerling.isPikachu = false;
+  billspokemon->sawsbuck.isPikachu = false;
+  billspokemon->emolga.isPikachu = false;
+  billspokemon->karrablast.isPikachu = false;
+  billspokemon->escavalier.isPikachu = false;
+  billspokemon->foongus.isPikachu = false;
+  billspokemon->amoonguss.isPikachu = false;
+  billspokemon->frillish.isPikachu = false;
+  billspokemon->jellicent.isPikachu = false;
+  billspokemon->alomomola.isPikachu = false;
+  billspokemon->joltik.isPikachu = false;
+  billspokemon->galvantula.isPikachu = false;
+  billspokemon->ferroseed.isPikachu = false;
+  billspokemon->ferrothorn.isPikachu = false;
+  billspokemon->klink.isPikachu = false;
+  billspokemon->klang.isPikachu = false;
+  billspokemon->klinklang.isPikachu = false;
+  billspokemon->tynamo.isPikachu = false;
+  billspokemon->eelektrik.isPikachu = false;
+  billspokemon->eelektross.isPikachu = false;
+  billspokemon->elgyem.isPikachu = false;
+  billspokemon->beheeyem.isPikachu = false;
+  billspokemon->litwick.isPikachu = false;
+  billspokemon->lampent.isPikachu = false;
+  billspokemon->chandelure.isPikachu = false;
+  billspokemon->axew.isPikachu = false;
+  billspokemon->fraxure.isPikachu = false;
+  billspokemon->haxorus.isPikachu = false;
+  billspokemon->cubchoo.isPikachu = false;
+  billspokemon->beartic.isPikachu = false;
+  billspokemon->cryogonal.isPikachu = false;
+  billspokemon->shelmet.isPikachu = false;
+  billspokemon->accelgor.isPikachu = false;
+  billspokemon->stunfisk.isPikachu = false;
+  billspokemon->mienfoo.isPikachu = false;
+  billspokemon->mienshao.isPikachu = false;
+  billspokemon->druddigon.isPikachu = false;
+  billspokemon->golett.isPikachu = false;
+  billspokemon->golurk.isPikachu = false;
+  billspokemon->pawniard.isPikachu = false;
+  billspokemon->bisharp.isPikachu = false;
+  billspokemon->bouffalant.isPikachu = false;
+  billspokemon->rufflet.isPikachu = false;
+  billspokemon->braviary.isPikachu = false;
+  billspokemon->vullaby.isPikachu = false;
+  billspokemon->mandibuzz.isPikachu = false;
+  billspokemon->heatmor.isPikachu = false;
+  billspokemon->durant.isPikachu = false;
+  billspokemon->deino.isPikachu = false;
+  billspokemon->zweilous.isPikachu = false;
+  billspokemon->hydreigon.isPikachu = false;
+  billspokemon->larvesta.isPikachu = false;
+  billspokemon->volcarona.isPikachu = false;
+  billspokemon->cobalion.isPikachu = false;
+  billspokemon->terrakion.isPikachu = false;
+  billspokemon->virizion.isPikachu = false;
+  billspokemon->tornadus.isPikachu = false;
+  billspokemon->thundurus.isPikachu = false;
+  billspokemon->reshiram.isPikachu = false;
+  billspokemon->zekrom.isPikachu = false;
+  billspokemon->landorus.isPikachu = false;
+  billspokemon->kyurem.isPikachu = false;
+  billspokemon->keldeo.isPikachu = false;
+  billspokemon->meloetta.isPikachu = false;
+  billspokemon->genesect.isPikachu = false;
+  billspokemon->chespin.isPikachu = false;
+  billspokemon->quilladin.isPikachu = false;
+  billspokemon->chesnaught.isPikachu = false;
+  billspokemon->fennekin.isPikachu = false;
+  billspokemon->braixen.isPikachu = false;
+  billspokemon->delphox.isPikachu = false;
+  billspokemon->froakie.isPikachu = false;
+  billspokemon->frogadier.isPikachu = false;
+  billspokemon->greninja.isPikachu = false;
+  billspokemon->bunnelby.isPikachu = false;
+  billspokemon->diggersby.isPikachu = false;
+  billspokemon->fletchling.isPikachu = false;
+  billspokemon->fletchinder.isPikachu = false;
+  billspokemon->talonflame.isPikachu = false;
+  billspokemon->scatterbug.isPikachu = false;
+  billspokemon->spewpa.isPikachu = false;
+  billspokemon->vivillon.isPikachu = false;
+  billspokemon->litleo.isPikachu = false;
+  billspokemon->pyroar.isPikachu = false;
+  billspokemon->flabebe.isPikachu = false;
+  billspokemon->floette.isPikachu = false;
+  billspokemon->florges.isPikachu = false;
+  billspokemon->skiddo.isPikachu = false;
+  billspokemon->gogoat.isPikachu = false;
+  billspokemon->pancham.isPikachu = false;
+  billspokemon->pangoro.isPikachu = false;
+  billspokemon->furfrou.isPikachu = false;
+  billspokemon->espurr.isPikachu = false;
+  billspokemon->meowstic.isPikachu = false;
+  billspokemon->honedge.isPikachu = false;
+  billspokemon->doublade.isPikachu = false;
+  billspokemon->aegislash.isPikachu = false;
+  billspokemon->spritzee.isPikachu = false;
+  billspokemon->aromatisse.isPikachu = false;
+  billspokemon->swirlix.isPikachu = false;
+  billspokemon->slurpuff.isPikachu = false;
+  billspokemon->inkay.isPikachu = false;
+  billspokemon->malamar.isPikachu = false;
+  billspokemon->binacle.isPikachu = false;
+  billspokemon->barbaracle.isPikachu = false;
+  billspokemon->skrelp.isPikachu = false;
+  billspokemon->dragalge.isPikachu = false;
+  billspokemon->clauncher.isPikachu = false;
+  billspokemon->clawitzer.isPikachu = false;
+  billspokemon->helioptile.isPikachu = false;
+  billspokemon->heliolisk.isPikachu = false;
+  billspokemon->tyrunt.isPikachu = false;
+  billspokemon->tyrantrum.isPikachu = false;
+  billspokemon->amaura.isPikachu = false;
+  billspokemon->aurorus.isPikachu = false;
+  billspokemon->sylveon.isPikachu = false;
+  billspokemon->hawlucha.isPikachu = false;
+  billspokemon->dedenne.isPikachu = false;
+  billspokemon->carbink.isPikachu = false;
+  billspokemon->goomy.isPikachu = false;
+  billspokemon->sliggoo.isPikachu = false;
+  billspokemon->goodra.isPikachu = false;
+  billspokemon->klefki.isPikachu = false;
+  billspokemon->phantump.isPikachu = false;
+  billspokemon->trevenant.isPikachu = false;
+  billspokemon->pumpkaboo.isPikachu = false;
+  billspokemon->gourgeist.isPikachu = false;
+  billspokemon->bergmite.isPikachu = false;
+  billspokemon->avalugg.isPikachu = false;
+  billspokemon->noibat.isPikachu = false;
+  billspokemon->noivern.isPikachu = false;
+  billspokemon->xerneas.isPikachu = false;
+  billspokemon->yveltal.isPikachu = false;
+  billspokemon->zygarde.isPikachu = false;
+  billspokemon->diancie.isPikachu = false;
+  billspokemon->hoopa.isPikachu = false;
+  billspokemon->volcanion.isPikachu = false;
+
+  if (billspokemon->pikachu.isPikachu) {
+    // WHEW, THAT'S A RELIEF
+    return 55; // SS ANNE
+  }
+  else {
+    return 0; // GUESS YOU'RE STUCK IN CERULEAN
+  }
+}

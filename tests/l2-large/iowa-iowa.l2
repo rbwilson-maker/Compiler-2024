@@ -1,0 +1,16 @@
+//test return 0
+
+int main() {
+    int iowa = 432;
+    int awoi = 234;
+
+    for (awoi = 0; awoi < 10; awoi++) {
+        iowa--;
+    }
+
+    iowa = iowa + (2 * 5);
+    iowa = ~iowa;
+    iowa = ~iowa;
+
+    return ((iowa) - 432);
+}

@@ -1,0 +1,20 @@
+//test return 1
+
+bool strange_bool(bool a, bool b)
+{
+    return !(!(a && b) || a) && b;
+}
+int main()
+{
+    bool a = true;
+    bool b = true;
+    bool c = strange_bool(a, b);
+    if(c)
+    {
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
+}

@@ -1,0 +1,17 @@
+//test error
+
+int recurse(int a, bool herp) {
+
+		int derp = 24	;
+		
+	return herp ? derp : 1 + recurse(a -2, a < 0);
+}
+
+typedef int int;
+
+int main() {
+
+	return recurse (200, false);
+
+
+}

@@ -1,0 +1,16 @@
+//test return 13244
+//returns the nth tetrahedral number (sum of the first n triangular numbers)
+
+int nth_tetrahedral_number(int n) {
+  int triangle = 0;
+  int total = 0;
+  for (int i=1; i <= n; i++) {
+    triangle += i;
+    total += triangle;
+  }
+  return total;
+}
+
+int main() {
+  return nth_tetrahedral_number(42);
+}

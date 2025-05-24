@@ -1,0 +1,10 @@
+//test return 10
+// test simple if
+int main()
+{
+    int y = 10 * 3;
+    if (y == 20) {
+        return 0;
+    }
+    return 10;
+}

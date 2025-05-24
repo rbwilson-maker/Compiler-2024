@@ -1,0 +1,12 @@
+//test div-by-zero
+//shifts by at least 32
+
+int main ()
+{
+  int x;
+  int y;
+
+  x = 0x10; //2
+  y = 33;
+  return x << y; //should raise error, not give 0x100 (4)
+}

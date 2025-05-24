@@ -1,0 +1,8 @@
+//test return 55
+int main() {
+    int x = 1;
+    int y = 2;
+    int z = 3;
+    int a = 4;
+    return x + y + z + a + a + 1 + (z * 2) + (a + z) + (y * y * y) + (a + y + z) + (x + y + z + a);
+}

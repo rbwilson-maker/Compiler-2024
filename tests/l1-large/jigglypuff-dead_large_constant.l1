@@ -1,0 +1,25 @@
+//test error
+
+/* Dead Code Too Large Constant Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Saturday, September 12, 2015 at 06:25:11 PM EDT
+ *
+ * This test tests that the compiler detects a constant that is outside the
+ * range of integer values, even in code that is dead.
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int z;
+
+    x = 4;
+    y = 7;
+    z = x + y;
+
+    return z;
+    x = 4294967296;     // 2^32
+}

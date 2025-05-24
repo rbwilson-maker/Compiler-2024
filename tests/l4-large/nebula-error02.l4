@@ -1,0 +1,7 @@
+//test error
+
+typedef int alloc_array; // reserved keyword
+
+int main() {
+  return 1;
+}

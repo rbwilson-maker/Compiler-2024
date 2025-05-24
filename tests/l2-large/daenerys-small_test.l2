@@ -1,0 +1,17 @@
+//test return -7 
+
+int main() {
+   int x = 5;
+   int y;
+   if (x == 5) {
+      y = 6;
+   }
+
+   y = 20;
+   while (y > 0) {
+      int z = 9;
+      y -= z;
+   }
+
+   return y;
+}

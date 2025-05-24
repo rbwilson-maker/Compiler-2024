@@ -1,0 +1,19 @@
+//test div-by-zero
+
+int main(){
+
+	int a = 500;
+	int b = 50;
+	int c = 0;
+	a -= b;
+	a -= b;
+	c = a/b;
+	b += b;
+	a -= b;
+	a -= b;
+	c = a/b;
+	b += b;
+	a -= b;
+	c = b/a;
+	return c;
+}

@@ -1,0 +1,28 @@
+//test error
+
+struct tuple {
+	int a;
+	int b;
+};
+typedef struct tuple * tuple_t;
+
+int swap(tuple_t t) {
+	int temp = t->a;
+	t->a = t->b;
+	t->b = temp; 
+	return 1;
+}
+
+int main() {
+    struct tuple t = alloc(struct tuple);
+    t->a = 0;
+    t->b = 1;
+    swap(t);
+
+    int[] check = alloc_array(int, 10);
+    for (int i = 0; i < 10; i++) {
+    	assert(check[i] == 0);
+    }	
+
+    return t->a + t->b;
+}

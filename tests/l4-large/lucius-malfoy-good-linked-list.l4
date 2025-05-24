@@ -1,0 +1,16 @@
+//test return 4;
+
+struct node {
+    struct node *next;
+    int data;
+};
+
+typedef struct node* list_t;
+
+int main() {
+    list_t head = alloc(struct node);
+    head->data = 3;
+    head->next = alloc(struct node);
+    head->next->data = 1;
+    return (head->next->next == NULL) ? head->data + head->next->data : 0;
+}

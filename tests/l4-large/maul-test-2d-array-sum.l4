@@ -1,0 +1,35 @@
+//test return 55
+int[] init(int start, int length)
+{
+  int[] arr = alloc_array(int, 10);
+  for (int i = 0; i < length; i++)
+  {
+    arr[i] = start;
+    start = start + 1;
+  }
+  return arr;
+}
+int sum_array(int[] arr, int len)
+{
+  int sum = 0;
+  for (int i = 0; i < len; i++)
+  {
+    sum += arr[i];
+  }
+  return sum;
+}
+int main()
+{
+  int num_arrays = 5;
+  int[][] outer_array = alloc_array(int[], num_arrays);
+  for (int index = 0; index < num_arrays; index++)
+  {
+    outer_array[index] = init(1, 10);
+  }
+  int sum = 0;
+  for (int i = 0; i < num_arrays; i++)
+  {
+    sum += sum_array(outer_array[i], 10);
+  }
+  return sum / 5;
+}

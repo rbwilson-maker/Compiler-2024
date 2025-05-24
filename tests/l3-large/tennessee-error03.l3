@@ -1,0 +1,12 @@
+//test error
+// mismatched braces
+
+int main() {
+  int x = 5;
+
+  {
+    int y = 4;
+    x += y;
+  
+  return x;
+}

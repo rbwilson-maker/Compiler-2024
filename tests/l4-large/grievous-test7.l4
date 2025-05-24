@@ -1,0 +1,9 @@
+//test return 0
+typedef int c;
+struct c{
+    c c;
+};
+
+int main(){
+    return alloc(struct c)->c;    
+}

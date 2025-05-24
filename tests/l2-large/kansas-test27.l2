@@ -1,0 +1,10 @@
+//test error
+
+// This is designed to test typechecking
+int main() {
+  int a = 7;
+  while (10 + 11) {
+    a = 10;
+  }
+  return a;
+}

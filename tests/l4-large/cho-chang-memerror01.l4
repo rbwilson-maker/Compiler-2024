@@ -1,0 +1,15 @@
+//test memerror
+
+struct Node {
+	int data;
+	struct Node *next;
+};
+
+typedef struct Node Node;
+
+int main() {
+	Node *head = alloc(Node);
+	head->data = 1;
+	head->next = alloc(Node);
+	return head->next->next->data;
+}

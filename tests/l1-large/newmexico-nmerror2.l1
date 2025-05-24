@@ -1,0 +1,9 @@
+//test error
+// Using reserved token -- incorrectly
+
+int main()
+{
+	int x;
+	x = --5;
+	return 0;
+}

@@ -1,0 +1,18 @@
+//test return 1000
+
+int one_function(int a, bool b);
+
+int main() {
+  int j = 1000;
+  int k = 0;
+  while(j > 0) {
+    k++;
+    j--;
+  }
+
+  return k;
+}
+
+int one_function(int j, bool s);
+
+int one_function(int a, bool z);

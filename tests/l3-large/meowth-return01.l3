@@ -1,0 +1,22 @@
+//test return 1
+/* Basic function calls */
+
+int do_something(int x);
+void do_nothing(bool x, int y);
+
+int do_something(int x) {
+ return x + 1;
+}
+
+void do_nothing(bool x, int y) {
+  x = x;
+  y = y;
+}
+
+int main () {
+  int x = 0;
+  bool y = true;
+  do_nothing(y, x);
+  x = do_something(x);
+  return x;
+}

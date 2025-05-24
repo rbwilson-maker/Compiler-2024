@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+  int []arr1 = alloc_array(bool, 10);
+  bool []arr2 = alloc_array(int, 10);
+  return 0;
+}

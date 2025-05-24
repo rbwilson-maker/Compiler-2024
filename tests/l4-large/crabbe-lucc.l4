@@ -1,0 +1,23 @@
+//test typecheck
+//test infloop
+
+struct point{
+  int x;
+  int y;
+};
+
+typedef int thats;
+typedef struct point* the;
+
+int main(){
+
+  for (int i = 0; i < 1; i = -1)
+  {
+    if (i > 0){ return i / 0; } 
+    if (i < -1) assert(0/1 == i);
+    return main();
+  }
+  struct point* p = alloc(struct point);
+  p->y = 2;
+  return p->x;
+}

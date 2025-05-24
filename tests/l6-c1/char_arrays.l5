@@ -1,0 +1,13 @@
+//test return 0
+int main() {
+    char[] cs = alloc_array(char, 5);
+    assert(cs[0] == '\0');
+    assert(cs[1] == '\0');
+    assert(cs[0] == cs[1]);
+    cs[2] = '\a';
+    cs[3] = '\b';
+    assert(!(cs[3] <= cs[2]));
+    assert(cs[3] == '\b');
+    assert(cs[2] == '\a');
+    return 0;
+}

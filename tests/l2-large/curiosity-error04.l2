@@ -1,0 +1,17 @@
+//test error
+//double declaration within first clause of for loop
+
+int main()
+{
+  int a;
+  int b;
+  a = 5;
+  b = 6;
+
+  a = a & b;
+
+  for(int a = 0; a < 10; a ++)
+    b++;
+
+  return b;
+}

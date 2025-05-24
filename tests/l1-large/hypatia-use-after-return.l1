@@ -1,0 +1,8 @@
+//test return 4
+// Uninitialized use after return
+
+int main() {
+    int a;
+    return 4;
+    a += 1;
+}

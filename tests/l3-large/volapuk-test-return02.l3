@@ -1,0 +1,21 @@
+//test return 1
+//test if two functions are equivalent
+bool check1(int x, int y) { return x * y == x + y; }
+
+bool check2(int x, int y) { return (x == 0 && y == 0) || (x == 2 && y == 2); }
+
+bool checkEquivalence() {
+  for (int i = 0; i < 100; i++) {
+    for (int j = 0; j < 100; j++) {
+      if (check1(i, j) != check2(i, j)) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+int main() { 
+  if(checkEquivalence()) return 1;
+  return 0;
+}

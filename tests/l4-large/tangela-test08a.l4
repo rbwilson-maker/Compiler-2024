@@ -1,0 +1,43 @@
+//test return 0
+
+struct point {
+  int x;
+  int y;
+};
+
+typedef struct point point;
+
+point *make_point(int x, int y) {
+  struct point *pt = alloc(point);
+  pt->x = x;
+  pt->y = y;
+  return pt;
+}
+
+int get_x(point *p) {
+  print_int(p->x);
+  return p->x;
+}
+
+int get_y(point *p) {
+  print_int(p->y);
+  return p->y;
+}
+
+int main() {
+  point *[] points = alloc_array(point*, 80);
+  for (int i = 10; i > 0; i--) {
+    for (int j = 0; j < 10; j++) {
+      point *coord = make_point(i, j);
+      points[j] = coord;
+    }
+  }
+
+  for (int k = 0; k < 10; k++) {
+    if (k > 0) {
+      points[get_x(points[k])]->y += 5;
+    }
+  }
+
+  return points[0]->y;
+}

@@ -1,0 +1,17 @@
+//test memerror
+
+int main(){
+
+  int* x = alloc(int);
+  int* y = alloc(int);
+  int* z = alloc(int);  
+
+  int* [] p_array = alloc_array(int *, 4);
+
+  p_array[0] = x;
+  p_array[1] = y;
+  p_array[2] = z;
+
+  return *p_array[3];
+  
+}

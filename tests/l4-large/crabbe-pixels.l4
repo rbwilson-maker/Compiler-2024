@@ -1,0 +1,41 @@
+//test abort
+
+typedef int pixel;       
+typedef pixel pixel_t;   
+
+int get_red(pixel p)
+{
+  return (p >> 16) & 0xFF;
+}
+
+int get_green(pixel p)
+{
+  return (p >> 8) & 0xFF;
+}
+
+int get_blue(pixel p)
+{
+	return (p & 0xFF);
+}
+
+int get_alpha(pixel p)
+{
+	return (p >> 24) & 0xFF;
+}
+
+pixel make_pixel(int alpha, int red, int green, int blue)
+{
+	return (alpha << 24) + (red << 16) + (green << 8) + blue;
+}
+
+int main () {
+    pixel p = make_pixel(7, 240, 15, 256);
+
+    // You dun thought, didntya? 
+    assert(get_green(p) == 15);
+    assert(get_alpha(p) == 7);
+    assert(get_blue(p) == 256);
+    assert(get_red(p) == 240);
+
+    return 1;
+}

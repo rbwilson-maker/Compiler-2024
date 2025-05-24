@@ -1,0 +1,16 @@
+//test return 0
+
+string f() {
+  char[] s = alloc_array(char, 2);
+  s[0] = 'h';
+  s[1] = '\0';
+  return string_from_chararray(s);
+}
+
+int main() {
+  if (string_equal(f(), "h")) {
+    return 0;
+  } else {
+    return 1;
+  }
+}

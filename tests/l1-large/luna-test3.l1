@@ -1,0 +1,38 @@
+//test return 15
+//spilling registers
+
+
+int main()
+{
+  int x1 = 1;
+  int x2 = 2;
+  int x3 = 3;
+  int x4 = 4;
+  int x5 = 5;
+  int x6 = 6;
+  int x7 = 7;
+  int x8 = 8;
+  int x9 = 9;
+  int x10 = 10;
+  int x11 = 11;
+  int x12 = 12;
+  int x13 = 13;
+  int x14 = 14;
+  
+  int x15 = x1+14;
+  int x16 = x2+14;
+  int x17 = x3+14;
+  int x18 = x4+14;
+  int x19 = x5+14;
+  int x20 = x6+14;
+  int x21 = x7+14;
+  int x22 = x8+14;
+  int x23 = x9+14;
+  int x24 = x10+14;
+  int x25 = x11+14;
+  int x26 = x12+14;
+  int x27 = x13+14;
+  int x28 = x14+14;
+
+  return x15;
+}

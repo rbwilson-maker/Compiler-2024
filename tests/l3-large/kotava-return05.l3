@@ -1,0 +1,30 @@
+//test return 1
+
+typedef int dog;
+typedef dog cat;
+
+dog rec1 (int a);
+cat rec2 (dog b);
+
+int rec1 (int depth) {
+  if (depth == 0) {
+    return 1;
+    assert(depth == 1);
+  } else {
+    return rec2(depth - 1) << 2;
+  }
+}
+
+int rec2 (int depth) {
+  if (depth == 0) {
+    assert(depth == 0);
+    return 1;
+  } else {
+    return rec1(depth - 1) >> 2;
+  }
+}
+
+int main () {
+  int depth = 3;
+  return rec2(rec1(depth));
+}

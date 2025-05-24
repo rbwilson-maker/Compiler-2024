@@ -1,0 +1,14 @@
+//test return 4
+struct hi
+{
+    int x;
+    int y;
+    bool c;
+};
+
+int main(){
+    struct hi* hi = alloc(struct hi);
+    (*hi).x = 3;
+    (*hi).y = 4;
+    return hi->y;
+}

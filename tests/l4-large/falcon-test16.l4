@@ -1,0 +1,26 @@
+//test return 16
+// I strongly dislike parsing this
+
+int main() {
+    int *a0 = alloc(int);
+    int **a1 = alloc(int*);
+    int ***a2 = alloc(int**);
+    int ****a3 = alloc(int***);
+
+    *a3 = a2;
+    *a2 = a1;
+    *a1 = a0;
+    *a0 = 2;
+
+    int *b0 = alloc(int);
+    int **b1 = alloc(int*);
+    int ***b2 = alloc(int**);
+    int ****b3 = alloc(int***);
+
+    *b3 = b2;
+    *b2 = b1;
+    *b1 = b0;
+    *b0 = 8;
+
+    return ****a3*****b3;
+}

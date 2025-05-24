@@ -1,0 +1,4 @@
+typedef int file_id;
+typedef int output;
+
+int write_to_file(file_id f, output o);

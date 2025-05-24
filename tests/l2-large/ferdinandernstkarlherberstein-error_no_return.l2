@@ -1,0 +1,10 @@
+//test error
+
+int main() {
+    int x = 2048;
+    for (int count = 0; true; count++) {
+        if (x == 0) {
+            return count;
+        }
+    } // no return here
+}

@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+    const std::string& randomtype = 12;
+    int randomtype2 = randomtype;
+    return randomtype + randomtype2;
+}

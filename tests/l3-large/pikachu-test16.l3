@@ -1,0 +1,26 @@
+//test return 8
+// tests multiple function declarations, local shadowing of function names
+
+int foo(int a, bool b);
+int foo(int a, bool b);
+int foo(int c, bool b);
+int foo(int d, bool helloworld);
+int foo(int f, bool gibberish);
+int foo(int e, bool randomname);
+int foo(int g, bool hello);
+int foo(int r, bool k);
+
+int foo(int final, bool const)
+{
+  // this is not java
+  int foo = 1;
+  bool main = true;
+  if (main)
+    return 8*foo;
+  return 9*foo;
+}
+
+int main()
+{
+  return foo(25234667, false);
+}

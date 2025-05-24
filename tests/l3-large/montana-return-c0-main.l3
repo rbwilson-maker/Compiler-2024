@@ -1,0 +1,14 @@
+//test return 1
+
+bool t() { return true; }
+
+// Hope you're renaming your functions
+int _c0_main() {
+  int main = 3;
+  return t() ? main % 2 : 9;
+}
+
+int main() {
+  int t = _c0_main();
+  return t > 0 ? t : 1/0;
+}

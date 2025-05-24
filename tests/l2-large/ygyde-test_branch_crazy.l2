@@ -1,0 +1,21 @@
+//test return 0
+
+// randomized test with all ingredients.
+// Mainly testing nested loops and scope preservation
+int main() {
+    int crazy_branch = 0;
+    int crazy_loopy = 1;
+
+    while (crazy_branch >= 0) {
+        for (crazy_loopy = 0; crazy_loopy < 52; crazy_loopy += 2) {
+            if (crazy_loopy == crazy_loopy * 2) {
+                return 0;
+            }
+        }
+        if (crazy_loopy == 52) {
+            return 1 / 0;
+        }
+        crazy_branch -= 1;
+    }
+    return crazy_loopy;
+}

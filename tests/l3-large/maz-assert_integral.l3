@@ -1,0 +1,28 @@
+//test abort
+
+int f(int i) {
+    if (i == 0) {
+        return 0;
+    } else {
+        return i + f(i-1);
+    }
+}
+
+//Computes the riemann integral of f from a to b with specified granularity
+int integrate_f(int a, int b, int granularity) {
+    assert(a <= b);
+    assert(granularity > 0);
+
+    int sum = 0;
+
+    for (int i = a; i < b; i += granularity) {
+        sum += granularity * f(i); 
+    }
+
+    return sum;
+}
+
+int main() {
+    assert(integrate_f(0, 10, 3) == 27);
+    return 0;
+}

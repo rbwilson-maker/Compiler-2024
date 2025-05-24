@@ -1,0 +1,10 @@
+//test div-by-zero
+//division by 0
+
+int main() {
+  int x = 1;
+  for (int i = 2; i >= 0; i--) {
+    x = x/i;
+  }
+  return x;
+}

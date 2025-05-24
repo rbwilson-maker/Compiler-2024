@@ -1,0 +1,25 @@
+//test return 300
+
+int[][] makegrid(int R, int C) {
+  int[][] grid = alloc_array(int[], R);
+  for (int r = 0; r < R; r++) {
+     grid[r] = alloc_array(int, C);
+     for (int c = 0; c < C; c++) {
+       grid[r][c] = r + c*R;
+     }
+  }
+  return grid;
+}
+
+int main() {
+  int R = 5;
+  int C = 5;
+  int[][] grid = makegrid(R, C);
+  int sum = 0;
+  for (int r = 0; r < R; r++) {
+     for (int c = 0; c < C; c++) {
+       sum += grid[r][c];
+     }
+  }
+  return sum;
+}

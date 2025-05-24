@@ -1,0 +1,16 @@
+//test return -3145672
+int main() {
+
+  int first = 970869;
+  int second = 43049840;
+
+  first = ~first;
+  second = first | second;
+
+  int third = 3092402;
+  second = second & third;
+
+  first = second ^ first;
+
+  return first;
+}

@@ -1,0 +1,19 @@
+//test error
+
+struct s {
+  int a;
+  int b;
+  bool c;
+}
+
+int main{} {
+  struct s * t;
+  t = alloc(struct s);
+  s->c = true;
+  if (s->c) {
+    s->b = 2;
+  } else {
+    s->b = 1;
+  }
+  return s.b;
+}

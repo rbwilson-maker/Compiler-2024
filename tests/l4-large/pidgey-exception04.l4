@@ -1,0 +1,10 @@
+//test memerror
+
+int main() {
+    int a = 0;
+
+    int * p = (a == 0 ? NULL : alloc(int));
+    *p = 90;
+
+    return 0;
+}

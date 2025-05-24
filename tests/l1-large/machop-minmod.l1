@@ -1,0 +1,6 @@
+//test div-by-zero
+// Author: Nick
+int main () {
+  int min_int = -2147483648;
+  return min_int % -1;
+}

@@ -1,0 +1,79 @@
+//test return -553124508
+
+/*
+    an implementation of the Trivium cipher (not guaranteed to be correct)
+
+    fun fact: if we reduce the number of initialization rounds to 576,
+    it's really easy to recover the key (given an encryption oracle):
+    https://ieeexplore.ieee.org/abstract/document/7429911
+
+    check out "Trivial" from PlaidCTF 2018 for a challenge that uses this
+*/
+
+// circular buffer
+struct _cbuf {
+    int size;
+    int next_index;
+    int[] buf;
+};
+
+typedef struct _cbuf cbuf;
+
+cbuf* alloc_cbuf(int size) {
+    cbuf* c = alloc(cbuf);
+    c->size = size;
+    c->buf = alloc_array(int, size);
+    return c;
+}
+
+void push_int(cbuf* c, int i) {
+    c->buf[c->next_index] = i;
+    c->next_index = (c->next_index + 1) % c->size;
+}
+
+int get_int(cbuf* c, int i) {
+    return c->buf[(c->next_index - i - 1 + c->size) % c->size];
+}
+
+int step(cbuf* a, cbuf* b, cbuf* c) {
+    int t1 = get_int(a, 65) ^ get_int(a, 92);
+    int t2 = get_int(b, 68) ^ get_int(b, 83);
+    int t3 = get_int(c, 65) ^ get_int(c, 110);
+    int output = t1 ^ t2 ^ t3;
+    int s1 = t1 ^ (get_int(a, 91) & get_int(a, 90)) ^ get_int(b, 77);
+    int s2 = t2 ^ (get_int(b, 82) & get_int(b, 81)) ^ get_int(c, 86);
+    int s3 = t3 ^ (get_int(c, 109) & get_int(c, 108)) ^ get_int(a, 68);
+
+    push_int(a, s3);
+    push_int(b, s1);
+    push_int(c, s2);
+
+    return output;
+}
+
+int main() {
+    cbuf* a = alloc_cbuf(93);
+    cbuf* b = alloc_cbuf(84);
+    cbuf* c = alloc_cbuf(111);
+
+    // initialize trivium cipher (with blank key and IV)
+    for (int i = 0; i < 3; i++) {
+        push_int(c, 1);
+    }
+    for (int i = 0; i < 108; i++) {
+        push_int(c, 0);
+    }
+
+    // 1152 initialization rounds
+    for (int i = 0; i < 1152; i++) {
+        step(a,b,c);
+    }
+
+    // get 32 bits out of the cipher
+    int keystream = 0;
+    for (int i = 0; i < 32; i++) {
+        keystream = (keystream << 1) | step(a,b,c);
+    }
+
+    return keystream;
+}

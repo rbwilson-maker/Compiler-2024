@@ -1,0 +1,7 @@
+//test error
+// integer overflow
+int do_math()
+{
+  int a = -2147483649;//2**31 + 1
+  return a; 
+}

@@ -1,0 +1,13 @@
+//test return 1
+
+struct foo {
+  int bar;
+};
+
+int main() {
+  struct foo*[] test;
+  test = alloc_array(struct foo*, 100);
+  test[0] = alloc(struct foo);
+  test[0]->bar = 1;
+  return (*test[0]).bar;
+}

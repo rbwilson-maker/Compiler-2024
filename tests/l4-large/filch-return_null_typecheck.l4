@@ -1,0 +1,13 @@
+//test error
+
+typedef int* happy_halloween;
+
+happy_halloween spooky(int seven){
+    return null;
+}
+
+int main() {
+    bool* spooky_pointer = spooky(7);
+
+    return 5;
+}

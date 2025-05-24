@@ -1,0 +1,24 @@
+//test return 15122
+
+struct cat {
+  int a;
+  bool b;
+};
+
+struct bar {
+   struct cat** c;
+};
+
+struct foo {
+   struct bar b;
+};
+
+int main() {
+   struct foo* a = alloc(struct foo);
+   a->b.c = alloc(struct cat*);
+   *a->b.c = alloc(struct cat);
+   (*a->b.c)->a = 15122;
+
+   return (*a->b.c)->a;
+}
+

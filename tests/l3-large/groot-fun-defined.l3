@@ -1,0 +1,8 @@
+//test error
+
+int foo(int x);
+int foo(int x);
+
+int main() {
+  return foo(x) + foo(x / 2) / 2 * 3;
+}

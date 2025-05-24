@@ -1,0 +1,23 @@
+//test return 3
+
+typedef struct Integer_ *Integer;
+struct Integer_ {
+    int toInt;
+};
+
+Integer add(Integer a, Integer b) {
+    if (a == NULL || b == NULL) return NULL;
+    Integer c = alloc(struct Integer_);
+    c->toInt = a->toInt + b->toInt;
+    return c;
+}
+
+int main() {
+    // quick mafs
+    Integer two = alloc(struct Integer_);
+    two->toInt = 2;
+
+    Integer minus_one = alloc(struct Integer_);
+    minus_one->toInt = -1;
+    return add(add(two, two), minus_one)->toInt;
+}

@@ -1,0 +1,9 @@
+//test return 88
+
+int main() {
+  int* ip = alloc(int);
+  bool* bp = alloc(bool);
+  if (*bp)
+    return *ip;
+  return 88;
+}

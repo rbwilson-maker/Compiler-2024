@@ -1,0 +1,13 @@
+//test abort
+//tests that expression args are evaluated from left to right
+
+int hi(int x) {
+  assert(false);
+  return 0;
+}
+
+int main(){
+  return hi(0) + 1/0;
+
+
+}

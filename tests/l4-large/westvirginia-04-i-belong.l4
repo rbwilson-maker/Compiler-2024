@@ -1,0 +1,28 @@
+//test memerror
+//Are you checking array out of bounds accesses properly?
+
+struct a {
+    int* foobar;
+};
+
+typedef struct a* aptr;
+
+int main() {
+    aptr[] allmymemories = alloc_array(aptr, 1000);
+
+    int gatherroundher = 0;
+    for (int minerslady = 0; minerslady < 40000; minerslady++) {
+        gatherroundher += 107374;
+    }
+    gatherroundher += 7295;
+
+    aptr strangerto = allmymemories[gatherroundher];
+
+    int blueWater = 1000;
+    aptr darkanddusty = allmymemories[blueWater];
+    
+    if (strangerto == darkanddusty) {
+        return 1;
+    }
+    return 0;
+}

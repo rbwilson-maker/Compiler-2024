@@ -1,0 +1,9 @@
+//test error
+
+// incorrect struct type from hdr
+
+int main () {
+    box * newbox = alloc(box);
+    box->height = true;
+    return 0;
+}

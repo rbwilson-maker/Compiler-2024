@@ -1,0 +1,9 @@
+//test return 24298
+int main() {
+  int a = 35890;
+  int b = 23905;
+  a = a & b;
+  int c = b | a;
+  int d = c ^ 907;
+  return d;
+}

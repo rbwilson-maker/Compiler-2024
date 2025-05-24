@@ -1,0 +1,11 @@
+//test error
+// test the non-context free parsing
+
+typedef bool ty;
+
+int main() {
+  int ty = 3; // typedef used as variable name
+  int ret = 4;
+  ty * ret;
+  return 0;
+}

@@ -1,0 +1,7 @@
+//test div-by-zero
+int main() {
+	int x = 2;
+	int y = 3;
+	x = (x+y*x) / (x*y-y*x+x-x);
+	return x;
+}

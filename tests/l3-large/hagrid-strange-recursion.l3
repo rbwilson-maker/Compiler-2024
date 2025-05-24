@@ -1,0 +1,11 @@
+//test typecheck
+//test infloop
+//"no u" -f and main, in unison, 2018
+
+int f() {
+  return main();
+}
+
+int main() {
+  return f();
+}

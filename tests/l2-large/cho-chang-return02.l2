@@ -1,0 +1,10 @@
+//test return 8
+
+int main()
+{
+    int i = 0;
+    i = i + 1;
+    i += 1;
+    i <<=2;
+    return i;
+}

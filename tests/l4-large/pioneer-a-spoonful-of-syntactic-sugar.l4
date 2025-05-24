@@ -1,0 +1,21 @@
+//test return 10
+//it helps the medicine go down!
+
+struct simple {
+  int* a;
+  bool c;
+};
+
+typedef struct simple simp;
+
+int main()
+{
+    simp* a = alloc(simp);
+    a->a = alloc(int);
+    a->c = true;
+    *(a->a) = 5;
+    if(a->c && (*a).c)
+      return *(a->a) + *((*a).a);
+    else
+      return 0;
+}

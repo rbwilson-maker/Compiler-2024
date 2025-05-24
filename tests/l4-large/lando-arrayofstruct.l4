@@ -1,0 +1,23 @@
+//test return 4
+
+struct dict_item {
+    int key;
+    int[] value;
+    int* ptr;
+};
+
+int main() {
+    struct dict_item[]* dictPtr = alloc(struct dict_item[]);
+    *dictPtr = alloc_array(struct dict_item, 5);
+    (*dictPtr)[0].key = 9;
+    (*dictPtr)[0].value = alloc_array(int, 10);
+    (*dictPtr)[0].value[(*dictPtr)[0].key] = 4;
+    assert((*dictPtr)[1].key == 0);
+    assert((*dictPtr)[1].value == (*dictPtr)[2].value);
+    (*dictPtr)[2].ptr = alloc(int);
+    assert(*(*dictPtr)[2].ptr == 0);
+    
+    int[]* other = alloc(int[]);
+    assert(*other == (*dictPtr)[2].value);
+    return (*dictPtr)[0].value[9];
+}

@@ -1,0 +1,46 @@
+//test return 2
+//1290
+struct syllable{
+  int F0;
+  int F1;
+  int F2;
+};
+
+typedef struct syllable* syllable; //This is actually dead code;
+
+bool isVowel(int i){
+  return (i == 65) || (i == 69) || (i == 73) || (i == 85) || (i == 79) || (i==89);
+}
+
+int numSyllabs(int[] word, int len){
+  bool currSyll = false;
+  int count = 0;
+  for(int i = 0; i < len; i++){
+    if(isVowel(word[i]) && !currSyll){
+      currSyll = true;
+      count++;
+    }
+    else
+      currSyll = false;
+  }
+  return count;
+}
+
+int main(){
+  int[] word = alloc_array(int, 9); //trochees has 2 syllables
+  word[0] = 84;
+  word[1] = 82;
+  word[2] = 79;
+  word[3] = 67;
+  word[4] = 72;
+  word[5] = 69;
+  word[6] = 69;
+  word[7] = 83;
+  word[8] = 0; //\0-terminated
+  int numS = numSyllabs(word, 9);
+
+  syllable[] phones = alloc_array(struct syllable*, numS);
+  //I have other homework and even if deagol knows it and doesn't care, I do.
+
+  return numS;
+}

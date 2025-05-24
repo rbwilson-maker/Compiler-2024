@@ -1,0 +1,11 @@
+//test error
+
+// This should fail to parse
+
+typedef int foo;
+
+int main() {
+  int foo;
+  foo* bar;
+  return 42;
+}

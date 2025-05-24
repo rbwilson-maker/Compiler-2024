@@ -1,0 +1,12 @@
+//test div-by-zero
+//Perform some arithmetic operations on vairables a and b, but / 0 is illegal.
+int main () {
+	int a;
+    int b;
+    a = 15;
+    b = 411;
+    a *= 100;
+    a += b;
+    b /= 0;
+	return b;
+}

@@ -1,0 +1,20 @@
+//test error
+
+int main()
+{
+	int i = 64;
+	int j = 32;
+
+	while (true) {
+		if (i > j) {
+			i++;
+		} else if (j > i) {
+			j++;
+		} else {}
+
+		i %= 3;
+		return (i + 1) / 2;
+	}
+
+	return false;
+}

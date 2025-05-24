@@ -1,0 +1,72 @@
+//test return 0
+
+struct f {
+  int[] arr;
+};
+
+struct s {
+  struct f* field;
+};
+
+struct s2 {
+  struct f field;
+};
+
+int f(struct s* s, int[]* out) {
+  int[] old = s->field->arr;
+  *out = old;
+  s->field->arr = alloc_array(int, 10);
+  old[1] = 4;
+  return 1;
+}
+
+int f2(struct s2* s, int[]* out) {
+  int[] old = s->field.arr;
+  *out = old;
+  s->field.arr = alloc_array(int, 10);
+  return 0;
+}
+
+int g(struct s* s, struct f** out) {
+  *out = s->field;
+  s->field = alloc(struct f);
+  s->field->arr = alloc_array(int, 10);
+  return 0;
+}
+
+int main() {
+
+  // test 1
+  {
+    struct s *s = alloc(struct s);
+    int[]* old = alloc(int[]);
+    s->field = alloc(struct f);
+    s->field->arr = alloc_array(int, 10);
+    s->field->arr[f(s, old)] += 5;
+    assert(s->field->arr[1] == 0);
+    assert((*old)[1] == 9);
+  }
+
+  // test 2
+  {
+    struct s *s = alloc(struct s);
+    s->field = alloc(struct f);
+    struct f** old = alloc(struct f*);
+    s->field->arr = alloc_array(int, 10);
+    s->field->arr[g(s, old)] = 2;
+    assert(s->field->arr[0] == 0);
+    assert((*old)->arr[0] == 2);
+  }
+
+  //test 3
+  {
+    struct s2 *s = alloc(struct s2);
+    int[]* old = alloc(int[]);
+    s->field.arr = alloc_array(int, 10);
+    s->field.arr[f2(s, old)] = 2;
+    assert(s->field.arr[0] == 0);
+    assert((*old)[0] == 2);
+  }
+
+  return 0;
+}

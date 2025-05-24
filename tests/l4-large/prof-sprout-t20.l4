@@ -1,0 +1,14 @@
+//test error
+// test recursive struct
+
+typedef struct stack stack;
+
+struct stack {
+  int head;
+  struct stack S;
+};
+
+int main() {
+  stack *S = alloc(stack);
+  return 0;
+}

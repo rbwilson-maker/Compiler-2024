@@ -1,0 +1,22 @@
+//test div-by-zero
+// test function argument evaluation order
+
+int infloop(int x) {
+    return infloop(x);
+}
+
+int f(int i, int j, bool l) {
+    return 42;
+}
+
+bool dummy() {
+    int sky = 0;
+    int blue = 1;
+    assert(sky == blue);
+    return true;
+}
+
+int main() {
+    int result = f(1/0, infloop(2), dummy());
+    return 0;
+}

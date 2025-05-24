@@ -1,0 +1,10 @@
+//test return 0
+//test right associative ternary operator
+
+int main() {
+  int x = 3;
+  int y = 4;
+  // Don't use boolean literals in case of static analysis
+  bool b = x == x ? x == y : x == x ? x == y : x == x;
+  return b ? 1 : 0;
+}

@@ -1,0 +1,16 @@
+//test error
+
+typedef int float;
+
+float sqrt(float x) {
+  // newton's method
+  float root = 1;
+  for (int i = 0; i < 100; i++) {
+    root = 0.5 * (root + x / root)
+  }
+  return root;
+}
+
+int main() {
+  return sqrt(4);
+}

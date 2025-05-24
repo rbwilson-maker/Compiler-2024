@@ -1,0 +1,21 @@
+//test return 2025
+
+// Test nested for loop
+int main()
+{
+  int x;
+  int y;
+  int total;
+  int stop;
+
+  stop = 10;
+  total = 0;
+
+  for(x = 0; x < stop; x++) {
+    for(y = 0; y < stop; y++) {
+      total += x * y;
+    }
+  }
+
+  return total;
+}

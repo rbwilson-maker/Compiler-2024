@@ -1,0 +1,11 @@
+//test memerror
+
+// another typechecker stress test
+
+int main() {
+  int*[] A = alloc_array(int *, 2);
+  int v = 0;
+  v++;
+  A[v] = NULL;
+  return *A[v];
+}

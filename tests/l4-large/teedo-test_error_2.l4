@@ -1,0 +1,9 @@
+//test error
+
+
+int main() {
+    int* p = alloc(int);
+
+    *p = 42;
+    return *(p++); // Invalid
+}

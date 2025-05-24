@@ -1,0 +1,23 @@
+//test error
+
+
+struct subsection;
+
+// not allowed to address struct only by its
+// name
+struct section{
+    subsection[] subs;
+    section next;
+};
+
+struct subsection{
+    int[] textBody;
+    struct subsection next;
+};
+
+
+
+
+int main(){
+    reuturn 0;
+}

@@ -1,0 +1,10 @@
+//test typecheck
+struct mystruct {
+	int x;
+};
+
+int main() {
+	alloc(struct mystruct);
+	return 0;
+}
+

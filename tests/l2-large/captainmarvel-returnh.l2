@@ -1,0 +1,17 @@
+//test return 2
+
+int main ()
+{
+  if (true) {
+    
+    if (false) {
+      return 1;
+    } 
+    
+    else {
+      return 2;
+    }
+  }
+
+  return 0;
+}

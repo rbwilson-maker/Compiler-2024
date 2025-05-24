@@ -1,0 +1,14 @@
+//test return 3
+//make sure that these x's are separate instances of x
+
+int cool_function(int x)
+{
+  return x * 2019;
+}
+
+int main()
+{
+  int x = 3;
+  int y = cool_function(x);
+  return x;
+}

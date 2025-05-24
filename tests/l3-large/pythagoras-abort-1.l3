@@ -1,0 +1,15 @@
+//test abort
+typedef int endian;
+
+bool troll(int num){
+    if (num % 2 == 0){
+        return true;
+    }
+    return false;
+}
+
+int main() {
+    bool qwertyuiopasdfjghl = troll(2);
+    assert(qwertyuiopasdfjghl == false);
+    return 1;
+}

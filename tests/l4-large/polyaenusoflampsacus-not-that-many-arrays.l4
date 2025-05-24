@@ -1,0 +1,14 @@
+//test return 15122
+
+int main() {
+  int sum = 0;
+  for(int i = 0; i < 15122; i++) {
+    int[] x = alloc_array(int, 1);
+    x[0] -= 15112;
+    x[0] += 15122;
+    x[0] /= 10;
+    sum += x[0];
+  }
+
+  return sum;
+}

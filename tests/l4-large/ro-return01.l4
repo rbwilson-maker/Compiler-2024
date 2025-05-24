@@ -1,0 +1,59 @@
+//test return 0
+// Clones binary trees
+
+struct binary_tree;
+
+typedef struct binary_tree* btree_t;
+
+struct binary_tree{
+  btree_t left;
+  btree_t right;
+  int val;
+};
+
+btree_t incr_clone(btree_t root){
+  if (root == NULL){
+    return NULL;
+  }
+  btree_t new_root = alloc(struct binary_tree);
+  new_root->val = root->val + 1;
+  new_root->left = incr_clone(root->left);
+  new_root->right = incr_clone(root->right);
+  return new_root;
+}
+
+bool is_correct(btree_t x, int level){
+  if (x == NULL){
+    return true;
+  }
+  return x->val == level && is_correct(x->left, level+1) && is_correct(x->right, level+1);
+}
+
+
+int main(){
+  
+  btree_t x = alloc(struct binary_tree);
+  x->val = 0;
+  x->left = incr_clone(x);
+  x->right = incr_clone(x);
+
+  if (!is_correct(x, 0)){
+    return -1;
+  }
+
+  x->left = incr_clone(x);
+  x->right = incr_clone(x);
+
+  if (!is_correct(x, 0)){
+    return -2;
+  }
+
+  x->left = incr_clone(x);
+  x->right = incr_clone(x);
+  
+  if (!is_correct(x, 0)){
+    return -3;
+  }
+
+  return 0;
+}

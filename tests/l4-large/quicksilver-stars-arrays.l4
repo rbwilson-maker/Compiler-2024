@@ -1,0 +1,6 @@
+//test error
+int main() {
+    int[] x = alloc_array(int, 100); 
+    int y = *x; 
+    return 0; 
+}

@@ -1,0 +1,12 @@
+//test error
+// tests that large type struct cannot be declared
+
+struct f {
+    int g;
+    int h;
+}
+
+int main() {
+    struct f ooh;
+}
+

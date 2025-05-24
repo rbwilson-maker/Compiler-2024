@@ -1,0 +1,16 @@
+//test return 100000
+int a(int b);
+int b(int c);
+
+int a(int c){
+  if(c == 100000) return c;
+  return b(c+1);
+}
+int b(int c){
+  if(c >= 100000) return c;
+  return a(c+1);
+}
+
+int main(){
+  return a(-4);
+}

@@ -1,0 +1,28 @@
+//test return 1
+
+bool is_even(int n);
+bool is_odd(int n);
+
+bool is_even(int n) {
+  if (n == 0) {
+    return true;
+  } else {
+    return is_odd(n - 1);
+  }
+}
+
+bool is_odd(int n) {
+  if (n == 1) {
+    return true;
+  } else {
+    return is_even(n - 1);
+  }
+}
+
+int main () {
+  assert(is_even(10));
+  assert(is_odd(11));
+  assert(is_even(20));
+  assert(is_odd(51));
+  return 1;
+}

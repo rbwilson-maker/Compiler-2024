@@ -1,0 +1,9 @@
+//test return 200
+
+int pool (int x) {
+    int i;
+    for (i = 0; i < x; i++) {}
+    return i;
+}
+
+int main () { return (pool (200)); }

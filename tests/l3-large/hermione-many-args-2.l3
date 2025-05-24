@@ -1,0 +1,15 @@
+//test return 1
+
+int func(int a, int b, int c, int d, int e,
+         int f, bool g, int h, bool i, int j) {
+  if (g) {
+    if (i) {
+      return 0x90;
+    }
+  }
+  return j;
+}
+
+int main () {
+  return func(-1, -1, -1, -1, -1, -1, false, 0x90, false, 1);
+}

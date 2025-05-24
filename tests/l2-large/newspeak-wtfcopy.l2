@@ -1,0 +1,8 @@
+//test error
+int main() {
+  int c = 2;
+  if (for (c; c<5; c++);) {
+    return 2;
+  }
+  return 2;
+}

@@ -1,0 +1,28 @@
+//test return 1
+/// call some functions from within a function, using a ternary expression
+/// make sure we can execute a valid assertion along the way
+
+int func3(int x){
+    return x;
+}
+
+int func2(int x){
+    return 1;
+}
+
+int func1(int x, int y, int z){
+    return (x == y) ? func2(y) : func3(z);
+}
+
+int main() {
+
+    if (false){
+        assert(func1(1, 1, 0) != 0);
+        return 0;
+    }
+    else{
+        assert(func1(1, 1, 0) != 0);
+    }
+
+    return 1;
+}

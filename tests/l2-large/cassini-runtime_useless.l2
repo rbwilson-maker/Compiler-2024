@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+    int q = 10;
+    q++;
+    q--;
+    4 + 7 - 10 == 7 - 4; // True statement!
+    q * 5 > q * 4 == q * 5 < q * 4;
+    q / ((q + 1) / 100) == q * 100 / (q + 1); // Math, right?
+    return 0;
+}

@@ -1,0 +1,12 @@
+//test return 10
+
+int main() {
+    int a = 2; 
+    int b = 3; 
+    int c = 4; 
+    int d = 5; 
+    int e = 32; 
+    int f = a / b; 
+    d = c * d; 
+    return (f + d) / a; 
+}

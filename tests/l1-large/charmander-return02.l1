@@ -1,0 +1,11 @@
+//test return 4
+// test div and mod
+int main()
+{
+  int a = 10;
+  int b = 4;
+  int c;
+
+  c = a / b + a % b;
+  return c;
+}

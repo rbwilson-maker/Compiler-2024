@@ -1,0 +1,77 @@
+//test return 2147465721
+
+typedef int data;
+
+struct node {
+    data val;
+};
+
+int left(int cur) { return (cur << 1); }
+int right(int cur) { return (cur << 1) + 1; }
+int mid(int l, int r) { return (r - l) / 2 + l; }
+data max(data a, data b) { return a > b ? a : b; }
+
+void init(struct node[] tree, int cur, int l, int r) {
+    tree[cur].val = 0;
+    if (l != r) {
+        init(tree, left(cur), l, mid(l, r));
+        init(tree, right(cur), mid(l, r)+1, r);
+    }
+}
+
+void update(struct node[] tree, int cur, int idx, data val, int l, int r) {
+    assert(l <= idx && idx <= r);
+
+    if (idx == l && idx == r) {
+        tree[cur].val = val;
+        return;
+    }
+    
+    tree[cur].val = max(tree[cur].val, val);
+    if (idx <= mid(l, r)) {
+        update(tree, left(cur), idx, val, l, mid(l, r));
+    } else {
+        update(tree, right(cur), idx, val, mid(l, r)+1, r);
+    }
+}
+
+data query(struct node[] tree, int cur, int ql, int qr, int l, int r) {
+    assert(l <= ql && qr <= r);
+    if (ql == l && qr == r) {
+        return tree[cur].val;
+    } else if (qr <= mid(l, r)) {
+        return query(tree, left(cur), ql, qr, l, mid(l, r));
+    } else if (ql >= mid(l, r) + 1) {
+        return query(tree, right(cur), ql, qr, mid(l, r)+1, r);
+    } else {
+        return max(query(tree, left(cur), ql, mid(l, r), l, mid(l, r)),
+                   query(tree, right(cur), mid(l, r)+1, qr, mid(l, r)+1, r));
+    }
+}
+
+// Tests creating a segment tree with max operation
+int main() {
+    // length of the segment tree, from [1, length]
+    int length = 1000000;
+
+    // allocate array for the segment tree
+    struct node[] tree = alloc_array(struct node, 20 * length);
+
+    // init tree with zeros
+    init(tree, 1, 1, length); 
+
+    // update tree[i] with i * i
+    for (int i = 1; i < length; i++) {
+        update(tree, 1, i, i * i, 1, length);
+    }
+
+    // check query max value for [1, i] and [i+1/2, i] to be i * i
+    for (int i = 1; i < 40000; i++) {
+        assert(query(tree, 1, 1, i, 1, length) == i * i);
+        assert(query(tree, 1, (i + 1) / 2, i, 1, length) == i * i);
+    }
+    
+    // check values when i * i overflow
+    assert(query(tree, 1, 499, 1000000, 1, length) == 2147478505);
+    return query(tree, 1, 500, 483749, 1, length);
+}

@@ -1,0 +1,15 @@
+//test return 1073741824
+
+int myPow(int x, int n) {
+    if (n < 0)
+        return 1 / myPow(x, -n);
+
+    if (n == 0) return 1;
+    if (n == 1) return x;
+    int k = myPow(x, n/2);
+    if (n % 2 == 0) return myPow(x, n/2) * myPow(x, n/2);
+    return myPow(x, n/2) * myPow(x, n/2) * x;
+}
+int main() {
+    return myPow(2,30);
+}

@@ -1,0 +1,73 @@
+//test return 1500
+
+typedef int[][] matrix;
+
+struct matt {
+  matrix x;
+  int m;
+  int n;
+};
+
+typedef struct matt mat;
+
+
+void matmul(mat *A, mat *B, mat *C);
+
+void matmul(mat *A, mat *B, mat *C) {
+  for (int i = 0; i < A->m; i++) {
+    for (int j = 0; j < B->n; j++) {
+      C->x[i][j] = 0;
+      for (int k = 0; k < A->n; k++) {
+        C->x[i][j] += A->x[i][k] * B->x[k][j];
+      }
+    }
+  }
+  return;
+}
+
+int main() {
+  mat *A = alloc(mat);
+  A->x = alloc_array(int[], 3);
+  (A->x)[0] = alloc_array(int, 3);
+  (A->x)[1] = alloc_array(int, 3);
+  (A->x)[2] = alloc_array(int, 3);
+  A->m = 3;
+  A->n = 3;
+  (A->x)[0][0] = 1;
+  (A->x)[0][1] = 2;
+  (A->x)[0][2] = 3;
+  (A->x)[1][0] = 4;
+  (A->x)[1][1] = 5;
+  (A->x)[1][2] = 6;
+  (A->x)[2][0] = 7;
+  (A->x)[2][1] = 8;
+  (A->x)[2][2] = 9;
+
+  mat *B = alloc(mat);
+  B->x = alloc_array(int[], 3);
+  (B->x)[0] = alloc_array(int, 3);
+  (B->x)[1] = alloc_array(int, 3);
+  (B->x)[2] = alloc_array(int, 3);
+  B->m = 3;
+  B->n = 3;
+  (B->x)[0][0] = 10;
+  (B->x)[0][1] = 20;
+  (B->x)[0][2] = 30;
+  (B->x)[1][0] = 40;
+  (B->x)[1][1] = 50;
+  (B->x)[1][2] = 60;
+  (B->x)[2][0] = 70;
+  (B->x)[2][1] = 80;
+  (B->x)[2][2] = 90;
+
+  mat *C = alloc(mat);
+  C->x = alloc_array(int[], 3);
+  (C->x)[0] = alloc_array(int, 3);
+  (C->x)[1] = alloc_array(int, 3);
+  (C->x)[2] = alloc_array(int, 3);
+  C->m = 3;
+  C->n = 3;
+
+  matmul(A, B, C);
+  return C->x[2][2];
+}

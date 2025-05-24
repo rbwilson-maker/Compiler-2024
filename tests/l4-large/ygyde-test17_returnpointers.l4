@@ -1,0 +1,23 @@
+//test return 193
+
+int *alloc_and_set(int i) {
+    if (i == 0) {
+        int *test_ptr = alloc(int);
+        *test_ptr = 5;
+        *test_ptr += 1;
+        return test_ptr;
+    }
+    else {
+        int *test_ptr = alloc_and_set(i - 1);
+        *test_ptr *= 2;
+        return test_ptr;
+    }
+}
+
+
+// tests if allocation within functions works or not
+int main() {
+    int *set_ptr = alloc_and_set(5);
+    *set_ptr += 1;
+    return *set_ptr;
+}

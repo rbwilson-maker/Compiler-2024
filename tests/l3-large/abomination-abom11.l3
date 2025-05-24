@@ -1,0 +1,13 @@
+//test typecheck
+
+int main() {
+    int two = two();
+    if(two == succ(two)) {
+        return 5;
+    }
+    while(positive(10 - two)) {
+        two = succ(two);
+        noop(1, false);
+    }
+    return two == 5 ? 0 : 1 + 1;
+}

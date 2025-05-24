@@ -1,0 +1,10 @@
+//test typecheck
+
+struct xxx{
+int a;
+};
+typedef int check;
+void fun(){}
+int main(){
+return 0;
+}

@@ -1,0 +1,6 @@
+//test return -2147483648
+// multiplying -1 should return itself
+
+int main() {
+	return -2147483648 * -1;
+}

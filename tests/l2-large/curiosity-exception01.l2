@@ -1,0 +1,17 @@
+//test div-by-zero
+//division by 0 error
+
+int main()
+{
+  int a;
+  int b;
+  int c;
+
+  a = 5;
+  b = 5;
+  c = 5;
+
+  c = a/(b^a);
+  
+  return c;
+}

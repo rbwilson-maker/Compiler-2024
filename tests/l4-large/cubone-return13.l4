@@ -1,0 +1,54 @@
+//test return 16
+/* Given a rectangular matrix of integers, finds the sum of the numbers on the 
+   path from top left to bottom right such that the sum is minimized, going
+   only down or right */
+
+int least(int[][] a, int m, int n) {
+  int[][] hash = alloc_array(int[], m);
+
+  for (int i = 0; i < m; i++)
+    hash[i] = alloc_array(int, n);
+
+  for (int i = 0; i < m; i++) {
+    for (int j = 0; j < n; j++) {
+      if ((i == 0) && (j == 0))
+        hash[i][j] = a[i][j];
+      else if (i == 0)
+        hash[i][j] = hash[i][j - 1] + a[i][j];
+      else if (j == 0)
+        hash[i][j] = hash[i - 1][j] + a[i][j];
+      else {
+        hash[i][j] = (hash[i - 1][j] <= hash[i][j - 1] ?
+                      hash[i - 1][j] + a[i][j] :
+                      hash[i][j - 1] + a[i][j]);
+      }
+    }
+  }
+
+  return hash[m - 1][n - 1];
+}
+
+int main() {
+  int[][] a = alloc_array(int[], 5);
+
+  for (int i = 0; i < 5; i++)
+    a[i] = alloc_array(int, 3);
+
+  a[0][0] = 1;
+  a[0][1] = 2;
+  a[0][2] = 3;
+  a[1][0] = 2;
+  a[1][1] = 5;
+  a[1][2] = 2;
+  a[2][0] = 3;
+  a[2][1] = 2;
+  a[2][2] = 1;
+  a[3][0] = 3;
+  a[3][1] = 4;
+  a[3][2] = 5;
+  a[4][0] = 2;
+  a[4][1] = 2;
+  a[4][2] = 3;
+
+  return least(a, 5, 3);
+}

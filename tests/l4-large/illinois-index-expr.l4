@@ -1,0 +1,6 @@
+//test return 2
+// alloc is an expression, and we can index by expressions
+
+int main() {
+    return alloc_array(int, *alloc(int) + 2)[*alloc(int) + 1] + 2;
+}

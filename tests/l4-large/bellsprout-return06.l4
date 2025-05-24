@@ -1,0 +1,12 @@
+//test return 6
+bool f(int* a) {
+  (*a) ++;
+  return (*a) % 3 > 0;
+}
+
+int main() {
+  int* i = alloc(int);
+  *i = 0;
+  for (f(i); f(i); f(i)) {}
+  return *i;
+}

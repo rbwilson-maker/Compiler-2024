@@ -1,0 +1,12 @@
+//test return 1
+// test if blocks and postfix
+
+
+int main()
+{
+  int x;
+  x = 0;
+  if (true)
+    x++;
+  return x;
+}

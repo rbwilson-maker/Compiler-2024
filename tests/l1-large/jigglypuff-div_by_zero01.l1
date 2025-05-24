@@ -1,0 +1,23 @@
+//test div-by-zero
+
+/* Divide By Zero Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Saturday, September 12, 2015 at 04:26:53 PM EDT
+ *
+ * Uses a more subtle approach for testing div by zero
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int z;
+
+    x = 5;
+    y = x + 5;
+    z = 70;
+
+    return (z / (y - 2 * x));
+}

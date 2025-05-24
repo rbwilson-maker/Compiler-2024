@@ -1,0 +1,10 @@
+//test abort
+//check assert works over equivalent typedefs
+typedef bool a;
+
+int main()
+{
+   a b = false;
+   assert(b);
+   return 0;
+}

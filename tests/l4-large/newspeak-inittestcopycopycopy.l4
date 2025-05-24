@@ -1,0 +1,9 @@
+//test error
+// test initialization by alloc_array
+
+int main() {
+  int N = 100000;
+  int[] x = alloc_array(int, N);
+
+  return *(x+64);
+}

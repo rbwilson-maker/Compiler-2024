@@ -1,0 +1,15 @@
+//test error
+
+
+int medic(int x)
+    if(x > 5)
+        return 5;
+    return x;
+}
+
+int main() {
+    int x = 7;
+    bool y = medic(x);
+    return 0;
+}
+

@@ -1,0 +1,5 @@
+//test error
+bool main(){
+	int x = 0;
+	return ((x == 0) && (x % 2 == 0)) || (x > 1);
+}

@@ -1,0 +1,16 @@
+//test typecheck
+//test infloop
+
+bool trueandfalse(bool t, bool f) {
+  while (!t && f) {
+    int a = 10;
+  }
+  return true;
+}
+
+int main(){
+  bool t = true;
+  bool f = false;
+  trueandfalse(f,t);
+  return 0;
+}

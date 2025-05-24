@@ -1,0 +1,21 @@
+//test return 255 
+
+struct image {
+  int[] buffer;
+  int width;
+  int height;
+};
+
+
+int main() {
+  struct image* I = alloc(struct image);
+  int[] imgBuff = alloc_array(int, 100);
+  (*I).width = 10;
+  (*I).height = 10;
+  (*I).buffer = imgBuff; 
+  for (int pix = 0; pix < 100; pix++) {
+    (*I).buffer[pix] = 255; // fill the image with black pixels
+  }
+  // return the color of the last pixel
+  return (*I).buffer[99];
+}

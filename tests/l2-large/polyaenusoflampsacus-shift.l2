@@ -1,0 +1,8 @@
+//test div-by-zero
+//Checks code against invalid shifts
+
+int main () {
+  int x = 5;
+  x << -1;
+  return 0;
+}

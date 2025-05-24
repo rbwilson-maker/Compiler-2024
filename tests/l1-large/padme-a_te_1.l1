@@ -1,0 +1,12 @@
+//test error
+
+/* This test will raise an uninitialized variable error for the variable vae,
+   since it is a misspelling of the initialized variable var.
+*/
+
+int main ()
+  {
+    int var = 1;
+    vae += 1;
+    return var;
+  }

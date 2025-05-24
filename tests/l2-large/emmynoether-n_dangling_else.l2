@@ -1,0 +1,16 @@
+//test error
+
+int main() {
+    int x = 10;
+    int y;
+    if x < x * x
+        if x > x * x
+            return 0;
+        else
+            y = 20;
+            x = 5;
+    else
+        return 2;
+
+    return x + y;
+}

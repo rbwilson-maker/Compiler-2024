@@ -1,0 +1,10 @@
+//test return 69
+int main () {
+    int x = 69;
+
+    for(int i = 0; i < 10; i++) {
+        x = (i < 11) ? x : 1 / 0;
+    }
+
+    return x;
+}

@@ -1,0 +1,21 @@
+//test memerror
+
+struct ss {
+    int a;
+    int **b;
+    struct bb *cc;
+};
+
+struct bb {
+    struct ss *t;
+    struct ss tt;
+    struct ss[] t_array;
+};
+
+int main() {
+    struct bb *tmp = alloc(struct bb);
+
+    tmp = tmp->tt.cc;
+    alloc_array(struct ss, -1);
+    return tmp->tt.a;
+}

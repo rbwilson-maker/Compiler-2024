@@ -1,0 +1,27 @@
+//test return 0
+
+int main() {
+    int x = 8;
+
+    if (x != 0) {
+        if (x != 1) {
+            if (x != 2) {
+                if (x != 3) {
+                    if (x != 4) {
+                        if (x != 5) {
+                            if (x != 6) {
+                                if (x != 7) {
+                                    if (x == 8) {
+                                        return 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return 1;
+}

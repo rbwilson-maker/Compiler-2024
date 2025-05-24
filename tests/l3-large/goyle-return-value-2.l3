@@ -1,0 +1,17 @@
+//test return 1904
+
+int region_sum(int x1, int x2, int y1, int y2) {
+  int acc = 0;
+  for (int x = x1; x < x2; x++) {
+    for (int y = y1; y < y2; y++) {
+      acc += x*y;
+    }
+  }
+  return acc;
+}
+
+int main() {
+  int big_square = region_sum(0, 10, 0, 10);
+  int little_square = region_sum(5, 7, 5, 7);
+  return big_square - little_square;
+}

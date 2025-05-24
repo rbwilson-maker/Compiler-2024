@@ -1,0 +1,13 @@
+//test return 27
+
+int fun(int x) {    
+    if (x == 0) {
+        return 0;
+    }
+    x = fun(x - 1) + 3 * x;
+    return x + 3;
+}
+
+int main () {
+    return fun(3);
+}

@@ -1,0 +1,17 @@
+//test return 1
+//Ensures proper use of malloc
+
+int main()
+{
+  int*[] arr = alloc_array(int*, 500);
+  for(int i = 0; i < 500; i++)
+  {
+    int* curr = alloc(int);
+    for(int j = 0; j < i; j++)
+    {
+      if(curr == arr[j]) return 0;
+    }
+    arr[i] = curr;
+  }
+  return 1;
+}

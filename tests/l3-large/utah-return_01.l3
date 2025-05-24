@@ -1,0 +1,10 @@
+//test return 5
+// Tests that recursion is ok.
+
+int rec(int r, int a) {
+    return r == 0 ? a : rec(r-1,a+1);   
+}
+
+int main () {
+    return rec(5,0);
+}

@@ -1,0 +1,30 @@
+//test return -1601558356
+typedef int set;
+bool member(int a,set b){
+	assert(a>=0 && a<32);
+	return ((b>>a)&1)==1;
+}
+set insert(int a,set b){
+	return b | (1<<a);
+}
+set empty(){
+	return 0;
+}
+bool divides(int a,int b){
+	return (b%a)==0;
+}
+int main(){
+	int primes=empty();
+	for(int p=2;p<32;p++){
+		bool isPrime=true;
+		for(int k=2;k<p;k++){
+			if(member(k,primes) && divides (k,p)){
+				isPrime=false;
+			}
+		}
+		if(isPrime){
+			primes=insert(p,primes);
+		}
+	}
+	return primes;
+}

@@ -1,0 +1,13 @@
+//test return 12
+
+typedef int my_int;
+my_int test() {
+  my_int my_double_int = 12;
+  return my_double_int;
+}
+
+typedef my_int my_double_int;
+int main() {
+  my_double_int test = test();
+  return test;
+}

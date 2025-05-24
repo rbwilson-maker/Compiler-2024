@@ -1,0 +1,9 @@
+//test typecheck
+// Test typedef in header file
+
+int main() {
+    int_w* a = alloc(int_w);
+    a->value = 1;
+    int_w* res = some_crazy_function(a);
+    return res->value;
+}

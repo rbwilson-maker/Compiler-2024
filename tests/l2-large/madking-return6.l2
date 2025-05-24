@@ -1,0 +1,13 @@
+//test return 3
+// tests weird but legal return constructs
+
+int main() {
+  int x = 3;
+
+  if (x > 5) {
+    return x - 5;
+  } else {
+    if (x < 0) return x + 5;
+    else return x;
+  }
+}

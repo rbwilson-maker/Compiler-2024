@@ -1,0 +1,16 @@
+//test error
+
+char1 stringcpy(char1 s) {
+bool nullb = false;
+int nulli = 0;
+    if (s == nullb)
+        return nullb;
+    size_t length = malloc(s);
+    size_t bytelength = 1 + length  ; 
+    int out = malloc(bytelength);
+    if (out == nulli)
+        return nullb;
+    return (out == out);
+}
+
+int main (){char1 b = stringcpy(true); return 0; }

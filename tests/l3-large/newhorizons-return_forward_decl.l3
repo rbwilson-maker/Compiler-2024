@@ -1,0 +1,13 @@
+//test return 251
+// forward decls with renaming of vars
+
+int gnag (int x, int y);
+
+int main () {
+    int a = gnag(200, 51);
+    return a; 
+}
+
+int gnag (int a, int b) {
+    return a + b;
+}

@@ -1,0 +1,17 @@
+//test error
+//Testing Error - Reserved Variables
+
+int main()
+{
+  int x;
+  int y;
+  int z;
+  x = 0;
+  y = 0;
+  int struct = 1;
+  z = x + y;
+  return z;
+}
+
+
+

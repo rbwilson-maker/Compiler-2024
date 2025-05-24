@@ -1,0 +1,9 @@
+//test memerror
+//can determine type of any*
+
+int main () {
+  int* a = NULL;
+  if (*(false ? a : NULL) == *(true ? NULL : a))
+    return 1;
+  return 0;
+}

@@ -1,0 +1,12 @@
+//test return 479001600
+
+int main(){
+	int f = 1;
+    int loop = 1;
+    while(loop <= 12)
+    {
+        f = f * loop;
+        loop = loop + 1;
+    }
+	return f;
+}

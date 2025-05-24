@@ -1,0 +1,12 @@
+//test return 42
+// tests that exceptions AFTER a return do not actually generate exceptions
+
+int main() {
+
+    int a = 21;
+    int b = 21;
+    return a + b;
+
+    int c = a / (a - b);
+    return c;
+}

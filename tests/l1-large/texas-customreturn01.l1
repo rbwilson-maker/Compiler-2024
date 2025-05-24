@@ -1,0 +1,11 @@
+//test return 297
+
+int main() {
+	int b;
+	int i = 4;
+	b = 233;
+	i += b;
+	b = i % 2;
+	i = 253 * b + 44;
+	return i;	
+}

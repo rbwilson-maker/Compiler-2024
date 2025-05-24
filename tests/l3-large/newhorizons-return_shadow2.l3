@@ -1,0 +1,11 @@
+//test return 122
+
+int on_the_gang (int x) {
+    return x;
+}
+
+int main () { 
+    int a = on_the_gang(251);
+    int on_the_gang = 122; 
+    return on_the_gang; 
+}

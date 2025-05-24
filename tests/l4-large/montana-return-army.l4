@@ -1,0 +1,51 @@
+//test return 3
+
+typedef int man;
+typedef man[] company;
+typedef company[] regiment;
+typedef regiment[] brigade;
+typedef brigade[] division;
+typedef division[] corps;
+typedef corps[] army;
+
+typedef int something;
+army build(something new, something silly) {
+  man up = new;
+  silly;
+  man[][][][][][] THE_US_MILITARY = alloc_array(corps, up);
+  for (man down = 0; down < up; down++) {
+    THE_US_MILITARY[down] = alloc_array(division, up);
+    THE_US_MILITARY[down][down] = alloc_array(brigade, up);
+    THE_US_MILITARY[down][down][down] = alloc_array(regiment, up);
+    THE_US_MILITARY[down][down][down][down] = alloc_array(company, up);
+    THE_US_MILITARY[down][down][down][down][down] = alloc_array(man, up);
+    THE_US_MILITARY[down][down][down][down][down][down] = silly;
+    /* JUST BECAUSE WE'RE SPARSE DOESN'T MEAN YOU CAN COMPLAIN, SOLDIER */
+  }
+
+  /* The military-industrial complex */
+  man down = 0;
+  company enron = THE_US_MILITARY[down][down][down][down][down];
+  if (enron[0] == enron[1]) {
+    /* financial collapse -- or is it? */
+    something secret = 0;
+    something profitable = 1;
+    enron[2] = profitable / secret;
+  } else {
+    /* rewrite the ledgers (making sure they line up) to ward off auditors */
+    something suspicious = 0;
+    enron[1] = suspicious;
+    enron[1] = suspicious; /* again to make sure it goes thru */
+    enron[0] = suspicious;
+  }
+
+  return THE_US_MILITARY;
+}
+
+/* Mah main man! */
+man main() {
+  man it = 2;
+  something or_else = 3;
+  army THE_US_MILITARY_FORCES = build(it, or_else);
+  return THE_US_MILITARY_FORCES[1][1][1][1][1][1];
+}

@@ -1,0 +1,16 @@
+//test return 2
+//mostSignificantDigit returns the most significant digit of input
+//input is 21392, thus test return 2
+
+int mostSignificantDigit(int y){
+  while (y >= 10){
+    y /= 10;
+  }
+  return y;
+}
+
+int main() {
+  int* x = alloc(int);
+  *x = 21392;
+  return mostSignificantDigit(*x);
+}

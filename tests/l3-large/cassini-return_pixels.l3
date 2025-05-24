@@ -1,0 +1,44 @@
+//test return 0
+
+typedef int pixel_t;
+
+int get_alpha(pixel_t p) {
+    int ret = (p >> 24) & 0xFF;
+    assert(ret >= 0 && ret <= 255);
+    return ret;
+}
+
+int get_red(pixel_t p) {
+    int ret = (p >> 16) & 0xFF;
+    assert(ret >= 0 && ret <= 255);
+    return ret;
+}
+
+int get_green(pixel_t p) {
+    int ret = (p >> 8) & 0xFF;
+    assert(ret >= 0 && ret <= 255);
+    return ret;
+}
+
+int get_blue(pixel_t p) {
+    int ret = (p >> 0) & 0xFF;
+    assert(ret >= 0 && ret <= 255);
+    return ret;
+}
+
+pixel_t make_pixel(int a, int r, int g, int b) {
+    assert(a >= 0 && a <= 255);
+    assert(r >= 0 && r <= 255);
+    assert(g >= 0 && g <= 255);
+    assert(b >= 0 && b <= 255);
+
+    return (a << 24) | (r << 16) | (g << 8) | (b << 0);
+}
+
+int main() {
+    pixel_t p1 = make_pixel(100, 250, 150, 0);
+    assert(get_red(p1) == 250);
+    assert(get_green(p1) == 150);
+    assert(get_alpha(p1) == 100);
+    return get_blue(p1);
+}

@@ -1,0 +1,13 @@
+//test abort
+
+int main()
+{
+  bool accum;
+  bool[] lotsa_bools = alloc_array(bool, 100000);
+  int i = 0;
+  for (accum = false; i < 100000; i++) {
+    accum = accum || lotsa_bools[100000 - i - 1];
+  }
+  assert(accum);
+  return 42;
+}

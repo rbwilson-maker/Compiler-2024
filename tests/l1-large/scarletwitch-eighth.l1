@@ -1,0 +1,23 @@
+//test return 0
+
+int main () {
+    int x = 100000000;
+    int y = 20;
+    int z = x / y;
+
+    y = 20;
+    z = z / y;
+
+    y = 20;
+    z = z / y;
+
+    y = 20;
+    z = z / y;
+
+    y = 20;
+    z = z / y;
+
+    y = 20;
+    z = z / y;
+    return 0;
+}

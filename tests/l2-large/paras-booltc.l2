@@ -1,0 +1,5 @@
+//test error
+//comparison between bool and int
+int main(){
+    return ~42 + (1 == 0);
+}

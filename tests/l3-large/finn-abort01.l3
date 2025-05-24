@@ -1,0 +1,15 @@
+//test abort
+
+
+int compute_binomial_with_abort(int n, int k){
+  if(k == 1 || k == n-1)
+    return n;
+  int x= compute_binomial_with_abort(n-1, k);
+  int y = x*k/(n-k);
+  assert(y > 0);
+  assert(x+y > 0);
+  return x+y;
+} 
+int main(){
+  return compute_binomial_with_abort(40, 15);
+}

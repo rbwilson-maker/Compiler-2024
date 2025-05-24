@@ -1,0 +1,12 @@
+//test div-by-zero
+
+								struct wand {   int val;							};  int f(struct wand *w) {										  if (w->val == 0) {
+    return 1/0;   }
+  if (w->val == 1) {    struct wand* v = NULL;
+    return v->val;   }
+  return 0;
+} 																					int main() {					  struct wand *w = alloc(struct wand);																			  struct wand *v = alloc(struct wand);															  int[] a = alloc_array(int, 0);								  v->val = 1;									   // which f(w) happens first?   
+
+
+
+                                    a[f(w)] = a[f(v)] + 1;    return a[0]; } 																			

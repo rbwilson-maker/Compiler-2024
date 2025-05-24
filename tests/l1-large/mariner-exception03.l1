@@ -1,0 +1,7 @@
+//test div-by-zero
+int main()
+{
+	int worse_than_div_by_0 = 1 % 0;
+	int too_difficult_for_auto_compiler = 2 * worse_than_div_by_0;
+	return too_difficult_for_auto_compiler;
+}

@@ -1,0 +1,28 @@
+//test return 320
+
+// testing some new keywords
+
+int main(){
+    int x = 5;
+    bool b = true;
+    b = false;
+    if (!b) int garbage; else if (!b) int garbage; else false;
+
+    {
+    }
+    {{{{{{{{{{{{}}}}}}}}}}}}
+    {{{x;}}}
+    {{{true;}}}
+    {{{false;}}}
+    {{{int garbage = 0x77aAbBfF;}}}
+
+    int y = 10;
+    if (x % x != 0) return -1;
+    else while (x != 0) {y = y << 1; x-=1;}
+
+    if (b == false|| x / 0 == 3) {return y;}
+
+    return -1;
+}
+
+

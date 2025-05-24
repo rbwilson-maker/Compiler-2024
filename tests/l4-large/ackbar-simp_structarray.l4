@@ -1,0 +1,12 @@
+//test return 0
+
+struct test{
+    int a;
+    int b;
+    bool c;
+};
+
+int main(){
+    struct test[] arr = alloc_array(struct test, 10);
+    return arr[4].b;
+}

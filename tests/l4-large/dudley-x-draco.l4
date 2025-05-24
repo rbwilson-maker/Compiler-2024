@@ -1,0 +1,5 @@
+//test div-by-zero
+																																										struct malfoy {			    int daddy; }; 
+int main(){
+    struct malfoy *lucius = alloc(struct malfoy);
+    lucius->daddy = 10;     lucius->daddy / 0;																												    return 0; } 

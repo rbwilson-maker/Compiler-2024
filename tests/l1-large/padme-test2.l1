@@ -1,0 +1,11 @@
+//test error
+
+
+int main() {
+    int a = 0x2154;
+    int b = a + 1;
+    b += 1;
+    b *= 2;
+    int c = --b;
+    return 0;
+}

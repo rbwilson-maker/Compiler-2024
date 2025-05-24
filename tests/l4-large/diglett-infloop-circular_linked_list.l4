@@ -1,0 +1,32 @@
+//test typecheck
+//test infloop
+// traverse a circular linked list
+
+typedef struct node* node;
+
+struct node {
+    int data;
+    node next;
+};
+
+
+node traverseLL(node head){
+    node result = NULL;
+    while (head != NULL){
+        result = head;
+        head = head->next;
+    }
+    return result;
+}
+
+int main(){
+    node a = alloc(struct node);
+    node b = alloc(struct node);
+
+    a->next = b;
+    b->next = a;
+
+    node result = traverseLL(a);
+    return 0;
+
+}

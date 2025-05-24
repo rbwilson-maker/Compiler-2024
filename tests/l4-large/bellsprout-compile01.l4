@@ -1,0 +1,17 @@
+//test compile
+
+int main() {
+  int* a = NULL;
+  int[] b;
+  if (a == NULL) {
+    b = alloc_array(int, 123);
+    a = alloc(int);
+    *a = 123;
+  } else {
+    b = alloc_array(int, 321);
+    a = alloc(int);
+    *a = 321;
+  }
+  assert(*a > b[1]);
+  return *a - b[222];  
+}

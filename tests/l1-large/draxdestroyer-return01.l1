@@ -1,0 +1,10 @@
+//test return -2147483647 
+int main() {
+    int h = 0x1;
+    int max = 0x7fffffff;
+    int res = h + max;
+    res += 1;
+    return res;
+}
+
+

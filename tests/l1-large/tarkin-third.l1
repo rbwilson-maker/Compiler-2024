@@ -1,0 +1,16 @@
+//test return 1
+
+int main() { 
+  
+  int x = 6;
+  int y = 2;
+  
+  int t1 = x + y;
+  int t2 = x - y;
+  int t3 = x * y;
+  int t4 = x / y;
+  int t5 = x % y;
+
+  return 1; 
+
+  }

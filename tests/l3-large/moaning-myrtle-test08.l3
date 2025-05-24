@@ -1,0 +1,10 @@
+//test abort
+
+void abort(){
+    assert(true==false);
+}
+
+int main(){
+    abort();
+    return 0;
+}

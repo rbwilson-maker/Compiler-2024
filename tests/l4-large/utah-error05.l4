@@ -1,0 +1,38 @@
+//test return 4
+// Tests that a struct can be used from its typedef or its "struct" type.
+
+struct foo {
+    int x;
+    int y;
+};
+
+struct bar {
+    int a;
+    int b;
+};
+
+typedef struct foo foo;
+typedef struct bar baz;
+
+int main () {
+
+    struct foo *s1 = alloc(foo);
+    struct bar *s2 = alloc(baz);
+
+    foo *s3 = alloc(struct foo);
+    baz *s4 = alloc(struct bar);
+
+    s1->x = 3;
+    s1->y = 4;
+
+    s2->a = 1;
+    s2->b = 2;
+
+    s3->x = s1->x;
+    s3->y = s1->x;
+
+    s4->a = s2->a;
+    s4->b = s2->b;
+
+    return s3->x + s4->a;
+}

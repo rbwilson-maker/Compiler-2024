@@ -1,0 +1,194 @@
+//test return 0
+
+typedef struct node node;
+
+struct node {
+  int data;
+  struct node *next;
+};
+
+void bubble_sort(node *list, int len) {
+  if (list == NULL) return;
+  node *curr;
+  node *last = NULL;
+  bool again = true;
+  while(again) {
+    again = false;
+    curr = list;
+    while (curr->next != last) {
+      if(curr->data > curr->next->data) {
+        int temp = curr->data;
+        curr->data = curr->next->data;
+        curr->next->data = temp;
+        again = true;
+      }
+      curr = curr->next;
+    }
+    last = curr;
+  }
+}
+
+void print_list(node *l) {
+	while(l != NULL) {
+    print_int(l->data);
+    l = l->next;
+  }
+}
+
+int main() {
+	node *a0 = alloc(node);
+  node *a1 = alloc(node);
+  node *a2 = alloc(node);
+  node *a3 = alloc(node);
+  node *a4 = alloc(node);
+  node *a5 = alloc(node);
+  node *a6 = alloc(node);
+  node *a7 = alloc(node);
+  node *a8 = alloc(node);
+  node *a9 = alloc(node);
+  node *a10 = alloc(node);
+  node *a11 = alloc(node);
+  node *a12 = alloc(node);
+  node *a13 = alloc(node);
+  node *a14 = alloc(node);
+  node *a15 = alloc(node);
+  node *a16 = alloc(node);
+  node *a17 = alloc(node);
+  node *a18 = alloc(node);
+  node *a19 = alloc(node);
+  node *a20 = alloc(node);
+  node *a21 = alloc(node);
+  node *a22 = alloc(node);
+  node *a23 = alloc(node);
+  node *a24 = alloc(node);
+  node *a25 = alloc(node);
+  node *a26 = alloc(node);
+  node *a27 = alloc(node);
+  node *a28 = alloc(node);
+  node *a29 = alloc(node);
+  node *a30 = alloc(node);
+  node *a31 = alloc(node);
+  node *a32 = alloc(node);
+  node *a33 = alloc(node);
+  node *a34 = alloc(node);
+  node *a35 = alloc(node);
+  node *a36 = alloc(node);
+  node *a37 = alloc(node);
+  node *a38 = alloc(node);
+  node *a39 = alloc(node);
+  node *a40 = alloc(node);
+  node *a41 = alloc(node);
+  node *a42 = alloc(node);
+  node *a43 = alloc(node);
+  node *a44 = alloc(node);
+  node *a45 = alloc(node);
+  node *a46 = alloc(node);
+  node *a47 = alloc(node);
+  node *a48 = alloc(node);
+  node *a49 = alloc(node);
+  a0->data = 50;
+  a1->data = 49;
+  a2->data = 48;
+  a3->data = 47;
+  a4->data = 46;
+  a5->data = 45;
+  a6->data = 44;
+  a7->data = 43;
+  a8->data = 42;
+  a9->data = 41;
+  a10->data = 40;
+  a11->data = 39;
+  a12->data = 38;
+  a13->data = 37;
+  a14->data = 36;
+  a15->data = 35;
+  a16->data = 34;
+  a17->data = 33;
+  a18->data = 32;
+  a19->data = 31;
+  a20->data = 30;
+  a21->data = 29;
+  a22->data = 28;
+  a23->data = 27;
+  a24->data = 26;
+  a25->data = 25;
+  a26->data = 24;
+  a27->data = 23;
+  a28->data = 22;
+  a29->data = 21;
+  a30->data = 20;
+  a31->data = 19;
+  a32->data = 18;
+  a33->data = 17;
+  a34->data = 16;
+  a35->data = 15;
+  a36->data = 14;
+  a37->data = 13;
+  a38->data = 12;
+  a39->data = 11;
+  a40->data = 10;
+  a41->data = 9;
+  a42->data = 8;
+  a43->data = 7;
+  a44->data = 6;
+  a45->data = 5;
+  a46->data = 4;
+  a47->data = 3;
+  a48->data = 2;
+  a49->data = 1;
+  a0->next = a1;
+  a1->next = a2;
+  a2->next = a3;
+  a3->next = a4;
+  a4->next = a5;
+  a5->next = a6;
+  a6->next = a7;
+  a7->next = a8;
+  a8->next = a9;
+  a9->next = a10;
+  a10->next = a11;
+  a11->next = a12;
+  a12->next = a13;
+  a13->next = a14;
+  a14->next = a15;
+  a15->next = a16;
+  a16->next = a17;
+  a17->next = a18;
+  a18->next = a19;
+  a19->next = a20;
+  a20->next = a21;
+  a21->next = a22;
+  a22->next = a23;
+  a23->next = a24;
+  a24->next = a25;
+  a25->next = a26;
+  a26->next = a27;
+  a27->next = a28;
+  a28->next = a29;
+  a29->next = a30;
+  a30->next = a31;
+  a31->next = a32;
+  a32->next = a33;
+  a33->next = a34;
+  a34->next = a35;
+  a35->next = a36;
+  a36->next = a37;
+  a37->next = a38;
+  a38->next = a39;
+  a39->next = a40;
+  a40->next = a41;
+  a41->next = a42;
+  a42->next = a43;
+  a43->next = a44;
+  a44->next = a45;
+  a45->next = a46;
+  a46->next = a47;
+  a47->next = a48;
+  a48->next = a49;
+  a49->next = NULL;
+	
+	print_list(a0);
+	bubble_sort(a0, 50);
+	print_list(a0);
+	return 0;
+}

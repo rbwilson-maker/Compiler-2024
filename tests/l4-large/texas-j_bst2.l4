@@ -1,0 +1,73 @@
+//test return 0
+// testing the "not found" case of a BST
+
+/*    HEADER    */
+struct _bstNode {
+	int val;
+	struct _bstNode* left;
+	struct _bstNode* right;
+};
+struct bst {	//a binary search tree
+	struct _bstNode* top;
+};
+void insert(struct bst* tree, int val);
+bool find(struct bst* tree, int val);
+
+
+/*    MAIN     */
+int main() {
+	struct bst* tree = alloc(struct bst);
+	insert(tree, 8);
+	insert(tree, 4);
+	insert(tree, 2);
+	insert(tree, 5);
+	insert(tree, 6);
+	insert(tree, 7);
+	insert(tree, 11);
+	insert(tree, 23);
+	insert(tree, 10);
+	return find(tree, 19) ? 1 : 0;
+}
+
+
+/*    FUNCTIONS    */
+struct _bstNode* _makeNode(int val);
+
+void insert_r(struct _bstNode* node, int val);
+void insert(struct bst* tree, int val) {
+	if (tree->top == NULL)
+		tree->top = _makeNode(val);
+	else
+		insert_r(tree->top, val);
+}
+void insert_r(struct _bstNode* node, int val) {
+	if (val == node->val)
+		return;
+	if (val < node->val) {
+		if (node->left == NULL)
+			node->left = _makeNode(val);
+		else
+			insert_r(node->left, val);
+	} else {
+		if (node->right == NULL)
+			node->right = _makeNode(val);
+		else
+			insert_r(node->right, val);
+	}
+}
+
+bool find(struct bst* tree, int val) {
+	struct _bstNode* node = tree->top;
+	while (node != NULL) {
+		if (val == node->val)
+			return true;
+		node = (val < node->val) ? node->left : node->right;
+	}
+	return false;
+}
+
+struct _bstNode* _makeNode(int val) {
+	struct _bstNode* newNode = alloc(struct _bstNode);
+	newNode->val = val;
+	return newNode;
+}

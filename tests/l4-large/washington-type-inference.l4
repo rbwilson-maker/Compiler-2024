@@ -1,0 +1,15 @@
+//test return 5
+
+struct foo {
+    int x;
+};
+
+struct foo *malloc() {
+    return alloc(struct foo);
+}
+
+int main() {
+    struct foo *f = malloc();
+    f->x = 5;
+    return f->x;
+}

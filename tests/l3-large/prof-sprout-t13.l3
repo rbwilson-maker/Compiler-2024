@@ -1,0 +1,10 @@
+//test error
+//test typedef same ident twice
+
+typedef int x;
+typedef int x;
+
+int main() {
+  x tmp = 0;
+  return tmp;
+}

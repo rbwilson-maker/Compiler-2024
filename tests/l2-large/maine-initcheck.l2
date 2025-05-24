@@ -1,0 +1,14 @@
+//test error
+//causes initialization error for z
+int main()
+{
+   int x = 5;
+   int y = 21;
+   int z;
+   while (x >= 0)
+   {
+      z = y/x;
+      x--;
+   }
+   return z;
+}

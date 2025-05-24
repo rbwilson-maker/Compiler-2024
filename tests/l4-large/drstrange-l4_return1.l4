@@ -1,0 +1,20 @@
+//test return 3
+/// Use all the new tokens
+
+struct item {
+  int[] kvp;
+  struct item* next;
+};
+
+int main() {
+  struct item* item1 = alloc(struct item);
+
+  struct item* item2 = alloc(struct item);
+  item2->kvp = alloc_array(int, 2);
+  item2->kvp[0] = 1;
+  item2->kvp[1] = 2;
+
+  item1->next = item2;
+
+  return (*item1).next->kvp[0] + (*item1).next->kvp[1];
+}

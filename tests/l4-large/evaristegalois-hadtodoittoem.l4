@@ -1,0 +1,25 @@
+//test return 2
+
+
+int side_effect(int* indic) {
+    *indic += 1;
+    return *indic;
+}
+
+int main() {
+    int[] arr = alloc_array(int, 5);
+    int* indicator = alloc(int);
+    *indicator = 0;
+
+    arr[0] = 1;
+    arr[1] = 2;
+    arr[2] = 3;
+    arr[3] = 4;
+    arr[4] = 5;
+
+    int result = 0;
+
+    result += arr[side_effect(indicator)];
+
+    return result;
+}

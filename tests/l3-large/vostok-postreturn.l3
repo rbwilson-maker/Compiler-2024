@@ -1,0 +1,12 @@
+//test error
+
+int func(int a) {
+    return func(a);
+}
+
+int main() {
+    return 0;
+    return func(10);
+    int func = 5;
+    return func(func);
+}

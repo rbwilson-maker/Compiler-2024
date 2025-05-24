@@ -1,0 +1,9 @@
+//test return 5
+//assignment op
+
+int main() {
+  int x = 5;
+  int y = -x;
+  int z = -y;
+  return z;
+}

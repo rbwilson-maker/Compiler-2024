@@ -1,0 +1,9 @@
+//test return ~1
+
+// multiply operator, basic case
+
+int main() { 
+    int j=-9;
+    j %= 2;
+    return j; 
+}

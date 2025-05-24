@@ -1,0 +1,13 @@
+//test error
+typedef void nothing;
+
+int main() {
+	return 0;
+}
+
+typedef bool something;
+
+something get_nothing() {
+	
+	return;
+}

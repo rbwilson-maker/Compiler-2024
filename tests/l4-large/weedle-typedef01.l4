@@ -1,0 +1,12 @@
+//test return 1
+typedef int x;
+typedef int[] arr;
+
+int main() {
+  x * y;
+  int z = 1;
+  int w = 1;
+  w * z;
+  arr a = alloc_array(int, 4);
+  return z;
+}

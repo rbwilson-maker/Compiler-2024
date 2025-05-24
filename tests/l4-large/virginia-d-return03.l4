@@ -1,0 +1,14 @@
+//test return 0
+//check initialization, aliasing with pointers
+struct l {
+	struct l* next;
+};
+
+typedef int blah;
+
+int main()
+{
+	blah* a = alloc(int);
+
+	return *a;
+}

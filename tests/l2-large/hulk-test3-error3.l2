@@ -1,0 +1,32 @@
+//test error
+
+int main(){
+
+    int a = 5;
+    int b = 6;
+    int c = 7;
+    int d = 8;
+    int e = 9;
+    int f = 10;
+
+    bool i = true;
+    bool j = false;
+    bool k = true;
+    bool l = false;
+    
+    int res1 = a & b | c + d;
+    bool res2 = a + d == b + c;
+    bool res3 = res1 < d;
+
+    if(res3){
+        i = j && k || l & f;
+    }
+
+    {
+        bool a = 112;
+        bool b = 122;
+        bool c = 151;
+    }
+
+    return res1;
+}

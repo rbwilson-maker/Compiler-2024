@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main() {
+  int x = 5 / (0 << 31);
+
+  return x;
+}

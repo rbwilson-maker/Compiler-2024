@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int main()
+{
+    bool z = false;
+
+    for ( ; !z ; )
+    {
+        z = 1 == (4+5);
+    }
+    return 0;
+
+}

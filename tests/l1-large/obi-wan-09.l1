@@ -1,0 +1,13 @@
+//test return 5
+
+// this tests a valid int max and int min
+int main()
+{
+    int x = 0x7fffffff;
+    x = -x;
+    x = x - 1;
+    x += 0x80000005;
+
+    return x;
+}
+

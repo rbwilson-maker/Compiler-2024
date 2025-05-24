@@ -1,0 +1,35 @@
+//test return 0
+
+typedef int int_a;
+typedef int_a int_b;
+typedef bool bool_a;
+typedef int_b int_c;
+
+typedef bool_a bool_b;
+
+bool_a do_something();
+
+typedef int_c int_d;
+
+bool_b do_something() {
+  return true;
+}
+
+typedef bool_b bool_c;
+
+bool_c do_something_else(int_c hi);
+
+typedef int_d int_e;
+
+int_e main () {
+  int_b hello = 1;
+  if (do_something() && do_something_else(hello)) {
+    return 0;
+  } else {
+    return -1;
+  }
+}
+
+bool_c do_something_else(int_d hi) {
+  return hi > 0;
+}

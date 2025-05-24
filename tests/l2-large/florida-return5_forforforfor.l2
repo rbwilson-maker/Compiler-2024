@@ -1,0 +1,19 @@
+//test return 45000
+
+int main(){
+    int a = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            for (int k = 0; k < 10; k++)
+            {
+                for (int x = 0; x < 10; x++)
+                {
+                    a += i;
+                }
+            }
+        }
+    }
+    return a;
+}

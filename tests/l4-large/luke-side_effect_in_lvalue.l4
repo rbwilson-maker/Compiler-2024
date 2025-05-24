@@ -1,0 +1,23 @@
+//test return 0
+
+int pre_increment(int *p) {
+    (*p)++;
+    return *p;
+}
+
+int main() {
+    int[] arr = alloc_array(int, 5);
+    for (int i = 0; i < 5; i++) {
+        arr[i] = 10 * i;
+    }
+    int *p = alloc(int);
+    *p = 1;
+    arr[pre_increment(p)] += 0x3c1f;
+    assert(*p == 2);
+    assert(arr[0] == 0);
+    assert(arr[1] == 10);
+    assert(arr[2] == 15411);
+    assert(arr[3] == 30);
+    assert(arr[4] == 40);
+    return 0;
+}

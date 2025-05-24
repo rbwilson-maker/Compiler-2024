@@ -1,0 +1,17 @@
+//test error
+
+typedef void myvoid;
+typedef myvoid myvoidvoid;
+
+int main() {
+    rec1(true, 3);
+    return 1 / 0;
+}
+
+myvoidvoid rec1(bool b, int a) {
+    if (b) {
+        a + a;
+    } else {
+        a * a
+    }
+}

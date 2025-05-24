@@ -1,0 +1,6 @@
+//test abort
+
+int main() {
+  assert(33492 <= 0);
+  return 2;
+}

@@ -1,0 +1,151 @@
+//test return 0
+
+
+struct dl_list;
+typedef struct dl_list dl_node;
+typedef int elt;
+
+
+struct dl_list {
+    dl_node* prev;
+    elt data;
+    dl_node* next;
+};
+
+
+struct list_overhead {
+    int size;
+    dl_node* head;
+    dl_node* tail;
+};
+
+typedef struct list_overhead dlist;
+
+
+
+dlist* new_list(){
+    dlist *result  = alloc(dlist);
+    dl_node *node1 = alloc(dl_node);
+    result->head = node1;
+    result->tail = node1;
+    return result;
+}
+
+bool is_empty(dlist *given_list){
+    return given_list->head == given_list->tail;
+}
+
+
+void push_front(dlist *given_list, elt new_elt){
+    dl_node *front = given_list->head;
+    dl_node *new   = alloc(dl_node);
+    new->next = front;
+    new->data = new_elt;
+    front->prev = new;
+    given_list->head = new;
+}
+
+
+void push_back(dlist *given_list, elt new_elt){
+    dl_node *back = given_list->tail;
+    dl_node *new  = alloc(dl_node);
+    back->next = new;
+    back->data = new_elt;
+    new->prev  = back;
+    given_list->tail = new;
+}
+
+
+elt pop_back(dlist *given){
+    assert(!is_empty(given));
+    
+    // retirve result and new tail
+    dl_node *tail = given->tail;
+    dl_node *back = given->tail->prev;
+    elt result = back->data;
+    
+    // deassign and free up space
+    back->next = NULL;
+    tail->prev = NULL;
+    // free(tail);
+
+
+    // place the new tail and return result
+    given->tail = back;
+    return result;
+}
+
+elt pop_front(dlist *given){
+    assert(!is_empty(given));
+
+    // retrieve result and new head
+    dl_node *front    = given->head;
+    elt result        = front->data;
+    dl_node* new_head = given->head->next;
+
+    // deassign and free up space
+    new_head->prev = NULL;
+    front->next = NULL;
+    // free(new_head);
+
+    // place the new head and return the result
+    given->head = new_head;
+    return result;
+}
+
+
+typedef dlist* dlist_t;
+
+// dlist_t new_list()
+// bool is_empty(dlist_t)
+// void push_front(dlist_t, elt)
+// void push_back(dlist_t, elt)
+// elt  pop_front(dlist_t)
+// elt  pop_back(dlist_t)
+
+
+int main(){
+
+    dlist_t dl = new_list();
+    push_front(dl, 1);  // [1]
+    push_front(dl, 0);  // [0, 1]
+    push_front(dl, -1); // [-1, 0, 1]
+    push_back(dl, 2);   // [-1, 0, 1, 2]
+    push_back(dl, 3);   // [-1, 0, 1, 2, 3]
+    
+    for (int i=-1; i < 4; i++){
+        assert(!is_empty(dl));
+        int j = pop_front(dl);
+        assert(j == i);
+    }
+
+   dlist_t dl2 = new_list();
+   push_back(dl2, 0); // [0]
+   push_back(dl2, 1); // [0, 1]
+   push_back(dl2, 2); // [0, 1, 2]
+   push_back(dl2, 3); // [0, 1, 2, 3]
+
+   for (int i = 3; i >= 0; i--){
+        assert(!is_empty(dl2));
+        int j = pop_back(dl2);
+        assert(j == i);
+   }
+
+
+
+    return 0;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

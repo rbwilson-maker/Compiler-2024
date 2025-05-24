@@ -1,0 +1,19 @@
+//test return -1412567295
+
+int main() 
+{
+	int x;
+	int y;
+	int z;
+
+	x = 0xabcdef01; 
+	y = 0xABCDEF01;
+
+	if ((x | y) != 0) {
+	  z = x & y;
+	} else {
+	  z = 0;
+	}
+
+	return z;
+}

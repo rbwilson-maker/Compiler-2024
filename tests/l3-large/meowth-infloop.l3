@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+/* let's call main a bunch of times */
+
+typedef int mainy;
+
+mainy main () {
+  for (mainy maine = 0; maine < 1;) {
+    maine = main();
+  }
+  return 1;
+}
+
+mainy main();

@@ -1,0 +1,14 @@
+//test error
+
+struct s{
+    int x;
+};
+
+struct s{
+    int y;
+};
+
+int main(){
+    struct s* x;
+    return 0;
+}

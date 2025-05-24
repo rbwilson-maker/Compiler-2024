@@ -1,0 +1,13 @@
+//test error
+
+// cant use lvalue as a pointer math thing
+
+int ptrToInt(int* ptr) {
+	*(ptr+4) = 1;
+	return *ptr;
+}
+
+int main () {
+	int* A_ptr = alloc(int);
+	return 0;
+}

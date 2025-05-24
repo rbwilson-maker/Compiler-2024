@@ -1,0 +1,11 @@
+//test error
+//type mismatch
+
+int main() {
+    int x;
+    x = f(10);
+
+    if (g(x))
+        return g(x);
+    return f(x);
+}

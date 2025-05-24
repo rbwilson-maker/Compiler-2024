@@ -1,0 +1,22 @@
+//test typecheck
+//test infloop
+int myfuncB(int b);
+int myfuncA(int a) {
+	if (a > 3) {
+		return myfuncB(a - 1);
+	} else {
+		return myfuncB(a - 1);
+	}
+}
+
+int myfuncB(int a) {
+	if (a > 3) {
+		return myfuncA(a - 1);
+	} else {
+		return myfuncA(a - 1);
+	}
+}
+
+int main() {
+	return myfuncA(400);
+}

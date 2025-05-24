@@ -1,0 +1,13 @@
+//test div-by-zero
+int main()
+{
+   	 int sum;
+   	 int x;
+
+   	 sum = 5;
+   	 for(x = 0; x < 5; x++)
+   	 {
+		sum = sum-1;  
+   	 }
+   	 return x/sum;
+}

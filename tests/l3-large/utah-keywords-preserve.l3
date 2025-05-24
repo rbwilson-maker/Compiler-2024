@@ -1,0 +1,9 @@
+//test error
+//Keywords are preserved
+
+typedef int return;
+
+int main() {
+    int foo = 30;
+    return foo;
+}

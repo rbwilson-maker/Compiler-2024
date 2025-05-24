@@ -1,0 +1,73 @@
+//test typecheck
+//test infloop
+
+// Sorry you will never be a man.
+// Infloop with structs
+
+/*
+                         ___---___
+                      .--         --.
+                    ./   ()      .-. \.
+                   /   o    .   (   )  \
+                  / .            '-'    \
+                 | ()    .  O         .  |
+                |                         |
+                |    o           ()       |
+                |       .--.          O   |
+                 | .   |    |            |
+                  \    `.__.'    o   .  /
+                   \                   /
+                    `\  o    ()      /' jgs
+                      `--___   ___--'
+                            ---
+       *http://www.ascii-art.de/ascii/mno/moon.txt*
+*/
+
+struct man
+{
+  int swiftness;
+  int force;
+  int strength;
+  int mysteriousness;
+};
+
+void make_a_man(struct man* you, struct man* man){
+  you -> swiftness ++;
+  you -> force *= 3;
+  you -> strength *= 2;
+  you -> mysteriousness ++;
+
+  if ((you -> swiftness > man -> swiftness) 
+         && (you -> force > man -> force) 
+         && (you -> strength > man -> strength)
+         && (you -> mysteriousness > man -> mysteriousness)) return;
+  else make_a_man(you, man);
+}
+
+int main(){
+  int spineless = 0xDEADD00D;
+  int pale = 0xB01DFACE;
+  int pathetic = 0xD06F00D;
+
+  int coursing_river = 0x8000000;
+  int great_typhoon = 0x8000000;
+  int raging_fire = 0x8000000;
+  int dark_side_of_the_moon = 0x80000000;
+
+  struct man* you;
+  you = alloc(struct man);
+  you -> swiftness = spineless;
+  you -> force = pale;
+  you -> strength = pathetic;
+  you -> mysteriousness = 0;
+
+  struct man* man;
+  man = alloc(struct man);
+  man -> swiftness = coursing_river;
+  man -> force = great_typhoon;
+  man -> strength = raging_fire;
+  man -> mysteriousness = dark_side_of_the_moon;
+
+  make_a_man(you, man);
+  return you -> mysteriousness;
+}

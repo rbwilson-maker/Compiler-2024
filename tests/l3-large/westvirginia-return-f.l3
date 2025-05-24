@@ -1,0 +1,14 @@
+//test return 42
+// Fun fact: did you know most quadratic maps are chaotic?
+
+typedef int a;
+
+void b(a c){
+    if (c != 0) b(4*c*(1-c)); 
+}
+
+typedef int the;
+the main(){
+    for (a c = 0; c < 0x8fffff; c++) b(c);
+    return 42;
+}

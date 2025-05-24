@@ -1,0 +1,9 @@
+//test return -11
+// variables - success
+// all operations on variables
+int main() {
+    int x = 5;
+    int y = 3;
+    int z = -1;
+    return z*((x + y) - (y / z));
+}

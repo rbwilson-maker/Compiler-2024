@@ -1,0 +1,14 @@
+//test error
+
+typedef int new_int;
+typedef bool new_bool;
+
+void test(int var1, bool var1, new_int var2, new_bool var3) {
+  assert(var1 = var3);
+  return;
+}
+
+int main() {
+  test(0, true, 1, false);
+  return 0;
+}

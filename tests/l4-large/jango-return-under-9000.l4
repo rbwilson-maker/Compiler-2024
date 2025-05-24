@@ -1,0 +1,16 @@
+//test return 1000
+
+struct test1 {
+  int field1;
+};
+
+struct test {
+  struct test1 field0;
+  int field1;
+};
+
+int main() {
+  struct test[] arr = alloc_array(struct test, 10);
+  arr[0].field1 = 1000;
+  return arr[0].field1;
+}

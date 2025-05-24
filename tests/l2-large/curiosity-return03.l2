@@ -1,0 +1,22 @@
+//test return 3
+//test while, for, bool?t:f, +=,--,++,boolean binop,boolean unop, comparator
+
+int main(){
+  int N = 6;
+  int acc = 1;
+  while(N > 0){
+    acc *= N;
+    N --;
+    N ++;
+    N -= (!(1==1) == false) ? 1 : 2;
+  }
+
+  for(int i = acc; i >= 0; i --){
+    N += i;
+    if(i * i * i <= N )
+      N /= 2;
+    if(N < N - i)
+      return 1;
+  }
+  return N;
+}

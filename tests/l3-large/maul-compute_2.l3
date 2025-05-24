@@ -1,0 +1,25 @@
+//test return 2
+// recursive is_prime
+
+typedef bool x;
+typedef x y;
+typedef y z;
+
+typedef int p;
+typedef int q;
+
+// n is the integer being tested, i is n / 2
+z is_prime(p n, q i) {
+    if (i < 2) {
+        return true;
+    }
+    if (n % i == 0) {
+        return false;
+    }
+    return is_prime(n, i - 1);
+}
+
+q main() {
+    y a = is_prime(37, 37 / 2);
+    return a ? 2 : 0;
+}

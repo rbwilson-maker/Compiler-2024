@@ -1,0 +1,12 @@
+//test error
+
+myinttype func() {
+    return 5
+}
+
+typedef int myinttype;
+
+int main () {
+    return func();
+}
+

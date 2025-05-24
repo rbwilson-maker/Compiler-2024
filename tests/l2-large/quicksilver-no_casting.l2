@@ -1,0 +1,8 @@
+//test error
+int main() {
+    int y = 1;
+    if (bool y) {
+        return 3;
+    }
+    return 1;
+}

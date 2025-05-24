@@ -1,0 +1,14 @@
+//test return 127341288
+int main() {
+    // the GUESS MY NUMBER GAME
+    // Protip the number is 127341288, don't tell anyone tho.
+    int number = 127341288;
+    int guess = 1;
+    while (guess <= number) {
+        guess *= 2;
+    }
+    while (guess != number) {
+        guess -= 1;
+    }
+    return guess;
+}

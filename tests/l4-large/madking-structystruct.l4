@@ -1,0 +1,21 @@
+//test return 42
+
+struct G;
+
+struct F {
+       struct G* g;
+       int val;
+};
+
+struct G {
+       struct F* f;
+};
+
+int main () {
+    struct G* g = alloc(struct G);
+    struct F* f = alloc(struct F);
+    (*f).val = 42;
+    g->f = f;
+    f->g = g;
+    return g->f->g->f->g->f->g->f->val;
+}

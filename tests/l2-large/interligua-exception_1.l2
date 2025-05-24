@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+    int x = 4;
+    int shift = 1;
+    while (shift < 100) {
+        x = x << shift;
+        shift = shift + 1;
+    }
+    return x;
+}

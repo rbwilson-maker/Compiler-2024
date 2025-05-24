@@ -1,0 +1,14 @@
+//test error
+
+//lvalue?
+
+struct s {
+    int i;
+};
+
+int main() {
+    struct s* s1 = alloc(struct s);
+    struct s* s2 = alloc(struct s);
+    (true ? s1 : s2)->i = 10;
+    return 0;
+}

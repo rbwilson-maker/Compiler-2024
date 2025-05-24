@@ -1,0 +1,14 @@
+//test return 3
+// tests that variables aren't modified due to function call
+
+void f() {
+    return;
+}
+
+int main() {
+    int x = 3;
+    bool t = true;
+    f();
+    if (t) return 3;
+    return 2;
+}

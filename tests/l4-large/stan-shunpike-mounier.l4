@@ -1,0 +1,57 @@
+//test return 3
+
+void floydWarshall(int N) { 
+  int[][] dist = alloc_array(int[], N);
+
+  for (int i = 0; i < N; i++) {
+    dist[i] = alloc_array(int, N);
+    for (int j = 0; j < N; j++) {
+      dist[i][j] = 100;
+    }
+  }
+
+  for (int k = 0; k < N; k++) { 
+    for (int i = 0; i < N; i++) { 
+      for (int j = 0; j < N; j++) { 
+        if (dist[i][k] + dist[k][j] < dist[i][j]) 
+          dist[i][j] = dist[i][k] + dist[k][j]; 
+      } 
+    } 
+  } 
+}
+
+int[][][] make3D(int N) {
+  int[][][] res = alloc_array(int[][], N);
+
+  for (int i = 0; i < N; i++) {
+    res[i] = alloc_array(int[], N);
+    for (int j = 0; j < N; j++) {
+      res[i][j] = alloc_array(int, N);
+      for (int k = 0; k < N; k++) {
+        res[i][j][k] = i + j + k;
+      }
+    }
+  }
+
+  return res;
+}
+
+int[][] initgraph(int N) {
+  int[][] graph = alloc_array(int[], N);
+  for (int i = 0; i < N; i++) {
+    graph[i] = alloc_array(int, N);
+    for (int j = 0; j < N; j++) {
+      graph[i][j] = i + j; 
+    }
+  }
+  return graph;
+}
+
+int main() {
+  int N = 4;
+  int[][] g = initgraph(N);
+  int[] randomrow = initgraph(N)[2];
+  int[][][] randomMatrix = make3D(3);
+  floydWarshall(N);
+  return g[0][3];
+}

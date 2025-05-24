@@ -1,0 +1,21 @@
+//test return 2
+
+void shifter(int toShift, int shiftBy) {
+	int i = 0;
+	while (i<shiftBy) {
+		toShift <<= 1;
+		i++;
+	}
+	return;
+}
+
+int main() {
+	shifter(5, 10);
+	shifter(3, 15);
+	shifter(52, 2);
+	shifter(169, 10);
+	shifter(4152, 10);
+	shifter(551, 16);
+	shifter(5, 50);
+	return 2;
+}

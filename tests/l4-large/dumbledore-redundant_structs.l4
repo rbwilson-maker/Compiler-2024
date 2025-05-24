@@ -1,0 +1,15 @@
+//test error
+
+struct giraffe {
+  int * one;
+  bool * two;
+};
+
+int main() {
+  giraffe g1 = alloc(struct giraffe);
+
+  g1->one = alloc(int);
+  *g1->one = 4;
+
+  return *g1->one;
+}

@@ -1,0 +1,21 @@
+//test return 10101
+
+int main ()
+{
+  int x;
+  int y;
+  int z;
+  int u;
+
+  x = 10100;
+  if (x < 100000)
+  {
+	return x + 1;
+  }
+  else {
+	return x;
+  }
+
+  return z;
+  u = z + y;
+}

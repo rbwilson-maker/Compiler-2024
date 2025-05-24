@@ -1,0 +1,13 @@
+//test return 0
+
+int thing(int stuff){
+  return 1;
+}
+
+int stuff(int two){
+  return thing(two);
+}
+
+int main(){
+  return stuff(1234567) - 1;
+}

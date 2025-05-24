@@ -1,0 +1,13 @@
+//test error
+
+// pointer and array type mismatch
+
+void ptrToInt(int[] ptr) {
+	ptr[1] = 1;
+}
+
+int main () {
+	int* A_ptr = alloc(int);
+	ptrToInt(A_ptr);
+	return 0;
+}

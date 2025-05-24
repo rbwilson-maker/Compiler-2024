@@ -1,0 +1,14 @@
+//test return 0
+//tests shifting and bitwise operations
+
+int main() {
+    int x = 1;
+    int y = -1 << 2;
+    if (~((y|1)^x) == 2) return -1;
+
+    int z = 3 | y;
+
+    if (~z != 0) return -3;
+
+    return 0;
+}

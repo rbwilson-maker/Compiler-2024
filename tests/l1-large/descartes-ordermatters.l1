@@ -1,0 +1,11 @@
+//test error
+//Program attempts to use variables initialized after the return statement.
+
+int main () {
+    int a = 0;
+    int b = 1;
+    int c = 2;
+    int d = 3;
+    return a+b+c+d+e;
+    int e = 4;
+}

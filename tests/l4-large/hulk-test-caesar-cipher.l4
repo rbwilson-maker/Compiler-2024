@@ -1,0 +1,65 @@
+//test return 14
+
+void fill_arr(int[] arr, int offset) {
+  for(int i = 0; i < 26; i++) {
+    arr[i] = (i + offset) % 26;
+  }
+}
+
+int main() {
+  int[] a = alloc_array(int, 26);
+  int[] b = alloc_array(int, 26);
+  int[] c = alloc_array(int, 26);
+  int[] d = alloc_array(int, 26);
+  int[] e = alloc_array(int, 26);
+  int[] f = alloc_array(int, 26);
+  int[] g = alloc_array(int, 26);
+  int[] h = alloc_array(int, 26);
+  int[] i = alloc_array(int, 26);
+  int[] j = alloc_array(int, 26);
+  int[] k = alloc_array(int, 26);
+  int[] l = alloc_array(int, 26);
+  int[] m = alloc_array(int, 26);
+  int[] n = alloc_array(int, 26);
+  int[] o = alloc_array(int, 26);
+  int[] p = alloc_array(int, 26);
+  int[] q = alloc_array(int, 26);
+  int[] r = alloc_array(int, 26);
+  int[] s = alloc_array(int, 26);
+  int[] t = alloc_array(int, 26);
+  int[] u = alloc_array(int, 26);
+  int[] v = alloc_array(int, 26);
+  int[] w = alloc_array(int, 26);
+  int[] x = alloc_array(int, 26);
+  int[] y = alloc_array(int, 26);
+  int[] z = alloc_array(int, 26);
+
+  fill_arr(a, 0);
+  fill_arr(b, 1);
+  fill_arr(c, 2);
+  fill_arr(d, 3);
+  fill_arr(e, 4);
+  fill_arr(f, 5);
+  fill_arr(g, 6);
+  fill_arr(h, 7);
+  fill_arr(i, 8);
+  fill_arr(j, 9);
+  fill_arr(k, 10);
+  fill_arr(l, 11);
+  fill_arr(m, 12);
+  fill_arr(n, 13);
+  fill_arr(o, 14);
+  fill_arr(p, 15);
+  fill_arr(q, 16);
+  fill_arr(r, 17);
+  fill_arr(s, 18);
+  fill_arr(t, 19);
+  fill_arr(u, 20);
+  fill_arr(v, 21);
+  fill_arr(w, 22);
+  fill_arr(x, 23);
+  fill_arr(y, 24);
+  fill_arr(z, 25);
+
+  return a[b[c[d[e[f[g[h[i[j[k[l[m[n[o[p[q[r[s[t[u[v[w[x[y[z[1]]]]]]]]]]]]]]]]]]]]]]]]]];
+}

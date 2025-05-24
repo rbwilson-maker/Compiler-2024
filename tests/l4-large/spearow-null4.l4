@@ -1,0 +1,10 @@
+//test memerror
+
+typedef int bleh;
+
+int main() {
+    int *x = NULL;
+    bool *y = NULL;
+    bleh *z = NULL;
+    return *z;
+}

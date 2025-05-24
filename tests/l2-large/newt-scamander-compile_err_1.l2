@@ -1,0 +1,9 @@
+//test error
+
+int main () {
+	int a = 20;
+	int b = 45;
+	if (a && b) return a + b;
+	else return a - b;
+
+}

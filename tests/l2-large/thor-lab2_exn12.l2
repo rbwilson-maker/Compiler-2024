@@ -1,0 +1,13 @@
+//test div-by-zero
+int main()
+{
+	int x = 5;
+  int y;
+	{
+	if ((x & 0) == 0)
+		y = 300;
+	else
+		y = 0;
+		}
+		return (x << y);
+	}

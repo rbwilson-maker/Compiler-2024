@@ -1,0 +1,61 @@
+//test return 2
+
+typedef int data;
+
+struct node {
+  data val;
+  struct node *next;
+};
+
+typedef struct node * node;
+
+struct queue {
+  node head;
+};
+
+typedef struct queue * queue;
+
+queue init_queue() {
+  return alloc(struct queue);
+}
+
+void push_queue(queue q, data n) {
+  node new_node = alloc(struct node);
+  new_node->val = n;
+  new_node->next = NULL;
+
+  if (q->head == NULL) {
+    q->head = new_node;
+  } else {
+    // traverse
+    node curr = q->head;
+    while (curr->next != NULL) {
+      curr = curr->next;
+    }
+    curr->next = new_node;
+  }
+}
+
+bool queue_empty(queue q) {
+  return q->head == NULL;
+}
+
+data pop_queue(queue q) {
+  assert(!queue_empty(q));
+  node top = q->head;
+  q->head = q->head->next;
+  return top->val;
+}
+
+int main() {
+  queue q = init_queue();
+
+  push_queue(q, 5);
+  push_queue(q, -1);
+
+  assert(!queue_empty(q));
+  assert(pop_queue(q) == 5);
+  assert(pop_queue(q) == -1);
+
+  return 2;
+}

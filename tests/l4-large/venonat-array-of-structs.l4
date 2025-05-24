@@ -1,0 +1,22 @@
+//test return 18
+// array of structs
+
+struct mystruct {
+  int x;
+  int y;
+  int z;
+};
+
+int main(){
+  struct mystruct[] A = alloc_array(struct mystruct, 5);
+  for (int i = 0; i < 5; i++){
+    A[i].x = i;
+    A[i].y = i * 2;
+    A[i].z = i * 3;
+  }
+  int acc = 0;
+  for (int i = 0; i < 3; i++){
+    acc += A[i].x + A[i].y + A[i].z;
+  }
+  return acc;
+}

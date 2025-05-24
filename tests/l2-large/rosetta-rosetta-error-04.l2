@@ -1,0 +1,15 @@
+//test error
+//ill-formed while loop
+
+int main()
+{
+  int x = 10;
+  int y = 1;
+
+  int i = 0;
+  while (i = x) {
+  	y += i;
+  	i++;
+  }
+  return y;
+}

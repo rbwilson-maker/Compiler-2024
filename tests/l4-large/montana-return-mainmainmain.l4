@@ -1,0 +1,13 @@
+//test return 3
+
+typedef int mane;
+struct maine {
+  mane main;
+};
+
+mane main() {
+  struct maine *mayn = alloc(struct maine);
+  mayn->main = 3;
+  return mayn->main;
+  main();
+}

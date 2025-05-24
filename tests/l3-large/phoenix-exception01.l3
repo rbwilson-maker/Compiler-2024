@@ -1,0 +1,13 @@
+//test abort
+// False assertion
+
+int main() {
+    int n = 5;
+    int i = 0;
+    for (; i < n; i++) {
+        assert(i < n);
+    }
+    assert(i < n);
+
+    return 0;
+}

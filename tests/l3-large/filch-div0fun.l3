@@ -1,0 +1,28 @@
+//test div-by-zero
+
+int div_zero(int x);
+
+int hello(int a, int b)
+{
+  int z = 22;
+  return a + b + z;
+}
+
+bool hello_again(int x)
+{
+  return (x % 2 == 0);
+}
+
+int div_zero(int x)
+{
+  return 0 / 0;
+}
+
+int main()
+{
+  int x = 42;
+  bool even = hello_again(x);
+  int h = hello(x, 1);
+  int z = div_zero(x);
+  return h;
+}

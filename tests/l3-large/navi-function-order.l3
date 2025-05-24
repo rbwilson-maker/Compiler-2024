@@ -1,0 +1,17 @@
+//test div-by-zero
+
+int err() {
+	return 1/0;
+}
+int abort() {
+	assert(false);
+	return 1;
+}
+
+int f(int err, int abort) {
+	return 1;
+}
+
+int main() {
+	return f(err(), abort());
+}

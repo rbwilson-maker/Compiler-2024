@@ -1,0 +1,10 @@
+//test error
+// some path does not have return value
+int main() {
+    int a = 1;
+    if (a < 10) {
+        int b = 1;
+    } else {
+        return 1;
+    }
+}

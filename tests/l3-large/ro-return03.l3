@@ -1,0 +1,29 @@
+//test return 1
+// testing short circuiting with basic functions
+
+bool f1();
+bool f2();
+bool f3();
+bool f4();
+
+int main() {
+  if (f1() || f2() || f3() || f4()) return 1;
+  else return -1;
+}
+
+bool f1() {
+  return false;
+}
+
+bool f2() {
+  return false;
+}
+
+bool f3() {
+  return true;
+}
+
+bool f4() {
+  int x = 1 / 0;
+  return true;
+}

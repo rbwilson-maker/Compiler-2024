@@ -1,0 +1,43 @@
+//test div-by-zero
+// In the midst of a normal program, do some incorrect assignment in here.
+// I purposely copied another test and just changed some values, since I want 
+// to make sure it's detected in a program that's mostly correct.
+int main()
+{
+  int x;
+  int y;
+  int z;
+  int a;
+  int b;
+  int c;
+
+  // Misc assignments and binops
+  y = 746;
+  x = 2*y;
+  z = -y;
+  a = -z;
+
+  // Expressions with more than 1 operation.
+  // Include constants and variables defined
+  // earlier. Also check for order of operations.
+
+  // THIS ASSIGNMENT WILL DIV BY ZERO
+  b = x-a*x/y;
+  c = z/b*a-37;
+
+  // Try reassignment of some variables
+  c = b;
+  z = -z; 
+  y = y+964/7;
+  int q;
+  q = b*c+c-y;
+  int r;
+  r = -b; 
+  int s;
+  int t;
+  s = y/64+3;
+  t = x*x*x*x*x*x*x*x;
+  int res;
+  res = a+b+c+q+r+s+t+x+y+z;
+  return res;
+}

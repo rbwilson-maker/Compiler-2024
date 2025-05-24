@@ -1,0 +1,27 @@
+//test return 0
+// test division
+int main() { 
+    int THING;
+    int THING2;
+    int THING3;
+    int THING4;
+    int THING5;
+
+    THING = 0;
+    THING2 = -1;
+    THING3 = 0;
+    THING4 = 1;
+    THING5 = 0;
+    THING = 0;
+    THING2 = -1;
+    THING3 = 0;
+    THING4 = 1;
+    THING5 = 0;
+    THING = 0;
+    THING2 = -1;
+    THING3 = 0;
+    THING4 = 1;
+    THING5 = 0;
+
+    return THING5 / (THING4 + THING5); 
+}

@@ -1,0 +1,6 @@
+//test return 1024
+int main() {
+    int intermediate = 1024 + 1024;
+    int output = intermediate - 1024;
+    return output;
+}

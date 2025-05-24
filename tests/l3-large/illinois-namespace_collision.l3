@@ -1,0 +1,26 @@
+//test return 0
+// possible namespace collisions?
+
+int done() {
+  return 0;
+}
+
+int __c0_main() {
+  return done();
+}
+
+int _c0_main() {
+  return __c0_main();
+}
+
+int c0_main() {
+  return _c0_main();
+}
+
+int _main() {
+  return c0_main();
+}
+
+int main() {
+  return _main();
+}

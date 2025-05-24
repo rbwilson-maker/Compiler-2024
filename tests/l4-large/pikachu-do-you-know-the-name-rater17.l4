@@ -1,0 +1,40 @@
+//test return 94
+// test real hardcore name mangling
+
+typedef int _main;
+struct main
+{
+  _main main;
+};
+
+typedef int _c0_main;
+typedef struct _c0_main __c0_main;
+struct _c0_main
+{
+  _c0_main _c0_main;
+  __c0_main* __c0_main;
+};
+
+// you think this is bad?
+// i could have put more underscores between c0 and main, you know
+_c0_main ___c0_main(__c0_main* c0_main)
+{
+  if (c0_main->__c0_main->_c0_main < 0) {
+    return c0_main->__c0_main->_c0_main + 92;
+  }
+  c0_main->__c0_main->_c0_main--;
+  return ___c0_main(c0_main);
+}
+
+int main()
+{
+  _main main = 3;
+  struct main* __main = alloc(struct main);
+  __main->main = main;
+
+  __c0_main* c0_main = alloc(struct _c0_main);
+  c0_main->__c0_main = alloc(struct _c0_main);
+  c0_main->__c0_main->_c0_main = 52;
+
+  return ___c0_main(c0_main)+__main->main;
+}

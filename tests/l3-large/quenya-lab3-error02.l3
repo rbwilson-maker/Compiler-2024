@@ -1,0 +1,10 @@
+//test error
+// Use function defined after it is called
+int main() {
+    int x = bar();
+    return 0;
+}
+
+int bar() {
+    return 0xFACEB00C;
+}

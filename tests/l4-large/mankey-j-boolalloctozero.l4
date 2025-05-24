@@ -1,0 +1,16 @@
+//test return -1
+// A initialized to zeros, and so is B... .
+
+int main () {
+  bool[] A;
+  bool* B;
+  A = alloc_array(bool, 1);
+  B = alloc(bool);
+  int bool_arith = 0;
+  if (!(*B))
+    bool_arith = 1;
+  if (bool_arith==0)
+    return 123244;
+  return -1;
+}
+

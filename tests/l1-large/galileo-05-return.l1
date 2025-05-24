@@ -1,0 +1,17 @@
+//test return 41072
+// a single huge expression
+
+int main() {
+    int x = 1;
+    int y = 2;
+    int z = 3;
+    int p = -1000;
+    int q = -1024;
+    int r = -0xffff;
+    int result;
+
+    result = (x + y * z + p * q - r % z) * (x % y % z % p % q % r) % (x + y + z + r);
+
+    return result;
+}
+

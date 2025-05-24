@@ -1,0 +1,178 @@
+//test typecheck
+//test infloop
+
+
+int findMatchingClose(int[] progmem, int pc, int progSize)
+{
+    assert(0 <= pc && pc < progSize);
+    if(progmem[pc] != 7)
+    {
+	return -1;
+    }
+
+    int nestedCount = 0;
+    while(true)
+    {
+	pc++;
+	assert(0 <= pc && pc < progSize);
+	if(progmem[pc] == 7)
+	{
+	    nestedCount++;
+	}
+	if(progmem[pc] == 8)
+	{
+	    if(nestedCount == 0)
+	    {
+		return pc;
+	    }
+	    nestedCount--;
+	}
+    }
+
+    //For a properly formatted program, control never reaches here
+    return -1;
+}
+
+int findMatchingOpen(int[] progmem, int pc, int progSize)
+{
+
+    assert(0 <= pc && pc < progSize);
+    if(progmem[pc] != 8)
+    {
+	return -1;
+    }
+
+    int nestedCount = 0;
+    while(true)
+    {
+	pc--;
+	assert(0 <= pc && pc < progSize);
+	if(progmem[pc] == 8)
+	{
+	    nestedCount++;
+	}
+	if(progmem[pc] == 7)
+	{
+	    if(nestedCount == 0)
+	    {
+		return pc;
+	    }
+	    nestedCount--;
+	}
+    }
+
+    //For a properly formatted program, control never reaches here
+    return -1;
+}
+
+
+void exeProg(int[] progmem, int progSize)
+{
+    //This should probably be enough data memory
+    //...Probably
+    int[] data = alloc_array(int, 30000);
+    int dataPointer = 0;
+
+    for(int pc = 0; pc < progSize;)
+    {
+        assert(0 <= pc && pc < progSize);
+
+	int currInst = progmem[pc];
+
+	//Figure out what current instruction is
+	if(currInst == 8)
+	{
+
+	    //8, ]
+	    pc = findMatchingOpen(progmem, pc, progSize);
+	    assert(pc >= 0);
+	}
+	else
+	{
+	    if((currInst & 0x4) == 0)
+	    {
+		//1, 2, or 3
+		if((currInst & 0x2) == 0)
+		{
+		    //1, <
+		    dataPointer--;
+		    pc++;
+		}
+		else
+		{
+		    //2 or 3
+		    if(currInst == 2)
+		    {
+			//2, >
+			dataPointer++;
+			assert(dataPointer >= 0);
+			pc++;
+		    }
+		    else
+		    {
+			//3, +
+			data[dataPointer]++;
+			pc++;
+		    }
+		}
+	    }
+	    else
+	    {
+		//4, 5, 6, or 7
+		if(currInst <= 5)
+		{
+		    //4 or 5
+		    if((currInst & 0x1) == 0)
+		    {
+			//4, -
+			data[dataPointer]--;
+			pc++;
+		    }
+		    else
+		    {
+			//5, .
+			print_int(data[dataPointer]);
+			pc++;
+		    }
+		}
+		else
+		{
+		    //6 or 7
+		    if((currInst & 0x1) == 0)
+		    {
+			//6, ,
+		    	assert(false);
+		    }
+		    else
+		    {
+			//7, [
+			if(data[dataPointer] == 0)
+			{
+			    pc = findMatchingClose(progmem, pc, progSize) + 1;
+			    assert(pc >= 0);
+			}
+			else
+			{
+			    pc++;
+			}
+		    }
+		}
+	    }
+	}
+    }
+}
+
+int main()
+{
+    int progSize = 111;
+    int[] progmem = alloc_array(int, progSize);
+
+    progmem[0] = 3;
+    progmem[1] = 7;
+    progmem[2] = 8;
+    progmem[3] = 5;
+
+    exeProg(progmem, 111);
+
+    return 0;
+}

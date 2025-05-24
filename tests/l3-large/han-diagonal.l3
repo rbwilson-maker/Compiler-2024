@@ -1,0 +1,51 @@
+//test return 46085
+
+// Basically, call a bunch of functions in a deeply
+// nested call tree, no real fancy computation in any
+// one function though.
+int a(); int b(); int c(); int d(); int e();
+int f(); int g(); int h(); int i(); int j();
+
+int a(){
+    return 1 + b() + b();
+}
+
+int b(){
+    return 2 + c() + c();
+}
+
+int c(){
+    return 3 + d() + d();
+}
+
+int d(){
+    return 4 + e() + e();
+}
+
+int e(){
+    return 5 + f() + f();
+}
+
+int f(){
+    return 6 + g() + g();
+}
+
+int g(){
+    return 7 + h() + h();
+}
+
+int h(){
+    return 8 + i() + i();
+}
+
+int i(){
+    return 9 + j() + j();
+}
+
+int j(){
+    return 10;
+}
+
+int main(){
+    return a() + a() + a() + a() + a();
+}

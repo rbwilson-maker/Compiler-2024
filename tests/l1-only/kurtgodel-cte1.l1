@@ -1,0 +1,7 @@
+//test error
+int main()
+{
+    {  /* Nested block can only come at the end in L1 */ }
+    return 0;
+    {}
+}

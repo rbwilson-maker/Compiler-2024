@@ -1,0 +1,20 @@
+//test error
+
+typedef int b;
+
+struct a;
+
+struct b;
+
+
+int main() {
+	struct b *a = alloc(struct b);
+	return a->e;
+}
+
+
+struct b {
+	int d;
+	int e;
+	struct a c;
+};

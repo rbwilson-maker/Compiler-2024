@@ -1,0 +1,10 @@
+//test return 0
+
+void f(struct a *b) { }
+
+int main()
+{
+	struct a *b = NULL;
+	f(b);
+	return 0;
+}

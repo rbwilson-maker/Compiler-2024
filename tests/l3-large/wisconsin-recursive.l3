@@ -1,0 +1,11 @@
+//test error
+//Assert expression must be type bool
+
+int a(int n) {
+   assert(a(5));
+   return 0;
+}
+
+int main() {
+   return 0;
+}

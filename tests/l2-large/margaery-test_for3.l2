@@ -1,0 +1,15 @@
+//test return 4950
+
+int main() {
+    int sum = 0;
+    bool cond = true;
+
+    for ( int n = 0; cond && n < 100; n++ ) {
+        sum += n + 1;
+        if (sum == 4950) {
+            cond = false;
+        }
+    }
+
+    return sum;
+}

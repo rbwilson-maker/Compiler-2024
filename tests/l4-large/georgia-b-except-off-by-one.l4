@@ -1,0 +1,17 @@
+//test memerror
+// off by one error
+
+int[] num_array(int size, int val) {
+    int[] result = alloc_array(int, size);
+    for (int i = 0; i <= size; i++) {
+        result[i] = val;
+    }
+
+    return result;
+}
+
+int main() {
+    int[] array = num_array(10, 5);
+
+    return array[0];
+}

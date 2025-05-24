@@ -1,0 +1,17 @@
+//test error
+
+bool check_is_null(struct a *aa) {
+  if (aa == NULL) {
+    return true;
+  }
+  return false;
+}
+
+struct a {
+  A aaa;
+};
+
+int main() {
+  struct a *aa;
+  return (check_is_null(aa)? 1: 0); // un-initialized variable aa, see return07.l4
+}

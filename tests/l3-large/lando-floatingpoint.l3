@@ -1,0 +1,18 @@
+//test return 1068830857
+
+//Adapted from Quake 3's "Fast Inverse Square Root" bit-hacking algorithm
+//http://www.lomont.org/Math/Papers/2003/InvSqrt.pdf
+fpt sqrt(fpt x){
+    fpt xhalf = fdiv(x, itof(2));
+    int i = x;
+    i = 0x5f3759df - (i >> 1);
+    x = i;
+    x = fmul(x, (fsub(fdiv(itof(3), itof(2)), fmul(fmul(xhalf, x), x))));
+    return fdiv(itof(1), x);
+}
+
+int main() {
+    fpt result = sqrt(itof(2));
+    print_fpt(result);
+    return result;
+}

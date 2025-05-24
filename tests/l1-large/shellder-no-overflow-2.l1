@@ -1,0 +1,6 @@
+//test return -2147483648
+int main()
+{
+  int a = -2147483648;//-2**31
+  return a; 
+}

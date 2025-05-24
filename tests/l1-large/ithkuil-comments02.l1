@@ -1,0 +1,19 @@
+//test return 25
+// test comment behavior
+
+int main()
+{
+    int x;
+    // should fail to compile as comments are not matched.
+    x /*
+    This is a comment.
+    /*
+    This is another comment.
+    */
+    This is still a comment.
+    */
+    = 20;
+    x = x +// This is another comment
+    5;
+    return x;
+}

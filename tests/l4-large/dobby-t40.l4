@@ -1,0 +1,44 @@
+//test return 5
+
+typedef struct header list;
+typedef struct node node;
+typedef int elem;
+
+struct node {
+  node* next;
+  elem data;
+};
+
+struct header {
+  node* start;
+  node* end;
+};
+
+int length(list* l) {
+  int count = 0;
+  node* n = l->start;
+  while(n != NULL) {
+    count++;
+    n = n->next;
+  }
+  return count;
+}
+
+void add(list* l, elem data) {
+  l->end->next = alloc(node);
+  l->end = l->end->next;
+  l->end->next = NULL;
+  l->end->data = data;
+}
+
+int main() {
+  list* l = alloc(list);
+  l->start = alloc(node);
+  l->start->data = 0;
+  l->start->next = NULL;
+  l->end = l->start;
+  for(int i = 1; i < 5; i++) {
+    add(l, i);
+  }
+  return length(l);
+}

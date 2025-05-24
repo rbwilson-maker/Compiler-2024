@@ -1,0 +1,11 @@
+//test return 0
+
+int main()
+{
+    int i = 0x0;
+    int j = 0x0abcdf+i;
+    int k= 0x11111111 / j;
+    i= (j/k)*k +(j%k);
+
+    return j-i;
+}

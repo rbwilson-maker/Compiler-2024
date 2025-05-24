@@ -1,0 +1,16 @@
+//test typecheck
+//test infloop
+
+int main ()
+{
+  int x = 5;
+  bool y = true;
+  while (y)
+  {
+    y = x >= 0;
+
+    x = x == 0 ? 5 : x - 1;
+  }
+
+  return x;
+}

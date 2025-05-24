@@ -1,0 +1,28 @@
+//test error
+
+typedef b c;
+typedef c d;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d c;
+typedef d bool;
+typedef d bool;
+
+int main() {
+  return four(1);
+}
+
+d four(int v) {
+  return true;
+}

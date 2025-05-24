@@ -1,0 +1,44 @@
+//test return 5
+
+int first(int a, int b);
+int second(int a, int b);
+
+
+
+
+
+
+int main() {
+
+
+
+
+return first(0, 10);
+
+}
+
+
+
+
+int first(int a, int b){
+if(a > b) return 23;
+
+
+return second (a, b + 23 + a);
+
+}
+int second(int a, int b)
+
+
+{
+
+return (first((a + b) % 50, (a + 30 * b/2) %80)* 1478 + 67)%99;
+
+
+
+
+
+
+}
+
+

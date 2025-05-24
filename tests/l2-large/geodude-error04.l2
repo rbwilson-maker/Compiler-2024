@@ -1,0 +1,10 @@
+//test error
+// use unintialized variables in for loop
+
+int main ()
+{
+  for (x = 0; x < y; x++){
+    a = b * c + d;
+  }
+  return re;
+}

@@ -1,0 +1,10 @@
+//test return 1
+// test binary operators "+", "-", "*", "/", "%"
+int main() {
+  int a = 2;            // 2
+  int b = a + 13;       // 15
+  int c = b / 5;        // 3
+  int d = b / 6;        // 2
+  b = b % 8;            // 7
+  return b - c * d;     // 1
+}

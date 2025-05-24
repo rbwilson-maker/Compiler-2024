@@ -1,0 +1,87 @@
+//target 3
+[
+ {
+  "Uses": [], 
+  "Defines": [ "%t32" ],
+  "Live_out": [ "%t32" ],
+  "Move": false,
+  "Line": 0
+ },
+ {
+  "Uses": [ "%t32" ], 
+  "Defines": [ "%t35" ],
+  "Live_out": [ "%t35" ],
+  "Move": false,
+  "Line": 1
+ },
+ {
+  "Uses": [ "%t35" ], 
+  "Defines": [ "%t38" ],
+  "Live_out": [ "%t38" ],
+  "Move": false,
+  "Line": 2
+ },
+ {
+  "Uses": [ "%t38" ], 
+  "Defines": [ "%t41" ],
+  "Live_out": [ "%t41" ],
+  "Move": false,
+  "Line": 3
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t45" ],
+  "Live_out": [ "%t41", "%t45" ],
+  "Move": false,
+  "Line": 4
+ },
+ {
+  "Uses": [ "%t45", "%t41" ], 
+  "Defines": [ "%t46" ],
+  "Live_out": [ "%t46" ],
+  "Move": false,
+  "Line": 5
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%edx" ],
+  "Live_out": [ "%t46" ],
+  "Move": true,
+  "Line": 6
+ },
+ {
+  "Uses": [ "%t46" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": true,
+  "Line": 7
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": false,
+  "Line": 8
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t49" ],
+  "Live_out": [ "%t49" ],
+  "Move": true,
+  "Line": 9
+ },
+ {
+  "Uses": [ "%t49" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": true,
+  "Line": 10
+ },
+ {
+  "Uses": [], 
+  "Defines": [],
+  "Live_out": [],
+  "Move": false,
+  "Line": 11
+ }
+]

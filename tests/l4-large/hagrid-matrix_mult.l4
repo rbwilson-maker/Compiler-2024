@@ -1,0 +1,44 @@
+//test return 1
+//multiplies two nxn matrices together :)
+
+int[][] matrix_mult (int[][] A, int[][] B, int n) {
+  int[][] result = alloc_array(int[], n);
+  int entry;
+  for (int i=0; i < n; i++) {
+    result[i] = alloc_array(int, n);
+    for (int j=0; j < n; j++) {
+      entry = 0;
+      for (int k=0; k < n; k++) {
+        entry += A[i][k] * B[k][j];
+      }
+      result[i][j] = entry;
+    }
+  }
+  return result;
+}
+
+int main() {
+  int[][] A = alloc_array(int[], 2);
+  A[0] = alloc_array(int, 2);
+  A[1] = alloc_array(int, 2);
+  A[0][0] = 3;
+  A[0][1] = 5;
+  A[1][0] = 1;
+  A[1][1] = 4;
+
+  int[][] B = alloc_array(int[], 2);
+  B[0] = alloc_array(int, 2);
+  B[1] = alloc_array(int, 2);
+  B[0][0] = 4;
+  B[0][1] = 1;
+  B[1][0] = 2;
+  B[1][1] = 6;
+
+  int[][] C = matrix_mult(A, B, 2);
+
+  if (C[0][0] == 22 && C[0][1] == 33 && C[1][0] == 12 && C[1][1] == 25) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

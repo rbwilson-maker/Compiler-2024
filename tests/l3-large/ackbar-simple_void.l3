@@ -1,0 +1,17 @@
+//test return 42
+//A test of a void function
+
+void neverNothing(int x){
+    int nothing = x;
+}
+
+int main(){
+    neverNothing(1);
+    neverNothing(2);
+    neverNothing(3);
+    neverNothing(4);
+    neverNothing(5);
+    neverNothing(6);
+    neverNothing(7);
+    return 42;
+}

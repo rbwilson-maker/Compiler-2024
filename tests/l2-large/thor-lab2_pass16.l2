@@ -1,0 +1,10 @@
+//test error
+
+int main ()
+{
+while(true)
+{ int x; int y; return 1; x = y + 1; }
+
+}
+
+//this shouldn't pass cuz it doesnt look in loops for returns

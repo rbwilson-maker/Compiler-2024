@@ -1,0 +1,48 @@
+//test return 1072
+
+int main() {
+  int x00 = 0x00;
+  int x01 = 0x01;
+  int x02 = 0x02;
+  int x03 = 0x03;
+  int x04 = 0x04;
+  int x05 = 0x05;
+  int x06 = 0x06;
+  int x07 = 0x07;
+  int x10 = 0x08;
+  int x11 = 0x09;
+  int x12 = 0x0a;
+  int x13 = 0x0b;
+  int x14 = 0x0c;
+  int x15 = 0x0d;
+  int x16 = 0x0e;
+  int x17 = 0x0f;
+  int x20 = 0x10;
+  int x21 = 0x11;
+  int x22 = 0x12;
+  int x23 = 0x13;
+  int x24 = 0x14;
+  int x25 = 0x15;
+  int x26 = 0x16;
+  int x27 = 0x17;
+  int x28 = 0x18;
+  int x29 = 0x19;
+  int x30 = 0x1a;
+  int x31 = 0x1b;
+  int x32 = 0x1c;
+  int x33 = 0x1d;
+  int x34 = 0x1e;
+  int x35 = 0x1f;
+
+  int sum = x00 + x01 + x02 + x03 + x04 +
+            x05 + x06 + x07 + x35 + x34 +
+            x33 + x32 + x31 + x30 + x29 +
+            x10 + x11 + x12 + x13 + x14 +
+            x15 + x16 + x17 + x28 + x27 +
+            x26 + x25 + x24 + x23 + x22 +
+            x21 + x20 + x00 + x34 + x12 ;
+
+  int double_sum = sum * 2;
+
+  return double_sum;
+}

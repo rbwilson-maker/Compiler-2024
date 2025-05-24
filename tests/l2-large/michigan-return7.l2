@@ -1,0 +1,12 @@
+//test return 55
+
+int main() {
+	int i = 10;
+	int result = 0;
+	while (i > 0) {
+		result += i;
+		i--;
+	}
+
+	return result;
+}

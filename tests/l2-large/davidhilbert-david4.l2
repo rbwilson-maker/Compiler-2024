@@ -1,0 +1,9 @@
+//test div-by-zero
+int main() {
+    int nine = 0;
+    int ten = 0;
+    while (nine + ten == 21) {
+        int x = nine / ten;
+    }
+    return nine / ten;
+}

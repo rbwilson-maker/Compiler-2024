@@ -1,0 +1,12 @@
+//test error
+
+int main() {
+int* x = alloc(int);
+*x = 15;
+*x += 20;
+return *x;
+}
+
+typedef void* q;
+
+int decl(int a, q b, bool c);

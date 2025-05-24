@@ -1,0 +1,9 @@
+//test error
+int test(){
+    return 0;
+}
+
+bool main(){
+    if(test()==0) return false;
+    return true;
+}

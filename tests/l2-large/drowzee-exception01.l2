@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+    int i = 1111;
+    int n = 0;
+
+    while (i>0) {
+        n += (1%10);
+        i /= 10;
+    }
+
+    return n / i;
+}

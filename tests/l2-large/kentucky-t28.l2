@@ -1,0 +1,14 @@
+//test return 5
+
+// useless expressions, should be harmless
+
+int main () {
+    int g = 78;
+
+    5 + 87;
+
+    g - 1200;
+
+    return 5;
+
+}

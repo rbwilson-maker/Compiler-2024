@@ -1,0 +1,14 @@
+//test div-by-zero
+
+// divide by zero at runtime, due to arithmetic shift with bad operand
+
+int shift(int n, int shift_amount) {
+    if (shift_amount == 0) return n;
+    int rec = shift(n, shift_amount-1);
+    return n << rec;
+}
+
+int main() {
+    return shift(4,2);
+}
+

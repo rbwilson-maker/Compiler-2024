@@ -1,0 +1,13 @@
+//test return 198
+
+//factor 1337 and sum the factors!
+int main () {
+	int res = 0;
+	for ( int i = 2; i < 37; i += 1) {
+		if ((1337 % i) == 0) {
+			res += i;
+			res += 1337/i;
+		}
+	}
+	return res;
+}

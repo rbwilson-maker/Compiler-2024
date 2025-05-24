@@ -1,0 +1,13 @@
+//test return 14
+
+int returnHi(bool b, int i)
+{
+    if(b)
+        return 14;
+    return i;
+}
+
+int main()
+{
+    return returnHi(true, 10498205);
+}

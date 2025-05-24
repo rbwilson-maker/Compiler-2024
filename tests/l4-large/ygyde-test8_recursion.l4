@@ -1,0 +1,15 @@
+//test memerror
+
+// recursion here is meant to stop when there is a memerror testing out of bounds for variable length arrays
+
+void foo(int[] test_arr, int index) {
+    test_arr[index] = 0;
+    foo(test_arr, (index + 1));
+    return;
+}
+
+int main() {
+    int[] test_arr = alloc_array(int, 5);
+    foo(test_arr, 0);
+    return 0;
+}

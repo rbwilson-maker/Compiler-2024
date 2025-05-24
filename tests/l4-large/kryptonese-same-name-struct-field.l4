@@ -1,0 +1,17 @@
+//test return 4
+// struct name can have the same name as field
+struct asdf;
+typedef struct asdf a;
+
+struct asdf {
+  int a;
+  a * b;
+
+};
+
+
+int main() {
+  a * b = alloc(a);
+  b->a = 4;
+  return b->a;
+}

@@ -1,0 +1,10 @@
+//test error
+
+bool fool (int x) {
+     return (x == 0);
+}
+
+int main () {
+    int x = bool (3);
+    return x;
+}

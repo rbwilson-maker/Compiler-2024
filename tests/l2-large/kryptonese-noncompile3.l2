@@ -1,0 +1,12 @@
+//test error
+
+int main ()
+{
+    int x = 35;
+    bool b = (x % 2 == 1);
+    if (b) {
+        b = b << 2;
+    } else {
+        return 71;
+    }
+}

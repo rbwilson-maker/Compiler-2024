@@ -1,0 +1,16 @@
+//test typecheck
+
+// Test header indirectly to loop guard
+bool getLoopVal(int x){
+    return loopVal(x, x+1, x+2, x+3, x+4);
+}
+
+int main(){
+
+    int a = 0;
+    while (getLoopVal(a)){
+        a = a + 1;
+    }
+    return a;
+
+}

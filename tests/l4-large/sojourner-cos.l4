@@ -1,0 +1,32 @@
+//test return -2147483648
+
+dub pow(dub x, int n) {
+    if (n == 0)
+        return itod(1);
+    return dmul(x, pow(x, n-1));
+}
+
+int fact(int n) {
+    if (n == 0)
+        return 1;
+    return n * fact(n-1);
+}
+
+dub cos(dub x) {
+    dub y = itod(0);
+    for (int i = 0; i < 100; i++) {
+        if (i % 2 == 0) {
+            y = dadd(y, ddiv(pow(x, 2*i), itod(fact(2*i))));
+        } else {
+            y = dsub(y, ddiv(pow(x, 2*i), itod(fact(2*i))));
+        }
+    }
+    return y;
+}
+
+int main() {
+    dub x = itod(123);
+    dub y = cos(x);
+    print_dub(y);
+    return dtoi(y);
+}

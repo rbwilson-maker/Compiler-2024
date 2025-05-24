@@ -1,0 +1,35 @@
+//test return 0
+
+/* Implicit Struct Declaration
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, October 26, 2015 at 12:05:00 AM EDT
+ *
+ * Tests that when a undefined/undeclared struct is used in a non-relevant
+ * context, it is implicitly declared.
+ */
+
+int coerce_null(struct s* x)
+{
+    return (x == NULL) ? 0 : -555;
+}
+
+int main()
+{
+    struct s** x = alloc(struct s*);
+
+    return coerce_null(*x);
+}
+
+typedef struct s s;
+s *alloc_s();
+
+s *gen_s() {
+    return NULL;
+}
+
+struct s1 {
+    struct s *x;
+    int y;
+};

@@ -1,0 +1,11 @@
+//test div-by-zero
+// Divide INT_MIN by -1
+int main()
+{
+  int a;
+  int b;
+
+  a = 0x80000000;
+  b = -1;
+  return a / b;
+}

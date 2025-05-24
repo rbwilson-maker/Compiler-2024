@@ -1,0 +1,19 @@
+//test return 150
+// tests modulus, division, multiplication and subtraction
+
+int main()
+{
+  int s1;
+  int s2;
+  int s5;
+  int s23475902345;
+  
+  s1 = 2000;
+  s2 = 4 * s1;
+  s5 = 12;
+  s23475902345 = 34;
+  s1 = s1 % s23475902345;
+  s2 /= s5 + s1; 
+
+  return s2 - 50;
+}

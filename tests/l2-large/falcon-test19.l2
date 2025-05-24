@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+    int a = 1;
+
+    if(a != 1) {
+        int a = 4; // don't optimize this away
+    }
+
+    return a;
+}

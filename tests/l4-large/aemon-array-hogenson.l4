@@ -1,0 +1,23 @@
+//test return 95
+
+int[] foo(int size, int val) {
+    int[] A = alloc_array(int, size);
+    for (int i = 0; i < size; i++) {
+        A[i] = val;
+    }
+    return A;
+}
+
+int main() {
+    int[] A = foo(5, 5);
+    int[] B = foo(5, 12);
+    int[] C = alloc_array(int, 5);
+    for (int i = 0; i < 5; i++) {
+        C[i] = A[i] + B[i] + i;
+    }
+    int count = 0;
+    for (int i = 0; i < 5; i++) {
+        count += C[i];
+    }
+    return count;
+}

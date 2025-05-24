@@ -1,0 +1,11 @@
+//test error
+
+// tests incompatible function re-declaration
+
+int foo(int bar);
+
+int main() { return 0; }
+
+int foo (bool rab) {
+	return 0;
+}

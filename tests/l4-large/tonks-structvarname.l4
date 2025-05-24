@@ -1,0 +1,19 @@
+//test error
+
+struct list_node {
+  int data;
+  struct list_node *next;
+};
+
+typedef struct list_node list;
+
+/**
+ * Variable list is illegal since it's the name of the type
+ */
+bool tortoise_and_hare(list *list) {
+  return false;
+}
+
+int main() {
+  return 0;
+}

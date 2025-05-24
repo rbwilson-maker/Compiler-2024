@@ -1,0 +1,12 @@
+//test error
+// Types not specified
+
+int findEulerNumber(x, y) {
+  return 42;
+}
+
+int main() {
+  int w = 123124123;
+  int x = findEulerNumber(w, z);
+  return x;
+}

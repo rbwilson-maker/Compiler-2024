@@ -1,0 +1,26 @@
+//test return 5
+// Generates a non-chordal intereference graph
+
+int main()
+{
+  int a = 1;
+  int b = 1;
+  int c = 1;
+  int d = 1;
+
+  // Interference graph:
+  // a -- b
+  // |    |
+  // c -- d
+                // Liveness:
+  a = 1;        //
+  b = 1;        // a
+  b = b + a;    // a b
+  d = 1;        //   b
+  d = d + b;    //   b   d
+  c = 1;        //       d
+  c = c + d;    //     c d
+  a = 1;        //     c
+  a = a + c;    // a   c
+  return a;     // a
+}

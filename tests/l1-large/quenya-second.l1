@@ -1,0 +1,12 @@
+//test return 6
+// includes every arithmetic op
+int main() {
+  int a = 77;
+  int b = a + 3;
+  int c = b / 2;
+  int d = c - 4;
+  int e = d % 5;
+  int f = e * 6;
+
+  return f;
+}

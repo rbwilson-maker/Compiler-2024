@@ -1,0 +1,11 @@
+//test return 112
+// test ability to deal with multiplication overflow
+
+int main() {
+  int TMAX;
+  int y;
+
+  TMAX = 2147483647;
+  y = (TMAX * TMAX) * ((TMAX * 1234567890) / 123456789) * (- 66 / 6);
+  return y + 2;
+}

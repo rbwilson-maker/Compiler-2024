@@ -1,0 +1,28 @@
+//test return 0
+
+int rec_a(int x);
+int rec_b(int x);
+int rec_c(int x);
+
+int rec_a(int x) {
+  x -= 1;
+  return rec_b(x);
+}
+
+int rec_b(int x) {
+  x /= 2;
+  return rec_c(x);
+}
+
+int rec_c(int x) {
+  x /= 4;
+  if (x == 0)
+    return x;
+  return rec_a(x);
+}
+
+int main() {
+  int a = 153;
+  return rec_a(a);
+}
+

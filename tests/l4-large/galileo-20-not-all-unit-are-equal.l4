@@ -1,0 +1,14 @@
+//test error
+// test type equivalence for structs
+
+struct unit0 {
+};
+typedef struct unit0 unit;
+
+struct unit {
+};
+
+int main() {
+  unit * p = alloc(struct unit);
+  return 0;
+}

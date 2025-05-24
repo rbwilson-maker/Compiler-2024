@@ -1,0 +1,10 @@
+typedef int session;
+typedef int port;
+typedef int chars;
+
+
+session start_session(port listen_port);
+
+chars next_char(session active_session);
+
+void send_char(session active_session, chars msg);

@@ -1,0 +1,12 @@
+//test abort
+
+// Test correct evaluation order for shift check vs. evaluating RHS
+
+int err() {
+  assert(false);
+  return 0;
+}
+
+int main() {
+  return err() >> 64;
+}

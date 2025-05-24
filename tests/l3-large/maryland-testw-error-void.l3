@@ -1,0 +1,15 @@
+//test error
+// void synonym is illegal
+
+typedef void chadoodly;
+
+chadoodly nop1() { }
+chadoodly nop2(int x) { }
+chadoodly nop3(int x, int y) { }
+
+int main() {
+  nop1();
+  nop2(42);
+  nop3(1234, 5678);
+  return 100;
+}

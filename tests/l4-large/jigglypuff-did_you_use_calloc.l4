@@ -1,0 +1,174 @@
+//test return 0
+
+/* Did You Use Calloc? Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, October 25, 2015 at 09:03:59 PM EDT
+ *
+ * Tests that calloc was used for all allocation types, by allocating
+ * a structure with several nested types, and returning a value without
+ * assigning to it.
+ */
+
+struct s1 {
+    int *a;
+    int b;
+};
+
+struct s2 {
+    bool *c;
+    struct s1[] d;
+    int d_len;
+};
+
+struct s3 {
+    struct s2 e;
+    struct s3[] f;
+    int f_len;
+};
+
+struct s4 {
+    struct s3 *g;
+    struct s4 *h;
+    struct s4*[] j;
+    int j_len;
+    int **k;
+};
+
+// Allocate a struct s4, only ensuring that there are no NULL pointers
+struct s4 *alloc_s4()
+{
+    struct s4 *x = alloc(struct s4);
+
+    // First level
+    x->g = alloc(struct s3);
+    x->h = alloc(struct s4);
+    x->j = alloc_array(struct s4 *, 77);
+    x->j_len = 77;
+    for (int i = 0; i < x->j_len; i++)
+    {
+        x->j[i] = alloc(struct s4);
+    }
+    x->k = alloc(int *);
+    *x->k = alloc(int);
+
+    // Second level
+    x->g->f = alloc_array(struct s3, 42);
+    x->g->f_len = 42;
+
+    // Third level
+    x->g->e.c = alloc(bool);
+    x->g->e.d = alloc_array(struct s1, 88);
+    x->g->e.d_len = 88;
+
+
+    // Fourth level
+    for (int i = 0; i < x->g->e.d_len; i++)
+    {
+        x->g->e.d[i].a = alloc(int);
+    }
+
+    return x;
+}
+
+int coerce_bool(bool x)
+{
+    assert(!x);
+
+    return (!x) ? 0 : -555;
+}
+
+int coerce_intptr(int* x)
+{
+    assert(x == NULL);
+
+    return (x == NULL) ? 0 : -555;
+}
+
+int coerce_intptrptr(int **x)
+{
+    assert(x == NULL);
+
+    return (x == NULL) ? 0 : -555;
+}
+
+int coerce_boolptr(bool *x)
+{
+    assert(x == NULL);
+
+    return (x == NULL) ? 0 : -555;
+}
+
+int coerce_s3ptr(struct s3* x)
+{
+    assert(x == NULL);
+
+    return (x == NULL) ? 0 : -555;
+}
+
+int coerce_s4ptr(struct s4* x)
+{
+    assert(x == NULL);
+
+    return (x == NULL) ? 0 : -555;
+}
+
+int sum_s3(struct s3 *x)
+{
+    int sum = 0;
+
+    sum += coerce_bool(*x->e.c);
+    for (int i = 0; i < x->e.d_len; i++)
+    {
+        sum += *x->e.d[i].a;
+        sum += x->e.d[i].b;
+    }
+
+    for (int i = 0; i < x->f_len; i++)
+    {
+        sum += coerce_boolptr(x->f[i].e.c);
+        for (int j = 0; j < x->f[i].e.d_len; j++)
+        {
+            sum += coerce_intptr(x->f[i].e.d[i].a);
+            sum += x->f[i].e.d[i].b;
+        }
+    }
+
+    return sum;
+}
+
+// Sum all the fields contained in an s4 struct, coercing bool, pointers, and
+// arrays as needed to ints.
+int sum_s4(struct s4 *x)
+{
+    int sum = 0;
+
+    sum += sum_s3(x->g);
+
+    for (int i = 0; i < x->j_len; i++)
+    {
+        sum += x->j[i]->j_len;
+        sum += coerce_s3ptr(x->j[i]->g);
+        sum += coerce_s4ptr(x->j[i]->h);
+        sum += coerce_intptrptr(x->j[i]->k);
+    }
+
+    sum += x->h->j_len;
+    sum += coerce_s3ptr(x->h->g);
+    sum += coerce_s4ptr(x->h->h);
+    sum += coerce_intptrptr(x->h->k);
+
+    sum += **x->k;
+
+    return sum;
+}
+
+int main()
+{
+    struct s4 *x = alloc_s4();
+
+    int sum = sum_s4(x);
+
+    return sum;
+}

@@ -1,0 +1,13 @@
+//test error
+
+typedef int t1;
+typedef t1 t2;
+typedef t2 t3;
+typedef t3 t4;
+// typedef t4 t5;
+typedef t5 t6;
+typedef t6 t7;
+
+int main() {
+  return 0;
+}

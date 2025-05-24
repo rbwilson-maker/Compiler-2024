@@ -1,0 +1,7 @@
+//test error
+//can't alloc struct without definition
+
+int main() {
+    struct s* bad_ptr = alloc(struct point);
+    return 0;
+}

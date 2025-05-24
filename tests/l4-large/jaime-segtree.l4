@@ -1,0 +1,52 @@
+//test return 48
+
+int LeftChild(int i) {return 2*i;}
+int RightChild(int i) {return 2*i+1;}
+int Parent(int i) {return i/2;}
+int min(int i, int j) {return (i < j) ? i : j;}
+int max(int i, int j) {return (i > j) ? i : j;}
+
+void assign(int[] tree, int len, int i, int x)
+{
+    i = i+len;
+    tree[i] = x;
+    for(i = Parent(i); i > 0; i = Parent(i))
+    {
+        tree[i] = tree[LeftChild(i)] + tree[RightChild(i)];
+    }
+}
+
+int f(int[] tree, int v, int l, int r, int i, int j)
+{
+    int t1;
+    int t2;
+    int m;
+    if(l == i && r==j)
+    {
+        return tree[v];
+    }
+    else
+    {
+        m = (l+r)/2;
+        t1 = (i <= m) ? f(tree, LeftChild(v), l, m, i, min(j, m)) : 0;
+        t2 = (j > m) ? f(tree, RightChild(v), (m+1), r, max(i, (m+1)), j) : 0;
+        return t1 + t2;
+    }
+}
+
+int rangeSum(int[] tree, int length, int i, int j)
+{
+    return f(tree, 1, 0, length-1, i, j);
+}
+
+int main()
+{
+    int length = 50;
+    int[] tree = alloc_array(int, length*2);
+    assign(tree, length, 5, 10);
+    assign(tree, length, 2, 1);
+    assign(tree, length, 40, 2);
+    assign(tree, length, 38, 23);
+    assign(tree, length, 0, 12);
+    return rangeSum(tree, length, 0, 49); 
+}

@@ -1,0 +1,8 @@
+// https://www.gnu.org/software/libc/manual/html_mono/libc.html#Process-Identification
+// "The pid_t data type is a signed integer type which is capable of
+// "representing a process ID. In the GNU C Library, this is an int."
+// How convenient!
+typedef int pid_t;
+pid_t getpid();
+// I could also use raise, but then I wouldn't have a reason to use getpid...
+int kill(pid_t pid, int signum);

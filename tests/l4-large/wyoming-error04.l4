@@ -1,0 +1,6 @@
+//test error
+
+int main(){
+    *(NULL)=0;
+    return 0;
+}

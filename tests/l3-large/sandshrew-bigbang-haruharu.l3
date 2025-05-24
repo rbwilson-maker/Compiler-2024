@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int foo(int x, int y) {
+  assert(false);
+  return x + y;
+}
+
+int main() {
+  return foo(0/0, foo(1,2));
+}

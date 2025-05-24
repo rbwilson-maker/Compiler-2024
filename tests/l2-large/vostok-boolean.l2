@@ -1,0 +1,16 @@
+//test error
+
+int main() {
+    int x = 15411;
+    int y;
+    if (x > 0) {
+        if (x - 15411) {
+            y = 1;
+            return y;
+        } else {
+            y = 2;
+            return y;
+        }
+    }
+    return x;
+}

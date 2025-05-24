@@ -1,0 +1,7 @@
+//test memerror
+
+int main() {
+    int* kappa = NULL;
+    assert(*kappa == 1/0);
+    return 100;
+}

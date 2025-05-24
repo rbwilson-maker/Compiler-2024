@@ -1,0 +1,39 @@
+//test return 135
+
+typedef int foo;
+typedef int elem;
+
+struct list_node {
+    elem data;
+    struct list_node* next;
+};
+
+typedef struct list_node list;
+
+int main () {
+    list* head = alloc(list);
+    list* current = head;
+    for (int i = 0; i < 10; i++) {
+        current->data = i;
+        current->next = alloc(list);
+        current = current->next;
+    }
+    int sum = 0;
+    for (list* iter = head; iter != NULL; iter = iter->next) {
+        sum += iter->data;
+    }
+
+    foo *a = alloc(foo);
+    foo* b = alloc(foo);
+    int[] arr = alloc_array(foo, 10);
+
+    for (int i = 0; i < 10; i++) {
+        arr[i] = i;
+        *a = i;
+        *b = i * i;
+    }
+
+
+
+    return sum + *a + *b;
+}

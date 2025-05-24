@@ -1,0 +1,36 @@
+//test return 451451451
+//concat(string, n) return a new string that cacatenate string 3 times
+int len(int str) {
+  int x = str;
+  int cnt = 0;
+  while(x != 0) {
+    x = x / 10;
+    cnt++;
+  }
+  return cnt;
+}
+int powerOf10 (int x) {
+  if(x == 0) {
+    return 1;
+  } else {
+    return 10 * powerOf10(x-1);
+  }
+}
+int concat(int str, int n) {
+  if(n == 0) {
+    return 0;
+  } else {
+    if(n == 1) {
+      return str;
+    } else {
+      int x = concat(str, n-1);
+      int length = len(str);
+      int shift_size = powerOf10(length);
+      return x * shift_size + str;
+    }
+  }
+}
+
+int main() {
+    return concat(451, 3);
+}

@@ -1,0 +1,11 @@
+//test error
+// Test invalid variable name, starts with number
+int main()
+{
+  int 0a;
+  int b;
+
+  0a = 6;
+  b = 4;
+  return 0a + b;
+}

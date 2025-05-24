@@ -1,0 +1,9 @@
+//test return -100
+int main() {
+	int[][] double_array = alloc_array(int[], 10);
+	double_array[0] = alloc_array(int, 10);
+	double_array[9] = alloc_array(int, 10);
+	double_array[0][0] = 100;
+	double_array[9][9] = 200;
+	return double_array[0][0] - double_array[9][9];
+}

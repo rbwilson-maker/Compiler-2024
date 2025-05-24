@@ -1,0 +1,20 @@
+//test return 2
+
+int main () {
+	int x;
+	int y;
+	int z;
+	int n;
+	
+	x = 4;
+	y = 2;
+	z = 6;
+
+	for (n = 0; n < 100; n++) {
+	  x = -((y << z) * (y - x) / (x + z));
+	  if (x > 100)
+	  	return n; // at n=2, x=119
+	}
+
+	return x;
+}

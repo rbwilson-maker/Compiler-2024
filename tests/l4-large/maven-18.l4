@@ -1,0 +1,14 @@
+//test memerror
+
+struct test_test {
+  int *x;
+};
+
+
+int main()
+{
+  struct test_test *x_x = alloc(struct test_test);
+  x_x->x = NULL;
+  *(x_x->x) = 123;
+  return 0;
+}

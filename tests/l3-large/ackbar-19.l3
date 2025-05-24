@@ -1,0 +1,12 @@
+//test div-by-zero
+//should evaluate infinite loop before div by 0
+
+int forever(){ return forever();}
+
+int div0(){ return 1/0;}
+
+int add(int a, int b){ return a + b;}
+
+int main(){
+    return add(div0(),forever());
+}

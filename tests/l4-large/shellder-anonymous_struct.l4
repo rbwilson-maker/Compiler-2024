@@ -1,0 +1,11 @@
+//test error
+struct foo {
+    struct {
+        int a;
+    } b;
+};
+
+int main() {
+    struct foo *x = alloc(struct foo);
+    return 0;
+}

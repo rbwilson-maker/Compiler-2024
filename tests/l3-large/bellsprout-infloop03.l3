@@ -1,0 +1,26 @@
+//test return 4
+
+int cal(int a, int b, int c, int x) {
+    return ((a * x) + b) * x + c;
+}
+
+int bin_search(int a, int b, int c, int l, int r) {
+    while (l < r) {
+        int m = (l + r) / 2;
+        int v1 = cal(a, b, c, m);
+	int v2 = cal(a, b, c, m + 1);
+	if (v1 == 0) return m;
+	if (v2 == 0) return m + 1;
+	if (v1 * v1 < 0) {
+	    l = m;
+	} else {
+	    r = m + 1;
+	}
+    }
+    return l;
+}
+
+int main() {
+    return bin_search(5, 5, -100, -10, 100);
+}
+

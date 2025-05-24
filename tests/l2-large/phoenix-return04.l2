@@ -1,0 +1,33 @@
+//test return 2
+// regular program with while and conditionals
+
+int main() {
+    int x = 2;
+    int y = 0;
+    int z = -5;
+
+    int temp = 1;
+
+    int a = x;
+    int b = y;
+
+    while (z < x + y) {
+        z = z + 1;
+    }
+    
+    if (temp != z) {
+        temp = z;	// should be 2
+    }
+
+    a <<= 2; 	    // should be 8
+
+    if (a != b) {
+        b = a;		// should be 8
+    }
+
+    a = 100 - b;	// should be 92
+    b = temp;		// should be 2
+
+    int c = a + b;
+    return y + z;
+}

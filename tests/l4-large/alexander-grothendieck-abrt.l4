@@ -1,0 +1,10 @@
+//test abort
+int main(){
+    int *f = alloc(int);
+    *f = 3;
+    int *g = alloc(int);
+    *g = 4;
+    assert(f != g);
+    assert(*f == *g);
+    return 4;
+}

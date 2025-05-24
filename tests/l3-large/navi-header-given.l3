@@ -1,0 +1,14 @@
+//test typecheck
+
+int main() {
+	fpt a = 12;
+	fpt b = 155;
+	fpt c = fadd(a, b);
+	print_fpt(a);
+	print_fpt(b);
+	print_fpt(c);
+	print_int(144);
+	print_hex(144);
+	int d = fless(c,b) ? 100 : 10;
+	return 100;
+}

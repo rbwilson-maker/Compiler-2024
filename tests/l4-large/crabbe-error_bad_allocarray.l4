@@ -1,0 +1,17 @@
+//test error
+// should fail to typecheck since a non-integer is used for alloc_array
+
+bool notanint() {
+    return true;
+}
+
+int main() {
+    bool[] B = alloc_array(bool, notanint);
+    B[0] = true;
+    if (B[0]) {
+        return 7;
+    }
+    else {
+        return 9;
+    }
+}

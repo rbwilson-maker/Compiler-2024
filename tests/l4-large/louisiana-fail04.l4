@@ -1,0 +1,14 @@
+//test error
+//you can't do pointer arithmetic on an address in C0
+
+int* get_array_addr(int[] x, int i)
+{
+	return x+i;
+}
+
+int main()
+{
+	int[] x = alloc_array(int, 30);
+	int* fifth_element = get_array_addr(x, 5);
+	return 0;
+}

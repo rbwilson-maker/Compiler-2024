@@ -1,0 +1,11 @@
+/* 
+ * A header file that imports random functions from libc
+ */
+
+// Get a random number from the random number generator
+int rand();
+
+// Seed the random number generator with a 32-bit quantity
+// Types do not quite match here: stdlib.h's srand
+// function expects an unsigned int.
+void srand(int i);

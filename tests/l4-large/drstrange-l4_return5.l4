@@ -1,0 +1,14 @@
+//test return 0
+/// structs can share the same name as a type
+
+struct atype {
+  int value;
+};
+
+typedef int atype;
+
+int main() {
+  atype x = 0;
+  struct atype* y;
+  return x;
+}

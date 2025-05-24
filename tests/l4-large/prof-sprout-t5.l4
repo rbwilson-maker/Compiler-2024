@@ -1,0 +1,19 @@
+//test return 15
+
+struct x {
+  int *val;
+  bool happy;
+};
+
+int main() {
+  int *q = alloc(int);
+  *q = 19;
+  struct x *j = alloc(struct x);
+  j->val = q;
+  j->happy = false;
+  while (!j->happy) {
+    (*q)--;
+    if (*(j->val) % 5 == 0) j->happy = true; 
+  }
+  return *q;
+}

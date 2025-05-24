@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+    int x = 42;
+    int *y = null;
+    y = &x;
+    x = 12;
+    *y -= x;
+    y += y;
+    return **y;
+}

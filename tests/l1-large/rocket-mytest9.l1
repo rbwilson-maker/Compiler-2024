@@ -1,0 +1,12 @@
+//test error
+// not a variable on left
+int main()
+{
+  int a;
+  int b;
+
+  a = 5;
+  b = 1;
+  2 = a+b;
+  return 2;
+}

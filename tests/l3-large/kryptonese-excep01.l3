@@ -1,0 +1,43 @@
+//test abort
+// assert statements 
+
+bool is_prime(int num) {
+    if (num <= 2) {
+        return true;
+    }
+    for (int fact = 2; fact <= num/2; fact +=2) {
+        if (num % fact == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool is_cool(int i) {
+    if (i < 10) {
+        return true;
+    }
+    if (i % 10 == 0) {
+        return true;
+    }
+    if (i % 25 == 0) {
+        return true;
+    }
+    if (i % 4 == 0) {
+        return true;
+    }
+    if (i % 3 == 0) {
+        return true;
+    }
+    if (is_prime(i)) {
+        return true;
+    }
+    return false;
+}
+
+int main() {
+    for (int num = 0; num < 100; num++) {
+        assert(is_cool(num));
+    }
+    return 0;
+}

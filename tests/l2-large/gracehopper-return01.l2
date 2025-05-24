@@ -1,0 +1,12 @@
+//test return 15
+// for loop with decreasing variable
+
+int main() {
+    int x;
+    int y = 120;
+    for(x = 5; x > 0; x--)
+    {
+        y = y / x; 
+    }
+    return y + 7 * 2;
+}

@@ -1,0 +1,25 @@
+//test return 211266
+
+typedef int open;
+typedef int pod;
+typedef int doors;
+
+open the (pod bay, doors HAL) {
+  return ~HAL;
+}
+
+int main() {
+  int answer = 42;
+  int crazy = 88888888;
+
+  int daisy = 0;
+  daisy += the(answer, 0xD0);
+
+  int me = crazy / 2;
+
+  for (int love = daisy; love < me; love++) {
+    me += daisy;
+  }
+
+  return me;
+}

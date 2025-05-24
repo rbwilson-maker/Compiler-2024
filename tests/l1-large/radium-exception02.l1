@@ -1,0 +1,13 @@
+//test div-by-zero
+//Divide by zero
+
+int main(){
+   int a;
+   int n;
+
+   a = 1107;
+   n = 1107 % 0;
+
+   return n;
+}
+

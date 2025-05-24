@@ -1,0 +1,9 @@
+//test return 0
+int small(int x) {
+  if (x == 0)
+    return x;
+  return small(x-1);
+}
+int main() {
+  return small(50);
+}

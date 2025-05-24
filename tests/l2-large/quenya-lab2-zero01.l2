@@ -1,0 +1,9 @@
+//test div-by-zero
+// ...in a loop
+int main() {
+  int x = 88;
+  for (int i = 4; x > 0; i--) {
+    x /= i;
+  }
+  return x + 1;
+}

@@ -1,0 +1,21 @@
+//test abort
+
+typedef int cat;
+typedef cat[] cat_home;
+
+cat_home count_cats (int[] house, int num) {
+  cat_home new_house = alloc_array(cat, num);
+  for (int i = 0; i < num; i++) {
+    new_house[i] = house[i];
+  }
+  return new_house;
+}
+
+int main() {
+  cat my_cats = 10;
+  cat_home new_home = alloc_array(int, my_cats);
+  cat_home home = count_cats(new_home, my_cats);
+  new_home[0] += 1;
+  assert(home == new_home);
+  return home[0];
+}

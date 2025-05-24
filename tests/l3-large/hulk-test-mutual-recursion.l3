@@ -1,0 +1,19 @@
+//test error
+
+int a(int n) {
+  if(n <= 0) {
+    return 0;
+  }
+  return b(n-1) + 1;
+}
+
+int b(int n) {
+  if(n <= 0) {
+    return 0;
+  }
+  return a(n-1) + 1;
+}
+
+int main() {
+  return a(15411);
+}

@@ -1,0 +1,15 @@
+//test return 3
+
+int main () {
+  int x = 1;
+  int y = 2;
+
+  fpt xf = itof(x);
+  fpt yf = itof(y);
+
+  fpt res = fadd(xf, yf);
+  
+  int result = ftoi(res);
+
+  return result;
+}

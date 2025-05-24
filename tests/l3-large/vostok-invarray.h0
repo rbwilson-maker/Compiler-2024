@@ -1,0 +1,8 @@
+/* alias for arrays */
+typedef int array;
+
+array newArray();
+
+array insert(array arr, int i, int val);
+
+int get(array arr, int i);

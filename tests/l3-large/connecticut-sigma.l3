@@ -1,0 +1,13 @@
+//test return 6
+
+// This function finds the bitsum (Number of 1 bits) in its input.
+int sigma(int n) {
+	if(n == 0) {
+		return 0;
+	}
+	return (n % 2) + sigma(n / 2);
+}
+
+int main() {
+	return sigma(125);
+}

@@ -1,0 +1,15 @@
+//test return 16
+
+int main ()
+{
+  int n = 4;
+  int sum = 1;
+  bool flag = false;
+
+  if(!flag) {
+    return sum << n;
+  } else {
+    return sum << (sum+1);
+  }
+
+}

@@ -1,0 +1,9 @@
+//test div-by-zero
+// test division by zero error
+
+int main() {
+    int x = 9;
+    int y = 3;
+    int z = 5;
+    return z / (x - 3 * y);
+}

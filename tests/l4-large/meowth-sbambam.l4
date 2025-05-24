@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+struct over{bool f; int i;};
+
+int main(){
+    struct over* test_over = alloc(struct over);
+    test_over->i = 1;
+    while(!test_over->f){
+        test_over->i = test_over->i * 100;
+    }
+    return 0;
+}

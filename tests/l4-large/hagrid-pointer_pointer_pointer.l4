@@ -1,0 +1,10 @@
+//test return 420
+//time to go on a wild goose chase!
+
+int main() {
+  int*** p = alloc(int**);
+  *p = alloc(int*);
+  **p = alloc(int);
+  ***p = 210;
+  return 2****p;
+}

@@ -1,0 +1,13 @@
+//test div-by-zero
+
+
+
+int main(){
+
+  bool t = 7 > -11;
+
+  assert(t);
+
+  return 8 / (!!!!t ? 0 : 11234);
+  
+}

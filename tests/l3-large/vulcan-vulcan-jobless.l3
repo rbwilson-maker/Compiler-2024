@@ -1,0 +1,37 @@
+//test return 0
+
+
+int a (int one) {
+	int aa = 0;
+	int ab = 1;
+	int ac = 2;
+	int ad = 3;
+	int ae = 4;
+	int af = 5;
+	int ag = 6;
+	int ah = 7;
+	int ai = 8;
+	int aj = 9;
+	int ak = 10;
+	int al = 11;
+	int am = 12;
+	int an = 13;
+	int ao = 14;
+	int ap = 15;
+	int aq = 16;
+	int ar = 17;
+	int as = 18;
+	int at = 19;
+	int au = 20;
+	int av = 21;
+	int aw = 22;
+	int ax = 23;
+	int ay = 24;
+	int az = 25;
+	int res = aa + ab - ac + ad - ae + af - ag + ah - ai + aj - ak + al - am + an - ao + ap - aq + ar - as + at - au + av - aw + ax - ay + az + one - 14;
+	return res == 0? res : a(res);
+}
+
+int main () {
+	return a(10000);
+}

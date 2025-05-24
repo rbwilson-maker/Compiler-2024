@@ -1,0 +1,19 @@
+//test div-by-zero
+
+void shift(int *p) {
+    1 / (*p);
+    *p = (*p) >> 17;
+
+    shift(p);
+}
+
+int main() {
+
+    int* p = alloc(int);
+
+    *p = 1 << 30;
+    
+    shift(p);
+
+    return 1;
+}

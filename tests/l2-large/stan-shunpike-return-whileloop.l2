@@ -1,0 +1,13 @@
+//test return 144
+
+int main(){
+    int a = 1;
+    int b = 1;
+    int tmp;
+    while (a < 100){
+          tmp = a;
+          a = b;
+          b += tmp;
+    }
+    return a;
+}

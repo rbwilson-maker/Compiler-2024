@@ -1,0 +1,31 @@
+//test return 21
+
+int main() {
+  int x = 0;
+
+  if(true || ((x / 0) == 1))
+    if(true || ((x / 0) == 1))
+      x += 1;
+    else
+      x += 2;
+
+  if(true ? true : ((x / 0) == 1))
+    if(false ? ((x / 0) == 1) : false)
+      x += 10;
+    else
+      x += 20;
+
+  if(false ? ((x / 0) == 1) : false)
+    if(true ? true : ((x / 0) == 1))
+      x += 100;
+    else
+      x += 200;
+
+  if(false && ((x / 0) == 1))
+    if(false && ((x / 0) == 1))
+      x += 1000;
+    else
+      x += 2000;
+
+  return x;
+}

@@ -1,0 +1,12 @@
+//test memerror
+
+int* c(int* x) {
+*x += 1;
+return x;
+}
+
+int main() {
+int* x = NULL;
+x = c(c(c(c(c(c(c(c(c(x)))))))));
+return *x;
+}

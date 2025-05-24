@@ -1,0 +1,42 @@
+//test return 0
+
+// Simulate a DFA that accepts the language 0*1110*
+
+bool state1(int input, int idx);
+bool state2(int input, int idx);
+bool state3(int input, int idx);
+
+bool state0(int input, int idx) {
+  if (idx < 0) return false;
+  if ((input & 1 << idx) > 0)
+    return state1(input, idx-1);
+  else
+    return state0(input, idx-1);
+}
+
+bool state1(int input, int idx) {
+  if (idx < 0) return false;
+  if ((input & 1 << idx) > 0)
+    return state2(input, idx-1);
+  else
+    return false;
+}
+
+bool state2(int input, int idx) {
+  if (idx < 0) return false;
+  if ((input & 1 << idx) > 0)
+    return state3(input, idx-1);
+  else
+    return false;
+}
+
+bool state3(int input, int idx) {
+  return true;
+}
+
+int main() {
+  assert(state0(0x700, 31) == true);
+  assert(state0(0xF3A14D67, 2) == true);
+  assert(state0(0xF3A14D67, 5) == false);
+  return 0;
+}

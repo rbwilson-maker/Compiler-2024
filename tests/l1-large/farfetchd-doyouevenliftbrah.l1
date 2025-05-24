@@ -1,0 +1,11 @@
+//test return 8
+
+int main() {
+    int weight = 20;
+    int arm = 2;
+    int leg = 3;
+    int lats = 4;
+    int traps = 3;
+    int doesLift = weight - arm - leg - lats - traps;
+    return doesLift;
+}

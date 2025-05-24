@@ -1,0 +1,15 @@
+//test error
+//test that typedefs cannot be void
+
+typedef void abc;
+
+abc omg() {
+    while(1 > 0) {
+
+    }
+};
+
+int main() {
+    omg();
+    return 0;
+}

@@ -1,0 +1,16 @@
+//test error
+
+int foo(int bar, int baz) {
+    bar * baz = NULL;
+    return 0;
+}
+
+typedef int bar;
+
+
+int foo2() {
+    bar * baz = NULL;
+    return 0;
+}
+
+int main() { return 0; }

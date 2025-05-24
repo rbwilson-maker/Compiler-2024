@@ -1,0 +1,9 @@
+//test return 2
+int main() {
+    int a;
+    a = 0;
+    a = 1;
+    a = 2;
+    a = a;
+    return a - a + a % 3;
+}

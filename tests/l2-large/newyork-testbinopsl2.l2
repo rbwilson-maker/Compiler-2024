@@ -1,0 +1,32 @@
+//test return 0
+int main() {
+    int x = 0xDEADBEEF;
+
+    int t1 = x & 0xFFFF0000;
+    int t2 = x & 0x0000FFFF;
+
+    if (t1 != 0xDEAD0000)
+        return 1;
+
+    if (t2 != 0x0000BEEF)
+        return 2;
+
+    if ((t1 | t2) != 0xDEADBEEF)
+        return 3;
+
+    int t3 = (t1 >> 16) & 0x0000FFFF;
+
+    if (t3 != 0x0000DEAD)
+        return 4;
+
+    if ((t2 << 16) != 0xBEEF0000)
+        return 5;
+
+    if ((t2 ^ t3) != 0x00006042)
+        return 6;
+
+    if ((~0xFFFF0000) != 0x0000FFFF)
+        return 7;
+
+    return 0;
+}

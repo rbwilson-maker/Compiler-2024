@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+  int x = 32;
+  while(true) {
+    x = x >> 32;
+  }
+  return 0;
+}

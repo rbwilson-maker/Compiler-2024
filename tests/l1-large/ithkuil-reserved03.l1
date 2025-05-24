@@ -1,0 +1,10 @@
+//test error
+// test reserved keywords
+
+int main()
+{
+    int alloc_array;
+    // alloc_array is reserved
+    alloc_array = 10;
+    return alloc_array;
+}

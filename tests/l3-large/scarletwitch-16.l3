@@ -1,0 +1,13 @@
+//test return 8
+
+int sum (int x, int y, bool z, bool a) {
+  if (a) {
+      return 1;
+  }
+  return x + y;
+}
+
+
+int main () {
+  return sum(3, 5, true, false);
+}

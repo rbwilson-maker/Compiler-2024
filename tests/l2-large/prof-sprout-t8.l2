@@ -1,0 +1,11 @@
+//test return 1
+// test control flow checking
+
+int main() {
+    int x = 5;
+    int y;
+    {
+        return 1;
+    }
+    y = y + x;
+}

@@ -1,0 +1,16 @@
+//test error
+
+int main ()
+{
+  int m = 130;
+  int n = 120;
+  int gcd;
+
+  while (m % n != 0) {
+    gcd = m % n;
+    m = n;
+    n = gcd;
+  }
+
+  return gcd;
+}

@@ -1,0 +1,15 @@
+//test abort
+
+int main(){
+	
+	int sum = 21;
+	while(sum > 1){
+		if((sum % 2) == 0){
+			sum /= 2;
+		} else {
+			sum = 3*sum + 1;
+		}
+	}
+	assert(false);
+	return 0;
+}

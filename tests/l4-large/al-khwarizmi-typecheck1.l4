@@ -1,0 +1,12 @@
+//test typecheck
+
+void set_twenty_three(int *p) {
+  *p = 23;
+}
+
+int main() {
+  int* ret_val_ptr;
+  ret_val_ptr =  alloc(int);
+  set_twenty_three(ret_val_ptr);
+  return *ret_val_ptr;
+}

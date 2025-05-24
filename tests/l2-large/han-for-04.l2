@@ -1,0 +1,10 @@
+//test return 9
+int main() {
+  // subtracts 1 from x without '-'
+  int x = 10;
+  int result = 0;
+  for (int loop = 0; loop != x; loop++) {
+    result = loop;
+  }
+  return result;
+}

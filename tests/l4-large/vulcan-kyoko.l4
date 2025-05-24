@@ -1,0 +1,16 @@
+//test return -264095900
+
+int main() {
+	int []a = alloc_array(int, 1);
+	int *b = alloc(int);
+	*b = 0;
+
+	for (int i = 0; i < 1000000; i++) {
+		(*b)++;
+		*b <<= 1;
+		a[0] = *b;
+		*b *= a[0];
+	}
+
+	return *b;
+}

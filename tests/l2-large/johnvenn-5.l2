@@ -1,0 +1,27 @@
+//test return 0
+
+//testing parsing (variant of 4 but this one should pass)
+
+int main() {
+    int x1;
+    {
+        int x2;
+        {
+            int x3;
+            {
+                int x4;
+                {
+                    int x5;
+                    {
+                        int x6;
+                        {
+                            return 0;
+                        }
+                    }
+                }
+                return 9;
+            }
+        }
+        return 5;
+    }
+}

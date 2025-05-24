@@ -1,0 +1,12 @@
+//test memerror
+
+// who get up at 7.am anyways
+//the basic testcase in lecture note 15.5
+typedef int sevenAM;
+
+int main()
+{
+  sevenAM** the_usual_morning_lineup = NULL;
+  **the_usual_morning_lineup = 1/0;
+  return **the_usual_morning_lineup;
+}

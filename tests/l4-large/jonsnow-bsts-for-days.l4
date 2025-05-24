@@ -1,0 +1,151 @@
+//test return 1
+
+typedef struct tree_node tree;
+struct tree_node {
+  int* data;
+  tree* left;
+  tree* right;
+};
+
+typedef struct bst_header bst;
+struct bst_header {
+  tree* root;
+};
+
+/* is_ordered(T, lower, upper) checks if all elements in T
+ * are strictly in the interval (elem_key(lower),elem_key(kupper)).
+ * lower = NULL represents -infinity; upper = NULL represents +infinity */
+bool is_ordered(tree* T, int* lower, int* upper) {
+  if (T == NULL) return true;
+  return T->data != NULL
+    && (lower == NULL || *lower < *T->data)
+    && (upper == NULL || *T->data < *upper)
+    && is_ordered(T->left, lower, T->data)
+    && is_ordered(T->right, T->data, upper);
+}
+
+bool is_tree(tree* T) {
+  return is_ordered(T, NULL, NULL);
+}
+
+bool is_bst(bst* B) {
+  if (B == NULL) return false;
+  return is_tree(B->root);
+}
+
+bst* bst_new()
+//@ensures is_bst(\result);
+{
+  bst* B = alloc(bst);
+  B->root = NULL; // Not necessary
+  return B;
+}
+
+int* tree_lookup(tree* T, int x) 
+//@requires is_tree(T) && x != NULL;
+//@ensures \result == NULL || *(\result) == x;
+{
+  if (T == NULL) return NULL;
+  if (x == *(T->data)) {
+    return T->data;
+  } else if (x < *(T->data)) {
+    return tree_lookup(T->left, x);
+  } else {
+    //@assert cmp > 0;
+    return tree_lookup(T->right, x);
+  }  
+}
+
+int* bst_lookup(bst* B, int x)
+//@requires is_bst(B) && x != NULL;
+//@ensures \result == NULL || *(\result) == x;
+{
+  return tree_lookup(B->root, x);
+}
+
+tree* tree_insert(tree* T, int y) 
+//@requires is_tree(T) && x != NULL;
+//@ensures is_tree(\result);
+{
+  int* x = alloc(int);
+  *x = y;
+  if (T == NULL) {
+    tree* R = alloc(tree);
+    R->data = x;
+    return R;
+  }
+  if(*x == *(T -> data)){
+    T->data = x;
+  } else if (*x < *(T -> data)) {
+    T->left = tree_insert(T->left, y);
+  } else {
+    //@assert cmp > 0;
+    T->right = tree_insert(T->right, y);
+  }
+
+  return T;
+}
+
+void bst_insert(bst* B, int x)
+//@requires is_bst(B) && x != NULL;
+//@ensures is_bst(B);
+{
+  int* y = alloc(int);
+  *y = x;
+  B->root = tree_insert(B->root, x);
+}
+
+int post_ord_helper(tree* T, int[] res, int ind) {
+    if(T==NULL){
+        return ind;
+    }
+    int lres = post_ord_helper(T->left, res, ind);
+    int rres = post_ord_helper(T->right, res, lres);
+    res[rres] = *(T->data);
+    return rres+1;
+}
+
+void post_ord(bst* T, int[] res, int ind){
+    if(T==NULL){
+        return;
+    }
+    int x = post_ord_helper (T -> root, res, ind);
+}
+
+int main(){
+    bst* B = bst_new();
+
+    bst_insert(B, 3);
+    bst_insert(B, 1);
+    bst_insert(B, 5);
+    bst_insert(B, 8);
+    bst_insert(B, 9);
+    bst_insert(B, 7);
+    bst_insert(B, 2);
+    bst_insert(B, 0);
+    bst_insert(B, 6);
+    bst_insert(B, 4);
+
+    int[] res = alloc_array(int, 10);
+    res[0]=0;
+    res[1]=2;
+    res[2]=1;
+    res[3]=4;
+    res[4]=6;
+    res[5]=7;
+    res[6]=9;
+    res[7]=8;
+    res[8]=5;
+    res[9]=3;
+
+    int[] post_ord_trav = alloc_array(int, 10);
+    post_ord(B, post_ord_trav, 0);
+    int lit = 1;
+    for (int j = 0; j<10; j++){
+        if(post_ord_trav[j]!=res[j]){
+            lit = 0;
+        }
+    }
+
+    return lit;
+}

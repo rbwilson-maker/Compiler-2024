@@ -1,0 +1,8 @@
+//test error
+
+// tests if the type system works
+int main() {
+    bool foo = true;
+    int bar = 1;
+    return foo + bar;
+}

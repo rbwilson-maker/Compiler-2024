@@ -1,0 +1,10 @@
+//test return -66076672
+int main() {
+  int white = 0xFF;
+  int black = 0x00;
+  int r = black | 0xF;
+  int g = (white << 6) & white;
+  int b = black;
+  int alpha = white << 2;
+  return (alpha << 24 | r << 16 | g << 8 | b);
+}

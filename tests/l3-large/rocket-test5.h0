@@ -1,0 +1,8 @@
+int add_multiply_subtract (int a)
+{
+    int add = a + a;
+    int multiply = add * add;
+    int subtract = multiply - multiply;
+
+    return add_multiply_subtract;
+}

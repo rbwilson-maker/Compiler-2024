@@ -1,0 +1,9 @@
+//test error
+// ensuring proper typechecking of memory dereferences
+int main()
+{
+  int * x = alloc(int);
+  *x = 5;
+  bool b = *x;
+  return 5;
+}

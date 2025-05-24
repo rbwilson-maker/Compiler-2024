@@ -1,0 +1,10 @@
+//test error
+int main() {
+  int x = 0;
+  x--;
+  x += x-(-x);
+  if ((x + 3 == 0) && (x > -1)) {
+    bool y = 0;
+  }
+  return x;
+}

@@ -1,0 +1,22 @@
+//test return 4;
+
+typedef int foo;
+typedef foo foo1;
+typedef foo1 foo2;
+typedef foo2 foo3;
+
+int main() {
+	foo * bar;
+	int a = 1;
+	int b = 4;
+	a * b;
+	a * b;
+	a * b;
+	a * b;
+	a * b;
+	a * b;
+	foo1 * bar1;
+	foo2 * bar2;
+	foo3 * bar3;
+	return a * b;
+}

@@ -1,0 +1,26 @@
+//test return 1675869784
+
+//Blum Blum Shub
+
+int next(int prev){
+	int p = 4999;
+	int q = 3221;
+	int n = p * q;
+	return (prev * prev) % n;
+}
+
+int genInt(int seed){
+	int x = seed;
+	int res = 0;
+	int mask = 0x1;
+	for(int i=0;i<32;i++){
+		x = next(x);
+		res += x & mask;
+		res <<= 1;
+	}
+	return res;
+}
+
+int main(){
+	return genInt(15210);
+}

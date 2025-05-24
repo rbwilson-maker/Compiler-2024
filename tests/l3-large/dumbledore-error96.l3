@@ -1,0 +1,11 @@
+//test error
+
+typedef int test1;
+
+int main() {
+    test1 a = 1;
+    test1 b = 1;
+    int test1 = 1;
+    return a + b + test1;
+}
+

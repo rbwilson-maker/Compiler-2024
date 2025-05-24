@@ -1,0 +1,12 @@
+//test return 2
+int main() {
+    int x1 = 1;
+    (x1) = 2; 
+    x1 / 1; 
+    int x2 = (x1 / 2 + 4 << 2 + 10) * 2; 
+    if (x1 == 2) 
+        if (x2 == 1) 
+            return 1; 
+        else return 2;
+    return 3; 
+}

@@ -1,0 +1,9 @@
+//test return 385
+
+int main() {
+  int count = 0;
+  for(int i = 10; i > 0; i--) {
+    count += i*i;
+  }
+  return count;
+}

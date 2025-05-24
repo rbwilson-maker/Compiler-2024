@@ -1,0 +1,33 @@
+//test error
+
+struct foo;
+
+struct bar;
+
+struct foo *f() {
+    return NULL;
+}
+
+struct bar *b() {
+    return NULL;
+}
+
+struct baz {
+    struct foo x;
+    struct bar y;
+};
+
+struct foo {
+    int asdf;
+};
+
+struct bar {
+    
+};
+
+int main() {
+    struct bar *blah = alloc(struct baz);
+    blah->x = *f();
+    blah->y = *b();
+    return 0;
+}

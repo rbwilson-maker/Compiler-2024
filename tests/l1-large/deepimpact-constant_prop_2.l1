@@ -1,0 +1,14 @@
+//test return 2
+
+// should propagate to more than 1
+int main() {
+    int x = 1;
+    int y;
+    int z;
+
+    z = x;
+    y = x;
+
+    return z + y;
+
+}

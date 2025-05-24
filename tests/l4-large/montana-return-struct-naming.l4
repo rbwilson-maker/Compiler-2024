@@ -1,0 +1,19 @@
+//test return 0
+
+struct _c0_main {
+  int main;
+};
+struct main {
+  int main;
+  struct _c0_main foo;
+};
+struct abort {
+  int a;
+  int b;
+};
+
+
+int main() {
+  assert(true);
+  return 0;
+}

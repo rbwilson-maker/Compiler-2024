@@ -1,0 +1,9 @@
+//test memerror
+// Lets see how you handle this situation
+// I had to write stupid code to handle *x++. Do you?
+
+int main() {
+  int *[]*[]*[]*[]*[] x = alloc_array(int *[]*[]*[]*[]*, 1);
+  *(*(*(*(*x[0])[0])[0])[0])[0] *= 2;
+  return 1;
+}

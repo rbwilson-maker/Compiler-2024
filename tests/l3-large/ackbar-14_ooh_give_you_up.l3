@@ -1,0 +1,8 @@
+//test error
+//can't call undefined functions that aren't in a header
+
+int main(){
+    int x= 42;
+    print_bar(x);   //external function without header
+    return x;
+}

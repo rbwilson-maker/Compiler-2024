@@ -1,0 +1,11 @@
+//test error
+// return an uninitialized variable
+int main()
+{
+  int x;
+  int y;
+  int z;
+  x = 1000 % (25 * 25);
+  z = x * x + 2;
+  return y;
+}

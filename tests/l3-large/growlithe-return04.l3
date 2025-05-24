@@ -1,0 +1,27 @@
+//test return 13
+
+/*
+ * This program tests the Ackermann function
+  *
+   */
+
+ int ackermann(int m, int n)
+  {
+       if(m == 0)
+                return n + 1;
+		     if(n == 0)
+		              return ackermann(m-1, 1);
+			           return ackermann(m-1, ackermann(m, n-1));
+				    }
+
+int main()
+{
+    int m;
+        int n;
+
+    assert(1 == ackermann(0,0));
+        assert(2 == ackermann(0,1));
+	    assert(5 == ackermann(0,4));
+
+    return ackermann(3,1);
+    }

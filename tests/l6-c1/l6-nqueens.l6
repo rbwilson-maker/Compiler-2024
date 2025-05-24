@@ -1,0 +1,103 @@
+//test return 0;
+
+typedef struct list* list_t;
+typedef struct ilist* ilist_t;
+
+struct list {
+    int i;
+    int j;
+    list_t tl;
+};
+
+struct ilist {
+    int hd;
+    ilist_t tl;
+};
+
+bool threat(int x, int y, int i, int j){
+    return (x+y==i+j) || (x-y == i-j) || x==i || y==j;
+}
+
+bool conflict (int i, int j, list_t qs){
+    if(qs == NULL) return false;
+    return threat(i, j, qs->i, qs->j) || conflict(i, j, qs->tl);
+}
+
+bool safe(list_t qs){
+    if(qs==NULL) return true;
+    return !conflict(qs->i, qs->j, qs->tl) && safe(qs->tl);
+}
+
+typedef list_t* cont();
+typedef list_t* t_s(cont* fc);
+typedef t_s* fun;
+
+ilist_t upto(int i, int j){
+    if(i>j) return NULL;
+    
+    ilist_t l = alloc(struct ilist);
+    l->hd = i;
+    l->tl = upto(i+1, j);
+    return l;
+}
+
+fun try(int n, int i, ilist_t A, list_t qs){
+    return fn (cont* fc){
+        if(A==NULL) return (*fc)();
+
+        int j = A->hd;
+        ilist_t B = A->tl;
+
+        if(conflict(i,j,qs)){
+            return (*(try(n, i, B, qs)))(fc);
+        }else if (i == n){
+            list_t qsp = alloc(struct list);
+            qsp->i = i;
+            qsp->j = j;
+            qsp->tl = qs;
+
+            list_t* pqsp = alloc(list_t);
+            *pqsp = qsp;
+            return pqsp;
+        }
+
+        list_t qsp = alloc(struct list);
+        qsp->i = i;
+        qsp->j = j;
+        qsp->tl = qs;
+
+        return (*(try(n, i+1, upto(1,n), qsp)))(fn(){
+            return (*(try(n,i,B,qs)))(fc);
+        }); 
+    };
+}
+
+list_t* queens(int n){
+    return (*(try(n,1,upto(1,n),NULL)))(fn(){return NULL;});
+}
+
+int main(){
+    list_t* ans = queens(4);
+    
+    list_t pos = *ans;
+
+    assert(pos->i == 4);
+    assert(pos->j == 3);
+    pos = pos->tl;
+    assert(pos->i == 3);
+    assert(pos->j == 1);
+    pos = pos->tl;
+    assert(pos->i == 2);
+    assert(pos->j == 4);
+    pos = pos->tl;
+    assert(pos->i == 1);
+    assert(pos->j == 2);
+    pos = pos->tl;
+
+    assert(pos == NULL);
+
+    ans = queens(3);
+    assert(ans == NULL);
+
+    return 0;
+}

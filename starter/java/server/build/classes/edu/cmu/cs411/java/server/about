@@ -1,0 +1,74 @@
+[about]
+    1) Client Instructions
+    2) Server Instructions
+    3) Classloader Hierarchy
+    4) Protocols
+
+[1) Client Instructions]
+
+List:
+    CLIENT_NEWLOADER <classloader id> <resources ...>
+    CLIENT_NEWJOB <classloader id> [resources ...] <methodpath> <args ...>
+    CLIENT_IN <chunk>
+    CLIENT_END
+
+CLIENT_NEWLOADER : creates a classloader with some resources available on the 
+    classloader
+CLIENT_NEWJOB : creates a job under a classloader on the server, with some additional
+    resources local to the job. We specify the path to a static String[] args
+    method, along with the args we should pass it
+CLIENT_IN : sends client in to System.in
+CLIENT_END : ends a list in the client. Note that we don't have an EXIT code
+    (like in nailgun) since we can just use EOF and the already existing system
+    to handle that
+
+
+
+[2) Server Instructions]
+    EXIT <value>
+    EXCEPTION <value>
+    OUTSTREAM chunk
+    ERRSTREAM chunk
+
+EXIT : tells the client the job has exited normally, and sends the exit value
+EXCEPTION : tells the client the job has exited with an exception, and sends the 
+    exception value
+OUTSTREAM : sends System.out to the client
+ERRSTREAM : sends System.err to the client
+
+[3) Classloader Hierarchy]
+
+Layout : 
+                   [system classloader]
+                     :: port we're using
+                     :: server timeout
+  
+            null                        null
+             |                           |
+        classloader 0                classloader 1
+        :: loader 0 resources         :: loader 1 resources
+          /      \                    /      \
+     sibling00  sibling01         sibling10  sibling11
+       |              |             |              |  
+      job            job           job            job
+
+411 Use : 
+We use loader 0 for dispatching compiler tests. Loader 1 is used for running
+jasmine. 
+
+[4) Protocols]
+We use [...] to specify a chunk. [...][...] represents 2 consecutive chunks, and
+[...:32] represents a chunk of size 32 bits
+
+bind an int to a new classloader with the appropriate resources
+    CLIENT_NEWLOADER[loaderNum:32](CLIENT_CONTINUE[resourceSiz=K:16][resourceURL:K])*CLIENT_END
+    
+make a new job under an existing loader. Will wait for the loader to be created 
+if it is not bound.
+    CLIENT_NEWJOB[loaderNum:32](CLIENT_CONTINUE[resourceSiz=K:16][resourceURL:K])*CLIENT_END[methodpathSiz=K:16][methodPath:K](CLIENT_CONTINUE[argSiz=K:16][argString:K])*CLIENT_END
+
+OUTSTREAM and ERRSTREAM
+    ((JOB_OUT|JOB_ERR)[resourceSiz=K:16][serverOutput:K])*((JOB_EXIT|JOB_EXCEPTION)[exitType:32])
+
+exit and close the server:
+    CLIENT_END

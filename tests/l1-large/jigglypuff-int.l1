@@ -1,0 +1,24 @@
+//test error
+
+/* Int Keyword Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, September 13, 2015 at 09:27:18 AM 
+ *
+ * This test tests whether the compiler detects that the keyword 'int'
+ * is being used as an identifier.
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int int;
+
+    x = 4;
+    y = 3;
+    int = x + y;
+
+    return int;
+}

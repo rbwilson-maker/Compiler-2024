@@ -1,0 +1,27 @@
+//test return 0
+struct compilers_student {
+    int hrs_sleep; 
+    int happiness; 
+    int lectures_attended;
+    bool is_alive; 
+}; 
+
+int main() {
+    struct compilers_student*[] thonking = alloc_array(struct compilers_student*, 10); 
+    struct compilers_student* quicksilver1 = alloc(struct compilers_student);
+    quicksilver1->hrs_sleep = 2; 
+    quicksilver1->happiness = 2; 
+    quicksilver1->lectures_attended = -100; 
+    quicksilver1->is_alive = false; 
+
+    struct compilers_student* quicksilver2 = alloc(struct compilers_student);
+    quicksilver2->hrs_sleep = 5; 
+    quicksilver2->happiness = 0; 
+    quicksilver2->lectures_attended = -100+2; 
+    quicksilver2->is_alive = false; 
+
+    thonking[0] = quicksilver1; 
+    thonking[1] = quicksilver2; 
+
+    return 0;     
+}

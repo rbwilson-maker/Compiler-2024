@@ -1,0 +1,17 @@
+//test return 2
+
+typedef int *counter;
+
+int increment(counter n) {
+    int val = *n;
+    *n += 1;
+    return val;
+}
+
+int main() {
+    counter a = alloc(int);
+    int[] arr = alloc_array(int, 3);
+    arr[increment(a)] = 1;
+    arr[increment(a)] = 2;
+    return *a;
+}

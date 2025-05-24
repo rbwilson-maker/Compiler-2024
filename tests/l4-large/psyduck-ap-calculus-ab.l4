@@ -1,0 +1,14 @@
+//test error
+
+struct a {
+int* a;
+int b;
+};
+
+typedef struct a b;
+
+int main() {
+b* c = alloc(b);
+return *c.b;
+}
+

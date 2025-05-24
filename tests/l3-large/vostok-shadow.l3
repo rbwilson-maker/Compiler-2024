@@ -1,0 +1,13 @@
+//test error
+// shadow shenanigans
+
+typedef int array;
+
+int binSearch(array array, int target, int size) {
+    array = size;
+    return array;
+}
+
+int main() {
+    return binSearch(arr, 14, 8);
+}

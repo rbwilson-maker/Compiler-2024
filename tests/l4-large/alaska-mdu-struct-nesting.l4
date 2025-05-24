@@ -1,0 +1,23 @@
+//test return 6
+
+struct node
+{
+  struct node* next;
+  int data;
+};
+
+int main()
+{
+  struct node* root = alloc(struct node);
+  root->data = -1;
+
+  struct node* cur = root;
+  for (int i = 0; i < 10; i++)
+  {
+    cur->next = alloc(struct node);
+    cur = cur->next;
+    cur->data = i;
+  }
+
+  return root->next->next->next->next->next->next->next->data;
+}

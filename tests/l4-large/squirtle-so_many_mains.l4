@@ -1,0 +1,11 @@
+//test return 100
+
+struct main {
+  int main;
+};
+
+int main() {
+  struct main * main = alloc(struct main);
+  (*main).main = 100;
+  return main->main;
+}

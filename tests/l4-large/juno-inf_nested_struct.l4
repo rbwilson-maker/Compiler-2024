@@ -1,0 +1,14 @@
+//test error
+
+struct b;
+struct b {
+    bool x;
+    struct b y;
+};
+
+int main() {
+    struct b *x = alloc(struct b);
+    x->y.x = 1;
+
+    return x->y.x;
+}

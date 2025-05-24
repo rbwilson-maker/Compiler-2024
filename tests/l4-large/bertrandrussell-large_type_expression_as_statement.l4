@@ -1,0 +1,11 @@
+//test error
+
+struct foo {};
+
+int main() {
+    struct foo[] a = alloc_array(struct foo, 10);
+    // expressions used as statements must have small type
+    a[0];
+    return 0;
+}
+

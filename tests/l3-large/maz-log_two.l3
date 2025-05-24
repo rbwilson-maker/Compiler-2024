@@ -1,0 +1,13 @@
+//test return 3
+
+int log_two(int op) {
+    if (op <= 2) {
+        return 1; 
+    } else {
+        return 1 + log_two(op / 2);
+    }
+}
+
+int main() {
+    return log_two(10);
+}

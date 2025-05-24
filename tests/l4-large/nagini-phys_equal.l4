@@ -1,0 +1,14 @@
+//test return 123
+
+int main() {
+    int[][] buf = alloc_array(int[], 100);
+    assert(buf[2] == buf[4]);
+    buf[2] = alloc_array(int, 0);
+    buf[4] = alloc_array(int, 0);
+    assert(buf[2] != buf[4]);
+    buf[2] = alloc_array(int, 1);
+    buf[4] = alloc_array(int, 1);
+    assert(buf[2] != buf[4]);
+    return 123;
+}
+

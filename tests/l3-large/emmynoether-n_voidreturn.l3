@@ -1,0 +1,13 @@
+//test return 1
+
+void foo(int x);
+
+int main() {
+    int x = 0;
+    foo(x);
+    return 1 << x;
+}
+
+void foo(int y) {
+    y << y;
+}

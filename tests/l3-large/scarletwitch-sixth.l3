@@ -1,0 +1,41 @@
+//test return 136
+
+void loopdeloop(int one, int two){
+    int sum = one + two;
+    int diff = one - two;
+    int diff2 = two - one;
+    while(diff2 > 0)
+        diff2--;
+}
+void loopy(){
+    int x = 20;
+    int counter = 0;
+    while(counter < x){
+        loopdeloop(x, x - counter);
+        counter++;
+    }
+}
+int main(){
+    int a = 0;
+    int b = 1;
+    int c = 2;
+    int d = 3;
+    int e = 4;
+    int f = 5;
+    int g = 6;
+    int h = 7;
+    int i = 8;
+    int j = 9;
+
+    for(int x = 0; x < j; x+=b){
+        b = c + d;
+    }
+    d = e + f;
+    f = g + h;
+    h = b << 4;
+    int y = j << 4;
+    int x = a + b + c + d + e + f;
+    int z = g + h + i + j;
+    loopy();
+    return x + z;
+}

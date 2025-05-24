@@ -1,0 +1,12 @@
+//test return 0
+
+struct point {
+    int x;
+    int y;
+};
+typedef struct point point;
+
+int main () {
+    point* pt = alloc(struct point);
+    return pt->x;
+}

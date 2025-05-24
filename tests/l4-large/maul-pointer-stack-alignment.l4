@@ -1,0 +1,8 @@
+//test return 1
+
+// test alignment
+int main() {
+    int *k = alloc(int);
+    print_int(*k);
+    return 1;
+}

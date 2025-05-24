@@ -1,0 +1,15 @@
+//test typecheck
+
+typedef bool b;
+
+typedef b z;
+
+typedef int i;
+
+int main() {
+    i x = 0;
+
+    b y = (1 == 0);
+
+    return x;
+}

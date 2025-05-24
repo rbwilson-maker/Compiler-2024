@@ -1,0 +1,28 @@
+//test typecheck
+//test infloop
+
+typedef struct node node;
+struct node {
+    node* next;
+};
+
+int main()
+{
+    node* x = alloc(node);
+    node* y = alloc(node);
+    node* z = alloc(node);
+    node* w = alloc(node);
+
+    x->next = y;
+    y->next = z;
+    z->next = w;
+    w->next = x;
+    node* t = x;
+    
+    while (t != NULL)
+    {
+        t = t->next;
+    }
+
+    return 0;
+}

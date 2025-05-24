@@ -1,0 +1,19 @@
+//test return 0
+
+struct s {
+    int garbage;
+    struct s *a;
+};
+
+int main() {
+    struct s *a = alloc(struct s);
+    struct s *b = alloc(struct s);
+    b->a = a;
+    struct s *c = alloc(struct s);
+    c->a = b;
+    if (c->a->a->a == NULL) {
+        return 0;
+    } else {
+        return 1;
+    }
+}

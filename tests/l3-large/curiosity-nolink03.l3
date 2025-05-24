@@ -1,0 +1,8 @@
+//test error
+//shouldn't type check
+
+int main(){
+  int x;
+  x = int_cmp(1,2);
+  return x;
+}

@@ -1,0 +1,16 @@
+//test return 5
+
+int main()
+{
+    bool t = true;
+
+    int x = 3;
+    x <<= 2;  // 12
+    x |= 5;  // 13
+    x &= 7; // 5
+    x ^= 15; // 10
+    x >>= 1; // 5
+
+
+    return x > 3 ? x : 0xffffffff;                   //5
+}

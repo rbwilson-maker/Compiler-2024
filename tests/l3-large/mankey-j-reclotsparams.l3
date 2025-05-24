@@ -1,0 +1,18 @@
+//test return 12720
+/* Simple function call to sum up numbers */
+
+
+int lots_of_params(int i, int j, bool k, bool l, bool m, int n, int o, int p, int q, int r, int s, int t, int u, int v, int w, int x, bool y, int z, int incr) {
+  if (incr == 0) return 0;
+  if (k && !l && !m && y)
+    return i + j + n + o + p + lots_of_params(i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,incr-1) + q + r + s + t +u+ v+ w +x +z;
+  else
+    return 1/0;
+}
+
+int main () {
+  int n;
+  n = 1;
+  return lots_of_params(n,2,true, false, false, 3,4,5,6,7,8,9,10,11,12,13,true,15,120);
+}
+

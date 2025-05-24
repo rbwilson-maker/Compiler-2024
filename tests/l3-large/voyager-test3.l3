@@ -1,0 +1,15 @@
+//test return 18
+//test typedef over functions
+
+typedef int check;
+
+check checkmath(check a, check b)
+{
+   return a - b + 10;
+}
+
+int main()
+{
+   int out = checkmath(4, 5) * 2;
+   return out;
+}

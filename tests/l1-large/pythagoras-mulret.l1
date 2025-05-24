@@ -1,0 +1,13 @@
+//test return 1
+// tests to see whether the code terminates after the first return statement
+
+int main(){
+    int a = 1;
+    int b = 2;
+    int c = 3;
+    int d = 4;
+    return a;
+    return b;
+    return c;
+    return d;
+}

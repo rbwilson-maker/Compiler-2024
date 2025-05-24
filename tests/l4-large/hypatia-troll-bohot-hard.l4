@@ -1,0 +1,7 @@
+//test memerror
+
+int main() {
+  int *a = NULL;
+  assert(a == NULL);
+  return *a;
+}

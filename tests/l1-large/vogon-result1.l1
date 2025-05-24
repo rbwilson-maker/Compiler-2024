@@ -1,0 +1,11 @@
+//test return 25
+
+int main() { 
+  int a = (4 + 5) - 3;
+  a /= 2;
+  a += 15;
+  a %= 5;
+  a *= 9;
+  a -= 2;
+  return a; 
+}

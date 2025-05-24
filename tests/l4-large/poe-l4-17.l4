@@ -1,0 +1,40 @@
+//test return -2147483648
+
+// very large daxpy
+
+int lcg(int seed) {
+	int m = 1<<31;
+	int a = 1103515245;
+	int c = 12345;
+
+	return (seed * a + c) % m;
+}
+
+dub[] daxpy(dub[] a, dub[] b, dub[] c, int len) {
+	dub[] res = alloc_array(dub, len);
+	for(int k = 0; k < len; k++) {
+		res[k] = dadd(dmul(a[k], b[k]), c[k]);
+	}
+	return res;
+}
+
+int main () {
+	int arr_len = 1<<25;
+	dub[] a = alloc_array(dub, arr_len);
+	dub[] b = alloc_array(dub, arr_len);
+	dub[] c = alloc_array(dub, arr_len);
+
+	int prev_rand = 0;
+	for(int k = 0; k < arr_len; k++) {
+		prev_rand = lcg(prev_rand);
+		a[k] = itod(prev_rand);
+		prev_rand = lcg(prev_rand);
+		b[k] = itod(prev_rand);
+		prev_rand = lcg(prev_rand);
+		c[k] = itod(prev_rand);
+	}
+
+	dub[] res = daxpy(a, b, c, arr_len);
+
+	return dtoi(res[0]);
+}

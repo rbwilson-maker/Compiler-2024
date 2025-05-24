@@ -1,0 +1,12 @@
+//test return 0
+typedef bool a;
+typedef a b;
+typedef int c;
+
+a g(c e){
+  return e==e;
+}
+int main(){
+  if(g(0)) return 0;
+    return 1;
+}

@@ -1,0 +1,7 @@
+//test memerror
+int main() {
+	int *a = false ? alloc(int) : NULL;
+	int[] arr = alloc_array(int, 1);
+	arr[*a] = 0;
+	return -1;
+}

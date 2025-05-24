@@ -1,0 +1,9 @@
+//test error
+// Types cannot be reserved words
+
+typedef int typedef;
+
+int main() {
+    //Returns a value of type typedef!
+    return 0;
+}

@@ -1,0 +1,43 @@
+//test return 15122
+
+struct A {
+  int a;
+  int* b;
+  int c;
+};
+
+struct B {
+  int a;
+  struct A b;
+  struct A* c;
+  struct B* d;
+  int e;
+};
+
+struct C {
+  int[] a;
+  struct B[] b;
+  int c;
+};
+
+int main() {
+  struct C* C_ = alloc(struct C);
+
+  C_->a = alloc_array(int, 7);
+  assert(C_->a[6] == 0);
+  C_->a[6] = 654321;
+  assert(C_->a[6] == 654321);
+  C_->a = alloc_array(int, 11);
+  assert(C_->a[6] == 0);
+  C_->a[10] += 122;
+
+  C_->b = alloc_array(struct B, 3);
+  C_->b[0].b.b = alloc(int);
+  *C_->b[0].b.b -= 15;
+  *C_->b[0].b.b *= -1;
+  C_->b[1].c = alloc(struct A);
+  C_->b[1].c->b = alloc(int);
+  *C_->b[1].c->b += 1000;
+
+  return *C_->b[0].b.b * *C_->b[1].c->b + C_->a[10];
+}

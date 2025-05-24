@@ -1,0 +1,14 @@
+//test return 123
+
+void foo() {}
+
+int main() {
+  if (true) {
+    foo();
+  } else {
+    while (true) {
+      foo();
+    }
+  }
+  return 123;
+}

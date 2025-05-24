@@ -1,0 +1,13 @@
+//test error
+
+typedef int[] money;
+int main()
+{
+    money a = alloc_array(int, 4);
+    for(int i = 0; i < 4; i++)
+    {
+        a[i] = false;
+    }
+    return a[0];
+}
+

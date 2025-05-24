@@ -1,0 +1,36 @@
+//test error
+//should be a clown, but instead is the entire circus
+//(i.e., we can't pass large types as function arguments)
+
+struct clown {
+  int m;
+  int o;
+  int e;
+};
+
+struct circus {
+  struct clown moe;
+  struct clown curly;
+  struct clown larry;
+};
+
+typedef struct clown clown;
+typedef struct circus circus;
+
+circus* create_circus (clown first, clown second, clown third)
+{
+  circus* threestooges = alloc(circus);
+  threestooges->moe = first;
+  threestooges->curly = third;
+  threestooges->larry = second;
+  return threestooges;
+}
+
+int main()
+{
+  clown* moe = alloc(clown);
+  clown* larry = alloc(clown);
+  clown* curly = alloc(clown);
+  circus* berrybigcircus = create_circus(*moe,*larry,*curly);
+  return 0;
+}

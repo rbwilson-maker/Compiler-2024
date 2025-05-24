@@ -1,0 +1,10 @@
+//test return 0
+
+int main() {
+  int x = 20;
+  int r = 200;
+  for (int i = 1; i <= x ; i++) {
+    r /= i;
+  }
+  return r;
+}

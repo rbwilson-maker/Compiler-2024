@@ -1,0 +1,30 @@
+//test return 22
+struct node;
+
+struct node {
+  int val;
+  struct node *left;
+  struct node *right;
+};
+
+int tree_sum (struct node* root) {
+  if(root == NULL) return 0;
+  return root->val + tree_sum(root->left) + tree_sum(root->right);
+}
+
+int main() {
+  struct node* root;
+  root = alloc(struct node);
+  root -> val = 3;
+  root -> left = alloc(struct node);
+  root -> left -> val = 2;
+  root -> right = alloc(struct node);
+  root -> right -> val = 5;
+  root -> left -> left = alloc(struct node);
+  root -> left -> left -> val = 11;
+  root -> left -> right = alloc(struct node);
+  root -> left -> right -> val = 0;
+  root -> right -> left = alloc(struct node);
+  root -> right -> left -> val = 1;
+  return tree_sum(root);
+}

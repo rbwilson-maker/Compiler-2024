@@ -1,0 +1,33 @@
+//test return 13
+
+struct basket {
+  int potato;
+};
+
+/* N light bulbs are connected by a wire. Each bulb has a switch associated with it; however due to faulty wiring, a switch also changes the state of all the bulbs to the right of current bulb. Given an initial state of all bulbs, find the minimum number of switches you have to press to turn on all the bulbs. You can press the same switch multiple times. */
+struct basket* bulbs(int[] A, int n1) {
+  int curr = 0;
+  int count = 0;
+  for (int i = 0; i < n1; i++)
+  {
+    if (A[i] == curr) {
+      count++;
+      curr = 1 - curr;
+    }
+  }
+  struct basket* b = alloc(struct basket);
+  b->potato = count;
+  return b;
+}
+
+int main() {
+  int[] A = alloc_array(int, 8);
+  for (int i = 0; i < 8; i++) {
+    if (i % 2 == 1) {
+      A[i] = 1;
+    }
+  }
+  struct basket* b = bulbs(A, 8);
+  (*b).potato += 5;
+  return b->potato;
+}

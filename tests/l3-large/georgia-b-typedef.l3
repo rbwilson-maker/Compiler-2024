@@ -1,0 +1,22 @@
+//test return 71
+// Test the typdef
+
+typedef int b;
+typedef int c;
+typedef int a;
+
+typedef bool x;
+typedef bool y;
+typedef bool z;
+
+int main() {
+    a d = 4;
+    b e = 17;
+    c f = 71;
+
+    x q = d == f;
+    y r = d > f;
+    z s = e < f;
+
+    return q ? d : r ? e : s ? f : e;
+}

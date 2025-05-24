@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int takk(int x)
+{
+    return (x & 0xF0) & 0x0F;
+}
+
+
+
+int main() {
+    return 22 / takk(22);
+
+}

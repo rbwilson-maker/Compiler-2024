@@ -1,0 +1,96 @@
+//test return 0
+
+/* The pixel type and an iterface to pixels */
+
+typedef int pixel;       // Library (concrete) view of a pixel
+typedef pixel pixel_t;   // Client  (abstract) view of a pixel
+// Returns the red component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_red(pixel p)
+//@ensures 0<= \result && \result<=255;
+{
+    pixel wiped=p & 0x00FF0000;
+    int output=wiped>>16;
+    return output;
+}
+
+// Returns the green component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_green(pixel p)
+//@ensures 0<= \result && \result<=255;
+{
+    pixel wiped=p & 0x0000FF00;
+    int output=wiped>>8;
+    return output;
+}
+
+// Returns the blue component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_blue(pixel p)
+//@ensures 0<= \result && \result<=255;
+{
+    int output=p & 0x000000FF;
+    return output;
+}
+
+// Returns the alpha component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_alpha(pixel p)
+//@ensures 0<= \result && \result<=255;
+{
+    pixel shifted=p>>24;
+    int output=shifted & 0x000000FF;
+    return output;
+}
+
+// Returns an int representing an RGB pixel consisting of the given
+// alpha, red, green and blue intensity values.
+// PRECONDITION: all intensity values must be between 0 and 255,
+// inclusive.
+pixel make_pixel(int alpha, int red, int green, int blue)
+//@requires 0<=alpha && 0<=red && 0<=green && 0<=blue;
+//@requires 255>=alpha && 255>=red && 255>=green && 255>=blue;
+{
+    int first=alpha<<24;
+    int second=red<<16;
+    int third=green<<8;
+    int fourth=blue;
+    pixel output=first|second|third|fourth;
+    return output;
+}
+
+int main()
+{
+//return 0
+    assert(0==get_alpha(0x0056CBAC));
+    assert(0==get_red(0xEF001099));
+    assert(0==get_green(0x47AE0013));
+    assert(0==get_blue(0x4AD32200));
+//return 255
+    assert(255==get_alpha(0xFF123456));
+    assert(255==get_red(0xABFFECD0));
+    assert(255==get_green(0x8306FF95));
+    assert(255==get_blue(0x9E834FFF));
+//edge cases
+    assert(make_pixel(0,0,0,0)==0);
+    assert(make_pixel(255,255,255,255)==-1);
+    assert (get_green(make_pixel(0,0,0,0))==0);
+    assert (get_blue(make_pixel(255,255,255,255))==255);
+    assert(make_pixel(128, 0,0,0)==-2147483648);
+    assert(get_alpha(make_pixel(128, 0,0,0))==128);
+    assert(get_green(make_pixel(128, 0,0,0))==0);
+    assert(make_pixel(127,255,255,255)==2147483647);
+    assert(get_alpha(make_pixel(127,255,255,255))==127);
+    assert(get_red(make_pixel(127,255,255,255))==255);
+//other
+    assert(make_pixel(170,170,170,170)==-1431655766);
+    assert(make_pixel(85,85,85,85)==1431655765);
+    assert(get_blue(make_pixel(170,170,170,170))==170);
+    assert(get_red(make_pixel(85,85,85,85))==85);
+    assert(get_green(make_pixel(101,53,47,90))==47);
+    assert(get_blue(make_pixel(89,253,91,254))==254);
+
+
+
+
+    return 0;}

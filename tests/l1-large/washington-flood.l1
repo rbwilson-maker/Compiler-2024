@@ -1,0 +1,7 @@
+//test div-by-zero
+// You remember 213, don't you?
+
+int main() {
+  int a = 2147483647 / (((644220 + 20640) * (753753 / 33)) + 1993801924);
+  return 99;
+}

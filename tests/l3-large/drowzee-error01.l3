@@ -1,0 +1,10 @@
+//test error
+
+bool foo (int a, int b, bool c, int d, int e, int f) {
+    return a==b==c==d==e==f;    
+}
+
+
+int main() {
+    return foo(1,1,true,1,1,1);
+}

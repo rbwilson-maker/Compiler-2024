@@ -1,0 +1,17 @@
+//test return 42
+
+int main() {
+   int is = 4;
+   { 
+      int a = 5;
+      {
+         {
+            {
+               int change = 33;
+               int this = is + a + change;
+               return this;
+            }
+         }
+      }
+   }
+}

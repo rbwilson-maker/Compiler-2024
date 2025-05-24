@@ -1,0 +1,29 @@
+//test return 0
+
+//Calculates the distance travelled for a given start point,
+//initial velocity, acceleration, and time
+
+
+int velocity(int a, int t, int v0) {
+  return a*t + v0;
+}
+
+int dist(int r0, int v0, int t, int a) {
+  return r0 + v0*t + a*t*t/2;
+}
+
+int dist2(int r0, int v, int v0, int t) {
+  return r0 + (v + v0)*t/2;
+}
+
+int main() {
+  int a = 1;
+  int t = 2;
+  int v0 = 14;
+  int r0 = 75;
+  int v = velocity(a, t, v0);
+  int d = dist(r0, v0, t, a);
+  int d2 = dist2(r0, v, v0, t);
+  assert(d == d2);
+  return 0;
+}

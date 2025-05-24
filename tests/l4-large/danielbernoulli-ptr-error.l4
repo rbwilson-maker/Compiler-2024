@@ -1,0 +1,12 @@
+//test abort 
+
+int f(int* x) {
+    assert(1==0);
+    return *x; 
+}
+
+int main() {
+    int* x = NULL; 
+    *x = f(x); 
+    return *x; 
+}

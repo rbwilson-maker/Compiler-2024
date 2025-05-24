@@ -1,0 +1,56 @@
+//test return 0
+// Matrix multiplication! Everyone's favorite. Just for fun, one is a ragged
+// array, the others are contiguous. This is done the naive way.
+
+// X(lxm) = A(lxn) * B(nxm)
+void mult(int[] X, int[] A, int[][] B, int l, int n, int m) {
+  for (int i = 0; i < l; i++) {
+    for (int j = 0; j < m; j++) {
+      X[i*m + j] = 0;
+      for (int k = 0; k < n; k++) {
+        X[i*m + j] += A[i*n + k] * B[k][j];
+      }
+    }
+  }
+}
+
+int min(int a, int b) {
+  return a < b? a : b;
+}
+
+int main() {
+
+  int l = 20;
+  int n = 40;
+  int m = 60;
+
+  int[] X = alloc_array(int, l*m);
+  int[] A = alloc_array(int, l*n);
+  int[][] B = alloc_array(int[], n);
+
+  for (int i = 0; i < n; i++) {
+    B[i] = alloc_array(int, m);
+  }
+
+  for (int i = 0; i < min(l,n); i++) {
+    A[i*n + i] = 1;
+  }
+
+  for (int i = 0; i < min(n,m); i++) {
+    B[i][i] = 1;
+  }
+
+  mult(X, A, B, l, n, m);
+
+  for (int i = 0; i < l; i++) {
+    for (int j = 0; j < m; j++) {
+      if (i == j && i < m && j < l) {
+        assert(X[i*m + j] == 1);
+      } else {
+        assert(X[i*m + j] == 0);
+      }
+    }
+  }
+
+  return 0;
+}

@@ -1,0 +1,87 @@
+//test return 7
+
+struct cell {
+	int row;
+	int col;
+};
+
+struct cell[] gpc(int rows, int cols) {
+	struct cell[] cells = alloc_array(struct cell, rows*2 + cols*2 - 4);
+	int i = 0;
+	for(int col = 0; col < cols; col++) {
+		cells[i].row = 0;
+		cells[i].col = col;
+		i++;
+	}
+	for (int row = 1; row < rows; row++) {
+		cells[i].row = row;
+		cells[i].col = cols - 1;
+		i++;
+	}
+	for (int col = cols - 2; col > -1; col--) {
+		cells[i].row = rows - 1;
+		cells[i].col = col;
+		i++;
+	}
+	for (int row = rows - 2; row > 0; row--) {
+		cells[i].row = row;
+		cells[i].col = 0;
+		i++;
+	}
+	return cells;
+}
+
+void rotatePerimeter(int[][] L, int rows, int cols, int n) {
+	struct cell[] cells = gpc(rows, cols);
+	int numCells = rows*2 + cols*2 - 4;
+	n = n % numCells;
+	int[] perimeter = alloc_array(int, numCells);
+	for(int i = 0; i < numCells; i++) {
+		perimeter[i] = L[cells[i].row][cells[i].col];
+	}
+	int[] rotated = alloc_array(int, numCells);
+	for(int i = 0; i < numCells; i++) {
+		int newI = i + n;
+		if (newI > numCells) newI -= numCells;
+		if (newI < 0) newI += numCells;
+		rotated[i] = perimeter[newI];
+	}
+	for(int i = 0; i < numCells; i++) {
+		L[cells[i].row][cells[i].col] = rotated[i];
+	}
+	return;
+}
+
+int main() {
+	int[][] L = alloc_array(int[], 3);
+	int i = 1;
+	for (int rowI = 0; rowI < 3; rowI++) {
+		L[rowI] = alloc_array(int, 3);
+		for (int colI = 0; colI < 3; colI++) {
+			L[rowI][colI] = i;
+			i++;
+		}
+	}
+	rotatePerimeter(L, 3, 3, -2);
+	int[][] rotatedL = alloc_array(int[], 3);
+	rotatedL[0] = alloc_array(int, 3);
+	rotatedL[0][0] = 7;
+	rotatedL[0][1] = 4;
+	rotatedL[0][2] = 1;
+	rotatedL[1] = alloc_array(int, 3);
+	rotatedL[1][0] = 8;
+	rotatedL[1][1] = 5;
+	rotatedL[1][2] = 2;
+	rotatedL[2] = alloc_array(int, 3);
+	rotatedL[2][0] = 9;
+	rotatedL[2][1] = 6;
+	rotatedL[2][2] = 3;
+
+
+	for(int row = 0; row < 1; row++) {
+		for(int col = 0; col < 1; col++) {
+			assert(L[row][col] == rotatedL[row][col]);
+		}
+	}
+	return L[0][0];
+}

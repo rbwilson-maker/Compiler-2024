@@ -1,0 +1,13 @@
+//test div-by-zero
+int main() {
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+    a = 2;
+    b = 3;
+    c = 10; // just feel like commenting here
+    c += 5/0;
+    return c;
+}

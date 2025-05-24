@@ -1,0 +1,54 @@
+//test return 1
+
+int[] merge(int[] a, int[] b, int n) {
+  int ai = 0; int bi = 0; int ri = 0;
+  int[] res = alloc_array(int, 2 * n);
+  while (ai < n && bi < n) {
+    if (a[ai] < b[bi]) {
+      res[ri] = a[ai];
+      ai++; ri++;
+    } else {
+      res[ri] = b[bi];
+      bi++; ri++;
+    }
+  }
+
+  if (ai < n) {
+    for (; ai < n; ai++) {
+      res[ri] = a[ai]; ri++;
+    }
+  }
+  if (bi < n) {
+    for (; bi < n; bi++) {
+      res[ri] = b[bi]; ri++;
+    }
+  }
+  return res;
+}
+
+int check_sorted(int[] a, int n) {
+  for (int i = 0; i < n - 1; i++) {
+    if (a[i] > a[i+1]) return 0;
+  }
+  return 1;
+}
+
+int main() {
+  int n = 5;
+  int[] a = alloc_array(int, n);
+  int[] b = alloc_array(int, n);
+  a[0] = 1;
+  a[1] = 3;
+  a[2] = 5;
+  a[3] = 7;
+  a[4] = 9;
+  
+  b[0] = 2;
+  b[1] = 4;
+  b[2] = 6;
+  b[3] = 8;
+  b[4] = 10;
+
+  int[] merged = merge(a, b, n);
+  return check_sorted(merged, n);
+}

@@ -1,0 +1,11 @@
+//test error
+
+int fn_1(int a; int b; int c)
+{
+  return a+b+c;
+}
+return 5;
+
+int main(){
+  return fn_1(1,2,3);
+}

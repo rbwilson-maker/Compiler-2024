@@ -1,0 +1,14 @@
+//test return 5
+
+typedef int tau;
+
+struct tau{
+	int x;
+};
+
+int main(){
+
+	tau x = 5;
+
+	return x;
+}

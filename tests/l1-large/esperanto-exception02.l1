@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main(){
+	int a;
+	int b;
+	int c;
+
+	a = 11;
+	b = 11;
+	c = 1/(a-b);
+	return 5;
+}

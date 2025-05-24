@@ -1,0 +1,13 @@
+//test error
+
+typedef struct foo * bar;
+
+struct foo {
+    int bar;
+};
+
+int main() {
+    // bar is a pointer, not a struct!
+    bar[] b = alloc_array(bar, 20);
+    return b[0].bar;
+}

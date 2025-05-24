@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int zero(int x) {
+  return 0;
+}
+
+int one(int x) {
+  return 1;
+}
+
+int main() {
+  return one(1) / zero(1);
+}

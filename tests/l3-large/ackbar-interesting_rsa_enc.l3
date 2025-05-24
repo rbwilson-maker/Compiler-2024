@@ -1,0 +1,25 @@
+//test return 66
+//A test of rsa encryption
+
+int gen_n(int p, int q){
+    //Of course this will never overflow for large p and q!
+    return p*q;
+}
+
+int enc(int plaintext, int e, int n){
+    int res = plaintext;
+    for(int i = 1; i < e; i++){
+        res = (res * plaintext) % n;
+    }
+    return res;
+}
+
+int main(){
+    int e = 15;
+    int p = 17;
+    int q = 23;
+    int n = gen_n(p, q);
+    int plaintext = 42;
+    int c = enc(42, e, n);
+    return c;
+}

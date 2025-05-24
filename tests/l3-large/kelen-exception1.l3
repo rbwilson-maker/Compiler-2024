@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int inc(int a) {
+    return a + 1;
+}
+
+// Tests dividing by zero
+int main(){
+    int sum = 0;
+    int base = -500;
+    for (int i = 0; i < 1000; i++) {
+        sum += 1000 / inc(base);
+        base = inc(base);
+    }
+    return sum;
+}

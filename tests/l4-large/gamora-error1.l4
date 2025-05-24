@@ -1,0 +1,35 @@
+//test error
+// invalid typedef with structs
+
+struct red {
+  int color;
+};
+
+typedef struct red red;
+
+struct violet {
+  int color;
+};
+
+typedef struct violet violet;
+
+//ROYGBIV :)
+typedef red orange;
+
+typedef orange yellow;
+
+typedef yellow green;
+
+typedef green blue;
+
+typedef blue indigo;
+
+typedef indigo violet; // not valid
+
+int main()
+{
+  red *yay = alloc(red);
+  yay->color = 22;
+  return yay->color;
+}
+

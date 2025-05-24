@@ -1,0 +1,14 @@
+//test return 0
+// check whether a number is prime
+
+int main() {
+    int n = 7919;
+    bool flag = true;
+
+    for (int i = 2; flag && i * i <= n; i++) {
+        if (n % i == 0)
+            flag = false;
+    }
+
+    return flag ? 0 : 1;
+}

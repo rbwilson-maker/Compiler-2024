@@ -1,0 +1,114 @@
+//test return 0
+//
+//Linked lists implementation from 15-122
+//
+typedef struct list_node list;
+struct list_node {
+  int data;
+  list* next;
+};
+
+bool is_segment(list* start, list* end);
+
+typedef struct sortedlist_header sortedlist;
+struct sortedlist_header {
+  list* start;
+};
+
+bool is_sortedlist(sortedlist* L);
+
+/* The nil(), cons(), and tostring() functions may be useful to your testing.
+ *
+ * The linked list referred to as S in the handout can be constructed as
+ * cons(-2, cons(6, cons(12, nil()))).
+ *
+ * These functions don't care about the list being sorted, and will
+ * terminate even if the list is badly formed or contains cycles. */
+
+sortedlist* nil()                      /*@ensures \result != NULL; @*/ ;
+sortedlist* cons(int i, sortedlist* S) /*@requires S != NULL; @*/ ;
+
+
+/*** Implementation ***/
+
+sortedlist* nil()
+//@ensures \result != NULL;
+//@ensures \result->start == NULL;
+{
+  return alloc(sortedlist);
+}
+
+sortedlist* cons(int i, sortedlist* S)
+//@requires S != NULL;
+{
+  list* l = alloc(list);
+  l->data = i;
+  l->next = S->start;
+  S->start = l;
+  return S;
+}
+
+bool is_segment(list* start, list* end) {
+  list* cur = start;
+  while (cur != end) {
+    if (cur->next == NULL) return false;
+    cur = cur->next;
+  }
+  return true;
+}
+
+
+
+/* Checks if a given sortedlist is valid */
+bool is_sortedlist(sortedlist* L) {
+  if (L == NULL) return false;
+
+  //check for sortedness
+  list* cur = L->start;
+  if (cur == NULL) return true; //empty list is sorted
+
+  int prev_elem = cur->data;
+  while (cur->next != NULL) {
+    cur = cur->next;
+    if (prev_elem >= cur->data) {
+      return false;
+    } else {
+      prev_elem = cur->data;
+    }
+  }
+
+  return true;
+}
+
+bool is_in(sortedlist* L, int n){
+  list* cur = L->start;
+  while (cur->next != NULL){
+    if (cur->data == n){
+      return true;
+    }
+    cur = cur->next;
+  }
+  return false;
+}
+
+
+int testIsIn() {
+  // Here's an example
+  sortedlist* S = cons(-2, cons(6, cons(12, nil())));
+
+  /* Test 1 */
+  assert(is_in(S, 6));
+  /* TODO : Add more tests for is_in here! */
+
+  sortedlist* T = cons(1, cons(2, cons(4, cons(5, nil()))));
+  assert(is_in(T,1));
+
+  sortedlist* U = cons(1, cons(1, cons(1, cons(2, nil()))));
+  assert(is_in(U,1));
+  return 0;
+}
+
+int main(){
+  return testIsIn();
+
+}

@@ -1,0 +1,16 @@
+//test return 4
+
+struct point {
+       int x;
+       int point;
+};
+
+typedef struct point point;
+
+int main() {
+    struct point* p1 = alloc(point);
+    point* p2 = alloc(struct point);
+    p1->point = 4;
+    p2->x = 4;
+    return p1->x + p2->x;
+}

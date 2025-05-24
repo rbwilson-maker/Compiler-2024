@@ -1,0 +1,11 @@
+//test memerror
+
+int main() {
+	int[] a = alloc_array(int, 100000);
+	int i = 0;
+	while(true) {
+		a[i] += i + 1;
+		i = a[i];
+	}
+	return 5;	
+}

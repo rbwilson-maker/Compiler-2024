@@ -1,0 +1,11 @@
+//test return 0;
+
+int main() {
+	int x = 5;
+	int y = 3;
+	y = x;
+	x = y;
+	int z = x + 3 + y;
+	z -= y;
+	return z / x / y;
+}

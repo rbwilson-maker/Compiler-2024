@@ -1,0 +1,106 @@
+//test return 1056383597
+// fast lucas function calculation using matrix multiplication
+// returns lucas of INT_MAX, with overflow
+
+// note this lab we can actually do this without an unreasonable amount of code;
+// we can also calculate lucas numbers instead of fibonacci numbers
+// this was unreasonable last time because solutions of arbitrary recurrences involve taking the power of a matrix; this is hard without arrays
+// (we could cheat when calculating fibonacci numbers because all we need is the top left of the matrix)
+
+int[][] alloc_matrix(int m, int n) {
+    int[][] A = alloc_array(int[], m);
+    for (int i = 0; i < m; i++) A[i] = alloc_array(int, n);
+    return A;
+}
+
+int[][] copy_matrix(int[][] A, int m, int n) {
+    int[][] B = alloc_matrix(m, n);
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < n; j++)
+            B[i][j] = A[i][j];
+    return B;
+}
+
+// finds dot product of two length-n vectors
+int dot(int[] A, int[] B, int n) {
+    int sum = 0;
+
+    for (int i = 0; i < n; i++) {
+        sum += A[i] * B[i];
+    }
+
+    return sum;
+}
+
+int[] row(int[][] A, int m, int n, int i) {
+    int[] B = alloc_array(int, n);
+
+    for (int j = 0; j < n; j++) {
+        B[j] = A[i][j];
+    }
+
+    return B;
+}
+
+int[] col(int[][] A, int m, int n, int j) {
+    int[] B = alloc_array(int, m);
+
+    for (int i = 0; i < m; i++) {
+        B[i] = A[i][j];
+    }
+
+    return B;
+}
+
+// multiplies m x n by n x p matrix
+int[][] matrix_mult(int[][] A, int[][] B, int m, int n, int p) {
+    int[][] C = alloc_matrix(m, p);
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < p; j++) {
+            C[i][j] = dot(row(A, m, n, i), col(B, n, p, j), n);
+        }
+    }
+
+    return C;
+}
+
+// O(log n) matrix exponentiation function
+int[][] matrix_pow(int[][] A, int n, int exp) {
+    int[][] res = alloc_matrix(n, n);
+    for (int i = 0; i < n; i++) res[i][i] = 1;
+
+    // make copy of A
+    int[][] B = copy_matrix(A, n, n);
+
+    while (exp > 0) {
+        if (exp % 2 == 1) {
+            res = matrix_mult(res, B, n, n, n);
+        }
+        B = matrix_mult(B, B, n, n, n);
+        exp /= 2;
+    }
+
+    return res;
+}
+
+// L_0 = 2, F_1 = 1, etc.
+int lucas(int n) {
+    if (n == 0) return 2;
+
+    int[][] f = alloc_matrix(2, 2);
+    f[0][0] = 1;
+    f[0][1] = 1;
+    f[1][0] = 1;
+    f[1][1] = 0;
+
+    int[][] seed = alloc_matrix(2, 1);
+    seed[0][0] = 1;
+    seed[1][0] = 2;
+
+    return matrix_mult(matrix_pow(f, 2, n-1), seed, 2, 2, 1)[0][0];
+}
+
+int main() {
+    return lucas((1<<31) - 1);
+}

@@ -1,0 +1,12 @@
+//test return 1
+int main() { 
+    int x = 1;
+    int y = 2;
+    int z = 3;
+
+    x = y;     // x holds y
+    y = z;     // y holds z
+    z = x;     // z holds x which is holding y 
+    
+    return (y - z);
+}

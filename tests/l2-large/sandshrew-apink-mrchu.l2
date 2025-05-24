@@ -1,0 +1,25 @@
+//test return 4
+int main(){
+    int y = 3;
+    if (true){
+        if (false){
+          return y;
+        }
+        else{
+            int x = 5;
+            if (x < 4){
+                return y;
+            }
+            else{
+                x = 6;
+                y = 4;
+                return y;
+                y += 1;
+            }
+        }
+     }
+     else{
+         y = 2;
+         return y;
+     }
+}

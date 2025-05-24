@@ -1,0 +1,11 @@
+//test error
+
+struct foo {
+    int x;
+};
+
+int main() {
+    struct foo[] array = alloc_array(struct foo, 1);
+    array[0] = NULL;
+    return 5;
+}

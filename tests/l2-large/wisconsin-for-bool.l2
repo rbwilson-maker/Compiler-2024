@@ -1,0 +1,7 @@
+//test return 1
+int main() {
+    int ret = 0;
+    for (bool boo = true; boo; boo = false)
+        if (boo) ret = 1; else ret = 2;
+    return ret;
+}

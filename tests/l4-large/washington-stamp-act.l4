@@ -1,0 +1,19 @@
+//test return 0
+
+struct stamp {
+    int x;
+};
+
+typedef struct stamp stamp_t;
+
+struct stamp_t {
+    int y;
+};
+
+typedef struct stamp_t stamp_t_t;
+
+int main() {
+    stamp_t *f = alloc(struct stamp);
+    struct stamp_t *g = alloc(stamp_t_t);
+    return g->y;
+}

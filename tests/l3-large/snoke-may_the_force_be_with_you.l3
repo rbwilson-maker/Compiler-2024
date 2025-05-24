@@ -1,0 +1,38 @@
+//test return 1
+// implement sqrt using dump for loop and this function is really silly
+
+bool is_correct(int x, fpt t);
+
+int sqrt(fpt t);
+
+int main() {
+    fpt target0 = itof(9 * 9);
+    fpt target1 = itof(999 * 999);
+    fpt target2 = itof(19999 * 19999);
+    int a = sqrt(target0);
+    int b = sqrt(target1);
+    int c = sqrt(target2);
+    int d = sqrt(target2);
+    if (1 + 2 * 3 < 3 + 4 * 5) {
+       return a + b - 9 - 999 + 1; // return 1
+    } else {
+       return c + d - 99999 * 2;
+    }
+}
+
+int sqrt(fpt t) {
+    for (int i = 0; i < ftoi(t); i++) {
+        if (is_correct(i, t)) {
+            return i;
+        }
+    }
+    return 0;
+}
+
+bool is_correct(int x, fpt t) {
+    int sq = 0;
+    for (int i = 0; i < x; i++) {
+        sq += x;
+    }
+    return itof(sq) == t;
+}

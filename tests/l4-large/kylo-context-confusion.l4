@@ -1,0 +1,17 @@
+//test return 555
+
+typedef int foo;
+
+int f(){
+  int x = 10;
+  int y = 20;
+  foo * bar;
+  x * y;
+  bar = alloc(foo);
+  *bar = 555;
+  return *bar;
+}
+
+int main(){
+  return f();
+}

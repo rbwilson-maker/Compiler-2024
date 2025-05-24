@@ -1,0 +1,87 @@
+//test return 8
+
+// We can encode sequences of numbers as ints
+// So we encode as an int the 2d list ((1, 2), (2, 3))
+// and then we find the sum of this list: 1 + 2 + 2 + 3 = 8.
+
+// Cantor's pairing function (injective, for sure)
+int pair(int x, int y) {
+  return (x + y) * (x + y + 1) / 2 + y;
+}
+
+int min(int x, int y) {
+  return x < y ? x : y;
+}
+
+int isqrt_rec(int x, int lo, int hi) {
+  if (lo == hi) return lo - 1;
+  int mid = lo + (hi - lo) / 2;
+  if (mid * mid == x) return mid;
+  if (mid * mid < x) return isqrt_rec(x, mid+1, hi);
+  return isqrt_rec(x, lo, mid);
+}
+
+int isqrt(int x) {
+  if (x == 0 || x == 1) return x;
+  return isqrt_rec(x, 1, min(x, 65536));
+}
+
+int calc_w(int z) {
+  int y = 8 * z + 1;
+  return (isqrt(y) - 1) / 2;
+}
+
+int snd(int pair) {
+  int w = calc_w(pair);
+  return pair - (w * w + w) / 2;
+}
+
+int fst(int pair) {
+  int w = calc_w(pair);
+  return w - snd(pair);
+}
+
+
+// Sequence library
+int emptySeq() {
+  return 0;
+}
+
+bool isEmpty(int seq) {
+  return seq == 0;
+}
+
+int cons(int x, int xs) {
+  return pair(x+1, xs);
+}
+
+int hd(int xs) {
+  assert(!isEmpty(xs));
+  return fst(xs) - 1;
+}
+
+int tl(int xs) {
+  assert(!isEmpty(xs));
+  return snd(xs);
+}
+
+int sum(int seq) {
+  if (isEmpty(seq)) return 0;
+  return hd(seq) + sum(tl(seq));
+}
+
+int foldl_sum(int seqseq) {
+  if (isEmpty(seqseq)) return 0;
+  int seq = hd(seqseq);
+  int rest = tl(seqseq);
+  return sum(seq) + foldl_sum(rest);
+}
+
+int main() {
+  int pair1 = cons(1, cons(2, emptySeq()));
+  int pair2 = cons(2, cons(3, emptySeq()));
+  int seq = cons(pair2, emptySeq());
+  seq = cons(pair1, seq);
+
+  return foldl_sum(seq);
+}

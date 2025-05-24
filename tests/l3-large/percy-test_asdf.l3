@@ -1,0 +1,16 @@
+//test error
+
+int a(int i)
+{
+  return 5;
+}
+
+int a(int b)
+{
+  return 3;
+}
+
+int main()
+{
+  return a(6);
+}

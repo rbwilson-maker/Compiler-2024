@@ -1,0 +1,12 @@
+//test return 1
+struct s {
+  int x;
+  int y;
+};
+
+int main() {
+  struct s* s = alloc(struct s);
+  s->x = 2;
+  s->y = 1;
+  return s->x - s->y;
+}

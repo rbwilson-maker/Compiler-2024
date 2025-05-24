@@ -1,0 +1,26 @@
+//test return 1
+
+struct foo {
+  int foo;
+};
+struct bar {
+  int bar;
+};
+struct rob {
+  int rob;
+};
+
+typedef struct rob rob;
+typedef struct foo foo1;
+
+foo1* bar(foo1* foo) {
+  foo->foo++;
+  return foo;
+}
+
+int main() {
+  foo1* foo = alloc(foo1);
+  foo = bar(foo);
+  return foo->foo;
+}
+

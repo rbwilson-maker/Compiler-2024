@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int foo (int w, int x, int y, int z, int a, int b, int c, int d) {
+  return (w + x + y + z) * (a * b * c * d);
+}
+
+int main () {
+  return foo (1, 2, 3, 4, (5/0), 6, 7, 8);
+}

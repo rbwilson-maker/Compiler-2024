@@ -1,0 +1,18 @@
+//test return 1
+struct s1 {
+    int *f;
+};
+typedef struct s1 s1_t;
+struct s2 {
+    s1_t*[][] b;
+};
+typedef struct s2 s2_t;
+int main() {
+    s2_t[] a = alloc_array(s2_t, 4);
+    a[0].b = alloc_array(s1_t*[], 1);
+    a[0].b[0] = alloc_array(s1_t*, 1);
+    a[0].b[0][0] = alloc(s1_t);
+    a[0].b[0][0]->f = alloc(int);
+    *(a[0].b[0][0]->f) = 1;
+    return *(a[0].b[0][0]->f);
+}

@@ -1,0 +1,18 @@
+//test error
+/*
+Compile error.
+Cannot return (even void) in void function.
+*/
+
+void r() {
+  return;
+}
+
+void r2() {
+  return r();
+}
+
+int main() {
+  r2();
+  return r20;
+}

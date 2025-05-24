@@ -1,0 +1,22 @@
+//test error
+
+// This should be OK...
+struct foo *id(struct foo *f) {
+    struct foo *g = f;
+    return g;
+}
+
+struct foo;
+
+// ...but this shouldn't.
+int bar(struct foo *f) {
+    return f->x;
+}
+
+struct foo {
+    int x;
+};
+
+int main() {
+    return 0;
+}

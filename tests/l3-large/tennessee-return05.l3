@@ -1,0 +1,12 @@
+//test return 10
+// param list
+
+int something(int a, int b, int c, int d, int e) {
+  return a + b;
+}
+
+int main() {
+  int x = 5;
+
+  return something(x,x,0,0,0);
+}

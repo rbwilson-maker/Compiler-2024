@@ -1,0 +1,13 @@
+//test error
+
+// tests that declaring the int inside the for loop wouldn't work
+// due to scoping issues
+
+int main()
+{
+    
+    for(int count = 0; count < 42; count++)
+	{
+	}
+	return count;
+}

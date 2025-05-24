@@ -1,0 +1,19 @@
+//test return 9
+
+struct q {
+  int a;
+  bool b;
+};
+
+struct p {
+  int c;
+  struct q d;
+};
+
+int main() {
+  struct p* first = alloc(struct p);
+  (first->d).a = 5;
+  struct p* second = alloc(struct p);
+  second->c = 4;
+  return (first->d).a + second->c;
+}

@@ -1,0 +1,8 @@
+//test abort
+
+int main() {
+  int a = 10;
+  assert(a == 1);
+  assert(a == 10); // unreachable
+  return 0;
+}

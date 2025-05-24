@@ -1,0 +1,15 @@
+//test error
+
+// cannot use undefined structs in size-dependent contexts
+
+struct undefd;
+
+struct whoknowshowbig {
+    int c;
+    bool b;
+    struct undefd uhoh;
+}
+
+int main () {
+    return 0;
+}

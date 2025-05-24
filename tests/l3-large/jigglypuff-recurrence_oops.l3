@@ -1,0 +1,25 @@
+//test div-by-zero
+
+/* Recurence Oops
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Tuesday, October 13, 2015 at 02:39:11 PM EDT
+ *
+ * This test is a simple test where a recursive function goes wrong calculating
+ * a value, leading to a divde by zero exception.
+ */
+
+int fun(int x)
+{
+    if (x < 1) {
+        return 0;
+    }
+
+    return (x + fun(x-1)) / fun(x-1);
+}
+
+int main()
+{
+    return fun(10);
+}

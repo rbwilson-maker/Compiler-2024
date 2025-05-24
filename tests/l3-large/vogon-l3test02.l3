@@ -1,0 +1,11 @@
+//test typecheck
+
+int main() { 
+  int b;
+  if (random_bool_function(3, 2)) {
+    b = random_header_function(123123, 21312, true); 
+  } else {
+    b = random_header_function(323, 23, false); 
+  }
+  return b * 132 + 3212 + random_header_function(23, 123123, false);
+}

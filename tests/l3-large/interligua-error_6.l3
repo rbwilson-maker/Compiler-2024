@@ -1,0 +1,12 @@
+//test error
+
+void foo(){
+    int x = 3;
+    int y = 4;
+}
+
+int main(){
+    int x = foo();
+
+    return 0;
+}

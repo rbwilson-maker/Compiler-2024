@@ -1,0 +1,8 @@
+//test return 1
+
+int main() {
+   fpt x = itof(1);
+   fpt y = itof(0);
+   assert(fless(y, x));
+   return (ftoi(x));
+}

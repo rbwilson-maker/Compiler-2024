@@ -1,0 +1,11 @@
+//test error
+
+// Shouldn't typecheck. Coercion of x to a boolean isn't allowed in c0.
+int main() {
+    int x = 1;
+    while (x) {
+        x += 1;
+    }
+    return x;
+}
+

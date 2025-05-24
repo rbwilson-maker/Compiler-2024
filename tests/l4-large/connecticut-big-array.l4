@@ -1,0 +1,10 @@
+//test memerror
+
+int main() {
+    fpt[] x = alloc_array(fpt, 33);
+	int big = 33;
+	for (int i = 1; i <= 33; i++) {
+		x[i] = big * x[i-1];   // Make an array with big numbers
+	}
+	return x[32];  // Return the last element of our new array
+}

@@ -1,0 +1,7 @@
+//test return 2
+
+int main() {
+    int x = -512;
+    int y = x >> 8;
+    return -y;
+}

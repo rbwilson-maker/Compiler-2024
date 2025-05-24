@@ -1,0 +1,19 @@
+//test error
+
+struct yeehaw;
+
+struct cowboy;
+
+struct emoji;
+
+struct howdy {
+  struct yeehaw x;
+  struct cowboy y;
+  struct emoji z;
+};
+
+int main()
+{
+  struct howdy *invalid = alloc(struct howdy);
+  return -209482;
+}

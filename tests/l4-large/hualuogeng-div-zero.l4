@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int main() {
+    int *x;
+    x = NULL;
+    x = alloc(int);
+    *x = 0;
+    return 100 / *x;
+}
+

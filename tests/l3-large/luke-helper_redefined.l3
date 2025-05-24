@@ -1,0 +1,12 @@
+//test error
+
+int twelve(int three, int four) {
+    return three * four;
+}
+int twelve(int three, int four) {
+    return three * four;
+}
+
+int main() {
+    return 42;
+}

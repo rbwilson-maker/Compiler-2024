@@ -1,0 +1,6 @@
+//test return -120000000
+int main() {
+    int y = -1000000;
+    for (int x = 1; x <= 5; x++) { y = y * x; }
+    return y;
+}

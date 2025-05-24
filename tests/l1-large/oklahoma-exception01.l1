@@ -1,0 +1,19 @@
+//test div-by-zero
+// bunch of math ending with a division by zero
+
+int main()
+{
+  int a = 5;
+  int b = 10;
+  int c = (a * b) + (b - a);
+  int d = c*c;
+  a = (d + d) / (c + 1);
+  int e = d % (a + 1);
+
+  int f = 6;
+  int g = 3;
+  a = (f + g) * (f + (f - g));
+  b = a + (a % b);
+
+  return (e + b) / (e - b);
+}

@@ -1,0 +1,7 @@
+//test error
+// should be true && true
+
+int main() {
+    true & true;
+    return 0;
+}

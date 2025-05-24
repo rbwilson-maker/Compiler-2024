@@ -1,0 +1,30 @@
+//test return 2048
+
+typedef int dog;
+typedef dog cat;
+
+cat change(dog a, dog b);
+
+int main () {
+  dog x;
+  dog y = 2;
+
+  x = 6;
+  for (x = 0; x < 5; x += 1) {
+  	if (x == 6) {
+          assert(false);
+          return y;
+        } else {
+          y = change(x, y);
+        }
+  }
+  return y;
+}
+
+cat change(dog x, dog y) {
+  if (x > y) {
+    return change(y, x);
+  } else {
+    return y << x;
+  }
+}

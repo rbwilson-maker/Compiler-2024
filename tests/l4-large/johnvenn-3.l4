@@ -1,0 +1,22 @@
+//test error
+
+struct cat;
+typedef int chipichipi;
+typedef int chapachapa;
+typedef int dubidubi;
+typedef int dabadaba;
+
+
+struct cat* initcat() {
+    struct cat* catcat = alloc(struct cat);
+    (*catcat).chapachapa = 1;
+    (*catcat).dabadaba = 100;
+    return catcat;
+}
+
+struct cat {chipichipi chapachapa; dubidubi dabadaba;};
+
+int main () {
+    struct cat* catcat = initcat ();
+    return (*catcat).dabadaba;
+}

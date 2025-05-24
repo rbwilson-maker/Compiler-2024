@@ -1,0 +1,21 @@
+//test return 15122
+
+struct A {
+  int a;
+  int* b;
+  int c;
+};
+
+struct B {
+  int a;
+  struct A b;
+  struct A* c;
+  struct B* d;
+  int e;
+};
+
+struct C {
+  int[] a;
+  struct B[] b;
+  int c;
+};

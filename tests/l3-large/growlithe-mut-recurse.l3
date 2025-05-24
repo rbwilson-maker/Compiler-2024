@@ -1,0 +1,29 @@
+//test return 1
+//more mutual, tail recursion. 
+
+
+int raisetwo(int r, int acc);
+
+int raiseone(int r, int acc)
+{
+  if (r==0)
+    return acc;
+  else
+    return raisetwo(r-1, acc*2);
+}
+
+int raisetwo(int r, int acc)
+{
+  if (r==0)
+    return acc;
+  else
+    return raisetwo(r-1, acc*2);
+}
+
+int main()
+{
+  assert(raiseone(0,1) == raisetwo(0,1));
+  assert(raiseone(4,1)==16);
+  assert(raiseone(18,1) == raisetwo(18,1));
+  return 1;
+}

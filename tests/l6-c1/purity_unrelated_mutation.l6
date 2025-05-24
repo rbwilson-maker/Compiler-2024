@@ -1,0 +1,26 @@
+//test error
+
+struct bool_box {
+    bool v;
+};
+
+// This function can only mutate its second argument.
+bool check(int n, struct bool_box *state) {
+    state->v = true;
+    return n == 42;
+}
+
+int certify(struct of_int *input)
+// Theoretically, we could see that the below is safe, because we pass
+// in a fresh object for the only thing that can be mutated. But our
+// purity heuristic, "if a function accepts a pointer or array, and it
+// has any memory writes, then it is not known-pure", doesn't notice
+// that it's safe, so we must raise an error.
+//@ ensures check(\result, alloc(struct bool_box));
+{
+    return 42;
+}
+
+int main() {
+    return 0;
+}

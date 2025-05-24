@@ -1,0 +1,13 @@
+//test error
+
+void f();
+
+typedef struct node {
+        int i;
+        void a;
+} Void_t;
+
+int main() {
+    Void_t *node;
+    return 0;
+}

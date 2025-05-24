@@ -1,0 +1,45 @@
+//test return 22
+
+struct cellar
+{
+  int* hal;
+};
+
+typedef struct cellar* cellar_t;
+
+struct plumbing
+{
+  cellar_t cell;
+};
+
+typedef struct plumbing* plumb;
+
+struct academy
+{
+  plumb P;
+};
+
+typedef struct academy* A;
+
+struct hals_ritual
+{
+  A hals_academy;
+};
+
+typedef struct hals_ritual* smoke;
+
+int main()
+{
+  smoke s = alloc(struct hals_ritual);
+  s->hals_academy = alloc(struct academy);
+  s->hals_academy->P = alloc(struct plumbing);
+  s->hals_academy->P->cell = alloc(struct cellar);
+  s->hals_academy->P->cell->hal = alloc(int);
+  
+  *(s->hals_academy->P->cell->hal) = 22;
+
+  int fun = *(s->hals_academy->P->cell->hal);
+
+  return fun;
+
+}

@@ -1,0 +1,9 @@
+//test error
+struct name {};
+
+typedef struct name name;
+
+int main() {
+  name a = 1;
+  return a;
+}

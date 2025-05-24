@@ -1,0 +1,98 @@
+//test return 91485
+
+typedef int* * [] * *foo;
+typedef int *bar;
+typedef foo int_star_star_array_star_star;
+
+struct main {
+  int[] a0;
+  bool[] *a1;
+  int []  * a2;
+  int [] [] *** []*[] a3;
+  int_star_star_array_star_star * [] * [][][] **[] a4;
+  bar a5;
+};
+
+struct foo {
+  struct main main;
+  foo x;
+};
+
+struct bar {
+  bar bar;
+};
+
+struct baz {
+  foo foo;
+};
+
+void baz() { }
+
+int f(int* p);
+
+struct s {
+  int x;
+  int* p;
+  int y;
+};
+
+int main() {
+  struct main* main = alloc(struct main);
+  
+  main->a2 = alloc(int [ ] );
+  *main->a2 = alloc_array(int, 11);
+  main->a4 = alloc_array(int**[]***[]*[][][]**, 10);
+  main->a5 = alloc(int);
+  
+  for (int* i = alloc(int); *i < 10; (*i)++) {
+    main->a4[  *i] = alloc(int**[ ]* **[  ] *[ ][][ ]*);
+    *main->a4[ * i] = alloc(int* *[]*** []*[ ][][ ]);
+    **main->a4[*  i] = alloc_array(int* *[]* **[  ] *[ ][], 12);
+  }
+  
+  for (int* i = alloc(int); *i < 10; (*    i)++)
+    for (int j = 0; j < 12; j++) {
+      (**main->a4[* i])[j] = alloc_array(int**[] ***[ ] *[], 4);
+    }
+
+  struct s[] b = alloc_array(struct s, 1);
+  for (int i = 9; i > -1; i--)
+    assert((*main->a2)[i] == 0);
+
+  struct main[] a0 = alloc_array(struct main, 4);
+  a0[0].a0 = alloc_array(int, 2);
+  for (int i = 1; i < 4; i++) {
+    a0[i].a0 = a0[0].a0;
+  }
+
+  a0[0].a0[1] = 1;
+  assert(a0[3].a0[1] == 1);
+
+  int* p = alloc(int);
+  int[] a = alloc_array(int, 10);
+  struct foo*oof = alloc(struct foo);
+  oof->main.a2 = alloc(int []);
+
+  baz();
+
+  int *v = *alloc(int*);
+  struct baz* baz = alloc(struct baz);
+  baz->foo = alloc(int* * [] *);
+
+  a[f(p)] += 1;
+  b[0].x += 1;
+
+  assert(a[1] == 1);
+  assert(*p == 1);
+  assert((true ? b[0].x : b[0].y) == 1);
+  assert(alloc_array(int*[], 0) != alloc_array(int*[], 0));
+  assert(*alloc(bool*[]) == *alloc(bool*[]));
+  assert(alloc_array(int, 0) != *alloc(int[]));
+
+  return 91485;
+}
+
+int f(int* p) {
+  (*p)++;
+  return *p;
+} 

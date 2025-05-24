@@ -1,0 +1,11 @@
+//test memerror
+
+typedef int* int_p;
+typedef int_p* int_pp;
+typedef int_pp* int_ppp;
+
+int main() { 
+  int_ppp* x = alloc(int_ppp);
+  *(*(*(*x))) = 1;
+  return *(*(*(*x)));
+}

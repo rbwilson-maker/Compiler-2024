@@ -1,0 +1,16 @@
+//test error
+// type name collide with function name
+
+typedef int coincidence
+
+int coincidence() {
+    int what = 0;
+    int a = 1;
+    int surprise = 2;
+    return what + a + surprise;
+}
+
+coincidence main() {
+    int c = coincidence();
+    return c;
+}

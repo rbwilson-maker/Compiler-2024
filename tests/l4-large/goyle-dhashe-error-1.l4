@@ -1,0 +1,15 @@
+//test error
+
+int func(struct foo *x) {
+  return x->bar;
+}
+
+struct foo {
+  int bar;
+  bool baz;
+};
+
+int main() {
+  struct foo *x = alloc(struct foo);
+  return func(x);
+}

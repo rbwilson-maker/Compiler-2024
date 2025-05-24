@@ -1,0 +1,22 @@
+//test return 1011101001
+// convert dec(m) to base n
+
+int convert(int m, int n)
+{
+    assert (m >= 0);
+    assert (n < 10 && n > 1);
+    if (m < n) return m;
+
+    return convert (m / n,n) * 10 + m % n;
+
+}
+
+
+int main()
+{
+    int x =  convert(745,2);
+
+    assert (x == 1011101001);
+
+    return x;
+}

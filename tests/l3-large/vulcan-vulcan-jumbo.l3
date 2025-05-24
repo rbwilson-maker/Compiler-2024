@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int yikes(int x){
+    return x/x;
+}
+
+int main(){
+    return yikes(0);
+}

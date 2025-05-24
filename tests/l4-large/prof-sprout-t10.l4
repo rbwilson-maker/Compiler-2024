@@ -1,0 +1,29 @@
+//test return 35
+// test array of structs
+
+typedef struct point point;
+
+struct point {
+  int x;
+  point[] ys;
+};
+
+int main() {
+  point*[] P = alloc_array(point*, 5);
+  for (int i = 0; i < 5; i++) {
+    P[i] = alloc(point);
+    P[i]->x = i;
+    P[i]->ys = alloc_array(point, i);
+    for (int j = 0; j < i; j++) {
+      P[i]->ys[j].x = j;
+    }
+  }
+
+  int tot = 0;
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < i; j++) {
+      tot += P[i]->x * P[i]->ys[j].x;
+    }
+  }
+  return tot;
+}

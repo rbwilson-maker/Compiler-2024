@@ -1,0 +1,8 @@
+//test return 1
+int main() {
+	int x = 2;
+	while(x < 1) {
+		return (1/0);
+	}
+	return 1;
+}

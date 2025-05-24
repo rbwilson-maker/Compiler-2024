@@ -1,0 +1,31 @@
+//test return 2024
+
+struct s3 {
+  int x;
+};
+
+struct s2 {
+  struct s3 s3;
+  int y;
+};
+
+struct s1 {
+  struct s2 s2;
+  int x;
+  int s3;
+};
+
+void s1() {}
+void s2() {}
+void s3() {}
+
+int main() {
+  struct s1 *testStruct = alloc(struct s1);
+
+  testStruct->s2.s3.x = 2000;
+  testStruct->s2.y = 20;
+  testStruct->x = 4;
+  testStruct->s3 = testStruct->s2.s3.x + testStruct->s2.y + testStruct->x;
+
+  return testStruct->s3;
+}

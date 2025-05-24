@@ -1,0 +1,12 @@
+//test abort
+/* Better division function with assert */
+
+int good_divide(int a, int b) {
+	assert(a!=0);
+	int x = a+b-a;
+	return x/a;
+}
+
+int main() {
+	return good_divide(0,good_divide(1,1));
+}

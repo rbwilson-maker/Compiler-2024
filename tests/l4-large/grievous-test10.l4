@@ -1,0 +1,9 @@
+//test error
+struct test {
+    int x;
+};
+
+int main(){
+    struct test* test = alloc(int);
+    return test->x;        
+}

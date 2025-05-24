@@ -1,0 +1,17 @@
+//test div-by-zero
+
+int looper() {
+  while (true) {
+  }
+  return 0;
+}
+int exn() {
+  return (1) / (0);
+}
+int fn8(int v0, int v1, int v2, int v3, int v4, int v5, int v6, int v7) {
+  return ((((((((0) + (v0)) + (v1)) + (v2)) + (v3)) + (v4)) + (v5)) + (v6)) + (v7);
+}
+int main() {
+  return fn8(0, 1, 2, exn(), 4, looper(), 6, 7);
+}
+

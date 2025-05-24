@@ -1,0 +1,13 @@
+//test div-by-zero
+
+// Tests mod 0
+int main() {
+
+    int x = 354;
+    while ( x > 0 ) {
+        x = x % (x % 3);
+    }
+
+    return x;
+
+}

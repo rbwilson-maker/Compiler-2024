@@ -1,0 +1,15 @@
+//test error
+/*
+Compile error.
+Void is not a type (so cannot be used for a typedef)
+*/
+
+typedef void c;
+
+c fun() {
+  return;
+}
+
+int main() {
+  return 3;
+}

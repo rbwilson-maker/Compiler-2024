@@ -1,0 +1,7 @@
+//test return 42
+//lexing look ahead edge case
+
+typedef int foo;
+foo func(){return 42;}
+
+int main(){return func();}

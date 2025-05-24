@@ -1,0 +1,15 @@
+//test return 230
+
+// tests looping
+
+int main() {
+	int sum = 1;
+	for (int i = 0; i < 100; i += sum) {
+		while (i > 0) {
+			sum += i;
+			i--;
+		}
+	}
+
+	return sum;
+}

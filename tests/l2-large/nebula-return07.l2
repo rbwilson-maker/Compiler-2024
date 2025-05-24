@@ -1,0 +1,9 @@
+//test return 0
+int main ()
+{
+    int x;
+    for (x = 0; false; x++) {
+        x++;
+    }
+    return x;
+}

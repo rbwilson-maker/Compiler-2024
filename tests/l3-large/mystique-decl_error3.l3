@@ -1,0 +1,19 @@
+//test error
+
+void fn(bool x, int y);
+
+void fn(bool x, int y);
+
+void fn(bool x, int y);
+
+void fn(int x, int y) {
+    x + y;
+    return;
+}
+
+int main() {
+    x = 100;
+    y = 999;
+    fn(x, y);
+    return 1;
+}

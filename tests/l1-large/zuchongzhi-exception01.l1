@@ -1,0 +1,7 @@
+//test div-by-zero
+// test (1 / 2) is 0
+
+int main()
+{
+    return 10 / (1 / 2);
+}

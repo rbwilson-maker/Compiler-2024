@@ -1,0 +1,19 @@
+//test return 1
+
+// The testing harness will expect this program to fail to terminate.
+
+// Test 20: Syracuse conjecture loop
+
+int main() {
+   int x = 48604056;
+   while (x > 1) {
+      int y;
+      if (x % 2 == 0) {
+        y = x / 2;
+      } else {
+        y = (3 * x + 1) / 2;
+      }
+      x = y;
+   }
+   return x ;
+   }

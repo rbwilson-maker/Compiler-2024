@@ -1,0 +1,27 @@
+//test return 1
+//tests typedef and fdefn
+
+typedef int date;
+typedef bool cando;
+
+date mindate (date d1, date d2) {
+	if (d1 < d2) return d1;
+	return d2;
+}
+
+int main() {
+	date x = 1;
+	date y = 2;
+	date z = mindate(x, y);
+	cando f = false;
+	if (z == 1) {
+		f = true;
+	}
+	if (f) {
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}

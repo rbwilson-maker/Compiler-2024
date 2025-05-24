@@ -1,0 +1,5 @@
+//test memerror
+
+int main(){
+    return *(*(alloc(int *)));
+}

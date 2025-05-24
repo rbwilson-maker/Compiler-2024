@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main() 
+{	
+	return (42 - 1) / (42 / 2 / 2 / 2 / 2 / 2 / 2 / 2 / 2);
+}
+

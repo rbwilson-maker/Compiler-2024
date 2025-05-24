@@ -1,0 +1,85 @@
+//test return 80
+
+// make sure extra arguments get pushed onto stack correctly
+
+int aconst() {
+    return 2;
+}
+
+int sum_of_20_things(
+    int x01,
+    int x02,
+    int x03,
+    int x04,
+    int x05,
+    int x06,
+    int x07,
+    int x08,
+    int x09,
+    int x10,
+    int x11,
+    int x12,
+    int x13,
+    int x14,
+    int x15,
+    int x16,
+    int x17,
+    int x18,
+    int x19,
+    int x20) {
+    return (
+        x01 +
+        x02 +
+        x03 +
+        x04 +
+        x05 +
+        x06 +
+        x07 +
+        x08 +
+        x09 +
+        x10 +
+        x11 +
+        x12 +
+        x13 +
+        x14 +
+        x15 +
+        x16 +
+        x17 +
+        x18 +
+        x19 +
+        x20
+    );
+}
+
+int main() {
+    int x01 = aconst();
+    int x02 = aconst();
+    int x03 = aconst();
+    int x04 = aconst();
+    int x05 = aconst();
+    int x06 = aconst();
+    int x07 = aconst();
+    int x08 = aconst();
+    int x09 = aconst();
+    int x10 = aconst();
+    int x11 = aconst();
+    int x12 = aconst();
+    int x13 = aconst();
+    int x14 = aconst();
+    int x15 = aconst();
+    int x16 = aconst();
+    int x17 = aconst();
+    int x18 = aconst();
+    int x19 = aconst();
+    int x20 = aconst();
+    int sum1 = sum_of_20_things(
+        x01, x02, x03, x04, x05, x06, x07, x08, x09, x10,
+        x11, x12, x13, x14, x15, x16, x17, x18, x19, x20
+    );
+    int sum2 = sum_of_20_things(
+        x01, x02, x03, x04, x05, x06, x07, x08, x09, x10,
+        x11, x12, x13, x14, x15, x16, x17, x18, x19, x20
+    );
+    return sum1 + sum2;
+}
+

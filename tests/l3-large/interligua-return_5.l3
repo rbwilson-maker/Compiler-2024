@@ -1,0 +1,13 @@
+//test return 3
+
+int adder(int x){
+    if (x == 0){
+        return 0;
+    }
+
+    return 1 + adder(x / 2);
+}
+
+int main(){
+    return adder(6);
+}

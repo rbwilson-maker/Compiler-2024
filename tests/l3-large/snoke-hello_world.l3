@@ -1,0 +1,12 @@
+//test return 9
+// lots of arguments
+
+int hello(int a, int b, int c, int d, int e, int f, int g, int h, int i);
+
+int main() {
+	return hello(1, 1, 1, 1, 1, 1, 1, 1, 1);
+}
+
+int hello(int a, int b, int c, int d, int e, int f, int g, int h, int i) {
+    return a + b + c + d + e + f + g + h + i;
+}

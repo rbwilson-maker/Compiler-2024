@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+//tests uh... uh... I don't know I just really wanted to write this test
+
+struct s
+{
+  struct s* s;
+};
+
+int main()
+{
+  struct s* s = alloc(struct s);
+  s->s = s;
+  while(s->s == s)
+  {
+    s = s->s;
+  }
+  return 0;
+}

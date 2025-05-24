@@ -1,0 +1,10 @@
+//test error
+//check handling of ternary where both branches have different types
+
+int main(){
+    bool a = false;
+
+    int b = a ? 5 : false;
+
+    return b;
+}

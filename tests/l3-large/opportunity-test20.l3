@@ -1,0 +1,23 @@
+//test return 0;
+
+//tests function prototypes so you can have mutual recursion
+
+int f(int a);
+int g(int b){
+  if(b==0) return 0;
+  return f(b-1);
+}
+
+int f(int a){
+  if(a==0) return 0;
+  return g(a-1);
+}
+
+int main(){
+  assert(g(0)==0);
+  assert(g(10)==0);
+  assert(g(1000)==0);
+  assert(f(10000)==0);
+  assert(f(0)==0);
+  return 0;
+}

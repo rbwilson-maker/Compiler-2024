@@ -1,0 +1,16 @@
+//test error
+
+struct asdf;
+
+struct asdf *alloc_asdf() {
+	return alloc(struct asdf);
+}
+
+struct asdf {
+	int hjkl;
+};
+
+int main() {
+	struct asdf *asdf = alloc_asdf();
+	return asdf->hjkl;
+}

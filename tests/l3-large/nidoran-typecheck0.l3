@@ -1,0 +1,11 @@
+//test return 5
+
+typedef int notint;
+
+notint x(notint y) { int b = y; return b; }
+
+notint main() {
+    return x(5);
+}
+
+

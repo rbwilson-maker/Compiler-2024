@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+int temp_35 = -121 / 0;
+int temp_36;
+int temp_37 = temp_35;
+temp_37 = -809;
+return 676;
+}

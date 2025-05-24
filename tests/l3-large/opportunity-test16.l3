@@ -1,0 +1,19 @@
+//test return 0;
+
+
+int add(int a, int b){
+  assert(b>=0);
+  if(b==0) return a;
+  return add(a+1,b-1);
+}
+
+int main(){
+  assert(add(0,1)==1);
+  assert(add(10,1)==11);
+  assert(add(-8,1)==-7);
+  assert(add(0,50)==50);
+  assert(add(0,30000)==30000);
+  return 0;
+}
+
+

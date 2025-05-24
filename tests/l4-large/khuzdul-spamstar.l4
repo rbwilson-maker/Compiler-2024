@@ -1,0 +1,17 @@
+//test return 0
+
+//spamming *
+
+int main(){
+  int ******** a;
+  a = alloc(int *******);
+  *a = alloc(int ******);
+  **a = alloc(int *****);
+  ***a = alloc(int ****);
+  ****a = alloc(int ***);
+  *****a = alloc(int **);
+  ******a = alloc(int *);
+  *******a = alloc(int );
+  ********a = 0;
+  return ********a;
+}

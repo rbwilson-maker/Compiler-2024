@@ -1,0 +1,15 @@
+//test typecheck
+int f(int a, int b) {
+    return a;
+}
+
+int loop()
+{
+  while (true) {}
+  return 0;
+}
+
+int main()
+{
+  return f(loop(), 1 / 0);
+}

@@ -1,0 +1,24 @@
+//test return 25
+
+int main(){
+	int a1;
+	int a2;
+	int b3;
+	int b4;
+	int b5;
+	int b6;
+	int b7;
+	int c1;
+	int c2;
+	
+	a1 = 1;
+	a2 = 2;
+	b3 = 16;
+	b4 = b3/2;
+	b5 = b4/2;
+	b6 = b5/2;
+	b7 = b6/2;
+	c1 = 21 + a1;
+	c2 = a2 + b7;
+	return c1 + c2;
+}

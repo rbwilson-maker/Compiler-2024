@@ -1,0 +1,12 @@
+//test return 10
+
+// This is designed to test a boolean function call with varied arguments
+bool func(int x, int y, bool a, bool b, bool c, bool d, bool e) {
+  bool z = x <= y;
+  return (z || a || b || e) && (c || d);
+}
+
+int main() {
+  bool y = func(5, 10, true, true, false, false, true);
+  return y ? 5 : 10;
+}

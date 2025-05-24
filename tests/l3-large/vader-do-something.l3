@@ -1,0 +1,17 @@
+//test return 157
+int init() {
+  return 1;
+}
+
+int store(int r, int x) {
+  return 10*r + x;
+}
+
+int main() {
+  int x = init();
+  x = store(x, 5);
+  x = store(x, 7);
+  return x;
+}
+
+

@@ -1,0 +1,25 @@
+//test return 13
+
+// This function is very interesting
+// Computes (approximately) the maximum number of non-zero characters printed by a turing machine on n states.
+int busy_beaver(int n) {
+    if (n == 1) {
+        return 1;
+    }
+    if (n == 2) {
+        return 4;
+    }
+    if (n == 3) {
+        return 6;
+    }
+    if (n == 4) {
+        return 13;
+    }
+    else {
+        return 0x7fffffff;
+    }
+}
+
+int main () {
+    return busy_beaver(4);
+}

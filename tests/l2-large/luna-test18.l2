@@ -1,0 +1,12 @@
+//test return 1
+
+int main() {
+    bool x = true;
+    bool y = x && x;
+    bool z = x || y && x;
+    if (z) {
+        return x ? 1 : 2;
+    } else {
+        return y ? 3 : 4;
+    }
+}

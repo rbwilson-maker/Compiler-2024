@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int main()
+{
+    int x = 7;
+    int y = 500;
+
+
+    while(x >= 0) {
+        x--;
+        y /= x;
+    }
+
+    return x + y;                   //never gets here
+}

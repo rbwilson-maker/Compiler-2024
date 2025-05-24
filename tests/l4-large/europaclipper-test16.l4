@@ -1,0 +1,23 @@
+//test return 5000
+
+void ggg(int[] a, int[] b, int [] c, int n) {
+  for (int l = 0; l < 100; l++) {
+    for (int i = 0; i < n; i++) {
+      c[i] = a[i] + b[i];
+    }
+  }
+}
+
+int main() {
+  int[] a = alloc_array(int, 5000);
+  int[] b = alloc_array(int, 5000);
+  int[] c = alloc_array(int, 5000);
+
+  for (int i = 0; i < 5000; i++) {
+    a[i] = i;
+    b[i] = 5000 - i;
+  }
+
+  ggg(a, b, c, 5000);
+  return c[4999];
+}

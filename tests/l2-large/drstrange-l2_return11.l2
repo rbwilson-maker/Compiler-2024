@@ -1,0 +1,30 @@
+//test return ~1
+// op assignment
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  bool temp_bool1 = true;
+  bool temp_bool2 = false;
+  a = 1;
+  b = 2;
+  c = 3;
+  d = 4;
+  e = 5;
+  a += 1;
+  b -= 1;
+  c *= 2;
+  d /= 2;
+  e %= 3;
+
+  bool temp3 = (temp_bool2 || temp_bool1);
+
+  if (temp3 && (temp_bool2 && (!temp_bool1))){
+    return e;
+  }
+
+  return -1;
+}

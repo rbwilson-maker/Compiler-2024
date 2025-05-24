@@ -1,0 +1,7 @@
+//test div-by-zero
+int main() {
+    int shiftby = 0;
+    for (int i = 0; i < 42; i++)
+        shiftby++;
+    return 0xDEADBEEF << shiftby;
+}

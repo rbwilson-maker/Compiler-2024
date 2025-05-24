@@ -1,0 +1,14 @@
+//test error
+queue_t *queue_new(void) {
+    queue_t *q = alloc(queue_t);
+    /* What if malloc returned NULL? */
+    /*if malloc returns null then you can't get the head thing*/
+    if (q == NULL)
+        return q;   /*added this*/
+    q->head = NULL; /*dereferences the pointer and gets the head
+                        value out*/
+                    /*note that head is also a pointer*/
+    q->tail = NULL; /*added*/
+    q->size = 0;    /*added*/
+    return q;
+}

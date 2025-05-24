@@ -1,0 +1,14 @@
+//test memerror
+// test initial value of a struct just allocated
+
+struct stack {
+  int top;
+  int[] elem;
+};
+typedef struct stack stack_t;
+
+int main() {
+  stack_t * s = alloc(stack_t);
+  s->elem[s->top];
+  return 0;
+}

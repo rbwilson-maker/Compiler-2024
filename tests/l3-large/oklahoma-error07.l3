@@ -1,0 +1,7 @@
+//test error
+//this is wrong
+
+int main () {
+  int f (int x) { return x; }
+  return f(5);
+}

@@ -1,0 +1,13 @@
+//test error
+
+typedef int num;
+typedef num nat;
+typedef nat number;
+
+number function (nat x);
+
+int main () {
+  nat x = 3;
+  number z = function (x);
+  return x;
+}

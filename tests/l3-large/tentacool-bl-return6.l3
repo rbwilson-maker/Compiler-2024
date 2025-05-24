@@ -1,0 +1,18 @@
+//test return 505
+
+typedef int abc;
+int f0 (int a, abc b);
+
+int f1 (int c) {
+    int f1 = 405;
+    return f1 + f0(c+1,c-1);
+}
+
+int f0 (int a, int b) {
+    int f0 = 100;
+    return f0;
+}
+
+int main () {
+    return f1(100);
+}

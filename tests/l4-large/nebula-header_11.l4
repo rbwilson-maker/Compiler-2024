@@ -1,0 +1,10 @@
+//test error 
+
+int main() {
+  struct a *a_list = alloc_array(struct a, 10); // struct must be defined!
+  return 0;
+}
+
+struct a {
+  int aa;
+}

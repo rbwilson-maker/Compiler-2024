@@ -1,0 +1,14 @@
+//test error
+// Try to use a type identifier as a variable
+
+typedef int i;
+typedef bool b;
+
+int main() {
+  i a = 0;
+  b c = true;
+  i d = 129;
+  return c ? a + d : a - d;
+  i b = c ? a + d : a - d;
+  return b;
+}

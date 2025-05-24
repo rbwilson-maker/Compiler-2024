@@ -1,0 +1,22 @@
+//test return 2623741
+
+// How many ways are there to break a rectangle of length
+// n into segments of length 1, 5, 10, 25.
+
+int cents(int n) {
+    if (n == 0) return 1;
+    return (n >= 1  ? cents(n - 1 ) : 0) +
+           (n >= 5  ? cents(n - 5 ) : 0) +
+           (n >= 10 ? cents(n - 10) : 0) +
+           (n >= 25 ? cents(n - 25) : 0);
+}
+
+int main() {
+    assert(cents(0) == 1);
+    assert(cents(1) == 1);
+    assert(cents(2) == 1);
+    assert(cents(4) == 1);
+    assert(cents(5) == 2);
+    assert(cents(6) == 3);
+    return cents(51);
+}

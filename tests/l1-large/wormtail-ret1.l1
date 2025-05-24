@@ -1,0 +1,10 @@
+//test return 1997
+
+int main() {
+  int x = 5; 
+  int y = 3;
+  int z = 2 + x;
+  y = 10 % y;
+  int a = 1990 * y;
+  return z + a;
+}

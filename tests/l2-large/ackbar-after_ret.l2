@@ -1,0 +1,13 @@
+//test return 55
+//A test of code after the return
+int main() {
+    int counter = 0;
+    int max = 10;
+    int sum = 0;
+    while(counter < max){
+        counter++;
+        sum += counter;
+    }
+    return sum;
+    int a = 212;
+}

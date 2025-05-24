@@ -1,0 +1,8 @@
+//test error
+typedef int void;
+
+int main() {
+  void y = 3;
+  void x = 5;
+  return 3 + 5;
+}

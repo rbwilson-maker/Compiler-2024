@@ -1,0 +1,18 @@
+//test return 1693792088
+
+int func(){
+    int t1 = 0;
+    for(int i = 0; i<1; i++){
+        t1 = 111/4;
+    }
+    int t2 = -4*t1 + 12*34+32;
+    int t3 = t1 - t2 +5332 - t1*4;
+    int t5 = t3 * t3 - t2 - t1+ 32;
+    int t6 = 5*t5-t2+t3;
+    int t7 = t6 *-5 +t3 - 2*t2;
+    return t7*-2+t6 + 3*t6;
+}
+
+int main() { 
+    return func();
+}

@@ -1,0 +1,18 @@
+//test typecheck
+//test infloop
+
+struct myself;
+
+struct myself {
+    struct myself *self;
+    bool done;
+};
+
+int main() {
+    struct myself *me = alloc(struct myself);
+    me->self = me;
+    while (!(me->done)) {
+        me = me->self;
+    }
+    return 0;
+}

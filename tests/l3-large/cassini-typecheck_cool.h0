@@ -1,0 +1,9 @@
+typedef int cool_dude;
+
+cool_dude make_cool_dude(int age, int coolness, bool is_2cool_4school);
+
+cool_dude make_cool_baby(cool_dude dude1, cool_dude dude2);
+
+int get_coolness(cool_dude dude);
+
+void destroy_cool_dude(cool_dude dude);

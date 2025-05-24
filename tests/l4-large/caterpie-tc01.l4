@@ -1,0 +1,13 @@
+//test return 0
+// foo is a type name, foo * bar is a declaration
+struct foo {
+  int x;
+};
+
+typedef struct foo foo;
+
+int main()
+{
+  foo * bar;
+  return 0;
+}

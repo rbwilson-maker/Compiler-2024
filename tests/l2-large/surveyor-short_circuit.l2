@@ -1,0 +1,21 @@
+//test return 50
+
+int main() {
+  int x = 0;
+  int a = 10;
+  int b = -10;
+
+  if (x == 0 || 1 / x == 1) {
+    a = 15;
+  } else {
+    b = (1 / x);
+  }
+
+  if (x == 0 ? true : 1 / x == 1) {
+    a -= 20;
+  } else {
+    b -= (1 / x) + 999;
+  }
+
+  return a * b;
+}

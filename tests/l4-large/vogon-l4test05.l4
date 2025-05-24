@@ -1,0 +1,18 @@
+//test return 3
+
+int side_effects(int[] at_least_two, int b) {
+  int temp = at_least_two[0];
+  at_least_two[0] = at_least_two[1];
+  at_least_two[1] = temp;
+  return b;
+}
+
+
+int main() { 
+  int[] at_least_two = alloc_array(int, 2);
+  at_least_two[0] = 3;
+  at_least_two[1] = 4;
+  int[] arr = alloc_array(int, 1);
+  arr[side_effects(at_least_two, 0)] = 3;
+  return at_least_two[1];
+}

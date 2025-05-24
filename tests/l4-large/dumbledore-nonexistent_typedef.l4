@@ -1,0 +1,27 @@
+//test error
+
+struct t1 {
+  struct t2 * t1t2;
+};
+
+struct t2 {
+  struct t3 * t2t3;
+};
+
+struct t3 {
+  struct t4 * t3t4;
+};
+
+struct t4 {
+  struct t5 * t4t5;
+};
+
+int main() {
+  struct t1 * myt1 = alloc(struct t1);
+  myt1->t1t2 = alloc(struct t2);
+  myt1->t1t2->t2t3 = alloc(struct t3);
+  myt1->t1t2->t2t3->t3t4 = alloc(struct t4);
+
+  myt1->t1t2->t2t3->t3t4->t4t5 = alloc(struct t5);
+  return 0;
+}

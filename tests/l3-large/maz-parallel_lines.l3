@@ -1,0 +1,13 @@
+//test return 0;
+
+bool are_parallel(int x0, int x1, int y0, int y1, int x2, int x3, int y2, int y3) {
+    int slope01 = (y1 - y0) / (x1 - x0);
+    int slope23 = (y3 - y2) / (x3 - x2);
+
+    return slope01 == slope23;
+}
+
+int main() {
+    assert(are_parallel(0, 10, 0, 20, 5, 10, 7, 17));
+    return 0;
+}

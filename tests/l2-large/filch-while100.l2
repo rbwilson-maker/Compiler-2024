@@ -1,0 +1,13 @@
+//test return 100
+
+int main()
+{
+  int z = 0;
+
+  while (z != 100)
+  {
+    z += 10;
+  }
+
+  return z;
+}

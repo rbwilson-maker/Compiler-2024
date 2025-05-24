@@ -1,0 +1,12 @@
+//test return -1
+
+int main()
+{
+	while (true)
+	{
+		int x = 234;
+		int y = 235;
+		return x-y;
+	}
+    return 5;
+}

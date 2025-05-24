@@ -1,0 +1,11 @@
+//test return -2
+typedef int hello;
+
+hello world () {
+      return -2;
+}
+
+int main () {
+    hello there = world ();
+    return (world());
+}

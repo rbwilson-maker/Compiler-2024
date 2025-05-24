@@ -1,0 +1,53 @@
+//test return 268435972
+//a long chain of recursive functions
+int f1(int x);
+int f2(int x);
+int f3(int x);
+int f4(int x);
+int f5(int x);
+int f6(int x);
+int f7(int x);
+int f8(int x);
+
+int f1(int x) {
+  return f2(x * 2);
+}
+
+int f2(int x) {
+  return f3(x * 2);
+}
+
+int f3(int x) {
+  return f4(x * 2);
+}
+
+int f4(int x) {
+  if (x >= 100000) {
+    return f5(x+1);
+  }
+  return f5(x * 2);
+}
+
+int f5(int x) {
+  return f6(x * 2);
+}
+
+int f6(int x) {
+  return f7(x * 2);
+}
+
+int f7(int x) {
+  if (x > 10000000) {
+    return x;
+  }
+  return f8(x * 2);
+}
+
+int f8(int x) {
+  return f1(x * 2);
+}
+
+int main() {
+  int res = f1(1);
+  return res;
+}

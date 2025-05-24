@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+
+int main() {
+	int[] A = alloc_array(int, 10);
+	A[0] = 2;
+	A[2] = 3;
+	A[3] = 9;
+	A[9] = 3;
+	int start = 144;
+	int index = 0;
+	while (start % 2 == 0) {
+		start = start / A[index];
+		index = A[index];
+	}
+	return 0;
+}

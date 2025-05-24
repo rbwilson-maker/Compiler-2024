@@ -1,0 +1,46 @@
+//test abort
+//881
+
+//wow would have been nice to roll this one before I implemented
+//a (non)randomness generator for estimation. this will be the same file
+//but with slight differences
+
+struct pair{
+  int first;
+  int second;
+};
+
+typedef struct pair* pair;
+
+int find(int[] list, int value);
+
+int randFromSeed(int seed, int min){
+  for(; min > 0;){
+    if(seed % min > (min/3))
+      return min;
+    else
+      min = 4 * (min/3) + 1;
+  }
+  //only terminates because of overflow, which it should
+  assert(false);
+  return 0;
+}
+
+pair rand(int seed, int min){
+  pair ret = alloc(struct pair);
+  int xorbit = (seed & 1) ^ ((seed & 2) >> 1);
+  int newSeed = (seed >> 1) | (xorbit << 30);
+  ret -> first = randFromSeed(seed, min+1);
+  ret -> second = newSeed;
+  return ret;
+}
+
+int main(){
+  int[] array = alloc_array(int, 1600000);
+  pair randoms = rand(881, 1);
+  for(int i = 0; i < 1600000; i++){
+    array[i] = randoms->first;
+    randoms = rand(randoms->second, randoms->first);
+  }
+  return -1;
+}

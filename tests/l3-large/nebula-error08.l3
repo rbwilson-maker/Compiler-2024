@@ -1,0 +1,9 @@
+//test error 
+
+
+int functionA(int a); // not ok since used but not defined
+int functionB(int b); // ok since unused
+
+int main() {
+  return functionA(1);
+}

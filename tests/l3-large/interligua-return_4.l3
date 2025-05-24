@@ -1,0 +1,18 @@
+//test return 0
+
+// return the absolute value of x
+
+int abs(int x){
+    if (x < 0){
+        return -x;
+    }else{
+        return x;
+    }
+}
+
+int main(){
+    int x = -5;
+    int y = 5;
+
+    return 1 / (abs(x) + abs(y));
+}

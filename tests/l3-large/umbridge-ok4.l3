@@ -1,0 +1,35 @@
+//test return 10
+
+typedef int integer;
+
+/* function declaration */
+int add(int a, int b, int c, int d);
+int cook(bool apple, bool banana);
+
+int g() {
+    // main is implicitly declared
+    return main();
+}
+
+int main() {
+    return (cook(false, false) > 100)? add(1,2,3,4):add(5,6,7,8);
+}
+
+/* function definition */
+int add(int i, int j, int k, int l) {
+    return i+j+k+l;
+}
+
+int cook(bool dinner, bool lunch){
+    if (dinner) {
+        return 100%10;
+    }
+    else {
+        if (lunch) {
+            return 3 << 2;
+        }
+        else {
+            return 1001;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+//test error
+int main() {
+    int x1 = 1;
+    { int x3 = 2; returnx x1++; }
+    int x2 = x1+1;
+}

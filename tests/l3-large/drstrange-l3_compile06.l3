@@ -1,0 +1,24 @@
+//test error
+/// invalid condition type
+
+int func3(int x){
+    return x;
+}
+
+int func2(int x){
+    assert(false);
+    return 1;
+}
+
+int func1(int x, int y, int z){
+    return (x == y) ? func2(y) : func3(z);
+}
+
+int main() {
+
+    if (assert(func1(1, 1, 0) != 0)){
+        return 0;
+    }
+
+    return 1;
+}

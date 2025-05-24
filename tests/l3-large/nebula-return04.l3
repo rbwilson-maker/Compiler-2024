@@ -1,0 +1,17 @@
+//test return 3
+
+int functionA(int a) {
+  int foo = a + 1;
+  return foo;
+}
+
+typedef int foo;
+
+int functionB(foo b) {
+  foo c = functionA(b + 1);
+  return c;
+}
+
+int main() {
+  return functionB(1);
+}

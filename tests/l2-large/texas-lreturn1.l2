@@ -1,0 +1,13 @@
+//test return 32
+// basic while loop
+int main() {
+	int x = 0;
+	bool found = false;
+	while (found == false) {
+		x++;
+		if (x == 32) {
+			found = true;
+		}
+	}
+	return x;
+}

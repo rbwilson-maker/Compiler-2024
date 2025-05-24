@@ -1,0 +1,16 @@
+//test return 13
+
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+
+  a = 2;
+  b = 8/2;
+  c = a + 7;
+  d = 8%2;
+  
+  return b + c + d;
+}

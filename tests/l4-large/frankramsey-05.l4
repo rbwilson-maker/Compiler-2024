@@ -1,0 +1,10 @@
+//test abort
+
+int main() {
+    int[] A = alloc_array(int, 32);
+    A[0] = 0;
+    A[1] = 1;
+    A[31] = 31;
+    assert(A[2] != 0);
+    return 0;
+}

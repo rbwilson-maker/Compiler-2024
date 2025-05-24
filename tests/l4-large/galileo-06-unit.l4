@@ -1,0 +1,21 @@
+//test return 1
+// test that unit type works
+
+struct unit {
+};
+typedef struct unit unit_t;
+
+int main() {
+  unit_t * p = alloc(unit_t);
+  unit_t * q = alloc(unit_t);
+
+  if (p == NULL) {
+    return 0;
+  }
+
+  if (p == q) {
+    return 0;
+  }
+
+  return 1;
+}

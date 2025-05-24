@@ -1,0 +1,12 @@
+//test memerror
+
+int main() {
+    int MAX = 25;
+    
+    int[] memo = alloc_array(int, MAX);
+    for (int i = 1; i < MAX; i++) {
+        memo[i] = memo[i - 1] + memo[i - 2];
+    }
+
+    return 0;
+}

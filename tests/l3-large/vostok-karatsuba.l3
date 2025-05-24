@@ -1,0 +1,38 @@
+//test div-by-zero
+// Karatsuba's algorithm, implemented badly
+
+int lent(int a) {
+    int l = 0;
+    while (a > 0) {
+        a /= 2;
+        l++;
+    }
+    return l;
+}
+
+int multiply(int a, int b) {
+    if (a == 0 || b == 0) {
+        return 0;
+    }
+    if (a <= 2) {
+        return a*b;
+    }
+    if (b <= 2) {
+        return a*b;
+    }
+    int len1 = lent(a) / 2;
+    int len2 = lent(b) / 2;
+    int len = len1 < len2 ? len1 : len2;
+    int x0 = a >> len;
+    int y0 = b >> len;
+    int x1 = a - x0 << len;
+    int y1 = b - x1 << len;
+    int z0 = multiply(x0, y0);
+    int z2 = multiply(x1, y1);
+    int z1 = multiply(x0 + x1, y0 + y1) - z0 - z2;
+    return z0 << (2*len) + z1 << len + z2;
+}
+
+int main() {
+    return multiply(16, 16);
+}

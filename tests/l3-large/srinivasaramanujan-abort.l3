@@ -1,0 +1,12 @@
+//test abort
+
+int sum(int a, int b) {
+    int val = a + b + (a * b) - (a - b);
+    return val;
+}
+
+int main() {
+    int val = sum(10, 20);
+    assert(val == 10);
+    return val;
+}

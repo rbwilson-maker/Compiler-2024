@@ -1,0 +1,25 @@
+//test return 1
+// Two functions with different types
+// f casts bool to int in the natural way, and g casts int to bool in the natural way
+
+int f(bool b) {
+	if (b) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+bool g(int n) {
+	if (n == 1) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+int main() {
+	return f(g(1));
+}

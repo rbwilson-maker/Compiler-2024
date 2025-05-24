@@ -1,0 +1,29 @@
+//test return 10
+
+// Total size is
+// 8 + 8 + 4 + 4 = 24
+struct inner {
+  int a;        // Size 4
+  int* ptr1;    // Size 8
+  int* ptr2;    // Size 8
+  int test;     // Size 4
+};
+
+// Total size is
+// 24 + 8 + 4 + 4 = 40
+struct outer {
+  int a;            // Size 4
+  struct inner* b;  // Size 8
+  struct inner c;   // Size 24
+  int test;         // Size 4
+};
+
+int main() {
+  struct outer* a = alloc(struct outer);
+  a->b = alloc(struct inner);
+  a->a;
+  a->b->ptr2 = alloc(int);
+  *(a->b->ptr2) = 10;
+  a->test;
+  return *(a->b->ptr2);
+}

@@ -1,0 +1,11 @@
+//test error
+//wrong type
+
+int foo(int x);
+int main(){
+    bool bar = true;
+    return foo(bar);
+}
+int foo(int x){
+    return 0;
+}

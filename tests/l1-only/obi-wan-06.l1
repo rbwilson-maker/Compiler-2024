@@ -1,0 +1,8 @@
+//test error
+
+//this tests for a compile-time error when using a reserved keyword
+int main() {
+    int x = 15;
+    x--; //-- is reserved
+    return x;
+}

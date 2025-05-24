@@ -1,0 +1,81 @@
+//test return 0
+// idk what this is testing but i couldn't forego the puntential
+
+struct ion {
+  struct element[] components; // sorted
+  int charge;
+  int length;
+};
+
+struct element {
+  int element; // by number in periodic table
+  int count;
+};
+
+struct ion* new_ion() {
+  int MAX_ELTS = 92;
+  struct ion* i = alloc(struct ion);
+  i->components = alloc_array(struct element, MAX_ELTS);
+  return i;
+}
+
+struct ion* merge(struct ion* i1, struct ion* i2) {
+  int MAX_ELTS = 92;
+  struct ion* merged = new_ion();
+  merged->charge = i1->charge + i2->charge;
+
+  int i = 0;
+  int j = 0;
+  int k = 0;
+  while (i < i1->length && j < i2->length) {
+    if (i1->components[i].element == i2->components[j].element) {
+      merged->components[k].element = i1->components[i].element;
+      merged->components[k].count =
+        i1->components[i].count + i2->components[j].count;
+      i++; j++; k++;
+    } else if (i1->components[i].element < i2->components[j].element) {
+      i++;
+    } else {
+      j++;
+    }
+  }
+  // slurp up the remaining elements
+  while (i < i1->length) {
+    merged->components[k].element = i1->components[i].element;
+    merged->components[k].count = i1->components[i].count;
+    i++; k++;
+  }
+  while (j < i2->length) {
+    merged->components[k].element = i2->components[j].element;
+    merged->components[k].count = i2->components[j].count;
+    j++; k++;
+  }
+  merged->length = k; 
+  return merged;
+}
+
+int main() {
+  struct ion* hydrogen = new_ion();
+  hydrogen->components[0].element = 1; // H
+  hydrogen->components[0].count = 1;
+  hydrogen->charge = 1;
+  hydrogen->length = 1;
+
+  struct ion* hydroxide = new_ion();
+  hydroxide->components[0].element = 1; // H
+  hydroxide->components[0].count = 1;
+  hydroxide->components[1].element = 8; // O
+  hydroxide->components[1].count = 1;
+  hydroxide->charge = -1;
+  hydroxide->length = 2;
+
+  struct ion* water = merge(hydrogen, hydroxide);
+  assert(water->components[0].element == 1);
+  assert(water->components[0].count == 2);
+  assert(water->components[1].element == 8);
+  assert(water->components[1].count == 1);
+  assert(water->charge == 0);
+  assert(water->length == 2);
+
+  return 0;
+}

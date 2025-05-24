@@ -1,0 +1,13 @@
+//test typecheck
+
+int main() {
+  int[] a = alloc_array(int, 10);
+  int[] b = alloc_array(int, 10);
+  for (int i = 0; i < 10; i++) {
+    a[i] = i;
+    a[i] = -i;
+  }
+  struct pair[] c = cartesian(a, b);
+
+  return c[0].x;
+}

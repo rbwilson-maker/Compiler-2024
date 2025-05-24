@@ -1,0 +1,31 @@
+//test return 2124342273
+
+int main()
+{
+  int a = 0;
+  int b = 1;
+  int c = 2;
+  int d = 3;
+  int e = 4;
+  int f = a + b;
+  int g = f - e / b;
+  int z = c / b;
+  int k = z % g;
+  int l = b - k;
+  int m = d + d;
+  int n = d * 100000000;
+  a = b + c + d - e * f;
+  b = a + c + d - e * f + g + z + k % l / m + n;
+  c = a + b + d - e * f + g + z + k % l / m + n;
+  d = a + b + c - e * f + g + z + k % l / m + n;
+  e = a + b + c - d * f + g + z + k % l / m + n;
+  f = a + b + d - e * c + g + z + k % l / m + n;
+  g = a + b + d - e * f + c + z + k % l / m + n;
+  z = a + b + d - e * f + g + c + k % l / m + n;
+  k = a + b + d - e * f + g + z + c % l / m + n;
+  l = a + b + d - e * f + g + z + k % c / m + n;
+  m = a + b + d - e * f + g + z + k % l / c + n;
+  n = a + b + d - e * f + g + z + k % l / m + c;
+  n = n * n + n / n % n;
+  return n;
+}

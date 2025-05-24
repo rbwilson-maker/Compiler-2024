@@ -1,0 +1,10 @@
+//test return -105
+
+int main() {
+  int x = 100;
+  int y = -~~~~-~-~-~-~x;
+  x++;
+  y--;
+  x /= ~-y;
+  return x > y ? y : x;
+}

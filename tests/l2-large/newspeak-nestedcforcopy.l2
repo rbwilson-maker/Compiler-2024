@@ -1,0 +1,10 @@
+//test return 8
+int main() {
+  int c = 2;
+  for (c = 4; c < 5; c++) {
+    for (c = 5; c < 6; c++) {
+      c++;
+    }
+  }
+  return c;
+}

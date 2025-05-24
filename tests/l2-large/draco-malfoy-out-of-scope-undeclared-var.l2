@@ -1,0 +1,18 @@
+//test error
+//undefined value used in conditional
+
+int main ()
+{
+  int x = 1;
+  
+  if (x > 0) {
+    int y = -x;
+  }
+
+  if (y < -2) {
+    x *= 2;
+  }
+
+  return x;
+
+}

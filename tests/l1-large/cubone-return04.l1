@@ -1,0 +1,7 @@
+//test return ~1
+int main () {
+  int a = 10;
+  int b = a % 9;
+  
+  return 0 - b;
+}

@@ -1,0 +1,7 @@
+//test error
+// test precedence between - and --
+
+int main() {
+  int x = 10;
+  return x---x; // (x--) - x -> error
+}

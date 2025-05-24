@@ -1,0 +1,13 @@
+//test abort
+
+void func(int x)
+{
+    assert(x > 0);
+    func(x - 1);
+}
+
+int main()
+{
+    func(10);
+    return 0;
+}

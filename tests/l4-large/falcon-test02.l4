@@ -1,0 +1,28 @@
+//test error
+// Vapid void
+
+void foo(int a) {
+    if(a > 2) {
+        foo(a - 1);
+        foo(a / 2);
+        return;
+    }
+
+    return;
+}
+
+
+int main() {
+    // Once again, the evil void star makes a return.
+    void* v = alloc(void);
+
+    // And the evil void array, I guess...
+    void[] v = alloc_array(void, 0);
+
+    // Now, let's do something evil
+    for(int i = 0 ; i < 4; i++) {
+        void[i] = foo(256 << i);
+    }
+
+    return 0;
+}

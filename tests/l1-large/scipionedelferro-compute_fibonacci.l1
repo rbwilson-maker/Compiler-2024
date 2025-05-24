@@ -1,0 +1,10 @@
+//test return 5
+// computes 4th fibonacci number
+
+int main() {
+    int f1 = 1;
+    int f2 = 2;
+    int f3 = f1 + f2;
+    int f4 = f2 + f3;
+    return f4;
+}

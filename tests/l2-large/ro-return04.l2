@@ -1,0 +1,17 @@
+//test return 3
+//tests ands and or logical/arithmatic operations
+
+int main() {
+    bool a = true;
+    bool b = true;
+    bool c = false;
+    bool d = a && b || c;
+    if (!d) return -1;
+    
+    int x = 2;
+    int y = 1;
+
+    int q = x | y;
+
+    return q;
+}

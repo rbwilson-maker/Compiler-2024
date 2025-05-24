@@ -1,0 +1,23 @@
+//test return 7
+
+struct dot {
+    int x;
+    int* y;
+    bool t;
+    struct point* p;    
+};
+
+struct point {
+    int x;
+    int y;
+    bool t;
+    bool* p;
+    struct dot d;    
+};
+
+int main() {
+    struct point* p = alloc(struct point);
+    p->x = 5;
+    p->y = 2;
+    return p->x + p->y;    
+}

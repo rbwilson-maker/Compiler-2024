@@ -1,0 +1,23 @@
+//test return 34169
+// tests register spilling with 16 different variables
+int main()
+{
+  int a = 1;
+  int b = 1521;
+  int c = 6321;
+  int d = 1742;
+  int e = 1853;
+  int f = 1126;
+  int g = 1247;
+  int h = 1361;
+  int i = 1742;
+  int j = 185;
+  int k = 152;
+  int l = 1136;
+  int m = 12474;
+  int n = 138;
+  int o = 1538;
+  int p = 1632;
+
+  return a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p;
+}

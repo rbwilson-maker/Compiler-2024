@@ -1,0 +1,5 @@
+// header file that defines modular arithmetics
+int mod_add(int x, int y, int mod);
+int mod_sub(int x, int y, int mod);
+int mod_mul(int x, int y, int mod);
+int mod_div(int x, int y, int mod);

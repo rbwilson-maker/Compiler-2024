@@ -1,0 +1,14 @@
+//test return 1000
+//return out of a infinite while loop
+
+int main() {
+  bool True = false;
+  int False = 1;
+  while (!True) {
+    False++;
+    if (False % 123 > 5) {
+      return 1000;
+    }
+  }
+  return 5;
+}

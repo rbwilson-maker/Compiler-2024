@@ -1,0 +1,26 @@
+//test return 1483
+//overflow registers
+int main()
+{
+  int a = 1;
+  int b = 2;
+  int c = 3;
+  int d = 4;
+  int e = 5;
+  int f = 6;
+  int g = 7;
+  int h = 8;
+  int i = 9;
+  int j = 10;
+  int a1 = 12;
+  int a2 = 123;
+  int a3 = 1234;
+  int a4 = 33;
+  int a5 = 22;
+  int a6 = 11;
+  int a7 = -3;
+  int a8 = -4;
+  int retval = (a+b+c+d+e+f+g+h+i+j+a1+a2+a3+a4+a5+a6+a7+a8);
+  return retval;
+}
+

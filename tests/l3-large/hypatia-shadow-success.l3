@@ -1,0 +1,11 @@
+//test typecheck
+
+int shadow(int n) {
+  if (n == -1) return n;
+  int shadow = shadow(n - 1);
+  return shadow;
+}
+
+int main() {
+  return shadow(299);
+}

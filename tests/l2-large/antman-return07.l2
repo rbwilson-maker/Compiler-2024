@@ -1,0 +1,6 @@
+//test return -1
+
+int main() { 
+    int y = -1;
+    return (~y & y) | y;
+}

@@ -1,0 +1,17 @@
+//test return 0
+
+/* Basic Typedef */
+typedef int cat;
+typedef bool dog;
+
+cat main() {
+  cat n = 3; dog d;
+  for (cat i = 0; i < 50; i++) {
+    if (i % 2 == 0) {
+      d = false;
+    } else {
+      d = true;
+    }
+  }
+  return 0;
+}

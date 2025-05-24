@@ -1,0 +1,20 @@
+//test return 1
+
+bool is_even(int a);
+bool is_odd(int a) {
+	if(a == 0) return false;
+	else return is_even(a-1);
+}
+bool is_even(int a) {
+	if(a == 0) return true;
+	else return is_odd(a-1);
+}
+
+
+int main() {
+	assert(is_even(4));
+	assert(!is_odd(600));
+	int ans = is_odd(3) ? 1 : 0;
+	return ans * ans;
+}
+

@@ -1,0 +1,15 @@
+//test memerror
+// Try to access array out of bounds
+
+struct a {
+    int[] test;
+};
+
+typedef struct a* a;
+
+int main() {
+    a x = alloc(struct a);
+
+    x->test = alloc_array(int, 10); 
+    return x->test[10];
+}

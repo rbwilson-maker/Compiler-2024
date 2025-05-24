@@ -1,0 +1,35 @@
+//test return 7
+
+struct list_node {
+  int data;
+  struct list_node* next;
+};
+
+int main() {
+  struct list_node* head = alloc(struct list_node);
+  int i = 0;
+  struct list_node* p = head;
+  int[] A = alloc_array(int, 10);
+  A[0] = 0;
+  A[1] = 1;
+  A[2] = 2;
+  A[3] = 3;
+  A[4] = 4;
+  A[5] = 5;
+  A[6] = 6;
+  A[7] = 7;
+  A[8] = 8;
+  A[9] = 9; 
+  while (i < 10) {
+    p->data = A[i];
+    p->next = alloc(struct list_node);
+    p = p->next;
+    i += 1;
+  }
+  p = head;
+  while (p != NULL) {
+    if (p->data == 7) return 7;
+    p = p->next;
+  }
+  return 0;
+}

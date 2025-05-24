@@ -1,0 +1,12 @@
+//test return 6
+
+int main() {
+    int y = 5;
+    int x = 0;
+    while (y > 4) {
+        x = y+1;
+        y--;
+    }
+
+    return x;
+}

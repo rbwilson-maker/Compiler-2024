@@ -1,0 +1,15 @@
+//test return 0
+
+int main() {
+  int a = 0;
+  int b = 1;
+  int k = 100;
+  int d = 10;
+  // testing comments
+  int c = 30; /* testing some more */
+  int e = b;
+  k = e;
+  // d = a;
+  int ret = a + b / c / (a + d);
+  return ret;
+}

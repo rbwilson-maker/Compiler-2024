@@ -1,0 +1,5 @@
+//test error
+// hexadecimal constant too large
+int main() {
+	return 0x123456781234567812345678;
+}

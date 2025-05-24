@@ -1,0 +1,20 @@
+//test return 2
+int main() {
+	int a = 2;
+  int b;
+  int c = 10;
+	for (int i = 0; i<9; i++) {
+		a++;
+		a--;
+    for (int j = 0; j < 100; j++) {
+      b = 0;
+      b = a;
+      for (int k = 0; k < 999; k++) {
+        c++;
+        c++;
+        c++;
+      }
+    }
+	}
+	return a + 2 - 2;
+}

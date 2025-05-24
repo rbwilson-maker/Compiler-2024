@@ -1,0 +1,14 @@
+//test return 5
+
+
+int main() {
+    int* x = alloc(int);
+    *x = 5;
+    int*[] p = alloc_array(int*, 1);
+    p[0] = x;
+    
+    int*[]* s = alloc(int *[]);
+    *s = p;
+
+    return *(*s)[0];
+}

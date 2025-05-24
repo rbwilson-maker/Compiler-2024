@@ -1,0 +1,27 @@
+//test div-by-zero
+
+/* make sure that all allocated memory is initialized to zero */
+/* Takes advantage of the fact that newly freed memory is 
+   regularly reallocated when reallocating the same type */
+
+struct amazing {
+      int a;
+      int b;
+      bool c;
+};
+
+void struct_game() {
+    struct amazing *a = alloc(struct amazing);
+    assert(a->a == 0);
+    a->a = 100;
+    a->c = (a->c == false) ? false : true;
+    (a->a) / (a->b);     //if b is properly initialized to zero then error
+}
+
+int main() {
+    for (int i = 0; i < 20; i++) {
+        struct_game();
+    }
+    return 0;
+}
+

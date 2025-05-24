@@ -1,0 +1,7 @@
+//test error
+//infinite looping while loop
+
+int main () {
+    while (true) continue;
+    return 0;
+}

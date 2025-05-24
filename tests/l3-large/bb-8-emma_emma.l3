@@ -1,0 +1,20 @@
+//test error
+
+typedef bool green;
+
+int alien(int r, bool b);
+bool g();
+
+bool g(){
+	return true;
+}
+
+green alien(int red, bool blue) {
+	return true;
+}
+
+int main(){
+	int a = 4;
+	int b = 5;
+	return alien(a,(b == 1));
+}

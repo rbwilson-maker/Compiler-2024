@@ -1,0 +1,18 @@
+//test abort
+
+int addL(int a, int b){
+	return a * b - a + b;
+}
+
+int addLH(int a, int b){
+	a = addL(a, b);
+	assert(a >= 0);
+	return a;
+}
+
+int main() {
+  	for(int i = 1237822; i < 123871209; i++){
+  		addLH(i, 123993);
+  	}
+  	return 0;
+}

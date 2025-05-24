@@ -1,0 +1,8 @@
+//test return 6
+int main() {
+	/* test precedence of operators */
+	int a = 1 << 1 + 2;	/* a should be 8 */
+	int b = 5 % 4 * 2; /* b should be 2 */
+	int c = 2 + (a - b * 3) * 2;
+	return c;
+}

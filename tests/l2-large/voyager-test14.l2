@@ -1,0 +1,12 @@
+//test div-by-zero
+//shift overflow in for step
+
+int main()
+{
+	int x = 0;
+	for(int i = 5; i < 10; i << 60)
+	{
+		x += i;
+	}
+	return x;
+}		

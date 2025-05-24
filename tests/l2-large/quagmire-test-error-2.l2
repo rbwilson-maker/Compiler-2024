@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+    bool x = false;
+    if (x != 15122) return 0;
+    else return 1;
+}

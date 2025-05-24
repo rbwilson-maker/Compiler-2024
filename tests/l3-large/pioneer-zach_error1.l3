@@ -1,0 +1,13 @@
+//test error
+
+bool a() {
+  return true;
+}
+
+int a(int x, int y, int z) {
+  return x + y + z;
+}
+
+int main() {
+  return 15 + a(1, 2, 3);
+}

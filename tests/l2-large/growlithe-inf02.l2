@@ -1,0 +1,27 @@
+//test typecheck
+//test infloop
+int main()
+{
+   	 int m;
+   	 int n;
+   	 int p;
+   	 
+   	 m = 5;
+         p = 0;
+   	 while(m > 0)
+   	 {
+   		 for(n = 0; n < 5; n++)
+   		 {
+   			 p++;
+   			 if(p > m)
+   			 {
+   				 p >>= m;
+   			 }
+   			 else
+   			 {
+   				 p <<= m;
+   			 }
+   		 }
+   	 }
+   	 return p;
+}

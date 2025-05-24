@@ -1,0 +1,9 @@
+//test return 273
+int main() {
+    int twenty_one = 21;
+    int seven = 7;
+    int five = twenty_one & seven;
+    int minus_four = ~five ^ (twenty_one / seven + twenty_one / seven);
+    int one = five + minus_four;
+    return one | one * 16 | one * 256;
+}

@@ -1,0 +1,13 @@
+//test return 19
+
+int main() {
+  int x = 5 + 3;
+  int r;
+
+  r = x % 2;
+  r += 1; //r = 1
+  x = r + x; //x = 9
+  r = r + x; //r = 10
+
+  return r + x; //19
+}

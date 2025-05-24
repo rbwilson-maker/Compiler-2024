@@ -1,0 +1,11 @@
+//test div-by-zero
+// neededness analysis should not optimize out div/mod
+
+int main() {
+    int x = 3;
+    int y = 2;
+    x / 0;
+    x % 0;
+    
+    return y;
+}

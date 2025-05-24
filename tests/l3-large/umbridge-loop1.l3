@@ -1,0 +1,22 @@
+//test typecheck
+//test infloop
+
+typedef bool boolean;
+
+bool and(boolean a, boolean b) {
+     return a && b;
+}
+
+int main()
+{
+    bool a = true;
+    bool b = false;
+
+    while (!and(a, b))
+    {
+        a = !b;
+        b = !a;
+    }
+
+    return 0;
+}

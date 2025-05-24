@@ -1,0 +1,11 @@
+//test return 3
+// test unary
+int main()
+{
+  int n1;
+
+  n1 = -3;
+  n1 = -n1;
+
+  return n1;            
+}

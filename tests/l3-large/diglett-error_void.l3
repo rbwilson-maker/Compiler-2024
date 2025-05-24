@@ -1,0 +1,11 @@
+//test error
+
+void print(int i) {
+  return print_int(i);
+}
+
+int main() {
+  print(1);
+  return 0;
+}
+

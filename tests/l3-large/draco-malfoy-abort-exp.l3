@@ -1,0 +1,17 @@
+//test abort
+
+bool blackbox(bool b) {
+	assert(!(!(b && b) || b));
+	return !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!b;
+}
+
+bool innocent() {
+	bool b = false;
+	bool result = blackbox(false);
+	return result;
+}
+
+int main() {
+	if (innocent()) return 1;
+	return -1;
+}

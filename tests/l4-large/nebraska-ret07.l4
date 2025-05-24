@@ -1,0 +1,86 @@
+//test return 9
+
+struct node
+{
+    int data;
+    struct node* left;
+    struct node* right;
+};
+
+typedef struct node node;
+
+node* create_node(int data)
+{
+    node *new_node = alloc(struct node);
+    new_node->data = data;
+    new_node->left = NULL;
+    new_node->right = NULL;
+    return new_node;
+}
+
+node* insert_node(node *root, int data)
+{
+    if(root == NULL)
+    {
+        root = create_node(data);
+    }
+    else
+    {
+        bool is_left  = false;
+        int r        = 0;
+        node* cursor = root;
+        node* prev   = NULL;
+ 
+        while(cursor != NULL)
+        {
+            prev = cursor;
+            if(data < cursor->data)
+            {
+                is_left = true;
+                cursor = cursor->left;
+            }
+            else
+            {
+                is_left = false;
+                cursor = cursor->right;
+            }
+ 
+        }
+        if(is_left)
+            prev->left = create_node(data);
+        else
+            prev->right = create_node(data);
+ 
+    }
+    return root;
+}
+
+node* search(node *root, int data)
+{
+    if(root == NULL)
+        return NULL;
+
+    node* cursor = root;
+    while(cursor != NULL)
+    {
+        if (data < cursor->data)
+            cursor = cursor->left;
+        else if (data > cursor->data)
+            cursor = cursor->right;
+        else
+            return cursor;
+    }
+    return cursor;
+}
+
+int main() {
+  node *root = insert_node(NULL, 1);
+  node *t1 = insert_node(root, 5);
+  node *t2 = insert_node(t1, 8);
+  node *t3 = insert_node(t2, 9);
+  node *t4 = insert_node(t3, 10);
+
+  node *a = search(t4, 9);
+  assert(a != NULL);
+  return a->data;
+}

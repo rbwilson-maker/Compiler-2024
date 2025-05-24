@@ -1,0 +1,68 @@
+//test return 0
+// impl of separate chaining hash table (with identity fn as hash)
+
+int abs(int x){return x<0 ? -x : x;}
+
+struct node{
+  int key;
+  int[] data;
+  struct node* next;
+};
+typedef struct node node;
+
+struct ht{
+  node*[] table;
+  int len;
+};
+
+typedef struct ht ht;
+
+ht* ht_new(int len){
+  ht* ret = alloc(ht);
+  ret -> len = len;
+  ret -> table = alloc_array(node*,len);
+  return ret;
+}
+
+void ht_add(ht* h, int key, int[] data){
+  node* n = alloc(node);
+  n->key = key;
+  n->data = data;
+  n->next = h->table[abs(key%h->len)];
+  h->table[abs(key%h->len)] = n;
+}
+
+int[] ht_lookup(ht* h,int key){
+  node* chain = h->table[abs(key%h->len)];
+  while(chain->key!=key) chain = chain->next;
+  return chain->data;
+}
+
+int[] make_array(int a, int b, int c, int d, int e){
+  int[] A = alloc_array(int, 5);
+  A[0] = a;
+  A[1] = b;
+  A[2] = c;
+  A[3] = d;
+  A[4] = e;
+  return A;
+}
+
+int main(){
+  ht* H = ht_new(5);
+  int[] A = make_array(1,2,3,4,5);
+  int[] B = make_array(6,7,8,9,10);
+  ht_add(H,5,A);
+  ht_add(H,6,B);
+  ht_add(H,11,A);
+  assert(ht_lookup(H,6)==B);
+  assert(ht_lookup(H,5)==A);
+  return 0;
+  
+}
+
+
+
+
+
+

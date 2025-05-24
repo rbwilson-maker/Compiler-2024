@@ -1,0 +1,13 @@
+//test memerror
+
+int main() {
+	int[][] a = alloc_array(int[], 360);
+	a[0] = alloc_array(int, 4);
+	for (int i = 1; i <= 360; i++) {
+		a[i] = a[i-1];
+	}
+    a[299][0] = 10;
+
+	assert(a[1][0] == 10);
+	return a[34][2];
+}

@@ -1,0 +1,19 @@
+//test error
+
+typedef struct apple bad_apple;
+typedef struct apple[] apple_tree;
+
+struct apple {
+  int apple;
+  int bad_apple;
+  int[] apple_tree;
+};
+
+int main() {
+  bad_apple* a;
+  apple_tree* b;
+  b = alloc(apple_tree);
+  a = alloc(bad_apple);
+  assert(*b == NULL); // incompatible types
+  return 1/0; // never reached
+}

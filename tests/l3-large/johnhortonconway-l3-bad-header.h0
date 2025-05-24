@@ -1,0 +1,9 @@
+/*
+ * This header file is bad because it contains function definition.
+ */
+
+int foo();
+int bar();
+int faz() {
+  return foo() + bar();
+}

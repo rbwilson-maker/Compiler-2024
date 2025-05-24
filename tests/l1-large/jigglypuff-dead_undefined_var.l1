@@ -1,0 +1,26 @@
+//test return 79
+
+/* Dead Code Undefined Variable Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Saturday, September 12, 2015 at 04:54:55 PM EDT
+ *
+ * This test tests that the compiler ignore an undefined variable
+ * being used, when it is in dead code after a return statement.
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int z;
+    int w;
+
+    x = 2;
+    y = 77;
+    z = x + y;
+
+    return z;
+    w += x;
+}

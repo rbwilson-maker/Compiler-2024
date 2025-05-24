@@ -1,0 +1,10 @@
+//test error
+//calling a function that hasn't been defined since the method parameters don't match
+
+int f(int a, int b) {
+    return a * (a + b);
+}
+
+int main(){
+    return f(5, 4, bool);
+}

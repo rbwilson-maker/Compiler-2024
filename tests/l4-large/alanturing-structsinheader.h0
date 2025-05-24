@@ -1,0 +1,5 @@
+struct s {int t; };
+
+typedef int* t;
+
+struct s2 {t t; };

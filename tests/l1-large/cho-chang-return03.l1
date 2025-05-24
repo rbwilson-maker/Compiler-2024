@@ -1,0 +1,17 @@
+//test return 1
+//tests a successful run with mixed statements and declarations
+int main()
+{
+    int a;
+    int b;
+    a = 0;
+    b = 1;
+
+    int c;
+    c = a + b;
+
+    int d;
+    d = c;
+
+    return d;
+}

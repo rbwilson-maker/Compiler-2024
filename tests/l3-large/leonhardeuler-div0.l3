@@ -1,0 +1,28 @@
+//test div-by-zero
+
+int heh(bool asdlfjldf, bool oihi2h3ro2);
+
+int hah (int x) {
+    if (x < 0) {
+        return x;
+    }
+    return hah(x - (heh (x % 2 == 0, x % 3 == 0)));
+}
+
+int heh (bool heh, bool hah) {
+    if (heh && hah) {
+        return 43;
+    } else if (heh && !hah) {
+        return 234;
+    } else if (!heh && hah) {
+        return 113;
+    } else {
+        return 12;
+    }
+}
+
+int main()
+{
+    int x = hah (1234) - (hah (5676) + hah (22)) - heh(true, true) + hah(240) + 1;
+    return 1234 / x;
+}

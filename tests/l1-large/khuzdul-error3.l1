@@ -1,0 +1,7 @@
+//test error
+int main(){
+	// Errors are easy to make
+	int y = 4 // oops no semicolon
+	int z = y + 1;
+	return y + z;
+}

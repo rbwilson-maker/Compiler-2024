@@ -1,0 +1,16 @@
+//test typecheck
+//test infloop
+
+int main()
+{
+  int i = 0;
+  int y = 0;
+  
+  while (i == y)
+  {
+    i += y;
+    y += i;
+  }
+
+  return 0;
+}

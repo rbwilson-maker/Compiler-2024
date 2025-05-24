@@ -1,0 +1,10 @@
+//test return 15
+// adds numbers in a loop
+int main() {
+  int acc = 0;
+  int n = 5;
+  for (int i = n; i > 0; i--) {
+    acc += i;
+  }
+  return acc;
+}

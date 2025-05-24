@@ -1,0 +1,14 @@
+//test return 123
+
+struct abc {
+    struct aewf* k;
+    int ks;
+    struct ae* k3;
+};
+
+int main () {
+    struct abc* mys = alloc(struct abc);
+    mys->ks = 123;
+    return mys->ks;
+}
+

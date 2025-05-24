@@ -1,0 +1,11 @@
+//test return 10
+
+// Tests simple program
+int main() {
+    int a = 1111100000;
+    int bit = 0;
+    for (; a != 0; a -= a & -a) {
+        bit++;
+    }
+    return bit;
+}

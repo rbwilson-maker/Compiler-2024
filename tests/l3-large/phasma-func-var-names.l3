@@ -1,0 +1,15 @@
+//test return 0
+int poop(int x) {
+  int poop = 2;
+  if(poop > x) {
+    return 2;
+  }
+  else {
+    return 0;
+  }
+}
+
+int main() {
+  int x = poop(2);
+  return poop(8);
+}

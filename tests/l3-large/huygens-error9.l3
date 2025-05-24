@@ -1,0 +1,13 @@
+//test error
+
+int x(int x) {
+    return x;
+}
+
+int x(int x, int y) {
+    return x + y;
+}
+
+int main() {
+    return x(1,2);
+}

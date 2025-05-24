@@ -1,0 +1,110 @@
+//test return 0
+
+
+
+int main() {
+  int m = 2;
+  int n = 3;
+  int k = 2;
+  
+  // A is m * n
+  int [][] A = alloc_array(int [], m);
+  for (int i=0; i<m; i++) {
+    A[i] = alloc_array(int, n);
+  }
+
+  // B is n * k
+  int [][] B = alloc_array(int [], n);
+
+  for (int i=0; i<n; i++) {
+    B[i] = alloc_array(int, k);
+  }
+
+  // https://www.symbolab.com/solver/matrix-multiply-calculator/%5Cbegin%7Bpmatrix%7D-1%262%263%5C%5C%205%26-1%267%5Cend%7Bpmatrix%7D%5Cbegin%7Bpmatrix%7D2%26-3%5C%5C%207%26-1%5C%5C%20-1%261%5Cend%7Bpmatrix%7D?or=input
+  A[0][0] = -1;
+  A[0][1] = 2;
+  A[0][2] = 3;
+  A[1][0] = 5;
+  A[1][1] = -1;
+  A[1][2] = 7;
+
+  B[0][0] = 2;
+  B[0][1] = -3;
+  B[1][0] = 7;
+  B[1][1] = -1;
+  B[2][0] = -1;
+  B[2][1] = 1;
+
+  // C is m * k
+  int [][] C = alloc_array(int [], m);
+  for (int i=0; i<m; i++) {
+    C[i] = alloc_array(int, k);
+  }
+
+  for (int i=0; i<m; i++) {
+    for (int j = 0; j < k; j++) {
+      C[i][j] = 0;
+      for (int l = 0; l < n; l++) {
+        C[i][j] += A[i][l] * B[l][j];
+      }
+    }
+  }
+  assert(C[0][0] == 9);
+  assert(C[0][1] == 4);
+  assert(C[1][0] == -4);
+  assert(C[1][1] == -7);
+
+  // THERES MORE 
+  // https://www.symbolab.com/solver/matrix-multiply-calculator/%5Cbegin%7Bpmatrix%7D-1%265%267%5C%5C%20%20%202%263%26-2%5C%5C%20%20%203%261%26-3%5Cend%7Bpmatrix%7D%5E%7B8%7D?or=input
+  n = 3;
+
+  int [][] D = alloc_array(int [], n);
+  for (int i=0; i<n; i++) {
+    D[i] = alloc_array(int, n);
+  }
+
+  D[0][0] = -1;
+  D[0][1] = 5;
+  D[0][2] = 7;
+  D[1][0] = 2;
+  D[1][1] = 3;
+  D[1][2] = -2;
+  D[2][0] = 3;
+  D[2][1] = 1;
+  D[2][2] = -3;
+
+  int [][] E = alloc_array(int [], n);
+  for (int i=0; i<n; i++) {
+    E[i] = alloc_array(int, n);
+  }
+  
+  int pow = 3;
+  for (int iter = 0; iter < pow; iter ++) {
+    for (int i=0; i<n; i++) {
+      for (int j = 0; j < n; j++) {
+        E[i][j] = 0;
+        for (int l = 0; l < n; l++) {
+          E[i][j] += D[i][l] * D[l][j];
+        }
+      }
+    }
+
+    for (int i=0; i<n; i++) {
+      for (int j=0; j<n; j++) {
+        D[i][j] = E[i][j];
+      }
+    }
+  }
+
+  assert(D[0][0] == 3100766);
+  assert(D[0][1] == -548605);
+  assert(D[0][2] == -5417570);
+  assert(D[1][0] == -881510);
+  assert(D[1][1] == 510161);
+  assert(D[1][2] == 1784330);
+  assert(D[2][0] == -1848910);
+  assert(D[2][1] == 763005);
+  assert(D[2][2] == 3530866);
+
+  return 0;
+}

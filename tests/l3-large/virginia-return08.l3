@@ -1,0 +1,25 @@
+//test return 45
+// simple multi function declaration
+
+int fun(int n1);
+int fun(int n2);
+int fun(int n3);
+int fun(int n4);
+int fun(int n5);
+int fun(int n6);
+int fun(int n7);
+int fun(int n8);
+int fun(int n9);
+
+int fun(int n)
+{
+	return n;
+}
+
+int main () {
+  int j = 0;
+  for(int i = 0; i < 10; i++)
+  	j += fun(i);
+  return j;
+
+}

@@ -1,0 +1,15 @@
+//test return 1
+int main() {
+    while (true) {
+        return 1;
+    }
+    while (true) {
+        return 38;
+    }
+    if (false) {
+        for (int i = 0; false; i *= 10) {
+            i -= 10;
+        }
+    }
+    return 10;
+}

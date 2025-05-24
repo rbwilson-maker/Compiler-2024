@@ -1,0 +1,33 @@
+//test return -1059319835
+
+// LF(k) = LF(k-l) + LF(k-n)
+// Thus, LF(k,1,2) is just the kth Fibonnaci number.
+int LF(int k, int l, int n)
+{
+  if(n < l) return n;
+
+  int res = 0;
+  res += LF(k, l, n-k);
+  res += LF(k, l, n-l);
+  return res;
+}
+
+int lf_memo(int[] A, int k, int l, int n)
+{
+  if(n < l)
+    return n;
+  if(A[n] != 0)
+    return A[n];
+  int res = lf_memo(A, k, l, n-k) + lf_memo(A, k, l, n-l);
+  A[n] = res;
+  return res;
+}
+
+int main()
+{
+  int k = 1;
+  int l = 2;
+  int n = 50000;
+  int[] A = alloc_array(int, n + 1);
+  return lf_memo(A, k, l, n); // 50000th Fibonacci number mod 2^32
+}

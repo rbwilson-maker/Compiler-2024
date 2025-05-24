@@ -1,0 +1,14 @@
+//test typecheck
+
+int main() {
+
+    fpt sum = 0;
+
+    for(int i = 0; i < 1000; i++) {
+        fpt a = fadd(i*i, i - 3);
+        fpt b = fsub(3, -i);
+        sum += (fmul(a, b));
+    }
+
+    return sum;
+}

@@ -1,0 +1,11 @@
+//test error
+// double declaration
+
+int main() {
+    int a = 3;
+    int a;
+    
+    int b;
+    int b = 5;
+    return a+b;
+}

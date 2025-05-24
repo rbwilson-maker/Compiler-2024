@@ -1,0 +1,17 @@
+//test abort
+
+typedef bool hai;
+
+hai isGood(int a, int b, int c) {
+    return (a + b) == c || ((a - 2) & c) < 0;
+}
+
+int heh() {
+    return 234 ^ 13214;
+}
+
+int main()
+{
+    assert(isGood (heh(), 2342, 988));
+    return 234;
+}

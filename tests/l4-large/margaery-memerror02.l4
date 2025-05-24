@@ -1,0 +1,15 @@
+//test memerror
+
+int main() {
+
+    dub[] too_long = alloc_array(dub, 9999);
+
+    int i= 0;
+    
+    for (i  = 9999; i > 0; i--) {
+        print_dub(too_long[i]);
+    }
+    
+
+    return dtoi(too_long[i + 1]);
+}

@@ -1,0 +1,23 @@
+//test return 1134
+
+struct nevada {
+    int california;
+    struct nevada *nevada;
+};
+
+void nevadanevada(struct nevada *nevada, int california) {
+    if (california == 0) return;
+    nevada->california = california;
+    nevada->nevada = alloc(struct nevada);
+    nevadanevada(nevada->nevada, california-1);
+}
+
+
+int main() {
+    struct nevada *nevada = alloc(struct nevada);
+    nevadanevada(nevada, 1234);
+
+    return nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->nevada->california;
+
+    return 0;
+}

@@ -1,0 +1,9 @@
+//test error
+// Recursive struct
+
+struct recursive { int x; struct recursive r; int y };
+
+int main() {
+    struct recursive *a = alloc(struct recursive);
+    return a->x;
+}

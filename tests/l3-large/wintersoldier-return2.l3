@@ -1,0 +1,18 @@
+//test return 3
+
+int unused() {
+    assert(false);
+    return 1 / 0;
+}
+
+int returnOne() {
+    return 1;
+}
+
+int returnTwo() {
+    return 2;
+}
+
+int main () {
+    return returnOne() + returnTwo();
+}

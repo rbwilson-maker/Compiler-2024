@@ -1,0 +1,22 @@
+//test typecheck
+//test infloop
+
+struct node{struct node* next;};
+typedef struct node * node;
+
+int main(){
+    int i = 100;
+    node[] nodes = alloc_array(node, i);
+    nodes[0] = alloc(struct node);
+    for(int j = 1; j < i; j++){
+        nodes[j] = alloc(struct node);
+        nodes[j]->next = nodes[j-1];
+    }
+    nodes[0]->next = nodes[i-1];
+
+    node curr_node = nodes[i-1];
+    while(curr_node != NULL){
+        curr_node = curr_node->next;
+    }
+    return 0;
+}

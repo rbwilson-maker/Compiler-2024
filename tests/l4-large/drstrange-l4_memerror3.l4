@@ -1,0 +1,10 @@
+//test memerror
+// pointers can be nullified
+
+int main() {
+  int* ref = alloc(int);
+  ref = NULL;
+  *ref = 0;
+
+  return *ref;
+}

@@ -1,0 +1,9 @@
+//test return 32
+//doing a lot of ops
+int main()
+{
+  int x = 1 + 2 - 3 * 4 / 5 << 6 >> 4;
+  bool y = true && false || true;
+  int z = 3 & 2 | 1;
+  return x * (z + (2 + 3));
+}

@@ -1,0 +1,42 @@
+//test typecheck
+
+void sort(int[] A, int n)
+{
+    assert (0 <= n);
+  for (int i = 0; i < n; i++) 
+  {
+    assert (0 <= i && i <= n);
+    assert (is_sorted(A, 0, i));
+    assert (le_segs(A, 0, i, A, i, n));
+    int min = i;
+
+    for (int j = i + 1; j < n; j++) 
+    {
+        assert(i < j && j <= n);
+        assert(i <= min && min < n);
+        assert(le_seg(A[min], A, i, j));
+      if (A[j] < A[min]) {
+        min = j;
+      }
+    }
+
+    swap(A, i, min);
+  }
+  assert (is_sorted(A, 0, n));
+}
+
+int main() {
+    int[] B = alloc_array(int, 10);
+    B[0] = 42;
+    B[1] = 1;
+    B[2] = 3;
+    B[3] = 7;
+    B[4] = 2;
+    B[5] = 45;
+    B[6] = 1;
+    B[7] = 16;
+    B[8] = 92;
+    B[9] = 4;
+    sort(B, 10);
+    return 1;
+}

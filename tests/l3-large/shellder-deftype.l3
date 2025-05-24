@@ -1,0 +1,17 @@
+//test compile
+
+typedef bool integer;
+typedef int boolean;
+
+bool evenp (int n)
+{
+  integer answer = n%2==0;
+  return answer;
+}
+
+integer oddp (boolean b){
+  return !evenp(b);
+}
+boolean main() {
+  return main();
+}

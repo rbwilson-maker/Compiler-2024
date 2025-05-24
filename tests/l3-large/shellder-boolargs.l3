@@ -1,0 +1,16 @@
+//test return 42
+int bools_to_num(bool a, bool b, bool c, bool d, bool e, bool f, bool g, bool h)
+{
+    return (a ? 0x80 : 0)
+         + (b ? 0x40 : 0)
+         + (c ? 0x20 : 0)
+         + (d ? 0x10 : 0)
+         + (e ? 0x08 : 0)
+         + (f ? 0x04 : 0)
+         + (g ? 0x02 : 0)
+         + (h ? 0x01 : 0);
+}
+
+int main() {
+    return bools_to_num(false, false, true, false, true, false, true, false);
+}

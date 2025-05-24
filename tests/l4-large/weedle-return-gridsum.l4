@@ -1,0 +1,37 @@
+//test return 1764
+
+int[][] makegrid(int R, int C) {
+  int[][] grid = alloc_array(int[], R);
+  for (int r = 0; r < R; r++) {
+     grid[r] = alloc_array(int, C);
+     for (int c = 0; c < C; c++) {
+       grid[r][c] = r + c*R;
+     }
+  }
+  return grid;
+}
+
+void process(int[][] grid, int R, int C) {
+  for (int r = 0; r < R; r++) {
+     for (int c = 0; c < C; c++) {
+       int up = r > 0 ? grid[r-1][c] : 0;
+       int left = c > 0 ? grid[r][c-1] : 0;
+       int ul = r > 0 && c > 0 ? grid[r-1][c-1] : 0;
+       grid[r][c] += up + left - ul;
+     }
+  }
+}
+
+int gridsum(int[][] grid, int r1, int c1, int r2, int c2) {
+  return grid[r2][c2] - grid[r1][c2] - grid[r2][c1] + grid[r1][c1];
+}
+
+int main() {
+  int R = 8;
+  int C = 8;
+  int[][] grid = makegrid(R, C);
+  process(grid, R, C);
+  assert(gridsum(grid, 2, 2, 5, 6) == 480);
+  assert(gridsum(grid, 3, 2, 6, 4) == 198);
+  return gridsum(grid, 0, 0, R - 1, C - 1);
+}

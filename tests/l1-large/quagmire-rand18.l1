@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+int temp_42;
+temp_42 = 627 % 0;
+temp_42 = ((636 + 823) % temp_42);
+temp_42 = 690;
+temp_42 = temp_42;
+temp_42 = (temp_42 % (temp_42 % 725));
+return (temp_42 * temp_42);
+}

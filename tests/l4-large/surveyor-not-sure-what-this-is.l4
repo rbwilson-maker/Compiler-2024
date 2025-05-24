@@ -1,0 +1,38 @@
+//test return 39
+struct item {
+  int x;
+  int y;
+};
+
+typedef struct item item;
+
+int rand(int seed) {
+  return 1103515245 * seed + 12345;
+}
+
+int mod(int v, int count) {
+  int ret = v % count;
+  if (ret < 0) {
+    ret += count;
+  }
+  return ret;
+}
+
+int main() {
+  int count = 100;
+  item[][] items = alloc_array(item[], count);
+
+  // fill array with "random" numbers
+  int n = 3250987;
+  for(int i = 0; i < count; i++) {
+    items[i] = alloc_array(item, count);
+    for(int j = 0; j < count; j++) {
+      n = rand(n);
+      items[i][j].x = mod(n, count);
+      n = rand(n);
+      items[i][j].y = mod(n, count);
+    }
+  }
+
+  return items[43][21].x + items[23][92].y;
+}

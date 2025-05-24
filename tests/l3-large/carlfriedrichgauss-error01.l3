@@ -1,0 +1,6 @@
+//test error
+// wrong usage of assert
+int main() {
+    assert(assert(true));
+    return 0;
+}

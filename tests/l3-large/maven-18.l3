@@ -1,0 +1,16 @@
+//test return 0
+// test basic assert
+
+int main() {
+  int x = 0;
+  int y = 1;
+  int z = 2;
+  int a = 3;
+  int b = 4;
+  assert(x == 0);
+  assert(y == 1);
+  assert(z == 2);
+  assert(a == 3);
+  assert(b == 4);
+  return 0;
+}

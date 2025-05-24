@@ -1,0 +1,25 @@
+//test return 12
+
+int main()
+{
+	int[] list = alloc_array(int, 10);
+	list[0] = 1;
+	list[1] = 4;
+	list[2] = 1;
+	list[3] = 6;
+	list[4] = 10;
+	list[5] = 11;
+	list[6] = 8;
+	list[7] = 0;
+	list[8] = 12;
+	list[9] = 7;
+  int max = 0;
+	for(int i = 0; i < 10; i++)
+	{
+		if(list[i] > max)
+		{
+			max = list[i];
+		}
+	}
+	return max;
+}

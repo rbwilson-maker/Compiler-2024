@@ -1,0 +1,9 @@
+//test typecheck
+
+int fun() {
+    return 42;
+}
+
+int main() {
+    return fun();
+}

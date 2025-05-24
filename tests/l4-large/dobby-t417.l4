@@ -1,0 +1,14 @@
+//test return 0
+struct x {
+  int x;
+};
+
+struct y {
+  struct x hi;
+};
+
+int main() {
+  struct x* hello = alloc(struct x);
+  int x = (*(alloc(struct y))).hi.x;
+  return x;
+}

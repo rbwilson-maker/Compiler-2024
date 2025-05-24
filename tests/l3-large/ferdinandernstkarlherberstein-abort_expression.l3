@@ -1,0 +1,12 @@
+//test abort
+
+int h(int n) {
+    return n * 10;
+}
+
+int main() {
+    int x = 1;
+    int y = 2;
+    assert(x + y == h(x));
+    return 1;
+}

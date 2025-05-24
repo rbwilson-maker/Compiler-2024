@@ -1,0 +1,36 @@
+//test return 8
+
+/* Tests:
+ *  - Long pointer list chain
+ *  - Dereferencing the long pointer list chain
+ */
+
+int main () {
+    int* star1 = alloc(int);
+    *star1 = 8;
+    int*[] arr1 = alloc_array(int*, 2);
+    arr1[0] = star1;
+    arr1[1] = star1;
+    int*[][] arr2 = alloc_array(int*[], 1);
+    arr2[0] = arr1;
+    int*[][]* star2 = alloc(int*[][]);
+    *star2 = arr2;
+    int*[][]** star3 = alloc(int*[][]*);
+    *star3 = star2;
+    int*[][]*** star4 = alloc(int*[][]**);
+    *star4 = star3;
+    int*[][]***[] arr3 = alloc_array(int*[][]***, 3);
+    arr3[0] = star4;
+    arr3[1] = star4;
+    arr3[2] = star4;
+    int*[][]***[]* star5 = alloc(int*[][]***[]);
+    *star5 = arr3;
+    int*[][]***[]*[] arr4 = alloc_array(int*[][]***[]*, 1);
+    arr4[0] = star5;
+    int*[][]***[]*[]* star6 = alloc(int*[][]***[]*[]);
+    *star6 = arr4;
+    int*[][]***[]*[]** star7 = alloc(int*[][]***[]*[]*);
+    *star7 = star6;
+
+    return *((***(*(**star7)[0])[2])[0][1]);
+}

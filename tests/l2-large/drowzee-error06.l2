@@ -1,0 +1,11 @@
+//test error
+//can't check equality between int and bool
+
+int main () {
+  bool a = true;
+  int x = 10;
+  if (a == x) {
+    return 1;
+  }
+  return 0;
+}

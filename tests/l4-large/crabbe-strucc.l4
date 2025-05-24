@@ -1,0 +1,20 @@
+//test return 2
+
+typedef struct pointer pointer;
+
+struct pointer{
+  int bloop;
+};
+
+struct s{
+  int bloop;
+  pointer* smoot;
+};
+
+int main(){
+  struct s* s= alloc(struct s);
+  pointer* goop = alloc(pointer);
+  goop->bloop = 2;
+  s->smoot = goop;
+  return s->smoot->bloop;
+}

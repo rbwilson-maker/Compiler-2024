@@ -1,0 +1,17 @@
+//test typecheck
+
+struct newstruct {
+    int a;
+    int** b;
+    coolstruct* z;
+};
+
+int main() {
+    struct newstruct* var = alloc(struct newstruct);
+
+    var->a = 5;
+
+    var->b;
+
+    return 0;
+}

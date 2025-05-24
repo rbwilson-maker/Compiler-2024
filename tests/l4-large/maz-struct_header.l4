@@ -1,0 +1,10 @@
+//test typecheck
+
+int main() {
+    struct s *a = alloc(struct s);
+    
+    a->a = 0;
+    a->b = true;
+    
+    return a->a; 
+}

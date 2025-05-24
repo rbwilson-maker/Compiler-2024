@@ -1,0 +1,8 @@
+//test error
+// use of reserved "--"
+int main() 
+{
+    int i = 5;
+    int x = 4--i;
+    return x;
+}

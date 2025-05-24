@@ -1,0 +1,12 @@
+//test error
+// passing a pointer instead of an int
+
+void do_stuff(int x){
+    x = x + 1;
+}
+
+int main(){
+    int *x = alloc(int);
+    do_stuff(x);
+    return 0;
+}

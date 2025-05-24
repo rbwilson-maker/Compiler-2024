@@ -1,0 +1,14 @@
+//test abort
+
+int main() {
+    int len = 999;
+    int[] A = alloc_array(int, len);
+    for (int i = 0; i < len; i++) {
+        A[i] = i;
+    }
+    A[990] = A[991];
+    for (int i = 0; i < len-1; i++) {
+        assert(A[i] < A[i+1]);
+    }
+    return 0;
+}

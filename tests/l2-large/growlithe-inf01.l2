@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+int main()
+{
+   	 int a;
+   	 int i;
+   	 int j;
+   	 int k;
+
+	 k = 0xFB;
+   	 i = 45678;
+   	 for(a = 0; a < 45 ; a++)
+   	 {
+   		 j = i % (a + 1);
+   		 k = (i + j) * (i - j);
+   		 a = 0;
+   	 }
+   	 return k;
+}

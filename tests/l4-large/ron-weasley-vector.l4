@@ -1,0 +1,167 @@
+//test return 0
+
+
+
+typedef struct vect_str vector;
+
+
+
+struct vect_str{
+    int len;
+    int capacity;
+    int[] data;
+    bool hasOriginalCap;
+};
+
+
+int roundFloor(int n, int rounder){
+    if (rounder <= 0) return n;
+    return (n - (n % rounder));
+}
+
+int roundCeil(int n, int rounder){
+    if (rounder <= 0) return n;
+    return (n - (n % rounder) + rounder);
+}
+
+int max(int a, int b) {
+    if (a > b) return a;
+    else return b;
+}
+
+vector* new_vector(int capacity){
+    // get true capacity
+    // int t_capacity = roundCeil(capacity, 4);
+    int t_capacity = max(4, capacity);
+    
+    // allocate structures
+    vector* v = alloc(vector);
+    int[] data = alloc_array(int, t_capacity);
+    
+    
+    v->len = 0;
+    v->capacity = t_capacity;
+    v->data = data;
+    v->hasOriginalCap = true;
+    return v;   
+}
+
+void resizeIfNecessary(vector * v){
+    if (v->len == v->capacity) {
+        // make new data array 
+        int new_capacity = 2 * (v->capacity);
+        int[] new_data = alloc_array(int, new_capacity);
+        for (int i = 0; i < v->len; i++){
+            new_data[i] = v->data[i];
+        }
+        v->data = new_data;
+        v->capacity = new_capacity;
+        v->hasOriginalCap = false;
+
+    }
+    else { 
+        if (!(v->hasOriginalCap) && v->len == v->capacity/4){
+            int new_capacity = (v->capacity)/2;
+            int[] new_data = alloc_array(int, new_capacity);
+            for (int i = 0; i < v->len; i++){
+                new_data[i] = v->data[i];
+            }
+            v->data = new_data;
+            v->capacity = new_capacity;
+        }
+    }
+
+    return;
+}
+
+
+void add_value(vector* v, int val){
+    v->data[v->len] = val;
+    v->len = v->len + 1;
+    resizeIfNecessary(v);
+}
+
+
+int remove_value(vector* v){
+    int new_len = v->len - 1;
+    int popped_val = v->data[new_len];
+    v->len = new_len;
+    resizeIfNecessary(v);
+    return popped_val;
+}
+
+int get_val(vector* v, int index){
+    assert(index >= 0);
+    assert(index < v->len);
+    return v->data[index];
+}
+
+void set_val(vector* v, int index, int val){
+    assert(index >= 0);
+    assert(index < v->len);
+    v->data[index] = val;
+
+}
+
+int get_len(vector *v){
+    return v->len;
+}
+
+int get_capacity(vector *v){
+    return v->capacity;
+}
+
+typedef vector* vector_t;
+
+int main(){
+    vector_t v1 = new_vector(8);
+
+    // assert correctness of values
+    assert(get_capacity(v1) == 8);
+    assert(get_len(v1) == 0);
+
+    // add 6 values
+    for (int i = 0; i < 6; i++){
+        add_value(v1, i);
+    }
+
+    assert(get_capacity(v1) == 8);
+    assert(get_len(v1) == 6);
+
+    // remove 6 values
+    for (int i = 0; i < 6; i++){
+        assert((5 - remove_value(v1)) == i);
+    }
+
+    // capacity and len should be conserved since the original
+    // capacity has not be changed    
+    assert(get_capacity(v1) == 8);
+    assert(get_len(v1) == 0);
+
+    
+    // add 10 values 
+    for (int i = 0; i < 10; i++){
+        add_value(v1, i);
+    }
+
+    // capacity should have changed
+    assert(get_capacity(v1) == 16);
+    assert(get_len(v1) == 10);
+    
+    // remove 6 values to get to len 4
+    for (int i = 9; i > 3; i--){
+        assert(i == remove_value(v1));
+    }
+
+    // capacity should now shrink back
+    assert(get_capacity(v1) == 8);
+    assert(get_len(v1) == 4);
+
+    return 0;
+}
+
+
+
+
+
+

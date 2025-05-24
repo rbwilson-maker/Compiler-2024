@@ -1,0 +1,28 @@
+//test return 20
+
+struct a {
+    int *x;
+};
+
+struct b {
+    struct a * s;
+    bool enabled;
+    int *value;
+};
+
+int main() {
+  struct a * temp1 = alloc(struct a);
+  struct b * temp2 = alloc(struct b);
+  temp2->enabled = true;
+  temp2->value = alloc(int);
+  *temp2->value = 5;
+  temp2->s = temp1;
+  temp1->x = alloc(int);
+  *temp1->x = 20;
+
+  if (*temp2->value != 0) {
+    return *temp2->s->x;
+  } else {
+    return *temp2->value;
+  }
+}

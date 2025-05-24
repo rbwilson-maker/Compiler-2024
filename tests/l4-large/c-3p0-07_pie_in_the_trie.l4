@@ -1,0 +1,110 @@
+//test return 602;
+
+//Build a trie for strings of digits of pi
+//Returns the position of the digit string "000"
+
+//Also tests weak polymorphism (fill_trie_with_pie need not know what trie is)
+
+struct node;
+typedef struct node * trie;
+
+trie insert(trie t, int v, int[] word, int p, int len);
+
+void fill_trie_with_pie(trie t){
+    int[] r = alloc_array(int, 2801);
+    int[] w = alloc_array(int, 4);
+    int i;
+    int k;
+    int b;
+    int d;
+    int c = 0;
+
+    for(i=0;i<2800;i++){
+        r[i] = 2000;
+    }
+
+    int pos = 0;
+
+    for(k=2800; k>0; k-=14){
+        d = 0;
+        i = k;
+        bool flag = true;
+        while(flag){
+            d += r[i] * 10000;
+            b = 2 * i - 1;
+            r[i] = d%b;
+            d /= b;
+            i--;
+            if(i == 0) flag = false;
+            else d *= i;
+        }
+
+        int pp = c + d / 10000;
+        for(int j=3; j>=0; j--){
+            for(int kk=0;kk<3;kk++){
+                w[kk] = w[kk+1];
+            }
+            w[3] = pp % 10;
+
+            insert(t,pos,w,0,4);
+            pos++;
+            pp /= 10;
+        
+        }
+        c = d % 10000;       
+    }
+}
+
+typedef int result;
+struct node{
+    bool is_word;
+    result value;
+    trie[] child;
+};
+
+trie new_trie(){
+    trie t = alloc(struct node);
+    t->is_word = false;
+    t->child = alloc_array(trie, 10);
+    return t;
+}
+
+trie insert(trie t, int v, int[] word, int p, int len){
+    if(len == p){
+        t->is_word = true;
+        t->value = v;
+        return t;
+    }
+    if(t->child[word[p]] == NULL){
+        t->child[word[p]] = new_trie();
+    }
+
+    t->child[word[p]] = insert(t->child[word[p]], v, word, p+1,len);
+    return t;
+}
+
+bool in_trie(trie t, result * v, int[] word, int p, int len){
+    if(p == len){
+        *v = t->value;
+        return t->is_word;
+    }
+    if(t->child[word[p]] == NULL) return false;
+    return in_trie(t->child[word[p]],v,word,p+1,len);
+}
+
+int main(){
+    trie t = new_trie();
+    fill_trie_with_pie(t);
+
+    int[] w = alloc_array(int, 4);
+
+    // Is the digit string "000" in pi? And at what position?
+
+    w[0] = 0;
+    w[1] = 0;
+    w[2] = 0;
+ 
+    result * res = alloc(int);
+    if(in_trie(t,res,w,0,4)) return *res;
+    return 0;
+}

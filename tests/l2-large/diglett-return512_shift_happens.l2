@@ -1,0 +1,16 @@
+//test return 512
+
+int main()
+{
+int x = 32;
+int z;
+x >>= 1;
+if (x > 20) return 42;
+else
+  {
+    int y = x << 5;
+    x = y >> 8;
+    z = 32 >> 1 << 5 >> 10;
+    return y << 0;
+  }
+}

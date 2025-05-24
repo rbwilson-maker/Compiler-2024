@@ -1,0 +1,9 @@
+//test memerror
+
+int main() {
+	int *a = true ? NULL : alloc(int);
+	int **c = alloc(int*);
+	int *b = true ? *c : a;
+	*b = 1;
+	return 0;
+}

@@ -1,0 +1,40 @@
+//test return 25
+
+struct huh {
+    int whatever;
+    int[] ohyeah;
+};
+
+struct ohno {
+    struct huh*[] why;
+    struct ohno*[][] pleaseno;
+};
+
+int main() {
+    int /*%*/rip = 10;
+
+    struct ohno*[] oops = alloc_array(struct ohno*, rip);
+
+    for (int i = 0; i < rip; i++) {
+        oops[i] = alloc(struct ohno);
+        oops[i]->why = alloc_array(struct huh*, 0);
+        oops[i]->pleaseno = alloc_array(struct ohno*[], i);
+        for (int j = 0; j < i; j++) {
+            oops[i]->pleaseno[j] = alloc_array(struct ohno*, j);
+            for (int k = 0; k < j; k++) {
+                oops[i]->pleaseno[j][k] = alloc(struct ohno);
+                oops[i]->pleaseno[j][k]->why = alloc_array(struct huh*, k);
+                for (int l = 0; l < k; l++) {
+                    oops[i]->pleaseno[j][k]->why[l] = alloc(struct huh);
+                    oops[i]->pleaseno[j][k]->why[l]->whatever = l;
+                    oops[i]->pleaseno[j][k]->why[l]->ohyeah = alloc_array(int, l);
+                    for (int m = 0; m < l; m++) {
+                        oops[i]->pleaseno[j][k]->why[l]->ohyeah[m] = m*m;
+                    }
+                }
+            }
+        }
+    }
+
+    return oops[9]->pleaseno[8][7]->why[6]->ohyeah[5];
+}

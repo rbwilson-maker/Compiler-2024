@@ -1,0 +1,23 @@
+//test typecheck
+
+squiggle squig(snigger sn);
+snigger snig(squiggle sq);
+
+squiggle squig(snigger sn){
+  tigger tig = converttigsn(sn);
+  squiggle squig = convertsq(tig);
+  return squig;
+}
+
+snigger snig(squiggle sq){
+tigger tig = converttigsq(sq);
+snigger snig = convertsn(tig);
+return snig;
+}
+
+int main() {
+  squiggle sq = 5;
+  snigger sn = snig(sq);
+  squiggle sq2 = squig(sn);
+  return 0;
+}

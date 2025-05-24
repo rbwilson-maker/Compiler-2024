@@ -1,0 +1,49 @@
+//test return 119939769
+
+/* struct 01 Test 
+ *  
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * 
+ * Test various places for struct definitions and usages
+ */
+
+typedef struct a t;
+struct a {
+    int a1;
+    bool a2; 
+    int *a3;
+    bool *a4;
+    int[] a5;
+};
+
+int sum(int[] list, int len) {
+    int sum = 0; 
+    for (int i = 0; i < len; i++) {
+        sum+=list[i];
+    }
+    return sum;
+}
+
+int main()
+{
+    int i = 0; 
+    t*[] t1 = alloc_array(struct a *, 100); 
+    int[] sums = alloc_array(int, 100);
+
+    for(; i < 100; i++) {
+        t1[i] = alloc(struct a);
+        t1[i]->a1 = i; 
+        t1[i]->a5 = alloc_array(int, i);
+        
+        for (int j = 0; j < i; j++) {
+            t1[i]->a5[j] = j + i * (0xdeed + j) % 0xbeef; 
+        }
+
+        sums[i] = sum(t1[i]->a5, t1[i]->a1);
+    }
+
+
+    return sum(sums, 100);    
+}
+

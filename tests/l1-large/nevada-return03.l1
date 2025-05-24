@@ -1,0 +1,21 @@
+//test return 3
+// gcd of 15 and 12
+
+int main() {
+  int a;
+  int b;
+  int c;
+
+  a = 15;
+  b = 12;
+
+  c = b;
+  b = a % b;
+  a = c;
+
+  c = b;
+  b = a % b;
+  a = c;
+
+  return a;
+}

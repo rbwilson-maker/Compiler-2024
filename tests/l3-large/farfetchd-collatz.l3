@@ -1,0 +1,23 @@
+//test return 9232
+
+int collatz(int n)
+//@requires n >= 1;
+{
+  int r = 1;
+  while (n > 1) {
+    if (n > r) {
+      r = n;
+    }
+    if (n % 2 == 0)
+      n = n / 2;
+    else
+      n = 3*n + 1;
+  }
+  return r;
+}
+
+
+int main ()
+{
+  return collatz(27);
+}

@@ -1,0 +1,16 @@
+//test div-by-zero
+//test shift quantity out of range
+
+int shift(int x, int a) {
+	return x << a;
+}
+
+int main() {
+	int x = 1;
+	int y = 2;
+	int z = 3;
+	bool a = true;
+	bool b = false;
+	x = shift(x, 32);
+	return 1;
+}

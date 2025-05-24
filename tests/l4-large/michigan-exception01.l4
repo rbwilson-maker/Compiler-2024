@@ -1,0 +1,25 @@
+//test typecheck
+//test infloop
+
+struct node {
+	int elem;
+	struct node* next;
+};
+
+typedef struct node list;
+
+int main() {
+	list* l1 = alloc(list);
+	list* l2 = alloc(list);
+	list* l3 = alloc(list);
+	l1->elem = 10;
+	l1->next = l2;
+	l2->elem = 20;
+	l2->next = l1;
+	int result = 0;
+	for (list* p = l1; p != NULL; p = p->next) {
+		result += p->elem;
+	}
+
+	return result;
+}

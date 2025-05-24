@@ -1,0 +1,24 @@
+//test error
+
+/* Else Keyword Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, September 13, 2015 at 09:26:54 AM 
+ *
+ * This test tests whether the compiler detects that the keyword 'else'
+ * is being used as an identifier.
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int else;
+
+    x = 4;
+    y = 3;
+    else = x + y;
+
+    return else;
+}

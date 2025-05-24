@@ -1,0 +1,16 @@
+//test return 0
+
+//many types
+void foo(int a, bool b, int c, int d, bool e) {
+    a + c;
+    b && e;
+    while (true) {
+        d++;
+    }
+}
+
+int main() {
+    return 0;
+
+    foo(1, true, 3, 4, false);
+}

@@ -1,0 +1,13 @@
+//test return 0
+
+bool main_ext() { 
+    bool i= (true == false);
+    int k = 2147483648;
+    int j=k*10;
+    if(i) return i; return false; 
+}
+
+int main()
+{   
+    if (main_ext()) return 1; else return 0; 
+}

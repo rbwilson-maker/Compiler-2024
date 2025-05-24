@@ -1,0 +1,33 @@
+//test return 0
+// computes pi via taylor expansion of arctan
+
+dub arctan(dub x) {
+  dub exp = x;
+  dub result = itod(0);
+  dub negone = itod(-1);
+  dub xsqr = dmul(x, x);
+
+  for(int i=1; i<1000000; i+=2) {
+    dub term = ddiv(exp, itod(i));
+
+    if (i/2 % 2 == 1)
+      term = dmul(term, negone);
+
+    result = dadd(result, term);
+    exp = dmul(xsqr, exp);
+  }
+
+  return result;
+}
+
+
+int main() {
+  dub pi = dmul(itod(4), arctan(itod(1)));
+  
+  print_dub(pi);
+
+  assert(dless(pi, ddiv(itod(31417), itod(10000))));
+  assert(dless(ddiv(itod(31415), itod(10000)), pi));
+
+  return 0;
+}

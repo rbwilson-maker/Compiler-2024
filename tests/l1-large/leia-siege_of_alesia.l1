@@ -1,0 +1,6 @@
+//test return -26
+int main() {
+    // test associativity of -
+    int dont_be_negative = 1 - 2 - 3 - 4 - 5 - 6 + - 7;
+    return dont_be_negative;
+}

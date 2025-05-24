@@ -1,0 +1,19 @@
+//test return 42
+//A test of rsa decryption
+
+//Definitely the best way to do this.
+int dec(int ciphertext, int d, int n){
+    int res = ciphertext;
+    for(int i = 1; i < d; i++){
+        res = (res * ciphertext) % n;
+    }
+    return res;
+}
+
+int main(){
+    int d = 47;
+    int n = 391;
+    int ciphertext = 66;
+    int plain = dec(ciphertext, d, n);
+    return plain;
+}

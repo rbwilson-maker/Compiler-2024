@@ -1,0 +1,13 @@
+//test error
+
+int main() {
+    int a;
+    int b;
+    int c;
+
+    a = 123;
+    b = 43;
+    c = a + b - c;
+
+    return c;    
+}

@@ -1,0 +1,44 @@
+//test return 7
+
+struct dec_part {
+    int tenths;
+    int hundreths;
+    int thousandths;
+    
+};
+
+struct real_number {
+    int whole;
+    struct dec_part *decimal; 
+};
+
+
+int main() {
+
+    struct dec_part *dec1 = alloc(struct dec_part);
+    dec1->tenths = 1;
+    dec1->hundreths = 2;
+    dec1->thousandths = 3;
+
+    struct dec_part *dec2 = alloc(struct dec_part);
+    dec2->tenths = 2;
+    dec2->hundreths = 3;
+    dec2->thousandths = 4;
+
+    struct real_number *num1 = alloc(struct real_number);
+    num1->whole = 1;
+    num1->decimal = dec1;
+
+    struct real_number *num2 = alloc(struct real_number);
+    num2->whole = 2;
+    num2->decimal = dec2;
+
+    struct real_number *num3 = alloc(struct real_number);
+    num3->whole = num1->whole + num2->whole;
+    num3->decimal = alloc(struct dec_part);
+    num3->decimal->tenths = num1->decimal->tenths + num2->decimal->tenths;
+    num3->decimal->hundreths = num1->decimal->hundreths + num2->decimal->hundreths;
+    num3->decimal->thousandths = num1->decimal->thousandths + num2->decimal->thousandths;
+
+    return num3->decimal->thousandths;
+}

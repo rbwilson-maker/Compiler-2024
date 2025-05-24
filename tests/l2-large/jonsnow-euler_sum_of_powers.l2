@@ -1,0 +1,47 @@
+//test return 210
+//let's see if we can come up with a counterexample...
+
+int main() {
+  int lo = 20;
+  int hi = 150; // search space
+
+  for (int a = lo; a < hi; a++) {
+    for (int b = a; b < hi; b++) {
+      for (int c = b; c < hi; c++) {
+        for (int d = c; d < hi; d++) {
+          for (int e = d; e < hi; e++) {
+            // We have to account for overflow
+
+            int aaaa = a * a * a * a;
+            int bbbb = b * b * b * b;
+            int cccc = c * c * c * c;
+            int dddd = d * d * d * d;
+            int eeee = e * e * e * e;
+
+            int aaaaa = aaaa * a;
+            int bbbbb = bbbb * b;
+            int ccccc = cccc * c;
+            int ddddd = dddd * d;
+            int eeeee = eeee * e;
+
+            // Only possible overflow is in above multiplications;
+            // the below sum of aaaaa + bbbbb + ... will never overflow
+            // for the search space.
+            bool summand_overflow = false
+              || aaaaa / aaaa != a
+              || bbbbb / bbbb != b
+              || ccccc / cccc != c
+              || ddddd / dddd != d;
+            bool sum_overflow = eeeee / eeee != e;
+
+            if (aaaaa + bbbbb + ccccc + ddddd == eeeee && summand_overflow == sum_overflow) {
+              return a + b + c + d - e;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return -1;
+}

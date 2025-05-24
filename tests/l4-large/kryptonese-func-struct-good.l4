@@ -1,0 +1,22 @@
+//test return 14124
+// foo as an arg won't work if its a struct
+
+struct foo {
+  int a;
+};
+
+bool foo(int a, struct foo  * b) {
+  if (a <= 0) return true;
+  struct foo* bar = alloc(struct foo);
+  foo(a-1, bar);
+  return a == 0;
+}
+
+int main() {
+  struct foo * b = alloc(struct foo);
+  if (foo(10, b)) {
+    return 1;
+  }
+  return 14124;
+}
+

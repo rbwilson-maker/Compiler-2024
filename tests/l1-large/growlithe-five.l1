@@ -1,0 +1,14 @@
+//test error
+//integer incorrectly defined.
+int main()
+{
+  int r = 5;
+  r = r*2;
+  r = r*2;
+  r = r*2;
+  r = r*2;
+
+  int what = 0001;
+
+  return 13;
+}

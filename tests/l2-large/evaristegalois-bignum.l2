@@ -1,0 +1,12 @@
+//test return 10
+
+int main() {
+    int x = 9;
+    x++;
+    if (x == 10) {
+        return 10;
+    }
+    else {
+        return 9;
+    }
+}

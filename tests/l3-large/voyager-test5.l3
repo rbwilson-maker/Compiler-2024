@@ -1,0 +1,11 @@
+//test error
+//test invalid typedef
+
+typedef void mask;
+
+int main()
+{
+  int a = 5;
+  mask b;
+  return a;
+}

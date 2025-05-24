@@ -1,0 +1,11 @@
+//test return 10
+//Swap
+
+int main(){
+	int x = 20;
+	int y = 10;
+	x += y;
+	y = x - y;
+	x -= y;
+	return y - x;
+}

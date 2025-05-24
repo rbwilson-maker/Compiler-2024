@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+	for (int x = 0; x < 10; int y = 4) {
+		int z = 4;
+		z = z + 1;
+	}
+	return -4;
+}

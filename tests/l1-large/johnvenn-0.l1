@@ -1,0 +1,14 @@
+//test error
+
+//testing not allowed to redeclare variables
+int main() {
+  int x;
+  int y;
+  int z;
+
+  x = 5;
+  y = 0;
+  z = 0;
+  int x;
+  return (z*y)/x;
+}

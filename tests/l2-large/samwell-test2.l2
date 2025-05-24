@@ -1,0 +1,31 @@
+//test return 1
+
+int main() { 
+  int ret = 1;
+  int x = 2;
+  int y = -1;
+  int z = x + y;
+  ret *=z;
+
+  y = 1;
+  z = x - y;
+  ret *=z;
+  
+  y = 2;
+  z = x / y;
+  ret *=z;
+
+  x = 3;
+  z = x % y;
+  ret *=z;
+
+  bool a = true;
+  bool b = false;
+  bool c = a && b;
+  bool d = a || b;
+  
+  return ret;
+  }
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

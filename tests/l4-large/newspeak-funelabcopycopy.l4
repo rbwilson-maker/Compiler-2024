@@ -1,0 +1,25 @@
+//test memerror
+// test that elaboration of asnops is done correctly
+
+int f(int *x) {
+  (*x)--;
+  return *x;
+}
+
+int main() {
+  int *x = alloc(int);
+  *x = 0;
+  int[] A = alloc_array(int, 100);
+  for(int i = 0; i < 100; i++) {
+    A[i] = 0;
+  }
+  A[f(x)] = A[f(x)] + 1;  // +2
+  (*x)--;
+  A[f(x)] += 1;           // +1
+  A[f(x)] *= 1;           // +1
+  A[f(x)] /= 1;           // +1
+  A[f(x)] %= 1;           // +1
+  A[f(x)] = A[f(x)] << A[f(x)]; // +3
+  A[f(x)] <<= A[f(x)]; // +2
+  return *x;
+}

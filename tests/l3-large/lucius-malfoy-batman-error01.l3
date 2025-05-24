@@ -1,0 +1,16 @@
+//test error
+
+void na(int na) {
+    if (na == 0) {
+        print_hex(871889);
+        return;
+    }
+
+    print_int(0);
+    na(na - 1);
+}
+
+int main() {
+    na(100);
+    return 1;
+}

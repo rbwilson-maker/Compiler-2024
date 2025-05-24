@@ -1,0 +1,15 @@
+//test return 64
+// test arithmetic operations except for div and mod
+int main()
+{
+  int a;
+  int b;
+
+  a = 4;
+  a += 3;
+  b = 25;
+  a += b;
+  b = a+a;
+
+  return b;
+}

@@ -1,0 +1,15 @@
+//test abort
+int main(){
+    int x = 371;
+    int y = 95120;
+    int z = 532197;
+
+    bool a = x*y > z;
+    bool b = (x+z^y&x) == (z|x);
+    bool c = (x+y+z+y+x) == (z+y+x+y+x);
+
+    assert(a || b && c);
+    assert(a && b || c);
+    assert(a ?  b :  c);
+    return x+y+z;
+}

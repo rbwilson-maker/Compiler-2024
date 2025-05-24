@@ -1,0 +1,14 @@
+//test return 8
+
+int main() {
+    int x = 5;
+    int y = x - 4;
+    x = y + 7;
+    int z = x - 1;
+    x = z + 1;
+    int q = z + 5;
+    x = q * 2;
+    int r = x / 3;
+
+    return r;
+}

@@ -1,0 +1,21 @@
+//test error
+// Radical return types
+
+void foo(int a) {
+    if(a > 3) {
+        return 3;
+    }
+    // This branch is technically unreachable, but who cares?
+    else if(a > 5) {
+        return true;
+    }
+
+    return;
+}
+
+
+int main() {
+    for(int i = 0; i < 10; i *= 2) {
+        return foo(a);
+    }
+}

@@ -1,0 +1,14 @@
+//test return -914
+
+int main(){
+    int t1 = 21/3;
+    int t2 = t1 + 43*3;
+    int t3 = t1 - t2 +5 + t2;
+    int t5 = t2 + t3 - t1 + t2 + 1;
+    int t6 = t5+t3-t1;
+    int t7 = 0;
+    for(int i = 0; i<1;i++){
+        t7 = t5 *4 +t2 - 2*t3;
+    }
+    return t7*-1+t5 + 32;
+}

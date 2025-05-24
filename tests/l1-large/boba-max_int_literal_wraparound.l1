@@ -1,0 +1,10 @@
+//test return -2147483648
+// One weird aspect of the spec is that there is a single permissible
+// integer literal which is not actually representable in 32-bit integers.
+// This tests that the compiler accepts 2^31.
+
+int main()
+{
+  return 2147483648;
+}
+

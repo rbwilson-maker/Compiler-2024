@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+
+struct node {
+  struct node* next;
+};
+typedef struct node * node;
+
+void traverse(node n) {
+  node t = n;
+  while (t != NULL) t = t->next;
+}
+
+
+int main() {
+   node n = alloc(struct node);
+   n->next = n; traverse(n);
+   return 0;
+}

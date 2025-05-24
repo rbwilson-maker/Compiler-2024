@@ -1,0 +1,51 @@
+//test return 1 
+
+// binary tree traversal
+struct node {
+  int val;
+  struct node* left;
+  struct node* right;
+};
+
+bool binarySearch(int toFind, struct node* root) {
+  int currVal = (*root).val;
+  if (currVal != toFind) {
+    if ((*root).left == NULL) { // simple treee if left is null so is right
+      return false;
+    }
+    bool inLeft = binarySearch(toFind, (*root).left);
+    bool inRight = binarySearch(toFind, (*root).right);
+    return (inLeft || inRight);
+  }
+  return true;
+}
+
+int main() {
+    struct node* root = alloc(struct node);
+    (*root).val = 0;
+    struct node* n1 = alloc(struct node);
+    (*n1).val = 1;
+    struct node* n2 = alloc(struct node);
+    (*n2).val = 2;
+    struct node* n3 = alloc(struct node);
+    (*n3).val = 3;
+    struct node* n4 = alloc(struct node);
+    (*n4).val = 4;
+    struct node* n5 = alloc(struct node);
+    (*n5).val = 5;
+    struct node* n6 = alloc(struct node);
+    (*n6).val = 6;
+    
+    (*root).left = n1;
+    (*root).right = n2;
+    (*n1).left = n3;
+    (*n1).right = n4;
+    (*n2).left = n5;
+    (*n2).right = n6;
+
+    bool found = binarySearch(5, root);
+    if (found) 
+       return 1;
+    else 
+       return 0;
+}

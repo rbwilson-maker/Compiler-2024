@@ -1,0 +1,6 @@
+//test error
+// we define main as an identifier with the special requirement that it can only be defined as a function with no parameters and the return type of int.
+
+void main(int x) {
+    return;
+}

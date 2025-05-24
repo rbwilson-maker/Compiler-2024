@@ -1,0 +1,12 @@
+//test return 3
+int main() {
+    bool x = false;
+    bool y = true;
+
+    x = x && y;
+    if(x)
+        return 4;
+    if(y)
+        return 3;
+    return 0;
+}

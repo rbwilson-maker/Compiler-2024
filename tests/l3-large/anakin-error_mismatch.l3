@@ -1,0 +1,15 @@
+//test error
+// declaration does not match
+
+int strange(int x, int y, int z, bool xx, bool yy, bool zz);
+
+int strange(int x, int y, bool z, bool xx, bool yy, bool zz);
+
+int strange(int x, int y, bool z, bool xx, bool yy, bool zz) {
+    return 0;
+}
+
+int main() {
+    int s = strange(0, 0, false, true, true, false);
+    return s;
+}

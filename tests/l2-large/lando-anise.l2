@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+  int x = 0x80000000;
+  x >>= 31;
+  x = x & 0x00000001;
+  int y = 1 / (1 - x);
+  return y;
+}

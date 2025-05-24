@@ -1,0 +1,9 @@
+//test return 74
+
+int main(){
+    int x = 37;
+    if (x > 73){
+       x << 1;
+    }
+    return x << 1;
+}

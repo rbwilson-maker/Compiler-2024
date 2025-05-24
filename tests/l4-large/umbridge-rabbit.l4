@@ -1,0 +1,10 @@
+//test memerror
+
+typedef int rabbit;
+typedef rabbit[] hat;
+typedef hat[] shop;
+
+int main() {
+    shop magic_shop = alloc_array(hat, 10);
+    return magic_shop[2][0]; // where did the rabbit come from?
+}

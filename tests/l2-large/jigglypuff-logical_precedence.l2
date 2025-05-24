@@ -1,0 +1,27 @@
+//test error
+
+/* Logical Precedence Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Tuesday, September 29, 2015 at 12:14:35 AM EDT
+ *
+ * This test exercises the operator precedence defined by the C0 language.
+ * Specifically, it tests a weird case of the precedence that leads to a
+ * syntax error. The equality and disequality operators have precedence
+ * over all bitwise operations, so a comparison with a bitwise expression
+ * using equality will cause an error due a integer and boolean expression
+ * being &'ed.
+ */
+
+int main()
+{
+    int x = 4;
+    int y = 2;
+
+    if (x & y == 0) {
+        x += y;
+    }
+
+    return x + y;
+}

@@ -1,0 +1,22 @@
+//test return 275
+
+
+// Test nested while-loops
+int main(){
+
+    int x = 0;
+    int y = 10;
+    int z = 5;
+
+    while (z > 0){
+        while (y > 0){
+            x = x + y;
+            y = y - 1;
+        }
+        y = 10;
+        z = z - 1;
+    }
+
+    return x;
+
+}

@@ -1,0 +1,10 @@
+//test error
+
+int[] foo() {
+    return alloc_array(int, 2000000000);
+}
+
+int main() {
+    foo()[3] += 5;
+    return 0;
+}

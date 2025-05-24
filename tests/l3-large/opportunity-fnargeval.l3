@@ -1,0 +1,11 @@
+//test div-by-zero
+//tests left-to-right evaluation order of fn arguments
+
+int hi(int x, int y) { return 0; }
+
+int fpe(int x) { return x/0; }
+int abort(int x) { assert(false); return 0; }
+
+int main(){
+  return hi(fpe(0), abort(0));
+}

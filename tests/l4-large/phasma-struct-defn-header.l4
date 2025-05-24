@@ -1,0 +1,10 @@
+//test typecheck
+
+struct tomato {
+  bool t;
+};
+
+int main() {
+  struct tomato* t = alloc(struct tomato);
+  return 0;
+}

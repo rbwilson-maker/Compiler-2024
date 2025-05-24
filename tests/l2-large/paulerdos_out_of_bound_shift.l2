@@ -1,0 +1,24 @@
+//test div-by-zero
+
+int main() {
+    int y;
+    int x;
+    int a = 0;
+    int b = 1;
+    int c = 2;
+    int d = 3;
+    int e = 4;
+    int f = 5;
+    bool g = true;
+    bool h = false;
+    if (a == b == h) 
+        if (e == f == (c == d) == h) 
+            return 1;
+        else
+            for (;e>=0;e--) {
+                if (e == 0)
+                    return f << b >> (f*f*f*f);
+            }
+    return 0;
+    y = x + 1; // unreachable for all control flow
+}

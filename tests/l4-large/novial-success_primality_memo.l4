@@ -1,0 +1,31 @@
+//test return 541
+
+// Test whether n is prime, given a list of the first `count` primes
+bool test_prime(int[] primes, int count, int n) {
+  int i = 0;
+
+  while (primes[i] * primes[i] <= n) {
+    int prime = primes[i];
+    if (n % prime == 0) return false;
+    i++;
+  }
+
+  primes[count] = n;
+  return true;
+}
+
+int main() {
+  int[] primes = alloc_array(int, 100);
+  primes[0] = 2;
+
+  int count = 1;
+  int n = 3;
+  while (count < 100) {
+    if (test_prime(primes, count, n)) {
+      count++;
+    }
+    n++;
+  }
+
+  return primes[count-1];
+}

@@ -1,0 +1,10 @@
+//test return 0;
+// test control flow-based variable initialization + usage
+
+int main() {
+    int j;
+    for (int i = 0; i < 10; i += j) {
+        j = 3;
+    }
+    return 0;
+}

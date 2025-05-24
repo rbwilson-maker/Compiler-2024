@@ -1,0 +1,10 @@
+//test error
+
+void why() {
+     return;
+}
+
+int main() {
+    true ? why() : why();
+    return 1;
+}

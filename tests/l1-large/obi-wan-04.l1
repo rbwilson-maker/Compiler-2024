@@ -1,0 +1,7 @@
+//test return -2147483648
+
+//this tests for overflow
+int main() {
+    int x = 0x80000000 * -1;
+    return x;
+}

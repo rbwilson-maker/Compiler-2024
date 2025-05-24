@@ -1,0 +1,43 @@
+//test return 2376000
+
+// This is designed to test integer comparison
+int main() {
+  int a = 10;
+  if (5 > 7) {
+    a *= 2;
+  }
+  if (5 > 5) {
+    a *= 3;
+  }
+  if (7 > 5) {
+    a *= 4;
+  }
+  if (5 < 7) {
+    a *= 5;
+  }
+  if (5 < 5) {
+    a *= 6;
+  }
+  if (7 < 5) {
+    a *= 7;
+  }
+  if (5 >= 7) {
+    a *= 8;
+  }
+  if (5 >= 5) {
+    a *= 9;
+  }
+  if (7 >= 5) {
+    a *= 10;
+  }
+  if (5 <= 7) {
+    a *= 11;
+  }
+  if (5 <= 5) {
+    a *= 12;
+  }
+  if (7 <= 5) {
+    a * 13;
+  }
+  return a;
+}

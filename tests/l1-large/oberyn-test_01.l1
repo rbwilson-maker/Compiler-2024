@@ -1,0 +1,12 @@
+//test return 2
+
+// tests basic arithmetic
+
+int main() { 
+	int x = 6; 
+	int y = 3; 
+	int a = x + 3; 
+	int b = y + 4; 
+	int z = a - b; 
+	return z; 
+}

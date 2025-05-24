@@ -1,0 +1,21 @@
+//test return 7
+
+struct abc {
+    int k0;
+    int k1;
+    int k2;
+    int k3;
+};
+
+int f (struct abc* hh) {
+    hh->k2 = 3;
+    hh->k3 = 4;
+    return 0;
+}
+int main () {
+    struct abc* mys = alloc(struct abc);
+    int[] abc = alloc_array(int, 10);
+    abc[f(mys)] = mys->k1 + mys->k2 + mys->k3;
+    return abc[0];
+}
+

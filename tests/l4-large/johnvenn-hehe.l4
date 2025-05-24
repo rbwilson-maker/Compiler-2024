@@ -1,0 +1,29 @@
+//test typecheck
+//test return 0
+
+typedef int he;
+typedef int ha;
+
+struct ha {he haha; ha hehe;};
+struct he {he haha; ha hehe;};
+
+struct hahaha {struct he haha; struct ha hehe;};
+struct hehehe {struct he haha; struct ha hehe;};
+
+struct hahahaha {struct hehehe haha; struct hahaha hehe;};
+struct hehehehe {struct hehehe haha; struct hahaha hehe;};
+
+struct hahahahaha {struct hehehehe haha; struct hahahaha hehe;};
+struct hehehehehe {struct hehehehe haha; struct hahahaha hehe;};
+
+struct hahahahahaha {struct hehehehehe haha; struct hahahahaha hehe;};
+struct hehehehehehe {struct hehehehehe haha; struct hahahahaha hehe;};
+
+struct haha {struct hehehehehehe haha; struct hahahahahaha hehe;};
+struct hehe {struct hehehehehehe haha; struct hahahahahaha hehe;};
+
+int main() {
+    struct haha* hehe = alloc(struct haha);
+    return (*hehe).haha.hehe.haha.hehe.haha.hehe;
+
+}

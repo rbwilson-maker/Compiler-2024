@@ -1,0 +1,13 @@
+//test typecheck
+// test various types in typedef
+
+int_type_5 helper() {
+    int_type_2 x = 1;
+    int_type_3 y = 2;
+    bool_type_4 z = true;
+    return simple_function(x, y, z); 
+}
+
+int main() {
+    return helper();
+}

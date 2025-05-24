@@ -1,0 +1,5 @@
+//test div-by-zero
+int main() {
+  int y = 4 >> -349890;
+  return 0;
+}

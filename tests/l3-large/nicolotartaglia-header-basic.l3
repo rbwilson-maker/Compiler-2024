@@ -1,0 +1,13 @@
+//test typecheck
+
+// uses the custom header file with functions that haven't been implemented
+
+int main() {
+    int p = 3;
+    assert(isPrime(p));
+
+    int x = sqrt(41) / 3;
+    assert(isPrime(x));
+
+    return 0;
+}

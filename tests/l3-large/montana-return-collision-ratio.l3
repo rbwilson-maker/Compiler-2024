@@ -1,0 +1,38 @@
+//test return 84
+
+// Super secret hashing prime number algorithms
+int super_secret_hash_function_omg(int mod_me, int hash_me) {
+  return ((hash_me + 100101) * 1013) % mod_me;
+}
+
+int main() {
+  int num_to_check;
+
+  // hashes we tried
+  int tried = 0;
+
+  // collisions found
+  int collides = 0;
+
+  // Range to try modular hash over
+  int mod_me_pls = 30;
+  int mod_max = 40;
+  num_to_check = 50;
+  for (mod_me_pls++; mod_me_pls < mod_max; mod_me_pls++) {
+    for (int i = 1; i < num_to_check; i++) {
+      for (int j = i; j < num_to_check; j++) {
+        // If the hashes are equal, we found a collision!
+        if (i != j &&
+            super_secret_hash_function_omg(mod_me_pls, i) ==
+            super_secret_hash_function_omg(mod_me_pls, j))
+          collides++;
+        if (i != j)
+          tried++;
+      }
+    }
+  }
+
+  // This ratio is the avg number of elements it takes for a hash
+  // collision to occur. Neato.
+  return tried / collides;
+}

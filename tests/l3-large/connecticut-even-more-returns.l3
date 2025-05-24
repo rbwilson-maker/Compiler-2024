@@ -1,0 +1,16 @@
+//test return 7
+
+void foo() {
+	int x = 5;
+}
+
+void bar() {
+	int x = 3;
+}
+
+int main() {
+	int x = 7;
+	foo();
+	bar();
+	return x;
+}

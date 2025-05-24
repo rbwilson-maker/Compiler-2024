@@ -1,0 +1,26 @@
+//test return 720
+
+int multiply(int a, int b, int c, int d, int e, int f, int g, int h,
+             int i, int j, int k)
+{
+  return a * b * c * d * e * f * g * h * i * j * k;
+}
+
+int main()
+{
+  int a = 1;
+  int b = 2;
+  int c = a + b;
+  int d = c + a;
+  int e = d + c;
+  int f = e + d;
+  int g = f + a;
+  int h = d * g;
+  int i = g * f;
+  int j = d - b;
+  int k = c * h;
+  multiply(a,b,c,d,e,f,g,h,i,j,k);
+  a += g;
+  g *= h;
+  return k + g;
+}

@@ -1,0 +1,14 @@
+//test error
+///  needs forward declaration
+
+int func1(int x, int y, int z){
+    return func2();
+}
+
+int func2(){
+    return -1;
+}
+
+int main() {
+    return func1(0, 1, 2);
+}

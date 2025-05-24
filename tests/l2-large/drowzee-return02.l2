@@ -1,0 +1,17 @@
+//test return 8
+//shifts 16 to the right by 1.
+
+int main ()
+{
+  int x;
+  int y;
+  int z;
+
+  x = 0x10; //16
+  y = 33;
+  z = 1;
+  if (x < z) {
+    return x >> y; //does not execute this statement
+  }
+  return x >> z; //executes this statement
+}

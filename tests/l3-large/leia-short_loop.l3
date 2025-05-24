@@ -1,0 +1,27 @@
+//test return 5700
+
+int foo(int x){
+    if (x == 0) {return 0;}
+    int y0 = 0;
+    int y1 = 1;
+    int y2 = 2;
+    int y3 = 3;
+    int y4 = 4;
+    int y5 = 5;
+    int y6 = 6;
+    int y7 = 7;
+    int y10 = 1;
+    int y11 = 1;
+    int y12 = 2;
+    int y13 = 3;
+    int y14 = 4;
+    int y15 = 5;
+    int y16 = 6;
+    int y17 = 7;
+    return y0+y1+y2+y3+y4+y5+y6+y7+y10+y11+y12+y3+y14+y15+y16+y17+foo(x-1);
+}
+
+int main() {
+    return foo(100);
+}
+

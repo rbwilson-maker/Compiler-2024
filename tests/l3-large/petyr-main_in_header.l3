@@ -1,0 +1,12 @@
+//test error
+
+//main is declared in the header
+//main not defined in the function
+
+int sumthem (int x, int y) {
+    return x+y;
+}
+
+int multthem (int a, int b){
+    return a*b;
+}

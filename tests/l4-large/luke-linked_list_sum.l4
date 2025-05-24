@@ -1,0 +1,37 @@
+//test return 10
+
+struct node {
+    int value;
+    struct node *next;
+};
+
+struct node *nil();
+struct node *cons(int x, struct node *xs);
+
+int sum(struct node *p);
+
+int main() {
+    struct node *list = cons(1, cons(2, cons(3, cons(4, nil()))));
+    return sum(list);
+}
+
+int t_sum(struct node *p, int acc) {
+    if (p == NULL) {
+        return acc;
+    }
+    return t_sum(p->next, acc + p->value);
+}
+int sum(struct node *p) {
+    return t_sum(p, 0);
+}
+
+struct node *nil() {
+    return NULL;
+}
+
+struct node *cons(int x, struct node *xs) {
+    struct node *result = alloc(struct node);
+    result->value = x;
+    result->next = xs;
+    return result;
+}

@@ -1,0 +1,34 @@
+//test return 8
+
+// find max in a linked list
+
+struct llist {
+    int value;
+    struct llist * next;
+};
+
+int findmax (struct llist * l) {
+   if (l == NULL) return -1 ;
+   int res = l->value;
+   while (l->next != NULL) {
+     l = l->next;
+     if (l->value > res) res = l->value ;
+   }
+   return res;
+}
+
+int main () {
+    struct llist * listptr = alloc(struct llist) ;
+    int i = 0 ;
+    struct llist * l = listptr ;
+    while ( i < 9 ) {
+       (*l).value = i;
+       (*l).next = alloc(struct llist) ;
+       l = (*l).next ;
+       i++ ;
+    }
+    (*l).value = 7;
+    (*l).next = NULL ;
+
+    return findmax(listptr);
+}

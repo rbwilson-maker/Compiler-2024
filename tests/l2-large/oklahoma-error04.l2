@@ -1,0 +1,12 @@
+//test error
+//Polymorphic equality can't compare things of incompatible types
+
+int main () {
+
+  bool y = false;
+
+  for (int z = 0; z == y; y++) {
+    return (1/0);
+  }
+    
+}

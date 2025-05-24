@@ -1,0 +1,11 @@
+//test return 15
+int main() {
+  int a = 3;
+  int b = 5;
+  int c = 13;
+  int d = 23;
+
+  int result = (a + b * c - d) / a % d;
+
+  return result;
+}

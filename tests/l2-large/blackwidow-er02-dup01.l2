@@ -1,0 +1,30 @@
+//test error
+// missing return statement
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int aa;
+  int bb;
+  int cc;
+  int dd;
+  int ee;
+
+  int m = 1;
+  int n = 0;
+  if(m>n){
+    m = n;
+  }
+  else{
+    n = m;
+  }
+
+  d = 1;
+  c = -2147483648;
+  b = c/d;
+  a = c*d;
+  e = c-d;
+}

@@ -1,0 +1,13 @@
+//test div-by-zero
+// test hex version of INT_MIN times -1 overflow
+int main()
+{
+  int x;
+  int y;
+  int z;
+
+  x = 0x80000000;
+  y = 0;
+  z = 1;
+  return (x * (y - z)) / (y * y);
+}

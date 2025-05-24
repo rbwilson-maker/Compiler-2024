@@ -1,0 +1,11 @@
+//test return 12032
+// Tests weird syntax
+
+int foo(int bar) {{
+    int foo = 20;
+    return foo + 12012;
+}}
+
+int main() {
+    return foo(50);
+}

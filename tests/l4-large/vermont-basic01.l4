@@ -1,0 +1,8 @@
+//test return 7
+
+int main() {
+	int[] A = alloc_array(int, 2);
+	A[0] = 3;
+	A[1] = 4;
+	return A[0] + A[1];
+}

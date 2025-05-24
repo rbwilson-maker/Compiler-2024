@@ -1,0 +1,96 @@
+//test return 27
+
+struct node_struct {
+    int neighbor_count;
+    struct node_struct*[] neighbors;
+};
+
+typedef struct node_struct* node;
+
+node create_node(int num_of_neighbors){
+    node n = alloc(struct node_struct);
+    n->neighbor_count = num_of_neighbors;
+    n->neighbors = alloc_array(node, num_of_neighbors);
+    return n;
+}
+
+bool is_seen(node[] nodes, bool[] seen_nodes, node n) {
+    int i = 0;
+
+    while (nodes[i] != n){
+	i++;
+    }
+
+    if (seen_nodes[i]){
+	return true;
+    } else {
+	seen_nodes[i] = true;
+	return false;
+    }
+}
+
+bool depth_first_search(node[] nodes, bool[] seen_nodes, node start, node end){
+    if (is_seen(nodes, seen_nodes, start)) return false;
+
+    if (start == end) return true;
+
+    int start_neighbor_count = start->neighbor_count;
+    node[] start_neighbors = start->neighbors;
+
+    for (int i = 0; i < start_neighbor_count; i++){
+	    node this_neighbor = start_neighbors[i];
+
+	    if (depth_first_search(nodes, seen_nodes, this_neighbor, end)) {
+	        return true;
+	    }
+    }
+
+    return false;
+}
+
+bool is_reachable(node[] nodes, int node_count, node start, node end) {
+    bool[] seen_nodes = alloc_array(bool, node_count);
+
+    return depth_first_search(nodes, seen_nodes, start, end);
+}
+
+int main() {
+    node node0 = create_node(3);
+    node node1 = create_node(1);
+    node node2 = create_node(2);
+    node node3 = create_node(3);
+    node node4 = create_node(2);
+    node node5 = create_node(1);
+
+    node0->neighbors[0] = node1;
+    node0->neighbors[1] = node2;
+    node0->neighbors[2] = node3;
+    node1->neighbors[0] = node0;
+    node2->neighbors[0] = node0;
+    node2->neighbors[1] = node4;
+    node3->neighbors[0] = node0;
+    node3->neighbors[1] = node4;
+    node3->neighbors[2] = node5;
+    node4->neighbors[0] = node2;
+    node4->neighbors[1] = node3;
+    node4->neighbors[0] = node3;
+
+    node[] all_nodes = alloc_array(node, 6);
+    all_nodes[0] = node0;
+    all_nodes[1] = node1;
+    all_nodes[2] = node2;
+    all_nodes[3] = node3;
+    all_nodes[4] = node4;
+    all_nodes[5] = node5;
+
+    bool reachable = is_reachable(all_nodes, 6, node0, node5);
+
+    if (reachable) {
+        return 27;
+    } else {
+        return 14;
+    }
+
+    return 3;
+
+}

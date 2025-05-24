@@ -1,0 +1,8 @@
+//test return 0
+// test never reached div by zero statement
+int main() {
+	int a = 0;
+	int b = 0;
+	return a - b;
+	return a / b;
+}

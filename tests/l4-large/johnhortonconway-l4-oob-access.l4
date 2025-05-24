@@ -1,0 +1,10 @@
+//test memerror
+
+// Off-by-one OOB write
+int main() {
+  int[] p = alloc_array(int, 100);
+  for (int i = 0; i <= 100; i += 1) {
+    p[i] = i;
+  }
+  return -1;
+}

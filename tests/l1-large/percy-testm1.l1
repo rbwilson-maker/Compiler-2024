@@ -1,0 +1,11 @@
+//test return -209685
+
+int main(){
+
+	int a = 65;
+	int b = a;
+	int c = 50*(a*b - 30);
+	b = c-a;
+	int d = -1*b;
+	return d;
+}

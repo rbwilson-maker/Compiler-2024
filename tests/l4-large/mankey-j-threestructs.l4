@@ -1,0 +1,29 @@
+//test return 115
+
+struct s0
+{
+  struct s1 *elem0;
+};
+
+struct s1
+{
+  struct s2 *elem1;
+};
+
+struct s2
+{
+  int final;
+};
+
+int main()
+{
+    struct s0 *ss0 = alloc(struct s0);
+    struct s1 *ss1 = alloc(struct s1);
+    struct s2 *ss2 = alloc(struct s2);
+
+    ss0->elem0 = ss1;
+    ss1->elem1 = ss2;
+    ss2->final = 115;
+    return ss0->elem0->elem1->final;
+}
+

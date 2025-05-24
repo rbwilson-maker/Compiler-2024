@@ -1,0 +1,31 @@
+//test compile
+// Approximate pi using Leibniz formula
+// https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80
+
+dub approx_pi (int n) {
+  int res = 0;
+
+  int[] numerator = alloc_array(int, n);
+  int[] denominator = alloc_array(int, n);
+  for (int i = 0; i < n; i++) {
+    if (i % 2 == 0) {
+      numerator[i] = 1;
+    }
+    else {
+      numerator[i] = -1;
+    }
+    denominator[i] = 2*i+1;
+  }
+
+  while (n > 0) {
+    res += numerator[n] / denominator[n];
+    n--;
+  }
+
+  return itod(4 * res);
+}
+
+int main() {
+  dub res = approx_pi(30);
+  return dtoi(res);
+}

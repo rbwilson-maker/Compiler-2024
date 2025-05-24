@@ -1,0 +1,15 @@
+//test error
+
+struct A {
+	int a;
+};
+
+struct B {
+	int b;
+};
+
+typedef struct A struct B;
+
+int main() {
+	return 0;
+}

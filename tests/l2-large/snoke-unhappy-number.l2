@@ -1,0 +1,16 @@
+//test typecheck
+//test infloop
+
+int main() {
+	int n = 999; /* /* /* Not a happy number */ */*/
+	while (n != 1) {
+		int next = 0;
+		while (n != 0) {
+			int digit = n % 10;
+			n /= 10;
+			next += digit * digit;
+		}
+		n = next;
+	}
+	return 1;
+}

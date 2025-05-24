@@ -1,0 +1,13 @@
+//test div-by-zero
+int main() {
+    for (int i = 0 ; i < 10 ; i ++) {}
+    for (int i = 0 ; i < 10 ; i ++) {}
+    for (int i = 0 ; i < 10 ; i ++) {}
+
+    if (false) {
+        int a = 8;
+        int b = a + 8;
+    }
+    int i = 6;
+    return i / -0; 
+}

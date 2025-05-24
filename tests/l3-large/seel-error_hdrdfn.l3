@@ -1,0 +1,12 @@
+//test error
+// Checks that a function from a header cannot be defined
+
+int f(int x, int y);
+
+int main() {
+  return f(1, 2);
+}
+
+int f(int x, int y) {
+  return x+y;
+}

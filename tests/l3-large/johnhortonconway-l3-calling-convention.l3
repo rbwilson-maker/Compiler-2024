@@ -1,0 +1,71 @@
+//test return 0
+
+int a32(int t1, int t2, int t3, int t4, int t5, int t6, int t7, int t8, int t9, int t10, int t11, int t12,
+        int t13, int t14, int t15, int t16, int t17, int t18, int t19, int t20, int t21, int t22, int t23,
+        int t24, int t25, int t26, int t27, int t28, int t29, int t30, int t31, int t32) {
+    return t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8 + t9 + t10 + t11 + t12 +
+           t13 + t14 + t15 + t16 + t17 + t18 + t19 + t20 + t21 + t22 + t23 +
+           t24 + t25 + t26 + t27 + t28 + t29 + t30 + t31 + t32;
+}
+
+int a() {
+    return 10;
+}
+
+int a12(int t1, int t2, int t3, int t4, int t5, int t6, int t7, int t8, int t9, int t10, int t11, int t12) {
+    return a32(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, a(), t12,
+                a32(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12,
+                    t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12,
+                    t1, t2, t3, t4, t5, t6, t7, t8),
+                t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12,
+                t1 * t2, t3 * t4, t5 * t6, t7 * t8, t9 * t10, t11 * t12,
+                t11 + t12);
+}
+
+int a8(int t1, int t2, int t3, int t4, int t5, int t6, int t7, int t8) {
+    return a12(t1, t2, t3, t4, t5, t6, t7, t8,
+               a12(t1, t2, t3, t4, t5, t6, t7, t8, t1, t2, t3, t4),
+               t1 * t8, t2 + t8 + a(), t3);
+}
+
+int a4(int t1, int t2, int t3, int t4) {
+    return a8(t1, t2, t3, t4, t1 + t2, t3 + t4, t1 + t3, t2 + t4);
+}
+
+int main() {
+    int t1 = 1;
+    int t2 = 2;
+    int t3 = 3;
+    int t4 = 4;
+    int t5 = 5;
+    int t6 = 6;
+    int t7 = 7;
+    int t8 = 8;
+    int t9 = 9;
+    int t10 = 10;
+    int t11 = 11;
+    int t12 = 12;
+    int t13 = 13;
+    int t14 = 14;
+    int t15 = 15;
+    int t16 = 16;
+    int result = a4(0xa, 0xb, 0xc, 0xd);
+    assert(t1 == 1);
+    assert(t2 == 2);
+    assert(t3 == 3);
+    assert(t4 == 4);
+    assert(t5 == 5);
+    assert(t6 == 6);
+    assert(t7 == 7);
+    assert(t8 == 8);
+    assert(t9 == 9);
+    assert(t10 == 10);
+    assert(t11 == 11);
+    assert(t12 == 12);
+    assert(t13 == 13);
+    assert(t14 == 14);
+    assert(t15 == 15);
+    assert(t16 == 16);
+    assert(result == 609367);
+    return 0;
+}

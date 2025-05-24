@@ -1,0 +1,17 @@
+//test return 0
+
+// Multiple function declarations
+
+int add(int x, int y);
+int add(int i, int j);
+int add(int a, int b);
+
+int main() {
+  int x = 1;
+  int y = 2;
+  int i = -1;
+  int j = -2;
+  int a = 7;
+  int b = 8;
+  return 0;
+}

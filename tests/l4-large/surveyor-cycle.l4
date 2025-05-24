@@ -1,0 +1,27 @@
+//test return 0
+
+int main() {
+  int count = 10000;
+  int[] items = alloc_array(int, count);
+
+  // initialize array with 0..count
+  for (int i = 0; i < count; i++) {
+    items[i] = i;
+  }
+
+  // rotate the array enough times to get back where we started
+  for (int i = 0; i < count; i++) {
+    int first = items[0];
+    int j;
+    for (j = 1; j < count; j++) {
+      items[j - 1] = items[j];
+    }
+    items[count - 1] = first;
+  }
+
+  for (int i = 0; i < count; i++) {
+    assert(items[i] == i);
+  }
+
+  return 0;
+}

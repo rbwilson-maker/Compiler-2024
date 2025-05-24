@@ -1,0 +1,22 @@
+//test return 354
+
+struct A {
+    int a;
+    int b;
+    int c;
+    int d;
+};
+
+struct B {
+    int i;
+    struct A a;
+    int j;
+};
+
+int main() {
+    struct B* x = alloc(struct B);
+    x->j = 1;
+    x->a.b = 354;
+    assert(x->j == 1);
+    return x->a.b;
+}

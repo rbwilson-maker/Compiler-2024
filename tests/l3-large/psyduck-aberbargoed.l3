@@ -1,0 +1,14 @@
+//test abort
+
+int first () {
+assert(false);
+return 0;
+}
+
+int second (int a, int b) {
+return a / b % b;
+}
+
+int main () {
+return second(first(), 1/0);
+}

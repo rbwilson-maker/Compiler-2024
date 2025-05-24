@@ -1,0 +1,22 @@
+//test abort
+
+int num_subsets(int n, int k) {
+    if (k == 0) {
+        return 1;
+    }
+    assert (n >= k);
+    int res = 0;
+    if (n - 1 >= k) {
+        res += num_subsets(n - 1, k);
+    }
+    res += num_subsets(n - 1, k - 1);
+    return res;
+}
+
+int main() {
+    int x = num_subsets(6, 2);
+    int y = num_subsets(6, 3);
+    int z = num_subsets(6, 4);
+    int w = num_subsets(6, 5);
+    return num_subsets(x + w, y + z);
+}

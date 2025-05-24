@@ -1,0 +1,12 @@
+//test error
+// Use of uninitialized variable
+int main()
+{
+    if (true) {
+        return 1;
+    } else {
+        return 1;
+    }
+
+    return a;
+}

@@ -1,0 +1,16 @@
+//test abort
+
+
+
+int main(){
+
+
+  fpt y = itof(8);
+
+  fpt z = itof(3 << 19);
+
+  assert(fless(z, y));
+
+  return z;
+  
+}

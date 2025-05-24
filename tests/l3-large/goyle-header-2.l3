@@ -1,0 +1,12 @@
+//test typecheck
+
+int main() {
+  int N = 10;
+  ptr A = make_array(N);
+  for (int i = 0; i < N; i++) {
+    write_index(A, i, i*i);
+  }
+  int ret = read_index(A, 5);
+  delete_array(A);
+  return ret;
+}

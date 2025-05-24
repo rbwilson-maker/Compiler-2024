@@ -1,0 +1,181 @@
+//test return 1
+
+struct board {
+	bool[][] xes;
+	bool[][] oes;
+	bool is_oes;
+};
+
+typedef struct board board_t;
+	
+void init_board(board_t *board) {
+	board->xes = alloc_array(bool[], 5);
+	board->oes = alloc_array(bool[], 5);
+	for(int i = 0; i < 5; i++) {
+		board->xes[i] = alloc_array(bool, 5);
+		board->oes[i] = alloc_array(bool, 5);
+	}
+	board->is_oes = false;
+}
+
+bool is_won(bool[][] side) {
+	int row_straight = 0;
+	int col_straight = 0;
+	for(int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			if(side[i][j]) {
+				row_straight++;
+			} else {
+				row_straight = 0;
+			}
+			if(side[j][i]) {
+				col_straight++;
+			} else {
+				col_straight = 0;
+			}
+		}
+		if (row_straight >= 4 || col_straight >= 4)
+			return true;
+	}
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 2; j++) {
+			int diag_straight = 0;
+			int back_diag_straight = 0;
+			for (int diag = 0; diag < 4; diag++) {
+				if (side[i+diag][j+diag]) {
+					diag_straight++;
+				} else {
+					diag_straight = 0;
+				}
+				if(side[i+diag][j+3-diag]) {
+					back_diag_straight++;
+				} else {
+					back_diag_straight = 0;
+				}
+			}
+			if (diag_straight >= 4 || back_diag_straight >= 4) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+int winner(board_t *board) {
+	if (is_won(board->xes)) {
+		return 1;
+	} else if (is_won(board->oes)) {
+		return 2;
+	}
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			if (!(board->xes[i][j]) && !(board->oes[i][j])) {
+				return 0;
+			}
+		}
+	}
+	return 3;
+}
+
+int mini_max(board_t *board, int alpha, int beta) {
+    int winner_ = winner(board);
+    if (winner_ == 3) {
+        return 0;
+    } else if (winner_ == 2) {
+        return -100;
+    } else if (winner_ == 1) {
+        return 100;
+    }
+    int side = board->is_oes ? -1 : 1;
+    int best_score = 200 * -side;
+    for (int i = 0; i < 5; i++) {
+		for(int j = 0; j < 5; j++) {
+			if (!(board->xes[i][j]) && !(board->oes[i][j])) {
+				if(board->is_oes) {
+					board->oes[i][j] = true;
+				} else {
+					board->xes[i][j] = true;
+				}
+				board->is_oes = !board->is_oes;
+
+				int score = mini_max(board, alpha, beta);
+				
+				board->is_oes = !board->is_oes;
+				if(board->is_oes) {
+					board->oes[i][j] = false;
+				} else {
+					board->xes[i][j] = false;
+				}
+				
+				if (score * side > best_score * side) {
+					if (!board->is_oes) {
+						if (best_score > alpha) {
+							alpha = best_score;
+						}
+					} else {
+						if (best_score < beta) {
+							beta = best_score;
+						}
+					}
+					if (alpha >= beta) {
+						return best_score;
+					}
+					best_score = score;
+				}
+			}
+		}
+	}
+	return best_score;
+}
+
+void best_move(board_t *board) {
+    int side = board->is_oes ? -1 : 1;
+    int best_score = 200 * -side;
+	int alpha = 200;
+	int beta = -200;
+	int best_i = -1;
+	int best_j = -1;
+    for (int i = 0; i < 5; i++) {
+		for(int j = 0; j < 5; j++) {
+			if (!(board->xes[i][j]) && !(board->oes[i][j])) {
+				if(board->is_oes) {
+					board->oes[i][j] = true;
+				} else {
+					board->xes[i][j] = true;
+				}
+				board->is_oes = !board->is_oes;
+
+				int score = mini_max(board, alpha, beta);
+				
+				board->is_oes = !board->is_oes;
+				if(board->is_oes) {
+					board->oes[i][j] = false;
+				} else {
+					board->xes[i][j] = false;
+				}
+				
+				if (score * side > best_score * side) {
+					best_i = i;
+					best_j = j;
+					best_score = score;
+				}
+			}
+		}
+	}
+	if(board->is_oes) {
+		board->oes[best_i][best_j] = true;
+	} else {
+		board->xes[best_i][best_j] = true;
+	}
+	return;
+}
+
+int main() {
+	board_t *board = alloc(board_t);
+	init_board(board);
+
+	while(winner(board) == 0) {
+		best_move(board);
+	}
+	return(winner(board));
+}

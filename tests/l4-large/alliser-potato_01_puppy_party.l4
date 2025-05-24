@@ -1,0 +1,49 @@
+//test return 1449483701
+//dog simulator # 1
+
+struct dog {
+  int fluffiness;
+  int charisma;
+  struct dog* puppy;
+};
+
+typedef struct dog* dog;
+
+void pet(dog d, int num_pets) {
+  while (num_pets > 0) {
+    d->fluffiness++;
+
+    int ch = d->charisma;
+    if (ch % 2 == 0) ch++;
+    else ch += 99;
+    d->charisma = ch;
+
+    dog puppy = d->puppy;
+    if (puppy != NULL) pet(puppy, num_pets);
+
+    num_pets--;
+
+  }
+}
+
+int main() {
+  // multi generation dog family
+  dog fluffy = alloc(struct dog);
+  dog charles = alloc(struct dog);
+  dog maisie = alloc(struct dog);
+  dog perry = alloc(struct dog);
+  dog lucky = alloc(struct dog);
+  dog koromaru = alloc(struct dog);
+
+  fluffy->fluffiness = 100;
+  fluffy->charisma = 56;
+  fluffy->puppy = charles;
+  charles->puppy = maisie;
+  maisie->puppy = perry;
+  perry->puppy = lucky;
+  lucky->puppy = koromaru;
+
+  pet(fluffy, 50);
+  return koromaru->charisma;
+
+}

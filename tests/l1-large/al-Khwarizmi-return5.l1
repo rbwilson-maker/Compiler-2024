@@ -1,0 +1,11 @@
+//test return 15
+
+int main() {
+    int x0 = 0;
+    int x1 = 1;
+    int x2 = x0 + 2 * x1; // x2 = 2
+    int x3 = x1 + 2 * x2; // x3 = 5
+    int x4 = -x3; // x4 = -5
+    x4 *= x2; // x4 = -10
+    return 5 + (-x4); // -10
+}

@@ -1,0 +1,9 @@
+//test return 0
+//test if the unary - operator works as expected
+int main()
+{
+  int a = - 0xF; // -15
+  int b;
+  b = a * (a + -a); // 0
+  return b;
+}

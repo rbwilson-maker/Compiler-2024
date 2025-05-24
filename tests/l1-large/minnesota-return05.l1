@@ -1,0 +1,7 @@
+//test return 14
+// test modulus with negative numbers
+int main()
+{
+  int a = 12101;
+  return a % (-17);
+}

@@ -1,0 +1,10 @@
+//test error
+
+typedef struct Blue Blue;
+struct Blue {
+	int field;
+}
+
+int main() {
+	return 0;
+}

@@ -1,0 +1,12 @@
+//test return 2
+
+int main() {
+    int a = 246;
+    int b = 1982;
+    while (b > 0) {
+        int temp = a % b;
+        a = b;
+        b = temp;
+    }
+    return a;
+}

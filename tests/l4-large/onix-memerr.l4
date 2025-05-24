@@ -1,0 +1,20 @@
+//test memerror
+
+struct otherStruct {
+  int a;
+  int b;
+  int c;
+};
+
+struct myStruct {
+  struct otherStruct *a;
+  struct otherStruct *b;
+  int c;
+};
+
+int main ()
+{
+  struct myStruct* s= alloc(struct myStruct);
+  s->a->b = 4;
+  return 0;
+}

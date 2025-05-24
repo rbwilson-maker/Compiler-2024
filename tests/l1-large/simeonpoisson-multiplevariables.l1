@@ -1,0 +1,58 @@
+//test return 26
+
+int main() {
+  int a = 1;
+  int b = a;
+  int c = b;
+  int d = c;
+  int e = d;
+  int f = e;
+  int g = f;
+  int h = g;
+  int i = h;
+  int j = i;
+  int k = j;
+  int l = k;
+  int m = l;
+  int n = m;
+  int o = n;
+  int p = o;
+  int q = p;
+  int r = q;
+  int s = r;
+  int t = s;
+  int u = t;
+  int v = u;
+  int w = v;
+  int x = w;
+  int y = x;
+  int z = y;
+  int accum = 0;
+  accum += a*a;
+  accum += b*b;
+  accum += c*c;
+  accum += d*d;
+  accum += e*e;
+  accum += f*f;
+  accum += g*g;
+  accum += h*h;
+  accum += i*i;
+  accum += j*j;
+  accum += k*k;
+  accum += l*l;
+  accum += m*m;
+  accum += n*n;
+  accum += o*o;
+  accum += p*p;
+  accum += q*q;
+  accum += r*r;
+  accum += s*s;
+  accum += t*t;
+  accum += u*u;
+  accum += v*v;
+  accum += w*w;
+  accum += x*x;
+  accum += y*y;
+  accum += z*z;
+  return accum;
+}

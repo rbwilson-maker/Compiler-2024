@@ -1,0 +1,13 @@
+//test abort
+int main()
+{
+  int iters = 0;
+  // This is a lot less sneaky than I wanted because of the explicit floats :/
+  for(fpt i = itof(0); i != itof(10); i = fadd(i, fdiv(itof(1), itof(3))))
+  {
+    iters++;
+    assert(ftoi(i) < 10);
+  }
+  return 0;
+}
+

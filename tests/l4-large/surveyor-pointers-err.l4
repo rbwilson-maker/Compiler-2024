@@ -1,0 +1,11 @@
+//test error
+
+int* get_new_pointer() {
+  return alloc(int*); // this should be alloc(int)
+}
+
+int main() {
+  int* me = get_new_pointer();
+  *me = 5;
+  return *me;
+}

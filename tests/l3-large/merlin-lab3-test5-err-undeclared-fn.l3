@@ -1,0 +1,7 @@
+//test error
+// should not compile due to calling undeclared function
+
+int main() {
+    oh_no();
+    return 42;
+}

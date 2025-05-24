@@ -1,0 +1,10 @@
+//test return 37
+// x / y + x % y = x
+int main() {
+    int divisor = 37;
+    int dividend = 7;
+    int div = divisor / dividend;
+    int mod = divisor % dividend;
+    int res = div * dividend + mod;
+    return res;
+}

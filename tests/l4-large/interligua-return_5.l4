@@ -1,0 +1,17 @@
+//test return 10
+// matrices
+
+int main(){
+    int m = 5;
+    int n = 10;
+
+    int[][] x = alloc_array(int[], m);
+    for (int i = 0; i < m; i++)
+        x[i] = alloc_array(int, n);
+
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < n; j++)
+            x[i][j] = i*i + j*j;
+
+    return x[1][3];
+}

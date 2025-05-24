@@ -1,0 +1,8 @@
+//test error
+int main () {
+  int a = 1;
+  int c = b;
+  int b = c;
+  
+  return 1;
+}

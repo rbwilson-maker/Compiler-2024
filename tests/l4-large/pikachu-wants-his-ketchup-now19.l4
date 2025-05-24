@@ -1,0 +1,16 @@
+//test div-by-zero
+// tests ambiguity of line 14: div-by-zero or null deref?
+
+int** obtain_ketchup()
+{
+  int** x = alloc(int*);
+  *x = NULL;
+  return x;
+}
+
+int main()
+{
+  int** ketchup = obtain_ketchup();
+  **ketchup = 1 / 0;
+  return **ketchup;
+}

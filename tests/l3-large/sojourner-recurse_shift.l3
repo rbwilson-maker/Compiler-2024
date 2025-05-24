@@ -1,0 +1,24 @@
+//test return -1
+
+int shift_right(int x, int depth);
+
+int shift_left(int x, int depth) {
+  if (depth == 0) {
+    return x;
+  }
+  return shift_right(x << 31, depth - 1);
+}
+
+//logical shift to the right will fill all top bits with 0
+int shift_right(int x, int depth) {
+  if (depth == 0) {
+    return x;
+  }
+  return shift_left(x >> 31, depth - 1);
+}
+
+
+int main() {
+  int res = shift_left(1, 1000);
+  return res;
+}

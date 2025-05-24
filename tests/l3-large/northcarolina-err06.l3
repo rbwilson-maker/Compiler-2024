@@ -1,0 +1,10 @@
+//test error
+// function must have a type
+
+f(int x) {
+	return 0;
+}
+
+int main() {
+	return f(0);
+}

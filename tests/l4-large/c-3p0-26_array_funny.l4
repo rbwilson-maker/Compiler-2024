@@ -1,0 +1,12 @@
+//test return 1
+
+void f(int[] * a){
+    *a = alloc_array(int,5);
+    (*a)[0] += 1;
+}
+
+int main(){
+    int[] * a = alloc(int[]);
+    f(a);
+    return (*a)[0];
+}

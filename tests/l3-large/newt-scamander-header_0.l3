@@ -1,0 +1,26 @@
+//test typecheck
+
+bool pentaquality(int aa, int ab, int ac, int ad, int ae);
+
+bool pentaquality(int a, int b, int c, int d, int e) {
+	return (a==b) && (b==c) && (c==d) && (d==e);
+	a = 0;
+	b = 1;
+	c = 2;
+	d = 3;
+	e = 4;
+}
+
+
+int main() {
+	int a = 1;
+	int b = 3;
+	int c = 5;
+	int d = 7;
+	int e = 9;
+	if (pentaquality(a,b,c,d,e)) {
+		return my_reduce(c, d);
+	} else {
+		return 1 - my_reduce(e, a);
+	}
+}	

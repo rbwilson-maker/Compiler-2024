@@ -1,0 +1,10 @@
+//test error
+// incorrect arithmetic assignment operator usage
+
+int main()
+{
+  int x = 0;
+  int y = 0;
+  x = y += 5;
+  return x;
+}

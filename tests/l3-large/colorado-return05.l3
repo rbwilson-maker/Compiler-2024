@@ -1,0 +1,7 @@
+//test return 0
+int add (int x, int y, int z, int t, int d, int e, int f, int g, int h, int i, int j, int k) {
+	return x+y+z+t+d+e+f+g+h+i+j+k;
+}
+int main () {
+  return add(-1,1,-1,1,-1,1,-1,1,-1,1,-1,1);
+}

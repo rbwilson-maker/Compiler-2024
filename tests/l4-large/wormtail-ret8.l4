@@ -1,0 +1,20 @@
+//test return 1
+
+struct a {
+    int* x;
+    int[] a;    
+};
+
+struct b {
+    int x;
+    int* y;
+    struct a a;
+    int z;
+};
+
+int main() {
+    struct b[] b = alloc_array(struct b, 5);
+    b[0].a.x = alloc(int);
+    (*b[0].a.x) ++;
+    return *b[0].a.x;
+}

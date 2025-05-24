@@ -1,0 +1,16 @@
+//test error
+
+struct wow_a_struct{
+    int a;
+    int b;
+    int c;
+};
+
+int main(){
+
+    struct wow_a_struct* w = alloc(struct wow_a_struct);
+
+    w[1] = 4;
+
+    return w[1];
+}

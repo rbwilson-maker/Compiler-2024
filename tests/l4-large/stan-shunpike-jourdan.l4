@@ -1,0 +1,26 @@
+//test return 0;
+
+typedef int pixel;
+
+struct x {
+    int data;
+};
+
+struct x;
+
+struct s {
+    int data;
+    int pixel;
+};
+
+struct s;
+
+int data(struct s* S) {
+    int data = S->data;
+    return data;
+}
+
+int main() {
+    struct s* S = alloc(struct s);
+    return data(S);
+}

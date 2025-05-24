@@ -1,0 +1,14 @@
+//test return 5
+//Tests Assert Statement and Void Expressions as Statement
+
+void assertTrue(int x);
+
+int main() {
+  int x = 5;
+  assertTrue(x);
+  return 5;
+}
+
+void assertTrue(int x) {
+  assert(true);
+}

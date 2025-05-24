@@ -1,0 +1,25 @@
+//test return 1
+//Mutually Recursive functions where two is defined earlier
+
+int two(int i);
+int one(int i);
+
+int main() {
+  int x = one(5);
+  return x;
+}
+
+int one(int i) {
+  if (i <= 0) {
+    return 1;
+  }
+  return two(i-1);
+}
+
+int two(int i) {
+  if (i <= 0) {
+    return 1;
+  }
+  return one(i-1);
+}
+

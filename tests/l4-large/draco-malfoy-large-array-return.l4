@@ -1,0 +1,11 @@
+//test return 0
+
+int innocent(int x, int index) {
+	int INTMAX = 54687091;
+	int[] innocent = alloc_array(int, INTMAX);
+	return innocent[index];
+}
+
+int main() {
+	return innocent(1,53687091);
+}

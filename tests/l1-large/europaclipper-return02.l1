@@ -1,0 +1,17 @@
+//test return 0
+int main() {
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+	int f;
+
+	a = 10;
+	b = 3;
+	c = a / b;
+	d = a % b;
+	e = a - b;
+	f = -d;
+	return 0;
+}

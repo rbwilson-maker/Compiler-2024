@@ -1,0 +1,7 @@
+//test error
+
+// Tests that a header should not contain any function definitions
+
+int main () {
+    return add(1, 2);
+}

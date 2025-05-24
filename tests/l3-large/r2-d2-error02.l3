@@ -1,0 +1,12 @@
+//test error
+
+typedef int work;
+typedef work int;
+typedef work work;
+
+
+int main()
+{
+  work a = 3;
+  return a;
+}

@@ -1,0 +1,10 @@
+//test return 0
+// Test asserts
+
+
+int main () {
+  for (int i = 1; i < 100000000; i++) {
+    assert (i > 0);
+  }
+  return 0;
+}

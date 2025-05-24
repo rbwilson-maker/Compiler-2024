@@ -1,0 +1,34 @@
+//test return 15210
+//Structs with structs inside of them
+
+struct Value {
+    int x;
+    int y;
+};
+
+struct Node {
+    struct Value val;
+	struct Node *next;
+};
+
+struct Node *makeNode(int x, int y, struct Node *next){
+	struct Node *new_node = alloc(struct Node);
+	new_node->val.x = x;
+    new_node->val.y = y;
+	new_node->next = next;
+	return new_node;
+}
+
+int main(){
+	struct Node *node_1 = makeNode(10, 1, NULL);
+	struct Node *node_2 = makeNode(20, 10, node_1);
+	struct Node *node_3 = makeNode(15, 1000, node_2);
+
+	struct Node *curr = node_3;
+	int sum = 0;
+	while (curr != NULL){
+		sum += curr->val.x*curr->val.y;
+		curr = curr->next;
+	}
+	return sum;
+}

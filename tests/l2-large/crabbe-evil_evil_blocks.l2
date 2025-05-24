@@ -1,0 +1,14 @@
+//test return 1
+
+int main() {
+    int c = 2;
+    {
+        int a = 6;
+        c *= 2;
+    }
+    {
+        bool a = false;
+        c >>= 2;
+    }
+    return c;
+}

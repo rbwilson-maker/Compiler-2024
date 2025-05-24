@@ -1,0 +1,8 @@
+//test error
+//array typechecking
+int main()
+{
+	int[] d = alloc_array(int, 5);
+	d[false] = 5;
+	return d[0];
+}

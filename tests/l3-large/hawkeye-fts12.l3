@@ -1,0 +1,12 @@
+//test error
+
+int add (int x, int y) {
+    return x + y;
+}
+
+int main () {
+    int a = 3;
+    bool b = true;
+    add (a, b);
+    return 0;
+}

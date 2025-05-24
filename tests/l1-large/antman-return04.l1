@@ -1,0 +1,15 @@
+//test return 0
+// return a constant
+
+int main() { 
+    int x = -1;
+    x += 1;
+    x = 1;
+    x = -1;
+    int y = -5;
+    y = x;
+    x = 5;
+    x += 6;
+    x %= 1;
+    return 0;
+}

@@ -1,0 +1,12 @@
+//test return 1000
+
+// Tests evaluation of long chain of && ||
+int main(){
+
+  if (false || false && true || false && true || false && false || false && true || false){
+    return 999;
+  }
+
+  return 1000;
+
+}

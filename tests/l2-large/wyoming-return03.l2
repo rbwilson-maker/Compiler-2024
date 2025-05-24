@@ -1,0 +1,10 @@
+//test return -17469961
+int main(){
+    int x = 5;
+    int y = 0xDEADBEEF;
+    while(x>0){
+        x--;
+        y = ((y&1)<<31) | (y>>1);
+    }
+    return y;
+}

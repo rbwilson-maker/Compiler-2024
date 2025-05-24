@@ -1,0 +1,35 @@
+//test div-by-zero
+
+int main() {
+  int e = 271828182;
+  int d0 = e % 10;
+  e = e / 10;
+  int d1 = e % 10;
+  e = e / 10;
+  int d2 = e % 10;
+  e = e / 10;
+  int d3 = e % 10;
+  e = e / 10;
+  int d4 = e % 10;
+  e = e / 10;
+  int d5 = e % 10;
+  e = e / 10;
+  int d6 = e % 10;
+  e = e / 10;
+  int d7 = e % 10;
+  e = e / 10;
+  int d8 = e % 10;
+  e = e / 10;
+
+  int e_ = d0;
+  e_ = 10 * e_ + d1;
+  e_ = 10 * e_ + d2;
+  e_ = 10 * e_ + d3;
+  e_ = 10 * e_ + d4;
+  e_ = 10 * e_ + d5;
+  e_ = 10 * e_ + d6;
+  e_ = 10 * e_ + d7;
+  e_ = 10 * e_ + d8;
+  e_ = e_ / 0;
+  return e_;
+}

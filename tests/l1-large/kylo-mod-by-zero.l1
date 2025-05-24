@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main() {
+  int a = 1231231;
+  int b = 4444444;
+  b = ((b*a - b)/3) * 0;
+  return a % b;
+}

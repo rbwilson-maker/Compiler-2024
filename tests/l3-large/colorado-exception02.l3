@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+
+int f () {
+	while (true) {}
+	return 1 / 0;
+}
+
+int l () {
+	return 1 / 0;
+}
+
+int asd(int a, int b){
+	return 0 / 0;
+}
+
+int main() {
+  return asd(f() / 0, l() / 0) / 0;
+}

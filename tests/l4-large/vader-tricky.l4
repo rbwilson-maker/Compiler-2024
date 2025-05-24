@@ -1,0 +1,10 @@
+//test error
+struct str {
+  int a;
+  int b;
+}
+int main() {
+  struct str point;
+  point->a = 5;
+  return point->a;
+}

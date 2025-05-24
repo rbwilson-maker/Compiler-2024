@@ -1,0 +1,11 @@
+//test error
+// Mutual Recursive struct def
+
+struct a {int x; int y; struct b b;};
+struct b {int w; int z; struct a a;};
+
+int main() {
+    struct a *a = alloc(struct a);
+    struct b *b = alloc(struct b);
+    return a->x;
+}

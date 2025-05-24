@@ -1,0 +1,35 @@
+//test return 97
+
+bool is_prime(int n) {
+    if (n == 2)
+        return true;
+    for (int i = 2; i * i <= n; i += 1) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int get_next_prime(int start) {
+    while (true) {
+        if (is_prime(start))
+            return start;
+        start++;
+    }
+    // may not be reachable but necessary for typecheck
+    return -1; 
+}
+
+int get_nth_prime(int n) {
+    if (n == 1)
+        return 2;
+    int prime = 2;
+    for (int i = 1; i < n; i++) {
+        prime = get_next_prime(prime + 1);
+    }
+    return prime;
+}
+
+int main() {
+    return get_nth_prime(25);
+}

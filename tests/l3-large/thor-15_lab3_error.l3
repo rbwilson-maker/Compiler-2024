@@ -1,0 +1,10 @@
+//test error
+//pred the inductive way
+
+void pred (int n){
+if n = 0 then return 0;
+return 1 + (pred (n - 1));
+
+}
+
+int main () {return pred 17;}

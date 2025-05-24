@@ -1,0 +1,18 @@
+//test return 1
+
+struct a1a2a3a4 {
+	int *aa;
+	int a;
+	int b;
+	int *bb;
+};
+
+int main () {
+	struct a1a2a3a4* a = alloc(struct a1a2a3a4);
+	a->aa = NULL;
+	a->a = 1;
+	a->b = 2;
+	a->bb = NULL;
+	alloc_array(int, 100);
+	return a->a;
+}

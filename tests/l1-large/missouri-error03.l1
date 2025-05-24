@@ -1,0 +1,11 @@
+//test error
+// Number is too large
+
+int main() {
+  int vegetarian;
+  vegetarian = 0x8BADF00D;
+
+  int carnivore;
+  carnivore = 0xdeadbeef;
+  return vegatarian + carnivore;
+}

@@ -1,0 +1,13 @@
+//test return 0
+
+struct point {
+  int x;
+  int y;
+};
+
+int main() {
+  struct point *p = alloc(struct point);
+  p->x = -1;
+  p->y = 1;
+  return p->x + p->y;
+}

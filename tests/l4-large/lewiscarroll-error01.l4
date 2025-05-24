@@ -1,0 +1,9 @@
+//test error
+
+int main () {
+	int[] A = alloc_array(int, 5);
+	int * ruff = alloc(int);
+	*ruff = 100;
+	A[4] = ruff;
+	return A[4];
+}

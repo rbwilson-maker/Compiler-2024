@@ -1,0 +1,13 @@
+//test return 0
+
+typedef struct mys mys;
+typedef struct yys yys;
+
+struct mys {
+    yys *inside;
+};
+
+int main(){
+    mys *s1 = alloc(struct mys);
+    return 0;
+}

@@ -1,0 +1,7 @@
+//test error
+
+typedef int fadd;
+
+int main() {
+    return ftoi(itof(3));
+}

@@ -1,0 +1,28 @@
+//test return 336
+// many vars with many divisions
+
+int main() {
+    int x;
+    int w;
+    int t;
+    int a = 0x2000;
+    int b = 5;
+    int c = a / b;
+    int z = c % b;
+    int d = c / b;
+    int y = a % d;
+    int e = d / b;
+    int f = a / d;
+    y = d % f;
+    e = b / f;
+    f = f / 20;
+    z = (f + 20 + 20 + 20) % (a - 0x20 - 0x20);
+    b = b / 40;
+    int g = b + c + d + e - f;
+    a = a % g;
+    t = z;
+    w = t;
+    x = z + y + a + b - (z + t);
+
+    return a;
+}

@@ -1,0 +1,12 @@
+//test error
+struct A {
+    int a;
+    int b;
+    int c;
+};
+typedef struct A _c0_main;
+int main(){
+    struct A[] a = alloc_array(struct A, 100);
+    struct A[] b = a + 100;
+    return 0;
+}

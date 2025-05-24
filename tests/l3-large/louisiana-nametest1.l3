@@ -1,0 +1,17 @@
+//test return 1
+// tests typedefs of typedefs
+
+typedef bool mybool;
+typedef mybool hisbool;
+
+int equal(mybool b1, hisbool b2){
+    return b1 == b2 ? 1 : 0;
+}
+
+int main(){
+    bool b = true;
+    mybool b1 = b;
+    hisbool b2 = b1;
+    return equal(b1, b2);
+}
+

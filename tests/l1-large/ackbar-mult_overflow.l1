@@ -1,0 +1,9 @@
+//test return ~2147483648
+//Tests integer overflow as the result of multiplcation
+//2 * 2^30 = 2^31 = -2^31 = ~2147483648
+
+int main() {
+    int two_to_30th = 1073741824;
+    int two = 2;
+    return two_to_30th * two;
+}

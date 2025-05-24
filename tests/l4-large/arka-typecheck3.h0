@@ -1,0 +1,15 @@
+//test typecheck
+//struct definition in header
+
+struct s1;
+struct s2;
+
+struct s1 {
+    int val;
+    struct s2* next;
+};
+
+struct s2 {
+    int val;
+    struct s1 *next;
+};

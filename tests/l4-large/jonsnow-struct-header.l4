@@ -1,0 +1,11 @@
+//test typecheck
+
+int main() {
+  struct main *main = alloc(struct main);
+  main->main = main;
+  main->main->main = main->main;
+  main->main->main->main = main->main->main;
+  main->main->main->main->main = main->main->main->main;
+  main->main->main->main->main->main = main->main->main->main->main;
+  return main->main->main->main->main->main->i;
+}

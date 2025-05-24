@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+    int a = 3;
+    int b = 2;
+
+    int a = 4;  /* Redefinition of a */
+    return a / b;
+}

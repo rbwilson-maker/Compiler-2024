@@ -1,0 +1,21 @@
+//test return 0
+
+int main(){
+
+  /**
+    /*
+       Nesty Boii if (4.0 * x * 2 / false) == return eleventy;
+    */ 
+   **/
+  int x = 0;
+  x += 2;
+
+  if (x > 1){
+    x = 0;
+  }
+  
+  if (x == 0) return 0;
+  
+  x = 0;
+  return 1;
+}

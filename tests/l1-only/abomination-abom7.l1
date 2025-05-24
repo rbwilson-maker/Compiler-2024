@@ -1,0 +1,18 @@
+//test error
+
+int main(){
+    int a = 33;
+    int b = 0x00D;
+    int c = a + b; // 45
+    int d = c / a; // 1
+    int e = c + (d - b); // 56
+    {
+        c /= 0x5; // 9
+        e -= c; // 47
+        return e + 3;
+    }
+    {
+        int y = 0x000;
+        int x = 5 / y;
+    }
+}

@@ -1,0 +1,26 @@
+//test return 1207
+
+struct point {
+  int x;
+  int y;
+};
+
+typedef struct point point;
+
+int main(){
+
+  point * x1;
+  point * x2;
+
+  x1 = alloc(point);
+  x2 = alloc(point);
+
+  x1->x = 1;
+  x1->y = -3;
+
+  x2->x = 7;
+  x2->y = -400;
+
+  return (x1->x * x2->x) + (x1->y * x2->y);
+  
+}

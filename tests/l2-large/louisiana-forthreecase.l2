@@ -1,0 +1,25 @@
+//test return 55
+
+int main()
+{
+	int x = 3;
+	int y = 4;
+
+	for (int z = 2; z < 40; z++)
+	{
+		if (z < 20)
+		{
+			y++;
+		}
+		else if (z < 30)
+		{
+			x++;
+		}
+		else
+		{
+			x++;
+			y++;
+		}
+	}
+	return x+y;
+}

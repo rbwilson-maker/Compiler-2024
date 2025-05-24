@@ -1,0 +1,13 @@
+//test error
+
+/*
+ * test if ints are properly typed
+ */
+
+
+typedef int f;
+
+
+int main() {
+    return f(1);
+}

@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int main() {
+    int x = -10;
+    x *= 10;
+    int INT_MIN = 0x80000000;
+    int y = (INT_MIN - 1) % 2; 
+    int z = (x + (100 * y));
+    return INT_MIN / z;
+}

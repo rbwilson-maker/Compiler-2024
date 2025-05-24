@@ -1,0 +1,9 @@
+//test error
+
+bool helper() {
+  return false;
+}
+
+int main() {
+  return helper();
+}

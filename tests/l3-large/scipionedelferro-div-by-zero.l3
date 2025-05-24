@@ -1,0 +1,11 @@
+//test div-by-zero
+// attempts to  call function that divides by 0
+
+int division () {
+    return 1/0;
+}
+
+int main () {
+    int result = division();
+    return result;
+}

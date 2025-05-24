@@ -1,0 +1,14 @@
+//test return 16
+
+int zeno(int v, int eps) {
+  if(!fless(v, fsub(itof(1), eps))) {
+    return 0;
+  }
+  return 1 + zeno(fadd(v, fdiv(fsub(itof(1), v), itof(2))), eps);
+}
+
+int main() {
+  int eps = fdiv(itof(1),itof(100000));
+  int start = fdiv(itof(1),itof(2));
+  return zeno(start, eps);
+}

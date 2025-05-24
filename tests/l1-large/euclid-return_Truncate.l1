@@ -1,0 +1,45 @@
+//test return 0
+// testing register allocation and rounding down
+
+int main() {
+    int a = 4;
+    int b = 5;
+
+    int c = 7;
+    int d = 10;
+
+    int e = 20;
+    int f = 30;
+
+    int g = 500;
+    int h = 700;
+
+    int i = -5;
+    int j = -6;
+
+    int k = -5;
+    int l = 6;
+
+    int m = 2147483647;
+    int n = -2147483648;
+
+    int o = 5 / 7 + 10 / 11 + (-5 + -5) / 12 + 37 / 6;
+    int p = 7;
+
+    int q = 5 / 7 + (5 + 8 / 9) / 6 + (20 + 5 / 2) / 10;
+    int r = 3;
+
+    int s = 20 * 8 / 9;
+    int t = 18;
+
+    int u = 20 * (8 / 9);
+    int v = 20 * 8 / 9;
+
+    int w = 4;
+    int x = 5;
+
+    int y = x - 1 - 1 + 1 / 2;
+    int z = w * (x * 0 + 1);
+
+    return a/b + c/d + e/f + g/h + i/j + k/l + m/n + o/p + q/r + s/t + u/v + w/x + y/z;
+}

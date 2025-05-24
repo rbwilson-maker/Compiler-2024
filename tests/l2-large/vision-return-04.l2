@@ -1,0 +1,6 @@
+//test return 4
+
+int main() {
+    int x = 1 << 2;
+    return (x << 3 >> 3);
+}

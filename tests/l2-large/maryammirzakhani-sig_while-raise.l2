@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+    bool x = true;
+    int y = 10;
+    while (!x || y > 0) {
+        if (x) y--;
+        x = !x;
+    }
+    return (x ? 10 % y : y % 10);
+}

@@ -1,0 +1,16 @@
+//test error
+// z is not init even though the block is after the return statement
+int main ()
+{
+  bool x = true;
+  int y = 0xefefef;
+  while(x) {
+      x = x && (y % 3 == 0);
+  }
+  return 1;
+  {
+    x = false;
+    int z;
+    x = x && (z % 2 == 0);
+  }
+}

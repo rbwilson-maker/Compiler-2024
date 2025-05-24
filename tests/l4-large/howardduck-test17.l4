@@ -1,0 +1,21 @@
+//test return 5
+
+struct A {
+    int a;
+    int b;
+    int c;
+};
+
+struct B {
+    struct A *a;
+    int w;
+};
+
+int main () {
+    struct B *b = alloc(struct B);
+    b->a = alloc(struct A);
+    b->a->b = 3;
+    b->w = 4;
+    b->a->a = 6;
+    return (b->a->b) - (b->w) + (b->a->a);
+}

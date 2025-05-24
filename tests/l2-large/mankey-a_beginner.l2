@@ -1,0 +1,16 @@
+//test return -64
+//we will be incrementally making this harder as our compiler is less shit
+int main()
+{
+  int x = 1;
+  x = 0;
+  int y = 1;
+  y = x << 1;
+  x = 2;
+  x <<= 5;
+  y = -x + 1;
+  y++;
+  y--;
+  y--;
+  return y;
+}

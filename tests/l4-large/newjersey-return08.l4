@@ -1,0 +1,13 @@
+//test return 4
+int main(){
+	int[] x = alloc_array(int, 5);
+	x[0] = 0;
+	x[1] = 1;
+	x[2] = 2;
+	x[3] = 3;
+	x[4] = 4;
+
+	int y = 0;
+
+	return x[(y+10)/2-1];
+}

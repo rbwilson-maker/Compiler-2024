@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main () {
+	int i;
+	int a = 0x5932;
+
+	for(i = 0; i < a; i++) {
+		return (i/a) + (a/i);
+	}
+
+	return 0;
+}

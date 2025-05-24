@@ -1,0 +1,19 @@
+//test return 3
+int main ()
+{
+  int x = 0;
+  bool f = true;
+  if (f)
+  {
+    x = 1;
+  }
+  if (!f)
+  {
+    x = 2;
+  }
+  else
+  {
+    x = 3;
+  }
+  return x;
+}

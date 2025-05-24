@@ -1,0 +1,9 @@
+//test error
+int main() {
+  int****** p = alloc(int*);
+  if (p != NULL) {
+    return 0;
+  }
+  return 9;
+}
+  

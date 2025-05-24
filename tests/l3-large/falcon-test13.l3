@@ -1,0 +1,40 @@
+//test abort
+
+int spooky_power_of_2(int x) {
+    assert(x >= 0);
+    return 1 << x;
+}
+
+int speepy_power_of_2(int y) {
+    if(y < 0) {
+        return -1 % -1 + 4 % 0;
+    }
+    return 1 << y;
+}
+
+// a very useless function
+int g(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m) {
+    return 1;
+}
+
+
+int main() {
+    // even if you have a lot of arguments, you always have to evaluate them
+    // left-to-right
+    return g(
+        spooky_power_of_2(1),
+        spooky_power_of_2(3),
+        spooky_power_of_2(4),
+        speepy_power_of_2(6),
+        spooky_power_of_2(7),
+        spooky_power_of_2(13),
+        speepy_power_of_2(5),
+        spooky_power_of_2(3),
+        spooky_power_of_2(7),
+        speepy_power_of_2(2),
+        // this must be called first among the three to get abort
+        spooky_power_of_2(-4),
+        speepy_power_of_2(-63),
+        speepy_power_of_2(-3)
+    );
+}

@@ -1,0 +1,10 @@
+//test error
+// No semicolons at all.
+
+int main()
+{
+  int a = 2387468
+  int b = 123
+
+  return a % b
+}

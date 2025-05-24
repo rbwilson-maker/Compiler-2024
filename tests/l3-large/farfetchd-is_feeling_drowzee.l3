@@ -1,0 +1,20 @@
+//test div-by-zero
+
+typedef int integer;
+
+int divide(int a, int b);
+integer divide(int c, int d);
+int divide(int e, int f);
+
+integer divide(int n, integer d)
+{
+  return n / d;
+}
+
+int main()
+{
+  for (int i = 10; i >= 0; i--)
+    int x = divide (10, i);
+
+  return 10;
+}

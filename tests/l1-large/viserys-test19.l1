@@ -1,0 +1,10 @@
+//test return 12
+
+int main() {
+  // testing whitespace, order of ops, and extraneous variables
+  int a = 9;              int b = 0;  int c = 10;
+  int d = 100;
+  int e = d;
+  int z = a;
+  return a + b + 1 + 2 + 3 / 100;
+}

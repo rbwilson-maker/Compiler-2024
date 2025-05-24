@@ -1,0 +1,30 @@
+//test return 45149
+// a lot of vars
+int main()
+{
+  int a = 1;
+  int b = a;
+  int c = a + b;
+  a = c - b;
+  int d = 2 * b;
+  int e = 3 * d;
+  int f = a;
+  f = d + e % b;
+  int g = f;
+  int h = a + b + c + d + e + f + g;
+  h = h + h;
+  int i;
+  int j;
+  int k = h;
+  i = k;
+  j = k;
+  int l = a * b * c;
+  int m = 0;
+  int n = 1;
+  int o = m * n;
+  int p = o + 1 + o;
+  int q = 100 / ((i + j) / (p + (a * a)));
+  int r = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q;
+  int s = r + p + o + n + m + l + k + j + i + h + g + f + e + d + b + c + a;
+  return r * s;
+}

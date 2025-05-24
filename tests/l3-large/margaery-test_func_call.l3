@@ -1,0 +1,13 @@
+//test return 7
+int sum(int a, int b);
+
+int main() {
+    int x = 3;
+    int y = 4;
+
+    return sum(x, y);
+}
+
+int sum(int a, int b) {
+    return (a + b);
+}

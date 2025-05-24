@@ -1,0 +1,53 @@
+//test return 0
+
+bool xor(bool a, bool b) {
+	if (a && b) {
+		return false;
+	} else if (a || b) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+// a shift feedback register
+int main () {
+    int res = 0;
+    int reg = 0xCDE1;
+	bool[] reg_ = alloc_array(bool, 16);
+	reg_[15] = true;
+	reg_[14] = true;
+	reg_[11] = true;
+	reg_[10] = true;
+	reg_[8] = true;
+	reg_[7] = true;
+	reg_[6] = true;
+	reg_[5] = true;
+	reg_[0] = true;
+    for (int i = 0; i < 100; i++) {
+        int tmp = 0;
+        tmp ^= 1 & reg >> 11;
+        tmp ^= 1 & reg >> 13;
+        tmp ^= 1 & reg >> 14;
+        reg >>= 1;
+        reg |= tmp << 15;
+		
+		bool tmp_ = false;
+		tmp_ = xor(tmp_, reg_[11]);
+		tmp_ = xor(tmp_, reg_[13]);
+		tmp_ = xor(tmp_, reg_[14]);
+		for(int j = 0; j < 15; j++) {
+			reg_[j] = reg_[j+1];
+		}
+        reg_[15] = tmp_;
+
+		tmp = 0;
+		for(int j = 15; j >= 0; j--) {
+			tmp = (tmp << 1) | (reg_[j] ? 1 : 0);
+		}
+		
+		res ^= reg ^ tmp;
+    }
+    return res;
+}
+

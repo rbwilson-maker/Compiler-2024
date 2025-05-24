@@ -1,0 +1,11 @@
+//test error
+
+// Test that void functions should not return a value
+
+void f() {
+    return;
+}
+
+int main () {
+    return f();    
+}

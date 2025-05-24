@@ -1,0 +1,12 @@
+//test return 6
+
+int main() {
+    int num = 12;
+    int numFactors = 0;
+    for(int i = 1; i <= num; i++) {
+        if(num % i == 0) {
+            numFactors++;
+        }
+    }
+    return numFactors;
+}

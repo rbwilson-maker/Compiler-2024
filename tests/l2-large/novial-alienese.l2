@@ -1,0 +1,12 @@
+//test return 256
+// test while loop
+
+int main() {
+  int x = 28;
+  int k = 2;
+  while (x >= 9) {
+    k = k * 2;
+    x -=3;
+  }
+  return k;
+}

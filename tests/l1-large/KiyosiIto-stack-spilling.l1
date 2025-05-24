@@ -1,0 +1,26 @@
+//test return -17920
+int main() {
+  int a = 47;
+  int b = 53;
+  int c = 59;
+  int d = 61;
+  int e = 67;
+  int f = 71;
+  int g = 73;
+  int h = 79;
+  int i = 83;
+  int j = 89;
+  int k = 97;
+  int l = 101;
+  int m = 103;
+  int n = 107;
+  int o = 109;
+  int p = 113;
+  int q = 11;
+  int r = 123;
+  int s = 10;
+  int result =
+      ((a + b) * (c - d) * (e % f + (g - h) * (i + j) - k / l % (m + n)) * o % p * (q - r)) * s;
+
+  return result;
+}

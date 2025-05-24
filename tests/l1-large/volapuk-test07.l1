@@ -1,0 +1,9 @@
+//test error
+
+// Tests compile time error on the token --
+
+int main() {
+   int a = 1 - -1;
+   int b = 2--2;
+   return a + b;
+}

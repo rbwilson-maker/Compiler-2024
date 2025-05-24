@@ -1,0 +1,25 @@
+//test return 1
+int div2(int i);
+int n3plus1(int n);
+
+int div2(int n) {
+    if (n == 1) return 1;
+    n = n / 2;
+
+    if (n % 2 == 0) return div2(n);
+    else return n3plus1(n);
+}
+int n3plus1(int n) {
+    if (n == 1) return 1;
+    n = 3*n + 1;
+
+    if (n % 2 == 0) return div2(n);
+    else return n3plus1(n);
+}
+int is_collatz(int n) {
+    if (n % 2 == 0) return div2(n);
+    else return n3plus1(n);
+}
+int main() {                         // WTF
+    return is_collatz(100) == 1 ? 1 : 0;
+}

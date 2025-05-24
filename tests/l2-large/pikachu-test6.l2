@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+  int quot = 10;
+  int div = 4;
+  while (quot < 20) {
+    int ans = quot/div;
+    quot++;
+    div--;
+  }
+  return 0;
+}

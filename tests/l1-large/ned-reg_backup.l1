@@ -1,0 +1,37 @@
+//test return 109
+
+int main() {
+
+  // There are 14 available registers, so we need 14 data points to fill them
+  // all up:
+  int n1 = 1;
+  int n2 = 2;
+  int n3 = 3;
+  int n4 = 4;
+  int n5 = 5;
+  int n6 = 6;
+  int n7 = 7;
+  int n8 = 8;
+  int n9 = 9;
+  int n10 = 10;
+  int n11 = 11;
+  int n12 = 12;
+  int n13 = 13;
+  int n14 = 14;
+
+  // Any variable x is live at line l iff x is live at succ(l) and x is not
+  // defined at l
+
+  // We know that edx:eax stores values right now. So, let's do some division
+  // to ensure that edx:eax is backed up and restored properly:
+
+  int n15 = n12 / 3;
+
+  // n15 is never live, so it never takes up register space. However, the value
+  // n2 must be moved into edx:eax, and 3 must be moved either into a
+  // register or memory location in order to perform addition. Thus, this
+  // test is an exercise in register juggling.
+
+  return n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 +
+         n9 + n10 + n11 + n12 + n13 + n14 + n15;
+}

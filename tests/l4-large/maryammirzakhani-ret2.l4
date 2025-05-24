@@ -1,0 +1,39 @@
+//test return -1391
+
+typedef struct amongus* amongus;
+typedef int nombre;
+
+nombre nomber();
+
+nombre main() {
+  return nomber();
+}
+
+struct amongus {
+  amongus amongus;
+  nombre nombre;
+};
+
+int nomber() {
+  amongus amougus = alloc(struct amongus);
+  amongus amomgus = amougus;
+  for (int i = 0; i < 100; i++) {
+    amomgus->amongus = alloc(struct amongus);
+    amomgus = amomgus->amongus;
+  }
+  amomgus->amongus = amougus;
+  nombre nomber = 69;
+  for (;
+    (*amomgus->amongus->amongus->amongus).nombre == 0;
+    amomgus = amomgus->amongus
+  ) {
+    amomgus->amongus->amongus->amongus->nombre = nomber;
+    nomber++;
+  }
+  amomgus = amougus;
+  while (nomber > -1337) {
+    nomber -= amomgus->nombre;
+    amomgus = amomgus->amongus;
+  }
+  return nomber;
+}

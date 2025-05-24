@@ -1,0 +1,11 @@
+//test return 4
+// asnop
+int main(){
+    int a;
+    a = 0;
+    a += 2;
+    a += 4;
+    a /= 3;
+    a *= 2;
+    return a;
+}

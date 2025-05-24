@@ -1,0 +1,5 @@
+//test error
+// ill-formed ternary
+int main() {
+  return 5 == 5 ? 1;
+}

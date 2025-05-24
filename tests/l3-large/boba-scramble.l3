@@ -1,0 +1,23 @@
+//test typecheck
+void print_stringy_int(int a)
+{
+  for(int i = 3; i >= 0; i--)
+  {
+    int chop_right = a >> (i * 8);
+    int chop_left = chop_right & 0xFF;
+    putchar(chop_left);
+  }
+}
+
+int main()
+{
+  // '0x' + ''.join([hex(ord(x))[2:] for x in ['G', 'r', 'a', 'n'][::-1]])
+  int message1 = 0x6e617247;
+  // '0x' + ''.join([hex(ord(x))[2:] for x in ['t', ' ', 'W', 'u'][::-1]])
+  int message2 = 0x75572074;
+
+  int unscrambled1 = __bswapsi2(message1);
+  int unscrambled2 = __bswapsi2(message1);
+
+  return 0;
+}

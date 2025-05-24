@@ -1,0 +1,149 @@
+//test return 42
+
+/* Hash Table Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, October 26, 2015 at 01:04:25 PM EDT
+ *
+ * A simple hashtable library implementation.
+ */
+
+typedef struct hashtable* ht;
+typedef struct linked_list_head list;
+typedef struct node node;
+
+struct hashtable {
+    list[] buckets;
+    int num_buckets;
+    int count;
+};
+
+struct linked_list_head {
+    int len;
+    node* start;
+    node* end;
+};
+
+struct node {
+    int elem;
+    node* next;
+    node* prev;
+};
+
+int hash(int elem)
+{
+    return elem;
+}
+
+ht alloc_ht(int num_buckets)
+{
+    ht hashtable = alloc(struct hashtable);
+    hashtable->buckets = alloc_array(list, num_buckets);
+    hashtable->num_buckets = num_buckets;
+    hashtable->count = 0;
+
+    return hashtable;
+}
+
+void add_elem(ht hashtable, int elem)
+{
+    node *new_node = alloc(node);
+    new_node->elem = elem;
+    new_node->next = NULL;
+    new_node->prev = NULL;
+
+    int index = hash(elem) % hashtable->num_buckets;
+
+    if (hashtable->buckets[index].start == NULL) {
+        hashtable->buckets[index].start = new_node;
+        hashtable->buckets[index].end = new_node;
+    } else {
+        hashtable->buckets[index].end->next = new_node;
+        new_node->prev = hashtable->buckets[index].end;
+        hashtable->buckets[index].end = new_node;
+    }
+
+    hashtable->count += 1;
+    hashtable->buckets[index].len += 1;
+}
+
+int remove_elem(ht hashtable, int elem)
+{
+    int index = hash(elem) % hashtable->num_buckets;
+
+    for (node *n = hashtable->buckets[index].start; n != NULL; n = n->next)
+    {
+        if (n->elem == elem) {
+            if (n->next != NULL && n->prev != NULL) {
+                n->next->prev = n->prev;
+                n->prev->next = n->next;
+            } else if (n->next == NULL && n->prev == NULL) {
+                hashtable->buckets[index].end = NULL;
+                hashtable->buckets[index].start = NULL;
+            } else if (n->next == NULL) {
+                n->prev->next = NULL;
+                hashtable->buckets[index].end = n->prev;
+            } else if (n->prev == NULL) {
+                n->next->prev = NULL;
+                hashtable->buckets[index].start = n->next;
+            } else {
+                assert(false);
+            }
+
+            hashtable->count -= 1;
+            hashtable->buckets[index].len -= 1;
+            return n->elem;
+        }
+    }
+    assert(false);
+
+    return -555;
+}
+
+bool has_elem(ht hashtable, int elem)
+{
+    int index = hash(elem) % hashtable->num_buckets;
+
+    for (node *n = hashtable->buckets[index].start; n != NULL; n = n->next)
+    {
+        if (n->elem == elem) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+int ht_size(ht hashtable)
+{
+    return hashtable->count;
+}
+
+int main()
+{
+    int num_buckets = 20;
+    int num_elems = 10000;
+
+    ht hashtable = alloc_ht(num_buckets);
+
+    // Test add
+    for (int i = 0; i < num_elems; i++)
+    {
+        add_elem(hashtable, i);
+        assert(ht_size(hashtable) == i+1);
+        assert(has_elem(hashtable, i));
+    }
+
+    // Test removal
+    int sum = 0;
+    for (int i = 0; i < num_elems; i++)
+    {
+        sum += remove_elem(hashtable, i);
+        assert(ht_size(hashtable) == num_elems - i - 1);
+        assert(!has_elem(hashtable, i));
+    }
+
+    return 42;
+}
+

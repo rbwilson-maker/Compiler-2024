@@ -1,0 +1,26 @@
+//test return 360
+// permuation
+
+int main() {
+    int original_n = 6;
+    int original_k = 4;
+
+    int n = original_n;
+    int k = original_k;
+    int numerator = 1;
+    int denominator = 1; 
+
+    k = original_n - original_k;
+
+    while (k > 0) {
+        denominator = k * denominator;
+        k = k - 1;
+    }
+
+    while (n > 0) {
+        numerator = n * numerator;
+        n = n - 1;
+    } 
+
+    return numerator/denominator;
+}

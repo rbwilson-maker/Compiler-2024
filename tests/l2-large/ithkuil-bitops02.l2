@@ -1,0 +1,17 @@
+//test return 2
+
+int main ()
+{
+    int x = 3;
+    int m1 = 17 | (17 << 8);
+    int mask = m1 | (m1 << 16);
+    int s = x & mask;
+    s += x>>1 & mask;
+    s += x>>2 & mask;
+    s += x>>3 & mask;
+    s = s + (s >> 16);
+
+    mask = 15 | (15 << 8);
+    s = (s & mask) + ((s >> 4) & mask);
+    return (s + (s>>8)) & 63;
+}

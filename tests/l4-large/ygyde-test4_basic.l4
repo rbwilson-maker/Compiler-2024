@@ -1,0 +1,13 @@
+//test memerror
+
+// basic array dereference test in function
+void foo(int[] x) {
+    x[1] = 0;
+    return;
+}
+
+int main () {
+    int[] test_arr = alloc_array(int, 1);
+    foo(test_arr);
+    return 0;
+}

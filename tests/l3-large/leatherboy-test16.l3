@@ -1,0 +1,27 @@
+//test div-by-zero
+
+int f1() {
+    return 123/4;
+}
+
+int f2(int t2, int t1) {
+    return t2 - 3*t2 +322 - t1*2;
+}
+
+int f3(int t3, int t5, int t1) {
+    return 6*t3-t5+t1;
+}
+
+int main(){
+    int t1 = f1();
+    int t2 = -5*t1 + 4*5+1;
+    int t3 = f1();
+    int t5 = 0;
+    for(int i = 0; i<1;i++){
+        t5 = t2 * t1 - t3 - t2+ 12;
+    }
+    int t6 = f3(t3, t5, t1);
+    int t7 = 4*t6 *-6 +t5 -6*t1;
+    int t4 = t3/(t7*0);
+    return t7*2-t6 + 4*t5;
+}

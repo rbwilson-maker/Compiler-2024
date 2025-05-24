@@ -1,0 +1,11 @@
+//test memerror
+
+int get_negative_one() {
+    return -1;
+}
+
+int main() {
+    int*[] inner = alloc_array(int*, 10);
+    int *a = inner[get_negative_one()];
+    return *a;
+}

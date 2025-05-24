@@ -1,0 +1,10 @@
+//test error
+int main()
+{
+  // parses, but is garbage
+  int[] x;
+  x = alloc_array(int, 5);
+  int y = 3;
+  (*x) = 1;
+  (x.y)[3 + x] + 1;
+}

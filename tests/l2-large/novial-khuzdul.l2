@@ -1,0 +1,11 @@
+//test return 4
+// nest ternary operators
+
+int main() {
+  int x = true ? 5 : 2; // 5
+  int y = (x>5) ? 12 : 1; // 1
+
+  int k = (x <= 5) ? ((y != 2) ? 4 : 3) :                   12; // 4
+  true ? (false ? 4 : 3) : (true ? 2 : 1);
+  return k;
+}

@@ -1,0 +1,10 @@
+//test return -2
+
+int minus(int a, int b);
+int minus(int c, int d);
+
+int minus(int e, int f) { return e - f;}
+
+int main() {
+	return minus(4, 6);
+}

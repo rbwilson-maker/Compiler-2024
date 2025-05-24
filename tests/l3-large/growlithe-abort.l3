@@ -1,0 +1,29 @@
+//test abort
+
+    /*
+     * This program tests correct compilation but
+     * raising SIGABRT
+     *
+     */
+
+     int main()
+     {
+         int a = 0;
+         int i;
+         int main = 0;
+
+         for((((i))) = 0; i < 7; i++)
+         {
+             if(i%2 == 0)
+             {
+                 main = 0;
+             }
+             else
+                 main++;
+         }
+
+         if(main < 2)
+             assert(false);
+
+         return 2;
+     }

@@ -1,0 +1,11 @@
+/* 
+ * A header file that describes a function to calculate 2-color ramsey's number
+ *
+ * Given a pair of positive integers (r, s). If we color each edge of an undirected
+ * complete graph G(V, E) with V >= ramsey(r, s) with blue or red, then we must be able
+ * to find a blue clique with r vertices or a red clique with s vertices on the graph.
+ *
+ * https://en.wikipedia.org/wiki/Ramsey%27s_theorem
+ */
+
+int ramsey(int r, int s);

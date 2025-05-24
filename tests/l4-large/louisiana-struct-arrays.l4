@@ -1,0 +1,17 @@
+//test return 1
+
+struct me {
+    bool isme;
+};
+
+typedef struct me me;
+
+int main(){
+    me[] mes = alloc_array(me, 5);
+    if (mes[0].isme == mes[4].isme){
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}

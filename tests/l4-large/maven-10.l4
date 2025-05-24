@@ -1,0 +1,33 @@
+//test error
+
+int main () {
+  int ****y = alloc(int ***);
+  for (int i = 0;i < 100; ++i) {
+    i += 1;
+  }
+  for (int i = 0;i < 200; ++i) {
+    i += 1;
+  }
+  for (int i = 0;i < 300; ++i) {
+    i += 1;
+  }
+  for (int i = 0;i < 400; ++i) {
+    i += 1;
+  }
+  for (int i = 0;i < 500; ++i) {
+    i += 1;
+  }
+  for (int i = 0;i < 600; ++i) {
+    i += 1;
+  }
+  for (int i = 0;i < 700; ++i) {
+    i += 1;
+  }
+  for (int i = 0;i < 800; ++i) {
+    i += 1;
+  }
+  for (int i = 0;i < 900; ++i) {
+    i += 1;
+  }
+  return 0;
+}

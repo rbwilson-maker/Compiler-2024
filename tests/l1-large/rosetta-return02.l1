@@ -1,0 +1,16 @@
+//test return 164
+// test arithmetic operations except for div and mod
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+
+  a = 10;   
+  b = a+5;    //15
+  c = 2*b+a;  //40  
+  d = 3-c * 2;   //-77
+  return -d-d+a;
+}

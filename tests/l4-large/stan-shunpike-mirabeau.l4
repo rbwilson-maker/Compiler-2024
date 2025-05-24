@@ -1,0 +1,23 @@
+//test memerror
+
+int main(){
+    int[] a = alloc_array(int, 0);
+    assert(a == a);
+    int[][] b = alloc_array(int[], 5);
+    // a size 0 array which is alloc'd should differ from a default array
+    assert(a != b[0]);
+    // all default arrays should be equal
+    assert(b[0] == b[1]);
+    assert(b[1] == b[2]);
+    assert(b[2] == b[3]);
+    assert(b[3] == b[4]);
+    // in fact, they should be equal to all other default arrays!
+    int[][] c = alloc_array(int[], 3);
+    assert(c[0] == b[0]);
+
+    // if we alloc one of them, this equality should break
+    b[3] = alloc_array(int, 0);
+    assert(b[3] != b[2]);
+    // now let's go access a size 0 array - it'll be fun!
+    return alloc_array(int[], 6)[4][4];
+}

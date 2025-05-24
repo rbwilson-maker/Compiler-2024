@@ -1,0 +1,39 @@
+//test return 0
+
+int getNumDigits(int n) {
+    if (n == 0) {
+       return 1;
+    }
+    int res = 0;
+    while (n > 0) {
+          res += 1;
+          n = n / 10;
+    }
+    return res;
+}
+
+bool isPalindrome(int n) {
+     int d = getNumDigits(n);
+     int[] A = alloc_array(int, d);
+     int i = 0;
+     while (n > 0) {
+           A[i] = n % 10;
+           n = n / 10;
+           i += 1;
+     }
+     int l = 0;
+     for (i = 0; i < d / 2; i++) {
+         if (A[i] != A[d - i - 1]) {
+            return false;
+         }
+     }
+     return true;
+}
+
+
+int main() {
+    assert(isPalindrome(1345431) == true);
+    assert(isPalindrome(123) == false);
+    assert(isPalindrome(121) == true);
+    return 0;
+}

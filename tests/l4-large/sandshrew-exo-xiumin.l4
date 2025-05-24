@@ -1,0 +1,6 @@
+//test error
+typedef int x;
+typedef int y;
+int main(){
+   return x * y;
+}

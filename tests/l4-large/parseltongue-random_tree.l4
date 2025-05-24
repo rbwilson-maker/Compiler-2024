@@ -1,0 +1,165 @@
+//test return 15413
+
+// Tree struct
+typedef struct tree tree_t;
+
+struct tree {
+  int data;
+  tree_t *parent;
+  tree_t *left;
+  tree_t *right;
+};
+
+// Random state struct
+typedef struct rand_state rand_state_t;
+
+struct rand_state {
+  int x;
+  int w;
+  int s;
+};
+
+// Bounded array struct
+typedef struct barray barray_t;
+
+struct barray {
+  int size;
+  int[] arr;
+};
+
+tree_t *node(tree_t *parent, int data) {
+  tree_t *t = alloc(tree_t);
+  t->data = data;
+  t->parent = parent;
+  return t;
+}
+
+void tree_insert(tree_t *t, int data) {
+  assert(t != NULL);
+  
+  if (t->data > data)
+    if (t->left == NULL)
+      t->left = node(t, data);
+    else
+      tree_insert(t->left, data);
+  else
+    if (t->right == NULL)
+      t->right = node(t, data);
+    else
+      tree_insert(t->right, data);
+}
+
+tree_t *find_node(tree_t *t, int data) {
+  assert(t != NULL);
+
+  if (t->data == data) return t;
+  if (t->data > data)
+    if (t->left != NULL)
+      return find_node(t->left, data);
+    else
+      return NULL;  // Not found
+  else
+    if (t->right != NULL)
+      return find_node(t->right, data);
+    else
+      return NULL;  // Not found
+}
+
+tree_t *common_ancestor_helper(tree_t *t, tree_t *A, tree_t *B) {
+  int a = A->data;
+  int b = B->data;
+  assert(t != NULL && A != NULL && B != NULL);
+  if (A == B) return A;
+  // Either A or B is the root, which is a common ancestor of every node
+  if (A == t || B == t) return t;
+  // Parents should not be NULL since they are not the root
+  assert(A->parent != NULL && B->parent != NULL);
+  if (a > b && A->parent->data > a)   // A is a left subtree
+    return common_ancestor_helper(t, A, B->parent);
+  if (a > b && A->parent->data <= a)  // A is a right subtree
+    return common_ancestor_helper(t, A->parent, B);
+  // Reverse the nodes
+  return common_ancestor_helper(t, B, A);
+}
+
+tree_t *common_ancestor(tree_t *t, int A, int B) {
+  tree_t *node_a;
+  tree_t *node_b;
+  node_a = find_node(t, A);
+  if (node_a == NULL) return NULL;  // Invalid A
+  node_b = find_node(t, B);
+  if (node_b == NULL) return NULL;  // Invalid B
+  return common_ancestor_helper(t, node_a, node_b);
+}
+
+void srand_r(int init, rand_state_t *s) {
+  assert(s != NULL);
+  s->x = init;
+  s->w = 0;
+  s->s = 0xda1ce2a9;
+}
+
+int rand_r(rand_state_t *s) {
+  assert(s != NULL);
+  s->x *= s->x;
+  s->w += s->s;
+  s->x += s->w;
+  s->x = ((s -> x >> 16) & 0xFFFF) | (s->x << 16);
+  return s->x & 0xFFFF;
+}
+
+void shuffle(barray_t *a, rand_state_t *s) {
+  assert(a != NULL && s != NULL);
+  int tmp;
+  int j;
+  for (int i = a->size; i > 0; i--) {
+    j = rand_r(s) % i;
+    assert(j < a->size);
+    tmp = a->arr[i - 1];
+    a->arr[i - 1] = a->arr[j];
+    a->arr[j] = tmp;
+  }
+}
+
+int main() {
+  // Initialize the random number generator
+  rand_state_t *rng = alloc(rand_state_t);
+  assert(rng != NULL);
+  srand_r(15411, rng);
+
+  // Initialize the array
+  struct barray *a = alloc(barray_t);
+  assert(a != NULL);
+  a->size = 20000;
+  a->arr = alloc_array(int, a->size);
+  for (int i = 0; i < a->size; i++) a->arr[i] = i;
+
+  // Shuffle the array
+  shuffle(a, rng);
+
+  // Initialize a tree
+  tree_t *root = node(NULL, a->arr[0]);
+  assert(root != NULL);
+
+  // Insert the elements of array a into the tree
+  for (int i = 1; i < a->size; i++) tree_insert(root, a->arr[i]);
+
+  assert(root->data == 14321);
+  assert(root->left->data == 6018);
+  assert(root->right->data == 15385);
+
+  tree_t *ancestor;
+  ancestor = common_ancestor(root, 15411, 15213);
+  assert(ancestor != NULL && ancestor->data == 14321);    // Never heard of this class before O.o
+
+  ancestor = common_ancestor(root, 25, 8509);
+  assert(ancestor != NULL && ancestor->data == 14321);
+
+  ancestor = common_ancestor(root, 2358, 11329);
+  assert(ancestor != NULL && ancestor->data == 14321);
+
+  ancestor = common_ancestor(root, 15410, 15411);
+  assert(ancestor != NULL && ancestor->data == 15413);
+
+  return ancestor->data;
+}

@@ -1,0 +1,13 @@
+//test error
+int main() {
+    int a = 0000;
+    a += 1
+    a %= 2;
+    a *= 4;
+    int b = 6+1;
+    b -= a;
+    b *= 69;
+    return b; 
+}
+
+

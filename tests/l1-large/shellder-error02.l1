@@ -1,0 +1,6 @@
+//test error
+// constant overflow
+int main(){
+  int x = 10000000000; // 10^10 > 2^31
+  return x;
+}

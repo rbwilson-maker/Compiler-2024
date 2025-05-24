@@ -1,0 +1,15 @@
+//test error
+
+typedef int *aliasInt;
+typedef bool *aliasBool;
+
+int testFunc(aliasInt a, aliasBool b, int aliasInt) {
+    return a + b + aliasInt;
+}
+
+int main() {
+    int *a = 1;
+    int *b = 2;
+    int *c = 3;
+    return testFunc(a, b, c);
+}

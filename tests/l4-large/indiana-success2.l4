@@ -1,0 +1,30 @@
+//test return 349
+//349
+
+//but now it passes
+
+struct success;
+
+struct success{
+  int success;  //but this passes
+};
+
+void test(){
+  struct     success* success = alloc(struct success);
+}
+
+typedef int success;
+
+
+
+
+int main(){
+  success K = 349;
+  test();
+  struct
+    success*
+      S = alloc
+    (struct success);
+  S->success = K;
+  return S->success;
+}

@@ -1,0 +1,22 @@
+//test div-by-zero
+
+int main ()
+{
+  int x;
+  int y;
+
+  y = 1;
+  
+  {
+    y = 2;
+  }
+
+  x = 1;
+  x += 1;
+  x += 2;
+  x += 3;
+
+  y = 0;
+
+  return x / y;
+}

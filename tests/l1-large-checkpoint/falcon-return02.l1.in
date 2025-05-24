@@ -1,0 +1,45 @@
+//target 2
+[
+ {
+  "Uses": [], 
+  "Defines": [ "%t15" ],
+  "Live_out": [ "%t15" ],
+  "Move": false,
+  "Line": 0
+ },
+ {
+  "Uses": [ "%t15" ], 
+  "Defines": [ "%t17" ],
+  "Live_out": [ "%t17" ],
+  "Move": false,
+  "Line": 1
+ },
+ {
+  "Uses": [ "%t17" ], 
+  "Defines": [ "%t19" ],
+  "Live_out": [ "%t19" ],
+  "Move": false,
+  "Line": 2
+ },
+ {
+  "Uses": [ "%t19" ], 
+  "Defines": [ "%t22" ],
+  "Live_out": [ "%t22" ],
+  "Move": false,
+  "Line": 3
+ },
+ {
+  "Uses": [ "%t22" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": true,
+  "Line": 4
+ },
+ {
+  "Uses": [], 
+  "Defines": [],
+  "Live_out": [],
+  "Move": false,
+  "Line": 5
+ }
+]

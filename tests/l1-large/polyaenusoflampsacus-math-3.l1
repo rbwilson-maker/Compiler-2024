@@ -1,0 +1,26 @@
+//test return -1310009855
+
+int main () {
+	int x = 15122;
+	int y = 15411;
+	int z = x * y;
+	z *= x;
+	z *= y;
+	z *= x;
+	z *= y;
+	z *= x;
+	z *= y;
+	z *= x;
+	z *= y;
+	z *= x;
+	z *= y;
+	z *= x;
+	z *= y;
+	z *= x;
+	z *= y;
+	z *= x;
+	z *= y;
+	z -= 0x80000000;
+	z -= 0x7FFFFFFF;
+	return z;
+}

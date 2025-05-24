@@ -1,0 +1,23 @@
+//test div-by-zero
+
+     /*
+      * This program tests exception occurence due to
+      * division by zero
+      *
+      */
+
+      int some_func(int a, int num)
+      {
+              if(a == -1)
+                  return 1;
+              else
+              {
+                  num /= a;
+                  return some_func(a-1,num);
+              }
+      }
+
+      int main()
+      {
+          return some_func(5,12000);
+      }

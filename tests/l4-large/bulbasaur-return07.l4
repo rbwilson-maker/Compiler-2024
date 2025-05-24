@@ -1,0 +1,68 @@
+//test return 573
+//derivatives
+
+struct poly
+{
+  int coef;
+  struct poly* next;
+};
+
+typedef struct poly* poly;
+
+poly gen_poly()
+// Generates 0 + x + 2x^2 + 3x^3 + 4x^4 + 5x^5
+{
+  poly p = alloc(struct poly);
+  p->coef = 0;
+  poly curr = p;
+  for(int i = 1; i < 6; i++)
+  {
+    poly new = alloc(struct poly);
+    new->coef = i;
+    curr->next = new;
+    curr = new;
+  }
+  return p;
+}
+
+poly deriv(poly p)
+// Derivative of gen_poly is 1 + 4x + 9x^2 + 16x^3 + 25x^4
+{
+  poly curr = p;
+  int d = 1;
+  while(curr->next != NULL)
+  {
+    curr->coef = d * curr->next->coef;
+    curr = curr->next;
+    d++;
+  }
+  curr->coef = 0;
+  return p;
+}
+
+int exp(int b, int e)
+{
+  if(e == 0) return 1;
+  if(e == 1) return b;
+  return b * exp(b, e-1);
+}
+
+int apply(poly p, int n)
+{
+  int d = 0;
+  int ans = 0;
+  while(p != NULL)
+  {
+    ans += p->coef * exp(n, d);
+    p=p->next;
+    d++;
+  }
+  return ans;
+}
+
+int main()
+// 1 + 8 + 36 + 128 + 400 == 573
+{
+  poly p = gen_poly();
+  return apply(deriv(p), 2);
+}

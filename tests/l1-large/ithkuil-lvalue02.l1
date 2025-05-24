@@ -1,0 +1,10 @@
+//test error
+// test lvalue forms
+
+int main()
+{
+    // invalid lvalue
+    int 5;
+    5 = 6;
+    return 5;
+}

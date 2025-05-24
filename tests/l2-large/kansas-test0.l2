@@ -1,0 +1,8 @@
+//test return 20
+
+// This is designed to test bitwise and
+int main() {
+  int a = 0x57;
+  int b = 0x34;
+  return a & b;
+}

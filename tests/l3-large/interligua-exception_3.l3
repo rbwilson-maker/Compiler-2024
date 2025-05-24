@@ -1,0 +1,17 @@
+//test div-by-zero
+
+int add3(int a, int b, int c){
+    return a + b + c;
+}
+
+int div(int z){
+    return z / z;
+}
+
+int main(){
+    int x = 1;
+    int y = x / x;
+    int z = 2 / x;
+
+    return add3(x,y,z) + div(x-x);
+}

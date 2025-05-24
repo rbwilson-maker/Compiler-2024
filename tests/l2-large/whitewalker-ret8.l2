@@ -1,0 +1,9 @@
+//test return 8
+
+int main() {
+    int x = 0;
+    int i;
+    for (i = 0; i < 3; i++) x++;
+    bool b = i > 4;
+    return b ? x : 8; 
+}

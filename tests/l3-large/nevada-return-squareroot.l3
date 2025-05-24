@@ -1,0 +1,18 @@
+//test return 99
+// square root using recursive binary search
+
+// returns the floor of the square root of n
+int square_root_helper(int n, int lo, int hi) {
+    if (hi == lo) return lo;
+    int mid = (hi + lo + 1)/2;
+    if (mid * mid > n) return square_root_helper(n, lo, mid-1);
+    else return square_root_helper(n, mid, hi);
+}
+
+int square_root(int n) {
+    return square_root_helper(n, 0, n);
+}
+
+int main() {
+    return square_root(9999);
+}

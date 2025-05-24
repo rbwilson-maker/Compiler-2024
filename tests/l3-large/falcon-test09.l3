@@ -1,0 +1,18 @@
+//test abort
+
+// The wacctorial function.
+int wacc(int a) {
+    if(a == 0) {
+        return 1;
+    }
+    else
+    {
+        bool b = (a > 1) ? true : (a < 2) ? false : (a * 3 == 67) ? 512 % 4 % 2 == 15411 : 8 / a / a / a * wacc(a * a) > -24;
+        assert(b != (b || !b));
+        return 12;
+    }
+}
+
+int main() {
+    return wacc(1024 * 1048576);
+}

@@ -1,0 +1,11 @@
+//test return 0
+int main(){
+  int x = 1;
+  int y = 2;
+  int w = 3;
+  int z = 4;
+  return 0;
+  while(true){
+    return x + y + w + z;
+  }
+}

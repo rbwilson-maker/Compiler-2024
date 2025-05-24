@@ -1,0 +1,8 @@
+//test compile
+
+int main(){
+    fpt x = itof(2);
+    fpt y = itof(3);
+    if(fless(x, y)) return 1;
+    else return -1;
+}

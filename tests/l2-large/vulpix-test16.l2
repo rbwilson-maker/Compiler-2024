@@ -1,0 +1,10 @@
+//test return 0
+int main() {
+  int x = 0;
+  int y = x / 3;
+  if (x != 0) {
+    y |= x;
+    return x;
+  }
+  return y;
+}

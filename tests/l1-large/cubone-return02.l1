@@ -1,0 +1,9 @@
+//test return 0
+int main() {
+  int a = 0x80000000;
+  int b = 1;
+  int c = 0x7FFFFFFF;
+  int d = a + b + c;
+  
+  return d;
+}

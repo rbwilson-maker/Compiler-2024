@@ -1,0 +1,8 @@
+//test return -1811308707
+
+int main() {
+int temp_1 = -1811308707;
+temp_1 = temp_1;
+temp_1 = temp_1;
+return temp_1;
+}

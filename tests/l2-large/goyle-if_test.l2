@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int main () {
+    int x = 10;
+    if (true) {
+        x += 5;
+        if (x == 15) {
+            x = 0;
+        }
+        else x = 100;
+    }
+    
+    else x = 140;
+    return x/0;
+}
+

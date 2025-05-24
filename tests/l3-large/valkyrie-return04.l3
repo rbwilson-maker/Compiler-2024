@@ -1,0 +1,17 @@
+//test return 0
+// One time pad
+
+int encrypt(int key, int x){
+	return key ^ x;
+}
+
+int decrypt(int key, int x){
+	return key ^ x;
+}
+
+int main(){
+	int message = 15210;
+	int key = 9853927;
+	assert(decrypt(key,encrypt(key,message)) == message);
+	return 0;
+}

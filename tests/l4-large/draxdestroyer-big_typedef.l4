@@ -1,0 +1,14 @@
+//test typecheck
+typedef int************************************************************************* k;
+
+
+int main() {
+    // Lets see how deep we can access this
+    // also I had no idea that the type had to typecheck
+    // whack
+    k m = alloc(int ************************************************************************);
+
+    ************************************************************************m = alloc(int);
+
+    return 0;
+}

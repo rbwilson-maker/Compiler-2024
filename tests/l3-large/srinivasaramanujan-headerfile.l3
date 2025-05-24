@@ -1,0 +1,9 @@
+//test typecheck
+
+int main() {
+    int fib_val_two = fib_sequence(2);
+    int fib_val_three = fib_sequence(3);
+    int fib_val_four = fib_val_two + fib_val_three;
+    assert(fib_val_four == fib_sequence(4));
+    return fib_val_four;
+}

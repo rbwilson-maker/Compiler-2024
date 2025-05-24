@@ -1,0 +1,12 @@
+//test return 3
+
+struct a {
+    int[] a;
+};
+
+int main() {
+    struct a* a = alloc(struct a);
+    a->a = alloc_array(int, 5);
+    a->a[4] = 3;
+    return a->a[4];
+}

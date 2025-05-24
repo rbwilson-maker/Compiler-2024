@@ -1,0 +1,7 @@
+//test error
+
+typedef void v;
+int main() {
+    v x = print_int(2);
+    return 0;
+}

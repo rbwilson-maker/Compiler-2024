@@ -1,0 +1,15 @@
+//test return 4
+
+int r (int i) {
+  return i + 1;
+}
+
+int main() {
+  fpt asdf = itof(0);
+  int i = 0;
+  for (i = 0; i < 4; i++) {
+    i = r(i);
+  }
+  
+  return i;
+}

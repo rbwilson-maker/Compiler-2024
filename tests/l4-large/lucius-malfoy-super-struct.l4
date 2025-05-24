@@ -1,0 +1,34 @@
+//test return 13
+
+struct a {
+    int ai;
+    struct b *B;
+};
+
+struct b {
+    int bi;
+    struct c *C;
+};
+
+struct c {
+    int ci;
+    struct d *D;
+};
+
+struct d {
+    struct e *E;
+    int di;
+};
+
+int main() {
+    struct a *A = alloc(struct a);
+    A->B = alloc(struct b);
+    A->B->C = alloc(struct c);
+    A->B->C->D = alloc(struct d);
+    A->B->C->D->E = NULL;
+    A->ai = 2;
+    A->B->bi = 4;
+    A->B->C->ci = 3;
+    A->B->C->D->di = 4;
+    return A->ai + A->B->bi + A->B->C->ci + A->B->C->D->di;
+}

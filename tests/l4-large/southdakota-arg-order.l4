@@ -1,0 +1,14 @@
+//test memerror
+
+int gathering(int nuts, int berries, int somethingElse) {
+	return nuts + berries;
+}
+
+int hunting() {
+	return hunting();
+}
+
+int main() {
+	int[] a = alloc_array(int, 6);
+	return gathering(a[6], 1/0, hunting());
+}

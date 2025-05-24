@@ -1,0 +1,26 @@
+//test return 0;
+//isqrt finds the integer square root of a number
+// by binary searching for it.
+int isqrt(int a)
+{
+  int hi = a;
+  int lo = 1;
+  while(true)
+  {
+    int guess = (hi + lo) / 2;
+    if(guess * guess == a) return guess;
+    if(guess * guess < a)
+      lo = guess + 1;
+    if(guess * guess > a)
+      hi = guess;
+    if(lo >= hi) return guess;
+  }
+
+  return 0;
+}
+
+int main()
+{
+  assert(isqrt(150) == 12);
+  return 0;
+}

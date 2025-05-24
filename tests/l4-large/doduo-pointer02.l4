@@ -1,0 +1,8 @@
+//test return 0
+typedef int a;
+
+int main() {
+  a* b = alloc(int);
+  int c = (*b) * 2;
+  return c;
+}  

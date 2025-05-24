@@ -1,0 +1,24 @@
+//test return 505000
+struct s1 {int[] a;};
+struct s2 {struct s1* a;};
+struct s3 {struct s2[] a;};
+
+int main() {
+  int n = 100;
+  struct s3* a = alloc(struct s3);
+  a->a = alloc_array(struct s2, n);
+  for (int i = 0; i < n; i ++) {
+    a->a[i].a = alloc(struct s1);
+    a->a[i].a->a = alloc_array(int, n);
+    for (int j = 0; j < n; j++ ) {
+      a->a[i].a->a[j] = j + 1;
+    }
+  }
+  int sum = 0;
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++ ) {
+      sum += a->a[i].a->a[j];
+    }
+  }
+  return sum;
+}

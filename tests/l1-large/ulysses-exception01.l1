@@ -1,0 +1,8 @@
+//test div-by-zero
+
+//test division by 0
+
+int main() {
+    int x = 15 / (8 - 4 * 2);
+    return x;
+}

@@ -1,0 +1,40 @@
+//test return 42
+// initialization of arrays, structs, and structs inside structs
+
+struct point {
+  int x;
+  int y;
+};
+
+struct foo {
+  bool b;
+  struct point p1;
+  struct point p2;
+};
+
+struct foo *allocate() {
+  return alloc(struct foo);
+}
+
+int main() {
+  struct foo *[] fps = alloc_array(struct foo *, 10);
+  for (int i = 0; i < 10; i++) {
+    assert(fps[i] == NULL);
+    fps[i] = allocate();
+    assert(!fps[i]->b);
+    assert(fps[i]->p1.x == 0);
+    assert(fps[i]->p1.y == 0);
+    assert(fps[i]->p2.x == 0);
+    assert(fps[i]->p2.y == 0);
+  }
+
+  struct foo [] fs = alloc_array(struct foo, 10);
+  for (int i = 0; i < 10; i++) {
+    assert(!fs[i].b);
+    assert(fs[i].p1.x == 0);
+    assert(fs[i].p1.y == 0);
+    assert(fs[i].p2.x == 0);
+    assert(fs[i].p2.y == 0);
+  }
+  return 42;
+}

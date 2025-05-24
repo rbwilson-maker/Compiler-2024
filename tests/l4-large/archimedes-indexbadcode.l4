@@ -1,0 +1,10 @@
+//test div-by-zero
+// Some bad code in indexing
+
+int main() {
+  int n = 5;
+  int[] nd_arr;
+  nd_arr = alloc_array(int, n);
+  nd_arr[2/(~0+1)] = 4;
+  return nd_arr[2];
+}

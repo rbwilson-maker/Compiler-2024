@@ -1,0 +1,20 @@
+//test return 1
+//don't use a one-time pad multiple times
+
+int main()
+{
+  int one_time_pad = 99999999;
+  int super_secret_message = 69;
+  int ciphertext_1 = super_secret_message ^ one_time_pad;
+  int not_so_secret_message = 420;
+  int ciphertext_2 = not_so_secret_message ^ one_time_pad;
+  int uh_oh = ciphertext_1 ^ ciphertext_2;
+  if (uh_oh == (69 ^ 420))
+  {
+    return 1;
+  }
+  else
+  {
+    return 0;
+  }
+}

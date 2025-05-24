@@ -1,0 +1,21 @@
+//test memerror
+
+// index out of range
+int next_fib(int a, int b) {
+  int c = a + b;
+  return c;
+}
+
+int main() {
+    int n = 2020;
+    int[] A = alloc_array(int, 40);
+    int a = 1;
+    int b = 1;
+    for (int i = a + b; i < n;) {
+    	A[i] = i;
+	a = b;
+	b = i;
+	i = a + b;
+    }
+    return n;
+}

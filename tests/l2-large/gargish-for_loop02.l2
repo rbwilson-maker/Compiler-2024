@@ -1,0 +1,14 @@
+//test return 1
+// testing simple for loop with bool
+
+int main() {
+    int a = 3;    
+    bool flag = true;
+    int result = 0;
+
+    for (int i = 1; flag && i < a; i++) {
+        result = result + i;
+        flag = !flag;
+    }
+    return result;
+}

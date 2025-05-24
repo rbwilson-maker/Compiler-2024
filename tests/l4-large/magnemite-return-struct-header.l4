@@ -1,0 +1,7 @@
+//test return 3
+
+int main() {
+    struct external_struct *a= alloc(struct external_struct);
+    a->a = 3;
+    return a->a;
+}

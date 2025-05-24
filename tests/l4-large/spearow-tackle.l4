@@ -1,0 +1,72 @@
+//test memerror
+
+typedef struct _tree tree;
+typedef struct _array array;
+typedef struct _list list;
+
+struct _tree {
+    tree *l;
+    int   v;
+    tree *r;
+};
+
+struct _array {
+    int   l;
+    int[] v;
+};
+
+tree *singleton(int v) {
+    tree *t = alloc(tree);
+    t->l = NULL;
+    t->v = v;
+    t->r = NULL;
+    return t;
+}
+
+void insert(tree *r, int v) {
+    assert(r != NULL);
+    if (r->v == v)
+        return;
+    else if (r->v > v)
+        if (r->l == NULL)
+            r->l = singleton(v);
+        else
+            insert(r->l, v);
+    else // r->v < v
+        if (r->r == NULL)
+            r->r = singleton(v);
+        else
+            insert(r->r, v);
+}
+
+void toList(tree *r, array *a) {
+    if (r == NULL)
+        return;
+    toList(r->l, a);
+    a->v[a->l] = r->v; a->l++;
+    toList(r->r, a);
+}
+
+tree *makeBST(array *a) {
+    if (a->l == 0)
+        return NULL;
+    tree *t = singleton(a->v[0]);
+    for (int i = 0; i < a->l; i++) // duplicate insert doesn't matter.
+        insert(t, a->v[i]);
+    return t;
+}
+
+void sort(array *a) { // removes duplicates, so a->v changes
+    tree *t = makeBST(a);
+    toList(t, a);
+}
+
+int main() {
+    array *a = alloc(array);
+    a->l = 10000;
+    a->v = alloc_array(int, a->l);
+    for (int i = 0; i < a->l; i++)
+        a->v[i] = a->l * (a->l - i) >> 8;
+    sort(a);
+    return a->v[0];
+}

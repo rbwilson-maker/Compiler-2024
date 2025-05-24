@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main() {
+  int *one = alloc(int);
+  int *zero = alloc(int);
+  *one = 1;
+  return (*one)/(*zero);
+}

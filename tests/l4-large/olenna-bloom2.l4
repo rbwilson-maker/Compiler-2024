@@ -1,0 +1,172 @@
+//test return 0
+//Runs part of bloom filter assignment 15-112
+
+
+int int_length(int[] x){
+  int i = 0;
+  while (true) {
+    if (x[i] == 0) return i;
+    i++;
+  }
+  return -1;
+}
+
+// hash functions
+int hash1(int[] x)
+{
+  int len = int_length(x);
+  int hash = (x[0]);
+  for (int i = 1; i < len; i++)
+  {
+    hash = hash*31 + (x[i]);
+  }
+  hash = (hash < 0) ? ~hash : hash;
+  return hash;
+}
+
+int f(int x)
+{
+  return 1664525*x + 1013904223;
+}
+
+int hash2(int[] x)
+{
+  int len = int_length(x);
+  int hash = f((x[0]));
+  for (int i = 1; i < len; i++)
+  {
+    hash = f(hash + (x[i]));
+  }
+
+  hash = (hash < 0) ? ~hash : hash;
+  return hash;
+}
+
+
+int hash3(int[] x)
+{
+  int len = int_length(x);
+  int[] val = x;
+  int result = 0;
+  for (int i = 0; i < len; i++)
+  {
+    result = 86028157 * (result + (val[i])) + 42227;
+  }
+  result = (result < 0) ? ~result : result;
+  return result;
+}
+
+
+// bloom implementation
+struct bloom_filter {
+  int[] data;
+  int limit;
+};
+
+typedef struct bloom_filter* bloom_t;
+
+
+bool correct_arr_length(int[] arr, int length)
+{
+  //@assert \length(arr) == length;
+  return true;
+}
+
+bool is_bloom(bloom_t B)
+{
+  return B != NULL
+    && correct_arr_length(B->data, B->limit)
+    && B->limit > 0
+    && B-> limit <= (1 << 27) + 1; // this is true because if the
+  // bloom has int_max capacity the limit would be int_max / 32 + 1
+  // thus all limits are less than or equal to int_max / 32 + 1
+}
+
+bloom_t bloom_new(int capacity)
+  //@requires capacity > 0;
+  //@ensures is_bloom(\result);
+{
+  struct bloom_filter* result = alloc(struct bloom_filter);
+  int limit = (capacity % 32 == 0) ? capacity / 32 : capacity / 32 + 1;
+  int[] data = alloc_array(int, limit);
+  result->data = data;
+  result->limit = limit;
+  return result;
+}
+
+bool get_bit(int[] A, int i)
+  //@requires 0 <= i && i/32 < \length(A);
+{
+  int bit_index = i % 32;
+  int arr_index = i / 32;
+  int helper = 1 << bit_index;
+  bool result = ((A[arr_index] & helper) == 0) ? false : true;
+  return result;
+}
+
+void set_bit(int[] A, int i)
+  //@requires 0 <= i && i/32 < \length(A);
+  //@ensures get_bit(A, i);
+{
+  int bit_index = i % 32;
+  int arr_index = i / 32;
+  int helper = 1 << bit_index;
+  A[arr_index] = A[arr_index] | helper;
+}
+
+void test_bit()
+{
+  int[] A = alloc_array(int, 2);
+  for (int i = 0; i < 64; i = i + 4)
+  {
+    assert(!get_bit(A, i));
+    set_bit(A, i);
+    assert(get_bit(A, i));
+  }
+}
+
+bool bloom_contains(bloom_t B, int[] x)
+  //@requires is_bloom(B);
+  //@ensures is_bloom(B);
+{
+  int[] h = alloc_array(int, 3);
+  h[0] = hash1(x);
+  h[1] = hash2(x);
+  h[2] = hash3(x);
+  int bound = (32 * B->limit < 0) ? 0x7FFFFFFF : 32 * B->limit;
+  // the minus 1 is for the edge case where B->limit is
+  // int_max() / 32 + 1.
+  // in that case 32*B->limit would overflow to int_min();
+  // thus we need bound it to int_max (and waste some space);
+  for (int i = 0; i < 3; i++)
+  {
+    h[i] %= bound;
+    if (! get_bit(B->data, h[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+void bloom_add(bloom_t B, int[] x)
+  //@requires is_bloom(B);
+  //@ensures is_bloom(B);
+  //@ensures bloom_contains(B, x);
+{
+  int[] h = alloc_array(int, 3);
+  h[0] = hash1(x);
+  h[1] = hash2(x);
+  h[2] = hash3(x);
+  int bound = (32 * B->limit < 0) ? 0x7FFFFFFF : 32 * B->limit;
+  for (int i = 0; i < 3; i++)
+  {
+    h[i] %= bound;
+    set_bit(B->data, h[i]);
+  }
+}
+
+int main()
+{
+  test_bit();
+  return 0;
+}

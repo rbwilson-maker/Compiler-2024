@@ -1,0 +1,13 @@
+//test return 150
+
+int main() {
+  int *x = alloc(int);
+  *x = 122;
+  {
+    int *y = x;
+    *y = 150;
+    y = alloc(int);
+    *y = 151;
+  }
+  return *x;
+}

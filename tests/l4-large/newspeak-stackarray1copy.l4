@@ -1,0 +1,64 @@
+//test return 120
+// this just pushes some numbers onto a stack and pops/sums them
+
+struct stack {
+  int[] vals;
+  int head;
+};
+
+// Note: the following adapated from the library provided for the clac lab in 15122
+
+typedef struct stack *stack_t;
+
+bool stack_empty(stack_t S)       /* O(1) */
+  /*@requires S != NULL; @*/;
+
+stack_t stack_new(int n)               /* O(1) */
+  /*@ensures \result != NULL; @*/
+  /*@ensures stack_empty(\result); @*/;
+
+void push(stack_t S, int x)       /* O(1) */
+  /*@requires S != NULL; @*/;
+
+int pop(stack_t S)                /* O(1) */
+  /*@requires S != NULL; @*/
+  /*@requires !stack_empty(S); @*/;
+
+// a simple driver
+int main() {
+  int N = 15;
+  stack_t s = stack_new(20);
+
+  for(int i = 0; i <= N; i++) {
+    push(s, i);
+  }
+
+  int sum = 0;
+  while(!stack_empty(s)) {
+    sum += pop(s);
+  }
+
+  return sum;
+}
+
+bool stack_empty(stack_t S) {
+  return S->head == 0;
+}
+
+stack_t stack_new(int n) {
+  stack_t S = alloc(struct stack);
+  S->head = 0;
+  S->vals = alloc_array(int, n);
+  return S;
+}
+
+void push(stack_t S, int x) {
+  S->vals[S->head] = x;
+  S->head++;
+}
+
+int pop(stack_t S) {
+  int ret = S->vals[S->head - 1];
+  S->head--;
+  return ret;
+}

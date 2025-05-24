@@ -1,0 +1,10 @@
+//test return 0
+
+int main() {
+  fpt a = 0;
+  fpt b = 0;
+  fpt x = fadd(a, b);
+  x = fmul(x, a);
+  print_fpt(x);
+  return 0;
+}

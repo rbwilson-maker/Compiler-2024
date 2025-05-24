@@ -1,0 +1,10 @@
+//test return 0
+
+int main() {
+    int[] wish = alloc_array(int, 0);
+    int[] i = wish; 
+    int[] could = alloc_array(int, 10);
+    could[8] = 1;
+    could[9] = -1;
+    return could[8] + could[9];  
+}

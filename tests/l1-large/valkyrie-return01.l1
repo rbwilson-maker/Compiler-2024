@@ -1,0 +1,12 @@
+//test return 15210
+
+int main() {
+	int moo = 0;
+	int work = 3;
+	int span = 210;
+	moo += (5 % work) * 5;
+	moo *= moo;
+	moo *= moo;
+	int cow = moo / 2;
+	return cow + moo + span;
+}

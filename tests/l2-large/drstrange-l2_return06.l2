@@ -1,0 +1,21 @@
+//test return ~27
+// -1 is 0xFFFFFFFF
+// INT_MAX is 0x7FFFFFFF
+// INT_MIN is 0x80000000
+
+int main()
+{
+  int value1 = -75;
+  int value2 = -50;
+  bool keep_looping = true;
+  while(value2 < -1 || keep_looping){
+    value1 += 1;
+    value2 += 1;
+
+    if (value1 >= 3 && (value1 % 257) == 1){
+        keep_looping = false;
+    }
+  }
+  int value3 = (~value2) + (value1 - 1);
+  return value3;
+}

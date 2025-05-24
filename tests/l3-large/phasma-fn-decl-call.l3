@@ -1,0 +1,18 @@
+//test return 0
+
+bool is_tomato(int tomato);
+
+bool is_tomato(int tomato) {
+  if(tomato == 2) {
+    return true;
+  }
+  return false;
+}
+
+int main() {
+  bool tomato = is_tomato(2);
+  if (tomato) {
+    return 0;
+  }
+  return 2;
+}

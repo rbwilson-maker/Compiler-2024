@@ -1,0 +1,38 @@
+//test return 1440
+
+int[] concat(int[] a1, int[] a2, int l1, int l2) {
+  int[] result = alloc_array(int, l1 + l2);
+
+  for (int i = 0; i < l1; i++) {
+    result[i] = a1[i];
+  }
+  for (int j = 0; j < l2; j++) {
+    result[l1 + j] = a2[j];
+  }
+
+  return result;
+}
+
+
+int main() {
+  int size1 = 12773;
+  int size2 = 34012;
+  int[] first = alloc_array(int, size1);
+  int[] second = alloc_array(int, size2);
+
+  for (int i = 0; i < size1; i++) {
+    first[i] = ((i + 12) * 57) % 791;
+  }
+  for (int i = 0; i < size2; i++) {
+    second[i] = ((i + 17) * 23) % 813;
+  }
+
+  int[] final = concat(first, second, size1, size2);
+
+  int oscill = 0;
+  for (int i = 0; i < size1 + size2; i++) {
+    oscill = i % 2 != 0 ? oscill + final[i] : oscill - final[i];
+  }
+
+  return oscill;
+}

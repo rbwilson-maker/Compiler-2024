@@ -1,0 +1,21 @@
+//test typecheck
+// tests both valid structs and using not defined structs in a safe way
+
+struct actually_defined {
+    int x;
+    int y;
+};
+
+struct only_declared;
+
+int never_used_param (struct actually_defined * param1, struct only_declared * param2) {
+    int compilers_is_cool = 0;
+    return compilers_is_cool + param1->x + param1->y;
+}
+
+int main() {
+    struct actually_defined * a = alloc(struct actually_defined);
+    a->x = 1;
+    (*a).y = 2;
+    return do_something(true) + never_used_param(a, NULL);
+}

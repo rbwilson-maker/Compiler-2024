@@ -1,0 +1,14 @@
+//test return 55
+// test fib
+int main()
+{
+  int a = 0;
+  int b = 1;
+
+  for (int i = 0; i < 10; i++) {
+    int temp = a;
+    a = b;
+    b = temp + b;
+  }
+  return a;
+}

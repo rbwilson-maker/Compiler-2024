@@ -1,0 +1,11 @@
+//test typecheck
+//test infloop
+
+int not_main(){
+  return main();
+}
+
+int main(){
+  not_main();
+  return 0;
+}

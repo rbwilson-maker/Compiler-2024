@@ -1,0 +1,25 @@
+//test error
+
+struct bit {
+    bool b;
+};
+
+typedef struct bit bit;
+
+struct byte {
+    bit[] bits;
+};
+
+typedef struct byte byte;
+
+struct integer {
+    byte[] bytes;
+};
+
+typedef struct integer integer;
+
+int main() {
+    integer *i = alloc(integer);
+    *i;
+    return 0;
+}

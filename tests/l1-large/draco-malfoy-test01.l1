@@ -1,0 +1,19 @@
+//test return 216216
+//test div mod and multi
+
+int main() {
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+	int f;
+
+	a = 7 / 3; // 2
+	b = 7 % 3; // 1
+	c = a * 3; // 6
+	d = 7 / -3; // -2
+	e = 7 % -3; // 1
+	f = d * -3; // 6
+    return f+10*(e+10*(-d+10*(c+10*(b+10*a))));
+}

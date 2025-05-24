@@ -1,0 +1,14 @@
+//test error
+
+
+int cpow(int x,int y) {
+    return x * y;
+}
+
+
+int main() {
+    int x = 5;
+    int y;
+    int z = cpow(x,y);
+    return z;
+}

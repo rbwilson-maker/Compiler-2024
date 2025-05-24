@@ -1,0 +1,8 @@
+//test error
+
+// test disallowing comparison of boolean and int
+int main()
+{
+    bool result = (4 == true);
+    return 0;
+}

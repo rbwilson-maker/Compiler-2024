@@ -1,0 +1,51 @@
+//test return 1556111435
+// Working with structs, pointers, aliasing.
+
+struct nodestruct;
+typedef struct nodestruct node;
+
+struct nodestruct {
+  int v;
+  node *next;
+};
+
+typedef node* list;
+
+list mklist(int n){
+  if (n == 0) { return NULL; }
+  node *this = alloc(node);
+  this->v = 0;
+  this->next = mklist(n-1);
+  return this;
+}
+
+list compute_fib(int n){
+  list l = mklist(n);
+  node *curr = l;
+  if (n == 0) { return l; }
+  curr -> v = 1;
+  node *prev = curr;
+  curr = curr -> next;
+  if (n == 1) { return l; }
+  curr -> v = 1;
+  node *prev2 = prev;
+  prev = curr;
+  curr = curr -> next;
+  for (; curr != NULL ; curr = curr -> next) {
+    curr -> v = prev2 -> v + prev -> v;
+    prev2 = prev;
+    prev = curr;
+  }
+  return l;
+}
+
+int get(list l, int i) {
+  for (int j = 0; j < i; j++) {
+    l = l -> next;
+  }
+  return l -> v;
+}
+
+int main() {
+  return get(compute_fib(1000),999);
+}

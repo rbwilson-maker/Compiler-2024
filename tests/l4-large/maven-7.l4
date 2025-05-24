@@ -1,0 +1,24 @@
+//test error
+// non existing type
+
+int test(int *n) {
+  int[] f;
+  f = alloc_array(int, 5000);
+  f = alloc_array(int, 5000);
+  f = alloc_array(5000, int);
+  f = alloc_array(int, 5000);
+  f = alloc_array(int, 5000);
+  f = alloc_array(hello, 5000);
+  f = alloc_array(int, 5000);
+  f = alloc_array(int, 5000);
+  f = alloc_array(int, 5000);
+  f = alloc_array(int, 5000);
+  for (int i = 0; i < 5000; ++i) {
+    f[i] = i;
+  }
+  return sum;
+}
+
+int main () {
+  return test(&n);
+}

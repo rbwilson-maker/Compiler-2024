@@ -1,0 +1,26 @@
+//test memerror
+
+struct s {
+  struct s* next;
+};
+
+typedef struct s* node;
+
+// what happens when you run off the end of a linky-boii?
+int main(){
+  node head = alloc(struct s);
+  node n = head;
+  for (int i = 0; i < 10; i++)
+  {
+    n->next = alloc(struct s);
+    n = n->next;
+  }
+
+  for (int i = 0; i < 100; i++)
+  {
+    head = head->next;
+  }
+
+  assert(false);
+  return 0;
+}

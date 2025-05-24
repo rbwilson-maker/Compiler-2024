@@ -1,0 +1,12 @@
+//test return 42
+//test that args define variables
+
+int always42(int x){
+    //defined by arg
+    x = 42;
+    return x;
+}
+
+int main(){
+    return always42(7);
+}

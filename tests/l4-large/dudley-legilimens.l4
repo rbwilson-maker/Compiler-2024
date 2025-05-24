@@ -1,0 +1,3 @@
+//test memerror
+ 																struct s {   struct s* s; };  int main() {   struct s * s = alloc(struct s);																													  // don't elaborate this out!		  
+                                            s->s->s->s->s; 													  return 0; }																									 

@@ -1,0 +1,15 @@
+//test return 0
+
+struct my_struct {
+	int val0;
+	bool val1;
+	int val2;
+};
+
+int main() {
+	struct my_struct* my = alloc(struct my_struct);
+  my->val0 = 0;
+  my->val1 = true;
+  my->val2 = 2;
+	return my->val1 ? my->val0 : my->val2;
+}

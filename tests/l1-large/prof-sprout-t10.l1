@@ -1,0 +1,8 @@
+//test error
+// invalid integer literal
+
+int main() {
+  int x = 5;
+  int y = 0123;
+  return x * y;
+}

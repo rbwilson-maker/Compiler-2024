@@ -1,0 +1,12 @@
+//test return 43046721
+
+int iKon(int ikon, int bi) {
+    if (ikon == 0)
+        return bi;
+    else
+        return iKon(ikon - 1, bi * bi);
+}
+
+int main() {
+    return iKon(4, 3);
+}

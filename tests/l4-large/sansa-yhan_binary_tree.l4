@@ -1,0 +1,33 @@
+//test return 129
+
+struct Tree {
+    int val;
+    struct Tree *left;
+    struct Tree *right;
+};
+
+typedef struct Tree * t_ptr;
+
+t_ptr create_tree(int depth) {
+    if (depth == 0) {
+        return NULL;
+    }
+    t_ptr tree = alloc(struct Tree);
+    tree -> val = (1 << depth) - 1;
+    tree -> left = create_tree(depth - 1);
+    tree -> right = create_tree(depth - 1);
+    return tree;
+}
+
+int get_sum(t_ptr tree) {
+    if (tree == NULL) {
+        return 0;
+    }
+    return tree -> val + get_sum(tree -> left) + get_sum(tree -> right);
+}
+
+int main() {
+    t_ptr tree = create_tree(5);
+    int sum = get_sum(tree);
+    return sum;
+}

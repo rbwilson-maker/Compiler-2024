@@ -1,0 +1,18 @@
+//test return 2147483646
+
+int bitwise_and_or(int x, int y, bool bitwise_and) {
+    if (bitwise_and) {
+        return x & y;
+    }
+    else {
+        return x | y;
+    }
+}
+
+int main()
+{
+    int and = bitwise_and_or(bitwise_and_or((1 << 31), 1, false), ((1 << 31) + 1), true);
+    int or = bitwise_and_or(1 << 31 >> 31, 0, false);
+    int diff = or - and;
+    return diff;
+}

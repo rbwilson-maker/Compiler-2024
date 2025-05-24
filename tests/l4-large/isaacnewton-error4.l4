@@ -1,0 +1,7 @@
+//test error 
+
+int main() {
+    int[] arr = alloc_array(int, 5); 
+    int x = *(arr + 4);
+    return x; 
+}

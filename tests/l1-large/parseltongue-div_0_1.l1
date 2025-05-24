@@ -1,0 +1,17 @@
+//test div-by-zero
+
+// Test div_0 error on variables
+
+int main(){
+    int a;
+    int b;
+
+    a = 10;
+    b = 1;
+
+    int c = (a-a);
+
+    c = b / c;
+
+    return 0;
+}

@@ -1,0 +1,10 @@
+//test return 72
+int main()
+{
+  int x = 6;
+  int y = 2;
+  int z = x * y; // 12
+  int a = z * z; // 144
+  int b = a / y; // 72
+  return b;
+}

@@ -1,0 +1,19 @@
+//test return 0
+//test while, ==, if else
+
+int main()
+{
+  int p = 101;
+  int factor = 2;
+  bool isPrime = true;
+  while(factor * factor <= p){
+    if(p % factor == 0)
+      isPrime = false;
+    else
+      isPrime = 1 == 2 - 1; //testing precedent rules
+    factor ++;
+  }
+  if(isPrime)
+    return 0;
+  return 1;
+}

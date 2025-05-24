@@ -1,0 +1,7 @@
+//test return -292
+
+int main() {
+int temp_7 = 244;
+temp_7 = (temp_7 % (348 - 327));
+return -292;
+}

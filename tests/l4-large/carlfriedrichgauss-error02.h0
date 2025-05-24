@@ -1,0 +1,8 @@
+// function definition in a header file
+int foo(int x);
+
+int foo(int y);
+
+int foo(int x) {
+    return x;
+}

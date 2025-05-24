@@ -1,0 +1,13 @@
+//test return 27
+// test arithmetic operations except for div and mod
+int main()
+{
+  int a;
+  int b;
+  int c;
+
+  a = 3;
+  b = a+a+a;
+  c = 3*b;
+  return c;
+}

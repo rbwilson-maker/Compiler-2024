@@ -1,0 +1,23 @@
+//test memerror
+
+struct henlo {
+  int hi;
+  int *bye;
+};
+
+void boo(struct henlo *h) {
+  *h->bye;
+}
+
+int scary() {
+  struct henlo *[] ahh = alloc_array(struct henlo *, 1000);
+  int scared = 666;
+  ahh[scared] = alloc(struct henlo);
+  boo(ahh[scared]);
+  return 1000;
+}
+
+int main()
+{
+  return scary();
+}

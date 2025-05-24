@@ -1,0 +1,83 @@
+//test return 114
+
+//Sort but with some jank pointers
+
+bool is_sorted(int*[] arr){
+	for(int i = 0; i <= 6; i++){
+		if(*(arr[i]) > *(arr[i+1])){
+			return false;
+		}
+	}
+	return true;
+}
+
+void init_array(int*[] arr, int size){
+	for(int i = 0; i < size; i++){
+		arr[i] = alloc(int);
+	}
+	return;
+}
+
+void sort(int*[] arr, int size){
+	if(size == 0 || size == 1){
+		return; 
+	}
+	int pivot = *(arr[0]);
+	int left = 0;
+	int right = 0;
+	for(int i = 1; i < size; i++){
+		if(*(arr[i]) <= pivot){
+			left++;
+		} else {
+			right++;
+		}
+	}
+	int*[] left_arr = alloc_array(int*, left);
+	int*[] right_arr = alloc_array(int*, right);
+	init_array(left_arr, left);
+	init_array(right_arr, right);
+	int left_c = 0;
+	int right_c = 0;
+	for(int i = 1; i < size; i++){
+		if(*(arr[i]) <= pivot){
+			*(left_arr[left_c]) = *(arr[i]);
+			left_c++;
+		} else {
+			*(right_arr[right_c]) = *(arr[i]);
+			right_c++;
+		}
+	}
+	sort(left_arr, left);
+	sort(right_arr, right);
+	int counter = 0;
+	while(counter < left){
+		*(arr[counter]) = *(left_arr[counter]);
+		counter++;
+	}
+	*(arr[counter]) = pivot;
+	counter++;
+	while(counter < right){
+		*(arr[counter]) = *(right_arr[counter]);
+		counter++;
+	}
+	return;
+}
+
+int main(){
+	int*[] to_sort = alloc_array(int*, 8);
+	init_array(to_sort, 8);
+	*(to_sort[0]) = 489;
+	*(to_sort[1]) = 265;
+	*(to_sort[2]) = 114;
+	*(to_sort[3]) = 648;
+	*(to_sort[4]) = 348;
+	*(to_sort[5]) = 731;
+	*(to_sort[6]) = 621;
+	*(to_sort[7]) = 487;
+	if(is_sorted(to_sort)){
+		return *(to_sort[0]);
+	} else {
+		sort(to_sort, 8);
+		return *(to_sort[0]);
+	}
+}

@@ -1,0 +1,10 @@
+//test error
+// Tests an operation on an int and a bool which shouldn't typecheck
+
+int main() {
+  if (false != 0) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

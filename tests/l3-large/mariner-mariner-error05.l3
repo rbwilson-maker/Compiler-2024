@@ -1,0 +1,20 @@
+//test error
+//tests typedef and fdefn
+
+typedef int date;
+typedef bool cando;
+
+date adddate (date d) {
+	date z = 0;
+	for (date i = 0; i < d; i++) {
+		z += i;
+	}
+	return z;
+}
+
+int main() {
+	date x = 10;
+	date y = 20;
+	date z = addddate(x, y);
+	return z;
+}

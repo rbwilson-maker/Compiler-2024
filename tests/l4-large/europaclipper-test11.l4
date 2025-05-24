@@ -1,0 +1,29 @@
+//test memerror
+
+int main() {
+  int[] arr = alloc_array(int, 10);
+  int[] brr = alloc_array(int, 10);
+
+  for (int i = 0; i < 10; i++) {
+    arr[i] = arr[i] + brr[i+1];
+  }
+
+  int sumA;
+  int sumB;
+  int sumC;
+  int sumD;
+  int sumE;
+  int sumF;
+  int sumG;
+  int sumH;
+  int sumI;
+  int sumJ;
+  int sumK;
+  int sumL;
+  int sumM = 0;
+  for (int i = 0; i < 10; i++) {
+    sumM = sumM + arr[i];
+  }
+
+  return sumM;
+}

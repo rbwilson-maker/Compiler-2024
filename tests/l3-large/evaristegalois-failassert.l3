@@ -1,0 +1,22 @@
+//test abort
+
+bool is_even(int num) {
+    if (num % 2 == 0) {
+        return true;
+    }
+    
+    return false;
+}
+
+int main() {
+
+    bool gotta_be_even = true;
+
+    for (int i = 0; i < 10; i++) {
+        gotta_be_even = is_even(i);
+    }
+
+    assert(gotta_be_even);
+
+    return 0;
+}

@@ -1,0 +1,24 @@
+//test error
+//test wrong product with header file
+
+int sum(int n) {
+    int res = 0;
+    for (int i = 0; i < n; i++) {
+        res += i;
+    }
+    return res;
+}
+
+int product(int n) {
+    int res = 1;
+    for (int i = 0; i < n; i++) {
+        res *= i;
+    }
+    return res + sum(n);
+}
+
+int main () {
+
+    return 0;
+}
+

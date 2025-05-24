@@ -1,0 +1,15 @@
+//test memerror
+
+struct b {
+	int a;
+	int **d;
+};
+
+typedef int b;
+
+b main() {
+	struct b *c = alloc(struct b);
+	c->d = NULL;
+	**(c->d) = 1/0;
+	return **(c->d);
+}

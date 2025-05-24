@@ -1,0 +1,10 @@
+//test error
+
+// test valid variable names
+
+int main() {
+  int x = 5;
+  int 4bc = 3;
+
+  return x + 4bc;
+}

@@ -1,0 +1,22 @@
+//test div-by-zero
+
+int foo(int a, int b){
+    if (a == 0)
+        return b;
+    else
+        foo(a / b, b);
+    return -1;
+}
+
+int main() {
+    bool x = false;
+    bool y = true;
+    x = x && y;
+
+    foo ( 10, 0);
+    if(x)
+        return 4;
+    if(y)
+        return 3;
+    return 0;
+}

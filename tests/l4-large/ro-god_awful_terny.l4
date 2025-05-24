@@ -1,0 +1,18 @@
+//test return 0
+// hope you like typechecking ternery stuff
+
+
+
+int main(){
+
+  bool* true_pointer = alloc(bool);
+  *true_pointer = true;
+  bool* false_pointer = alloc(bool);
+  *false_pointer = false;
+  int* ten_pointer = alloc(int);
+  *ten_pointer = 10;
+  int* zero_pointer = alloc(int);
+  *zero_pointer = 0;
+
+  return *(*(*(*(false ? NULL : true_pointer) ? ten_pointer : NULL) == 10 ? zero_pointer : NULL) == -1 ? NULL : zero_pointer);
+}

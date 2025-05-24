@@ -1,0 +1,8 @@
+//test error
+
+int main()
+{
+  int x = 0xFFF;
+  int y = x << 22;
+  return y;
+}

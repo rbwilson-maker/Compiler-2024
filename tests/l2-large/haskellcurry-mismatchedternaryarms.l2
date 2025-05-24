@@ -1,0 +1,28 @@
+//test error
+/*
+    mismatchedTernaryArms: The two arms of the ternary expression
+    return different types, so this should fail to compile.
+*/
+
+int main() {
+    // Let's test whether two numbers are coprime...
+    int x = 15213;
+    int y = 15410;
+
+    int larger = x >= y ? x : y;
+    int smaller = x + y - larger;
+
+    while (smaller >= 1) {
+        /*
+            "Replace the larger by the remainder of dividing the larger by the
+            smaller."
+        */
+        
+       int remainder = larger % smaller;
+       larger = remainder >= smaller ? remainder : smaller;
+       smaller = remainder > smaller ? smaller : remainder;
+    }
+    
+    // Here's the ternary!
+    return (larger == 1) ? 1 : false;
+}

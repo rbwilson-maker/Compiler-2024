@@ -1,0 +1,17 @@
+//test typecheck
+
+struct str {
+    int* a;
+    int* b;
+    int c;
+    int d;
+};
+
+int main() {
+    struct str * s = alloc(struct str);
+
+    s->c = 10;
+    s->d = 100;
+
+    return s->c;
+}

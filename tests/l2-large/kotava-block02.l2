@@ -1,0 +1,17 @@
+//test div-by-zero
+int main()
+{
+	int x;
+	int y;
+	{
+		x = 0;
+	}
+	{
+		y = 25;
+	}
+	{
+		int z;
+		z = y % x; // x is defined to be 0
+		return z;
+	}
+}

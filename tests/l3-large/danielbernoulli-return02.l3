@@ -1,0 +1,15 @@
+//test return 3
+
+int test(int x, int y); 
+typedef int type1;
+typedef type1 type2;
+typedef type2 type3;
+
+type3 test(type1 x, type2 y) {
+    return x+y;
+}
+
+type3 main() {
+    return test(1,2);
+}
+

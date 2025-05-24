@@ -1,0 +1,9 @@
+//test return 0
+// check rounding towards zero
+
+int main() {
+  int a = 4/3;
+  int b = -4/3;
+
+  return a + b;
+}

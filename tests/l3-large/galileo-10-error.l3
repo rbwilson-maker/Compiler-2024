@@ -1,0 +1,8 @@
+//test error
+// main should be treated differently
+
+void main() {}
+
+int main() {
+    return 0;
+}

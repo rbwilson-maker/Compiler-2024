@@ -1,0 +1,10 @@
+//test error
+//void can't be an arg
+
+int f(void x) {
+  return 5;
+}
+
+int main () {
+  return 0;
+}

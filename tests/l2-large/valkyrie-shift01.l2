@@ -1,0 +1,5 @@
+//test return 15210
+int main(){
+	int x = 105;
+	return (x << 1) + 15 * 1000;
+}

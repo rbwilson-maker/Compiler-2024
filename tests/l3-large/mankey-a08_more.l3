@@ -1,0 +1,42 @@
+//test compile
+//fdecls are var names too
+
+int main();
+
+int foo(fpt a);
+
+bool bar () {
+  if (true)
+  return true;
+  return false;
+}
+
+int main() {
+  if (bar()) {
+    return 1;
+  }
+  return foo(1);
+}
+
+int main();
+
+int foo(fpt a) {
+  assert(fless(0,0));
+  int fless = 0;
+  fpt fadd = fadd(fless, a);
+  fpt fsub = fsub(fadd, fless);
+  fpt fmul = fmul(fsub, fadd);
+  fdiv(fmul, fless);
+  if(true) {
+    print_fpt(fless);
+    print_int(fless);
+    print_hex(fless);
+  }
+  int print_fpt = fless;
+  fpt print_int = print_fpt;
+  return print_int;
+}
+
+int foo(fpt a);
+
+bool bar();

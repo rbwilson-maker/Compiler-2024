@@ -1,0 +1,48 @@
+//test abort
+
+int add(int x, int y) {
+  return x + y;
+}
+
+int sub(int x, int y) {
+  return x - y;
+}
+
+int mul(int x, int y) {
+  return x * y;
+}
+
+int div(int x, int y) {
+  assert(y != 0);
+  assert(x != 0x80000000 || y != -1);
+  return x / y;
+}
+
+int shl(int x, int y) {
+  assert(0 <= y && y < 32);
+  return x << y;
+}
+
+int raise_error() {
+  assert(false);
+  return 0;
+}
+
+int perform_op(int op, int x, int y) {
+  return 
+    op == 0 ? add(x, y) :
+    op == 1 ? sub(x, y) :
+    op == 2 ? mul(x, y) :
+    op == 3 ? div(x, y) :
+    op == 4 ? shl(x, y) :
+      raise_error();
+}
+
+int main() {
+  int result = 0;
+  for (int i = 0; i < 20; i++) {
+    result += perform_op(i, 7 * i, 2 - i);
+  }
+
+  return result;
+}

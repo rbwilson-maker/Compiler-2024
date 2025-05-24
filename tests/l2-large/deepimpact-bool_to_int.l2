@@ -1,0 +1,7 @@
+//test error
+int main() {
+    int boo = 1;
+    bool iNtEgEr = false; //pls i am real intergetr
+    boo = iNtEgEr;
+    return boo;
+}

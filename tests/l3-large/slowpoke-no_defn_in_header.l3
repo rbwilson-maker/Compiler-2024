@@ -1,0 +1,6 @@
+//test error
+
+// can't define functions in header
+int main() {
+  return f();
+}

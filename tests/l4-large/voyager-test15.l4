@@ -1,0 +1,11 @@
+//test return 6
+
+int main()
+{
+    int**** depth = alloc(int***);
+    *depth = alloc(int**);
+    **depth = alloc(int*);
+    ***depth = alloc(int);
+    ****depth = 6;
+    return ****depth;
+}

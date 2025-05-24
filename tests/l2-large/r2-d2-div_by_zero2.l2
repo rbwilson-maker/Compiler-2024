@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int main()
+{
+  int x = 0;
+  int y = 50;
+  if (x != 0) {
+     y = y / x;
+     return 100;
+  }
+  else {
+     int z = 30;
+     return z/x;
+  }
+  return 30;
+}

@@ -1,0 +1,11 @@
+//test abort
+
+int main() {
+  int *a = alloc(int);
+  *a = 6;
+  int c = *a - 10;
+  assert (c > 0);
+  int b = *a << c;
+
+  return b;
+}

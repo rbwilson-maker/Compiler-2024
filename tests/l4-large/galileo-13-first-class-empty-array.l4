@@ -1,0 +1,12 @@
+//test return 0
+// test an empty array can be passed as argument and returned
+
+bool[] id(bool[] x) {
+  return x;
+}
+
+int main() {
+  bool[] empty = alloc_array(bool, 0);
+  id(empty);
+  return 0;
+}

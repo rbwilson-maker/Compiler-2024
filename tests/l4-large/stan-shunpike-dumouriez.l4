@@ -1,0 +1,50 @@
+//test return 12
+
+typedef int pixel;
+struct img_header;
+
+struct img_header {
+    pixel[] data;
+    int width;
+    int height;
+};
+
+struct intbool {
+    int intval;
+    bool boolval;
+};
+
+typedef struct intbool IB;
+
+
+int main() {
+    struct img_header* IMG = alloc(struct img_header);
+    struct img_header* IMG2 = alloc(struct img_header);
+
+    IMG->data = alloc_array(pixel, 2);
+    IMG->width = 1;
+    (*IMG).height = 2;
+
+    (*IMG2).data = alloc_array(pixel, 1);
+    IMG2->width = 3;
+    (*IMG2).height = 4;
+
+    IB*[] ib = alloc_array(IB*, 2);
+
+    ib[0] = alloc(IB);
+    ib[0]->intval = 1;
+    ib[0]->boolval = true;
+
+    ib[1] = alloc(IB);
+    (*ib[1]).intval = 0;
+    (*ib[1]).boolval = false;
+
+    int maxwidth = (IMG2->width > IMG->width ? IMG2: IMG)->width;
+    int maxheight = (*((*IMG2).height > (*IMG).height ? IMG2: IMG)).height;
+
+    int y = 37;
+
+    ib[(1 % 2 + 1) % 2]->intval += ib[((1 % 2 + 1 + 1) % 2)]->intval;
+    
+    return maxwidth * maxheight;
+}

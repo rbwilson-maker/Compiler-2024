@@ -1,0 +1,27 @@
+//test memerror
+
+struct a;
+
+struct b;
+
+struct a {
+  int a;
+  int b;
+  int c;
+  int d;
+};
+
+struct b {
+  struct a ****a;
+  struct a ****b;
+  struct a ****c;
+  struct a ****d;
+};
+
+int main()
+{
+  struct b *b = alloc(struct b);
+  struct a ***a = alloc(struct a **);
+  *((*b).c) = a;
+  return 542;
+}

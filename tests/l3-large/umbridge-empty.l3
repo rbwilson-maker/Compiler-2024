@@ -1,0 +1,38 @@
+//test error
+/* error because of no main function */
+
+typedef int integer;
+
+/* function declaration */
+int add(int a, int b, int c, int d);
+int cook(bool apple, bool banana);
+void ok();
+void oops();
+
+/* function definition */
+int add(int i, int j, int k, int l) {
+    return i+j+k+l;
+}
+
+int cook(bool dinner, bool lunch){
+    if (dinner) {
+        return 100%10;
+    }
+    else {
+        if (lunch) {
+            return 3 << 2;
+        }
+        else {
+            return 1001;
+        }
+    }
+}
+
+void ok() {
+    oops();
+    return;
+}
+
+void oops() {
+    ok();
+}

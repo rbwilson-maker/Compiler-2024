@@ -1,0 +1,15 @@
+//test return 10
+
+int main()
+{
+	int x = 0;
+	int y = 20;
+	int i;
+
+	for (i = 0; i < y; i++) {
+		if (i % 2 == 0) {
+			x++;
+		}
+	}
+	return x;
+}

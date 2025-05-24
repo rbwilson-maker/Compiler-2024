@@ -1,0 +1,20 @@
+//test return 100
+
+typedef struct point *point;
+struct point {
+  int x;
+  int y;
+};
+
+typedef struct list_node *list;
+struct list_node {
+  struct point p;
+  list next;
+};
+
+int main() {
+  list a = alloc(struct list_node);
+  a->p.x = 10;
+  a->p.y = 10;
+  return a->p.x * a->p.y;
+}

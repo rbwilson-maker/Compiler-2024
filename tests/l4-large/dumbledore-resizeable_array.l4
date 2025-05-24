@@ -1,0 +1,66 @@
+//test return -33554432 
+
+struct dynamic_array {
+  int [] contents;
+  int len;
+  int max_len;
+};
+typedef struct dynamic_array * container;
+
+// init contents to size 1 array 
+container init() {
+  container n = alloc(struct dynamic_array);
+  n->contents = alloc_array(int, 1);
+  n->len = 0;
+  n->max_len = 1;
+  
+  return n;
+}
+
+void resize (container c) {
+  int len = c -> len;
+  int[] contents = c->contents;
+
+  int newlen = 2 * c->max_len;
+  int[] newcontents = alloc_array(int, newlen);
+
+  for (int i = 0; i < len; i++) {
+    newcontents[i] = contents[i];
+  }
+
+  c->contents = newcontents;
+  c->max_len = newlen;
+}
+
+void add (int n, container c) {
+  if (c->len == c->max_len) {
+    resize(c);
+  }
+  c->contents[c->len] = n;
+  c->len++;
+}
+
+void pop (int n, container c) {
+  c->contents[c->len-1] = 0;
+  c->len--;
+}
+
+int sum (container c) {
+  int sum = 0;
+
+  for (int i = 0; i < c->len; i++) {
+    sum += c->contents[i];
+  }
+
+  return sum;
+}
+
+int main() {
+  container c = init();
+  
+  for (int i = 0; i < 67108864; i++) {
+    add(i, c);
+  }
+  
+  return sum(c);
+}

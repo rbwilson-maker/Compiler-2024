@@ -1,0 +1,12 @@
+//test return 127
+int main() {
+    int y = 1;
+    while (y < 1000) { 
+        y *= 2; 
+        if (y > 100) {
+            y -= 1;
+            return y;
+        }
+    }
+    return y;
+}

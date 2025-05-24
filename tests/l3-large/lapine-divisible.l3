@@ -1,0 +1,19 @@
+//test error
+
+/* true if n has no factors greater than or equal to m and false otherwise */
+bool divisible(int n, int m) {
+  if (n % m == 0) return false;
+  else {
+    if (m*m >= n) return true;
+    else return divisible(n, m+1);
+  }
+}
+
+int main() {
+  bool b = divisible(23, 2);
+  if (b) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

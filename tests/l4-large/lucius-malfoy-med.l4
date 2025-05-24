@@ -1,0 +1,310 @@
+//test return 0
+// computes the minimum edit distance between bitvectors
+// lot's of stuff in here is pretty awful because this isn't C1
+
+typedef int bv;
+
+bv bv_make(int bits, int size) {
+    assert(0 <= size && size <= 27);
+    assert(bits >> size == 0);
+    return (size << 27) | bits;
+}
+
+int bv_size(bv v) {
+    return (v >> 27) & 0x1F;
+}
+
+int bv_bits(bv v) {
+    return v & 0x07FFFFFF;
+}
+
+void bv_check(bv v) {
+    assert(v == bv_make(bv_bits(v), bv_size(v)));
+}
+
+void bv_check_index(bv v, int i) {
+    int size = bv_size(v);
+    assert(0 <= i && i < size);
+}
+
+bv bv_flip(bv v, int i) {
+    bv_check_index(v, i);
+    return v ^ (1 << i);
+}
+
+bv bv_subseq(bv v, int i, int j) {
+    assert(i <= j);
+    bv_check_index(v, i);
+    if (i == j) return 0;
+    bv_check_index(v, j - 1);
+
+    int size = j - i;
+    int bits = bv_bits(v);
+    bits >>= i;
+    bits &= (1 << size) - 1;
+    return bv_make(bits, size);
+}
+
+bv bv_concat(bv a, bv b) {
+    int size_a = bv_size(a);
+    int size_b = bv_size(b);
+    int bits_a = bv_bits(a);
+    int bits_b = bv_bits(b);
+
+    int size = size_a + size_b;
+    assert(0 <= size && size <= 27);
+
+    int bits = bits_a | (bits_b << size_a);
+    return bv_make(bits, size);
+}
+
+bv bv_insert(bv v, int i, bool b) {
+    int size = bv_size(v);
+    if (i == size) {
+        bv new = bv_make(bv_bits(v), size + 1);
+        if (b) new = bv_flip(new, size);
+        return new;
+    }
+
+    bv_check_index(v, i);
+    bv mid = bv_make(b ? 1 : 0, 1);
+    bv fro = bv_subseq(v, 0, i);
+    bv bac = bv_subseq(v, i, size);
+    return bv_concat(fro, bv_concat(mid, bac));
+}
+
+bv bv_delete(bv v, int i) {
+    bv_check_index(v, i);
+
+    int size = bv_size(v);
+    if (i == size - 1) {
+        return bv_make(bv_bits(v) & ((1 << (size - 1)) - 1), size - 1);
+    }
+
+    bv fro = bv_subseq(v, 0, i);
+    bv bac = bv_subseq(v, i + 1, size);
+    return bv_concat(fro, bac);
+}
+
+
+
+typedef struct node* node;
+struct node {
+    bv value;
+    node next;
+    int depth;
+};
+
+typedef struct queue* queue;
+struct queue {
+    node head;
+    node tail;
+    node spares;
+};
+
+queue queue_new() {
+    return alloc(struct queue);
+}
+
+bool queue_empty(queue q) {
+    return q->head == NULL;
+}
+
+node queue_deq(queue q) {
+    assert(!queue_empty(q));
+
+    node res = q->head;
+
+    q->head = q->head->next;
+    if (q->head == NULL)
+        q->tail = NULL;
+
+    res->next = q->spares;
+    q->spares = res;
+
+    return res;
+}
+
+void queue_enq(queue q, bv value, int depth) {
+    node new;
+    if (q->spares == NULL) {
+        new = alloc(struct node);
+    } else {
+        new = q->spares;
+        q->spares = q->spares->next;
+    }
+
+    new->value = value;
+    new->depth = depth;
+
+    if (queue_empty(q)) {
+        q->head = new;
+        q->tail = new;
+        return;
+    }
+
+    q->tail->next = new;
+    q->tail = new;
+}
+
+
+
+typedef struct set* set;
+struct set {
+    set left;
+    set right;
+    int value;
+};
+
+set set_new() {
+    return NULL;
+}
+
+bool set_member(set s, int x) {
+    while (s != NULL) {
+        if (s->value == x) return true;
+        else if (s->value < x) s = s->left;
+        else s = s->right;
+    }
+    return false;
+}
+
+set set_insert(set s, int x) {
+    if (s == NULL) {
+        s = alloc(struct set);
+        s->value = x;
+        return s;
+    }
+
+    if (s->value < x) {
+        s->left = set_insert(s->left, x);
+    }
+    else if (s->value > x) {
+        s->right = set_insert(s->right, x);
+    }
+    return s;
+}
+
+
+
+int med(bv start, bv end) {
+    if (bv_size(start) < bv_size(end)) {
+        bv temp = start;
+        start = end;
+        end = temp;
+    }
+
+    int endSize = bv_size(end);
+    bv_check(start);
+    bv_check(end);
+
+    queue q = queue_new();
+    queue_enq(q, start, 0);
+
+    set s = set_new();
+
+    for (int iters = 0; true; iters++) {
+        node currNode = queue_deq(q);
+        bv curr = currNode->value;
+        int depth = currNode->depth;
+
+        if (!set_member(s, curr)) {
+        s = set_insert(s, curr);
+
+        if (curr == end) return depth;
+
+        int size = bv_size(curr);
+
+        if (size < endSize) {
+            for (int i = 0; i <= size; i++) {
+                bv candidate;
+                candidate = bv_insert(curr, i, false);
+                queue_enq(q, candidate, depth + 1);
+                candidate = bv_flip(candidate, i);
+                queue_enq(q, candidate, depth + 1);
+            }
+        }
+
+        if (size >= endSize) {
+            for (int i = 0; i < size; i++) {
+                bv candidate = bv_delete(curr, i);
+                queue_enq(q, candidate, depth + 1);
+            }
+        }
+
+        if (size == endSize) {
+            for (int i = 0; i < size; i++) {
+                bv candidate = bv_flip(curr, i);
+                queue_enq(q, candidate, depth + 1);
+            }
+        }
+        }
+    }
+
+    // if only we had panic() :(
+    // ... or a real compiler
+    assert(false);
+    return -1;
+}
+
+
+
+void test_med(bv a, bv b, int d) {
+    assert(med(a, b) == d);
+    assert(med(b, a) == d);
+}
+
+int main() {
+    // sample bitvectors
+    bv s00101 = bv_make(0x5, 5);
+    bv s10 = bv_make(0x2, 2);
+    bv s00101010 = bv_make(0x2A, 8);
+    bv s0010110 = bv_make(0x16, 7);
+    bv s10101010 = bv_make(0xAA, 8);
+    bv s1010111000101 = bv_make(0x15C5, 13);
+    bv s101011100010110101010 = bv_make(0x15C5AA, 21);
+    bv s010101 = bv_make(0x15, 6);
+    bv s101010 = bv_make(0x2A, 6);
+    bv s110110110110 = bv_make(0xDB6, 12);
+    bv s101101101101 = bv_make(0xB6D, 12);
+    bv s100111101101 = bv_make(0x9ED, 12);
+    bv s001111011001101010101101010 = bv_make(0x1ECD56A, 27);
+    bv s101001001010001010101010110 = bv_make(0x5251556, 27);
+    bv s111111110001110101100011111 = bv_make(0x7F8EB1F, 27);
+
+    // bitvector tests
+    assert(bv_make(0, 0) == 0);
+    assert(bv_insert(0, 0, true) == bv_make(1, 1));
+    assert(bv_concat(s10101010, s1010111000101) == s101011100010110101010);
+    assert(bv_flip(s00101010, 7) == s10101010);
+    assert(bv_insert(bv_delete(s00101010, 7), 7, true) == s10101010);
+    assert(bv_insert(bv_delete(s00101010, 6), 7, true) == s10101010);
+    assert(bv_delete(s00101010, 2) == s0010110);
+    assert(bv_delete(bv_delete(s10, 0), 0) == 0);
+    assert(bv_delete(bv_delete(s10, 1), 0) == 0);
+    assert(bv_subseq(s0010110, 0, 2) == s10);
+    assert(bv_subseq(s0010110, 2, 7) == s00101);
+    assert(bv_size(bv_insert(s0010110, 2, false)) == bv_size(s00101010));
+    assert(bv_insert(s0010110, 2, false) == s00101010);
+    assert(bv_insert(bv_delete(s00101010, 2), 2, false) == s00101010);
+
+    // minimum edit distance tests
+    test_med(0, 0, 0);
+    test_med(s10101010, s00101010, 1);
+    test_med(s00101010, s0010110, 1);
+    test_med(s00101, s10, 3);
+    test_med(s010101, s101010, 2);
+    test_med(s00101, s10, 3);
+    test_med(s00101, 0, 5);
+    test_med(s110110110110, s101101101101, 2);
+    test_med(s100111101101, s110110110110, 3);
+    test_med(s00101010, s1010111000101, 6);
+    test_med(s101011100010110101010, s1010111000101, 8);
+
+    // these ones take too long to run
+    //test_med(s001111011001101010101101010, s101001001010001010101010110, 8);
+    //test_med(s001111011001101010101101010, s111111110001110101100011111, 10);
+    //test_med(s101001001010001010101010110, s111111110001110101100011111, 12);
+
+    return 0;
+}

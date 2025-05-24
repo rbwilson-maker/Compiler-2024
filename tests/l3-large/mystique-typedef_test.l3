@@ -1,0 +1,19 @@
+//test return 1
+
+typedef bool b;
+typedef int i;
+
+void f(b p) {
+    return;
+}
+
+int main() {
+    i x;
+    if (1 == 1) {
+        x = 3;
+    } else {
+        x = 1 + 1;
+    }
+    f(true);
+    return 1;
+}

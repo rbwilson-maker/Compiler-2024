@@ -1,0 +1,19 @@
+//test div-by-zero
+// order of evaluation
+
+int foo() {
+  assert(false);
+  return 0;
+}
+
+int bar() {
+  return 1/0;
+}
+
+int blah(int x, int y) {
+  return x + y;
+}
+
+int main() {
+  return blah(bar(), foo());
+} 

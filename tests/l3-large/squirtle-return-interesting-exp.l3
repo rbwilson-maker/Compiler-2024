@@ -1,0 +1,21 @@
+//test return 1116164
+
+// calculates num ^ exp efficiently
+
+int fexp(int num, int exp) {
+    assert(num != 0 || exp != 0);
+    assert(exp >= 0);
+    if (exp == 0) return 1;
+    if (exp == 1) return num;
+    if (exp % 2 == 0) {
+        int result = fexp(num, exp/2);
+        return result * result;
+    } else {
+        int result = fexp(num, exp/2);
+        return result * result * num;
+    }
+}
+
+int main() {
+    return fexp(2, 20) + fexp(2, 16) + fexp(2, 11) + fexp(2, 1) + fexp(2, 0) + fexp(1, 100000001);    
+}

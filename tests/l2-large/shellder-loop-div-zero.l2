@@ -1,0 +1,10 @@
+//test div-by-zero
+int main() {
+    int x = 1;
+    int result = 0;
+    while (true) {
+        result += 42 / (x % 23);
+        x++;
+    }
+    return result;
+}

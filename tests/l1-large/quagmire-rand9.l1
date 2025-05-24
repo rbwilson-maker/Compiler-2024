@@ -1,0 +1,11 @@
+//test return -563
+
+int main() {
+int temp_21 = -981;
+temp_21 = -(858);
+temp_21 = -(944);
+temp_21 = (temp_21 * -(-(-650)));
+temp_21 = -((-(temp_21) * temp_21));
+temp_21 = -((temp_21 - 581));
+return -563;
+}

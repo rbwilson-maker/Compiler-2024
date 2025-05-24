@@ -1,0 +1,38 @@
+//test return 36
+
+struct C {
+	int c;
+	int[] carr;
+};
+
+struct B {
+	struct C *C;
+	int b;
+	int *bp;
+};
+
+struct A {
+	struct B B;
+	int a;
+};
+
+int main() {
+	struct A *A = alloc(struct A);
+	A->a = 12345;
+	A->B.C = alloc(struct C);
+	A->B.b = 5213;
+	A->B.C->c = 14;
+	A->B.C->carr = alloc_array(int, 3);
+	A->B.C->carr[0] = 17;
+	A->B.C->carr[1] = 23;
+	A->B.C->carr[2] = 47;
+	A->B.bp = alloc(int);
+	*A->B.bp = 5;
+
+	A->a -= A->B.b * 2;
+	A->B.b *= 12;
+	A->B.b = A->B.C->carr[0] + A->B.C->c;
+	A->B.C->c = A->B.b + *A->B.bp;
+	
+	return A->B.C->c;
+}

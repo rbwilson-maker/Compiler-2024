@@ -1,0 +1,19 @@
+//test return 0
+
+typedef struct gap_buffer* gapbuf;
+
+struct gap_buffer {
+  int limit; /* limit > 0 */
+  int[] buffer; /* \length(buffer) == limit */
+  int gap_start; /* 0 <= gap_start */
+  int gap_end; /* gap_start <= gap_end <= limit */
+};
+
+int main() {
+  gapbuf gb = alloc(struct gap_buffer);
+  int limit = 65536;
+  gb->buffer = alloc_array(int, 65536);
+  gb->gap_start = 48112;
+  gb->gap_end = 48136;
+  return 0;
+}

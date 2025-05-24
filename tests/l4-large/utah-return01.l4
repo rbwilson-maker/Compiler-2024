@@ -1,0 +1,18 @@
+//test return 97
+// Tests that a struct without a base type is still valid.
+
+struct baseless {
+    struct baseless* down;
+};
+
+int main () {
+    struct baseless* top = alloc(struct baseless);
+    struct baseless* cur = top;
+    for (int i = 0; i < 1000; i++) {
+        cur->down = alloc(struct baseless);
+        cur = cur->down;
+    }
+    cur->down = NULL;
+    assert(top->down != cur->down);
+    return 97;
+}

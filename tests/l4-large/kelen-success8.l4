@@ -1,0 +1,20 @@
+//test error
+
+// Test declaring struct with same name as field
+struct equalName{
+    int equalName;
+};
+
+struct anotherSameName{
+    int anotherSameName;
+};
+
+int main(){
+    struct equalName* equalName = alloc(struct equalName);
+    equalName->equalName = 0;
+    return equalName->equalName;
+
+    struct anotherSameName anotherSameName;
+    anotherSameName.anotherSameName = 1;
+    return equalName->equalName + anotherSameName.anotherSameName;
+}

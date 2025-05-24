@@ -1,0 +1,17 @@
+//test div-by-zero
+int main ()
+{
+  int x = 2;
+  int y = 0;
+
+  while (x < 100) {
+    if (x % 2 == 0) {
+        // We will always hit this case and get a div-by-zero error.
+        y = x / 0;
+    } else {
+        y += x;
+    }
+    x *= 2;
+  }
+  return y;
+}

@@ -1,0 +1,21 @@
+//test div-by-zero
+// Tests a bit of mutual recursion
+
+int a(int n);
+
+// The author of b() didn't document the interface well. They assume n is
+// positive, but the author of a() assumes n is non-negative!
+int b(int n) {
+  return a(100/n);
+}
+
+// The author of a() is very careful to check their assumptions. Sadly their
+// assumptions are dead wrong.
+int a(int m) {
+  assert(m > 0);
+  return b(m-1);
+}
+
+int main() {
+  return a(5);
+}

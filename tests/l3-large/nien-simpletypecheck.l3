@@ -1,0 +1,17 @@
+//test typecheck
+
+bool funcb()
+{
+    return !!!!!!!!!!!!!!!false;
+}
+
+int funci(int x)
+{
+    if(funcb()) return x / 2;
+    else return 1 + 3 * x;
+}
+
+int main()
+{
+    return funci(65536);
+}

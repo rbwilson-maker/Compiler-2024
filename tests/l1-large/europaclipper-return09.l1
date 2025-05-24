@@ -1,0 +1,9 @@
+//test return 411
+int main() {
+  int x = 411;
+  int y = 0x6a;
+  y += 0x61;
+  y += 0x6e;
+  y += 0x65;
+  return x;
+}

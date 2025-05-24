@@ -1,0 +1,7 @@
+//test return ~2147483647
+// interger overflow, not no error
+
+int main() {
+    int INT_MAX = 2147483647;
+    return INT_MAX + 2;
+}

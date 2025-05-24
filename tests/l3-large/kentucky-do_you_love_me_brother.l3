@@ -1,0 +1,26 @@
+//test return 354
+
+
+
+typedef int t1;
+typedef t1 t2;
+
+
+bool is_evan(int tester);
+bool is_evan(int taster);
+
+int main() {
+if(is_evan(5)) return 355;
+
+return 354;
+}
+
+
+
+
+
+
+bool is_evan(int nomnom) {
+// THAT'S NOT MY NAME
+return false;
+}

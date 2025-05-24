@@ -1,0 +1,31 @@
+//test typecheck
+
+myint process(myint a, myint b);
+mybool check_larger_than_ten(myint a);
+
+int main() {
+    myint a = 10000;
+    myint b = 9;
+
+    while (check_larger_than_ten(a)) {
+        a %= 10;
+    }
+
+    while(check_larger_than_ten(b)) {
+        b %= 10;
+    }
+
+    return process(a, b);
+}
+
+mybool check_larger_than_ten(myint a) {
+    if (a > 10) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+myint process(myint a, myint b) {
+    return a * b;
+}

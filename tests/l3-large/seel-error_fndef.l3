@@ -1,0 +1,10 @@
+//test error
+// Bad function definition
+
+int add(int a, int b,) {    // Error!
+    return a + b;
+}
+
+int main() {
+    return add(3, 4);
+}

@@ -1,0 +1,8 @@
+//test error
+
+int fun(struct s*, int b) {
+    return s->a + b;
+}
+int main() {
+    return fun(NULL, 3);
+}

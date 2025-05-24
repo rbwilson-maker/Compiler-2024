@@ -1,0 +1,30 @@
+//test memerror
+// Test for correct handling for declaring the structs
+
+struct A {
+       int[] f;
+       struct B* b;
+       struct A* a;
+};
+ 
+struct B {
+       int g;
+       struct C* c;
+       struct B* b;
+};
+
+struct C {
+       int h;
+       struct A* a;
+       struct C* c;
+};
+
+int main() {
+    struct A* a = alloc(struct A);
+    struct B* b = alloc(struct B);
+    struct C* c = alloc(struct C);
+    a->a = a; a->b = b;
+    b->b = b; b->c = c; b->g = 20;
+    c->c = c; c->a = a; c->h = 30;
+    return a->b->c->a->a->b->b->c->c->a->f[0];
+}

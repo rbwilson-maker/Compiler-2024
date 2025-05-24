@@ -1,0 +1,12 @@
+//test return 42
+
+int main()
+{
+    int a = 21;
+    a = a + a;
+    int b = 0;
+    a = b;
+    a = b + 42;
+
+    return a;
+}

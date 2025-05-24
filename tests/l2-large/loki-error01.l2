@@ -1,0 +1,10 @@
+//test error
+
+int main() {
+  int x = 15;
+  int ct = 0;
+  for (int x = 0; x < 15; x++) {
+    ct += x;
+  }
+  return ct;
+}

@@ -1,0 +1,74 @@
+//test return 4174
+/*
+    lasarga: Test lots of arguments, with lots of different types.
+*/
+
+struct lasagna {
+    int cookTime;
+    int maxCookTime;
+    bool burnt;
+};
+
+typedef struct lasagna lasagna_t;
+
+lasagna_t *newLasagna() {
+    lasagna_t *result = alloc(lasagna_t);
+    result->cookTime = 0;
+    result->maxCookTime = 1500;
+    result->burnt = false;
+
+    return result;
+}
+
+void bake(lasagna_t*[] lasagnas, int temp1, int* temp2, int temp3, bool broil,
+int temp4, int temp5, int temp6) {
+
+    bool allBurnt = true;
+    for (int i = 0; i < 6; i++) { allBurnt = allBurnt && lasagnas[i]->burnt; }
+    if (allBurnt) { return; }
+
+    int broilMult = broil ? 2 : 1;
+
+    lasagnas[0]->cookTime += temp1 * broilMult;
+    lasagnas[1]->cookTime += *temp2 * broilMult;
+    lasagnas[2]->cookTime += temp3 * broilMult;
+    lasagnas[3]->cookTime += temp4 * broilMult;
+    lasagnas[4]->cookTime += temp5 * broilMult;
+    lasagnas[5]->cookTime += temp6 * broilMult;
+
+    // Update burnt status
+    for (int i = 0; i < 6; i++) {
+        lasagna_t *lasagna = lasagnas[i];
+        if (lasagna->cookTime > lasagna->maxCookTime) {
+            lasagna->burnt = true;
+        }
+    }
+
+    bake(lasagnas, temp1 ^ *temp2, temp2, temp3, !broil, temp4 ^ temp5,
+         temp5 ^ temp6, temp1 ^ temp5);
+}
+
+int main() {
+    lasagna_t*[] lasagnas = alloc_array(lasagna_t*, 6);
+    for (int i = 0; i < 6; i++) { lasagnas[i] = newLasagna(); }
+
+    int temp1 = 6;
+    int *temp2 = alloc(int);
+    *temp2 = 5;
+    int temp3 = 3;
+    int temp4 = 9;
+    int temp5 = 2;
+    int temp6 = 10;
+
+    // Bake!
+    bake(lasagnas, temp1, temp2, temp3, false, temp4, temp5, temp6);
+
+    assert(lasagnas[0]->cookTime == 2004);
+    assert(lasagnas[1]->cookTime == 2505);
+    assert(lasagnas[2]->cookTime == 1503);
+    assert(lasagnas[3]->cookTime == 4495);
+    assert(lasagnas[4]->cookTime == 4169);
+    assert(lasagnas[5]->cookTime == 4174);
+
+    return lasagnas[5]->cookTime;
+}

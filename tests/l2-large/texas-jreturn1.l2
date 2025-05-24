@@ -1,0 +1,9 @@
+//test return -43968
+// testing shifting
+int main() {
+  int val = 0xABC;
+  val = val << 8;	//val = 0xABC00
+  val *= -1;		//val = 0xFFF54400
+  val = val >> 4;	//val = 0xFFFF5440
+  return val;
+}

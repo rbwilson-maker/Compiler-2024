@@ -1,0 +1,3 @@
+int* addressOf(int x);
+void assign(int* loc, int val);
+int* increment(int* ptr, int bytes);

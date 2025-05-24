@@ -1,0 +1,15 @@
+//test return 218
+// Test for constant propogation
+// Should be able to propogate all the way to the end
+
+int main()
+{
+    int i1 = 10 + 15;
+    int i2 = 11 * 15;
+    int i3 = i1 + i2;
+    int i4 = i1 + (i2 + i1);
+    int i5 = i4 + i4 * i4;
+    int i6 = i4 / i2;
+    int i7 = i1 + i4 + i3;
+    return (i7 + i4) / i3 + i4;
+}

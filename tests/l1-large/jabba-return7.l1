@@ -1,0 +1,8 @@
+//test return 7
+
+int main() {
+	//this is a comment! wooo
+	int foo = 42;
+	int z = 3 * 2 / 1 + foo - foo;
+	return foo / z;
+}

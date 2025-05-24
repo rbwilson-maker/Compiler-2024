@@ -1,0 +1,11 @@
+//test return 5040
+
+int main()
+{
+  int fac = 1;
+  int n = 7;
+  for (; n > 0; n--) {
+      fac *= n;
+  }
+  return fac;
+}

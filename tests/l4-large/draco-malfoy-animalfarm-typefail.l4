@@ -1,0 +1,15 @@
+//test error
+
+struct basicallyanint {
+	int n;
+};
+
+typedef struct basicallyanint * bi;
+
+int main(){
+	bi i1 = alloc(struct basicallyanint);
+	i1->n = 1;
+	bi i2 = alloc(struct basicallyanint);
+	i2->n = 2;
+	return (i1 != i2);
+}

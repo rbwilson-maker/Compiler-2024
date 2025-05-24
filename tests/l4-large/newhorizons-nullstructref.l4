@@ -1,0 +1,15 @@
+//test memerror
+/* dereference a null struct pointer */
+
+struct x {
+  int y;
+  bool z;
+};
+
+int main() {
+    struct x* p; 
+    p = NULL;
+    int a = p->y; 
+    return a;
+}
+

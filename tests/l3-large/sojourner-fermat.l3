@@ -1,0 +1,35 @@
+//test return 12321
+//by fermat's last theorem, for n >= 3 there are no positive integers a, b, c
+//such that a^n + b^n = c^n
+//see https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem
+
+int pow(int x, int n) {
+    if (n == 1) {
+        return x;
+    }
+    if (n % 2 == 0) {
+        int half = pow(x, n/2);
+        return half * half;
+    }
+    return x * pow(x, n-1);
+}
+
+bool fermat(int n) {
+  for (int a = 1; a < 400; a++) {
+    for (int b = 1; b < 400; b++) {
+      for (int c = 1; c < 400; c++) {
+        if (pow(a, n) + pow(b, n) == pow(c, n)) {
+            return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+int main() {
+  if (fermat(3)) {
+    return 0;
+  }
+  return 12321;
+}

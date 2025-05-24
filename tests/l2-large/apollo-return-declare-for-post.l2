@@ -1,0 +1,9 @@
+//test error
+// checks for declares in postops
+
+int main () {
+  for (int x = 0; x < 10; int y = 0) {
+    x++;
+  }
+  return 0;
+}

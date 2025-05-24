@@ -1,0 +1,10 @@
+//test div-by-zero
+//division error by mod 0
+
+int main() {
+	int x;
+	int y;
+	x = 5;
+	y = -5;
+	return y % (x + y);
+}

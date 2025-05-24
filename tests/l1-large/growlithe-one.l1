@@ -1,0 +1,16 @@
+//test return 38
+//reg allocation. should be able to be optimized to 1 or 2 registers.
+int main()
+{
+  int a = 1;
+
+  a = a+1;
+  a = 1+a;
+  a = a*a;
+  a = a-a+a;
+  a = a+a+a+a;
+
+  a = (a/a)+a+(a/a);
+
+  return a;
+}

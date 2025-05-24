@@ -1,0 +1,38 @@
+//test return 45055
+
+// find the appearing range [l, r) of an element in a sorted array
+
+void find_element(int[] a, int n, int[] res, int ele) {
+    int l = 0;
+    int r = n;
+    int mid;
+    while (l < r) {
+        mid = (l + r) / 2;
+        if (a[mid] < ele) l = mid + 1;
+        else r = mid;
+    }
+    res[0] = l;
+
+    l = 0;
+    r = n;
+    while (l < r) {
+        mid = (l + r) / 2;
+        if (a[mid] <= ele) l = mid + 1;
+        else r = mid;
+    }
+    res[1] = l;
+}
+
+int main() {
+    int[] a = alloc_array(int, 55);
+    int start_idx = 0;
+    for (int i = 1; i <= 10; i++) {
+        for (int j = start_idx; j < start_idx + i; j++) {
+            a[j] = i;
+        }
+        start_idx += i;
+    }
+    int[] idx = alloc_array(int, 2);
+    find_element(a, start_idx, idx, 10);
+    return idx[0] * 1000 + idx[1];
+}

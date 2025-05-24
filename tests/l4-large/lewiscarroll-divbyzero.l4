@@ -1,0 +1,14 @@
+//test div-by-zero
+
+struct meow {
+	int x;
+	int z;
+} ;
+
+int main () {
+	struct meow *m = alloc(struct meow);
+	m->x = 10;
+	m->z = 0;
+	int result = m->x / m->z;
+	return 0;
+}

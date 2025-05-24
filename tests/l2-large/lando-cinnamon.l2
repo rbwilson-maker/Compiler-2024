@@ -1,0 +1,10 @@
+//test return 72;
+
+int main() {
+  bool a = true && false || (true ? false : true) && (!false || (1/0 == 7));  
+  if (a) {
+    return 265;
+  } else {
+    return 72;
+  }
+}

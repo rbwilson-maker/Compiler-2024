@@ -1,0 +1,27 @@
+//test return 15411;
+
+int main() {
+    int x = 15411;
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+    for (a = 0; a < x; a++) {
+        for (b = a; b < x; b++) {
+            for (c = b; c < x; c++) {
+                for (d = c; d < x; d++) {
+                    for (e = d; e < x; e++) {
+                        if ((a + b + c + d + e) > x) {
+                            e = x;
+                            d = x;
+                            c = x;
+                            b = x;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return a;
+}

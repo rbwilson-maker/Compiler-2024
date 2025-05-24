@@ -1,0 +1,10 @@
+//test return 31
+// 0-array different from 0-array
+
+int main()
+{
+  int[] a = alloc_array(int, 0);
+  int[] b = alloc_array(int, 0);
+  if (a == b) 0 / 1;
+  return 31;
+}

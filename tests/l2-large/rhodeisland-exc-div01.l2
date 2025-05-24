@@ -1,0 +1,15 @@
+//test div-by-zero
+int main()
+{
+    int n;
+    int start;
+    int i;
+
+    n = 50;
+    start = 100;
+    i = 0;
+    for (i; i <= n; i++) {
+        start /= i;
+    }
+    return start;
+}

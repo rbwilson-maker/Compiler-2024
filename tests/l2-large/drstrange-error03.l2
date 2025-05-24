@@ -1,0 +1,9 @@
+//test error
+// re-declared variable
+
+int main()
+{
+  int value = 1.0;
+  int value = 2;
+  return value;
+}

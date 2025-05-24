@@ -1,0 +1,7 @@
+//test error
+// C0 pointer arithmatic is not allowed
+
+int main() {
+    int array = alloc_array(int, 128);
+    return *(array + 2);
+}

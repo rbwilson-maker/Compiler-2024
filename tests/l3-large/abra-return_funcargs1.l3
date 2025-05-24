@@ -1,0 +1,13 @@
+//test return 20
+void blonde(int a, bool b, int c, int d) {
+	int x = d;
+	int z = a + d;
+	int qq = b ? a : (a + c + d);
+	return;
+}
+
+int main() {
+	blonde(1, true, 3, 4);
+	return 20;
+}
+

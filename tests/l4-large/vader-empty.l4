@@ -1,0 +1,18 @@
+//test abort
+struct str {
+  int* val;
+};
+
+bool empty(struct str* check) {
+  return (check->val == NULL);
+}
+
+int main() {
+  struct str* check = alloc(struct str);
+  assert (empty(check));
+  check->val = alloc(int);
+  *(check->val) = 5;
+  assert (empty(check));
+  return 0;
+}
+

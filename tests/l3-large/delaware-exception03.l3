@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int hello (int x) {
+    5 << x;
+    return hello (x + 1);
+}
+
+int main () {
+   return (hello (3));
+}

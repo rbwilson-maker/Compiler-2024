@@ -1,0 +1,13 @@
+//test return 4
+/*
+AC (return 4).
+Unused function can be undefined.
+*/
+
+int r();
+
+int main() {
+  return 4;
+}
+
+int r();

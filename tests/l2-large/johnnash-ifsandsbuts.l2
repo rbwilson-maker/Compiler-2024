@@ -1,0 +1,12 @@
+//test return 7
+
+int main() {
+    bool b;
+    b = true;
+
+    while (b)
+        if (b)
+            b = b && false;
+
+    return b ? 1 / 0 : 7;
+}

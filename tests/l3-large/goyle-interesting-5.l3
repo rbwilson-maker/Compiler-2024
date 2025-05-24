@@ -1,0 +1,23 @@
+//test return 724
+
+// Use the Babylonian method to approximate the square root
+// to within a certain epsilon.
+
+bool within_epsilon(fpt x, fpt y, fpt epsilon) {
+  return fless(fsub(x,y), epsilon) && fless(fsub(y,x), epsilon);
+}
+
+fpt babylon_sqrt(fpt x) {
+  fpt est = x;
+  fpt epsilon = fdiv(itof(1), itof(10));
+  while (!within_epsilon(fmul(est,est), x, epsilon)) {
+    print_fpt(est);
+    est = fdiv(fadd(est, fdiv(x, est)), itof(2));
+  }
+  return est;
+}
+
+int main() {
+  int x = 524415;
+  return ftoi(babylon_sqrt(itof(x)));
+}

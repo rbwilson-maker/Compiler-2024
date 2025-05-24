@@ -1,0 +1,17 @@
+//test return 12
+// make sure ints and pointers are aligned correctly in structs
+
+struct C {
+  int a;
+  int *b;
+  int c;
+};
+
+int main() {
+  struct C *var = alloc(struct C);
+  var->a = 12;
+  var->b = alloc(int);
+  var->c = -11;
+
+  return var->c + 23;
+}

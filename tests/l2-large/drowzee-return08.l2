@@ -1,0 +1,7 @@
+//test return 0
+//uses ternary operator
+
+int main () {
+  int y = 3 > 5 ? 1 : 0;
+  return y;
+}

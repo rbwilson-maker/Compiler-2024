@@ -1,0 +1,13 @@
+//test error
+
+struct bad {
+    int a;
+    int b;
+    int c;
+    int d;
+};
+
+int main() {
+    struct bad *testvar = alloc(struct bad);
+    return testvar->e;
+}

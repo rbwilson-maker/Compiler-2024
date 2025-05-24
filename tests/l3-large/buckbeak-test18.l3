@@ -1,0 +1,15 @@
+//test error
+int f1 (int a, int b, bool c);
+
+int main () {
+  return f1(1+2*3, 4+5/2, 1);
+}
+
+int f1 (int c, int d, bool e)
+{
+  if (e) {
+    return c+d;
+  } else {
+    return c<<d;
+  }
+}

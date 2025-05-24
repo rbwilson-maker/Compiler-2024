@@ -1,0 +1,13 @@
+//test error
+// no clue what this is supposed to test, * folding?
+
+typedef struct large*** small;
+
+struct large {
+    small small;
+    ***small large;
+};
+
+int main() {
+    return 0;
+}

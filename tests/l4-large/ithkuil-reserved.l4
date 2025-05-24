@@ -1,0 +1,9 @@
+//test error
+
+bool alloc(int type) {
+    return true;
+}
+
+int main() {
+    return *alloc(int);
+}

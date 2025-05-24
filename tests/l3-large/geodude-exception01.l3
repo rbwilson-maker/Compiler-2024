@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int solve(int a1, int a2, int a3, int a4){
+  return (a1 + a2 - a3 - a4) / (a1 - a4 + 1);
+}
+
+int main(){
+  int b1 = 123;
+  int b2 = 52;
+  int b3 = 124;
+  int b4 = 124;
+  return solve(b1, b2, b3, b4);
+}

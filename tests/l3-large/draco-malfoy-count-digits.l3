@@ -1,0 +1,15 @@
+//test return 4
+int numdigits(int number, int base){
+    int result;
+    if (number < base){
+        result = 1;
+    }
+    else {
+        result = numdigits(number / base, base) + 1;
+    }
+    return result;
+}
+
+int main(){
+    return numdigits(777,7);
+}

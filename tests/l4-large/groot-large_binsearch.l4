@@ -1,0 +1,96 @@
+//test return 44
+
+// rand.c0
+struct rand {
+  int seed;
+};
+
+typedef struct rand* rand_t;
+
+rand_t init_rand (int seed) {
+  rand_t gen = alloc(struct rand);
+  gen->seed = seed;
+  return gen;
+}
+
+int rand(rand_t gen) {
+  gen->seed = gen->seed * 1664525 + 1013904223;
+  return gen->seed;
+}
+
+int[] generate_array(int count) {
+  int[] result = alloc_array(int, count);
+  rand_t gen = init_rand(0x12345);
+
+  for (int i = 0; i < count; i++) {
+    int next = rand(gen);
+    result[i] = next;
+  }
+
+  return result;
+}
+
+void swap(int[] A, int a, int b) {
+  int temp = A[a];
+  A[a] = A[b];
+  A[b] = temp;
+}
+
+int partition(int[] A, int lo, int hi)
+//@requires 0 <= lo && lo < hi && hi <= \length(A);
+//@ensures lo <= \result && \result < hi;
+{
+  int pi = lo + (hi - lo)/2;
+  int pivot = A[pi];
+  swap(A, pi, lo);
+  int left = lo + 1;
+  int right = hi;
+
+  while (left < right)
+  //@loop_invariant lo <= left && left <= right && right <= hi;
+  //@loop_invariant pivot == A[lo];
+  {
+    if (A[left] <= pivot) {
+      left++;
+    } else {
+      //@assert A[left] > pivot;
+      swap(A, left, right-1);
+      right--;
+    }
+  }
+
+  //@assert left == right;
+  swap(A, lo, left-1);
+  return left-1;
+}
+
+
+// quicksort
+void sort(int[] A, int lo, int hi)
+//@requires 0 <= lo && lo <= hi && hi <= \length(A);
+{
+  if (hi - lo <= 1) return;
+
+  int p = partition(A, lo, hi);   //@assert lo <= p && p < hi;
+  sort(A, lo, p);                
+  sort(A, p+1, hi);
+}
+
+// Binary search for the first element less than x
+int binary_search(int x, int[] A, int lo, int hi) {
+  while (lo < hi) {
+    int mid = lo + (hi - lo)/2;
+    if (A[mid] < x) {
+      lo = mid + 1;
+    } else {
+      hi = mid;
+    }
+  }
+  return lo;
+}
+
+int main() {
+  int[] array = generate_array(100);
+  sort(array, 0, 100);
+  return binary_search(8253900, array, 0, 100);
+}

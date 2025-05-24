@@ -1,0 +1,26 @@
+//test return 34
+
+int main() {
+  int x = 5 + 3;
+  int r;
+
+  r = x % 2;
+  r += 1;
+
+  int j = x; //8
+  int d = 42;
+  d += j;
+  d /= 2; // 25
+
+  int v;
+  int n;
+  int s;
+  int e;
+  int a;
+
+  return r + j + d; // 1 + 8 + 25
+
+  //unreachable
+  d /= j;
+  int u = e + v + a + n + s;
+}

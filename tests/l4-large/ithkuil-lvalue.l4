@@ -1,0 +1,7 @@
+//test error
+// exprs in lvalues should be rejected
+
+int main() {
+    *alloc(int) = 5;
+    return 1;
+}

@@ -1,0 +1,7 @@
+//test return 927388
+int main() {
+    int intermediate1 = 927388 / 4;
+    int intermediate2 = intermediate1 * 2;
+    int output = intermediate2 * 2;
+    return output;
+}

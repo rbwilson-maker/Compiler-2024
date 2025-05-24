@@ -1,0 +1,32 @@
+//test error
+
+int foo(int x) {
+  x++;
+  return x;
+}
+
+int bar(int x) {
+  x = foo(foo(x));
+  return x;
+}
+
+int yay(int x, int y, int z, bool a, bool b, bool c) {
+  if (a && b && c) {
+    return 1 + yay(x - 1, y - 1, z - 1, x > 0, b && c);
+  }
+  return 0;
+}
+
+int main() {
+  int x = 2;
+  int y = 3;
+  int z = 5;
+  while (z > 0) {
+    assert(z > 0);
+    x = bar(x);
+    y = foo(y);
+    z--;
+  }
+  int w = yay(x, y, z, true, true, true);
+  return x;
+}

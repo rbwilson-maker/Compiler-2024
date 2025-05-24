@@ -1,0 +1,13 @@
+//test return 0
+
+// Tests assignment operators
+
+int main() {
+    int i = 0;
+    i += i;
+    i -= i;
+    i *= i;
+    i /= 1;
+    i %= 2;
+    return i;
+}

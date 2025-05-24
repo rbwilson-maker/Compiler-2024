@@ -1,0 +1,164 @@
+//test error
+
+struct pixel {
+  int alpha;
+  int red;
+  int green;
+  int blue;
+};
+
+int get_row(int index, int width, int height)
+{
+  return index/width;
+}
+
+int get_column(int index, int width, int height)
+{
+  return index%width;
+}
+
+int get_index(int row, int col, int width, int height)
+{
+  return row*width + col;
+}
+
+int get_red(pixel p)
+{
+  int r = (p >> 16) & 0xFF;
+  return r;
+}
+
+int get_green(pixel p)
+{
+  int g = (p >> 8) & 0xFF;
+  return g;
+}
+
+int get_blue(pixel p)
+{
+  int b = p&0xFF;
+  return b;
+}
+
+int get_alpha(pixel p)
+{
+  int a = (p >> 24) & 0xFF;
+  return a;
+}
+
+int find_hex(int num)
+{
+  if (num <= 9) {
+    return num;
+  } else if (num == 10) {
+    return 0xA;
+  } else if (num == 11) {
+    return 0xB;
+  } else if (num == 12) {
+    return 0xC;
+  } else if (num == 13) {
+    return 0xD;
+  } else if (num == 14) {
+    return 0xE;
+  } else {
+    return 0xF;
+  }
+}
+
+int to_hex(int num)
+{
+         int rem = num % 16;
+         int main = num/16;
+         int two = find_hex(rem);
+         int one = find_hex(main);
+         int result = ((one << 4) | two);
+         return result;
+}
+
+pixel make_pixel(int alpha, int red, int green, int blue)
+{
+  int a = to_hex(alpha);
+  int r = to_hex(red);
+  int ar = ((a << 8) | r);
+  int g = to_hex(green);
+  int b = to_hex(blue);
+  int gb = ((g << 8) | b);
+  int result = ((ar << 16) | gb);
+  return result;
+}
+
+bool top_left(int row, int column, int width, int height)
+{
+  return row < height && column < width;
+}
+
+bool top_right(int row, int column, int width, int height)
+{
+  return row < height && column >= width && column < 2*width;
+}
+
+bool bottom_left(int row, int column, int width, int height)
+{
+  return row >= height && row < 2*height && column < width;
+}
+
+bool bottom_right(int row, int column, int width, int height)
+{
+  return row >= height && row < 2*height && column >= width && column < 2*width;
+}
+
+pixel[] rotate(pixel[] pixels, int width, int height)
+{
+  pixel[] rotated = alloc_array(pixel, 4*width*height);
+  int r = 0;
+  int c = 0;
+  for (int i = 0; i < 4*width*height; i++)
+  {
+    r = get_row(i, 2*width, 2*height);
+    c = get_column(i, 2*width, 2*height);
+    if (top_left(r, c, width, height))
+    {
+      pixel old = pixels[get_index(c, width-1-r, width, height)];
+      int alpha = get_alpha(old);
+      int red = get_red(old);
+      int green = get_green(old);
+      int blue = get_blue(old);
+      rotated[i] = make_pixel(alpha, red, green, blue);
+    } else if (top_right(r, c, width, height))
+    {
+      pixel old = pixels[get_index(r, c-width, width, height)];
+      int alpha = get_alpha(old);
+      int red = get_red(old);
+      int green = get_green(old);
+      int blue = get_blue(old);
+      rotated[i] = make_pixel(alpha, red, green, blue);
+    } else if (bottom_left(r, c, width, height))
+    {
+      pixel old = pixels[get_index(2*width-1-r, width-1-c, width, height)];
+      int alpha = get_alpha(old);
+      int red = get_red(old);
+      int green = get_green(old);
+      int blue = get_blue(old);
+      rotated[i] = make_pixel(alpha, red, green, blue);
+    } else {
+      pixel old = pixels[get_index(2*width-1-c, r-width, width, height)];
+      int alpha = get_alpha(old);
+      int red = get_red(old);
+      int green = get_green(old);
+      int blue = get_blue(old);
+      rotated[i] = make_pixel(alpha, red, green, blue);
+    }
+  }
+  return rotated;
+}
+
+int main() {
+  pixel[] image = alloc_array(pixel, 4*4*4);
+  int r = 0;
+  int c = 0;
+  for (int i = 0; i < 4*4*4; i++) {
+    image[i] = make_pixel(i, i + 1, i + 2, i + 3);
+  }
+  pixel[] rotated = rotate(image, 4, 4);
+  return get_alpha(rotated[65]);
+}

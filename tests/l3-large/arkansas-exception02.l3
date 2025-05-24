@@ -1,0 +1,10 @@
+//test div-by-zero
+// overflow
+int f(int n) {
+    return n/(-1);
+}
+
+int main() {
+    f(-2147483648);
+    return 0;
+}

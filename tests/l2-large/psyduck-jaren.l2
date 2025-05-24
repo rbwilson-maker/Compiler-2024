@@ -1,0 +1,18 @@
+//test return ~14558
+
+int main() {
+int x = 12038;
+int y = 230948;
+int z = 2034;
+x += y | z;
+y -= z ^ x;
+z *= y & x;
+x /= ~y;
+y %= x << 13;
+z &= y >> 2;
+x ^= y + 17 & 18 - z;
+y |= x * 13 | y / 2;
+z <<= y & 31 | x & 31;
+x >>= (y + z) & ((x == y) ? 31 : 15);
+return x;
+}

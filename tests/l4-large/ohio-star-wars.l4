@@ -1,0 +1,82 @@
+//test return 511566
+// sum of first 10 squares squared
+
+int** vader1(int* x) {
+  int **y = alloc(int*);
+  *y = x;
+  *x += 4;
+  return y;
+}
+
+int*** vader2(int** x) {
+  int ***y = alloc(int**);
+  *y = x;
+  **x += 9;
+  return y;
+}
+
+int**** vader3(int*** x) {
+  int ****y = alloc(int***);
+  *y = x;
+  ***x += 16;
+  return y;
+}
+
+int***** vader4(int**** x) {
+  int *****y = alloc(int****);
+  *y = x;
+  ****x += 25;
+  return y;
+}
+
+int****** vader5(int***** x) {
+  int ******y = alloc(int*****);
+  *y = x;
+  *****x += 36;
+  return y;
+}
+
+int******* vader6(int****** x) {
+  int *******y = alloc(int******);
+  *y = x;
+  ******x += 49;
+  return y;
+}
+
+int******** vader7(int******* x) {
+  int ********y = alloc(int*******);
+  *y = x;
+  *******x += 64;
+  return y;
+}
+
+int********* vader8(int******** x) {
+  int *********y = alloc(int********);
+  *y = x;
+  ********x += 81;
+  return y;
+}
+
+int********** vader9(int********* x) {
+  int **********y = alloc(int*********);
+  *y = x;
+  *********x += 100;
+  return y;
+}
+
+int*********** vader10(int********** x) {
+  int ***********y = alloc(int**********);
+  *y = x;
+  **********x += 121;
+  return y;
+}
+
+int yoda(int* x) {
+  return ***********vader10(vader9(vader8(vader7(vader6(vader5(vader4(vader3(vader2(vader1(x))))))))))************vader10(vader9(vader8(vader7(vader6(vader5(vader4(vader3(vader2(vader1(x))))))))));
+} 
+
+int main() {
+  int *x = alloc(int);
+  *x = 1;
+  return yoda(x);
+}

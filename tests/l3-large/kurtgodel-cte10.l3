@@ -1,0 +1,22 @@
+//test error
+/*
+Compile error.
+Cannot have value of type void. (and ensure checking happens even after function returns).
+*/
+
+void solve() {
+  int x = 1;
+}
+
+int f(int x) {
+  return 1 / x;
+  void res = solve();
+}
+
+int main() {
+  int x = 100;
+  while (x >= 0) {
+    x = f(x);
+  }
+  return x;
+}

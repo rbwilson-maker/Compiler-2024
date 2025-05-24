@@ -1,0 +1,10 @@
+//test error
+// invalid assignment
+
+int main()
+{
+  int x;
+  x = 5;
+  5 = x;
+  return x;
+}

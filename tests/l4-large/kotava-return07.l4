@@ -1,0 +1,28 @@
+//test return 8
+
+struct card;
+struct card_ptr;
+struct card_ptr_ptr;
+
+typedef struct card card;
+typedef card* card_ptr;
+typedef card** card_ptr_ptr;
+
+struct card {
+  bool reveal;
+  int number;
+  card_ptr next;
+};
+
+int main() {
+  card_ptr a = alloc(card);
+  card_ptr b = alloc(card);
+  a->reveal = true;
+  a->number = 7;
+  a->next = b;
+  b->number = 8;
+
+  card_ptr_ptr stack = alloc(card_ptr);
+  *stack = a;
+  return (*(*stack)).reveal ? (*(*stack)).next->number : (*(*stack)).number;
+}

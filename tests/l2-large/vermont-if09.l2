@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+    int z = 10;
+    int i = z ? 0: 1;
+    return i;
+}

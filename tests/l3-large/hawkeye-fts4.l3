@@ -1,0 +1,22 @@
+//test return 10
+
+/**
+  * this tests mutual recursion
+  */
+
+int foo(int j);
+
+int bar(int i) {
+    if ( i == 1 )
+        return 10;
+
+    return foo(i-1);
+}
+
+int foo(int j) {
+    return bar(j);
+}
+
+int main () {
+    return foo(1000);
+}

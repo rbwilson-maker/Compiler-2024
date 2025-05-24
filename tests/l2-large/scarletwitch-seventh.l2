@@ -1,0 +1,11 @@
+//test error
+int main(){
+    bool x = true && true;
+    bool y = false && true;
+    if(x && y)
+        int z = 4;
+    else
+        int z = 6;
+    z = z + 44;
+    return z;
+}

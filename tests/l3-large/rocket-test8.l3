@@ -1,0 +1,29 @@
+//test return 98765
+
+int opposite(int input)
+{
+    int ones_digit;
+    int zeroed_out;
+    int divided;
+    int multiplicative_factor = 1;
+    int result = 0;
+
+    while (input != 0)
+    {
+        ones_digit = input % 10;
+        zeroed_out = input - ones_digit;
+        divided = zeroed_out / 10;
+        input = divided;
+        
+        result += (10 - ones_digit) * multiplicative_factor;
+        multiplicative_factor *= 10;
+    }
+    return result;
+}
+
+int main()
+{
+    /* interesting: return the "opposite" of a number
+    where 1 is opposite 9, 2 is opposite 8, 5 itself (i.e. i is opposite to 10 - i) */
+    return opposite(12345);
+}

@@ -1,0 +1,6 @@
+//test typecheck
+
+typedef int my_int;
+int test();
+
+typedef my_int my_double_int;

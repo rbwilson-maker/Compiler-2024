@@ -1,0 +1,12 @@
+//test return 0
+/* zero-length arrays and structs test */
+
+struct s {};
+int main() {
+    assert(alloc(int) != alloc(int));
+    assert(alloc_array(int, 0) != alloc_array(int, 0));
+    assert(alloc(struct s) != alloc(struct s));
+    assert(alloc_array(struct s, 0) != alloc_array(struct s, 0));
+    assert(alloc_array(struct s, 42) != alloc_array(struct s, 42));
+    return 0;
+}

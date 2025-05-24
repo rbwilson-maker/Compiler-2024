@@ -1,0 +1,49 @@
+//test return 0
+// make a bst and in-order traverse it
+
+typedef struct bst bst_t;
+
+struct bst {
+    int val;
+    bst_t* left;
+    bst_t* right;
+};
+
+bst_t* insert(bst_t* bst, int val) {
+    if (bst == NULL) {
+        bst_t* b = alloc(bst_t);
+        b->val = val;
+        return b;
+    }
+    if (bst->val == val) {
+        return bst;
+    } else if (bst->val > val) {
+        bst->left = insert(bst->left, val);
+    } else {
+        bst->right = insert(bst->right, val);
+    }
+    return bst;
+}
+
+int traverse(bst_t *bst, int[] arr, int start) {
+    if (bst == NULL) {
+        return start;
+    }
+    int y = traverse(bst->left, arr, start);
+    arr[y] = bst->val;
+    return traverse(bst->right, arr, y + 1);
+}
+
+int main() {
+    bst_t* bst = NULL;
+    for(int i = 10; i >= 0; i--) {
+        bst = insert(bst, i);
+    }
+    int[] arr = alloc_array(int, 11);
+    traverse(bst, arr, 0);
+    for(int i = 1; i <= 10; i++) {
+        assert(arr[i] > arr[i - 1]);
+    }
+    return 0;
+}
+

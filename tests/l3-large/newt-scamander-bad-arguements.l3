@@ -1,0 +1,16 @@
+//test error
+
+int foo(int arg1, bool arg2) {
+	if(arg2)
+		return arg1 << 21;
+	else 
+		return arg1 >> 11;
+}
+
+
+int main() {
+	int a = 40;
+	bool b = false;
+	int res = foo(a);
+	return res;
+}

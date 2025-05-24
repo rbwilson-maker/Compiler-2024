@@ -1,0 +1,57 @@
+//test return 285
+// Compute the sum from i = 0 to n of i^2 for n > 7
+
+int uselessHelper1() {
+  return 0;
+}
+
+int uselessHelper2(int a1) {
+  return a1 * a1 + 1;
+}
+
+int uselessHelper3(int a1, int a2) {
+  return a1 + a2 + 4;
+}
+
+int uselessHelper4(int a1, int a2) {
+  return (a2 << 1) / 2 + 9;
+}
+
+int uselessHelper5(int a1, int a2) {
+  return a2 + 16;
+}
+
+int uselessHelper6(int a1, int a2) {
+  return a2 + 25;
+}
+
+int uselessHelper7(int a1, int a2) {
+  return a2 + 36;
+}
+
+int uselessHelper8(int a1, int a2) {
+  return a2 + 49;
+}
+
+int sum(int n) {
+  int a1 = uselessHelper1();
+  int a2 = uselessHelper2(a1);
+  int a3 = uselessHelper3(a1, a2);
+  int a4 = uselessHelper4(a2, a3);
+  int a5 = uselessHelper5(a3, a4);
+  int a6 = uselessHelper6(a4, a5);
+  int a7 = uselessHelper7(a5, a6);
+  int a8 = uselessHelper8(a6, a7);
+
+  for (int i = 8; i <= n; i++) {
+    a8 += i*i;
+  }
+  int res = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8;
+  return res - a1 - a2 - a3 - a4 - a5 - a6 - a7;
+
+}
+
+int main() {
+  int n = 9;
+  return sum(n);
+}

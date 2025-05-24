@@ -1,0 +1,22 @@
+//test return 0
+
+//test zero-init and dereference
+int* some_func() {
+  int* b = alloc(int);
+  return b;
+}
+
+int*[] some_func2(int n) {
+  assert(n > 0);
+  int*[] B = alloc_array(int*, n);
+  for (int i = 0; i < n; i++) {
+    B[i] = some_func();
+  }
+  return B;
+}
+
+int main() {
+  int*[] q;
+  q = some_func2(20);
+  return *q[19];
+}

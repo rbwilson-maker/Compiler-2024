@@ -1,0 +1,25 @@
+//test error
+
+/*
+    isPrime-badScope
+
+    Should fail to compile because we try to access the loop variable out of
+    its scope.
+*/
+
+int main() {
+    int n = 15217;
+
+    if (n < 2) {
+        return 0;
+    }
+
+    for (int factor = 2; factor < n; factor++) {
+        if (n % factor == 0) {
+            return 0;
+        }
+    }
+
+    // Shouldn't be able to access the loop variable out of its scope
+    return factor;
+}

@@ -1,0 +1,18 @@
+//test return ~1908874354
+/*
+ * This is an (incorrect) implementation of the carryless add operation:
+ *   carryless add works like regular addition, but the result of addition
+ *   in a specific digit does not "carry" to the next digit.
+ *   for example, carrlyessAdd(42, 59) = 91, since 2 + 9 = 1 mod 10, and 4 + 5 = 9 mod 10
+ */
+
+int carrylessAdd(int x, int y, int ctr) {
+    if (ctr > 1000) return x + y; // This shouldn't happen...
+    return (x % 10 + y % 10) % 10 + carrylessAdd(x, y, ctr + 1) * 10;
+}
+
+int main() {
+    int x = 359;
+    int y = 223;
+    return carrylessAdd(x, y, 0);
+}

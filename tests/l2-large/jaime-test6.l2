@@ -1,0 +1,27 @@
+//test return 59049
+
+int main()
+{
+    int one = 3;
+    int e = 10;
+    if(e == 0)
+    {
+        return 1;
+    }
+    int y = 1;
+    while(e > 1)
+    {
+        if((e%2) == 0)
+        {
+            one *= one;
+            e = e / 2;
+        }
+        else   
+        {
+            y = y * one;
+            one = one * one;
+            e = (e - 1) / 2;
+        }
+    }
+    return one * y;
+}

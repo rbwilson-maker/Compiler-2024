@@ -1,0 +1,12 @@
+//test error
+
+int main()
+{
+    return 0;
+    bool boolean = true;
+    int x = 1 + true;   // implicit type coercion from bool to int
+    x = -x;
+    int y = 1;
+
+    return x ^ y;       // xor
+}

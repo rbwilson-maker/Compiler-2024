@@ -1,0 +1,10 @@
+//test return 23
+
+int main() {
+  bool x = false;
+  if (x) {
+    return 17;
+  } else {
+    return 23;
+  }
+}

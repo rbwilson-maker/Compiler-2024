@@ -1,0 +1,23 @@
+//test return 4
+
+int main() {
+  {
+    int x;
+    {
+      x = 2;
+      {
+        int y;
+        {
+          y = 3;
+          {
+            {
+              int z;
+            }
+          }
+          x = 4;
+        }
+        return x;
+      }
+    }
+  }
+}

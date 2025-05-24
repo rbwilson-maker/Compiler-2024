@@ -1,0 +1,11 @@
+//test error
+int main () {
+	bool cat = true;
+	bool dog = false;
+	if (dog && cat) {
+		int x = 0;
+	}
+	else {
+		return 4;
+	}
+}

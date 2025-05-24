@@ -1,0 +1,12 @@
+//test return 55
+// sum of first five squares
+int main()
+{
+  int a = 1;
+  int b = 2;
+  int c = 3;
+  int d = 4;
+  int e = 5;
+
+  return a * a + b * b + c * c + d * d + e * e;
+}

@@ -1,0 +1,27 @@
+//test error
+
+/*
+    isPrime-badScope2
+
+    Should fail to compile because we try to access a variable declared in the
+    loop body.
+
+    Same as isPrime-badScope, the variable is just declared in a different place.
+*/
+
+int main() {
+    int n = 15217;
+
+    if (n < 2) {
+        return 0;
+    }
+
+    for (int factor = 2; factor < n; factor++) {
+        int remainder = n % factor;
+        if (remainder == 0) {
+            return 0;
+        }
+    }
+
+    return remainder;
+}

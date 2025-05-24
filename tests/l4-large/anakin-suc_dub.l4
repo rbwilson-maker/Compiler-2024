@@ -1,0 +1,7 @@
+//test return 15
+int main() {
+    dub a = itod(5);
+    dub b = itod(10);
+    print_dub(dadd(a,b));
+    return dtoi(dadd(a,b));
+}

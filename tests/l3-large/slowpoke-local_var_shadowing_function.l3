@@ -1,0 +1,20 @@
+//test return 10
+
+int f(int x) {
+  return x + 1;
+}
+
+int g(int x) {
+  return x - 1;
+}
+
+int h(int f) {
+  int m = g(f);
+  int g = 5;
+  return f + g + m;
+}
+
+// local varaibles can shadow function declarations
+int main() {
+    return h(3);
+}

@@ -1,0 +1,29 @@
+//test return 189
+// test nested loops
+
+int main() {
+    int n = 5;
+    int x = 7;
+    int res = 0;
+    // really bad taylor series approx for e^x
+    for (int a = 0; a < n; a++) {
+        int f = 1;
+        // x^a
+        int t = 1;
+        int b = 0;
+        while (b < a) {
+            int cur = 0;
+            for (int c = 0; c < x; c++) {
+                cur += t;
+            }
+            t = cur;
+            b++;
+        }
+        // a!
+        for (int c = 0; c < a; c++) {
+            f *= c + 1;
+        }
+        res += t / f;
+    }
+    return res;
+}

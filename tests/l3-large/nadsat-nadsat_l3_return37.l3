@@ -1,0 +1,20 @@
+//test return 1;
+
+// Walks through the collatz sequence for a given number
+int collatz(int x) {
+  if(x % 2 == 0) {
+    return x / 2;
+  } else {
+    return 3 * x + 1;
+  }
+}
+
+int main() {
+  int num = 47;
+
+  while(num > 1) {
+    num = collatz(num);
+  }
+
+  return num;
+}

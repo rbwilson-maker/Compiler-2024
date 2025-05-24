@@ -1,0 +1,133 @@
+//test return 0
+// Constant propgate your way out of this one!
+int one() {
+    return 1;
+}
+
+int psh(int ugh) {
+    if (ugh == 0) {
+        return 0;
+    }
+
+    // Trash; 
+    int a = one();
+    int b = one();
+    int c = one();
+    int d = one();
+    int e = one();
+    int f = one();
+    int g = one();
+    int h = one();
+    int i = one();
+    int j = one();
+    int k = one();
+    int l = one();
+    int m = one();
+    int n = one();
+    int o = one();
+    int p = one();
+    // Make sure no constant propogation fixes this.
+    for (; a < 11; a++) {}
+    for (; b < 12; b++) {}
+    for (; c < 13; c++) {}
+    for (; d < 14; d++) {}
+    for (; e < 15; e++) {}
+    for (; f < 16; f++) {}
+    for (; g < 17; g++) {}
+    for (; h < 18; h++) {}
+    for (; i < 19; i++) {}
+    for (; j < 20; j++) {}
+    for (; k < 21; k++) {}
+    for (; l < 22; l++) {}
+    for (; m < 23; m++) {}
+    for (; n < 24; n++) {}
+    for (; o < 25; o++) {}
+    for (; p < 26; p++) {}
+
+    int foo = a + b + c + d + e + f +
+              g + h + i + j + k + l +
+              m + n + o + p;
+
+    int foo2 = a + b + c + d + e + f +
+               g + h + i + j + k + l +
+               m + n + o + p + foo;
+
+    // Can't remove this.
+    int foo3 = (foo + foo) / (foo2 + foo2);
+
+    bool _true = a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c;
+
+    return _true ? 1 + psh(ugh - 1) : foo3;
+}
+
+int main() {
+    // Trash the stack
+    psh(500);
+
+    // Use the stack
+    // Trash; 
+    int a = one();
+    int b = one();
+    int c = one();
+    int d = one();
+    int e = one();
+    int f = one();
+    int g = one();
+    int h = one();
+    int i = one();
+    int j = one();
+    int k = one();
+    int l = one();
+    int m = one();
+    int n = one();
+    int o = one();
+    int p = one();
+    // Make sure no constant propogation fixes this.
+    for (; a < 11; a++) {}
+    for (; b < 12; b++) {}
+    for (; c < 13; c++) {}
+    for (; d < 14; d++) {}
+    for (; e < 15; e++) {}
+    for (; f < 16; f++) {}
+    for (; g < 17; g++) {}
+    for (; h < 18; h++) {}
+    for (; i < 19; i++) {}
+    for (; j < 20; j++) {}
+    for (; k < 21; k++) {}
+    for (; l < 22; l++) {}
+    for (; m < 23; m++) {}
+    for (; n < 24; n++) {}
+    for (; o < 25; o++) {}
+    for (; p < 26; p++) {}
+
+    int foo = a + b + c + d + e + f +
+              g + h + i + j + k + l +
+              m + n + o + p;
+
+    int foo2 = a + b + c + d + e + f +
+               g + h + i + j + k + l +
+               m + n + o + p + foo;
+
+    // Can't remove this.
+    int foo3 = (foo + foo) / (foo2 + foo2);
+
+    bool _true = a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c &&
+                a == a && b == b && c == c;
+
+    return _true ? foo3 : foo2;
+}

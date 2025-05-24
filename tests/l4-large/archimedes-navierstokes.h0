@@ -1,0 +1,10 @@
+
+// Some computations that should happen for Navier-Stokes
+int[] compute_gradient(int[] pressure);
+
+int[] compute_divergence(int[] stress);
+
+int[] compute_force(int[] body_force);
+
+// Check result
+bool vec_check(int[] a, int[] b, int[] c, int[] res);

@@ -1,0 +1,12 @@
+//test error
+// disambiguate multiplication and dereferencing
+
+typedef bool* c;
+
+int main() {
+	int a = 5; int b = 6;
+	a * b;			//allowed: multiplies a and b without using the result
+	c * d;			//allowed: declares a variable d of type c* (bool**)
+	return a * b;	//allowed: multiplies a and b
+	return c * d;	//NOT allowed: c * d is a statement, not an expression
+}

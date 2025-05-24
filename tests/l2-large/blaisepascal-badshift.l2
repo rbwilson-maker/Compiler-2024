@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+  int x = 2147483648;
+  int shift = 1;
+  x <<= shift;
+  x << 32;
+  return 0;
+}

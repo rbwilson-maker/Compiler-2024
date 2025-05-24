@@ -1,0 +1,7 @@
+//test abort
+
+int main () {
+  int *x = NULL;
+  assert(x!=NULL);
+  return 0;
+}

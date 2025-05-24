@@ -1,0 +1,9 @@
+//test return 61
+int acker(int x, int y)
+{
+	return (x!=0?(acker(x-1,y!=0?acker(x,y-1):1)):y+1);
+}
+
+int main(){
+	return acker(3,3);
+}

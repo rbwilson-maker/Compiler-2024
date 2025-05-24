@@ -1,0 +1,22 @@
+//test error
+// Even though inner loop does always return, no return statement along every control flow
+
+int main() {
+  int x = 0;
+  int y = 1;
+
+  for (int i = 0; i < 122; i++) {
+    int j = 150;
+
+    while (j < 15411) {
+      x = i + j;
+      j *= 5;
+      j = j >> 2;
+
+
+      if (i == 121) {
+        return x;
+      }
+    }
+  }
+}

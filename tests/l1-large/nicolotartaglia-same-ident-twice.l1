@@ -1,0 +1,6 @@
+//test return 1
+
+int main() {
+    int a = 0xFFFFFFFF;
+    return a*a;
+}

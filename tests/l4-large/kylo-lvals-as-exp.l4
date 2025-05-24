@@ -1,0 +1,12 @@
+//test error
+
+int f(int x){
+  int* pointer = alloc(int);
+  *pointer = x;
+  return pointer;
+}
+
+int main(){
+  *(f(5)) = 7;
+  return 1;
+}

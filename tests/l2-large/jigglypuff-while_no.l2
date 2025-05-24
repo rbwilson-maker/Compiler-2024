@@ -1,0 +1,35 @@
+//test typecheck
+//test infloop
+
+/* while infinite loop test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ *
+ * Don't end, ever.
+ */
+
+int main()
+{
+    bool what = true; 
+    bool ever = false;    
+    
+    int x = 5; 
+    int y = 6; 
+
+    while (what || ever) {
+        what = !what; 
+        ever = !ever;
+        
+        if (x < y) {
+            x++;
+            y--; 
+        } else if (x > y) { 
+            x--;
+            y++;
+        } else {
+            return 0; 
+        }
+    }
+    return 1; 
+}

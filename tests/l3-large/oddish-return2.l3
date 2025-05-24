@@ -1,0 +1,21 @@
+//test return 987654321
+
+int to_the_tenth(int i) {
+  int x = 1;
+
+  for (int a = 0; a < i-1; a++) {
+    x = x * 10;
+  }
+
+  return i * x;
+}
+
+int main() {
+  int result = 0;
+
+  for (int i = 1; i < 10; i++) {
+    result += to_the_tenth(i);
+  }
+
+  return result;
+}

@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+  int cond = 5 * 7;
+  while (cond) cond;
+  return 0;
+}

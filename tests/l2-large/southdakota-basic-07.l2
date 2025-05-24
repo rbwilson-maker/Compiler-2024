@@ -1,0 +1,9 @@
+//test return 21
+
+int main() {
+  int x = 10;
+  x++;
+  int y = x;
+  x--;
+  return x + y;
+}

@@ -1,0 +1,10 @@
+//test return 1319635455
+//Goose turd green
+
+int from_rgba(int r, int g, int b, int a){
+	return (r << 24) | (g << 16) | (b << 8) | a;
+}
+
+int main(){
+	return from_rgba(78,168,9,0xff);
+}

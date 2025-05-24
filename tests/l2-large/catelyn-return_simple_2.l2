@@ -1,0 +1,22 @@
+//test return -1
+
+int main()
+{
+	int a = 1; // 1
+	int b = a + 1; // 2
+	int c = b + a; // 3
+	int d = b + a + c; // 6
+	int e = b + a + c + d; // 12
+	int f = a + b + c + d + e; // 24
+	int g = a + b + c + d + e + f; // 48
+	int h = g + 12; // 60
+
+	int acc = 0;
+	for (int i = 0; i < 100 && acc <= g; i++)
+	{
+		acc += i;
+	}
+	// acc = 55
+
+	return acc != h ? (a << 31) >> 31 : (b << h) >> h;
+}

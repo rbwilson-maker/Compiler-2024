@@ -1,0 +1,14 @@
+//test return -195
+
+int main () {
+	int i = 0;
+	int j = 20;
+	int k = 10;
+	for(i;i<j;i=i%2==0?i+1:i+2){
+		if((j+i)%2==0)
+			if ((1^0)!=0) {
+				k = k & i + 10 ^ 0 - 10 * j - 1;
+			}
+	}
+	return k;
+}

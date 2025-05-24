@@ -1,0 +1,9 @@
+//test div-by-zero
+int main() {
+    int farnam_money = 10000;
+    int my_money_pre_tuition = 5000;
+    int tuition = 50000; 
+    int my_financial_aid = 45000;
+    int my_money_now = my_money_pre_tuition - tuition + my_financial_aid;
+    return farnam_money / my_money_now;
+}

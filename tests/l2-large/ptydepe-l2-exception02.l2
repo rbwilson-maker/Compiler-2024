@@ -1,0 +1,11 @@
+//test div-by-zero
+// Right shift error
+int main()
+{
+    if(true) {
+        1 >> 64;
+    } else {
+        1 << 64;
+    }
+    return 0;
+}

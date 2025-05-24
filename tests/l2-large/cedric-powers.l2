@@ -1,0 +1,8 @@
+//test return 1073741824
+int main() {
+    int x = 2;
+    for(int i = 2; i <= 30; i++) {
+        x = x * 2;
+    }
+    return x;
+}

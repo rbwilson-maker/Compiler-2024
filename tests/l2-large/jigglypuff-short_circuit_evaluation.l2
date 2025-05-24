@@ -1,0 +1,58 @@
+//test return 1073
+
+/* Short Circuit Evaluation
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, September 28, 2015 at 10:07:41 PM EDT
+ *
+ * This test exercises the short circuit evaluation specifications for the C0
+ * language. Namely, it makes sure that only the first portion of
+ * short-circuit expressions is evaluated in the appropiate situation. It does
+ * this for conditions and the ternary operator.
+ */
+
+int main()
+{
+    int x = 4;
+    int y = 7;
+    int z = 7;
+
+    // Test shortcircuit evaluation with if statements
+    if (x == 4 || y / 0 == 7) {
+        z += 4;
+    }
+    if (x != 4 && y / 0 == 42) {
+        z *= 70;
+    }
+
+    // Test shortcircuit evaluation with while loops
+    int i = 10;
+    while ((i != 0) || (i == 1 && z / 0 == 42))
+    {
+        y += x * z;
+        i -= 1;
+    }
+    i = 10;
+    while (!(i < 1) && (i > -1 || x / 0 == 77))
+    {
+        y += x * z;
+        i -= 1;
+    }
+
+    // Test shortcircuit evaluation with for loops
+    for (i = 0; (i < 10) || (i == 1 && z / 0 == 42); i++)
+    {
+        z += x * x;
+    }
+    for (i = 0; !(i < 1) && (i > -1 || x / 0 == 77); i++)
+    {
+        z += y * z * x;
+    }
+
+    // Test shortcircuit evaluation with ternary operators
+    x = (x > 0 || x / 0 == 7) ? x + 4 : x + 3;
+    x = (x < 0 && z % 0 == 4) ? x + 1 : x + 7;
+
+    return x + y + z;
+}

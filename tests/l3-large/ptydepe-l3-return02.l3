@@ -1,0 +1,15 @@
+//test return 338350
+// helper() will recursively multiply all the values i^2 where i is in [1, n] 
+
+int helper(int n) 
+//@requires n >= 0;
+{
+  if(n == 0)
+    return 0;
+  return (n * n) + helper(n-1);
+}
+
+int main () {
+  int n = 100;
+  return helper(n);
+}

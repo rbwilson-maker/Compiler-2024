@@ -1,0 +1,14 @@
+//test error
+// function name same as typedef types
+
+int collision();
+
+int collision() {
+  int y = 3;
+  int z = 1;
+  return y/z;
+}
+
+int main() {
+  return collision();
+}

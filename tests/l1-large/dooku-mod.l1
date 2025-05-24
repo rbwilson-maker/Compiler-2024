@@ -1,0 +1,7 @@
+//test return 0 
+int main() { 
+	int tina = 12;	
+	((tina) ) %= 10;
+	int eddie = tina % 2;
+	return eddie;
+}

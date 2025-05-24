@@ -1,0 +1,11 @@
+//test return 0
+// variable names can shadow function names
+
+typedef int zerg;
+
+void ling(zerg ling) {}
+
+int main() {
+  zerg ling = 0;
+  return ling;
+}

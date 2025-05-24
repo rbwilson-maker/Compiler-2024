@@ -1,0 +1,5 @@
+//test return 15251
+int main(){
+    int x = -15211;
+    return ~x + 41;
+}

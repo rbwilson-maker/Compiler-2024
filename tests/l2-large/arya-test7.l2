@@ -1,0 +1,16 @@
+//test return 12
+int main(){
+  int i = 84;
+  int j = 156;
+  while (j>i){
+    int k = j-i;
+    if (k>i){
+      j = k;
+    }
+    else{
+      j = i;
+      i = k;
+    }
+  }
+  return i;
+}

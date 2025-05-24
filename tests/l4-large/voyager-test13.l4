@@ -1,0 +1,12 @@
+//test error
+
+struct s { int[] idxs; int bottom };
+
+int main()
+{
+    s test;
+    test.idxs = alloc_array(int, 4);
+    test->bottom = alloc(int);
+    test->bottom = 4;
+    return s.idxs[test.bottom];
+}

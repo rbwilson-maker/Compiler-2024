@@ -1,0 +1,30 @@
+//test error
+
+struct A;
+struct B;
+struct C;
+struct D;
+
+struct C {
+  int x;
+};
+
+struct B {
+  struct C c;
+  bool b;
+};
+
+struct A {
+  int a;
+  struct B b;
+  struct C c;
+};
+
+struct D {
+  struct A a;
+  struct D d;
+};
+
+int main() {
+  alloc(struct D);
+}

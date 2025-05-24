@@ -1,0 +1,14 @@
+//test return 1
+//Asnop Elaboration
+
+int foo(int *x, int y){
+	(*x)++;
+	return y;
+}
+
+int main(){
+	int[] A = alloc_array(int,10);
+	int *x = alloc(int);
+	A[foo(x,0)] = 1;
+	return (*x) * A[foo(x,0)];
+}

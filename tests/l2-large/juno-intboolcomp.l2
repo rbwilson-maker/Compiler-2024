@@ -1,0 +1,12 @@
+//test error
+
+// You cannot do comp operations between ints and bools
+
+int main () {
+    int a;
+    a = 0;
+    if (2 == true) {
+        a = 1;
+    }
+    return a;
+}

@@ -1,0 +1,7 @@
+//test error
+// using an if statement in an expression.
+
+int main () {
+  int x = 0;
+  return (if (x == 0) { 210; } else { 213; });
+}

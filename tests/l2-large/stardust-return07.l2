@@ -1,0 +1,17 @@
+//test return 1
+//test unop
+
+int main() {
+  int x = 21392;
+  bool y;
+  if (x != 0){
+    y = true;
+  } else {
+    y = false;
+  }
+  if (!!y == true){
+    return 1;
+  } else {
+    return 0;
+  }
+}

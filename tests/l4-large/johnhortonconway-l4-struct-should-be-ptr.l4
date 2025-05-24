@@ -1,0 +1,17 @@
+//test error
+
+struct ss {
+    int a;
+    int **b;
+    struct bb *cc;
+};
+
+struct bb {
+    struct ss *t;
+    struct ss tt;
+};
+
+int main() {
+    struct bb tmp = alloc(struct bb);
+    return 0;
+}

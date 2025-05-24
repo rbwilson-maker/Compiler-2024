@@ -1,0 +1,14 @@
+//test return 3 
+
+int function(int x);
+int function(int y);
+int function(int z);
+
+int function(int a) {
+  return a;
+}
+
+int main() {
+  int x = function(3);
+  return x;
+}

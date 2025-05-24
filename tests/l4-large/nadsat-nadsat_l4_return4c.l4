@@ -1,0 +1,25 @@
+//test return 47
+
+//implicitly declared struct
+typedef struct some s0;
+typedef struct some* s1;
+typedef struct some** s2;
+typedef struct some*** s3;
+typedef struct some**** s4;
+typedef struct some***** s5;
+typedef struct some****** s6;
+
+s6 fact(s6 orig) {
+  return orig;
+}
+
+int main() {
+  s1 some1;
+  s2 some2;
+  s3 some3;
+  s4 some4;
+  s5 some5;
+  s6 some6 = alloc(s5);
+  some6 = fact(some6);
+  return 47;
+}

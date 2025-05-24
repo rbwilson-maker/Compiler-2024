@@ -1,0 +1,10 @@
+//test typecheck
+// Typedefs can be idents
+
+typedef int raccoon;
+typedef raccoon ricky;
+
+raccoon main() {
+  ricky x = 5;
+  return x;
+}

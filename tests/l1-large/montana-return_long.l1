@@ -1,0 +1,41 @@
+//test return 22
+// long expression
+int main()
+{
+  int x = 0x12;
+  int y = 8;
+  int z = 1;
+  int a = -x * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x
+             * y + z + 12 / z % x * y + z + 12 / z % x * y + z + 12 / z % x;
+  y -= 13245;
+  a /= y;
+  y *= a;
+  a = 4;
+  z = a + y + x;
+  return z;
+}

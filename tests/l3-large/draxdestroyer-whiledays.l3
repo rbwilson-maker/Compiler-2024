@@ -1,0 +1,10 @@
+//test div-by-zero
+int main() {
+    int i = 2147483648;
+    int j = 0;
+    while(true && true && true || false)  {
+        i += 20;
+        j/=i;
+    }
+    return j;
+}

@@ -1,0 +1,14 @@
+//test return 15411
+int main() {
+    int x = 2147483647;
+    if(x < 15411) {
+        while(x < 15411) {
+            x++;
+        }
+    } else {
+        while(x > 15411) {
+            x--;
+        }
+    }
+    return x;
+}

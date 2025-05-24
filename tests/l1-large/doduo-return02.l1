@@ -1,0 +1,12 @@
+//test return 72
+// test asnops "=" "+=", "-=", "/=", "*="
+int main() {
+  int a = 2;
+  int b = a;
+  int c = b + a; // 4
+  a += 13;       // 15
+  b -= 8;        // -6
+  c *= (3 / 2);  // 4
+  a /= -5;       // -3
+  return a * b * c; // 72
+}

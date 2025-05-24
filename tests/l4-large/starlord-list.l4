@@ -1,0 +1,42 @@
+//test abort
+
+typedef struct cons list;
+struct cons {
+  int data;
+  list *next;
+};
+
+list *empty() {
+  return NULL;
+}
+
+bool is_empty(list *xs) {
+  return xs == NULL;
+}
+
+list *cons(int x, list *xs) {
+  list *n = alloc(list);
+  if(n == NULL) return NULL;
+  n->data = x;
+  n->next = xs;
+  return n;
+}
+
+int tlength(list *xs, int acc) {
+  if(is_empty(xs)) return acc;
+  return tlength (xs->next, acc + 1);
+}
+
+int length(list *xs) {
+  return tlength(xs, 0);
+}
+
+int main() {
+  list *xs = empty();
+
+  for(int i = 0; i < 10; i++) {
+    xs = cons(i * 2, xs);
+  }
+  assert(length(xs) != 10);
+  return 0;
+}

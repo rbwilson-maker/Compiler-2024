@@ -1,0 +1,44 @@
+//test return 7
+
+void swap(int[] A, int i, int j) {
+    int tmp = A[i];
+    A[i] = A[j];
+    A[j] = tmp;
+}
+
+int partition(int[] A, int lo, int pi, int hi) {  
+  // Hold the pivot element off to the left at "lo"  
+  int pivot = A[pi];  
+  swap(A, lo, pi);  
+  
+  int left = lo+1;  
+  int right = hi;  
+  
+  while (left < right) {  
+      if (A[left] <= pivot) {  
+        left++;  
+      } else {   
+        swap(A, left, right-1);  
+        right--;  
+      }  
+    }     
+  swap(A, lo, left-1);  
+  return left-1;  
+}  
+
+void sort(int[] A, int lo, int hi) {  
+  if (hi-lo <= 1) return;  
+  int pi = lo + (hi-lo)/2; /* should be random */  
+  
+  int mid = partition(A, lo, pi, hi);  
+  sort(A, lo, mid);  
+  sort(A, mid+1, hi);  
+  return;  
+}  
+
+int main() {
+    int[] A = alloc_array(int, 10);
+    for (int i = 0; i < 10; i++) A[i] = 9-i;
+    sort(A, 0, 10);
+    return A[7];
+}

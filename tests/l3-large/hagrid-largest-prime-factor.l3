@@ -1,0 +1,30 @@
+//test return 17
+//yes i know it's a bad algorithm, square roots are hard okay
+//102 = 2 * 3 * 17
+
+bool is_prime(int n) {
+  if ((n < 2) || ((n != 2) && (n % 2 == 0))) {
+    return false;
+  }
+  for(int i = 3; i < n; i+=2) {
+    if (n % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+int largest_prime_factor(int n) {
+  assert(n >= 2);
+  for(int i = n; true; i--) {
+    if ((n % i == 0) && is_prime(i)) {
+      return i;
+    }
+  }
+  assert(false);
+  return -1;
+}
+
+int main(){
+  return largest_prime_factor(102);
+}

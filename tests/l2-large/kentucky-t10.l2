@@ -1,0 +1,23 @@
+//test return 6
+
+// basic boolean equality tests as well as simple branches
+
+int main () {
+    int x = 45;
+    int y = 79;
+
+    if(x > y) return 1;
+    if(x >= y) return 2;
+    if(x != x) return 3;
+    if(y == x) return 4;
+    if(y == 80) return 5;
+    if(x < y) return 6;
+    return 9000;
+
+
+
+
+
+
+
+}

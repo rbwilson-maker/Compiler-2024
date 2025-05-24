@@ -1,0 +1,12 @@
+//test div-by-zero
+
+bool foo(int n) {
+  1 / n;
+  return true;
+}
+
+int main() {
+  int x = 628;
+  314 < x ? foo(0) : foo(x);
+  return 0;
+}

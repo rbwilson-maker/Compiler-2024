@@ -1,0 +1,59 @@
+//test return 2
+
+void swap(int[] a, int i, int j) {
+	int temp = a[i];
+	a[i] = a[j];
+	a[j] = temp;
+}
+
+int separate_neg_pos(int[] a, int length) {
+	int i;
+	int j = 0;
+	for (i = 0; i < length; i++) {
+		if (a[i] <= 0) {
+			swap(a, i, j);
+			j++;
+		}
+	}
+
+	return j;
+}
+
+int nextPos(int[] a, int length) {
+	int i;
+	int index;
+	for (i = 0; i < length; i++) {
+		if (a[i] < 0) {
+			index = -a[i]-1;
+		} else {
+			index = a[i]-1;
+		}
+		if (index < length && a[index] > 0)
+			a[index] = -a[index];
+	}
+
+	for (i = 0; i < length; i++) {
+		if (a[i] > 0) return i+1;
+	}
+
+	return length+1;
+}
+
+int findNextPos(int[] a, int length) {
+	int i = separate_neg_pos(a, length);
+	int[] b = alloc_array(int, length-i);
+	for (int j = 0; j < length-i; j++) {
+		b[j] = a[j+i];
+	}
+	return nextPos(b, length-i);
+}
+
+int main() {
+	int[] a = alloc_array(int, 5);
+	a[0] = 0;
+	a[1] = 7;
+	a[2] = 1;
+	a[3] = -5;
+	a[4] = -1;
+	return findNextPos(a, 5);
+}

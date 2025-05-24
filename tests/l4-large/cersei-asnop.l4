@@ -1,0 +1,13 @@
+//test return 1
+
+int f(int *p) {
+  *p += 1;
+  return *p;
+}
+
+int main() {
+  int *p = alloc(int);
+  int[] arr = alloc_array(int, 2);
+  arr[f(p)] += 1;  // will result in memerror if elaborated naively
+  return arr[f(p)-1];
+}

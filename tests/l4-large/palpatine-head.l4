@@ -1,0 +1,8 @@
+//test error
+
+// arrays are not pointers
+int main() {
+  int[] A = alloc_array(int, 5000);
+  foo(A, A, A, A);
+  return 0;
+}

@@ -1,0 +1,6 @@
+//test typecheck
+/* Better division function with assert */
+
+int main() {
+	return good_divide(0,good_divide(1,1));
+}

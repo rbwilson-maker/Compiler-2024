@@ -1,0 +1,19 @@
+//test abort
+
+struct node {
+  int payload;
+  struct node* next;
+};
+
+int payloadAt(struct node* node, int n) {
+  assert (node != NULL);
+  if(n == 0) return node->payload;
+  return payloadAt(node->next, n - 1);
+}
+
+int main() {
+  struct node* singleton = alloc (struct node);
+
+  return payloadAt(singleton, 1);
+}
+

@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main () {
+    int x = 0;
+    int y = 0;
+
+    for (x = 0; x < 1; x++) {
+        x = x >> 64;
+    }
+
+    return x;
+}

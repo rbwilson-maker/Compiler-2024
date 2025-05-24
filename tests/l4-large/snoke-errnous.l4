@@ -1,0 +1,13 @@
+//test error
+
+typedef struct node node;
+
+void f();
+
+void f() {
+}
+
+int main() {
+    struct node n;
+    return 0;
+}

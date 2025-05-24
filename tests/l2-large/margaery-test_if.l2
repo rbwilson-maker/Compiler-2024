@@ -1,0 +1,16 @@
+//test return 50108
+
+int main() {
+    int result = 0;
+    int num = 0x80;
+
+    while (result < 50000) {
+        result += num;
+        num = num >> 1;
+        if (num == 0) {
+            num = 0x80;
+        }
+    }
+
+    return result;
+}

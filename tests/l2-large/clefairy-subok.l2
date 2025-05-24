@@ -1,0 +1,11 @@
+//test return 0
+
+int main() {
+    int x = 0x80000000;
+    int y = 0x70000000;
+    int z = ~y;
+    int signsame = x ^ z;
+    int signdiff = (y ^ (x + z + 1));
+    bool result = (((signsame | signdiff) >> 31) & 1) == 1;
+    return result ? 1 : 0;
+}

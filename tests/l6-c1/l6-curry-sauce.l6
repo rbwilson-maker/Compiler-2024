@@ -1,0 +1,19 @@
+//test return 10
+
+typedef int a(int i);
+typedef a* b(int i);
+typedef b* fun(int i);
+
+fun* fact(int i){
+    return fn (int j){
+        return fn (int k){
+            return fn (int l){
+                return i+j+k+l;
+            };
+        };
+    };
+}
+
+int main(){
+    return (*((*(*fact(1))(2))(3)))(4);
+}   

@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int foo(int n) {
+  return 1 << n;
+}
+
+int main() {
+  return foo(32);
+}

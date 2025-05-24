@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+
+void doSomething(int param) {
+    param += main();
+}
+
+int main() {
+    int x = 5;
+    doSomething(x);
+    return x;
+}

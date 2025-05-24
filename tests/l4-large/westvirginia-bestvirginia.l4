@@ -1,0 +1,9 @@
+//test error
+// Check that you read the lecture notes
+
+int main() {
+    bool b = true;
+    *(b ? (!b ? NULL : NULL) : (b ? NULL : NULL));
+
+    return 0;
+}

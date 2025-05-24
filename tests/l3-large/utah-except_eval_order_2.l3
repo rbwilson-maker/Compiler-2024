@@ -1,0 +1,17 @@
+//test div-by-zero
+// Tests that function arguments are evaluated in order.
+
+int forever() {
+    while(true) {
+        
+    }
+	return 0;
+}
+
+int dont_call_me (int x, int y) {
+    return 3;
+}
+
+int main () {
+    return dont_call_me(1/0, forever());
+}

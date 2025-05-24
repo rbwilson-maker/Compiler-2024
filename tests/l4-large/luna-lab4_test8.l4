@@ -1,0 +1,30 @@
+//test memerror
+
+// test if compiler handles aliases and define-after-declare
+// correctly. 
+
+typedef struct s s;
+
+struct s* just_s(s* p) {
+       return p;
+}
+
+typedef struct p p;
+
+struct s {
+       int sfield;
+       p* p;
+       s* s;
+};
+
+struct p {
+       int pfield;
+       s s;
+};
+
+int main() {
+     struct p* pvar = alloc(p);
+     pvar->s.p = pvar;
+     pvar->s.p->s.p->pfield = 10;
+     return pvar->s.p->s.p->s.p->s.p->s.p->s.s->sfield;
+}

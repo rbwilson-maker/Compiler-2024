@@ -1,0 +1,82 @@
+//test return 46
+
+struct node {
+  int data;
+  struct node *next;
+};
+
+struct stack_header {
+  struct node *front;
+};
+
+typedef struct stack_header *stack;
+
+struct queue_header {
+  stack instack;
+  stack outstack;
+};
+
+typedef struct queue_header *queue;
+
+void push(stack S, int x) {
+  struct node *front = S->front;
+  S->front = alloc(struct node);
+  S->front->data = x;
+  S->front->next = front;
+}
+
+int pop (stack S) {
+  if (S->front == NULL) assert(false);
+  int data = S->front->data;
+  S->front = S->front->next;
+  return data;
+}
+
+stack stack_new() {
+  return alloc(struct stack_header);
+}
+
+queue queue_new() {
+  queue Q = alloc(struct queue_header);
+  Q->instack = stack_new();
+  Q->outstack = stack_new();
+  return Q;
+}
+
+void enq(queue Q, int x) {
+  push(Q->instack, x);
+}
+
+int deq(queue Q) {
+  if (Q->outstack->front == NULL) {
+    while(Q->instack->front != NULL) {
+      push(Q->outstack,pop(Q->instack));
+    }
+   if (Q->outstack->front == NULL) assert(false);
+  }
+  return pop(Q->outstack);
+}
+
+bool queue_empty(queue Q) {
+  return Q->instack->front == NULL &&
+         Q->outstack->front == NULL;
+}
+int main() {
+
+  queue[] A = alloc_array(queue, 10);
+  for (int i = 0; i < 10; i++) {
+    A[i] = queue_new();  
+    enq(A[i],i);
+    if (i > 0) {
+      enq(A[i-1],i);
+    }
+  }
+  for (int j = 9; j >= 0; j--) {
+    enq(A[0],deq(A[j]));
+  }
+  int sum = 0;
+  while(!queue_empty(A[0])) {
+    sum += deq(A[0]);
+  }
+  return sum;
+}

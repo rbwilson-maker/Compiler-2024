@@ -1,0 +1,18 @@
+//test typecheck
+//test infloop
+
+bool halts(){
+  return true;
+}
+
+int check(){
+  if (halts()) {
+    while (true) int a = 10;
+  }
+  return 0;
+}
+
+int main(){
+  check();
+  return -1;
+}

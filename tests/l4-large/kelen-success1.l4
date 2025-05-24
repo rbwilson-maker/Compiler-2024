@@ -1,0 +1,13 @@
+//test return 100
+
+struct node {
+    int value;
+};
+
+// Tests using 2-level pointer
+int main() {
+    struct node** double = alloc(struct node*);
+    (*double) = alloc(struct node);
+    (*double)->value = 100;
+    return (**double).value;
+}

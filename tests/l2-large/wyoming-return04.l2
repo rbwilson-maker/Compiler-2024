@@ -1,0 +1,20 @@
+//test typecheck
+//test infloop
+int main(){
+    int a = 123123123;
+    int b = 321321321;
+    while(a > 0 && b > 0){
+        if(a == b){
+            return a;
+        }else if(a > b){
+            int temp = a;
+            a = b;
+            b = temp % b;
+        }else if(b < a){
+            int temp = b;
+            b = a;
+            a = temp % a;
+        }
+    }
+    return a+b;
+}

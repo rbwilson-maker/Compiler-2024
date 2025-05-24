@@ -1,0 +1,11 @@
+//test return 23
+
+void do_thing(int[] thing) {
+  thing[2] = 23;
+}
+
+int main() {
+  int[] thing = alloc_array(int, 5);
+  do_thing(thing);
+  return thing[2];
+}

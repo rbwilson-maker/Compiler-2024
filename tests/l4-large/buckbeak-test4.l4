@@ -1,0 +1,11 @@
+//test memerror
+
+int main () {
+	fpt a;
+	fpt b;
+
+	a = itof(2);
+	b = itof(5);
+	int[] c = alloc_array(int, a + b);
+	return ftoi(a);
+}

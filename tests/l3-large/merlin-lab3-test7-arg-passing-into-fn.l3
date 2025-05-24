@@ -1,0 +1,23 @@
+//test return 1;
+// tests argument passing based on statements and function calls
+
+int fn2(int k) {
+    return k + 1;
+}
+
+bool fn3(bool case) {
+    return !case;
+}
+
+int fn(int integer1, int integer2, int integer3,
+        bool boolean1, bool boolean2, bool boolean3) {
+    if (integer1 != 2 || integer2 != 331 || integer3 != 36 ||
+        !boolean1 || boolean1 != true ||
+        boolean2 || !boolean3) return 0;
+    return 1;
+}
+
+int main() {
+    return fn(2, 293 + 38, fn2(35), true, !(!(2197 == 2198)), fn3(false));
+
+}

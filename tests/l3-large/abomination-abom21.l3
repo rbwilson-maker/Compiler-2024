@@ -1,0 +1,32 @@
+//test return 1
+
+// Compute collatz stopping-times
+int collatz(int x) {
+    if(x == 1) {
+        return 0;
+    } else if(x % 2 == 0) {
+        return collatz(x / 2) + 2;
+    } else {
+        return collatz(3 * x + 1) + 2;
+    }
+}
+
+int pow(int b, int e) {
+    if(e < 0) {
+        return 5 / 0;
+    } else if(e == 0) {
+        return 1;
+    } else {
+        return pow(b, e - 1) * b * b;
+    }
+}
+
+// it is sleepy time :(
+int main() {
+    for(int h = 0; h < 3; h++){
+        assert(collatz(pow(2, h)) == 4 * h);
+    }
+    int i = 6;
+    i++;
+    return (collatz(i + 1) / pow(3, 3)) % 3 + 1;
+}

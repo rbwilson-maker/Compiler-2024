@@ -1,0 +1,35 @@
+//test return 110
+
+int main () 
+{
+  int x1;
+  int x2;
+  int x3;
+  int i;
+  int j;
+  int k;
+
+  x1 = 1;
+  x2 = 0;
+  x3 = 0;
+
+  if (x1 == 1) {
+      for (i = 0; i < 10; i++) {
+          x3 += 1;
+      }
+  }
+  else {
+      return 0;
+  }
+
+  x3 += 200;    /* x3 = 210 */
+
+  for (j = 0; j < 10; j++) {
+      for (k = 0; k < 10; k++) {
+          x2 += 1;
+      }
+  }
+
+  return (x3-x2);
+
+}

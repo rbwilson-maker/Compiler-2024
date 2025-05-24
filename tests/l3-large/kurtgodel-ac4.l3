@@ -1,0 +1,21 @@
+//test return 19
+/*
+AC (return 19).
+Co-recursive functions test
+*/
+
+int s(int r); // Also test that renaming parameters is allowed
+
+int r(int counter) {
+  if (counter == 0) return 0;
+  return 1 + s(counter - 1);
+}
+
+int s(int counter) {
+  if (counter == 0) return 0;
+  return 1 + r(counter);
+}
+
+int main() {
+  return r(10);
+}

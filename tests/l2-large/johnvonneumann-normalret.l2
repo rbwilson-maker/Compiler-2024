@@ -1,0 +1,9 @@
+//test return 7
+
+int main() {
+    int y = 1;
+    for (;y<7;) {
+        y++;
+    }
+    return y;
+}

@@ -1,0 +1,52 @@
+//test return 20007777
+// Test for reasonably efficient offset computation for nested structs
+
+struct big;
+
+typedef struct big* big_pointer;
+
+struct xxxtiny {
+  int data;
+  struct big[] b;
+};
+
+struct xxtiny {
+  struct xxxtiny xxxa;
+};
+
+struct xtiny {
+  struct xxtiny xxa;
+};
+
+struct tiny {
+  int* a;
+  int hello;
+  struct xtiny xa;
+};
+
+struct small {
+  int a;
+  struct tiny d;
+};
+
+struct big {
+  bool a;
+  struct small b;
+  int hi1;
+  int hi2;
+  int hi3;
+  int hi4;
+  big_pointer c;
+};
+
+int main() {
+  big_pointer aardvark = alloc(struct big);
+  aardvark->c = alloc(struct big);
+  aardvark->c->b.d.hello = 7777;
+  aardvark->c->b.d.xa.xxa.xxxa.b = alloc_array(struct big, 100);
+  aardvark->c->b.d.xa.xxa.xxxa.b[42].b.d.xa.xxa.xxxa.data = 0;
+  for (int i = 0; i < 20*1000*1000; i++) {
+    aardvark->c->b.d.xa.xxa.xxxa.b[42].b.d.xa.xxa.xxxa.data++;
+  }
+  return aardvark->c->b.d.xa.xxa.xxxa.b[42].b.d.xa.xxa.xxxa.data + aardvark->c->b.d.hello;
+}

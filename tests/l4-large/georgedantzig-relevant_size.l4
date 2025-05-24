@@ -1,0 +1,50 @@
+//test error
+
+/* Tests:
+ *  - Struct references when size is irrelevant
+ *  - Struct references when size is relevant
+ */
+
+// Declare but don't define a struct
+struct s;
+
+// Redeclare that same struct
+struct s;
+struct s;
+struct s;
+struct s;
+
+// Give it a definition
+struct s {
+    int a;
+    int b;
+};
+
+// This should be okay
+struct s;
+
+// Now we define two new structs
+struct a;
+
+// This should be okay
+struct a* fun_func() {
+    // We don't care about the size of a here
+    struct a* a_var;
+    return NULL;
+}
+
+// This should be okay
+struct b {
+    struct s this_is_okay;
+};
+
+struct c {
+    // This is okay
+    struct a* a_pointer;
+    // This is not
+    struct a this_sucks;
+};
+
+int main () {
+    return 0;
+}

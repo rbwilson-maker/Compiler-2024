@@ -1,0 +1,7 @@
+//test error
+typedef bool fpt;
+
+int main(){
+    int x = ftoi(fadd(true, false));
+    return x;
+}

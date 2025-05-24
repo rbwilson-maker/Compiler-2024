@@ -1,0 +1,19 @@
+//test error
+
+struct dup; 
+
+struct dup {
+    int a;
+    bool b;
+};
+
+struct dup {
+    int a;
+    bool b;
+};
+
+int main () {
+    struct dup* = alloc(struct dup);
+    dup->a = 1;
+    return dup->a;
+}

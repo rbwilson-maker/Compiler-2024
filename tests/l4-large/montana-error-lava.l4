@@ -1,0 +1,11 @@
+//test error
+int main() {
+  int QUANTITY_OF_LAVA_BE_AFRAID = 5;
+  int[] LAVA_MINEFIELD_HAHAHA_UR_DEAD_KID =
+    alloc_array(int, QUANTITY_OF_LAVA_BE_AFRAID);
+  QUANTITY_OF_LAVA_BE_AFRAID++;
+
+  /* ??????? */
+  QUANTITY_OF_LAVA_BE_AFRAID + 5 = QUANTITY_OF_LAVA_BE_AFRAID;
+  return 0;
+}

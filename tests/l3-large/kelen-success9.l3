@@ -1,0 +1,48 @@
+//test return 55
+
+// Tests many functions
+
+int getOne(){
+    return 1;
+}
+
+int getTwo(){
+    return 2;
+}
+
+int getThree(){
+    return 3;
+}
+
+int getFour(){
+    return 4;
+}
+
+int getFive(){
+    return 5;
+}
+
+int getSix(){
+    return 6;
+}
+
+int getSeven(){
+    return 7;
+}
+
+int getEight(){
+    return 8;
+}
+
+int getNine(){
+    return 9;
+}
+
+int getTen(){
+    return 10;
+}
+
+int main(){
+    return getOne() + getTwo() + getThree() + getFour() + getFive() + getSix()
+                    + getSeven() + getEight() + getNine() + getTen();
+}

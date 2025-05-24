@@ -1,0 +1,9 @@
+//test error
+
+struct s;
+
+int main() {
+    struct s *a;
+    a->blah = 0;
+    return 0;
+}

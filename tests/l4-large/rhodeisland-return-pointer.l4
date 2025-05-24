@@ -1,0 +1,27 @@
+//test return 4
+
+//here's a tip: make sure your left shift and right shift aren't running
+//an expression twice for the bounds check
+
+int* one(int* a) {
+	*a = (*a / *a) * *a + 4;
+	return a;
+}
+
+void two(int* a) {
+	*a -= 2;
+}
+
+int three(int* a) {
+	(*a)++;
+	return 3;
+}
+
+int main() {
+	int* a = alloc(int);
+	*a = 0;
+	int x = 12<<three(a);
+	x >>= three(a);
+	two(one(a));
+	return *a;
+}

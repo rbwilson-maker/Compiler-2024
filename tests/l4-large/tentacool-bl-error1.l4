@@ -1,0 +1,13 @@
+//test error
+
+struct abc {
+    struct aewf* k;
+    struct ae* k3;
+};
+
+int main () {
+    struct abc* mys = alloc(struct abc);
+    mys->k = alloc(struct aewf);
+    return 1;
+}
+

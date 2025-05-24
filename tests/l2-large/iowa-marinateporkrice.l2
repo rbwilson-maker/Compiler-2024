@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+    int marinate = 795; /* /* <-- cost of marinate pork rice */ */
+    int pork = 10;
+    int rice = 5;
+
+    while (pork > rice) {
+        pork = pork - 1;
+    }
+
+    return (marinate / (pork - rice));
+}

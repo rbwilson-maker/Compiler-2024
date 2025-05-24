@@ -1,0 +1,14 @@
+//test error
+
+void f() {
+    return;
+    return;
+    return;
+    return;
+    return;
+}
+
+int main() {
+    f();
+    return f();
+}

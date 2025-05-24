@@ -1,0 +1,13 @@
+//test error
+// global variables not supported yet
+
+void rand = 10;
+
+int main() {
+  int x = 12;
+  if (rand > 1) {
+    assert(true);
+    x = 20;
+  }
+  return x;
+}

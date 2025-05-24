@@ -1,0 +1,15 @@
+//test return 4
+
+// leaky leaky eggs and... beaky? i guess? idk im so tired
+
+int f(int x) {
+    if (x == 0) {
+        return 4;
+    }
+    int[] myInt = alloc_array(int, 10);
+    return f(x-1);
+}
+
+int main() {
+    return f(100000);
+}

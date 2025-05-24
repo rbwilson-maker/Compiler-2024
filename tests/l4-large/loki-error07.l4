@@ -1,0 +1,10 @@
+//test error
+
+typedef int foo;
+typedef int bar;
+
+int main {
+  foo *f = alloc(foo);
+  bar *b = alloc(bar);
+  return *f * *b;
+}

@@ -1,0 +1,8 @@
+//test return 2
+
+int foo() {
+  return true ? 2 : 1 / 0;
+}
+int main() {
+  return foo();
+}

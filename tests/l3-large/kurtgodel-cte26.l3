@@ -1,0 +1,13 @@
+//test error
+/*
+Compile error.
+Void is not a type so expressions cannot have that type.
+*/
+
+void fun() {
+  (true ? fun() : fun());
+}
+
+int main() {
+  return 3;
+}

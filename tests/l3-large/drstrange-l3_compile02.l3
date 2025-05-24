@@ -1,0 +1,10 @@
+//test error
+/// invalid return type for top-level function call
+
+void func1(int x, int y, int z){
+    return;
+}
+
+int main() {
+    return func1(0, 1, 2);
+}

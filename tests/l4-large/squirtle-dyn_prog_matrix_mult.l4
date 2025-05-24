@@ -1,0 +1,94 @@
+//test return 54730
+
+struct Matrix {
+  int rows;
+  int cols;
+};
+
+typedef struct Matrix Matrix;
+
+Matrix * createMatrix(int rows, int cols) {
+  Matrix * m = alloc(Matrix);
+  m->rows = rows;
+  m->cols = cols;
+  return m;
+}
+
+int numberOfProductsWithDims(int rowsA, int colsA, int rowsB, int colsB) {
+  return rowsA * rowsB * colsB;
+}
+
+int minimumMatrixProducts(Matrix * [] matrices, int numMatrices) {
+    int minimumProduct = 0;
+    int [][] m = alloc_array(int [], numMatrices);
+    for(int i = 0; i < numMatrices; i++){
+        m[i] = alloc_array(int, numMatrices);
+        m[i][i] = 0;
+    }
+    //M[i][j]   = amount of multiplications to multiply matrices (i,...,j)
+    //M[i][i]   = 0 for all i
+    //M[i][i+1] = mult(f(i), c(i), f(i+1), c(i+1))
+    //M[i][j]   = MIN (1 <= k <= j)(
+    //                    M[i][k-1] + M[k][j] + mult(f(i), c(k-1), f(k), c(j)),
+    //            )
+    int i;
+    int j;
+    for(int k = 1; k < numMatrices; k++){
+        i = 0;
+        j = k;
+        while(j < numMatrices){
+            m[i][j] = -1;
+            for(int cutPoint = i+1; cutPoint <= j; cutPoint++){
+                //multiply matrices i,...,(cutPoint-1), then matrices cutPoint,...,j
+                int leftProducts  = m[i][cutPoint-1];
+                int rightProducts = m[cutPoint][j];
+                Matrix * firstMatrix = matrices[i];
+                Matrix * matrixBeforeCutpoint = matrices[cutPoint-1];
+                Matrix * matrixAtCutpoint = matrices[cutPoint];
+                Matrix * lastMatrix = matrices[j];
+                int total
+                = leftProducts + rightProducts
+                + numberOfProductsWithDims(firstMatrix->rows,
+                                           matrixBeforeCutpoint->cols,
+                                           matrixAtCutpoint->rows,
+                                           lastMatrix->cols);
+                if(m[i][j] < 0 || m[i][j] > total){
+                    m[i][j] = total;
+                }
+            }
+            i++;
+            j++;
+        }
+    }
+    minimumProduct = m[0][numMatrices-1];
+
+    return minimumProduct;
+}
+
+
+int main() {
+  int size = 19;
+  Matrix * [] matrices = alloc_array(Matrix *, size);
+
+  matrices[0] = createMatrix(78, 42);
+  matrices[1] = createMatrix(42, 23);
+  matrices[2] = createMatrix(23, 51);
+  matrices[3] = createMatrix(51, 78);
+  matrices[4] = createMatrix(78, 59);
+  matrices[5] = createMatrix(59, 41);
+  matrices[6] = createMatrix(41, 70);
+  matrices[7] = createMatrix(70, 89);
+  matrices[8] = createMatrix(89, 83);
+  matrices[9] = createMatrix(83, 86);
+  matrices[10] = createMatrix(86, 58);
+  matrices[11] = createMatrix(58, 66);
+  matrices[12] = createMatrix(66, 11);
+  matrices[13] = createMatrix(11, 59);
+  matrices[14] = createMatrix(59, 14);
+  matrices[15] = createMatrix(14, 1);
+  matrices[16] = createMatrix(1, 24);
+  matrices[17] = createMatrix(24, 40);
+  matrices[18] = createMatrix(40, 23);
+
+  return minimumMatrixProducts(matrices, size);
+}

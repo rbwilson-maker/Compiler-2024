@@ -1,0 +1,18 @@
+//test error
+
+typedef int dog;
+typedef dog cat;
+dog foo();
+cat bar();
+
+int main() {
+  int res = 10;
+  dog foo() {
+    return res += 1;
+  };
+  return bar();
+}
+
+cat bar() {
+  return 100;
+}

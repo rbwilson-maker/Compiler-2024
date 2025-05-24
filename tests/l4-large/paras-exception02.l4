@@ -1,0 +1,12 @@
+//test abort
+
+int foo(){
+  assert(false);
+  return 0;
+}
+
+int main(){
+  int[] x = alloc_array(int, 5);
+  x[0] = 1/foo();
+  return x[0];
+}

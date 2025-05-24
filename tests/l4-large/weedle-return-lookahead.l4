@@ -1,0 +1,18 @@
+//test return 1337
+
+// From handout:
+// In this case, if the parser parses typedef int foo; the lexer may already 
+// have lexed the foo at the beginning of the next line, so be careful!
+// This tests for that issue.
+
+typedef int foo;
+foo func();
+
+foo func() {
+  return 1337;
+}
+
+int main() {
+
+  return func();
+}

@@ -1,0 +1,74 @@
+//test error
+// test lots of dereferencing
+
+struct noodle;
+
+struct pot {
+  int fluid_oz;
+  bool boiling;
+  struct noodle[] pasta;
+};
+
+struct noodle {
+  int len;
+};
+
+struct salad {
+  struct noodle[] base;
+  bool with_the_fixings;
+  int spice_level;
+};
+
+typedef struct salad spaghettisalad;
+
+void boil_noodles(struct noodle[] noodles, int num_noodles)
+{
+  struct pot *cooking_mechanism = alloc(struct pot);
+  cooking_mechanism->fluid_oz = 20000;
+  cooking_mechanism->boiling = false;
+  int warm_up = 0;
+  while (warm_up < cooking_mechanism->fluid_oz) {
+    warm_up++;
+  }
+  cooking_mechanism->boiling = true;
+  cooking_mechanism->pasta = noodles;
+}
+
+spaghettisalad *******prepare_salad(int num_noodles, bool fixings,
+                                          int spice_level)
+{
+  spaghettisalad *first_spaghet = alloc(spaghettisalad);
+  spaghettisalad **second_spaghet = alloc(spaghettisalad *);
+  *second_spaghet = first_spaghet;
+  spaghettisalad ***third_spaghet = alloc(spaghettisalad **);
+  *third_spaghet = second_spaghet;
+  spaghettisalad ****fourth_spaghet = alloc(spaghettisalad ***);
+  *fourth_spaghet = third_spaghet;
+  spaghettisalad *****fifth_spaghet = alloc(spaghettisalad ****);
+  *fifth_spaghet = fourth_spaghet;
+  spaghettisalad ******sixth_spaghet = alloc(spaghettisalad *****);
+  *sixth_spaghet = fifth_spaghet;
+  spaghettisalad *******final_spaghet = alloc(spaghettisalad ******);
+  *final_spaghet = sixth_spaghet;
+  struct noodle[] uncooked_noodles = alloc_array(struct noodle, num_noodles);
+  boil_noodles(uncooked_noodles, 5000);
+  struct noodle[] cooked_noodles = uncooked_noodles;
+  (*******final_spaghet).base = cooked_noodles;
+  (*******final_spaghet).with_the_fixings = fixings ? fixings ? fixings ?
+        fixings ? fixings ? true : false : false : false : false : false;
+  int *super_spiceify = alloc(int);
+  int *super_spice = alloc(int);
+  *super_spice = 55555;
+  *super_spiceify = spice_level;
+  for (*super_spiceify = spice_level; *super_spiceify < *super_spice;
+        (*super_spiceify)++)
+  (******final_spaghet)->spice_level = *super_spiceify;
+  return final_spaghet;
+}
+
+int main()
+{
+  spaghettisalad *******best_noodl_slad = prepare_salad(3333, true, 0);
+  return (*****best_noodl_slad)->spice_level; // incorrect number of *'s
+}
+

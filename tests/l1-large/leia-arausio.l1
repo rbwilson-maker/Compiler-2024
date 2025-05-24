@@ -1,0 +1,40 @@
+//test return 74
+int main() {
+  int x = 0;
+  int y = 1;
+  int z = 2;
+  x = 10;
+  int w = x + y;
+  y = 111;
+  z = 112;
+  x = 120;
+  y = 121;
+  z = 122;
+  x = 120;
+  y = 121;
+  z = 122;
+  x = 120;
+  y = 121;
+  z = 122;
+  x = 20;
+  y = 21;
+  z = 22;
+  int p = 11;
+  int o = 12;
+  int n = 20;
+  int m = 21;
+  int l = 22;
+  int k  = 20;
+  int j = 21;
+  int i = 22;
+  int h = 11;
+  int g = 12;
+  int f = 20;
+  int e = 21;
+  int d = 22;
+  int c  = 20;
+  int b = 21;
+  int a = 22;
+  int r = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p;
+  return w + x + y + z;
+}

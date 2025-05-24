@@ -1,0 +1,22 @@
+//test return 8
+
+/* recursive typedef */
+
+typedef int cat;
+typedef cat dog;
+typedef dog cow;
+typedef cow moose;
+typedef moose deer;
+typedef deer monkey;
+typedef monkey hippo;
+typedef hippo hamster;
+typedef hamster rat;
+
+int main() {
+  int a = 1; cat b = 2;
+  dog c = 3; cow d = 4;
+  moose e = 5; deer f = 6;
+  monkey g = 7; hippo h = 8;
+  hamster i = 9; rat j = 9;
+  return 8;
+}

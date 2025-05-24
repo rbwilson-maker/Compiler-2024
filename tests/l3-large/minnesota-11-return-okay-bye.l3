@@ -1,0 +1,17 @@
+//test return 98
+//nested typedefs
+
+typedef int YOHOHO;
+typedef YOHOHO BOTTLE_OF_RUM;
+typedef BOTTLE_OF_RUM ON_THE_WALL;
+
+BOTTLE_OF_RUM drunken_pirates(
+    ON_THE_WALL ninety_nine, 
+    BOTTLE_OF_RUM pass_around) {
+  YOHOHO left = ninety_nine-pass_around;
+  return left;
+}
+
+int main() {
+  return drunken_pirates(99, 1);
+}

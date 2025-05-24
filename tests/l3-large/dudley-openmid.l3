@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+int f();
+
+int main() {
+  return f();
+}
+
+int f() {
+  return main();
+}
+

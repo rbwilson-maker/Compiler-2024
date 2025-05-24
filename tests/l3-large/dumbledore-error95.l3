@@ -1,0 +1,19 @@
+//test return 3
+// Can use a typedef name before it's defined in a function above.
+
+typedef int test1;
+
+int foo() {
+    test1 a = 1;
+    test1 b = 1;
+    int test2 = 1;
+    return a + b + test2;
+}
+
+typedef bool test2;
+
+int main() {
+    test2 scrap = true;
+    return foo();
+}
+

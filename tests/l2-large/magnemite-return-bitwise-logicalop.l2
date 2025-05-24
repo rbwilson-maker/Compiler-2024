@@ -1,0 +1,7 @@
+//test return 6
+//bitwise logical op
+
+int main() {
+    int i = 3;
+    return (i | 5) & 78;
+}

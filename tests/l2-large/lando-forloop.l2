@@ -1,0 +1,10 @@
+//test return 30
+
+int main() {
+    int x = 0;
+    for (int i = 0; false || i < 10 && true; i++) {
+        int y = 3;
+        x += y;
+    }
+    return x;
+}

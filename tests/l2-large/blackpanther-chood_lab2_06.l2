@@ -1,0 +1,22 @@
+//test error
+
+int main()
+{
+	int i = 64 + 64;
+	int j = i - i;
+	int k = i / i;
+
+	int x = 64;
+	while (x > 0) {
+		bool cond = (j == k) || (i == i);
+		x--;
+	}
+
+	if (cond) {
+		return i / 2;
+	} else if (!cond) {
+		return i;
+	} else {}
+
+	return 12;
+}

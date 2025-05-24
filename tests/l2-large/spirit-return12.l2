@@ -1,0 +1,20 @@
+//test return 15;
+int main() {
+    int x = 9;
+    bool y = false;
+    if (y) {
+        x <<= 123;   
+    }    
+    else {
+        y = true;
+        x = 10;
+    }
+
+    if (y) {
+        x += 5;    
+    }
+    else {
+        x /= 0;  
+    }
+    return x;
+}

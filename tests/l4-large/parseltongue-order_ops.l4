@@ -1,0 +1,26 @@
+//test return 1
+
+/*
+ * proper expansion of "op=" 
+ * should not call f twice
+ */
+
+int f(int *a){
+    int temp = *a;
+
+    *a = 0;
+
+    return temp;
+}
+
+
+int main() {
+    int[] array = alloc_array (int, 10);
+    int *a = alloc(int);
+
+    *a = 1;
+
+    array[1/f(a)] += 1;
+
+    return 1;
+}

@@ -1,0 +1,21 @@
+//test abort
+
+typedef int foo;
+
+struct foo {
+    foo foo;
+};
+
+struct bar {
+    foo[] foo;
+};
+
+foo bar() {
+    return alloc(struct foo)->foo;
+}
+
+foo main() {
+    foo bar = bar();
+    assert(bar != bar);
+    return bar;
+}

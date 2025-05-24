@@ -1,0 +1,32 @@
+//test return 1
+// creates a balanced binary search tree from a sorted array (at least i think)
+
+struct node {
+  int val;
+  struct node* left;
+  struct node* right;
+};
+
+typedef struct node node_t;
+
+node_t* make_balanced_bst(int[] arr, int start, int end) {
+  if (start > end) {
+    return NULL;
+  }
+  int mid = start + (end - start) / 2;
+  node_t* n = alloc(node_t);
+
+  n->val = arr[mid];
+  n->left = make_balanced_bst(arr, start, mid - 1);
+  n->right = make_balanced_bst(arr, mid + 1, end);
+  return n;
+}
+
+int main() {
+  int[] arr = alloc_array(int, 10);
+  for (int i = 0; i < 10; i++) {
+    arr[i] = i;
+  }
+  node_t* t = make_balanced_bst(arr, 0, 9);
+  return t->left->val;
+}

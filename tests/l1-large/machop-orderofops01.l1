@@ -1,0 +1,8 @@
+//test return 3
+// Author: Nick
+int main () {
+  int x = 1;
+  int y = 1;
+  int z = 2;
+  return x + y * z; /* This should be 3, not 4! */
+}

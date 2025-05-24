@@ -1,0 +1,8 @@
+//test div-by-zero
+int loop(int n) {
+  return (15451/n) + loop(n-1);
+}
+int main() {
+  loop(15451);
+  return 0;
+}

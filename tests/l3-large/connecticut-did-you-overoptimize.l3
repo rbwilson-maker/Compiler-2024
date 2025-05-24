@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int a(int x) {
+	return x % (-1);
+}
+
+int main() {
+	int y = a(1);
+	int z = a(0x80000000);
+	return y;
+}

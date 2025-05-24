@@ -1,0 +1,12 @@
+//test return 24
+int main() {
+    int i = 1;
+    int s = 48;
+    int n = 2;
+    for (i = 1; i < 2; i++) {
+        s = s / 2;
+    }
+    return s;
+}
+
+

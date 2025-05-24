@@ -1,0 +1,15 @@
+//test return 3
+
+int incr(int[] a) {
+  a[0] += 1;
+  return 0;
+}
+
+
+int main() {
+  int[] a = alloc_array(int, 1);
+
+  a[incr(a) + incr(a) + incr(a)] += 0;
+
+  return a[0];
+}

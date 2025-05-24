@@ -1,0 +1,13 @@
+//test memerror
+
+int foo(int * val){
+    (*val)--;
+    return *val;
+}
+
+int main(){
+    int[] test = alloc_array(int, 10);
+    int * index = alloc(int);
+    
+    return test[foo(index)];
+}

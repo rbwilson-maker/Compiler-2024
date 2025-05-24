@@ -1,0 +1,14 @@
+//test error
+
+struct Unit {};
+
+int main()
+{
+	struct Unit *u = alloc(struct Unit);
+	for(int *i = alloc(int); *i < 10; *i++)
+	{
+		*u = alloc(struct Unit);
+	}
+	return -1;
+
+}

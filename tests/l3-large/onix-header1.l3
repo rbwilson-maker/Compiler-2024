@@ -1,0 +1,12 @@
+//test error
+
+// redefines double included in header with different argument, should fail
+
+int main()
+{
+    return double(0)/double(0);
+}
+
+int double(bool x){
+    return 0;
+}

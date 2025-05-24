@@ -1,0 +1,10 @@
+//test error
+
+typedef int aa;
+int a (aa x) {
+	int a = 0;
+}
+
+int main () {
+    return a(100);
+}

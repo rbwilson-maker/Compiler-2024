@@ -1,0 +1,16 @@
+//test return 483
+
+typedef int kitty;
+typedef kitty puppy;
+typedef puppy birdie;
+typedef puppy baby;
+
+puppy woofs (kitty meows) {
+    birdie chirps = 135;
+    meows += chirps;
+    return meows;
+}
+
+baby main () {
+    return woofs(348);
+}

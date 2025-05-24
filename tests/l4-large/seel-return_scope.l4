@@ -1,0 +1,16 @@
+//test return 42
+// Test scoping of arrays. Arrays are on the heap so this *should* work.
+
+
+int[] createArray() {
+  int[] x = alloc_array(int, 5);
+  x[0] = 42;
+
+  return x;
+}
+
+int main() {
+
+  int[] x = createArray();
+  return x[0];
+}

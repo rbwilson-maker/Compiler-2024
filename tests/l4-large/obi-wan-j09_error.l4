@@ -1,0 +1,33 @@
+//test memerror
+
+typedef bool cool;
+
+struct happy {
+    bool yay;
+    int awesome_data;
+    struct happy *futures;
+};
+
+typedef struct happy* happiness;
+
+
+int main() {
+
+    happiness yay = alloc(struct happy);
+    yay->futures = alloc(struct happy);
+    yay->futures->futures = alloc(struct happy);
+
+    cool ness = true;
+
+    cool yes = true;
+
+    !!!yes; // woo hoo!
+
+    while(yes) {
+        yay = yay->futures;
+    }
+
+    yes = yay->yay;
+
+    return 0;
+}

@@ -1,0 +1,15 @@
+//test error
+//Fail initialization criterion
+
+int main () {
+
+  int x;
+  bool b = true;
+
+  if ((b || b) && b) {
+    x = 5;
+  }
+
+  return x;
+    
+}

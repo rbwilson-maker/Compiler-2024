@@ -1,0 +1,23 @@
+//test abort
+
+int fac(int x){
+  if(x==0){return 1;}
+  return x*fac(x-1);
+}
+
+int choose(int x, int y){
+  int x_fac = fac(x);
+  int y_fac = fac(y);
+  int diff_fac = fac(x-y);
+  return (x/(y_fac*diff_fac));
+}
+
+
+int main(){
+  int res1 = choose(5, 2);
+  int res2 = choose(5, 3);
+  assert(res1 == res2);
+  assert(res1 == 10);
+  assert(res1 == 100);
+  return 0;
+}

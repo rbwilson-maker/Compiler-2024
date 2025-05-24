@@ -1,0 +1,17 @@
+//test div-by-zero
+
+typedef int[] allInts;
+int main()
+{
+    allInts a = alloc_array(int, 5);
+    int product = 1;
+    for(int i = 0; i < 5; i++)
+    {
+        a[i] = i;
+    }
+    for(int j = 0; j < 5; j++)
+    {
+        product = a[j] * product;
+    }
+    return 60/product;
+}

@@ -1,0 +1,22 @@
+//test return 1324301603  
+
+//Calculate sum of primes less than 500000.
+//Return value mod 2^31, b/c we only have ints
+
+int main() {
+
+    int sum = 2;
+
+    for (int p = 3; p < 500000; p+=2) {
+        bool isPrime = true;
+        for (int n = 3; n*n <= p; n+=2) {
+            if (p%n == 0)
+                isPrime = false;
+        }
+
+        if (isPrime)
+            sum += p;
+    }
+
+    return sum;
+}

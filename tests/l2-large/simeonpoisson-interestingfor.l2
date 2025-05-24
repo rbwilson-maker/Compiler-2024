@@ -1,0 +1,7 @@
+//test return 13
+
+int main() {
+  int plus = 0;
+  for (plus++; plus < 10; plus++) plus++; plus++; plus++;
+  return plus;
+}

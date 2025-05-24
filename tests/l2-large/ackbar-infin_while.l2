@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+//A test of an infinite loop
+int main() {
+    int counter = 0;
+    int max = 1;
+    int sum = 0;
+    while(counter != max){
+        counter += 2;
+        sum += counter;
+    }
+    return sum;
+}

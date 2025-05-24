@@ -1,0 +1,30 @@
+//test return 56
+
+// A recursive function that calculates the nth Fibonacci number
+int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+// A function to test various logical and arithmetic operations, including edge cases for type checking
+int test_operations(int a, int b) {
+    int result = a * b - (a / (b + 1));
+    if (result < 0) {
+        return 0;
+    } else if (result == 0) {
+        return 1;
+    } else {
+        int fib = fibonacci(result % 5);
+        return (fib % 2) == 0 ? 1 : 0;
+    }
+}
+
+// Main function to execute tests
+int main() {
+    int fibResult = fibonacci(10); // Expected: 55
+    int opResult = test_operations(10, 20); // Complex operation test
+    return fibResult + opResult;
+}

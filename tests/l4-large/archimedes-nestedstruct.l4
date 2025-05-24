@@ -1,0 +1,26 @@
+//test memerror
+// Nested struct definition that hides the index
+
+struct foo {
+  int hidden;
+};
+
+struct bar {
+  struct foo bar_wrap;
+};
+
+struct baz {
+  struct bar* baz_wrap;
+};
+
+int main() {
+  struct baz* var;
+  var = alloc(struct baz);
+  var->baz_wrap = alloc(struct bar);
+  var->baz_wrap->bar_wrap.hidden = 42;
+  int n = 30;
+  bool[] some_content = alloc_array(bool, n);
+  if (some_content[var->baz_wrap->bar_wrap.hidden])
+    return -1;
+  return 0;
+}

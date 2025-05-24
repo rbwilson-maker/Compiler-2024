@@ -1,0 +1,19 @@
+//test return 624
+//modular arithmetic testing.
+int main()
+{
+  int IMin = 0x80000000;
+  int IMax = IMin-1;
+  int minusOne = 0 - 1;
+
+  int IMinPlusOne = IMax*(-1);
+  int c = IMinPlusOne + 100;
+  int r = c % 37;
+  int d = r*99;
+  int g = d%2;
+  int q = g+5;
+
+  q = ((((q*q)*q)*q)*(-1)*(IMax))-IMin;
+
+  return q-1;
+}

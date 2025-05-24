@@ -1,0 +1,13 @@
+//test return 420
+// test arithmetic operation
+int main()
+{
+  int x = 10;
+  int y = 20;
+  int z = 123;
+  int w = 124;
+  int r = 12;
+  int a = ((x + y) * w) / r;
+  a += 100;
+  return x + a;
+}

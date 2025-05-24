@@ -1,0 +1,25 @@
+//test return 50
+
+struct s
+{
+  int data1;
+  int data2;
+  int data3;
+};
+
+struct t
+{
+  bool v1;
+  struct s v2;
+  int v3;
+};
+
+int main()
+{
+  struct t* x = alloc(struct t);
+
+  x->v2.data1 = 50;
+  x->v3 = 100;
+
+  return x->v2.data1;
+}

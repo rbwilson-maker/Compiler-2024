@@ -1,0 +1,14 @@
+//test error
+
+int main() {
+	int a = f(5);
+	return a;
+}
+
+int f(int c) {
+	return c + g(2);
+}
+
+int g(int d) {
+	return 2 << d;
+}

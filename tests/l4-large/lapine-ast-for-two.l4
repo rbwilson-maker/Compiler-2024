@@ -1,0 +1,53 @@
+//test return -396
+
+struct ast {
+  int label;
+  /*
+    0: leaf
+    1: add
+    2: neg
+  */
+
+  int *value;
+  struct ast *child1;
+  struct ast *child2;
+};
+
+int eval(struct ast *e) {
+  if (e->label == 0)
+    return *e->value;
+
+  if (e->label == 1)
+    return eval(e->child1) + eval(e->child2);
+
+  if (e->label == 2)
+    return -eval(e->child1);
+
+  return 1/0; // oh no!
+}
+
+int main () {
+  struct ast *e = alloc(struct ast);
+  e->label = 1;
+  {
+    e->child1 = alloc(struct ast);
+    e->child1->label = 0;
+
+    e->child1->value = alloc(int);
+    *e->child1->value = 15;
+  }
+  {
+    e->child2 = alloc(struct ast);
+    e->child2->label = 2;
+
+    {
+      e->child2->child1 = alloc(struct ast);
+      e->child2->child1->label = 0;
+
+      e->child2->child1->value = alloc(int);
+      *e->child2->child1->value = 411;
+    }
+  }
+
+  return eval(e);
+}

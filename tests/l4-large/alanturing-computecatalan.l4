@@ -1,0 +1,22 @@
+//test return 1767263190
+
+// Compute the 20th Catalan number
+
+int main () {
+    int array_size = 20;
+    int[] num_array = alloc_array(int, array_size);
+
+    num_array[0] = 1;
+
+    for (int n = 1; n < array_size; n++) {
+    	int nth_catalan = 0;
+	
+    	for (int i = 1; i <= n; i++) {
+	    nth_catalan += num_array[i-1] * num_array[n-i];
+	}
+
+	num_array[n] = nth_catalan;
+    }
+    
+    return num_array[19];
+}

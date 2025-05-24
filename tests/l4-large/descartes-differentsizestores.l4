@@ -1,0 +1,21 @@
+//test return 2
+// tests for alignment and storing of small/large sizes
+
+struct alignMe {
+    int val;
+    int* valref;
+};
+
+int unpack (struct alignMe * box) {
+    return (box->val) + (*(box->valref));
+}
+
+int main() {
+    int * x = alloc(int);
+    *x = 1;
+    struct alignMe * store = alloc(struct alignMe);
+    store->val = *x;
+    store->valref = x;
+
+    return unpack(store);
+}

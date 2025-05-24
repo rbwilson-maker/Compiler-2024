@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int looper() {
+  while (true) {
+  }
+  return 0;
+}
+int exn() {
+  return (1) / (0);
+}
+int main() {
+  return (exn()) | (looper());
+}
+

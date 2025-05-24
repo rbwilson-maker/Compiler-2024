@@ -1,0 +1,38 @@
+//test return 12
+
+
+// this helpful helper adds 1 to your number!! whohoo!
+int helpful_helper(int[] x){
+    x[0] = x[0] + 1;
+
+    return x[0];
+
+    x[-1]; // risky business
+}
+
+
+int main()
+{
+    int[] y = alloc_array(int, 10);  // 2 are just in case :)
+
+    y[0] = 5; // yeah 5
+    helpful_helper(y);  // 6 now
+
+
+    y[helpful_helper(y)] = 1; // y[7] = 1
+
+    y[8] = 6;
+
+    y[9] = 7;
+
+    y[helpful_helper(y)] *= 2;  // y[8] = y[8] * 2 = 12 (or 14?)
+
+    return y[8];
+}
+
+
+
+
+
+
+

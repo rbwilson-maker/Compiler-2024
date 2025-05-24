@@ -1,0 +1,39 @@
+//test return -1
+
+bool i_will_be_here_til_the_end_of_time();
+
+
+bool should_i_stay_or_should_i_go() {
+	int r = 0;
+	bool stay = false;
+	bool go = false;
+	while (!stay && !go) {
+		r++;
+		if (r % 13 == 0) r *= r - 1;
+		if (r < 0) stay = !stay;
+		else if (r > 2000000000) go = !go;
+	}
+	return go;
+}
+
+bool if_you_say_that_you_are_mine() {
+	return i_will_be_here_til_the_end_of_time();
+}
+
+bool i_will_be_here_til_the_end_of_time() {
+	bool b = false;
+	return b || !(b && !(b || !(b && b)));
+}
+
+bool so_you_got_to_let_me_know() {
+	return should_i_stay_or_should_i_go();
+}
+
+bool innocent() {
+	return should_i_stay_or_should_i_go() ? if_you_say_that_you_are_mine() : so_you_got_to_let_me_know();
+}
+
+int main() {
+	if (innocent()) return 1;
+	return -1;
+}

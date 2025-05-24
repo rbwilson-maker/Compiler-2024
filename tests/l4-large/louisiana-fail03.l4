@@ -1,0 +1,27 @@
+//test error
+
+//same structs but different names
+struct t1 {
+	int field1;
+	int field2;
+}
+
+struct t2 {
+	int field1;
+	int field2;
+}
+
+int compare_pointers(struct t1 *x, struct t2 *y)
+{
+	int retval = (x->field1 == y->field2) ? 1 : 0;
+	return retval;
+}
+
+int main()
+{
+	struct t1* x = alloc(struct t1);
+	struct t2* y = alloc(struct t2);
+	x->field1 = 0xCAFE;
+	y->field2 = 0xBABE;
+	return compare_pointers(x,y);
+}

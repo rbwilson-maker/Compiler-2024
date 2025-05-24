@@ -1,0 +1,9 @@
+//test return 3
+// Test valid assertion
+
+int main() {
+  int x = 3;
+  int y = 2 + 1;
+  assert(x == y);
+  return x;
+}

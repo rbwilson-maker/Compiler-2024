@@ -1,0 +1,7 @@
+//test div-by-zero
+// Modulo 0
+int main() {
+	int a = 42;
+	int b = 42 - a;
+	return a % b;
+}

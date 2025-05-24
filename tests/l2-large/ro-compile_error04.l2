@@ -1,0 +1,10 @@
+//test error
+//checking badly formated loops
+
+int main() {
+    int x = 2;
+    for (int i; i<10; i++) {
+        x = x * x
+    }
+    return x;
+}

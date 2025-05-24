@@ -1,0 +1,11 @@
+//test memerror
+int f(int[] arr) {
+  arr[0] = -1;
+  return arr[arr[0]];
+}
+
+int main() {
+  int[] arr = alloc_array(int, 100);
+  int index = f(arr);
+  return arr[index];
+}

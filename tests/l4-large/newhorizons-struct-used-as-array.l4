@@ -1,0 +1,12 @@
+//test error
+
+struct x {
+    int y;
+    bool z; 
+};
+
+int main() {
+    struct x* p = alloc(struct x);
+    p[0] = 5; 
+    return p[0];
+}

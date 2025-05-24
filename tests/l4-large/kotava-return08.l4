@@ -1,0 +1,59 @@
+//test return 2800
+
+typedef struct a a;
+typedef struct b b;
+typedef struct c c;
+typedef struct d d;
+typedef struct e e;
+typedef struct f f;
+typedef struct g g;
+
+struct a {
+  int a;
+};
+
+struct b {
+  int b;
+  a x;
+};
+
+struct c {
+  int c;
+  b x;
+};
+
+struct d {
+  int d;
+  c x;
+};
+
+struct e {
+  int e;
+  d x;
+};
+
+struct f {
+  int f;
+  e x;
+};
+
+struct g {
+  int g;
+  f x;
+};
+
+int add_together(g* x) {
+  return x->g + x->x.f + x->x.x.e + x->x.x.x.d + x->x.x.x.x.c + x->x.x.x.x.x.b + x->x.x.x.x.x.x.a;
+}
+
+int main() {
+  g* res = alloc(g);
+  res->g = 100;
+  res->x.f = 200;
+  res->x.x.e = 300;
+  res->x.x.x.d = 400;
+  res->x.x.x.x.c = 500;
+  res->x.x.x.x.x.b = 600;
+  res->x.x.x.x.x.x.a = 700;
+  return add_together(res);
+}

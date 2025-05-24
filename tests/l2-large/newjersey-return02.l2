@@ -1,0 +1,13 @@
+//test return 0
+
+int main()
+{
+  int x;
+  int y;
+  int z;
+
+  x = 5;
+  y = 6;
+  z = 4;
+  return z ^ x & y;
+}

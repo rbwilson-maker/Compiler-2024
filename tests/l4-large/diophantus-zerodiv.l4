@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+    int *size = alloc(int);
+    *size = 50;
+    int *toshift = alloc(int);
+    *toshift = 4;
+    int *nullp = alloc(int);
+    nullp = NULL;
+    *nullp = *toshift << *size;
+    return 1;
+}

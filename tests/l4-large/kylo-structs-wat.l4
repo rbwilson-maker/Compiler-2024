@@ -1,0 +1,13 @@
+//test return 0
+
+typedef struct phantom PH;
+
+struct S {
+  PH *P;
+};
+
+
+int main() {
+  struct S* wat = alloc(struct S);
+  return 0;
+}

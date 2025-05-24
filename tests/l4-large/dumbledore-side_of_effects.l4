@@ -1,0 +1,26 @@
+//test return 1536
+
+int f(int * p1, int * p2, int * side_effect) {
+  *p1 = *p2;
+  *p2 = *side_effect;
+  
+  *side_effect = (*side_effect / 2);
+  return *side_effect;
+}
+
+int main() {
+  int * p1 = alloc(int);
+  int * p2 = alloc(int);
+  
+  *p1 = 2048;
+  *p2 = 4096;
+
+  int * side_effect = alloc(int);
+  *side_effect = 1024;
+
+  for (int i = 1; i < *side_effect; i*=2) {
+    *side_effect = f(p1, p2, side_effect) - *p1;
+  }
+
+  return *p1 + *p2 + *side_effect;
+}

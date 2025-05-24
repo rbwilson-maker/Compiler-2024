@@ -1,0 +1,44 @@
+//test return 84673
+
+/*
+    recursive-nthPrime: like nthPrime, but makes lots of stack frames!
+
+    Should get pretty close to the recursion limit.
+
+    Tests:
+    - Recursion
+    - Efficient allocation of stack frames
+
+*/
+
+bool isPrimeHelper(int n, int f) {
+    if (n < 2) { return false; }
+    if (f >= n) { return true; }
+    if (n % f == 0) { return false; }
+
+    return isPrimeHelper(n, f + 1);
+}
+
+bool isPrime(int n) {
+    return isPrimeHelper(n, 2);
+}
+
+int nthPrimeHelper(int n, int found, int guess) {
+    if (found > n) { return guess; }
+
+    guess += 1;
+
+    if (isPrime(guess)) {
+        return nthPrimeHelper(n, found + 1, guess);
+    } else {
+        return nthPrimeHelper(n, found, guess);
+    }
+}
+
+int nthPrime(int n) {
+    return nthPrimeHelper(n, 0, 0);
+}
+
+int main() {
+    return nthPrime(8250);
+}

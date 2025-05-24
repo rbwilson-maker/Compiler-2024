@@ -1,0 +1,8 @@
+//test return 0
+int main() {
+    bool a = true;
+    if (a) {
+        return 0;
+    }
+    return -1; //why did we fail :()
+}

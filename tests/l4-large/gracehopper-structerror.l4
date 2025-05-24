@@ -1,0 +1,33 @@
+//test div-by-zero
+
+struct s {
+    int first;
+    int second;
+    int* third;
+};
+
+typedef struct s* s;
+
+s rec(s x) {
+    if (*(x->third) == 0) {
+        return x;
+    }
+    s new_x = alloc(struct s);
+    new_x->first = x->first;
+    new_x->second = x->second;
+    new_x->third = alloc(int);
+    *(new_x->third) = *(x->third) - 1;
+
+    return rec(new_x);
+}
+
+int main() {
+    s x = alloc(struct s);
+    x->first = 1;
+    x->second = 2;
+    x->third = alloc(int);
+    *(x->third) = 5;
+
+    s res = rec(x);
+    return res->first / *(res->third);
+}

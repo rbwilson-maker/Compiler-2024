@@ -1,0 +1,13 @@
+//test return -4583
+//mutual recursion
+
+int u(int x);
+int v(int x);
+
+int u (int x) { return v(x); }
+
+int v (int y) { return u(y); }
+
+int main () {
+  return 212-555-4240;
+}

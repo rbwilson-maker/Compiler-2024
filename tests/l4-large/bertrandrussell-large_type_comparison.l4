@@ -1,0 +1,11 @@
+//test error
+
+struct foo {};
+
+int main() {
+    struct foo* a = alloc(struct foo);
+    // can't compare values with large types - even if said "large" types are zero-sized
+    assert(*a == *a);
+    return 0;
+}
+

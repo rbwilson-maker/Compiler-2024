@@ -1,0 +1,6 @@
+//test error
+// -- is reserved
+int main()
+{
+  return --2;
+}

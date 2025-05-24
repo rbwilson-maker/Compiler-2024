@@ -1,0 +1,100 @@
+//test return 4
+
+/*
+ * more simple trees but with height
+ */
+
+
+struct tree {
+    int val;
+
+    struct tree* left;
+    struct tree* right;
+};
+
+typedef struct tree tree_l;
+
+tree_l* init_tree_node(int val){
+
+    tree_l* root = alloc(struct tree);
+
+    root->val = val;
+
+    return root;
+}
+
+void insert_tree(tree_l* root, int val){
+
+    if (root == NULL) return;
+
+    if (root->val > val){
+        if (root->left == NULL){
+            root->left = init_tree_node(val);
+        } else {
+            insert_tree(root->left, val);
+        }
+    } else {
+        if (root->right == NULL){
+            root->right = init_tree_node(val);
+        } else {
+            insert_tree(root->right, val);
+        }
+    }
+
+}
+
+int max (int a, int b){
+    if (a > b) return a;
+    return b;
+}
+
+int h_tree (tree_l* root){
+    if (root == NULL) return 0;
+
+    return 1 + max(h_tree(root->right), h_tree(root->left));
+}
+
+int main() {
+    
+    tree_l* root = init_tree_node(5);
+    assert(h_tree(root) == 1);
+
+    insert_tree(root, 2);
+
+    assert(h_tree(root) == 2);
+
+    insert_tree(root, 3);
+
+    assert(h_tree(root) == 3);
+
+    insert_tree(root, 4);
+
+    assert(h_tree(root) == 4);
+
+    insert_tree(root, 1);
+    
+    assert(h_tree(root) == 4);
+    
+    insert_tree(root, 8);
+    
+    assert(h_tree(root) == 4);
+    
+    insert_tree(root, 7);
+    
+    assert(h_tree(root) == 4);
+    
+    insert_tree(root, 9);
+    
+    assert(h_tree(root) == 4);
+    
+    insert_tree(root, 10);
+    
+    assert(h_tree(root) == 4);
+    
+    insert_tree(root, 6);
+    
+    assert(h_tree(root) == 4);
+
+
+    return h_tree(root);
+}

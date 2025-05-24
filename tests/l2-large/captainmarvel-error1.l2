@@ -1,0 +1,16 @@
+//test error
+
+int main ()
+{
+
+  
+  for (a = 1; a < 1; a++){ // did not declare a first
+    int b = 1;
+
+    while (b == 1){
+      b += 1;
+    }
+  }
+  
+  return 0;
+}

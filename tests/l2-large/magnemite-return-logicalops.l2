@@ -1,0 +1,14 @@
+//test return 3
+//logical ops
+
+int main() {
+    bool m = true;
+    bool n = false;
+
+    if (m && (n || m)) {
+       return 3;
+    } else {
+      return 4;
+    }
+
+}

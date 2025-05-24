@@ -1,0 +1,11 @@
+//test return 123
+
+int main() {
+    bool b = true && false || true;
+
+    if (b) {
+        return 123;
+    } else {
+        return 321;
+    }
+}

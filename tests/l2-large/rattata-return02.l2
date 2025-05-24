@@ -1,0 +1,16 @@
+//test return 6
+int main() {
+  int x = 0;
+  int y = 1;
+  int z = 2;
+  if (y < 10) {
+    if (z > 4) {
+      return x;
+    }
+    else {
+      z++;
+    }
+  }
+  y++;
+  return 2 * z;
+}

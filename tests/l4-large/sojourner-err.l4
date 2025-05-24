@@ -1,0 +1,47 @@
+//test return 961434
+
+struct result {
+    int ok;
+    int err;
+};
+
+struct result *try(int *x) {
+    struct result* res =  alloc(struct result);
+    if (x == NULL)
+        res->err = 1;
+    else
+        res->ok = *x;
+    return res;
+}
+
+int twist(int x) {
+    return (((x ^ 0x12345678) << 13) >> 4) + (x ^ 0x87654321);
+}
+
+int check(struct result[] results, int n) {
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        if (results[i].err == 1)
+            count++;
+        else
+            assert(results[i].ok >= 0);
+    }
+    return count;
+}
+
+int main() {
+    struct result[] results = alloc_array(struct result, 1000000);
+    for (int i = 0; i < 1000000; i++) {
+        struct result *foo;
+        if (twist(i) < 0)
+            foo = try(NULL);
+        else {
+            int *blah = alloc(int);
+            *blah = twist(i);
+            foo = try(blah);
+        }
+        results[i].ok = foo->ok;
+        results[i].err = foo->err;
+    }
+    return check(results, 1000000);
+}

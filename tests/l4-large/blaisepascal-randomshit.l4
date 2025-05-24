@@ -1,0 +1,52 @@
+//test return 182
+
+typedef int foo;
+foo func();
+
+foo func () {
+  return 5;
+}
+
+void asdf () {
+  int x = 5;
+  return;
+}
+
+int pog () {
+  return 3;
+}
+
+int yo (int n) {
+  return n + 3;
+}
+
+int yoyo (int x, int y) {
+  return x + y + 1;
+}
+
+int use_arg_later (int a, int b, int c, int d, int e, int f, int g, int h, int j) {
+  int x = 1;
+  int y = 2;
+  int z = 3;
+  bool bb = a < z;
+  if (bb) {
+    return a+b+c+d+e+f+g+h+j;
+  }
+  else {
+    return x+y+z+a+b+c+d+e+f+g+h+j;
+  }
+}
+
+int main () {
+  asdf();
+  int x = pog();
+  int y = x + 3;
+  int z = yo (x);
+  int a = yoyo (x, z);
+  // assert(x < y);
+  int d = use_arg_later (x, y, z, a, a, 100, x, z, 2);
+  int q = func();
+  int b = x / z;
+  int c = x >> 5;
+  return x+y+z+a+b+c+d+q;
+}

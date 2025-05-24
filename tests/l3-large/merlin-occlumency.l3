@@ -1,0 +1,18 @@
+//test return 1771561
+
+int legilimens(int m, int n, int k) {
+	if (k == 0) return m + n;
+	else if (k == 1 && n == 0) return 0;
+	else if (k == 2 && n == 0) return 1;
+	else if (k > 2 && n == 0) return m;
+	else {
+		return legilimens(m,legilimens(m,(n-1),k),k-1);
+	}
+}
+	
+
+int main () {
+	
+	return legilimens(11,6,2);
+
+}

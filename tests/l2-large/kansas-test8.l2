@@ -1,0 +1,8 @@
+//test return 9
+
+// This is designed to test bitwise xor assignment
+int main() {
+  int a = 7;
+  a ^= 0xE;
+  return a;
+}

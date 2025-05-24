@@ -1,0 +1,11 @@
+//test abort
+
+int main() {
+    bool *cond = alloc(bool);
+    *cond = true;
+    bool **pcond = alloc(bool*);
+    *pcond = cond;
+    **pcond = false;
+    assert(**pcond);
+    return 0;
+}

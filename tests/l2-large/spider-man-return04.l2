@@ -1,0 +1,18 @@
+//test return 4
+
+int main() 
+{
+    bool blah = false;
+    int y = 0;
+    int z;
+    while (!blah && y < 10) {
+        if (y == 9) {
+            return y >> 1;
+        }
+        else {
+            y += 1;
+        }
+    }
+    z = 10;
+    return z + y;
+}

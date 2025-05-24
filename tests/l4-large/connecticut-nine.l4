@@ -1,0 +1,21 @@
+//test return 0
+
+struct pair {
+	int x;
+	int y;
+};
+
+// Why does c0 not have tuples?
+
+typedef struct pair pair;
+
+int sum(pair* p) {
+	return p -> x + p -> y;
+}
+
+int main() {
+	pair* xy = alloc(pair);
+	xy -> x = 5;
+	xy -> y = -5;
+	return sum(xy);
+}

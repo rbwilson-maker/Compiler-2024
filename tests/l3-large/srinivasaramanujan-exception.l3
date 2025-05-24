@@ -1,0 +1,17 @@
+//test div-by-zero
+
+int sum(int x, int y);
+
+int sum(int a, int b) {
+    int x = a + b;
+
+    return x;
+}
+
+int main() {
+    int x = 5;
+    int y = sum(10, -10);
+
+    int z = x / y;
+    return z;
+}

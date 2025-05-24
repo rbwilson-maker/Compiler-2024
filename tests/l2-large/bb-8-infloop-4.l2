@@ -1,0 +1,18 @@
+//test typecheck
+//test infloop
+int main()
+{
+    int x;
+    int y;
+    int z;
+    x = 1;
+    y = 1;
+    z = 5;
+    while (y < z)
+    {
+      x = x * 2;
+      y = y + 1;
+      y = y - 1;
+    }
+    return x;
+}

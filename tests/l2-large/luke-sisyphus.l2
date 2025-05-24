@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int main() {
+    int rock = 0;
+    int top = 1000;
+    while (rock < top) {
+        rock++;
+        if (rock + 1 == top) {
+            rock = 0;
+        }
+    }
+    return rock;
+}

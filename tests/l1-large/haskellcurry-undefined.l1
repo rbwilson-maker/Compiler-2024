@@ -1,0 +1,10 @@
+//test error
+
+int main() {
+    int bestCourse;
+
+    int systems_course = 3 * 11 * 461;
+    int parallel_course = 2 * 3 * 3 * 5 * 13 * 13;
+
+    return systems_course - parallel_course + (parallel_course - systems_course) + bestCourse;
+}

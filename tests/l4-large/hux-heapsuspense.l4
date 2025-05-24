@@ -1,0 +1,90 @@
+//test return 0
+
+struct n {
+  int[] ashwin;
+  int n;
+  int ana;
+  int xanax;
+  int axanaxa;
+  int naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct ana {
+  struct n n;
+  int ana;
+  int xanax;
+  int axanaxa;
+  int naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct xanax {
+  struct n n;
+  struct ana ana;
+  int xanax;
+  int axanaxa;
+  int naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct axanaxa {
+  struct n n;
+  struct ana ana;
+  struct xanax xanax;
+  int axanaxa;
+  int naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct naxanaxan {
+  struct n n;
+  struct ana ana;
+  struct xanax xanax;
+  struct axanaxa axanaxa;
+  int naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct anaxanaxana {
+  struct n n;
+  struct ana ana;
+  struct xanax xanax;
+  struct axanaxa axanaxa;
+  struct naxanaxan naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct xanaxanaxanax {
+  struct n n;
+  struct ana ana;
+  struct xanax xanax;
+  struct axanaxa axanaxa;
+  struct naxanaxan naxanaxan;
+  struct anaxanaxana anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct zombie {
+  struct n n;
+  struct ana ana;
+  struct xanax xanax;
+  struct axanaxa axanaxa;
+  struct naxanaxan naxanaxan;
+  struct anaxanaxana anaxanaxana;
+  struct xanaxanaxanax xanaxanaxanax;
+};
+
+typedef struct zombie zombie;
+
+int main() {
+  zombie[] CMU = alloc_array(zombie, 273355);
+  CMU[666].xanaxanaxanax.anaxanaxana.naxanaxan.axanaxa.xanax.ana.n.ashwin = alloc_array(int, 1000);
+  return CMU[666].xanaxanaxanax.anaxanaxana.naxanaxan.axanaxa.xanax.ana.n.ashwin[666];
+}

@@ -1,0 +1,39 @@
+//test return 1
+
+int main() {
+    int a1 = 1;
+    int a2 = 0;
+    int a3 = 1;
+    int a4 = 0;
+    if (a1 > a2) {
+        int temp = a2;
+        a2 = a1;
+        a1 = temp;
+    }
+    if (a2 > a3) {
+        int temp = a3;
+        a3 = a2;
+        a2 = temp;
+    }
+    if (a3 > a4) {
+        int temp = a4;
+        a4 = a3;
+        a3 = temp;
+    }
+    if (a1 > a2) {
+        int temp = a2;
+        a2 = a1;
+        a1 = temp;
+    }
+    if (a2 > a3) {
+        int temp = a3;
+        a3 = a2;
+        a2 = temp;
+    }
+    if (a1 > a2) {
+        int temp = a2;
+        a2 = a1;
+        a1 = temp;
+    }
+    return a4 == 1 && a3 == 1 && a2 == 0 && a1 == 0 ? 1 : 0;
+}

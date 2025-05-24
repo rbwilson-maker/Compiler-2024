@@ -1,0 +1,7 @@
+//test return 0
+
+int main () {
+  int x = 100;
+  x <<= 2;
+  return ((x >= 400) ? 0 : 1 / 0);
+}

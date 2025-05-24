@@ -1,0 +1,9 @@
+//test div-by-zero
+int main() {
+  int x = 4;
+  int y = 3;
+  if (x != 3) {
+    return (x << y) / (x & y);
+  }
+  return ((2 * x) >> y) % (y >> x);
+}

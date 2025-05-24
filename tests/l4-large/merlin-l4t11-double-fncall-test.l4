@@ -1,0 +1,14 @@
+//test return 42
+
+//function should only be called twice instead of three times, as per the writeup
+
+int update_ptr(int[] x) {
+    x[0] += 3;
+    return 0;
+}
+
+int main() {
+    int[] val = alloc_array(int, 1);
+    val[update_ptr(val)] += 36;
+    return val[update_ptr(val)];
+}

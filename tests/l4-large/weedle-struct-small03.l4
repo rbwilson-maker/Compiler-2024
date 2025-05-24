@@ -1,0 +1,17 @@
+//test error
+// return values must have small type
+
+struct a {
+	int foo;
+};
+
+struct a foo() {
+	
+	struct a* b = alloc(struct a);
+	return *b;
+}
+
+int main() {
+	
+	return 1234;
+}

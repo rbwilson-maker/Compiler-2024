@@ -1,0 +1,9 @@
+//test memerror
+struct foo {
+    int *bar;
+};
+int main() {
+    struct foo* bar = alloc(struct foo);
+    *bar->bar = *bar->bar;
+    return 0;
+}

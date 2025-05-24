@@ -1,0 +1,19 @@
+//test error
+
+struct s1 {
+  int[] arr;
+};
+
+typedef struct s1 cat;
+
+struct s2 {
+  cat dog;
+  cat bird;
+};
+
+typedef struct s2 snake;
+
+int main() {
+  snake hiss = alloc (snake);
+  return 0;
+}

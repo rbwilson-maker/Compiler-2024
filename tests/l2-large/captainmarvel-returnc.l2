@@ -1,0 +1,14 @@
+//test return 3
+
+int main ()
+{
+
+  int a = 0;
+  int i = 0;
+  
+  for (a = 0; a < 5; a += 2){
+    i++;
+  }
+
+  return i;
+}

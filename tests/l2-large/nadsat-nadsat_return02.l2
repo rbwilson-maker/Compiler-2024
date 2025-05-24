@@ -1,0 +1,22 @@
+//test return 2187
+
+// Test multiplication, division in loops
+int main()
+{
+  int to_mul;
+  int to_div;
+  int n1;
+  int n2;
+
+  to_mul = 3;
+  to_div = 7;
+  n1 = 1;
+  n2 = 244140625;
+
+  while (n1 < n2) {
+    n1 *= to_mul;
+    n2 /= to_div;
+  }
+
+  return n1;
+}

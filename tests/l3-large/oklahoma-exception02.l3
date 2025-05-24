@@ -1,0 +1,8 @@
+//test div-by-zero
+//declared functions need not be defined
+
+int friend();
+
+int main () {
+  return (1/0);
+}

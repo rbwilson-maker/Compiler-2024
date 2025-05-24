@@ -1,0 +1,51 @@
+//test return 0
+/*
+    recursive-gcd: Finds some GCDs, but with recursion this time.
+
+    Tries to verify correctness with assert statements.
+
+    Tests:
+    - Recursion
+    - Functions with multiple arguments
+
+    Some testcases from:
+    https://www.kosbie.net/cmu/fall-21/15-112/notes/hw2.html
+*/
+
+int max(int x, int y) {
+    return x >= y ? x : y;
+}
+
+int min(int x, int y) {
+    return x < y ? x : y;
+}
+
+int gcd(int x, int y) {
+    int larger = max(x, y);
+    int smaller = min(x, y);
+
+    if (smaller < 1) { return larger; }
+
+    int remainder = larger % smaller;
+    return gcd(remainder, smaller);
+}
+
+int main() {
+    assert(gcd(512, 252) == 4);
+    assert(gcd(513, 252) == 9);
+    assert(gcd(270, 250) == 10);
+    assert(gcd(1568160, 3143448) == 7128);
+
+    // Coprime!
+    assert(gcd(15938, 15693) == 1);
+
+    assert(gcd(547668, 562881) == 15213);
+
+    // Lots of iterations
+    assert(gcd(102334155, 165580141) == 1);
+
+    // Again!
+    assert(gcd(1836311903, 1134903170) == 1);
+
+    return 0;
+}

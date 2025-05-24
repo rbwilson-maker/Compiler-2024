@@ -1,0 +1,15 @@
+//test div-by-zero
+
+/*
+ * 0 init of arrays
+ * arrays should be initialized to 0
+ */
+
+
+int main() {
+    int[] a = alloc_array (int, 10);
+
+    a[0] /= a[0];
+
+    return 1;
+}

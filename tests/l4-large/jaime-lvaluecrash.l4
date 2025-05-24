@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main()
+{
+  bool[] p = alloc_array(bool, 256);
+  p[(1/0)] = false;
+  return 1;
+}

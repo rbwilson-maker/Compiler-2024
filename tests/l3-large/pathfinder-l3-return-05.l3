@@ -1,0 +1,14 @@
+//test return 3
+
+bool function_call(int x, bool pred, int y) {
+    return x == 10 && !pred && y == -7;
+}
+
+int main() {
+    int a = function_call(0, false, -7) ? 3 : 0;
+    int b = function_call(-7, false, 10) ? 3 : 0;
+    int c = function_call(10, true, -7) ? 3 : 0;
+    int d = function_call(10, false, -7) ? 3 : 0;
+    int e = function_call(7, false, -7) ? 3 : 0;
+    return a + b + c + d + e;
+}

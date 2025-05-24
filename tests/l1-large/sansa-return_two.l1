@@ -1,0 +1,9 @@
+//test return 2
+int main() {
+    int a = 256;
+    a /= 2;
+    a /= 2;
+    a /= 8;
+    a /= 4;
+    return a;
+}

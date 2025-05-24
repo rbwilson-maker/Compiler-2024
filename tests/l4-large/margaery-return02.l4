@@ -1,0 +1,45 @@
+//test return 1278
+
+struct  vector {
+    int x;
+    int y;
+};
+
+int square(int x) {
+    return x * x;
+}
+
+int square_root(int x) {
+    if (x == 0 || x == 1) {
+        return x;
+    }
+
+    int i = 1;
+    int result = 1;
+
+    while(result < x) {
+        if (result == x) {
+            return result;
+        }
+
+        i++;
+        result = i * i;
+    }
+
+    return i - 1;
+}
+
+int main() {
+    struct vector* v1 = alloc(struct vector);
+    struct vector* v2 = alloc(struct vector);
+
+    v1->x = 1000;
+    v1->y = 99;
+
+    (*v2).x = 93;
+    v2->y = 1000;
+
+    return square_root(square(v1->x - v2->x) + square(v1->y - v2->y));
+
+     
+}

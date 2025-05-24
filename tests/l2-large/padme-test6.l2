@@ -1,0 +1,10 @@
+//test return 17
+int main() {
+
+  int a = 1;
+  int b = 1 << 4;
+  for (int i = 0; i < b; i++) {
+    a = a + 1;
+  }
+  return a;
+}

@@ -1,0 +1,26 @@
+//test return 46684
+
+// Compute hash and sum
+
+int hash(int input, int len) {
+  // Stupid modification to Knuth's multiplicative method mod len
+  int hash_val = input * 35761;
+  return hash_val % len;
+}
+
+
+int main() {
+  int[] hash_tbl = alloc_array(int, 5);
+  int sum = 0;
+
+  for (int i = 0; i < 5; i++) {
+    int input = i * 3 + i - 5 + 9283 - i*i*i + i*i*i*i;
+    hash_tbl[hash(input, 5)] += input;
+  }
+
+  for (int i = 0; i < 5; i++) {
+    sum += hash_tbl[i];
+  }
+
+  return sum;
+}

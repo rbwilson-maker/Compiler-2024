@@ -1,0 +1,9 @@
+//test error
+
+//variable declarations aren't supported outside functions
+
+fpt global_var = 0;
+
+int main () {
+    return global_var;
+}

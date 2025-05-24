@@ -1,0 +1,17 @@
+//test abort
+
+
+typedef bool fun;
+typedef int zerois;
+
+fun fact(zerois one)
+{
+    return 0 == one;
+}
+
+
+int main()
+{
+    if(fact(0)) assert(false);
+    return 0;
+}

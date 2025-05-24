@@ -1,0 +1,11 @@
+//test return 15411
+//test binary operation on both decimal num and hex num
+int main()
+{
+  int a = 0xF; // 15
+  int b = 411;
+  int c;
+  c = a * 1000; // 15000
+  c += b;
+  return c;
+}

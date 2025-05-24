@@ -1,0 +1,8 @@
+//test return 0
+
+int main() {
+  int n = 5;
+  int[] board = alloc_array(int, n * n);
+
+  return board[0];
+}

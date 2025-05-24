@@ -1,0 +1,12 @@
+//test return 0
+struct test{
+	int x;
+};
+
+int main(){
+	struct test * t;
+	t = alloc(struct test);
+	(*t).x = (*alloc(struct test)).x;
+	(*(alloc(int)));
+	return 0;
+}

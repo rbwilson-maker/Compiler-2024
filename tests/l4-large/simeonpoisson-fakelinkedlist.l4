@@ -1,0 +1,23 @@
+//test return 100
+
+struct s {
+  struct s *s;
+};
+
+typedef struct s s;
+
+int main() {
+  s* ss = alloc(s);
+  s* sss = ss;
+  int recurse = 100;
+  for (int i = 0; i < recurse; i++) {
+    sss->s = alloc(s);
+    sss = sss->s;
+  }
+  int result = 0;
+  while (ss->s != NULL) {
+    result++;
+    ss = ss->s;
+  }
+  return result;
+}

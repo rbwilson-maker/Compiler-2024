@@ -1,0 +1,13 @@
+//test return 3628800
+
+int fact(int n) {
+    assert(n >= 1);
+    if (n == 1) {
+        return 1;
+    }
+    return n * fact(n-1);
+}
+
+int main() {
+    return fact(10);
+}

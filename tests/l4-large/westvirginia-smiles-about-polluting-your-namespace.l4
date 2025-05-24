@@ -1,0 +1,17 @@
+//test return 7
+// Check about those shadowing rules
+
+typedef int r;
+
+struct s{
+    r s;
+};
+
+r s(struct s* s){ return s->s; }
+
+int main() {
+    struct s* t = alloc(struct s);
+    t->s = 7;
+
+    return s(t);
+}

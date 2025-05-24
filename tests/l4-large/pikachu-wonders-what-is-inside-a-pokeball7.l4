@@ -1,0 +1,9 @@
+//test error
+// tests whether a void* can be allocated. yo, this isn't C1
+
+int main()
+{
+  void *generic_lol = alloc(void*);
+  return 12;
+}
+

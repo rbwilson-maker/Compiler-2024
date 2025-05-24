@@ -1,0 +1,15 @@
+//test return 0;
+
+
+bool all_even_bits_one(int x){
+  return (x&0x55555555)==0x55555555;
+}
+
+int main(){
+  assert(!all_even_bits_one(0));
+  assert(all_even_bits_one(-1));
+  assert(all_even_bits_one(0xFD7FFFFF));
+  return 0;
+}
+
+

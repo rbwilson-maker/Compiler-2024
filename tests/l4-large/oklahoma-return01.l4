@@ -1,0 +1,116 @@
+//test return 1026
+// s-expressions as linked lists
+
+struct list;
+
+struct list_header {
+  struct list* l;
+};
+
+struct sexp {
+  int val;
+  struct list_header* args;
+};
+
+struct list {
+  struct sexp* data;
+  struct list* next;
+};
+
+typedef struct sexp* sexp;
+
+int list_length(struct list* l) {
+  if (l == NULL) return 0;
+  return 1+list_length(l->next);
+}
+
+/* don't give me a cyclic list */
+int length(struct list_header* lh) {
+  assert (lh != NULL);
+  return list_length(lh->l);
+}
+
+int eval(sexp s) {
+  assert(s != NULL);
+  struct list_header* lh = s->args;
+  int val = s-> val;
+  if (lh == NULL) {
+    return val;
+  } else {
+    if (val == 0) { /* addition */
+      assert(length(lh) == 2);
+      int a = eval(lh->l->data);
+      int b = eval(lh->l->next->data);
+      return (a + b);
+    } else if (val == 1) { /* subtraction */
+      assert(length(lh) == 2);
+      int a = eval(lh->l->data);
+      int b = eval(lh->l->next->data);
+      return (a - b);
+    } else if (val == 2) { /* multiplication */
+      assert(length(lh) == 2);
+      int a = eval(lh->l->data);
+      int b = eval(lh->l->next->data);
+      return (a * b);
+    } else if (val == 3) { /* negation */
+      assert(length(lh) == 1);
+      int a = eval(lh->l->data);
+      return (-a);
+    } else {
+      assert(false);
+      return 0;
+    }
+  }
+}
+
+int main ()
+{
+  sexp s1 = alloc(struct sexp); /* 10 */
+  s1->val = 10;
+
+  sexp s2 = alloc(struct sexp); /* 27 */
+  s2->val = 27;
+
+  sexp s3 = alloc(struct sexp); /* 37 = 10 + 27 */
+  struct list_header *lh3 = alloc(struct list_header);
+  struct list *l3_1 = alloc(struct list);
+  struct list *l3_2 = alloc(struct list);
+  l3_1->data = s1;
+  l3_1->next = l3_2;
+  l3_2->data = s2;
+  lh3->l = l3_1;
+  s3->val = 0;
+  s3->args = lh3;
+
+  sexp s4 = alloc(struct sexp); /* 999 = 37 * 27 */
+  struct list_header *lh4 = alloc(struct list_header);
+  struct list *l4_1 = alloc(struct list);
+  struct list *l4_2 = alloc(struct list);
+  l4_1->data = s3;
+  l4_1->next = l4_2;
+  l4_2->data = s2;
+  lh4->l = l4_1;
+  s4->val = 2;
+  s4->args = lh4;
+ 
+  sexp s5 = alloc(struct sexp); /* -27 = -27 */
+  struct list_header *lh5 = alloc(struct list_header);
+  struct list *l5_1 = alloc(struct list);
+  l5_1->data = s2;
+  lh5->l = l5_1;
+  s5->val = 3;
+  s5->args = lh5;
+
+  sexp s6 = alloc(struct sexp); /* 1026 = 999 - (-27) */
+  struct list_header *lh6 = alloc(struct list_header);
+  struct list *l6_1 = alloc(struct list);
+  struct list *l6_2 = alloc(struct list);
+  l6_1->data = s4;
+  l6_1->next = l6_2;
+  l6_2->data = s5;
+  lh6->l = l6_1;
+  s6->val = 1;
+  s6->args = lh6;
+  
+  return eval(s6);
+}

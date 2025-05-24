@@ -1,0 +1,24 @@
+//test return 3
+
+typedef int b;
+
+struct b;
+
+typedef struct b *x;
+
+struct a {
+	struct b *c; 
+	int *[] d;
+
+};
+
+struct b {
+	int c;
+};
+
+int main() {
+	x f = alloc(struct b);
+	f->c = 3;
+	b g = f->c;
+	return 3;
+}

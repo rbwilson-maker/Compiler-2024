@@ -1,0 +1,11 @@
+//test return 0
+
+typedef struct mystruct s;
+
+int foo(s* x){
+  return 0;
+}
+
+int main(){
+  return foo(NULL);
+}

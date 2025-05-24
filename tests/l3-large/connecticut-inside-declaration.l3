@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+	int a(int x) {   // <- Fix your shit plz
+		return 10 * x;
+	}
+
+	return a(10000);
+}

@@ -1,0 +1,19 @@
+//test error
+// Using definition of struct that is declared but not defined
+
+struct b;
+
+struct a {
+  struct b b;
+};
+
+struct b {
+  int* c;
+  int d;
+};
+
+int main() {
+  struct a* a = alloc(struct a);
+  a->b.d = 5;
+  return a->b.d;
+}

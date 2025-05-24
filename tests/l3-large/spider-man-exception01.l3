@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int blargh(int x) {
+    if (x == 1) return 4;
+    return 1 << blargh(x >> 1);
+}
+
+int main() {
+    while (true) {
+        int x;
+        x = 1;
+        x = x / blargh(x << 3);
+    }
+    return 0;
+}

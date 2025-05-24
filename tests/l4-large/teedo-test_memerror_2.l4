@@ -1,0 +1,30 @@
+//test memerror
+
+bool isPalindrome(int[] A, int n) {
+    if (n == 0) {
+        return true;
+    }
+
+    int i = 0;
+    int j = n - 1;
+    while (i <= j) {
+        if (A[i] != A[j]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int[] A = alloc_array(int, 10);
+
+    for (int i = 0; i < 5; i++) {
+        A[i] = i;
+        A[10 - i] = i;  // BUG! Should be 10 - i - 1
+    }
+    
+    if (isPalindrome(A, 10)) {
+        return 1;
+    }
+    return 0;
+}

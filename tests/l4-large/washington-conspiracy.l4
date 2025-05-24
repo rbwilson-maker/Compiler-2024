@@ -1,0 +1,9 @@
+//test return 0
+
+struct conspiracy *id(struct conspiracy *f) {
+    return f;
+}
+
+int main() {
+    return 0;
+}

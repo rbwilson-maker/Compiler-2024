@@ -1,0 +1,12 @@
+//test error
+
+typedef int dog;
+typedef bool cat;
+
+int main () {
+  dog x = 0;
+  cat cat = true;
+  dog cat = 1; 
+
+  return cat;
+}

@@ -1,0 +1,12 @@
+//test div-by-zero
+// shift negative
+
+int main() {
+    int x = 9;
+    int y = 6;
+    while (y >= 0) {
+        y--;
+        x >>= y;
+    }
+    return x;
+}

@@ -1,0 +1,21 @@
+//test return 150
+
+typedef struct foo foo;
+struct foo {
+  int i;
+};
+typedef foo * bar;
+
+bar make(int x) {
+  bar s = alloc(foo);
+  if(s != NULL) {
+    s->i = x;
+  }
+  return s;
+}
+
+int main() {
+  bar test = make(150);
+  if(test == NULL) return 0;
+  return test->i;
+}

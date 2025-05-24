@@ -1,0 +1,20 @@
+//test abort
+/* early return and assert failure */
+
+int guess_my_value() {
+  int x = 1;
+  int y = 2;
+  int z = 3;
+  x = y;
+  y = z;
+  z = x;
+  return z;
+  return y;
+  return x;
+}
+
+int main () {
+  int value = guess_my_value();
+  assert(value == 1); // BAD GUESS YOU ARE A DISGRACE TO YOUR ANCESTORS
+  return value;
+}

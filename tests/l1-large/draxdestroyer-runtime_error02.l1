@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+    int c = 0;
+    int b = (10000000 % c);
+    b += 25;
+    c /= 4;
+    return 0;
+}

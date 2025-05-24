@@ -1,0 +1,6 @@
+//test div-by-zero
+// integer overflow
+
+int main() {
+  return 0xc0000000 * 2 / -1;
+}

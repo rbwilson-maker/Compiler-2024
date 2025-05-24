@@ -1,0 +1,7 @@
+//test return 32
+
+int main() {
+    int forelse = 2;
+    int iftrue = 4;
+    return forelse << iftrue;
+}

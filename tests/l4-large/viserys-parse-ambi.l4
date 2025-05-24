@@ -1,0 +1,11 @@
+//test return 0
+
+typedef int buu;
+
+int main() {
+  buu * a = alloc(int);
+  buu b = 4;
+  buu c = 6;
+  b * c;
+  return *a;
+}

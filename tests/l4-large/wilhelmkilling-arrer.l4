@@ -1,0 +1,15 @@
+//test typecheck
+
+struct meoww {
+  int a; 
+  int b; 
+};
+
+int main() {
+  struct meow *woof = alloc(struct meow);
+  woof->a = 10;
+  woof->b = 20; 
+  (*woof).a = 15;
+  int meoww = woof->a - woof->b; 
+  return (woof->b - woof->a) / meoww;
+}

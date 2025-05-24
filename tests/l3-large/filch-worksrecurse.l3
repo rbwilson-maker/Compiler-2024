@@ -1,0 +1,21 @@
+//test return 1
+
+typedef int num;
+
+num B(num x)
+{
+  if (x == 0) return 2;
+  else return B(x - 1);
+}
+
+void A()
+{
+  int b = B(10);
+  return;
+}
+
+int main()
+{
+  A();
+  return 1;
+}

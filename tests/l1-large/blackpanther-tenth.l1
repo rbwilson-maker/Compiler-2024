@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+	int x = 17;
+	int k = 3;
+	x = x / k;
+	k += 5;
+	x = x / k;
+	x = x / k;
+	x = x / k;
+	return x / x;
+}

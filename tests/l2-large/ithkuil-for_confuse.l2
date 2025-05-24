@@ -1,0 +1,17 @@
+//test return 4096 
+
+int main ()
+{
+  int i;
+  bool cond = true;
+  for (i = 0; i < 4096; ) {
+      if (cond) {
+          i += 2;
+      } else {
+          i--;
+      }
+      cond = !cond;
+  }
+
+  return i;
+}

@@ -1,0 +1,10 @@
+
+typedef int mana;
+typedef int damage;
+
+damage arcanemissiles(mana one);
+damage fireblast(mana two);
+damage frostbolt(mana two);
+damage fireball(mana four);
+damage pyroblast(mana ten);
+damage d_add(damage x, damage y);

@@ -1,0 +1,6 @@
+//test return 1885
+int main(){
+    int x = 15210;
+    int y = 15150;
+    return (x | y) ^ 15411;
+}

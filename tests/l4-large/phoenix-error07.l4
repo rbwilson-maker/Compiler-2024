@@ -1,0 +1,13 @@
+//test error
+//redefining a struct from the header
+
+struct phoenix {
+    int rise;
+    int* from;
+    bool the;
+    bool* ashes;
+}
+
+int main() {
+    return 0;
+}

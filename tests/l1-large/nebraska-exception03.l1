@@ -1,0 +1,12 @@
+//test div-by-zero
+// division error in asnop
+
+int main()
+{
+  int x;
+
+  x = 2;
+  x /= 0;
+
+  return x;
+}

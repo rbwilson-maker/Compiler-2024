@@ -1,0 +1,7 @@
+//test return 42
+int main() {
+  int x = 0;
+  int y = 42;
+  int z = (x > y) ? (y << 32) : y;
+  return z;
+}

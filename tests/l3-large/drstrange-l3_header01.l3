@@ -1,0 +1,9 @@
+//test error
+
+void func1(int x, int y, int z){
+    return;
+}
+
+int main() {
+    return func1(0, 1, 2);
+}

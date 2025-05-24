@@ -1,0 +1,22 @@
+//test typecheck
+//the halt is a lie
+
+bool liar(tm TM, input i) {
+  if (halts(TM, i)) {
+    while(true) {}
+    return false;
+  } else {
+    return true;
+  }
+}
+
+int main() {
+  tm TM = makeliar();
+  input i = TM;
+  bool result = halts(TM, i);
+  if (result == true || result == false) {
+    return 0;
+  }
+  assert(false);
+  return -1;
+}

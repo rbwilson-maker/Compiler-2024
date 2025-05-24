@@ -1,0 +1,10 @@
+//test return 5282
+
+int main() { 
+  int x = 1;
+  int i = 1;
+  for (; i < 10000; i *= 2) {
+    x = 123 + 23323324 / i + 2312;
+  }
+  return x;
+}

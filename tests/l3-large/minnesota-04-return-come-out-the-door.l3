@@ -1,0 +1,18 @@
+//test return 11
+//multiple functions
+
+int add_one(int n) {
+  return n+1;
+}
+
+int double(int n) {
+  return n*2;
+}
+
+int subtract_one(int n) {
+  return n-1;
+}
+
+int main() {
+  return subtract_one(double(add_one(5)));
+}

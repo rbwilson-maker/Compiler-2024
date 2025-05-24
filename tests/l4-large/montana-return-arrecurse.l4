@@ -1,0 +1,17 @@
+//test return 18678
+
+void do_a_thing(int *[]arr, int x) {
+  arr[x] = alloc(int);
+  if (x > 0) do_a_thing(arr, x - 1);
+  *arr[99 - x] = x ^ 0xaa;
+}
+
+int main() {
+  int x = 100;
+  int *[]a = alloc_array(int *, x);
+  do_a_thing(a, x - 1);
+  int result = 0;
+  for (int i = 0; i < x; i++)
+    result += *a[i];
+  return result;
+}

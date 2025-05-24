@@ -1,0 +1,14 @@
+//test return 1
+int f(int *count) {
+    int x = *count;
+    *count = *count + 1;
+    return x;
+}
+
+int main () {
+    int *count = alloc(int);
+    int[] A = alloc_array(int, 4);
+    *count = 0;
+    A[f(count)] += 1;
+    return *count;
+}

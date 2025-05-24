@@ -1,0 +1,29 @@
+//test return 0
+
+int odd(int n);
+
+int even(int n);
+
+int parity(int n) {
+	if(odd(n)!= 1) return 1;
+	else return 0;
+}
+
+int odd(int n) {
+	if (n == 0)
+		return 0;
+	else
+		return even(n-1);
+}
+
+int even(int n) {
+	if (n == 0)
+		return 1;
+	else
+		return odd(n-1);
+}
+
+int main() {
+	int test = 15411;
+	return parity(test);
+}

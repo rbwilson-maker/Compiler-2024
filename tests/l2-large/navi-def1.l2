@@ -1,0 +1,14 @@
+//test error
+int main() {
+	int a;
+	int c = 4;
+	if(c > 3) {
+	while(c > 0) {
+		c++;
+		a = 5;
+	}
+	} {
+		if(c < 2) a = 1;
+	}
+	return a;
+}

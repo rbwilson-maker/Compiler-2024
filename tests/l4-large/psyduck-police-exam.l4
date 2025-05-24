@@ -1,0 +1,11 @@
+//test error
+
+bool eq(int* x, int* y)
+{
+return x == y;
+}
+
+int main () {
+int[] x = alloc_array(int, 15);
+return eq(x, NULL) ? 0 : 1;
+}

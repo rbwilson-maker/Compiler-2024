@@ -1,0 +1,10 @@
+//test error
+//parameters have same variable name
+
+bool helper(bool b, int b, bool c){ 
+      return 0;
+}
+
+int main() {
+      return 0;
+}

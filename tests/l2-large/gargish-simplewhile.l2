@@ -1,0 +1,11 @@
+//test return 10
+// simple while loop
+int main()
+{
+    int y = 0;
+    int x = 2 * 4 + 2;
+    while (y < x) {
+        y += 1;
+    }
+    return y;
+}

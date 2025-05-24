@@ -1,0 +1,28 @@
+//test return 25
+
+int main()
+{
+	int x = 5;
+	int y;
+
+  {
+    y = 20;
+
+    return x + y;
+
+  }
+	x <<= y;
+	x >>= y;
+  x += 20;
+  x -= 20;
+  x *= 42;
+  x /= 42;
+
+  x %= 1; // x = 0
+
+  x |= 0xF;
+  x ^= 0x6;
+  x &= 0x5;
+
+	return x;
+}

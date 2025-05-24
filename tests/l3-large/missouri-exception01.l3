@@ -1,0 +1,14 @@
+//test div-by-zero
+// Divide by 0 in a function
+
+typedef int Int;
+
+
+Int divByZero (Int x) {
+  return x / 0;
+}
+
+
+Int main () {
+  return divByZero (10);
+}

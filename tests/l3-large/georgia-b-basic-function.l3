@@ -1,0 +1,26 @@
+//test return 25
+// Tests basic function calls
+
+int plus5(int x) {
+    return x + 5;
+}
+
+int plus4(int x) {
+    return x + 4;
+}
+
+int plus3(int x) {
+    return x + 3;
+}
+
+int plus2(int x) {
+    return x + 2;
+}
+
+int plus1(int x) {
+    return x + 1;
+}
+
+int main() {
+    return plus1(plus2(plus3(plus4(plus5(10)))));
+}

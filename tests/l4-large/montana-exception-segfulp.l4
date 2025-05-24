@@ -1,0 +1,25 @@
+//test memerror
+
+/* Tom Fulp was once a cool kid who made a site called Newgrounds (Yoink!).
+/* In this test case, I turn ol' Fulpy into a ghost, where he meets with
+/* his brother Wade and triggers the end of the world (a segfault).
+*/
+*/
+*/
+
+typedef int tom;
+
+tom * wade(tom fulp) {
+  return NULL;
+}
+
+int main() {
+  tom * fulp = alloc(tom);
+  *fulp = 1999;
+  tom ** fulps_ghost = alloc(tom *);
+  *fulps_ghost = fulp;
+  fulp = wade(*fulp);
+  **fulps_ghost;
+  *fulp;
+  return **fulps_ghost;
+}

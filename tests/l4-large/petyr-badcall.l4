@@ -1,0 +1,23 @@
+//test error
+
+// bad return on fct call
+
+bool ismaxarray (int[] arr, int n) {
+  int i = 0;
+  int res = arr[i];
+  while (i<n ) {
+     if (arr[i] > res) res = arr[i];
+     i++ ;
+  }
+  return res==n ;
+}
+
+int main () {
+    int [] arr = alloc_array(int, 100) ;
+    int i = 0 ;
+    while (i<100 ) {
+       arr[i] = i ;
+       i++ ;
+    }
+    return ismaxarray(arr,9) ;
+}

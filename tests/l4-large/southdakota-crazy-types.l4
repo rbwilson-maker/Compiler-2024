@@ -1,0 +1,23 @@
+//test return 0
+
+struct beans {
+	int pinto;
+};
+
+struct cheese {
+	struct beans* lima;
+};
+
+typedef struct cheese*[] pizza;
+
+int main() {
+	pizza mushroom = alloc_array(struct cheese*, 4);
+	mushroom[0] = alloc(struct cheese);
+	mushroom[0]->lima = alloc(struct beans);
+	mushroom[0]->lima->pinto = 5;
+
+	struct beans* gouda = alloc(struct beans);
+	mushroom[0]->lima = gouda;
+
+	return mushroom[0]->lima->pinto;
+}

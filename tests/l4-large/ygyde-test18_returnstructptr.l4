@@ -1,0 +1,25 @@
+//test error
+
+struct bad {
+    int val;
+};
+
+typedef struct bad badbad;
+
+badbad *foo(int bar) {
+    if (bar == 0) {
+        struct bad *ptr = array_alloc(badbad, 1);
+        bad->val = 0;
+        return ptr;
+    }
+    else {
+        badbad *ptr = foo(bar - 1);
+        ptr->val += 1;
+        return ptr;
+    }
+}
+
+int main() {
+    struct bad *ptr = foo(5);
+    return ptr->val;
+}

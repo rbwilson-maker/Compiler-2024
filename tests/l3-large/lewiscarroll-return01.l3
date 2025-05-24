@@ -1,0 +1,18 @@
+//test return 2
+
+typedef bool banana;
+
+int woohoo () {
+	banana b = true;
+	if (b) {
+		return 2;
+	}
+	else {
+		return 0; 
+	}
+}
+
+int main () {
+	int g = woohoo ();
+	return g;
+}

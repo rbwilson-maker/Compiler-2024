@@ -1,0 +1,17 @@
+//test return 0
+typedef bool a;
+typedef int b;
+typedef int* k;
+
+int main () {
+    a *a1 = alloc(a);
+    b *b1 = alloc(b);
+    k *k1 = alloc(k);
+
+    assert(*a1 == false);
+    assert(*b1 == 0);
+    assert(*k1 == NULL);
+
+    return 0;
+
+}

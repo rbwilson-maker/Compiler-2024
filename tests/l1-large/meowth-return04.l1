@@ -1,0 +1,16 @@
+//test return 0
+// test integer overflow and underflow
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+
+  a = 2147483647;
+  b = -(2147483648);
+  c = (a + 1) - b;
+  d = a - (b - 1);
+
+  return c * a + d * b;
+}

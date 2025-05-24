@@ -1,0 +1,9 @@
+//test error
+// int (and return) are currently the only reserved words that are actually terminals in the
+// grammar.  Checking for lazy reserved word checking...
+
+int main()
+{
+  int int = 3;
+  return int;
+}

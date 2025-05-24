@@ -1,0 +1,12 @@
+//test abort
+
+int function(int x, int y) {
+    assert(x > 0);
+    assert(y < 0);
+    return x * y;
+}
+
+int main() {
+    int a = function(1, 2);
+    return a;
+}

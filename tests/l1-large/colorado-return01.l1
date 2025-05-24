@@ -1,0 +1,16 @@
+//test return 1
+// test statement and declaration mixing
+int main()
+{
+  int a;
+  a = 0;
+  int b;
+  b = a+1;
+  int c;
+  c = 2*b;
+  int d;
+  d = 3-c;
+  int e;
+  e = -d;
+  return d;
+}

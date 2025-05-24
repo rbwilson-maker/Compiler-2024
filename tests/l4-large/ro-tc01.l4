@@ -1,0 +1,23 @@
+//test memerror
+// null coerces to anything pointer, right?
+
+int main() {
+  int ******x = NULL;
+  bool ********y = NULL;
+
+  int* [] a = alloc_array(int*, 10);
+
+  int i = 0;
+  while (i<10) {
+    a[i] = NULL;
+    i++;
+  }
+  int out = 0;
+  i = 0;
+  while (i<10) {
+    out += *a[i];
+    i++;
+  }
+
+  return out;
+}

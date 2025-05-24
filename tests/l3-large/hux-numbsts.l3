@@ -1,0 +1,17 @@
+//test return 42
+
+int num_bsts(int n) {
+	if (n <= 1)
+		return 1;
+
+	int tot = 0;
+	for (int i = 0; i < n; i++) {
+		tot += (num_bsts(i) * num_bsts(n-i-1));
+	}
+
+	return tot;
+}
+
+int main() {
+	return num_bsts(5);
+}

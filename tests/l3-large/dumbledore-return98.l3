@@ -1,0 +1,14 @@
+//test return 10
+// Test recursive function calls
+
+int recursive(int x, int accum) {
+    if (x == 0) {
+        return accum;
+    } else {
+        return recursive(x-1, accum+1);
+    }
+}
+
+int main() {
+    return recursive(10, 0);
+}

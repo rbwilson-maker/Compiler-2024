@@ -1,0 +1,11 @@
+//test return 7
+
+int main()
+{
+    int x = 0;
+    int y = -1;
+    int z = x | y;
+    z = z ^ y;
+    int a = y << 3;
+    return a ^ y;
+}

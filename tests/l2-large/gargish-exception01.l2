@@ -1,0 +1,9 @@
+//test div-by-zero
+
+// shift out-of-bound
+int main() {
+    int x = 1;
+    int y = 33;
+    int z = x >> y;
+    return 0;
+}

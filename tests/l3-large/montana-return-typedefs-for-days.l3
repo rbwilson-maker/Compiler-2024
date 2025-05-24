@@ -1,0 +1,27 @@
+//test return 0
+
+typedef int cooltype;
+typedef cooltype coolertype;
+typedef coolertype not_a_pointer;
+typedef cooltype small_data;
+typedef bool nihilist_type;
+
+bool nietzsche(not_a_pointer z);
+
+int main() {
+  cooltype a = 12;
+  while (nietzsche(a)) {
+    return -1;
+  }
+  return 0;
+}
+
+nihilist_type nietzsche(small_data existence) {
+  not_a_pointer p = 0;
+  bool god = true;
+  coolertype a = (p + existence) / 2;
+  for (p = a; p > 0; p /= 2) {
+    god = (nietzsche(a) && false);
+  }
+  return god;
+}

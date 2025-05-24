@@ -1,0 +1,28 @@
+//test return 42
+
+void subset_sum (int N, int k, int n, int r, int* count) {
+  if(n<0) return;
+  if(n==0 && r!=0) {
+    (*count)++;
+    return;
+  }
+  if(k==N && n!=0) {
+    (*count)++;
+    return; //N is the sum
+  }
+  if(n==0 && r==0){
+    (*count)++; //count is the number of subsets summing to N so far, 0 initially
+    return;
+  }
+  if(r<=0) return;
+  subset_sum(N, k+1, n, r, count);
+  subset_sum(N, k+1, n-k, r-1, count);
+}
+
+int main() {
+  int* count = alloc(int);
+  *count = 0;
+  subset_sum(10, 1, 10, 10, count);
+
+  return *count; 
+}

@@ -1,0 +1,9 @@
+//test error
+
+int multiply(int x, int y) {
+  return x * y;
+}
+
+int main() {
+  return multiply(1, 2, 3);
+}

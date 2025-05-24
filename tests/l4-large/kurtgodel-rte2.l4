@@ -1,0 +1,17 @@
+//test div-by-zero
+
+struct s {
+    int x;
+};
+
+typedef struct s ss;
+
+ss* f(ss* s) {
+    if (s == NULL)
+        return alloc(ss);
+    return s;
+}
+
+int main() {
+    return 1 / f(f(f(f(f(f(f(NULL)))))))->x;
+}

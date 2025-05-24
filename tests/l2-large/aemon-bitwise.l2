@@ -1,0 +1,12 @@
+//test return -13
+
+int main() {
+    int x = 0x55555555;
+    int y = 0x33333333;
+    x >>= 8; // 0x00555555
+    y <<= 2; // 0xCCCCCCCC
+    int z = x & y; // 0x00444444
+    y >>= 2; // 0xF3333333
+    z |= y; // 0xF3777777
+    return (z >> 24);
+}

@@ -1,0 +1,13 @@
+//test error
+
+// We do not return outside the while loop, even though this logically will never happen
+int main() {
+    int a = 0;
+    while (true) {
+        int b = a * 2;
+        a ++;
+        if (a < b) {
+            return 2;
+        }
+    }
+}

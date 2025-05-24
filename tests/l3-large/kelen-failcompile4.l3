@@ -1,0 +1,11 @@
+//test error
+
+int myint(int a);
+
+typedef int myint;
+
+// Tests using bool to receive the result from f()
+int main() {
+    myint a = 5;
+    return a;
+};

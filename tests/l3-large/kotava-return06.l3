@@ -1,0 +1,30 @@
+//test return 10
+
+int sum(int a, int b);
+int sub(int a, int b);
+int div(int a, int b);
+int mul(int a, int b);
+
+int main() {
+  int a;
+  int b;
+  {
+    a = 7;
+    b = 0x5;
+  }
+  int res = sum(sub(div(mul(sum(b, a), sub(a, b)), sub(b, a)), div(a, b)), sub(mul(a, b), sum(b, a)));
+  return res;
+}
+
+int sum(int x, int y) {
+  return x + y;
+}
+int sub(int x, int y) {
+  return x - y;       
+}
+int div(int x, int y) {
+  return x / y;
+}
+int mul(int x, int y) {
+  return x * y;    
+}

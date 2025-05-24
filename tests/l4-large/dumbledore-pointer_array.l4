@@ -1,0 +1,19 @@
+//test return 66
+int main() {
+  int[] * trick = alloc (int []);
+  *trick = alloc_array(int, 4);
+  
+  int * [] trickier = alloc_array(int *, 12);
+  
+  for ( int i = 0;  i < 12; i++ ) {
+    trickier[i] = alloc(int);
+    *trickier[i] = i;
+  }
+  
+  int sum = 0;
+
+  for (int i = 0; i < 12; i++) {
+    sum += *trickier[i];
+  }
+  return sum;
+}

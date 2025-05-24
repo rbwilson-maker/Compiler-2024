@@ -1,0 +1,7 @@
+//test return 1337
+int main() {
+  int[] x = alloc_array(int, 10);
+  x[3] = 1330; // regular assignment
+  x[3] += 7; // asnop
+  return x[3];
+}

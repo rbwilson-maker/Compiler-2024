@@ -1,0 +1,16 @@
+//test return -6
+
+int main() {
+  int x = ((3 + 4 * 5) - 100) / 7; // x == -11
+  x += 13;                         // x == 2
+
+  int y = x * x * x;               // y == 8
+  int z = y * y + x;               // z == 66
+
+  z -= 66 + 1;                     // z == -1
+  z /= (((z + z) * -1));           // z == 0
+
+  x = z + x - y;                   // x == -6
+
+  return x;                        // return -6
+}

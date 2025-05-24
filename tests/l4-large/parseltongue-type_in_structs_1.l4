@@ -1,0 +1,28 @@
+//test error
+
+/*
+ * correct types in a struct?
+ * bool should not be casted to int
+ */
+
+
+struct tree {
+    int val;
+
+    struct tree* left;
+    struct tree* right;
+
+    bool test;
+};
+
+typedef struct tree tree_l;
+
+
+int main() {
+    
+    tree_l* root = alloc(struct tree);
+
+    root->val += root->test;
+
+    return 1;
+}

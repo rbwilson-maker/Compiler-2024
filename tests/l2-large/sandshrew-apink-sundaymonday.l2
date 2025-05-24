@@ -1,0 +1,12 @@
+//test return 30
+
+int main() {
+  int x = 0;
+  int y = 5;
+
+  for ( ; x < y ; x++)
+    while (x < y)
+      x += 1;
+
+  return x * y;
+}

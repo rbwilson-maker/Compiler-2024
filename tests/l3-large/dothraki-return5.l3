@@ -1,0 +1,17 @@
+//test return 0
+
+// decrease positive int to 0
+int decrease(int num) {
+  if(num < 1) { 
+    return num;
+  }
+  if(num % 2 == 1){
+    return decrease(num - 1);
+  }
+  return decrease(num / 2);
+}
+
+int main()
+{
+  return decrease(11);
+}

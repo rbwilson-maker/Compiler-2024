@@ -1,0 +1,12 @@
+//test return 1
+
+int main(){
+
+    bool x = true;
+
+    int i = x ? 0 : (1/0); 
+
+    return i + (!x ? (3/0) : 1);
+
+}
+

@@ -1,0 +1,46 @@
+//test error
+
+int complicate(int start){
+  while(start < 3000){
+    start += start * 23 - 20;
+  }
+  while(start > 3000){
+    start -= start * 23 - 20;
+  }
+  while(start < 3000){
+    start += start * 23 - 20;
+  }
+  while(start > 3000){
+    start -= start * 23 - 20;
+  }
+  while(start < 3000){
+    start += start * 23 - 20;
+  }
+  while(start > 3000){
+    start -= start * 23 - 20;
+  }
+  while(start < 3000){
+    start += start * 23 - 20;
+  }
+  while(start > 3000){
+    start -= start * 23 - 20;
+  }
+  return start;
+}
+
+int main ()
+{
+  int x;
+
+  x = 1;  // 1
+  x <<= x; // 2
+  x >>= 2;
+  x <<= 2;
+  x >>= 2;
+  x <<= 4;
+  x >>= 4;
+  x ^= 4 >> 1 >> 1 << 1 >> 1 << 1;
+  complicate(x, x + 1);
+  return 15;
+}
+

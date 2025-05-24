@@ -1,0 +1,9 @@
+//test return -32
+
+// Check that compiler is using signed shifts
+ 
+int main () {
+    int a = -32;
+    a = a >> 5 << 5;
+    return a;
+}

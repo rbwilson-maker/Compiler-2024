@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+  int x = 5;
+  while (x < 200) {
+    x *= 2;
+  }
+
+  int y = -x;
+  if (x / (x + y) == 1) return 4;
+  return 3;
+}

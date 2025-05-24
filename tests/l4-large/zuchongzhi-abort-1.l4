@@ -1,0 +1,14 @@
+//test abort
+struct foo {
+    int bar;
+};
+
+int main() {
+    struct foo * f = alloc( struct foo );
+    f->bar = 0;
+    struct foo * p = alloc( struct foo );
+    p->bar = 0;
+    assert(p->bar == 0);
+    assert(f->bar == p->bar + ~f->bar);
+    return f->bar / p->bar; // Shouldn't reach here
+}

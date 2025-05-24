@@ -1,0 +1,28 @@
+//test return 55
+
+// Tests a valid program with many of variables
+
+int main(){
+
+    int a = 1;
+    int b = 2;
+    int c = 3;
+    int d = 4;
+    int e = 5;
+    int f = 6;
+    int g = 7;
+    int h = 8;
+    int i = 9;
+    int j = 10;
+    int k = a + b;
+    int l = c + d;
+    int m = e + f;
+    int n = g + h;
+    int o = i + j;
+    int p = k + l;
+    int q = m + n;
+    int r = o + p;
+    int s = q + r;
+    return s;
+
+}

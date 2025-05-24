@@ -1,0 +1,38 @@
+//test return 488854784
+
+struct node {
+	int val;
+	struct node *left;
+	struct node *right;
+};
+
+typedef struct node node;
+
+node *gen_tree(int seed) {
+	if (seed <= 1) {
+		node *leaf = alloc(node);
+		leaf->val = seed;
+
+		return leaf;
+	}
+
+	node *internal = alloc(node);
+	internal->val = seed;
+	internal->left = gen_tree(seed/2);
+	internal->right = gen_tree(seed/2);
+
+	return internal;
+}
+
+int reduce(node *root) {
+	if (root == NULL)
+		return 0;
+
+	return reduce(root->left) + root->val + reduce(root->right);
+}
+
+int main() {
+	node *tree = gen_tree(20000000);
+
+	return reduce(tree);
+}

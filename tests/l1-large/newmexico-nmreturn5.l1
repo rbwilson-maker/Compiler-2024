@@ -1,0 +1,42 @@
+//test return 1436499739
+// arithmetic operations with parentheses at the end
+
+int main()
+{
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+	int f;
+	int g;
+	int h;
+	int i;
+	int j;
+	int k;
+	int l;
+	a = -3 - -7;
+	b = a * -9;
+	c = a + b;
+	a = c * b;
+	d = 14;
+	b = d + a;
+	d += c;
+	g = 75;
+	h = 35;
+	i = g + h;
+	j = i - a;
+	h -= d;
+	k = h+1;
+	e = a % (c+4);
+	/* Random comment */
+	c = a / 2; // Hello!
+	f = a + b;
+	l = -1;
+	a = k - ((b-c)*(d-f)*((e+j+1)*(l+2)));
+	b = -(h+((c-d-3)/(e-f+5))) + (l- -2 + c);
+	c += a-b;
+	d /= e - f + a + 1;
+	l *= h;
+	return a+b+c+d+e+f+g+h+i+j+k+l;
+}

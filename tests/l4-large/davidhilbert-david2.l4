@@ -1,0 +1,15 @@
+//test typecheck
+
+struct yes {
+    int yes;
+    int************************** no;
+    bool three;
+    bool four;
+};
+
+typedef struct yes foo;
+
+int main() {
+    foo * bar = alloc(foo);
+    return **************************(bar->no);
+}

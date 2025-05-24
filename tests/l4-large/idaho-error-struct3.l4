@@ -1,0 +1,15 @@
+//test error
+struct s1 {
+  int x;
+};
+
+struct s2 {
+  struct s1 foo;
+};
+
+int main() {
+  struct s2* test = alloc(struct s2);
+  struct s1* two = alloc(struct s1);
+  test->foo = *two;
+  return 0;
+}

@@ -1,0 +1,14 @@
+//test return 0
+
+// checking simple math.
+int main() {
+  int z = 0;
+  for(int i = 0; i < 5; i++){
+    int j = i;
+    j++;
+    while(i < j){
+      i++;
+    }
+  }
+  return z;
+}

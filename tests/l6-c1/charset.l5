@@ -1,0 +1,19 @@
+//test return 0
+
+int main() {
+    char a = '\t';
+    char b = '\r';
+    char c = '\f';
+    char d = '\a';
+    char e = '\b';
+    char f = '\n';
+    char g = '\v';
+    char h = '\'';
+    char h1 = ''';
+    char i = '\"';
+    char i2 = '"';
+    char j = '\\';
+    char k = '\0';
+    if (h == h1 && i == i2) return 0;
+    return 1;
+}

@@ -1,0 +1,14 @@
+//test return 7
+
+int*[] f(){
+  int*[] A = alloc_array(int*, 10);
+  for(int i=0; i<10; i++){
+    A[i] = alloc(int);
+    *A[i] = i;
+  }
+  return A;
+}
+
+int main(){
+  return *f()[7];
+}

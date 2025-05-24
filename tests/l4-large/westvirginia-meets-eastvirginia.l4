@@ -1,0 +1,7 @@
+//test error
+// Plz don't use NULL in any places except pointer declaration
+// For example, in alloc_array declaration
+int main() {
+    int[] s = alloc_array(int, NULL);
+    return 0;
+}

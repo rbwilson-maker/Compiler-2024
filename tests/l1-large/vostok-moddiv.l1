@@ -1,0 +1,9 @@
+//test return -5
+
+// Test C0 moddiv properties
+
+int main() {
+    int a = (5 / 3) * 3 + (5 % 3);
+    int b = -a;
+    return (b / (-2)) * (-2) + (b % (-2));
+}

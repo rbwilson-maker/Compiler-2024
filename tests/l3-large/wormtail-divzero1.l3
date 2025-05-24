@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int foo() {
+  return 2;	
+}
+
+int buzz() {
+  return 3 / 0;
+}
+
+int main() {
+  return foo() * buzz();
+}

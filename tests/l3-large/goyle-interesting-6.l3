@@ -1,0 +1,30 @@
+//test return 93
+
+//Approximate the integral of a function across its domain, using the rectangle rule.
+
+fpt f(fpt x, fpt y) {
+  return fadd(fmul(x, x), y);
+}
+
+fpt integrate(fpt x1, fpt x2, int xnum,
+                    fpt y1, fpt y2, int ynum) {
+  fpt acc = itof(0);
+  fpt xwidth = fdiv(fsub(x2, x1), itof(xnum));
+  fpt ywidth = fdiv(fsub(y2, y1), itof(ynum));
+  for (fpt x = x1; fless(x, x2); x = fadd(x, xwidth)) {
+    for (fpt y = y1; fless(y, y2); y = fadd(y, ywidth)) {
+      acc = fadd(acc, fmul(f(x, y), fmul(xwidth, ywidth)));
+    }
+  }
+  return acc;
+}
+
+int main() {
+  fpt x1 = itof(0);
+  fpt x2 = itof(5);
+  int xnum = 1000;
+  fpt y1 = itof(0);
+  fpt y2 = itof(2);
+  int ynum = 1000;
+  return ftoi(integrate(x1,x2,xnum,y1,y2,ynum));
+}

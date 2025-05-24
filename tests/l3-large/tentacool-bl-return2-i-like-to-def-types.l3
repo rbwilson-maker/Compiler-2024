@@ -1,0 +1,129 @@
+//test return 42885
+
+typedef int a0;
+typedef a0 a1;
+typedef a1 a2;
+typedef a2 a3;
+typedef a3 a4;
+typedef a4 a5;
+typedef a5 a6;
+typedef a6 a7;
+typedef a7 a8;
+typedef a8 a9;
+typedef a9 a10;
+typedef a10 a11;
+typedef a11 a12;
+typedef a12 a13;
+typedef a13 a14;
+typedef a14 a15;
+typedef a15 a16;
+typedef a16 a17;
+typedef a17 a18;
+typedef a18 a19;
+typedef a19 a20;
+typedef a20 a21;
+typedef a21 a22;
+typedef a22 a23;
+typedef a23 a24;
+typedef a24 a25;
+typedef a25 a26;
+typedef a26 a27;
+typedef a27 a28;
+typedef a28 a29;
+typedef a29 a30;
+typedef a30 a31;
+typedef a31 a32;
+typedef a32 a33;
+typedef a33 a34;
+typedef a34 a35;
+typedef a35 a36;
+typedef a36 a37;
+typedef a37 a38;
+typedef a38 a39;
+typedef a39 a40;
+typedef a40 a41;
+typedef a41 a42;
+typedef a42 a43;
+typedef a43 a44;
+typedef a44 a45;
+typedef a45 a46;
+typedef a46 a47;
+typedef a47 a48;
+typedef a48 a49;
+typedef a49 a50;
+typedef a50 a51;
+typedef a51 a52;
+typedef a52 a53;
+typedef a53 a54;
+typedef a54 a55;
+typedef a55 a56;
+typedef a56 a57;
+typedef a57 a58;
+typedef a58 a59;
+typedef a59 a60;
+typedef a60 a61;
+typedef a61 a62;
+typedef a62 a63;
+typedef a63 a64;
+typedef a64 a65;
+typedef a65 a66;
+typedef a66 a67;
+typedef a67 a68;
+typedef a68 a69;
+typedef a69 a70;
+typedef a70 a71;
+typedef a71 a72;
+typedef a72 a73;
+typedef a73 a74;
+typedef a74 a75;
+typedef a75 a76;
+typedef a76 a77;
+typedef a77 a78;
+typedef a78 a79;
+typedef a79 a80;
+typedef a80 a81;
+typedef a81 a82;
+typedef a82 a83;
+typedef a83 a84;
+typedef a84 a85;
+typedef a85 a86;
+typedef a86 a87;
+typedef a87 a88;
+typedef a88 a89;
+typedef a89 a90;
+typedef a90 a91;
+typedef a91 a92;
+typedef a92 a93;
+typedef a93 a94;
+typedef a94 a95;
+typedef a95 a96;
+typedef a96 a97;
+typedef a97 a98;
+typedef a98 a99;
+typedef a99 a100;
+
+int f4(a84 i, a98 f)
+{
+    return 5 + f * f * f+ i;
+}
+
+int f3(a100 c, a2 str)
+{
+  return f4(5, 35);
+}
+
+int f2()
+{
+  return f3(393, 2);
+}
+
+int f1()
+{
+  return f2();
+}
+
+
+int main() {
+    return f1();
+
+}

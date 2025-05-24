@@ -1,0 +1,6 @@
+//test error
+int main() {
+	bool[] james = alloc_array(bool, 1);
+	bool* bond = james;
+	return 0;
+}

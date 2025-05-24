@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+
+int lagged_fib(int i, int j, int k) {
+	if (i < k) return i;
+
+	int res = 0;
+	res += lagged_fib(i-j, j, k);
+	res += lagged_fib(i-k, j, k);
+	return res;
+}
+
+int main() {
+	return lagged_fib(100000, 1, 25);
+}

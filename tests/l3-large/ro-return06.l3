@@ -1,0 +1,33 @@
+//test return 7
+//doing a non-trival function in l3, finds the first number that contains a number
+//in its collatz sequence that is > 100
+
+int largest_num_in_collatz_seq(int x);
+
+int main() {
+  int x = 1;
+  while (true) {
+    int largestNumber = largest_num_in_collatz_seq(x);
+    if (largestNumber > 50) {
+      return x;
+    }
+    x++;
+  }
+
+  return x;
+}
+
+int largest_num_in_collatz_seq(int x) {
+  int largestNumber = 1;
+  while (x != 1) {
+    if (x % 2 == 1) {
+      x = x * 3 + 1;
+      if (x > largestNumber) {
+        largestNumber = x;
+      }
+    }
+    else x /= 2;
+  }
+
+  return largestNumber;
+}

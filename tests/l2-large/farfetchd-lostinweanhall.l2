@@ -1,0 +1,16 @@
+//test typecheck
+//test infloop
+
+int main() {
+    int wean = 1000;
+    int room = 5410;
+    int exit = 0;
+    while (room != exit) {
+       room = room + 2;
+       if (room % 2 == 0) {
+          room  = room - 2;
+       }
+    }
+    
+    return 0;
+}

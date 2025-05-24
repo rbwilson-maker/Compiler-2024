@@ -1,0 +1,10 @@
+//test div-by-zero
+// Overflow from mod -1 with lots of extra arithmetic
+
+int main()
+{
+  int x = 0x1000 / 0x100;                   // x==0x10
+  int TMIN = x * x * x * x * x * x * x * 8; // TMIN==0x80000000
+  x -= - -0x11;                             // x==-1
+  return TMIN % x;                          // failure
+}

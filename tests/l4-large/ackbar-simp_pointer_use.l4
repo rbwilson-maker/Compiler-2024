@@ -1,0 +1,8 @@
+//test return 0
+//Tests default value initialization
+
+int main(){
+    int * test;
+    test = alloc(int);
+    return *test;
+}

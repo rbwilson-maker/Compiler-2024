@@ -1,0 +1,7 @@
+//test return 0
+// test multiple overflow
+
+int main()
+{
+  return 0x80000000 * 0x80000000;
+}

@@ -1,0 +1,54 @@
+//test return 0
+
+// sorts an int array by using a binary search tree
+
+typedef struct tree tree;
+struct tree{
+    int data;
+    tree* left;
+    tree* right;
+};
+
+tree* tree_insert(tree* T, int data)
+{
+    if(T == NULL){
+        tree* node = alloc(tree);
+        node->data = data;
+        return node;
+    }
+    else if (T->data > data) T->left = tree_insert(T->left, data);
+    else { T->right = tree_insert(T->right, data);}
+    return T;
+}
+
+int tree_to_arr(tree* T, int[] arr, int i){
+    if(T == NULL) return i;
+    
+    int l = tree_to_arr(T->left, arr, i);
+    arr[l] = T->data;
+    return tree_to_arr(T->right, arr, l+1);
+}
+
+void tree_sort(int[] arr, int len){
+    tree* T = NULL;
+    for(int i = 0; i < len; i++){
+        T = tree_insert(T, arr[i]);
+    }
+    tree_to_arr(T, arr, 0);
+}
+
+int main() {
+    int[] arr = alloc_array(int, 5);
+    arr[0] = 3;
+    arr[1] = 5;
+    arr[2] = 4;
+    arr[3] = 1;
+    arr[4] = 2;
+
+    tree_sort(arr, 5);
+
+    for(int i = 0; i < 5; i++){
+        assert(arr[i] == i+1);
+    }
+    return 0;
+}

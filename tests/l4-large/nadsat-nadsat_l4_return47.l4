@@ -1,0 +1,22 @@
+//test return 7
+
+/* It's pointers all the way down */
+
+int main() {
+  int* p1v5 = alloc(int);
+  *p1v5 = 5;
+  int** p2v5 = alloc(int*);
+  *p2v5 = p1v5;
+  int*** p3v5 = alloc(int**);
+  *p3v5 = p2v5;
+  int**** p4v5 = alloc(int***);
+  *p4v5 = p3v5;
+  int***** p5v5 = alloc(int****);
+  *p5v5 = p4v5;
+
+  assert(*****p5v5 == 5);
+
+  ***p3v5 = 7;
+
+  return *****p5v5;
+}

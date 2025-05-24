@@ -1,0 +1,8 @@
+//test return 30
+
+int main()
+{
+  int x = 30;
+  int y = 50;
+  return (x < y) ? x : y;
+}

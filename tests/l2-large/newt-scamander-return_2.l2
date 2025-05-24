@@ -1,0 +1,29 @@
+//test return 20
+
+int main () {
+	int min = 100;
+	int	max = 1000000;
+	int target = 200;
+	
+	int guess = ((max-min+1)/2)+min;
+	int guesses = 1;
+
+	while (guess != target) {
+		int old_guess = guess;
+		if (guess < target) {
+			max = guess;
+		}
+		else {
+			min = guess;
+		}
+		guess = ((max-min+1)/2)+min;
+
+		if (guess == old_guess) return guesses;
+
+		guesses++;
+
+	}
+
+	return guesses;
+
+} 

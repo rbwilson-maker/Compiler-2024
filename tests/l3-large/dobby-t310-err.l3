@@ -1,0 +1,9 @@
+//test div-by-zero
+int lol(int x, int y) {
+  return x/y;
+}
+
+int main() {
+  int y = lol(3, 5);
+  return lol(y, y);
+}

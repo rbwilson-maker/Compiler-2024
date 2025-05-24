@@ -1,0 +1,190 @@
+//test return 94
+
+// A solution to problem E from the ACM ICPC ECNA 2017 Regional
+
+// Since we don't have a good way of doing IO, the test case is hard-coded in
+// main.  In particular, each class name is replaced with a number, each "is-a"
+// relationship is replaced with a 0, and each "has-a" relationship is replaced
+// with a 1.
+
+// Sample input:
+/*
+5 5
+Day is-a Time
+Appointment is-a Datebook
+Appointment is-a Reminder
+Appointment has-a Day
+Datebook has-a Year
+Day is-a Time
+Time is-a Day
+Appointment has-a Time
+Appointment has-a Year
+Day is-a Day
+*/
+
+// Sample output:
+/*
+Query 1: true
+Query 2: false
+Query 3: true
+Query 4: true
+Query 5: true
+*/
+
+void floyd_warshall(int[][] graph, int n);
+
+int main() {
+	int n = 5;
+	int m = 5;
+	int k = 6;
+
+	int[][] stmts = alloc_array(int[], n);
+	int[][] queries = alloc_array(int[], m);
+
+	int Day = 0;
+	int Time = 1;
+	int Appointment = 2;
+	int Datebook = 3;
+	int Reminder = 4;
+	int Year = 5;
+
+	int ISA = 0;
+	int HASA = 1;
+
+	int INFTY = 1000000000;
+
+	for (int i = 0; i < n; i++) {
+		stmts[i] = alloc_array(int, 3);
+	}
+
+	for (int i = 0; i < m; i++) {
+		queries[i] = alloc_array(int, 3);
+	}
+
+	stmts[0][0] = Day;
+	stmts[0][1] = ISA;
+	stmts[0][2] = Time;
+
+	stmts[1][0] = Appointment;
+	stmts[1][1] = ISA;
+	stmts[1][2] = Datebook;
+
+	stmts[2][0] = Appointment;
+	stmts[2][1] = ISA;
+	stmts[2][2] = Reminder;
+
+	stmts[3][0] = Appointment;
+	stmts[3][1] = HASA;
+	stmts[3][2] = Day;
+
+	stmts[4][0] = Datebook;
+	stmts[4][1] = HASA;
+	stmts[4][2] = Year;
+
+	queries[0][0] = Day;
+	queries[0][1] = ISA;
+	queries[0][2] = Time;
+
+	queries[1][0] = Time;
+	queries[1][1] = ISA;
+	queries[1][2] = Day;
+
+	queries[2][0] = Appointment;
+	queries[2][1] = HASA;
+	queries[2][2] = Time;
+
+	queries[3][0] = Appointment;
+	queries[3][1] = HASA;
+	queries[3][2] = Year;
+
+	queries[4][0] = Day;
+	queries[4][1] = ISA;
+	queries[4][2] = Day;
+
+	int[][] is_fw = alloc_array(int[], k);
+	int[][] ishas_fw = alloc_array(int[], k);
+	bool[][] has = alloc_array(bool[], k);
+	bool[][] fin = alloc_array(bool[], k);
+
+	for (int i = 0; i < k; i++) {
+		is_fw[i] = alloc_array(int, k);
+		ishas_fw[i] = alloc_array(int, k);
+		has[i] = alloc_array(bool, k);
+		fin[i] = alloc_array(bool, k);
+
+		for (int j = 0; j < k; j++) {
+			is_fw[i][j] = i == j ? 0 : INFTY;
+			ishas_fw[i][j] = i == j ? 0 : INFTY;
+			has[i][j] = false;
+		}
+	}
+
+	for (int i = 0; i < n; i++) {
+		if (stmts[i][1] == ISA) {
+			if (ishas_fw[stmts[i][0]][stmts[i][2]] > 2) {
+				ishas_fw[stmts[i][0]][stmts[i][2]] = 2;
+			}
+			is_fw[stmts[i][0]][stmts[i][2]] = 1;
+		} else {
+			ishas_fw[stmts[i][0]][stmts[i][2]] = 1;
+		}
+	}
+
+	floyd_warshall(is_fw, k);
+	floyd_warshall(ishas_fw, k);
+
+	for (int i = 0; i < k; i++) {
+		for (int j = 0; j < k; j++) {
+			if (ishas_fw[i][j] == 1) {
+				for (int l = 0; l < k; l++) {
+					if (ishas_fw[j][l] < INFTY) {
+						has[i][l] = true;
+					}
+				}
+			}
+		}
+	}
+
+	for (int i = 0; i < k; i++) {
+		for (int j = 0; j < k; j++) {
+			if (is_fw[i][j] < INFTY) {
+				for (int l = 0; l < k; l++) {
+					if (has[j][l]) {
+						fin[i][l] = true;
+					}
+				}
+			}
+		}
+	}
+
+	int ret = 0;
+
+	for (int i = 0; i < m; i++) {
+		ret *= 3;
+
+		if (queries[i][1] == ISA) {
+			if (is_fw[queries[i][0]][queries[i][2]] < INFTY) {
+				ret++;
+			}
+		} else {
+			if (fin[queries[i][0]][queries[i][2]]) {
+				ret++;
+			}
+		}
+	}
+
+	return ret;
+}
+
+void floyd_warshall(int[][] graph, int n) {
+	for (int k = 0; k < n; k++) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				int d = graph[i][k] + graph[k][j];
+				if (d < graph[i][j]) {
+					graph[i][j] = d;
+				}
+			}
+		}
+	}
+}

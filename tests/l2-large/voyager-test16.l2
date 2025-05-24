@@ -1,0 +1,12 @@
+//test error
+//type error in while
+
+int main()
+{
+	int x = 5;
+	while(x)
+	{
+		x--;
+	}
+	return x;
+}

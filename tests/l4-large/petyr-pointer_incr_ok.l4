@@ -1,0 +1,10 @@
+//test error
+
+// pointer increment OK
+
+int main () {
+    int * x ;
+    *x = 6 ;
+    (*x)++ ;
+    return *x;
+}

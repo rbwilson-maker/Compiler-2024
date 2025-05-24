@@ -1,0 +1,11 @@
+//test error
+//for does not return
+
+int main () {
+
+  for (int x = 0; true; x++)
+    return 5;
+  
+}
+
+  

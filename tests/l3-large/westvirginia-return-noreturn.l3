@@ -1,0 +1,15 @@
+//test return 3
+// Check that you can have no return statements in void functions
+
+void g(){
+    return;
+}
+
+void f(){
+}
+
+int main(){
+    f();
+    g();
+    return 3;
+}

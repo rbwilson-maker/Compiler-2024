@@ -1,0 +1,7 @@
+//test return 0
+
+//how many symbols can we squeeze into 1 line?
+
+int main(){
+    return 0<=(0>=((0==(~(1>>2>2>>3?1:0)))||(1==1?true:false)?~0:1)&&(~(1<<2<2<<3?1:0)<=-2)?0:1)?0:1;
+}

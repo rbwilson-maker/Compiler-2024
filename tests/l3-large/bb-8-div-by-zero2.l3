@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int dangerous_woman(int tour)
+{
+  int calvin = 100;
+  return calvin / tour;
+}
+
+int main()
+{
+  int Grande = 0;
+  return dangerous_woman(Grande);
+}

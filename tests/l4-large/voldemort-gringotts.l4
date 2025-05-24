@@ -1,0 +1,97 @@
+//test return 0
+struct digraph {
+    int root;
+    int nodes;
+    bool[][] adj_mtrx;
+};
+typedef struct digraph * digraph;
+
+bool can_reach(digraph g, int root, int node) {
+    if (root == node) {
+        return true;
+    } else {
+        for (int i = 0; i < g->nodes; i++) {
+            if (g->adj_mtrx[root][i] && can_reach(g, i, node)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+int compute_imm_dominator(digraph g, int root, int node) {
+    if (root == node) {
+        return -1;
+    }
+    bool seen = false;
+    int idx = 0;
+    for (int i = 0; i < g->nodes; i++) {
+        if (g->adj_mtrx[root][i] && can_reach(g, i, node)) {
+            if (!seen) {
+                seen = true;
+                idx = i;
+            } else {
+                if (node == 1) {
+                    assert(false);
+                }
+                return root;
+            }
+        }
+    }
+    if (seen) {
+        if (idx == node) {
+            return root;
+        } else {
+            return compute_imm_dominator(g, idx, node);
+        }
+    } else {
+        return -1;
+    }
+}
+
+
+
+
+digraph compute_dominator_tree(digraph g) {
+    digraph dom_tree = alloc(struct digraph);
+    dom_tree->nodes = g->nodes;
+    dom_tree->adj_mtrx = alloc_array(bool[], g->nodes);
+    for (int i = 0; i < g->nodes; i++) {
+        dom_tree->adj_mtrx[i] = alloc_array(bool, g->nodes);
+    }
+
+    for (int i = 0; i < g->nodes; i++) {
+        int dom_idx = compute_imm_dominator(g, g->root, i);
+        if (i == 1) {
+            assert(dom_idx == 0);
+        }
+
+        if (dom_idx >= 0) {
+            dom_tree->adj_mtrx[dom_idx][i] = true;
+        }
+    }
+    return dom_tree;
+}
+
+
+int main() {
+    digraph cfg = alloc(struct digraph);
+    cfg->root = 0;
+    cfg->nodes = 5;
+    cfg->adj_mtrx = alloc_array(bool[], cfg->nodes);
+    for (int i = 0; i < cfg->nodes; i++) {
+        cfg->adj_mtrx[i] = alloc_array(bool, cfg->nodes);
+    }
+    cfg->adj_mtrx[0][1] = true;
+    cfg->adj_mtrx[0][2] = true;
+    cfg->adj_mtrx[1][3] = true;
+    cfg->adj_mtrx[2][3] = true;
+    cfg->adj_mtrx[2][4] = true;
+    digraph dom_tree = compute_dominator_tree(cfg);
+    assert(dom_tree->adj_mtrx[0][1]);
+    assert(dom_tree->adj_mtrx[0][2]);
+    assert(dom_tree->adj_mtrx[0][3]);
+    assert(dom_tree->adj_mtrx[2][4]);
+    return 0;
+}
+

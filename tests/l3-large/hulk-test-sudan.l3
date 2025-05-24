@@ -1,0 +1,22 @@
+//test return 3
+
+// Compute the Sudan function which is not primitive recursive
+int sudan(int n, int x, int y) {
+  if(n == 0) {
+    return x + y;
+  } else if(y == 0) {
+    return x;
+  } else {
+    return sudan(n-1, sudan(n, x, y-1), sudan(n, x, y-1) + y);
+  }
+}
+
+int main() {
+  assert(57330 == sudan(1, 12, 12));
+  assert(57330 != sudan(1, 11, 12));
+  assert(1014 == sudan(1, 2, 8));
+  assert(2036 == sudan(1, 0, 10));
+  assert(sudan(1, 0, 0) >= 0);
+
+  return sudan(1, 1, 1);
+}

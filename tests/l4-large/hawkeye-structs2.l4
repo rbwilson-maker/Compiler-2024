@@ -1,0 +1,18 @@
+//test return 4
+
+struct point {
+    int x;
+    int y;
+};
+
+int f(struct point* p) {
+    struct point* f = p;
+    f->x = 4;
+    f->y = 3;
+    return f->x;
+}
+
+int main () {
+    struct point* p = alloc(struct point);
+    return f(p);
+}

@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main() {
+  int sum = 411;
+  int crash = (sum == 411) ? 0 : 1;
+  return sum / crash;
+}

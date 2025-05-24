@@ -1,0 +1,7 @@
+//test return -12
+// add 1 on return
+
+int main() {
+    int i = 12;
+    return (i + 1) % 2 / 5 * 18 - 12;
+}

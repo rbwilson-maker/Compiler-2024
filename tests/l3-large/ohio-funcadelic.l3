@@ -1,0 +1,46 @@
+//test return 2560
+//should be test return -1/12, but we don't have enough stack space to get there
+
+int f (int x) {
+  return 1 + x;
+}
+
+int u (int x) {
+  return f(x);
+}
+
+int n (int x) {
+  return u(x);
+}
+
+int k (int x) {
+  return n(x);
+}
+
+int a (int x) {
+  return k(x);
+}
+
+int d (int x) {
+  return a(x);
+}
+
+int e (int x) {
+  return d(x);
+}
+
+int l (int x) {
+  return e(x);
+}
+
+int i (int x) {
+  return l(x);
+}
+
+int c (int x) {
+  return i(x);
+}
+
+int main() {
+  return f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( f(u(n(k(a(d(e(l(i(c( 0 )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) )))))))))) ;
+}

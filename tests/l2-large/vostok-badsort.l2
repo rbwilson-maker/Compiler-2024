@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+    int x = 15251;
+    while (x > 32) {
+        x /= x >> 5;
+    }
+    while (x > 0) {
+        x /= (x - 32);
+    }
+    return x;
+}

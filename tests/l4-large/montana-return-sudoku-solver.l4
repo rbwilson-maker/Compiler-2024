@@ -1,0 +1,61 @@
+//test return 0
+// Sudoku solver!
+// (only solves 4x4 so as not to be unreasonable on performance)
+
+bool conflict(int[][] board, int i, int j) {
+  int new = board[i][j];
+  for (int k = 0; k < 4; k++) {
+    if (k != i && board[k][j] == new)
+      return true;
+  }
+  for (int l = 0; l < 4; l++) {
+    if (l != j && board[i][l] == new)
+      return true;
+  }
+  int kstart = (i / 2) * 2;
+  int kend = kstart + 2;
+  int lstart = (j / 2) * 2;
+  int lend = lstart + 2;
+  for (int k = kstart; k < kend; k++) {
+    for (int l = lstart; l < lend; l++) {
+      if (k != i && l != j && board[k][l] == new)
+        return true;
+    }
+  }
+  return false;
+}
+
+bool solve(int[][] board) {
+  for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 4; j++) {
+      if (board[i][j] == -1) {
+        for (int try = 1; try <= 4; try++) {
+          board[i][j] = try;
+          if (!conflict(board, i, j) && solve(board))
+            return true;
+        }
+        board[i][j] = -1;
+      }
+    }
+  }
+  /* All possibilities exhausted. */
+  return false;
+}
+
+int main() {
+  /* Set up the board */
+  int[][] board = alloc_array(int[], 4);
+  for (int i = 0; i < 4; i++) {
+    board[i] = alloc_array(int, 4);
+    for (int j = 0; j < 4; j++) {
+      board[i][j] = -1;
+    }
+  }
+  /* a pretty tough one. */
+  board[0][1] = 2; board[0][2] = 4;
+  board[1][0] = 1; board[1][3] = 3;
+  board[2][0] = 4; board[2][3] = 2;
+  board[3][1] = 1; board[3][2] = 3;
+  return solve(board) ? 1 : 0;
+}
+

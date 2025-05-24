@@ -1,0 +1,27 @@
+//test return -113
+// loop with if-else
+
+int main() {
+    int a = 2;
+
+    int b = 5;
+
+    for(int i = 0; i < 23; i++) {
+        int mod = i % 3;
+        if(i == 0) {
+            a += 1;
+            b += 3;
+        }
+        else if(i == 1) {
+            a += 2;
+            b += 5;            
+        }
+        else {
+            a += 3;
+            b += 8;
+        }
+    }
+
+    return a - b;
+
+}

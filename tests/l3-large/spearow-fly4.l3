@@ -1,0 +1,22 @@
+//test return 300
+
+typedef int a;
+typedef a b;
+typedef b c;
+
+int d(a e, b f){
+    return e + f;
+}
+
+int f(a e);
+
+int e(){
+    return d(f(10),f(20));
+}
+int f(int e){
+    return 10*e;
+}
+
+int main(){
+    return e();
+}

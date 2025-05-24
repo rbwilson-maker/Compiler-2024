@@ -1,0 +1,5 @@
+//test memerror
+int main() {
+    int* yes = NULL;
+    return *yes;
+}

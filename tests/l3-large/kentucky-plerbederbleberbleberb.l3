@@ -1,0 +1,17 @@
+//test return 4527
+
+int recurse(int a, bool herp) {
+
+		int derp = 24	;
+		
+	return herp ? derp : 1 + recurse(a -2, a < 0);
+}
+
+
+
+int main() {
+
+	return recurse (9002, false);
+
+
+}

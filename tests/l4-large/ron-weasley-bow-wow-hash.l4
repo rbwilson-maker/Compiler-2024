@@ -1,0 +1,55 @@
+//test return 1190431834
+
+int hash_bool(bool thing) {
+    if (thing) {
+        return 0x0f0f0f0f;
+    }
+    return 0xf0f0f0f0;
+}
+
+int hash_int(int thing) {
+    int hash = 0;
+
+    for (int i = 0; i < 32; i++) {
+        hash += ((thing >> i) & 1) * 37;
+        hash *= 71812973;
+    }
+
+    return hash;
+}
+
+struct mystruct {
+    int x;
+    int y;
+    bool a;
+    bool b;
+};
+
+int hash_mystruct(struct mystruct *s) {
+    int hash = 0;
+
+    hash += hash_int(s->x);
+    hash *= 1728397;
+
+    hash += hash_int(s->y);
+    hash *= 328951;
+
+    hash += hash_bool(s->a);
+    hash *= 789231;
+
+    hash += hash_bool(s->b);
+    hash *= 4902563;
+
+    return hash;
+}
+
+int main() {
+    struct mystruct *s = alloc(struct mystruct);
+
+    s->x = 0xdeadbeef;
+    s->y = 0xca11ab1e;
+    s->a = false;
+    s->b = true;
+
+    return hash_mystruct(s);
+}

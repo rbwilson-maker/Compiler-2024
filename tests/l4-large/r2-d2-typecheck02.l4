@@ -1,0 +1,24 @@
+//test typecheck
+
+struct s
+{
+	int x;
+	int y;
+};
+
+struct test
+{
+	int *p;
+	struct s ss;
+	struct test *next;
+};
+
+typedef struct test *testptr;
+
+
+int main()
+{
+	testptr myt = alloc(struct test);
+	myt->p = NULL;
+	return 0;
+}

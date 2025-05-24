@@ -1,0 +1,11 @@
+//test typecheck
+
+int main() {
+    raise(3);
+    if (fork()) {
+        printint(5);
+    } else {
+        printint(4);
+    }
+    return 0;
+}

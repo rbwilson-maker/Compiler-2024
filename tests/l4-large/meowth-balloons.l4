@@ -1,0 +1,18 @@
+//test memerror
+
+//Eventually out of bounds.
+
+int main(){
+    int range = 1000;
+    int[] x = alloc_array(int, range);
+    for (int i = 0; i < range; i++){
+        x[i] = 1;
+    }
+    int *z = alloc(int);
+    *z = 0;
+    for(int i = 0; i < 50; i++){
+        int y = x[*z] * i;
+        *z += y;
+    }
+    return *z;
+}

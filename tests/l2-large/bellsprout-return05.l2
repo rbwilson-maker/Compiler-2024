@@ -1,0 +1,12 @@
+//test return 5
+int main() {
+	int a;
+	{
+		a  = 0xFFFF0000;
+		a |= 0x0000FFFF;
+		a += 0xFFFFFFFF;
+		a *= 0x00000002;
+		return 1 - a;
+	}
+	return -1;
+}

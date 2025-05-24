@@ -1,0 +1,11 @@
+//test error
+
+int main()
+{
+	int *a = alloc(int);
+	for(*a = 0; *a < 10; (*a)++)
+	{
+		return 0;
+	}
+	return a > 0 ? *a : 1;
+}

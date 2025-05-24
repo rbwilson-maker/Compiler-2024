@@ -1,0 +1,11 @@
+//test return 7
+//shift ops
+
+int main() {
+    int i = 1;
+    int j = i << 1; //2
+    int k = j << 1; //4
+    int l = k << 1; //8
+    int m = l << 1; //16
+    return (i+j+k+l+m) >> 2;//31 >> 2 = 7
+}

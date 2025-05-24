@@ -1,0 +1,17 @@
+//test return 1
+
+typedef bool b1;
+typedef b1 b2;
+typedef b2 b3;
+typedef b3 b4;
+
+b4 mymain(){
+    b3 f = 1 == 2;
+    b4 f1 = 3 == 3;
+    b2 f2 = f1 ? true : false;
+    return f || f1 && f2;
+}
+
+int main(){
+    return mymain() ? 1 : 0;
+}

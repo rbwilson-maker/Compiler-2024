@@ -1,0 +1,15 @@
+//test return 18
+
+int gcd(int b, int s){
+    if (b % s == 0){
+        return s;
+    }
+    else {
+        return gcd(s, b % s);
+    }
+}
+
+int main(){
+    return gcd(198, 72);
+}
+

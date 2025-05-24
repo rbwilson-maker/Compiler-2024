@@ -1,0 +1,21 @@
+//test return 3
+int main() {
+	int z = 1;
+	{ 	
+		int a = 0; 
+		int b = 0; 
+		{
+			int c = 0;
+			int d = 1;
+		}
+		{
+			int c = 1;
+			b = c + 2;
+		}
+		{
+			int d = 3;
+		}
+		z = b;
+	}
+	return z;
+}

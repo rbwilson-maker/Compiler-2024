@@ -1,0 +1,11 @@
+//test return 0
+
+int main() {
+    int [][] arrs = alloc_array(int [], 10);
+    for (int i = 0; i<10; i++) {
+        arrs[i] = alloc_array(int, 10);
+        arrs[i][i] = 2;
+    }
+    //@ assert \forall {arrs} (\exists {\element} (\element == 2));
+    return 0;
+}

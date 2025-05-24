@@ -1,0 +1,7 @@
+//test error
+
+int main()
+{
+void*[] x = alloc_array(void*, 10);
+return x[0] == x[1] ? 0 : 1;
+}

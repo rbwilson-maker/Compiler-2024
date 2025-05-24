@@ -1,0 +1,20 @@
+//test return 998
+
+struct bigInt {
+  int x1;
+  int x2;
+};
+
+
+int main() {
+  struct bigInt *a = alloc(struct bigInt);
+  struct bigInt *b = alloc(struct bigInt);
+  // We need to make sure that we allocate enough space on the stack
+  // for each struct -- this tests will fail if only four bytes are allocated
+  // for a struct.
+  a->x1 = 67;
+  a->x2 = 998;
+  b->x1 = 74;
+  b->x2 = 666;
+  return a->x2;
+}

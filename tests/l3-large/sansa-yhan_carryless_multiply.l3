@@ -1,0 +1,56 @@
+//test div-by-zero
+//carrylessMultiply
+
+int digitCount(int n) {
+  n = n > 0 ? n : -n;
+  int count = 1;
+  while (n >= 10) {
+    count += 1;
+    n /= 10;
+  }
+  return count;
+}
+
+int fast_exp(int base, int e) {
+  int r = 1;
+  while (e > 1) {
+    if (e % 2 == 1) {
+      r = base * r;
+    }
+    base = base * base;
+    e = e / 2;
+  }
+  return r * base;
+}
+
+int carrylessAdd(int x, int y) {
+  int result = 0;
+  int count = 0;
+  while (x > 0 || y > 0) {
+    result += ((x % 10 + y % 10) % 10) * (fast_exp(10, count));
+    x /= 10;
+    y /= 10;
+    count += 1;
+  }
+  return result;
+}
+
+
+int carrylessMultiply(int x, int y) {
+  int result = 0;
+  int a = digitCount(x);
+  int b = digitCount(y);
+  for (int count = 0; count < a + b -1; count++) {
+    for (int fac = 0; fac < count + 1; fac++) {
+      int p = ((x/(fast_exp(10, fac)%10) * ((y/(fast_exp(10, count - fac))) % 10))) %10 * fast_exp(10, count);
+      result = carrylessAdd(p, result);
+    }
+  }
+  return result;
+}
+
+int main() {
+  int x = 100;
+  int y = 900;
+  return carrylessMultiply(x, y);
+}

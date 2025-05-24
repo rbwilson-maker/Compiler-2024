@@ -1,0 +1,14 @@
+//test return 3
+
+struct sss {bool a; int b;};
+
+int main(){
+  struct sss *s = alloc(struct sss);
+  s -> a = false;
+  s -> b = 2;
+  if(s -> a){
+    return 2;
+  } else {
+    return s -> b + 1;
+  }
+}

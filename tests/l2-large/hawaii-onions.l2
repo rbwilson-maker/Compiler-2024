@@ -1,0 +1,19 @@
+//test return 2
+
+int main()
+{
+  bool x = true;
+  bool y = true;
+  
+  if (x == y)
+  {
+    if (x != y)
+    {
+      return 1;
+    } else {
+      return 2;
+    }
+  }
+  
+  return 525600;
+}

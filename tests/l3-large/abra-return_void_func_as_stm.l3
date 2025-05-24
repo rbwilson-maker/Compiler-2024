@@ -1,0 +1,18 @@
+//test return 20
+// void function callso should not be optimised away
+// as they are not side-effect free
+typedef bool ian;
+typedef int ursula;
+
+void no(ursula andress) {
+	ursula the_witch = -1;
+	return;
+}
+
+int main() {
+	ian fleming = true;
+	ursula beach = 20;
+	no(beach);
+	return beach;
+}
+	

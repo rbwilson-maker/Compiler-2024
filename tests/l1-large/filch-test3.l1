@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+  int very_unique_variable = 3;
+  very_unique_variable += 1;
+
+  int very_unique_variable = 5;
+}

@@ -1,0 +1,5 @@
+struct giraffe {
+  int one;
+  bool two;
+};
+typedef struct giraffe * giraffe;

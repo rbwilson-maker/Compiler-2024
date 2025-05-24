@@ -1,0 +1,708 @@
+//test return 1
+// So we put a struct in yo struct so you don't recurse while you recurse
+
+struct s { };
+
+struct s1 {
+    struct s w;
+    struct s x;
+    struct s y;
+    struct s z;
+};
+
+struct s2 {
+    struct s1 w;
+    struct s1 x;
+    struct s1 y;
+    struct s1 z;
+};
+
+struct s3 {
+    struct s2 w;
+    struct s2 x;
+    struct s2 y;
+    struct s2 z;
+};
+
+struct s4 {
+    struct s3 w;
+    struct s3 x;
+    struct s3 y;
+    struct s3 z;
+};
+
+struct s5 {
+    struct s4 w;
+    struct s4 x;
+    struct s4 y;
+    struct s4 z;
+};
+
+struct s6 {
+    struct s5 w;
+    struct s5 x;
+    struct s5 y;
+    struct s5 z;
+};
+
+struct s7 {
+    struct s6 w;
+    struct s6 x;
+    struct s6 y;
+    struct s6 z;
+};
+
+struct s8 {
+    struct s7 w;
+    struct s7 x;
+    struct s7 y;
+    struct s7 z;
+};
+
+struct s9 {
+    struct s8 w;
+    struct s8 x;
+    struct s8 y;
+    struct s8 z;
+};
+
+struct s10 {
+    struct s9 w;
+    struct s9 x;
+    struct s9 y;
+    struct s9 z;
+};
+
+struct s11 {
+    struct s10 w;
+    struct s10 x;
+    struct s10 y;
+    struct s10 z;
+};
+
+struct s12 {
+    struct s11 w;
+    struct s11 x;
+    struct s11 y;
+    struct s11 z;
+};
+
+struct s13 {
+    struct s12 w;
+    struct s12 x;
+    struct s12 y;
+    struct s12 z;
+};
+
+struct s14 {
+    struct s13 w;
+    struct s13 x;
+    struct s13 y;
+    struct s13 z;
+};
+
+struct s15 {
+    struct s14 w;
+    struct s14 x;
+    struct s14 y;
+    struct s14 z;
+};
+
+struct s16 {
+    struct s15 w;
+    struct s15 x;
+    struct s15 y;
+    struct s15 z;
+};
+
+struct s17 {
+    struct s16 w;
+    struct s16 x;
+    struct s16 y;
+    struct s16 z;
+};
+
+struct s18 {
+    struct s17 w;
+    struct s17 x;
+    struct s17 y;
+    struct s17 z;
+};
+
+struct s19 {
+    struct s18 w;
+    struct s18 x;
+    struct s18 y;
+    struct s18 z;
+};
+
+struct s20 {
+    struct s19 w;
+    struct s19 x;
+    struct s19 y;
+    struct s19 z;
+};
+
+struct s21 {
+    struct s20 w;
+    struct s20 x;
+    struct s20 y;
+    struct s20 z;
+};
+
+struct s22 {
+    struct s21 w;
+    struct s21 x;
+    struct s21 y;
+    struct s21 z;
+};
+
+struct s23 {
+    struct s22 w;
+    struct s22 x;
+    struct s22 y;
+    struct s22 z;
+};
+
+struct s24 {
+    struct s23 w;
+    struct s23 x;
+    struct s23 y;
+    struct s23 z;
+};
+
+struct s25 {
+    struct s24 w;
+    struct s24 x;
+    struct s24 y;
+    struct s24 z;
+};
+
+struct s26 {
+    struct s25 w;
+    struct s25 x;
+    struct s25 y;
+    struct s25 z;
+};
+
+struct s27 {
+    struct s26 w;
+    struct s26 x;
+    struct s26 y;
+    struct s26 z;
+};
+
+struct s28 {
+    struct s27 w;
+    struct s27 x;
+    struct s27 y;
+    struct s27 z;
+};
+
+struct s29 {
+    struct s28 w;
+    struct s28 x;
+    struct s28 y;
+    struct s28 z;
+};
+
+struct s30 {
+    struct s29 w;
+    struct s29 x;
+    struct s29 y;
+    struct s29 z;
+};
+
+struct s31 {
+    struct s30 w;
+    struct s30 x;
+    struct s30 y;
+    struct s30 z;
+};
+
+struct s32 {
+    struct s31 w;
+    struct s31 x;
+    struct s31 y;
+    struct s31 z;
+};
+
+struct s33 {
+    struct s32 w;
+    struct s32 x;
+    struct s32 y;
+    struct s32 z;
+};
+
+struct s34 {
+    struct s33 w;
+    struct s33 x;
+    struct s33 y;
+    struct s33 z;
+};
+
+struct s35 {
+    struct s34 w;
+    struct s34 x;
+    struct s34 y;
+    struct s34 z;
+};
+
+struct s36 {
+    struct s35 w;
+    struct s35 x;
+    struct s35 y;
+    struct s35 z;
+};
+
+struct s37 {
+    struct s36 w;
+    struct s36 x;
+    struct s36 y;
+    struct s36 z;
+};
+
+struct s38 {
+    struct s37 w;
+    struct s37 x;
+    struct s37 y;
+    struct s37 z;
+};
+
+struct s39 {
+    struct s38 w;
+    struct s38 x;
+    struct s38 y;
+    struct s38 z;
+};
+
+struct s40 {
+    struct s39 w;
+    struct s39 x;
+    struct s39 y;
+    struct s39 z;
+};
+
+struct s41 {
+    struct s40 w;
+    struct s40 x;
+    struct s40 y;
+    struct s40 z;
+};
+
+struct s42 {
+    struct s41 w;
+    struct s41 x;
+    struct s41 y;
+    struct s41 z;
+};
+
+struct s43 {
+    struct s42 w;
+    struct s42 x;
+    struct s42 y;
+    struct s42 z;
+};
+
+struct s44 {
+    struct s43 w;
+    struct s43 x;
+    struct s43 y;
+    struct s43 z;
+};
+
+struct s45 {
+    struct s44 w;
+    struct s44 x;
+    struct s44 y;
+    struct s44 z;
+};
+
+struct s46 {
+    struct s45 w;
+    struct s45 x;
+    struct s45 y;
+    struct s45 z;
+};
+
+struct s47 {
+    struct s46 w;
+    struct s46 x;
+    struct s46 y;
+    struct s46 z;
+};
+
+struct s48 {
+    struct s47 w;
+    struct s47 x;
+    struct s47 y;
+    struct s47 z;
+};
+
+struct s49 {
+    struct s48 w;
+    struct s48 x;
+    struct s48 y;
+    struct s48 z;
+};
+
+struct s50 {
+    struct s49 w;
+    struct s49 x;
+    struct s49 y;
+    struct s49 z;
+};
+
+struct s51 {
+    struct s50 w;
+    struct s50 x;
+    struct s50 y;
+    struct s50 z;
+};
+
+struct s52 {
+    struct s51 w;
+    struct s51 x;
+    struct s51 y;
+    struct s51 z;
+};
+
+struct s53 {
+    struct s52 w;
+    struct s52 x;
+    struct s52 y;
+    struct s52 z;
+};
+
+struct s54 {
+    struct s53 w;
+    struct s53 x;
+    struct s53 y;
+    struct s53 z;
+};
+
+struct s55 {
+    struct s54 w;
+    struct s54 x;
+    struct s54 y;
+    struct s54 z;
+};
+
+struct s56 {
+    struct s55 w;
+    struct s55 x;
+    struct s55 y;
+    struct s55 z;
+};
+
+struct s57 {
+    struct s56 w;
+    struct s56 x;
+    struct s56 y;
+    struct s56 z;
+};
+
+struct s58 {
+    struct s57 w;
+    struct s57 x;
+    struct s57 y;
+    struct s57 z;
+};
+
+struct s59 {
+    struct s58 w;
+    struct s58 x;
+    struct s58 y;
+    struct s58 z;
+};
+
+struct s60 {
+    struct s59 w;
+    struct s59 x;
+    struct s59 y;
+    struct s59 z;
+};
+
+struct s61 {
+    struct s60 w;
+    struct s60 x;
+    struct s60 y;
+    struct s60 z;
+};
+
+struct s62 {
+    struct s61 w;
+    struct s61 x;
+    struct s61 y;
+    struct s61 z;
+};
+
+struct s63 {
+    struct s62 w;
+    struct s62 x;
+    struct s62 y;
+    struct s62 z;
+};
+
+struct s64 {
+    struct s63 w;
+    struct s63 x;
+    struct s63 y;
+    struct s63 z;
+};
+
+struct s65 {
+    struct s64 w;
+    struct s64 x;
+    struct s64 y;
+    struct s64 z;
+};
+
+struct s66 {
+    struct s65 w;
+    struct s65 x;
+    struct s65 y;
+    struct s65 z;
+};
+
+struct s67 {
+    struct s66 w;
+    struct s66 x;
+    struct s66 y;
+    struct s66 z;
+};
+
+struct s68 {
+    struct s67 w;
+    struct s67 x;
+    struct s67 y;
+    struct s67 z;
+};
+
+struct s69 {
+    struct s68 w;
+    struct s68 x;
+    struct s68 y;
+    struct s68 z;
+};
+
+struct s70 {
+    struct s69 w;
+    struct s69 x;
+    struct s69 y;
+    struct s69 z;
+};
+
+struct s71 {
+    struct s70 w;
+    struct s70 x;
+    struct s70 y;
+    struct s70 z;
+};
+
+struct s72 {
+    struct s71 w;
+    struct s71 x;
+    struct s71 y;
+    struct s71 z;
+};
+
+struct s73 {
+    struct s72 w;
+    struct s72 x;
+    struct s72 y;
+    struct s72 z;
+};
+
+struct s74 {
+    struct s73 w;
+    struct s73 x;
+    struct s73 y;
+    struct s73 z;
+};
+
+struct s75 {
+    struct s74 w;
+    struct s74 x;
+    struct s74 y;
+    struct s74 z;
+};
+
+struct s76 {
+    struct s75 w;
+    struct s75 x;
+    struct s75 y;
+    struct s75 z;
+};
+
+struct s77 {
+    struct s76 w;
+    struct s76 x;
+    struct s76 y;
+    struct s76 z;
+};
+
+struct s78 {
+    struct s77 w;
+    struct s77 x;
+    struct s77 y;
+    struct s77 z;
+};
+
+struct s79 {
+    struct s78 w;
+    struct s78 x;
+    struct s78 y;
+    struct s78 z;
+};
+
+struct s80 {
+    struct s79 w;
+    struct s79 x;
+    struct s79 y;
+    struct s79 z;
+};
+
+struct s81 {
+    struct s80 w;
+    struct s80 x;
+    struct s80 y;
+    struct s80 z;
+};
+
+struct s82 {
+    struct s81 w;
+    struct s81 x;
+    struct s81 y;
+    struct s81 z;
+};
+
+struct s83 {
+    struct s82 w;
+    struct s82 x;
+    struct s82 y;
+    struct s82 z;
+};
+
+struct s84 {
+    struct s83 w;
+    struct s83 x;
+    struct s83 y;
+    struct s83 z;
+};
+
+struct s85 {
+    struct s84 w;
+    struct s84 x;
+    struct s84 y;
+    struct s84 z;
+};
+
+struct s86 {
+    struct s85 w;
+    struct s85 x;
+    struct s85 y;
+    struct s85 z;
+};
+
+struct s87 {
+    struct s86 w;
+    struct s86 x;
+    struct s86 y;
+    struct s86 z;
+};
+
+struct s88 {
+    struct s87 w;
+    struct s87 x;
+    struct s87 y;
+    struct s87 z;
+};
+
+struct s89 {
+    struct s88 w;
+    struct s88 x;
+    struct s88 y;
+    struct s88 z;
+};
+
+struct s90 {
+    struct s89 w;
+    struct s89 x;
+    struct s89 y;
+    struct s89 z;
+};
+
+struct s91 {
+    struct s90 w;
+    struct s90 x;
+    struct s90 y;
+    struct s90 z;
+};
+
+struct s92 {
+    struct s91 w;
+    struct s91 x;
+    struct s91 y;
+    struct s91 z;
+};
+
+struct s93 {
+    struct s92 w;
+    struct s92 x;
+    struct s92 y;
+    struct s92 z;
+};
+
+struct s94 {
+    struct s93 w;
+    struct s93 x;
+    struct s93 y;
+    struct s93 z;
+};
+
+struct s95 {
+    struct s94 w;
+    struct s94 x;
+    struct s94 y;
+    struct s94 z;
+};
+
+struct s96 {
+    struct s95 w;
+    struct s95 x;
+    struct s95 y;
+    struct s95 z;
+};
+
+struct s97 {
+    struct s96 w;
+    struct s96 x;
+    struct s96 y;
+    struct s96 z;
+};
+
+struct s98 {
+    struct s97 w;
+    struct s97 x;
+    struct s97 y;
+    struct s97 z;
+};
+
+struct s99 {
+    struct s98 w;
+    struct s98 x;
+    struct s98 y;
+    struct s98 z;
+};
+
+struct s100 {
+    struct s99 w;
+    int y;
+};
+
+int main() {
+    struct s100* x = alloc(struct s100);
+    x->y++;
+    return x->y;
+}

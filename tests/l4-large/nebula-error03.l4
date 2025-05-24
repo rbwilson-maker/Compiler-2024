@@ -1,0 +1,21 @@
+//test error
+
+struct b;
+
+struct a {
+  struct b bb; // struct b is not defined 
+};
+
+struct b {
+  bool bbb;
+};
+
+int main() {
+  a **aa = alloc(struct a);
+  if ((*aa)->bb.bbb) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+

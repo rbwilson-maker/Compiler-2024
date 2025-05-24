@@ -1,0 +1,12 @@
+//test div-by-zero
+// alloc should set all field to zero
+struct foo {
+    int bar;
+};
+
+int main() {
+    struct foo * f = alloc( struct foo );
+    assert(f->bar == 0);
+    struct foo * p = alloc( struct foo );
+    return f->bar / p->bar;
+}

@@ -1,0 +1,12 @@
+//test div-by-zero
+//a for loop that eventually causes a divide by zero exception
+
+int main(){
+    int x = 0x34135481;
+
+    for (int i = 10; i >= 0; i--) {
+        x /= i;
+    }
+
+    return x;
+}

@@ -1,0 +1,17 @@
+//test error
+
+int helper(struct s *a) {
+    return a->a;
+}
+
+struct s {
+    int a;
+    int b;
+};
+
+int main() {
+    struct s *a = alloc(struct s);
+    s->a = 1;
+    s->b = 0;
+    return helper(a); 
+}

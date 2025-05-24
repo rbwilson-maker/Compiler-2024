@@ -1,0 +1,132 @@
+//test return 13
+
+// Runs a Turing machine that computes Ackermann(4,0)
+
+typedef bool symbol;
+symbol SYM_ZRO() { return false; }
+symbol SYM_ONE() { return true; }
+
+typedef bool dir;
+dir DIR_LEFT() { return false; }
+dir DIR_RGHT() { return true; }
+
+typedef int state; // only supports 2^30 states sadly :/
+state HALT() { return 0x3FFFFFFF; }
+bool is_halted(state s) { return s == 0x3FFFFFFF; }
+
+typedef int instr;
+
+instr make_instr(symbol write, dir move, state new_s) {
+    return (write ? 0x80000000 : 0) | (move ? 0x40000000 : 0) | (new_s & 0x3FFFFFFF);
+}
+
+symbol instr_write(instr i) { return (i & 0x80000000) != 0; }
+dir instr_move(instr i) { return (i & 0x40000000) != 0; }
+state instr_new_s(instr i) { return i & 0x3FFFFFFF; }
+
+
+typedef instr[] tm;
+
+instr tm_fetch(tm m, state s, symbol read) {
+    return m[2*s + (read ? 1 : 0)];
+}
+
+
+struct cfg {
+    bool[] tape;
+    int ts;
+    int head;
+    state s;
+};
+typedef struct cfg* config;
+
+void step(tm m, config c) {
+    assert(!is_halted(c->s));
+
+    instr i = tm_fetch(m, c->s, c->tape[c->head]);
+
+    c->tape[c->head] = instr_write(i);
+    c->head += instr_move(i) ? 1 : -1;
+    c->s = instr_new_s(i);
+}
+
+int eval(tm m, int in, int ts) {
+    // Set up config
+    config c = alloc(struct cfg);
+    c->ts = ts;
+    c->tape = alloc_array(bool, ts);
+    for (int i = 0; i < in; i++) c->tape[i] = true;
+    c->head = 0;
+    c->s = 0;
+
+    // Run until halts
+    while (!is_halted(c->s)) {
+        step(m,c);
+    }
+
+    // Calc output & return
+    int ret = 0;
+    while (c->tape[ret] && ret < ts) ret++;
+    return ret;
+}
+
+tm ack() {
+    tm m = alloc_array(instr, 100);
+    m[2*0 ] = make_instr(SYM_ONE(),DIR_RGHT(),HALT()); m[1+2*0 ] = make_instr(SYM_ZRO(),DIR_RGHT(),1     );
+    m[2*1 ] = make_instr(SYM_ZRO(),DIR_RGHT(),3     ); m[1+2*1 ] = make_instr(SYM_ZRO(),DIR_RGHT(),2     );
+    m[2*2 ] = make_instr(SYM_ONE(),DIR_RGHT(),3     ); m[1+2*2 ] = make_instr(SYM_ONE(),DIR_RGHT(),2     );
+    m[2*3 ] = make_instr(SYM_ONE(),DIR_RGHT(),4     ); m[1+2*3 ] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*4 ] = make_instr(SYM_ONE(),DIR_RGHT(),5     ); m[1+2*4 ] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*5 ] = make_instr(SYM_ZRO(),DIR_RGHT(),6     ); m[1+2*5 ] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*6 ] = make_instr(SYM_ONE(),DIR_LEFT(),7     ); m[1+2*6 ] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*7 ] = make_instr(SYM_ZRO(),DIR_LEFT(),8     ); m[1+2*7 ] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*8 ] = make_instr(SYM_ONE(),DIR_RGHT(),9     ); m[1+2*8 ] = make_instr(SYM_ONE(),DIR_LEFT(),16    );
+    m[2*9 ] = make_instr(SYM_ZRO(),DIR_RGHT(),10    ); m[1+2*9 ] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*10] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*10] = make_instr(SYM_ZRO(),DIR_RGHT(),11    );
+    m[2*11] = make_instr(SYM_ZRO(),DIR_LEFT(),12    ); m[1+2*11] = make_instr(SYM_ONE(),DIR_LEFT(),13    );
+    m[2*12] = make_instr(SYM_ZRO(),DIR_LEFT(),12    ); m[1+2*12] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*13] = make_instr(SYM_ZRO(),DIR_LEFT(),13    ); m[1+2*13] = make_instr(SYM_ONE(),DIR_RGHT(),14    );
+    m[2*14] = make_instr(SYM_ONE(),DIR_RGHT(),15    ); m[1+2*14] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*15] = make_instr(SYM_ZRO(),DIR_RGHT(),15    ); m[1+2*15] = make_instr(SYM_ZRO(),DIR_RGHT(),11    );
+    m[2*16] = make_instr(SYM_ZRO(),DIR_RGHT(),17    ); m[1+2*16] = make_instr(SYM_ONE(),DIR_RGHT(),22    );
+    m[2*17] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*17] = make_instr(SYM_ONE(),DIR_RGHT(),18    );
+    m[2*18] = make_instr(SYM_ONE(),DIR_RGHT(),19    ); m[1+2*18] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*19] = make_instr(SYM_ZRO(),DIR_LEFT(),20    ); m[1+2*19] = make_instr(SYM_ONE(),DIR_RGHT(),19    );
+    m[2*20] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*20] = make_instr(SYM_ZRO(),DIR_LEFT(),21    );
+    m[2*21] = make_instr(SYM_ZRO(),DIR_LEFT(),8     ); m[1+2*21] = make_instr(SYM_ONE(),DIR_LEFT(),21    );
+    m[2*22] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*22] = make_instr(SYM_ONE(),DIR_RGHT(),23    );
+    m[2*23] = make_instr(SYM_ZRO(),DIR_RGHT(),24    ); m[1+2*23] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*24] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*24] = make_instr(SYM_ONE(),DIR_RGHT(),25    );
+    m[2*25] = make_instr(SYM_ZRO(),DIR_LEFT(),26    ); m[1+2*25] = make_instr(SYM_ZRO(),DIR_RGHT(),30    );
+    m[2*26] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*26] = make_instr(SYM_ONE(),DIR_LEFT(),27    );
+    m[2*27] = make_instr(SYM_ONE(),DIR_LEFT(),28    ); m[1+2*27] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*28] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*28] = make_instr(SYM_ZRO(),DIR_LEFT(),8     );
+    m[2*29] = make_instr(SYM_ZRO(),DIR_LEFT(),HALT()); m[1+2*29] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*30] = make_instr(SYM_ONE(),DIR_LEFT(),31    ); m[1+2*30] = make_instr(SYM_ONE(),DIR_RGHT(),30    );
+    m[2*31] = make_instr(SYM_ZRO(),DIR_LEFT(),32    ); m[1+2*31] = make_instr(SYM_ONE(),DIR_LEFT(),31    );
+    m[2*32] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*32] = make_instr(SYM_ONE(),DIR_LEFT(),47    );
+    m[2*47] = make_instr(SYM_ONE(),DIR_LEFT(),48    ); m[1+2*47] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*48] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*48] = make_instr(SYM_ZRO(),DIR_LEFT(),49    );
+    m[2*49] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*49] = make_instr(SYM_ZRO(),DIR_LEFT(),33    );
+    m[2*33] = make_instr(SYM_ZRO(),DIR_RGHT(),34    ); m[1+2*33] = make_instr(SYM_ZRO(),DIR_RGHT(),37    );
+    m[2*34] = make_instr(SYM_ONE(),DIR_RGHT(),35    ); m[1+2*34] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*35] = make_instr(SYM_ZRO(),DIR_RGHT(),36    ); m[1+2*35] = make_instr(SYM_ONE(),DIR_RGHT(),35    );
+    m[2*36] = make_instr(SYM_ZRO(),DIR_LEFT(),8     ); m[1+2*36] = make_instr(SYM_ONE(),DIR_RGHT(),36    );
+    m[2*37] = make_instr(SYM_ONE(),DIR_RGHT(),38    ); m[1+2*37] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT());
+    m[2*38] = make_instr(SYM_ZRO(),DIR_RGHT(),39    ); m[1+2*38] = make_instr(SYM_ONE(),DIR_RGHT(),38    );
+    m[2*39] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*39] = make_instr(SYM_ONE(),DIR_RGHT(),40    );
+    m[2*40] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*40] = make_instr(SYM_ONE(),DIR_RGHT(),41    );
+    m[2*41] = make_instr(SYM_ONE(),DIR_RGHT(),42    ); m[1+2*41] = make_instr(SYM_ONE(),DIR_RGHT(),41    );
+    m[2*42] = make_instr(SYM_ZRO(),DIR_RGHT(),HALT()); m[1+2*42] = make_instr(SYM_ZRO(),DIR_RGHT(),43    );
+    m[2*43] = make_instr(SYM_ONE(),DIR_LEFT(),44    ); m[1+2*43] = make_instr(SYM_ONE(),DIR_RGHT(),43    );
+    m[2*44] = make_instr(SYM_ZRO(),DIR_LEFT(),45    ); m[1+2*44] = make_instr(SYM_ONE(),DIR_LEFT(),44    );
+    m[2*45] = make_instr(SYM_ZRO(),DIR_LEFT(),46    ); m[1+2*45] = make_instr(SYM_ONE(),DIR_LEFT(),45    );
+    m[2*46] = make_instr(SYM_ZRO(),DIR_LEFT(),33    ); m[1+2*46] = make_instr(SYM_ONE(),DIR_LEFT(),46    );
+
+    return m;
+}
+
+int main() {
+    // Calculate & return A(4,0)
+    return eval(ack(),4,100);
+}

@@ -1,0 +1,21 @@
+//test typecheck
+//test infloop
+
+void check_arr_bound(int[] a, int i) {
+    if (i < 0 || i > 1) {
+        return;
+    }
+
+    check_arr_bound(a, a[i]);
+}
+
+int main() {
+    int[] a = alloc_array(int, 2);
+
+    int i = 0;
+    a[0] = 1;
+    a[1] = 0;
+
+    check_arr_bound(a, 0);
+    return 0;
+}

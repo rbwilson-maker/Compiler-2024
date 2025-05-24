@@ -1,0 +1,85 @@
+//test return 0
+
+struct node {
+  int data;
+  struct node *next;
+};
+
+struct stack_header {
+  struct node *front;
+};
+
+typedef struct stack_header *stack;
+
+struct queue_header {
+  stack instack;
+  stack outstack;
+};
+
+typedef struct queue_header *queue;
+
+void push(stack S, int x) {
+  struct node *front = S->front;
+  S->front = alloc(struct node);
+  S->front->data = x;
+  S->front->next = front;
+}
+
+int pop (stack S) {
+  if (S->front == NULL) assert(false);
+  int data = S->front->data;
+  S->front = S->front->next;
+  return data;
+}
+
+stack stack_new() {
+  return alloc(struct stack_header);
+}
+
+queue queue_new() {
+  queue Q = alloc(struct queue_header);
+  Q->instack = stack_new();
+  Q->outstack = stack_new();
+  return Q;
+}
+
+void enq(queue Q, int x) {
+  push(Q->instack, x);
+}
+
+int deq(queue Q) {
+  if (Q->outstack->front == NULL) {
+    while(Q->instack->front != NULL) {
+      push(Q->outstack,pop(Q->instack));
+    }
+   if (Q->outstack->front == NULL) assert(false);
+  }
+  return pop(Q->outstack);
+}
+int main() {
+    queue Q = queue_new();
+    enq(Q,1);
+    enq(Q,2);
+    enq(Q,3);
+    enq(Q,4);
+    enq(Q,5);
+    enq(Q,6);
+    enq(Q,7);
+    enq(Q,8);
+    enq(Q,9);
+    enq(Q,10);
+    assert(deq(Q) == 1);
+    assert(deq(Q) == 2);
+    assert(deq(Q) == 3);
+    assert(deq(Q) == 4);
+    assert(deq(Q) == 5);
+    stack S = Q->outstack;
+    Q->outstack = Q->instack;
+    Q->instack = S;
+    assert(deq(Q) == 10);
+    assert(deq(Q) == 9);
+    assert(deq(Q) == 8);
+    assert(deq(Q) == 7);
+    assert(deq(Q) == 6);
+    return 0;
+}

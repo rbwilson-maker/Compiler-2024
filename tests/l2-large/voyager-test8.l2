@@ -1,0 +1,17 @@
+//test return 3
+// greatest common divisor with for loop
+
+int main()
+{
+  int a = 93;
+  int b = 48;
+  int c;
+  
+  for (int i = b; i > 0; i = i + 0)
+  {
+      c = a % i;
+      a = i;
+      i = c;
+  }
+  return a;
+}

@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int main() {
+
+    int **pointy = NULL;
+    pointy = alloc(int*);
+    **pointy = 2 / 0;
+    
+    return **pointy;
+}

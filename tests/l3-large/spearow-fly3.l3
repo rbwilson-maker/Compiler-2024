@@ -1,0 +1,16 @@
+//test return 324
+
+int a(int b);
+int b(int a);
+
+int a(int c){
+    if(c >= 30) return c;
+    return b(c*2);
+}
+int b(int d){
+    if(d < 5) return a(d+1);
+    return a(d*3);
+}
+int main(){
+    return b(a(3));
+}

@@ -1,0 +1,22 @@
+//test return 0
+// ultimate lvalue test
+struct bar {
+  int[] vals;
+  bool* valid;
+};
+
+struct foo {
+  struct bar b;
+};
+
+int main()
+{
+  struct foo *x = alloc(struct foo);
+  x->b.vals = alloc_array(int, 10);
+  x->b.valid = alloc(bool);
+
+  (x->b.vals[0]) = 1;
+  ((*x->b.valid)) = true;
+  
+  return 0;
+}

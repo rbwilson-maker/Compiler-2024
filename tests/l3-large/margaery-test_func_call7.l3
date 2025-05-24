@@ -1,0 +1,28 @@
+//test return 7
+
+int func(int a, int b, int c, int d, bool e, bool f, bool g);
+int main() {
+    return func(func(1, 2, 7 + 2, 15441 >> 3, false, false, true),
+                func(199, func(1, 2, 7 + 2, 15441 >> 3, false, true, true), 7 + 2, 15441 << 3, false, false, false),
+                10 > 2 ? 7 : 10,
+                66,
+                false,
+                false,
+                true);
+}
+
+int func(int a, int b, int c, int d, bool e, bool f, bool g) {
+    if(e) {
+        return a;
+    }
+
+    if (f) {
+        return b;
+    }
+
+    if (g) {
+        return c;
+    }
+
+    return d;
+}

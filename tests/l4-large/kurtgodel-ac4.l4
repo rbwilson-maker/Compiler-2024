@@ -1,0 +1,24 @@
+//test return 1000
+// tests recursive struct
+
+typedef struct s ss;
+
+struct s {
+    ss *p;
+    int x;
+};
+
+ss* f(int d, ss *s) {
+    if (d == 1000) {
+        s->x = d;
+        return s;
+    }
+    return f(d + 1, s->p);
+}
+
+int main() {
+    ss* s = alloc(ss);
+    s->p = s;
+
+    return f(0, s)->x;
+}

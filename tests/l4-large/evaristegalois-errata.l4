@@ -1,0 +1,10 @@
+//test memerror
+
+int* return_pointer() {
+    return NULL;
+}
+
+int main() {
+    return *return_pointer();
+}
+

@@ -1,0 +1,8 @@
+//test typecheck
+struct foo {
+    int bar;
+};
+
+typedef struct foo foo;
+
+int not_exist(foo* p);

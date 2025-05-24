@@ -1,0 +1,83 @@
+//test return 80085
+// Simple red black tree implementation that I didn't have time to finish cause deadlines but rotations work!
+
+struct node;
+typedef struct node node;
+
+struct node {
+  bool red; // true for red, false for black
+  int key;
+  node* left;
+  node* right;
+  node* p;
+};
+
+void leftRotate(node** root, node* x) {
+  assert(x != NULL && x->right != NULL && root != NULL);
+
+  node* y = x->right;
+  x->right = y->left;
+  if(y->left != NULL) y->left->p = x;
+  y->p = x->p;
+  if(x->p == NULL) *root = y;
+  else if(x == x->p->left) x->p->left = y;
+  else x->p->right = y;
+  y->left = x;
+  x->p = y;
+}
+
+void rightRotate(node** root, node* x) {
+  assert(x != NULL && x->left != NULL && root != NULL);
+
+  node* y = x->left;
+  x->left = y->right;
+  if(y->right != NULL) y->right->p = x;
+  y->p = x->p;
+  if(x->p == NULL) *root = y;
+  else if(x == x->p->left) x->p->left = y;
+  else x->p->right = y;
+  y->right = x;
+  x->p = y;
+}
+
+node* grandparent(node* n) {
+  if((n != NULL) && (n->p != NULL))
+    return n->p->p;
+  else
+    return NULL;
+}
+
+node* uncle(node* n) {
+  node* g = grandparent(n);
+  if(g == NULL)
+    return NULL;
+  if(n->p == g->left)
+    return g->right;
+  else
+    return g->left;
+}
+
+void rbInsert(node** root, node* z) {}
+
+int main() {
+  node* left = alloc(node);
+  node* mid = alloc(node);
+  node* right = alloc(node);
+
+  node** root = alloc(node*);
+  *root = mid;
+
+  left->key = 3;
+  left->p = mid;
+
+  mid->key = 4;
+  mid->left = left;
+  mid->right = right;
+  
+  right->key = 80085;
+  right->p = mid;
+
+  leftRotate(root, mid);
+
+  return (*root)->key;
+}

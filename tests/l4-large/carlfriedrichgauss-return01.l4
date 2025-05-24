@@ -1,0 +1,24 @@
+//test return 3
+// cyclic dependency of struct
+
+struct Bar;
+
+struct Foo {
+    struct Bar* bar;
+    int a;
+};
+
+struct Bar {
+    struct Foo* foo;
+    int b;
+};
+
+int main() {
+    struct Foo* foo = alloc(struct Foo);
+    struct Bar* bar = alloc(struct Bar);
+    foo->a = 1;
+    bar->b = 2;
+    foo->bar = bar;
+    bar->foo = foo;
+    return foo->bar->foo->a + bar->foo->bar->b;
+}

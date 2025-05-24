@@ -1,0 +1,12 @@
+//test return 150
+// simple array
+
+int main(){
+  int[] A = alloc_array(int, 5);
+  A[0] = 10;
+  A[1] = 20;
+  A[2] = 30;
+  A[4] = 40;
+  A[3] = 50;
+  return A[0] + A[1] + A[2] + A[3] + A[4];
+}

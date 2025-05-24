@@ -1,0 +1,45 @@
+//test return 285
+
+// Perform simple operations with a linked list data structure
+
+struct node {
+  int val;
+  struct node *next;
+};
+
+struct list {
+  struct node *head;
+  struct node *dummy;
+};
+
+struct list *create_list() {
+  struct list *l = alloc(struct list);
+  l->head = alloc(struct node);
+  l->dummy = l->head;
+  return l;
+}
+
+void cons(int v, struct list *l) {
+  struct node *n = alloc(struct node);
+  n->val = v;
+  n->next = l->head;
+  l->head = n;
+}
+
+int sum(struct list *l) {
+  int result = 0;
+  struct node *n = l->head;
+  while (n != l->dummy) {
+    result += n->val;
+    n = n->next;
+  }
+  return result;
+}
+
+int main() {
+  struct list *l = create_list();
+  for (int i = 0; i < 10; i++) {
+    cons(i*i, l);
+  }
+  return sum(l);
+}

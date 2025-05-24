@@ -1,0 +1,11 @@
+//test return 0
+//and shortcircuit
+
+int main()
+{
+	int i = 0;
+	bool j = false;
+	if(j && 4/i < 0)
+		 return 4;
+	return 0;
+}

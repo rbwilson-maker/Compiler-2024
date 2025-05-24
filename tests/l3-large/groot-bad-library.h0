@@ -1,0 +1,6 @@
+typedef int foo;
+
+foo f(foo a, foo b) {
+  // this is not allowed
+  return a + b;
+}

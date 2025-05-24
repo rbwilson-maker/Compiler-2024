@@ -1,0 +1,10 @@
+//test return 358
+int main() {
+    int x1 = 17;
+    int x2 = 6481;
+    int x3 = 181081;
+    int x4 = x3;
+    x4 %= x2;
+    x4 /= x1;
+    return x4;
+}

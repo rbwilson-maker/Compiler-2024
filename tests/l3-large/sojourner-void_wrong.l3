@@ -1,0 +1,13 @@
+//test error
+
+void get_x(int x) {
+  x++;
+  return;
+}
+
+int main() {
+  get_x(3);
+  int y = get_x(4);
+
+  return 0;
+}

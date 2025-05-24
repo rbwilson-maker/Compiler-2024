@@ -1,0 +1,6 @@
+//test return 991896
+// causes a compile-time error
+
+int main() {
+   return -8*-123987;
+}

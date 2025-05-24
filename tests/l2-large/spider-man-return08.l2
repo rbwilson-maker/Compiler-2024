@@ -1,0 +1,20 @@
+//test return 8
+
+int main()
+{
+    int x;
+    x = 432;
+    bool __else = false;
+    if (x > 433) {
+        return 255;
+    }
+    __else = (x < 431);
+    int ret;
+    if (__else) {
+        ret = 9;
+    }
+    else {
+        ret = 8;
+    }
+    return ret;
+}

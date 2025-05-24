@@ -1,0 +1,41 @@
+//test return 10240
+
+typedef struct block* block;
+typedef struct wall* wall;
+
+struct block {
+  int size;
+  int weight;
+  block next_block;
+};
+
+struct wall {
+  block top_block;
+};
+
+void build (block x, int num_blocks) {
+  if (num_blocks == 0) {
+    x->next_block = NULL;
+    return;
+    1/0;
+  }
+  x->next_block = alloc(struct block);
+  x->next_block->size = x->size / 2;
+  x->next_block->weight = x->weight * 2;
+  build(x->next_block, num_blocks - 1);
+}
+
+int main() {
+  wall[] building = alloc_array(wall, 1);
+  wall front = alloc(struct wall);
+  front->top_block = alloc(struct block);
+  front->top_block->size = 100;
+  front->top_block->weight = 10;
+  building[0] = front;
+  build(front->top_block, 10);
+  block x = front->top_block;
+  while (x->next_block != NULL) {
+    x = x->next_block;
+  }
+  return x->weight;
+}

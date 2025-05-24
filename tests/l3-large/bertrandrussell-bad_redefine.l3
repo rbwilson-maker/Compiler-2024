@@ -1,0 +1,15 @@
+//test error
+/* Differnt paramerters for same function name */
+
+void temps(int x) {
+  return;
+}
+
+void temps(bool y) {
+  return;
+}
+
+int main () {
+  temps (3);
+  return 1;
+}

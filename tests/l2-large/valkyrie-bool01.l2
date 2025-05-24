@@ -1,0 +1,10 @@
+//test return 15210
+// Shortcircuiting
+
+int main(){
+    bool b = true;
+    if (b || (1/0 == 1)){
+        return 15210;
+    }
+    return 0;
+}

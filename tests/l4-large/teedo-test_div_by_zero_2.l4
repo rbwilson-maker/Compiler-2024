@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int log_i_n(int i, int n) {
+    int res = 0;
+    while (n > 0) {
+        res++;
+        n /= i;
+    }
+    return res;
+}
+
+int main() {
+    return log_i_n(0, 5);
+}

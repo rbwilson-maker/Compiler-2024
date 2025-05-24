@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int loop() {
+  return loop();
+}
+
+int cause_error() {
+  return 1 / 0;
+}
+
+int main() {
+  return (loop() + cause_error());
+}

@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main(){
+	int* ptr1 = alloc(int);
+	int* ptr2 = alloc(int);
+	*ptr1 = 1;
+	*ptr2 = 0;
+	return *ptr1/(*ptr2);
+}

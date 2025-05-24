@@ -1,0 +1,8 @@
+//test return 2
+int main ()
+{
+  bool f1 = true;
+  bool f2 = false;
+  int res = f1 ? f2 ? 1 : 2 : 3;
+  return res;
+}

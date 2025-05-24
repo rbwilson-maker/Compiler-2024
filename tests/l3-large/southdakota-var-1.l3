@@ -1,0 +1,19 @@
+//test return 8
+
+int main(){
+	int i = 0;
+
+	while (i < 7) {
+		int a;
+		i++;
+	}
+
+	i = 0;
+
+	while (i < 8) {
+		int a;
+		i++;
+	}
+
+	return i;
+}

@@ -1,0 +1,5 @@
+//test error
+int main() {
+  int y = 40;
+  return (if (y % 2 == 1) { true; } else { false; });
+}

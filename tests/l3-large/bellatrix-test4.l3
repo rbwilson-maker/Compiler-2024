@@ -1,0 +1,25 @@
+//test error
+
+int frankfurt(bool z, int y) {
+
+  if (z) {
+    return y;
+  }
+
+  return z ? -y : y - 100;
+  
+}
+
+
+int main(){
+
+  bool t;
+  int x;
+
+  t = true;
+
+  x = 100;
+
+  return frankfurt(t, x);
+  
+}

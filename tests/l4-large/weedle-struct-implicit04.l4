@@ -1,0 +1,15 @@
+//test error
+
+// Types struct s that have not (yet) been defined may be referenced 
+// as long as their size is irrelevant. The size of a struct is relevant in 
+// expressions alloc(struct s), alloc array(struct s, e), and in struct 
+// definitions when serving as the type of a field.
+
+struct b {
+	struct a foo;
+};
+
+int main() {
+
+	return 1234;
+}

@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+	int big_num = 12345678;
+	int den = 5;
+	while (den >= 0) {
+		big_num /= den;	/* div-by-zero */
+		den -= 1;
+	}
+	return big_num;
+}

@@ -1,0 +1,11 @@
+//test error
+
+int a(int n) {
+   if(n == 1) {
+   	return 1;
+   }
+}
+
+int main() {
+   return a(5);
+}

@@ -1,0 +1,13 @@
+//test error
+
+// assign wrong array element type
+
+int main () {
+    int [] arr = alloc_array(int, 100) ;
+    i =0;
+    while (i<100 ) {
+       arr[i] = i < 50 ;
+       i++ ;
+    }
+    return 0;
+}

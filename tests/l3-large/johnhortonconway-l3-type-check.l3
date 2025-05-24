@@ -1,0 +1,10 @@
+//test error
+
+void test() {
+  return;
+}
+
+int main() {
+    test() + 3;
+    return 0;
+}

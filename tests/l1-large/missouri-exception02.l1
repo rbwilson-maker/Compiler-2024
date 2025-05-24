@@ -1,0 +1,8 @@
+//test div-by-zero
+// modulo by 0
+int main()
+{
+    int a;
+    a = 1 + 1 + 1;
+    return 10 % 0;
+}

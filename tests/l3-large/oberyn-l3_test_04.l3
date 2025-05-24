@@ -1,0 +1,14 @@
+//test return 6
+
+// tests tests basic parameter passing
+
+int add3(int a, int b, int c) {
+	return a + b + c;
+}
+
+int main() {
+	int x = 1;
+	int y = 2;
+	int z = 3;
+	return add3(x, y, z);
+}

@@ -1,0 +1,13 @@
+//test return 5
+
+int fail(bool b) {
+	assert(b);
+	return (b ? 0 : 1);
+}
+
+int main() {
+	bool b1 = true;
+	bool b2 = false;
+	int x = b1 ? b2 ? fail(b2) : 5 : fail(b1);
+	return x;
+}

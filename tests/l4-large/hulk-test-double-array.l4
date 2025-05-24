@@ -1,0 +1,22 @@
+//test return 45
+// Interprets a double as a struct dub *
+
+struct dub {
+  int x;
+};
+
+int main() {
+  dub[] x = alloc_array(dub, 10);
+  for(int i = 0; i < 10; i++) {
+    x[i] = itod(i);
+  }
+  // y = 0 + ... + 9 = 9*10/2 = 45
+  int y = dtoi(dadd(dadd(dadd(dadd(x[0], x[1]), dadd(x[2], x[3])), dadd(dadd(x[4], x[5]), dadd(x[6], x[7]))), dadd(x[8], x[9])));
+
+  // This should run successfully since NULL and (double)0 are both 00...00 in binary
+  x[0] = alloc(struct dub);
+  y = dtoi(dadd(itod(y), x[0]));
+  y += x[0]->x;
+
+  return y;
+}

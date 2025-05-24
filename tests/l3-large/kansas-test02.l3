@@ -1,0 +1,11 @@
+//test return 12
+
+// This is designed to test a multi-argument function call
+int func(int x, int y) {
+  return x * y;
+}
+
+int main() {
+  int y = func(3, 4);
+  return y;
+}

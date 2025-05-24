@@ -1,0 +1,10 @@
+//test error
+//variable name and function name collide
+
+int false() {
+    return 15;
+}
+
+int main () {
+    return 0;
+}

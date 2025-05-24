@@ -1,0 +1,19 @@
+//test div-by-zero
+
+void rec_div(int* p) {
+    if (*p == 0) return;
+    *p = (*p) / 2;
+
+    int* t = p;
+    rec_div(p);
+    *p = (*t) / (*p);
+}
+
+int main() {
+    int* p = alloc(int);
+    *p = 1999;
+
+    rec_div(p);
+
+    return 1;
+}

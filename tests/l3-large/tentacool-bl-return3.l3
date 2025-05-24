@@ -1,0 +1,26 @@
+//test return 99
+
+int f1(int i);
+int f2(int i);
+int f0(int i);
+
+int f0 (int i) {
+
+    if (i >=98) {
+        return i;
+    }
+    return f1(i+1);
+}
+
+int f1 (int i) {
+    return f2(i+1);
+}
+
+
+int f2 (int i) {
+    return f0(i+1);
+}
+
+int main () {
+    return f0(0);
+}

@@ -1,0 +1,8 @@
+//test error
+//Tests using a reserved keyword as a variable name. Compilation should fail
+
+int main() {
+    int while = 3 
+    return while;
+}
+

@@ -1,0 +1,38 @@
+//test return 0
+
+/*  Tells you if a byte is a "vowel". */
+bool is_vowel(int byte) {
+    return (byte == 0xa) || (byte == 0xe);
+}
+
+/*  Counts how many "vowels" there are in an int.
+    Actually, counts the occurrences of 0xa and 0xe in the hexadecimal
+    representation of an integer. */
+int count_vowels(int x) {
+    int res = 0;
+
+    for (int i = 0; i < 8; i++) {
+        if (is_vowel(x & 0xf)) {
+            res++;
+        }
+
+        x >>= 4;
+    }
+
+    return res;
+}
+
+/*  A lot of the following are taken from
+    https://nedbatchelder.com/text/hexwords.html */
+int main() {
+    assert(count_vowels(0xad0be) == 2);
+    assert(count_vowels(0xaffab1e) == 3);
+    assert(count_vowels(0xbaff1ed) == 2);
+    assert(count_vowels(0xdebac1e) == 3);
+    assert(count_vowels(0xdecaf) == 2);
+    assert(count_vowels(0xdeadbeef) == 4);
+    assert(count_vowels(0xfacade) == 3);
+    assert(count_vowels(0xfeeb1e) == 3);
+
+    return 0;
+}

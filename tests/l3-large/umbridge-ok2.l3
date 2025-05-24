@@ -1,0 +1,28 @@
+//test return 25
+
+/* count the number of prime numbers from 2 to 100 */
+
+bool isprime(int i) {
+    // local variables are allowed to shadow function names
+    bool isprime = true;
+    for (int j = 2; j < i; j++)
+    {
+        if (i % j == 0)
+        {
+            isprime = false;
+            return isprime;
+        }
+    }
+    return isprime;
+}
+
+int main() {{
+    int _count = 0;
+    for (int i = 2; i <= 100; i++)
+    {
+        if (isprime(i))
+            _count++;
+    }
+
+    return _count;
+}}

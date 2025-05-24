@@ -1,0 +1,8 @@
+//test div-by-zero
+// Shift by negative number
+
+int main(){
+    int x = -10;
+    int y = 2;
+    return y << x;
+}

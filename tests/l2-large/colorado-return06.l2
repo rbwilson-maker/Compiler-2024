@@ -1,0 +1,17 @@
+//test return 12604
+int main(){
+	int j = 30;
+	while(true){
+		j+=92;
+		if(j % 239 == 0){
+			return 1;
+		} else if((j & 29) < 11){
+			j += 31;
+		} else if((j % 23) == 0) {
+			return j;
+		} else if((j % 11) == 0) {
+			j -= 21;
+		} 
+	}
+	return 0;
+}

@@ -1,0 +1,16 @@
+//test error
+
+struct aa;
+struct bb {
+	struct aa dd;
+}
+
+struct aa {
+	int ddd;
+	bool ffff;
+	int* wwww;
+};
+
+int main() {
+	return 2;
+}

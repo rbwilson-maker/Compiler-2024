@@ -1,0 +1,8 @@
+//test return 1
+
+int main() {
+    int x = 0xffffffff;
+    int INT_MIN = 0x80000000; 
+    int INT_MAX = INT_MIN - 0x000001;
+    return INT_MAX * x - INT_MIN;
+}

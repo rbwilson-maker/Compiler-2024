@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+
+int main() {
+    int x = 3;
+    for (int y = 0; y < x; y++) {
+        bool p = y % 2 == 0;
+        bool q = x % 3 == 0;
+        if (!!!!!!!!!!p != !!!!!!!q) {
+            x++;
+        } else {
+            x += 2;
+        }
+    }
+    return x;
+}
+

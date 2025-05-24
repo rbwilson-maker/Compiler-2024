@@ -1,0 +1,11 @@
+//test return 0
+
+int main ()
+{
+  // bitwise operators
+  int n;
+  n = 1;
+  n <<= 2; 
+  n -= 1; 
+  return n ^ 3; 
+}

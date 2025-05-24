@@ -1,0 +1,124 @@
+//test return 0
+// test bool assignment and test
+int biggirlsdontcry(int mama) {
+  if (mama == 0) return 0;
+  if (mama == 44) return 9090;
+  else {
+    int dooshka = mama * 2;
+    return biggirlsdontcry(dooshka);
+  }
+}
+
+int main() {
+  int doob = biggirlsdontcry(22); // 9090
+  int bruh = biggirlsdontcry(11); // 9090
+  int res2 = doob - bruh; //0
+	bool e = true;
+	bool b = false;
+	bool c = e || b; // true
+	bool d = e && b; // false
+  int a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+
+
+	int res = 0;
+	if (e) res++;
+	if (b) res++;
+	if (c) res++;
+	if ((d)) res++;
+	return res2;
+}

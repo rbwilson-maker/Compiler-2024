@@ -1,0 +1,31 @@
+//test error
+// foobar and barfoo are structurally the same, but different names
+
+typedef int foo;
+typedef int* bar;
+struct foobar {
+    foo x;
+    bar y;
+};
+typedef struct foobar something;
+typedef something* foobar_pointer;
+struct barfoo {
+    bar x;
+    foo y;
+};
+
+int main() {
+    foobar_pointer fb1 = alloc(struct foobar);
+    something* fb2 = alloc(struct barfoo);
+    fb1->x = 7;
+    fb2->x = 9;
+    fb1->y = alloc(foo);
+    fb2->y = alloc(int);
+
+    *(fb1->y) = 99;
+    *(fb2->y) = 1;
+
+    bar fb1_bar = (*fb1).y;
+    assert(*fb1_bar == 99);
+    return fb1->x + fb2->x + *fb1_bar + (*fb2->y);
+}

@@ -1,0 +1,12 @@
+//test error
+// error in block scope
+
+int main() {
+  int y = 0;
+  int z = 4;
+  return y + z;
+  {
+    int x;
+    x += x;
+  }
+}

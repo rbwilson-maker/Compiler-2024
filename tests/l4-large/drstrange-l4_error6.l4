@@ -1,0 +1,7 @@
+//test error
+/// Cannot dereference non ref value
+
+int main() {
+  int x = 0;
+  return *x;
+}

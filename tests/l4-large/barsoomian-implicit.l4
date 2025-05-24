@@ -1,0 +1,12 @@
+//test error
+
+typedef struct f* f;
+
+f func() {
+    // struct f is implicitly declared but not defined
+    return alloc(struct f);
+}
+
+int main() {
+    return 0;
+}

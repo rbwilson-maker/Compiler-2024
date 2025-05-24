@@ -1,0 +1,14 @@
+//test return 9217
+
+int f1 (int x, int y) {
+    int z = x + y;
+    return z;
+}
+
+int main() {
+    int sum = 0;
+    for (int i = 10; i > 0; i--) {
+        sum += f1(sum, i);
+    }
+    return sum;
+}

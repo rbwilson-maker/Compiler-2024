@@ -1,0 +1,19 @@
+//test return 5
+// Test nested structs with same field names
+
+struct y {
+    int x;
+};
+
+struct x {
+    int x;
+    struct y y;
+};
+
+typedef struct x* x;
+
+int main() {
+    x test = alloc(struct x);
+    test->y.x = 5;
+    return test->y.x;
+}

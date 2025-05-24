@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int f(int x) {
+  return 5 / x;
+}
+
+int main() {
+  for (int i = -5; i < 6; i++) {
+    print_int(f(i));
+  }
+  return f(10);
+}

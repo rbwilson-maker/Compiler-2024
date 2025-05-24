@@ -1,0 +1,44 @@
+//test return -132579
+// reassign something a lot
+int main() {
+  int a;
+  a = 1;
+  int a1 = 10;
+  a = a + a1 % 40 + a;
+  int a2 = a1 * 2;
+  a = a2 + a1 + a / a1 + a;
+  int a3 = a1 * a2;
+  a = a + a3 + a2 - 10 + a1 + a + a1;
+  int a4 = a1 * a2 * a3;
+  a = a - 20 * a4 / 10 + a;
+  a = 20 + a - a2 + a4;
+  a = 11 * a / a2 + a3;
+  a = a - 20 * a4 / 10 + a;
+  a = 20 + a - a2 + a4;
+  a = 11 * a / a2 + a3;
+  a = a - 20 * a4 / 10 + a;
+  a = 20 + a - a2 + a4;
+  a = 11 * a / a2 + a3;
+  a = a - 20 * a4 / 10 + a;
+  a = 20 + a - a2 + a4;
+  a = 11 * a / a2 + a3;
+  a = a - 20 * a4 / 10 + a;
+  a = 20 + a - a2 + a4;
+  a = 11 * a / a2 + a3;
+  return a;
+  a = a - 20 * a4 / 10 + a;
+  a = 20 + a - a2 + a4;
+  a = 11 * a / a2 + a3;
+  a = a - 20 * a4 / 10 + a;
+  a = 20 + a - a2 + a4;
+  a = 11 * a / a2 + a3;
+  a = a - 20 * a4 / 10 + a;
+  a = 20 + a - a2 + a4;
+  a = 11 * a / a2 + a3;
+  a = a - 20 * a4 / 10 + a;
+  a = 20 + a - a2 + a4;
+  a = 11 * a / a2 + a3;
+  a = a - 20 * a4 / 10 + a;
+  a = 20 + a - a2 + a4;
+  a = 11 * a / a2 + a3;
+}

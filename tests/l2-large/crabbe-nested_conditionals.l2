@@ -1,0 +1,23 @@
+//test return 0
+
+int main(){
+
+  int x = 1;
+
+  if (0 <= 1 && x == 0 ){
+    return 11 / 2 >= 5 ? 2 : 5;
+  }
+  else{
+    x -= 0x1;
+    while (x == 0){
+      bool b = x > 0;
+      x = b ? 0 : 1;
+    }
+    if (x == 1){
+      int y = (x + x > x) ? 0 : 1;
+      return y; // op precedence
+    }
+  }
+
+  return 2;
+}

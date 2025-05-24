@@ -1,0 +1,16 @@
+//test return 4
+
+int succ(int x) { return x + 1; }
+
+int count_to_four() {
+  int i = 0;
+  while (i < 4) {
+    i = succ(i);
+  }
+
+  return i;
+}
+
+int main() {
+  return count_to_four();
+}

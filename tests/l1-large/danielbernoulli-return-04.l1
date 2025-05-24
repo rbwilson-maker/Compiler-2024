@@ -1,0 +1,9 @@
+//test return 20
+
+int main() {
+    int a1 = 1;
+    int a2 = 2; 
+    int a3 = 3; 
+    int a4 = 4; 
+    return a1 + a2 + a3 + a4 + a1 + a2 + a3 + a4; 
+}

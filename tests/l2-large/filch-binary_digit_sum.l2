@@ -1,0 +1,21 @@
+//test return 16
+
+int main() {
+    int wow_a_number = 123454321;
+
+    int all_the_binary_digits = 0;
+
+    while (wow_a_number > 0) {
+	int is_the_last_digit_1 = wow_a_number & 1;
+
+	int is_it_really_tho = is_the_last_digit_1 & (wow_a_number % 2);
+
+	all_the_binary_digits += is_it_really_tho;
+
+	wow_a_number >>= 1;
+    }
+
+    return all_the_binary_digits;
+
+    all_the_binary_digits++;
+}

@@ -1,0 +1,63 @@
+//test return -1
+// structs within structs within structs...
+
+struct _chuck {
+  bool wood;
+};
+
+struct could {
+  struct _chuck chuck;
+};
+ 
+struct _woodchuck {
+  struct could could;
+}; 
+
+struct _a {
+  struct _woodchuck woodchuck;
+};
+
+struct _if {
+  struct _a a;
+};
+
+struct chuck {
+  struct _if _if;
+};
+
+struct woodchuck {
+  struct chuck chuck;
+};
+
+struct a {
+  struct woodchuck woodchuck;
+};
+
+struct would {
+  struct a a;
+};
+
+struct wood {
+  struct would would;
+};
+
+struct much {
+  struct wood wood;
+};
+
+struct how {
+  struct much much;
+};
+
+struct foo {
+  struct how how;
+};
+
+int main() {
+  struct foo *p = alloc(struct foo);
+  return p->
+  
+  how.much.wood.would.a.woodchuck.chuck._if.a.woodchuck.could.chuck.wood?
+
+  0:-1;
+}

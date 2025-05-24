@@ -1,0 +1,7 @@
+//test div-by-zero
+int main() {
+    int a = 0x24;
+    a >>= 2; // 8
+    a <<= 2; // 32
+    return 0 << a;
+}

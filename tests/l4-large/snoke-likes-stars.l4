@@ -1,0 +1,28 @@
+//test return 1
+
+typedef int a;
+typedef a b;
+typedef b c;
+typedef c d;
+typedef d e;
+typedef e f;
+typedef f g;
+typedef g h;
+typedef h i;
+typedef i j;
+typedef j k;
+typedef k l;
+typedef l m;
+
+int main() {
+    int ia = 1;
+    ia * 1;
+    b[] pb = alloc_array(h, 20);
+    pb[0] = 1;
+    b pc = pb[0];
+    pb[0] = 2;
+    c[][] arr = alloc_array(c[], 10);
+    c *** ***** ****** * **** pi = NULL;
+    d *** ***** ****** * pj = NULL;
+    return pc;
+}

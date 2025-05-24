@@ -1,0 +1,14 @@
+//test abort
+// weird for loops with bools abort
+
+int main () {
+  int hi;
+  for(hi = 0; hi != 1; hi++)
+    for(hi = 1; hi != 0; hi--)
+      if (hi == 1)
+        assert(hi == 0);
+      else
+        assert(true);
+  return 11321424;
+}
+

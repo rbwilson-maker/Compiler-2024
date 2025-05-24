@@ -1,0 +1,6 @@
+//test memerror
+
+int main() {
+    bool **i = alloc(bool*);
+    return (**i)? 1: 0;
+}

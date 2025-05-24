@@ -1,0 +1,11 @@
+//test return 75
+// Hofstadter's H sequence, recursive version (without memoization, hence exponential runtime)
+
+int HofH(int n) {
+    if (n == 0) return 0;
+    else return n - HofH(HofH(HofH(n-1)));
+}
+
+int main() {
+    return HofH(110);
+}

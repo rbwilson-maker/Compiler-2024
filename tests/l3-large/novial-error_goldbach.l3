@@ -1,0 +1,39 @@
+//test error
+
+// This function does nothing
+bool isPrime(int n) {
+  if (n < 2)
+    return false;
+
+  for (int i = 2; i < n; i++) {
+    if (n%i == 0) return false;
+  }
+  return true;
+}
+
+// This function also does nothing
+bool goldbach(int n) {
+  for (int i = 2; i < n; i++) {
+    int x1 = i;
+    int x2 = n - i;
+    if (isPrime(i) && isPrime(n-i)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// This kills everything
+int max = 200;
+
+int main() {
+  int i = 2;
+
+  while (i < max) {
+    if (!goldbach(2*i)) {
+      return i;
+    }
+    i++;
+  }
+  return 0;
+}

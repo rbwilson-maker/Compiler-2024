@@ -1,0 +1,10 @@
+//test return 8
+// use binary operations
+int main() {
+  int a = 0xFB;
+  a >>= 0xA;
+  a <<= 0x7;
+  a |= 0xC;
+  a &= 0x8;
+  return a;
+}

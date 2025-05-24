@@ -1,0 +1,19 @@
+//test return -474400483
+
+void write(int[] arr, int i, int v) {
+    arr[i] += v;
+}
+
+int main() {
+    int s = 1;
+    int size = 0x7000;
+    int[] arr = alloc_array(int, size);
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < i; j++) {
+            write(arr, i, arr[j]);
+        }
+        write(arr, i, s);
+        s = arr[i];
+    }
+    return s;
+}

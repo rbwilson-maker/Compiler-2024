@@ -1,0 +1,11 @@
+//test error
+// All branches must have returns
+
+int main() {
+  int val = 10;
+  if val != 10 {
+    val += 2;  // Doesnt really matter
+  } else {
+    return val;
+  }
+}

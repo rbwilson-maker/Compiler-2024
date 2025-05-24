@@ -1,0 +1,15 @@
+//test memerror
+
+struct node;
+typedef struct node node;
+struct node {
+  int value;
+  node* next;
+};
+
+int main() {
+  node* my_node = alloc(node);
+  my_node -> value = 42;
+  my_node -> next = NULL;
+  return my_node -> next -> value;
+}

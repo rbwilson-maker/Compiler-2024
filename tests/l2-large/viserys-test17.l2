@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main() {
+  int large = 0x7FFFFFFF;
+  for (int i=10; i>=0; i--)
+    large /= i;
+  return large;
+}

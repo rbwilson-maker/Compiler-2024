@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+
+bool friendly_pushes_away(bool s) {
+	if (!s) friendly_pushes_away(s);
+	return s;	
+}
+
+bool innocent() {
+	bool s = true;
+	assert(friendly_pushes_away(s));
+	assert(friendly_pushes_away(!s));
+	return !s || s;
+}
+
+int main() {
+	if (innocent()) return 1;
+	return -1;
+}

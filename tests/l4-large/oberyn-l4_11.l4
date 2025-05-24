@@ -1,0 +1,15 @@
+//test error
+// checking -> operates on a pointer
+
+struct thing {
+  int a;
+};
+typedef struct things t;
+
+int main() {
+  int a = 0;
+  thing* b = alloc(thing);
+  b->a = a;
+  b.a = a;
+  return a;
+}

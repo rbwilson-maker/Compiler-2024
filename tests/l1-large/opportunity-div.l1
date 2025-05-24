@@ -1,0 +1,8 @@
+//test return 3
+
+int main(){
+  int x = 100/5/4;
+  int z = x * 30 / 2 % 6;
+  return z;
+
+}

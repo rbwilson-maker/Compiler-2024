@@ -1,0 +1,29 @@
+//test error
+typedef int good;
+
+good luck() {
+  struct in *side = NULL;
+  *side;
+  return 0;
+}
+
+struct in {
+  good bye;
+};
+
+good main() {
+  struct in *cite = alloc(struct in);
+  *cite = 10101;
+  return *cite;
+  {
+    while (false) {
+      if (true) {
+      } else {
+        luck();
+        struct in {
+          good night;
+        }
+      }
+    }
+  }
+}

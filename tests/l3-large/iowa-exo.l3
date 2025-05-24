@@ -1,0 +1,28 @@
+//test return 2011
+
+typedef int kpop_t;
+
+kpop_t exoM(bool m) {
+    if (m) {
+        return 1;
+    }
+
+    return 0;
+}
+
+bool exoC(int c) {
+    return (c % 2 == 0);
+}
+
+int main() {
+    bool suho;
+    int baekhun = 9001;
+    kpop_t chanyeol;
+
+    suho = false;
+    chanyeol = 2011;
+
+    suho = exoC(exoM(suho));
+
+    return (suho ? chanyeol : baekhun);
+}

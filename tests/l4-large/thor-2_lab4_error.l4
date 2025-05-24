@@ -1,0 +1,4 @@
+//test error
+bool f1 (int arg1, int arg2, int arg3);
+bool f2 (bool arg1, bool arg2, bool arg3);
+bool f2 (bool arg1, bool arg2, bool arg3) {f1 (*arg1, *arg2, *arg3)}

@@ -1,0 +1,30 @@
+//test return 0
+
+int h(int x);
+
+int f(int x){
+    return h(x-1);
+}
+
+int g(int x){
+    return h(x);
+}
+
+int h(int x){
+    if (x != 0){
+       return 0;   
+    }else{
+       return 1;
+    }
+}
+
+int i(int x){
+    return h(f(g(x)));
+}
+
+int main() {
+    assert(f(5) == g(5));
+    assert(f(0) != g(0));
+    assert(h(0) != i(0));
+    return 0;
+}

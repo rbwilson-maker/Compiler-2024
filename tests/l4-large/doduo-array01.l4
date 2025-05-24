@@ -1,0 +1,11 @@
+//test return 3
+int sum(int[] array, int n){
+  return array[0] + array[1];
+}
+  
+int main() {
+  int[] array = alloc_array(int, 2);
+  array[0] = 1;
+  array[1] = 2;
+  return sum(array, 2);
+}

@@ -1,0 +1,58 @@
+//test return 7
+//Levenshtein Distance, recursive
+
+int min(int[] xs, int l) {
+    assert(l > 0);
+    int min = xs[0];
+    for (int i = 1; i < l; i++)
+    {
+        if (xs[i] < min) {
+            min = xs[i];
+        }
+    }
+    return min;
+}
+
+int ld(int[] s, int sl, int[] t, int tl)
+{
+    int cost;
+    if (sl == 0)
+        return tl;
+    if (tl == 0)
+        return sl;
+    if (s[sl-1] <= t[tl-1])
+        cost = t[tl-1] - s[sl-1];
+    else
+        cost = s[sl-1] - t[tl-1];
+
+    int[] ds = alloc_array(int, 3);
+    ds[0] = ld(s, sl - 1, t, tl) + 1;
+    ds[1] = ld(s, sl, t, tl - 1) + 1;
+    ds[2] = ld(s, sl - 1, t, tl - 1) + cost;
+
+    return min(ds, 3);
+}
+
+int main() {
+    int[] s = alloc_array(int, 10);
+    s[0] = 1;
+    s[1] = 1;
+    s[2] = 78;
+    s[3] = 1;
+    s[4] = 1;
+    s[5] = 15;
+    s[6] = 1;
+    s[7] = -23;
+    s[8] = 1;
+    s[9] = 89;
+
+    int[] t = alloc_array(int, 6);
+    t[0] = 1;
+    t[1] = -1;
+    t[2] = 78;
+    t[3] = 1;
+    t[4] = 2;
+    t[5] = 15;
+
+    return ld(s, 10, t, 6);
+}

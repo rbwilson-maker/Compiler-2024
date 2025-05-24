@@ -1,0 +1,13 @@
+//test div-by-zero
+
+// Tests dividing by zero
+int main(){
+    int a = 99;
+    for (true; a == a; false) {
+        a--;
+        if (a == 0) {
+            return 99 / a;
+        }
+    }
+    return a;
+}

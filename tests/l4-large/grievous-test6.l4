@@ -1,0 +1,36 @@
+//test return 3
+struct list {
+    int val;
+    struct list* next;    
+};
+typedef struct list* list;
+
+list empty() {
+    return NULL;
+}
+
+list singleton(int x){
+    list l = alloc(struct list);
+    l -> val = x;
+    return l;    
+}
+
+list append(list l1, list l2){
+    list head = l1;
+    if(head == NULL){
+        return l2;
+    }   
+    while(head->next != NULL){
+        head = head->next;
+    }
+    head->next = l2;
+    return l1;
+}
+
+int main(){
+    list l1 = empty();
+    list l2 = singleton(1);
+    list l3 = singleton(3);
+    list l4 = append(append(l1,l2), l3);
+    return l4->next->val;
+}

@@ -1,0 +1,13 @@
+//test return 30
+// (*s).a is the same as s->a
+
+struct s {
+    int hello;
+};
+
+int main() {
+    struct s * st = alloc(struct s);
+    (*st).hello = 5;
+    (*st).hello *= 6;
+    return st->hello;
+}

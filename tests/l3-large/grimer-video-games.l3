@@ -1,0 +1,18 @@
+//test return 1100;
+
+
+int buildNum(int i) {
+  if (i == 0) return 0;
+  return (1 + buildNum(i - 1));
+}
+
+int main() {
+  int a = buildNum(100);
+  int b = buildNum(0);
+  int c = buildNum(1000);
+  bool d = (true || (buildNum(-1) == 0));
+  if (d)
+    return (a + b + c);
+  else
+    return buildNum(1000000);
+}

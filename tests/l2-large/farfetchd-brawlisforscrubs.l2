@@ -1,0 +1,6 @@
+//test div-by-zero
+
+int main() {
+    int rage = 99 << 10000;
+    return rage;
+}

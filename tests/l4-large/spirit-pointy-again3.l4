@@ -1,0 +1,10 @@
+//test memerror
+
+int main() {
+
+    int **pointy = NULL;
+    pointy = alloc(int*);
+    **pointy = 1;
+    
+    return **pointy;
+}

@@ -1,0 +1,16 @@
+//test return 3
+
+struct s {
+    int x;
+    int y;
+};
+
+int main() {
+    struct s[][] a;
+    a = alloc_array(struct s[], 10);
+    a[1] = alloc_array(struct s, 3);
+    a[2] = alloc_array(struct s, 5);
+    a[1][2].x = 2;
+    a[2][4].y = 6;
+    return a[2][4].y / a[1][2].x;
+}

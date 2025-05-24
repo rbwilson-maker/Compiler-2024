@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+int main(){
+
+    for(;true;){
+        int j = 0;
+        j = j + 2;
+    }
+
+    return 0;
+
+}

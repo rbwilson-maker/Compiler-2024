@@ -1,0 +1,28 @@
+//test typecheck
+//test infloop
+
+/* Implied Main Delcaration
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, October 11, 2015 at 10:02:46 PM EDT
+ *
+ * This test tests that the compiler treats main as an implicitly delcared
+ * function, so an function can forward-reference main without a forward
+ * declaration.
+ */
+
+int test(int x)
+{
+    // Loop for awhile to try to prevent stack overflow
+    for (int i = 0; i < (1 << 18); i++) {}
+
+    main();
+    return x + 77;
+}
+
+int main()
+{
+    test(4);
+    return 0;
+}

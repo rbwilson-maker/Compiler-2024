@@ -1,0 +1,13 @@
+//test error
+// Multiple nested typedefs that don't line up
+
+typedef int one;
+typedef one two;
+typedef two three;
+
+int main() {
+    one x = 1;
+    two y = 2;
+    three z = true;
+    return x + y;
+}

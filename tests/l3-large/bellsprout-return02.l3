@@ -1,0 +1,31 @@
+//test return 2
+
+int min(int a, int b) {
+    return a < b ? a : b;
+}
+
+// compute value of f(x) where f(x) = a*x^2 + b*x + c.
+int compute_quadratic(int a, int b, int c, int x) {
+    return (a * x + b) * x + c;   
+}
+
+/*
+    Function find_max() computes the minimum value of a
+    quadratic function with discrete points.
+*/
+int find_min(int a, int b, int c) {
+    assert(a > 0);
+    int z = -b / (2 * a);
+    if (z * a * 2 == -b) {  // exactly the minimum point
+        return compute_quadratic(a, b, c, z);
+    } else {
+        int t1 = compute_quadratic(a, b, c, z - 1);
+        int t2 = compute_quadratic(a, b, c, z);
+        int t3 = compute_quadratic(a, b, c, z + 1);
+        return min(t1, min(t2, t3));
+    }
+}
+
+int main() {
+    return find_min(1, 2, 3);
+}

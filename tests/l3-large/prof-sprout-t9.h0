@@ -1,0 +1,5 @@
+int generate_otp(int seed);
+
+int decrypt(int msg, int key);
+
+int encrypt(int msg, int key);

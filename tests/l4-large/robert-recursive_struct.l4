@@ -1,0 +1,23 @@
+//test typecheck
+//test infloop
+
+typedef struct rec* rec_t;
+
+struct rec {
+	rec_t next;
+	int elt;
+};
+
+int get_last_elt(rec_t r) {
+	if (r == NULL) {
+		return r->elt;
+	}
+	return get_last_elt(r->next);
+}
+
+int main() {
+	rec_t r = alloc(struct rec);
+	r->next = r;
+	r->elt  = 1337;
+	return get_last_elt(r);
+}

@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int name (int name) {
+    int a = 4235;
+    return a / name;
+}
+
+int main () {
+    return name(0);
+}

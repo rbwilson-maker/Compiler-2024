@@ -1,0 +1,13 @@
+//test memerror
+
+  int incr(int i) {
+    return 1000*i;
+  }
+
+  int main() {
+    int[] a = alloc_array(int, 20000);
+    for (int i = 0; i < 100; i++) {
+      a[i] = incr(i);
+    }
+    return a[incr(30)];
+  }

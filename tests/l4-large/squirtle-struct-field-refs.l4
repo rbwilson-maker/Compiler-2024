@@ -1,0 +1,19 @@
+//test memerror
+//check that struct field are referenced correctly.
+struct Info {
+  bool valid;
+  int *data;
+  int num_records;
+  int *omg;
+  int lol;
+  int wtf;
+};
+
+int main() {
+  struct Info * info = alloc(struct Info);
+  info->data = alloc(int);
+  *info->data = -1;
+  info->data = (*info).omg;
+  *info->data/0;
+  return 0;
+}

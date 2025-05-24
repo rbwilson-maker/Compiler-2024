@@ -1,0 +1,16 @@
+//test error
+/* wrong field type */
+
+struct point {
+  int x;
+  int y;
+  bool z;
+};
+
+int main () {
+  struct point p;
+  p.x = false;
+  p.y = true;
+  p.z = 500;
+  return -1;
+}

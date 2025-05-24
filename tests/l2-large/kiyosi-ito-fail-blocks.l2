@@ -1,0 +1,10 @@
+//test error
+
+int main() {
+  x = 4
+  int x = 3; {
+  { {} { { {} {{ x++; } } }}
+    }
+  } return x;
+}
+

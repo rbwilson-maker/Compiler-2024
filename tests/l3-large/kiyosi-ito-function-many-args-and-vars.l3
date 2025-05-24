@@ -1,0 +1,18 @@
+//test abort
+
+int rec(int one, int two, int three, int four, int five, int six, int seven, int eight) {
+  int nine = one - two;
+  int ten = three - four;
+  int eleven = five - six;
+  int twelve = seven - eight;
+  if (eight < 0) {
+    return 0;
+  }
+  return rec(nine, ten, eleven, twelve, one, two, three, eight-1);
+}
+
+int main() {
+  assert(rec(0, 0, 0, 0, 0, 0, 0, 200) > 0);
+  return 0;
+}
+

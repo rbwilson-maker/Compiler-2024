@@ -1,0 +1,14 @@
+//test return 0
+// try context sensitive parsing rules
+
+int mult(int x, int y) {
+  return x * y;
+}
+
+typedef int x;
+
+int main() {
+  x *y;
+  y = alloc(x);
+  return *y;
+}

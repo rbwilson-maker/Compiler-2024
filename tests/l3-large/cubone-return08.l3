@@ -1,0 +1,25 @@
+//test return 168
+//count_primes(x) returns the number of primes that are less than or equal to x
+
+bool is_prime(int x) { 
+  if (x <= 1)
+    return false;
+
+  for (int i = 2; i < x; i++) {
+    if (x % i == 0)
+      return false;
+  }
+  return true;
+}
+
+int count_primes(int x) {
+  int count = 0;
+  for (int i = 2; i <= x; i++) {
+    count += (is_prime(i) ? 1 : 0);
+  }
+  return count;
+}
+
+int main () {
+  return count_primes(1000);
+}

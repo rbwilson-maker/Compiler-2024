@@ -1,0 +1,10 @@
+//test return 1
+
+int main() {
+  int a = 0x80000000;
+  int b = 0xFFFFFFFF;
+
+  if (b < a)  return -1;
+  if (b == a) return 0;
+  else 	      return 1;
+}

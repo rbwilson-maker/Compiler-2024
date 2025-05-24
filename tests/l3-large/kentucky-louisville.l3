@@ -1,0 +1,17 @@
+//test error
+bool blargwagon() {
+
+	bool x;
+
+
+int y = 6;
+
+return x;
+}
+
+
+int main() {
+return blargwagon ? 4 : -67;
+
+
+}

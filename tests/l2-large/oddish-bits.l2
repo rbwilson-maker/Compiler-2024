@@ -1,0 +1,17 @@
+//test return 0
+
+int main() {
+  int pixel = 0xFFABCD89;
+
+  int alpha = pixel >> 24 & 0xFF;
+  int red =   pixel >> 16 & 0xFF;
+  int green = pixel >> 8 & 0xFF;
+  int blue =  pixel & 0xFF;
+
+  if (alpha != 0xFF) return 1;
+  if (red != 0xAB)   return 2;
+  if (green != 0xCD) return 3;
+  if (blue != 0x89)  return 4;
+
+  return 0;
+}

@@ -1,0 +1,12 @@
+//test compile
+// Forgot to define the base case for recursion, smh
+
+fpt some_rec(int a) {
+  return fadd(some_rec(a/2), some_rec(a/2));
+}
+
+int main() {
+  int a = 42;
+  fpt res = some_rec(a);
+  return res;
+}

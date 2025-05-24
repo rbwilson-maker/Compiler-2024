@@ -1,0 +1,37 @@
+//test error
+// What will happen in this situation?
+
+
+struct dub {
+  int whole;
+  int decimal;
+};
+
+int main() {
+  dub hello = itod(100000);
+  dub goodbye = alloc(struct dub*);
+  goodbye->whole = 100000;
+
+  hello = dmul(hello, goodbye);
+  hello = dadd(goodbye, hello);
+  hello = dmul(hello, goodbye);
+  hello = dadd(goodbye, hello);
+  hello = dmul(hello, goodbye);
+  hello = dadd(goodbye, hello);
+  hello = dmul(hello, goodbye);
+  hello = dadd(goodbye, hello);
+  hello = dmul(hello, goodbye);
+  hello = dadd(goodbye, hello);
+  hello = dmul(hello, goodbye);
+  hello = dadd(goodbye, hello);
+  hello = dmul(hello, goodbye);
+  hello = dadd(goodbye, hello);
+  hello = dmul(hello, goodbye);
+  hello = dadd(goodbye, hello);
+  hello = dmul(hello, goodbye);
+  hello = dadd(goodbye, hello);
+  hello = dmul(hello, goodbye);
+  hello = dadd(goodbye, hello);
+
+  return dtoi(dub x);
+}

@@ -1,0 +1,195 @@
+//test return 249
+// Computes the wandering salesperson's problem on a fully connected graph
+// by computing the cost of all permutations using brute-force search
+
+struct path {
+  int cost; // path cost
+  int[] path; // order of node visits
+};
+typedef struct path path_t;
+
+void setDist(int[] dist, int i, int j, int value) {
+  int num_nodes = 13;
+  assert(value > 0);
+  dist[i * num_nodes + j] = value;
+}
+
+int getDist(int[] dist, int i, int j) {
+  int num_nodes = 13;
+  return dist[i * num_nodes + j];
+}
+
+void permute(int[] dist, path_t *bestPath, int k, int[] permutations, int currCost) {
+  int num_nodes = 13;
+  if(currCost >= bestPath->cost) {
+    // If permutation costs too much, discontinue this run
+    // Must rotate the permutation array as Heap's algorithm must have done
+    if(k % 2 == 1) {
+      int last = permutations[k-1];
+      for(int i = k - 1; i > 0; i--) {
+        permutations[i] = permutations[i-1];
+      }
+      permutations[0] = last;
+    }
+  }
+  else if(k == 1) {
+    // Reached end of permutation, update new best path
+    int newCost = currCost + getDist(dist, permutations[0], permutations[1]);
+    if(newCost >= bestPath->cost) {
+      return;
+    }
+    bestPath->cost = newCost;
+    for(int i = 0; i < num_nodes; i++) {
+      bestPath->path[i] = permutations[i];
+    }
+  }
+  else {
+    // Use Heap's algorithm to permute in place
+    for(int i = 0; i < k; i++) {
+      // Compute cost of the path from (k-1)-th node to the end
+      int addCost = (k >= num_nodes) ? 0 : getDist(dist, permutations[k-1], permutations[k]);
+      permute(dist, bestPath, k-1, permutations, currCost + addCost);
+
+      if(k % 2 == 0) {
+        int tmp = permutations[0];
+        permutations[0] = permutations[k-1];
+        permutations[k-1] = tmp;
+      }
+      else {
+        int tmp = permutations[i];
+        permutations[i] = permutations[k-1];
+        permutations[k-1] = tmp;
+      }
+    }
+  }
+}
+
+void wspStart(int[] dist, path_t *bestPath) {
+  // Determine cost of initial path to compare against
+  int num_nodes = 13;
+  bestPath->path[0] = 0;
+  for(int i = 1; i < num_nodes; i++) {
+    bestPath->path[i] = i;
+    bestPath->cost += getDist(dist, bestPath->path[i-1], bestPath->path[i]);
+  }
+
+  int[] permutations = alloc_array(int, num_nodes);
+  for(int i = 0; i < num_nodes * (num_nodes - 1); i++) {
+    int i1 = i % num_nodes; // first level of tree
+    int i2 = i / num_nodes; // second level of tree
+
+    // Initialize node array
+    for(int j = 0; j < num_nodes; j++) {
+      permutations[j] = j;
+    }
+    int tmp = permutations[i1];
+    permutations[i1] = permutations[num_nodes - 1];
+    permutations[num_nodes-1] = tmp;
+
+    tmp = permutations[i2];
+    permutations[i2] = permutations[num_nodes - 2];
+    permutations[num_nodes-2] = tmp;
+
+    // Generate permutations and go through paths
+    permute(dist, bestPath, num_nodes-2, permutations, getDist(dist, permutations[num_nodes-2], permutations[num_nodes-1]));
+  }
+}
+
+int main() {
+  int ncities = 13;
+  int[] d = alloc_array(int, ncities * ncities);
+
+  int[] dist = alloc_array(int, ncities * ncities);
+  path_t *bestPath = alloc(path_t);
+  bestPath->cost = 0;
+  bestPath->path = alloc_array(int, ncities);
+  d[0] = 15;
+  d[1] = 58;
+  d[2] = 70;
+  d[3] = 38;
+  d[4] = 53;
+  d[5] = 29;
+  d[6] = 101;
+  d[7] = 97;
+  d[8] = 91;
+  d[9] = 107;
+  d[10] = 49;
+  d[11] = 59;
+  d[12] = 17;
+  d[13] = 32;
+  d[14] = 77;
+  d[15] = 19;
+  d[16] = 12;
+  d[17] = 64;
+  d[18] = 51;
+  d[19] = 85;
+  d[20] = 50;
+  d[21] = 53;
+  d[22] = 47;
+  d[23] = 72;
+  d[24] = 74;
+  d[25] = 51;
+  d[26] = 55;
+  d[27] = 35;
+  d[28] = 70;
+  d[29] = 73;
+  d[30] = 49;
+  d[31] = 67;
+  d[32] = 42;
+  d[33] = 35;
+  d[34] = 61;
+  d[35] = 42;
+  d[36] = 89;
+  d[37] = 86;
+  d[38] = 81;
+  d[39] = 96;
+  d[40] = 11;
+  d[41] = 66;
+  d[42] = 74;
+  d[43] = 42;
+  d[44] = 32;
+  d[45] = 43;
+  d[46] = 37;
+  d[47] = 65;
+  d[48] = 64;
+  d[49] = 60;
+  d[50] = 48;
+  d[51] = 25;
+  d[52] = 10;
+  d[53] = 42;
+  d[54] = 49;
+  d[55] = 56;
+  d[56] = 63;
+  d[57] = 26;
+  d[58] = 44;
+  d[59] = 65;
+  d[60] = 12;
+  d[61] = 53;
+  d[62] = 50;
+  d[63] = 23;
+  d[64] = 55;
+  d[65] = 44;
+  d[66] = 47;
+  d[67] = 48;
+  d[68] = 48;
+  d[69] = 54;
+  d[70] = 55;
+  d[71] = 31;
+  d[72] = 36;
+  d[73] = 25;
+  d[74] = 25;
+  d[75] = 44;
+  d[76] = 19;
+  d[77] = 25;
+  int d_idx = 0;
+  for(int i = 1; i < ncities; i++) {
+    for(int j = 0; j < i; j++) {
+      setDist(dist, i, j, d[d_idx]);
+      setDist(dist, j, i, d[d_idx]);
+      d_idx++;
+    }
+  }
+
+  wspStart(dist, bestPath);
+  return bestPath->cost;
+}

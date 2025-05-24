@@ -1,0 +1,11 @@
+//test error
+// test operator precedence
+
+int main()
+{
+    int x;
+    x = 0;
+    // should error, since simp is not an exp
+    (x) += (x) += 5;
+    return x;
+}

@@ -1,0 +1,16 @@
+//test return 288
+
+int main ()
+{
+  int x;
+  int y;
+  int z = 1;
+
+  for (y = 0; y < 3; y++) {
+  	for (x = y + 1; x < 5; x += 1) {
+  		z *= x - y;
+  	}  
+  }
+
+  return z;
+}

@@ -1,0 +1,15 @@
+//test error
+// bad scope
+
+int main()
+{
+  int x;
+  int z;
+  x = 1;
+  {
+    int y;
+    y = 2;
+  }
+  z = x + y;
+  return z;
+}

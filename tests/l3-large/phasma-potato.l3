@@ -1,0 +1,17 @@
+//test return 1
+
+typedef int potato;
+
+potato add_potatoes(int x, int y);
+
+potato add_potatoes(potato potato1, potato potato2);
+
+potato add_potatoes(int p1, int p2) {
+  return p1 + p2;
+}
+
+potato main() {
+  potato p1 = add_potatoes(-1, 0);
+  potato p2 = add_potatoes(1241, -1239);
+  return add_potatoes(p1,p2);
+}

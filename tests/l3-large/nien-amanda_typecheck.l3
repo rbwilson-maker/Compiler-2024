@@ -1,0 +1,24 @@
+//test error
+
+//this test typedefs int to bool and bool to int
+//then uses the .h0 functions that do math on bools
+//which in this case are actually called int
+//we want to calculate, for i's 0-3, what (true + i) ^ i power is
+
+typedef int bool;
+typedef bool int;
+
+bool main() {
+     int a;
+     for (bool i = 0; i < 4; i++) {
+         int t = true;
+         for (bool j = 0; j < i; j++) {
+            t = addb(t, true);
+         }
+         for (bool j = 0; j < i; j++) {
+            a += mulb(t, true);
+         }
+     }
+     assert(a);
+     return 0;
+}

@@ -1,0 +1,13 @@
+//test return 36
+int plus(int x){return x+1;}
+int minus(int y){return y-1;}
+
+int main()
+{
+	int x = 0;
+	for (int y = plus(10); y > minus(0); y = minus(y))
+	{
+		x = plus(plus(plus(x)));
+	}
+	return x;
+}

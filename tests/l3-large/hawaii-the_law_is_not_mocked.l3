@@ -1,0 +1,21 @@
+//test return 20000 
+
+typedef int prohibited;
+
+void where(prohibited by_law) {
+  int bound = 0;
+  while (bound < by_law) {
+    bound++;
+    int homeward = bound;
+    if (homeward == by_law) {
+      return;
+    }
+  }
+  assert(false);
+}
+
+int main() {
+  int i = 0;
+  for (; i < 20000; i++) where(i + 1);
+  return i;
+}

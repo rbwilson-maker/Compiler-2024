@@ -1,0 +1,57 @@
+//test return 1
+//Sort sort sort
+int [] copy (int [] a, int start, int len) {
+    int [] b = alloc_array(int, len - start);
+    for (int i = 0; i < len - start; i ++) {
+        b[i] = a[start + i];
+    }
+    return b;
+}
+
+bool is_sorted(int [] a, int len) {
+    for (int i = 1; i < len; i++) {
+        if (a[i - 1] > a[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void sort(int [] a, int len) {
+    if (len < 2) {
+        return;
+    }
+
+    while (!is_sorted(a, len)) {
+        int tmp = a[0]; 
+        a[0] = a[1];
+        a[1] = tmp;
+
+        int [] b = copy(a, 1, len);
+        sort(b, len - 1);
+        for (int i = 1; i < len; i++) {
+            a[i] = b[i - 1];
+        }
+    }
+}
+
+int rand(int seed, int max) {
+    return (seed * 1664525) % max;
+}
+
+void fill(int [] a, int len) {
+    int seed = 0xdeadbeef;
+    for (int i = 0; i < len; i ++) {
+        seed = rand(seed, 10002323);
+        a[i] = seed;
+    }
+}
+
+
+int main() {
+    int len = 500;
+    int [] a = alloc_array(int, len); 
+    fill(a, len);
+    sort(a, len);
+    return is_sorted(a, len) ? 1 : -1;
+}

@@ -1,0 +1,87 @@
+//test typecheck
+/*
+    de-checko: Should typecheck.
+
+    Tests:
+    - Inferring type of list elements
+
+*/
+
+void sort(int[] L, int arrLen) {
+    bool swapped = true;
+
+    while (swapped) {
+        swapped = false;
+        for (int i = 0; i < arrLen - 1; i++) {
+            if (compare(L[i], L[i + 1]) > 0) {
+                check temp = L[i];
+                L[i] = L[i + 1];
+                L[i + 1] = temp;
+                swapped = true;
+            }
+        }
+    }
+}
+
+check main() {
+    int[] firstList = alloc_array(int, 5);
+    firstList[0] = 1;
+    firstList[1] = 5;
+    firstList[2] = 2;
+    firstList[3] = 1;
+    firstList[4] = 3;
+
+    sort(firstList, 5);
+    assert(firstList[0] == 1);
+    assert(firstList[1] == 1);
+    assert(firstList[2] == 2);
+    assert(firstList[3] == 3);
+    assert(firstList[4] == 5);
+
+    int[] secondList = alloc_array(int, 20);
+    secondList[0] = 15992;
+    secondList[1] = 15255;
+    secondList[2] = 15212;
+    secondList[3] = 15932;
+    secondList[4] = 15849;
+    secondList[5] = 15744;
+    secondList[6] = 15625;
+    secondList[7] = 15715;
+    secondList[8] = 15692;
+    secondList[9] = 15420;
+    secondList[10] = 15621;
+    secondList[11] = 15575;
+    secondList[12] = 15335;
+    secondList[13] = 15560;
+    secondList[14] = 15804;
+    secondList[15] = 15400;
+    secondList[16] = 15184;
+    secondList[17] = 15786;
+    secondList[18] = 15936;
+    secondList[19] = 15915;
+
+    sort(secondList, 20);
+
+    assert(secondList[0] == 15184);
+    assert(secondList[1] == 15212);
+    assert(secondList[2] == 15255);
+    assert(secondList[3] == 15335);
+    assert(secondList[4] == 15400);
+    assert(secondList[5] == 15420);
+    assert(secondList[6] == 15560);
+    assert(secondList[7] == 15575);
+    assert(secondList[8] == 15621);
+    assert(secondList[9] == 15625);
+    assert(secondList[10] == 15692);
+    assert(secondList[11] == 15715);
+    assert(secondList[12] == 15744);
+    assert(secondList[13] == 15786);
+    assert(secondList[14] == 15804);
+    assert(secondList[15] == 15849);
+    assert(secondList[16] == 15915);
+    assert(secondList[17] == 15932);
+    assert(secondList[18] == 15936);
+    assert(secondList[19] == 15992);
+
+    return 0;
+}

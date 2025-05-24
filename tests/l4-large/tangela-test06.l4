@@ -1,0 +1,9 @@
+//test memerror
+
+int main() {
+  int *ints = alloc(int);
+  *ints = 4;
+  int[] *intss = alloc(int[]);
+  (*intss)[0] = 0;
+  return *ints / (*intss)[0];
+}

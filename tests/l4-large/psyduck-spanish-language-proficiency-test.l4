@@ -1,0 +1,14 @@
+//test return 0
+
+struct nooo;
+typedef struct nooo no;
+
+struct nooo {
+no* noo;
+};
+
+int main() {
+no* n1 = alloc(no);
+n1->noo = n1;
+return 0;
+}

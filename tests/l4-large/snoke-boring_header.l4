@@ -1,0 +1,10 @@
+//test typecheck
+
+int f (point_t * point) {
+        struct point *p = point;
+	return p->x * p->x + p->y * p->y;
+}
+
+int main() {
+	return 0;
+}

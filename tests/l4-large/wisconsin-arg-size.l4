@@ -1,0 +1,19 @@
+//test return 1
+
+bool f(int * a, bool b, int c, int** d) {
+    return (*a == **d) && (c > 5 == b);
+}
+
+int main() {
+    int* a = alloc(int);
+    bool b;
+    int c;
+    int** d = alloc(int*); *d = alloc(int);
+
+    *a = 12345;
+    b = false;
+    c = 4;
+    **d = 12345;
+
+    return f(a,b,c,d) ? 1 : 0;
+}

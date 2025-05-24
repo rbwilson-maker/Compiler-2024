@@ -1,0 +1,9 @@
+//test typecheck
+//repeated declaration of function can have different names
+int add(int x, int y);
+
+int add(int m, int n);
+
+int main() {
+    return 0;
+}

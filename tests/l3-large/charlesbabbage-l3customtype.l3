@@ -1,0 +1,14 @@
+//test typecheck
+//use a typedef
+
+typedef int g;
+
+g f(int n, int q) {
+    int x = n / q;
+    return f(n + 1, q - 1);
+}
+
+int main(){
+    g h = f(13442384, 1024);
+    return 0;
+}

@@ -1,0 +1,12 @@
+//test error
+
+typedef int wow;
+
+int main() {
+  wow z = 123;
+  z + 321;
+
+  int *x = alloc(wow);
+  (x + 1);
+  return 0;
+}

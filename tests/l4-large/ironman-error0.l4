@@ -1,0 +1,11 @@
+//test error
+
+struct s {
+    int x;
+    struct t* st;
+};
+
+int main(){
+    struct s* x;
+    return (*x).y;
+}

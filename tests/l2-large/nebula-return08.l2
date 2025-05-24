@@ -1,0 +1,15 @@
+//test return 99
+int main ()
+{
+    int x = 1;
+    int y = 100;
+    while (x < y /* not binary search but binary search lol*/) {
+        int m = (x + y) / 2;
+        if (x < m) {
+            x = m;
+        } else {
+            y = m;
+        }
+    }
+    return y;
+}

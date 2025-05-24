@@ -1,0 +1,23 @@
+//test return 15411 
+
+int main()
+{
+	int a = 1;
+	int b = 5;
+	int c = 4;
+	int d = 1;
+	int e = 1;
+	for(int i = 0; i < 4; i++) {
+		a *= 10;
+		if(i < 3) {
+			b *= 10;
+		}
+		if(i < 2) {
+			c *= 10;
+		}
+		if(i < 1) {
+			d *= 10;
+		}
+	}
+	return a+b+c+d+e;
+}

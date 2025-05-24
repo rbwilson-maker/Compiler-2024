@@ -1,0 +1,14 @@
+//test return 42
+//gimme some blocks.  
+int main() {
+    int y = 1;
+    {
+        int x = 1;
+        y += x;
+    }
+    {
+        int x = 2;
+        y += x;
+    }
+    return y + 38;
+}

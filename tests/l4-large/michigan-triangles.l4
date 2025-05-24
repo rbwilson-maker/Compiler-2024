@@ -1,0 +1,34 @@
+//test return 3
+// check how many triangles in an array are right triangles
+
+struct lame_triangle {
+    int a;
+    int b;
+    int c;
+};
+
+bool is_right_triangle(struct lame_triangle *t) {
+    int a = t->a;
+    int b = t->b;
+    int c = t->c;
+    return (a*a + b*b == c*c || b*b + c*c == a*a || c*c + a*a == b*b);
+}
+
+int main() {
+    struct lame_triangle*[] triangles = alloc_array(struct lame_triangle*, 5);
+    for(int i = 0; i < 5; i++) {
+        triangles[i] = alloc(struct lame_triangle);
+    }
+    triangles[0]->a = 3; triangles[0]->b = 4; triangles[0]->c = 5;
+    triangles[1]->a = 10; triangles[1]->b = 11; triangles[1]->c = 12;
+    triangles[2]->a = 11; triangles[2]->b = 60; triangles[2]->c = 61;
+    triangles[3]->a = 5; triangles[3]->b = 12; triangles[3]->c = 13;
+    triangles[4]->a = 42; triangles[4]->b = 1337; triangles[4]->c = 9001;
+
+    int count = 0;
+    for(int i = 0; i < 5; i++) {
+        if(is_right_triangle(triangles[i])) count++;
+    }
+    return count;
+}
+

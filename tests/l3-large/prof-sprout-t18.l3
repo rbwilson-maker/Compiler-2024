@@ -1,0 +1,13 @@
+//test error
+// mismatched function decl, defn
+
+bool asdf(int a, int b, int c, bool d, bool e, int f);
+int jkl(int a, int b, int c);
+
+int main() {
+  return asdf(1,2,3,true,true,true) ? 1 : 0;
+}
+
+bool asdf(int a, int b, int c, int d, bool e, bool f) {
+  return a > b + c + d && e && f;
+}

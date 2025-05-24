@@ -1,0 +1,15 @@
+//test div-by-zero
+//tests else statement with hex
+
+int main() {
+	int x = 0x10;
+	int y = 45;
+	int i = 0x0;
+	if (i > x) {
+		return y;
+	}
+	else
+	{
+		return (x / i);
+	}
+}

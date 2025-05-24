@@ -1,0 +1,7 @@
+//test error
+// declare a variable in a scoped block.
+
+int main () {
+  { int x = 0; }
+  return true ? 1 : x;
+}

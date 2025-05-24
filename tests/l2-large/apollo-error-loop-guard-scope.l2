@@ -1,0 +1,12 @@
+//test error
+// loop guard scoping after loop
+
+int main () {
+  int y = 10;
+
+  for (int x = 0; x < 10; x += 2) {
+    y += x;
+  }
+
+  return x;
+}

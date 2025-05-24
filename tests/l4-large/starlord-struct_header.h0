@@ -1,0 +1,9 @@
+typedef struct pos pos;
+
+struct pos {
+  int x;
+  int y;
+  int z;
+};
+
+int dist_sq(pos *p);

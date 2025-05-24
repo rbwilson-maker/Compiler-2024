@@ -1,0 +1,17 @@
+//test return 458330
+//types are not abstract
+
+typedef int t;
+typedef t u;
+typedef t v;
+typedef u w;
+
+w f(w x);
+v g(v x);
+
+u f (v x) { return x + 1; }
+w g (t y) { return y * y; }
+
+int main () {
+  return f(g(f(g(f(g(f(g(f(1)))))))));
+}

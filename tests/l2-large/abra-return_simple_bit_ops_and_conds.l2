@@ -1,0 +1,14 @@
+//test return 100
+int main() {
+	int a = 0;
+	int b = 1;
+	a &= b; //should be 0
+	if (a > 0) {
+		a += 10;
+	} else {
+		while (a < 10) {
+			a += 100;
+		}
+	}
+	return a;	
+}

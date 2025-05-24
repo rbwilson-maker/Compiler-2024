@@ -1,0 +1,8 @@
+//test abort
+// abort with assert
+int main() {
+    for (int i = 0; i <= 100; i += 1) {
+        assert(i < 100);
+    }
+    return 0;
+}

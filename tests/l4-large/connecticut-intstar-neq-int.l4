@@ -1,0 +1,7 @@
+//test error
+// Why are you reading this? Did you let this typecheck?
+
+int main() {
+	int* x = alloc(int);
+	return x;
+}

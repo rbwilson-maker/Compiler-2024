@@ -1,0 +1,9 @@
+//test return 1
+
+// Use of undeclared variables across a return is allowed
+
+int main() {
+  int x;
+  return 1;
+  x++;
+}

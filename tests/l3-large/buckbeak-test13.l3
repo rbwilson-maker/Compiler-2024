@@ -1,0 +1,8 @@
+//test error
+typedef int m1;
+
+void f1 (int a, m1 b, m2 c);
+
+int main () {
+  return 0;
+}

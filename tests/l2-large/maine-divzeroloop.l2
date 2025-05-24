@@ -1,0 +1,14 @@
+//test div-by-zero
+//causes divide by zero
+int main()
+{
+   int x = 5;
+   int y = 21;
+   int z = 0;
+   while (x >= 0)
+   {
+      z = y/x;
+      x--;
+   }
+   return z;
+}

@@ -1,0 +1,9 @@
+//test error 
+typedef int my_int;
+typedef my_int my_int2;
+typedef my_int2 my_int3;
+
+int main() {
+	my_int3 d = true;
+	return 2;
+}

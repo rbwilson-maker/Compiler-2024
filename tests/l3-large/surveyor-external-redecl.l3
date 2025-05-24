@@ -1,0 +1,9 @@
+//test typecheck
+
+typedef bar quz;
+
+quz foo();
+
+int main() {
+  return foo();
+}

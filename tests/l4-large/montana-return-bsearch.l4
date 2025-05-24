@@ -1,0 +1,52 @@
+//test return 37987
+
+struct node {
+  int data;
+  struct node *left;
+  struct node *right;
+};
+
+struct node *insert(struct node *root, int data) {
+  if (root == NULL) {
+    root = alloc(struct node);
+    root->left = NULL;
+    root->right = NULL;
+    root->data = data;
+  } else if (data > root->data) {
+    root->right = insert(root->right, data);
+  } else if (data < root->data) {
+    root->left = insert(root->left, data);
+  }
+  return root;
+}
+
+int get_min(struct node *root) {
+  if (root->left == NULL)
+    return root->data;
+  else
+    return get_min(root->left);
+}
+
+int get_max(struct node *root) {
+  if (root->right == NULL)
+    return root->data;
+  else
+    return get_min(root->right);
+}
+
+int hash(int i) {
+  int hash = 5381;
+  hash = (hash << 5) + hash + i;
+  hash = (hash << 5) + hash + (i >> 8);
+  hash = (hash << 5) + hash + (i >> 16);
+  hash = (hash << 5) + hash + (i >> 24);
+  return hash;
+}
+
+int main() {
+  struct node *tree = NULL;
+  for (int i = 0; i < 100; i++) {
+    tree = insert(tree, hash(i));
+  }
+  return get_min(tree) ^ get_max(tree);
+}

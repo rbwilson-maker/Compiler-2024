@@ -1,0 +1,14 @@
+//test div-by-zero
+
+// tests three things: typechecking that contains void functions,
+// calling syntax, and proper adherence to calling convention.
+
+int call() {
+    return 0;
+}
+
+int main() {
+    int i = call();
+    int j = call();
+    return i / j;
+}

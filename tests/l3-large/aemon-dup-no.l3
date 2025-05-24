@@ -1,0 +1,13 @@
+//test error
+
+int f(int n) {
+    return n * n;
+}
+
+int f(int m) {
+    return m + m;
+}
+
+int main() {
+    return f(15411);
+}

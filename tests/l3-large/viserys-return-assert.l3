@@ -1,0 +1,12 @@
+//test abort
+
+typedef int d;
+
+d four(int v) {
+  return v + 0 + 0 + 0 + 0 + 0 + 0 + 0x00;
+}
+
+int main() {
+  assert(four(400000) < 0);
+  return four(400000);
+}

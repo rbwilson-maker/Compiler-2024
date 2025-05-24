@@ -1,0 +1,9 @@
+//test error
+// causes a compile-time error due to using reserved keyword
+
+int main() {
+   int x = 3;
+   int struct = 4;
+   int z = x + struct;
+   return z;
+}

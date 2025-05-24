@@ -1,0 +1,26 @@
+//test return 0
+
+struct Player {
+       int id;
+       int age;
+};
+
+int main() {
+    int size = 11;
+    struct Player[] team = alloc_array(struct Player, size);
+    for (int i = 0; i < size; i++) {
+        team[i].id = i;
+        team[i].age = 20 + i;
+    }
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += team[i].id;
+    }
+    assert(sum == 55);
+    int agesum = 0;
+    for (int i = 0; i < size; i++) {
+        agesum += team[i].age;
+    }
+    assert(agesum == (55 + 20 * 11));
+    return 0;
+}

@@ -1,0 +1,15 @@
+//test return 40320
+
+int main ()
+{
+    int x;
+    int y = 1;
+    int z;
+
+    for(z = 1; z <= 8; z++) {
+        y *= z; /* y = 8! */   
+    }
+    return y;
+    x = x + x;
+    return x;
+}

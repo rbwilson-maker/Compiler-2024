@@ -1,0 +1,12 @@
+//test error
+//Redeclared variable
+int main()
+{
+    int a;
+    int b;
+    int c;
+    a = 1;
+    b = 2;
+    int c = a + b;
+    return c;
+}

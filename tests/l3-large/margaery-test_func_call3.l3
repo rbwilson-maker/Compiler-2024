@@ -1,0 +1,26 @@
+//test return 121
+
+int sum(int a, int b);
+int sum(int x, int y);
+bool check(bool a, int b);
+
+int main() {
+    bool boo = true;
+    int a = 77;
+    int b = 66;
+    int c = 55;
+
+    if (check(boo, b)) {
+        return sum(a, b);
+    } else {
+        return sum(b, c);
+    }
+}
+
+int sum(int a, int b) {
+    return a + b;
+}
+
+bool check(bool a, int b) {
+    return !a;
+}

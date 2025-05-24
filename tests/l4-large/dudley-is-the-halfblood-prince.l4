@@ -1,0 +1,3 @@
+//test error
+ 
+struct a { int b; };																																																				typedef struct a b;																																								int main() {   b * b;	  return 0;								}

@@ -1,0 +1,18 @@
+//test return 0
+
+struct bloop {
+    int bloop;
+    int **bleeep;
+};
+
+typedef int blooq;
+
+blooq bleeq (blooq bloopp, blooq blooqq, blooq blop) {
+    struct bloop* blopp = alloc(struct bloop);
+    blopp->bloop = bloopp + blooqq * blooqq***(blopp->bleeep) + blopp->bloop;
+    return blop;
+}
+
+int main() {
+    return 0;
+}

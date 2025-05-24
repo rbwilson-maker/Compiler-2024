@@ -1,0 +1,40 @@
+//test return 4
+
+struct tree {
+  int value;
+  struct tree* left;
+  struct tree* right;
+};
+
+typedef struct tree tree;
+
+tree* generate_tree(int left, int right) {
+  tree* t = alloc(tree);
+  t->value = 1;
+  if (left > 0) {
+    t->left = generate_tree(left - 1, right - 1);
+  }
+  if (right > 0) {
+    t->right = generate_tree(left - 1, right - 1);
+  }
+  return t;
+}
+
+int max(int a, int b) {
+  if (a > b) {
+    return a;
+  }
+  return b;
+}
+
+int height(tree* t) {
+  if (t == NULL) {
+    return 0;
+  }
+  return 1 + max(height(t->left), height(t->right));
+}
+
+int main() {
+  tree* t = generate_tree(3, 3);
+  return height(t);
+}

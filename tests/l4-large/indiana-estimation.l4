@@ -1,0 +1,57 @@
+//test return 417693
+//612
+
+//binary-search estimation.
+
+struct pair{
+  int first;
+  int second;
+};
+
+typedef struct pair* pair;
+
+int find(int[] list, int value);
+
+int randFromSeed(int seed, int min){
+  for(; min > 0; min++){
+    if(seed % min < (3*min/4))
+      return min;
+  }
+  //only terminates because of overflow;
+  assert(false);
+  return 0;
+}
+
+pair rand(int seed, int min){
+  pair ret = alloc(struct pair);
+  int xorbit = (seed & 1) ^ ((seed & 2) >> 1);
+  int newSeed = (seed >> 1) | (xorbit << 30);
+  ret -> first = randFromSeed(seed, min+1);
+  ret -> second = newSeed;
+  return ret;
+}
+
+int main(){
+  int[] array = alloc_array(int, 8192);   //actually turns out to be exponentially distributed
+  pair randoms = rand(612, 1);
+  for(int i = 0; i < 8192; i++){
+    array[i] = randoms->first;
+    randoms = rand(randoms->second, randoms->first);
+  }
+  for(int i = 0; i < 8192; i+=32){} //was for printing but let's just throw a loop here anyway.
+
+  for(int i = 0; i < 400000; i+=1000){
+    int index = find(array, i);
+    assert(index == -1 || (array[index-1] < i && array[index+1] > i));
+  }
+  return array[8191];
+}
+
+int find(int[] list, int value){
+  //binary search too hard to implement :(
+  for(int i = 1; i < 8191; i++){
+    if(list[i-1] < value && list[i+1] > value)
+      return i;
+  }
+  return -1;
+}

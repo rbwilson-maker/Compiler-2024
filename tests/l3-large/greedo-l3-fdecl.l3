@@ -1,0 +1,13 @@
+//test typecheck
+
+int F(int f);
+
+int main(){
+    return F(2);
+}
+
+typedef int DWORD;
+
+DWORD F(DWORD g){
+    return g+2;
+}

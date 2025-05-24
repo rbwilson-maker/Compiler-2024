@@ -1,0 +1,20 @@
+//test return 18
+
+// tests if statements to a fault
+int main() {
+    int i = 15;
+    if (i == 0) {
+        return i + 1;
+    } 
+    if (i == 1) {
+        return i + 2;
+    }
+    if (i == 2) {
+        return i + 3;
+    }
+
+    if (i == 15) {
+        return i + 3;
+    }
+    return 0;
+}

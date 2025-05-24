@@ -1,0 +1,13 @@
+//test typecheck
+
+int wawa(int hehe, int hoohoo, int haha) {
+    int x = hehe/5;
+    int y;
+    y = x % hoohoo;
+    return (haha << x) >> y;
+}
+
+int main(){
+    int z = wawa(25, 7, 15);
+    return 5;
+}

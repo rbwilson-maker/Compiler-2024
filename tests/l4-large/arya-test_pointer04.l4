@@ -1,0 +1,7 @@
+//test return 0
+typedef int[] b;
+int main(){
+  b[] a = alloc_array(int[], 4);
+  a[0] = alloc_array(int, 4);
+  return a[0][0];  
+}

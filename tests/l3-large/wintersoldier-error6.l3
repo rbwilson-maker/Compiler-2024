@@ -1,0 +1,6 @@
+//test error
+void main () {
+    for (int x = 10; x; x--; x; x; x) {
+        return 0;
+    }
+}

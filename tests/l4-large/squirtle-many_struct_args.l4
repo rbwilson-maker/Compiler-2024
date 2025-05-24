@@ -1,0 +1,57 @@
+//test return 117
+
+struct lol {
+  int a;
+  struct lol * lol;
+};
+
+int many_args(struct lol * a1,
+              struct lol * a2,
+              struct lol * a3,
+              struct lol * a4,
+              struct lol * a5,
+              struct lol * a6,
+              struct lol * a7,
+              struct lol * a8,
+              struct lol * a9,
+              struct lol * a10,
+              struct lol * a11,
+              struct lol * a12,
+              struct lol * a13,
+              struct lol * a14,
+              struct lol * a15,
+              struct lol * a16,
+              struct lol * a17,
+              struct lol * a18,
+              struct lol * a19,
+              struct lol * a20,
+              struct lol * a21,
+              struct lol * a22,
+              struct lol * a23,
+              struct lol * a24,
+              struct lol * a25,
+              struct lol * a26,
+              struct lol * a27) {
+
+  return a1->a  - a2->a  + a3->a
+       + a4->a  - a5->a  + a6->a
+       + a7->a  - a8->a  + a9->a
+       + a10->a - a11->a + a12->a
+       + a13->a - a14->a + a15->a
+       + a16->a - a17->a + a18->a
+       + a19->a - a20->a + a21->a
+       + a22->a - a23->a + a24->a
+       + a25->a - a26->a + a27->a;
+}
+
+int main() {
+  struct lol * [] arr = alloc_array(struct lol *, 27);
+  for(int i = 0; i < 27; i++) {
+    arr[i] = alloc(struct lol);
+    arr[i]->a = i;
+  }
+  return many_args(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5],
+  arr[6], arr[7], arr[8], arr[9], arr[10], arr[11], arr[12], arr[13],
+  arr[14], arr[15], arr[16], arr[17], arr[18], arr[19], arr[20],
+  arr[21], arr[22], arr[23], arr[24], arr[25], arr[26]);
+}

@@ -1,0 +1,39 @@
+//test return 0
+
+typedef struct dll_node dll;
+
+struct dll_node {
+  dll* prev;
+  int data;
+  dll* next;
+};
+
+bool is_segment(dll* start, dll* end) {
+  dll* curr = start;
+  dll* next = start->next;
+
+  while (curr != end) {
+    if (curr != curr->next->prev) return false;
+    curr = next;
+    next = next->next;
+  }
+  return true;
+}
+
+int main() {
+  dll* a = alloc(dll);
+  dll* b = alloc(dll);
+  dll* c = alloc(dll);
+  dll* d = alloc(dll);
+
+  a->next = b;
+  b->prev = a;
+  b->next = c;
+  c->prev = b;
+  c->next = d;
+  d->prev = c;
+
+  if (is_segment(a, d))
+    return 0;
+  else return 1;
+}

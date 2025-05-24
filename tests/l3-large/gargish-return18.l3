@@ -1,0 +1,13 @@
+//test return 0
+
+int fun(int a);
+int fun(int x);
+typedef int t;
+t fun (t q);
+t fun (t input) {
+    return input;
+}
+
+int main () {
+    return fun(0);
+}

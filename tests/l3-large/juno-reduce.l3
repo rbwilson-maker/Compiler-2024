@@ -1,0 +1,36 @@
+//test return 15
+
+// Simulates `reduce op+ 0 [1, 2, 3, 4, 5]`
+
+int f(int x, int y) {
+    return x + y;
+}
+
+// All arrays are 5 elements long
+int reduce(int a, int b, int c, int d, int e, int i, int acc) {
+    assert(0 <= i && i <= 5);
+
+    if (i == 5) {
+        return acc;
+    }
+
+    int x;
+    if (i == 0) {
+        x = a;
+    } else if (i == 1) {
+        x = b;
+    } else if (i == 2) {
+        x = c;
+    } else if (i == 3) {
+        x = d;
+    } else {
+        x = e;
+    }
+
+    acc = f(acc, x);
+    return reduce(a, b, c, d, e, i + 1, acc);
+}
+
+int main() {
+    return reduce(1, 2, 3, 4, 5, 0, 0);
+}

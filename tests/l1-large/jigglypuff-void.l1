@@ -1,0 +1,24 @@
+//test error
+
+/* Void Keyword Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, September 13, 2015 at 09:27:22 AM 
+ *
+ * This test tests whether the compiler detects that the keyword 'void'
+ * is being used as an identifier.
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int void;
+
+    x = 4;
+    y = 3;
+    void = x + y;
+
+    return void;
+}

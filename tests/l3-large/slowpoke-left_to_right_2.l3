@@ -1,0 +1,18 @@
+//test div-by-zero
+
+int add(int x, int y) {
+  return x + y;
+}
+
+int f(int x) {
+  if(x == 1) {
+    return f(0);
+  } else {
+    return f(1);
+  }
+}
+
+// should divide by 0 before it gets into an infinite loop
+int main() {
+    return add(2/0, f(1));
+}

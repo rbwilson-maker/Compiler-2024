@@ -1,0 +1,13 @@
+//test return 1
+
+struct x {
+	int x;
+	int[] A;
+};
+
+int main() {
+	int[] A = alloc_array(int, 3);
+	struct x* x = alloc(struct x);
+	x->A = A;
+	return 1;
+}

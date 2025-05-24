@@ -1,0 +1,35 @@
+//test return 23
+// struct polymorphism
+
+void do_nothing(struct s* s1){
+  return;
+}
+
+struct s* my_max(struct s* s1, struct s* s2, int x1, int x2){
+  if (x1 >= x2){
+    do_nothing(s1);
+    do_nothing(s2);
+    return s1;
+  } else{
+    do_nothing(s1);
+    do_nothing(s2);
+    return s2;
+  }
+} 
+
+struct s {
+  int x;
+  int y;
+};
+
+int main(){
+  struct s* s1 = alloc(struct s);
+  struct s* s2 = alloc(struct s);
+  s1->x = 11;
+  s1->y = 12;
+  s2->x = 21;
+  s2->y = 22;
+  struct s* s3 = my_max(s1, s2, 1, 0);
+  return s3->x + s3->y;
+}
+

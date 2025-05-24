@@ -1,0 +1,11 @@
+//test return 19
+//using double minus
+int main()
+{
+  int sum = 0;
+  sum --;
+  int a = 5;
+  sum = sum + (5 - -a);
+  a = a -(-a);
+  return sum + a;
+}

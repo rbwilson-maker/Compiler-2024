@@ -1,0 +1,24 @@
+//test return 127990775
+// arithmetic operations using asnops and repeated negations.
+
+int main()
+{
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+	a = -(-(-(-12387))) - 3;
+	b = a- -4;
+	c = 0x80000001 - -(-1);
+	d = a % b;
+	d *= a;
+	a += d;
+	b -= c;
+	e = c / a;
+	e -= d;
+	a *= e;
+	e /= a;
+	b %= c;
+	return ((a- -c)*(d+e)+(b-3)/(4-8))/3;
+}

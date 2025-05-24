@@ -1,0 +1,14 @@
+//test div-by-zero
+// mod by 0 in loop
+
+int main ()
+{
+  int a;
+  int b = 5;
+
+  for (a = 0; a <= 5; a++) {
+    return b / a;
+  }
+
+  return 0;
+}

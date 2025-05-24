@@ -1,0 +1,39 @@
+//test typecheck
+
+typedef int BitVector;
+
+void validate_index(int idx);
+bool get_bit_vec(int v, int idx);
+BitVector flip_bit_vec(int v, int idx); 
+
+BitVector set_bit_vec(BitVector v, int index, bool value) {
+    validate_index(index);
+    if (get_bit_vec(v, index) != value)
+        return flip_bit_vec(v, index);
+    else
+        return v;
+}
+
+bool get_bit_vec(BitVector v, int index) {
+    validate_index(index);
+    return ((1 << index) & v) != 0;
+}
+
+BitVector flip_bit_vec(BitVector v, int index) {
+    validate_index(index);
+    v ^= (1 << index);
+    return v;
+}
+
+void validate_index(int index) {
+    assert(index >= 0 && index < 32);
+    return;
+}
+
+
+int main() {
+    BitVector v = 123;
+    v = flip_bit_vec(v, 31);
+    v = set_bit_vec(v, 1, false);
+    return v;
+}

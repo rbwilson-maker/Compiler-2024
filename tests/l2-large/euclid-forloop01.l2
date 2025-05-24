@@ -1,0 +1,14 @@
+//test return 80
+//testing forLoop and then in 
+
+int main(){
+  int x = 10;
+  bool path = true;
+  for (int i = 0; i < 10; i++) {
+    x *= 2;
+    if (x >= 50) {
+      return x;
+    }
+  }
+  return -10;
+}

@@ -1,0 +1,25 @@
+//test error
+
+int cool2(int wow) {
+    /* local var with same name as function */
+    int cool2 = 2;
+    /* local var with same name as other function */
+    int wow4 = wow;
+    /* error, shouldn't be able to call wow4 here */
+    return cool2 * wow4(wow4);     
+}
+
+int cool3(int wow4) {
+    /* arg name same as other function */
+    return 3 * wow4(wow4);    
+}
+
+int wow4(int wow4) {
+    /* arg name same as function */
+    return 4 * wow4;    
+}
+
+int main() {
+    /* 16 + 12 + 16 */
+    return cool2(2) + cool3(3) + wow4(4);    
+}

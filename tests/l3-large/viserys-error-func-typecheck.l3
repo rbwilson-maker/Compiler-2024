@@ -1,0 +1,16 @@
+//test error
+
+// return type of function doesn't match required type of return in main
+
+int succ(int x) { return x + 1; }
+
+void count_to_four() {
+  int i = 0;
+  while (i < 4) {
+    i = succ(i);
+  }
+}
+
+int main() {
+  return count_to_four();
+}

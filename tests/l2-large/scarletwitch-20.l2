@@ -1,0 +1,14 @@
+//test error
+
+int main ()
+{
+  break;
+  while (true) {
+      while (false) {
+          break;
+      }
+      continue;
+      break;
+  }
+  return 0;
+}

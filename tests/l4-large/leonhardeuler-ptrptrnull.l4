@@ -1,0 +1,7 @@
+//test memerror
+
+int main() {
+    int** ptr = alloc(int *);
+    
+    return **ptr + 15411;
+}

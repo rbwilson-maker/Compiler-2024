@@ -1,0 +1,11 @@
+//test return 1
+
+int main()
+{
+  int i = 0;
+  int j = 10;
+  while(i <= j) {
+      j = j - 1;
+  }
+  return i - j;
+}

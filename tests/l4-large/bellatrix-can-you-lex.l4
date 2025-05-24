@@ -1,0 +1,22 @@
+//test error
+
+typedef int foo;
+
+int foo(int x) {
+  return x * x;
+}
+
+int main(){
+
+  foo x;
+  int y;
+  int z = 13;
+
+  x = 7;
+  y = 9;
+  z = foo(y);
+
+  return z;
+  
+  
+}

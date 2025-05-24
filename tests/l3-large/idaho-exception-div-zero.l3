@@ -1,0 +1,9 @@
+//test div-by-zero
+void exn() {
+  int x = 1 / 0;
+}
+
+int main() {
+  exn();
+  return 0;
+}

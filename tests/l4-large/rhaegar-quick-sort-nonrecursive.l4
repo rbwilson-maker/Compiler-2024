@@ -1,0 +1,73 @@
+//test return 233333
+
+// this test has problem, should return 2333, but actually returns 233333
+
+typedef int index;
+
+void quickSort(int[] A, index p, index q);
+int partition(int[] A, index p, index q);
+
+void quickSort(int[] A, index p, index r) {
+
+  int[] stack = alloc_array(int, r - p + 1);
+
+  int top = -1;
+  top++;
+  stack[top] = p;
+  top++;
+  stack[top] = r;
+
+  while (top >= 0) {
+    r = stack[top];
+    top--;
+    p = stack[top];
+    top--;
+
+    int q = partition(A, p, r);
+    if (q - 1 > p) {
+      top++;
+      stack[top] = p;
+      top++;
+      stack[top] = q - 1;
+    }
+
+    if (q + 1 < r) {
+      top++;
+      stack[top] = p + 1;
+      top++;
+      stack[top] = r;
+    }
+  }
+}
+
+int  partition(int[] A, index p, index r) {
+  int x = A[r];
+  int i = p - 1;
+  for (int j = p; j < r - 1; j++) {
+    if (A[j] < x) {
+      i++;
+      int tmp = A[i];
+      A[i] = A[j];
+      A[j] = tmp;
+    }
+  }
+  A[r] = A[i + 1];
+  A[i + 1] = x;
+  return i + 1;
+}
+
+int main() {
+  int[] A = alloc_array(int, 10);
+  A[0] = 10;
+  A[1] = 20;
+  A[2] = -15;
+  A[3] = 25;
+  A[4] = 100;
+  A[5] = 420;
+  A[6] = -315;
+  A[7] = 233333;
+  A[8] = 222;
+  A[9] = 2333;
+  quickSort(A, 0, 9);
+  return A[8];
+}

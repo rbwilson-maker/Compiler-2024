@@ -1,0 +1,12 @@
+//test error
+
+int main(int argc, int argv) {
+  int ERROR = 1;
+
+  // Check the number of args
+  if (argc < 2)
+    return ERROR;
+
+  // Success
+  return 0;
+}

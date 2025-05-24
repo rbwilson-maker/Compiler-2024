@@ -1,0 +1,25 @@
+//test error
+
+/* Dead code undeclared variable test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Saturday, September 12, 2015 at 03:30:52 PM EDT
+ *
+ * A test that tests if a undeclared variable is detected in the dead code
+ * after a 'return' statement.
+ */
+
+int main()
+{
+    int x;
+    int y;
+    int z;
+
+    x = 0;
+    y = 3;
+    z = x + y;
+
+    return z;
+    w = 0;
+}

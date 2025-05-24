@@ -1,0 +1,25 @@
+//test return 0
+//tests heap init and nested field access
+
+struct du
+{
+   int crazy;
+};
+
+typedef struct du hast;
+
+struct mech;
+
+struct mech
+{
+    int hmm;
+    struct du d;
+};
+
+typedef struct mech duhastmech;
+
+int main()
+{
+    duhastmech* h = alloc(duhastmech);
+    return h->d.crazy;
+}

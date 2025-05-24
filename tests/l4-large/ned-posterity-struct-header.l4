@@ -1,0 +1,10 @@
+//test typecheck
+
+// Let's just make sure we can use structs in header files.
+
+int main() {
+  struct test_struct *s = alloc(struct test_struct);
+  s->x = 10;
+  s->y = 50;
+  return s->x;
+}

@@ -1,0 +1,26 @@
+//test div-by-zero
+
+int morebar(bool y) {
+    return (y) ? 1 : 0;
+}
+
+int morefoo(int x) {
+    return 4 / x;
+}
+
+
+int bar() {
+    return morebar(false) * morefoo(4);
+}
+
+int foo() {
+    return 1/bar();
+}
+
+int main() {
+
+    int x;
+    x = foo();
+    return x;
+
+}

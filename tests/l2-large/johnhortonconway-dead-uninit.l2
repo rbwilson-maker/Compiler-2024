@@ -1,0 +1,18 @@
+//test return 3
+int main() {
+    int i = 3;
+    int j = 10;
+    int k;
+    for (int x = j; x >= 0; x--) {
+        j = j + 1;
+        if (x == 2) {
+            // x should return here
+            return 3;
+            k += 2;
+            i *= k + j;
+        }
+        i += 1;
+    }
+    //@assert (i == 2);
+    return i;
+}

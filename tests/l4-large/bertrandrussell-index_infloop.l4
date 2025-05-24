@@ -1,0 +1,15 @@
+//test typecheck
+
+typedef int[] arr;
+
+int foo() {
+    arr a;
+    a = alloc_array(int, foo());
+    return a[0];
+}
+
+int main() {
+    foo();
+    return 0;
+}
+

@@ -1,0 +1,40 @@
+//test error
+typedef int ba;
+ba bar()
+{
+    return 1;
+}
+
+int[][][][][]****** foo()
+{
+    return NULL;
+}
+
+struct ineff 
+{
+};
+
+struct bar 
+{
+    int bar;
+    int l;
+    struct ineff dummy;
+    bool* laji;
+
+};
+
+
+int main()
+{
+    int* p = alloc(struct ghgh);
+    int k = *p;
+    bar = 10;
+    struct foo *  bar = alloc(void);
+    (*x[4])++ ;
+    !*x;
+    *x[5][5][7][9].shit->laji[4] *= 3;
+    int tt = bar -> bar;
+
+    (5**p);
+    return p[20];
+}

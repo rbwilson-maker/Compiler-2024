@@ -1,0 +1,11 @@
+//test return 2
+//ints are immutable
+void addOne(int x) {
+  x++;
+}
+
+int main() {
+  int x = 2;
+  addOne(x);
+  return x;
+}

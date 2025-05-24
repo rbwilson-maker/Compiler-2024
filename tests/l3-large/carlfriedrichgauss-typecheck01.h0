@@ -1,0 +1,5 @@
+typedef int crazy_int;
+
+// Some crazy function that takes an integer and returns an integer
+// but cannot be implemented in C0 for some reason :)
+crazy_int some_crazy_function(crazy_int x);

@@ -1,0 +1,13 @@
+//test error
+
+int deftwice(){
+	return 0;
+}
+
+int deftwice(){
+	return 1;
+}
+
+int main(){
+	return 0;
+}

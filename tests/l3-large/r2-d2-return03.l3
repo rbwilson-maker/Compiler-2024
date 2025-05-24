@@ -1,0 +1,21 @@
+//test return 28
+// calculate the sum of divisors of a number 
+
+int sum_of_divisor(int n)
+{
+  int sum = 0;
+  int i;
+  for (i = 1; i <= n; i++) {
+    if (n % i == 0) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+
+int main()
+{
+  int n = 12;
+  int s = sum_of_divisor(n);
+  return s;
+}

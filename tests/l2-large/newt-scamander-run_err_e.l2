@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main(){
+	int a = 45830 - 12354 * 23498 % 123;
+	int b = (a <<12) >> 32;
+	return b;
+}

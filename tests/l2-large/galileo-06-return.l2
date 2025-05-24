@@ -1,0 +1,10 @@
+//test return 13848777
+// complex expression
+
+int main() {
+    int x = 9874987;
+    int y = -383874;
+    int z = 84462492;
+
+    return x + (y << 2) * (~z >> 3) & (x + y | z % x) ^ x / z & x;
+}

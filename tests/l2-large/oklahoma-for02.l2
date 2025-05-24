@@ -1,0 +1,18 @@
+//test return 110111101
+//Decimal to binary
+
+int main () {
+
+  int n = 445;
+
+  int b = 0;
+
+  for (int e = 1; n != 0; e *= 10) {
+    if (n % 2 == 1) b += e;
+    n /= 2;
+  }
+
+  return b;
+}
+
+  

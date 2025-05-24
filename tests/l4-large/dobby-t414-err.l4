@@ -1,0 +1,6 @@
+//test error
+int main() {
+  int[] x = alloc_array(int, 10);
+  assert(x[0] == false);
+  return 0;
+}

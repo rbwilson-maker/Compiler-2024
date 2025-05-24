@@ -1,0 +1,35 @@
+//test return 20
+
+// tests a simple binary search
+
+int get_mid (int min, int max) {
+	return ((max-min+1)/2)+min;
+}
+
+int binsearch (int min, int max, int target) {	
+	int guess = get_mid(min, max);
+	int guesses = 1;
+
+	while (guess != target) {
+		int old_guess = guess;
+		if (guess < target) {
+			max = guess;
+		}
+		else {
+			min = guess;
+		}
+		guess = get_mid(min, max);
+
+		if (guess == old_guess) return guesses;
+
+		guesses++;
+	}
+	return guesses;
+}
+
+int main () {
+	int min = 100;
+	int	max = 1000000;
+	int target = 200;
+	return binsearch(min, max, target);
+} 

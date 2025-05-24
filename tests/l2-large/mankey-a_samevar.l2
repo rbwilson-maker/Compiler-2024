@@ -1,0 +1,32 @@
+//test return 11
+//using the same var all day
+int main()
+{
+  int a;
+  {
+    {
+      {
+        {
+          int i = 3;
+        }
+        int i = 4;
+      }
+      int i = 5;
+    }
+    int i = 2;
+  }
+  a = 2;
+  {
+    {
+      int i = 7;
+      a = -1;
+    }
+    int i = 1;
+    {
+      i = 6;
+    }
+    i = i + i;
+    a += i;
+  }
+  return a;
+}

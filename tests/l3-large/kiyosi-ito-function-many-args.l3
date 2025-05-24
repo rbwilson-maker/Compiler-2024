@@ -1,0 +1,25 @@
+//test return 7
+
+int telescope(int one, int two, int three, int four, int five, int six, int seven, int eight) {
+  int t1 = one - two;
+  int t2 = two - three;
+  int t3 = three - four;
+  int t4 = four - five;
+  int t5 = five - six;
+  int t6 = six - seven;
+  int t7 = seven - eight;
+  return t1 + t2 + t3 + t4 + t5 + t6 + t7;
+}
+
+int main() {
+  int eight = (4*2) / 2 * 2;
+  int seven = 7;
+  int six = 2 * 3;
+  int five = 100 / 20;
+  int four = (1+1)*2;
+  int three = telescope(6, 0, 0, (1+10), 3, 5, 10000, (6/2));
+  int two = (5 > 4) ? (5 < 10 ? 2 : 1) : 1;
+  int one = 1;
+  return telescope(eight, seven, six, five, four, three, two, one);
+}
+

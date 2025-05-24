@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+
+int sum(int a, int b) {
+    int x = 10*b+1;
+    return a + b + x;    
+}
+
+int inf_loop() {
+    while (true) {} 
+    return 0;   
+}
+
+int main() {
+    int x = 0;
+    int y = 1;
+    int z = sum(x,y) + inf_loop();
+    return z;    
+}

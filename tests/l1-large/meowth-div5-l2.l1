@@ -1,0 +1,7 @@
+//test div-by-zero
+
+//Rounding?
+int main(){
+    int k = 10/(4/5);
+    return k;
+}

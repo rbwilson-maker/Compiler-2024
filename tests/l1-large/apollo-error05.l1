@@ -1,0 +1,9 @@
+//test error
+// Uninitialize variable access should raise error
+
+int main()
+{
+	int x;
+	int y = x;
+	return y;
+}

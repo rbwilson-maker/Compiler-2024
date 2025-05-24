@@ -1,0 +1,31 @@
+//test div-by-zero
+
+int main() {
+    int x = 4;
+    if(x <= 4) {
+        x--;
+        if (x <= 3) {
+            x--;
+            if (x <= 2) {
+                x--;
+                if (x <= 1) {
+                    x--;
+                } else {
+                    x++;
+                }
+            } else {
+                x++;
+            }
+        } else {
+            x++;
+        }
+    } else {
+        x++;
+    }
+
+    int b = 6;
+    int c = b % x; // div by zero!
+    int d = b - 1;
+
+    return d;
+}

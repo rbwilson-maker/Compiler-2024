@@ -1,0 +1,89 @@
+//test return 69
+
+struct n {
+  int[] ashwin;
+  int n;
+  int ana;
+  int xanax;
+  int axanaxa;
+  int naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct ana {
+  struct n n;
+  int ana;
+  int xanax;
+  int axanaxa;
+  int naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct xanax {
+  struct n n;
+  struct ana ana;
+  int xanax;
+  int axanaxa;
+  int naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct axanaxa {
+  struct n n;
+  struct ana ana;
+  struct xanax xanax;
+  int axanaxa;
+  int naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct naxanaxan {
+  struct n n;
+  struct ana ana;
+  struct xanax xanax;
+  struct axanaxa axanaxa;
+  int naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct anaxanaxana {
+  struct n n;
+  struct ana ana;
+  struct xanax xanax;
+  struct axanaxa axanaxa;
+  struct naxanaxan naxanaxan;
+  int anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct xanaxanaxanax {
+  struct n n;
+  struct ana ana;
+  struct xanax xanax;
+  struct axanaxa axanaxa;
+  struct naxanaxan naxanaxan;
+  struct anaxanaxana anaxanaxana;
+  int xanaxanaxanax;
+};
+
+struct zombie {
+  struct n n;
+  struct ana ana;
+  struct xanax xanax;
+  struct axanaxa axanaxa;
+  struct naxanaxan naxanaxan;
+  struct anaxanaxana anaxanaxana;
+  struct xanaxanaxanax xanaxanaxanax;
+};
+
+int main() {
+  struct zombie* anatol = alloc(struct zombie);
+  anatol->xanaxanaxanax.anaxanaxana.naxanaxan.axanaxa.xanax.ana.n.ashwin = alloc_array(int, 1000);
+  anatol->xanaxanaxanax.anaxanaxana.naxanaxan.axanaxa.xanax.ana.n.ashwin[666] = 69;
+  return anatol->xanaxanaxanax.anaxanaxana.naxanaxan.axanaxa.xanax.ana.n.ashwin[666];
+}

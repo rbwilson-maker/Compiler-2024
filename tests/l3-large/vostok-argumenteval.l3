@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int func(int a, int b) {
+    return a + b;
+}
+
+int gunc() {
+    assert(false);
+    return 0;
+}
+
+int main() {
+    return func(1 / 0, gunc());
+}

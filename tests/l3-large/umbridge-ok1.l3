@@ -1,0 +1,33 @@
+//test return 62
+
+/* if
+ /* else
+  /* while
+   /* for
+     * bool // * // * // nested comments
+    */
+   */
+  */
+ */
+
+int add(int n1, int n2) {
+    return n1 + n2;
+}
+
+int add4(int n1, int n2, int n3, int n4) {
+    return add(n1, n2) + add(n3, n4);
+}
+
+int main()
+{
+    // identifiers are concats of keywords
+    int forwhile = 2147483647; // INT_MAX
+    int ifelse = forwhile + 1; // overflow to INT_MIN
+    int returntrue = 0;
+    while (forwhile > 0)
+    {
+        returntrue += 1;
+        forwhile >>= 1;
+    }
+    return add4(returntrue, forwhile, returntrue, forwhile);
+}

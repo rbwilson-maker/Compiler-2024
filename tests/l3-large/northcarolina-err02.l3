@@ -1,0 +1,7 @@
+//test error
+// Cannot be typedef reserved keyword
+typedef int if;
+
+int main() {
+	return 0;
+}

@@ -1,0 +1,15 @@
+//test return 0
+
+int main ()
+{
+  int x = 1;
+  int y = 2;
+  int z = 3;
+
+  x++;
+  z -= x;
+  z--;
+  y *= z;
+
+  return y;
+}

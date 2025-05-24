@@ -1,0 +1,14 @@
+//test error
+// typedef keyword
+
+int keywords(int typedef, int main){
+  return typedef * main;
+}
+
+int main()
+{
+  int typedef = 10;
+  int main = 11;
+  
+  return keywords(typedef, main);
+}

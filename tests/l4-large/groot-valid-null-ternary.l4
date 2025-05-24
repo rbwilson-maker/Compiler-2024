@@ -1,0 +1,11 @@
+//test return 5
+
+bool True() { return true; }
+bool False() { return false; }
+int* make_ptr(int v) { int* p = alloc(int); *p = v; return p; }
+
+int main() {
+  return True() 
+    ? *(True () ? make_ptr(5) : (False() ? NULL : NULL))
+    : 123;
+}

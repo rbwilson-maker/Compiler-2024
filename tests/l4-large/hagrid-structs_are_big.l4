@@ -1,0 +1,13 @@
+//test error
+//you try to get a good grade in compilers, but structs are just too big
+
+struct gradebook {
+  int grade_in_411;
+};
+
+int main() {
+  struct gradebook* x = alloc(struct gradebook);
+  z = *x;
+  z.grade_in_411 = 100;
+  return x->grade_in_411;
+}

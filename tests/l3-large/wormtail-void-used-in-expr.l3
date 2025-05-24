@@ -1,0 +1,15 @@
+//test error
+int main() {
+
+  bool y = true;
+  int f = 2;
+  int x = 1 + 3 * (2 >> (f * (y ? void_fn(f) : 1)))
+  return 0;
+}
+
+void void_fn(int f) {
+     3+2;
+     1/0;
+     return;
+     2 >> f;
+}

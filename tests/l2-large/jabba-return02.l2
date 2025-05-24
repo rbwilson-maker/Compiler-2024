@@ -1,0 +1,12 @@
+//test return 1;
+
+int main() {
+    int x = 373587911; // a big prime number
+    bool is_prime = true;
+    for (int f = 2; is_prime && (f * f <= x); f++) {
+        if (x % f == 0) {
+            is_prime = false;
+        }
+    }
+    return is_prime ? 1 : 0;
+}

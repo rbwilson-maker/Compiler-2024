@@ -1,0 +1,10 @@
+//test return 17
+
+//Test weird syntax
+
+int main() {
+	int a = 17;
+	if(a == 17) (true);
+	else (false);
+	return a;
+}

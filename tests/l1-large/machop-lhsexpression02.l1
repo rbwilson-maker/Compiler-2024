@@ -1,0 +1,7 @@
+//test error
+// unary operator expression on LHS of assignment
+int main () {
+  int x = 0;
+  x++ = 4;
+  return 0;
+}

@@ -1,0 +1,23 @@
+//test return 55
+
+int main() {
+  int x = 0;
+  int y = 0;
+  int z = 1;
+
+  int lowerBound = 1 << 20;
+
+  int counter = 0;
+
+  int temp;
+
+  while (x < lowerBound) {
+    temp = z;
+    z = x + y;
+    x = y;
+    y = temp;
+    counter++;
+  }
+
+  return counter;
+}

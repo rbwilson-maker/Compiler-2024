@@ -1,0 +1,23 @@
+//test return 80085
+
+struct node {
+  int payload;
+  struct node* next;
+};
+
+int payloadAt(struct node* node, int n) {
+  assert (node != NULL);
+  if(n == 0) return node->payload;
+  return payloadAt(node->next, n - 1);
+}
+
+int main() {
+  struct node* fst = alloc (struct node);
+
+  struct node* snd = alloc (struct node);
+  snd->payload = 80085;
+
+  fst->next = snd;
+
+  return payloadAt(fst, 1);
+}

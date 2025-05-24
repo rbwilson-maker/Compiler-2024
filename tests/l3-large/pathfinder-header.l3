@@ -1,0 +1,8 @@
+//test typecheck
+
+int main() {
+    int array = malloc(2 * 4);
+    store(array, 42);
+    store(array + 4, 37);
+    return get(array) + get(array + 4);
+}

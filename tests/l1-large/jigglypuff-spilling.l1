@@ -1,0 +1,44 @@
+//test return 1016
+
+/* Spilling Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Saturday, September 12, 2015 at 04:26:53 PM EDT
+ *
+ * This test tests that spilling is correctly handled for naive register
+ * allocation algorithms.
+ */
+
+int main()
+{
+    int x0 = 4 + 2 * 5;
+    int y0 = 4 - 2 * 5;
+    int z0 = x0 + y0;
+
+    int x1 = z0 + 2 * 5;
+    int y1 = z0 - 2 * 5;
+    int z1 = x1 + y1;
+
+    int x2 = z1 + 2 * 5;
+    int y2 = z1 - 2 * 5;
+    int z2 = x2 + y2;
+
+    int x3 = z2 + 2 * 5;
+    int y3 = z2 - 2 * 5;
+    int z3 = x3 + y3;
+
+    int x4 = z3 + 2 * 5;
+    int y4 = z3 - 2 * 5;
+    int z4 = x4 + y4;
+
+    int x5 = z4 + 2 * 5;
+    int y5 = z4 - 2 * 5;
+    int z5 = x5 + y5;
+
+    int x6 = z5 + 2 * 5;
+    int y6 = z5 - 2 * 5;
+    int z6 = x6 + y6;
+
+    return (z0 + z1 + z2 + z3 + z4 + z5 + z6);
+}

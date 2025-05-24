@@ -1,0 +1,11 @@
+//test return 1234
+// tests short-circuit evaluation on &&
+
+int main()
+{
+  if (false && 1/0 == 3) {
+    return 999;
+  } else {
+    return 1234;
+  }
+}

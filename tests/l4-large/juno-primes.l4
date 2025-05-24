@@ -1,0 +1,31 @@
+//test return 0
+
+//Calculates primes using sieve method, i.e. https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+
+bool[] calculatePrimes(int n) {
+    int arrSize = n + 1;
+    bool[] primes = alloc_array(bool, arrSize);
+    for (int i = 0; i < arrSize; i++) {
+        primes[i] = true;
+    }
+
+    for (int i = 2; i * i < arrSize; i++) {
+        if (primes[i]) {
+            for (int j = i * i; j < arrSize; j = j + i) {
+                primes[j] = false;
+            }
+        }
+    }
+    return primes;
+}
+
+bool isPrime(bool[] primes, int n) {
+    return primes[n];
+}
+
+int main () {
+    bool[] twoHundredPrimes = calculatePrimes(200);
+    assert(isPrime(twoHundredPrimes, 199));
+    assert(!isPrime(twoHundredPrimes, 198));
+    return 0;
+}

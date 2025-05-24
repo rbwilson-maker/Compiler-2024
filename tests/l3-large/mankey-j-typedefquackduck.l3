@@ -1,0 +1,11 @@
+//test return 0
+
+typedef bool quackquackquackquackquackquack;
+
+quackquackquackquackquackquack duck (quackquackquackquackquackquack ugly) {return false;}
+
+int main () {
+  if (duck(true)) return 1/0;
+  else return 0;
+}
+

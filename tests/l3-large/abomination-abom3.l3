@@ -1,0 +1,35 @@
+//test error
+
+void two(int t) {
+    t;
+}
+
+int two() {
+    return 2;
+}
+
+int succ(int x) {
+    return x + 1;
+}
+
+bool positive(int x) {
+    return x > 0;
+}
+
+void noop(int x, bool b) {
+    int z = x;
+    z--;
+    return;
+}
+
+int main() {
+    int two = two();
+    if(two == succ(two)) {
+        return 5;
+    }
+    while(positive(10 - two)) {
+        two = succ(two);
+        noop();
+    }
+    return two;
+}

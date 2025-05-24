@@ -1,0 +1,14 @@
+//test return 5;
+
+typedef int sail;
+
+int rent_a(sail boat) {
+    return boat;
+}
+
+typedef int boat;
+
+int main() {
+    boat house = 5;
+    return rent_a(house);
+}

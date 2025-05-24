@@ -1,0 +1,10 @@
+//test return 15
+//Tests expressions in function call
+
+int sum(int x, int y) {
+    return x + y;
+}
+
+int main() {
+    return sum(1 + 2 - 3 * 4 / 5 % 6 & 7 ^ 8 | 9 << 10 >> 11 - ~12, 3 * 2);
+}

@@ -1,0 +1,38 @@
+//test return 29700
+
+struct wow {
+  struct wowow * wowow;
+  int value;
+};
+
+struct wowow {
+  struct wowowow * wowowow;
+  int value2;
+};
+
+struct wowowow {
+  int value3;
+};
+
+struct wow * create_wow() {
+  struct wow * wow = alloc(struct wow);
+  wow->wowow = alloc(struct wowow);
+  wow->wowow->wowowow = alloc(struct wowowow);
+  return wow;
+}
+
+int main() {
+  int size = 100;
+  struct wow * [] wows = alloc_array(struct wow *, size);
+  for(int i = 0; i < size; i++) {
+    wows[i] = create_wow();
+    wows[i]->value = i;
+    wows[i]->wowow->value2 = 2*i;
+    wows[i]->wowow->wowowow->value3 = 3*i;
+  }
+  int sum = 0;
+  for(int i = 0; i < size; i++) {
+    sum += wows[i]->value + wows[i]->wowow->value2 + wows[i]->wowow->wowowow->value3;
+  }
+  return sum;
+}

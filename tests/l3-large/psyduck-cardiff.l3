@@ -1,0 +1,18 @@
+//test typecheck
+
+// Uses the do_things.h0 file
+
+int aux(int x);
+int aux(int y);
+
+int main() {
+    int x = 0;
+    while (!test_int(x)) {
+        x += eger();
+    }
+    return x + aux(x);
+}
+
+int aux (int z) {
+    return z + 1;
+}

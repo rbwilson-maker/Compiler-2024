@@ -1,0 +1,16 @@
+//test error
+
+// Should detect that x is not iniitalized in all paths
+
+int main() {
+  int x;
+  if (true) {
+    x = 1;
+  }
+
+  for (int i = 10; i > 0; i++) {
+    x++;
+  }
+
+  return x;
+}

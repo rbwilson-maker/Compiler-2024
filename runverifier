@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# script to automate verifier, must be put in same directory as gradeCompiler.
+# Takes in 1 argument: name of the test directory to run l1 checkpoint verifier tests.
+# Example usage: ./runverifier l1-checkpoint (will run tests in dist/tests/l1-checkpoint)
+#
+# Steps:
+# 1. Makes the compiler.
+# 2. For each checkpoint input file in the passed in test directory, pass the
+#    input file to the compiler with -o flag to produce an output file
+# 3. Call the verifier with both the input and output files
+
+script_directory=$(dirname "$(python3 -c "import os; print(os.path.realpath('$0'))")")
+
+# If the first two arguments are "-dir <directory>", change the working
+# directory to be the given directory.
+# Mostly intended to be used by autograder
+if [ "$1" = "-dir" ]; then
+   cd "$2" || exit
+   shift
+   shift
+fi
+
+"$script_directory/harness/runHarness" verifyCheckpoint "$@"

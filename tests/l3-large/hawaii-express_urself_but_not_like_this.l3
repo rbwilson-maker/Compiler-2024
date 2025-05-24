@@ -1,0 +1,15 @@
+//test error
+
+typedef int expression;
+
+int some(expression x) {
+  bool expression = true;
+  expression yes = x;
+  expression no = 600000;
+  return expression ? yes : no;
+}
+
+int main() {
+  expression thing = 12;
+  return some(thing);
+}

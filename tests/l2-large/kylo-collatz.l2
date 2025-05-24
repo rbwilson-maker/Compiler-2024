@@ -1,0 +1,6795 @@
+//test typecheck
+//test infloop
+
+int main(){ 
+    int current = 0;
+    int x;
+    int baton1;
+    int baton2 = 1;
+
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a1 = x;
+        while(a1 != 1){
+            if(a1 % 2 == 0)
+                a1 = a1 / 2;
+            else
+                a1 = 3 * a1 + 1;
+            baton1 = a1;
+            baton2 = baton1 + 1;
+            if(a1 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a2 = x;
+        while(a2 != 1){
+            if(a2 % 2 == 0)
+                a2 = a2 / 2;
+            else
+                a2 = 3 * a2 + 1;
+            baton1 = a2;
+            baton2 = baton1 + 1;
+            if(a2 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a3 = x;
+        while(a3 != 1){
+            if(a3 % 2 == 0)
+                a3 = a3 / 2;
+            else
+                a3 = 3 * a3 + 1;
+            baton1 = a3;
+            baton2 = baton1 + 1;
+            if(a3 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a4 = x;
+        while(a4 != 1){
+            if(a4 % 2 == 0)
+                a4 = a4 / 2;
+            else
+                a4 = 3 * a4 + 1;
+            baton1 = a4;
+            baton2 = baton1 + 1;
+            if(a4 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a5 = x;
+        while(a5 != 1){
+            if(a5 % 2 == 0)
+                a5 = a5 / 2;
+            else
+                a5 = 3 * a5 + 1;
+            baton1 = a5;
+            baton2 = baton1 + 1;
+            if(a5 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a6 = x;
+        while(a6 != 1){
+            if(a6 % 2 == 0)
+                a6 = a6 / 2;
+            else
+                a6 = 3 * a6 + 1;
+            baton1 = a6;
+            baton2 = baton1 + 1;
+            if(a6 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a7 = x;
+        while(a7 != 1){
+            if(a7 % 2 == 0)
+                a7 = a7 / 2;
+            else
+                a7 = 3 * a7 + 1;
+            baton1 = a7;
+            baton2 = baton1 + 1;
+            if(a7 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a8 = x;
+        while(a8 != 1){
+            if(a8 % 2 == 0)
+                a8 = a8 / 2;
+            else
+                a8 = 3 * a8 + 1;
+            baton1 = a8;
+            baton2 = baton1 + 1;
+            if(a8 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a9 = x;
+        while(a9 != 1){
+            if(a9 % 2 == 0)
+                a9 = a9 / 2;
+            else
+                a9 = 3 * a9 + 1;
+            baton1 = a9;
+            baton2 = baton1 + 1;
+            if(a9 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a10 = x;
+        while(a10 != 1){
+            if(a10 % 2 == 0)
+                a10 = a10 / 2;
+            else
+                a10 = 3 * a10 + 1;
+            baton1 = a10;
+            baton2 = baton1 + 1;
+            if(a10 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a11 = x;
+        while(a11 != 1){
+            if(a11 % 2 == 0)
+                a11 = a11 / 2;
+            else
+                a11 = 3 * a11 + 1;
+            baton1 = a11;
+            baton2 = baton1 + 1;
+            if(a11 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a12 = x;
+        while(a12 != 1){
+            if(a12 % 2 == 0)
+                a12 = a12 / 2;
+            else
+                a12 = 3 * a12 + 1;
+            baton1 = a12;
+            baton2 = baton1 + 1;
+            if(a12 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a13 = x;
+        while(a13 != 1){
+            if(a13 % 2 == 0)
+                a13 = a13 / 2;
+            else
+                a13 = 3 * a13 + 1;
+            baton1 = a13;
+            baton2 = baton1 + 1;
+            if(a13 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a14 = x;
+        while(a14 != 1){
+            if(a14 % 2 == 0)
+                a14 = a14 / 2;
+            else
+                a14 = 3 * a14 + 1;
+            baton1 = a14;
+            baton2 = baton1 + 1;
+            if(a14 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a15 = x;
+        while(a15 != 1){
+            if(a15 % 2 == 0)
+                a15 = a15 / 2;
+            else
+                a15 = 3 * a15 + 1;
+            baton1 = a15;
+            baton2 = baton1 + 1;
+            if(a15 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a16 = x;
+        while(a16 != 1){
+            if(a16 % 2 == 0)
+                a16 = a16 / 2;
+            else
+                a16 = 3 * a16 + 1;
+            baton1 = a16;
+            baton2 = baton1 + 1;
+            if(a16 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a17 = x;
+        while(a17 != 1){
+            if(a17 % 2 == 0)
+                a17 = a17 / 2;
+            else
+                a17 = 3 * a17 + 1;
+            baton1 = a17;
+            baton2 = baton1 + 1;
+            if(a17 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a18 = x;
+        while(a18 != 1){
+            if(a18 % 2 == 0)
+                a18 = a18 / 2;
+            else
+                a18 = 3 * a18 + 1;
+            baton1 = a18;
+            baton2 = baton1 + 1;
+            if(a18 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a19 = x;
+        while(a19 != 1){
+            if(a19 % 2 == 0)
+                a19 = a19 / 2;
+            else
+                a19 = 3 * a19 + 1;
+            baton1 = a19;
+            baton2 = baton1 + 1;
+            if(a19 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a20 = x;
+        while(a20 != 1){
+            if(a20 % 2 == 0)
+                a20 = a20 / 2;
+            else
+                a20 = 3 * a20 + 1;
+            baton1 = a20;
+            baton2 = baton1 + 1;
+            if(a20 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a21 = x;
+        while(a21 != 1){
+            if(a21 % 2 == 0)
+                a21 = a21 / 2;
+            else
+                a21 = 3 * a21 + 1;
+            baton1 = a21;
+            baton2 = baton1 + 1;
+            if(a21 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a22 = x;
+        while(a22 != 1){
+            if(a22 % 2 == 0)
+                a22 = a22 / 2;
+            else
+                a22 = 3 * a22 + 1;
+            baton1 = a22;
+            baton2 = baton1 + 1;
+            if(a22 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a23 = x;
+        while(a23 != 1){
+            if(a23 % 2 == 0)
+                a23 = a23 / 2;
+            else
+                a23 = 3 * a23 + 1;
+            baton1 = a23;
+            baton2 = baton1 + 1;
+            if(a23 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a24 = x;
+        while(a24 != 1){
+            if(a24 % 2 == 0)
+                a24 = a24 / 2;
+            else
+                a24 = 3 * a24 + 1;
+            baton1 = a24;
+            baton2 = baton1 + 1;
+            if(a24 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a25 = x;
+        while(a25 != 1){
+            if(a25 % 2 == 0)
+                a25 = a25 / 2;
+            else
+                a25 = 3 * a25 + 1;
+            baton1 = a25;
+            baton2 = baton1 + 1;
+            if(a25 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a26 = x;
+        while(a26 != 1){
+            if(a26 % 2 == 0)
+                a26 = a26 / 2;
+            else
+                a26 = 3 * a26 + 1;
+            baton1 = a26;
+            baton2 = baton1 + 1;
+            if(a26 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a27 = x;
+        while(a27 != 1){
+            if(a27 % 2 == 0)
+                a27 = a27 / 2;
+            else
+                a27 = 3 * a27 + 1;
+            baton1 = a27;
+            baton2 = baton1 + 1;
+            if(a27 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a28 = x;
+        while(a28 != 1){
+            if(a28 % 2 == 0)
+                a28 = a28 / 2;
+            else
+                a28 = 3 * a28 + 1;
+            baton1 = a28;
+            baton2 = baton1 + 1;
+            if(a28 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a29 = x;
+        while(a29 != 1){
+            if(a29 % 2 == 0)
+                a29 = a29 / 2;
+            else
+                a29 = 3 * a29 + 1;
+            baton1 = a29;
+            baton2 = baton1 + 1;
+            if(a29 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a30 = x;
+        while(a30 != 1){
+            if(a30 % 2 == 0)
+                a30 = a30 / 2;
+            else
+                a30 = 3 * a30 + 1;
+            baton1 = a30;
+            baton2 = baton1 + 1;
+            if(a30 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a31 = x;
+        while(a31 != 1){
+            if(a31 % 2 == 0)
+                a31 = a31 / 2;
+            else
+                a31 = 3 * a31 + 1;
+            baton1 = a31;
+            baton2 = baton1 + 1;
+            if(a31 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a32 = x;
+        while(a32 != 1){
+            if(a32 % 2 == 0)
+                a32 = a32 / 2;
+            else
+                a32 = 3 * a32 + 1;
+            baton1 = a32;
+            baton2 = baton1 + 1;
+            if(a32 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a33 = x;
+        while(a33 != 1){
+            if(a33 % 2 == 0)
+                a33 = a33 / 2;
+            else
+                a33 = 3 * a33 + 1;
+            baton1 = a33;
+            baton2 = baton1 + 1;
+            if(a33 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a34 = x;
+        while(a34 != 1){
+            if(a34 % 2 == 0)
+                a34 = a34 / 2;
+            else
+                a34 = 3 * a34 + 1;
+            baton1 = a34;
+            baton2 = baton1 + 1;
+            if(a34 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a35 = x;
+        while(a35 != 1){
+            if(a35 % 2 == 0)
+                a35 = a35 / 2;
+            else
+                a35 = 3 * a35 + 1;
+            baton1 = a35;
+            baton2 = baton1 + 1;
+            if(a35 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a36 = x;
+        while(a36 != 1){
+            if(a36 % 2 == 0)
+                a36 = a36 / 2;
+            else
+                a36 = 3 * a36 + 1;
+            baton1 = a36;
+            baton2 = baton1 + 1;
+            if(a36 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a37 = x;
+        while(a37 != 1){
+            if(a37 % 2 == 0)
+                a37 = a37 / 2;
+            else
+                a37 = 3 * a37 + 1;
+            baton1 = a37;
+            baton2 = baton1 + 1;
+            if(a37 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a38 = x;
+        while(a38 != 1){
+            if(a38 % 2 == 0)
+                a38 = a38 / 2;
+            else
+                a38 = 3 * a38 + 1;
+            baton1 = a38;
+            baton2 = baton1 + 1;
+            if(a38 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a39 = x;
+        while(a39 != 1){
+            if(a39 % 2 == 0)
+                a39 = a39 / 2;
+            else
+                a39 = 3 * a39 + 1;
+            baton1 = a39;
+            baton2 = baton1 + 1;
+            if(a39 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a40 = x;
+        while(a40 != 1){
+            if(a40 % 2 == 0)
+                a40 = a40 / 2;
+            else
+                a40 = 3 * a40 + 1;
+            baton1 = a40;
+            baton2 = baton1 + 1;
+            if(a40 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a41 = x;
+        while(a41 != 1){
+            if(a41 % 2 == 0)
+                a41 = a41 / 2;
+            else
+                a41 = 3 * a41 + 1;
+            baton1 = a41;
+            baton2 = baton1 + 1;
+            if(a41 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a42 = x;
+        while(a42 != 1){
+            if(a42 % 2 == 0)
+                a42 = a42 / 2;
+            else
+                a42 = 3 * a42 + 1;
+            baton1 = a42;
+            baton2 = baton1 + 1;
+            if(a42 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a43 = x;
+        while(a43 != 1){
+            if(a43 % 2 == 0)
+                a43 = a43 / 2;
+            else
+                a43 = 3 * a43 + 1;
+            baton1 = a43;
+            baton2 = baton1 + 1;
+            if(a43 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a44 = x;
+        while(a44 != 1){
+            if(a44 % 2 == 0)
+                a44 = a44 / 2;
+            else
+                a44 = 3 * a44 + 1;
+            baton1 = a44;
+            baton2 = baton1 + 1;
+            if(a44 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a45 = x;
+        while(a45 != 1){
+            if(a45 % 2 == 0)
+                a45 = a45 / 2;
+            else
+                a45 = 3 * a45 + 1;
+            baton1 = a45;
+            baton2 = baton1 + 1;
+            if(a45 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a46 = x;
+        while(a46 != 1){
+            if(a46 % 2 == 0)
+                a46 = a46 / 2;
+            else
+                a46 = 3 * a46 + 1;
+            baton1 = a46;
+            baton2 = baton1 + 1;
+            if(a46 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a47 = x;
+        while(a47 != 1){
+            if(a47 % 2 == 0)
+                a47 = a47 / 2;
+            else
+                a47 = 3 * a47 + 1;
+            baton1 = a47;
+            baton2 = baton1 + 1;
+            if(a47 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a48 = x;
+        while(a48 != 1){
+            if(a48 % 2 == 0)
+                a48 = a48 / 2;
+            else
+                a48 = 3 * a48 + 1;
+            baton1 = a48;
+            baton2 = baton1 + 1;
+            if(a48 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a49 = x;
+        while(a49 != 1){
+            if(a49 % 2 == 0)
+                a49 = a49 / 2;
+            else
+                a49 = 3 * a49 + 1;
+            baton1 = a49;
+            baton2 = baton1 + 1;
+            if(a49 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a50 = x;
+        while(a50 != 1){
+            if(a50 % 2 == 0)
+                a50 = a50 / 2;
+            else
+                a50 = 3 * a50 + 1;
+            baton1 = a50;
+            baton2 = baton1 + 1;
+            if(a50 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a51 = x;
+        while(a51 != 1){
+            if(a51 % 2 == 0)
+                a51 = a51 / 2;
+            else
+                a51 = 3 * a51 + 1;
+            baton1 = a51;
+            baton2 = baton1 + 1;
+            if(a51 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a52 = x;
+        while(a52 != 1){
+            if(a52 % 2 == 0)
+                a52 = a52 / 2;
+            else
+                a52 = 3 * a52 + 1;
+            baton1 = a52;
+            baton2 = baton1 + 1;
+            if(a52 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a53 = x;
+        while(a53 != 1){
+            if(a53 % 2 == 0)
+                a53 = a53 / 2;
+            else
+                a53 = 3 * a53 + 1;
+            baton1 = a53;
+            baton2 = baton1 + 1;
+            if(a53 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a54 = x;
+        while(a54 != 1){
+            if(a54 % 2 == 0)
+                a54 = a54 / 2;
+            else
+                a54 = 3 * a54 + 1;
+            baton1 = a54;
+            baton2 = baton1 + 1;
+            if(a54 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a55 = x;
+        while(a55 != 1){
+            if(a55 % 2 == 0)
+                a55 = a55 / 2;
+            else
+                a55 = 3 * a55 + 1;
+            baton1 = a55;
+            baton2 = baton1 + 1;
+            if(a55 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a56 = x;
+        while(a56 != 1){
+            if(a56 % 2 == 0)
+                a56 = a56 / 2;
+            else
+                a56 = 3 * a56 + 1;
+            baton1 = a56;
+            baton2 = baton1 + 1;
+            if(a56 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a57 = x;
+        while(a57 != 1){
+            if(a57 % 2 == 0)
+                a57 = a57 / 2;
+            else
+                a57 = 3 * a57 + 1;
+            baton1 = a57;
+            baton2 = baton1 + 1;
+            if(a57 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a58 = x;
+        while(a58 != 1){
+            if(a58 % 2 == 0)
+                a58 = a58 / 2;
+            else
+                a58 = 3 * a58 + 1;
+            baton1 = a58;
+            baton2 = baton1 + 1;
+            if(a58 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a59 = x;
+        while(a59 != 1){
+            if(a59 % 2 == 0)
+                a59 = a59 / 2;
+            else
+                a59 = 3 * a59 + 1;
+            baton1 = a59;
+            baton2 = baton1 + 1;
+            if(a59 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a60 = x;
+        while(a60 != 1){
+            if(a60 % 2 == 0)
+                a60 = a60 / 2;
+            else
+                a60 = 3 * a60 + 1;
+            baton1 = a60;
+            baton2 = baton1 + 1;
+            if(a60 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a61 = x;
+        while(a61 != 1){
+            if(a61 % 2 == 0)
+                a61 = a61 / 2;
+            else
+                a61 = 3 * a61 + 1;
+            baton1 = a61;
+            baton2 = baton1 + 1;
+            if(a61 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a62 = x;
+        while(a62 != 1){
+            if(a62 % 2 == 0)
+                a62 = a62 / 2;
+            else
+                a62 = 3 * a62 + 1;
+            baton1 = a62;
+            baton2 = baton1 + 1;
+            if(a62 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a63 = x;
+        while(a63 != 1){
+            if(a63 % 2 == 0)
+                a63 = a63 / 2;
+            else
+                a63 = 3 * a63 + 1;
+            baton1 = a63;
+            baton2 = baton1 + 1;
+            if(a63 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a64 = x;
+        while(a64 != 1){
+            if(a64 % 2 == 0)
+                a64 = a64 / 2;
+            else
+                a64 = 3 * a64 + 1;
+            baton1 = a64;
+            baton2 = baton1 + 1;
+            if(a64 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a65 = x;
+        while(a65 != 1){
+            if(a65 % 2 == 0)
+                a65 = a65 / 2;
+            else
+                a65 = 3 * a65 + 1;
+            baton1 = a65;
+            baton2 = baton1 + 1;
+            if(a65 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a66 = x;
+        while(a66 != 1){
+            if(a66 % 2 == 0)
+                a66 = a66 / 2;
+            else
+                a66 = 3 * a66 + 1;
+            baton1 = a66;
+            baton2 = baton1 + 1;
+            if(a66 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a67 = x;
+        while(a67 != 1){
+            if(a67 % 2 == 0)
+                a67 = a67 / 2;
+            else
+                a67 = 3 * a67 + 1;
+            baton1 = a67;
+            baton2 = baton1 + 1;
+            if(a67 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a68 = x;
+        while(a68 != 1){
+            if(a68 % 2 == 0)
+                a68 = a68 / 2;
+            else
+                a68 = 3 * a68 + 1;
+            baton1 = a68;
+            baton2 = baton1 + 1;
+            if(a68 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a69 = x;
+        while(a69 != 1){
+            if(a69 % 2 == 0)
+                a69 = a69 / 2;
+            else
+                a69 = 3 * a69 + 1;
+            baton1 = a69;
+            baton2 = baton1 + 1;
+            if(a69 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a70 = x;
+        while(a70 != 1){
+            if(a70 % 2 == 0)
+                a70 = a70 / 2;
+            else
+                a70 = 3 * a70 + 1;
+            baton1 = a70;
+            baton2 = baton1 + 1;
+            if(a70 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a71 = x;
+        while(a71 != 1){
+            if(a71 % 2 == 0)
+                a71 = a71 / 2;
+            else
+                a71 = 3 * a71 + 1;
+            baton1 = a71;
+            baton2 = baton1 + 1;
+            if(a71 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a72 = x;
+        while(a72 != 1){
+            if(a72 % 2 == 0)
+                a72 = a72 / 2;
+            else
+                a72 = 3 * a72 + 1;
+            baton1 = a72;
+            baton2 = baton1 + 1;
+            if(a72 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a73 = x;
+        while(a73 != 1){
+            if(a73 % 2 == 0)
+                a73 = a73 / 2;
+            else
+                a73 = 3 * a73 + 1;
+            baton1 = a73;
+            baton2 = baton1 + 1;
+            if(a73 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a74 = x;
+        while(a74 != 1){
+            if(a74 % 2 == 0)
+                a74 = a74 / 2;
+            else
+                a74 = 3 * a74 + 1;
+            baton1 = a74;
+            baton2 = baton1 + 1;
+            if(a74 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a75 = x;
+        while(a75 != 1){
+            if(a75 % 2 == 0)
+                a75 = a75 / 2;
+            else
+                a75 = 3 * a75 + 1;
+            baton1 = a75;
+            baton2 = baton1 + 1;
+            if(a75 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a76 = x;
+        while(a76 != 1){
+            if(a76 % 2 == 0)
+                a76 = a76 / 2;
+            else
+                a76 = 3 * a76 + 1;
+            baton1 = a76;
+            baton2 = baton1 + 1;
+            if(a76 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a77 = x;
+        while(a77 != 1){
+            if(a77 % 2 == 0)
+                a77 = a77 / 2;
+            else
+                a77 = 3 * a77 + 1;
+            baton1 = a77;
+            baton2 = baton1 + 1;
+            if(a77 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a78 = x;
+        while(a78 != 1){
+            if(a78 % 2 == 0)
+                a78 = a78 / 2;
+            else
+                a78 = 3 * a78 + 1;
+            baton1 = a78;
+            baton2 = baton1 + 1;
+            if(a78 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a79 = x;
+        while(a79 != 1){
+            if(a79 % 2 == 0)
+                a79 = a79 / 2;
+            else
+                a79 = 3 * a79 + 1;
+            baton1 = a79;
+            baton2 = baton1 + 1;
+            if(a79 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a80 = x;
+        while(a80 != 1){
+            if(a80 % 2 == 0)
+                a80 = a80 / 2;
+            else
+                a80 = 3 * a80 + 1;
+            baton1 = a80;
+            baton2 = baton1 + 1;
+            if(a80 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a81 = x;
+        while(a81 != 1){
+            if(a81 % 2 == 0)
+                a81 = a81 / 2;
+            else
+                a81 = 3 * a81 + 1;
+            baton1 = a81;
+            baton2 = baton1 + 1;
+            if(a81 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a82 = x;
+        while(a82 != 1){
+            if(a82 % 2 == 0)
+                a82 = a82 / 2;
+            else
+                a82 = 3 * a82 + 1;
+            baton1 = a82;
+            baton2 = baton1 + 1;
+            if(a82 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a83 = x;
+        while(a83 != 1){
+            if(a83 % 2 == 0)
+                a83 = a83 / 2;
+            else
+                a83 = 3 * a83 + 1;
+            baton1 = a83;
+            baton2 = baton1 + 1;
+            if(a83 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a84 = x;
+        while(a84 != 1){
+            if(a84 % 2 == 0)
+                a84 = a84 / 2;
+            else
+                a84 = 3 * a84 + 1;
+            baton1 = a84;
+            baton2 = baton1 + 1;
+            if(a84 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a85 = x;
+        while(a85 != 1){
+            if(a85 % 2 == 0)
+                a85 = a85 / 2;
+            else
+                a85 = 3 * a85 + 1;
+            baton1 = a85;
+            baton2 = baton1 + 1;
+            if(a85 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a86 = x;
+        while(a86 != 1){
+            if(a86 % 2 == 0)
+                a86 = a86 / 2;
+            else
+                a86 = 3 * a86 + 1;
+            baton1 = a86;
+            baton2 = baton1 + 1;
+            if(a86 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a87 = x;
+        while(a87 != 1){
+            if(a87 % 2 == 0)
+                a87 = a87 / 2;
+            else
+                a87 = 3 * a87 + 1;
+            baton1 = a87;
+            baton2 = baton1 + 1;
+            if(a87 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a88 = x;
+        while(a88 != 1){
+            if(a88 % 2 == 0)
+                a88 = a88 / 2;
+            else
+                a88 = 3 * a88 + 1;
+            baton1 = a88;
+            baton2 = baton1 + 1;
+            if(a88 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a89 = x;
+        while(a89 != 1){
+            if(a89 % 2 == 0)
+                a89 = a89 / 2;
+            else
+                a89 = 3 * a89 + 1;
+            baton1 = a89;
+            baton2 = baton1 + 1;
+            if(a89 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a90 = x;
+        while(a90 != 1){
+            if(a90 % 2 == 0)
+                a90 = a90 / 2;
+            else
+                a90 = 3 * a90 + 1;
+            baton1 = a90;
+            baton2 = baton1 + 1;
+            if(a90 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a91 = x;
+        while(a91 != 1){
+            if(a91 % 2 == 0)
+                a91 = a91 / 2;
+            else
+                a91 = 3 * a91 + 1;
+            baton1 = a91;
+            baton2 = baton1 + 1;
+            if(a91 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a92 = x;
+        while(a92 != 1){
+            if(a92 % 2 == 0)
+                a92 = a92 / 2;
+            else
+                a92 = 3 * a92 + 1;
+            baton1 = a92;
+            baton2 = baton1 + 1;
+            if(a92 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a93 = x;
+        while(a93 != 1){
+            if(a93 % 2 == 0)
+                a93 = a93 / 2;
+            else
+                a93 = 3 * a93 + 1;
+            baton1 = a93;
+            baton2 = baton1 + 1;
+            if(a93 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a94 = x;
+        while(a94 != 1){
+            if(a94 % 2 == 0)
+                a94 = a94 / 2;
+            else
+                a94 = 3 * a94 + 1;
+            baton1 = a94;
+            baton2 = baton1 + 1;
+            if(a94 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a95 = x;
+        while(a95 != 1){
+            if(a95 % 2 == 0)
+                a95 = a95 / 2;
+            else
+                a95 = 3 * a95 + 1;
+            baton1 = a95;
+            baton2 = baton1 + 1;
+            if(a95 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a96 = x;
+        while(a96 != 1){
+            if(a96 % 2 == 0)
+                a96 = a96 / 2;
+            else
+                a96 = 3 * a96 + 1;
+            baton1 = a96;
+            baton2 = baton1 + 1;
+            if(a96 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a97 = x;
+        while(a97 != 1){
+            if(a97 % 2 == 0)
+                a97 = a97 / 2;
+            else
+                a97 = 3 * a97 + 1;
+            baton1 = a97;
+            baton2 = baton1 + 1;
+            if(a97 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a98 = x;
+        while(a98 != 1){
+            if(a98 % 2 == 0)
+                a98 = a98 / 2;
+            else
+                a98 = 3 * a98 + 1;
+            baton1 = a98;
+            baton2 = baton1 + 1;
+            if(a98 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a99 = x;
+        while(a99 != 1){
+            if(a99 % 2 == 0)
+                a99 = a99 / 2;
+            else
+                a99 = 3 * a99 + 1;
+            baton1 = a99;
+            baton2 = baton1 + 1;
+            if(a99 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a100 = x;
+        while(a100 != 1){
+            if(a100 % 2 == 0)
+                a100 = a100 / 2;
+            else
+                a100 = 3 * a100 + 1;
+            baton1 = a100;
+            baton2 = baton1 + 1;
+            if(a100 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a101 = x;
+        while(a101 != 1){
+            if(a101 % 2 == 0)
+                a101 = a101 / 2;
+            else
+                a101 = 3 * a101 + 1;
+            baton1 = a101;
+            baton2 = baton1 + 1;
+            if(a101 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a102 = x;
+        while(a102 != 1){
+            if(a102 % 2 == 0)
+                a102 = a102 / 2;
+            else
+                a102 = 3 * a102 + 1;
+            baton1 = a102;
+            baton2 = baton1 + 1;
+            if(a102 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a103 = x;
+        while(a103 != 1){
+            if(a103 % 2 == 0)
+                a103 = a103 / 2;
+            else
+                a103 = 3 * a103 + 1;
+            baton1 = a103;
+            baton2 = baton1 + 1;
+            if(a103 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a104 = x;
+        while(a104 != 1){
+            if(a104 % 2 == 0)
+                a104 = a104 / 2;
+            else
+                a104 = 3 * a104 + 1;
+            baton1 = a104;
+            baton2 = baton1 + 1;
+            if(a104 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a105 = x;
+        while(a105 != 1){
+            if(a105 % 2 == 0)
+                a105 = a105 / 2;
+            else
+                a105 = 3 * a105 + 1;
+            baton1 = a105;
+            baton2 = baton1 + 1;
+            if(a105 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a106 = x;
+        while(a106 != 1){
+            if(a106 % 2 == 0)
+                a106 = a106 / 2;
+            else
+                a106 = 3 * a106 + 1;
+            baton1 = a106;
+            baton2 = baton1 + 1;
+            if(a106 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a107 = x;
+        while(a107 != 1){
+            if(a107 % 2 == 0)
+                a107 = a107 / 2;
+            else
+                a107 = 3 * a107 + 1;
+            baton1 = a107;
+            baton2 = baton1 + 1;
+            if(a107 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a108 = x;
+        while(a108 != 1){
+            if(a108 % 2 == 0)
+                a108 = a108 / 2;
+            else
+                a108 = 3 * a108 + 1;
+            baton1 = a108;
+            baton2 = baton1 + 1;
+            if(a108 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a109 = x;
+        while(a109 != 1){
+            if(a109 % 2 == 0)
+                a109 = a109 / 2;
+            else
+                a109 = 3 * a109 + 1;
+            baton1 = a109;
+            baton2 = baton1 + 1;
+            if(a109 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a110 = x;
+        while(a110 != 1){
+            if(a110 % 2 == 0)
+                a110 = a110 / 2;
+            else
+                a110 = 3 * a110 + 1;
+            baton1 = a110;
+            baton2 = baton1 + 1;
+            if(a110 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a111 = x;
+        while(a111 != 1){
+            if(a111 % 2 == 0)
+                a111 = a111 / 2;
+            else
+                a111 = 3 * a111 + 1;
+            baton1 = a111;
+            baton2 = baton1 + 1;
+            if(a111 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a112 = x;
+        while(a112 != 1){
+            if(a112 % 2 == 0)
+                a112 = a112 / 2;
+            else
+                a112 = 3 * a112 + 1;
+            baton1 = a112;
+            baton2 = baton1 + 1;
+            if(a112 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a113 = x;
+        while(a113 != 1){
+            if(a113 % 2 == 0)
+                a113 = a113 / 2;
+            else
+                a113 = 3 * a113 + 1;
+            baton1 = a113;
+            baton2 = baton1 + 1;
+            if(a113 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a114 = x;
+        while(a114 != 1){
+            if(a114 % 2 == 0)
+                a114 = a114 / 2;
+            else
+                a114 = 3 * a114 + 1;
+            baton1 = a114;
+            baton2 = baton1 + 1;
+            if(a114 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a115 = x;
+        while(a115 != 1){
+            if(a115 % 2 == 0)
+                a115 = a115 / 2;
+            else
+                a115 = 3 * a115 + 1;
+            baton1 = a115;
+            baton2 = baton1 + 1;
+            if(a115 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a116 = x;
+        while(a116 != 1){
+            if(a116 % 2 == 0)
+                a116 = a116 / 2;
+            else
+                a116 = 3 * a116 + 1;
+            baton1 = a116;
+            baton2 = baton1 + 1;
+            if(a116 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a117 = x;
+        while(a117 != 1){
+            if(a117 % 2 == 0)
+                a117 = a117 / 2;
+            else
+                a117 = 3 * a117 + 1;
+            baton1 = a117;
+            baton2 = baton1 + 1;
+            if(a117 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a118 = x;
+        while(a118 != 1){
+            if(a118 % 2 == 0)
+                a118 = a118 / 2;
+            else
+                a118 = 3 * a118 + 1;
+            baton1 = a118;
+            baton2 = baton1 + 1;
+            if(a118 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a119 = x;
+        while(a119 != 1){
+            if(a119 % 2 == 0)
+                a119 = a119 / 2;
+            else
+                a119 = 3 * a119 + 1;
+            baton1 = a119;
+            baton2 = baton1 + 1;
+            if(a119 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a120 = x;
+        while(a120 != 1){
+            if(a120 % 2 == 0)
+                a120 = a120 / 2;
+            else
+                a120 = 3 * a120 + 1;
+            baton1 = a120;
+            baton2 = baton1 + 1;
+            if(a120 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a121 = x;
+        while(a121 != 1){
+            if(a121 % 2 == 0)
+                a121 = a121 / 2;
+            else
+                a121 = 3 * a121 + 1;
+            baton1 = a121;
+            baton2 = baton1 + 1;
+            if(a121 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a122 = x;
+        while(a122 != 1){
+            if(a122 % 2 == 0)
+                a122 = a122 / 2;
+            else
+                a122 = 3 * a122 + 1;
+            baton1 = a122;
+            baton2 = baton1 + 1;
+            if(a122 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a123 = x;
+        while(a123 != 1){
+            if(a123 % 2 == 0)
+                a123 = a123 / 2;
+            else
+                a123 = 3 * a123 + 1;
+            baton1 = a123;
+            baton2 = baton1 + 1;
+            if(a123 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a124 = x;
+        while(a124 != 1){
+            if(a124 % 2 == 0)
+                a124 = a124 / 2;
+            else
+                a124 = 3 * a124 + 1;
+            baton1 = a124;
+            baton2 = baton1 + 1;
+            if(a124 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a125 = x;
+        while(a125 != 1){
+            if(a125 % 2 == 0)
+                a125 = a125 / 2;
+            else
+                a125 = 3 * a125 + 1;
+            baton1 = a125;
+            baton2 = baton1 + 1;
+            if(a125 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a126 = x;
+        while(a126 != 1){
+            if(a126 % 2 == 0)
+                a126 = a126 / 2;
+            else
+                a126 = 3 * a126 + 1;
+            baton1 = a126;
+            baton2 = baton1 + 1;
+            if(a126 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a127 = x;
+        while(a127 != 1){
+            if(a127 % 2 == 0)
+                a127 = a127 / 2;
+            else
+                a127 = 3 * a127 + 1;
+            baton1 = a127;
+            baton2 = baton1 + 1;
+            if(a127 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a128 = x;
+        while(a128 != 1){
+            if(a128 % 2 == 0)
+                a128 = a128 / 2;
+            else
+                a128 = 3 * a128 + 1;
+            baton1 = a128;
+            baton2 = baton1 + 1;
+            if(a128 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a129 = x;
+        while(a129 != 1){
+            if(a129 % 2 == 0)
+                a129 = a129 / 2;
+            else
+                a129 = 3 * a129 + 1;
+            baton1 = a129;
+            baton2 = baton1 + 1;
+            if(a129 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a130 = x;
+        while(a130 != 1){
+            if(a130 % 2 == 0)
+                a130 = a130 / 2;
+            else
+                a130 = 3 * a130 + 1;
+            baton1 = a130;
+            baton2 = baton1 + 1;
+            if(a130 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a131 = x;
+        while(a131 != 1){
+            if(a131 % 2 == 0)
+                a131 = a131 / 2;
+            else
+                a131 = 3 * a131 + 1;
+            baton1 = a131;
+            baton2 = baton1 + 1;
+            if(a131 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a132 = x;
+        while(a132 != 1){
+            if(a132 % 2 == 0)
+                a132 = a132 / 2;
+            else
+                a132 = 3 * a132 + 1;
+            baton1 = a132;
+            baton2 = baton1 + 1;
+            if(a132 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a133 = x;
+        while(a133 != 1){
+            if(a133 % 2 == 0)
+                a133 = a133 / 2;
+            else
+                a133 = 3 * a133 + 1;
+            baton1 = a133;
+            baton2 = baton1 + 1;
+            if(a133 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a134 = x;
+        while(a134 != 1){
+            if(a134 % 2 == 0)
+                a134 = a134 / 2;
+            else
+                a134 = 3 * a134 + 1;
+            baton1 = a134;
+            baton2 = baton1 + 1;
+            if(a134 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a135 = x;
+        while(a135 != 1){
+            if(a135 % 2 == 0)
+                a135 = a135 / 2;
+            else
+                a135 = 3 * a135 + 1;
+            baton1 = a135;
+            baton2 = baton1 + 1;
+            if(a135 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a136 = x;
+        while(a136 != 1){
+            if(a136 % 2 == 0)
+                a136 = a136 / 2;
+            else
+                a136 = 3 * a136 + 1;
+            baton1 = a136;
+            baton2 = baton1 + 1;
+            if(a136 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a137 = x;
+        while(a137 != 1){
+            if(a137 % 2 == 0)
+                a137 = a137 / 2;
+            else
+                a137 = 3 * a137 + 1;
+            baton1 = a137;
+            baton2 = baton1 + 1;
+            if(a137 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a138 = x;
+        while(a138 != 1){
+            if(a138 % 2 == 0)
+                a138 = a138 / 2;
+            else
+                a138 = 3 * a138 + 1;
+            baton1 = a138;
+            baton2 = baton1 + 1;
+            if(a138 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a139 = x;
+        while(a139 != 1){
+            if(a139 % 2 == 0)
+                a139 = a139 / 2;
+            else
+                a139 = 3 * a139 + 1;
+            baton1 = a139;
+            baton2 = baton1 + 1;
+            if(a139 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a140 = x;
+        while(a140 != 1){
+            if(a140 % 2 == 0)
+                a140 = a140 / 2;
+            else
+                a140 = 3 * a140 + 1;
+            baton1 = a140;
+            baton2 = baton1 + 1;
+            if(a140 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a141 = x;
+        while(a141 != 1){
+            if(a141 % 2 == 0)
+                a141 = a141 / 2;
+            else
+                a141 = 3 * a141 + 1;
+            baton1 = a141;
+            baton2 = baton1 + 1;
+            if(a141 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a142 = x;
+        while(a142 != 1){
+            if(a142 % 2 == 0)
+                a142 = a142 / 2;
+            else
+                a142 = 3 * a142 + 1;
+            baton1 = a142;
+            baton2 = baton1 + 1;
+            if(a142 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a143 = x;
+        while(a143 != 1){
+            if(a143 % 2 == 0)
+                a143 = a143 / 2;
+            else
+                a143 = 3 * a143 + 1;
+            baton1 = a143;
+            baton2 = baton1 + 1;
+            if(a143 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a144 = x;
+        while(a144 != 1){
+            if(a144 % 2 == 0)
+                a144 = a144 / 2;
+            else
+                a144 = 3 * a144 + 1;
+            baton1 = a144;
+            baton2 = baton1 + 1;
+            if(a144 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a145 = x;
+        while(a145 != 1){
+            if(a145 % 2 == 0)
+                a145 = a145 / 2;
+            else
+                a145 = 3 * a145 + 1;
+            baton1 = a145;
+            baton2 = baton1 + 1;
+            if(a145 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a146 = x;
+        while(a146 != 1){
+            if(a146 % 2 == 0)
+                a146 = a146 / 2;
+            else
+                a146 = 3 * a146 + 1;
+            baton1 = a146;
+            baton2 = baton1 + 1;
+            if(a146 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a147 = x;
+        while(a147 != 1){
+            if(a147 % 2 == 0)
+                a147 = a147 / 2;
+            else
+                a147 = 3 * a147 + 1;
+            baton1 = a147;
+            baton2 = baton1 + 1;
+            if(a147 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a148 = x;
+        while(a148 != 1){
+            if(a148 % 2 == 0)
+                a148 = a148 / 2;
+            else
+                a148 = 3 * a148 + 1;
+            baton1 = a148;
+            baton2 = baton1 + 1;
+            if(a148 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a149 = x;
+        while(a149 != 1){
+            if(a149 % 2 == 0)
+                a149 = a149 / 2;
+            else
+                a149 = 3 * a149 + 1;
+            baton1 = a149;
+            baton2 = baton1 + 1;
+            if(a149 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a150 = x;
+        while(a150 != 1){
+            if(a150 % 2 == 0)
+                a150 = a150 / 2;
+            else
+                a150 = 3 * a150 + 1;
+            baton1 = a150;
+            baton2 = baton1 + 1;
+            if(a150 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a151 = x;
+        while(a151 != 1){
+            if(a151 % 2 == 0)
+                a151 = a151 / 2;
+            else
+                a151 = 3 * a151 + 1;
+            baton1 = a151;
+            baton2 = baton1 + 1;
+            if(a151 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a152 = x;
+        while(a152 != 1){
+            if(a152 % 2 == 0)
+                a152 = a152 / 2;
+            else
+                a152 = 3 * a152 + 1;
+            baton1 = a152;
+            baton2 = baton1 + 1;
+            if(a152 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a153 = x;
+        while(a153 != 1){
+            if(a153 % 2 == 0)
+                a153 = a153 / 2;
+            else
+                a153 = 3 * a153 + 1;
+            baton1 = a153;
+            baton2 = baton1 + 1;
+            if(a153 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a154 = x;
+        while(a154 != 1){
+            if(a154 % 2 == 0)
+                a154 = a154 / 2;
+            else
+                a154 = 3 * a154 + 1;
+            baton1 = a154;
+            baton2 = baton1 + 1;
+            if(a154 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a155 = x;
+        while(a155 != 1){
+            if(a155 % 2 == 0)
+                a155 = a155 / 2;
+            else
+                a155 = 3 * a155 + 1;
+            baton1 = a155;
+            baton2 = baton1 + 1;
+            if(a155 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a156 = x;
+        while(a156 != 1){
+            if(a156 % 2 == 0)
+                a156 = a156 / 2;
+            else
+                a156 = 3 * a156 + 1;
+            baton1 = a156;
+            baton2 = baton1 + 1;
+            if(a156 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a157 = x;
+        while(a157 != 1){
+            if(a157 % 2 == 0)
+                a157 = a157 / 2;
+            else
+                a157 = 3 * a157 + 1;
+            baton1 = a157;
+            baton2 = baton1 + 1;
+            if(a157 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a158 = x;
+        while(a158 != 1){
+            if(a158 % 2 == 0)
+                a158 = a158 / 2;
+            else
+                a158 = 3 * a158 + 1;
+            baton1 = a158;
+            baton2 = baton1 + 1;
+            if(a158 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a159 = x;
+        while(a159 != 1){
+            if(a159 % 2 == 0)
+                a159 = a159 / 2;
+            else
+                a159 = 3 * a159 + 1;
+            baton1 = a159;
+            baton2 = baton1 + 1;
+            if(a159 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a160 = x;
+        while(a160 != 1){
+            if(a160 % 2 == 0)
+                a160 = a160 / 2;
+            else
+                a160 = 3 * a160 + 1;
+            baton1 = a160;
+            baton2 = baton1 + 1;
+            if(a160 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a161 = x;
+        while(a161 != 1){
+            if(a161 % 2 == 0)
+                a161 = a161 / 2;
+            else
+                a161 = 3 * a161 + 1;
+            baton1 = a161;
+            baton2 = baton1 + 1;
+            if(a161 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a162 = x;
+        while(a162 != 1){
+            if(a162 % 2 == 0)
+                a162 = a162 / 2;
+            else
+                a162 = 3 * a162 + 1;
+            baton1 = a162;
+            baton2 = baton1 + 1;
+            if(a162 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a163 = x;
+        while(a163 != 1){
+            if(a163 % 2 == 0)
+                a163 = a163 / 2;
+            else
+                a163 = 3 * a163 + 1;
+            baton1 = a163;
+            baton2 = baton1 + 1;
+            if(a163 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a164 = x;
+        while(a164 != 1){
+            if(a164 % 2 == 0)
+                a164 = a164 / 2;
+            else
+                a164 = 3 * a164 + 1;
+            baton1 = a164;
+            baton2 = baton1 + 1;
+            if(a164 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a165 = x;
+        while(a165 != 1){
+            if(a165 % 2 == 0)
+                a165 = a165 / 2;
+            else
+                a165 = 3 * a165 + 1;
+            baton1 = a165;
+            baton2 = baton1 + 1;
+            if(a165 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a166 = x;
+        while(a166 != 1){
+            if(a166 % 2 == 0)
+                a166 = a166 / 2;
+            else
+                a166 = 3 * a166 + 1;
+            baton1 = a166;
+            baton2 = baton1 + 1;
+            if(a166 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a167 = x;
+        while(a167 != 1){
+            if(a167 % 2 == 0)
+                a167 = a167 / 2;
+            else
+                a167 = 3 * a167 + 1;
+            baton1 = a167;
+            baton2 = baton1 + 1;
+            if(a167 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a168 = x;
+        while(a168 != 1){
+            if(a168 % 2 == 0)
+                a168 = a168 / 2;
+            else
+                a168 = 3 * a168 + 1;
+            baton1 = a168;
+            baton2 = baton1 + 1;
+            if(a168 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a169 = x;
+        while(a169 != 1){
+            if(a169 % 2 == 0)
+                a169 = a169 / 2;
+            else
+                a169 = 3 * a169 + 1;
+            baton1 = a169;
+            baton2 = baton1 + 1;
+            if(a169 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a170 = x;
+        while(a170 != 1){
+            if(a170 % 2 == 0)
+                a170 = a170 / 2;
+            else
+                a170 = 3 * a170 + 1;
+            baton1 = a170;
+            baton2 = baton1 + 1;
+            if(a170 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a171 = x;
+        while(a171 != 1){
+            if(a171 % 2 == 0)
+                a171 = a171 / 2;
+            else
+                a171 = 3 * a171 + 1;
+            baton1 = a171;
+            baton2 = baton1 + 1;
+            if(a171 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a172 = x;
+        while(a172 != 1){
+            if(a172 % 2 == 0)
+                a172 = a172 / 2;
+            else
+                a172 = 3 * a172 + 1;
+            baton1 = a172;
+            baton2 = baton1 + 1;
+            if(a172 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a173 = x;
+        while(a173 != 1){
+            if(a173 % 2 == 0)
+                a173 = a173 / 2;
+            else
+                a173 = 3 * a173 + 1;
+            baton1 = a173;
+            baton2 = baton1 + 1;
+            if(a173 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a174 = x;
+        while(a174 != 1){
+            if(a174 % 2 == 0)
+                a174 = a174 / 2;
+            else
+                a174 = 3 * a174 + 1;
+            baton1 = a174;
+            baton2 = baton1 + 1;
+            if(a174 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a175 = x;
+        while(a175 != 1){
+            if(a175 % 2 == 0)
+                a175 = a175 / 2;
+            else
+                a175 = 3 * a175 + 1;
+            baton1 = a175;
+            baton2 = baton1 + 1;
+            if(a175 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a176 = x;
+        while(a176 != 1){
+            if(a176 % 2 == 0)
+                a176 = a176 / 2;
+            else
+                a176 = 3 * a176 + 1;
+            baton1 = a176;
+            baton2 = baton1 + 1;
+            if(a176 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a177 = x;
+        while(a177 != 1){
+            if(a177 % 2 == 0)
+                a177 = a177 / 2;
+            else
+                a177 = 3 * a177 + 1;
+            baton1 = a177;
+            baton2 = baton1 + 1;
+            if(a177 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a178 = x;
+        while(a178 != 1){
+            if(a178 % 2 == 0)
+                a178 = a178 / 2;
+            else
+                a178 = 3 * a178 + 1;
+            baton1 = a178;
+            baton2 = baton1 + 1;
+            if(a178 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a179 = x;
+        while(a179 != 1){
+            if(a179 % 2 == 0)
+                a179 = a179 / 2;
+            else
+                a179 = 3 * a179 + 1;
+            baton1 = a179;
+            baton2 = baton1 + 1;
+            if(a179 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a180 = x;
+        while(a180 != 1){
+            if(a180 % 2 == 0)
+                a180 = a180 / 2;
+            else
+                a180 = 3 * a180 + 1;
+            baton1 = a180;
+            baton2 = baton1 + 1;
+            if(a180 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a181 = x;
+        while(a181 != 1){
+            if(a181 % 2 == 0)
+                a181 = a181 / 2;
+            else
+                a181 = 3 * a181 + 1;
+            baton1 = a181;
+            baton2 = baton1 + 1;
+            if(a181 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a182 = x;
+        while(a182 != 1){
+            if(a182 % 2 == 0)
+                a182 = a182 / 2;
+            else
+                a182 = 3 * a182 + 1;
+            baton1 = a182;
+            baton2 = baton1 + 1;
+            if(a182 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a183 = x;
+        while(a183 != 1){
+            if(a183 % 2 == 0)
+                a183 = a183 / 2;
+            else
+                a183 = 3 * a183 + 1;
+            baton1 = a183;
+            baton2 = baton1 + 1;
+            if(a183 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a184 = x;
+        while(a184 != 1){
+            if(a184 % 2 == 0)
+                a184 = a184 / 2;
+            else
+                a184 = 3 * a184 + 1;
+            baton1 = a184;
+            baton2 = baton1 + 1;
+            if(a184 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a185 = x;
+        while(a185 != 1){
+            if(a185 % 2 == 0)
+                a185 = a185 / 2;
+            else
+                a185 = 3 * a185 + 1;
+            baton1 = a185;
+            baton2 = baton1 + 1;
+            if(a185 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a186 = x;
+        while(a186 != 1){
+            if(a186 % 2 == 0)
+                a186 = a186 / 2;
+            else
+                a186 = 3 * a186 + 1;
+            baton1 = a186;
+            baton2 = baton1 + 1;
+            if(a186 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a187 = x;
+        while(a187 != 1){
+            if(a187 % 2 == 0)
+                a187 = a187 / 2;
+            else
+                a187 = 3 * a187 + 1;
+            baton1 = a187;
+            baton2 = baton1 + 1;
+            if(a187 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a188 = x;
+        while(a188 != 1){
+            if(a188 % 2 == 0)
+                a188 = a188 / 2;
+            else
+                a188 = 3 * a188 + 1;
+            baton1 = a188;
+            baton2 = baton1 + 1;
+            if(a188 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a189 = x;
+        while(a189 != 1){
+            if(a189 % 2 == 0)
+                a189 = a189 / 2;
+            else
+                a189 = 3 * a189 + 1;
+            baton1 = a189;
+            baton2 = baton1 + 1;
+            if(a189 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a190 = x;
+        while(a190 != 1){
+            if(a190 % 2 == 0)
+                a190 = a190 / 2;
+            else
+                a190 = 3 * a190 + 1;
+            baton1 = a190;
+            baton2 = baton1 + 1;
+            if(a190 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a191 = x;
+        while(a191 != 1){
+            if(a191 % 2 == 0)
+                a191 = a191 / 2;
+            else
+                a191 = 3 * a191 + 1;
+            baton1 = a191;
+            baton2 = baton1 + 1;
+            if(a191 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a192 = x;
+        while(a192 != 1){
+            if(a192 % 2 == 0)
+                a192 = a192 / 2;
+            else
+                a192 = 3 * a192 + 1;
+            baton1 = a192;
+            baton2 = baton1 + 1;
+            if(a192 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a193 = x;
+        while(a193 != 1){
+            if(a193 % 2 == 0)
+                a193 = a193 / 2;
+            else
+                a193 = 3 * a193 + 1;
+            baton1 = a193;
+            baton2 = baton1 + 1;
+            if(a193 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a194 = x;
+        while(a194 != 1){
+            if(a194 % 2 == 0)
+                a194 = a194 / 2;
+            else
+                a194 = 3 * a194 + 1;
+            baton1 = a194;
+            baton2 = baton1 + 1;
+            if(a194 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a195 = x;
+        while(a195 != 1){
+            if(a195 % 2 == 0)
+                a195 = a195 / 2;
+            else
+                a195 = 3 * a195 + 1;
+            baton1 = a195;
+            baton2 = baton1 + 1;
+            if(a195 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a196 = x;
+        while(a196 != 1){
+            if(a196 % 2 == 0)
+                a196 = a196 / 2;
+            else
+                a196 = 3 * a196 + 1;
+            baton1 = a196;
+            baton2 = baton1 + 1;
+            if(a196 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a197 = x;
+        while(a197 != 1){
+            if(a197 % 2 == 0)
+                a197 = a197 / 2;
+            else
+                a197 = 3 * a197 + 1;
+            baton1 = a197;
+            baton2 = baton1 + 1;
+            if(a197 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a198 = x;
+        while(a198 != 1){
+            if(a198 % 2 == 0)
+                a198 = a198 / 2;
+            else
+                a198 = 3 * a198 + 1;
+            baton1 = a198;
+            baton2 = baton1 + 1;
+            if(a198 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a199 = x;
+        while(a199 != 1){
+            if(a199 % 2 == 0)
+                a199 = a199 / 2;
+            else
+                a199 = 3 * a199 + 1;
+            baton1 = a199;
+            baton2 = baton1 + 1;
+            if(a199 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a200 = x;
+        while(a200 != 1){
+            if(a200 % 2 == 0)
+                a200 = a200 / 2;
+            else
+                a200 = 3 * a200 + 1;
+            baton1 = a200;
+            baton2 = baton1 + 1;
+            if(a200 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a201 = x;
+        while(a201 != 1){
+            if(a201 % 2 == 0)
+                a201 = a201 / 2;
+            else
+                a201 = 3 * a201 + 1;
+            baton1 = a201;
+            baton2 = baton1 + 1;
+            if(a201 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a202 = x;
+        while(a202 != 1){
+            if(a202 % 2 == 0)
+                a202 = a202 / 2;
+            else
+                a202 = 3 * a202 + 1;
+            baton1 = a202;
+            baton2 = baton1 + 1;
+            if(a202 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a203 = x;
+        while(a203 != 1){
+            if(a203 % 2 == 0)
+                a203 = a203 / 2;
+            else
+                a203 = 3 * a203 + 1;
+            baton1 = a203;
+            baton2 = baton1 + 1;
+            if(a203 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a204 = x;
+        while(a204 != 1){
+            if(a204 % 2 == 0)
+                a204 = a204 / 2;
+            else
+                a204 = 3 * a204 + 1;
+            baton1 = a204;
+            baton2 = baton1 + 1;
+            if(a204 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a205 = x;
+        while(a205 != 1){
+            if(a205 % 2 == 0)
+                a205 = a205 / 2;
+            else
+                a205 = 3 * a205 + 1;
+            baton1 = a205;
+            baton2 = baton1 + 1;
+            if(a205 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a206 = x;
+        while(a206 != 1){
+            if(a206 % 2 == 0)
+                a206 = a206 / 2;
+            else
+                a206 = 3 * a206 + 1;
+            baton1 = a206;
+            baton2 = baton1 + 1;
+            if(a206 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a207 = x;
+        while(a207 != 1){
+            if(a207 % 2 == 0)
+                a207 = a207 / 2;
+            else
+                a207 = 3 * a207 + 1;
+            baton1 = a207;
+            baton2 = baton1 + 1;
+            if(a207 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a208 = x;
+        while(a208 != 1){
+            if(a208 % 2 == 0)
+                a208 = a208 / 2;
+            else
+                a208 = 3 * a208 + 1;
+            baton1 = a208;
+            baton2 = baton1 + 1;
+            if(a208 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a209 = x;
+        while(a209 != 1){
+            if(a209 % 2 == 0)
+                a209 = a209 / 2;
+            else
+                a209 = 3 * a209 + 1;
+            baton1 = a209;
+            baton2 = baton1 + 1;
+            if(a209 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a210 = x;
+        while(a210 != 1){
+            if(a210 % 2 == 0)
+                a210 = a210 / 2;
+            else
+                a210 = 3 * a210 + 1;
+            baton1 = a210;
+            baton2 = baton1 + 1;
+            if(a210 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a211 = x;
+        while(a211 != 1){
+            if(a211 % 2 == 0)
+                a211 = a211 / 2;
+            else
+                a211 = 3 * a211 + 1;
+            baton1 = a211;
+            baton2 = baton1 + 1;
+            if(a211 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a212 = x;
+        while(a212 != 1){
+            if(a212 % 2 == 0)
+                a212 = a212 / 2;
+            else
+                a212 = 3 * a212 + 1;
+            baton1 = a212;
+            baton2 = baton1 + 1;
+            if(a212 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a213 = x;
+        while(a213 != 1){
+            if(a213 % 2 == 0)
+                a213 = a213 / 2;
+            else
+                a213 = 3 * a213 + 1;
+            baton1 = a213;
+            baton2 = baton1 + 1;
+            if(a213 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a214 = x;
+        while(a214 != 1){
+            if(a214 % 2 == 0)
+                a214 = a214 / 2;
+            else
+                a214 = 3 * a214 + 1;
+            baton1 = a214;
+            baton2 = baton1 + 1;
+            if(a214 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a215 = x;
+        while(a215 != 1){
+            if(a215 % 2 == 0)
+                a215 = a215 / 2;
+            else
+                a215 = 3 * a215 + 1;
+            baton1 = a215;
+            baton2 = baton1 + 1;
+            if(a215 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a216 = x;
+        while(a216 != 1){
+            if(a216 % 2 == 0)
+                a216 = a216 / 2;
+            else
+                a216 = 3 * a216 + 1;
+            baton1 = a216;
+            baton2 = baton1 + 1;
+            if(a216 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a217 = x;
+        while(a217 != 1){
+            if(a217 % 2 == 0)
+                a217 = a217 / 2;
+            else
+                a217 = 3 * a217 + 1;
+            baton1 = a217;
+            baton2 = baton1 + 1;
+            if(a217 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a218 = x;
+        while(a218 != 1){
+            if(a218 % 2 == 0)
+                a218 = a218 / 2;
+            else
+                a218 = 3 * a218 + 1;
+            baton1 = a218;
+            baton2 = baton1 + 1;
+            if(a218 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a219 = x;
+        while(a219 != 1){
+            if(a219 % 2 == 0)
+                a219 = a219 / 2;
+            else
+                a219 = 3 * a219 + 1;
+            baton1 = a219;
+            baton2 = baton1 + 1;
+            if(a219 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a220 = x;
+        while(a220 != 1){
+            if(a220 % 2 == 0)
+                a220 = a220 / 2;
+            else
+                a220 = 3 * a220 + 1;
+            baton1 = a220;
+            baton2 = baton1 + 1;
+            if(a220 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a221 = x;
+        while(a221 != 1){
+            if(a221 % 2 == 0)
+                a221 = a221 / 2;
+            else
+                a221 = 3 * a221 + 1;
+            baton1 = a221;
+            baton2 = baton1 + 1;
+            if(a221 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a222 = x;
+        while(a222 != 1){
+            if(a222 % 2 == 0)
+                a222 = a222 / 2;
+            else
+                a222 = 3 * a222 + 1;
+            baton1 = a222;
+            baton2 = baton1 + 1;
+            if(a222 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a223 = x;
+        while(a223 != 1){
+            if(a223 % 2 == 0)
+                a223 = a223 / 2;
+            else
+                a223 = 3 * a223 + 1;
+            baton1 = a223;
+            baton2 = baton1 + 1;
+            if(a223 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a224 = x;
+        while(a224 != 1){
+            if(a224 % 2 == 0)
+                a224 = a224 / 2;
+            else
+                a224 = 3 * a224 + 1;
+            baton1 = a224;
+            baton2 = baton1 + 1;
+            if(a224 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a225 = x;
+        while(a225 != 1){
+            if(a225 % 2 == 0)
+                a225 = a225 / 2;
+            else
+                a225 = 3 * a225 + 1;
+            baton1 = a225;
+            baton2 = baton1 + 1;
+            if(a225 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a226 = x;
+        while(a226 != 1){
+            if(a226 % 2 == 0)
+                a226 = a226 / 2;
+            else
+                a226 = 3 * a226 + 1;
+            baton1 = a226;
+            baton2 = baton1 + 1;
+            if(a226 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a227 = x;
+        while(a227 != 1){
+            if(a227 % 2 == 0)
+                a227 = a227 / 2;
+            else
+                a227 = 3 * a227 + 1;
+            baton1 = a227;
+            baton2 = baton1 + 1;
+            if(a227 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a228 = x;
+        while(a228 != 1){
+            if(a228 % 2 == 0)
+                a228 = a228 / 2;
+            else
+                a228 = 3 * a228 + 1;
+            baton1 = a228;
+            baton2 = baton1 + 1;
+            if(a228 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a229 = x;
+        while(a229 != 1){
+            if(a229 % 2 == 0)
+                a229 = a229 / 2;
+            else
+                a229 = 3 * a229 + 1;
+            baton1 = a229;
+            baton2 = baton1 + 1;
+            if(a229 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a230 = x;
+        while(a230 != 1){
+            if(a230 % 2 == 0)
+                a230 = a230 / 2;
+            else
+                a230 = 3 * a230 + 1;
+            baton1 = a230;
+            baton2 = baton1 + 1;
+            if(a230 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a231 = x;
+        while(a231 != 1){
+            if(a231 % 2 == 0)
+                a231 = a231 / 2;
+            else
+                a231 = 3 * a231 + 1;
+            baton1 = a231;
+            baton2 = baton1 + 1;
+            if(a231 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a232 = x;
+        while(a232 != 1){
+            if(a232 % 2 == 0)
+                a232 = a232 / 2;
+            else
+                a232 = 3 * a232 + 1;
+            baton1 = a232;
+            baton2 = baton1 + 1;
+            if(a232 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a233 = x;
+        while(a233 != 1){
+            if(a233 % 2 == 0)
+                a233 = a233 / 2;
+            else
+                a233 = 3 * a233 + 1;
+            baton1 = a233;
+            baton2 = baton1 + 1;
+            if(a233 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a234 = x;
+        while(a234 != 1){
+            if(a234 % 2 == 0)
+                a234 = a234 / 2;
+            else
+                a234 = 3 * a234 + 1;
+            baton1 = a234;
+            baton2 = baton1 + 1;
+            if(a234 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a235 = x;
+        while(a235 != 1){
+            if(a235 % 2 == 0)
+                a235 = a235 / 2;
+            else
+                a235 = 3 * a235 + 1;
+            baton1 = a235;
+            baton2 = baton1 + 1;
+            if(a235 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a236 = x;
+        while(a236 != 1){
+            if(a236 % 2 == 0)
+                a236 = a236 / 2;
+            else
+                a236 = 3 * a236 + 1;
+            baton1 = a236;
+            baton2 = baton1 + 1;
+            if(a236 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a237 = x;
+        while(a237 != 1){
+            if(a237 % 2 == 0)
+                a237 = a237 / 2;
+            else
+                a237 = 3 * a237 + 1;
+            baton1 = a237;
+            baton2 = baton1 + 1;
+            if(a237 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a238 = x;
+        while(a238 != 1){
+            if(a238 % 2 == 0)
+                a238 = a238 / 2;
+            else
+                a238 = 3 * a238 + 1;
+            baton1 = a238;
+            baton2 = baton1 + 1;
+            if(a238 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a239 = x;
+        while(a239 != 1){
+            if(a239 % 2 == 0)
+                a239 = a239 / 2;
+            else
+                a239 = 3 * a239 + 1;
+            baton1 = a239;
+            baton2 = baton1 + 1;
+            if(a239 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a240 = x;
+        while(a240 != 1){
+            if(a240 % 2 == 0)
+                a240 = a240 / 2;
+            else
+                a240 = 3 * a240 + 1;
+            baton1 = a240;
+            baton2 = baton1 + 1;
+            if(a240 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a241 = x;
+        while(a241 != 1){
+            if(a241 % 2 == 0)
+                a241 = a241 / 2;
+            else
+                a241 = 3 * a241 + 1;
+            baton1 = a241;
+            baton2 = baton1 + 1;
+            if(a241 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a242 = x;
+        while(a242 != 1){
+            if(a242 % 2 == 0)
+                a242 = a242 / 2;
+            else
+                a242 = 3 * a242 + 1;
+            baton1 = a242;
+            baton2 = baton1 + 1;
+            if(a242 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a243 = x;
+        while(a243 != 1){
+            if(a243 % 2 == 0)
+                a243 = a243 / 2;
+            else
+                a243 = 3 * a243 + 1;
+            baton1 = a243;
+            baton2 = baton1 + 1;
+            if(a243 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a244 = x;
+        while(a244 != 1){
+            if(a244 % 2 == 0)
+                a244 = a244 / 2;
+            else
+                a244 = 3 * a244 + 1;
+            baton1 = a244;
+            baton2 = baton1 + 1;
+            if(a244 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a245 = x;
+        while(a245 != 1){
+            if(a245 % 2 == 0)
+                a245 = a245 / 2;
+            else
+                a245 = 3 * a245 + 1;
+            baton1 = a245;
+            baton2 = baton1 + 1;
+            if(a245 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a246 = x;
+        while(a246 != 1){
+            if(a246 % 2 == 0)
+                a246 = a246 / 2;
+            else
+                a246 = 3 * a246 + 1;
+            baton1 = a246;
+            baton2 = baton1 + 1;
+            if(a246 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a247 = x;
+        while(a247 != 1){
+            if(a247 % 2 == 0)
+                a247 = a247 / 2;
+            else
+                a247 = 3 * a247 + 1;
+            baton1 = a247;
+            baton2 = baton1 + 1;
+            if(a247 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a248 = x;
+        while(a248 != 1){
+            if(a248 % 2 == 0)
+                a248 = a248 / 2;
+            else
+                a248 = 3 * a248 + 1;
+            baton1 = a248;
+            baton2 = baton1 + 1;
+            if(a248 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a249 = x;
+        while(a249 != 1){
+            if(a249 % 2 == 0)
+                a249 = a249 / 2;
+            else
+                a249 = 3 * a249 + 1;
+            baton1 = a249;
+            baton2 = baton1 + 1;
+            if(a249 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a250 = x;
+        while(a250 != 1){
+            if(a250 % 2 == 0)
+                a250 = a250 / 2;
+            else
+                a250 = 3 * a250 + 1;
+            baton1 = a250;
+            baton2 = baton1 + 1;
+            if(a250 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a251 = x;
+        while(a251 != 1){
+            if(a251 % 2 == 0)
+                a251 = a251 / 2;
+            else
+                a251 = 3 * a251 + 1;
+            baton1 = a251;
+            baton2 = baton1 + 1;
+            if(a251 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a252 = x;
+        while(a252 != 1){
+            if(a252 % 2 == 0)
+                a252 = a252 / 2;
+            else
+                a252 = 3 * a252 + 1;
+            baton1 = a252;
+            baton2 = baton1 + 1;
+            if(a252 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a253 = x;
+        while(a253 != 1){
+            if(a253 % 2 == 0)
+                a253 = a253 / 2;
+            else
+                a253 = 3 * a253 + 1;
+            baton1 = a253;
+            baton2 = baton1 + 1;
+            if(a253 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a254 = x;
+        while(a254 != 1){
+            if(a254 % 2 == 0)
+                a254 = a254 / 2;
+            else
+                a254 = 3 * a254 + 1;
+            baton1 = a254;
+            baton2 = baton1 + 1;
+            if(a254 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a255 = x;
+        while(a255 != 1){
+            if(a255 % 2 == 0)
+                a255 = a255 / 2;
+            else
+                a255 = 3 * a255 + 1;
+            baton1 = a255;
+            baton2 = baton1 + 1;
+            if(a255 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a256 = x;
+        while(a256 != 1){
+            if(a256 % 2 == 0)
+                a256 = a256 / 2;
+            else
+                a256 = 3 * a256 + 1;
+            baton1 = a256;
+            baton2 = baton1 + 1;
+            if(a256 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a257 = x;
+        while(a257 != 1){
+            if(a257 % 2 == 0)
+                a257 = a257 / 2;
+            else
+                a257 = 3 * a257 + 1;
+            baton1 = a257;
+            baton2 = baton1 + 1;
+            if(a257 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a258 = x;
+        while(a258 != 1){
+            if(a258 % 2 == 0)
+                a258 = a258 / 2;
+            else
+                a258 = 3 * a258 + 1;
+            baton1 = a258;
+            baton2 = baton1 + 1;
+            if(a258 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a259 = x;
+        while(a259 != 1){
+            if(a259 % 2 == 0)
+                a259 = a259 / 2;
+            else
+                a259 = 3 * a259 + 1;
+            baton1 = a259;
+            baton2 = baton1 + 1;
+            if(a259 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a260 = x;
+        while(a260 != 1){
+            if(a260 % 2 == 0)
+                a260 = a260 / 2;
+            else
+                a260 = 3 * a260 + 1;
+            baton1 = a260;
+            baton2 = baton1 + 1;
+            if(a260 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a261 = x;
+        while(a261 != 1){
+            if(a261 % 2 == 0)
+                a261 = a261 / 2;
+            else
+                a261 = 3 * a261 + 1;
+            baton1 = a261;
+            baton2 = baton1 + 1;
+            if(a261 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a262 = x;
+        while(a262 != 1){
+            if(a262 % 2 == 0)
+                a262 = a262 / 2;
+            else
+                a262 = 3 * a262 + 1;
+            baton1 = a262;
+            baton2 = baton1 + 1;
+            if(a262 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a263 = x;
+        while(a263 != 1){
+            if(a263 % 2 == 0)
+                a263 = a263 / 2;
+            else
+                a263 = 3 * a263 + 1;
+            baton1 = a263;
+            baton2 = baton1 + 1;
+            if(a263 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a264 = x;
+        while(a264 != 1){
+            if(a264 % 2 == 0)
+                a264 = a264 / 2;
+            else
+                a264 = 3 * a264 + 1;
+            baton1 = a264;
+            baton2 = baton1 + 1;
+            if(a264 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a265 = x;
+        while(a265 != 1){
+            if(a265 % 2 == 0)
+                a265 = a265 / 2;
+            else
+                a265 = 3 * a265 + 1;
+            baton1 = a265;
+            baton2 = baton1 + 1;
+            if(a265 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a266 = x;
+        while(a266 != 1){
+            if(a266 % 2 == 0)
+                a266 = a266 / 2;
+            else
+                a266 = 3 * a266 + 1;
+            baton1 = a266;
+            baton2 = baton1 + 1;
+            if(a266 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a267 = x;
+        while(a267 != 1){
+            if(a267 % 2 == 0)
+                a267 = a267 / 2;
+            else
+                a267 = 3 * a267 + 1;
+            baton1 = a267;
+            baton2 = baton1 + 1;
+            if(a267 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a268 = x;
+        while(a268 != 1){
+            if(a268 % 2 == 0)
+                a268 = a268 / 2;
+            else
+                a268 = 3 * a268 + 1;
+            baton1 = a268;
+            baton2 = baton1 + 1;
+            if(a268 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a269 = x;
+        while(a269 != 1){
+            if(a269 % 2 == 0)
+                a269 = a269 / 2;
+            else
+                a269 = 3 * a269 + 1;
+            baton1 = a269;
+            baton2 = baton1 + 1;
+            if(a269 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a270 = x;
+        while(a270 != 1){
+            if(a270 % 2 == 0)
+                a270 = a270 / 2;
+            else
+                a270 = 3 * a270 + 1;
+            baton1 = a270;
+            baton2 = baton1 + 1;
+            if(a270 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a271 = x;
+        while(a271 != 1){
+            if(a271 % 2 == 0)
+                a271 = a271 / 2;
+            else
+                a271 = 3 * a271 + 1;
+            baton1 = a271;
+            baton2 = baton1 + 1;
+            if(a271 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a272 = x;
+        while(a272 != 1){
+            if(a272 % 2 == 0)
+                a272 = a272 / 2;
+            else
+                a272 = 3 * a272 + 1;
+            baton1 = a272;
+            baton2 = baton1 + 1;
+            if(a272 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a273 = x;
+        while(a273 != 1){
+            if(a273 % 2 == 0)
+                a273 = a273 / 2;
+            else
+                a273 = 3 * a273 + 1;
+            baton1 = a273;
+            baton2 = baton1 + 1;
+            if(a273 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a274 = x;
+        while(a274 != 1){
+            if(a274 % 2 == 0)
+                a274 = a274 / 2;
+            else
+                a274 = 3 * a274 + 1;
+            baton1 = a274;
+            baton2 = baton1 + 1;
+            if(a274 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a275 = x;
+        while(a275 != 1){
+            if(a275 % 2 == 0)
+                a275 = a275 / 2;
+            else
+                a275 = 3 * a275 + 1;
+            baton1 = a275;
+            baton2 = baton1 + 1;
+            if(a275 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a276 = x;
+        while(a276 != 1){
+            if(a276 % 2 == 0)
+                a276 = a276 / 2;
+            else
+                a276 = 3 * a276 + 1;
+            baton1 = a276;
+            baton2 = baton1 + 1;
+            if(a276 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a277 = x;
+        while(a277 != 1){
+            if(a277 % 2 == 0)
+                a277 = a277 / 2;
+            else
+                a277 = 3 * a277 + 1;
+            baton1 = a277;
+            baton2 = baton1 + 1;
+            if(a277 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a278 = x;
+        while(a278 != 1){
+            if(a278 % 2 == 0)
+                a278 = a278 / 2;
+            else
+                a278 = 3 * a278 + 1;
+            baton1 = a278;
+            baton2 = baton1 + 1;
+            if(a278 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a279 = x;
+        while(a279 != 1){
+            if(a279 % 2 == 0)
+                a279 = a279 / 2;
+            else
+                a279 = 3 * a279 + 1;
+            baton1 = a279;
+            baton2 = baton1 + 1;
+            if(a279 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a280 = x;
+        while(a280 != 1){
+            if(a280 % 2 == 0)
+                a280 = a280 / 2;
+            else
+                a280 = 3 * a280 + 1;
+            baton1 = a280;
+            baton2 = baton1 + 1;
+            if(a280 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a281 = x;
+        while(a281 != 1){
+            if(a281 % 2 == 0)
+                a281 = a281 / 2;
+            else
+                a281 = 3 * a281 + 1;
+            baton1 = a281;
+            baton2 = baton1 + 1;
+            if(a281 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a282 = x;
+        while(a282 != 1){
+            if(a282 % 2 == 0)
+                a282 = a282 / 2;
+            else
+                a282 = 3 * a282 + 1;
+            baton1 = a282;
+            baton2 = baton1 + 1;
+            if(a282 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a283 = x;
+        while(a283 != 1){
+            if(a283 % 2 == 0)
+                a283 = a283 / 2;
+            else
+                a283 = 3 * a283 + 1;
+            baton1 = a283;
+            baton2 = baton1 + 1;
+            if(a283 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a284 = x;
+        while(a284 != 1){
+            if(a284 % 2 == 0)
+                a284 = a284 / 2;
+            else
+                a284 = 3 * a284 + 1;
+            baton1 = a284;
+            baton2 = baton1 + 1;
+            if(a284 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a285 = x;
+        while(a285 != 1){
+            if(a285 % 2 == 0)
+                a285 = a285 / 2;
+            else
+                a285 = 3 * a285 + 1;
+            baton1 = a285;
+            baton2 = baton1 + 1;
+            if(a285 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a286 = x;
+        while(a286 != 1){
+            if(a286 % 2 == 0)
+                a286 = a286 / 2;
+            else
+                a286 = 3 * a286 + 1;
+            baton1 = a286;
+            baton2 = baton1 + 1;
+            if(a286 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a287 = x;
+        while(a287 != 1){
+            if(a287 % 2 == 0)
+                a287 = a287 / 2;
+            else
+                a287 = 3 * a287 + 1;
+            baton1 = a287;
+            baton2 = baton1 + 1;
+            if(a287 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a288 = x;
+        while(a288 != 1){
+            if(a288 % 2 == 0)
+                a288 = a288 / 2;
+            else
+                a288 = 3 * a288 + 1;
+            baton1 = a288;
+            baton2 = baton1 + 1;
+            if(a288 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a289 = x;
+        while(a289 != 1){
+            if(a289 % 2 == 0)
+                a289 = a289 / 2;
+            else
+                a289 = 3 * a289 + 1;
+            baton1 = a289;
+            baton2 = baton1 + 1;
+            if(a289 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a290 = x;
+        while(a290 != 1){
+            if(a290 % 2 == 0)
+                a290 = a290 / 2;
+            else
+                a290 = 3 * a290 + 1;
+            baton1 = a290;
+            baton2 = baton1 + 1;
+            if(a290 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a291 = x;
+        while(a291 != 1){
+            if(a291 % 2 == 0)
+                a291 = a291 / 2;
+            else
+                a291 = 3 * a291 + 1;
+            baton1 = a291;
+            baton2 = baton1 + 1;
+            if(a291 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a292 = x;
+        while(a292 != 1){
+            if(a292 % 2 == 0)
+                a292 = a292 / 2;
+            else
+                a292 = 3 * a292 + 1;
+            baton1 = a292;
+            baton2 = baton1 + 1;
+            if(a292 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a293 = x;
+        while(a293 != 1){
+            if(a293 % 2 == 0)
+                a293 = a293 / 2;
+            else
+                a293 = 3 * a293 + 1;
+            baton1 = a293;
+            baton2 = baton1 + 1;
+            if(a293 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a294 = x;
+        while(a294 != 1){
+            if(a294 % 2 == 0)
+                a294 = a294 / 2;
+            else
+                a294 = 3 * a294 + 1;
+            baton1 = a294;
+            baton2 = baton1 + 1;
+            if(a294 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a295 = x;
+        while(a295 != 1){
+            if(a295 % 2 == 0)
+                a295 = a295 / 2;
+            else
+                a295 = 3 * a295 + 1;
+            baton1 = a295;
+            baton2 = baton1 + 1;
+            if(a295 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a296 = x;
+        while(a296 != 1){
+            if(a296 % 2 == 0)
+                a296 = a296 / 2;
+            else
+                a296 = 3 * a296 + 1;
+            baton1 = a296;
+            baton2 = baton1 + 1;
+            if(a296 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a297 = x;
+        while(a297 != 1){
+            if(a297 % 2 == 0)
+                a297 = a297 / 2;
+            else
+                a297 = 3 * a297 + 1;
+            baton1 = a297;
+            baton2 = baton1 + 1;
+            if(a297 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a298 = x;
+        while(a298 != 1){
+            if(a298 % 2 == 0)
+                a298 = a298 / 2;
+            else
+                a298 = 3 * a298 + 1;
+            baton1 = a298;
+            baton2 = baton1 + 1;
+            if(a298 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a299 = x;
+        while(a299 != 1){
+            if(a299 % 2 == 0)
+                a299 = a299 / 2;
+            else
+                a299 = 3 * a299 + 1;
+            baton1 = a299;
+            baton2 = baton1 + 1;
+            if(a299 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a300 = x;
+        while(a300 != 1){
+            if(a300 % 2 == 0)
+                a300 = a300 / 2;
+            else
+                a300 = 3 * a300 + 1;
+            baton1 = a300;
+            baton2 = baton1 + 1;
+            if(a300 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a301 = x;
+        while(a301 != 1){
+            if(a301 % 2 == 0)
+                a301 = a301 / 2;
+            else
+                a301 = 3 * a301 + 1;
+            baton1 = a301;
+            baton2 = baton1 + 1;
+            if(a301 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a302 = x;
+        while(a302 != 1){
+            if(a302 % 2 == 0)
+                a302 = a302 / 2;
+            else
+                a302 = 3 * a302 + 1;
+            baton1 = a302;
+            baton2 = baton1 + 1;
+            if(a302 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a303 = x;
+        while(a303 != 1){
+            if(a303 % 2 == 0)
+                a303 = a303 / 2;
+            else
+                a303 = 3 * a303 + 1;
+            baton1 = a303;
+            baton2 = baton1 + 1;
+            if(a303 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a304 = x;
+        while(a304 != 1){
+            if(a304 % 2 == 0)
+                a304 = a304 / 2;
+            else
+                a304 = 3 * a304 + 1;
+            baton1 = a304;
+            baton2 = baton1 + 1;
+            if(a304 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a305 = x;
+        while(a305 != 1){
+            if(a305 % 2 == 0)
+                a305 = a305 / 2;
+            else
+                a305 = 3 * a305 + 1;
+            baton1 = a305;
+            baton2 = baton1 + 1;
+            if(a305 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a306 = x;
+        while(a306 != 1){
+            if(a306 % 2 == 0)
+                a306 = a306 / 2;
+            else
+                a306 = 3 * a306 + 1;
+            baton1 = a306;
+            baton2 = baton1 + 1;
+            if(a306 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a307 = x;
+        while(a307 != 1){
+            if(a307 % 2 == 0)
+                a307 = a307 / 2;
+            else
+                a307 = 3 * a307 + 1;
+            baton1 = a307;
+            baton2 = baton1 + 1;
+            if(a307 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a308 = x;
+        while(a308 != 1){
+            if(a308 % 2 == 0)
+                a308 = a308 / 2;
+            else
+                a308 = 3 * a308 + 1;
+            baton1 = a308;
+            baton2 = baton1 + 1;
+            if(a308 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a309 = x;
+        while(a309 != 1){
+            if(a309 % 2 == 0)
+                a309 = a309 / 2;
+            else
+                a309 = 3 * a309 + 1;
+            baton1 = a309;
+            baton2 = baton1 + 1;
+            if(a309 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a310 = x;
+        while(a310 != 1){
+            if(a310 % 2 == 0)
+                a310 = a310 / 2;
+            else
+                a310 = 3 * a310 + 1;
+            baton1 = a310;
+            baton2 = baton1 + 1;
+            if(a310 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a311 = x;
+        while(a311 != 1){
+            if(a311 % 2 == 0)
+                a311 = a311 / 2;
+            else
+                a311 = 3 * a311 + 1;
+            baton1 = a311;
+            baton2 = baton1 + 1;
+            if(a311 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a312 = x;
+        while(a312 != 1){
+            if(a312 % 2 == 0)
+                a312 = a312 / 2;
+            else
+                a312 = 3 * a312 + 1;
+            baton1 = a312;
+            baton2 = baton1 + 1;
+            if(a312 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a313 = x;
+        while(a313 != 1){
+            if(a313 % 2 == 0)
+                a313 = a313 / 2;
+            else
+                a313 = 3 * a313 + 1;
+            baton1 = a313;
+            baton2 = baton1 + 1;
+            if(a313 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a314 = x;
+        while(a314 != 1){
+            if(a314 % 2 == 0)
+                a314 = a314 / 2;
+            else
+                a314 = 3 * a314 + 1;
+            baton1 = a314;
+            baton2 = baton1 + 1;
+            if(a314 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a315 = x;
+        while(a315 != 1){
+            if(a315 % 2 == 0)
+                a315 = a315 / 2;
+            else
+                a315 = 3 * a315 + 1;
+            baton1 = a315;
+            baton2 = baton1 + 1;
+            if(a315 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a316 = x;
+        while(a316 != 1){
+            if(a316 % 2 == 0)
+                a316 = a316 / 2;
+            else
+                a316 = 3 * a316 + 1;
+            baton1 = a316;
+            baton2 = baton1 + 1;
+            if(a316 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a317 = x;
+        while(a317 != 1){
+            if(a317 % 2 == 0)
+                a317 = a317 / 2;
+            else
+                a317 = 3 * a317 + 1;
+            baton1 = a317;
+            baton2 = baton1 + 1;
+            if(a317 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a318 = x;
+        while(a318 != 1){
+            if(a318 % 2 == 0)
+                a318 = a318 / 2;
+            else
+                a318 = 3 * a318 + 1;
+            baton1 = a318;
+            baton2 = baton1 + 1;
+            if(a318 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a319 = x;
+        while(a319 != 1){
+            if(a319 % 2 == 0)
+                a319 = a319 / 2;
+            else
+                a319 = 3 * a319 + 1;
+            baton1 = a319;
+            baton2 = baton1 + 1;
+            if(a319 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a320 = x;
+        while(a320 != 1){
+            if(a320 % 2 == 0)
+                a320 = a320 / 2;
+            else
+                a320 = 3 * a320 + 1;
+            baton1 = a320;
+            baton2 = baton1 + 1;
+            if(a320 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a321 = x;
+        while(a321 != 1){
+            if(a321 % 2 == 0)
+                a321 = a321 / 2;
+            else
+                a321 = 3 * a321 + 1;
+            baton1 = a321;
+            baton2 = baton1 + 1;
+            if(a321 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a322 = x;
+        while(a322 != 1){
+            if(a322 % 2 == 0)
+                a322 = a322 / 2;
+            else
+                a322 = 3 * a322 + 1;
+            baton1 = a322;
+            baton2 = baton1 + 1;
+            if(a322 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a323 = x;
+        while(a323 != 1){
+            if(a323 % 2 == 0)
+                a323 = a323 / 2;
+            else
+                a323 = 3 * a323 + 1;
+            baton1 = a323;
+            baton2 = baton1 + 1;
+            if(a323 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a324 = x;
+        while(a324 != 1){
+            if(a324 % 2 == 0)
+                a324 = a324 / 2;
+            else
+                a324 = 3 * a324 + 1;
+            baton1 = a324;
+            baton2 = baton1 + 1;
+            if(a324 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a325 = x;
+        while(a325 != 1){
+            if(a325 % 2 == 0)
+                a325 = a325 / 2;
+            else
+                a325 = 3 * a325 + 1;
+            baton1 = a325;
+            baton2 = baton1 + 1;
+            if(a325 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a326 = x;
+        while(a326 != 1){
+            if(a326 % 2 == 0)
+                a326 = a326 / 2;
+            else
+                a326 = 3 * a326 + 1;
+            baton1 = a326;
+            baton2 = baton1 + 1;
+            if(a326 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a327 = x;
+        while(a327 != 1){
+            if(a327 % 2 == 0)
+                a327 = a327 / 2;
+            else
+                a327 = 3 * a327 + 1;
+            baton1 = a327;
+            baton2 = baton1 + 1;
+            if(a327 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a328 = x;
+        while(a328 != 1){
+            if(a328 % 2 == 0)
+                a328 = a328 / 2;
+            else
+                a328 = 3 * a328 + 1;
+            baton1 = a328;
+            baton2 = baton1 + 1;
+            if(a328 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a329 = x;
+        while(a329 != 1){
+            if(a329 % 2 == 0)
+                a329 = a329 / 2;
+            else
+                a329 = 3 * a329 + 1;
+            baton1 = a329;
+            baton2 = baton1 + 1;
+            if(a329 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a330 = x;
+        while(a330 != 1){
+            if(a330 % 2 == 0)
+                a330 = a330 / 2;
+            else
+                a330 = 3 * a330 + 1;
+            baton1 = a330;
+            baton2 = baton1 + 1;
+            if(a330 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a331 = x;
+        while(a331 != 1){
+            if(a331 % 2 == 0)
+                a331 = a331 / 2;
+            else
+                a331 = 3 * a331 + 1;
+            baton1 = a331;
+            baton2 = baton1 + 1;
+            if(a331 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a332 = x;
+        while(a332 != 1){
+            if(a332 % 2 == 0)
+                a332 = a332 / 2;
+            else
+                a332 = 3 * a332 + 1;
+            baton1 = a332;
+            baton2 = baton1 + 1;
+            if(a332 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a333 = x;
+        while(a333 != 1){
+            if(a333 % 2 == 0)
+                a333 = a333 / 2;
+            else
+                a333 = 3 * a333 + 1;
+            baton1 = a333;
+            baton2 = baton1 + 1;
+            if(a333 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a334 = x;
+        while(a334 != 1){
+            if(a334 % 2 == 0)
+                a334 = a334 / 2;
+            else
+                a334 = 3 * a334 + 1;
+            baton1 = a334;
+            baton2 = baton1 + 1;
+            if(a334 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a335 = x;
+        while(a335 != 1){
+            if(a335 % 2 == 0)
+                a335 = a335 / 2;
+            else
+                a335 = 3 * a335 + 1;
+            baton1 = a335;
+            baton2 = baton1 + 1;
+            if(a335 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a336 = x;
+        while(a336 != 1){
+            if(a336 % 2 == 0)
+                a336 = a336 / 2;
+            else
+                a336 = 3 * a336 + 1;
+            baton1 = a336;
+            baton2 = baton1 + 1;
+            if(a336 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a337 = x;
+        while(a337 != 1){
+            if(a337 % 2 == 0)
+                a337 = a337 / 2;
+            else
+                a337 = 3 * a337 + 1;
+            baton1 = a337;
+            baton2 = baton1 + 1;
+            if(a337 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a338 = x;
+        while(a338 != 1){
+            if(a338 % 2 == 0)
+                a338 = a338 / 2;
+            else
+                a338 = 3 * a338 + 1;
+            baton1 = a338;
+            baton2 = baton1 + 1;
+            if(a338 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a339 = x;
+        while(a339 != 1){
+            if(a339 % 2 == 0)
+                a339 = a339 / 2;
+            else
+                a339 = 3 * a339 + 1;
+            baton1 = a339;
+            baton2 = baton1 + 1;
+            if(a339 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a340 = x;
+        while(a340 != 1){
+            if(a340 % 2 == 0)
+                a340 = a340 / 2;
+            else
+                a340 = 3 * a340 + 1;
+            baton1 = a340;
+            baton2 = baton1 + 1;
+            if(a340 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a341 = x;
+        while(a341 != 1){
+            if(a341 % 2 == 0)
+                a341 = a341 / 2;
+            else
+                a341 = 3 * a341 + 1;
+            baton1 = a341;
+            baton2 = baton1 + 1;
+            if(a341 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a342 = x;
+        while(a342 != 1){
+            if(a342 % 2 == 0)
+                a342 = a342 / 2;
+            else
+                a342 = 3 * a342 + 1;
+            baton1 = a342;
+            baton2 = baton1 + 1;
+            if(a342 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a343 = x;
+        while(a343 != 1){
+            if(a343 % 2 == 0)
+                a343 = a343 / 2;
+            else
+                a343 = 3 * a343 + 1;
+            baton1 = a343;
+            baton2 = baton1 + 1;
+            if(a343 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a344 = x;
+        while(a344 != 1){
+            if(a344 % 2 == 0)
+                a344 = a344 / 2;
+            else
+                a344 = 3 * a344 + 1;
+            baton1 = a344;
+            baton2 = baton1 + 1;
+            if(a344 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a345 = x;
+        while(a345 != 1){
+            if(a345 % 2 == 0)
+                a345 = a345 / 2;
+            else
+                a345 = 3 * a345 + 1;
+            baton1 = a345;
+            baton2 = baton1 + 1;
+            if(a345 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a346 = x;
+        while(a346 != 1){
+            if(a346 % 2 == 0)
+                a346 = a346 / 2;
+            else
+                a346 = 3 * a346 + 1;
+            baton1 = a346;
+            baton2 = baton1 + 1;
+            if(a346 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a347 = x;
+        while(a347 != 1){
+            if(a347 % 2 == 0)
+                a347 = a347 / 2;
+            else
+                a347 = 3 * a347 + 1;
+            baton1 = a347;
+            baton2 = baton1 + 1;
+            if(a347 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a348 = x;
+        while(a348 != 1){
+            if(a348 % 2 == 0)
+                a348 = a348 / 2;
+            else
+                a348 = 3 * a348 + 1;
+            baton1 = a348;
+            baton2 = baton1 + 1;
+            if(a348 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a349 = x;
+        while(a349 != 1){
+            if(a349 % 2 == 0)
+                a349 = a349 / 2;
+            else
+                a349 = 3 * a349 + 1;
+            baton1 = a349;
+            baton2 = baton1 + 1;
+            if(a349 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a350 = x;
+        while(a350 != 1){
+            if(a350 % 2 == 0)
+                a350 = a350 / 2;
+            else
+                a350 = 3 * a350 + 1;
+            baton1 = a350;
+            baton2 = baton1 + 1;
+            if(a350 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a351 = x;
+        while(a351 != 1){
+            if(a351 % 2 == 0)
+                a351 = a351 / 2;
+            else
+                a351 = 3 * a351 + 1;
+            baton1 = a351;
+            baton2 = baton1 + 1;
+            if(a351 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a352 = x;
+        while(a352 != 1){
+            if(a352 % 2 == 0)
+                a352 = a352 / 2;
+            else
+                a352 = 3 * a352 + 1;
+            baton1 = a352;
+            baton2 = baton1 + 1;
+            if(a352 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a353 = x;
+        while(a353 != 1){
+            if(a353 % 2 == 0)
+                a353 = a353 / 2;
+            else
+                a353 = 3 * a353 + 1;
+            baton1 = a353;
+            baton2 = baton1 + 1;
+            if(a353 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a354 = x;
+        while(a354 != 1){
+            if(a354 % 2 == 0)
+                a354 = a354 / 2;
+            else
+                a354 = 3 * a354 + 1;
+            baton1 = a354;
+            baton2 = baton1 + 1;
+            if(a354 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a355 = x;
+        while(a355 != 1){
+            if(a355 % 2 == 0)
+                a355 = a355 / 2;
+            else
+                a355 = 3 * a355 + 1;
+            baton1 = a355;
+            baton2 = baton1 + 1;
+            if(a355 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a356 = x;
+        while(a356 != 1){
+            if(a356 % 2 == 0)
+                a356 = a356 / 2;
+            else
+                a356 = 3 * a356 + 1;
+            baton1 = a356;
+            baton2 = baton1 + 1;
+            if(a356 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a357 = x;
+        while(a357 != 1){
+            if(a357 % 2 == 0)
+                a357 = a357 / 2;
+            else
+                a357 = 3 * a357 + 1;
+            baton1 = a357;
+            baton2 = baton1 + 1;
+            if(a357 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a358 = x;
+        while(a358 != 1){
+            if(a358 % 2 == 0)
+                a358 = a358 / 2;
+            else
+                a358 = 3 * a358 + 1;
+            baton1 = a358;
+            baton2 = baton1 + 1;
+            if(a358 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a359 = x;
+        while(a359 != 1){
+            if(a359 % 2 == 0)
+                a359 = a359 / 2;
+            else
+                a359 = 3 * a359 + 1;
+            baton1 = a359;
+            baton2 = baton1 + 1;
+            if(a359 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a360 = x;
+        while(a360 != 1){
+            if(a360 % 2 == 0)
+                a360 = a360 / 2;
+            else
+                a360 = 3 * a360 + 1;
+            baton1 = a360;
+            baton2 = baton1 + 1;
+            if(a360 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a361 = x;
+        while(a361 != 1){
+            if(a361 % 2 == 0)
+                a361 = a361 / 2;
+            else
+                a361 = 3 * a361 + 1;
+            baton1 = a361;
+            baton2 = baton1 + 1;
+            if(a361 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a362 = x;
+        while(a362 != 1){
+            if(a362 % 2 == 0)
+                a362 = a362 / 2;
+            else
+                a362 = 3 * a362 + 1;
+            baton1 = a362;
+            baton2 = baton1 + 1;
+            if(a362 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a363 = x;
+        while(a363 != 1){
+            if(a363 % 2 == 0)
+                a363 = a363 / 2;
+            else
+                a363 = 3 * a363 + 1;
+            baton1 = a363;
+            baton2 = baton1 + 1;
+            if(a363 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a364 = x;
+        while(a364 != 1){
+            if(a364 % 2 == 0)
+                a364 = a364 / 2;
+            else
+                a364 = 3 * a364 + 1;
+            baton1 = a364;
+            baton2 = baton1 + 1;
+            if(a364 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a365 = x;
+        while(a365 != 1){
+            if(a365 % 2 == 0)
+                a365 = a365 / 2;
+            else
+                a365 = 3 * a365 + 1;
+            baton1 = a365;
+            baton2 = baton1 + 1;
+            if(a365 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a366 = x;
+        while(a366 != 1){
+            if(a366 % 2 == 0)
+                a366 = a366 / 2;
+            else
+                a366 = 3 * a366 + 1;
+            baton1 = a366;
+            baton2 = baton1 + 1;
+            if(a366 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a367 = x;
+        while(a367 != 1){
+            if(a367 % 2 == 0)
+                a367 = a367 / 2;
+            else
+                a367 = 3 * a367 + 1;
+            baton1 = a367;
+            baton2 = baton1 + 1;
+            if(a367 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a368 = x;
+        while(a368 != 1){
+            if(a368 % 2 == 0)
+                a368 = a368 / 2;
+            else
+                a368 = 3 * a368 + 1;
+            baton1 = a368;
+            baton2 = baton1 + 1;
+            if(a368 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a369 = x;
+        while(a369 != 1){
+            if(a369 % 2 == 0)
+                a369 = a369 / 2;
+            else
+                a369 = 3 * a369 + 1;
+            baton1 = a369;
+            baton2 = baton1 + 1;
+            if(a369 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a370 = x;
+        while(a370 != 1){
+            if(a370 % 2 == 0)
+                a370 = a370 / 2;
+            else
+                a370 = 3 * a370 + 1;
+            baton1 = a370;
+            baton2 = baton1 + 1;
+            if(a370 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a371 = x;
+        while(a371 != 1){
+            if(a371 % 2 == 0)
+                a371 = a371 / 2;
+            else
+                a371 = 3 * a371 + 1;
+            baton1 = a371;
+            baton2 = baton1 + 1;
+            if(a371 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a372 = x;
+        while(a372 != 1){
+            if(a372 % 2 == 0)
+                a372 = a372 / 2;
+            else
+                a372 = 3 * a372 + 1;
+            baton1 = a372;
+            baton2 = baton1 + 1;
+            if(a372 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a373 = x;
+        while(a373 != 1){
+            if(a373 % 2 == 0)
+                a373 = a373 / 2;
+            else
+                a373 = 3 * a373 + 1;
+            baton1 = a373;
+            baton2 = baton1 + 1;
+            if(a373 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a374 = x;
+        while(a374 != 1){
+            if(a374 % 2 == 0)
+                a374 = a374 / 2;
+            else
+                a374 = 3 * a374 + 1;
+            baton1 = a374;
+            baton2 = baton1 + 1;
+            if(a374 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a375 = x;
+        while(a375 != 1){
+            if(a375 % 2 == 0)
+                a375 = a375 / 2;
+            else
+                a375 = 3 * a375 + 1;
+            baton1 = a375;
+            baton2 = baton1 + 1;
+            if(a375 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a376 = x;
+        while(a376 != 1){
+            if(a376 % 2 == 0)
+                a376 = a376 / 2;
+            else
+                a376 = 3 * a376 + 1;
+            baton1 = a376;
+            baton2 = baton1 + 1;
+            if(a376 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a377 = x;
+        while(a377 != 1){
+            if(a377 % 2 == 0)
+                a377 = a377 / 2;
+            else
+                a377 = 3 * a377 + 1;
+            baton1 = a377;
+            baton2 = baton1 + 1;
+            if(a377 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a378 = x;
+        while(a378 != 1){
+            if(a378 % 2 == 0)
+                a378 = a378 / 2;
+            else
+                a378 = 3 * a378 + 1;
+            baton1 = a378;
+            baton2 = baton1 + 1;
+            if(a378 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a379 = x;
+        while(a379 != 1){
+            if(a379 % 2 == 0)
+                a379 = a379 / 2;
+            else
+                a379 = 3 * a379 + 1;
+            baton1 = a379;
+            baton2 = baton1 + 1;
+            if(a379 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a380 = x;
+        while(a380 != 1){
+            if(a380 % 2 == 0)
+                a380 = a380 / 2;
+            else
+                a380 = 3 * a380 + 1;
+            baton1 = a380;
+            baton2 = baton1 + 1;
+            if(a380 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a381 = x;
+        while(a381 != 1){
+            if(a381 % 2 == 0)
+                a381 = a381 / 2;
+            else
+                a381 = 3 * a381 + 1;
+            baton1 = a381;
+            baton2 = baton1 + 1;
+            if(a381 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a382 = x;
+        while(a382 != 1){
+            if(a382 % 2 == 0)
+                a382 = a382 / 2;
+            else
+                a382 = 3 * a382 + 1;
+            baton1 = a382;
+            baton2 = baton1 + 1;
+            if(a382 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a383 = x;
+        while(a383 != 1){
+            if(a383 % 2 == 0)
+                a383 = a383 / 2;
+            else
+                a383 = 3 * a383 + 1;
+            baton1 = a383;
+            baton2 = baton1 + 1;
+            if(a383 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a384 = x;
+        while(a384 != 1){
+            if(a384 % 2 == 0)
+                a384 = a384 / 2;
+            else
+                a384 = 3 * a384 + 1;
+            baton1 = a384;
+            baton2 = baton1 + 1;
+            if(a384 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a385 = x;
+        while(a385 != 1){
+            if(a385 % 2 == 0)
+                a385 = a385 / 2;
+            else
+                a385 = 3 * a385 + 1;
+            baton1 = a385;
+            baton2 = baton1 + 1;
+            if(a385 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a386 = x;
+        while(a386 != 1){
+            if(a386 % 2 == 0)
+                a386 = a386 / 2;
+            else
+                a386 = 3 * a386 + 1;
+            baton1 = a386;
+            baton2 = baton1 + 1;
+            if(a386 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a387 = x;
+        while(a387 != 1){
+            if(a387 % 2 == 0)
+                a387 = a387 / 2;
+            else
+                a387 = 3 * a387 + 1;
+            baton1 = a387;
+            baton2 = baton1 + 1;
+            if(a387 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a388 = x;
+        while(a388 != 1){
+            if(a388 % 2 == 0)
+                a388 = a388 / 2;
+            else
+                a388 = 3 * a388 + 1;
+            baton1 = a388;
+            baton2 = baton1 + 1;
+            if(a388 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a389 = x;
+        while(a389 != 1){
+            if(a389 % 2 == 0)
+                a389 = a389 / 2;
+            else
+                a389 = 3 * a389 + 1;
+            baton1 = a389;
+            baton2 = baton1 + 1;
+            if(a389 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a390 = x;
+        while(a390 != 1){
+            if(a390 % 2 == 0)
+                a390 = a390 / 2;
+            else
+                a390 = 3 * a390 + 1;
+            baton1 = a390;
+            baton2 = baton1 + 1;
+            if(a390 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a391 = x;
+        while(a391 != 1){
+            if(a391 % 2 == 0)
+                a391 = a391 / 2;
+            else
+                a391 = 3 * a391 + 1;
+            baton1 = a391;
+            baton2 = baton1 + 1;
+            if(a391 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a392 = x;
+        while(a392 != 1){
+            if(a392 % 2 == 0)
+                a392 = a392 / 2;
+            else
+                a392 = 3 * a392 + 1;
+            baton1 = a392;
+            baton2 = baton1 + 1;
+            if(a392 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a393 = x;
+        while(a393 != 1){
+            if(a393 % 2 == 0)
+                a393 = a393 / 2;
+            else
+                a393 = 3 * a393 + 1;
+            baton1 = a393;
+            baton2 = baton1 + 1;
+            if(a393 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a394 = x;
+        while(a394 != 1){
+            if(a394 % 2 == 0)
+                a394 = a394 / 2;
+            else
+                a394 = 3 * a394 + 1;
+            baton1 = a394;
+            baton2 = baton1 + 1;
+            if(a394 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a395 = x;
+        while(a395 != 1){
+            if(a395 % 2 == 0)
+                a395 = a395 / 2;
+            else
+                a395 = 3 * a395 + 1;
+            baton1 = a395;
+            baton2 = baton1 + 1;
+            if(a395 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a396 = x;
+        while(a396 != 1){
+            if(a396 % 2 == 0)
+                a396 = a396 / 2;
+            else
+                a396 = 3 * a396 + 1;
+            baton1 = a396;
+            baton2 = baton1 + 1;
+            if(a396 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a397 = x;
+        while(a397 != 1){
+            if(a397 % 2 == 0)
+                a397 = a397 / 2;
+            else
+                a397 = 3 * a397 + 1;
+            baton1 = a397;
+            baton2 = baton1 + 1;
+            if(a397 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a398 = x;
+        while(a398 != 1){
+            if(a398 % 2 == 0)
+                a398 = a398 / 2;
+            else
+                a398 = 3 * a398 + 1;
+            baton1 = a398;
+            baton2 = baton1 + 1;
+            if(a398 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    x = baton2 - 1;
+    while(x <= 0x7FFFFFF4){
+        int a399 = x;
+        while(a399 != 1){
+            if(a399 % 2 == 0)
+                a399 = a399 / 2;
+            else
+                a399 = 3 * a399 + 1;
+            baton1 = a399;
+            baton2 = baton1 + 1;
+            if(a399 == 1)
+                baton2 = baton1;
+        }
+        x += 1;
+    }
+    
+
+    return baton2;
+}

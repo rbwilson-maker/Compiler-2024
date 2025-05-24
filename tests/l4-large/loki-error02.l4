@@ -1,0 +1,11 @@
+//test error
+
+typedef struct star {
+  int a;
+  int b;
+  struct star s;
+} s;
+
+int main() {
+  return 0;
+}

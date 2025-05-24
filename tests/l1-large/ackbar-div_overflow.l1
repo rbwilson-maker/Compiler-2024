@@ -1,0 +1,9 @@
+//test div-by-zero
+//Tests division overflow, by dividing int_min by -1. Since negative int_min
+//is one more than int_max, it overflows. x86-64 treats this as an exception,
+//rather than simply overflowing.
+int main() {
+    int int_min = -2147483648; 
+    return int_min / -1;
+}
+

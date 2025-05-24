@@ -1,0 +1,22 @@
+//test typecheck
+//test infloop
+// Uh, definitely ping me if this finishes...
+
+int main() {
+    int n = 0;
+    bool found = false;
+    while (!found) {
+        if (n < 0) n = 0;
+        n++;
+        int x = n;
+        while (x > 1) {
+            if (x % 2 == 0) {
+                x /= 2;
+            } else {
+                x *= 3;
+                x += 1;
+            }
+        }
+    }
+    return n;
+}

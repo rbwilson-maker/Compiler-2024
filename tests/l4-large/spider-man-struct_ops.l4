@@ -1,0 +1,28 @@
+//test memerror
+
+struct blah {
+  int zz;
+  bool zzz;
+};
+
+
+struct zzz {
+    int[] ** iz;
+    struct blah *[] ** bz;
+};
+
+int main() {
+    struct zzz * zz = alloc(struct zzz);
+    zz->iz = alloc(int[] *);
+    *(zz->iz) = alloc(int[]);
+    **(zz->iz) = alloc_array(int, 60);
+    zz->bz = alloc(struct blah *[] * );
+    *(zz->bz) = alloc(struct blah *[]);
+    **(zz->bz) = alloc_array(struct blah *, 60);
+    int sad = 0;
+    for (int i = 0; i < 60; i += 1) {
+        sad += (**(zz->iz))[i];
+        sad += (**(zz->bz))[i]->zz;
+    }
+    return sad;
+}

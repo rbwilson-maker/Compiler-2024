@@ -1,0 +1,11 @@
+//test error
+
+typedef int num;
+
+int main() {
+  int num = 0;
+  int some_num = 1;
+  int other_num = 2;
+  int my_num = 8;
+  return num + my_num;
+}

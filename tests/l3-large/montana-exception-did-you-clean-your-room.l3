@@ -1,0 +1,28 @@
+//test div-by-zero
+//make sure that function call overhead isn't unreasonable (space & time-wise)
+
+int no_MOM_you_dont_know_my_LIFE(int bar, int baz);
+
+int GET_off_my_CASE_omg(int foo);
+
+int main() {
+  return GET_off_my_CASE_omg(10 * 1024);
+}
+
+int no_MOM_you_dont_know_my_LIFE(int bar, int baz) {
+  if (baz == 10 * 1024) {
+    return 1 / bar;
+  }
+  if (bar == 0) {
+    return 5;
+  } else {
+    return 1 + no_MOM_you_dont_know_my_LIFE(bar - 1, baz + 1);
+  }
+}
+
+int GET_off_my_CASE_omg(int foo) {
+  for (int i = 0; i <= foo; i++) {
+    no_MOM_you_dont_know_my_LIFE(i, 0);
+  }
+  return 0;
+}

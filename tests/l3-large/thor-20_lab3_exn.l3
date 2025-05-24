@@ -1,0 +1,11 @@
+//test abort
+void loopn (int n) {
+assert (n > 0);
+loopn(n-1);
+return;
+}
+
+int main() {
+loopn(5);
+return 0;
+}

@@ -1,0 +1,39 @@
+//test return ~1
+
+struct searcher {int[] arr; int hi; int lo;};
+
+int find(struct searcher* s, int target)
+{
+    while(s->hi >= s->lo)
+    {
+        int mid = (s->hi-s->lo)/2;
+	print_int(mid);
+        if(s->arr[mid] > target)
+        {
+            s->lo = mid+1;
+        }
+        else
+        {
+            if(s->arr[mid] < target)
+                s->hi = mid-1;
+            else
+                return mid;
+        }
+    }
+    return -1;
+
+}
+
+int main()
+{
+    struct searcher* s = alloc(struct searcher);
+    s->arr = alloc_array(int, 5);
+    s->arr[0] = 5;
+    s->arr[1] = 6;
+    s->arr[2] = 12;
+    s->arr[3] = 21;
+    s->arr[4] = 55;
+    s->hi = 5;
+    s->lo = 0;
+    return find(s, 21);
+}

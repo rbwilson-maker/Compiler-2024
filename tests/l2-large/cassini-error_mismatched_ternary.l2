@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+    bool b1 = false;
+    bool b2 = false;
+    int z = b1 || b2 ? 3 : false;
+    return z;
+}

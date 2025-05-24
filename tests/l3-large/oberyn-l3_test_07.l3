@@ -1,0 +1,14 @@
+//test abort
+
+// tests test that abort works to reject program states
+
+int fib(int n) {
+	assert(n >= 0);
+	if (n == 0) return 0;
+	if (n == 1) return 1;
+	else return fib(n - 1) + fib(n - 2);
+}
+
+int main() {
+	return fib(-1);
+}

@@ -1,0 +1,43 @@
+//test return 9
+
+
+struct node { 
+  int value;
+  struct node* next;
+};
+
+typedef struct node node;
+
+node* of_array(int[] A,int n) {
+  node* root = alloc(node);
+  node* curr = root;
+  for (int i = 0; i < n; i++) {
+    curr->value = A[i];
+    node* new = alloc(node);
+    curr->next = new;
+    new = curr;
+  }
+  curr->next = NULL;
+  return root;
+}
+
+int max(node* n) {
+  int max = 0;
+  node* curr = n;
+  while (curr != NULL) {
+    if (curr->value > max) {
+      max = curr->value;
+    }
+    curr = curr->next;
+  }
+  return max;
+}
+
+int main() {
+  int[] A = alloc_array(int,10);
+  for (int i = 0;i < 10; i++) {
+    A[i] = i;
+  }
+  return max(of_array(A,10));  
+}
+

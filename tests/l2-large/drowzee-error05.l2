@@ -1,0 +1,8 @@
+//test error
+//can't shift by a bool
+
+int main () {
+  int x = 2;
+  bool y = true;
+  return x << y;
+}

@@ -1,0 +1,7 @@
+//test return 64
+
+int main () {
+    bool ean = true;
+    int x = ean ? 2 << 5 : 5 << 3;
+    return x;
+}

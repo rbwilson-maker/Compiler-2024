@@ -1,0 +1,8 @@
+//test return 4;
+int main() {
+	bool x = true;
+	for (int i = 0; i < 99; i += 4) {
+		bool y = x || x || !x && x && !x;
+	}
+	return x ? 4 : 1;
+}

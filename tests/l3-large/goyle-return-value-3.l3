@@ -1,0 +1,16 @@
+//test return 165
+
+int square(int x) {
+  return x*x;
+}
+
+int main() {
+  int acc = 0;
+  for (int i = 0; i < 10; i++) {
+    int sq = square(i);
+    if (sq % 2 == 1) {
+      acc += sq;
+    }
+  }
+  return acc;
+}

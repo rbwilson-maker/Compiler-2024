@@ -1,0 +1,9 @@
+//test div-by-zero
+// shift operation out of bound
+
+int main() {
+    int x = 100;
+    int y = 10;
+    
+    return x >> (x + y);
+}

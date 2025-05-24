@@ -1,0 +1,18 @@
+//test return 101
+
+int side_effect(int[] arr) {
+  arr[0] -= 1;
+  return 1;
+}
+
+// arr[e] => e should only be evaluated once
+int main() {
+  int[] arr = alloc_array(int, 100);
+  arr[0] = 2;
+  arr[1] = 100;
+  arr[side_effect(arr)] += 1;
+  // arr[1] = 101;
+  // arr[0] = 1;
+  // sigfpe will be raised if side_effect(arr) is executed two times
+  return arr[1] / arr[0];
+}

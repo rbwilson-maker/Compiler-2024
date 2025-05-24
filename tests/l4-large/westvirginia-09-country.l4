@@ -1,0 +1,56 @@
+//test return 5628
+//pseudo-random graph construction
+
+struct node {
+    bool visited;
+    int[] nbrs;  
+};
+
+// Returns an integer, not necessarily positive
+int hash (int key) {
+    int a = 1664525; int b = 1013904223;
+    int r = key;
+    int h = 0;
+    for (int i = 0; i < 30; i++){
+        h = r*h + i;
+        r = r*a + b;
+    }
+    return h;
+}
+
+int main() {
+    
+    struct node[] drivingdown = alloc_array(struct node, 20000);
+    for (int i = 0; i < 20000; i++) {
+        drivingdown[i].nbrs = alloc_array(int, 4);
+        int seed = 4 * i;
+        for (int j = 0; j < 4; j++) {
+            int nbr = hash(seed + j);
+            nbr = (nbr < 0) ? -nbr : nbr;
+            nbr %= 20000;
+            drivingdown[i].nbrs[j] = nbr;
+        }
+    }
+
+    int theroad = 0;
+    int curr = 0;
+    int igetafeelingthati = 0;
+    while (theroad < 10000000) {
+        if (drivingdown[curr].visited) {
+
+        } else {
+            drivingdown[curr].visited = true;
+            igetafeelingthati++;
+            int next = curr + 1;
+            for (int j = 0; j < 4; j++) {
+                if (!drivingdown[drivingdown[curr].nbrs[j]].visited) {
+                    next = drivingdown[curr].nbrs[j];
+                }
+            }
+            curr = next;
+        }
+        theroad++;
+    }
+
+    return igetafeelingthati;
+}

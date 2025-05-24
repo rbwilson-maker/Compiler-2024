@@ -1,0 +1,8 @@
+//test return -2102132736
+int main() {
+  int cnt = 1;
+  for (int i = 20; i != 0; i--) {
+    cnt = cnt * i;
+  }
+  return cnt;
+}

@@ -1,0 +1,89 @@
+//test return 9140
+
+struct rand_state {
+  int x;
+  int w;
+  int s;
+};
+
+typedef struct rand_state rand_state_t;
+
+struct barray {
+  int size;
+  int[] arr;
+};
+
+typedef struct barray barray_t;
+
+// Initialize the seed for the pseudo random number generator 
+void srand_r(int init, rand_state_t *dest) {
+  assert(dest != NULL);
+  dest->x = init;
+  dest->w = 0;
+  dest->s = 0xda1ce2a9;
+}
+
+// Pseudo random number generator
+int rand_r(rand_state_t *s) {
+  assert(s != NULL);
+  s->x *= s->x;
+  s->w += s->s;
+  s->x += s->w;
+  s->x = ((s->x >> 16) & 0xFFFF) | (s->x << 16);
+  return s->x & 0xFFFF;
+}
+
+// Shuffle the array inplace
+void shuffle(barray_t *a, rand_state_t *s) {
+  assert(a != NULL && s != NULL);
+  int tmp;
+  int j;
+  for (int i = a->size; i > 0; i--) {
+    j = rand_r(s) % i;
+    assert(j < a->size);
+    tmp = a->arr[i - 1];
+    a->arr[i - 1] = a->arr[j];
+    a->arr[j] = tmp;
+  }
+}
+
+int main() {
+  // Initialize the random number generator
+  struct rand_state *prng = alloc(rand_state_t);
+  assert(prng != NULL);
+  srand_r(0x15411, prng);
+
+  // Initialize the array
+  struct barray *a = alloc(barray_t);
+  assert(a != NULL);
+  a->size = 20000;
+  a->arr = alloc_array(int, a->size);
+  for (int i = 0; i < a->size; i++) a->arr[i] = i;
+
+  // Shuffle the array
+  shuffle(a, prng);
+
+  assert(a->arr[0] ==   722);
+  assert(a->arr[1] ==  5990);
+  assert(a->arr[2] ==  8860);
+  assert(a->arr[a->size - 3] == 17121);
+  assert(a->arr[a->size - 2] ==   825);
+  assert(a->arr[a->size - 1] ==   410);
+
+  // There should be exactly 4 calls to rand_r
+  // Possible extra calls: 
+  //    asnop +=
+  //    binop <<
+  //    ternop ?:
+  // Order of the calls lhs to rhs from left to right   NOTE: Different from gcc
+  a->arr[rand_r(prng) % a->size] += (rand_r(prng) % a->size) > (a->size / 2) 
+    ? (a->arr[rand_r(prng) % a->size] + a->arr[rand_r(prng) % a->size])
+    : (a->arr[rand_r(prng) % a->size] << (a->arr[rand_r(prng) % a->size] % 32));
+
+  assert(a->arr[12947] == 1189534);
+  assert(a->arr[  297] ==  2025);
+  assert(a->arr[17961] == 18288);
+  assert(a->arr[ 6993] ==  4614);
+
+  return rand_r(prng);
+}

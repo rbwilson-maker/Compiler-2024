@@ -1,0 +1,10 @@
+//test error
+/* name error */
+
+int void(int i) {
+  return i+1;
+}
+
+int main () {
+  return void(10);
+}

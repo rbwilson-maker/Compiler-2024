@@ -1,0 +1,18 @@
+//test return 110
+// do you need null checks?
+
+int main() {
+    int x = 100;
+    int* a = alloc(int);
+    for (int i = 0; i < 99; i++) {
+        x--;
+        a = NULL;
+        if (i != 100 || x != -1) {
+            a = alloc(int);
+            *a = *a + 10;
+            *a *= 10;
+        }
+    }
+    *a += 10;
+    return *a;
+}

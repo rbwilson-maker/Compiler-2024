@@ -1,0 +1,23 @@
+//test return 29981495
+//wacky call stack
+
+int f111(int z) { return z; }
+int f110(int z) { return z + z; }
+int f100(int z) { return 10000000; }
+int f101(int z) { return f100(z); }
+int f11(int x, int y) { return f110(y) + f111(x); }
+int f10(int x, int y) { return f100(y + f101(x)); }
+int f1(int x) { return f10(x,x-1) - f11(x,x+1); }
+int f000(int z) { return f1(z) + f1(z); }
+int f001(int z) { return 10; }
+int f011(int z) { return f10(z + z, z - z); }
+int f010(int z) { return f011(z * z); }
+int f01(int x, int y) { return f010(x * y) / f011(x); }
+int f00(int x, int y) { return f000(x+y) + f001(x * y); }
+int f0(int x) { return f00(x,x) + f01(x,x); }
+int f(int x) { return f0(x) + f1(x); }
+
+
+int main () {
+  return f(1234);
+}

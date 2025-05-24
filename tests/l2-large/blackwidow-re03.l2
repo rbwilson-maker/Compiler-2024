@@ -1,0 +1,74 @@
+//test return 15
+// test register spilling
+int main()
+{
+  for(int i=0;i<100;i++) {int ii = i;}
+
+  int x0;
+  int x1;
+  int x2;
+  int x3;
+  int x4;
+  int x5;
+  int x6;
+  int x7;
+  int x8;
+  int x9;
+  int xA;
+  int xB;
+  int xC;
+  int xD;
+  int xE;
+  int xF;
+  int x00;
+  int x11;
+  int x22;
+  int x33;
+  int x44;
+  int x55;
+  int x66;
+  int x77;
+  int x88;
+  int x99;
+  int xAa;
+  int xBb;
+  int xCc;
+  int xDd;
+  int xEe;
+  int xFf;
+
+  x0 = 15;
+  x1 = x0-1;
+  x2 = x1-1;
+  x3 = x2-1;
+  x4 = x3-1;
+  x5 = x4-1;
+  x6 = x5-1;
+  x7 = x6-1;
+  x8 = x7-1;
+  x9 = x8-1;
+  xA = x9-1;
+  xB = xA-1;
+  xC = xB-1;
+  xD = xC-1;
+  xE = xD-1;
+  xF = xE-1;
+  x00 = xF;
+  x11 = x00+1;
+  x22 = x11+1;
+  x33 = x22+1;
+  x44 = x33+1;
+  x55 = x44+1;
+  x66 = x55+1;
+  x77 = x66+1;
+  x88 = x77+1;
+  x99 = x88+1;
+  xAa = x99+1;
+  xBb = xAa+1;
+  xCc = xBb+1;
+  xDd = xCc+1;
+  xEe = xDd+1;
+  xFf = xEe+1;
+  return xFf;
+
+}

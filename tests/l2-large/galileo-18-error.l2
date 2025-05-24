@@ -1,0 +1,7 @@
+//test error
+// should not use a reserved keyword as identifier
+
+int main() {
+    bool alloc_array = false;
+    return 0;
+}

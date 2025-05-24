@@ -1,0 +1,19 @@
+//test return 0
+
+int convert_bool_to_int(bool b)
+{
+    if (b)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    bool b = false;
+    return convert_bool_to_int(b);
+}

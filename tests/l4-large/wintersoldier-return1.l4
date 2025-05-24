@@ -1,0 +1,46 @@
+//test return 0
+
+void mergesort(int[] input, int[] dest, int iBegin, int iEnd) {
+    // Based off of C-like pseudocode from wikipedia
+    // assumes destination is initially a perfect copy of
+
+    // sort the two halves of dest into the two halves of input
+    if (iEnd - iBegin <= 1) return;
+    int iMiddle = (iEnd + iBegin) / 2;
+    mergesort(dest, input, iBegin, iMiddle);
+    mergesort(dest, input, iMiddle, iEnd);
+
+    // merge the two halves of input into dest
+    int index1 = iBegin;
+    int index2 = iMiddle;
+    for (int index = iBegin; index < iEnd; index++) {
+        if (index1 < iMiddle && (index2 >= iEnd || input[index1] <= input[index2])) {
+            dest[index] = input[index1];
+            index1++;
+        } else {
+            dest[index] = input[index2];
+            index2++;
+        }
+    }
+}
+
+void sort(int[] arr, int len) {
+    int[] temp = alloc_array(int, len);
+    for (int i = 0; i < len; i++) {
+        temp[i] = arr[i];
+    }
+    mergesort(temp, arr, 0, len);
+}
+
+int main () {
+    int len = 1024;
+    int[] arr = alloc_array(int, len);
+    for (int i = 0; i < len; i++) {
+        arr[i] = -i;
+    }
+    sort(arr, len);
+    for (int i = 1; i < len; i++) {
+        if (arr[i-1] > arr[i]) return -1;
+    }
+    return 0;
+}

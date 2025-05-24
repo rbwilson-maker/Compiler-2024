@@ -1,0 +1,6 @@
+//test error
+// uses op incorrectly
+int main() {
+  int a = 5 -;
+  return a;
+}

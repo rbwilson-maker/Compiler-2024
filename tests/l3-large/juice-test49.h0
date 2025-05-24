@@ -1,0 +1,6 @@
+typedef bool testBool;
+
+typedef int testInt;
+
+testInt btoi(testBool b);
+testBool itob(testInt i);

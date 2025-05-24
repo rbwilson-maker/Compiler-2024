@@ -1,0 +1,13 @@
+//test error
+// test syntax error
+int main()
+{
+  int a;
+  int b;
+  
+  a = 15;
+  b = 17;
+  a = a + * b;
+
+  return a; 
+}

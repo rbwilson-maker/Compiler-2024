@@ -1,0 +1,11 @@
+//test error
+typedef int pi; 
+
+struct malformatted {
+  int x;
+  struct inside {
+    pi phi;
+  }
+};
+
+int main() { return 0; }

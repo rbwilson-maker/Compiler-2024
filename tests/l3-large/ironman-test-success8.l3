@@ -1,0 +1,13 @@
+//test return 1
+
+int main() {
+    bool b = true;
+    int result = 1;
+    while (b){
+        result++;
+        if (result == 10){
+            b = !b;
+        }
+    }
+    return 1;
+}

@@ -1,0 +1,13 @@
+//test return 0
+
+bool abort() {
+	return (1 == 0);
+}
+
+int main() {
+	
+	if (abort())
+		assert(1 == 0);
+	return 0;
+
+}

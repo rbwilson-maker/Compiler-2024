@@ -1,0 +1,27 @@
+//test typecheck
+
+// I don't know if pointer types can be passed in,
+
+// basically simple mutex implementation with spinlocks
+// so using int as placeholder
+bool try_lock(int lock_ptr) {
+    bool val = atomic_xchg(lock_ptr, false);
+    return is_locked(val);
+}
+
+void spinlock_lock(int lock_ptr) {
+    while (try_lock(lock_ptr)) {
+        int foo = 0;
+    }
+    return;
+}
+
+void spinlock_unlock(int lock_ptr) {
+    atomic_xchg(lock_ptr, true);
+}
+
+int main() {
+    spinlock_lock(0);
+    spinlock_unlock(0);
+    return 0;
+}

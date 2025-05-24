@@ -1,0 +1,9 @@
+//test error
+// Test trying to extract value from void function
+
+void foo() {}
+
+int main() {
+  int x = foo();
+  return 0;
+}

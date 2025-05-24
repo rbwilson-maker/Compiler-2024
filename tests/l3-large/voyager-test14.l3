@@ -1,0 +1,34 @@
+//test return 111
+//use mutual recursive functions to test Collatz conjecture
+
+int proc1(int x, int cnt);
+int proc2(int x, int cnt);
+
+int proc1(int x, int cnt) {
+    x /= 2;
+    cnt += 1;
+    if (x == 1) return cnt;
+    else if (x % 2 == 0) return proc1(x, cnt);
+    else return proc2(x, cnt);
+}
+
+int proc2(int x, int cnt) {
+    x = x * 3 + 1;
+    cnt += 1;
+    if (x == 1) return cnt;
+    else if (x % 2 == 0) return proc1(x, cnt);
+    else return proc2(x, cnt);
+}
+
+int main()
+{
+   int x = 27;
+   int cnt = 0;
+   if (x % 2 == 0) {
+     cnt = proc1(x, cnt);
+   } else {
+     cnt = proc2(x, cnt);
+   }
+
+   return cnt;
+}

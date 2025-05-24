@@ -1,0 +1,36 @@
+//test memerror
+// Out of bounds
+
+int sum(int[] a, int n) {
+    int sum = 0;
+    int rev = -1;
+    for(int i=0; i < n; i++) {
+        sum += (rev * a[i]);
+        rev *= (-1);
+    }
+    return sum;
+}
+
+int sum2(int[] a, int[] b, int n) {
+    int sum = 0;
+    for(int i = 0; i < n; i++) {
+        sum += (a[i] - b[i]);
+    }
+    return sum;
+}
+
+int main() {
+    int n = 37;
+    int[] a = alloc_array(int, n);
+    int[] b = alloc_array(int, n);    
+    for(int i=0; i<n; i++) {
+        a[i] = 1 + i + i*i;
+        b[i] = 3*i*i - 2*i + 8;
+    }
+
+    int asum = sum(a, n);
+    int bsum = sum(b, n);
+    int sum_pair = sum2(a, b, n+100000);
+
+    return sum_pair + asum - bsum;
+}

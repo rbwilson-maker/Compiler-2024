@@ -1,0 +1,30 @@
+//test return 3
+//count(size, sum, max) counts the number of ways we can choose a subset of
+//integers from 1 to max inclusive of size size such that their sum is sum
+
+int count(int size, int sum, int max) {
+  if ((size < 0) || (sum < 0))
+    return 0;
+
+  if (size == 0) {
+    if (sum == 0)
+      return 1;
+    else
+      return 0;
+  }
+
+  int total = 0;
+  for (int try = 1; try <= max; try++) {
+    int new_sum = sum - (try * size);
+    int new_size = size - 1;
+    int new_max = max - try;
+    int new_count = count(new_size, new_sum, new_max);
+    total += new_count;
+  }
+
+  return total;
+}
+
+int main () {
+  return count(3, 9, 9);
+}

@@ -1,0 +1,19 @@
+//test compile
+
+struct container;
+struct compartment;
+
+typedef struct container* c_t;
+
+struct compartment {
+	int n;
+};
+
+struct container {
+	struct compartment* c;
+};
+
+int main () {
+	c_t cnt = alloc(struct container);
+	return 0;
+}

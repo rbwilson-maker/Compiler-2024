@@ -1,0 +1,12 @@
+//test return 6435
+int main() {
+    // computes 15 choose 7
+    int n = 15;
+    int k = 7;
+    int result = 1;
+    for (int i = 1; i <= k; i++) {
+        result *= n + 1 - i;
+        result /= i;
+    }
+    return result;
+}

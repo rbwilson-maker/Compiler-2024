@@ -1,0 +1,12 @@
+//test return 15411
+
+int main()
+{
+    bool t = true;
+    bool f = false;
+
+    int x = t ? 15000 : (411 / 0);  //eval to 15000
+    int y = f ? (15000 / 0) : 411;  //eval to 411
+
+    return x + y;                   //15000 + 411
+}

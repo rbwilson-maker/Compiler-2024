@@ -1,0 +1,56 @@
+//test return 104729
+
+// returns the nth prime
+
+int succ(int n) {
+  return n + 1;
+}
+
+bool even(int n) {
+  if (n == 0) return true;
+  else if (n == 1) return false;
+  else return (n & 1) == 0;
+}
+
+bool div(int n, int i) {
+  return n % i == 0;
+}
+
+int poor_sqrt(int n) {
+  int i=1;
+  while (i * i <= n) {
+    i *= 2;
+  }
+  while (i * i > n) {
+    i -= 1;
+  }
+  return i + 1;
+}
+
+bool is_prime(int n) {
+  if (n < 2) return false;
+  if (even(n) && n != 2) return false;
+  if (n == 2) return true;
+
+  for (int i=3; i<poor_sqrt(n); i=succ(succ(i))) {
+    if (div(n, i)) return false;
+  }
+  return true;
+}
+
+int prime(int n) {
+  int count = 0;
+  int i = 0;
+  while (count < n) {
+    i++;
+    if (is_prime(i)) {
+      count++;
+    }
+  }
+  return i;
+}
+
+int main() {
+  int n = 10000;
+  return prime(n);
+}

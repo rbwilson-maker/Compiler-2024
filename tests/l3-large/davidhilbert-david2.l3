@@ -1,0 +1,12 @@
+//test typecheck
+
+typedef int fun;
+
+fun function(bool yes, fun no) {
+    fun nope = 2;
+    return yes ? nope : no;
+}
+
+int main() {
+    return function(true, 42);
+}

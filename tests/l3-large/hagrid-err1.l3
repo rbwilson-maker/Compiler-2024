@@ -1,0 +1,18 @@
+//test error
+// can't have nested functions
+
+
+int main(){
+  int foo(){
+    return 1;
+
+  }
+  return 2;
+
+}
+
+
+
+
+
+

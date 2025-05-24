@@ -1,0 +1,110 @@
+//test abort
+
+// linked list representing strings with chars a-f
+// abort due to violating interface, causing an assert
+
+struct node {
+    int data; // must be 10 (A) through 15 (F)
+    struct node* next; 
+    struct node* prev;
+};
+
+typedef struct node node;
+typedef node chart;
+
+struct stringf {
+    node* first;
+    node* last;
+};
+
+typedef struct stringf stringf;
+
+stringf* empty() {
+    stringf* new= alloc(stringf);
+    return new;
+}
+
+// add_x adds char x to end of string 
+void add_char(stringf* s, int char_num) {
+    assert(s != NULL);
+    if (s->first == NULL) {
+        node* new_char = alloc(node);
+        new_char->data = char_num;
+        s->first = new_char;
+        s->last = new_char;
+        return ;
+    }
+    assert(s-> last != NULL);
+    node* new_char = alloc(node);
+    new_char->data = char_num;
+    new_char->prev = s->last;
+    s->last->next = new_char;
+    s->last = new_char;
+    return;
+}
+
+void add_a(stringf* s) {
+    add_char(s, 10);
+}
+void add_b(stringf* s) {
+    add_char(s, 11);
+}
+void add_c(stringf* s) {
+    add_char(s, 12);
+}
+void add_d(stringf* s) {
+    add_char(s, 13);
+}
+void add_e(stringf* s) {
+    add_char(s, 14);
+}
+void add_f(stringf* s) {
+    add_char(s, 15);
+}
+
+chart* remove_char(stringf* s) {
+    assert(s != NULL);
+    assert(s->last != NULL);
+    node* temp = s->last;
+    s->last = s->last->prev;
+    s->last->next = NULL;
+    assert(10 <= temp->data && temp->data <= 15);
+    return temp;
+}
+
+void print_char(chart* c) {
+    assert(c != NULL);
+    assert(10 <= c->data && c->data <= 15);
+    print_hex(c->data);
+}
+
+void print_string(stringf* s) {
+    assert(s != NULL);
+    if (s->first == NULL) {
+        assert(s->last == NULL);
+    }
+    chart* curr = s->first;
+    while (curr != s->last) {
+        assert(curr != NULL);
+        print_char(curr);
+        curr = curr->next;
+    } 
+}
+
+
+int main() {
+    stringf* facebook = empty();
+    add_f(facebook);
+    add_a(facebook);
+    add_c(facebook);
+    add_e(facebook);
+    print_string(facebook);
+    add_d(facebook);
+    print_string(facebook);
+    node* chr = remove_char(facebook);
+    print_char(chr);
+    add_b(facebook);
+    add_char(facebook, 24); // violate the interface to add "O"
+    remove_char(facebook);
+    return 0;
+}

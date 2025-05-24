@@ -1,0 +1,13 @@
+//test return 12
+
+int bitcount(int x) {
+    if (x == 0) return 0;
+    int bit;
+    if (x % 2 == 1) bit = 1; else bit = 0;
+    return bit + bitcount(x/2);}
+
+int main() {
+    return bitcount(0x7777);
+}
+
+

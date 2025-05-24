@@ -1,0 +1,14 @@
+//test return 6
+int main () {
+  int a = 1;
+  int b = 1;
+  int c = 1;
+  int d = 19;
+
+  a += 1;
+  b -= a;
+  c *= (a + b);
+  d /= (a + b + c + 1);
+
+  return d;
+}

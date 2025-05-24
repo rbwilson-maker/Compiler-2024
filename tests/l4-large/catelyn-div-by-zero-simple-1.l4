@@ -1,0 +1,92 @@
+//test div-by-zero
+
+// tests assignments and all that goodness
+
+void a(int* x) {
+	*x = 0;
+}
+
+void b(int* x) {
+	*x = 1;
+}
+
+void c(int* x) {
+	*x = 2;
+}
+
+void d(int* x) {
+	*x = 3;
+}
+
+void e(int* x) {
+	*x = 4;
+}
+
+void f(int* x) {
+	*x = 5;
+}
+
+void g(int* x) {
+	*x = 6;
+}
+
+void h(int* x) {
+	*x = 7;
+}
+
+void switch(int* arg, int case) {
+    if (case == 0) {
+    	a(arg);
+    }
+    else if (case == 1) {
+    	b(arg);
+    }
+    else if (case == 2) {
+    	c(arg);
+    }
+    else if (case == 3) {
+    	d(arg);
+    }
+    else if (case == 4) {
+    	e(arg);
+    }
+    else if (case == 5) {
+    	f(arg);
+    }
+    else if (case == 6) {
+    	g(arg);
+    }
+    else if (case == 7) {
+    	h(arg);
+    }
+    else {
+    	assert(-1 == 1);
+    }
+}
+
+int main() {
+	int[] arr1 = alloc_array(int, 8);
+	int*[] arr2 = alloc_array(int*, 8);
+	int**[] arr3 = alloc_array(int**, 8);
+
+	for (int i = 0; i < 8; i++) {
+		assert(arr1[i] == 0);
+		assert(arr2[i] == NULL);
+		assert(arr3[i] == NULL);
+	}
+
+	for (int i = 0; i < 8; i++) {
+		arr1[i] = i;
+		arr2[i] = alloc(int);
+		arr3[i] = alloc(int*);
+		*arr3[i] = arr2[i];
+		switch(arr2[i], i);
+		switch(*arr3[i], 7-i);
+	}
+
+	for (int i = 0; i < 8; i++) {
+		assert(arr1[i] * *arr2[i] < 12 || arr2[i] == *arr3[i]);
+	}
+
+	return 1/0;
+}

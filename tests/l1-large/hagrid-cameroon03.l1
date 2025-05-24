@@ -1,0 +1,10 @@
+//test error
+// someone who doesn't know that multi-line comments exist
+int main()
+{
+    int x = 5;
+    /* gee i sure am glad comments are only one line and the next line is valid code
+    int y = 3;
+    */
+    return (x + y);
+}

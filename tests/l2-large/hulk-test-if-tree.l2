@@ -1,0 +1,171 @@
+//test return 0
+
+int main() {
+  bool c0 = false;
+  bool c1 = false;
+  bool c2 = false;
+  bool c3 = false;
+  bool c4 = false;
+  bool cond = true;
+
+  while(cond) {
+    if(c0) {
+      if(c1) {
+        if(c2) {
+          if(c3) {
+            if(c4) {
+              c0 = false;
+              c1 = false;
+              c2 = false;
+              c3 = false;
+              c4 = false;
+              cond = false;
+              return 0;
+            } else {
+              c4 = true;
+            }
+          } else {
+            if(c4) {
+              c3 = true;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          }
+        } else {
+          if(c3) {
+            if(c4) {
+              c2 = true;
+              c3 = false;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          } else {
+            if(c4) {
+              c3 = true;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          }
+        }
+      } else {
+        if(c2) {
+          if(c3) {
+            if(c4) {
+              c1 = true;
+              c2 = false;
+              c3 = false;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          } else {
+            if(c4) {
+              c3 = true;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          }
+        } else {
+          if(c3) {
+            if(c4) {
+              c2 = true;
+              c3 = false;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          } else {
+            if(c4) {
+              c3 = true;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          }
+        }
+      }
+    } else {
+      if(c1) {
+        if(c2) {
+          if(c3) {
+            if(c4) {
+              c0 = true;
+              c1 = false;
+              c2 = false;
+              c3 = false;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          } else {
+            if(c4) {
+              c3 = true;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          }
+        } else {
+          if(c3) {
+            if(c4) {
+              c2 = true;
+              c3 = false;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          } else {
+            if(c4) {
+              c3 = true;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          }
+        }
+      } else {
+        if(c2) {
+          if(c3) {
+            if(c4) {
+              c1 = true;
+              c2 = false;
+              c3 = false;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          } else {
+            if(c4) {
+              c3 = true;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          }
+        } else {
+          if(c3) {
+            if(c4) {
+              c2 = true;
+              c3 = false;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          } else {
+            if(c4) {
+              c3 = true;
+              c4 = false;
+            } else {
+              c4 = true;
+            }
+          }
+        }
+      }
+    }
+  }
+  return 1;
+}

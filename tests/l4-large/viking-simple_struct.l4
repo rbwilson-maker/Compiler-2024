@@ -1,0 +1,36 @@
+//test return 10
+struct simple_struct {
+  bool i_am_simple;
+  struct simple_struct* or_am_i;	
+};
+
+typedef struct simple_struct simpstr;
+
+simpstr* not_simple(int n) {
+  simpstr* p;
+  simpstr* q;
+  q = NULL;
+  p = alloc(simpstr);
+  p -> i_am_simple = true;
+  p -> or_am_i = q;
+  q = p; 
+  n -= 1;
+  while (n > 0) {
+    p = alloc(simpstr);
+    p -> i_am_simple = false;
+    p -> or_am_i = q;
+    q = p;
+    n -= 1; 
+  }
+  return q;	
+}
+int lack_of_simplicity(simpstr* q){
+  if (q == NULL) {
+    return 0;	  
+  }
+  else return 1 + lack_of_simplicity(q->or_am_i);
+}
+int main(){
+  simpstr* example = not_simple(10);
+  return lack_of_simplicity (example);  	
+}

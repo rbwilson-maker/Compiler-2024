@@ -1,0 +1,6 @@
+//test typecheck
+typedef struct s s;
+int main() {
+    s[] arr = alloc_array(s, 2);
+    return arr[1].x;
+}

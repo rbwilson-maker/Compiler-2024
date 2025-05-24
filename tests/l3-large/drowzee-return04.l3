@@ -1,0 +1,24 @@
+//test return 4
+
+
+int foo(int n, int m);
+int bar(int n, int m);
+
+int foo(int n, int m) {
+    if (n==0) return m;
+
+    return bar(n-1,m);
+}
+
+int bar(int n, int m) {
+    if (m==0) return n;
+
+    return foo(n,m-1);
+}
+
+int main() {
+    int x=5;
+    int y=9;
+
+    return foo(5,9);
+}

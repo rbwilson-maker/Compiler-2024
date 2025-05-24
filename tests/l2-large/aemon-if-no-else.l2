@@ -1,0 +1,10 @@
+//test return -2
+
+int main() {
+    int x = 7;
+    if (x > 8)
+        x = 19;
+    if (x < 14)
+        x = -2;
+    return x;
+}

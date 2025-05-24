@@ -1,0 +1,6 @@
+//test return 1
+
+void swap(int[] A, int i, int j);
+bool le_seg(int x, int[] A, int lower, int upper);
+bool is_sorted(int[] A, int lower, int upper);
+bool le_segs(int[] A, int lower1, int upper1, int[] B, int lower2, int upper2);

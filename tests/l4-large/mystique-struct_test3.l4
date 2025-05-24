@@ -1,0 +1,33 @@
+//test return 10
+//from 15122
+
+struct strbuf {
+  int limit;
+  int len;
+  int[] buf;
+};
+
+struct strbuf* strbuf_new(int initial_limit)
+{
+  struct strbuf* sb = alloc(struct strbuf);
+  sb->limit = initial_limit;
+  sb->buf = alloc_array(int, initial_limit);
+  sb->len = 0;
+  return sb;
+}
+
+int[] strbuf_str(struct strbuf* str)
+{
+  int[] s = alloc_array(int, str->len + 1);
+  for (int i = 0; i < str->len; i++) {
+    s[i] = str->buf[i];
+    }
+  s[str->len] = 0;
+  return s;
+}
+
+int main() {
+    struct strbuf *s = strbuf_new(10);
+    int[] c = strbuf_str(s);
+    return s->limit;
+}

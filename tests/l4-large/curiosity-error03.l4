@@ -1,0 +1,14 @@
+//test error
+//double declaration of function with different argument types
+
+int mult (int* x, int* y) {
+	return (*x) * (*y);
+}
+
+int mult (int x, int y){
+	return x * y;
+}
+
+int main() {
+	return 1;
+}

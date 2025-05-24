@@ -1,0 +1,13 @@
+//test error
+
+typedef bool b;
+
+b some();
+b some(int x);
+
+int main() {
+  if (some())
+    return 0;
+  return -1;
+}
+

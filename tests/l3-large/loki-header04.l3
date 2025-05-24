@@ -1,0 +1,9 @@
+//test typecheck
+
+int moo1(int x) {
+    return 2;
+}
+
+int main() {
+    return moo1(moo(3));
+}

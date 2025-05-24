@@ -1,0 +1,17 @@
+//test return 0
+
+bool check_even(int x) {
+    if (x % 2 == 0) {
+        return true;
+    }
+    return false;
+}
+
+int main()
+{
+    bool is_even = check_even(101);
+    if (is_even) {
+        return 1;
+    }
+    return 0;
+}

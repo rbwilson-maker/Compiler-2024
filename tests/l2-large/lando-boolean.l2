@@ -1,0 +1,14 @@
+//test return 7;
+
+int main() {
+    bool p = false;
+    bool q = true;
+    bool x = q && p || p && q;
+    if (x) {
+        return 5;
+    }
+    if (!!!!!!!!x) {
+        return 6;
+    }
+    return 7;
+}

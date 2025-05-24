@@ -1,0 +1,12 @@
+//test error
+// cannot have array on stack
+
+struct big {
+  int f1;
+  bool f2;
+};
+
+int main() {
+  struct big[][][][][][][][][][][][1][][][][][][][][][][][] big_arr = alloc_array(big[][][][][][][][][][][][1][][][][][][][][][][], 1);
+  return 0;
+}

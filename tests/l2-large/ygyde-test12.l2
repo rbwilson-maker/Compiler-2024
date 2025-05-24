@@ -1,0 +1,22 @@
+//test return 15
+
+// tests: branching, l1 subset of language
+// test if branch is not taken
+int main() {
+    int x = 32;
+    int i;
+    // should raise div by zero as we exceed the width
+    for (i = 0; i < 33; i *= 3) {
+        for (i = 0; i < 33; i *= 3) {
+            for (i = 0; i < 33; i *= 3) {
+                for (i = 0; i < 33; i *= 3) {
+                    if (i == 0) {
+                        return 15;
+                    }
+                }
+            }
+        }
+    }
+    // should not take this branch
+    return x;
+}

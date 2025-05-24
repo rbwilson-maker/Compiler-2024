@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+  while(5) {
+    int x = 0;
+    x += 5;
+  }
+  return 5;
+}

@@ -1,0 +1,15 @@
+//test return 1
+/* Function redef */
+
+typedef int whywouldyoueverwanttoredefineint;
+typedef whywouldyoueverwanttoredefineint thisisgettinghilarious;
+
+whywouldyoueverwanttoredefineint good_divide(thisisgettinghilarious a, whywouldyoueverwanttoredefineint b) ;
+
+whywouldyoueverwanttoredefineint good_divide(thisisgettinghilarious a, whywouldyoueverwanttoredefineint b) {
+	return 1;
+}
+
+int main() {
+ 	return good_divide(1,good_divide(1,1));
+}

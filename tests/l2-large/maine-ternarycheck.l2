@@ -1,0 +1,15 @@
+//test return 0
+//tests ternary op
+int main()
+{
+   bool t = true;
+   bool f = false;
+   int x = 21;
+   while (t ? true : false)
+   {
+      x--;
+      if (x == 0)
+         t = false;
+   }
+   return x;
+}

@@ -1,0 +1,8 @@
+//test div-by-zero
+// Zero divisor formed by bitwise operators
+
+int main() {
+  int x = 0xfeedc0de;
+  int y = ~x;
+  return (y / (x & y));
+}

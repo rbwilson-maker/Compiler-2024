@@ -1,0 +1,12 @@
+//test error
+
+typedef int foo;
+
+struct S {
+	foo foo;
+	foo NULL;
+};
+
+int main() {
+	return 0;
+}

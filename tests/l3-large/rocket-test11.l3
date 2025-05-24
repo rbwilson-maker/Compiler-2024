@@ -1,0 +1,13 @@
+//test error
+// no initialization of x
+
+int helper() {
+    return x;
+}
+
+int main()
+{
+    int a = 0;
+    int res = helper();
+    return res;
+}

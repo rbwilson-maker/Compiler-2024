@@ -1,0 +1,19 @@
+//test return 500000000
+
+int main() {
+    int i = 100000000;
+    int in_loops = 5;
+    int j;
+
+    int sum = 0;
+
+    while (i > 0) {
+        for (j = 0; j < in_loops; j++) {
+            sum += 1;
+        }
+
+        i--;
+    }
+
+    return sum;
+}

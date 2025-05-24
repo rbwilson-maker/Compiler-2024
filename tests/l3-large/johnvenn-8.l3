@@ -1,0 +1,17 @@
+//test return 1024
+
+int f(int x) {
+  int res = 1;
+  int e = 2;
+  while(x > 0) {
+    if(x%2 == 1) 
+      res = res*e;
+    x = x >> 1;
+    e = e*e;    
+  }
+  return res;
+}
+
+int main() {
+  return f(10);
+}

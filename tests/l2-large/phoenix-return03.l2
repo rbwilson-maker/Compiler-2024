@@ -1,0 +1,13 @@
+//test return 64
+// exponentiation
+
+int main() {
+    int i = 2;
+    int n = 1;
+    int pow = 6;
+    while (pow > 0) {
+        n *= i;
+        pow -= 1;
+    }
+    return n;
+}

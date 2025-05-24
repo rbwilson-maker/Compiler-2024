@@ -1,0 +1,9 @@
+struct ll_node {
+  int data;
+  struct ll_node * next;
+  struct ll_node * prev;
+};
+
+typedef struct ll_node ll_node;
+
+bool find(ll_node * node, int x);

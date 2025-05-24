@@ -1,0 +1,48 @@
+//test return 209715200
+//slow multiplication
+
+int succ(int n) {
+  n++;
+  return n;
+}
+
+int pred(int n) {
+  n--;
+  return n;
+}
+
+int add(int x, int y) {
+  if (x < y) {
+    while (x > 0) {
+      x = pred(x);
+      y = succ(y);
+    }
+    return y;
+  } else {
+    while (y > 0) {
+      y = pred(y);
+      x = succ(x);
+    }
+    return x;
+  }
+}
+
+int mult(int x, int y) {
+  if (x < y) {
+    while (x > 0) {
+      x = pred(x);
+      y = add(y, y);
+    }
+    return y;
+  } else {
+    while (y > 0) {
+      y = pred(y);
+      x = add(x, x);
+    }
+    return x;
+  }
+}
+
+int main() {
+  return mult(100, 21);
+}

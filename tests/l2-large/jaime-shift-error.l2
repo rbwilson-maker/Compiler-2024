@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main ()
+{
+  int x = 0x123456;
+  int too_big = 47;
+  int y = x << too_big;
+  return x;
+}

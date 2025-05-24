@@ -1,0 +1,23 @@
+//test return 53
+// Default values on empty arrays
+
+struct a {
+};
+
+int main() {
+    int breeze = 0;
+    struct a[] blowinglike = alloc_array(struct a, breeze);
+    struct a[] chorus1 = alloc_array(struct a, 0);
+    int inter  = 50;
+    struct a[]* lude = alloc(struct a[]);
+    if (blowinglike != chorus1) {
+        inter++;
+        if (blowinglike != *lude) {
+            inter++;
+        }
+        if (chorus1 != *lude) {
+            inter++;
+        }
+    }
+    return inter;
+}

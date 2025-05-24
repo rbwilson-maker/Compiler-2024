@@ -1,0 +1,15 @@
+//test error 
+
+struct ms {
+    int foo;
+};
+
+int f(struct ms s){
+    return ms.foo;
+}
+
+int main (){
+    struct ms *s = alloc(struct ms);
+    f(*s);
+    return 1;
+}

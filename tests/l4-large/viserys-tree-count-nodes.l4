@@ -1,0 +1,33 @@
+//test error
+
+struct tree {
+  int value;
+  struct tree* left;
+  struct tree* right;
+};
+
+typedef struct tree tree;
+
+tree* generate_tree(int left, int right) {
+  tree* t = alloc(tree);
+  t->value = 1;
+  if (left > 0) {
+    t->left = generate_tree(left - 1, right - 1);
+  }
+  if (right > 0) {
+    t->right = generate_tree(left - 1, right - 1);
+  }
+  return t;
+}
+
+int nodes(tree* t) {
+  if (t == null) {
+    return null;
+  }
+  return 1 + nodes(*t.left) + nodes(*t.right)
+}
+
+int main() {
+  tree* t = generate_tree(3, 3);
+  return height(null) + height(t);
+}

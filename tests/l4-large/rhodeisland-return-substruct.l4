@@ -1,0 +1,15 @@
+//test return 0
+struct bar {
+	int z;
+};
+struct foo {
+	int x;
+	struct bar* y;
+};
+
+int main() {
+	struct foo* x = alloc(struct foo);
+	x->x = 2;
+	x->y = alloc(struct bar);
+	return x->y->z;
+}

@@ -1,0 +1,25 @@
+//test return 85766121
+
+/*
+    mutual: Mutual Recursion
+
+    Tests:
+    - Semantic analysis
+    - Recursion
+
+*/
+
+int f(int x);
+
+int g(int x) {
+    return f(x * x * x);
+}
+
+int f(int x) {
+    if (x >= 10000) {return x;}
+    return g(x * x);
+}
+
+int main() {
+    return f(21);
+}

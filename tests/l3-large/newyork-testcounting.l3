@@ -1,0 +1,21 @@
+//test return 20
+
+int choose(int n, int k){
+
+	if ((k == n) || (k == 0))
+		return 1;
+	else if ((k > n) || (k < 0) || (n < 0))
+		return 0;
+
+	return choose(n-1,k-1) + choose(n-1,k);
+
+}
+
+
+int main(){
+
+
+	//20
+	return choose(6,3);
+
+}

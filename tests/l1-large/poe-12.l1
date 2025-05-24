@@ -1,0 +1,13 @@
+//test return 5
+
+// Test variable scope with same names
+// Making sure local scope correctly handles global declaration of x
+
+int main()
+{
+	int x = 3;
+	{
+		x = 5;
+		return x;
+	}
+}

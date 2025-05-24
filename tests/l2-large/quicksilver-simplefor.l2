@@ -1,0 +1,8 @@
+//test return 150
+int main() {
+    int y = 1;
+    for (int i=0; i<150; i++) {
+        y = i;
+    }
+    return y+1; 
+}

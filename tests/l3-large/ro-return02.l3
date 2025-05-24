@@ -1,0 +1,19 @@
+//test return 1
+// test basic functions
+
+int f1();
+int f2();
+
+int main() {
+  int x = 1;
+
+  return f1() + f2();
+}
+
+int f1(){
+  return 2;
+}
+
+int f2() {
+  return -1;
+}

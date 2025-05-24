@@ -1,0 +1,9 @@
+//test return 17
+
+int main() {
+    int a = 17;
+    int b = 16; 
+    int c = 15;
+    int d = b * c;
+    return a;
+}

@@ -1,0 +1,50 @@
+//test return 122
+
+void set_value(int[][][][][] A, int key, int value) {
+    int[] digits = alloc_array(int, 5);
+    for (int i = 0; i < 5; i++) {
+        digits[5-i-1] = key & 1;
+        key >>= 1;
+    }
+    A[digits[0]][digits[1]][digits[2]][digits[3]][digits[4]] = value;
+}
+
+int main() {
+    int[][][][][] A = alloc_array(int[][][][], 2);
+    A[0] = alloc_array(int[][][], 2);
+    A[1] = alloc_array(int[][][], 2);
+    A[0][0] = alloc_array(int[][], 2);
+    A[0][1] = alloc_array(int[][], 2);
+    A[1][0] = alloc_array(int[][], 2);
+    A[1][1] = alloc_array(int[][], 2);
+    A[0][0][0] = alloc_array(int[], 2);
+    A[0][0][1] = alloc_array(int[], 2);
+    A[0][1][0] = alloc_array(int[], 2);
+    A[0][1][1] = alloc_array(int[], 2);
+    A[1][0][0] = alloc_array(int[], 2);
+    A[1][0][1] = alloc_array(int[], 2);
+    A[1][1][0] = alloc_array(int[], 2);
+    A[1][1][1] = alloc_array(int[], 2);
+    A[0][0][0][0] = alloc_array(int, 2);
+    A[0][0][0][1] = alloc_array(int, 2);
+    A[0][0][1][0] = alloc_array(int, 2);
+    A[0][0][1][1] = alloc_array(int, 2);
+    A[0][1][0][0] = alloc_array(int, 2);
+    A[0][1][0][1] = alloc_array(int, 2);
+    A[0][1][1][0] = alloc_array(int, 2);
+    A[0][1][1][1] = alloc_array(int, 2);
+    A[1][0][0][0] = alloc_array(int, 2);
+    A[1][0][0][1] = alloc_array(int, 2);
+    A[1][0][1][0] = alloc_array(int, 2);
+    A[1][0][1][1] = alloc_array(int, 2);
+    A[1][1][0][0] = alloc_array(int, 2);
+    A[1][1][0][1] = alloc_array(int, 2);
+    A[1][1][1][0] = alloc_array(int, 2);
+    A[1][1][1][1] = alloc_array(int, 2);
+    
+    for (int i = 0; i < 1 << 5; i++) {
+        set_value(A, i, 100+i);
+    }
+    
+    return A[1][0][1][1][0];
+}

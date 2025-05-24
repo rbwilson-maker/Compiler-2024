@@ -1,0 +1,35 @@
+//test return 1
+
+typedef int int2;
+
+int main() {
+    int *a = alloc(int);
+    *a = 1;
+
+    // This should be a decl
+    int2 **b = alloc(int*);
+    *b = alloc(int);
+    **b = 2;
+
+    if (**b != 2) return 2;  
+
+    // This should be multiplication
+    int int3 = 3;
+    int c = int3 * int3;
+
+    if (c != 9) return 3;
+
+    // This should also be multiplication
+    int int4 = 4;
+    int d = int4 * (*a);
+
+    if (d != 4) return 4;
+
+    // Same
+    int int5 = 5;
+    int e = int5 * (**b);
+
+    if (e != 10) return 5;
+    
+    return 1;
+}

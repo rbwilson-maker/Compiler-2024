@@ -1,0 +1,23 @@
+//test return 5
+struct point {
+  int x;
+  int y;
+};
+
+int sq_dist (struct point* a, struct point* b) {
+  int dx = (a->x < b->x) ? (b->x - a->x) : (a->x - b->x);
+  int dy = (a->y < b->y) ? (b->y - a->y) : (a->y - b->y);
+  return dx*dx + dy*dy;
+}
+
+int main () {
+  struct point* p1;
+  struct point* p2;
+  p1 = alloc(struct point);
+  p2 = alloc(struct point);
+  p1 -> x = 0;
+  p1 -> y = 0;
+  p2 -> x = 1;
+  p2 -> y = 2;
+  return sq_dist(p1,p2);
+}

@@ -1,0 +1,13 @@
+//test return 15251
+
+void must_short_circuit (int x) {
+    if (x < 15251 && (1/0 == 0)) {
+       assert(false);
+    }
+}
+
+int main () {
+    int i = 15251;
+    must_short_circuit (i);
+    return i;
+}

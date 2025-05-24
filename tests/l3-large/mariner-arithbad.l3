@@ -1,0 +1,6 @@
+//test error
+//wrong number of arguments to function
+int main(){
+  div_t oops = div(1,2,3);
+  return oops.rem;
+}

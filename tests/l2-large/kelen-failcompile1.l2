@@ -1,0 +1,8 @@
+//test error
+
+// Tests adding bool by 3
+int main() {
+    bool abc = true;
+    abc += 3;
+    return abc;
+};

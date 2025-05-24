@@ -1,0 +1,12 @@
+//test return 0
+int one(int x) {
+  return x + 1;
+}
+
+int main() {
+  int x = -(1 << 27);
+  while (x != 0) {
+    x = one(x);
+  }
+  return x;
+}

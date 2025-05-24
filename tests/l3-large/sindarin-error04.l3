@@ -1,0 +1,13 @@
+//test error
+// calling undefined function
+
+bool f(int x, int y, int z);
+bool g(int x, int y, int z);
+bool f(int a, int b, int c) {
+  return true;
+}
+
+int main() {
+  g(1, 2, 3);
+  return 0;
+}

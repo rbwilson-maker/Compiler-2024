@@ -1,0 +1,6 @@
+struct pair {
+  int x;
+  int y;
+};
+
+struct pair[] cartesian(int[] first, int[] second);

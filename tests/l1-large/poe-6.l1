@@ -1,0 +1,10 @@
+//test div-by-zero
+
+//Testing a contrived div by 0
+
+int main() {
+	int x = 5-5;
+	int y = 3;
+	int z = x*y;
+	return 5/z;
+}

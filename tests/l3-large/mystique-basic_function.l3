@@ -1,0 +1,11 @@
+//test return 18
+
+
+int f(int x, int y, int z) {
+    return x + y + z;
+}
+
+int main() {
+    int x = f(1, 2, 3);
+    return x * 3;
+}

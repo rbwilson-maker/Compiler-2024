@@ -1,0 +1,11 @@
+//test div-by-zero
+int nonexistent();
+
+int overshift(int x) {
+	return 20 << x;
+}
+
+int main() {
+	int x = 20;
+	return overshift(overshift(overshift(overshift(overshift(x)))));
+}

@@ -1,0 +1,51 @@
+//test return 0
+// Puts a sorted array into a binary tree and validates that it is still
+// sorted.
+struct tree {
+  struct tree* left;
+  struct tree* right;
+  int value;
+};
+
+struct tree* fromArray(int[] xs, int start, int end)
+{
+  if (end == start)
+  {
+    return NULL;
+  }
+  if (end - start == 1)
+  {
+    struct tree* single = alloc(struct tree);
+    single->value = xs[start];
+    return single;
+  }
+  int midpoint = start + (end - start) / 2;
+  struct tree* left = fromArray(xs, start, midpoint);
+  struct tree* right = fromArray(xs, midpoint + 1, end);
+  struct tree* ret = alloc(struct tree);
+  ret->value = xs[midpoint];
+  ret->left = left;
+  ret->right = right;
+  return ret;
+}
+
+bool verify(struct tree* sorted, int lower_bound, int upper_bound)
+{
+  if (sorted == NULL)
+    return true;
+  int value = sorted->value;
+  return value >= lower_bound && value <= upper_bound &&
+         verify(sorted->left, lower_bound, value) &&
+         verify(sorted->right, value, upper_bound);
+}
+
+int main()
+{
+  int[] ints = alloc_array(int, 20);
+  for (int i = 0; i < 20; i++)
+    ints[i] = i;
+
+  struct tree* tree = fromArray(ints, 0, 20);
+  assert(verify(tree, 0x80000000, 0x7FFFFFFF));
+  return 0;
+}

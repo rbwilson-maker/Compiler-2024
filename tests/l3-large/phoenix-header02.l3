@@ -1,0 +1,7 @@
+//test typecheck
+//testing nested function calls to the header file
+
+int main() {
+    int answer = interesting_function(add(1, 4), equal(2, 4));
+    return square(answer);
+} 

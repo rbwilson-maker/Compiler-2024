@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+    int x = 0;
+    int z = 0;
+    bool y = true && true;
+    return z/x; 
+}
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

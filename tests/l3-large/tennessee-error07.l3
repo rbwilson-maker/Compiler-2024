@@ -1,0 +1,10 @@
+//test error
+// extraneous comma in param-list-follow
+
+int something(int x, int y,) {
+  return x + y;
+}
+
+int main() {
+  return something(5,4);
+}

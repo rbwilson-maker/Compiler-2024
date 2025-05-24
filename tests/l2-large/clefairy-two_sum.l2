@@ -1,0 +1,15 @@
+//test return 411
+
+int main() {
+    int x = 1233;
+    int i;
+    int j;
+    for (i = 0; i < x; i++) {
+        for (j = i; j < x; j++) {
+            if ((i + j) == x && (j - i <= 411)) {
+                return i;
+            }
+        }
+    }
+    return -1;
+}

@@ -1,0 +1,34 @@
+//test return 0
+
+typedef struct half_edge_header * half_edge;
+struct half_edge_header
+{
+  half_edge next;
+  half_edge twin;
+  int name;
+};
+
+half_edge new_half_edge (int n) {
+  half_edge h = alloc(struct half_edge_header);
+  h->name = n;
+  return h;
+}
+
+int main() {
+  half_edge h0 = new_half_edge(0);
+  half_edge h1 = new_half_edge(1);
+  half_edge h2 = new_half_edge(2);
+  half_edge h3 = new_half_edge(3);
+  h0->twin = h1;
+  h1->twin = h0;
+  h2->twin = h3;
+  h3->twin = h2;
+  h0->next = h2;
+  h2->next = h1;
+  h1->next = h0;
+  h3->next = h3;
+  assert(h0->twin->next == h0);
+  assert(h0->next->next == h0->twin);
+  return 0;
+}
+

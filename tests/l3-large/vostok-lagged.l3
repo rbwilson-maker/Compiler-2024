@@ -1,0 +1,217 @@
+//test return 30729220
+// computes some weird stuff, not quite sure what it does
+// I love 15-122
+
+int lagged(int n, int c1, int c2, int l1, int l2) {
+    assert (0 < l1 && l1 < l2);
+    assert (0 <= n);
+    if (n < l2) {
+        return n;
+    }
+    return c1 * lagged(n - l1, c1 - 1, c2 - 1, l1, l2) + c2 * lagged(n - l2, c1 - 1, c2 - 1, l1, l2);
+}
+
+int main() {
+    int sum = 0;
+    for(int i = 0; i < 10; i++) {
+        for(int c1 = 0; c1 < 10; c1++) {
+            for(int c2 = 0; c2 < 10; c2++) {
+                for(int l1 = 1; l1 < 5; l1++) {
+                    for(int l2 = l1 + 1; l2 < 5; l2++) {
+                        sum += lagged(i, c1, c2, l1, l2);
+                    }
+                }
+            }
+        }
+    }
+    return sum;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// have I mentioned I like 15-122

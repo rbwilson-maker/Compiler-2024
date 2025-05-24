@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int main()
+{
+  int TMIN;
+  int x;
+  int overflow;
+
+  TMIN = -2;
+  x = 32768;
+  TMIN = TMIN * x * x;
+  overflow = TMIN / -1;
+  return overflow;
+}

@@ -1,0 +1,34 @@
+//test return 42
+
+/* Contracts Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Saturday, September 12, 2015 at 04:48:39 PM EDT
+ *
+ * This tests that the compiler treats contracts no differently than comments.
+ */
+
+//@ensures I'm a contract, but with bad syntax
+
+/*@assert I'm a multi-line
+ * contract, again with no valid
+ * syntax @*/
+
+/*@I'm just a normal comment @*/
+
+int main()
+//@requires true
+//@ensures true
+{
+    int x;
+    int y;
+    int z;
+
+    x = 17;
+    //@assert x == 2
+    y = 25;
+    z = x + y;
+
+    return z;
+}

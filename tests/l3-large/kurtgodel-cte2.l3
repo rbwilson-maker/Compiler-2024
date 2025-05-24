@@ -1,0 +1,17 @@
+//test error
+/*
+Compile error.
+Multiple uses of same typedef.
+*/
+
+typedef int a;
+
+a r() {
+  return 3;
+}
+
+typedef bool a;
+
+int main() {
+  return r();
+}

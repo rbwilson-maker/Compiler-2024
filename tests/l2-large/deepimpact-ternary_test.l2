@@ -1,0 +1,7 @@
+//test return 0
+int main() {
+    bool boo = true;
+    bool boo1 = false;
+    int a = 0;
+    return boo ? a : -1;
+}

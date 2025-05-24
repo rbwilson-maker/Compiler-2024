@@ -1,0 +1,98 @@
+//test return 4
+
+/*********************************************************************************************************************************************************************
+***** 15-122
+***********
+*****************8
+*/
+
+struct a {
+	int *gggg;
+	bool b1;
+	bool b2;
+	bool b3;
+	bool b4;
+	bool b5;
+	bool b6;
+	bool b7;
+	bool b8;
+};
+
+struct b {
+	struct a aa;
+	struct a aa2;
+	struct a aa3;
+	struct a aa4;
+};
+
+struct c {
+	struct b bb;
+	struct b bb2;
+	struct b bb3;
+	struct b bb4;
+};
+
+struct d {
+	struct c cc;
+	struct c cc2;
+	struct c cc3;
+	struct c cc4;
+};
+
+struct e {
+	struct d dd;
+	struct d dd2;
+	struct d dd3;
+	struct d dd4;
+};
+
+struct f {
+	struct e ee;
+	struct e ee2;
+	struct e ee3;
+	struct e ee4;
+};
+
+struct g {
+	struct f ff;
+	struct f ff2;
+	struct f ff3;
+	struct f ff4;
+};
+
+struct h {
+	struct g gg;
+	struct g gg2;
+	struct g gg3;
+	struct g gg4;
+};
+
+struct i {
+	struct h hh;
+	struct h hh2;
+	struct h hh3;
+	struct h hh4;
+};
+
+struct j {
+	struct i ii;
+	struct i ii2;
+	struct i ii3;
+	struct i ii4;
+};
+
+struct k {
+	struct j jj;
+	struct j jj2;
+	struct j jj3;
+	struct j jj4;
+};
+
+int main() {
+	struct k *kk = alloc(struct k);
+	kk->jj.ii.hh.gg.ff.ee.dd.cc.bb.aa.b1 = true;
+	kk->jj.ii.hh.gg.ff.ee.dd.cc.bb.aa.b2 = false;
+	kk->jj.ii.hh.gg.ff.ee.dd.cc.bb.aa.b3 = kk->jj.ii.hh.gg.ff.ee.dd.cc.bb.aa.b1 && kk->jj.ii.hh.gg.ff.ee.dd.cc.bb.aa.b2;
+	
+	return kk->jj.ii.hh.gg.ff.ee.dd.cc.bb.aa.b3 ? 3 : 4;
+}

@@ -1,0 +1,26 @@
+//test return 0
+
+struct general {
+};
+
+typedef struct general* general;
+
+int main() {
+  struct general***** marshall = alloc(struct general****);
+  struct general***** macarthur = alloc(general***);
+  general**** eisenhower = alloc(struct general****);
+  general**** arnold = alloc(general***);
+  int size = 4;
+  struct general*****[] generals = alloc_array(struct general*****, size);
+  generals[0] = marshall;
+  generals[1] = macarthur;
+  generals[2] = eisenhower;
+  generals[3] = arnold;
+  for (int i = 0; i < size; i++) {
+    for (int j = 0; j < size; j++) {
+      assert(i == j || generals[i] != generals[j]);
+    }
+  }
+  return 0;
+}
+  

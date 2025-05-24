@@ -1,0 +1,16 @@
+//test return 0
+// define function multiple times
+
+int sum(int a, int b);
+
+int sum(int c, int d);
+
+int sum(int e, int f) {
+  return e + f;
+}
+
+int main() {
+  return sum(5, -5);
+}
+
+int sum(int y, int z);

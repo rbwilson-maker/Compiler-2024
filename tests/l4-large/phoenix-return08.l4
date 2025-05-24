@@ -1,0 +1,34 @@
+//test return 3
+
+struct small {
+  int miniscule;
+};
+
+struct medium {
+  struct small* s0; 
+  struct small* s1; 
+};
+
+struct large{
+  struct medium* m;
+  struct small* s;
+  struct large* l;
+};
+
+int main() {
+  struct small* s = alloc(struct small);
+  s->miniscule = 17; 
+
+  struct medium* m = alloc(struct medium);
+  m->s0 = s;
+  m->s1 = s;
+
+  struct large* l = alloc(struct large);
+  l->m = m;
+  l->s = s;
+  l->l = l;
+
+  s->miniscule = 3;
+
+  return (*(l->m->s1)).miniscule;
+}

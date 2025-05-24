@@ -1,0 +1,11 @@
+//test return 9
+
+int main() {
+  bool x = true;
+
+  while(x) {
+    x = false;
+  }
+
+  return 9;
+}

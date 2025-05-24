@@ -1,0 +1,8 @@
+//test memerror
+//Evaluation order
+
+int main(){
+	int **x = NULL;
+	**x = 1 / 0;
+	return 0;
+}

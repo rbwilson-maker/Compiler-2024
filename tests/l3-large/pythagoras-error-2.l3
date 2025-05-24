@@ -1,0 +1,22 @@
+//test error
+
+// void is not a type (only a return type)
+// and nested typedef mismatch
+
+typedef int goodtype;
+typedef void badtype;
+
+typedef int int1;
+typedef int1 int2;
+typedef int2 int3;
+typedef int3 int4;
+
+int main() {
+    int x=0;
+    int4 b = false;
+
+    while (true) {
+        x = x + 1 / 3;
+    }
+    return 1;
+}

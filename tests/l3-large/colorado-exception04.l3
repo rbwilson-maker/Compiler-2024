@@ -1,0 +1,24 @@
+//test typecheck
+//test infloop
+
+void mut1();
+void mut2();
+void mut3();
+
+void mut1(){
+	mut2();
+}
+
+int main() {
+  mut1();
+  return 0;
+}
+
+void mut2(){
+	mut3();
+}
+
+
+void mut3(){
+	main();
+}

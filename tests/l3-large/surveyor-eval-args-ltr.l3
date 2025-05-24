@@ -1,0 +1,20 @@
+//test return 357
+
+int f(int a, int b) {
+  print_int(3);
+  return a + b;
+}
+
+int g() {
+  print_int(1);
+  return 123;
+}
+
+int h() {
+  print_int(2);
+  return 234;
+}
+
+int main() {
+  return f(g(), h());
+}

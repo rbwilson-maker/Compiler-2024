@@ -1,0 +1,10 @@
+//test error
+//var out of scope
+int main()
+{
+  int n = 3;
+  if (true) {
+    int t = n;
+  }
+  return t;
+}

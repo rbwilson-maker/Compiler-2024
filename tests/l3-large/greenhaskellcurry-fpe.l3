@@ -1,0 +1,29 @@
+//test div-by-zero
+
+/*
+    fpe: Should raise a division by zero error.
+
+    Tests:
+    - Calling functions inside other functions
+    - Nested function calls
+    - Assert statements
+
+*/
+
+int one() {
+    return 1;
+}
+
+int two() {
+    return one() + 1;
+}
+
+int three(int x) {
+    return x - 2;
+}
+
+int main() {
+    assert(one() / three(two()) != 0);
+
+    return 15411;
+}

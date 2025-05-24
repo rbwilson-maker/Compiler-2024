@@ -1,0 +1,9 @@
+//test typecheck
+//test infloop
+
+void inf_rec() { inf_rec(); }
+
+int main() {
+    inf_rec();
+    return 0;
+}

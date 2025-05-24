@@ -1,0 +1,22 @@
+//test abort
+
+bool is_it_though (int i) {
+    if (i < 10) {
+        return true;
+    }
+    return false;
+}
+
+int good_one (bool b) {
+    if (b) {
+        return 10;
+    }
+    return 9;
+}
+
+int main() {
+    for (int i = 10; i > 0; i--) {
+        assert(good_one(is_it_though(i)) == 10);
+    }
+    return 0;
+}

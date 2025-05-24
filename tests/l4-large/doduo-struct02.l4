@@ -1,0 +1,20 @@
+//test return 4950
+struct number {
+  int num;
+};
+
+struct my_struct {
+  struct number num;
+};
+
+int main() {
+  struct my_struct[] a = alloc_array(struct my_struct, 100);
+  for(int i = 0; i < 100; i++) {
+    a[i].num.num = i;
+  }
+  int sum = 0;
+  for(int i = 0; i < 100; i++) {
+    sum += a[i].num.num;
+  } 
+  return sum;
+}

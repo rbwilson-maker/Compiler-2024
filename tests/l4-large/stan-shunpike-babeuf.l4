@@ -1,0 +1,16 @@
+//test return 0
+
+struct s1 {
+    int f1;
+    int *f2;
+};
+
+typedef struct s1 s1;
+
+int main(){
+    s1[] a = alloc_array(s1, 10);
+    int i = 3;
+    a[3].f2 = NULL;
+    int y = a[3].f1;
+    return y;
+}

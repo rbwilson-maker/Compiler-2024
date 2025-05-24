@@ -1,0 +1,10 @@
+//test return 1985229336
+// test a func that rotate x by n bits 
+
+int main() {
+  int n = 4;
+  int x = 0x87654321;
+  int power2Min1 = (1 << n) + (~0);
+  int rightPart = x >> (33 + (~n));
+  return (x << n) + (power2Min1 & rightPart); // 0x76543218
+}

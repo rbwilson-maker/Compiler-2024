@@ -1,0 +1,25 @@
+//test div-by-zero
+
+int sum(int[] A, int n) {
+  int result = 0;
+
+  for (int i = 0; i < n; i++)
+    result += A[i];
+
+  return result;
+}
+
+int mean(int[] A, int n) {
+  return sum(A, n) / n;
+}
+
+int main() {
+  int n = 21501;
+  int[] A = alloc_array(int, n);
+  // oh no, it's empty!
+
+  for (int i = 0; i < n; i++)
+    A[i] = i;
+
+  return mean(A, 0);
+}

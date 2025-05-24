@@ -1,0 +1,7 @@
+//test typecheck
+
+int main() {
+  assert(impossible(2, 2) == 2);
+  assert(impossible(3, 3) == 3);
+  return impossible(1, 1);
+}

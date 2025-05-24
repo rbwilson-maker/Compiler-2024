@@ -1,0 +1,19 @@
+//test error
+
+int brokenCheck(int b) {
+  if (b == 3) {
+    int x = 2;
+  }
+  else {
+    x = 3;
+  }
+}
+
+int main() {
+  int a = 6;
+  int b = 3;
+  
+  int x = brokenCheck(b);
+
+  return x;
+}

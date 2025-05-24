@@ -1,0 +1,35 @@
+//test return 0
+
+void sort(int[] A, int n) {
+  for(int i = 0; i < n; i++){
+    int min = A[i];
+    int loc = i;
+    for(int j = i+1; j < n; j++) {
+      if(A[j] < min) {
+        min = A[j];
+        loc = j;
+      }
+    }
+    int temp = A[i];
+    A[i] = A[loc];
+    A[loc] = temp;
+  }
+}
+
+int main() {
+  int[] A = alloc_array(int, 20);
+  for(int i = 0; i < 10; i++)
+  {
+    A[i] = 2*i;
+  }
+  for(int i = 0; i < 10; i++)
+  {
+    A[i+10] = 2*i + 1;
+  }
+  sort(A,20);
+  for(int i = 0; i < 20; i++)
+  {
+    assert(A[i] == i);
+  }
+  return 0;
+}

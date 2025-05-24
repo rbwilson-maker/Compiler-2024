@@ -1,0 +1,17 @@
+//test return 100
+struct ta {
+  int name;
+  int pay;
+};
+
+void pfrankisawesome(struct ta* foo) {
+  foo->name = 2;
+  foo->pay = 100;
+}
+
+int main() {
+  struct ta* pfrank;
+  pfrank = alloc (struct ta);
+  pfrankisawesome(pfrank);
+  return pfrank->pay;
+}

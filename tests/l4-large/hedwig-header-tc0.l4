@@ -1,0 +1,11 @@
+//test typecheck
+
+int main(){
+    struct point * res = always_null();
+    return 0;
+}
+
+struct point{
+    int x;
+    int y;
+};

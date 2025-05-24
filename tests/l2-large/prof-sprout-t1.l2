@@ -1,0 +1,9 @@
+//test return -1
+//test minus parsing
+
+int main() {
+  int a = 8;
+  int b = -1*a;
+  b--;
+  return a- -b;
+}

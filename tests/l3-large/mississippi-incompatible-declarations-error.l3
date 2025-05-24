@@ -1,0 +1,9 @@
+//test error
+
+int apple();
+int apple();
+int apple(int x);
+
+int main() {
+    return 0;
+}

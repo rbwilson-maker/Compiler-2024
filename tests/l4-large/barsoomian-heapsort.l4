@@ -1,0 +1,57 @@
+//test memerror
+
+void init_heap(int[] h) {
+    h[0] = -1;
+    h[1] = 99;
+    h[2] = 80;
+    h[3] = 85;
+    h[4] = 17;
+    h[5] = 30;
+    h[6] = 84;
+    h[7] = 2;
+    h[8] = 16;
+    h[9] = 1;
+}
+
+void print_heap(int[] h, int size) {
+    print_hex(~0);
+    for(int i = 0; i < size; i++) {
+        print_int(h[i + 1]);
+    }
+}
+
+void swap(int[] array, int a, int b) {
+    int temp = array[a];
+    array[a] = array[b];
+    array[b] = temp;
+}
+
+void heapDown(int[] array, int k, int size) {
+    if(k >= size || k*2 >= size) return;
+    int maxChild = k*2;
+    if(k*2 + 1 <= size && array[k*2] < array[k*2+1]) maxChild++;
+    if(array[k] < array[maxChild]) {
+        swap(array, k, maxChild);
+        heapDown(array, maxChild, size);
+    }
+}
+
+void sort(int[] heap, int size) {
+    while(size > 2) {
+        swap(heap, 1, size);
+        size--;
+        heapDown(heap, 1, size);
+    }
+    if(heap[1] > heap[2])
+        swap(heap, 1, 2);
+}
+
+int main() {
+    int HEAPSIZE = 9;
+    int[] heap = alloc_array(int, HEAPSIZE);
+    init_heap(heap);
+    print_heap(heap, HEAPSIZE);
+    sort(heap, HEAPSIZE);
+    print_heap(heap, HEAPSIZE);
+    return 0;
+}

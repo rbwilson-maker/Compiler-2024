@@ -1,0 +1,9 @@
+//test memerror
+
+int main() {
+    int **a = NULL;
+    int *b = NULL;
+    assert(**a > 3);
+    *a = b;
+    return **a;
+}

@@ -1,0 +1,16 @@
+//test typecheck
+
+typedef bool bool1;
+typedef bool1 bool2;
+typedef bool2 bool3;
+typedef bool3 bool4;
+
+void nothing(int x, int y) {
+    int z = x + y + x;
+    return;
+}
+
+int main() {
+    bool2 x = true;
+    return 1;
+}

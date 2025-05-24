@@ -1,0 +1,17 @@
+//test memerror 
+
+typedef int sig;
+typedef int[] sig_arr;
+
+sig check(int[]* arr, int len) {
+  assert((*arr)[len] == 1);
+  return (*arr)[0];
+}
+
+int main() {
+   sig_arr arr = alloc_array(sig, 2);
+   arr[1] = 50;
+   sig_arr* arr_ptr = alloc(sig_arr);
+   *arr_ptr = arr;
+   return (check(arr_ptr, 2) >> arr[1]);
+}

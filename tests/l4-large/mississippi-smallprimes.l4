@@ -1,0 +1,30 @@
+//test return 31
+int main() {
+    int numbers = 300;
+    int[] nums = alloc_array(int, numbers);
+
+    for (int i = 0; i < numbers; i++) {
+        nums[i] = i + 2;
+    }
+
+    for (int i = 0; i < numbers; i++) {
+        if (nums[i] != -1) {
+            for (int j = 2 * nums[i] - 2; j < numbers; j += nums[i]) {
+                nums[j] = -1;
+            }
+        }
+    }
+
+    int primecount = 20;
+    int[] primes = alloc_array(int, primecount);
+
+    int j = 0;
+    for (int i = 0; i < numbers && j < primecount; i++) {
+        if (nums[i] != -1) {
+            primes[j] = nums[i];
+            j++;
+        }
+    }
+
+    return primes[10];
+}

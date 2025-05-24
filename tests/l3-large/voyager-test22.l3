@@ -1,0 +1,16 @@
+//test error
+// function overloading is not supported: 
+// same name but different types of arguments
+
+bool myfunc(bool x, bool y) {
+    return x && y;
+}
+
+int myfunc(int x, int y) {
+    return x + y;
+}
+
+int main()
+{
+  return myfunc(1, 2);
+}

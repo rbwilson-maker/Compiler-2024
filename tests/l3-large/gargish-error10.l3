@@ -1,0 +1,8 @@
+//test error
+// re-declare function with different argument types
+void fun(int a);
+void fun(int a, int b);
+
+int main () {
+    return 0;
+}

@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+void depth_first(int c) {
+  for (int i = 0; i < c; i++) {
+  	depth_first(c);
+  }
+}
+
+int main() {
+  depth_first(2);
+  return 0;
+}

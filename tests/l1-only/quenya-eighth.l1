@@ -1,0 +1,5 @@
+//test error
+// uses invalid op
+int main() {
+  return (5 + 1) ^ 6;
+}

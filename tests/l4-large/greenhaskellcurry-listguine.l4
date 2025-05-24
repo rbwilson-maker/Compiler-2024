@@ -1,0 +1,110 @@
+//test compile
+/*
+    listguine: should compile, even though the dynamic list library is left
+    abstract.
+*/
+
+// Example
+elem_t *f(elem_t *x) {
+    elem_t *result = alloc(elem_t);
+    *result = *x + 1;
+
+    return result;
+}
+
+dynamic_array_t *map(dynamic_array_t *L) {
+    /*
+        You have to bring your own f, because there are no function pointers.
+
+        Also you're constrained to result type elem_t because we don't have
+        genericity :(
+    */
+
+    dynamic_array_t *elems = newArray();
+
+    for (int i = 0; i < getLength(L) ; i++) {
+        insert(elems, f(get(L, i)));
+    }
+
+    return elems;
+}
+
+bool predicate(elem_t *elem) {
+    return *elem % 2 == 0;
+}
+
+dynamic_array_t *filter(dynamic_array_t *L) {
+    /*
+        You have to bring your own predicate
+    */
+
+    dynamic_array_t *elems = newArray();
+
+    for (int i = 0; i < getLength(L); i++) {
+        elem_t *elem = get(L, i);
+        if (predicate(elem)) {
+            insert(elems, elem);
+        }
+    }
+
+    return elems;
+}
+
+elem_t *combine(elem_t *a, elem_t *b) {
+    elem_t *result = alloc(elem_t);
+    *result = *a + *b;
+
+    return result;
+}
+
+elem_t *reduce(dynamic_array_t *L, elem_t *base) {
+    elem_t *result = base;
+
+    for (int i = 0; i < getLength(L); i++) {
+        result = combine(result, get(L, i));
+    }
+
+    return result;
+}
+
+
+int *intStar(int x) {
+    int *result = alloc(int);
+    *result = x;
+
+    return result;
+}
+
+int main() {
+    int*[] firstList = alloc_array(int*, 5);
+    firstList[0] = intStar(1);
+    firstList[1] = intStar(5);
+    firstList[2] = intStar(2);
+    firstList[3] = intStar(1);
+    firstList[4] = intStar(3);
+
+    dynamic_array_t *firstResult = fromArray(firstList, 5);
+    firstResult = map(firstResult);
+    assert(*get(firstResult, 0) == 2);
+    assert(*get(firstResult, 1) == 6);
+    assert(*get(firstResult, 2) == 3);
+    assert(*get(firstResult, 3) == 2);
+    assert(*get(firstResult, 4) == 4);
+
+    int*[] secondList = alloc_array(int*, 5);
+    secondList[0] = intStar(1);
+    secondList[1] = intStar(5);
+    secondList[2] = intStar(2);
+    secondList[3] = intStar(1);
+    secondList[4] = intStar(3);
+    dynamic_array_t *secondResult = fromArray(secondList, 5);
+    secondResult = filter(secondResult);
+
+    assert(getLength(secondResult) == 1);
+    assert(*get(secondResult, 0) == 2);
+
+    elem_t *thirdResult = reduce(fromArray(secondList, 5), intStar(1));
+    assert(*thirdResult == 13);
+
+    return 0;
+}

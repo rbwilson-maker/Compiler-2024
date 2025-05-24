@@ -1,0 +1,10 @@
+//test error
+//ensure types are checked correctly for struct fields
+struct lol { int lel; bool lulz; };
+
+int main()
+{
+	struct lol svar;
+	svar.lel = true;
+	return 5;
+}

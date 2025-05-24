@@ -1,0 +1,29 @@
+//test return 0
+
+void withdraw(int []balances, int cardID, int amount) {
+    if (balances[cardID] < amount) {
+        return ;
+    } else {
+        balances[cardID] -= amount;
+    }
+}
+
+void deposit(int []balances, int cardID, int amount) {
+    balances[cardID] += amount;
+    return ;
+}
+
+int main() {
+    int numCards = 5;
+    int []balances = alloc_array(int, numCards);
+    for (int transactionID = 0; transactionID < 999; transactionID++)
+    //@loop_invariant \forall {balances} (\element >= 0);
+    {
+        if (transactionID % 2 == 0) {
+            withdraw(balances, transactionID % numCards, transactionID);
+        } else {
+            deposit(balances, (transactionID+42)%numCards, transactionID);
+        }
+    }
+    return 0;
+}

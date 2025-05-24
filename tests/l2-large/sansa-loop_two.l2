@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+int main() {
+    while (true) {
+        while (!false) {
+            while (true) {
+                while (false) {
+                    return -1;
+                }
+            }
+        }
+    }
+    return -2;
+}

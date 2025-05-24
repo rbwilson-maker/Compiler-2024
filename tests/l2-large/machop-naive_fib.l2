@@ -1,0 +1,12 @@
+//test return 34
+int main () {
+  int fib = 1;
+  int f_prev = 0;
+  int temp;
+  for (int i = 0; i < 8; i++) {
+    temp = fib;
+    fib = fib + f_prev;
+    f_prev = temp;
+  }
+  return fib;
+}

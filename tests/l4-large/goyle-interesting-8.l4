@@ -1,0 +1,23 @@
+//test return 3
+
+struct ll {
+    struct ll* next;
+    int val;
+};
+
+int sum(struct ll* s) {
+    int total = 0;
+    while(s != NULL) {
+        total += s->val;
+        s = s->next;
+    }
+    return total;
+}
+
+int main () {
+    struct ll *s = alloc(struct ll);
+    s -> next = alloc(struct ll);
+    s-> val = 1;
+    s->next->val = 2;
+    return sum(s);
+}

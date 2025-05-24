@@ -1,0 +1,5 @@
+/*
+ * A header file that aligns with libc's random integer functions.
+ */
+typedef int stressing;
+int stress(stressing i);

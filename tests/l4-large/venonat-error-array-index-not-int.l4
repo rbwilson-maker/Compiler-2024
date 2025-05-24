@@ -1,0 +1,9 @@
+//test error
+// array index not int
+
+int main(){
+  int[] A = alloc_array(int, 5);
+  bool b = true;
+  A[b] = 10;
+  return A[b];
+}

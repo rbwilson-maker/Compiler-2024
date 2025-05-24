@@ -1,0 +1,26 @@
+//test abort
+
+int f(int* ref){
+    (*ref)++;
+    return 5;
+}
+
+int g(int* ref){
+    (*ref)++;
+    return 6;
+}
+
+int main(){
+    int* ref1 = alloc(int);
+    *ref1 = 0;
+    int* ref2 = alloc(int);
+    *ref2 = 0;
+    int res = f(ref1) << g(ref2);
+    if (*ref1 > 1 || *ref2 > 1){
+        return 42;
+    }
+    else{
+        assert(false);
+        return 0;
+    }
+}

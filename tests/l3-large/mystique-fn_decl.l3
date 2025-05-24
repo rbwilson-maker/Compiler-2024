@@ -1,0 +1,21 @@
+//test return 1
+
+int f(int x, int y, int z);
+
+int f(int a, int b, int c) {
+    int d = a * b;
+    int e = d * 4 / a;
+    return c * e;
+}
+
+int main() {
+    int x = 444;
+    int y = 333;
+    int z = 222;
+    int t = f(x, y, z);
+    if (t == f(x, y, z)) {
+        return 1;
+    } else {
+        return 0;
+    }
+}

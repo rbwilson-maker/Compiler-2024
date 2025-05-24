@@ -1,0 +1,15 @@
+//test return 48
+/// shift left by a recursively defined amount, 
+/// then mask the result.  the constant is set such 
+/// that the left shift won't overflow
+
+int func1(int x){
+    if (x == 1){
+        return x;
+    }
+    return x << func1(x - 1);
+}
+
+int main() {
+    return 0xFFFF & func1(3);
+}

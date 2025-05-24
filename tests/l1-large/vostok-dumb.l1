@@ -1,0 +1,15 @@
+//test return 20
+
+// a broken-down calculation for gcd(32, 57) but simply returns 20
+
+int main() {
+    int a = 32;
+    int b = 57;
+    b = b - a;
+    a = a - b;
+    b = b - 3 * a;
+    a = a - b;
+    b = b - a;
+    a = a - 2 * b;
+    return 20;
+}

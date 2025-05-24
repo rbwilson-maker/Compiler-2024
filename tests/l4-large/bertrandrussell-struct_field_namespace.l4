@@ -1,0 +1,30 @@
+//test return 15411
+
+int foo() {
+    return 10;
+}
+
+typedef int[] bar;
+
+// struct names and fields are in separate namespaces from functions
+struct bar {
+    int bar;
+    int a;
+    bool fpt;
+    int[] main;
+    int* foo;
+};
+
+int main() {
+    struct bar* a = alloc(struct bar);
+    a->bar = 15;
+    a->a = 411;
+    a->fpt = true;
+    a->main = alloc_array(int, 20);
+    assert(a->foo == NULL && a->fpt);
+    a->foo = alloc(int);
+    *a->foo = foo();
+    a->main[*a->foo] = a->a;
+    return 1000 *a->bar + a->a;
+}
+

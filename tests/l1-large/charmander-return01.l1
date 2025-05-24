@@ -1,0 +1,9 @@
+//test return 30
+// test arithmetic operations except for div and mod
+int main()
+{
+  int a = 10;
+  int b = 5;
+
+  return (a+b)*a/b;
+}

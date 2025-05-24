@@ -1,0 +1,32 @@
+//test return 1
+
+typedef struct gap_buffer * gapbuf;
+struct gap_buffer
+{
+  int limit;              /* limit > 0 */
+  int[] buffer;      /* \length(buffer) == limit */
+  int gap_start;      /* 0 <= gap_start        */
+  int gap_end;       /* gap_start  <= gap_end <= limit */
+};
+
+bool gapbuf_empty(gapbuf G)
+{
+  return ((G->gap_start ==0) && (G->gap_end == G->limit));
+}
+
+gapbuf gapbuf_new(int limit)
+{
+  gapbuf G = alloc(struct gap_buffer);
+  assert(G != NULL);
+  G->buffer = alloc_array(int, limit);
+  G->limit = limit;
+  G->gap_start = 0;
+  G->gap_end = limit;
+  return G;
+}
+
+int main() {
+  gapbuf G = gapbuf_new(3);
+  if (gapbuf_empty(G)) return 1;
+  return 0;
+}

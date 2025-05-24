@@ -1,0 +1,29 @@
+//test typecheck
+//test infloop
+
+bool isPrime(int n);
+bool isSumOfTwoPrimes ( int n )	{
+  for ( int i = 2; i <= n/2; i++ )	{
+    if (isPrime(i) && isPrime(n-i))	{
+      return true;
+    }
+  }
+  return false;
+}
+  
+bool isPrime ( int n )	{
+  for ( int i = 2; i * i <= n; i++ )	{
+    if (n%i == 0)	{
+      return false;
+    }
+  }
+  return true;
+}
+
+int main() {
+  int i = 4;
+  while (isSumOfTwoPrimes(i))	{
+    i+=2;
+  }
+  return i;
+}

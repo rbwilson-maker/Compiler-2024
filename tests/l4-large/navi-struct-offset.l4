@@ -1,0 +1,17 @@
+//test return 1
+struct a {
+    int identity;
+	int* a;
+};
+struct b {
+    int identity;
+	int* a;
+	struct a[] arr;
+};
+
+int main() {
+	struct b* b = alloc(struct b);
+	b->arr = alloc_array(struct a, 5);
+	b->arr[0].a = alloc(int);
+	return 1;
+}

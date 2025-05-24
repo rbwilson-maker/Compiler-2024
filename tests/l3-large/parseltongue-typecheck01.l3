@@ -1,0 +1,21 @@
+//test typecheck
+
+void foobar(int x, int y) {
+  int d = x + y;
+  for (; x > y; x--) d -= x - y;
+  assert(y >= x);
+  return;
+}
+
+int main() {
+  clock_t start = clock();
+  foobar(122,112);
+  foobar(150,122);
+  foobar(210,150);
+  foobar(213,210);
+  foobar(251,213);
+  foobar(411,251);
+  foobar(451,411);
+  clock_t end = clock();
+  return end - start;
+}

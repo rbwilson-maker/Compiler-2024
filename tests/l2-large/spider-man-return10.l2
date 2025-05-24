@@ -1,0 +1,15 @@
+//test return 10
+
+int main()
+{
+    bool z = true;
+    int x = 1 << 16; // 16384
+    int y = 16383;
+    int zz = (x > y) ? x : y;
+    int zzz = (zz > 22) ? 1 : 11111111;
+    bool zzzz = ((x + y) > zzz);
+    if (z && (zz > zzz) && zzzz) {
+        return (zzz << 3) + (zzz << 1);
+    }
+    return 15251;
+}

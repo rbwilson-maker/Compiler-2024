@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int crash() {return 1/0;}
+int loop() {return loop();}
+
+int twoargs(int a, int b) { return a + b; }
+
+int main() {
+    return twoargs(crash(), loop());
+}
+
+

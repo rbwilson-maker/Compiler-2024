@@ -1,0 +1,11 @@
+//test abort
+int agent(){
+  int way_to_go = 2;
+  bool good;
+  return 0;
+}
+
+int main() {
+  assert(agent() != 0);
+  return 0;
+}

@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int const_fun () {
+    return 0;
+}
+
+int main () {
+    int x = 4;
+    int y = x * 5 + 2;
+    y = x <= y ? y / x : x / y;
+    return y / const_fun();
+}

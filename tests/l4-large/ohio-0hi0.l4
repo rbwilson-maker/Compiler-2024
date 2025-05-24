@@ -1,0 +1,12 @@
+//test div-by-zero
+
+struct s {
+  int f;
+};
+
+int main() {
+  struct s* s1 = alloc(struct s);
+  struct s* s2 = alloc(struct s);
+  s1 -> f = 0;
+  return s1 -> f / s2 -> f;
+}

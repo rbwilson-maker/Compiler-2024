@@ -1,0 +1,11 @@
+//test error 
+
+int howdy() {
+  int x = 5;
+  return x;
+}
+
+int main () {
+  int y = howdy();
+  return x; // shouldn't be accessible
+}

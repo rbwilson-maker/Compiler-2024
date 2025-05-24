@@ -1,0 +1,8 @@
+int loop_until_zero(int x) {
+    int counter = 0;
+    while (x > 0) {
+        x--;
+        counter++;
+    }
+    return counter;
+}

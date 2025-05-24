@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int shift(int x, int y)
+{
+    return x << y;
+}
+
+int main()
+{
+    int x = 50;
+    int y = 50;
+    return shift(x, y);
+}

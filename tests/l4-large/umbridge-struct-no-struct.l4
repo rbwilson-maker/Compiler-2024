@@ -1,0 +1,23 @@
+//test error
+
+struct foo {
+    int a;
+    int b;
+};
+
+struct bar {
+    int a;
+    bool b;
+};
+
+typedef struct foo bar;
+typedef struct bar foo;
+
+int main() {
+    bar *B = alloc(bar);
+    foo *F = alloc(foo);
+    if (B->b) {
+        return 0;
+    }
+    return F->a;
+}

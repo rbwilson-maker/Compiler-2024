@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+
+void magic(int n) {
+if (n == 0) { return; }
+magic(n + 2);
+}
+
+
+int main() {
+    magic(1);
+    return 1;
+}
+
+

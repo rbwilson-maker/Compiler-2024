@@ -1,0 +1,29 @@
+//test div-by-zero
+
+int main(){
+    int x = 15;
+    int div = 0xFFFF;
+    int mul = 1;
+
+    for(int j = 0; j < 1000; j++){
+        x = x * mul / div;
+        mul += 1;
+        div -= 1;
+    }
+
+    for(int k = 10; k < 100000; k++){
+        x = x * mul / div;
+        mul += 2;
+        div = div - 1;
+    }
+    
+    int j = 0;
+    while(j < 1000){
+        x = x * mul / div;
+        mul += 1;
+        div -= 1;
+        j++;
+    }
+    
+    return x;
+}

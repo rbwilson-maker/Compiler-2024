@@ -1,0 +1,37 @@
+//test return 4
+/*
+ * This computes the digit with the most consecutive apperances in a number.
+ * For example, longestDigitRun(64772223) = 2, since 2 has a run of length 3
+ */
+
+int longestDigitRun(int a);
+
+typedef int digit;
+
+int main() {
+    int n = 123334444;
+    return longestDigitRun(n);
+}
+
+digit longestDigitRun(int n) {
+    digit currDigit;
+    digit prevDigit = -1;
+    int runLen = 0;
+    int longestDigitRun = 0;
+    digit longestRunNum = -1;
+    while(n > 0) {
+        currDigit = n % 10;
+        if (currDigit == prevDigit) {
+            runLen++;
+        } else {
+            if (runLen > longestRunNum) {
+                longestRunNum = prevDigit;
+                longestDigitRun = runLen;
+            }
+            runLen = 0;
+        }
+        prevDigit = currDigit;
+        n /= 10;
+    }
+    return longestRunNum;
+}

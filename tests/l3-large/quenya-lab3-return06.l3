@@ -1,0 +1,14 @@
+//test return 6
+// Test return result for a function directly in main
+
+int foo() {
+  int x = 0;
+  for (int i = 0; i < 4; i++) {
+    x += i;
+  }
+  return x;
+}
+
+int main() {
+  return foo();
+}

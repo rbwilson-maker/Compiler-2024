@@ -1,0 +1,9 @@
+//test return 165580141
+
+int fib(int n) {
+  return n < 2 ? 1 : fib(n-2) + fib(n-1);
+}
+
+int main() {
+  return fib(40);
+}

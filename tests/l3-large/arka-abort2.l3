@@ -1,0 +1,18 @@
+//test abort
+//division goes to 0
+
+bool itob (int num) {
+    if (num == 0)
+        return false;
+    return true;
+}
+
+int main () {
+    int num = 10;
+
+    assert(itob(num / 10));
+    assert(itob(num / 5));
+    assert(itob(num / 11));
+
+    return 0;
+}

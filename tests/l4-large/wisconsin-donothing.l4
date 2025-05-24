@@ -1,0 +1,17 @@
+//test return 12345678
+
+// don't optimize this away!
+void do_nothing(int a1, int a2, int a3, int a4, int a5, int a6,int a7, int a8) {
+}
+
+int side_effect(int* a, int i) {
+   int j = *a;
+   *a = (*a * 10) + i;
+   return j;
+}
+
+int main() {
+   int* a = alloc(int);
+   do_nothing(side_effect(a, 1), side_effect(a, 2), side_effect(a, 3), side_effect(a, 4), side_effect(a, 5), side_effect(a, 6), side_effect(a, 7), side_effect(a, 8));
+   return *a;
+}

@@ -1,0 +1,12 @@
+//test return 18
+
+int main() {
+  int x = 300;
+  x %= 63;
+  x >>= 4;
+  x <<= 1;
+  x &= 4;
+  x |= 16;
+  x ^= 6;
+  return x;
+}

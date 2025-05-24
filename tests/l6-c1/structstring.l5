@@ -1,0 +1,25 @@
+//test return 0
+
+struct Big {
+  int i;
+  bool b;
+  char c;
+  string s;
+};
+
+int main() {
+  struct Big[] bigs = alloc_array(struct Big, 10);
+  for (int i = 0; i < 10; i++) {
+    bigs[i].i = i;
+    bigs[i].b = true;
+    bigs[i].c = 'y';
+    bigs[i].s = "hello";
+  }
+  for (int i = 0; i < 10; i++) {
+    assert(bigs[i].i == i);
+    assert(bigs[i].b);
+    assert(bigs[i].c == 'y');
+    assert(string_equal(bigs[i].s, "hello"));
+  }
+  return 0;
+}

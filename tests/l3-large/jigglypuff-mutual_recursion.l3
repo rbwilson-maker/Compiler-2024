@@ -1,0 +1,67 @@
+//test return 42
+
+/* Mutual Recursion Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Tuesday, October 13, 2015 at 02:42:42 PM EDT
+ *
+ * This test tests a set of mutually recursive functions, and that the compiler
+ * handles these correctly. These functions compute if a number is divisible by
+ * 5, 4, 3, or 2.
+ */
+
+bool cong_4_mod_5(int x);
+
+bool div_by_5(int x)
+{
+    if (x == 0) {
+        return true;
+    } else {
+        return cong_4_mod_5(x-1);
+    }
+}
+
+bool cong_1_mod_5(int x)
+{
+    if (x == 1) {
+        return true;
+    } else {
+        return div_by_5(x-1);
+    }
+}
+
+bool cong_2_mod_5(int x)
+{
+    if (x == 2) {
+        return true;
+    } else {
+        return cong_1_mod_5(x-1);
+    }
+}
+bool cong_3_mod_5(int x)
+{
+    if (x == 3) {
+        return true;
+    } else {
+        return cong_2_mod_5(x-1);
+    }
+}
+
+bool cong_4_mod_5(int x)
+{
+    if (x == 5) {
+        return true;
+    } else {
+        return cong_3_mod_5(x-1);
+    }
+}
+
+int main()
+{
+    if (div_by_5(5555)) {
+        return 42;
+    } else {
+        return -555;
+    }
+}

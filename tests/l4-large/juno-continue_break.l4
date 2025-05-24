@@ -1,0 +1,16 @@
+//test error
+
+int main () {
+    int a = 0;
+    for ( ; a < 3000; a++) {
+        if (a == 200) {
+            continue;
+        }
+
+        if (a == 1000) {
+            break;
+        }
+    }
+
+    return a;
+}

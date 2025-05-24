@@ -1,0 +1,48 @@
+//test return 17
+
+int addone(int* n, int* counter) {
+    *counter += 1;
+    *n += 1;
+    return *n;
+}
+
+bool*[] make_bools(int N)
+{
+    // allocate an array of bool*
+    bool*[] bools = alloc_array(bool*, N);
+    for (int i = 0; i < N; i++) {
+        bools[i] = alloc(bool);
+
+        if (i % 2 == 0) {
+           *bools[i] = true;
+        }
+    }
+    return bools;
+}
+
+int*[] make_ints(int N)
+{
+     int*[] ints = alloc_array(int*, N);
+     for (int i = 0; i < N; i++) {
+         ints[i] = alloc(int);
+     }
+     return ints;
+}
+
+typedef bool*[] bool_ptr_array;
+typedef int*[] int_ptr_array;
+typedef int foo;
+
+int main()
+{
+     bool_ptr_array bta = make_bools(99);
+     int N = 9;
+     int_ptr_array ita = make_ints(N);
+     int* n = alloc(foo);
+     int* counter = alloc(foo);
+
+     for (int i = 0; i < N-1; i++) {
+         *ita[addone(n, counter)] += 1;
+     }
+     return (*n + *counter + *ita[N-1]);
+}

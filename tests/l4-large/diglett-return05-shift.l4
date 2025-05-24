@@ -1,0 +1,21 @@
+//test return 5
+
+int f(int* ref){
+    (*ref)++;
+    return 5;
+}
+
+int g(int* ref){
+    (*ref)++;
+    return 0;
+}
+
+int main(){
+    int* ref1 = alloc(int);
+    *ref1 = 0;
+    int* ref2 = alloc(int);
+    *ref2 = 0;
+    int res = f(ref1) << g(ref2);
+    assert (!(*ref1 > 1 || *ref2 > 1));
+    return res;
+}

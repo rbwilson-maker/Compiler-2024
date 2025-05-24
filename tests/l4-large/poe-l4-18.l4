@@ -1,0 +1,51 @@
+//test return 1587000
+
+// project euler 112
+
+bool isIncreasing(int x) {
+	int prev = 10;
+	while(x > 0) {
+		if(x%10 <= prev) {
+			prev = x%10;
+			x = x/10;
+		}
+		else {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool isDecreasing(int x) {
+	int prev = -1;
+	while(x > 0) {
+		if(x%10 >= prev) {
+			prev = x%10;
+			x = x/10;
+		}
+		else {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool isBouncy(int x) {
+	return !isIncreasing(x) && !isDecreasing(x);
+}
+
+int main () {
+	int numBouncy = 0;
+
+	for(int k = 1; k < 1<<31-1; k++) {
+		if(isBouncy(k)) {
+			numBouncy++;
+		}
+
+		if(dtoi(dmul(itod(100),ddiv(itod(numBouncy),itod(k)))) == 99) {
+			return k;
+		}
+	}
+	
+	return -1;
+}

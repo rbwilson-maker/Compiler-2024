@@ -1,0 +1,14 @@
+//test return 4
+
+int main() {
+  bool x = true;
+  bool y = false;
+  bool z = true;
+  if (x && z) {
+    return 4;
+  }
+  if (x && y){
+    return 6;
+  }
+  return 5;
+}

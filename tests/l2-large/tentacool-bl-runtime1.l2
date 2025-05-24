@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main () {
+    int yoooo = 0xffffffff;
+    int bybyyy = yoooo + 1;
+
+    for (int yo=0; (yo>100) ? (yo/bybyyy == 0) : true ; yo++)
+    {
+        yoooo += yo;
+    }
+
+    return yoooo;
+}

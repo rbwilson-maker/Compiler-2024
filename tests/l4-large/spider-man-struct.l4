@@ -1,0 +1,29 @@
+//test return 15411
+
+struct bloop {
+    int blah;
+    int *blargh;
+    int **bleh;
+};
+
+void init(struct bloop * bleep) {
+    bleep->blah = 15;
+    bleep->blargh = alloc(int);
+    *(bleep->blargh) = 400;
+    bleep->bleh = alloc(int*);
+    *(bleep->bleh) = alloc(int);
+    **(bleep->bleh) = 11;
+}
+
+int main() {
+    struct bloop * bleep = alloc(struct bloop);
+    init(bleep);
+    if (bleep->blah == 15) {
+        if (*(bleep->blargh) == 400) {
+            if (**(bleep->bleh) == 11) {
+                return 15411;
+            }
+        }
+    }
+    return 0;
+}

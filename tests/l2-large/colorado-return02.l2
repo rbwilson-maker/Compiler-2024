@@ -1,0 +1,20 @@
+//test return 11
+//  boolean use, if/else, loops
+int main(){
+	int i = 10;
+	int j = 20;
+
+	bool b = true;
+
+	while(i >= 0){
+		i-=1;
+		if(i % 3 == 0 || b){
+			b = (i+4 < j/2) && b;
+			j -= 3;
+		} else{
+			b = !b;
+			j += 5;
+		}
+	}
+	return j;
+}

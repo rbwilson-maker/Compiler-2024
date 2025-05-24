@@ -1,0 +1,11 @@
+//test abort
+//testing your constant propogation :)
+
+int main() {
+	int x = 10;
+	int y = 3;
+
+	assert(((x/y) * y) == x);
+
+	return 0;
+}

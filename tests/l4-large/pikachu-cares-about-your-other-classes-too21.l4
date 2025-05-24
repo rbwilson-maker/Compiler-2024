@@ -1,0 +1,49 @@
+//test return 23
+// tests that allocated memory is initialized to zero
+/*
+           ,     ,_
+           |`\    `;;,            ,;;'
+           |  `\    \ '.        .'.'
+           |    `\   \  '-""""-' /
+           `.     `\ /          |`
+             `>    /;   _     _ \ 
+              /   / |       .    ;
+             <  (`";\ ()   ~~~  (/_
+              ';;\  `,     __ _.-'` )
+                >;\          `   _.'
+                `;;\          \-'
+                  ;/           \ _
+                  |   ,"".     .` \
+                  |      _|   '   /
+                   ;    /")     .;-,
+                    \    /  __   .-'
+                     \,_/-"`  `-'
+       pikachu is very tired and knows you must be too
+
+   he hopes you will pass this test easily by just choosing
+    the right memory allocation function or something
+*/
+
+struct pikamoves
+{
+  int rest;
+  int[] sleeptalk;
+  int* snore;
+  bool facade;
+};
+
+int main()
+{
+  assert(*alloc(int) == 0);
+  assert(*alloc(int*) == NULL);
+  int[] pikapika = alloc_array(int, 10);
+  for (int i = 0; i < 10; i++) {
+    assert(pikapika[i] == 0);
+  }
+  struct pikamoves* nochestoberry = alloc(struct pikamoves);
+  assert(nochestoberry->rest == 0);
+  //assert(\length(nochestoberry->sleeptalk) == 0); // if only i could
+  assert(nochestoberry->snore == NULL);
+  assert(nochestoberry->facade == false);
+  return 23;
+}

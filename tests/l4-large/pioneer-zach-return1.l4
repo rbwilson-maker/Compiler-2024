@@ -1,0 +1,29 @@
+//test return 6
+
+struct list {
+  int value;
+  struct list* next;
+};
+
+typedef struct list t;
+
+int sum_list(t* x) {
+  if (x != NULL) {
+    return x->value + sum_list(x->next);
+  } else {
+    return 0;
+  }
+}
+
+int main() {
+  t* a = alloc(t);
+  t* b = alloc(t);
+  t* c = alloc(t);
+  a->value = 1;
+  a->next = b;
+  b->value = 2;
+  b->next = c;
+  c->value = 3;
+  c->next = NULL;
+  return sum_list(a);
+}

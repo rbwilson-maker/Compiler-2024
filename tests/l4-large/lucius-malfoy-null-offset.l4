@@ -1,0 +1,13 @@
+//test memerror
+
+struct wow {
+    int pad1;
+    int wink;
+    int pad2;
+};
+
+int main() {
+    struct wow *wow = NULL;
+    wow->wink = 1;
+    return 0;
+}

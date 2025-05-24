@@ -1,0 +1,9 @@
+//test div-by-zero
+
+//Evaluation of ternary sets x to 0
+
+int main(){
+    int x = 0;
+    bool checker = false;
+    return (5/x == 0) && (false) ? 0  : 1;
+}

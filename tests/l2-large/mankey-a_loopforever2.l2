@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+//loop forever
+int main()
+{
+  int i = 9;
+  int sum = 0;
+  while (i >= 5) {
+    sum ++;
+    if (i == 5) {
+      i = 9;
+      sum = 0;
+    } 
+    i --;
+  }
+  return sum;
+}

@@ -1,0 +1,12 @@
+//test error 
+
+// type mismatch 
+
+int f(int a, int b) {
+    return 1; 
+}
+
+int main() {
+    int x = f(1, true); 
+    return x; 
+}

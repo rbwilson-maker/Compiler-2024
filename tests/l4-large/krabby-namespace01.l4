@@ -1,0 +1,14 @@
+//test return 7
+
+struct point {
+       int x;
+       int y;
+};
+
+int point(int x, int y) {
+    return x+y;
+}
+
+int main() {
+    return point(4, 3);
+}

@@ -1,0 +1,17 @@
+//test abort
+
+bool isPrime(int n) {
+  // wrong!
+  for (int i = 2 ; i < n / 2 ; i += 1) {
+    if (n % i == 0) { return false; }
+  }
+  return true;
+}
+
+int main() {
+  // n = [3, 2, 5, 4]
+  assert(!isPrime(4));
+
+  return 0;
+}
+

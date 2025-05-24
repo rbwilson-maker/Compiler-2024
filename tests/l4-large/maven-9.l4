@@ -1,0 +1,14 @@
+//test error
+
+struct test {
+  struct test x;
+};
+
+int main()
+{
+  for (int i = 0; i < 235234; i++) {
+    struct test x;
+    x.x = x;
+  }
+  return true;
+}

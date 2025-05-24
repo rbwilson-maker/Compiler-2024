@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+
+void pet(int dog);
+void pet_dog(int dog);
+
+void pet(int dog) {
+  pet_dog(dog);
+}
+
+void pet_dog(int dog) {
+  pet(dog);
+}
+
+int main () {
+  int fluffy = 15411;
+  pet_dog(fluffy);
+  return fluffy;
+}

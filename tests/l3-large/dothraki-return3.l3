@@ -1,0 +1,25 @@
+//test return 7
+
+// Simulates a not-so-random game of nim and returns number of moves made to finish a game
+int nim(int n, bool b) {
+  if (n <= 0) {
+    return 0;
+  }
+  if (n == 1) {
+    if (b) {
+      return 1 + nim(n - 1, false);
+    } else {
+      return 1 + nim(n - 1, true);
+    }
+  }
+  if (b) {
+    return 1 + nim(n - 2, false);
+  } else {
+    return 1 + nim(n - 1, true);
+  }
+}
+
+int main()
+{
+  return nim(10, true);
+}

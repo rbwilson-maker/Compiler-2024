@@ -1,0 +1,14 @@
+//test return 0
+
+typedef int t;
+
+t fun (t input) {
+    if (input == 0) {
+        return 0;
+    }
+    return fun(input - 1);
+}
+
+int main () {
+    return fun(10);
+}

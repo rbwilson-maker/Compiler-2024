@@ -1,0 +1,17 @@
+//test div-by-zero
+
+int main()
+{
+  int x;
+  int y;
+
+  x = 3;
+  y = 0;
+
+  if(x < y) {
+    return y / x;
+  } else {
+    // Div by 0
+    return x / y;
+  }
+}

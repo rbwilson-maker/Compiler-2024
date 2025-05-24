@@ -1,0 +1,16 @@
+//test return 666
+// yeah this is kind of dumb but it's just a function call test 
+// not as dumbs as trump getting covid though 
+bool has_covid(int num_cases, int num_deaths) {
+    if (num_cases >= 8000000 && num_deaths >= 220000) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int main() {
+    bool trump_has_covid = has_covid(8150043, 221843);
+    if (trump_has_covid) return 666;
+    return 420;
+}

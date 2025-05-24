@@ -1,0 +1,5 @@
+//test return -1
+
+int main(){
+    return (5 > 10) ? 1 : -1;
+}

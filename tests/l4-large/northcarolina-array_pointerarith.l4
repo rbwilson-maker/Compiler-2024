@@ -1,0 +1,11 @@
+//test error
+
+//checks that you don't treat arrays as ints
+//This is valid pointer arithmetic that won't
+//segfault in C.
+
+int main() {
+  int[] A = alloc_array(int, 4);
+  int x = *(A + 2);
+  return x;
+}

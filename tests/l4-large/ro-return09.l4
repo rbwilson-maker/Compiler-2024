@@ -1,0 +1,8 @@
+//test return 0
+//allocing an arrow with len 0 is valid, btw
+
+int main() {
+  int x = 10 - 10;
+  int[] a = alloc_array(int, x);
+  return 0;
+}

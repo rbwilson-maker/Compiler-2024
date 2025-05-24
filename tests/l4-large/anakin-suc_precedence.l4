@@ -1,0 +1,8 @@
+//test return 5
+int main() {
+    int*p = alloc(int);
+    *p = *p+1;
+    int[] arr = alloc_array(int, 3);
+    arr[2] = 5;
+    return arr[*p*2];
+}

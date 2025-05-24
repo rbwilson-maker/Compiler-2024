@@ -1,0 +1,11 @@
+//test abort
+
+bool abort (int x) {
+assert(x != 2);
+return false;
+}
+
+int main () {
+return abort (2) ? 0 : 1;
+}
+

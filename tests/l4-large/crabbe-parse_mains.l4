@@ -1,0 +1,17 @@
+//test return 0
+
+struct parsing {
+    bool main;
+};
+
+int main () {
+    struct parsing* is = alloc(struct parsing);
+    is->main = true;
+    bool fun = (*is).main;
+    if (fun) {
+        return 0;
+    }
+    else {
+        return 737;
+    }
+}

@@ -1,0 +1,26 @@
+//test error
+
+int mutual_rec1(int x, int y, int sum) {
+    
+    if(x+y >= 500)
+        return sum;
+    
+    
+    return mutual_rec2(x+3, y-1, sum + (x & y));
+}
+
+int mutual_rec2(int x, int y, int sum) {
+    
+    if(x+y >= 502)
+        return sum;
+
+    return mutual_rec1(x-1, y+4, sum + (x ^ y));
+    
+}
+
+int main()
+{
+    int sum = mutual_rec1(105, 106, 0);
+
+    return sum;
+}

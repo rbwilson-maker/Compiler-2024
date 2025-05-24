@@ -1,0 +1,27 @@
+//test return -1
+//test nested function calls and asserts
+
+int add(int a, int b){
+    return a+b;
+}
+
+bool equal(int a, int b){
+    return a==b;
+}
+
+int square_or_nothing (int a, bool b){
+    if (b) { 
+        return (a*a); 
+    } 
+    else {
+        return -1;
+    }
+}
+
+int main() {
+    int x = 3;
+    int answer = square_or_nothing(add(1, 4), equal(x, 3));
+    assert(answer == 25);
+    answer = square_or_nothing(answer, equal(answer, x));
+    return answer;
+}

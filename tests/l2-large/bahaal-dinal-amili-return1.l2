@@ -1,0 +1,13 @@
+//test return 1
+// Shenanigans after return should be fine! (As long as variables are
+// defined before they are used. But also, all variables in scope after
+// return should be defined.)
+
+int main() {
+  int x;
+  int y;
+  int z;
+  return 1;
+  int w;
+  x = y + z;
+}

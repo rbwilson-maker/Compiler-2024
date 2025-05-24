@@ -1,0 +1,14 @@
+//test error
+int main(){
+   int x = 0;
+   int w;
+   int z;
+   if (x > 0){
+     w = x*2;
+     if(w == 0){
+       z = 1;
+     }
+   }
+   return z;
+
+}

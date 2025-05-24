@@ -1,0 +1,11 @@
+//test error
+
+void f() {
+
+}
+
+int main() {
+    f(f());
+
+    return 1;
+}

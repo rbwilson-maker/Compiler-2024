@@ -1,0 +1,13 @@
+//test memerror
+
+// assign array element beyond array bounds
+
+int main () {
+    int [] arr = alloc_array(int, 100) ;
+    int i =0;
+    while (i<=100 ) {
+       arr[i] = i  ;
+       i++ ;
+    }
+    return 0;
+}

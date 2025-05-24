@@ -1,0 +1,18 @@
+//test return 3
+// namespace
+
+typedef int something;
+typedef bool bowling;
+typedef bowling chowling;
+
+int main() {
+  bool hi = true;
+  bowling yo = false;
+  chowling co = true;
+  int y = 1;
+  something x = 2;
+  if (hi && !yo && co)
+    return x + y;
+  else
+    return 0;
+}

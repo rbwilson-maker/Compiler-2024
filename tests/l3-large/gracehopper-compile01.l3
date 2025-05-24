@@ -1,0 +1,22 @@
+//test compile
+// Should return 1424064354
+
+int add(int x, int y) {
+    return x + y;
+}
+
+int sub(int x, int y) {
+    return x - y;
+}
+
+int main () {
+    int sum = 0;
+    for (int i = 0; i < 21942852; i++) {
+        if (i % 2 == 0) {
+            sum += add(i, i + 1);
+        } else if (i % 2 == 1) {
+            sum = sub(sum, i);
+        }
+    }
+    return sum;
+}

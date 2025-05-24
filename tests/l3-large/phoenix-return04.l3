@@ -1,0 +1,26 @@
+//test return 1
+//test a mutually recursive parity function
+
+bool is_odd(int a);
+
+bool is_even(int a) {
+    if (a == 0)
+        return true;
+    else
+        return is_odd(a - 1);
+}
+
+bool is_odd(int a) {
+    if (a == 0)
+        return false;
+    else
+        return is_even(a - 1);
+}
+
+int main() {
+    int a = 8 + 7;
+    if (is_even(a)) {
+        return 0;
+    }
+    return 1;
+}

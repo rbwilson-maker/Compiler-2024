@@ -1,0 +1,21 @@
+//test return 1123493
+
+int fun1(int x, int y){
+    return x + y | 0xFF;
+}
+int fun2(int x, int y){
+    return x*x & y*y;
+}
+int fun3(int x, int y){
+    return x % y + 10;
+}
+int fun4(int x, int y, int z){
+    return x ^ y + 1000 / z;
+}
+int fun5(int x){
+    return 123123 & x | x;
+}
+
+int main(){
+    return fun4(fun1(fun5(1123413), 75), fun2(5, fun5(1234)), fun3(fun2(fun1(1,2),3), 1000));
+}

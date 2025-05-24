@@ -1,0 +1,436 @@
+//test return 5;
+/*
+ * Partially generated using this script
+ 
+import random
+import string
+
+def randstring(n):
+  return ''.join(random.choice(string.ascii_uppercase) for _ in range(n))
+
+this = randstring(8);
+print "struct " + this + " {\n" + \
+      "  int c;\n" + \
+      "};\n"
+
+for i in range(100):
+  after = randstring(8);
+  print """struct {} {} 
+  struct {} a;
+{} 
+  """.format(after, "{", this, "}");
+  this = after;
+
+print ".a" * 100
+*/
+
+struct XJBRQOPU {
+  int c;
+};
+
+struct QKQAKBSO { 
+  struct XJBRQOPU a;
+}; 
+  
+struct LHXCWLUI { 
+  struct QKQAKBSO a;
+}; 
+  
+struct AFETYENF { 
+  struct LHXCWLUI a;
+}; 
+  
+struct EODHZPGF { 
+  struct AFETYENF a;
+}; 
+  
+struct RUTEFTWO { 
+  struct EODHZPGF a;
+}; 
+  
+struct MOUSNOVB { 
+  struct RUTEFTWO a;
+}; 
+  
+struct BMBNZIZP { 
+  struct MOUSNOVB a;
+}; 
+  
+struct AOVKLRSG { 
+  struct BMBNZIZP a;
+}; 
+  
+struct YYTMUZIE { 
+  struct AOVKLRSG a;
+}; 
+  
+struct FWDMSWKA { 
+  struct YYTMUZIE a;
+}; 
+  
+struct AMEHSPJF { 
+  struct FWDMSWKA a;
+}; 
+  
+struct YTYAQQUJ { 
+  struct AMEHSPJF a;
+}; 
+  
+struct AKEYCLWU { 
+  struct YTYAQQUJ a;
+}; 
+  
+struct NNWKZFGX { 
+  struct AKEYCLWU a;
+}; 
+  
+struct ZADNTWDD { 
+  struct NNWKZFGX a;
+}; 
+  
+struct QRILUNGQ { 
+  struct ZADNTWDD a;
+}; 
+  
+struct GOCZBYTB { 
+  struct QRILUNGQ a;
+}; 
+  
+struct CJZSMZQW { 
+  struct GOCZBYTB a;
+}; 
+  
+struct PGLDURGN { 
+  struct CJZSMZQW a;
+}; 
+  
+struct QQTHGUTI { 
+  struct PGLDURGN a;
+}; 
+  
+struct ANBJRLLG { 
+  struct QQTHGUTI a;
+}; 
+  
+struct NPWWTPEC { 
+  struct ANBJRLLG a;
+}; 
+  
+struct XUXBJGCV { 
+  struct NPWWTPEC a;
+}; 
+  
+struct TQMQWBRJ { 
+  struct XUXBJGCV a;
+}; 
+  
+struct MWBQOEWI { 
+  struct TQMQWBRJ a;
+}; 
+  
+struct UMDGMRUP { 
+  struct MWBQOEWI a;
+}; 
+  
+struct QCKYOXZP { 
+  struct UMDGMRUP a;
+}; 
+  
+struct ZLGQXZDL { 
+  struct QCKYOXZP a;
+}; 
+  
+struct HXOBIKJH { 
+  struct ZLGQXZDL a;
+}; 
+  
+struct OCFFJKQP { 
+  struct HXOBIKJH a;
+}; 
+  
+struct RDFBAPBR { 
+  struct OCFFJKQP a;
+}; 
+  
+struct MNXZPOQP { 
+  struct RDFBAPBR a;
+}; 
+  
+struct RPGTCNWY { 
+  struct MNXZPOQP a;
+}; 
+  
+struct WIWGHMBZ { 
+  struct RPGTCNWY a;
+}; 
+  
+struct AVLGSQXG { 
+  struct WIWGHMBZ a;
+}; 
+  
+struct PTQYHSBH { 
+  struct AVLGSQXG a;
+}; 
+  
+struct UECXKYAQ { 
+  struct PTQYHSBH a;
+}; 
+  
+struct MORROTPU { 
+  struct UECXKYAQ a;
+}; 
+  
+struct PQUFNHEJ { 
+  struct MORROTPU a;
+}; 
+  
+struct VAOLNMDL { 
+  struct PQUFNHEJ a;
+}; 
+  
+struct VTIYSHKL { 
+  struct VAOLNMDL a;
+}; 
+  
+struct ZUMXSQDV { 
+  struct VTIYSHKL a;
+}; 
+  
+struct DHWWISPW { 
+  struct ZUMXSQDV a;
+}; 
+  
+struct IFTSBIUD { 
+  struct DHWWISPW a;
+}; 
+  
+struct EMHDOOQN { 
+  struct IFTSBIUD a;
+}; 
+  
+struct EADHJUCG { 
+  struct EMHDOOQN a;
+}; 
+  
+struct VILKKCQX { 
+  struct EADHJUCG a;
+}; 
+  
+struct YJZSOWNZ { 
+  struct VILKKCQX a;
+}; 
+  
+struct PPFCZMHF { 
+  struct YJZSOWNZ a;
+}; 
+  
+struct NDDUYUGV { 
+  struct PPFCZMHF a;
+}; 
+  
+struct IDSIQAKS { 
+  struct NDDUYUGV a;
+}; 
+  
+struct VRKDYTZU { 
+  struct IDSIQAKS a;
+}; 
+  
+struct ZUOPYAYL { 
+  struct VRKDYTZU a;
+}; 
+  
+struct NVWSBGQH { 
+  struct ZUOPYAYL a;
+}; 
+  
+struct OCYVLIHF { 
+  struct NVWSBGQH a;
+}; 
+  
+struct UILPIDRE { 
+  struct OCYVLIHF a;
+}; 
+  
+struct ZKPIFUYC { 
+  struct UILPIDRE a;
+}; 
+  
+struct IJBKFJWP { 
+  struct ZKPIFUYC a;
+}; 
+  
+struct AXQPPNQW { 
+  struct IJBKFJWP a;
+}; 
+  
+struct YIAWSYJL { 
+  struct AXQPPNQW a;
+}; 
+  
+struct YANMJKDL { 
+  struct YIAWSYJL a;
+}; 
+  
+struct RDONOPKP { 
+  struct YANMJKDL a;
+}; 
+  
+struct VKTJUYAL { 
+  struct RDONOPKP a;
+}; 
+  
+struct BHALTMCV { 
+  struct VKTJUYAL a;
+}; 
+  
+struct JTSFPHPF { 
+  struct BHALTMCV a;
+}; 
+  
+struct RVZRQOOG { 
+  struct JTSFPHPF a;
+}; 
+  
+struct QVNEOVEG { 
+  struct RVZRQOOG a;
+}; 
+  
+struct SZCBPBIP { 
+  struct QVNEOVEG a;
+}; 
+  
+struct KJVJCNMF { 
+  struct SZCBPBIP a;
+}; 
+  
+struct SCOJKPRL { 
+  struct KJVJCNMF a;
+}; 
+  
+struct WUZRYDUN { 
+  struct SCOJKPRL a;
+}; 
+  
+struct RDUDVIKT { 
+  struct WUZRYDUN a;
+}; 
+  
+struct XWTLNGAM { 
+  struct RDUDVIKT a;
+}; 
+  
+struct AWGCQSRL { 
+  struct XWTLNGAM a;
+}; 
+  
+struct UVCNHYVB { 
+  struct AWGCQSRL a;
+}; 
+  
+struct UOEKUXRS { 
+  struct UVCNHYVB a;
+}; 
+  
+struct ZMZRLXRZ { 
+  struct UOEKUXRS a;
+}; 
+  
+struct VINNAFLS { 
+  struct ZMZRLXRZ a;
+}; 
+  
+struct HFVTNCBZ { 
+  struct VINNAFLS a;
+}; 
+  
+struct MMDIKTHL { 
+  struct HFVTNCBZ a;
+}; 
+  
+struct DWIGUYVN { 
+  struct MMDIKTHL a;
+}; 
+  
+struct RCMXCPVY { 
+  struct DWIGUYVN a;
+}; 
+  
+struct VDSDJQVO { 
+  struct RCMXCPVY a;
+}; 
+  
+struct FXTTKZAF { 
+  struct VDSDJQVO a;
+}; 
+  
+struct SSVUOUON { 
+  struct FXTTKZAF a;
+}; 
+  
+struct LMIMQHND { 
+  struct SSVUOUON a;
+}; 
+  
+struct OLEEPMJU { 
+  struct LMIMQHND a;
+}; 
+  
+struct FKRCEHTL { 
+  struct OLEEPMJU a;
+}; 
+  
+struct YTRAIBJF { 
+  struct FKRCEHTL a;
+}; 
+  
+struct CDYBGPQQ { 
+  struct YTRAIBJF a;
+}; 
+  
+struct IDBARFNA { 
+  struct CDYBGPQQ a;
+}; 
+  
+struct HZJSNZCD { 
+  struct IDBARFNA a;
+}; 
+  
+struct VMXOWFNL { 
+  struct HZJSNZCD a;
+}; 
+  
+struct HSYSKFJW { 
+  struct VMXOWFNL a;
+}; 
+  
+struct NRYURXQR { 
+  struct HSYSKFJW a;
+}; 
+  
+struct JILMIMWH { 
+  struct NRYURXQR a;
+}; 
+  
+struct ZRKZYOBD { 
+  struct JILMIMWH a;
+}; 
+  
+struct ZRMCNYUY { 
+  struct ZRKZYOBD a;
+}; 
+  
+struct JRWBLWJZ { 
+  struct ZRMCNYUY a;
+}; 
+  
+struct IZOWGKGK { 
+  struct JRWBLWJZ a;
+}; 
+  
+int main() {
+  struct IZOWGKGK* S = alloc(struct IZOWGKGK);
+  S->a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.c = 5;
+  return S->a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.c;
+  return 5;
+}

@@ -1,0 +1,22 @@
+//test abort
+// test using assert as a precondition.
+
+int midpoint (int x, int y) {
+  assert( (x + y) % 2 == 0 );
+  int res = (x + y) / 2;
+  if (res < (x < y ? x : y) || (x < y ? y : x) < res) { return -1; }
+  return res;
+}
+
+int main () {
+  int x;
+  int y;
+  int summid = 0;
+  for (x = 0; x < 10; x++) {
+    for (y = 0; y < 10; y++) {
+      assert( midpoint (x, y) > 0 );
+      summid += midpoint (x, y);
+    }
+  }
+  return summid;
+}

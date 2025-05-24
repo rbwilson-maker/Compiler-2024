@@ -1,0 +1,24 @@
+//test return 1
+
+void foo(int n) {
+    print_hex(n);
+    print_int(n);
+}
+
+void bar(int n) {
+    foo(n);
+}
+
+void baz(int n, int m) {
+    if (n==0) return;
+
+    bar(n);
+
+    baz(n-m,n/m);
+}
+
+int main() {
+    baz(10,3);
+
+    return 1;
+}

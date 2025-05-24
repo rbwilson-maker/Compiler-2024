@@ -1,0 +1,11 @@
+//test typecheck
+//test infloop
+
+int main(){
+    int * x = NULL;
+    int y = 0;
+    while(x == NULL){
+        y++;
+    }
+    return y;
+}

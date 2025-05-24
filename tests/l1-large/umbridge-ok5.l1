@@ -1,0 +1,25 @@
+//test return 16384
+
+// spill test
+
+int main() {
+  int x1 = 0x1;
+  int x2 = x1;
+  int x3 = x1 + x2;
+  int x4 = x1 + x2 + x3;
+  int x5 = x1 + x2 + x3 + x4;
+  int x6 = x1 + x2 + x3 + x4 + x5;
+  int x7 = x1 + x2 + x3 + x4 + x5 + x6;
+  int x8 = x1 + x2 + x3 + x4 + x5 + x6 + x7;
+  int x9 = x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8;
+  int x10 = x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9;
+  int x11 = x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10;
+  int x12 = x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10 + x11;
+  int x13 = x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10 + x11 + x12;
+  int x14 = x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10 + x11 + x12 + x13;
+  int x15 = x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10 + x11 + x12 + x13
+            + x14;
+  int x16 = x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8 + x9 + x10 + x11 + x12 + x13
+            + x14 + x15;
+  return x16;
+}

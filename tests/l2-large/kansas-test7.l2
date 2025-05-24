@@ -1,0 +1,8 @@
+//test return 15
+
+// This is designed to test bitwise or assignment
+int main() {
+  int a = 7;
+  a |= 0xE;
+  return a;
+}

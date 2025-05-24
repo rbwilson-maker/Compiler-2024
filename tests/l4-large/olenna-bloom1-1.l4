@@ -1,0 +1,80 @@
+//test return 0
+//Runs part of bloom filter assignment from 15-112
+
+struct bloom_filter {
+  bool[] data;
+  int capacity;
+};
+
+typedef struct bloom_filter* bloom_t;
+
+int int_length(int[] s) {
+  int i = 0;
+  while (true) {
+    if (s[i] == 0) return i;
+    i++;
+  }
+  return -1;
+}
+
+int hash_mul31(int[] x)
+{
+  int len = int_length(x);
+  int hash = x[0];
+  for (int i = 1; i < len; i++)
+  {
+    hash = hash*31 + x[i];
+  }
+  hash = (hash < 0) ? ~hash : hash;
+  return hash;
+}
+
+bool correct_arr_length(bool[] arr, int length)
+{
+  //@assert \length(arr) == length;
+  return true;
+}
+
+bool is_bloom(bloom_t B)
+{
+  return B != NULL
+         && correct_arr_length(B->data, B->capacity)
+         && B->capacity > 0;
+}
+
+bloom_t bloom_new(int capacity)
+//@requires capacity > 0;
+//@ensures is_bloom(\result);
+{
+  struct bloom_filter* result = alloc(struct bloom_filter);
+  bool[] data = alloc_array(bool, capacity);
+  for (int i = 0; i < capacity; i++)
+  {
+    data[i] = false;
+  }
+  result->data = data;
+  result->capacity = capacity;
+  return result;
+}
+
+bool bloom_contains(bloom_t B, int[] x)
+//@requires is_bloom(B);
+//@ensures is_bloom(B);
+{
+  int index = hash_mul31(x) % B->capacity;
+  return B->data[index];
+}
+
+void bloom_add(bloom_t B, int[] x)
+//@requires is_bloom(B);
+//@ensures is_bloom(B) && bloom_contains(B, x);
+{
+  int index = hash_mul31(x) % B->capacity;
+  B->data[index] = true;
+}
+
+int main(){
+  bloom_t b = bloom_new(32);
+  return 0;
+}
+

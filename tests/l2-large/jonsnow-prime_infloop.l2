@@ -1,0 +1,24 @@
+//test typecheck
+//test infloop
+//There is always a prime number between x and 2x
+
+int main() {
+  for (int x = 1; true; x++) {
+    bool any_prime = false;
+
+    for (int y = x; !any_prime && y < 2 * x; y++) {
+      any_prime = y == 2;
+      bool any_divide = false;
+      for (int divisor = 3; !any_divide && divisor < y; divisor += 2) {
+        any_divide = y % divisor == 0;
+      }
+      any_prime = !any_divide;
+    }
+
+    if (!any_prime) {
+      return 42;
+    }
+  }
+
+  return -1;
+}

@@ -1,0 +1,12 @@
+//test return 500
+
+int main(){
+
+	int* ptr1 = alloc(int);
+	int** ptr2 = alloc(int*);
+	int*** ptr3 = alloc(int**);
+	*ptr3 = ptr2;
+	*ptr2 = ptr1;
+	*ptr1 = 500;
+	return ***ptr3;
+}

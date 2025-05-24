@@ -1,0 +1,12 @@
+//test return 8
+
+int main()
+{
+  int[][] a = alloc_array(int[], 3);
+  int[][]* b = alloc(int[][]);
+  int[] c = alloc_array(int, 4);
+  *b = a;
+  a[2] = c;
+  c[0] = 8;
+  return (*b)[2][0];
+}

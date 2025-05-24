@@ -1,0 +1,9 @@
+//test error
+int sqrt(int x) {
+    return;
+    return 1;
+}
+
+int main() {
+    return foo(0);
+}

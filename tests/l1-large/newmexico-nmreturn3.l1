@@ -1,0 +1,12 @@
+//test return -2147483647
+// no division error when dividing non-INTMIN by -1
+int main()
+{
+	int a;
+	int b;
+	int c;
+	a = 1 + 0x80000000;
+	b = a % -1;
+	c = a / -1;
+	return b-c;
+}

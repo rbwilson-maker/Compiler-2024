@@ -1,0 +1,19 @@
+//test memerror
+// dereference NULL
+
+struct pointless { struct pointless *p; };
+
+struct pointless *make() { return alloc(struct pointless); }
+
+int main() {
+  struct pointless *p;
+
+  p = make();
+  p->p = make();
+  p->p->p = make();
+  p->p->p->p = make();
+  p->p->p->p->p = make();
+  p->p->p->p->p->p->p = make();
+
+  return 0;
+}

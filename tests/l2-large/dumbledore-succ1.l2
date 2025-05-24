@@ -1,0 +1,12 @@
+//test return 6
+
+int main() {
+    int x = 2;
+    int y = 4;
+    int z = 0;
+    int w = x + y;
+    if (x != 0) {
+        z = x + y;
+    }
+    return z;
+}

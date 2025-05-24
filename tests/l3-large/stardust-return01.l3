@@ -1,0 +1,15 @@
+//test return 1
+//test asop and typedef
+
+typedef int myint;
+
+int main() {
+	myint x = 1;
+	x += 1;
+	x -= 1;
+	x *= 2;
+	x /= 2;
+	x <<= 2;
+	x >>= 2;
+	return x;
+}

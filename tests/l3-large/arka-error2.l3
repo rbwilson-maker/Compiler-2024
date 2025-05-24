@@ -1,0 +1,10 @@
+//test error
+//void return
+
+void nothing(int n) {
+    return 0;
+}
+
+int main() {
+    return nothing(0);
+}

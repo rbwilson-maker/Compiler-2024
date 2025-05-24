@@ -1,0 +1,9 @@
+//test div-by-zero 
+
+int helper (int a) {
+    return a/0; 
+}
+int main() {
+    int x = 0;
+    return helper(x);
+}

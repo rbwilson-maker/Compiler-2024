@@ -1,0 +1,15 @@
+//test error
+
+typedef int float
+typedef bool double
+
+double evil(float);
+
+int main() {
+	double a = true;
+	return evil(a);
+}
+
+float evil(float a) {
+	return a;
+}

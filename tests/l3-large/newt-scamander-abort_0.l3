@@ -1,0 +1,15 @@
+//test abort
+
+bool multiple_in_range(int a, int div) {
+	int i = 1;
+	while(i < a) {
+		if(i != div && i % div == 0) return true;
+		i++;
+	}
+	return false;
+}
+
+int main() {
+	assert(multiple_in_range(106, 53));
+	return 0;
+}

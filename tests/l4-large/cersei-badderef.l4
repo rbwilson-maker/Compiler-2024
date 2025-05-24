@@ -1,0 +1,13 @@
+//test error
+
+struct s;
+typedef struct s s;
+struct s {
+  int a;
+}
+
+int main() {
+  s* p = alloc(s);
+  *s.a = 24; // this should not parse successfully
+  return 14;
+}

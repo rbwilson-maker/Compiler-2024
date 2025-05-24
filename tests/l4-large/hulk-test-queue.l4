@@ -1,0 +1,324 @@
+//test return 0
+// Large singly linked list of queue operations
+// Inspired by C Programming Lab from 15-213
+
+struct elem {
+  int[] value; // Pointer to an int array
+  struct elem *next; // Pointer to the next element in the linked list
+};
+typedef struct elem elem_t;
+
+struct queue {
+  elem_t *head;
+  elem_t *tail;
+  int size;
+};
+typedef struct queue queue_t;
+
+/**
+  *@brief Allocates a new queue
+  *@return The new queue, or NULL if alloc failed
+ */
+queue_t *queue_new() {
+  queue_t *q = alloc(queue_t);
+
+  q->head = NULL;
+  q->tail = NULL;
+  q->size = 0;
+
+  return q;
+}
+
+/**
+  *@brief Creates a copy of s at head of a queue
+  *@param[in] q The queue to insert into
+  *@param[in] s Int array to copy and insert into the queue
+ */
+void queue_insert_head(queue_t *q, int[] s) {
+  elem_t *newh = alloc(elem_t);
+
+  // Allocate and copy array
+  int len = 0;
+  while(s[len] != 0) {
+    len++;
+  }
+  newh->value = alloc_array(int, len + 1);
+  for(int i = 0; i < len; i++) {
+    newh->value[i] = s[i];
+  }
+  newh->value[len] = 0;
+
+  // Update queue with new element
+  newh->next = q->head;
+  q->head = newh;
+  if(q->tail == NULL) {
+    q->tail = newh;
+  }
+  q->size++;
+}
+
+/**
+  *@brief Creates a copy of s at head of a queue
+  *@param[in] q The queue to insert into
+  *@param[in] s Int array to copy and insert into the queue
+ */
+void queue_insert_tail(queue_t *q, int[] s) {
+  // Allocate list tail
+  elem_t *newt = alloc(elem_t);
+  
+  int len = 0;
+  while(s[len] != 0) {
+    len++;
+  }
+  newt->value = alloc_array(int, len + 1);
+  for(int i = 0; i < len; i++) {
+    newt->value[i] = s[i];
+  }
+  newt->value[len] = 0;
+
+  // Update queue with new element
+  q->tail->next = newt;
+  q->tail = newt;
+  newt->next = NULL;
+  if(q->head == NULL) {
+    q->head = newt;
+  }
+  q->size++;
+}
+
+/**
+ * @brief Attempts to remove an element from head of a queue
+ * @param[in] q Queue to remove from
+ * @param[out] buf Output buffer to write string value into
+ * @param[in] bufsize Size of buffer `buf` points to
+ * @return True on success, False otherwise
+ */
+bool queue_remove_head(queue_t *q, int[] buf, int bufsize) {
+  elem_t *h = q->head;
+  if(q->head == NULL) {
+    return false;
+  }
+
+  // Copy list head contents into buffer
+  int h_val = -1;
+  for(int i = 0; i < bufsize - 1 && h_val != 0; i++) {
+    h_val = h->value[i];
+    buf[i] = h_val;
+  }
+  buf[bufsize - 1] = 0;
+
+  // Remove element from queue
+  q->head = h->next;
+  if(q->tail == h) {
+    q->tail = NULL;
+  }
+  q->size--;
+  return true;
+}
+
+/**
+ * @brief Returns the number of elements in a queue
+ * @param[in] q The queue to examine
+ * @return Number of elements in queue
+ */
+int queue_size(queue_t *q) {
+  return q->size;
+}
+
+/**
+ * @brief Reverse the elements in a queue
+ * @param[in] q The queue to reverse
+ */
+void queue_reverse(queue_t *q) {
+  // Do nothing if queue has 0 or 1 elements
+  if(q->head == NULL || q->tail == NULL || q->head == q->tail) {
+    return;
+  }
+
+  elem_t *prev = NULL;
+  elem_t *curr = q->head;
+  elem_t *next = NULL;
+
+  q->tail = q->head;
+  while(curr != NULL) {
+    next = curr->next;
+    curr->next = prev;
+    prev = curr;
+    curr = next;
+  }
+  q->head = prev;
+}
+
+int[] make_gerbil() {
+  int[] a = alloc_array(int, 7);
+  a[0] = 103;
+  a[1] = 101;
+  a[2] = 114;
+  a[3] = 98;
+  a[4] = 105;
+  a[5] = 108;
+  a[6] = 0;
+  return a;
+}
+
+int[] make_squirrel() {
+  int[] a = alloc_array(int, 9);
+  a[0] = 115;
+  a[1] = 113;
+  a[2] = 117;
+  a[3] = 105;
+  a[4] = 114;
+  a[5] = 114;
+  a[6] = 101;
+  a[7] = 108;
+  a[8] = 0;
+  return a;
+}
+
+int[] make_meerkat() {
+  int[] a = alloc_array(int, 8);
+  a[0] = 109;
+  a[1] = 101;
+  a[2] = 101;
+  a[3] = 114;
+  a[4] = 107;
+  a[5] = 97;
+  a[6] = 116;
+  a[7] = 0;
+  return a;
+}
+
+int[] make_bear() {
+  int[] a = alloc_array(int, 5);
+  a[0] = 98;
+  a[1] = 101;
+  a[2] = 97;
+  a[3] = 114;
+  a[4] = 0;
+  return a;
+}
+
+int[] make_vulture() {
+  int[] a = alloc_array(int, 8);
+  a[0] = 118;
+  a[1] = 117;
+  a[2] = 108;
+  a[3] = 116;
+  a[4] = 117;
+  a[5] = 114;
+  a[6] = 101;
+  a[7] = 0;
+  return a;
+}
+
+int[] make_dolphin() {
+  int[] a = alloc_array(int, 8);
+  a[0] = 100;
+  a[1] = 111;
+  a[2] = 108;
+  a[3] = 112;
+  a[4] = 104;
+  a[5] = 105;
+  a[6] = 110;
+  a[7] = 0;
+  return a;
+}
+
+bool test_gerbil(int[] a) {
+  return (a[0] == 103) && (a[1] == 101) && (a[2] == 114) && (a[3] == 98) && (a[4] == 105) && (a[5] == 108) && (a[6] == 0);
+}
+
+bool test_squirrel(int[] a) {
+  return (a[0] == 115) && (a[1] == 113) && (a[2] == 117) && (a[3] == 105) && (a[4] == 114) && (a[5] == 114) && (a[6] == 101) && (a[7] == 108) && (a[8] == 0);
+}
+
+bool test_meerkat(int[] a) {
+  return (a[0] == 109) && (a[1] == 101) && (a[2] == 101) && (a[3] == 114) && (a[4] == 107) && (a[5] == 97) && (a[6] == 116) && (a[7] == 0);
+}
+
+bool test_bear(int[] a) {
+  return (a[0] == 98) && (a[1] == 101) && (a[2] == 97) && (a[3] == 114) && (a[4] == 0);
+}
+
+bool test_vulture(int[] a) {
+  return (a[0] == 118) && (a[1] == 117) && (a[2] == 108) && (a[3] == 116) && (a[4] == 117) && (a[5] == 114) && (a[6] == 101) && (a[7] == 0);
+}
+
+bool test_dolphin(int[] a) {
+  return (a[0] == 100) && (a[1] == 111) && (a[2] == 108) && (a[3] == 112) && (a[4] == 104) && (a[5] == 105) && (a[6] == 110) && (a[7] == 0);
+}
+
+int main() {
+  queue_t *q;
+  int[] rh_buf;
+  q = queue_new();
+  for(int i = 0; i < 15411; i++) {
+    queue_insert_head(q, make_dolphin());
+  }
+  for(int i = 0; i < 15411; i++) {
+    queue_insert_head(q, make_bear());
+  }
+  for(int i = 0; i < 15411; i++) {
+    queue_insert_head(q, make_gerbil());
+  }
+  queue_reverse(q);
+  for(int i = 0; i < 15411; i++) {
+    queue_insert_tail(q, make_meerkat());
+  }
+  for(int i = 0; i < 15411; i++) {
+    queue_insert_tail(q, make_bear());
+  }
+  for(int i = 0; i < 15411; i++) {
+    queue_insert_tail(q, make_gerbil());
+  }
+  queue_reverse(q);
+  for(int i = 0; i < 15411; i++) {
+    queue_insert_tail(q, make_squirrel());
+  }
+  queue_reverse(q);
+  for(int i = 0; i < 15411; i++) {
+    rh_buf = alloc_array(int, 9);
+    queue_remove_head(q, rh_buf, 9);
+    assert(test_squirrel(rh_buf));
+  }
+  for(int i = 0; i < 15411; i++) {
+    queue_insert_head(q, make_vulture());
+  }
+  queue_reverse(q);
+  for(int i = 0; i < 15411; i++) {
+    rh_buf = alloc_array(int, 7);
+    queue_remove_head(q, rh_buf, 7);
+    assert(test_gerbil(rh_buf));
+  }
+  for(int i = 0; i < 15411; i++) {
+    rh_buf = alloc_array(int, 5);
+    queue_remove_head(q, rh_buf, 5);
+    assert(test_bear(rh_buf));
+  }
+  for(int i = 0; i < 15411; i++) {
+    rh_buf = alloc_array(int, 8);
+    queue_remove_head(q, rh_buf, 8);
+    assert(test_meerkat(rh_buf));
+  }
+  for(int i = 0; i < 15411; i++) {
+    rh_buf = alloc_array(int, 7);
+    queue_remove_head(q, rh_buf, 7);
+    assert(test_gerbil(rh_buf));
+  }
+  for(int i = 0; i < 15411; i++) {
+    rh_buf = alloc_array(int, 5);
+    queue_remove_head(q, rh_buf, 5);
+    assert(test_bear(rh_buf));
+  }
+  for(int i = 0; i < 15411; i++) {
+    rh_buf = alloc_array(int, 8);
+    queue_remove_head(q, rh_buf, 8);
+    assert(test_dolphin(rh_buf));
+  }
+  for(int i = 0; i < 15411; i++) {
+    rh_buf = alloc_array(int, 8);
+    queue_remove_head(q, rh_buf, 8);
+    assert(test_vulture(rh_buf));
+  }
+  return 0;
+}

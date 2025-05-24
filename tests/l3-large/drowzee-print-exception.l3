@@ -1,0 +1,22 @@
+//test div-by-zero
+
+void foo(int n) {
+    print_hex(n);
+    print_int(n);
+}
+
+void bar(int n) {
+    foo(n);
+}
+
+void baz(int n, int m) {
+    bar(n);
+
+    baz(n-m,n/m);
+}
+
+int main() {
+    baz(10,3);
+
+    return 1;
+}

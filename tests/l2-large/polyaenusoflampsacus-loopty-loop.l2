@@ -1,0 +1,16 @@
+//test return 12150
+
+int main () {
+	int z = 0;
+	while(z < 12000) {
+		for(int i = 0; i < 10; i++) {
+			int j = 0;
+			while(j < 10*i) {
+				j++;
+				z++;
+			}
+		}
+	}
+	
+	return z;
+}

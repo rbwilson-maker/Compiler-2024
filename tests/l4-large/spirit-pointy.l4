@@ -1,0 +1,12 @@
+//test div-by-zero
+
+void nop() {}
+
+int main() {
+    
+    int *pointy = NULL;
+    *pointy = 2 / 0;
+    nop();
+
+    return *pointy;
+}

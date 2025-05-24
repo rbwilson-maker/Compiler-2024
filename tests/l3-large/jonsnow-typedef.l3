@@ -1,0 +1,5 @@
+//test typecheck
+
+int main() {
+  return perform_some_useful_work(do_other_things(perform_some_useful_work(100)));
+}

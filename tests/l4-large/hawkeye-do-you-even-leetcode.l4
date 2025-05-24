@@ -1,0 +1,35 @@
+//test return 2
+
+// floyd's tortoise and hare algorithm to find duplicate number (what a showoff..)
+int main() {
+    int[] A = alloc_array(int, 10);
+    A[0] = 5;
+    A[1] = 2;
+    A[2] = 4;
+    A[3] = 2;
+    A[4] = 6;
+    A[5] = 7;
+    A[6] = 1;
+    A[7] = 3;
+    A[8] = 9;
+    A[9] = 8;
+
+    int tortoise = A[0];
+    int hare = A[0];
+    bool iterdone = false;
+    while (tortoise != hare || !iterdone) {
+        tortoise = A[tortoise];
+        hare = A[A[hare]];
+        iterdone = true;    // hack cuz no breaks
+    }
+
+    int ptr1 = A[0];
+    int ptr2 = tortoise;
+
+    while (ptr1 != ptr2) {
+        ptr1 = A[ptr1];
+        ptr2 = A[ptr2];
+    }
+
+    return ptr1;
+}

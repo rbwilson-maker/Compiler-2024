@@ -1,0 +1,31 @@
+//test return 37
+
+int main(){
+    int x;
+    int y;
+    int z;
+    if (1 == 2){
+        x = 0;
+        if (1 == 2){
+          y = 0;
+          z = 0;
+        } else {
+          y = 0;
+          if (1 == 2) {
+            z = 0;
+          } else {
+            z = 0;
+          }
+        }
+    } else {
+        z = 0;
+        if (1 == 2){
+          x = 0;
+          y = 0;
+        } else {
+          x = 0;
+          y = 0;
+        }
+    }
+    return x + y + z + 37;
+}

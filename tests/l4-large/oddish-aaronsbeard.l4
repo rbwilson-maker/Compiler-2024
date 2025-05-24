@@ -1,0 +1,15 @@
+//test return -1
+
+int flooops(int* i) {
+  while (*i > 0) {
+    *i *= 2;
+    flooops(alloc(int));
+  }
+  return -1;
+}
+
+int main() {
+  int* i = alloc(int);
+  *i = 2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2*2;
+  return flooops(i);
+}

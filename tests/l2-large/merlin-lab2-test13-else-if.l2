@@ -1,0 +1,20 @@
+//test return 3
+
+// test that else if works
+
+int main()
+{
+    int value = 42;
+    if (value == 41)
+    {
+        return 2;
+    }
+    else if (value == 42)
+    {
+        return 3;
+    }
+    else
+    {
+        return 4;
+    }
+}

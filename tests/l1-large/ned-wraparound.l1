@@ -1,0 +1,12 @@
+//test return -1792365735
+
+int main() 
+{
+	int max = 0x7fffffff;
+	int min = max + 1;
+	int big1 = 1876243267;
+	int big2 = 1026496717;
+	int mul = big1 * big2; //-355117913 (3939849383)
+	
+	return min - mul;
+}

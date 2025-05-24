@@ -1,0 +1,9 @@
+//test return -5
+int main () {
+  int x = 2340293;
+  int y = 3;
+  x <<= y;
+  int z = x << 31 >> 31;
+  int a = y << 31 >> 31;
+  return 5 * (z + 1) / a;
+}

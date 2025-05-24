@@ -1,0 +1,24 @@
+//test div-by-zero
+// bunch of math with a modulus by zero in the middle which is not
+// used in the return statement
+
+int main()
+{
+  int a = 5;
+  int b = 0x6;
+  a = (b - a) * a;
+  b = ((a - b) * b) + a;
+  a = a / a;
+
+  int c = 6;
+  int d = 7;
+  int e = 8;
+  int h = (d / c) / e;
+
+  a = 8 % (a + b); // modulo zero
+
+  int k = (8 / 5) / 3;
+  e = h - k;
+
+  return e;
+}

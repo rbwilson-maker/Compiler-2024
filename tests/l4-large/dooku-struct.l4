@@ -1,0 +1,7 @@
+//test typecheck
+int main() {
+  person p;
+  p = alloc(struct person);
+  p->id = 15122;
+  return p->id;
+}

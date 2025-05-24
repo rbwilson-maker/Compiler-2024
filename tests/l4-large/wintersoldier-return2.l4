@@ -1,0 +1,48 @@
+//test return 0
+
+void iterstring(int[] str, int i) {
+    // keeps going until we see null terminal
+    if (str[i] == 0) return;
+    iterstring(str, i+1);
+}
+
+int main () {
+    // ascii codes, with null terminal
+    int[] fakestring = alloc_array(int, 33);
+    fakestring[0] = 119;
+    fakestring[1] = 104;
+    fakestring[2] = 97;
+    fakestring[3] = 116;
+    fakestring[4] = 32;
+    fakestring[5] = 97;
+    fakestring[6] = 32;
+    fakestring[7] = 119;
+    fakestring[8] = 97;
+    fakestring[9] = 115;
+    fakestring[10] = 116;
+    fakestring[11] = 101;
+    fakestring[12] = 32;
+    fakestring[13] = 111;
+    fakestring[14] = 102;
+    fakestring[15] = 32;
+    fakestring[16] = 116;
+    fakestring[17] = 105;
+    fakestring[18] = 109;
+    fakestring[19] = 101;
+    fakestring[20] = 32;
+    fakestring[21] = 116;
+    fakestring[22] = 104;
+    fakestring[23] = 105;
+    fakestring[24] = 115;
+    fakestring[25] = 32;
+    fakestring[26] = 119;
+    fakestring[27] = 97;
+    fakestring[28] = 115;
+    fakestring[29] = 46;
+    fakestring[30] = 46;
+    fakestring[31] = 46;
+
+    iterstring(fakestring, 0);
+
+    return 0;
+}

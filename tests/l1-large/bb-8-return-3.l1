@@ -1,0 +1,18 @@
+//test return 3
+
+int main(){
+    int alfred;
+    int belgium;
+    int calibre;
+    int derek;
+    int erica;
+
+    derek = 4;
+    erica = 3;
+    belgium = (derek-erica)/4;
+    alfred = belgium % derek;
+    calibre = alfred/erica;
+
+    return 3;
+
+}

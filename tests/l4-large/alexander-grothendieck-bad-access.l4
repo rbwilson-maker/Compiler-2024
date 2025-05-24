@@ -1,0 +1,6 @@
+//test return 0
+int main() {
+    int[] foo = alloc_array(int, 2);
+    // calloc smh
+    return foo[0];
+}

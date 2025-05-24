@@ -1,0 +1,8 @@
+//test return 5
+
+// This is designed to test assert
+
+int main() {
+  assert(false || 5 > 3);
+  return 5;
+}

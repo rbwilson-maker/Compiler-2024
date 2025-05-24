@@ -1,0 +1,5 @@
+//test typecheck
+
+int main(){
+    return meets_a_condition(some_function(1), some_unused_function(true));
+}

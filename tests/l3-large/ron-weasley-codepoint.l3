@@ -1,0 +1,56 @@
+//test return 0
+
+/*  Converts a UTF-8 sequence into a Unicode codepoint. */
+int utf8_to_codepoint(int utf8) {
+    int b0 = utf8 & 0xff;
+    int b1 = (utf8 >> 8) & 0xff;
+    int b2 = (utf8 >> 16) & 0xff;
+    int b3 = (utf8 >> 24) & 0xff;
+
+    if ((b3 & 0xf8) == 0xf0) {
+        int c3 = (b3 & 0x7) << 18;
+        int c2 = (b2 & 0x3f) << 12;
+        int c1 = (b1 & 0x3f) << 6;
+        int c0 = b0 & 0x3f;
+        return c3 | c2 | c1 | c0;
+    }
+    else if ((b2 & 0xf0) == 0xe0) {
+        int c2 = (b2 & 0xf) << 12;
+        int c1 = (b1 & 0x3f) << 6;
+        int c0 = b0 & 0x3f;
+        return c2 | c1 | c0;
+    }
+    else if ((b1 & 0xe0) == 0xc0) {
+        int c1 = (b1 & 0x1f) << 6;
+        int c0 = b0 & 0x3f;
+        return c1 | c0;
+    }
+    else if ((b0 & 0x80) == 0) {
+        return b0 & 0x7f;
+    }
+
+    assert(false);
+    return 0;
+}
+
+int main() {
+    //  COMMERCIAL AT
+    //  http://www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=64&mode=decimal
+    assert(utf8_to_codepoint(0x40) == 64);
+
+    //  CYRILLIC CAPITAL LETTER IOTIFIED BIG YUS
+    //  http://www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=1132&mode=decimal
+    assert(utf8_to_codepoint(0xd1ac) == 1132);
+
+    //  KHMER SYMBOL DAP ROC
+    //  http://www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=6650&mode=decimal
+    assert(utf8_to_codepoint(0xe1a7ba) == 6650);
+
+    //  CUNEIFORM SIGN AN PLUS NAGA SQUARED
+    //  http://www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=F0+92+80+B1&mode=bytes
+    //  This character is so beautiful, you must see it for yourself
+    //  https://www.compart.com/en/unicode/U+12031
+    assert(utf8_to_codepoint(0xf09280b1) == 73777);
+
+    return 0;
+}

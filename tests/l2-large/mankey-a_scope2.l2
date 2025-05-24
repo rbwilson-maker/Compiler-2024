@@ -1,0 +1,23 @@
+//test return 13
+//var in scope
+int main()
+{
+  int a = 1;
+  {
+    int b = 2;
+    {
+      int c = 3;
+      if (true) int d = 4;
+      {
+        c = 4;
+        int d = 5;
+      }
+      int d = 6;
+      a += c;
+      b += d;
+    }
+    a += b;
+  }
+  int f = a;
+  return f;
+}

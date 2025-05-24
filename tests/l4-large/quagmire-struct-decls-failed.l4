@@ -1,0 +1,23 @@
+//test error
+
+struct d_h;
+
+void test() {
+  struct d_h* test_var = alloc(struct d_h);
+  // doesn't work because the struct hasn't been defined
+}
+
+struct d_h {
+  int x;
+  int y;
+};
+
+int main() {
+  struct d_h* test_d = alloc(struct d_h);
+  test_d->x = 15;
+  test_d->y = 122;
+
+  test();
+
+  return 1000 * test_d->x + test_d->y;
+}

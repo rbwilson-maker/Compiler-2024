@@ -1,0 +1,25 @@
+//test return 5
+
+typedef int int1;
+typedef bool bool1;
+typedef int1 int2;
+typedef bool1 bool2;
+typedef int2 int3;
+typedef bool2 bool3;
+
+bool3 invert(bool3 val) {
+  return !val;
+}
+
+int3 main() {
+  int3 someint = 5;
+  int3 someotherint = 10;
+  bool3 b = someint < someotherint;
+
+  if(invert(b)) {
+    return someotherint;
+  } else {
+    assert(invert(invert(b)));
+    return someint;
+  }
+}

@@ -1,0 +1,16 @@
+//test div-by-zero
+// modulus by zero which is multiplied by zero
+
+int main () {
+
+    int c;
+    int g;
+    int a = 0x901;
+    int b = 0x900;
+    c = b - a;
+    int d = c * c - c;
+    a = 2;
+    int f = d - a;
+
+    return (a % f) * 0;
+}

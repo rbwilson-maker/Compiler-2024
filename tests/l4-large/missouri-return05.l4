@@ -1,0 +1,25 @@
+//test return -42
+//Subset sum
+
+bool subset_sum(int[] xs, int l, int s) {
+    if (s == 0)
+        return true;
+    else if (l == 0)
+        return false;
+    return subset_sum(xs, l-1, s - xs[l-1]) || subset_sum(xs, l-1, s);
+}
+
+int main () {
+    int[] s = alloc_array(int, 25);
+    s[0] = 1;
+    s[1] = 1;
+    s[2] = 78;
+    s[3] = 1;
+    s[4] = 1;
+    s[5] = 15;
+    s[6] = 1;
+    s[7] = -23;
+    s[8] = 1;
+    s[9] = 89;
+    return subset_sum(s, 25, 24) ? 42 : -42;
+}

@@ -1,0 +1,78 @@
+//test memerror
+
+// SNEAKY null pointer dereference!
+// Adapted from DLL points within the editor assignment for 15-122
+
+struct dll_node {
+    int data;
+    struct dll_node *next;
+    struct dll_node *prev;
+};
+typedef struct dll_node dll;
+
+struct dll_header {
+    dll *start;
+    dll *end;
+    dll *point;
+};
+typedef struct dll_header dll_pt;
+
+dll_pt *dll_new() {
+    dll *start = alloc(dll);
+    dll *end = alloc(dll);
+    dll *point = alloc(dll);
+
+    start->next = point;
+    point->next = end;
+    end->prev = point;
+    point->prev = start;
+
+    dll_pt *B = alloc(dll_pt);
+    B->start = start;
+    B->end = end;
+    B->point = point;
+    return B;
+}
+
+void dll_pt_forward(dll_pt *B) {
+    B->point = B->point->next;
+}
+
+void dll_pt_backward(dll_pt *B) {
+    B->point = B->point->prev;
+}
+
+void dll_pt_delete(dll_pt *B) {
+    B->point->next->prev = B->point->prev;
+    B->point->prev->next = B->point->next;
+    B->point = B->point->prev;
+}
+
+void dll_pt_insert(dll_pt *B) {
+    dll *new = alloc(dll);
+    // Because I dont hate everyone the bug is here. What's missing?
+    new->next = B->point->next;
+    B->point->prev->next = new;
+    B->point->next->prev = new;
+    B->point = new;
+}
+
+void dll_pt_set(dll_pt *B, int val) {
+    B->point->data = val;
+}
+
+int dll_pt_get(dll_pt *B) {
+    return B->point->data;
+}
+
+int main() {
+    //Test cases!
+
+    dll_pt *B = dll_new();
+
+    dll_pt_insert(B);
+    dll_pt_set(B, 5);
+    dll_pt_insert(B);
+    dll_pt_delete(B);
+    return dll_pt_get(B);
+}

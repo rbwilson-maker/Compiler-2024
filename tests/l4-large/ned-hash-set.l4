@@ -1,0 +1,117 @@
+//test return 14
+
+// We need linked lists, so I just copied our work in posterity-linked-list.l4
+struct link {
+  struct link *next;
+  // Let's store the data in between the "next" and "prev" pointers just to see
+  // what happens to the data >:-)
+  int data;
+  struct link *prev;
+};
+
+typedef struct link *link;
+
+link init_link(int data) {
+  link l = alloc(struct link);
+  l->next = NULL;
+  l->prev = NULL;
+  l->data = data;
+  return l;
+}
+
+// Inserts lp just after l
+void insert_link(link l, link lp) {
+  if(l->next != NULL) {
+    assert(l->next->prev == l);
+    l->next->prev = lp;
+  }
+  lp->next = l->next;
+  l->next = lp;
+  lp->prev = l;
+}
+
+// "Sews" the "prev" and "next" links of l together
+void remove_link(link l) {
+  if(l->next != NULL) {
+    assert(l->next->prev == l);
+    l->next->prev = l->prev;
+  }
+  if(l->prev != NULL) {
+    assert(l->prev->next == l);
+    l->prev->next = l->next;
+  }
+
+  // l gets thrown away, so we don't care what its "next" or "prev" values were
+  // Also, we don't have any way to free memory (It smells like garbage in here!
+  // I really wish someone would come and collect it!), so I guess we just
+  // terminate the function here...
+  return;
+}
+
+struct hash_set {
+  int n;
+  link[] arr;
+};
+
+typedef struct hash_set *hash_set;
+
+// N is the number of "buckets" in the hash set
+hash_set init_hash_set(int n) {
+  hash_set h = alloc(struct hash_set);
+  h->n = n;
+  h->arr = alloc_array(link, n);
+  return h;
+}
+
+int hash(int z, int m) {
+  return z % m;
+}
+
+// Adds x to the hash set
+void add_elem(hash_set h, int x) {
+  int index = hash(x, h->n);
+  if(h->arr[index] == NULL) {
+    h->arr[index] = init_link(x);
+  }
+  else {
+  insert_link(h->arr[index], init_link(x));
+  }
+}
+
+bool is_in(hash_set h, int x) {
+  int index = hash(x, h->n);
+
+  // Search for x in h->arr[index]
+  if(h->arr[index] != NULL) {
+    link curr_link = h->arr[index];
+    while(curr_link != NULL) {
+      if(curr_link->data == x) {
+        return true;
+      }
+      curr_link = curr_link->next;
+    }
+    return false;
+  }
+  else {
+    return false;
+  }
+}
+
+int main() {
+  // Add numbers 0-50 to hash set, assert that 0-50 are in hash set and 51-100
+  // are not in hash set.
+
+  hash_set h = init_hash_set(25);
+  for(int i = 0; i < 51; i++) {
+    add_elem(h, i);
+  }
+
+  int j;
+  for(j = 0; j < 51; j++) {
+    assert(is_in(h, j));
+  }
+  for(; j < 101; j++) {
+    assert(!is_in(h, j));
+  }
+  return 14;
+}

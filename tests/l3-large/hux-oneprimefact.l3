@@ -1,0 +1,53 @@
+//test return 1
+bool is_prime(int n) {
+	if (n < 2)
+		return false;
+	if (n == 2)
+		return true;
+
+	for (int i = 2; i < n; i++) {
+		if (n % i == 0)
+			return false;
+	}
+
+	return true;
+}
+
+bool _unique_prime_fact(int n, int prime_fact) {
+	if (n == 1)
+		return true;
+	if (n % prime_fact == 0)
+		return false;
+
+	int next_fact = prime_fact;
+	bool not_found = true;
+	for (; not_found; next_fact++) {
+		if (n % next_fact == 0 && is_prime(next_fact)) {
+			not_found = false;
+		}
+	}
+
+	next_fact -= 1;
+
+	return _unique_prime_fact(n/next_fact, next_fact);
+}
+
+bool unique_prime_fact(int n) {
+	int first_prime_fact = 2;
+	bool not_found = true;
+	for (; not_found; first_prime_fact++) {
+		if (n % first_prime_fact == 0 && is_prime(first_prime_fact)) {
+			not_found = false;
+		}
+	}
+	
+	first_prime_fact -= 1;
+	return _unique_prime_fact(n/first_prime_fact, first_prime_fact);
+}
+
+int main() {
+	if (unique_prime_fact(210))
+		return 1;
+	else
+		return 0;
+}

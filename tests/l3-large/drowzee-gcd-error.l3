@@ -1,0 +1,11 @@
+//test error
+
+// Uses the gcd.h0 header file
+
+int main() {
+   assert(true == gcd(7,5));
+   assert(false == gcd(72, 66));
+   assert(true == gcd(5029, 3317));
+
+   return gcd(39172487,91287364);
+}

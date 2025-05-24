@@ -1,0 +1,8 @@
+//test return 42
+int pixel(int pixel) {
+  return ~pixel;
+}
+
+int main() {
+  return pixel(-43);
+}

@@ -1,0 +1,14 @@
+//test error
+
+int f() {
+    return g();
+}
+
+int g() {
+    return f();
+}
+
+// Tests using bool to receive the result from f()
+int main() {
+    return g();
+}

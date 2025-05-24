@@ -1,0 +1,22 @@
+//test return 28
+// simple test recursively calls isEven 
+
+bool isEven(int x, int c){
+    if(x == 0)
+        return (c == 0);
+    
+    if(x % 2 == 0){
+        return isEven(x-1, c+1);
+    } else {
+        return isEven(x-1, c-1);
+    }
+}
+
+int main () {
+  int a = 27;
+  bool isEven = isEven(a, 0);
+  if(isEven){
+    return 25; 
+  }
+  return 28;
+}

@@ -1,0 +1,12 @@
+//test return 10
+int main() {
+    while (false) {
+        return 9;
+    }
+    int x;
+    int y;
+    int z;
+    x = 10;
+    return (x - 5) * 2;
+    z = y;
+}

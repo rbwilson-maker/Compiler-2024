@@ -1,0 +1,15 @@
+//test return 3
+
+struct a {
+    int e;
+    int b;
+    int c;
+    struct a *d;
+};
+
+int main () {
+    struct a *b = alloc(struct a);
+    b->e = 3;
+    b->b = 4;
+    return b->e;
+}

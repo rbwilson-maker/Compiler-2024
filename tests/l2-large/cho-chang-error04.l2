@@ -1,0 +1,19 @@
+//test error
+//Not declared in both if statements
+
+int main()
+{
+    int x;
+    int y = 3;
+    int z = 0;
+
+    if(y < 5)
+    {
+        x = 3;
+    }
+    else
+    {
+        z = 2;
+    }
+    return x;
+}

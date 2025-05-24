@@ -1,0 +1,13 @@
+//test return 33
+int main()
+{
+   	 int i;
+
+   	 for(i = 0; i < 8; i++)
+   	 {
+   		 if( (i%2) == 1)
+   			 return (((i << 2) << 3) + 1);
+   	 
+   	 }
+	return -1;
+}

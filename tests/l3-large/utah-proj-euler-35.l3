@@ -1,0 +1,55 @@
+//test return 55
+// Tests how many circular primes there are under 1 million.
+int numDigits(int n);
+
+bool prime(int p) {
+    for(int i = 2; i * i <  p; i++) {
+        if (p % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Not doing this as the test, just need this function!
+int pow(int n, int p) {
+    if (p == 0)
+        return 1;
+    return n * pow(n, p - 1);
+}
+
+int circShiftNum(int n) {
+    int m = n % 10;
+    int newN = n / 10;
+    newN += m * pow(10, numDigits(newN));
+    return newN;
+}
+
+int numDigits(int n) {
+    int numDigs = 0; 
+    for (int i = 0; n > 0; n /= 10) {
+        numDigs++;
+    }
+    return numDigs;
+}
+
+int main() {
+    int stop = 1000000;
+    int count = 0; 
+    for (int i = 3; i < stop; i += 2) {
+        if (prime(i)) {
+            int foo = i;
+            bool isPrime = true;
+            for (int j = 0; j < numDigits(i); j++) {
+                foo = circShiftNum(foo);
+                if (!prime(foo)) {
+                    isPrime = false;
+                }
+            }
+            if (isPrime) {
+                count++;
+            }
+        }
+    }
+    return count;
+}

@@ -1,0 +1,45 @@
+ ** Usage **
+
+There are exactly 3 ways to run the client. All args must be in the exact order, and all args
+not in brackets MUST be specified.
+
+Send a job : 
+  [-ne] -j loaderNum -r resources... -m methodname -a args...
+Make a new loader : 
+  -n loaderNum -r resources...
+Exit server : 
+  --exit-server
+
+** Sending a Job **
+  
+
+  -ne             Do not emulate the remote job (always exit 0)
+
+  -j loaderNum    Send the job to remote loader <loaderNum>
+  -r resources... Attach resources to the remote job that is local only to the job
+  -m methodname   Specifies the method we will run. Follows the signature 
+                      <packagepath>.<ClassName>#<methodName> 
+                  where the method is of type 
+                    methodName : String[] -> void
+
+  -a args...      Args to be sent to the job when invoked
+
+  Emulation : 
+  If the -ne is NOT specified, we emulate the remote job, meaning we 
+  exit with the same exit value as the remote job. If the remote job exits on an 
+  exception, we exit with exit code 1
+
+** Makine a New Loader **
+  
+  -n loaderNum    Makes a new loader under remote loader <loaderNum> 
+  -r resources... Attach resources to the loader
+
+
+** Special Details **
+  :: When the client disconnects, we IMMEDIATELY KILL the remote job and all of its subprocesses
+  :: When the client attempts to make a new job on a loader does not exist, we will wait for the loader to be created
+     by another client call. If the loader is never created, the client attempting to make the job on the 
+     non-existant loader will wait indefinitely 
+
+
+Contact for issues/bugs/problems : zkieda@andrew

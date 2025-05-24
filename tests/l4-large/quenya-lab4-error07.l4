@@ -1,0 +1,13 @@
+//test error
+// define struct as type
+
+struct foo {
+  int bar;
+};
+
+typedef struct foo struct bar;
+
+int main() {
+  struct bar* b = alloc(struct bar);
+  return b->bar;
+}

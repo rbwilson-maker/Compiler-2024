@@ -1,0 +1,80 @@
+//test return 0
+
+struct node {
+	struct node *left;
+    struct node *right;
+    struct node*[] path;
+    int depth;
+};
+
+
+struct node *lca(struct node *root, struct node *A, struct node *B)
+{
+	struct node *result = root;
+	for(int i = 0; i < A->depth && i < B->depth; i++)
+	{
+		if(A->path[i] != B->path[i])
+			return result;
+		result = A->path[i];
+	}
+	
+	return result;
+}		
+
+void fill_paths(struct node *root,struct node*[] path, int depth)
+{
+	if(root == NULL) return;
+
+	root->depth = depth;
+	root->path = path;
+	struct node*[] new_path = alloc_array(struct node*, depth + 1);
+
+	for(int i = 0; i < depth; i++)
+	{
+		new_path[i] = path[i];
+	}
+	new_path[depth] = root;
+	fill_paths(root->left,new_path,depth + 1);
+	fill_paths(root->right,new_path,depth + 1);
+}
+
+void mktree(struct node *root,int depth)
+{
+	if(depth > 0)
+	{
+	root->left = alloc(struct node);
+	mktree(root->left, depth - 1);
+
+	root->right = alloc(struct node);
+
+	mktree(root->right, depth - 1);
+
+}
+
+}
+
+
+struct node *find(struct node *root,int path,int depth)
+
+{
+
+    if(depth == 0)
+
+        return root;
+
+	return find(path % 2 == 0 ? root->left : root->right,path >> 1,depth - 1);
+
+}
+
+
+int main()
+
+{
+	struct node *root = alloc(struct node);
+	mktree(root,1 << 4);
+	fill_paths(root, alloc_array(struct node*,1),0);
+	struct node *ancestor = lca(root,find(root,6,3),find(root,2,3));
+
+	return ancestor == find(root,6,2) ? 0 : 1;
+
+}	

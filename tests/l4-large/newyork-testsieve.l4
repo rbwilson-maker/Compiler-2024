@@ -1,0 +1,44 @@
+//test return 39612
+
+//this test returns the sum of all prime numbers less than 700
+
+// adds together all prime numbers less than n
+int sievesum(int n){
+	assert(n > 1);
+	bool[] nums = alloc_array(bool, n);
+
+	//initialize the array
+	for (int i = 0; i < n; i++)
+		nums[i] = true;
+
+	//fill out the sieve
+	nums[0] = false;
+	nums[1] = false;
+	for (int i = 0; i < n; i++){
+		if (nums[i]){
+			for( int j = 2 * i; j < n; j += i){
+				nums[j] = false;
+			}
+		}
+	}
+
+
+	//add the primes together
+	int sums = 0;
+	for (int i = 0; i < n; i++){
+		if( nums[i] )
+			sums += i;
+	}
+
+	return sums;
+}
+
+int main(){
+
+	assert(sievesum(5) == 5);
+
+	assert(sievesum(18) == 58);
+
+	return sievesum(700);
+
+}

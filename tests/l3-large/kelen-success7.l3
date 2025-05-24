@@ -1,0 +1,20 @@
+//test return -1
+
+int binary_search(int l, int r, int num) {
+    int mid;
+    while(l < r) {
+        mid = (r - l) / 2 + l;
+        if (mid == num) return num;
+        else {
+            if (mid > num) return binary_search(l, mid, num);
+            else return binary_search(mid + 1, r, num);
+        }
+    }
+    return -1;
+}
+
+// Tests binary_search() when can cannot find target in 1 to 1000000
+int main() {
+    int target = 7859000;
+    return binary_search(1, 1000000, target);
+}

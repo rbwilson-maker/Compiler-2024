@@ -1,0 +1,10 @@
+//test error
+
+int main(){
+  int *p;
+  int sum = 0;
+  for(*p = 0; *p < 10; *p++){
+    sum += *p;
+  }
+  return sum
+}

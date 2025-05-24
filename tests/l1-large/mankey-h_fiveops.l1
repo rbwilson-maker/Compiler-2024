@@ -1,0 +1,10 @@
+//test return 7
+// normal ops
+int main()
+{
+  int a = 1 + 1 - 1 * 1 / 1 % 1;
+  int b = 2 + 2 - 2 * 2 / 2 % 2;
+  int c = b + b - a / a % a;
+  b = c;
+  return b;
+}

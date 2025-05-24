@@ -1,0 +1,57 @@
+//test return 100000
+
+struct a1;
+struct a2;
+struct a3;
+struct a4;
+struct a5;
+
+struct a1 {
+  struct a2* next;
+};
+struct a2 {
+  struct a3* next;
+};
+struct a3 {
+  struct a4* next;
+};
+struct a4 {
+  struct a5* next;
+};
+struct a5 {
+  int value;
+};
+struct a5* init5(int value) {
+  struct a5* newOne = alloc(struct a5);
+  newOne->value = value;
+  return newOne;
+}
+struct a4* init4(int value) {
+  struct a4* newOne = alloc(struct a4);
+  newOne->next = init5(value);
+  return newOne;
+}
+struct a3* init3(int value) {
+  struct a3* newOne = alloc(struct a3);
+  newOne->next = init4(value);
+  return newOne;
+}
+struct a2* init2(int value) {
+  struct a2* newOne = alloc(struct a2);
+  newOne->next = init3(value);
+  return newOne;
+}
+struct a1* init1(int value) {
+  struct a1* newOne = alloc(struct a1);
+  newOne->next = init2(value);
+  return newOne;
+}
+
+// Tests create and assign value to a1
+int main() {
+  struct a1*[] objs = alloc_array(struct a1*, 200000);
+  for (int i = 0; i < 200000; i++) {
+    objs[i] = init1(i);
+  }
+  return objs[100000]->next->next->next->next->value;
+}

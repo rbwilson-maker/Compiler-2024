@@ -1,0 +1,16 @@
+//test div-by-zero
+int main()
+{
+   	 int n;
+   	 int i;
+   	 int j;
+   	 
+   	 n = 35;
+	 j = n * 37;
+   	 for(i = n ; i > 0 ; i--)
+   	 {
+   		 i = i - 1;
+   		 j = n / i;
+   	 }
+   	 return j;
+}

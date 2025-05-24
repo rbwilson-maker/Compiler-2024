@@ -1,0 +1,9 @@
+//test return 3
+
+int main() {
+    int a = -4;
+    int b = -a * -(-3); // 12
+    int t = -a;         // 4
+
+    return b / t;       // 12 / 4 = 3
+}

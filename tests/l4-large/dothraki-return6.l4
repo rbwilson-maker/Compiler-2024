@@ -1,0 +1,37 @@
+//test return 213
+
+// given sorted integer array L, positive integer k, and length len, performs binary search for k in L and returns k if found and -1 otherwise
+int binarySearch(int[] L, int k, int len) {
+  if (len == 0) {
+    return -1;
+  }
+  int mid = len / 2;
+  if (L[mid] == k) {
+    return k;
+  }
+  int[] newL;
+  if (L[mid] > k) {
+    newL = alloc_array(int, mid);
+    for (int i = 0; i < mid; i++) {
+      newL[i] = L[i];
+    }
+    return binarySearch(newL, k, mid);
+  }
+  newL = alloc_array(int, len - mid - 1);
+  for (int i = mid + 1; i < len; i++) {
+    newL[i - mid - 1] = L[i];
+  }
+  return binarySearch(newL, k, len - mid - 1);
+}
+
+int main()
+{
+  int[] arr;
+
+  arr = alloc_array(int, 213);
+  for (int i = 0; i < 213; i += 2) {
+    arr[i] = i + 1;
+  }
+
+  return binarySearch(arr, 213, 213);
+}

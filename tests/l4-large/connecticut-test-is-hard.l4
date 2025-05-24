@@ -1,0 +1,25 @@
+//test abort
+
+struct s {
+	int y;
+	bool x;
+};
+
+typedef struct s str;
+
+int f(bool b) {
+	str* s = alloc(str);
+	s -> y = 4;
+	s -> x = b;
+	if(b) {
+		assert((*s).y == 5);
+	}	
+	else {
+		assert((*s).x == b);
+	}
+	return 5;
+}
+
+int main() {
+	return f(true);
+}

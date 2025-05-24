@@ -1,0 +1,16 @@
+//test return 123
+// bool array allocating
+
+int main () {
+  bool[] arrr;
+  arrr = alloc_array(bool, 4);
+  arrr[0] = true;
+  arrr[1] = false;
+  arrr[2] = true;
+  arrr[3] = false;
+  if (arrr[3])
+    return 555;
+  else
+    return 123;
+}
+

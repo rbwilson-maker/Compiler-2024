@@ -1,0 +1,13 @@
+//test div-by-zero
+
+// Simple FPE
+
+int main() {
+    int x = 5;
+    int y = 6;
+    x = y + x + x + x;
+    x /= 3;
+    x = 0;
+    x /= 0;
+    return x;
+}

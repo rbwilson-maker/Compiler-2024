@@ -1,0 +1,19 @@
+//test return 1903820732
+
+struct s {
+    int x;
+    int y;
+};
+
+int main() {
+    struct s *foo = alloc(struct s);
+    foo->x = 2;
+    foo->y = 1000000000;
+    for (int i = 0; i < 123456; i++) {
+        struct s *bar = alloc(struct s);
+        bar->y = foo->y / foo->x + foo->y + 1;
+        bar->x = foo->y / bar->y + 5;
+        foo = bar;
+    }
+    return foo->x ^ foo->y;
+}

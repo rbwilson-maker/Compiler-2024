@@ -1,0 +1,25 @@
+//test abort
+
+typedef int point_x;
+typedef int point_y;
+
+int dist2(point_x x1, point_y y1, point_x x2, point_y y2) {
+  int delta_x = x1 - x2;
+  int delta_y = y1 - y2;
+  return delta_x * delta_x + delta_y * delta_y;
+}
+
+int main() {
+  point_x ax = 109257;
+  point_y ay = 1283;
+  point_x bx = -19235;
+  point_y by = 32051;
+  point_x cx = -169;
+  point_y cy = 15619;
+  assert(dist2(ax, ay, ax, ay) == 0);
+  assert(dist2(bx, by, bx, by) == 0);
+  assert(dist2(ay, ax, ay, ax) == 0);
+  assert(dist2(by, bx, by, bx) == 0);
+  assert(dist2(ax, ay, cx, cy) == 0);
+  return dist2(ax, ay, bx, by);
+}

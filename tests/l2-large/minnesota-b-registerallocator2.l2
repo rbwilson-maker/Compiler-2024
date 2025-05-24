@@ -1,0 +1,33 @@
+//test return 50000000
+
+int main() {
+  int x = 1;
+  int y = 0;
+  for(int i=0; i<10000000; i++) {
+    int a = y % 5;
+    int b = 1 + a;
+    int c = 1 * b;
+    int d = c - 1;
+    int e = d / 2;
+    int f = e % 2;
+    int g = (f + 1) << 3;
+    int h = g >> 2;
+    int j = h + 1;
+    int k = j - 1;
+    int l = (k % 2 == 0 ? 1 : 0);
+    int m = k + l;
+    int n = m << 1;
+    int o = n >> 1;
+    int p = o % 3;
+    int q = p;
+    int r = q;
+    int s = r;
+    int t = s;
+    int u = t;
+    int v = u;
+    int w = v;
+    int z = w + o;
+    y += z;
+  }
+  return y;
+}

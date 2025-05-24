@@ -1,0 +1,11 @@
+//test return 5
+
+int main() {
+    int x = 0;
+    int y = 5;
+    for (int i = x; i < y; i++){
+        x--;
+    }
+    x = -x;
+    return 5;
+}

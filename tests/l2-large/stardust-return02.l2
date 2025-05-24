@@ -1,0 +1,9 @@
+//test return 1
+//test ternary
+
+int main() {
+	int x = 1;
+	int y = 348925783;
+	bool b = true;
+	return (x < y) && b ? x : y;
+}

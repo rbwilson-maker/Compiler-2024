@@ -1,0 +1,33 @@
+//test return 81
+// multi(multi) dimensional arrays
+
+int main() {
+
+  int[][][][] aaa = alloc_array(int[][][], 3);
+
+  for (int i = 0; i < 3; i++) {
+    aaa[i] = alloc_array(int[][],3);
+    for (int j = 0; j < 3; j++) {
+      aaa[i][j] = alloc_array(int[], 3);
+      for (int k = 0; k < 3; k++) {
+        aaa[i][j][k] = alloc_array(int, 3);
+        for (int l = 0; l < 3; l++) {
+          aaa[i][j][k][l] = 1;
+        }
+      }
+    }
+  }
+
+  int sum = 0;
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      for (int k = 0; k < 3; k++) {
+        for (int l = 0; l < 3; l++) {
+          sum += aaa[i][j][k][l];
+        }
+      }
+    }
+  }
+
+  return sum;
+}

@@ -1,0 +1,27 @@
+//test return -1
+
+struct foo {
+  int a;
+  bool b;
+};
+
+struct bar {
+  bool a;
+  int b;
+};
+
+typedef struct foo bar;
+
+typedef struct bar foo;
+
+
+int main() {
+  bar* my_foo = alloc(bar);
+  my_foo->a = 411;
+  my_foo->b = false;
+  foo* my_bar = alloc(foo);
+  my_bar->a = ! my_foo->b;
+  my_bar->b = ~my_foo->a;
+  return my_bar->b ^ my_foo->a;
+}
+

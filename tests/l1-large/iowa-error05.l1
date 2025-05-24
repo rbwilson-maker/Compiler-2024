@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+    int aB34 = 0xaB34;
+    int 3Ab = 0x3Ab;
+    return aB34 - 3Ab;
+}

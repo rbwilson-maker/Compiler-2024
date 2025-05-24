@@ -1,0 +1,9 @@
+//test return 4
+//polymorphic equal/unequal comparision
+int main() {
+    int i = 3;
+    int j = 4;
+    bool m = true;
+    bool n = true;
+    return m == n ? (i == j ? i : j) : j;
+}

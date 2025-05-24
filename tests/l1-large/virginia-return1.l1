@@ -1,0 +1,16 @@
+//test return -1
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int f;
+
+  a = 10;       // 10
+  b = -a;       // -10
+  c = (b+5)/3;  // -1
+
+  return c;
+}

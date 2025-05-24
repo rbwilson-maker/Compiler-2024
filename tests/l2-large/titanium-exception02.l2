@@ -1,0 +1,15 @@
+//test div-by-zero 
+// dubious looking perf test
+// Nerfed by RJS in Fall 2015 (2^30 ---> 2^25) 
+
+int main ()
+{
+  int x = 0;
+  while (true) {
+    x++;
+    if ((x % 33554431) == 0) {
+      return 3 / 0;
+    }
+  }
+  return 0;
+}

@@ -1,0 +1,24 @@
+//test div-by-zero
+struct M {
+    int val;
+    bool nop;
+};
+
+struct M * foo(struct M * prev) {
+    struct M *next = alloc(struct M);
+    next->val = prev->val - 1;
+    next->nop = prev->nop;
+    return next;
+}
+
+int main() {
+    struct M * m = alloc(struct M);
+    m->val = 100000;
+    for(int i = 100000; i > 0; i--) {
+        m = foo(m);
+    }
+    return 12 / m->val;
+}
+      
+    
+

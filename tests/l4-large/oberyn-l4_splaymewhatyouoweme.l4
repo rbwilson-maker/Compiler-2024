@@ -1,0 +1,251 @@
+//test return 500
+
+//#use <conio>
+//#use <string>
+
+// tree node
+struct tree {
+  int key;
+  int size;
+  struct tree* parent;
+  struct tree* left;
+  struct tree* right;
+};
+typedef struct tree tree_t;
+
+/* splay tree implementation,
+ * see https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf
+ * for description and analysis */
+
+// utility functions
+int s(tree_t* T) {return (T == NULL) ? 0 : T->size;}          // size
+tree_t* p(tree_t* T) {return (T == NULL) ? NULL : T->parent;} // parent
+tree_t* l(tree_t* T) {return (T == NULL) ? NULL : T->left;}   // left
+tree_t* r(tree_t* T) {return (T == NULL) ? NULL : T->right;}  // right
+tree_t* g(tree_t* T) {return p(p(T));}                        // grandparent
+
+void lrotate(tree_t* y) {
+  /*
+   *        z              z
+   *        |              |
+   *        y      -->     x
+   *       / \            / \
+   *      a   x          y   c
+   *         / \        / \
+   *        b   c      a   b
+   */
+  assert(y != NULL);
+
+  tree_t* x = r(y);
+  tree_t* z = p(y);
+
+  if (z != NULL) {
+    if (l(z) == y) z->left = x;
+    else if (r(z) == y) z->right = x;
+    else assert(false);
+  }
+
+  y->right = l(x);
+  x->left = y;
+  y->parent = x;
+  x->parent = z;
+
+  if (y->right != NULL) {
+    tree_t* right = r(y);
+    right->parent = y;
+  }
+  y->size = s(l(y)) + s(r(y)) + 1;
+  x->size = s(l(x)) + s(r(x)) + 1;
+}
+void rrotate(tree_t* y) {
+  /*
+   *        z              z
+   *        |              |
+   *        y      -->     x
+   *       / \            / \
+   *      x   c          a   y
+   *     / \                / \
+   *    a   b              b   c
+   */
+  assert(y != NULL);
+
+  tree_t* x = l(y);
+  tree_t* z = p(y);
+
+  if (z != NULL) {
+    if (l(z) == y) z->left = x;
+    else if (r(z) == y) z->right = x;
+    else assert(false);
+  }
+
+  y->left = r(x);
+  x->right = y;
+  y->parent = x;
+  x->parent = z;
+
+  if (y->left != NULL) {
+    tree_t* left = l(y);
+    left->parent = y;
+  }
+  y->size = s(l(y)) + s(r(y)) + 1;
+  x->size = s(l(x)) + s(r(x)) + 1;
+}
+
+// splays node T to the root, returning T
+tree_t* splay(tree_t* x) {
+  while (p(x) != NULL) {
+
+    if ((l(p(x))) == x) {
+
+      if (g(x) == NULL) {
+        rrotate(p(x));
+      } else if (l(g(x)) == p(x)) {
+        rrotate(g(x)); rrotate(p(x));
+      } else if (r(g(x)) == p(x)) {
+        rrotate(p(x)); lrotate(p(x));
+      } else assert(false);
+
+    } else if ((r(p(x))) == x) {
+
+      if (g(x) == NULL) {
+        lrotate(p(x));
+      } else if (r(g(x)) == p(x)) {
+        lrotate(g(x)); lrotate(p(x));
+      } else if (l(g(x)) == p(x)) {
+        lrotate(p(x)); rrotate(p(x));
+      } else assert(false);
+
+    } else {
+      assert(false);
+    }
+  }
+  return x;
+}
+
+tree_t* remove_root(tree_t* T) {
+  if (T == NULL) return NULL;
+
+  tree_t* x = l(T);
+  tree_t* y = r(T);
+  T->left = NULL;
+  T->right = NULL;
+  T->size = 1;
+
+  if (x == NULL) {
+    if (y != NULL) {
+      y->parent = NULL;
+    }
+    return y;
+  } else {
+    if (y != NULL) {
+      // find the end of the right spine in x
+      tree_t* a = x;
+      a->size = s(a) + s(y);
+      while (r(x) != NULL) {
+        a = r(x);
+        a->size = s(a) + s(y);
+      }
+
+      a->right = y;
+      y->parent = a;
+    }
+
+    x->parent = NULL;
+    return x;
+  }
+}
+
+int tree_size(int acc, tree_t* T) {
+  if (T == NULL) return acc;
+  else return tree_size(tree_size(acc + 1, l(T)), r(T));
+}
+
+tree_t* init_tree(int i) {
+  tree_t* T = alloc(tree_t);
+  T->key = i;
+  return T;
+}
+
+// ; w ;
+//void delete_tree(tree_t* T) {
+//  if (T == NULL) {
+//    return;
+//  }
+//  delete_tree(T->left);
+//  delete_tree(T->right);
+//  free(T);
+//}
+
+tree_t* make_balanced(tree_t*[] lookup, int from, int to) {
+  if (from > to) {
+    return NULL;
+  }
+
+  int m = (from + to)/2;
+  tree_t* root = lookup[m];
+  root->key = m;
+
+  root->left = make_balanced(lookup, from, m-1);
+  if (l(root) != NULL) {
+    tree_t* left = l(root);
+    left->parent = root;
+  }
+  root->right = make_balanced(lookup, m+1, to);
+  if (r(root) != NULL) {
+    tree_t* right = r(root);
+    right->parent = root;
+  }
+
+  root->size = s(l(root)) + s(r(root)) + 1;
+
+  return root;
+}
+
+/* end implementation */
+
+// for debugging purposes
+//string inorder(tree_t* p) {
+//  string result = "";
+//
+//  if (p != NULL) {
+//    result = string_join(result, " (");
+//    if (p->left != NULL) result = string_join(result, inorder(p->left));
+//    result =
+//      string_join( result,
+//      string_join( string_fromint(p->key),
+//      string_join( "[",
+//      string_join( string_fromint(p->size),
+//                   "]" ) ) ) );
+//    if (p->right != NULL) result = string_join(result, inorder(p->right));
+//    result = string_join(result, ") ");
+//  }
+//
+//  return result;
+//}
+
+int main() {
+
+  int N = 1000;
+
+  tree_t*[] lookup = alloc_array(tree_t*, N);
+  // making starter tree
+  for (int i = 0; i < N; i++) {
+    tree_t* node = init_tree(i);
+    lookup[i] = node;
+  }
+  tree_t* T = make_balanced(lookup, 0, N-1);
+
+  for (int i = 0; i < 500; i++) {
+    T = splay(lookup[i]);
+  }
+  for (int i = 0; i < 500; i++) {
+    T = remove_root(T);
+  }
+
+	//println(inorder(T));
+
+  //delete_tree(T);
+  //free(lookup);
+
+  return s(T);
+}

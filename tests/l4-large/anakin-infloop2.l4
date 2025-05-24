@@ -1,0 +1,36 @@
+//test typecheck
+//test infloop
+
+int sumarray(int[] arr, int len) {
+    int s = 0;
+    for (int i = 0; i < len; i++) {
+        s += arr[i];
+    }
+    return s;
+}
+
+void loopwhenzero(int x) {
+     if (x == 1) {
+        return ;
+     }
+     if (x == -1) {
+        return ;
+     }
+     if (x > 0) {
+        loopwhenzero(x-1);
+     }
+     if (x < 0) {
+        loopwhenzero(x+1);
+     }
+     if (x == 0) {
+        loopwhenzero(x);
+    }
+}
+
+int main() {
+    int len = 42;
+    int[] arr = alloc_array(int, len);
+    int sum = sumarray(arr, len);
+    loopwhenzero(sum);
+    return 0;
+}

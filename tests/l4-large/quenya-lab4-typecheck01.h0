@@ -1,0 +1,11 @@
+typedef struct node* node;
+
+typedef struct list* list;
+
+list create();
+
+void push(list ll, int x);
+
+int pop(list ll);
+
+bool empty(list ll);

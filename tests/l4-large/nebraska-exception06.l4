@@ -1,0 +1,24 @@
+//test memerror
+
+struct node {
+  struct node *next;
+};
+typedef struct node* node;
+
+int main() {
+  node n1 = alloc(struct node);
+  node n2 = alloc(struct node);
+  node n3 = alloc(struct node);
+  node n4 = alloc(struct node);
+  n1->next = n2;
+  n2->next = n3;
+  n3->next = n4;
+  node n = n1;
+  while (n != NULL) {
+    n = n->next;
+  }
+
+  n = n->next;
+
+  return 0;
+}

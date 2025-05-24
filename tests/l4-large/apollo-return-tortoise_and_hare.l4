@@ -1,0 +1,43 @@
+//test return 0
+
+struct node {
+	struct node *next;
+};
+
+typedef struct node* link;
+
+link walk(link l)
+{
+	if(l != NULL)
+		return l->next;
+	return NULL;
+}
+
+bool cyclic(link l)
+{
+	link turt = l;
+	link hare = l;
+	hare = walk(walk(hare));
+	while(hare != NULL && turt != hare)
+	{
+		turt = walk(turt);
+		hare = walk(walk(hare));
+	}
+	return hare !=  NULL;
+}
+
+int main()
+{
+	link l = alloc(struct node);
+	link temp = l;
+	for(int i = 0; i < 20; i++)
+	{
+		temp->next = alloc(struct node);
+		temp = temp->next;
+	}
+	temp->next = l->next->next->next;
+	return cyclic(l) ? 0 : 1;
+
+}
+
+

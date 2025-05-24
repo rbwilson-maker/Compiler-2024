@@ -1,0 +1,21 @@
+//test return 50
+// simple test defines types t1 and t2
+
+typedef bool bool_t;
+typedef int int_t;
+
+bool_t foo(bool_t b){
+    return !b;
+}
+
+int main () {
+  int_t i = 10;
+  bool_t b = false;
+
+  if (i == 10){
+    b = foo(b);
+  }
+  if (b)
+    return 50;
+  return 1;
+}

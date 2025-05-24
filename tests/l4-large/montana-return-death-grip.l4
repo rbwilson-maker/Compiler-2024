@@ -1,0 +1,90 @@
+//test return 6
+//Try to create conflicts among sizing, arguments, swap registers, and spilling.
+
+
+struct mc_rides_tattoos {
+  int some_weird_cryptic_devil_stuff;
+  bool pentagram;
+  int *he_looks_really_mad;
+};
+
+bool *it_goes_it_goes_it_goes_it_goes(bool *GUILLOTINE, int hacker, bool the_fever) {
+  int a;
+  int *[]footage = alloc_array(int*, hacker);
+  for (int i = hacker - 1; i >= 0; i--) {
+    footage[i] = alloc(int);
+    *footage[i] = i;
+  }
+  bool seen_footage;
+  int b;
+  int c = hacker * 2;
+  int d = the_fever ? 100 : 20;
+  if (the_fever) {
+    for (int i = 0; i < hacker; i++) {
+      d += hacker * c + *footage[i];
+    }
+  }
+  seen_footage = d > 200;
+  bool *foo = alloc(bool);
+  *foo = seen_footage;
+  return foo;
+}
+
+int flip_the_table_get_the_coconuts(int a,
+                                    bool b,
+                                    int *c,
+                                    int []d,
+                                    int **[]e,
+                                    bool f,
+                                    bool g,
+                                    bool h,
+                                    struct mc_rides_tattoos *i,
+                                    struct mc_rides_tattoos *j,
+                                    int l,
+                                    struct mc_rides_tattoos *k,
+                                    int [][][][][]five_dimensional,
+                                    int *probably_enough) {
+  int z = a + *c + l > 10 ? g ? l : d[0] : k->some_weird_cryptic_devil_stuff;
+  *probably_enough = z;
+  five_dimensional[0][0][0][0][0] = l;
+  while (b && l > 25) {
+    e = alloc_array(int **, 10);
+    i->pentagram = true;
+    j->pentagram = true;
+    k->pentagram = true;
+    if (h) {
+      return *probably_enough;
+    }
+  }
+  bool *does_it_go = alloc(bool);
+  return (*it_goes_it_goes_it_goes_it_goes(does_it_go, l, *does_it_go)) ? 1 : 0;
+}
+
+
+
+int main() {
+  int result = 0;
+  int a = 4;
+  int b = 6;
+  int c = 10;
+  int[] d = alloc_array(int, 2);
+  d[0] = 70;
+  bool[] stuff = alloc_array(bool, 10);
+  int[][][][][] five_d = alloc_array(int[][][][], 1);
+  five_d[0] = alloc_array(int[][][], 1);
+  five_d[0][0] = alloc_array(int[][], 1);
+  five_d[0][0][0] = alloc_array(int[], 1);
+  five_d[0][0][0][0] = alloc_array(int, 1);
+  struct mc_rides_tattoos *[]asdf = alloc_array(struct mc_rides_tattoos *, 3);
+  for (int i = 0; i < 3; i++) {
+    asdf[i] = alloc(struct mc_rides_tattoos);
+  }
+  int *enough = alloc(int);
+  *enough = 0;
+  for (int i = 0; i < 50; i++) {
+    result ^= flip_the_table_get_the_coconuts(a, true, alloc(int), alloc_array(int, 4),
+        alloc_array(int**, 1), false, true, true, asdf[0], asdf[1], i, asdf[2], five_d, enough) + *enough;
+  }
+  return result;
+}
+

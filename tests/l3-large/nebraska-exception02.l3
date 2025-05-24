@@ -1,0 +1,10 @@
+//test typecheck
+//test infloop 
+/* Basic infinite loop */
+void recurse_forever(int n, int m, int l, int o, int p, int k, int q) {
+  recurse_forever(n, m, l, o, p, k, q);
+}
+int main() {
+  recurse_forever(0,0,0,0,0,0,0);
+  return 0;
+}

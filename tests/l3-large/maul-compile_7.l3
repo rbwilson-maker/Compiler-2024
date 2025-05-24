@@ -1,0 +1,9 @@
+//test error
+// shouldn't allow typedef on types
+
+typedef int x;
+typedef x bool;
+
+int main() {
+    return 0;
+}

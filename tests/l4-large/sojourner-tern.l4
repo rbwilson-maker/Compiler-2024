@@ -1,0 +1,21 @@
+//test error
+
+struct t {
+    int *x;
+};
+
+struct s {
+    struct t q;
+};
+
+struct s *f() {
+    return alloc(struct s);
+}
+
+struct s *g() {
+    return alloc(struct s);
+}
+
+int main() {
+    return (true ? (*f()).q : (*g()).q).x;
+}

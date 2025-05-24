@@ -1,0 +1,12 @@
+//test return 15
+//test unary operation along with variable that is initialized but not used.
+int main()
+{
+  int a = - 0xF; // -15
+  int b = 411;
+  int c;
+  a *= -1; // 15
+  c = 611;
+  int d = a % c;
+  return d;
+}

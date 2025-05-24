@@ -1,0 +1,17 @@
+//test abort
+
+
+struct a {
+  int x;
+  int* y;
+  int[]** z;
+};
+
+int main(){
+  struct a* b = alloc(struct a);
+  if(b->x != 0) return 1;
+  //This next line is false
+  assert(b->y != NULL);
+  return 0;
+
+}

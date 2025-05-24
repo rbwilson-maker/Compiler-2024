@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int main(){
+    int* ref = alloc(int);
+    *ref = 5;
+    for (int i = *ref; i >= 0; i--){
+        int j = i/i;
+    }
+    return 0;
+}

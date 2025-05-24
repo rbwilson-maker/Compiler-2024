@@ -1,0 +1,41 @@
+//test typecheck
+//Hopefully the parser works
+
+typedef int A;
+typedef int[] B;
+
+typedef bool C;
+typedef bool[] D;
+
+struct E {
+   int intE;
+   bool boolE;
+    int* ptrE;
+    A AE;
+};
+
+typedef int random;
+
+typedef struct E F;
+typedef struct E *G;
+
+typedef int* I;
+typedef I *J;
+typedef I  [  ]    [    ] K;
+typedef I[] L;
+
+typedef A M;
+typedef A[] N;
+typedef A*** * **  * * * * O;
+
+typedef F P;
+
+int main () {
+    struct E *x = alloc(struct E);
+    struct E[] y;
+
+    bool b = x->intE == 0;
+    b = x->ptrE == NULL;
+
+    return 1;
+}

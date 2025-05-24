@@ -1,0 +1,13 @@
+//test typecheck
+
+int somefunc() {
+    int count = 0;
+    for (int i = 0; i < 10; i = some_extern_function()) {
+        count += 1;
+    }
+    return count;
+}
+
+int main() {
+    return somefunc();
+}

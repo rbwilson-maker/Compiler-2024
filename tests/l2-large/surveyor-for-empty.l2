@@ -1,0 +1,11 @@
+//test return 100
+
+int main() {
+  int x = 0;
+  bool b = true;
+  for (;b;) {
+    x++;
+    b = x > 99 ? true == false : true;
+  }
+  return x;
+}

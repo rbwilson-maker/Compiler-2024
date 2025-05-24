@@ -1,0 +1,49 @@
+//test return 29
+
+/* If-If-Else Ambiguity
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, September 28, 2015 at 04:33:10 PM EDT
+ *
+ * This test tests that the compiler's parser handles the edge case/ambuguity of
+ * two if statements followed by else state properly. The expected behavior is
+ * to associate the else statement with the nearest if statement. This is tested
+ * in several different configurations.
+ */
+
+int main()
+{
+    int x;
+    int y;
+
+    // One line if-if-else
+    x = 0;
+    y = 1;
+    if (x == 0) if (y != 0) x += 1; else y -= 42;
+
+    // Multi-line if-if-else
+    if (x != 0) {
+        if (y > 0) {
+            y += x;
+            x += y;
+        } else {
+            y *= x;
+            x %= y;
+        }
+    }
+
+    // One-line with several if's followed by an else
+    if (x != 0) if (y != 0) if (x + y != 0) if (x * y != 0) x += 9; else x = 0;
+
+    // One-line with nested if-else's
+    if (x != 0) if (y == 0) x -= 3007; else if (x > 0) if (y % 2 == 0) x += 10;
+    else y %= 1;
+
+    // One-line nested if-else's
+    if (true) if (true) x += 5; else y -= 49; else y = 0;
+
+    return x + y;
+}
+
+

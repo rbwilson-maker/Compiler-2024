@@ -1,0 +1,10 @@
+//test return 0
+
+int main() {
+  fpt a = itof(10);
+  fpt b = itof(15);
+  fpt c = fdiv(b, a); // c = 1.5
+  fpt d = fmul(c, c); // d = 2.25
+  print_fpt(d);
+  return ftoi(d) - 2; // 0
+}

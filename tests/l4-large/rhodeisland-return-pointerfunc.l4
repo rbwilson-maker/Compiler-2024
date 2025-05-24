@@ -1,0 +1,7 @@
+//test return 0
+int* foo() {
+	return alloc(int);
+}
+int main() {
+	return *foo();
+}

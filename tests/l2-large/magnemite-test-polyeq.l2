@@ -1,0 +1,9 @@
+//test return 68
+
+int main() {
+  int x = 5;
+  if (7 != 8) x += 30;
+  if (true == true) x += 33;
+  if (9 == 10) x += 23;
+  return x;
+}

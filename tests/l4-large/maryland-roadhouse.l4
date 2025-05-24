@@ -1,0 +1,21 @@
+//test error
+// Unfruitful attempt at euler 48 ='(
+
+int selfpow(int i) {
+  int prod = 1;
+  for(int j = 0; j < i; j++) {
+    prod = (prod * i) % 10000000000;
+  }
+
+  return prod;
+}
+
+int main() {
+  int sum = 0;
+
+  for(int i = 1; i <= 1000; i++) {
+    sum += selfpow(i);
+  }
+
+  return sum % 10000000000;
+}

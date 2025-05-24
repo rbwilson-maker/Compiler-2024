@@ -1,0 +1,34 @@
+//test return 0
+struct list {
+    int val;
+    struct list* next;
+};
+
+typedef struct list * list;
+
+bool is_cycle(list node) {
+    list fast = node;
+    for (list slow = node; slow != NULL; slow = slow->next) {
+        if (fast != NULL && fast->next != NULL) {
+            fast = fast->next->next;
+        } else {
+            return false;
+        }
+
+        if (fast == slow) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int main() {
+    list head = alloc(struct list);
+    head->next = alloc(struct list);
+    head->next->next = head;
+    if (is_cycle(head)) {
+        return 0;
+    } else {
+        return 1;
+    }
+}

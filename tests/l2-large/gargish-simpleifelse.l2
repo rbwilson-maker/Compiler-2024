@@ -1,0 +1,13 @@
+//test return 0
+// test simple if-else statement
+int main()
+{
+    int y = 0;
+    y += 10 % 3 + 342;
+    if (y == 42) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}

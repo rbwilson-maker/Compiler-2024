@@ -1,0 +1,68 @@
+//test return -10
+
+int main() {
+  int x = 12;
+  int y = 6;
+  bool z = true;
+  if (x > y) {
+    x++;
+    if (z) {
+      z = false;
+      if (z == !(x < y ? false : true)) {
+        if (y > 1) {
+          y ^= 0xf;
+        } else {
+          if (z) {
+            z = false;
+            if (z == !(x < y ? false : true)) {
+              z = true;
+            } else {
+              x--;
+            }
+          } else {
+            y /= 2;
+          }
+          z = true;
+        }
+      } else {
+        return 10;
+      }
+      if (z == !(x < y ? false : true)) {
+        if (y > 1) {
+          y ^= 0xf;
+        } else {
+          if (z) {
+            z = false;
+            if (z == !(x < y ? false : true)) {
+              z = true;
+              if (y > 1) {
+                y ^= 0xf;
+                if (y > 1) {
+                  y ^= 0xf;
+                }
+              }
+            } else {
+              x--;
+            }
+          } else {
+            y /= 2;
+          }
+          z = true;
+        }
+        if (z) {
+          z = false;
+          if (z == !(x < y ? false : true)) {
+            z = true;
+          } else {
+            x--;
+          }
+        } else {
+          y /= 2;
+        }
+      }
+    } else {
+      y += x ^ (z ? 0xf : 0xff);
+    }
+  }
+  return z ? (x - y) : (y - x);
+}

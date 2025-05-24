@@ -1,0 +1,7 @@
+//test error
+// you can't just ignore stuff after returns
+int main()
+{
+    return (5);
+    int 5 = 4;
+}

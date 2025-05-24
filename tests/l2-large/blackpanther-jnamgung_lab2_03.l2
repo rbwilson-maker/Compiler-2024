@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int main() {
+	int temp = 0;
+	int res = 15;
+	for (int i = 0; i < temp; i++)
+	{
+		while (true)
+		{
+			temp++;
+		}
+	}
+	return res / temp;
+}

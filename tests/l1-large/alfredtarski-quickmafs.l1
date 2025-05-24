@@ -1,0 +1,10 @@
+//test return 3
+
+int main () {
+  int two = 2;
+  int one = 1;
+  int four = two + two;
+  int three = four - one;
+  // quick mafs
+  return three;
+}

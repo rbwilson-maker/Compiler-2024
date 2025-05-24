@@ -1,0 +1,18 @@
+//test return 2
+
+// > lvalue is hard!
+
+struct waaat {
+    int* x;
+};
+
+struct wat {
+    struct waaat waat;
+};  
+
+int main() {
+    struct wat * x = alloc(struct wat);
+    ((x->waat).x) = alloc(int);
+    ((*(x->waat.x))) = 2;
+    return *((x->waat).x);
+}

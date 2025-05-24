@@ -1,0 +1,16 @@
+//test error
+// Non-void functions gotta return!
+
+bool bob(int harper) {
+    while(harper > 10) {
+        if(harper - 15 < 312 == false) return true;
+        else return false;
+    }
+
+    if (harper < 0)
+        return true;
+}
+
+int main() {
+    bob(15-150);
+}

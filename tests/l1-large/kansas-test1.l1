@@ -1,0 +1,22 @@
+//test return 10
+
+// This is designed to test the multiplication and division
+// arithmetic operations.
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+
+  a = 1;
+  b = 17;
+  c = 3;
+  d = 4;
+  e = 5;
+  a *= 6;
+  b /= 7;
+  c %= 2;
+  return a * b - c / d - e % 3;
+}

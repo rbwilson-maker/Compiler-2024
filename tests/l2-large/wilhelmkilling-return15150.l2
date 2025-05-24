@@ -1,0 +1,25 @@
+//test return 15150
+
+int main () {
+    int x;
+    int good;
+    int bad;
+    bool touch;
+    bool grass;
+
+    x = 1;
+    x <<= 14;
+    good = (1 * 1000) + (2 * 100) + (3 * 10) + 4;
+    bad = (1 * 1000) + (2 * 100) + (6 * 10) + 2;
+
+    touch = true;
+    grass = true;
+
+    if (touch && grass) {
+        x -= good;
+    } else {
+        x -= bad;
+    }
+
+    return x;
+}

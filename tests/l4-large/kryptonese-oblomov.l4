@@ -1,0 +1,8 @@
+//test error
+
+
+int main() {
+  int[] A = alloc_array(10, int);//arguments flipped
+  return A[0];
+}
+

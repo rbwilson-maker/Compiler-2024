@@ -1,0 +1,11 @@
+//test memerror
+
+int main() {
+  int*** x = alloc(int**);
+  *x = alloc(int*);
+  **x = alloc(int);
+  ***x = 4;
+  x = NULL;
+
+  return ***x;
+}

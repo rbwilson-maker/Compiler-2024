@@ -1,0 +1,16 @@
+//test return 6
+// Test allowed instantiations of variable and function with same name 
+
+int test() {
+    bool jan = true;
+    return (jan) ? 1 : 0;
+}
+
+int jan(int x) {
+    x = 5;
+    return x;
+}
+
+int main() {
+    return test() + jan(4);
+}

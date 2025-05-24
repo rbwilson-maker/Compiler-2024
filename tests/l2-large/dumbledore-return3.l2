@@ -1,0 +1,24 @@
+//test return 4
+
+int main() {
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+
+    a = 2;
+    b = 3;
+    c = b % a; 
+
+    d = (c % a * 2) + b - (a / 2);
+    
+    for (e = 0; e < 4; e++) {
+        a += c;
+    }
+    
+    if (a == 6) {
+        a = 4;
+    }
+    return a;
+}

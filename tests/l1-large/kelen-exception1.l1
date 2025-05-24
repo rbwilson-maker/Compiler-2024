@@ -1,0 +1,14 @@
+//test div-by-zero
+
+// Tests dividing by zero
+int main(){
+
+    int c = 5;       // Live-Out: c = 5
+    int a = 100 / c; // Live-Out: a = 20, c = 5
+    a = a / c;       // Live-Out: a = 4, c = 5
+    a = a / c;       // Live-Out: a = 0, c = 5
+    a = c / a;       // Should raise exception: divide 5/0
+    a = c - a;
+    return a;
+
+}

@@ -1,0 +1,11 @@
+//test return 22721185 
+
+int math(int a) {
+  if (a <= 5) return 1;
+
+  return math((a + 5)/7) + math(a / 100 * 99);
+}
+
+int main() {
+  return math(1000000);
+}

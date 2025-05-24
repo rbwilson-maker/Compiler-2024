@@ -1,0 +1,19 @@
+//test return -9
+
+int[] f(int n) {
+    int[] arr = alloc_array(int, n);
+    if (n == 0) {
+        return arr;
+    } else {
+        return f(n-1); 
+    }
+}
+
+int[] g() {
+    return alloc_array(int, 0);
+}
+
+int main() {
+    int[] t = (1 / 1 == 1 ? f(20) : g());
+    return -9;
+}

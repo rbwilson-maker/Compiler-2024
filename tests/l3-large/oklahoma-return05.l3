@@ -1,0 +1,59 @@
+//test return 55709
+//many functions
+
+int x0 (int y) { return y; }
+int x1 (int y) { return x0(y) + 1; }
+int x2 (int y) { return x1(y) + 1; }
+int x3 (int y) { return x2(y) + 1; }
+int x4 (int y) { return x3(y) + 1; }
+int x5 (int y) { return x4(y) + 1; }
+int x6 (int y) { return x5(y) + 1; }
+int x7 (int y) { return x6(y) + 1; }
+int x8 (int y) { return x7(y) + 1; }
+int x9 (int y) { return x8(y) + 1; }
+int x10 (int y) { return x9(y) + 1; }
+int x11 (int y) { return x10(y) + 1; }
+int x12 (int y) { return x11(y) + 1; }
+int x13 (int y) { return x12(y) + 1; }
+int x14 (int y) { return x13(y) + 1; }
+int x15 (int y) { return x14(y) + 1; }
+int x16 (int y) { return x15(y) + 1; }
+int x17 (int y) { return x16(y) + 1; }
+int x18 (int y) { return x17(y) + 1; }
+int x19 (int y) { return x18(y) + 1; }
+int x20 (int y) { return x19(y) + 1; }
+int x21 (int y) { return x20(y) + 1; }
+int x22 (int y) { return x21(y) + 1; }
+int x23 (int y) { return x22(y) + 1; }
+int x24 (int y) { return x23(y) + 1; }
+int x25 (int y) { return x24(y) + 1; }
+int x26 (int y) { return x25(y) + 1; }
+int x27 (int y) { return x26(y) + 1; }
+int x28 (int y) { return x27(y) + 1; }
+int x29 (int y) { return x28(y) + 1; }
+int x30 (int y) { return x29(y) + 1; }
+int x31 (int y) { return x30(y) + 1; }
+int x32 (int y) { return x31(y) + 1; }
+int x33 (int y) { return x32(y) + 1; }
+int x34 (int y) { return x33(y) + 1; }
+int x35 (int y) { return x34(y) + 1; }
+int x36 (int y) { return x35(y) + 1; }
+int x37 (int y) { return x36(y) + 1; }
+int x38 (int y) { return x37(y) + 1; }
+int x39 (int y) { return x38(y) + 1; }
+int x40 (int y) { return x39(y) + 1; }
+int x41 (int y) { return x40(y) + 1; }
+int x42 (int y) { return x41(y) + 1; }
+int x43 (int y) { return x42(y) + 1; }
+int x44 (int y) { return x43(y) + 1; }
+int x45 (int y) { return x44(y) + 1; }
+int x46 (int y) { return x45(y) + 1; }
+int x47 (int y) { return x46(y) + 1; }
+int x48 (int y) { return x47(y) + 1; }
+int x49 (int y) { return x48(y) + 1; }
+int x50 (int y) { return x49(y) + 1; }
+int x51 (int y) { return x50(y) + 1; }
+
+int main () {
+  return x51(55658);
+}

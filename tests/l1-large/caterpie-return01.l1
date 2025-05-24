@@ -1,0 +1,11 @@
+//test return 0
+// special case for initialization checking: return separates the declaration of
+// a variable from its use.
+
+int main()
+{
+    int x;
+
+    return 0;
+    x = x + 1;
+}

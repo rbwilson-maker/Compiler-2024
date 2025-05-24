@@ -1,0 +1,23 @@
+//test typecheck
+//test infloop
+
+struct xxxx {
+  struct xxxx* ptr;
+  struct xxxxx* ptrr;
+};
+
+struct xxxxx {
+  struct xxxx* ptr;
+  struct xxxxx* ptrr;
+};
+
+
+int main(){
+  struct xxxx* xxx = alloc(struct xxxx);
+  xxx->ptrr = alloc(struct xxxxx);
+  xxx->ptrr->ptr = xxx;
+  while( xxx != NULL ){
+    xxx = xxx->ptrr->ptr;    
+  }
+  return 0;
+}

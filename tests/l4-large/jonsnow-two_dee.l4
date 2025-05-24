@@ -1,0 +1,24 @@
+//test return 1500625
+
+int main() {
+    int[][] p = alloc_array(int[], 50);
+    
+    for(int i = 0; i<50; i++) {
+        p[i] = alloc_array(int, 50);
+    }
+
+    for(int i = 0; i<50; i++){
+        for(int j = 0; j<50; j++){
+            p[i][j] = i*j;
+        }
+    }
+
+    int acc = 0;
+    for(int i = 0; i<50; i++){
+        for(int j = 0; j<50; j++){
+            acc += p[i][j];
+        }
+    }
+
+    return acc;
+}

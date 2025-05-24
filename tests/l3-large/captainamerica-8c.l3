@@ -1,0 +1,11 @@
+//test compile
+
+int main() { 
+    int i=2<<10;
+    int j=79 % 2;
+    for(int s=ftoi(fadd(i,j)); true; i=i>>1)
+    {
+        j-=j % i;
+    }
+    return j+i % 1;
+}

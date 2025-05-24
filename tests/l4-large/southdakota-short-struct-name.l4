@@ -1,0 +1,13 @@
+//test return 7
+
+struct moon {
+	int mars;
+};
+
+typedef struct moon* moon;
+
+int main() {
+	moon m = alloc(struct moon);
+	m->mars = 7;
+	return (*m).mars;
+}

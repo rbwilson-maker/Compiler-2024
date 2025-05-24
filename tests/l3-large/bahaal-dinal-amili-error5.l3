@@ -1,0 +1,12 @@
+//test error
+// Variables declared in a particular function should not leave that scope
+
+int foo(int x) {
+  return x;
+}
+
+int main()
+{
+  int y = foo(1);
+  return x + y;
+}

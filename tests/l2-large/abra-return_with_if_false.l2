@@ -1,0 +1,10 @@
+//test return 0
+// test declaration then assignment
+int main() {
+	int a;
+	a = 0;
+	if (false) { 
+		return 25;
+	}
+	return a;
+}

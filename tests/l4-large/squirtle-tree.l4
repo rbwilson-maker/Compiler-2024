@@ -1,0 +1,184 @@
+//test return 1559500
+
+struct Tree {
+  struct Node ** root;
+};
+
+struct Node {
+  struct Node ** left;
+  struct Node ** right;
+  int value;
+};
+
+struct Tree * alloc_tree() {
+  struct Tree * tree = alloc(struct Tree);
+  tree->root = alloc(struct Node *);
+  *tree->root = NULL;
+  return tree;
+}
+
+struct Node * alloc_node() {
+  struct Node * node = alloc(struct Node);
+  node->left = alloc(struct Node *);
+  node->right = alloc(struct Node *);
+  *node->left = NULL;
+  *node->right = NULL;
+  return node;
+}
+
+void node_insert(struct Node ** parent_node_ptr, int value) {
+  struct Node * parent_node = *parent_node_ptr;
+  if(parent_node == NULL) {
+    *parent_node_ptr = alloc_node();
+    (*parent_node_ptr)->value = value;
+  } else if(parent_node->value > value) {
+    node_insert(parent_node->left, value);
+  } else if(parent_node->value < value) {
+    node_insert(parent_node->right, value);
+  }
+}
+
+void insert(struct Tree * tree, int value) {
+  node_insert(tree->root, value);
+}
+
+int node_min(struct Node * node) {
+  if(*node->left == NULL) return node->value;
+  else return node_min(*node->left);
+}
+
+int tree_min(struct Tree * tree) {
+  return node_min(*(tree->root));
+}
+
+int node_max(struct Node * node) {
+  if(*node->right == NULL) return node->value;
+  else return node_max(*node->right);
+}
+
+int tree_max(struct Tree * tree) {
+  return node_max(*(tree->root));
+}
+
+int node_count(struct Node * node) {
+  if(node == NULL) return 0;
+  else return 1 + node_count(*node->left) + node_count(*node->right);
+}
+
+int tree_size(struct Tree * tree) {
+  return node_count(*tree->root);
+}
+
+int main() {
+  struct Tree * tree = alloc_tree();
+  insert(tree,27607);
+  insert(tree,2783);
+  insert(tree,30426);
+  insert(tree,2140);
+  insert(tree,20891);
+  insert(tree,19015);
+  insert(tree,8472);
+  insert(tree,21351);
+  insert(tree,5109);
+  insert(tree,29767);
+  insert(tree,31881);
+  insert(tree,16256);
+  insert(tree,9257);
+  insert(tree,4142);
+  insert(tree,31788);
+  insert(tree,19074);
+  insert(tree,12115);
+  insert(tree,4511);
+  insert(tree,2377);
+  insert(tree,13958);
+  insert(tree,21042);
+  insert(tree,2280);
+  insert(tree,24213);
+  insert(tree,7802);
+  insert(tree,31520);
+  insert(tree,981);
+  insert(tree,8607);
+  insert(tree,22530);
+  insert(tree,4757);
+  insert(tree,5375);
+  insert(tree,30698);
+  insert(tree,19445);
+  insert(tree,28810);
+  insert(tree,7855);
+  insert(tree,11030);
+  insert(tree,28002);
+  insert(tree,26240);
+  insert(tree,691);
+  insert(tree,28865);
+  insert(tree,17493);
+  insert(tree,14135);
+  insert(tree,12200);
+  insert(tree,19658);
+  insert(tree,1811);
+  insert(tree,8591);
+  insert(tree,17945);
+  insert(tree,5374);
+  insert(tree,24870);
+  insert(tree,17325);
+  insert(tree,16511);
+  // (31881 - 691) * 50
+  return (tree_max(tree) - tree_min(tree)) * tree_size(tree);
+}
+
+/*
+
+Here are the numbers inserted to the tree in sorted order
+
+691
+981
+1811
+2140
+2280
+2377
+2783
+4142
+4511
+4757
+5109
+5374
+5375
+7802
+7855
+8472
+8591
+8607
+9257
+11030
+12115
+12200
+13958
+14135
+16256
+16511
+17325
+17493
+17945
+19015
+19074
+19445
+19658
+20891
+21042
+21351
+22530
+24213
+24870
+26240
+27607
+28002
+28810
+28865
+29767
+30426
+30698
+31520
+31788
+31881
+
+
+*/

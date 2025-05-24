@@ -1,0 +1,8 @@
+//test return 2
+
+int add(int x, int y);
+
+// functions can go undefined if they are never called
+int main() {
+    return 1+1;
+}

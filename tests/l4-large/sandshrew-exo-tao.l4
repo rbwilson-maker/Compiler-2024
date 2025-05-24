@@ -1,0 +1,4 @@
+//test memerror
+int main(){
+    return *(true ? (false ? NULL : NULL) : alloc(int));
+}

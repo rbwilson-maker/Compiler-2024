@@ -1,0 +1,11 @@
+//test return 0
+
+void subtract(int n) {
+  if (n > 0)
+    subtract(n-1);
+}
+
+int main() {
+  subtract(1 << 8);
+  return 0;
+}

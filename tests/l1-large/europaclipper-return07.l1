@@ -1,0 +1,10 @@
+//test return -559038737
+int main() {
+  int x = 0xDEAD;
+  int y = 0xBEEF;
+  int z = 16;
+  z *= 16;
+  z *= 16;
+  z *= 16;
+  return (x * z) + y;
+}

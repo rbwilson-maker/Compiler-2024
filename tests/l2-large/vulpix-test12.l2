@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+int main() {
+  bool x = false;
+  bool y = true;
+  bool z = false;
+  while (x || y || !z) {
+    x = x && y;
+    y = y || z;
+    z = !z;
+  }
+  x = x == x;
+  return 0;
+}

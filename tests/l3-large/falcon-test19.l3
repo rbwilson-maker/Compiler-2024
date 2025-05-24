@@ -1,0 +1,15 @@
+//test error
+
+int main() {
+    int a = 1;
+    // cannot define functions within functions
+    bool feed_me(int x, int y) {
+        return x + y == y - x;
+    }
+
+    if(feed_me(4, 1)) {
+        return 3;
+    } else {
+        return -3;
+    }
+}

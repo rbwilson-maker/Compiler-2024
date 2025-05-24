@@ -1,0 +1,9 @@
+//test error 
+
+int helper(int x) {
+    return 0;
+} 
+
+int main() {
+    return helper(1, 0);
+}

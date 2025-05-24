@@ -1,0 +1,18 @@
+//test return 9
+
+int main ()
+{
+  int x;
+  int y;
+
+  if (1 == 0x1)
+    x = 0x1;
+  else
+    x = 0;
+
+  for (y = 0; y < 3; y++) {
+    x <<= y;
+  }
+
+  return x + 1;
+}

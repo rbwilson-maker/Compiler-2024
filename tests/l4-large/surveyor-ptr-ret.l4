@@ -1,0 +1,15 @@
+//test return 15315
+
+int* make(int x) {
+  int* ret = alloc(int);
+  *ret = x + 1;
+  return ret;
+}
+
+int deref(int* x) {
+  return *x + 2;
+}
+
+int main() {
+  return deref(make(15312));
+}

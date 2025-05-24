@@ -1,0 +1,22 @@
+//test error
+
+struct one {
+  int one;
+};
+typedef struct one* one;
+
+struct two {
+  int two;
+};
+
+int main() {
+  one one = alloc (struct one);
+
+  one->one = 1;
+
+  struct two * two = alloc (struct two);
+  
+  two->two = one->one;
+  
+  return two->two;
+}

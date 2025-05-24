@@ -1,0 +1,13 @@
+//test return 0
+//try a global
+
+void really(int local)
+{
+   1 << local;
+}
+
+int main()
+{
+   really(31);
+   return 0;
+}

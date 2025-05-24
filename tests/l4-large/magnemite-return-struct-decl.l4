@@ -1,0 +1,18 @@
+//test return 3
+
+struct list;
+
+typedef struct list list;
+
+struct list {
+    int data;
+    list* next;
+};
+
+int main() {
+    list* aList;
+    aList = alloc(struct list);
+    aList->data = 3;
+    aList->next = NULL;
+    return aList->data;
+}

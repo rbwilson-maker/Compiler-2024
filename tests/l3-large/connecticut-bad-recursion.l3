@@ -1,0 +1,21 @@
+//test return 9001
+
+int b(int x);
+int a(int x);
+
+int a(int x) {
+	return (x == 0 ? 9001 : b(x));
+}
+
+int b(int x) {
+	if (x == -57) {
+		return 69;
+	}
+	return a(x/2);
+}
+
+// The recursive call will converge to 0 and return a number that is
+// over 9000.  This is interesting because 9000 is a large number.
+int main() {
+	return a(69);
+}

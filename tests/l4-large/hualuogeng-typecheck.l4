@@ -1,0 +1,8 @@
+//test typecheck
+
+int main() {
+    int *x;
+    x = alloc(int);
+    *x = 100;
+    return -1;
+}

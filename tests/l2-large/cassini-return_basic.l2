@@ -1,0 +1,20 @@
+//test return 6
+
+int main() {
+    bool b1 = true;
+    bool b2 = false;
+
+    int x = 5;
+    if(b1 || b2) {
+        int z = x + 3;
+    } else {
+        int y = x + 4;
+    }
+
+    while(b1) {
+        x ++;
+        b1 = false;
+    }
+
+    return x;
+}

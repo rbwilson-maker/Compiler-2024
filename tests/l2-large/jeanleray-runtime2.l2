@@ -1,0 +1,10 @@
+//test div-by-zero
+// mod by zero
+int main(){
+    int a = 100;
+    for(int i = 100; i  > -1;i--){
+        int k = (i&0);
+        a %= k;
+    }
+    return a;
+}

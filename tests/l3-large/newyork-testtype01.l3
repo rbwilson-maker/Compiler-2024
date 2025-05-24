@@ -1,0 +1,10 @@
+//test return 1065353216
+
+typedef int tau;
+
+int main(){
+
+	tau x = fadd(0, 1);
+	tau y = itof(x);
+	return y;
+}

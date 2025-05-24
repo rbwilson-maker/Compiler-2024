@@ -1,0 +1,13 @@
+//test error
+// multiple variable declarations due to blocking.
+
+int main () {
+  int x = 10;
+  int y = 0;
+  {
+    for (int x = 0; x <= 10; x++) {
+      y += x;
+    }
+  }
+  return y;
+}

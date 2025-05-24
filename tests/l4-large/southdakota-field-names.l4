@@ -1,0 +1,25 @@
+//test return 0 
+
+typedef bool foo;
+
+struct north {
+  foo foo;
+};
+
+struct south {
+  foo bar;
+};
+
+foo bar() {
+  return true;
+}
+
+
+int main() {
+  foo isCold = bar();
+  struct north *n = alloc(struct north);
+  struct south *s = alloc(struct south);
+  n -> foo = isCold;
+  s -> bar = n -> foo;
+  return 0;
+}

@@ -1,0 +1,6 @@
+//test return 64
+
+int main() {
+	return (1<<6);
+	return (1<<32);
+}

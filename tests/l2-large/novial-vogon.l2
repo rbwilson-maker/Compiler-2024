@@ -1,0 +1,9 @@
+//test error
+// cannot use incr as expression
+
+int main() {
+  int y = 2;
+  int z = y++;
+
+  return z;
+}

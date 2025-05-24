@@ -1,0 +1,31 @@
+//test return 47
+
+/**
+ * Returns the largest prime less than the given value
+ */
+
+int largest_prime(int x) {
+ int i = x;
+ int found = 0;
+ while(found == 0 && i >= 0) {
+    int j = 2;
+    bool divisible = false;
+    while(!divisible && j < i) {
+      if ( i % j == 0) {
+        divisible = true;
+      }
+      j++;
+    }
+
+    if(!divisible) {
+      found = i;
+    }
+    i--;
+  }
+  return found;
+}
+
+int main() {
+  return largest_prime(50);
+}
+

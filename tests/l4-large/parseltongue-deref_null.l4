@@ -1,0 +1,25 @@
+//test memerror
+
+/*
+ * derefrencing a NULL
+ */
+
+
+struct tree {
+    int val;
+
+    struct tree* left;
+    struct tree* right;
+};
+
+typedef struct tree tree_l;
+
+
+int main() {
+    
+    tree_l* root = alloc(struct tree);
+
+    root->left->val = 1;
+
+    return 1;
+}

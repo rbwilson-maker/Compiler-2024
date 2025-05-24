@@ -1,0 +1,45 @@
+//test memerror
+
+struct node {
+    int id;
+    struct node*[] neighbors;
+    int num_neighbors;
+    int[] weights;
+};
+
+// Floyd-Warshall (non-neg weight only)
+int FW(struct node*[] G, int n, int start, int end){
+    // init n*n dist array
+    int[][] dist = alloc_array(int[], n);
+    for(int i = 0; i < n; i++) {
+        dist[i] = alloc_array(int, n);
+        for(int j = 0; j < n; j++)
+            dist[i][j] = -1; // init to -1
+    }
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < G[i]->num_neighbors; j++){
+            dist[i][G[i]->neighbors[j]->id] = G[i]->weights[j];
+        }
+    }
+
+    for(int i = 0; i < n; i++)
+        dist[i][i] = 0;
+
+    for(int k = 0; k < n; k++)
+        for(int i = 0; i < n; i++)
+            for(int j = 0; j < n; j++){
+                if(dist[i][k] >= 0 && dist[k][j] >= 0){
+                    if(dist[i][j] < 0 || dist[i][j] > dist[i][k] + dist[k][j])
+                        dist[i][j] = dist[i][k] + dist[k][j];
+                }
+            }
+
+    return dist[start][end];
+}
+
+int main() {
+    struct node*[] K3 = alloc_array(struct node*, 3); // K_3, better known as a triangle
+    int foo = FW(K3, 3, 0, 0);
+    return foo;
+}

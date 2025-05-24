@@ -1,0 +1,21 @@
+//test return 50
+int main() {
+    int a = 0;
+    {
+        int b = 10;
+        a = a + b;
+    }
+    {
+        int c = 10;
+        a += c;
+    }
+    {
+        int d = 10;
+        a -= d;
+    }
+    {
+        int e = 5;
+        a *= e;
+    }
+    return a;
+}

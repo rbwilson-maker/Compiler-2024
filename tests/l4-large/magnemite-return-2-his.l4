@@ -1,0 +1,11 @@
+//test return 23
+
+void has_side_effects(int *is_modified) {
+  *is_modified = 23;
+}
+
+int main() {
+  int *will_be_modified = alloc(int);
+  has_side_effects(will_be_modified);
+  return *will_be_modified;
+}

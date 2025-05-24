@@ -1,0 +1,30 @@
+//test return 1454
+
+//op defines the number of time we recurse on the operation
+//op = 0 is increment by 1
+//op = 1 is addition
+//op = 2 is multiplication
+//op = 3 is exponentiation
+int hyperop(int a, int op, int b) {
+	if(op == 0) return b + 1;
+	if(b == 0) {
+		if(op == 1) return a;
+		if(op == 2) return 0;
+		else return 1;
+	}
+	int res = hyperop(a, op, 0);
+	for(int i = 0; i < b; i++) {
+		res = hyperop(a, op-1, res);
+	}
+	return res;
+}
+
+
+int main() {
+	int ans = hyperop(2, 0, 100);
+	ans += hyperop(2, 1, 100);
+	ans += hyperop(2, 2, 100);
+	ans += hyperop(2, 3, 10);
+	ans += hyperop(3, 4, 2);
+	return ans;
+}

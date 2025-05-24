@@ -1,0 +1,8 @@
+//test return 5
+// uninitialized variable, but no control flow path to it
+int main()
+{
+  int a1;
+  return 5;
+  return a1 * a1 + a1 % a1 / a1 - a1;
+}

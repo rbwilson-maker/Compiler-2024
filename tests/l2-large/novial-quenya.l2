@@ -1,0 +1,19 @@
+//test return 42
+// attempt all asnop expressions and loop
+
+int main() {
+  int x = 4;
+  x += 19; //23
+  x -= 5; //18
+  x *= 2; //36
+  x /= 6; //6
+  x %= 5; //1
+  x *= 6; //6
+  x *= x; //36
+
+  for (int i = 0; i < 6; i++) {
+    x++;
+  }
+
+  return x;
+}

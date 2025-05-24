@@ -1,0 +1,19 @@
+//test return 1
+int f(bool in) {
+    bool q = in || (in && in);
+    /* What if malloc returned NULL? */
+    /*if malloc returns null then you can't get the head thing*/
+    if (q == false)
+        return 1;   /*added this*/
+    q = true; /*dereferences the pointer and gets the head
+                        value out*/
+                    /*note that head is also a pointer*/
+    q = true; /*added*/
+    q  = true;
+    if (q) return 1;
+    return 0;    /*added*/
+}
+
+int main() {
+return f(true);
+}

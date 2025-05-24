@@ -1,0 +1,13 @@
+//test return 10
+
+int main ()  {
+    int x;
+    int y;
+    x = 0;
+    if(true)
+        if(true) x++;
+        else {}
+    else {}
+    
+    return 10;
+}

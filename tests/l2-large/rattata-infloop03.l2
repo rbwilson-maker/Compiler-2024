@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+int main() {
+  bool flag = false;
+  if (!flag) {
+    while (1 >= 0) {
+      flag = !flag;
+    }
+    return 5;
+  } 
+  return 5;
+}

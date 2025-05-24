@@ -1,0 +1,18 @@
+//test return 0
+int main() {
+
+  // all of the asops!
+     
+  int x = 5;
+  x += x;
+  x *= x;
+  x /= x;
+  x %= x;
+  x -= x;
+  x ^= x;
+  x |= 1;
+  x <<= x;
+  x >>= x;
+
+  return x;
+}

@@ -1,0 +1,16 @@
+//test return 1
+
+//Make sure a dangling 'else' is paired with the correct 'if'
+
+int main() {
+
+    int a = 0;
+
+    if (false)
+    if (false)
+    a++;
+    else
+    return 0;
+    
+    return 1;
+}

@@ -1,0 +1,7 @@
+//test memerror
+
+int main(){
+    int[] a=alloc_array(int,5);
+    a[10]=100;
+    return 1;
+}

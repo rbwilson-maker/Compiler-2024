@@ -1,0 +1,10 @@
+//test error
+// circular typedef
+
+typedef x y;
+typedef y z;
+typedef z x;
+
+int main() {
+    return 0;
+}

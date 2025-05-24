@@ -1,0 +1,9 @@
+//test error
+
+//We shouldn't be able to typedef to reserved keywords.
+
+typedef int bool;
+
+int main () {
+	return 0;
+}

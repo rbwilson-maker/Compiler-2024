@@ -1,0 +1,12 @@
+//test error
+
+typedef int foo;
+struct nam { foo x; int y; };
+
+int main() {
+  struct nam *n;
+  n = alloc(struct nam);
+  n->x = 1;
+  n->y = 2;
+  return *n;
+}

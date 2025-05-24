@@ -1,0 +1,9 @@
+//test error
+void x() {
+
+}
+
+int main() {
+  void x = x();
+  return 10;
+}

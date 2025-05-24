@@ -1,0 +1,17 @@
+//test return 3
+int main(){
+    int counter1 = 0;
+    while(counter1 < 10){
+        int counter2 = 10;
+        while(counter2 > 5){
+            int check = 3;
+            if (check % 2 == 1) {
+               return check;
+            } else 
+               counter1 = counter1 + 1;
+            counter2 = counter2 + 1;
+        }
+        counter1 = counter1 + 1;
+    }
+    return 0;
+}

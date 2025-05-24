@@ -1,0 +1,14 @@
+//test return 26
+// hexnum
+
+int main() {
+    int a = 0x1f;
+    int b = 0x1f;
+    int c = 0x1ff;
+    int d = c - a; // 0x1e0
+    int e = -b; // -0x1f
+    int f = a / b * c - d + e; // 0
+    int g = f % 0xf; // 0
+    int h = g + a; // 0x1f
+    return h - 5; // 26
+}

@@ -1,0 +1,11 @@
+//test error
+//an assert has no value
+
+bool is7(int x){
+    return assert(x == 7);
+}
+
+int main(){
+    if(is7(7)){ return 9;}
+    return 42;
+}

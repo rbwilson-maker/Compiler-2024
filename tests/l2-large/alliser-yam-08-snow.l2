@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+// fun fact 1
+
+int main(){
+  int a = -1;
+  int b = 1;
+  while (a != 0){
+    b = (a-1) * b;
+  }
+  return 0;
+}

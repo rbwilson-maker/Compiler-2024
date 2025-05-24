@@ -1,0 +1,51 @@
+//test return 0
+//A Trie data structure where each level represents a decimal digit.
+
+typedef struct trie_node* trie;
+
+struct trie_node {
+    struct trie_node*[]* next;
+    bool terminal;
+};
+
+void trie_insert(trie T, int n) {
+    if (n == 0) {
+        T->terminal = true;
+    } else {
+        int digit = n % 10;
+        if (T->next == NULL) {
+            T->next = alloc(struct trie_node*[]);
+            *(T->next) = alloc_array(struct trie_node*, 10);
+        }
+        if ((*(T->next))[digit] == NULL) {
+            (*(T->next))[digit] = alloc(struct trie_node);
+        }
+        trie_insert((*(T->next))[digit], n / 10);
+    }
+}
+
+bool trie_lookup(trie T, int n) {
+    if (n == 0) {
+        return T->terminal;
+    } else {
+        int digit = n % 10;
+        if (T->next == NULL || (*(T->next))[digit] == NULL) {
+            return false;
+        }
+        return trie_lookup((*(T->next))[digit], n / 10);
+    }
+}
+
+int main() {
+    trie T = alloc(struct trie_node);
+    for (int n = 0; n < 300000; n+=3) {
+        trie_insert(T, n);
+    }
+    for (int n = 0; n < 300000; n += 3) {
+        assert(trie_lookup(T, n));
+    }
+    for (int n = 1; n < 300000; n += 3) {
+        assert(!trie_lookup(T, n));
+    }
+    return 0;
+}

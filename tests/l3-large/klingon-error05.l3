@@ -1,0 +1,11 @@
+//test error
+//shouldn't define main before too_late
+int main() {
+
+  return too_late (2020);
+
+}
+
+int too_late (int x) {
+	return x;
+}

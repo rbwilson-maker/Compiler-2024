@@ -1,0 +1,42 @@
+//test return 0
+//This test case implments a union-find datastructure with path compression
+
+int find(int n, int[] parent) {
+    if(parent[n] != n) {
+        int p = find(parent[n], parent);
+        parent[n] = p;
+        return p;
+    } else {
+        return n;
+    }
+}
+
+void union(int a, int b, int[] parent, int[] rank) {
+    int parentA = find(a, parent);
+    int parentB = find(b, parent);
+    if(rank[parentA] == rank[parentB]) {
+        parent[parentA] = parentB;
+        rank[parentB]++;
+    } else if(rank[parentA] < rank[parentB]) {
+        parent[parentA] = parentB;
+    } else {
+        parent[parentB] = parentA;
+    }
+}
+
+int main() {
+    int[] parent = alloc_array(int, 10);
+    int[] rank = alloc_array(int, 10);
+    for(int i = 0; i < 10; i++) {
+        parent[i] = i;
+        rank[i] = 0;
+    }
+    union(0, 2, parent, rank);
+    union(2, 4, parent, rank);
+    union(4, 6, parent, rank);
+    union(1, 3, parent, rank);
+    union(5, 3, parent, rank);
+    union(1, 2, parent, rank);
+    assert(find(0, parent) == find(5, parent));
+    return 0;
+}

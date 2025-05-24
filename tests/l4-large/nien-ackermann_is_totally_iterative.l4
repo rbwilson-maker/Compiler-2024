@@ -1,0 +1,152 @@
+//test return 4093
+
+struct stackNode;
+
+typedef struct stackNode* node;
+typedef node* stackBase;
+
+stackBase initStack();
+bool stackEmpty(stackBase base);
+bool oneElemLeft(stackBase base);
+void push(stackBase base, int data);
+int pop(stackBase base);
+
+
+int iterativeAckermann(int x, int y)
+{
+    stackBase base = initStack();
+
+    //Based on the nature of the super-recursiveness of Ackermann,
+    //we need to pop the second argument FIRST, which means we push it SECOND
+    //Push x, then y:
+    push(base, x);
+    push(base, y);
+
+    //Every "call" to the ackermann function removes the top two elements
+    //fromt the stack and adds a new element, the result of the call
+    while(true)
+    {
+	//Check if we're done
+	if(oneElemLeft(base))
+	{
+	    return pop(base);
+	}
+
+	//Not done, keep going
+	//Pop n, then m
+	int n = pop(base);
+	int m = pop(base);
+
+	if(m == 0)
+	{
+	    //Totally non-recursive case
+	    push(base, n + 1);
+	}
+	else
+	{
+	    if(n == 0)
+	    {
+		//Primitive (tail) recursive case
+		//Push args for next "call"
+		push(base, m - 1);
+		push(base, 1);
+	    }
+	    else
+	    {
+		//Non-primitive recursive case
+
+		//Push args for outer recursive call
+		push(base, m - 1);
+
+		//Push args for inner recursive call
+		push(base, m);
+		push(base, n - 1);
+	    }
+	}
+    }
+
+    //Control should never reach here
+    return -1;
+}
+
+
+
+int main()
+{
+    return iterativeAckermann(3, 9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+struct stackNode
+{
+    int data;
+    struct stackNode *nextNode;
+};
+
+
+stackBase initStack()
+{
+    stackBase base = alloc(node);
+    *base = NULL;
+    return base;
+}
+
+bool stackEmpty(stackBase base)
+{
+    return (NULL == *base);
+}
+
+bool oneElemLeft(stackBase base)
+{
+    assert(base != NULL);
+    assert(!stackEmpty(base));
+    int q = pop(base);
+    bool weDone = stackEmpty(base);
+    push(base, q);
+    return weDone;
+}
+
+void push(stackBase base, int data)
+{
+    assert(base != NULL);
+    node newNode = alloc(struct stackNode);
+    newNode -> data = data;
+    newNode -> nextNode = *base;
+    *base = newNode;
+}
+
+int pop(stackBase base)
+{
+    assert(base != NULL);
+    assert(!stackEmpty(base));
+    node topNode = *base;
+    *base = topNode -> nextNode;
+    return topNode -> data;
+}

@@ -1,0 +1,13 @@
+//test return 2147483647
+// overflow
+// INT_MAX is 0x7FFFFFFF
+// INT_MIN is 0x80000000
+// -1 is 0xFFFFFFFF
+
+int main()
+{
+  int value1 = 0xFFFFFFFF;
+  int max_int = 0x7FFFFFFF;
+  int min_int = -max_int;
+  return min_int - 2;
+}

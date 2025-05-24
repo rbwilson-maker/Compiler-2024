@@ -1,0 +1,14 @@
+//test abort
+
+int recurse(int a) {
+  if (a == 0) {
+    return 0;
+  }
+  return a + recurse(a - 1);
+}
+
+int main() {
+  int main = recurse(100);
+  assert (main != 5050);
+  return main;
+}

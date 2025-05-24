@@ -1,0 +1,10 @@
+//test return 1024
+int main() {
+    int y = 1;
+    while (y < 1000) { 
+        y *= 2; 
+    }
+    int x  = 4;
+    x += 3; 
+    return y;
+}

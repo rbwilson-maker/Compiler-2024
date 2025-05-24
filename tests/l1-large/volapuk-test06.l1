@@ -1,0 +1,10 @@
+//test div-by-zero
+
+// Tests modulus by zero raises a runtime exception
+
+int main() {
+    int i;
+    i = 12;
+    i -= i;
+    return i % i;
+}

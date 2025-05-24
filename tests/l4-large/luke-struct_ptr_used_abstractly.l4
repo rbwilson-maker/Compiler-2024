@@ -1,0 +1,36 @@
+//test typecheck
+
+struct node {
+    struct elt *value;
+    struct node *next;
+};
+
+struct node *cons(struct elt *value, struct node *next) {
+    struct node *a = alloc(struct node);
+    a->value = value;
+    a->next = next;
+    return a;
+}
+
+struct node *nil() {
+    return NULL;
+}
+
+struct elt *foldl1(struct node *xs) {
+    if (xs == NULL) {
+        return elt_identity();
+    } else if (xs->next == NULL) {
+        return xs->value;
+    } else {
+        struct elt *new_value = elt_combine(xs->value, xs->next->value);
+        return foldl1(cons(new_value, xs->next->next));
+    }
+}
+
+int main() {
+    struct node *list =
+        cons(elt_create(1), cons(elt_create(2), cons(elt_create(3), nil())));
+    struct elt *result = foldl1(list);
+    assert(elt_eq(result, elt_create(6)));
+    return 15411;
+}

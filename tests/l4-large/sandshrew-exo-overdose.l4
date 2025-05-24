@@ -1,0 +1,9 @@
+//test error
+struct main{
+    int a;
+    struct main* a;
+};
+
+int main(){
+    return 0;
+}

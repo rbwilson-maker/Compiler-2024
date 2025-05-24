@@ -1,0 +1,13 @@
+//test return 2004999
+
+int superjunior(int super) {
+    return (super * 1000) - 1;
+}
+
+int main() {
+    //This declaration should not affect "super" in superjunior
+    int super = 1;
+    int junior = superjunior(2005);
+
+    return junior;
+}

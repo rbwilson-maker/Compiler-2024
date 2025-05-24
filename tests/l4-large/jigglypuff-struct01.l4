@@ -1,0 +1,35 @@
+//test return 3
+
+/* struct 01 Test 
+ *  
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * 
+ * Test various places for struct definitions and usages
+ */
+
+typedef struct a t;
+struct a {
+    int a1;
+    bool a2; 
+    int a3;
+};
+
+
+int main()
+{
+    int i = 0; 
+    t *t1; 
+    for(t1 = alloc(struct a); i < 1; i++) {
+        t1 = alloc(struct a); 
+        t1->a1 = 1; 
+        t1->a3 = 2; 
+    }
+    
+    if (t1->a2) {
+        return 1; 
+    } else {
+        return (t1->a1 + t1->a3);
+    }
+}
+

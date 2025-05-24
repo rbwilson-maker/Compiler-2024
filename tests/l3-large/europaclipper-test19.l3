@@ -1,0 +1,9 @@
+//test typecheck
+
+int f() {
+  return f() + f() + f();
+}
+
+int main() {
+  return f();
+}

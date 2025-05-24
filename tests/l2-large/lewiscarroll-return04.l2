@@ -1,0 +1,11 @@
+//test return 5
+int main () {
+	bool cat = true;
+	bool dog = false;
+	if (dog && cat) {
+		return 3;
+	}
+	else {
+		return 5;
+	}
+}

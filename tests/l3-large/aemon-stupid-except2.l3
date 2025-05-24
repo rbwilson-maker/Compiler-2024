@@ -1,0 +1,17 @@
+//test abort
+
+bool g(int a, int b)
+{
+	return a < b;
+}
+
+int f()
+{
+	assert(g(2, 1));
+	return 5;
+}
+
+int main()
+{
+	return f();
+}

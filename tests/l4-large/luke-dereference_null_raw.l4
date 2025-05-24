@@ -1,0 +1,10 @@
+//test error
+
+void not_allowed() {
+    *NULL;
+}
+
+int main() {
+    not_allowed();
+    return 8;
+}

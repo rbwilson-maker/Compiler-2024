@@ -1,0 +1,9 @@
+//test return 128
+
+int main() {
+    int a = 0x81;    
+    int b = 0x80;
+    int c = 0x83;
+    int d = 0x187;
+    return (a & b) & (c & d);
+}

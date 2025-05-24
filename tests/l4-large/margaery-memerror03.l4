@@ -1,0 +1,16 @@
+//test memerror
+
+struct rec_struct {
+    int x;
+    struct rec_struct* inner_rec;
+};
+
+int main() {
+
+    struct rec_struct* rec = alloc(struct rec_struct);
+    (*rec).x = 199999;
+    (*rec).inner_rec->x = 1999998;
+    (*rec).inner_rec->inner_rec = NULL;
+
+    return (*rec).inner_rec->x;
+}

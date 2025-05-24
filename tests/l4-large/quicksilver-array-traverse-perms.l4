@@ -1,0 +1,14 @@
+//test return 0 
+
+int main() {
+    int[] go_one = alloc_array(int, 100); 
+    for (int i=0; i<100; i++) {
+        go_one[i] = (i+1) % 100;
+    }
+
+    int curr = 0; 
+    while (go_one[curr] != 0) {
+        curr = go_one[curr]; 
+    }
+    return 0; 
+}

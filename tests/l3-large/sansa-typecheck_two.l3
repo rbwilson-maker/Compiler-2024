@@ -1,0 +1,24 @@
+//test error
+
+int f(int x);
+int g(int x);
+int h(int x);
+
+int f(int x){
+    x += 1;
+    return g(x);
+}
+
+int g(int x){
+    x *= 2;
+    return h(x);
+}
+
+int h(int x){
+    x >>= 3;
+    return x;
+}
+
+int main() {
+    return !f(0);
+}

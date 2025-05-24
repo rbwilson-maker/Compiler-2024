@@ -1,0 +1,11 @@
+//test return 508948
+
+int main () {
+	int u = 17;
+	int v = -1234567;
+	int w = 1234567;
+	int x = 5;
+	int y = -(-12);
+	int z = 15122;
+	return ((x * z) + w - v) / (u - y);
+}

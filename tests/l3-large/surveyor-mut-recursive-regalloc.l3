@@ -1,0 +1,75 @@
+//test return 8388681
+
+int pow(int a, int b) {
+  if (b == 1) {
+    return a;
+  } else {
+    return a * pow(a, b - 1);
+  }
+}
+
+int add(int a, int b) {
+  return a + b;
+}
+
+int b(int x, int y);
+
+int a(int x, int y) {
+  // create some variables
+  bool a = true;
+  int s = 3;
+  int c = 0;
+  int d = -1;
+
+  while (s + c + d < 5) {
+    s += 1;
+  }
+
+  int x0 = 1;
+  int x1 = 2;
+  int x2 = x0 / x1;
+  int x3 = add(x1, x2);
+  x0 = x2 + x3;
+  x1 = x0 * x3;
+  if (x1 > 0) {
+    s = 0;
+  }
+
+  int y0 = 1;
+  int y1 = 2;
+  int y2 = y0 / y1;
+  int y3 = y1 + y2;
+  y0 = add(y2, y3);
+  y1 = y0 * y3;
+  if (y1 > 0) {
+    s += 1;
+  }
+
+  int z0 = 1;
+  int z1 = 2;
+  int z2 = z0 + z1;
+  int z3 = add(z1, z2);
+  z0 = add(z2, z3);
+  z1 = z0 * z3;
+
+  // do actual calculation
+  if (x > pow(2, 23)) {
+    return x + y;
+  }
+
+  for (int i = 0; i < pow(2, 10); i++) {
+    x += 1;
+  }
+
+  y = s + d + x0 + x1 + x2 + x3 + y0 + y1 + y2 + y3 + z0 + z1 + z2 + z3;
+
+  return b(x, y);
+}
+
+int b(int x, int y) {
+  return a(x, y);
+}
+
+int main() {
+  return a(1, 0);
+}

@@ -1,0 +1,12 @@
+//test div-by-zero
+//test out-of-bounds shift handling
+
+int main(){
+    int a = 10;
+
+    for (int i = 0; i <= 32; i++) {
+        a >>= i;
+    }
+
+    return a;
+}

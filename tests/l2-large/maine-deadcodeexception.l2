@@ -1,0 +1,13 @@
+//test div-by-zero
+
+// Division by zero in what would otherwise look like dead code
+
+int main() {
+    int a = 2345;
+    int b = a ^ 0x2345FFFF;
+
+    int c = 0;
+    c /= c;
+    
+    return b;
+}

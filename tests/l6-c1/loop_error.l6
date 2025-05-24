@@ -1,0 +1,8 @@
+//test abort
+
+int main() {
+    int i;
+    for (i=0; i < 4; i++) //@loop_invariant i < 4;
+        {0;}
+    return i;
+}

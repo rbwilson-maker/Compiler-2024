@@ -1,0 +1,22 @@
+//test return 0
+// Calculates sum of squares formula
+int manually_calculate_sum(int n) {
+  int sum = 0;
+  for (int i = 0; i <= n; i++) {
+    sum += (i * i);
+  }
+  return sum;
+}
+
+int calculate_formula(int n) {
+  return (n * (n + 1) * (2 * n + 1))/6;
+}
+
+int main() {
+  // Testing sum of squares formula for multiple n's
+  for (int i = 0; i < 1000; i++) {
+    assert(manually_calculate_sum(i) == calculate_formula(i));
+  }
+  return 0;
+}
+

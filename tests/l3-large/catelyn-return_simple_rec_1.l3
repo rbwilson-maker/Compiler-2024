@@ -1,0 +1,20 @@
+//test return 1073728692
+
+int rec_func(int x, int y) {
+	if (x < 0) {
+		x = -x;
+	}
+	if (y < 0) {
+		y = -y;
+	}
+
+	if (x + y < 0) {
+		return y;
+	}
+
+	return rec_func(x + 1, (y * 5) / 2);
+}
+
+int main() {
+	return rec_func(0x3FFFFFFF, 2);
+}

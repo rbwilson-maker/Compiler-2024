@@ -1,0 +1,21 @@
+//test return 6
+// compute 4 choose 2
+
+int main() {
+  int n;
+  int r;
+
+  n = 4;
+  r = 2;
+  int diff = n - r;
+
+  int n_fact = n * (n - 1) * (n - 2) * (n - 3);
+  int r_fact = r * (r - 1);
+  int diff_fact = diff * (diff - 1);
+
+  int res = n_fact;
+  res /= r_fact;
+  res /= diff_fact;
+
+  return res;
+}

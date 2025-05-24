@@ -1,0 +1,8 @@
+//test error
+//bad use of typedef
+
+x foo () {return 0;}
+
+x main () {return foo();}
+
+typedef int x;

@@ -1,0 +1,19 @@
+//test return 6768
+
+int apples(int bananas);
+int strawberries(int pears);
+
+typedef int bananas;
+
+bananas main() {
+  bananas durians = 12;
+  return apples(durians);
+}
+
+bananas apples(bananas kumquats) {
+  return kumquats * strawberries(kumquats);
+}
+
+bananas strawberries(bananas strawberries) {
+  return strawberries * 47;
+}

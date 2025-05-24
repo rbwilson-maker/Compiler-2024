@@ -1,0 +1,15 @@
+//test return -2147483648
+// type synonyms
+
+typedef int blah1;
+typedef int blah2;
+typedef int blah3;
+
+blah3 foo() {
+  return 0x80000000;
+}
+
+blah1 main() {
+  blah2 x = foo();
+  return x;
+}

@@ -1,0 +1,44 @@
+//test return 250301
+typedef bool anothabool;
+typedef int anothaint;
+typedef bool boolbool;
+typedef int intint; 
+typedef int boolint;
+typedef bool intbool;
+// testing type aliases 
+
+
+int a(anothabool a, anothaint i) {
+    if (a) {
+        return i + 102;
+    }
+    else {
+        return i -124;
+    }
+}
+
+boolint b(boolbool a, intint b) {
+    if (a) {
+        return b + 96;
+    }
+    else {
+        return b - 252;
+    }
+
+}
+
+anothaint c(boolint i, intbool b) {
+    if (b) {
+        return i + 152;
+    }
+    else {
+        return i - 123531;
+    }
+
+}
+
+int main() {
+    return a(false, 235) * a(true, 9352) + 
+    b(true, 23523) - b(false, 8439) + 
+    c(315, true) - c(938523, false);
+}

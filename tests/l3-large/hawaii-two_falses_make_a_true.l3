@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+  assert(false, false);
+
+  return 27;
+}

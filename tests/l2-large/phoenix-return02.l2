@@ -1,0 +1,28 @@
+//test return 6765
+// fibonacci sequence
+
+int main() {
+    int count = 0;
+    int nth = 0;
+    int n = 21;
+
+    // finds 21st Fibonacci number (1st number is 0, 2nd is 1, and so on)
+    int n1 = 0;
+    int n2 = 1;
+
+    if (n > 1 && n == 2) {
+        nth = 1;
+    }
+
+    if (n > 2) {
+        count = 2; 
+
+        while (count < n) {
+            nth = n1 + n2;
+            n1 = n2;
+            n2 = nth;
+            count += 1;
+        }
+    }
+    return nth;
+}

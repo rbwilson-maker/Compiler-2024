@@ -1,0 +1,33 @@
+//test typecheck
+//test infloop
+
+struct Node {
+    int val;
+    struct Node* next;
+};
+
+typedef struct Node node;
+typedef struct Node* node_ptr;
+
+int main() {
+    node_ptr n1 = alloc(node);
+    node_ptr n2 = alloc(node);
+    node_ptr n3 = alloc(node);
+
+    n1->val = 1;
+    n2->val = 2;
+    n3->val = 3;
+
+    n1->next = n2;
+    n2->next = n3;
+    n3->next = n1;
+
+    int sum = 0;
+    node* n = n1;
+    while (n != NULL) {
+        sum += n->val;
+        n = n->next;
+    }
+
+    return sum;
+}

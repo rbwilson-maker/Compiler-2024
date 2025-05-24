@@ -1,0 +1,48 @@
+//test return 1515377
+int sqrt(int x) {
+  if(x==0) {
+    return 0;
+  }
+  int z = x/4;
+  int r2 = 2 * sqrt(z);
+  int r3 = r2+1;
+  if (x < r3*r3) {
+    return r2;
+  }
+  return r3;
+}
+// inspired by https://bellard.org/pi/pi.c
+/* return true if n is prime */
+bool is_prime(int n)
+{
+    int r;
+    int i;
+    if ((n % 2) == 0) {
+	return false;
+
+}
+
+    r = sqrt(n);
+    for (i = 3; i <= r; i += 2) {
+	if ((n % i) == 0) {
+
+	    return false;
+}
+}
+    return true;
+}
+
+/* return the prime number immediatly after n */
+int next_prime(int n)
+{
+    
+    while (!is_prime(n)) {
+n++;
+}
+    return n;
+}
+
+
+int main() {
+  return next_prime(1515361);
+}

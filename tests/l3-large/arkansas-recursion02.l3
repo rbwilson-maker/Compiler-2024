@@ -1,0 +1,20 @@
+//test return 13
+// Ackermann function
+// ackerman(0, n) = n + 1
+// ackerman(m, n) = ackerman(m-1, 1) if m > 0 && n == 0
+// ackerman(m, n) = ackerman(m-1, ackerman(m, n-1)) if m > 0 && n > 0
+
+int ackermann(int m, int n) {
+  if (m == 0) {
+    return n + 1;
+  }
+  if (n == 0) {
+    return ackermann(m - 1, 1);
+  }
+  return ackermann(m - 1, ackermann(m, n - 1));
+}
+
+int main() {
+    int i = ackermann(2, 5);
+    return i;
+}

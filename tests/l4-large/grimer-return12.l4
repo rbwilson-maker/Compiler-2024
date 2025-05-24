@@ -1,0 +1,17 @@
+//test return 5
+
+// did you initialize your arrays properly
+
+int main() {
+  bool[] bools = alloc_array(bool, 10);
+  for (int i = 0; i < 10; i++) {
+    if (i % 2 == 0) //  even indices get true - everything else should be false
+      bools[i] = true;
+  }
+  int sum = 0; // count the number of trues
+  for (int i = 0; i < 10; i++) {
+    if (bools[i])
+       sum++;
+  }
+  return sum;
+}

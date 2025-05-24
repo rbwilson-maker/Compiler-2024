@@ -1,0 +1,50 @@
+//test return 1
+
+typedef struct dll_node dll;
+
+struct dll_node {
+  dll* prev;
+  int data;
+  dll* next;
+};
+
+typedef struct dll_header dll_h;
+
+struct dll_header {
+  dll* start;
+  dll* end;
+};
+
+typedef dll_h stack;
+
+int pop(stack* S) {
+  int data = S->end->prev->data;
+  S->end = S->end->prev;
+  return data;
+}
+
+void push(stack* S, int x) {
+  S->end->data = x;
+  dll* new = alloc(dll);
+  S->end->next = new;
+  new->prev = S->end;
+  S->end = new;
+}
+
+int main() {
+  stack* S = alloc(stack);
+  S->start = alloc(dll);
+  S->end = alloc(dll);
+  S->start->next = S->end;
+  S->end->prev = S->start;
+
+  push(S, 1);
+  push(S, 2);
+  push(S, 3);
+
+  int x = pop(S);
+  x = pop(S);
+  x = pop(S);
+
+  return x;
+}

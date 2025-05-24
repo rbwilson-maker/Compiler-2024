@@ -1,0 +1,50 @@
+//test return 5736396
+
+typedef bool[] sieve;
+
+int find_next_prime(sieve s, int this_prime, int max) {
+
+    for (int i = this_prime + 1; i <= max; i++) {
+        if (!s[i - 2]) return i;
+    }
+
+    return -1;
+}
+
+void filter(sieve s, int this_prime, int max){
+    // because array indexing starts at zero, and potentially
+    // prime numbers start at two, we are going to do some
+    // weird indexing
+
+    int start_from = this_prime * 2 - 2;
+
+    for (int i = this_prime * 2; i <= max; i += this_prime) {
+        s[i - 2] = true;
+    }
+
+    int next = find_next_prime(s, this_prime, max);
+
+    if (next >= 0) filter(s, next, max);
+}
+
+int sum_primes(sieve s, int max) {
+    int sum = 0;
+
+    for (int i = 2; i <= max; i++) {
+        if (!s[i - 2]) sum += i;
+    }
+
+    return sum;
+}
+
+int main(){
+
+    int search_space = 10000;
+
+    sieve s = alloc_array(bool, search_space - 1);
+
+    filter(s, 2, search_space);
+
+    return sum_primes(s, search_space);
+
+}

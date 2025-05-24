@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main()
+{
+  int fac = 1;
+  int n = 7;
+  for (; n >= 0; n--) {
+      fac *= n;
+  }
+  n = 0;
+  return fac/n;
+}

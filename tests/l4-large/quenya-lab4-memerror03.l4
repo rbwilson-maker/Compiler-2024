@@ -1,0 +1,8 @@
+//test memerror
+// dereference pointer to pointer
+
+int main() {
+  int*** a = alloc(int**);
+  *a = alloc(int*);
+  return ***a;
+}

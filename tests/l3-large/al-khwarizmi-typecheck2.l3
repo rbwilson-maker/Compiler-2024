@@ -1,0 +1,8 @@
+//test typecheck
+
+typedef int num;
+typedef num number;
+
+int main() {
+  return 1;
+}

@@ -1,0 +1,37 @@
+//test abort
+
+int value(int[] tree, int node, int end) {
+    if (node > end) {
+        assert(false); 
+    }
+    return tree[node]; 
+}
+int left_child(int node) {
+    return node*2; 
+}
+int right_child(int node) {
+    return node*2+1; 
+}
+
+int fold (int[] tree, int node, int end) {
+    if (node >= end) {
+        return 0;
+    }
+    //sadly in c0 functions are not values, so we can only hardcode in our functions :( 
+    return value(tree, node, end) + fold(tree, left_child(node), end) + fold(tree, right_child(node), end);
+}
+
+int main() {
+    int end = 8; 
+    int[] tree = alloc_array(int, end); 
+    tree[0] = -1; 
+
+    int acc = 0; 
+    int root = 1; 
+    tree[root] = 100; 
+    int L = left_child(root); 
+    int LL = left_child(L); 
+    int LLL = left_child(LL); 
+    int LLLL = left_child(LLL); 
+    return value(tree, LLLL, end); 
+}

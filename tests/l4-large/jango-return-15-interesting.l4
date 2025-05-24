@@ -1,0 +1,21 @@
+//test return 15
+
+void towerOfHanoi(int n, int fromrod, int torod, int auxrod, int* count) {
+  if (n == 1) {
+    (*count)++;
+    return;
+  }
+  towerOfHanoi(n-1, fromrod, auxrod, torod, count);
+  (*count)++;
+  towerOfHanoi(n-1, auxrod, torod, fromrod, count);
+}
+ 
+int main()
+{
+  int n = 4; // Number of disks
+  int* count = alloc(int);
+  towerOfHanoi(n, 0, 1, 2, count);
+  // Number of required moves for towers of
+  // hanoi is 2^n - 1
+  return *count;
+}

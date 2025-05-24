@@ -1,0 +1,15 @@
+//test return 1
+//test binop
+
+int main() {
+  int x = 21392;
+  x>>=10;
+  x<<=10;
+  x>>=10;
+  x<<=10;
+  x>>=10;
+  x<<=10;
+  x>>=10;
+  x<<=10;
+  return 1;
+}

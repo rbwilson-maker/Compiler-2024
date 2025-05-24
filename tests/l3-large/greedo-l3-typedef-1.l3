@@ -1,0 +1,10 @@
+//test error
+
+//unused
+DWORD fun2(DWORD A){
+    return A;
+}
+
+DWORD main(){
+    return fun(20);
+}

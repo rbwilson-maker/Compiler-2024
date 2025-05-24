@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int main() {
+  int i = 1;
+  int j = 0;
+  for (j = 0; j < 33; j++) {
+    i <<= j;
+  }
+  return i;
+}

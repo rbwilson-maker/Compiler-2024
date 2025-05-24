@@ -1,0 +1,7 @@
+//test div-by-zero
+// test negative shift value
+int main() {
+	int x = 379;
+	int s = -12;
+	return x << s;
+}

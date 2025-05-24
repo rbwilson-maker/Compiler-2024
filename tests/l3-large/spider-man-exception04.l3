@@ -1,0 +1,33 @@
+//test div-by-zero
+
+int f(int x) {
+    if (x == 1) {
+        return 5;
+    }
+    if (x % 2 == 0) {
+        return 64;
+    }
+    else {
+        return f(x - 2) << 1;
+    }
+}
+
+int g(int x) {
+    if (x == 0) {
+        return 4;
+    }
+    if (x % 2 == 1) {
+        return f(x);
+    }
+    else {
+        return g(x - 2) << 1;
+    }
+}
+
+int main() {
+    int blah = f(8); // 64
+    int bloop = f(9); // 80
+    int blargh = g(8); // 64
+    int blargoop = g(9); // 80
+    return (2 << (blargh - blah)) / (blargoop - bloop);
+}

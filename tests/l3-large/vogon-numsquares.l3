@@ -1,0 +1,54 @@
+//test return 3
+//given nonnegative integer n, computes the min number of perfect squares needed to sum to n
+
+bool isSquare(int n) {
+  int lo = 0;
+  int hi = n;
+  while (lo <= hi) {
+    int mid = lo + (hi - lo) / 2;
+    if (mid * mid == n) {
+      return true;
+    } else if (mid * mid < n) {
+      lo = mid + 1;
+    } else {
+      hi = mid - 1;
+    }
+  }
+  return false;
+}
+
+int numSquares(int n) {
+  // trivial case for 0
+  if (n == 0) {
+    return 0;
+  }
+
+  // if n == 4^k * m, can distribute (2^k)^2 
+  while (n % 4 == 0) {
+    n /= 4;
+  }
+
+  // four squares theorem
+  if (n % 8 == 7) {
+    return 4;
+  }
+
+  // check for 1
+  if (isSquare(n)) {
+    return 1;
+  }
+
+  // brute force check for 2
+  for (int i = 1; i*i < n; i++) {
+    if (isSquare(n - i*i)) {
+      return 2;
+    }
+  }
+
+  // else answer is 3
+  return 3;
+}
+
+int main() { 
+  return numSquares(123456);
+}

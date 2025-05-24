@@ -1,0 +1,13 @@
+//test error
+//undefined type
+
+typedef hihi haha;
+
+struct mystruct {
+	hihi x;
+	haha y;
+}
+
+int main() {
+	return 1;
+}

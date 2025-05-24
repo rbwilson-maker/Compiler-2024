@@ -1,0 +1,5 @@
+//test return 256
+//A test of the new shift operations
+int main() {
+    return 1 << ((1 << 8 ) >> 5);
+}

@@ -1,0 +1,7 @@
+//test error
+
+int main () {
+    bool* b = true;
+    assert(b);
+    return 1;
+}

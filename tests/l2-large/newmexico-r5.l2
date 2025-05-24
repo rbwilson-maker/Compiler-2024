@@ -1,0 +1,17 @@
+//test return 1
+
+int main()
+{
+  int r = 0;
+  for(int i = 3333; i < (1 << 16); i += i & -i)
+  {
+    for(int j = 55555; j > 0; j -= j & -j)
+    {
+      if(i == j)
+      {
+        r++;
+      }
+    }
+  }
+  return r;
+}

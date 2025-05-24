@@ -1,0 +1,42 @@
+//test return 1
+
+bool binsearch(int a, int b, int c, int d, int e, int lo, int hi, int target) {
+    assert(0 <= lo && lo < 5);
+    assert(0 <= hi && hi <= 5);
+
+    if (lo == hi) {
+        return false;
+    }
+
+    int mid = (lo + hi) / 2;
+
+    int x;
+    if (mid == 0) {
+        x = a;
+    } else if (mid == 1) {
+        x = b;
+    } else if (mid == 2) {
+        x = c;
+    } else if (mid == 3) {
+        x = d;
+    } else {
+        x = e;
+    }
+
+    if (x < target) {
+        return binsearch(a, b, c, d, e, mid + 1, hi, target);
+    } else if (x > target) {
+        return binsearch(a, b, c, d, e, lo, mid, target);
+    } else {
+        // x == target
+        return true;
+    }
+}
+
+int main() {
+    if (binsearch(1, 2, 3, 4, 5, 0, 5, 3)) {
+        return 1;
+    } else {
+        return 0;
+    }
+}

@@ -1,0 +1,9 @@
+//test error
+// NULL and int keywords
+
+int main()
+{
+  int NULL = int;
+  NULL = 5;
+  return NULL;
+}

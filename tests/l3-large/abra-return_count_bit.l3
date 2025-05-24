@@ -1,0 +1,18 @@
+//test return 3
+
+int checkBits(int n, int bit) {
+	int count = 0;
+	while (n>0) {
+		if ((n & 1) == bit) {
+			count++;
+		}
+		n>>=1;
+	}
+	return count;
+}
+
+int main() {
+	int ones = checkBits(5, 1);
+	int zeroes = checkBits(5, 0);
+	return (ones + zeroes);
+}

@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+    int bye = 1000;
+
+    while (bye > 0) {
+        bye--;
+    }
+
+    int hello = 1000 / bye;
+
+    return 0;
+}

@@ -1,0 +1,11 @@
+//test div-by-zero
+
+// Shift quantity out of range
+
+int main() {
+  int x = 1;
+  for (int i = 0; i < 50; i++) {
+    x = x << i;
+  }
+  return x;
+}

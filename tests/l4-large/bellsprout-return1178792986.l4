@@ -1,0 +1,15 @@
+//test return 1178792986
+
+typedef int data;
+
+typedef int length;
+
+int main() {
+  length n = 1000;
+  data[] a = alloc_array(data, n);
+  for (int i = 0; i < n * n; i++) {
+    a[(i + 1) % n] += i + a[i % n];
+  }
+  return a[n - 1];
+}
+

@@ -1,0 +1,8 @@
+//test error
+// comparing pointers of different types is a type-error
+
+int main() {
+    int *x = alloc(int);
+    bool *y = alloc(bool);
+    return (*x == *y ? 1 : 0);
+}

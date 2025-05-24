@@ -1,0 +1,8 @@
+//test typecheck
+
+int main() {
+
+    int res = 5 + i_totally_dont_exist(10, 20);
+
+    return res;
+}

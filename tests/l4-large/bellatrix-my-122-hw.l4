@@ -1,0 +1,33 @@
+//test return 0
+
+struct student_info;
+struct student_info {
+  bool good_standing;
+  int days_present;
+  int days_absent;
+};
+
+int main() {
+  struct student_info* vijay = alloc(struct student_info);
+  vijay->good_standing = false;
+  vijay->days_present = -6;
+  vijay->days_absent = 0xffffffff;
+  struct student_info* prachi = alloc(struct student_info);
+  prachi->good_standing = true;
+  prachi->days_present = 100;
+  prachi->days_absent = 0;
+  struct student_info* nick = alloc(struct student_info); // uninitialized!
+  struct student_info* shalom = alloc(struct student_info);
+  shalom->days_absent = 77; // only some values uninitialized
+
+  struct student_info *[] roster = alloc_array(struct student_info *, 5);
+
+  roster[0] = vijay;
+  roster[1] = prachi;
+  roster[2] = nick;
+  roster[3] = shalom;
+
+  return roster[2]->days_present;
+  
+  
+}

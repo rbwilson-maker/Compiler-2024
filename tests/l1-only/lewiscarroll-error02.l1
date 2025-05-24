@@ -1,0 +1,6 @@
+//test error
+int main () {
+	int y = 2;
+	y % 3 == 2;
+	return y;
+}

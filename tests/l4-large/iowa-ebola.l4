@@ -1,0 +1,93 @@
+//test return 0
+
+struct matrix_t {
+    int[][]* A;
+    int n;
+    int m;
+    bool randomBool;
+    int************** suchPointer;
+    int[][][][][]**** Wow;
+};
+
+typedef struct matrix_t matrix;
+
+/* Transposes the elements of A and stores them in B */
+void transpose(matrix* M1, matrix* M2) {
+    assert(M1->n == M2->m);
+    assert(M1->m == M2->n);
+
+    int n = M1->n;
+    int m = M1->m;
+
+    int[][] A = *(M1->A);
+    int[][] B = *(M2->A);
+
+    // This would not do well in cachelab
+    for (int j = 0; j < m; j++) {
+        for (int i = 0; i < n; i++) {
+            B[j][i] = A[i][j];
+        }
+    }
+
+    return;
+}
+
+bool isTranspose(matrix* M1, matrix* M2) {
+    assert(M1->n == M2->m);
+    assert(M1->m == M2->n);
+
+    int n = M1->n; int m = M1->m;
+
+    int[][] A = *(M1->A);
+    int[][] B = *(M2->A);
+
+    bool b = !M2->randomBool;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++)
+            b = b && (A[i][j] == B[((j))][i]);
+    }
+
+    return b;
+}
+
+// Fully allocate a matrix and fill it with some values
+void makeMatrix(matrix* M, int n, int m) {
+    assert(M != NULL);
+    M->suchPointer = alloc(int*************);
+    
+    M->A = alloc(int[][]);
+    *(M->A) = alloc_array(int[], n);
+
+    for (int i = 0; i < n; i++) {
+        (*(M->A))[i] = alloc_array(int, m);
+        for (int j = 0; j < m; j++) {
+            (*(M->A))[i][j]++;
+            assert((*(M->A))[i][j] == 1);
+            (*(M->A))[i][j] = i * j;
+        } }
+
+    return;
+}
+
+int main() {
+    int n = 9001; /* OVER 9000 */
+    int m = 1900;
+
+    {{{{{{{{{assert(true);}}}}}}}}}
+
+    matrix* M1 = alloc(matrix);
+    matrix* M2 = alloc(matrix);
+    
+    makeMatrix(M1, n, m);
+    makeMatrix(M2, m, n);
+
+    transpose(M1, M2);
+    assert(isTranspose(M1, M2));    
+
+    while (true) {
+        return 0;
+    }
+
+    return 1;
+}

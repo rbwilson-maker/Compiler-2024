@@ -1,0 +1,19 @@
+//test return 1
+
+// Test compiler handling name spaces correctly.
+
+typedef int int_t;
+typedef int int_tt;
+
+struct int_t {
+       int_t int_t;
+       int_t int_tt;
+};
+
+int main() {
+  struct int_t* t = alloc(struct int_t);
+  t->int_t = 1;
+  t->int_tt = t->int_t;
+  t->int_tt = 10;
+  return t->int_t;
+}

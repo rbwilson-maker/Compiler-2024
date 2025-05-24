@@ -1,0 +1,10 @@
+//test return 1
+//for loop over boolean
+
+int main()
+{
+	int x = 0;
+    for (bool b = true; b; b = !b)
+		x += 1;
+	return x;
+}

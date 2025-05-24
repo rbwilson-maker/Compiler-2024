@@ -1,0 +1,18 @@
+//test abort
+//have you seen a pointer to a pointer to a pointer to a
+
+int main () {
+    int *a = NULL;
+    int **b = alloc(int *);
+    *b = a;
+    int ***c = alloc(int **);
+    *c = b;
+    int ****d = alloc(int ***);
+    *d = c;
+    int *****e = alloc(int ****);
+    *e = d;
+
+    assert(****e != NULL);
+
+    return *****e;
+}

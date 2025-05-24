@@ -1,0 +1,12 @@
+//test typecheck
+
+typedef struct a*[]**[] b;
+struct a {
+    int main;
+};
+
+int main() {
+    b *x = NULL;
+    (**(*x)[0])[1]->main = 420;
+    return 1;
+}

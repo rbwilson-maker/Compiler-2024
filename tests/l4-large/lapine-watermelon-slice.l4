@@ -1,0 +1,18 @@
+//test return 27948
+
+int sum(int[] watermelon, int n) {
+  if (n == 0)
+    return 0;
+
+  return watermelon[n - 1] + sum(watermelon, n - 1);
+}
+
+int main() {
+  int n = 411;
+  int[] A = alloc_array(int, n);
+
+  for (int i = 0; i < n; i += 3)
+    A[i] = (i * i) % n;
+
+  return sum(A, n);
+}

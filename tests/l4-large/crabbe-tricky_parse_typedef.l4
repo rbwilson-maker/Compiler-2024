@@ -1,0 +1,34 @@
+//test return 72
+// checks for the lookahead lexing problem from the writeup
+struct S {
+    int hay;
+    bool wheat;
+    int[] electromagnetic;
+    int* of_research;
+};
+
+struct S* plow (int acres) {
+    struct S* ess = alloc(struct S);
+    ess->hay = acres;
+    ess->wheat = true;
+    ess->electromagnetic = alloc_array(int, 2);
+    ess->of_research = alloc(int);
+    return ess;
+}
+
+typedef bool banana;
+
+banana tree () {
+    return true;
+}
+
+int main() {
+    struct S* kansas;
+    if (tree()) {
+        kansas = plow(72);
+    }
+    else {
+        kansas = plow(35);
+    }
+    return kansas->hay;
+}

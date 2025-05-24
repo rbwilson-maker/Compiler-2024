@@ -1,0 +1,46 @@
+//test return 888888
+//Calculates the largest palindrome not containing 0 that is the product of 2 3-digit numbers
+
+int most_significant(int n) {
+    int m = 0;
+    while(n > 0) {
+       m = n;
+       n = (n-(n%10))/10;
+    }
+    return m;
+}
+
+int remove_most_significant(int n) {
+    int l = most_significant(n);
+    while(l <= n)
+       l = l*10;
+    return n - (l/10);
+}
+
+bool is_palindrome(int n) {
+    assert(n >= 0);
+    if (n < 10) return true;
+    int m = n%10;
+    if (m == most_significant(n)) {
+        return is_palindrome(remove_most_significant( (n-(n%10)) /10));
+    } else {return false;}
+}
+
+bool contains_zero(int n) {
+     while(n > 0) {
+         if (n%10 == 0) return true;
+	 n = (n - (n%10))/10;
+     }
+     return false;
+}
+
+int main() {
+    int max = 0;
+    for (int x = 0; x < 1000; x++) {
+        for (int y = 0; y < 1000; y ++) {
+	    int n = x*y;
+            if (!contains_zero(n) && is_palindrome(n) && n > max) max = n;
+        }
+    }
+    return max;
+}

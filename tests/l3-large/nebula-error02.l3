@@ -1,0 +1,14 @@
+//test error
+
+int functionB(int b) {
+  if (b % 1) {
+    return 1;
+  } else {
+    return 2;
+  }
+  return true; // mismatched return type
+}
+
+int main() {
+  return 0;
+}

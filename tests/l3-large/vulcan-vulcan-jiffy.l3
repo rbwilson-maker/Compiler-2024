@@ -1,0 +1,17 @@
+//test return 0
+
+typedef int aa;
+typedef int bb;
+
+aa b(int x);
+bb a(aa x) {
+	return x == 0? 0: b(x-1);
+}
+
+aa b(aa x) {
+	return x == 0? 0: a(x-1);
+}
+
+int main () {
+	return a(100000);
+}

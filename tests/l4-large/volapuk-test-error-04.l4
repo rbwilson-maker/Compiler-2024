@@ -1,0 +1,15 @@
+//test error
+//Can I pass struct as parameter?
+
+struct a{
+  int x;
+  int y;
+};
+
+int func(struct a aa){
+  return aa.x + aa.y;
+}
+
+int main(){
+  return 0;
+}

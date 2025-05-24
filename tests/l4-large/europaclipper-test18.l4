@@ -1,0 +1,14 @@
+//test return 0
+
+int main() {
+  int[] a = alloc_array(int, 10000);
+  int i = 1 << 8;
+  while (i > 0) {
+    i--;
+    for (int j = 0; j < 10000; j++) {
+      a[j] += i;
+    }
+  }
+
+  return i;
+}

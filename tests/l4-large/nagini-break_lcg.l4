@@ -1,0 +1,166 @@
+//test return 30752
+
+/*
+    Breaking an LCG with unknown modulus, multiplier, and increment!
+
+    An LCG is a (very weak) PRNG that computes s_{i+1} = (A*s_i + B) mod M,
+    and outputs s_n.
+
+    If A, B, and M are kept secret, you can still easily break it, as this
+    program shows.
+
+    fun fact:
+        even a secret truncated LCG that only outputs the upper bits of s_i
+        is still easily breakable
+        (although now we need to use lattice magic algorithms like LLL):
+        https://www.math.cmu.edu/~af1p/Texfiles/RECONTRUNC.pdf
+
+        see "LCG" from PlaidCTF 2018 for a challenge that uses this
+
+    tl;dr: never use LCGs (or variants) in cryptographic situations.
+*/
+
+struct _lcg {
+    int A;
+    int B;
+    int M;
+    int s;
+};
+
+typedef struct _lcg lcg;
+
+int abs(int x) {
+    if (x < 0) return -x;
+    return x;
+}
+
+int gcd(int a, int b) {
+    if (a < b) {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+    if (b == 0) return a;
+    return gcd(a % b, b);
+}
+
+int modinv(int e, int m) {
+    int xo = 1;
+    int yo = 0;
+    int go = e;
+    int x = 0;
+    int y = 1;
+    int g = m;
+    while (g > 0) {
+        int q = go / g;
+        int temp;
+        temp = x;
+        x = xo - q*x;
+        xo = temp;
+        temp = y;
+        y = yo - q*y;
+        yo = temp;
+        temp = g;
+        g = go - q*g;
+        go = temp;
+    }
+    return (xo + m) % m;
+}
+
+lcg* create_lcg(int A, int B, int M) {
+    lcg* l = alloc(lcg);
+    l->A = A;
+    l->B = B;
+    l->M = M;
+    l->s = 1234; // some arbitrary seed
+    return l;
+}
+
+int output(lcg* l) {
+    int next_s = ((l->A)*(l->s) + (l->B)) % (l->M);
+    l->s = next_s;
+    return next_s;
+}
+
+int main() {
+    // secret parameters, chosen so no overflow will occur
+    int A = 123;
+    int B = 456;
+    int M = 31123;
+    lcg* l = create_lcg(A, B, M);
+
+    // let's use the LCG for a bit to "randomize" the output...
+    for (int i = 0; i < 100; i++) {
+        output(l);
+    }
+
+    // ATTACK START
+
+    /*
+        Consider the sequence of differences t_i = s_{i+1} - s_i.
+
+        (everything is mod M)
+
+        t_i     = s_{i+1} - s_i     = (A*s_i + B)       - s_i
+                =    (A-1)*s_i + B
+        t_{i+1} = s_{i+2} - s_{i+1} = (A*(A*s_i+B) + B) - (A*s_i + B)
+                = A*((A-1)*s_i + B) = A*t_i
+
+        Then note that t_{i+k} = A^k t_i.
+
+        Note also that t_{i+2} t_{i} - t_{i+1} t_{i+1} = 0 (mod M),
+        so we can get a bunch of multiples of M given only the outputs!
+
+        Taking the GCD gets us M (with high probability).
+
+        Once we have M, then we can calculate modular inverses and recover A:
+        t_{i+1} (t_i)^{-1} = A (mod M)
+
+        Once we have A, we can recover B:
+        s_{i+1} - A*(s_i) = B (mod M)
+
+        And now with A, B, and M, we can clone the LCG and predict its outputs!
+    */
+    
+    // first, recover M
+    int num_differences = 10;
+    int[] differences = alloc_array(int, num_differences);
+    int cur = output(l);
+    for (int i = 0; i < num_differences; i++) {
+        int new = output(l);
+        differences[i] = new - cur;
+        cur = new;
+    }
+
+    int[] multiples = alloc_array(int, num_differences-2);
+    for (int i = 0; i < num_differences-2; i++) {
+        multiples[i] = abs(  differences[i+2] * differences[i]
+                           - differences[i+1] * differences[i+1]);
+    }
+
+    int M_recovered = multiples[0];
+    for (int i = 0; i < num_differences-2; i++) {
+        M_recovered = gcd(M_recovered, multiples[i]);
+    }
+
+    // next, recover A
+    int A_recovered = ((differences[1] * modinv(differences[0], M_recovered))
+                       % M_recovered);
+    while (A_recovered < 0) {
+        A_recovered += M_recovered;
+    }
+
+    // finally, recover B
+    int s0 = output(l);
+    int s1 = output(l);
+    int B_recovered = (s1 - A_recovered * s0) % M_recovered;
+    while (B_recovered < 0) {
+        B_recovered += M_recovered;
+    }
+
+    assert(M == M_recovered);
+    assert(A == A_recovered);
+    assert(B == B_recovered);
+
+    return A_recovered ^ B_recovered ^ M_recovered;
+}

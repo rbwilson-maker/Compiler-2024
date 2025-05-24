@@ -1,0 +1,18 @@
+//test return 1
+
+int main() {
+    int t = 0;
+    {
+        int y = 0;
+        {
+            int x = 0;
+            {
+                int z = 1;
+                x += z;
+            }
+            y += x;
+        }
+        t += y;
+    }
+    return t;
+}

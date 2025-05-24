@@ -1,0 +1,11 @@
+//test typecheck
+
+int main() {
+    bool* HOG_RIIIIIIIIIDAAAAAAAAH = alloc(bool);
+    if (*HOG_RIIIIIIIIIDAAAAAAAAH) {
+        *HOG_RIIIIIIIIIDAAAAAAAAH = false;
+    } else {
+        *HOG_RIIIIIIIIIDAAAAAAAAH = true;
+    }
+    return 0;
+}

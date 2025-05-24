@@ -1,0 +1,10 @@
+//test return 0
+
+int main() {
+    int x = 0xffffffff;
+    int y = 0x00000000;
+
+    int z = x ^ y | x & y;
+
+    return ~z;
+}

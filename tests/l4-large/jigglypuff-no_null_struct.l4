@@ -1,0 +1,22 @@
+//test error
+
+/* No NULL Struct
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, October 26, 2015 at 02:03:46 PM EDT
+ *
+ * This tests that the compiler does not directly allow NULL to be directly
+ * dereferenced when it is used as the lvalue for a struct.
+ */
+
+struct test {
+    int x;
+};
+
+int main()
+{
+    int x = NULL->name;
+
+    return x;
+}

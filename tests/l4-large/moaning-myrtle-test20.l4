@@ -1,0 +1,18 @@
+//test return 80
+
+int f() {
+    int * x;
+    int type = 2;
+    int y = 3;
+    type * y;
+    return 7;
+}
+
+typedef int type;
+int main() {
+    type * y;
+    y = alloc(int);
+    *y = 10;
+    f() ** y;
+    return * y * 8;
+}

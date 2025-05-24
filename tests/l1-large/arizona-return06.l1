@@ -1,0 +1,20 @@
+//test return 1
+// test using all arithmetic operations
+int main()
+{
+  int x0;
+  int x1;
+  int x2;
+  int x3;
+  int x4;
+  int x5;
+
+  x0 = 5;
+  x1 = x0+4; //9
+  x2 = x1-3; //6
+  x3 = x2*4; //24
+  x4 = x3/6; //4
+  x5 = x4%3; //1
+
+  return x5;
+}

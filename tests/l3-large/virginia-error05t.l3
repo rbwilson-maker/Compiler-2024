@@ -1,0 +1,12 @@
+//test error
+//ensure a function declared multiple times that changes type is an error
+
+int lol(int x);
+int lol(int y);
+bool lol(int x);
+
+int main()
+{
+	lol();
+	return 2;
+}

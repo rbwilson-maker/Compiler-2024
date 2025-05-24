@@ -1,0 +1,32 @@
+//test return 6
+// structs can contain array that forms a cycle
+
+struct a;
+typedef struct a a_t;
+
+struct c {
+  int val;
+  a_t[] next;
+};
+typedef struct c c_t;
+
+struct b {
+  int val;
+  c_t[] next;
+};
+typedef struct b b_t;
+
+struct a {
+  int val;
+  b_t[] next;
+};
+
+int main() {
+  a_t* p = alloc(struct a);
+  p->val = 1;
+  p->next = alloc_array(struct b, 1);
+  p->next[0].val = 2;
+  p->next[0].next = alloc_array(struct c, 1);
+  p->next[0].next[0].val = 3;
+  return p->val + p->next[0].val + p->next[0].next[0].val;
+}

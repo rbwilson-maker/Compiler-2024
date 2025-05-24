@@ -1,0 +1,16 @@
+//test memerror
+
+int main() {
+    int*[] arr = alloc_array(int*, 5);
+    int* fill = alloc(int);
+    *fill = 6;
+    for(int i = 0; i < 4; i++) {
+        assert(arr[i] == NULL);
+        arr[i] = fill;
+    }
+    *fill = 7;
+    for(int i = 0; i < 5; i++) {
+        assert(*arr[i] == 7);
+    }
+    return *arr[4];
+}

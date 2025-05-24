@@ -1,0 +1,9 @@
+//test return 2
+
+int f(int x, int y, bool z) {
+	return z ? x : y;
+}
+
+int main() {
+	return f(1,f(2,4,true),false);
+}

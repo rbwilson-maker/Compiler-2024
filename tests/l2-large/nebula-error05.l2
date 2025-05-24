@@ -1,0 +1,9 @@
+//test error
+int main ()
+{
+    int x;
+    for (x = 0; false; x++) { /* commment unclosed
+        x++;
+    }
+    return x;
+}

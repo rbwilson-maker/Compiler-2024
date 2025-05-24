@@ -1,0 +1,5 @@
+struct elt;
+struct elt *elt_create(int x);
+struct elt *elt_identity();
+struct elt *elt_combine(struct elt *a, struct elt *b);
+bool elt_eq(struct elt *a, struct elt *b);

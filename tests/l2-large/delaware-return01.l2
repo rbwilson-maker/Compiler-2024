@@ -1,0 +1,9 @@
+//test return 2
+//do bools behave like bools?
+
+int main() {
+  bool a = true;
+  if (a || false) {
+     return 2;
+  } else { return 3; }
+}

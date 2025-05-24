@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main(){
+	int y = 50194;
+
+	for (int x = 10; x >= 0; x--){
+		if (x < 2){
+			y = y % x;
+		}
+	}
+	return y;
+}

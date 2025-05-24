@@ -1,0 +1,73 @@
+//test return 0
+
+int main() {
+    int *x00 = alloc(int);
+    int *x01 = alloc(int);
+    int *x02 = alloc(int);
+    int *x03 = alloc(int);
+    int *x04 = alloc(int);
+    int *x05 = alloc(int);
+    int *x06 = alloc(int);
+    int *x07 = alloc(int);
+    int *x08 = alloc(int);
+    int *x09 = alloc(int);
+    int *x10 = alloc(int);
+    int *x11 = alloc(int);
+    int *x12 = alloc(int);
+    int *x13 = alloc(int);
+    int *x14 = alloc(int);
+    int *x15 = alloc(int);
+
+    *x00 =  0;
+    *x01 =  1;
+    *x02 =  2;
+    *x03 =  3;
+    *x04 =  4;
+    *x05 =  5;
+    *x06 =  6;
+    *x07 =  7;
+    *x08 =  8;
+    *x09 =  9;
+    *x10 = 10;
+    *x11 = 11;
+    *x12 = 12;
+    *x13 = 13;
+    *x14 = 14;
+    *x15 = 15;
+
+    *x00 += *x15;
+    *x01 += *x00;
+    *x02 += *x01;
+    *x03 += *x02;
+    *x04 += *x03;
+    *x05 += *x04;
+    *x06 += *x05;
+    *x07 += *x06;
+    *x08 += *x07;
+    *x09 += *x08;
+    *x10 += *x09;
+    *x11 += *x10;
+    *x12 += *x11;
+    *x13 += *x12;
+    *x14 += *x13;
+    *x15 += *x14;
+
+    assert(*x00 ==  15);
+    assert(*x01 ==  16);
+    assert(*x02 ==  18);
+    assert(*x03 ==  21);
+    assert(*x04 ==  25);
+    assert(*x05 ==  30);
+    assert(*x06 ==  36);
+    assert(*x07 ==  43);
+    assert(*x08 ==  51);
+    assert(*x09 ==  60);
+    assert(*x10 ==  70);
+    assert(*x11 ==  81);
+    assert(*x12 ==  93);
+    assert(*x13 == 106);
+    assert(*x14 == 120);
+    assert(*x15 == 135);
+
+    return 0;
+}

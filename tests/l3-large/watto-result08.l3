@@ -1,0 +1,8 @@
+//test return 10
+
+int main() {
+  bool a = true;
+  bool b = (5 < 10);
+  if (!!a && b) return 10;
+  return 5;
+}

@@ -1,0 +1,170 @@
+//test return 0
+
+/*
+ * Compute the transpose of a square linked-linked-list matrix. Uses
+ * tail-recursion to be "efficient"!
+ */
+
+struct node {
+    int head;
+    struct node *tail;
+};
+
+struct metanode {
+    struct node *head;
+    struct metanode *tail;
+};
+
+/* Functions for constructing lists */
+struct node *nil();
+struct node *cons(int x, struct node *xs);
+struct metanode *metanil();
+struct metanode *metacons(struct node *xs, struct metanode *xss);
+
+/* Functions for reversing lists */
+struct node *rev(struct node *xs);
+struct metanode *metarev(struct metanode *xss);
+
+/* Functions for mapping `head`/`tail` over metalists */
+struct node *heads(struct metanode *xss);
+struct metanode *tails(struct metanode *xss);
+
+/* Functions for testing equality of lists */
+bool eq(struct node *xs, struct node *ys);
+bool metaeq(struct metanode *xss, struct metanode *yss);
+
+/* Function for computing the transpose of a square matrix */
+struct metanode *transpose(struct metanode *xss);
+
+/* Functions for printing lists (for debugging) */
+void print_list(struct node *xs);
+void print_metalist(struct metanode *xss);
+
+int main() {
+    struct metanode *input =
+        metacons(cons(1, cons(2, cons(3, nil()))),
+        metacons(cons(4, cons(5, cons(6, nil()))),
+        metacons(cons(7, cons(8, cons(9, nil()))),
+        metanil())));
+    struct metanode *output =
+        metacons(cons(1, cons(4, cons(7, nil()))),
+        metacons(cons(2, cons(5, cons(8, nil()))),
+        metacons(cons(3, cons(6, cons(9, nil()))),
+        metanil())));
+    struct metanode *actual = transpose(input);
+    print_metalist(input);
+    print_metalist(output);
+    print_metalist(actual);
+    assert(metaeq(actual, output));
+    return 0;
+}
+
+struct metanode *transpose(struct metanode *xss) {
+    if (xss == NULL) {
+        return metanil();
+    } else if (xss->head == NULL) {
+        return metanil();
+    } else {
+        struct node *heads = heads(xss);
+        struct metanode *tails = tails(xss);
+        return metacons(heads, transpose(tails));
+    }
+}
+
+struct node *t_rev_heads(struct metanode *xss, struct node *acc) {
+    if (xss == NULL) {
+        return acc;
+    } else {
+        return t_rev_heads(xss->tail, cons(xss->head->head, acc));
+    }
+}
+struct node *heads(struct metanode *xss) {
+    return rev(t_rev_heads(xss, nil()));
+}
+
+struct metanode *t_rev_tails(struct metanode *xss, struct metanode *acc) {
+    if (xss == NULL) {
+        return acc;
+    } else {
+        return t_rev_tails(xss->tail, metacons(xss->head->tail, acc));
+    }
+}
+struct metanode *tails(struct metanode *xss) {
+    return metarev(t_rev_tails(xss, metanil()));
+}
+
+struct node *t_rev(struct node *xs, struct node *acc) {
+    if (xs == NULL) {
+        return acc;
+    } else {
+        return t_rev(xs->tail, cons(xs->head, acc));
+    }
+}
+struct node *rev(struct node *xs) {
+    return t_rev(xs, nil());
+}
+
+struct metanode *t_metarev(struct metanode *xss, struct metanode *acc) {
+    if (xss == NULL) {
+        return acc;
+    } else {
+        return t_metarev(xss->tail, metacons(xss->head, acc));
+    }
+}
+struct metanode *metarev(struct metanode *xss) {
+    return t_metarev(xss, metanil());
+}
+
+struct node *nil() {
+    return NULL;
+}
+
+struct node *cons(int x, struct node *xs) {
+    struct node *result = alloc(struct node);
+    result->head = x;
+    result->tail = xs;
+    return result;
+}
+
+struct metanode *metanil() {
+    return NULL;
+}
+
+struct metanode *metacons(struct node *xs, struct metanode *xss) {
+    struct metanode *result = alloc(struct metanode);
+    result->head = xs;
+    result->tail = xss;
+    return result;
+}
+
+bool eq(struct node *xs, struct node *ys) {
+    if (xs == NULL || ys == NULL) {
+        return xs == NULL && ys == NULL;
+    }
+    return xs->head == ys->head && eq(xs->tail, ys->tail);
+}
+
+bool metaeq(struct metanode *xss, struct metanode *yss) {
+    if (xss == NULL || yss == NULL) {
+        return xss == NULL && yss == NULL;
+    }
+    return eq(xss->head, yss->head) && metaeq(xss->tail, yss->tail);
+}
+
+void print_list(struct node *xs) {
+    if (xs == NULL) {
+        print_int(-1);
+    } else {
+        print_int(xs->head);
+        print_list(xs->tail);
+    }
+}
+
+void print_metalist(struct metanode *xss) {
+    if (xss == NULL) {
+        print_int(-1);
+    } else {
+        print_list(xss->head);
+        print_metalist(xss->tail);
+    }
+}

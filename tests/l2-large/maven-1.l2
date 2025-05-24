@@ -1,0 +1,12 @@
+//test return 0
+
+int main() {
+  bool test;
+  test = false;
+  if (false) {
+    return ~0;
+  } else {
+    return 0;
+  }
+  return 0;
+}

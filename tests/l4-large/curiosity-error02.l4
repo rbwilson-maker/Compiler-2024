@@ -1,0 +1,16 @@
+//test error
+// main function has incorrect number of arguments
+
+int mult (int* x, int* y) {
+	return (*x) * (*y);
+}
+
+int main(int x, int y) {
+	int res;
+	int* p1 = alloc(int);
+	*p1 = x;
+	int* p2 = alloc(int);
+	*p2 = y;
+	res = mult(p1, p2);
+	return res;
+}

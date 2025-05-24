@@ -1,0 +1,14 @@
+//test return 110
+
+typedef struct s foo;
+struct s {
+  int x;
+  int y;
+};
+
+int main() {
+  foo * s = alloc(struct s);
+  s->x = 10;
+  s->y = 11;
+  return s->x * s->y;
+}

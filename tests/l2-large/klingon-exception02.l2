@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int main()
+{
+  int TMIN = -2;
+  int x = 1;
+  int overflow;
+
+  while (x < 32768) {
+  	x *= 2;
+  }
+
+  TMIN = TMIN * x * x;
+  overflow = TMIN / -1;
+  return overflow;
+}

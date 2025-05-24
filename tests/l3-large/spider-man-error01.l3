@@ -1,0 +1,13 @@
+//test error 
+
+typedef int blah;
+typedef blah bloop; 
+
+blah bloop() {
+    return 0;
+}
+
+blah main() {
+    blah x = 251;
+    return x;
+}

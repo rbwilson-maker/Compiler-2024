@@ -1,0 +1,15 @@
+//test return 548727
+int main() {
+  int a = 37;
+  int b = 104;
+  int m = 1009;
+  int x = a;
+  for (int i = b; i > 1; i /= 2) {
+    bool odd = i % 2 != 0;
+    if (odd) x *= a;
+    a *= a;
+    x %= m;
+    a %= m;
+  }
+  return x * a;
+}

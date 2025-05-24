@@ -1,0 +1,16 @@
+//test return 42
+
+typedef bool no;
+
+no fun() {
+    return true;
+}
+
+int main() {
+    int yes = 0;
+    while (yes < 34324) {
+        fun();
+        yes++;
+    }
+    return 42;
+}

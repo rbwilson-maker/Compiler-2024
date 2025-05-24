@@ -1,0 +1,8 @@
+//test typecheck
+//test infloop
+
+int main() {
+    for (; true ;) {}
+
+    return 0;
+}

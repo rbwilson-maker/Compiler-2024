@@ -1,0 +1,9 @@
+//test error
+
+//Test parse of illegal operator '<<'
+
+int main() {
+	int x = 1;
+	x <<= 32;
+	return x;
+}

@@ -1,0 +1,13 @@
+//test abort
+
+bool flip(bool flag) {
+    return !flag;
+}
+
+int main() {
+    bool flag = true;
+    assert(flag == true);
+    flag = flip(flag);
+    assert(flag == true);
+    return 0;
+}

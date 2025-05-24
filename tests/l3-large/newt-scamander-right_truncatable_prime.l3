@@ -1,0 +1,35 @@
+//test return 23399339
+
+// returns smallest right truncatable prime with n digits
+// an rtp is a prime, who only has primes as prefixes
+
+bool is_prime(int n) {
+	if (n <= 1) return false;
+	if (n == 2) return true;
+	if (n % 2 == 0) return false;
+	for (int i = 2; i < n; i++) {
+		if (n % i == 0) return false;
+	}
+	return true;
+}
+
+int get_rtp_helper(int n, int guess, int digit_count) {
+	if (digit_count == n) return guess;
+	for (int i = 0; i < 10; i++) {
+		int new_guess = guess * 10 + i;
+		if (is_prime(new_guess)) {
+			int solution = get_rtp_helper(n, new_guess, digit_count+1);
+			if (solution != -1) return solution;
+		}
+	}
+	return -1; 
+}
+
+int get_rtp(int n) {
+	return get_rtp_helper(n, 2, 1);
+}
+
+int main() {
+	int n = 8;
+	return get_rtp(n);
+}

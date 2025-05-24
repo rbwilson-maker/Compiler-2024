@@ -1,0 +1,18 @@
+//test return 10770
+//test some funky scopes with for loops and ifs
+
+int main(){
+
+    int i = 0;
+
+    for (int j = 10; j < 100; j++) {
+        for (int k = 19; k > j; k--) {
+            i += j * k;
+        }
+
+        int k = 15;
+        i += k;
+    }
+
+    return i;
+}

@@ -1,0 +1,27 @@
+//test return -1111102840
+
+struct spin {
+	struct spin* next;
+};
+
+int main() {
+	int []a = alloc_array(int, 1);
+	int *b = alloc(int);
+	*b = 0;
+
+	struct spin *spinner = alloc(struct spin);
+	for (int i = 0; i < 30000; i++) {
+		struct spin *cur = spinner;
+		while (cur->next != NULL) {
+			cur = cur->next;
+		}
+		cur->next = alloc(struct spin);
+		(*b)++;
+		*b <<= 2;
+		a[0] = *b;
+		*b >>= 1;
+		*b *= a[0];
+	}
+
+	return *b;
+}

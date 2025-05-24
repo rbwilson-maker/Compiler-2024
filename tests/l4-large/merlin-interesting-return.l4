@@ -1,0 +1,26 @@
+//test return 6805
+
+int fun_help(int x, int y) {
+    return 3*(x + y) / 2; 
+}
+
+
+int main() {
+    int[] arr = alloc_array(int,250); 
+
+     for(int i = 0; i < 250; i++) {
+        arr[i] = i;
+    }
+
+    int k = 0;
+    int fin = 0; 
+    while(k < 5) {
+        for(int j = 1; j < 250; j++) {
+            arr[j-1] = fun_help(arr[j-1],arr[j]); 
+            fin = arr[j-1]; 
+        }
+        k++; 
+    }
+
+    return fin;         
+}

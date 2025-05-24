@@ -1,0 +1,20 @@
+//test typecheck
+//test infloop
+
+struct node
+{
+  struct node* next;
+};
+
+int main()
+{
+  struct node* n = alloc(struct node);
+  (*n).next = n;
+
+  while (n->next != NULL)
+  {
+    n = n->next;
+  }
+
+  return 100;
+}

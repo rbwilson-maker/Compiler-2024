@@ -1,0 +1,18 @@
+//test return 11
+// Simple while loop with if then else statement program
+int main() {
+    int a = 5;
+    int w = 0;
+    int result = 0;
+ 
+    while(w < a) {
+        if(w < 3) {
+            result += 1;
+        } else {
+            result += 4;
+        }
+        w += 1;
+    }
+
+    return result;
+}

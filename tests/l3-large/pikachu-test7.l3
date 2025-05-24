@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int gen_num(int a) {
+  return 0-a;
+}
+
+int main() {
+  assert(gen_num(10) == -10);
+  return 10/gen_num(0);
+}

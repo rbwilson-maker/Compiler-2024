@@ -1,0 +1,12 @@
+//test div-by-zero
+//modulo check. div by zero.
+int main()
+{
+  int m = -57;
+
+  int zero = ((m/33)*33)+(m%33);
+
+  int z = m-m;
+
+  return (z/z);
+}

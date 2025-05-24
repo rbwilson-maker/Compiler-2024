@@ -1,0 +1,12 @@
+//test error
+
+struct a {
+	int foo;
+	bool bar;
+};
+
+int main() {
+  struct a[] a = alloc_array(struct a, 10);
+  bool b = a[5].foo;
+  return 1;
+}

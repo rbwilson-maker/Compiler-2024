@@ -1,0 +1,30 @@
+//test typecheck
+//test infloop
+
+int mainy(int a);
+bool mainyy(int b);
+void mainyyy(bool c);
+
+int main()
+{
+  int a = mainy(2);
+  return a;
+}
+
+int mainy(int a)
+{
+  bool b = mainyy(a);
+  return a;
+}
+
+bool mainyy(int b)
+{
+  mainyyy(true);
+  return false;
+}
+
+void mainyyy(bool c)
+{
+  mainy(2);
+  return;
+}

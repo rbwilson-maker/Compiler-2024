@@ -1,0 +1,13 @@
+//test error
+
+int main()
+{
+    int x, y, z, w, a, b ,c;
+    z = 2 + 5;
+    w = 7 * z;
+    a = 42;
+    b = 3 * (a - 3);
+    c = -b;
+    x = y;
+    return c;
+}

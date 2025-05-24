@@ -1,0 +1,12 @@
+//test error
+
+void f(int x) {
+  int y = x + 4;
+  return;
+}
+
+// can't have variables of type void
+int main() {
+    void x = f(2);
+    return 1;
+}

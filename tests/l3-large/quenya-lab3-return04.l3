@@ -1,0 +1,14 @@
+//test return 0
+// Test for-loops within a function
+
+int foo() {
+  for (int i = 0; i < 3; i++) {
+    int x = i;
+  }
+  return 0;
+}
+
+int main() {
+  foo();
+  return 0;
+}

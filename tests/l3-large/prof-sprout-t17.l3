@@ -1,0 +1,14 @@
+//test error
+//test assigning void function output to variable
+
+void f(int x, int y) {
+  x += y;
+  x *= y;
+  y -= x;
+  return;
+}
+
+int main() {
+  int k = f(2, 3);
+  return k;
+}

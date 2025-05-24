@@ -1,0 +1,12 @@
+//test return 0;
+
+int fun(int x) {
+  int y = 2 * x;
+  return y;
+}
+
+int main() {
+  int x = 2;
+  int y = fun(x);
+  return 8 - fun(y);
+}

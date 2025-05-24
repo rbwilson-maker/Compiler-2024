@@ -1,0 +1,11 @@
+//test return 3628800
+int f2(int x);
+int f1(int x) {
+    return x == 0 ? 1 : x * f2(x - 1);
+}
+int f2(int x) {
+    return x == 0 ? 1 : x * f1(x - 1);
+}
+int main() {
+    return f1(10);
+}

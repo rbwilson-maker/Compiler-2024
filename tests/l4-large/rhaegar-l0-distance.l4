@@ -1,0 +1,44 @@
+//test return 2333
+
+struct Point2D {
+  int x;
+  int y;
+};
+
+int abs(int a);
+int max(int a, int b) ;
+
+int l0_distance(struct Point2D *a, struct Point2D *b) {
+  int dx = abs(a->x-b->x);
+  int dy = abs(a->y-b->y);
+  return max(dx, dy);
+}
+
+int abs(int a) {
+  if (a >= 0) {
+    return a;
+  } else {
+    return -a;
+  }
+}
+
+int max(int a, int b) {
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
+
+int main() {
+  struct Point2D *a1 = alloc(struct Point2D);
+  struct Point2D *a2 = alloc(struct Point2D);
+  a1->x = 0;
+  a1->y = 1;
+
+  a2->x = 222;
+  a2->y = 2334;
+
+  return l0_distance(a1, a2);
+}

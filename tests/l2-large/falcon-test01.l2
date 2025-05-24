@@ -1,0 +1,14 @@
+//test return 600
+
+int main() {
+
+    bool x = false;
+    bool y = x && x;
+    bool z = y || x;
+    while(z) {
+        int zz = 1 / 0; // should never happen
+    }
+
+    int a = 4;
+    return a * 150;
+}

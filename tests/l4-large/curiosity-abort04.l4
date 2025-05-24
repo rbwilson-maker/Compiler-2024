@@ -1,0 +1,35 @@
+//test abort
+
+typedef struct course_header course;
+typedef struct student_header student;
+
+
+struct course_header{
+  int department;
+  int class_num;
+};
+
+struct student_header{
+  int id;
+  course*[] courses;
+
+};
+
+student* new_student(int id){
+  student* S = alloc(student);
+  S->id = id;
+
+  course* c = alloc(course);
+  c->department = 15;
+  c->class_num = 411;
+
+  S->courses = alloc_array(course*, 1);
+  S->courses[0] = c;
+  return S;
+}
+
+int main(){
+  student* cj = new_student(100);
+  assert(cj->id == 1);
+  return (cj->courses[0])->class_num;
+}

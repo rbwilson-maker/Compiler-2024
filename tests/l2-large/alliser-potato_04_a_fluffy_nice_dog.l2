@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int main () {
+  bool petting_dog = true;
+  int my_happiness_level = 2;
+
+  while (petting_dog) {
+    my_happiness_level++;
+  }
+
+  return my_happiness_level;
+
+}

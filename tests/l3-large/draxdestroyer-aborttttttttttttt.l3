@@ -1,0 +1,17 @@
+//test abort
+// Tests function calls and if values persist after if else
+
+void science() {
+    bool no = true;
+    bool yes = false;
+    if (no) {
+        assert(yes);
+        no = false;
+    }
+    assert(no);
+}
+
+int main() {
+    science();
+    return 0;
+}

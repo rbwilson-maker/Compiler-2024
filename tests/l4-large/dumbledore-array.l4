@@ -1,0 +1,15 @@
+//test return 14
+
+struct array {
+  int[] array;
+};
+typedef struct array * array;
+
+int main() {
+  array myarr = alloc(struct array);
+  myarr->array = alloc_array (int, 14);
+  
+  myarr->array[10] = 14;
+
+  return myarr->array[10];
+}

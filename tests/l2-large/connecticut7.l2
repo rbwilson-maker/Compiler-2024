@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main () {
+	int x = 5;
+	if(x > 3) {
+		return x / 0;
+	}
+	else {
+		return 17;
+	}
+}

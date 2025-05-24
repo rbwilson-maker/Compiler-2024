@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int divZero (int n) {
+  if(n==1){
+    return 1/0;
+  }else{
+    return 1;
+  }
+}
+
+
+int main () {
+  return divZero(1);
+}

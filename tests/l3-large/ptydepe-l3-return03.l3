@@ -1,0 +1,9 @@
+//test typecheck
+// simple header test
+
+int main () {
+  int a = 19;
+  if(isCoolNum(19))
+    doNothing();
+  return 1;
+}

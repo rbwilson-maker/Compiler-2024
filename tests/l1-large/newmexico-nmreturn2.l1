@@ -1,0 +1,17 @@
+//test return -43351
+// arithmetic operations with parentheses at the end
+
+int main()
+{
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+	a = -(-(-(-12387))) - 3;
+	b = 0x7fffffff;
+	c = 0x80000000;
+	d = a + b;
+	e = c - a;
+	return ((b+c)*(d+e)+(b-3)/(4-8))/a;
+}

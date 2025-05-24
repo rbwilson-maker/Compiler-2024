@@ -1,0 +1,28 @@
+//test return 506
+//506
+struct item{
+  int cost;
+  int owner;
+};
+
+typedef struct item roomba;
+typedef struct item xbox;
+
+int trade(roomba* R, xbox* X);
+
+int main(){
+  roomba* mine = alloc(xbox);
+  mine->owner = 0;
+  mine->cost = 256;
+  xbox* yours = alloc(roomba);
+  yours->owner = 1;
+  yours->cost = 250;
+  trade(mine, yours);
+  return mine->cost;
+}
+
+
+int trade(roomba* R, xbox* X){
+  R->cost += X->cost;
+  return X->owner;
+}

@@ -1,0 +1,47 @@
+//test memerror
+struct node {
+  int val;
+  struct node* next;
+} ;
+
+struct node* array_onto_stack(int[] xs, int len)
+{
+  struct node* curr = NULL;
+  for(int i = 0; i < len; i++)
+  {
+    struct node* new = alloc(struct node);
+    new->val = xs[i];
+    new->next = curr;
+    curr = new;
+  }
+  return curr;
+}
+
+int last(struct node* ll)
+{
+  assert(ll != NULL);
+  if (ll->next == NULL)
+    return ll->val;
+  else
+    return last(ll->next);
+}
+
+int main()
+{
+  int[] xs = alloc_array(int, 10);
+  for (int i = 0; i <= 10; i++)
+    xs[i] = i;
+
+  assert(last(array_onto_stack(xs, 10)) == 0);
+
+  struct node* one = alloc(struct node);
+  struct node* zero = alloc(struct node);
+  one->val = 1;
+  zero->val = 0;
+  one->next = zero;
+  zero->next = one;
+  // I've a feeling we're not in Haskell anymore
+  // Or are we?  We get bottom either way!
+  last(one);
+  return 0;
+}

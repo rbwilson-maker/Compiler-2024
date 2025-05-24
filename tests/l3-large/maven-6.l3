@@ -1,0 +1,17 @@
+//test error
+// Parameter type mismatch
+
+void add_and_subtract(int a, int b, int c, int d, int e, int f) {
+  return a + b - c + d - e + f;
+}
+
+int main() {
+  int a = 0x1;
+  int b = 0x1;
+  int c = 0x1;
+  int d = 0x1;
+  int e = 0x1;
+  bool f = false;
+  add_and_subtract(a, b, c, d, e, f);
+  return 0;
+}

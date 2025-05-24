@@ -1,0 +1,19 @@
+//test return 0
+
+struct s {
+    bool a;
+    bool *b;
+};
+
+int main() {
+    struct s *a = alloc(struct s); 
+    a->a = true;
+    a->b = alloc(bool);
+    *a->b = a->a;
+
+    if (*a->b) {
+        return 0;
+    } else {
+        return 1;
+    }
+}

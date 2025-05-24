@@ -1,0 +1,12 @@
+//test return 0
+
+struct foo {
+    int* x;
+};
+
+int main() {
+   struct foo *f = alloc(struct foo);
+   f->x = alloc(int);
+   return *f->x;
+}
+

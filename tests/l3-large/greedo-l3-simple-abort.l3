@@ -1,0 +1,9 @@
+//test abort
+
+int main(){
+
+    if(true) assert(false);
+
+    return 1;
+
+}

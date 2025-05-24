@@ -1,0 +1,7 @@
+//test error
+// return variable before it is defined
+int main()
+{
+    return x;
+    int x = 2;
+}

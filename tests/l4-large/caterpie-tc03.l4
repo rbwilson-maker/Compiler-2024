@@ -1,0 +1,13 @@
+//test return 0
+// struct is not defined but still works
+int helper(struct foo * b)
+{
+  return 0;
+}
+
+int main()
+{
+  struct foo * bar;
+  bar = NULL;
+  return helper(bar);
+}

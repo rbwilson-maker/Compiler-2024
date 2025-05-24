@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+    int[] a;
+    int *b = alloc(int);
+    *b = 1;
+    a = b;
+    return 0;
+}

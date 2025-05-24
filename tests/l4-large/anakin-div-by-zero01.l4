@@ -1,0 +1,8 @@
+//test div-by-zero
+// 0 initialization for arrays
+
+int main() {
+    int[] A = alloc_array(int, 10);
+    int b = 42 / A[2];
+    return 0;
+}

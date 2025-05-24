@@ -1,0 +1,18 @@
+//test return 20
+// declare lots of variables
+
+int main() { 
+    int x = -1;
+    int y = 4;
+    int z = 5;
+    int a = 10;
+    int b = 100;
+    int c = -2;
+    int d = 5;
+    a = a + b; //110
+    b /= 10; //10
+    d = c + d; //3
+    y += z; //9
+    d = a / b; //11
+    return d + y; //20
+}

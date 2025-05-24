@@ -1,0 +1,20 @@
+//test return 4
+/*
+AC (return 4).
+Signature check should account for typedefs
+*/
+
+int a(int b, bool c, int d);
+
+typedef int typ;
+typedef int rty;
+typedef bool cty;
+typedef int dty;
+typedef int mty;
+
+typ a(rty b, cty c, dty d);
+
+mty main() {
+  return 4;
+}
+

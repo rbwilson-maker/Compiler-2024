@@ -1,0 +1,17 @@
+//test error
+
+struct Hi
+{
+  int hello;
+  bool hi;
+};
+
+int main()
+{
+  struct Hi *s = alloc(struct Hi);
+  if (*s.goodbye)
+  {
+    return *s.hello;
+  }
+  return 3;
+}

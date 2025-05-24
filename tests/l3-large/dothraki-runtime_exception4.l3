@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int funFunction(int chom, int bom) {
+  int pom = chom * (bom % chom);
+  return pom * (chom % bom);
+}
+
+int main() {
+  int a = 15411;
+  
+  int b = 0;
+
+  int c = funFunction(a, b);
+
+  return c;
+}

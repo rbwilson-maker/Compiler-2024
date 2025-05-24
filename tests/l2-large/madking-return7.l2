@@ -1,0 +1,13 @@
+//test return 2
+// tests not weird legal scoping constructs
+
+int main() {
+  int x = 3;
+  int y;
+
+  if (x > 5) {
+    y = 1;
+  } else y = 2;
+
+  return y;
+}

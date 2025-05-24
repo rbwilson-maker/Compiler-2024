@@ -1,0 +1,19 @@
+//test return 0
+// check whether a number is prime
+
+
+bool is_prime(int n) {
+  for (int i = 2; i * i <= n; i++) {
+    if (n % i == 0)
+      return false;
+  }
+  return true;
+}
+
+int main() {
+  int n = 7919;
+  if (is_prime(n))
+    return 0;
+  else
+    return 1;
+}

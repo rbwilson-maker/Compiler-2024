@@ -1,0 +1,27 @@
+//test return 1346269
+
+bool constantTrue() {
+    return true;
+}
+
+bool constantFalse() {
+    return false;
+}
+
+int fib(int num) {
+    int a = 0;
+    int b = 1;
+    int c = 1;
+    for (int i = 1; i <= num; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    return c;
+}
+
+// Tests using functions to get 
+int main() {
+    int a = 20;
+    return (constantTrue() && constantFalse()) || constantFalse() ? a : ((fib(a) < 1000000) ? fib(a + 10) : fib(a));
+}

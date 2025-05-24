@@ -1,0 +1,22 @@
+//test memerror
+
+int foo(int*** q) {
+    **q = alloc(int);
+    return 1;
+}
+
+int main() {
+    int** p = alloc(int*);
+    int*** q = alloc(int**);
+    *q = p;
+    // order of events is
+    // - evaluate pointer itself: *p is a valid address (namely, NULL)
+    // - evaluate the rhs expression which changes *p
+    // - get the address of lhs and assign
+    // however, the lhs was already computed to be NULL - this causes memerror.
+    // (this is in contrast to the somewhat reasonable alternative behavior 
+    // where it recalculates *p after the function call - but that's not what it does.)
+    **p = foo(q);
+    return **p;
+}
+

@@ -1,0 +1,11 @@
+//test return 256
+
+int main () {
+  int n = 2;
+
+  while (n < 100) {
+    n *= n;
+    if (n == 123) return 1 / 0;
+  }
+  return n;
+}

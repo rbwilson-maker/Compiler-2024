@@ -1,0 +1,17 @@
+//test return 100;
+// Test assertion and power function.
+
+int pow(int n, int p) {
+  assert(p >= 0);
+
+  int result = 1;
+  for (int i = 0; i < p; i++) {
+    result *= n;
+  }
+
+  return result;
+}
+
+int main() {
+  return pow(10, 2);
+}

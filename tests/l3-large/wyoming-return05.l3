@@ -1,0 +1,27 @@
+//test return 423445147
+//Does this even accomplish a useful task?
+int foo(int a);
+int bar(int b);
+int foo(int a){
+	//print_int(b);
+	if(a==0){
+		return 1;
+	}else if((a&1)==1){
+		return 3*bar(0x7FFFFFFF&(a>>1));
+	}else{
+		return 3*foo(0x7FFFFFFF&(a>>1));
+	}
+}
+int bar(int a){
+	//print_int(a);
+	if(a==0){
+		return 1;	
+	}else if(a<0){
+		return 5*foo(a<<1);
+	}else{
+		return 5*bar(a<<1);
+	}
+}
+int main(){
+	return foo(12);
+}

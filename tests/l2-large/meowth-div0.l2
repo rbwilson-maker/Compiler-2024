@@ -1,0 +1,11 @@
+//test div-by-zero
+
+//Divide by zero through another variable
+int main(){
+    int k;
+    int j = 100;
+    for(k = 10; k > -10; k--){
+        j += (j / k);
+    }
+    return j;
+}

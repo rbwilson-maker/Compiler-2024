@@ -1,0 +1,12 @@
+//test div-by-zero
+int foo(int n){
+	if(n > 0){
+		return foo(n-1);
+	}
+	return n;
+}
+
+int main(){
+	int x = 1 / foo(10);
+	return 0;
+}

@@ -1,0 +1,4 @@
+struct a { int x; };
+typedef struct a b;
+struct c { b x; };
+typedef struct c d;

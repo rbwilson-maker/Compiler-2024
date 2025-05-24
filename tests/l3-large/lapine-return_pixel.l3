@@ -1,0 +1,44 @@
+//test return 183
+
+typedef int pixel;
+typedef pixel pixel_t;
+
+/* Returns the red component of the given pixel p. */
+int get_red(pixel p) {
+    int r = (p >> 16) & 0x000000FF;
+    assert(r >= 0 && r <= 255);
+    return r;
+}
+
+/* Returns the green component of the given pixel p. */
+int get_green(pixel p) {
+    int g = (p >> 8) & 0xFF;
+    assert(g >= 0 && g <= 255);
+    return g;
+}
+
+/* Returns the blue component of the given pixel p. */
+int get_blue(pixel p) {
+    int b = (p & 0xFF);
+    assert(b >= 0 && b <= 255);
+    return b;
+}
+
+/* Returns the alpha component of the given pixel p. */
+int get_alpha(pixel p) {
+    int a = (p >> 24) & 0xFF;
+    assert(a >= 0 && a <= 255);
+    return a;
+}
+
+/* Returns an int representing an RGB pixel consisting of the given alpha, red, green and blue intensity values. */
+pixel make_pixel(int alpha, int red, int green, int blue) {
+    assert(alpha >= 0 && alpha <= 255 && red >= 0 && red <= 255 && green >= 0 && green <= 255 && blue >= 0 && blue <= 255);
+    int p = (alpha << 24 & 0xFF000000) | (red << 16 & 0x00FF0000) | (green << 8 & 0x0000FF00) | (blue & 0x000000FF);
+    return p;
+}
+
+int main() {
+    pixel pix = make_pixel(3, 89, 71, 23);
+    return (get_green(pix) + get_red(pix) + get_blue(pix));
+}

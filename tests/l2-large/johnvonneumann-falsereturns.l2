@@ -1,0 +1,30 @@
+//test error
+
+int main() {
+    if (1 == 2) {
+        return 0;
+    }
+
+    int x = 0;
+    if (3 == 3) {
+        x = 1;
+    } else {
+        return 1;
+    }
+
+    if (x == 0) {
+        return 2;
+    } else {
+        if (x == 2) {
+            return 3;
+        }
+    }
+
+    while (false) {
+        return 4;
+    }
+
+    for (;false;) {
+        return 5;
+    }
+}

@@ -1,0 +1,26 @@
+//test return 6
+
+bool perfect (int x) {
+    int sum = 0;
+    for (int i = 1; i < x; i++) {
+        if ((x % i) == 0) {
+            sum += i;
+        }
+    }
+    return (sum == x);
+}
+
+int find_perfect(int n) {
+    int i = 0;
+    while (n > 0) {
+        i++;
+        if (perfect(i)) {
+            n--;
+        }
+    }
+    return i;
+}
+
+int main () {
+    return find_perfect(1);
+}

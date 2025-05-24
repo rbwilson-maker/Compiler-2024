@@ -1,0 +1,14 @@
+//test return 999999999
+
+int main()
+{
+    int x = 9;
+    int out = 0;
+    while(x > 0)
+    {
+        out *= 10;
+        out += 9;
+        x = x - 1;
+    }
+    return out;
+}

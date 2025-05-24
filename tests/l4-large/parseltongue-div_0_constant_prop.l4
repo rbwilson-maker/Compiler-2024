@@ -1,0 +1,50 @@
+//test div-by-zero
+
+/*
+ * constant prop 
+ * memory should be void after function call
+ */
+
+int sum_array (int[] a, int size){
+    int sum = 0;
+
+    for (int i = size - 1; i >= 0; i--){
+        sum += a[i];
+    }
+    
+    return sum;
+}
+
+void set_array (int[] the_array, int size){
+
+    for (int i = 0; i < size; i++) the_array[i] = i+1;
+
+}
+
+int f(int[] a, int size, int *b) {
+
+    *b = sum_array(a, size);
+
+    a[0] = 0;
+
+    return *b;
+}
+
+
+int main() {
+    int size = 10;
+    int[] a = alloc_array (int, size);
+
+    int* b = alloc(int);
+
+    set_array(a, size);
+
+    a[0] = 10;
+
+    int sum = f(a, size, b);
+
+    a[1] / a[0];
+
+
+    return sum;
+}

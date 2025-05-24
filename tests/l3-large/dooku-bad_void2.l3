@@ -1,0 +1,14 @@
+//test error
+#use <conio>
+
+void pp_bool(bool b) {
+  print("bool = ");
+  printbool(b);
+  println("");
+}
+
+int main() {
+  bool b = true;
+  bool bad = pp_bool;
+  return 1;
+}

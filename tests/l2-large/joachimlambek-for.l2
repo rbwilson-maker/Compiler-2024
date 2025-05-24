@@ -1,0 +1,11 @@
+//test return 89
+
+int main() {
+    int x = 0;
+    int y = 1;
+    for (int z = 0; z < 5; z++) {
+        x += y;
+        y += x;
+    }
+    return y;
+}

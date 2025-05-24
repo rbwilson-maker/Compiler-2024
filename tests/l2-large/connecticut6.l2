@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+	if(2 < 3 && ((1 / 0) == 1))
+		return 10;
+	else {
+		return 5;
+	}
+}

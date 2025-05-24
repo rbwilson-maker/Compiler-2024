@@ -1,0 +1,26 @@
+//test return 0
+int main() {
+    // '' 0 a b t n v f r
+    // 0x 0 7 8 9 a b c d
+    assert('\0' == '\0');
+    assert('\0' < '\a');
+    assert('\a' < '\b');
+    assert('\b' < '\t');
+    assert('\t' < '\n');
+    assert('\n' < '\v');
+    assert('\v' < '\f');
+    assert('\f' < '\r');
+
+    // 0x21 '!', 0x22 '\"', 0x23 '#'
+    assert('!' < '\"');
+    assert('\"' < '#');
+    assert('\"' == '"');
+    assert('\"' >= '"');
+    assert('\"' <= '"');
+
+    // 0x26 '&', 0x27 '\'', 0x28 '('
+    assert('&' < '\'');
+    assert('\'' < '(');
+
+    return 0;
+}

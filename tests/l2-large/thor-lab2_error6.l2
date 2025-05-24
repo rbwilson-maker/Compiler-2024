@@ -1,0 +1,9 @@
+//test error
+//loop
+
+int main()
+{
+int x = 5;
+for(; x < 6; int y=6) x-= 1;
+return x;
+}

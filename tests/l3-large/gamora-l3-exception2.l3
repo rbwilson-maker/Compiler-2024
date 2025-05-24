@@ -1,0 +1,59 @@
+//test div-by-zero
+
+int aborrrt() {
+  return 1/0;
+}
+
+
+int assssert(bool b) {
+  if (b) return 0; else return aborrrt();
+}
+
+int main () {
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(false);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  assssert(true);
+  return -1;
+}

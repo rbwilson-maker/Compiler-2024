@@ -1,0 +1,8 @@
+//test error
+//return before dec
+
+int main() {
+  int x = 1;
+  return y;
+  int y = x + 1;
+}

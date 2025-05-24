@@ -1,0 +1,20 @@
+//test abort
+//Checks that default arrays are handled properly
+
+struct cat {
+  int[] A;
+};
+typedef struct cat dog;
+
+int main() {
+  int[] A = alloc_array(int, 0);
+  int[] B = alloc_array(int, 0);
+  dog* s1 = alloc(dog);
+  dog* s2 = alloc(dog);
+  if(s1->A == s2->A){
+    if(A != B) {
+      assert(A == s1->A);
+    }
+  }
+  return 0;
+}

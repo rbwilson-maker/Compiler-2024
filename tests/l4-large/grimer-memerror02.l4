@@ -1,0 +1,24 @@
+//test memerror
+
+bool b(int[] a, int t) {
+  int b = a[0];
+  int i = 0;
+  while (b != t) {
+    b = a[i + 1];
+    i++;
+  }
+  return true;
+}
+
+int main() {
+  int[] a = alloc_array(int, 100);
+  for (int i = 0; i < 100; i++) {
+    a[i] = i;
+  }
+
+  b(a, 99);
+  b(a, 100);
+
+  return 1;
+
+}

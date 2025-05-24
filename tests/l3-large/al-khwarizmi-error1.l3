@@ -1,0 +1,10 @@
+//test error
+
+bool return_bool() {
+  return true;
+}
+
+int main() {
+    int x = return_bool();
+    return x;
+}

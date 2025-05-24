@@ -1,0 +1,15 @@
+//test return 2
+
+int get_idx (int min, int max) {
+    return (min + max) / 2;
+}
+
+int main () {
+    int[] a = alloc_array(int, 4);
+    a[0] = 1;
+    a[1] = 2;
+    a[2] = 3;
+    a[3] = 4;
+    int idx = get_idx (0, 3);
+    return a[idx];
+}

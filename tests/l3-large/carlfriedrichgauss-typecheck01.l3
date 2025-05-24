@@ -1,0 +1,8 @@
+//test typecheck
+// Test typedef in header file
+
+int main() {
+    int arg = 1;
+    int res = some_crazy_function(arg);
+    return res;
+}

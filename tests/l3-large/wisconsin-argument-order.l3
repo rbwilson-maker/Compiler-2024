@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int foo() {
+  while (true) {}
+  return 5;
+}
+
+int bar(int x, int y) {
+  return x + y;
+}
+
+int main() {
+  return bar(1 / 0, foo());
+}

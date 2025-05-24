@@ -1,0 +1,21 @@
+//test error
+
+void funny();
+bool funnier();
+
+int fun() {
+
+  if(funnier()) {
+    funny();
+  }
+  return 101;
+}
+
+void funny() {
+  int foo = 7331 + 360;
+  foo += 533;
+}
+
+bool funnier(){
+  return true || true;
+}

@@ -1,0 +1,32 @@
+//test div-by-zero
+
+typedef int K;
+
+void calc(int a, int b, int c);
+
+int main() {
+  int a = 0;
+  int b = 2;
+  int c = 1;
+
+  while(a < 100){
+    a++;
+    K o = a % 3;
+    if(o == 0){
+      calc(a, b, c);
+    } 
+    else if (o == 1){
+      calc(b, c, a);
+    }
+    else if (o == 2){
+      calc(c, a, b);
+    } else {
+      assert(false);
+    }
+  }
+  return 0;
+}
+
+void calc(int a, int b, int c){
+  a << b;
+}

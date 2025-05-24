@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int main() {
+	int *num = alloc(int);
+	int *denom = alloc(int);
+	int *zero = alloc(int);
+
+	*num = 10;
+	*denom = 20;
+	*zero = 0;
+
+	int misformed_fraction = *num / *zero;
+
+	return 0;
+}

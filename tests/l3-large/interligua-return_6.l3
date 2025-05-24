@@ -1,0 +1,17 @@
+//test return 135
+
+int x(){
+    return 45;
+}
+
+int y(){
+    return x() * 2;
+}
+
+int z(){
+    return 0;
+}
+
+int main(){
+    return x() + y() + z();
+}

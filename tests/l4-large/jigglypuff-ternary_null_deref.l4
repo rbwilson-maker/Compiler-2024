@@ -1,0 +1,46 @@
+//test error
+
+/* Ternary Null Dereference Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Tuesday, October 27, 2015 at 10:47:56 AM EDT
+ *
+ * Tests that the compiler checks that NULL is never directly dereferenced,
+ * specifically in a ternary expression. This should be regardless of how nested
+ * expression is.
+ */
+
+int foo(bool x, bool y, bool z)
+{
+    return *(
+        (x) ? NULL : (
+            (y) ? NULL : (
+                (z) ? NULL : (
+                    (!x) ? NULL : (
+                        (!y) ? NULL : (
+                            (!z) ? NULL : (
+                                (x) ? NULL : (
+                                    (y) ? NULL : (
+                                        (z) ? NULL : (
+                                            (!x) ? NULL : (
+                                                (!y) ? NULL : (
+                                                    (!z) ? NULL : NULL
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    );
+}
+
+int main()
+{
+    return foo(true, true, false);
+}

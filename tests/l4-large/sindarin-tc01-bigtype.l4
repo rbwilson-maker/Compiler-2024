@@ -1,0 +1,13 @@
+//test error
+// big type cannot be operands for conditional expressions
+
+struct big {
+  int f1;
+  bool f2;
+};
+
+int main() {
+  struct big *test1 = alloc(struct big);
+  struct big *test2 = alloc(struct big);
+  return (true ? *test1 : *test2).f2;
+}

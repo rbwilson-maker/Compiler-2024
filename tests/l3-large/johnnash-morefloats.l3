@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int main() {
+    fpt o = itof(12903);
+    fpt k = itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(itof(ftoi(0))))))))))))))))));
+
+    assert(fless(k, o));
+
+    return o / k;
+}

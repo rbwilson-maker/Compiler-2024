@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int main() {
+	int anakin = 0xffff00;
+	while (1 == 1) {
+		anakin /= (anakin >> 1);
+		anakin--;
+	}
+	return anakin;
+}

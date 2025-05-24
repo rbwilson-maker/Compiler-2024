@@ -1,0 +1,14 @@
+//test error
+// Functions must be declared before use
+
+int foo() {
+  return bar();
+}
+
+int bar() {
+  return 1;
+}
+
+int main() {
+  return foo();
+}

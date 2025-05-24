@@ -1,0 +1,6 @@
+//test div-by-zero
+int main() {
+  int foo = 42;
+  foo >>= 42;
+  return foo;
+}

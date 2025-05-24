@@ -1,0 +1,137 @@
+//test return 333
+
+
+int a();
+int b();
+int c();
+int d();
+int e();
+int f();
+int g();
+int h();
+int i();
+int j();
+int k();
+int l();
+int m();
+int n();
+int o();
+int p();
+int q();
+int r();
+int s();
+int t();
+int u();
+int v();
+int w();
+int x();
+int y();
+int z();
+
+int a() {
+  return 7;
+}
+
+int b() {
+  return 8;
+}
+
+int c() {
+  return 1;
+}
+
+int d() {
+  return 32;
+}
+
+int e() {
+  return 0x78;
+}
+
+int f() {
+  return 42;
+}
+
+int g() {
+  return 23;
+}
+
+int h() {
+  return 70;
+}
+
+int i() {
+  return 69;
+}
+
+int j() {
+  return 68;
+}
+
+int k() {
+  return 67;
+}
+
+int l() {
+  return 76;
+}
+
+int m() {
+  return 11;
+}
+
+int n() {
+  return 2;
+}
+
+int o() {
+  return 0;
+}
+
+int p() {
+  return -2;
+}
+
+int q() {
+  return 1 / 0;
+}
+
+int r() {
+  return 22;
+}
+
+int s() {
+  return 3;
+}
+
+int t() {
+  return 1;
+}
+
+int u() {
+  return 8675309;
+}
+
+int v() {
+  return 99;
+}
+
+int w() {
+  return 73;
+}
+
+int x() {
+  return y();
+}
+
+int y() {
+  return z();
+}
+
+int z() {
+  return x();
+}
+
+int main() {
+  return r() + i() + c() + k() + r() + o() + l() + l();
+}

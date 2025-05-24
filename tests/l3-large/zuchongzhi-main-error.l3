@@ -1,0 +1,9 @@
+//test error
+// redefine main function
+
+int main(int argc);
+
+int main() {
+  assert(1 == 0);
+  return 0;
+}

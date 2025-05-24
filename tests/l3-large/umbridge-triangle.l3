@@ -1,0 +1,46 @@
+//test return 0
+
+int append_n_digits(int prefix, int digit, int n) {
+    // only want one digit numbers as 'digit'
+    assert((digit >= 0) && (digit < 10));
+
+    int result = prefix;
+    for (int i = 0; i < n; i++)
+        result = result * 10 + digit;
+
+    return result;
+}
+
+int append_n_solids(int prefix, int n) {
+    return append_n_digits(prefix, 8, n);
+}
+
+int append_n_blanks(int prefix, int n) {
+    return append_n_digits(prefix, 1, n);
+}
+
+int main() {
+    int size = 9;
+    // odd-width graphs looks nice
+    assert(size % 2 == 1);
+
+    for (int solids = 1; solids <= size; solids += 2) {
+        int padding = (size - solids) / 2;
+        int result = 0;
+        result = append_n_blanks(result, padding);
+        result = append_n_solids(result, solids);
+        result = append_n_blanks(result, padding);
+        print_int(result);
+    }
+
+    return 0;
+}
+
+/*
+result should be a triangle:
+111181111
+111888111
+118888811
+188888881
+888888888
+*/

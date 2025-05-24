@@ -1,0 +1,17 @@
+//test return 23101923
+
+struct ne_mutlu_turkum_diyene;
+typedef int ne_mutlu_turkum_diyene;
+
+struct ne_mutlu_turkum_diyene {
+    ne_mutlu_turkum_diyene ne_mutlu_turkum_diyene;
+};
+
+
+
+int main () {
+    ne_mutlu_turkum_diyene ne_mutlu_turkum_diyene1 = 23101923;
+    struct ne_mutlu_turkum_diyene *s = alloc(struct ne_mutlu_turkum_diyene);
+    s->ne_mutlu_turkum_diyene = ne_mutlu_turkum_diyene1;
+    return s->ne_mutlu_turkum_diyene;
+}

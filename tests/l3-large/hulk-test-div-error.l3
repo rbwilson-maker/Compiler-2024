@@ -1,0 +1,26 @@
+//test div-by-zero
+
+int a(int x, int y){
+    return x & (y + 10);
+}
+int b(int x, int y){
+    return 10 / (x + 11203 + y);
+}
+int c(int i, int j){
+    for(int k = 40; k < j; k++){
+        i += k;
+    }
+    return i;
+}
+
+int main(){
+    int i = 0;
+    int j = 100;
+    i = c(i, j);
+
+    int x = 12341;
+    int y = -10;
+    int a1 = a(x, y);
+
+    return b(-23544 + x, a1);
+}

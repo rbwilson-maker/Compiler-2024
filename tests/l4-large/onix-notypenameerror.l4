@@ -1,0 +1,21 @@
+//test return 20
+
+struct S {
+  int x;
+  int y;
+};
+
+int useST()
+{
+  int st = 4;
+  int y = 5;
+  st * y;
+  return st * y;
+}
+
+typedef struct S st;
+
+int main() {
+  st* s = alloc(st);
+  return useST();
+}

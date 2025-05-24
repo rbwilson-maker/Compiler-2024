@@ -1,0 +1,15 @@
+//test return 127
+int main()
+{
+   	 int flag = 0xff;
+   	 int a;
+
+   	 a = 0;
+   	 a += 0xff;
+   	 flag += a;
+   	 
+   	 flag++;
+   	 flag >>= 2;
+   	 
+   	 return flag;
+}

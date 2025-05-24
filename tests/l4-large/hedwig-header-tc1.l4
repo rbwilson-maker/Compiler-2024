@@ -1,0 +1,7 @@
+//test typecheck
+
+int main(){
+    int * x = alloc(int);
+    if(gated_positive(x, true)) return *x;
+    else return -(*x);
+}

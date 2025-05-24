@@ -1,0 +1,19 @@
+//test return 15
+
+// nested loop with scoped vars
+
+int main () {
+    int x;
+    int f = 0;
+    for(x = 1; x <= 5; x++) {
+        int y = x;
+        f += y;
+/*
+        //for(int z = 2; z < 19; z += 3)
+            //z--;
+    */
+    }
+
+    return f;
+
+}

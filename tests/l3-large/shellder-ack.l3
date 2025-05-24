@@ -1,0 +1,11 @@
+//test return 65533 || infloop
+// #use <conio>
+int ack(int m, int n);
+int ACK(int m, int n);
+typedef int entero;
+entero ack(entero m, entero n) {
+    return m==0?n+1 : n==0? ack(m-1, 1): ack(m-1, ack(m,n-1));
+}
+entero main() {
+      return ack(4, 1);
+}

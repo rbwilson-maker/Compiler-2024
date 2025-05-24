@@ -1,0 +1,15 @@
+//test return 23423
+
+int main() { 
+  int x = 3;
+  for (int i = 1; i < 10000; i *= 2) {
+    if (i < 2342) {
+      x = x * i * i + 3;
+    } 
+  }
+  if (x > 33224342) {
+    return 223423;
+  } else {
+    return 23423;
+  }
+}

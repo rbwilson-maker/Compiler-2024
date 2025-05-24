@@ -1,0 +1,35 @@
+//test error
+void loop0 (int n) {
+assert (n > 0);
+loop0(n-1);
+return;
+}
+
+void loop1 (int* n) {
+loop0(*n);
+return;
+}
+
+void loop2 (int** n) {
+loop1(*n);
+return;
+}
+
+void loop3 (int*** n) {
+loop2(*n);
+return;
+}
+
+
+int f (int * x) {
+*x = 0;
+return 20;
+}
+
+int main() {
+int***  x = alloc (int***);
+***x = 6;
+int y = f(x);
+loop3(x);
+return 0;
+}

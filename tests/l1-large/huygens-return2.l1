@@ -1,0 +1,13 @@
+//test return 1
+// multiple return statements
+// round to 0
+
+int main() {
+    // Test for comment
+    int x = 15;
+    int y = 8;
+    return x / y;
+    x = 10;
+    y = 10;
+    return x / y;
+}

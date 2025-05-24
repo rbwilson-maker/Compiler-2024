@@ -1,0 +1,7 @@
+//test div-by-zero
+// Runtime exception for divide by zero
+
+int main() {
+  assert((0 % (0 % (0 % 0))) == 0);
+  return 0;
+}

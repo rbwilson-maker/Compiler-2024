@@ -1,0 +1,10 @@
+//test return 61
+
+int f(int x){
+  return x+x;
+
+}
+
+int main(){
+  return f(f(7)+f(7))+5;
+}

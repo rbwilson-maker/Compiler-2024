@@ -1,0 +1,16 @@
+//test return 88080384
+
+bool mutating_check(int x) {
+    x += 10;
+    return x - 10 == 42;
+}
+
+int forty_two()
+//@ ensures mutating_check(\result);
+{
+    return 42;
+}
+
+int main() {
+    return forty_two() << (forty_two() >> 1);
+}

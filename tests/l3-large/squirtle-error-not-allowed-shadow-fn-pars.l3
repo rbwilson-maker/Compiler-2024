@@ -1,0 +1,12 @@
+//test error
+
+/* Local vars not allowed to shadow function args */
+
+int wow(int wow) {
+    int wow = 2;
+    return wow;
+}
+
+int main() {
+    return wow(4);    
+}

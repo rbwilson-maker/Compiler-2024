@@ -1,0 +1,12 @@
+//test return 50005000
+
+
+int main() {
+    int sum = 0;
+    for(int x = 0; x <= 10000; x++) {
+        if(x > -1) {
+            sum += x;
+        }
+    }
+    return sum;
+}

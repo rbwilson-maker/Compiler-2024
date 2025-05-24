@@ -1,0 +1,12 @@
+//test return 1
+
+int* inc(int* a) {
+    int* b = a;
+    (*b)++;
+    return b;
+}
+
+int main() {
+    int* a = alloc(int);
+    return *inc(a);
+}

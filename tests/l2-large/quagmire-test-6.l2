@@ -1,0 +1,9 @@
+//test return 122
+
+int main() {
+    bool a = true;
+    bool b = false;
+    bool c = a || b;
+
+    return c ? 122 : 150;
+}

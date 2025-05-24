@@ -1,0 +1,12 @@
+//test return 1
+//tests allowing variables and functions to have the same name 
+
+int hi(int hi){
+	return hi+1;
+
+}
+
+int main(){
+	int hi = hi(0);
+	return hi;
+}

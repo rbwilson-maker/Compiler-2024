@@ -1,0 +1,33 @@
+//test return 12542434
+
+struct  point {
+    int x;
+    fpt f;
+    int y;
+    bool b; 
+    dub[] d; 
+    dub d_next;
+};
+
+int main() {
+    struct point* p = alloc(struct point);
+    (*p).x = 4;
+    (*p).f = itof(10000000);
+    (*p).d = alloc_array(dub, 3);
+    (*p).d[0] = itod(7);
+    (*p).d[1] = itod(12542434);
+    (*p).d[2] = itod(15411);
+    (*p).d_next = itod(222222222);
+    (*p).b = true;
+
+    if ((*p).b) {
+        int i = 0;
+        for (; i < 3; i++) {
+            print_dub((*p).d[i]);
+        }
+
+        return dtoi((*p).d[1]); 
+    } else {
+        return dtoi((*p).d[3]);
+    }
+}

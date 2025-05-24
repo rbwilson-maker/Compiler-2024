@@ -1,0 +1,8 @@
+//test error
+//trying to define a function inside of a struct 
+
+struct here {
+  int func(struct here* x);
+};
+
+int main() { return 0; }

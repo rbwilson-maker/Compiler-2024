@@ -1,0 +1,7 @@
+//test error
+
+// checks for deeply nested paren matching errors
+
+int main() {
+	return (1*(1*(1*(1*(1*(1*(1*(1*(1*(1*(1*(1*(1*(1*(1*(1*(1*(1*(1*(1*1)))))))))))))))))));
+}

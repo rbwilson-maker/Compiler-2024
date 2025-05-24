@@ -1,0 +1,13 @@
+//test error
+
+struct node {
+    int a;    
+};
+
+struct node {
+    int a;
+};
+
+int main() {
+    return 0;
+}

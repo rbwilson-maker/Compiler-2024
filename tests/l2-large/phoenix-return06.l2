@@ -1,0 +1,15 @@
+//test return 15
+// using a while loop nested inside a for loop to increment
+
+int main() {
+    int count = 0;
+    for (int i=0; i<5; i += 1){
+        int j = 2;
+        while (j >= 0) {
+            count += 1;
+            j -= 1;
+        }
+    }
+
+    return count;
+}

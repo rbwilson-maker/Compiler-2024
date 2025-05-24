@@ -1,0 +1,12 @@
+//test error
+// shadowing typedef ident
+
+typedef int fn;
+
+void f(int x, bool q, bool fn) {
+  return x > 0 && q && (!fn);
+}
+
+int main() {
+  return f(-1, true, false);
+}

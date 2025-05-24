@@ -1,0 +1,46 @@
+//test return 55
+// fibonacci
+
+int main() {
+    int x;
+    int y;
+    int z;
+
+    x = 1;
+    y = 1;
+
+    z = y;
+    y += x;
+    x = z;
+    
+    z = y;
+    y += x;
+    x = z;
+    
+    z = y;
+    y += x;
+    x = z;
+    
+    z = y;
+    y += x;
+    x = z;
+    
+    z = y;
+    y += x;
+    x = z;
+    
+    z = y;
+    y += x;
+    x = z;
+    
+    z = y;
+    y += x;
+    x = z;
+    
+    z = y;
+    y += x;
+    x = z;
+    
+    return y;
+}
+

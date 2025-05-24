@@ -1,0 +1,16 @@
+//test error
+
+struct point {
+       int x;
+       int y;
+};
+
+typedef struct point pt;
+
+int pt(int x, int y) {
+    return x+y;
+}
+
+int main() {
+    return pt(4, 5);
+}

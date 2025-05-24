@@ -1,0 +1,15 @@
+//test return 93
+
+int main() {
+    int a = 0xBa;   // 186
+    /*
+    comment-1;
+    /*
+        nested-comment;
+    */
+    // you should handle nested comments correctly.
+    a = 2;  /*This one is ignored*/
+    // comment-1-ends;
+    */
+    return a / 2;   // 186 / 2 = 93
+}

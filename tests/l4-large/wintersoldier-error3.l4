@@ -1,0 +1,13 @@
+//test error
+
+struct Foo {
+	struct Foo {
+		struct Foo {
+			struct Foo *bar;
+		};
+	};
+};
+
+int main() {
+	return 0;
+}

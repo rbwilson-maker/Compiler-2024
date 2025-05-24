@@ -1,0 +1,12 @@
+//test return 10
+
+int main() {
+  int x = 0;
+
+  {
+    int y = 18;
+    x = y - 8;
+  }
+
+  return x;
+}

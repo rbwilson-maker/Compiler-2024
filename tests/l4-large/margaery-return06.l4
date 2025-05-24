@@ -1,0 +1,23 @@
+//test return 1001
+
+int f(int x, int[] a) {
+    if (x == 3) {
+        a[x] /= 2;
+        return 3;
+    }
+
+    return -1;
+}
+
+int main() {
+    int[] a = alloc_array(int, 4);
+
+    int i = 0;
+    for(i = 0; i < 4; i++) {
+        a[i] = i;
+    }
+
+    a[f(3, a)] += 1000;
+
+    return a[3];
+}

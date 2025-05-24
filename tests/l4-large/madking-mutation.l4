@@ -1,0 +1,16 @@
+//test return 5
+
+void foo (int[][] A) {
+    A[0] = alloc_array(int, 10); 
+}
+
+void foo2 (int[][] A ) {
+     A[0][1] = 5;
+}
+
+int main () {
+    int[][] A = alloc_array(int[], 10);
+    foo(A);
+    foo2(A);
+    return A[0][1];
+}

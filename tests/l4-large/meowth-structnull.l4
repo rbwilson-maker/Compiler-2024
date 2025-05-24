@@ -1,0 +1,10 @@
+//test memerror
+
+struct goes_in{struct goes_in* in; int out;};
+
+int main(){
+    struct goes_in*** one = alloc(struct goes_in**);
+    *one = alloc(struct goes_in*);
+    **one = alloc(struct goes_in);
+    return (**one)->in->out;
+}

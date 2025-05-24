@@ -1,0 +1,19 @@
+//test return 3
+
+// basic typechecking for functions with array arguments
+typedef int foo;
+
+foo bar(foo[] x, foo[] y, foo[] z) {
+    x[0] = 1;
+    y[0] = 2;
+    z[0] = 3;
+    return 1;
+}
+
+int main () {
+    foo[] test_arr = alloc_array(foo, 1);
+    int ret = bar(test_arr, test_arr, test_arr);
+    assert(ret == 1);
+
+    return test_arr[0];
+}

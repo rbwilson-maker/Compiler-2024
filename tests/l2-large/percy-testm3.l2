@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main(){
+	
+	int a = 500;
+	int b = 250;
+
+	if(a/b > 1){
+		b = 0;
+	}
+
+	return a/b;
+}

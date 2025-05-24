@@ -1,0 +1,14 @@
+//test return 83
+int main   ()
+// test comment
+{ /* test block
+      comment */
+  int a;
+  a = 7;
+  int b = a + 3; // 10
+  int c;
+  c = b + 1; // 11
+  b = a - 1; // 6
+  a = b * c; // 66
+  return a + b + c; // 83
+}

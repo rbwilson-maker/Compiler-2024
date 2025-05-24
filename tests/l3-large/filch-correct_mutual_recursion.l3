@@ -1,0 +1,24 @@
+//test return 10240
+
+int f_b(int x);
+
+int f_a(int i) {
+  if (i == 5) {
+    return 5;
+  } else {
+    return f_b(i - 1);
+  }
+}
+
+int f_b(int i) {
+  if (i == 3) {
+    return 19;
+  } else {
+    return 2 * f_a(i - 1);
+  }
+}
+
+
+int main() {
+  return f_a(27);
+}

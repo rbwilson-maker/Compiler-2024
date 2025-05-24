@@ -1,0 +1,26 @@
+//test return 5
+// short-circuiting should work
+// if-else chains should work
+int main()
+{
+  bool a = true;
+  bool b = false;
+  if (a || (1 / 0 == 1)) {
+    a = false;
+  }
+  
+  if (b && (1 / 0 == 1)) {
+    b = true;
+  }
+
+  int x;
+  if (a) {
+    x = 3;
+  } else if (b) {
+    x = 4;
+  } else {
+    x = 5;
+  }
+
+  return x;
+}

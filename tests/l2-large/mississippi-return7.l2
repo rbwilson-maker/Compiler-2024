@@ -1,0 +1,7 @@
+//test return 18
+int main() {
+    bool x = false;
+    if (x)
+        return 0;
+    return 18;
+}

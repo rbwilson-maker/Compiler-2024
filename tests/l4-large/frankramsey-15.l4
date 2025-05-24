@@ -1,0 +1,13 @@
+//test typecheck
+
+struct A {
+    int a;
+    struct B* b;
+    int c;
+};
+
+int main() {
+    struct A* x = alloc(struct A);
+    x->b = NULL;
+    return 0;
+}

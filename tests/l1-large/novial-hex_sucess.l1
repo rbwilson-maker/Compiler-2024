@@ -1,0 +1,12 @@
+//test return 1044448
+// test hexadecmial mathematics
+
+int main() {
+
+    int h = 0xFeFe32;
+    int i = h / 0x10;
+    int j = i + 2 - 6 / 10 - 16 / 0xA * 5;
+    int k = 2;
+
+    return j;
+}

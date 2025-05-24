@@ -1,0 +1,20 @@
+//test return 3
+
+struct node {
+  struct node* left;
+  int value;
+  struct node* right;
+};
+
+int main() {
+  struct node* a = alloc(struct node);
+  a -> left = alloc(struct node);
+  a -> left -> value = 0;
+
+  a -> value = 1;
+
+  a -> right = alloc(struct node);
+  a -> right -> value = 2;
+   
+  return a -> left -> value + a -> value + a -> right -> value;
+}

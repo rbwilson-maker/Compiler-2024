@@ -1,0 +1,16 @@
+//test typecheck
+
+
+int main() {
+	session sess = start_session(1337);
+
+	chars characters;
+
+	for (int i = 0; i < 10; i++) {
+		characters = next_char(sess); 
+	}
+
+	send_char(sess, 0x41);
+
+	return 0;
+}

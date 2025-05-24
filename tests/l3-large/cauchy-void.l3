@@ -1,0 +1,13 @@
+//test error 
+void f(int x) {
+    x++;
+}
+int g(int a, int b) {
+    return a + b;
+}
+int h(int a, int b) {
+    return g(f(a), b);
+}
+int main() {
+    return h(0, 0);
+}

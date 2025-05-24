@@ -1,0 +1,37 @@
+//test return 3
+// checks if tree is a binary search tree
+
+struct node {
+  int val;
+  struct node* left;
+  struct node* right;
+};
+
+typedef struct node node_t;
+
+bool is_binary_search_tree(struct node* root, int lower, int upper) {
+  if (root == NULL) {
+    return true;
+  }
+  if (root->val > upper || root->val < lower) {
+    return false;
+  }
+  return is_binary_search_tree(root->left, lower, root->val) && is_binary_search_tree(root->right, root->val, upper);
+}
+
+int main() {
+  struct node* t = alloc(struct node);
+  struct node* left = alloc(struct node);
+  struct node* right = alloc(struct node);
+  t->left = left;
+  t->right = right;
+  t->val = 3;
+  left->val = 5;
+  right->val = 2;
+  assert(!is_binary_search_tree(t, -10, 10));
+  t->val = 3;
+  left->val = 2;
+  right->val = 5;
+  assert(is_binary_search_tree(t, -10, 10));
+  return 3;
+}

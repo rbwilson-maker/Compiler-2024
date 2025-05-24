@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int main() {
+
+        int x = 0;
+        int a = 1;
+        while (x < 35) {
+                a = a<<x;
+                x+=1;
+        }
+
+        return a;
+
+}

@@ -1,0 +1,11 @@
+//test div-by-zero
+
+
+int div(int a, int b) {
+    assert(a != 0); // BUG! Why not assert b != 0? 
+    return a / b;
+}
+
+int main() {
+    return div(3, 0);
+}

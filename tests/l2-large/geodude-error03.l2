@@ -1,0 +1,8 @@
+//test error
+// non-int return value of main
+
+int main ()
+{
+  int x = true || false || false || true;
+  return x & 0;
+}

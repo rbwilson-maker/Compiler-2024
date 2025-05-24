@@ -1,0 +1,24 @@
+//test typecheck
+
+//Uses the server.h0 header file which defines socket libraries
+
+void respond(int clientfd) {
+int x = read(clientfd);
+int y = read(clientfd);
+send(clientfd, x % y);
+}
+
+int main () {
+int sockfd = inet_socket();
+assert (sockfd != 0);
+assert (bind_inet(sockfd, 80, 0xFFFFFFFF) != 0);
+assert (listen(sockfd) != 0);
+while (true)
+{
+int clientfd = accept(sockfd);
+respond(clientfd);
+close(clientfd);
+}
+close(sockfd);
+return 0;
+}

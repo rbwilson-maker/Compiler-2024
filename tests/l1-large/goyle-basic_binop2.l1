@@ -1,0 +1,11 @@
+//test return 22
+
+int main() {
+    int x = 10-2;
+    int y = 8 * 8;
+    int z = y/3;
+    int z1 = 100 * y;
+    int z3 = z1%103;
+    int z4 = z3 + x + y;
+    return z4 % y;
+}

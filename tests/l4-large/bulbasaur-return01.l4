@@ -1,0 +1,13 @@
+//test return 1
+// test proper default value handling
+int main()
+{
+  int[] A = alloc_array(int, 5);
+  bool[] B = alloc_array(bool, 5);
+  int*[] C = alloc_array(int *, 5);
+
+  if (A[3] == 0 && B[3] == false && C[3] == NULL) {
+    return 1;
+  }
+  return 0;
+}

@@ -1,0 +1,9 @@
+//test error
+// L4/C0 won't even let you write this at the syntactic level.
+// So safe!
+
+int main() {
+  *NULL = 5;
+
+  return 0;
+}

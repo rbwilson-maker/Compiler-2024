@@ -1,0 +1,25 @@
+//test return 21
+
+/*
+ * This program tests tail recursion
+ *
+ */
+
+ int tail_recursion(int a, int b, int n) {
+     if(n == 1)
+         return 1;
+     else
+     {
+         a += b;
+         b += 1;
+     }
+
+     return a + tail_recursion(a,b,n-1);
+ }
+
+ int main() {
+     int x;
+
+     x = tail_recursion(0,1,5);
+     return x;
+ }

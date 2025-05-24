@@ -1,0 +1,25 @@
+//test return 1
+// Mutually recursive calls
+
+bool odd (int x);
+
+bool even (int x) {
+  if (x == 0)
+    return true;
+  else
+    return odd(x - 1);
+}
+
+bool odd (int x) {
+  if (x == 1)
+    return true;
+  else
+    return even(x - 1);
+}
+
+
+int main () {
+  if (even(100000))
+    return 1;
+    return 0;
+}

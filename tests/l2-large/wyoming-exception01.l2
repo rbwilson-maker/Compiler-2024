@@ -1,0 +1,9 @@
+//test div-by-zero
+int main(){
+    int x = 0;
+    for(int i = 0; i < 1000;i++){
+        x++;
+    }
+    x-=1000;
+    return x/x;
+}

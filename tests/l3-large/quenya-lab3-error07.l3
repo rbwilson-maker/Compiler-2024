@@ -1,0 +1,11 @@
+//test error
+// Mismatching parameter types for declaration and definition.
+
+int foo(bool x, int y) { // y should be bool according to declaration
+  return y;
+}
+
+int main() {
+  int x = foo();
+  return 0;
+}

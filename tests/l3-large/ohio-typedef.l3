@@ -1,0 +1,9 @@
+//test error
+
+typedef int struct;
+typedet struct alloc_array;
+
+int main() {
+  struct r = 88;
+  return r;
+}

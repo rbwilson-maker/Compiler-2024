@@ -1,0 +1,9 @@
+//test div-by-zero
+// Mod by zero
+int main() {
+  int neg_one = -1;
+  int y = 5;
+  int base = neg_one + 1;
+  int quotient = y % base;
+  return quotient;
+}

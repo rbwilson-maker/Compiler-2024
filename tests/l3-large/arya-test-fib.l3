@@ -1,0 +1,11 @@
+//test return 832040
+int fib(int i){
+  assert(i>=0);
+  if (i==0) return 0;
+  if (i==1) return 1;
+  else return fib(i-1)+fib(i-2);
+}
+
+int main(){
+  return fib(30);  
+}

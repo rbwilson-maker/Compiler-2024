@@ -1,0 +1,16 @@
+//test return 0
+// check that all small types have default value 0
+
+int main() {
+    int *x = alloc(int);
+    bool *y = alloc(bool);
+    int **z = alloc(int*);
+    int[]* w = alloc(int[]);
+
+    assert(*x == 0);
+    assert(*y == false);
+    assert(*z == NULL);
+    assert(*w != alloc_array(int, 0));
+
+    return 0;
+}

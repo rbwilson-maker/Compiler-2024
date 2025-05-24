@@ -1,0 +1,13 @@
+//test error
+//recursive struct
+
+struct a;
+struct a {
+   struct a b;
+};
+
+int main() {
+
+   return 0;
+}
+

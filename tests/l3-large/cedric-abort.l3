@@ -1,0 +1,14 @@
+//test abort
+int len(int str) {
+  int x = str;
+  int cnt = 0;
+  while(x != 0) {
+    x = x / 10;
+    cnt++;
+  }
+  return cnt;
+}
+int main() {
+  assert(len(15451) != 5);
+  return 0;
+}

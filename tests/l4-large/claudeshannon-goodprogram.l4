@@ -1,0 +1,9 @@
+//test typecheck
+
+int main() {
+    int x = 1 / 0;
+    int* y = NULL;
+    int z = *y;
+
+    return 0 / 0;
+}

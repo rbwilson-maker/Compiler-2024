@@ -1,0 +1,25 @@
+//test return 3
+// simulate finding gcd of 12 and 9
+
+int main() {
+  int x;
+  int y;
+  int z;
+
+  x = 12;
+  y = 9;
+
+  z = x;
+  x = y % x; // x = 9
+  y = z; // y = 12
+
+  z = x;
+  x = y % x; // x = 3
+  y = z; // y = 9
+
+  z = x;
+  x = y % x; // x = 0
+  y = z; // y = 3
+
+  return y;
+}

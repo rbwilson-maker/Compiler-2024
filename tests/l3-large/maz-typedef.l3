@@ -1,0 +1,13 @@
+//test return 10;
+
+int f() {
+    int abc = 2;
+    return abc;
+}
+
+typedef int abc;
+
+int main() {
+    abc a = 10;
+    return a;
+}

@@ -1,0 +1,11 @@
+//test memerror
+
+// out of bounds
+
+int main() {
+  int size = 20;
+  int[] A = alloc_array(int, size);
+
+  for (int i = 1; i <= size;i++) A[i] = 1;
+  return 0;
+}

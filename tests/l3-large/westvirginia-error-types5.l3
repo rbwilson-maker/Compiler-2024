@@ -1,0 +1,8 @@
+//test error
+// Local variable name shadows function name, and function is called
+
+typedef int f;
+
+f g(f g) {return g(g);}
+
+int main(){return 0;}

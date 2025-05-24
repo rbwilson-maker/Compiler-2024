@@ -1,0 +1,24 @@
+//test typecheck
+
+struct s1 {
+    A1 A1;
+    A2 A2;
+    A3 A3;
+    A5 A5;
+};
+
+struct s2 {
+    A1 A1;
+    A2 A2;
+    A4 A4;
+    A7 A7;
+};
+
+A1 main() {
+    A5 a5 = alloc(A4);
+    A7 a7 = alloc(A6);
+    a7->A7=a7;
+    a7->A4.A5 = a5;
+    a5->A5 = a5;
+    return a5->A5->A5->A5->A5->A5->A1;
+}

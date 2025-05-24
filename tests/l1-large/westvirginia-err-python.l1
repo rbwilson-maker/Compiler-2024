@@ -1,0 +1,11 @@
+//test error
+// tests if the compiler detects language automatically
+
+def compiler_runtime(program_len, register_ct):
+    if not program_len:
+        return register_count + 1
+    if not register_ct:
+        return compiler_runtime(program_len - 1, 1)
+    return compiler_runtime(program_len - 1, \
+    compiler_runtime(program_len, register_ct - 1))
+        

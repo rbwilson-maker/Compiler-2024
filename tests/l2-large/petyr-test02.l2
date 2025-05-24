@@ -1,0 +1,11 @@
+//test return 8
+
+// The testing harness will expect this to be a file that compiles and returns 8.
+
+// Test 02: multiple shift operations
+
+int main() {
+
+   return 1 << 1 << 1 << 1 ;
+
+   }

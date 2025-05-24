@@ -1,0 +1,20 @@
+//test return 5
+/* int pointer fun */
+
+int main () {
+  int ** p;
+  int * m;
+  int q;
+  int * t;
+  p = alloc(int*);
+  m = alloc(int);
+  t = alloc(int);
+  q = 5;
+  *m = q;
+  *p = m;
+  *t = 4;
+  m = t;
+  t = *p;
+  return *t;
+}
+

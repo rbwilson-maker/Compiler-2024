@@ -1,0 +1,8 @@
+//test error
+
+// Shouldn't typecheck. Coercion of 0 to a boolean isn't allowed in c0.
+int main() {
+    int x = 0 ? 1 : 2;
+    return x;
+}
+

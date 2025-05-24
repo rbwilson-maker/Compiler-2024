@@ -1,0 +1,17 @@
+//test error
+
+void voodooFunction() {
+	if (false) {
+		return 1;
+	}
+	else {
+		return;
+	}
+	return;
+}
+
+int main () {
+	voodooFunction();
+
+	return 1;
+}

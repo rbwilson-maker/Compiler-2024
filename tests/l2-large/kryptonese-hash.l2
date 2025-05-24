@@ -1,0 +1,14 @@
+//test return 1
+int main() {
+    int a = 1332842;
+    int b = 3829891;
+    int c = 7;
+    int hashA = 0;
+    int hashB = 0;
+    for (int i = 0; i < c; i++) {
+     hashA = (31 * hashA) + (a >> i);
+     hashB = (31 * hashA) + (b >> i);
+    }
+    if (hashA == hashB) return 0;
+    else return 1;
+}

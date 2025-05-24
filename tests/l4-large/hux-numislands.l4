@@ -1,0 +1,46 @@
+//test return 2
+
+int random(int r, int c) {
+	return (2145 * r + 443 * c) % 13;
+}
+
+void floodfill(int[][] islands, int r, int c, int rows, int cols) {
+	if ((r < 0 || r >= rows) || (c < 0 || c >= cols) || islands[r][c] == 0)
+		return;
+
+	islands[r][c] = 0;
+	floodfill(islands, r+1, c, rows, cols);
+	floodfill(islands, r-1, c, rows, cols);
+	floodfill(islands, r, c-1, rows, cols);
+	floodfill(islands, r, c+1, rows, cols);
+}
+
+int num_islands(int[][] islands, int rows, int cols) {
+	int count = 0;
+
+	for (int r = 0; r < rows; r ++) {
+		for(int c = 0; c < cols; c ++) {
+			if (islands[r][c] != 0) {
+				floodfill(islands, r, c, rows, cols);
+				count += 1;
+			}
+		}
+	}
+
+	return count;
+}
+
+int main() {
+	int rows = 20;
+	int cols = 20;
+	int[][] islands = alloc_array(int[], rows);
+	
+	for (int i = 0; i < rows; i ++)
+		islands[i] = alloc_array(int, cols);
+
+	for (int r = 0; r < rows; r ++)
+		for (int c = 0; c < cols; c ++)
+			islands[r][c] = random(r, c);
+
+	return num_islands(islands, rows, cols);
+}

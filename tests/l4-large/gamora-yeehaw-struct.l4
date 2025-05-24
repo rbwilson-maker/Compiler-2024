@@ -1,0 +1,36 @@
+//test return 45004
+
+typedef int yeehaw;
+
+struct yeehaw;
+
+struct yeehaww;
+
+struct yeehaw {
+  struct yeehaww *yeet;
+  yeehaw cowboy;
+};
+
+struct yeehaww {
+  struct yeehaw *yeet;
+  yeehaw cowboy;
+};
+
+int main()
+{
+  struct yeehaw *ye = alloc(struct yeehaw);
+  struct yeehaww *yee = alloc(struct yeehaww);
+  ye->cowboy = 4;
+  yee->cowboy = 20;
+  ye->yeet = yee;
+  yee->yeet = ye;
+  int accum = -472;
+  for (int i = 0; i < 3789; i++) {
+    if (i % 2 == 0) {
+      accum += ye->yeet->cowboy;
+    } else {
+      accum += yee->yeet->cowboy;
+    }
+  } 
+  return accum;
+}

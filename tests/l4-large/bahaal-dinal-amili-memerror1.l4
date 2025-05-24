@@ -1,0 +1,8 @@
+//test memerror
+// Memerror on -1 array access
+
+int main() {
+    int[] A = alloc_array(int, 0x15150);
+    A[-1] *= 0;
+    return A[-1];
+}

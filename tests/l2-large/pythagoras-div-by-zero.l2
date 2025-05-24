@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+    int INT_MIN = 0x80000000;
+    int zero = 0xFFFFFFFF;
+    for(int i = 0; i < 10; i++) {
+        if(INT_MIN / zero == 1){
+            return 0;
+        }
+    }
+    return 1;
+}
+

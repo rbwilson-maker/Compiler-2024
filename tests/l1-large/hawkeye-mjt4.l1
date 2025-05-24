@@ -1,0 +1,5 @@
+//test return 1
+// tests for chained well-formed division chain (correct)
+int main() {
+    return 100 / 2 / 2 / 2 / 2 / 2 / 2;
+}

@@ -1,0 +1,10 @@
+//test error
+// function arity not match
+
+void f(int i) {
+}
+
+int main() {
+    f(1, 2);
+    return 0;
+}

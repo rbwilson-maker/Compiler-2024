@@ -1,0 +1,19 @@
+//test return -125587548
+int main() {
+  int x = 0x529bd288;
+  int y = 0x961a1a94;
+  int z = 0xb36405b2;
+  int a = 0x1f6ac42d;
+  int b = 1;
+  x &= y;
+  x &= 0x5dae9c6f;
+  x |= a;
+  x |= 0xec526af9;
+  x <<= 1;
+  x <<= b;
+  x ^= 0xac8140d5;
+  x ^= z;
+  x >>= 1;
+  x >>= b;
+  return x;
+}

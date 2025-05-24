@@ -1,0 +1,22 @@
+//test error
+bool fn_1(int i);
+
+int fn_2(int a)
+{
+  return fn_1(a/5);
+}
+
+bool fn_1(bool b){
+{
+  if(b) {
+    return false;
+  }
+  return (!b)&&true;
+}
+
+int main() 
+{
+  return fn_2(5);
+}
+
+

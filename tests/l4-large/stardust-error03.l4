@@ -1,0 +1,13 @@
+//test error
+
+void f() {
+	int* x = 1;
+	x = f();
+	return;
+}
+
+
+int main() {
+	f();
+	return 1;
+}

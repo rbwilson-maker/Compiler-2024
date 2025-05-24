@@ -1,0 +1,14 @@
+//test abort
+
+int main() { 
+  int* x = alloc(int);
+  *x = 10;
+  while (*x > 0){
+    assert(*x != 3);
+    *x-=1;
+  }
+  return 1;
+}
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

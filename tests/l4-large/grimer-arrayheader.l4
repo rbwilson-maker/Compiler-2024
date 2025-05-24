@@ -1,0 +1,14 @@
+//test typecheck
+
+int[] gimmeAnArray(int size);
+bool[] compareThese(int[] a, int[] b);
+
+int main() {
+  int[] a = gimmeAnArray(100);
+  bool[] b = compareThese(a, a);
+  int sum = 0;
+  for (int i = 0; i < 100; i++) {
+    sum += i;
+  }
+  return a[0];
+}

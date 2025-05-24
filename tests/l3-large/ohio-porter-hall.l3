@@ -1,0 +1,37 @@
+//test return 11
+
+typedef bool myBool;
+
+int someFn(int a, int b, int c, int d, int e, int f, int g, int h) {
+  return 7;
+}
+
+int main() {
+  myBool x = false;
+
+  int a = 4;
+  int b = 6;
+  int c = 7;
+  int d = 8;
+  int e = 9;
+  int f = 10;
+  int g = 11;
+  int h = 12;
+
+  if (!x) {
+    int t = someFn(a, b, c, d, e, f, g, h);
+    h -= t;
+  } else {
+    assert(h > 0);
+  }
+  assert(a == a);
+  assert(b == b);
+  assert(c == c);
+  assert(d == d);
+  assert(e == e);
+  assert(f == f);
+  assert(g == g);
+  assert(h == h);
+  return (a + b + c + d + e + f + g) / h;
+}
+  

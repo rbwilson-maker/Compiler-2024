@@ -1,0 +1,88 @@
+//test return 55
+
+struct Node {
+    struct Node *left;
+    struct Node *right;
+    int val;
+};
+
+typedef struct Node Node;
+
+struct Tree {
+    struct Node *root;
+};
+
+typedef struct Tree Tree;
+
+void insert(Node *cur, int x) {
+    if (cur->val == x) {
+        return;
+    } else if (cur->val > x) {
+        if (cur->left == NULL) {
+            cur->left = alloc(Node);
+            cur->left->left = NULL;
+            cur->left->right = NULL;
+            cur->left->val = x;
+        } else {
+            insert(cur->left, x);
+        }
+    } else {
+        if (cur->right == NULL) {
+            cur->right = alloc(Node);
+            cur->right->left = NULL;
+            cur->right->right = NULL;
+            cur->right->val = x;
+        } else {
+            insert(cur->right, x);
+        }
+    }
+}
+
+void tree_insert(Tree *tree, int x) {
+    if (tree->root == NULL) {
+        tree->root = alloc(Node);
+        tree->root->left = NULL;
+        tree->root->right = NULL;
+        tree->root->val = x;
+    } else {
+        insert(tree->root, x);
+    }
+}
+
+Tree *tree_new() {
+    Tree *result = alloc(Tree);
+    result->root = NULL;
+    return result;
+}
+
+int node_sum(Node *n) {
+    if (n == NULL) {
+        return 0;
+    }
+
+    return node_sum(n->left) + n->val + node_sum(n->right);
+}
+
+int tree_sum(Tree *t) {
+    if (t->root == NULL) {
+        return 0;
+    }
+
+    return node_sum(t->root);
+}
+
+int main() {
+    Tree *test = tree_new();
+    tree_insert(test, 5);
+    tree_insert(test, 4);
+    tree_insert(test, 1);
+    tree_insert(test, 2);
+    tree_insert(test, 3);
+    tree_insert(test, 6);
+    tree_insert(test, 7);
+    tree_insert(test, 10);
+    tree_insert(test, 8);
+    tree_insert(test, 9);
+
+    return tree_sum(test);
+}

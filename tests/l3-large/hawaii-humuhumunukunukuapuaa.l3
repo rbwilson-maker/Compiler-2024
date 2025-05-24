@@ -1,0 +1,17 @@
+//test abort
+typedef int humuhumunukunukuapuaa;
+
+void trigger(int rectangulus) {
+  assert(rectangulus % 2 == 0);
+}
+
+int main() {
+  humuhumunukunukuapuaa letters = 21;
+  humuhumunukunukuapuaa apostrophe = 1;
+  humuhumunukunukuapuaa fish = 2048;
+  for(humuhumunukunukuapuaa sushi = fish; fish < 4096; sushi /= 2) {
+    trigger(fish);
+    fish += sushi / 2;
+  }
+  return letters + apostrophe;
+}

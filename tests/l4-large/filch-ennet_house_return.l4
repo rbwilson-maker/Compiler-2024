@@ -1,0 +1,45 @@
+//test return 99
+
+struct pemulis
+{
+  bool AA_meeting;
+  int[] plumbing;
+  int* tennis_ball;
+};
+
+typedef struct pemulis* individual;
+
+struct west_house
+{
+  int amanuensis;
+  bool prognathous;
+  bool[] androsartorialists;
+  individual P;
+};
+
+typedef struct west_house* WH;
+
+
+int main()
+{
+  WH house = alloc(struct west_house);
+
+  house->amanuensis = 1792;
+  house->prognathous = false;
+  house->androsartorialists = alloc_array(bool, 12);
+  for (int i = 0; i < 12; i++)
+  {
+    if (i % 2 == 0) house->androsartorialists[i] = true;
+    else house->androsartorialists[i] = false;
+  }
+  house->P = alloc(struct pemulis);
+  house->P->AA_meeting = true;
+  house->P->plumbing = alloc_array(int, 200);
+  for (int i = 0; i < 200; i++)
+  {
+    house->P->plumbing[i] += i + house->amanuensis;
+  }
+  house->P->tennis_ball = alloc(int);
+  *(house->P->tennis_ball) = 99;
+  return *(house->P->tennis_ball);
+}

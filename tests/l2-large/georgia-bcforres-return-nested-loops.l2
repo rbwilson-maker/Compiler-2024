@@ -1,0 +1,46 @@
+//test return 4096
+
+int main() {
+    int i;
+    int j;
+    int k;
+    int l;
+    int m;
+    int n;
+    int o;
+    int p;
+    int q;
+    int r;
+    int s;
+    int t;
+    int sum = 0;
+    int iters = 2;
+
+    for (i = 0; i < iters; i += 1) {
+        for (j = 0; j < iters; j += 1) {
+            for (k = 0; k < iters; k += 1) {
+                for (l = 0; l < iters; l += 1) {
+                    for (m = 0; m < iters; m += 1) {
+                        for (n = 0; n < iters; n += 1) {
+                            for (o = 0; o < iters; o += 1) {
+                                for (p = 0; p < iters; p += 1) {
+                                    for (q = 0; q < iters; q += 1) {
+                                        for (r = 0; r < iters; r += 1) {
+                                            for (s = 0; s < iters; s += 1) {
+                                                for (t = 0; t < iters; t += 1) {
+                                                    sum += 1;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return sum;
+}

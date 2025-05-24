@@ -1,0 +1,10 @@
+//test return 4181
+int main() {
+  int x = 0;
+  int y = 1;
+  while (x < 1000) {
+    x += y;
+    y += x;
+  }
+  return y;
+}

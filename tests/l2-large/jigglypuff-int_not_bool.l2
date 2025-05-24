@@ -1,0 +1,25 @@
+//test error
+
+/* int not bool Test 
+ *  
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * 
+ * Ints are not booleans, obviously. 
+ */
+
+
+
+int main()
+{
+
+    int x = 1; 
+    bool y = x == 1; 
+
+    if (y || x) {
+        return 0;
+    }
+
+    return 1;
+}
+

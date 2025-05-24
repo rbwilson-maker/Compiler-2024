@@ -1,0 +1,11 @@
+//test return 12
+
+int multip (int a,int b) {
+  int res = a * b;
+  return res;
+}
+
+int main () {
+  int res = multip(3, 4);
+  return res;
+}

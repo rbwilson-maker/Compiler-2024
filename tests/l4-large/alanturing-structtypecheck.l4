@@ -1,0 +1,11 @@
+//test error
+
+struct t;
+struct s {
+	   int f1;
+       	   struct t f2;
+	  };
+
+int main () {
+    return 0;
+}

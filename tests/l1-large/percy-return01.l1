@@ -1,0 +1,11 @@
+//test return 5
+
+int main() {
+  int a = 2;
+  int b = 3;
+  int c = 5;
+  int d = 10;
+  int e = a * b - 1;
+  int asdf = d - e;
+  return asdf;
+}

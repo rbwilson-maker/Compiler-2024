@@ -1,0 +1,8 @@
+//test error
+
+int main()
+{
+    int x = 5;
+
+    return x+--5;                   //type error (x + --) 5
+}

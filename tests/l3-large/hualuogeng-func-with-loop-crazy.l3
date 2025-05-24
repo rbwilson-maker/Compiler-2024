@@ -1,0 +1,12 @@
+//test return 268435455
+
+int foo(int a){ return 1; }
+
+int main() {
+    int res = 0;
+    int max = (~0) & 0x0FFFFFFF;
+    for(int i = 0; i < max; i++){
+        res += foo(i);
+    }
+    return max;
+}

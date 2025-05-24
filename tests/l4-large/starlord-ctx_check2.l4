@@ -1,0 +1,15 @@
+//test error
+
+struct foo {
+  int i;
+};
+
+int main () {
+  int bar = 75
+  int foo = 2;
+  foo *bar;
+
+  while(true) alloc(int);
+
+  return 0;
+}

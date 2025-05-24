@@ -1,0 +1,13 @@
+//test return 0
+//Grammar ambiguity
+
+typedef int x;
+
+int main(){
+	int a = 0;
+	int b = 2;
+	a * b;
+	x * y;
+	y = alloc(int);
+	return *y;
+}

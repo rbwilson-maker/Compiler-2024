@@ -1,0 +1,14 @@
+//test error
+
+int tooLate(int a, int b, int c) {
+  return a * b - c;
+}
+
+int main() {
+  int *a;
+  a = alloc(int);
+  int b = 3;
+  int c = 9
+
+  return tooLate(a, b, c);
+}

@@ -1,0 +1,91 @@
+//test compile
+
+void nobody (int nobody, bool* nobody1, int[] nobody2, bool nobody3) {
+    if (*nobody1) {
+        nobody2[0] + nobody;
+    } else {
+        assert(nobody3);
+    }
+}
+
+int main () {
+    struct whatIAm *myGod = alloc(struct whatIAm);
+    struct soI *window = alloc(struct soI);
+    struct people *of = alloc(struct people);
+    struct globalWarming *planetOfLove = alloc(struct globalWarming);
+    struct whatIWant *me = alloc(struct whatIWant);
+    struct whatINeed *me2 = alloc(struct whatINeed);
+
+    // my god I'm so lonely
+    int* soLonely = alloc(int);
+    *soLonely = 8008135;
+    myGod -> lonely = soLonely;
+
+    // so I open the window
+    window -> open = true;
+
+    // to hear sounds of people, to hear sounds of people
+    if (window -> open) {
+        int[] hear = alloc_array(int, 2);
+        of -> sounds = hear;
+        (of -> sounds)[0] = 1;
+        (of -> sounds)[1] = hear[0];
+    }
+
+    // Venus, planet of love, was destroyed by global warming
+    planetOfLove -> Venus = 69;
+    planetOfLove -> destroyed = true;
+    assert(planetOfLove -> destroyed);
+
+    // did its people want too much too, did its people want too much
+    of -> wantTooMuch = true;
+    if (of -> wantTooMuch) {
+        (of -> sounds)[-1]; // illegal access shouldn't be a compile error
+    } else {
+        return 0;
+    }
+
+    // I don't want your pity, I just want somebody near me
+    bool* isTherePity = alloc(bool);
+    bool* isThereSomeoneNearMe = alloc(bool);
+    *isTherePity = false;
+    *isThereSomeoneNearMe = true;
+    me -> pity = isTherePity;
+    me -> somebodyNearMe = isThereSomeoneNearMe;
+
+    // I guess I'm a coward, I just want to feel alright
+    myGod -> coward = true;
+    me -> beAlright = true;
+
+    if (!(myGod -> coward && me -> beAlright)) {
+        return 0;
+    } else {
+        (of -> sounds)[2]; // once again not a compiler error
+    }
+
+    // And I know no one can save me, I just need someone to kiss
+    // Give me one good honest kiss and I'll be alright
+    bool saveMe = false;
+
+    if (saveMe) {
+        return 69;
+    } else {
+        int[] puckerUp = alloc_array(int, 4);
+        puckerUp[0] = 1;
+        puckerUp[1] = 3;
+        puckerUp[2] = 3;
+        puckerUp[3] = 7;
+        me2 -> someoneToKiss = puckerUp;
+        int* smooch = alloc(int);
+        *smooch = 3;
+        me2 -> goodHonestKiss = smooch;
+        assert(me -> beAlright);
+    }
+
+    /* Nobody nobody nobody nobody nobody
+       oooooo nobody nobody nobody */
+
+    nobody(planetOfLove -> Venus, me -> pity, of -> sounds, me -> beAlright);
+
+    return *(myGod -> lonely);
+}

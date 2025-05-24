@@ -1,0 +1,26 @@
+//test return 0
+
+struct b {
+    int x;
+    int y;
+};
+
+struct a {
+    int m;
+    int n;
+    struct b * bb;
+};
+
+int main() {
+    struct b * first = alloc(struct b);
+    struct a * second = alloc(struct a);
+
+    first->x = 0;
+    first->y = 0;
+
+    second->m = 1;
+    second->n = 2;
+    second->bb = first;
+
+    return second->bb->x;
+}

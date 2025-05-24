@@ -1,0 +1,18 @@
+//test error
+//No infinite size structs
+
+struct node;
+
+struct foo {
+    int x;
+    struct node baz;
+};
+
+struct node {
+    int y;
+    struct foo noo;
+};
+
+int main () {
+    return 42;
+}

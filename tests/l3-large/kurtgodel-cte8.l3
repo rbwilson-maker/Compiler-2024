@@ -1,0 +1,12 @@
+//test error
+/*
+Compile error.
+Used function must be defined, even if result is discarded.
+*/
+
+int r();
+
+int main() {
+  r();
+  return 4;
+}

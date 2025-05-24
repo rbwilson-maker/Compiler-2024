@@ -1,0 +1,65 @@
+//test return 1258
+
+/**
+ * @brief This program solves Day 3, Star 2 of Advent of Code 2019.
+ *
+ * Writeup: https://adventofcode.com/2019/day/3
+ *
+ * Kevin Geng, Team Barsoomian
+ * 15-411 Fall 2019
+ */
+
+// Gets the `pos`th digit from the right of num
+int get_digit(int num, int pos) {
+  while (pos > 0) {
+    num /= 10;
+    pos--;
+  }
+  return num % 10;
+}
+
+// Checks that digits are nondecreasing
+bool check_nondecr_digits(int num) {
+  for (int i = 0; i < 5; i++) {
+    if (get_digit(num, 5 - i) > get_digit(num, 5 - (i + 1))) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Checks that there are two adjacent matching digits, which
+// are not part of a larger group of matching digits
+bool check_only_two_matching_digits(int num) {
+  int match_run = 0;
+  for (int i = 0; i < 5; i++) {
+    if (get_digit(num, 5 - i) == get_digit(num, 5 - (i + 1))) {
+      match_run++;
+    }
+    else {
+      if (match_run == 1) {
+        return true;
+      }
+      match_run = 0;
+    }
+  }
+  if (match_run == 1) {
+    return true;
+  }
+  return false;
+}
+
+int main() {
+  int START = 137683;
+  int END = 596253;
+
+  // Count how many numbers match both criterion
+  int count = 0;
+  for (int num = START; num <= END; num++) {
+    if (check_nondecr_digits(num) && check_only_two_matching_digits(num)) {
+      count++;
+    }
+  }
+
+  return count;
+}

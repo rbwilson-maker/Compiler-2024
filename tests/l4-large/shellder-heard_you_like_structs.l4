@@ -1,0 +1,19 @@
+//test return 2
+struct spam {
+    int a;
+    int b;
+};
+typedef struct spam spam_t;
+struct eggs {
+    spam_t a;
+    spam_t b;
+};
+typedef struct eggs eggs_t;
+int main(){
+    eggs_t *eggs = alloc(struct eggs);
+    eggs->a.a = 0;
+    eggs->a.b = 1;
+    eggs->b.a = 2;
+    eggs->b.b = 3;
+    return eggs->b.a;
+}

@@ -1,0 +1,5 @@
+//test div-by-zero
+int main()
+{
+  return 0 << 33; // 0 << x is 0, right?
+}

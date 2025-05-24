@@ -1,0 +1,10 @@
+//test return 8250
+
+int main() {
+    int a = 12345;
+    int b = 0xFFF;
+    int c = -5123;
+
+    int d = a - c + b;
+    return (a - b) * (d / (b + a)) + 5123 % 1;
+}

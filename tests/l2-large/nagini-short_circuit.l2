@@ -1,0 +1,14 @@
+//test return 4
+
+int main() {
+    int x = 1;
+    if (false && 1/0 < 0) {
+        x++;
+    }
+    if (true || 1/0 > 0) {
+        x++;
+    }
+    x += true ? 1 : 1/0;
+    x += false ? 1/0 : 1;
+    return x;
+}

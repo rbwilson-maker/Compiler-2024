@@ -1,0 +1,8 @@
+//test error
+
+typedef int boo;
+typedef boo bool; // bool is reserved keyword 
+
+int main() {
+  return 0;
+} 

@@ -1,0 +1,9 @@
+//test error
+// ill-formed return statement
+int main() {
+  int x = false;
+  if (x == false) {
+    return 5;
+  }
+  return;
+}

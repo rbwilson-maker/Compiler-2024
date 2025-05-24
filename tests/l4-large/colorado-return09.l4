@@ -1,0 +1,40 @@
+//test return 1160843280
+
+struct node {
+	int val;
+	struct node* left;
+	struct node* right;
+};
+
+typedef struct node* tree;
+
+int rand(int x) {
+	return 1103515245 * x + 12345;
+}
+
+tree insert(tree T, int x) {
+	if (T == NULL) {
+		T = alloc(struct node);
+		T->val = x;
+	}
+	if(x < T->val) T->left = insert(T->left, x);
+	if(x > T->val) T->right = insert(T->right, x);
+	return T;
+}
+
+int sum(tree T) {
+	if (T == NULL) return 0;
+	return sum(T->left) + T->val + sum(T->right);
+}
+
+int main() {
+	tree T = alloc(struct node);
+	T->val = 7;
+	tree R = T;
+	int sd = 849;
+	for(int i = 0; i < 10; i++) {
+		sd = rand(sd);
+		insert(T, sd);
+	}
+	return sum(T);
+}

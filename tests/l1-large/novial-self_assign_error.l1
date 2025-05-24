@@ -1,0 +1,15 @@
+//test error
+// test self assignment
+
+int main() {
+    int k = 13;
+    k = k;
+    int j = j;
+    j = 0;
+    j = 1;
+    j = 3;
+    k = j;
+    j = k;
+    return 12;
+    return 3;
+}

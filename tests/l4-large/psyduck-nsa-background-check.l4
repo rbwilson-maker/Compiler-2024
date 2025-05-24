@@ -1,0 +1,12 @@
+//test memerror
+
+int test(int a, int b)
+{
+return a+b;
+}
+
+int main() {
+int* x = NULL;
+test(*x, 1/0);
+return 0;
+}

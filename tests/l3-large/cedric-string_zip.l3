@@ -1,0 +1,17 @@
+//test return 2147483647
+//zip two strings: zip(abcd, efgh) = aebfcgdh
+int zip(int string1, int string2) {
+    if(string1 == 0 || string2 == 0) {
+      return 0;
+    } else {
+      int head1 = string1 / 10;
+      int head2 = string2 / 10;
+      int tail1 = string1 % 10;
+      int tail2 = string2 % 10;
+      int result = zip(head1, head2);
+      return result * 100 + tail1 * 10 + tail2;
+    }
+}
+int main() {
+  return zip(24434, 17867);
+}

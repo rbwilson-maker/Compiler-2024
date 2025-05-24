@@ -1,0 +1,27 @@
+//test return -1839189998
+//a bit of everything
+
+int   main(   )  {
+    int x = 4;
+    int y = 12311;
+    while ( x<= 8) {{{
+        x++;
+        {{{{{{{y--;}}}}}}}{}
+    }}}
+
+    if (x == 8) {
+        return y + 7;
+    } else if (x == 9) {
+        int z = 2342;
+        for (int i = 5; i <= z; i+=2) {
+            z += (((((z)))));
+            i--;
+        }
+        return z + y;
+    } else {
+        return y + 4;
+    }
+
+    return x;
+
+}

@@ -1,0 +1,20 @@
+//test return 1000000
+
+int main() {
+	int y = 4;
+	int x = 0;
+	int z = 6;
+	while (x < 1000000) {
+		x++;
+		y++;
+		z++;
+	}
+	while (y < 1000000) {
+		y++;
+		z++;
+	}
+	z+=y;
+	y+=z;
+	return x;
+	return y;
+}

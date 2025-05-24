@@ -1,0 +1,15 @@
+//test return 0
+
+int f(){
+	return 2;
+}
+
+int main(){
+
+	int[] x;
+	x = alloc_array(int, f() );
+
+	x[f() - 2] = 0;
+	
+	return x[0];
+}

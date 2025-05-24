@@ -1,0 +1,7 @@
+//test return 5
+
+int main() {
+    int x = 3;
+    int res = 1 + (x < 3 ? 1 / 0 : 0);
+    return res == 1 ? 5 : 7;
+}

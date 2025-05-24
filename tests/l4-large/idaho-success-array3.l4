@@ -1,0 +1,14 @@
+//test return 2
+
+void incr2(int[] A, int[] B, int i)
+{
+    A[i] = A[i] + 1;
+    B[i] = B[i] + 1;
+}
+
+int main() {
+    int[] A = alloc_array(int, 5);
+    A[0] = 0;
+    incr2(A, A, 0);
+    return A[0];
+}

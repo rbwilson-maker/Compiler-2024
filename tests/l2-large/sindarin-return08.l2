@@ -1,0 +1,22 @@
+//test return 72
+// test local scope declaration
+int main()
+{
+  int y = 1;
+  {
+    int x = 3;
+    y += x;
+  }
+
+  {
+    int x = 4;
+    y += x;
+  }
+
+  {
+    int x = 9;
+    y *= x;
+  }
+
+  return y;
+}

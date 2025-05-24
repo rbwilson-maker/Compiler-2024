@@ -1,0 +1,10 @@
+//test return 2
+
+int main() {
+    int* blah = alloc(int);
+    *blah = 0;
+    int* y;
+    y = blah;
+    *blah = 2;
+    return *y;
+}

@@ -1,0 +1,15 @@
+//test abort 
+
+// testing assert
+
+typedef bool yippee;
+typedef yippee wahooo;
+
+int main() {
+    yippee hehe = true;
+    wahooo haha = false;
+
+    assert(hehe);
+    assert(haha);
+    return 0;
+}

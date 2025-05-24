@@ -1,0 +1,25 @@
+//test return 100
+
+int fun(int x, int y)
+{
+  return x * y;
+}
+
+
+int lotsargs(int x, int y, bool z)
+{
+  return fun(x, y);
+}
+
+int main()
+{
+  bool f = false;
+  int x = !f ? 7 : 0;
+  int y = f ? 0 : 7;
+  int z = lotsargs(!f ? x : y, f ? y : x, f ? false : true);
+  if (z > 5)
+  {
+    return 100;
+  }
+  return 0;
+}

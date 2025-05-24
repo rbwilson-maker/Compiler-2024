@@ -1,0 +1,25 @@
+//test return 5115
+
+typedef int* sig;
+typedef sig[] sig_arr;
+
+int take_sum(sig_arr x, int num) {
+  for (int i = 1; i < num; i++) {
+    sig prev = x[i - 1];
+    sig cur = x[i];
+    *cur += *prev;
+  }
+  return *(x[num - 1]);
+}
+int main() {
+   sig_arr arr = alloc_array(sig, 10);
+   int i = 0;
+   while (i < 10) {
+     assert(arr[i] == NULL);
+     sig new_sig = alloc(int);
+     *new_sig = 5 << i;
+     arr[i] = new_sig;
+     i += 1;
+   }
+   return take_sum(arr, 10);
+}

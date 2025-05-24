@@ -1,0 +1,59 @@
+//test memerror
+//implements queues with uba. attempts to deq from empty queue
+
+
+struct queue{
+  int[] q;
+  int front;
+  int back;
+  int len;
+};
+typedef struct queue queue;
+typedef queue* queue_t;
+
+queue* queue_new(){
+  queue* Q = alloc(queue);
+  Q->q = alloc_array(int, 5);
+  Q->len = 5;
+  return Q;
+}
+
+int deq(queue* Q){
+  Q->front = (Q->front+1)%(Q->len);
+  return Q->q[Q->front-1];
+}
+
+void resize(queue* Q){
+  if(Q->front!=Q->back) return;
+  int[] nq = alloc_array(int, Q->len*2);
+  for(int i=0; i<Q->len; i++) nq[i] = Q->q[(Q->front+i)];
+  Q->len*=2;
+  Q->q=nq;
+}
+
+void enq(queue* Q, int x){
+  resize(Q);
+  Q->q[Q->back] = x;
+  Q->back++;
+}
+
+int main(){
+  queue_t Q = queue_new();
+  deq(Q);
+  enq(Q,1);
+  enq(Q,2);
+  enq(Q,3);
+  enq(Q,4);
+  enq(Q,5);
+  enq(Q,6);
+  assert(deq(Q)==1);
+  assert(deq(Q)==2);
+  assert(deq(Q)==3);
+  assert(deq(Q)==4);
+  assert(deq(Q)==5);
+  assert(deq(Q)==6);
+  return 0;
+}
+
+
+

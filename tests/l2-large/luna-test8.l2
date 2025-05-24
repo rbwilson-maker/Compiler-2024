@@ -1,0 +1,6 @@
+//test error
+// Type mismatch at return
+
+int main() {
+    return 1 + 2 > 3 ? true : false;
+}

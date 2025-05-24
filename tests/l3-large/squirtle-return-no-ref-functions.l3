@@ -1,0 +1,25 @@
+//test return 2
+//test functions which are never referenced in a call need not be defined
+
+/**
+  These three functions have been declared but never defined since they are never
+  referenced in any call.
+  */
+void f();
+int g();
+int h();
+
+bool cond(int some_number) {
+    if (some_number % 2 == 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+int main() {
+    if (cond(3)) {
+        return 2;
+    }
+    return 0;
+}

@@ -1,0 +1,14 @@
+//test return 0
+
+int foo(struct s* x, struct s* y) {
+	if (x == y) {
+		return 0;
+	}
+	return 1;
+}
+
+int main() {
+	struct s* x = NULL;
+	struct s* y = NULL;
+	return foo(x, y);
+}

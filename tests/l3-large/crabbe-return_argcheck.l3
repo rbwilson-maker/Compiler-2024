@@ -1,0 +1,19 @@
+//test return 55
+
+int func(int a, int b, int c, bool d, int e){
+  if (d){
+    return a / b;
+  } else{
+    return e >> c;
+  }
+  b = 0;
+  return func(a,0,c,true,e);
+}
+
+
+int main(){
+  int x = func(1,2,3,true,4);
+  int y = func(10,9,1,false,111);
+
+  return x + y;
+}

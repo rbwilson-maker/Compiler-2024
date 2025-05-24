@@ -1,0 +1,49 @@
+//test return 239
+// Sorts by shuffling until sorted
+
+bool sorted(int[] list, int size) {
+  for (int i = 0; i < size-1; i++) {
+    if (list[i] > list[i+1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+int get_random(int* state, int modulus) {
+  *state = ((*state) * 1103515245 + 12345);
+  int result = *state % modulus;
+  if (result < 0) result += modulus;
+  return result;
+}
+
+void shuffle(int[] list, int list_size, int* state) {
+  for (int a = 0; a < list_size; a++) {
+    int b = get_random(state, list_size);
+    int temp = list[a];
+    list[a] = list[b];
+    list[b] = temp;
+  }
+}
+
+int main() {
+  // State for pseudorandom number generator
+  int *state = alloc(int);
+  *state = 1337;
+
+  // Make a list
+  int list_size = 5;
+  int[] list = alloc_array(int, list_size);
+  for (int i = 0; i < list_size; i++) {
+    list[i] = get_random(state, 1000);
+  }
+
+  // Shuffle until sorted
+  int iters = 0;
+  while (!sorted(list, list_size)) {
+    shuffle(list, list_size, state);
+    iters++;
+  }
+
+  return iters;
+}

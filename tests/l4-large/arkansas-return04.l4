@@ -1,0 +1,10 @@
+//test return 12
+
+struct sss {int a; int b;};
+
+int main(){
+  struct sss* s = alloc(struct sss);
+  s -> a = 10;
+  (*s).b = 2;
+  return s -> a + s -> b;
+}

@@ -1,0 +1,6 @@
+//test return 0
+
+int main() {
+    int* a = alloc(int);
+    return (a == NULL)?1:0;
+}

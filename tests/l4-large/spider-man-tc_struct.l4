@@ -1,0 +1,22 @@
+//test error
+
+struct s {
+    int[] ** bloop;
+    int[] * bloopp;
+    int[] blooq;
+    int ** blooop;
+    int z;
+};
+
+int err(struct s * zz) {
+    return (**(zz->bloop))[0];
+}
+
+int main() {
+    struct s * zz = alloc(struct s);
+    zz->bloop = alloc(int[]*);
+    *(zz->bloop) = alloc(int[]);
+    **(zz->bloop) = alloc_array(int, 1);
+    zz->blooop = alloc(int*);
+    return err(zz) + zz->blooqq;
+}

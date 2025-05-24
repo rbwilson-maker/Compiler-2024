@@ -1,0 +1,15 @@
+//test return 300
+
+int f(bool x, bool y);
+
+int f(bool y, bool z);
+
+int f(bool x, bool y);
+
+int main() {
+    int x = 3;
+    if (1 + 1 == 2) {
+        x = 4;
+    }
+    return 10 * 10 * 3;
+}

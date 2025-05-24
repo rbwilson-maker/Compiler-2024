@@ -1,0 +1,32 @@
+//test return 7;
+
+int gcd(int a, int b) {
+    if (a == b) 
+        return a;
+    
+    if (a > b)
+        return gcd(a - b, b);
+    else
+        return gcd(a, b - a);
+}
+
+int gcd_loop(int a, int b) {
+    if (a == b) {
+        return a;
+    }
+    while (a != b) {
+        if (a > b)
+            a = a - b;
+        else
+            b = b - a;
+    }
+    return a;
+}
+
+int main() {
+    if (gcd(49, 21) == gcd_loop(21, 49)) {
+        return 7;
+    }
+    assert(1 == 0);
+    return 12345678;
+}

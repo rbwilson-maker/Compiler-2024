@@ -1,0 +1,19 @@
+//test return 10
+
+int main() {
+    int i;
+    int y;
+    i = 0;
+    y = 10;
+    int sum;
+    sum = 10;
+
+    for (i = 0; i < 10; i++) {
+        if (y < 10) {
+            sum += 10;
+        } else {
+            y += 10;
+        }
+    }
+    return sum;
+}

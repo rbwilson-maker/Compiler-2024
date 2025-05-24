@@ -1,0 +1,8 @@
+//test typecheck 
+
+typedef int toot; 
+
+int main() {
+    toot x = 1; 
+    return x; 
+}

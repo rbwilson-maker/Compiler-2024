@@ -1,0 +1,13 @@
+//test return 0
+// all of this should compile.
+
+int main() {
+  int _ = 0
+  ;_;
+  
+  (0 ^ 3 ^ 0) == (0 >> _ << 0) ? (0 ^ 0) : (0 - 0);
+  
+  // ^ _ ^;
+  
+  return 0;
+}

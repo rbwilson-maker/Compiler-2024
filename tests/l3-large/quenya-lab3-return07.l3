@@ -1,0 +1,17 @@
+//test return 6
+// Test variable scoping for functions
+
+int foo(int i) {
+  int x = i + 1;
+  int y = x + 1;
+  int z = y + 1;
+  return z;
+}
+
+int main() {
+  int i = 0;
+  int x = i + 1;
+  int y = x + 1;
+  int z = y + 1;
+  return foo(z);
+}

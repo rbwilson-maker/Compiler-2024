@@ -1,0 +1,13 @@
+//test return 167772206
+int main() {
+    int a = 4;
+    int b = 8;
+    b ^= 15;
+    a &= b;
+    int c = 16;
+    c += a;
+    c <<= 23;
+    int d = a | c;
+    d |= 42;
+    return d;
+}

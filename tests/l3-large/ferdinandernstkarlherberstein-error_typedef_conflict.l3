@@ -1,0 +1,12 @@
+//test error
+
+void f(int x) {
+    return;
+}
+
+typedef int f;
+
+int main () {
+    f(0);
+    return 0;
+}

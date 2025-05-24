@@ -1,0 +1,11 @@
+//test error
+
+int div(x,y) {
+    return x/y;
+}
+
+int main() {
+    assert(div(10,3) < div(5,4));
+    assert(div(3,0) > div(2,3));
+    return 1;
+}`

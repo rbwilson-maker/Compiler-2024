@@ -1,0 +1,20 @@
+//test div-by-zero
+
+int log2(int x) {
+  int exp = 0;
+  if (x <= 0) return 1/0;   // Cannot take the log of non negative numbers
+  while (x > 1) {
+    exp++;
+    x >>= 1;
+  }
+  return exp;
+}
+
+int main() {
+  assert(log2(5) == 2);
+  assert(log2(7) == 2);
+  assert(log2(14) == 3);
+  assert(log2(1) == 0);
+  assert(log2(0) == 0);   // failure
+  return log2(0);
+}

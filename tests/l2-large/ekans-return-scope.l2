@@ -1,0 +1,10 @@
+//test return 12
+int main() {
+    int x = 0;
+    { x++; }
+    {int y = 1; {y--;} x += y;}
+    int y = 12;
+    {x += y; {x--;}}
+    return x;
+}
+

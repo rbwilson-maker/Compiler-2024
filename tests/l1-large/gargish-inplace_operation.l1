@@ -1,0 +1,16 @@
+//test return 7
+// testing inplace operations
+
+int main() {
+    int a;
+    int b;
+
+    a = 3;
+    b = 4;
+
+    a += b;
+    b -= 5;
+    b *= a * -1;
+
+    return b;
+}

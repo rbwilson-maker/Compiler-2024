@@ -1,0 +1,39 @@
+//test return 8008135
+
+typedef bool swag;
+
+swag helpMe (swag b) {
+    return ((((b && true) || true) && true) || false) && true;
+}
+
+int help (swag b, int x) {
+    while (b) {
+            if (x == 8008135) {
+                return x;
+            } else {
+                x += 1000000;
+            }
+        }
+    return 42;
+}
+
+int main () {
+    swag torture = helpMe(false);
+    int x = 0;
+    if (torture) {
+        for (int i = 0; i < 8000; i++) {
+            int y;
+            y = 0;
+            y += 10;
+            y -= 9;
+            y *= 2;
+            y /= 1;
+            y %= 3;
+            x += y;
+        }
+        x += 135;
+        return help(torture, x);
+    } else {
+        return 42;
+    }
+}

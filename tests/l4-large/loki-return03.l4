@@ -1,0 +1,35 @@
+//test return 14
+
+typedef struct node node_t;
+struct node {
+  int val;
+  struct node* left;
+  struct node* right;
+};
+
+int traverse(node_t* node) {
+  if (node == NULL) {
+    return 0;
+  }
+  int left = traverse(node->left);
+  int right = traverse(node->right);
+  return left + right + node->val;
+}
+
+int main() {
+  node_t* a = alloc(node_t);
+  node_t* b = alloc(node_t);
+  node_t* c = alloc(node_t);
+  node_t* d = alloc(node_t);
+  node_t* e = alloc(node_t);
+  a->val = 1;
+  a->right = b;
+  a->left = c;
+  b->val = 2;
+  c->val = 3;
+  c->right = d;
+  c->left = e;
+  d->val = 4;
+  e->val = 4;
+  return traverse(a);
+}

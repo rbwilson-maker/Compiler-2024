@@ -1,0 +1,15 @@
+//test return 0
+
+bool f1(bool main){
+    return !main;
+}
+
+int f2(bool fun){
+    if (fun) f1(fun);
+    return 0;
+}
+
+int main(){
+   f2(true);
+   return 0;
+}

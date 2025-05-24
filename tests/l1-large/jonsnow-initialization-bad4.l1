@@ -1,0 +1,9 @@
+//test error
+int main() {
+  int struct = (5 + 5) - 7; // x = 3
+  x+=2; // x = 5
+  int y = -(12+4);  // y = -16
+  x-=y; // x = 21
+  return x * 2 % 60; //return 42
+}
+

@@ -1,0 +1,12 @@
+//test error
+
+struct a; // re-declaration ok
+
+struct a { // redefinition of struct not allowed
+  int aa;
+}
+
+int main() {
+  return 0;
+}
+

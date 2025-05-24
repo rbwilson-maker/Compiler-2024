@@ -1,0 +1,11 @@
+//test return 30
+// variables reuse typedef name
+
+int main() {
+  int helper = 5;
+  int function = 6;
+  return helper * function;
+}
+
+typedef int helper;
+typedef int function;

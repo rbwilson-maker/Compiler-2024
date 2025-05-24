@@ -1,0 +1,34 @@
+//test return 32
+
+int main() {
+    int i = 0;
+    i += 1;
+    while (i > 0) {
+        i += 1;
+        if (i == 32) {
+            return i;
+        }
+    }
+    
+    while (i > 0) {
+        i += 1;
+        if (i == 51) {
+            return i;
+        }
+    }
+
+    while (i > 0) {
+        i += 1;
+        if (i == 51) {
+            return i;
+        }
+    }
+
+    while (i > 0) {
+        i += 1;
+        if (i == 51) {
+            return i;
+        }
+    }
+    return 0;
+}

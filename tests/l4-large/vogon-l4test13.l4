@@ -1,0 +1,15 @@
+//test return 3
+
+int main() {
+  int* p = alloc(int);
+  *p = 3;
+  int** b = alloc(int*);
+  *b = p;
+  int*** c = alloc(int**);
+  *c = b;
+  int**** d = alloc(int***);
+  *d = c;
+  int***** e = alloc(int****);
+  *e = d;
+  return *****e;
+}

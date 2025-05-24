@@ -1,0 +1,10 @@
+//test memerror
+//basic test regarding explicit null pointers
+
+int main() {
+  int * x = NULL;
+  bool * y = NULL;
+  *x = 4;
+  return *x;
+}
+

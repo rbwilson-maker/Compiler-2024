@@ -1,0 +1,19 @@
+//test return 1
+
+// This little program computes the terms of the recurrent sequence
+//  u_{n+1} = 0.5*(u_n - 8) + 8
+// and checks that it always converge towards 8
+
+int next_term(fpt x) {
+    fpt half = fdiv(itof(1),itof(2));
+    return fadd(fmul(half,fsub(x,itof(8))),itof(8));
+}
+
+int main() {
+    fpt initial = itof(53874);
+    fpt x = initial;
+    while (fless(fdiv(itof(1),itof(100)),fsub(x,itof(8)))) {
+        x = next_term(x);
+    }
+    return 1;
+}

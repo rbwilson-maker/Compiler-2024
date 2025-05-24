@@ -1,0 +1,15 @@
+//test return 0
+
+struct stuff {
+  bool marked;
+  int v;
+};
+
+int main()
+{
+  struct stuff*** p = alloc(struct stuff**);
+  *p = alloc(struct stuff*);
+  **p = alloc(struct stuff);
+  (**p)->marked = true;
+  return (***p).v;
+}

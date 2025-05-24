@@ -1,0 +1,20 @@
+//test error
+
+struct nest;
+struct bird;
+
+struct nest{struct bird[] birds;};
+
+struct bird{struct nest[] nests;};
+
+int main(){
+    struct nest[] top_nests = alloc_array(struct nest, 10);
+    struct bird[] top_birds = alloc_array(struct bird, 10);
+    top_nests[1] = top_birds;
+    top_birds[1] = top_nests;
+    if(top_nests[1] == top_nests[1][1][1]){
+        return 0;
+    } else {
+        return 1;
+    }
+}

@@ -1,0 +1,25 @@
+//test return 285
+
+
+typedef int int_f(int i);
+
+int_f*[] generate(){
+    int_f*[] fns = alloc_array(int_f*, 10);
+    for(int i=0; i<10; i++){
+        fns[i] = fn (int j) {
+            return i*j;
+        };
+    }
+    return fns;
+}
+
+int main(){
+    int_f*[] f = generate();
+    int accum = 0;
+
+    for(int i=0; i<10; i++){
+        accum += (*f[i])(i);
+    }
+
+    return accum;
+}

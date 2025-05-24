@@ -1,0 +1,18 @@
+//test error
+
+typedef bool your;
+typedef int spoilers;
+typedef int text;
+typedef int is;
+typedef int henry;
+
+spoilers from(your history, text books) {
+  return history ? books : books + books;
+}
+
+int main() {
+  henry the = 5;
+  is dead = 0xDEAD;
+
+  return from(the, dead);
+}

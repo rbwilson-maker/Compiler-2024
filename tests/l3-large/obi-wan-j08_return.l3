@@ -1,0 +1,15 @@
+//test return 5
+
+typedef int hi_there;
+
+hi_there random(hi_there a, bool b)
+{
+    if(b)
+        return a;
+    return 0;
+}
+
+hi_there main()
+{
+    return random(5, true);
+}

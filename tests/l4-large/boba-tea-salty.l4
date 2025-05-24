@@ -1,0 +1,14 @@
+//test memerror
+/* I'd like to dedicate this one to all the pusheens out there */                                                                                                                                                                                                                                                                                                                     typedef int struct_s0; struct s1 {struct_s0 see; struct_s0 structs; struct_s0 flatten; struct_s0 I; struct_s0 that; struct_s0 lol; struct_s0 you; struct_s0 _; struct_s0 to; struct_s0 like;}; struct s2 {struct s1 to; struct s1 structs; struct s1 I; struct s1 like; struct s1 you; struct s1 flatten; struct s1 see; struct s1 that; struct s1 lol; struct s1 _; struct s1 __;}; struct s3 {struct s2 flatten; struct s2 I; struct s2 that; struct s2 _; struct s2 structs; struct s2 like; struct s2 __; struct s2 to; struct s2 see; struct s2 lol; struct s2 you;}; struct s4 {struct s3 to; struct s3 structs; struct s3 _; struct s3 lol; struct s3 you; struct s3 I; struct s3 flatten; struct s3 that; struct s3 like; struct s3 see;}; struct s5 {struct s4 I; struct s4 to; struct s4 see; struct s4 that; struct s4 structs; struct s4 like; struct s4 _; struct s4 you; struct s4 flatten; struct s4 lol;}; struct s6 {struct s5 that; struct s5 _; struct s5 structs; struct s5 like; struct s5 lol; struct s5 to; struct s5 flatten; struct s5 see; struct s5 you; struct s5 I;}; struct s7 {struct s6 structs; struct s6 lol; struct s6 you; struct s6 I; struct s6 flatten; struct s6 to; struct s6 see; struct s6 that; struct s6 _; struct s6 like;}; struct s8 {struct s7 that; struct s7 structs; struct s7 to; struct s7 _; struct s7 lol; struct s7 I; struct s7 you; struct s7 like; struct s7 flatten; struct s7 see;}; struct null {struct s8 I; struct s8 that; struct s8 to; struct s8 you; struct s8 topkek; struct s8 _; struct s8 flatten; struct s8 like; struct s8 lol; struct s8 see; struct s8 l0lol; struct s8 structs;};
+
+int pot_of_pusheen (struct null* Hi_pusheen) {
+    // You've activated my trap card! [spell card yes i know]
+    int hug_pusheen = Hi_pusheen->I.see.you.like.to.flatten.structs._.lol;
+    int hug_you_too = Hi_pusheen->lol.lol.lol.lol.lol.lol.lol.lol.lol;
+    while (hug_pusheen >= 0) {hug_pusheen >>= hug_pusheen; return 0xcafebabe;}
+    return hug_pusheen & hug_you_too;
+}
+
+int main() {
+    return pot_of_pusheen(NULL);
+}

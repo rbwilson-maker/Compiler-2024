@@ -1,0 +1,20 @@
+//test return 10
+
+int grab(bool[] want, int i) {
+    int j = 1-i;
+    int turn = 0;
+    want[i] = true;
+    turn = j;
+    while (!(want[j] && turn == j)) {
+        return 10;
+    }
+    want[i] = false;
+    return 0;
+}
+
+int main() {
+    bool[] want = alloc_array(bool, 2);
+    int res = grab(want, 0);
+
+    return want[0] ? res : 0;
+}

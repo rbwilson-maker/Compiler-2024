@@ -1,0 +1,38 @@
+//test return 10
+//quicksort
+
+int partition(int[] A, int lo, int hi){
+  int p = A[hi];
+  int i = lo;
+  for(int j = lo; j < hi; j++){
+    if(A[j] < p){
+      int tmp = A[j];
+      A[j] = A[i];
+      A[i] = tmp;
+      i++;
+    }
+  }
+  int tmp = A[hi];
+  A[hi] = A[i];
+  A[i] = tmp;
+  return i;
+}
+
+void qsort (int[] A, int lo, int hi) {
+  if(lo < hi){
+    int mid = partition(A, lo, hi);
+    qsort(A, lo, mid-1);
+    qsort(A, mid+1, hi);
+  }
+}
+
+int main () {
+  int n = 127;
+  int[] A = alloc_array(int, 2*n);
+  for (int i = 0; i < 2*n-1; i += 2) {
+    A[i] = i;
+    A[i+1] = 2*n-(i+1);
+  }
+  qsort(A, 0, 2*n-1);
+  return A[10];
+}

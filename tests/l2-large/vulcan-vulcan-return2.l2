@@ -1,0 +1,20 @@
+//test return 1092
+
+int main() {
+    int result = 0;
+
+    while (result < 1000) {
+    	if (result % 3 == 0) {
+	   result += 2;
+	}
+	if (result % 3 == 1) {
+	   result = result * 3;
+	}
+
+	if (result % 3 == 2) {
+	   result -= 1;
+	}
+    }
+
+    return result;
+}

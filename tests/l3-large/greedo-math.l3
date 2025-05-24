@@ -1,0 +1,18 @@
+//test return 3
+
+bool is_fact(int n)
+{
+  int prod = 1;
+  for(int i = 1; prod < n; i++)
+  {
+    prod *= i;
+  }
+  return prod == n;
+}
+
+int main()
+{
+  if(is_fact(5040) && (!is_fact(5041)))
+    return 3;
+  return 2;
+}

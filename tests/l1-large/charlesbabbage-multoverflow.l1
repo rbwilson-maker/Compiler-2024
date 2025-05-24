@@ -1,0 +1,8 @@
+//test div-by-zero
+//mod by zero somewhere
+
+int main(){
+    int foo = 1;
+    int bar = (foo - foo) + (foo * foo) - (foo % foo) * (foo + foo + foo % (foo - foo) * 15411);
+    return bar;
+}

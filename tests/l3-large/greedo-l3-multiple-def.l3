@@ -1,0 +1,15 @@
+//test typecheck
+
+
+int main();
+typedef int int_t;
+int_t main();
+
+typedef int_t integer;
+integer main();
+
+typedef integer integer_t;
+
+integer_t main(){
+    return 0;
+}

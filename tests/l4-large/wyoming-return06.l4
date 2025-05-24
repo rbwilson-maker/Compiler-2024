@@ -1,0 +1,14 @@
+//test return 0
+struct foo;
+struct bar{
+};
+struct foo{
+    struct bar baz;
+};
+int main(){
+    for(int i=0;i<0x000FFFFF;i++){
+        struct foo[] a = alloc_array (struct foo,0x7FFFFFFF);
+        
+    }
+    return 0;
+}

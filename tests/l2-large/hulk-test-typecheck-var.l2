@@ -1,0 +1,13 @@
+//test error
+
+int main() {
+  int x;
+  if(true) {
+    x = 1;
+  } else {
+    x = true;
+  }
+  x += x;
+
+  return 0;
+}

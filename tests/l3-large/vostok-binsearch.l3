@@ -1,0 +1,54 @@
+//test return 6
+// binary search 2: electric boogaloo
+// here we use ints as a size 8 array of ints in range [0, 16)
+
+/* alias for arrays */
+typedef int array;
+
+array newArray() {
+    return 0;
+}
+
+array insert(array arr, int i, int val) {
+    // if val is not a valid number, don't insert
+    if(val < 0 || val > 16) {
+        return arr;
+    }
+    int zeroedI = arr & ~(0xF << (i * 4));
+    return zeroedI | (val << (i * 4));
+}
+
+int get(array arr, int i) {
+    return (arr >> (i * 4)) & 0xF;
+}
+
+int binSearch(array arr, int target, int size) {
+    int i = 0;
+    int j = size - 1;
+
+    while(i < j) {
+        int mid = (i + j) / 2;
+        if(get(arr, mid) == target) {
+            return mid;
+        } else if (get(arr, mid) < target) {
+            i = mid + 1;
+        } else {
+            j = mid;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    array arr = newArray();
+    arr = insert(arr, 0, 0);
+    arr = insert(arr, 1, 3);
+    arr = insert(arr, 2, 5);
+    arr = insert(arr, 3, 6);
+    arr = insert(arr, 4, 9);
+    arr = insert(arr, 5, 12);
+    arr = insert(arr, 6, 14);
+    arr = insert(arr, 7, 15);
+
+    return binSearch(arr, 14, 8);
+}

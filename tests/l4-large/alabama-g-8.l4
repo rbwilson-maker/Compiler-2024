@@ -1,0 +1,15 @@
+//test error
+
+struct x {
+    int y_u_do_dis;
+};
+
+int foo(struct x y) {
+    return 0; // I'm so sorry
+}
+
+int main() {
+    struct x*y = alloc(struct x);
+    x->y_u_do_dis=42;
+    return foo(*y);
+}

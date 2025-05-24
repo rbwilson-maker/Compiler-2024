@@ -1,0 +1,56 @@
+//test typecheck
+//unused struct and many *s
+
+struct foo;
+struct foo;
+struct foo;
+struct foo;
+struct foo;
+struct foo;
+struct foo;
+struct foo;
+struct foo;
+struct foo;
+struct foo;
+struct foo;
+struct foo;
+struct foo;
+
+struct foo* f(struct foo* a);
+struct foo* f(struct foo* b);
+
+struct foo* f(struct foo* x) {
+    return x;
+}
+
+struct foo**** g(struct foo**** x) {
+    return x;
+}
+
+typedef struct foo fooo;
+
+
+fooo**** h(struct foo**** x) {
+    return x;
+}
+
+typedef struct fooo**** foooo;
+
+
+foooo i(foooo x) {
+    foooo* ah = alloc(foooo);
+    return *ah;
+}
+
+typedef foooo*********************** fooooo;
+typedef foooo*************************************** foooooo;
+
+fooooo**************************************** j() {
+    foooo***************************************************************[] ah = alloc_array(foooo***************************************************************,100);
+    return ah[0];
+}
+
+int main() {
+    assert(j() == j());
+    return 0;
+}

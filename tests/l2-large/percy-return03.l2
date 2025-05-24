@@ -1,0 +1,10 @@
+//test return 6
+int main() {
+  int i = 5;
+  bool b = false;
+  if(b) {
+    return i-1;
+  } else {
+    return i + 1;
+  }
+}

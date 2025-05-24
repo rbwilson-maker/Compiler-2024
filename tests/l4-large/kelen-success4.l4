@@ -1,0 +1,34 @@
+//test return 50;
+
+struct x{
+    int a;
+    int b;
+    struct y* z;
+};
+
+struct y{
+    int c;
+    int d;
+};
+
+int main(){
+
+    struct y* first = alloc(struct y);
+    first->c = 3;
+    first->d = 4;
+    struct x[] arr = alloc_array(struct x, 5);
+    for (int i = 0; i < 5; i++){
+        arr[i].z = first;
+        arr[i].a = 1;
+        arr[i].b = 2;
+    }
+    int total = 0;
+    for (int i = 0; i < 5; i++){
+        total += arr[i].a;
+        total += arr[i].b;
+        total += (arr[i].z)->c;
+        total += (arr[i].z)->d;
+    }
+    return total;
+
+}

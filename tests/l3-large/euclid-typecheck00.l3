@@ -1,0 +1,26 @@
+//test typecheck
+
+int doSomething(int x, int y){
+  int z = x + y;
+  bool do = x > y;
+  if (do && (z > y)){
+    do = true;
+  } else {
+    do = false;
+  }
+
+  if (do){
+    return 0;
+  } else {
+    return 1;
+  }
+}
+
+int main(){
+  int done = doSomething(1, 2);
+  if (done == 0){
+    return 1;
+  } else {
+    return 0;
+  }
+}

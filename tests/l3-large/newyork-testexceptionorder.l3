@@ -1,0 +1,19 @@
+//test abort
+
+bool first () {
+    assert(false);
+
+    return true;
+}
+
+bool second () {
+    1 / 0;
+
+    return true;
+}
+
+int main() {
+    bool x = first() && second();
+
+    return 0;
+}

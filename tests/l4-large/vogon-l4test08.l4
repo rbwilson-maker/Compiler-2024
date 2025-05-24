@@ -1,0 +1,10 @@
+//test memerror
+
+struct a {
+  int b;
+  struct a* a;
+};
+
+int main() { 
+  return (alloc(struct a))->a->b;
+}

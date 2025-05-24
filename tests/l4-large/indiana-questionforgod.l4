@@ -1,0 +1,19 @@
+//test div-by-zero
+//1315
+
+//Can you divide by 0? See into the emptiness?
+
+struct empty{};
+struct empty2{
+  struct empty* notempty;
+};
+
+int main(){
+  struct empty2* MT = alloc(struct empty2);
+  assert(MT->notempty == NULL);
+  //stress?? quarantine?? reduce number?
+  struct empty[] VOID = alloc_array(struct empty, 131500000);
+  //calloc should be used
+  int[] EZ = alloc_array(int, 10);
+  return 1/EZ[0];
+}

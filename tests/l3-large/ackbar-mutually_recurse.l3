@@ -1,0 +1,18 @@
+//test return 42
+//mutually recursive functions
+
+
+int sub1(int x);
+
+int check0(int x){ 
+    if(x>0){ return sub1(x);}
+    else{ return 42;}
+}
+
+int sub1(int x){
+    return check0(x-1);
+}
+
+int main(){
+    return check0(300);
+}

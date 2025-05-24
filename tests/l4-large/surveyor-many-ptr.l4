@@ -1,0 +1,7 @@
+//test return 123
+
+int main() {
+  int*** foo = NULL;
+  int*** bar = NULL;
+  return foo == bar ? 123 : 234;
+}

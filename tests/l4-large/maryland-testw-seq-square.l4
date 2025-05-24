@@ -1,0 +1,92 @@
+//test return 462979
+// basic manipulation of immutable sequences, influenced by the 210 sequence
+// library (of course!).
+
+typedef int elem;
+
+struct seq {
+  elem[] arr;
+  int idx;
+  int len;
+};
+typedef struct seq *seq;
+
+void copy_elems(int n, elem[] src, int i, elem[] dst, int j) {
+  for (int k = 0; k < n; k++) dst[j+k] = src[i+k];
+}
+
+int len(seq S) {
+  return S->len;
+}
+
+int nth(seq S, int i) {
+  return S->arr[S->idx + i];
+}
+
+seq from_array(elem[] A, int lower, int upper) {
+  seq S = alloc(struct seq);
+  S->arr = alloc_array(elem, upper - lower);
+  S->len = upper - lower;
+  S->idx = 0;
+
+  copy_elems(upper-lower, A, lower, S->arr, S->idx);
+  return S;
+}
+
+seq empty() {
+  return from_array(alloc_array(elem, 0), 0, 0);
+}
+
+seq singleton(elem e) {
+  elem[] arr = alloc_array(elem, 1);
+  arr[0] = e;
+  return from_array(arr, 0, 1);
+}
+
+seq append(seq S1, seq S2) {
+  seq T = alloc(struct seq);
+  T->arr = alloc_array(elem, S1->len + S2->len);
+  T->idx = 0;
+  T->len = S1->len + S2->len;
+
+  copy_elems(S1->len, S1->arr, S1->idx, T->arr, T->idx);
+  copy_elems(S2->len, S2->arr, S2->idx, T->arr, T->idx + S1->len);
+  return T;
+}
+
+seq subseq(seq S, int i, int l) {
+  seq T = alloc(struct seq);
+  T->arr = S->arr;
+  T->idx = S->idx + i;
+  T->len = l;
+  return T;
+}
+
+seq take(seq S, int n) {
+  return subseq(S, 0, n);
+}
+
+seq drop(seq S, int n) {
+  return subseq(S, n, len(S) - n);
+}
+
+// --------------------------------------------------------------------------
+
+seq map_square(seq S) {
+  if (len(S) == 0) return empty();
+  return append(singleton(nth(S, 0) * nth(S, 0)), map_square(drop(S, 1)));
+}
+
+int foldl_plus(seq S, int b) {
+  if (len(S) == 0) return b;
+  return foldl_plus(drop(S, 1), b + nth(S, 0));
+}
+
+int main() {
+  elem[] A = alloc_array(elem, 6);
+  A[0] = 0; A[1] = 1; A[2] = 2; A[3] = 3; A[4] = 4; A[5] = 5;
+
+  seq S = map_square(map_square(map_square(from_array(A, 0, 6))));
+
+  return foldl_plus(S, 0);
+}

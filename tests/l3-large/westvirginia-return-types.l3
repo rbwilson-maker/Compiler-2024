@@ -1,0 +1,12 @@
+//test return -10
+// Check things that are allowed with types
+
+typedef bool rancidity;
+typedef rancidity foulness;
+typedef foulness vulgarity;
+
+rancidity scrubRequired(rancidity scrubRequired, foulness fetid, vulgarity perverted) {
+    return fetid || perverted || scrubRequired || (fetid && perverted && scrubRequired);
+}
+
+int main() {return scrubRequired(false, false, false) ? 10 : -10;}

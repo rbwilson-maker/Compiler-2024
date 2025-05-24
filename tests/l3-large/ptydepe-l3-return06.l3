@@ -1,0 +1,34 @@
+//test return 1
+// simple test defines types t1 and t2
+
+typedef int int_t;
+
+int foo(int b){
+    int a = b;
+    {
+        a += 4;
+        a %= 3;
+        {
+            a++;
+        }
+        a--;
+    }
+
+    if (true){
+        a *= a;
+        {
+            a /= a;            
+        }
+    } else {
+        return 0;
+    }
+    return a;
+}
+
+int main () {
+  int_t i = 1;
+  int result = foo(i);
+  if (false)
+    return 50;
+  return result;
+}

@@ -1,0 +1,17 @@
+//test error
+//mutually recursive structs. will your compiler loop forever?
+
+struct a;
+
+struct b {
+    struct a a;
+};
+
+struct a {
+    struct b b;
+};
+
+int main() {
+    struct a a = alloc(struct a);
+    return 0;
+}

@@ -1,0 +1,17 @@
+//test return 9
+// array of struct pointers
+
+struct mystruct {
+  int x;
+  int y;
+};
+
+int main(){
+  struct mystruct*[] A = alloc_array(struct mystruct*, 5);
+  for (int i = 0; i < 5; i++){
+    A[i] = alloc(struct mystruct);
+    A[i]->x = i;
+    A[i]->y = i * 2;
+  }
+  return A[1]->x + A[2]->y + A[4]->x;
+}

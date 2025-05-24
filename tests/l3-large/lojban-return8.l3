@@ -1,0 +1,18 @@
+//test return 0
+typedef int my_int;
+typedef my_int my_int2;
+typedef my_int2 my_int3;
+
+typedef bool my_bool;
+typedef my_bool my_bool2;
+typedef my_bool2 my_bool3;
+
+int main() {
+	int a = 0;
+	my_int b = a;
+	my_int2 c = b;
+	my_int3 d = c;
+	my_bool3 bb = true;
+	if(bb && a == d) return d;
+	else return -1;
+}

@@ -1,0 +1,11 @@
+//test return 2
+
+// This is designed to test a void function call
+void func() {
+  return;
+}
+
+int main() {
+  func();
+  return 2;
+}

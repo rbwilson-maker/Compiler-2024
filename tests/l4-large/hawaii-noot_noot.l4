@@ -1,0 +1,84 @@
+//test return -1035323794
+
+struct hawaii1 {
+  int a;
+  int b;
+  int[] c;
+};
+
+struct hawaii2 {
+  int a;
+  int b;
+  struct hawaii1*[] c;
+};
+
+struct hawaii3 {
+  int a;
+  int b;
+  struct hawaii2*[] c;
+};
+
+struct hawaii1* alpha(struct hawaii1* yoseph, int karkat)
+{
+  yoseph->c = alloc_array(int, 25);
+  
+  for (int i=0; i<25; i++)
+  {
+    yoseph->c[i] + yoseph->a;
+    yoseph->a--;
+    yoseph->b += karkat;
+    yoseph->c[i] -= yoseph->b * yoseph->a;
+    yoseph->a *= 2;
+  }
+  
+  return yoseph;
+}
+
+struct hawaii2* beta(struct hawaii2* gnarly, int terezi)
+{
+  gnarly->c = alloc_array(struct hawaii1*, 19);
+  
+  for (int i=0; i<19; i++)
+  {
+    gnarly->c[i] = alloc(struct hawaii1);
+    gnarly->c[i]->a = gnarly->a;
+    gnarly->c[i]->b = gnarly->b;
+    
+    gnarly->c[i] = alpha(gnarly->c[i], terezi);
+    
+    gnarly->a = gnarly->c[i]->a;
+    gnarly->b = gnarly->c[i]->b;
+  }
+  
+  return gnarly;
+}
+
+struct hawaii3* gamma(struct hawaii3* tubular, int eridan)
+{
+  tubular->c = alloc_array(struct hawaii2*, 36);
+  
+  for (int i=0; i<36; i++)
+  {
+    tubular->c[i] = alloc(struct hawaii2);
+    tubular->c[i]->a = tubular->a;
+    tubular->c[i]->b = tubular->b;
+    
+    tubular->c[i] = beta(tubular->c[i], eridan);
+    
+    tubular->a = tubular->c[i]->a;
+    tubular->b = tubular->c[i]->b;
+  }
+  
+  return tubular;
+}
+
+int main()
+{
+  struct hawaii3* frugality = alloc(struct hawaii3);
+  frugality->a = 15251;
+  frugality->b = 525600;
+  
+  gamma(frugality, 0xDEADBEEF);
+  
+  return frugality->a - frugality->b;
+}

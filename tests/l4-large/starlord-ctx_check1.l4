@@ -1,0 +1,14 @@
+//test error
+
+typedef struct foo foo;
+struct foo {
+  int i;
+};
+
+int main () {
+  int bar = 75
+  int foo = 2;
+  foo *bar;
+  1 / 0;
+  return 0;
+}

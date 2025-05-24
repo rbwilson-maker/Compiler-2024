@@ -1,0 +1,7 @@
+//test error
+// header should error out due to shadowing
+// shadowing happens between variables of different types
+
+int main() {
+  return 0;
+}

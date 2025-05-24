@@ -1,0 +1,138 @@
+//test return 4845669
+
+/**
+ * @brief This program solves Day 1, Star 2 of Advent of Code 2019.
+ *
+ * Writeup: https://adventofcode.com/2019/day/1
+ *
+ * Kevin Geng, Team Barsoomian
+ * 15-411 Fall 2019
+ */
+
+int array_get(int idx) {
+    if (idx == 0) return 128270;
+    if (idx == 1) return 147113;
+    if (idx == 2) return 61335;
+    if (idx == 3) return 78766;
+    if (idx == 4) return 119452;
+    if (idx == 5) return 116991;
+    if (idx == 6) return 70640;
+    if (idx == 7) return 145446;
+    if (idx == 8) return 117606;
+    if (idx == 9) return 135046;
+    if (idx == 10) return 70489;
+    if (idx == 11) return 131072;
+    if (idx == 12) return 67955;
+    if (idx == 13) return 66424;
+    if (idx == 14) return 126450;
+    if (idx == 15) return 101418;
+    if (idx == 16) return 90225;
+    if (idx == 17) return 66004;
+    if (idx == 18) return 136510;
+    if (idx == 19) return 61695;
+    if (idx == 20) return 143880;
+    if (idx == 21) return 53648;
+    if (idx == 22) return 58699;
+    if (idx == 23) return 119214;
+    if (idx == 24) return 83838;
+    if (idx == 25) return 95895;
+    if (idx == 26) return 66388;
+    if (idx == 27) return 66755;
+    if (idx == 28) return 120223;
+    if (idx == 29) return 79310;
+    if (idx == 30) return 93828;
+    if (idx == 31) return 136686;
+    if (idx == 32) return 108958;
+    if (idx == 33) return 140752;
+    if (idx == 34) return 85343;
+    if (idx == 35) return 103800;
+    if (idx == 36) return 126602;
+    if (idx == 37) return 147726;
+    if (idx == 38) return 88228;
+    if (idx == 39) return 83380;
+    if (idx == 40) return 77877;
+    if (idx == 41) return 61922;
+    if (idx == 42) return 75448;
+    if (idx == 43) return 67095;
+    if (idx == 44) return 60888;
+    if (idx == 45) return 136692;
+    if (idx == 46) return 63271;
+    if (idx == 47) return 113742;
+    if (idx == 48) return 68854;
+    if (idx == 49) return 86904;
+    if (idx == 50) return 110243;
+    if (idx == 51) return 104642;
+    if (idx == 52) return 141854;
+    if (idx == 53) return 71205;
+    if (idx == 54) return 76729;
+    if (idx == 55) return 138540;
+    if (idx == 56) return 134142;
+    if (idx == 57) return 62517;
+    if (idx == 58) return 63306;
+    if (idx == 59) return 71363;
+    if (idx == 60) return 126146;
+    if (idx == 61) return 74749;
+    if (idx == 62) return 76716;
+    if (idx == 63) return 59135;
+    if (idx == 64) return 62449;
+    if (idx == 65) return 110575;
+    if (idx == 66) return 134030;
+    if (idx == 67) return 84072;
+    if (idx == 68) return 122698;
+    if (idx == 69) return 96891;
+    if (idx == 70) return 69976;
+    if (idx == 71) return 94501;
+    if (idx == 72) return 149180;
+    if (idx == 73) return 57944;
+    if (idx == 74) return 64873;
+    if (idx == 75) return 68192;
+    if (idx == 76) return 138238;
+    if (idx == 77) return 119185;
+    if (idx == 78) return 137570;
+    if (idx == 79) return 79274;
+    if (idx == 80) return 111040;
+    if (idx == 81) return 142586;
+    if (idx == 82) return 120872;
+    if (idx == 83) return 63586;
+    if (idx == 84) return 78628;
+    if (idx == 85) return 122704;
+    if (idx == 86) return 147951;
+    if (idx == 87) return 102593;
+    if (idx == 88) return 105562;
+    if (idx == 89) return 55180;
+    if (idx == 90) return 64450;
+    if (idx == 91) return 87466;
+    if (idx == 92) return 112522;
+    if (idx == 93) return 60000;
+    if (idx == 94) return 149885;
+    if (idx == 95) return 52154;
+    if (idx == 96) return 80633;
+    if (idx == 97) return 61867;
+    if (idx == 98) return 86380;
+    if (idx == 99) return 136024;
+    return -1;
+}
+
+int calculate_single_fuel(int mass) {
+    int fuel = mass / 3 - 2;
+    return fuel < 0 ? 0 : fuel;
+}
+
+int calculate_acc_fuel(int mass) {
+    int acc = 0;
+    while (mass > 0) {
+        mass = calculate_single_fuel(mass);
+        acc += mass;
+    }
+    return acc;
+}
+
+int main() {
+    int total_fuel = 0;
+    for (int i = 0; array_get(i) != -1; i++) {
+        int mass = array_get(i);
+        int fuel = calculate_acc_fuel(mass);
+        total_fuel += fuel;
+    }
+    return total_fuel;
+}

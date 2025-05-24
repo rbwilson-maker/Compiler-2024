@@ -1,0 +1,16 @@
+//test return 200
+
+bool assoc(int a, int b) {
+	return a - b == b - a;
+}
+
+int main() {
+	int count = 0;
+	for (int i = -100; i < 100; i++) {
+		for (int j = -100; j <= i; j++) {
+			count += assoc(i, j) ? 1 : 0;
+		}
+	}
+
+	return count;
+}

@@ -1,0 +1,21 @@
+//test return 4
+
+int main () {
+  int n = 4;
+  bool curr = true;
+  bool curr2 = true;
+
+  while (curr2) {
+    for (int i = 2; i < n; i = i + 1) {
+      if (n * (i % 10) != 0) {
+        curr = false;
+      }
+    }
+    curr2 = false;
+  }
+  if (curr) {
+    return 8;
+  } else {
+    return n;
+  }
+}

@@ -1,0 +1,13 @@
+//test error
+// variable not defined before usage
+int main(){
+    int b;
+    for(int i =10; i < 100; i++){
+        a++;
+        while(a<1000){
+            a+=10;
+            if(a >500)break;
+        }
+    }
+    return a;
+}

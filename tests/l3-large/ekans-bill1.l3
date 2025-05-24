@@ -1,0 +1,15 @@
+//test return 8936928
+
+int choose(int n, int k) {
+    int ret = 1;
+    for (int i=n-k+1; i<=n; i++) {
+        ret *= i;
+        ret /= (i-(n-k));
+    }
+    return ret;
+}
+
+int main() {
+    return choose(66, 61);
+}
+

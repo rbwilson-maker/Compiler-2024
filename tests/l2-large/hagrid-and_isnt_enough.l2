@@ -1,0 +1,11 @@
+//test typecheck
+//test infloop
+//and tries his best to make things right, but he's just not strong enough
+
+int main() {
+  bool everything_is_okay = false;
+  while (!everything_is_okay) {
+    everything_is_okay = everything_is_okay && true;
+  }
+  return 0;
+}

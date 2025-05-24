@@ -1,0 +1,23 @@
+//test return 32
+// exponentiation program
+
+int main() {
+  int x1;
+  int x2;
+  int x3;
+
+  x1 = 2;
+  x2 = 4;
+  x3 = x1;
+
+  x1 *= x3;
+  x2 -= 1;
+  x1 *= x3;
+  x2 -= 1;
+  x1 *= x3;
+  x2 -= 1;
+  x1 *= x3;
+  x2 -= 1;
+
+  return x1;
+}

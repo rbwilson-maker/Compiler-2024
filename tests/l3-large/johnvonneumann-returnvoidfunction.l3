@@ -1,0 +1,12 @@
+//test error
+
+void empty() {}
+
+void badfunction() {
+    int x = 1;
+    return empty();
+}
+
+int main() {
+    return 0;
+}

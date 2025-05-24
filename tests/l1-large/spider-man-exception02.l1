@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main()
+{
+  int TMIN;
+  int denom = 8 % 7 - 6 + 5 - 2 * 3 + 4 + 1;
+  int overflow;
+
+  TMIN = -2147483648;
+  overflow = TMIN % denom;
+  return overflow;
+}

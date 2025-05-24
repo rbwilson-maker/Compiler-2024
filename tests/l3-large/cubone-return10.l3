@@ -1,0 +1,34 @@
+//test return 33456789
+//sort(x) sorts the digits of x in increasing order, where 0 <= x < 1000000000
+
+int new(int x) {
+  int new_x = 0;
+  int temp = x;
+  while (temp > 0) {
+    if (temp % 10 != 0)
+      new_x = (new_x * 10) + (temp % 10);
+    temp /= 10;
+  }
+  return new_x;
+}
+
+int sort(int x) {
+  x = new(x);
+  int temp = 0;
+
+  while (x > 0) {
+    int divider = 1;
+    int try = x % 10;
+
+    while ((divider <= temp) && ((temp / divider) % 10 > try))
+      divider *= 10;
+
+    temp = ((temp / divider) * 10 + try) * divider + (temp % divider);
+    x /= 10;
+  }
+  return temp;
+}
+
+int main() {
+  return sort(805763394);
+}

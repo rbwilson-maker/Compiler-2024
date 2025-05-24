@@ -1,0 +1,7 @@
+//test return 4
+
+int main() {
+  int x = 4;
+  int z = 31;
+  return z / (z/x);
+}

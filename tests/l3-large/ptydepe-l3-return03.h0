@@ -1,0 +1,11 @@
+/* 
+ * A header file for the l3-header03.l3 tests
+ */
+
+typedef bool bool_t;
+
+// Multiply by 3
+bool_t isCoolNum(int i);
+
+// void function that does nothing
+void doNothing();

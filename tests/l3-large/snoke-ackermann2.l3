@@ -1,0 +1,21 @@
+//test return 29
+// define ackermann function with unused args
+
+int ackermann(int a1, int b1, int m, int n, int f);
+
+int main() {
+	return ackermann(0, 0, 3, 2, 0);
+}
+
+int ackermann(int a1, int b1, int m, int n, int f) {
+	if (m == 0) {
+		return n + 1 + f;
+	} else if (m > 0 && n == 0) {
+		return ackermann(0, 0, m - 1, 1, 0);
+	} else if (m > 0  && n > 0) {
+		return ackermann(0, 0, m - 1, 
+		ackermann(0, 0, m, n-1, 0), 0);
+	} else {
+		return 0;
+	}
+}

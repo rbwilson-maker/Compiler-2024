@@ -1,0 +1,55 @@
+//test return 158118958
+
+/* Karp Rabin fingerprinting compares "substrings" in constant time */
+
+struct fingerprinter {
+  int B;
+  int P;
+  int[] r;
+  int[] a;
+};
+typedef struct fingerprinter fp;
+
+int euclidean_mod(int a, int b) {
+  int result = a % b;
+  return result >= 0 ? result : result + b;
+}
+
+int h(fp* f, int i, int j) {
+  return euclidean_mod((f->a[j + 1] - f->a[i] * f->r[j - i + 1]), f->P);
+}
+
+int main(){
+
+  int N = 8;
+  int[] S = alloc_array(int, N);
+
+  S[0] = 8;
+  S[1] = 1;
+  S[2] = 2;
+  S[3] = 8;
+
+  S[4] = 8;
+  S[5] = 1;
+  S[6] = 2;
+  S[7] = 8;
+
+  fp* f = alloc(fp);
+  f->B = 11;
+  f->P = 393342743;
+  f->r = alloc_array(int, N+1);
+  f->a = alloc_array(int, N+1);
+
+  f->r[0] = 1;
+  f->a[0] = 0;
+  for (int i = 1; i <= N; i++) {
+    f->r[i] = euclidean_mod(f->r[i-1] * f->B, f->P);
+    f->a[i] = euclidean_mod((f->a[i-1] * f->B + S[i-1]), f->P);
+  }
+
+  assert(h(f,0,3) == h(f,4,7));
+  assert(h(f,0,3) != h(f,3,6));
+  assert(h(f,0,3) != h(f,3,7));
+
+  return h(f,0,N-1);
+}

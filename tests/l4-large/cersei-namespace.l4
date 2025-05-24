@@ -1,0 +1,22 @@
+//test typecheck
+
+typedef bool url;
+typedef int smack;
+
+int *kotd();
+
+struct leagues {
+  url smack;
+  smack url;
+  int kotd;
+  int f;
+};
+
+int main() {
+  if (f(3,4)) {
+    return 0;
+  }
+  else {
+    return g(424);
+  }
+}

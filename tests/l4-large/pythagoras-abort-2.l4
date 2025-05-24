@@ -1,0 +1,16 @@
+//test abort
+
+typedef struct ValueArray_t valArr;
+struct ValueArray_t{
+    int id;
+    int[] vals;
+    int size;
+};
+
+// want to test null pointers are equal
+int main() {
+    valArr* x = NULL;
+    valArr* y = alloc(valArr);
+    assert(x == y);
+    return 1;
+}

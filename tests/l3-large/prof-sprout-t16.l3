@@ -1,0 +1,13 @@
+//test error
+// returning from void
+
+void f(int x) {
+  print_fpt(itof(x));
+  return;
+  return x;
+}
+
+int main() {
+  f(9);
+  return 9;
+}

@@ -1,0 +1,25 @@
+//test return 210605
+
+int do_op(int n) {
+  return (n << 3) ^ (n >> 3) + 55;
+}
+
+int level1(int n) {
+  int i = 0; int r = 55;
+  while ( i < n ) {
+    r = do_op(n + i); i++;
+  }
+  return r;
+}
+
+
+int main() {
+  int i = 0;
+  int n = 10;
+  int r = 200;
+  while ( i < n ) {
+    r = level1(r);
+    i++;
+  }
+  return r;
+}

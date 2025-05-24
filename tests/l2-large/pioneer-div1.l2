@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+  int divisor = 100;
+  while (divisor > 0) {
+    divisor >>= 1;
+  } 
+  return 3 / divisor;
+}

@@ -1,0 +1,13 @@
+//test error
+// array arg shadows function name
+
+int foo( int[] foo, int n) {
+  int[] newarr = alloc_array(int, 3);
+  foo(newarr, 3);
+  int a = foo[n-1];
+}
+
+int main() {
+  int[] fool = alloc_array(int, 3);
+  return foo(fool, 3);
+}

@@ -1,0 +1,12 @@
+//test memerror
+typedef int* bigint;
+
+int tentacles (int **long) {
+    return **long;
+}
+
+int main () {
+    int** abc = alloc(int*);
+
+    return tentacles(abc);
+}

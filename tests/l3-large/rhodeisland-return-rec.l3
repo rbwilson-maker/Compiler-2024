@@ -1,0 +1,13 @@
+//test return 55
+
+int star (int x) {
+  if (x == 0)
+    return 0;
+  else
+   return x + star(x-1);
+}
+
+int main() {
+  int r = star(10);
+  return r;
+}

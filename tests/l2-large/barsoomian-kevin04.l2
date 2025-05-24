@@ -1,0 +1,14 @@
+//test error
+
+int main() {
+    int x = 3000 / 42;
+    int y = x * x * x;
+    if (x > 12) y += 10;
+    {
+        if (y > 100)
+            y /= 2;
+    }
+    else
+        y *= 3;
+    return y;
+}

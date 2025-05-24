@@ -1,0 +1,6 @@
+//test div-by-zero
+// Divide by 0 through overflow of hex
+int main() {
+  int maxhex = 0xffffffff;
+  return 42 / (maxhex + 1);
+}

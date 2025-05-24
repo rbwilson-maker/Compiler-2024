@@ -1,0 +1,17 @@
+//test error
+
+struct foo {
+    struct foo bar;
+    int bet;
+}
+
+void struct_foo(struct foo test) {
+    test.bet = 0;
+    return;
+}
+
+int main() {
+    struct foo teststruct;
+    teststruct.bang = 0;
+    return 0;
+}

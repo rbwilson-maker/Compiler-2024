@@ -1,0 +1,12 @@
+//test error
+
+int main()
+{
+int catalan = 1;
+for(char c = char_chr(0); string_compare(string_fromchar(c),'C') < 0;
+   c = char_chr(char_ord(c)+1))
+{
+  catalan = ((2*(2*char_ord(c)+1))/(char_ord(c)+2))*catalan;
+} 
+return catalan;
+}

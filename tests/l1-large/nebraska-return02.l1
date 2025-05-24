@@ -1,0 +1,22 @@
+//test return 1
+// test operations
+
+int main()
+{
+  int f1;
+  int f2;
+  int f3;
+
+  f1 = 1;
+  f2 = 2;
+  f3 = 3;
+
+  f1 *= 2; // 2
+  f2 += 2 + f1; // 6
+  f3 -= 3; // 0
+  f2 /= 4; // 1
+  f1 %= 2; // 0
+  f2 %= 2; // 1
+  
+  return f1 + f2 + f3; // 1
+}

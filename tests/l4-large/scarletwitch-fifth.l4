@@ -1,0 +1,20 @@
+//test error
+
+void def() {
+    int omg = 0;
+    int this = 1;
+    int is = 2;
+    int a = 3;
+    int void1 = 4;
+    int function = 5;
+    omg + this + is + a + void1 + function;
+}
+int main(){
+    def ();
+    int *x = alloc(int);
+    int *y = alloc(int);
+    bool *z = alloc(bool);
+    if (x == z)
+        def();
+    return 2000;  
+}

@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int a(){
+    int a = 0;
+    int b = 10;
+    int c = 20;
+    return b + c/a;
+}
+
+int main(){
+    return a();
+}

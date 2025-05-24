@@ -1,0 +1,8 @@
+//test error
+// main has too many arguments
+
+int main (int x, int y) {
+  x += y;
+  y -= x;
+  return 0;
+}

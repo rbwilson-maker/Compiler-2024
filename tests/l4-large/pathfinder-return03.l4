@@ -1,0 +1,7 @@
+//test return 123
+
+int main() {
+    int []bigarray = alloc_array(int, 1025);
+    bigarray[1 << 1 << 1 << 1 << 1 << 1 << 1 << 1 << 1 << 1 << 1] = 123;
+    return bigarray[1024];
+}

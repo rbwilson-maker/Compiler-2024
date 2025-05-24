@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+
+int rand(int x) {
+    return (x + 26713) * 2113347293 % 1373051851;
+}
+
+int main() {
+    int x = 100;
+    while (x < 2003347293) {
+        x = rand(x);
+    }
+    assert(x < 2073347293);
+    return x;
+}

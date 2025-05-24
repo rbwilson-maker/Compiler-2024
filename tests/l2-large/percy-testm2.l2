@@ -1,0 +1,19 @@
+//test return 0
+
+int main(){
+	
+	int a = 52 * 48 * 3648;
+	int b = 123*456*789;
+	int c = 2*2*2*2*2*22*2*2*2*2;
+	if(a > b){
+		if(b > c){
+			return 1;
+		} else {
+			return 0;
+		}
+	} else {
+		return 0;
+	}
+
+	return 0;
+}

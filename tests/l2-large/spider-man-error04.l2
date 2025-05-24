@@ -1,0 +1,19 @@
+//test error
+
+int main() 
+{
+    bool blah = false;
+    int x;
+    while (!blah) {
+        x = 6;
+        if (x > 6) {
+            blah = true;
+        }
+        else {
+            x = x + 1;
+            blah = true;
+        }
+    }
+    if (blah)
+        return 222222;
+}

@@ -1,0 +1,10 @@
+//test return 21
+
+int bruh() {
+    return 9 + 10;
+}
+
+int main() {
+    int whats9plus10 = bruh();
+    return 21;
+}

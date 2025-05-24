@@ -1,0 +1,10 @@
+//test return 2
+
+//brooooooooooooooo... didn't recursion go like....down to a base case? not up?
+
+int broooo(int n) {
+    if (n==0) return 2;
+    return broooo(n+1);
+}
+
+int main() { return broooo(-15411); }

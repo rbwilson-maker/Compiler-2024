@@ -1,0 +1,20 @@
+struct A;
+
+typedef struct A* uint16_t;
+typedef struct A uint32_t;
+
+uint32_t random_uint();
+
+uint16_t round_down(uint32_t x);
+
+uint32_t extend(uint16_t x);
+
+uint16_t new_uint(int x);
+
+int uint_to_int(uint16_t x);
+
+struct A {
+    int x;
+    int y;
+    bool z;
+};

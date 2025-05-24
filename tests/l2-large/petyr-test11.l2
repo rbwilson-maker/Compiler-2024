@@ -1,0 +1,51 @@
+//test return 140
+
+// The testing harness will expect this program to fail to compile due to a L2 source error.
+
+// Test 11: invalid syntax (variables with local scope)
+
+int main() {
+
+   int x01 = 0;
+   int x02 = 0;
+   int x03 = 0;
+   int x04 = 0;
+   int x05 = 0;
+   int x06 = 0;
+   int x07 = 0;
+   int x08 = 0;
+   int x09 = 0;
+   int x11 = 0;
+   int x12 = 0;
+   int x13 = 0;
+   int x14 = 0;
+   int x15 = 0;
+   int x16 = 0;
+   int x17 = 0;
+   int x18 = 0;
+   int x19 = 0;
+   int x20 = 10;
+
+   while (x20 >0)
+   {
+      x20--;
+      x01++;
+      x02++;
+      x03++;
+      x04++;
+      x05++;
+      x06++;
+      x07++;
+      x08++;
+      x09++;
+      x11++;
+      x12++;
+      x13++;
+      x14++;
+      x15++;
+
+   }
+
+   return x01 + x02 + x03 + x04 + x05 + x06 + x07 + x08 + x09 + x11 + x12 + x13 + x14 + x15 + x16 + x17 + x18 + x19 + x20;
+
+   }

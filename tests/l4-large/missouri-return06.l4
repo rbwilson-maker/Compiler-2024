@@ -1,0 +1,45 @@
+//test return 42
+//Linked list cycles
+
+struct Node {
+    int value;
+    struct Node* next;
+};
+
+struct Node* new_node(int value, struct Node* next) {
+    struct Node* node = alloc(struct Node);
+    node->value = value;
+    node->next = next;
+    return node;
+}
+
+bool is_cycle(struct Node* start) {
+    struct Node* tortoise = start;
+    struct Node* hare = start;
+    while (tortoise != NULL && hare != NULL) {
+        tortoise = tortoise->next;
+        if (hare->next == NULL)
+            return false;
+        hare = hare->next->next;
+        if (tortoise == hare)
+            return true;
+    }
+    return false;
+}
+
+int main() {
+    struct Node*[] xs = alloc_array(struct Node*, 100);
+    xs[0] = new_node(0, NULL);
+    for (int i = 1; i < 100; i++)
+    {
+        xs[i] = new_node(i, xs[i-1]);
+    }
+    struct Node*[] ys = alloc_array(struct Node*, 100);
+    ys[0] = new_node(0, NULL);
+    for (int i = 1; i < 100; i++)
+    {
+        ys[i] = new_node(i, ys[i-1]);
+    }
+    ys[0]->next = ys[99];
+    return !is_cycle(xs[0]) && is_cycle(ys[0]) ? 42 : -42;
+}

@@ -1,0 +1,17 @@
+//test error
+
+struct first {
+  int a;
+  int b;
+};
+
+struct second {
+  int a;
+  int b;
+};
+
+int main(){
+  struct first* f = alloc(struct first);
+  struct second* b = alloc(struct second);
+  return f == b ? 5 : 10;
+}

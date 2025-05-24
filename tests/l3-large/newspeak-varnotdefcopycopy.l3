@@ -1,0 +1,10 @@
+//test error
+
+int zeno(fpt eps, fpt eps) {
+  return eps;
+}
+
+int main() {
+  int i = 0;
+  return zeno(itof(i), itof(i));
+}

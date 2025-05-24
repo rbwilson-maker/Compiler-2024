@@ -1,0 +1,14 @@
+//test return 4
+// Tests that uninitialized variables used after return are ignored
+
+int main()
+{
+  int x;
+  int y;
+  int z;
+
+  x = 5 * 8;
+  return x/10;
+
+  z = y + 2;
+}

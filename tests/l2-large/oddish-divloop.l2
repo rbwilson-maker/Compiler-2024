@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+int main() {
+  int a = 15411;
+  int b = 15122;
+
+  while (a / b > 0) {
+    int c = a / b;
+    
+    b = c > b ? c : b;
+    a = a > b ? a : b;
+  }
+
+  return b;
+}

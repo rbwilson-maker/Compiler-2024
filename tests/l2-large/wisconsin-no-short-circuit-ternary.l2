@@ -1,0 +1,7 @@
+//test return 2
+int main() {
+  int ret = 0;
+  ret += true ? 1 : 1 / ret;
+  ret += false ? 1 / (ret - 1) : 1;
+  return ret;
+}

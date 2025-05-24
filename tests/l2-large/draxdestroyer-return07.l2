@@ -1,0 +1,12 @@
+//test return 144
+
+int main() {
+    int f1 = 0;
+    int f2 = 1;
+    int f3 = f2 + f1;
+    while (f3 != 144) {
+        f3 = f3 + f2;
+    }
+
+    return f3;
+}

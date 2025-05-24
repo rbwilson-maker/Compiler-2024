@@ -1,0 +1,10 @@
+//test error
+// Cannot make variable name shadow type name
+
+typedef bool fun;
+
+fun times(fun fun) {
+    return fun;
+}
+
+int main(){ return 0;}

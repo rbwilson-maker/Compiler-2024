@@ -1,0 +1,14 @@
+//test div-by-zero
+//
+int main() {
+    int x = 4;
+    int r;
+    if (x == 4) {
+        int a = 7;
+        int b = 0;
+        r = a / b;
+    } else {
+        r = 14;
+    }
+    return r;
+}

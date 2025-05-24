@@ -1,0 +1,17 @@
+//test div-by-zero
+
+int main() {
+    int argc = 4;
+    bool argv = true;
+
+    while (argv || argc > 0) {
+        if (argc > 0) {
+            argv = !argv;
+        }
+        argc++;
+        int q = argc / 2;
+        argc -= q * 2;
+    }
+
+    return 10 / argc;
+}

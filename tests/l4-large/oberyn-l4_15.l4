@@ -1,0 +1,16 @@
+//test return 2
+
+typedef int a;
+typedef int e;
+typedef int o;
+typedef int u;
+
+o w_o (a w_a, e w_e) {
+  if (w_a <= 0) return 0;
+  return 1 + w_o (w_a - w_e, w_e);
+}
+
+int main() {
+  u w_u = w_o (10, 5);
+  return w_u;
+}

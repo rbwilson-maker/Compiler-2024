@@ -1,0 +1,10 @@
+//test return 4
+
+int main ()
+{
+  int x = 5;
+  int y = 1;
+  int and = x&y;
+  int or = ~(~x & ~y);
+  return or & ~and;
+}

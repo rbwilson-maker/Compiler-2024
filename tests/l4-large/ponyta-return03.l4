@@ -1,0 +1,15 @@
+//test return 13
+
+struct foo {
+  int index;
+};
+
+int main() {
+    struct foo *x;
+    int[] array;
+    x = alloc(struct foo);
+    array = alloc_array(int, 42);
+    x->index = 7;
+    array[7] = 13;
+    return array[x->index];
+}

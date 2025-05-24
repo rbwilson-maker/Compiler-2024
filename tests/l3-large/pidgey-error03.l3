@@ -1,0 +1,11 @@
+//test error
+typedef int t1;
+
+t1 v() {
+    return true;
+}
+
+int main() {
+    int a = v();
+    return 0;
+}

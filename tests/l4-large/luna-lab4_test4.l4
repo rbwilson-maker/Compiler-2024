@@ -1,0 +1,10 @@
+//test return 10
+
+// Test if the compiler handles empty structs correctly.
+
+struct s {};
+
+int main() {
+    struct s[] s = alloc_array(struct s, 10);
+    return 10;
+}

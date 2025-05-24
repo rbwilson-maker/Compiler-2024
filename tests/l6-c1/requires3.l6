@@ -1,0 +1,20 @@
+//test return 0
+
+bool checkForSorted(int i, int j, int []a)
+//@requires i < j;
+//@requires \length(a) == 999;
+//@ensures \result == true;
+{
+  return a[i] < a[j];
+}
+
+int main() {
+  int []a = alloc_array(int, 999);
+  for (int i = 0; i < 999; i++) {
+    a[i] = i;
+  }
+  for (int i = 0; i < 998; i++) {
+    checkForSorted(i, i+1, a);
+  }
+  return 0;
+}

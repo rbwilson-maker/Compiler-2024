@@ -1,0 +1,15 @@
+//test error
+
+// this should catch some C-style struct definitions
+
+typedef struct node {
+    int val;
+    struct node* next;
+} node_t;
+
+int main() {
+    node_t *newNode = alloc(node_t);
+    newNode->val = 0;
+    newNode->next = NULL;
+    return 0;
+}

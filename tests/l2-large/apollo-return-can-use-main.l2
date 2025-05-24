@@ -1,0 +1,7 @@
+//test return 0
+//makes sure that the parser doesn't prevent you from using main
+int main()
+{
+    bool main = false;
+    return main ? 1 : 0;
+}

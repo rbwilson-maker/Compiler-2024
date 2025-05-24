@@ -1,0 +1,36 @@
+//test return 0
+//grayscale an image
+
+struct pixel{
+    int r;
+    int g;
+    int b;
+};
+typedef struct pixel * pxl;
+
+int main(){
+    // create a 10x20 img
+    int m = 10;
+    int n = 20;
+    pxl[] img = alloc_array(pxl, m*n);
+
+    // initialize the image with some colors
+    for (int i = 0; i < m*n; i++){
+        pxl p = alloc(struct pixel);
+        p->r = 3*i % 256;
+        p->g = (10*i + 14) % 256;
+        p->b = 2*i % 256;
+        img[i] = p;
+    }
+
+    // now go through and grayscale the image
+    for (int i = 0; i < m*n; i++){
+        pxl p = img[i];
+        int sum = p->r + p->g + p->b;
+        p->r = sum / 3;
+        p->g = sum / 3;
+        p->b = sum / 3;
+    }
+
+    return 0;
+}

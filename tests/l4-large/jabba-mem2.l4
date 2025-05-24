@@ -1,0 +1,16 @@
+//test memerror
+
+int main() {
+	bool[][][][][][] b = alloc_array(bool[][][][][], 20);
+	for(int i = 0; i < 20; i++) {
+		b[i] = alloc_array(bool[][][][], 5);
+		b[i][0] = alloc_array(bool[][][], 4);
+		b[i][0][0][0] = alloc_array(bool[], 1);
+		b[i][0][0][0][0] = alloc_array(bool, 1);
+		b[i][0][0][0][0][0] = true;
+	}
+	if(b[3][0][0][0][0][0]) {
+		return 1/0;
+	}
+	return 0;
+}

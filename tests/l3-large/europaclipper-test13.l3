@@ -1,0 +1,11 @@
+//test abort
+
+int main() {
+  int i = 28102804;
+  while (i > 0) {
+    i--;
+    assert(i != 0);
+  }
+
+  return 0;
+}

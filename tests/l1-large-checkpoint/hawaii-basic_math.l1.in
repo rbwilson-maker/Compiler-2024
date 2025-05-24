@@ -1,0 +1,59 @@
+//target 3
+[
+ {
+  "Uses": [], 
+  "Defines": [ "%edx" ],
+  "Live_out": [],
+  "Move": true,
+  "Line": 0
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": true,
+  "Line": 1
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": false,
+  "Line": 2
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t10" ],
+  "Live_out": [ "%t10" ],
+  "Move": true,
+  "Line": 3
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t13" ],
+  "Live_out": [ "%t10", "%t13" ],
+  "Move": false,
+  "Line": 4
+ },
+ {
+  "Uses": [ "%t10", "%t13" ], 
+  "Defines": [ "%t14" ],
+  "Live_out": [ "%t14" ],
+  "Move": false,
+  "Line": 5
+ },
+ {
+  "Uses": [ "%t14" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": true,
+  "Line": 6
+ },
+ {
+  "Uses": [], 
+  "Defines": [],
+  "Live_out": [],
+  "Move": false,
+  "Line": 7
+ }
+]

@@ -1,0 +1,12 @@
+//test error
+
+int main () {
+	int u = 15122;
+	int v = 15411;
+	int x;
+	int y;
+	int z;
+	u *= x;
+	v *= y;
+	return (u + v) % z;
+}

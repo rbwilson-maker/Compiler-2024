@@ -1,0 +1,13 @@
+//test error
+
+int fun(struct foo *x) {
+  return foo->bar;
+}
+
+struct foo {
+  int bar;
+};
+
+int main() {
+  return 0;
+}

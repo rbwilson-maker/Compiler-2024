@@ -1,0 +1,11 @@
+//test error
+//Tests that the first argument is not of type arg-list-follow
+
+int foo(int x, int y) {
+  return 7;
+}
+
+int main() {
+  foo(,5,6);
+  return 0;
+}

@@ -1,0 +1,12 @@
+//test return 100
+
+int main() {
+    // Loads EDX with 5, and EAX with 1
+    int y = 15 % 10;
+
+    // Tries division - this should work!
+    // If EDX not cleared, then this will throw a hardware exception
+    int z = 100 / 1;
+
+    return z;
+}

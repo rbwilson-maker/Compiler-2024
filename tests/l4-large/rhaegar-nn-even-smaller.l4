@@ -1,0 +1,202 @@
+//test return 326347
+
+// a crippled neural-network without bprop..etc
+
+typedef int[][] matrix;
+typedef int[] vector;
+
+struct matt {
+  matrix x;
+  int m;
+  int n;
+};
+
+struct vect {
+  vector x;
+  int m;
+};
+
+typedef struct matt mat;
+typedef struct vect vec;
+
+void matmul(mat *A, mat *B, mat *C);
+void ReLU(vec *a, vec *h);
+void Linear(vec *h, vec *a, mat *w, vec *b);
+void Softmax(vec *a, vec *h);
+
+void matmul(mat *A, mat *B, mat *C) {
+  for (int i = 0; i < A->m; i++) {
+    for (int j = 0; j < B->n; j++) {
+      C->x[i][j] = 0;
+      for (int k = 0; k < A->n; k++) {
+        C->x[i][j] += A->x[i][k] * B->x[k][j];
+      }
+    }
+  }
+  return;
+}
+
+void ReLU(vec *a, vec *h) {
+  for (int i = 0; i < a->m; i++) {
+    if (a->x[i] > 0) {
+      h->x[i] = a->x[i];
+    } else {
+      h->x[i] = 0;
+    }
+  }
+}
+
+// a = wh+b
+void Linear(vec *h, vec *a, mat *w, vec *b) {
+  for (int i = 0; i < w->m; i++) {
+      a->x[i] = b->x[i];
+    for (int j = 0; j < w->n; j++) {
+      a->x[i] += w->x[i][j] * h->x[j]; 
+    }
+  }
+  return;
+}
+
+// a modified version of softmax
+// softmax cannot be naively implemented using int, dead code
+void Softmax(vec *a, vec *h) {
+  int sum = 0;
+  for (int i = 0; i < a->m; i++) {
+    sum += a->x[i] * a->x[i];
+  }
+}
+
+// a fprop without softmax
+void forward_propagation(vec *input, mat *w1, vec *b1, vec *a1, vec *h, mat *w2, vec *b2, vec *a2) {
+  Linear(input, a1, w1, b1);
+  ReLU(a1, h);
+  Linear(h, a2, w2, b2);
+}
+
+int main() {
+  vec *input = alloc(vec);
+  input->x = alloc_array(int, 10);
+  input->m = 10;
+  input->x[0] = -108;
+  input->x[1] = 194;
+  input->x[2] = 117;
+  input->x[3] = -127;
+  input->x[4] = 99;
+  input->x[5] = 248;
+  input->x[6] = 16;
+  input->x[7] = -37;
+  input->x[8] = 130;
+  input->x[9] = -108;
+  mat *w1 = alloc(mat);
+  w1->x = alloc_array(int[], 5);
+  w1->m = 5;
+  w1->n = 10;
+  w1->x[0] = alloc_array(int, 10);
+  w1->x[1] = alloc_array(int, 10);
+  w1->x[2] = alloc_array(int, 10);
+  w1->x[3] = alloc_array(int, 10);
+  w1->x[4] = alloc_array(int, 10);
+  w1->x[0][0] = -125;
+  w1->x[0][1] = -144;
+  w1->x[0][2] = -114;
+  w1->x[0][3] = 1;
+  w1->x[0][4] = -69;
+  w1->x[0][5] = 94;
+  w1->x[0][6] = -163;
+  w1->x[0][7] = 78;
+  w1->x[0][8] = -23;
+  w1->x[0][9] = -209;
+  w1->x[1][0] = 232;
+  w1->x[1][1] = 35;
+  w1->x[1][2] = -81;
+  w1->x[1][3] = -213;
+  w1->x[1][4] = 126;
+  w1->x[1][5] = -123;
+  w1->x[1][6] = 84;
+  w1->x[1][7] = 180;
+  w1->x[1][8] = -142;
+  w1->x[1][9] = 108;
+  w1->x[2][0] = -139;
+  w1->x[2][1] = -3;
+  w1->x[2][2] = -238;
+  w1->x[2][3] = 150;
+  w1->x[2][4] = -56;
+  w1->x[2][5] = -78;
+  w1->x[2][6] = -58;
+  w1->x[2][7] = 83;
+  w1->x[2][8] = -246;
+  w1->x[2][9] = 65;
+  w1->x[3][0] = -254;
+  w1->x[3][1] = -124;
+  w1->x[3][2] = -163;
+  w1->x[3][3] = 155;
+  w1->x[3][4] = -223;
+  w1->x[3][5] = -81;
+  w1->x[3][6] = -168;
+  w1->x[3][7] = 128;
+  w1->x[3][8] = 106;
+  w1->x[3][9] = 10;
+  w1->x[4][0] = -124;
+  w1->x[4][1] = -243;
+  w1->x[4][2] = -80;
+  w1->x[4][3] = 186;
+  w1->x[4][4] = -57;
+  w1->x[4][5] = -223;
+  w1->x[4][6] = 174;
+  w1->x[4][7] = -147;
+  w1->x[4][8] = 44;
+  w1->x[4][9] = -46;
+  vec *b1 = alloc(vec);
+  b1->x = alloc_array(int, 5);
+  b1->m = 5;
+  b1->x[0] = -15;
+  b1->x[1] = -38;
+  b1->x[2] = 192;
+  b1->x[3] = 1;
+  b1->x[4] = 136;
+  vec *a1 = alloc(vec);
+  a1->x = alloc_array(int, 5);
+  a1->m = 5;
+  a1->x[0] = 219;
+  a1->x[1] = -29;
+  a1->x[2] = -208;
+  a1->x[3] = 36;
+  a1->x[4] = 176;
+  vec *h1 = alloc(vec);
+  h1->x = alloc_array(int, 5);
+  h1->m = 5;
+  h1->x[0] = -24;
+  h1->x[1] = -98;
+  h1->x[2] = 83;
+  h1->x[3] = -82;
+  h1->x[4] = -45;
+  mat *w2 = alloc(mat);
+  w2->x = alloc_array(int[], 2);
+  w2->m = 2;
+  w2->n = 5;
+  w2->x[0] = alloc_array(int, 5);
+  w2->x[1] = alloc_array(int, 5);
+  w2->x[0][0] = 243;
+  w2->x[0][1] = -82;
+  w2->x[0][2] = -151;
+  w2->x[0][3] = 181;
+  w2->x[0][4] = -98;
+  w2->x[1][0] = 123;
+  w2->x[1][1] = -248;
+  w2->x[1][2] = -239;
+  w2->x[1][3] = 174;
+  w2->x[1][4] = 169;
+  vec *b2 = alloc(vec);
+  b2->x = alloc_array(int, 2);
+  b2->m = 2;
+  b2->x[0] = 177;
+  b2->x[1] = 28;
+  vec *a2 = alloc(vec);
+  a2->x = alloc_array(int, 2);
+  a2->m = 2;
+  a2->x[0] = 158;
+  a2->x[1] = -243;
+
+  forward_propagation(input, w1, b1, a1, h1, w2, b2, a2);
+  return a2->x[1];
+}

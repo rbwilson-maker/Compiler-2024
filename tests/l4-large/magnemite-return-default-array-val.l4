@@ -1,0 +1,6 @@
+//test return 0
+
+int main() {
+    bool[] barray = alloc_array(bool, 10);
+    return barray[0] == true ? 1 : 0;
+}

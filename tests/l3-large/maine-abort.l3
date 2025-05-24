@@ -1,0 +1,20 @@
+//test abort
+
+bool isEven(int n);
+
+int f(int n) {
+    if (n < 20) {
+        return n << 23;
+    }
+    else {
+        assert(!isEven(n));
+        return 50;
+    }
+}
+int main() {
+    return f(234);
+}
+
+bool isEven(int n) {
+    return n%2==0;
+}

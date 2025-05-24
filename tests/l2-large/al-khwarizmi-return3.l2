@@ -1,0 +1,11 @@
+//test return 0
+// Jump behavior in conditionals
+
+int main() {
+  bool a = false;
+  int b = 0;
+  if(a) {
+    b = 1;
+  }
+  return b;
+}

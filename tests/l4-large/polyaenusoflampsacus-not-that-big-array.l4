@@ -1,0 +1,23 @@
+//test return 151220
+
+int f(int* a) {
+  (*a)++;
+  return (*a)-1;
+}
+
+int main() {
+  int* ct = alloc(int);
+
+  int[] A = alloc_array(int, 151220);
+  for(int i = 0; i < 151220; i++) {
+    A[f(ct)] += 1;
+  }
+  assert(*ct == 151220);
+
+  int sum = 0;
+  for(int i = 0; i < *ct; i++) {
+    sum += A[i];
+  }
+
+  return sum;
+}

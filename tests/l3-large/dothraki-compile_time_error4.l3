@@ -1,0 +1,13 @@
+//test error
+
+int doSomething(int i) {
+    return i;
+}
+
+int main() { 
+    Chom chom = 1;
+
+    chom = doSomething(chom);
+
+    return chom;
+}

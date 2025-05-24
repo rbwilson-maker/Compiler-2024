@@ -1,0 +1,13 @@
+//test return 6
+
+void void_function(bool cond) {
+  if (cond) return;
+  else 19;
+}
+
+int main() {
+  void_function(false);
+
+  return 6;
+}
+

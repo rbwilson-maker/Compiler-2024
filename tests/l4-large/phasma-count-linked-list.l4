@@ -1,0 +1,68 @@
+//test return 0
+
+/* count the numbers in a linked list */
+
+typedef struct list_node* node;
+struct list_node {
+  int k;
+  node numbers;
+  node next;
+};
+
+int find_num(node head, int index)
+{
+  if (head == NULL) {
+    return -1;
+  }
+  int count = -1;
+  for (node current = head; current != NULL; current = current->next) {
+    count++;
+    if (count == index) {
+      return current->k;
+    }
+    for (node num = current->numbers; num != NULL; num = num->numbers) {
+      count++;
+      if (count == index) {
+        return num->k;
+      }
+    }
+  }
+
+  return -1;
+}
+
+int main() {
+  node head = alloc(struct list_node);
+  node two = alloc(struct list_node);
+  node three = alloc(struct list_node);
+  node four = alloc(struct list_node);
+  node five= alloc(struct list_node);
+  node six = alloc(struct list_node);
+  node seven = alloc(struct list_node);
+
+  head->k = 1;
+  head->next = two;
+  two->k = 2;
+  two->next = three;
+  three->k = 3;
+  three->numbers = four;
+  three->next = six;
+  four->k = 4;
+  four->numbers = five;
+  four->next = three->next;
+  five->k = 5;
+  five->next = three->next;
+  six->k = 6;
+  six->numbers = seven;
+  seven->k = 7;
+
+  assert(find_num(head, 0) == 1);
+  assert(find_num(head, 1) == 2);
+  assert(find_num(head, 2) == 3);
+  assert(find_num(head, 3) == 4);
+  assert(find_num(head, 4) == 5);
+  assert(find_num(head, 5) == 6);
+  assert(find_num(head, 6) == 7);
+
+  return 0;
+}

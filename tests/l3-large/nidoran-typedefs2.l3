@@ -1,0 +1,9 @@
+//test error
+typedef a b;
+typedef b c;
+typedef int a;
+
+int main() {
+    c d = 0xdee;
+    return d;
+}

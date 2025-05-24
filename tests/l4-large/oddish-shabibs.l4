@@ -1,0 +1,6 @@
+//test error
+
+int main() {
+  int[] A = alloc_array(int, 300);
+  return A[301] + "no";
+}

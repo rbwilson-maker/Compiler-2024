@@ -1,0 +1,16 @@
+//test typecheck
+//test infloop
+// verifying semantics for default and zero-length arrays
+
+
+int main(){
+    int[] x;
+    if (alloc_array(int, 0) == alloc_array(int, 0)){
+        return 2;
+    }
+    else{
+        while(true){}
+        return 1;
+    }
+
+}

@@ -1,0 +1,24 @@
+//test typecheck
+//test infloop
+
+// let's see what happens here...
+
+int main() {
+  int w = 0;
+  while (w < 11111111) {
+    int x = 0;
+    while (x < 22222222) {
+      int y = 0;
+      while (y < 33333333) {
+        int z = 0;
+	while (z < 44444444) {
+          z++;
+        }
+	y ++;
+      }
+      x++;
+    }
+    w++; 
+  }
+  return 0;
+}

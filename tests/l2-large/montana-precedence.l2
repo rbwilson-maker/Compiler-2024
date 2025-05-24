@@ -1,0 +1,9 @@
+//test return -2
+
+int main () {
+  int x = 4 | 3 ^ 7 & 1;        // 6
+  int y = -1 - -(-1);           // -2
+  bool z = 1 == 2 * 5 + 2 >> 1; // false
+  int r = z ? x : y;
+  return r;
+}

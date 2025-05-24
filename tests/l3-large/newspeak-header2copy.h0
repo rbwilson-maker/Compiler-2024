@@ -1,0 +1,5 @@
+// duplicate in parameter list in declaration
+int intint2int(int i, int i);
+int int2int(int i);
+bool int2bool(int i);
+bool boolbool2bool(bool b, bool c);

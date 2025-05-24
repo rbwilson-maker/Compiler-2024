@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+
+bool inf(int n) {
+   if (n < 1) {
+      n++;
+   }
+   if (n < 1) return true;
+   return inf(n-1);
+}
+
+int main() {
+   bool res = inf(3);
+   return 1;
+}

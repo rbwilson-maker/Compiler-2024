@@ -1,0 +1,13 @@
+//test return 1
+//check polymorphic functions
+int main () {
+    int x = 0;
+    int y = 0;
+
+    bool a = true;
+    bool b = true;
+
+    bool c = x == y;
+    bool d = a == b;
+    return c == d ? 1 : 0;
+}

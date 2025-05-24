@@ -1,0 +1,19 @@
+//test div-by-zero
+
+int main() {
+    int x = 10;
+    int y = 15;
+    int z = 25;
+
+    int a = x / y;
+    x = 50;
+    int b = x / y;
+    int c = z % a;
+
+    int i = 1000;
+    int j = 20000;
+    int k = 3421;
+    int l = i * j / k + k % i;
+    
+    return l;
+}

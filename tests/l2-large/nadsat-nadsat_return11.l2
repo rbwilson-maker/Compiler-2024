@@ -1,0 +1,16 @@
+//test return 5
+
+// Test ternary short-circuit
+int main()
+{
+  int x;
+  int y;
+  int z;
+
+  x = 0;
+  y = 1;
+
+  z = x < y ? 10 / 2 : 10 / 0;
+
+  return z;
+}

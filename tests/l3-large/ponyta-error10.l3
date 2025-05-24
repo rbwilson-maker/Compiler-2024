@@ -1,0 +1,12 @@
+//test error
+// don't mix up initialization and declaration
+
+int foo(int foo) {
+  return 42;
+}
+
+int main() {
+  int foo;
+
+  return foo;
+}

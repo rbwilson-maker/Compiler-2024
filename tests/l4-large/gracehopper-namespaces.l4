@@ -1,0 +1,25 @@
+//test return 1
+// Tests that namespaces are separate
+
+struct t {
+    int t;
+};
+
+typedef struct t* t_p;
+
+t_p x(t_p t) {
+    assert(t->t >= 1);
+    if (t->t == 1) {
+        return t;
+    }
+
+    t_p new_t = alloc(struct t);
+    new_t->t = t->t - 1;
+    return x(new_t);
+}
+
+int main() {
+    t_p t = alloc(struct t);
+    t->t = 10;
+    return x(t)->t;
+}

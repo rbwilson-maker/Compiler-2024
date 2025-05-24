@@ -1,0 +1,15 @@
+//test return 1
+
+void test_function(){
+	int a = 6;
+	int b = 0;
+	while(a-b > 0){
+		b += 2;
+		a += 1;
+	}
+}
+
+int main(){
+	test_function();
+	return 1;
+}

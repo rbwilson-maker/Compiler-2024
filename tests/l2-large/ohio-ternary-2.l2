@@ -1,0 +1,5 @@
+//test return 88
+int main() {
+  int d = 0;
+  return ((d+1) == d ? -88 : 88);
+}

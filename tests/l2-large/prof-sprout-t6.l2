@@ -1,0 +1,10 @@
+//test error
+// test block scoping
+
+int main() {
+    int y = 0;
+    { 
+        int x = 5;
+    }
+    return x + y;
+}

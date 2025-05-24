@@ -1,0 +1,9 @@
+//test error
+
+int param_name_same(int i, int i) {
+  return 2;
+}
+
+int main() {
+  return 0;
+}

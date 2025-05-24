@@ -1,0 +1,15 @@
+//test return 41
+
+int main()
+{
+  int i = 5;
+  int x = 0;
+
+  while (i == 5)
+  {
+    x += i;
+    if (x >= i << 3) {i -= x % 6;}
+  }
+  
+  return x | i;
+}

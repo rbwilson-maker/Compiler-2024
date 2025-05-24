@@ -1,0 +1,23 @@
+//test return 0
+
+/*
+ /*
+  /*
+   /*
+     * // * // * // nested comments
+    */
+   */
+  */
+ */
+
+int main()
+{
+    int x = 2147483647;        // INT_MAX
+    int y = x * x + x * 2 + 1; // overflow
+    int z = x + 1;             // overflow to INT_MIN
+    y *= x;
+    y -= y;
+    return y;
+    return x;
+    return z;
+}

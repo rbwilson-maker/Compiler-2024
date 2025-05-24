@@ -1,0 +1,37 @@
+//test return 0
+// test matrix discriminant
+
+int[][] get_submatrix(int[][] M, int n, int i, int j) {
+  int[][] res = alloc_array(int[], n);
+  for (int a = 0; a < n; a++) {
+    res[a] = alloc_array(int, n);
+    for (int b = 0; b < n; b++) {
+      int c = a < i ? a : a+1;
+      int d = b < j ? b : b+1;
+      res[a][b] = M[c][d];
+    }
+  }
+  return res;
+}
+
+int det(int[][] M, int n) {
+  if (n <= 1) return M[0][0];
+  int sign = 1;
+  int tot = 0;
+  for (int i = 0; i < n; i++) {
+    tot += sign * M[0][i] * det(get_submatrix(M, n-1, 0, i), n-1);
+    sign *= -1;
+  }
+  return tot;
+}
+
+int main() {
+  int[][] M = alloc_array(int[], 10);
+  for (int i = 0; i < 10; i++) {
+    M[i] = alloc_array(int, 10);
+    for (int j = 0; j < 10; j++) {
+      M[i][j] = i*10 + j;
+    }
+  }
+  return det(M, 10);
+}

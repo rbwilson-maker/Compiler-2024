@@ -1,0 +1,8 @@
+//test error
+// undeclared variable b
+
+int main() {
+  int a;
+  a = 5 / b;
+  return a;
+}

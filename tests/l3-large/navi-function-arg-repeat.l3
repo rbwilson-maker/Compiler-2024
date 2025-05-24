@@ -1,0 +1,9 @@
+//test error
+
+int f(int c, int d, int e, int c) {
+	return c + d;
+}
+
+int main() {
+	return f(4, 3, 4, 1);
+}

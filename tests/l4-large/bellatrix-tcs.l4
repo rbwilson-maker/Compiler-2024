@@ -1,0 +1,21 @@
+//test return 0
+//so there is asso rule for ->
+struct thai;
+typedef struct thai thai;
+struct thai{
+    int* salad;
+};
+struct thai2 {
+    thai* x;
+    int* salad;
+};
+    
+int main() {
+    struct thai2* chicken = alloc(struct thai2);
+    (*chicken).salad = alloc(int);
+    *(*chicken).salad = 85;
+    chicken->x = alloc(thai);
+    struct thai2* x = alloc(struct thai2);
+    (chicken->x->salad) ;
+    return 0;
+}

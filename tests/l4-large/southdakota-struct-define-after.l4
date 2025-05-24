@@ -1,0 +1,10 @@
+//test return 0
+
+int main() {
+  struct foo *f = NULL;
+  return 0;
+}
+
+struct foo {
+  int bar;
+};

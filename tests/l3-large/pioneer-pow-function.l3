@@ -1,0 +1,25 @@
+//test return 256
+//it's the power function, that's neat
+//we teach this in 15122 :)
+
+int POW(int x, int y)
+{
+  int r = 1;
+  int b = x;
+  int e = y;
+  while (e > 1)
+  {
+    if (e % 2 == 1)
+    {
+      r = b * r;
+    }
+    b = b * b;
+    e = e / 2;
+  }
+  return r * b;
+}
+
+int main()
+{
+  return POW(4, 4);
+}

@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+
+void addone(int i){
+  i++;
+  return;
+}
+
+int main() {
+  int* i = alloc(int);
+  while (*i < 5){
+    addone(*i);
+  }
+  return 0;
+}

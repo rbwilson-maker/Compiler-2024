@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+
+// interesting series of recursive calls which leads to failure for n > 4 
+int f (int n) {
+  if (n == 0) {
+    return 1;
+  }
+
+  return f(f(n-1) - 1) * n;
+}
+
+int main() {
+  return f(1) + f(2) + f(3) + f(4) + f(5);
+}

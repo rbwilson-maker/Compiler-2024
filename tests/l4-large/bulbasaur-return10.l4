@@ -1,0 +1,48 @@
+//test return 2
+//I'm sorry
+
+struct e
+{
+  int x;
+};
+
+struct d
+{
+  struct e* e;
+};
+
+struct c
+{
+  struct d*[] d;
+};
+
+struct b
+{
+  struct c** c;
+  int y;
+};
+
+struct a
+{
+  struct b* b;
+};
+
+int main()
+{
+  struct e* e = alloc(struct e);
+  e->x++;
+  struct d* d = alloc(struct d);
+  d->e = e;
+  struct c* c = alloc(struct c);
+  struct d*[] d_arr = alloc_array(struct d*, 3);
+  d_arr[1] = d;
+  c->d = d_arr;
+  struct c** c_star = alloc(struct c*);
+  *c_star = c;
+  struct b* b = alloc(struct b);
+  b->c = c_star;
+  b->y++;
+  struct a* a = alloc(struct a);
+  a->b = b;
+  return a->b->y + (*a->b->c)->d[1]->e->x;
+}

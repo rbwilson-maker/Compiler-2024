@@ -1,0 +1,20 @@
+//test return 70
+
+void foo(int x, int y, int* z){
+  {
+    int foo = 2;
+    y += foo;
+  }
+  {
+    int foo = 3;
+    x+=foo;
+  }
+  *z = x * y;
+  return;
+}
+
+int main() { 
+  int* z = alloc(int);
+  foo(4, 8, z);
+  return *z;
+ }

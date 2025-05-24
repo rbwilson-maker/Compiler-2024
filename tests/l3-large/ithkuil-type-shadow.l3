@@ -1,0 +1,8 @@
+//test error
+// bool is not an ident
+
+typedef int bool;
+
+bool main() {
+    return 0;
+}

@@ -1,0 +1,17 @@
+//test error
+
+struct scary {
+};
+
+struct ghost {
+	struct scary scary;
+};
+
+struct skeleton {
+	struct scary[] bones;
+};
+
+int main() {
+	struct scary* skeleton = alloc(struct scary);
+	return skeleton->bones[0];
+}

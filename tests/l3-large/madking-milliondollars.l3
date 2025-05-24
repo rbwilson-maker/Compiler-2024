@@ -1,0 +1,13 @@
+//test typecheck
+
+void earnAMillionDollars() {
+    proveRiemannHypothesis (10);
+    proofOfCollatz (0);
+    polyTimeAlgorithmForSAT (1);
+    proofsThatDontFitInTheMargin (true);
+}
+
+int main () {
+    earnAMillionDollars();
+    return 0;
+}

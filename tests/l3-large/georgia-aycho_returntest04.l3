@@ -1,0 +1,11 @@
+//test return 5
+
+bool some_bool(int i) {
+  if(i>0) {return true;}
+  return false;
+}
+
+int main() {
+  if(some_bool(-1)) {return 100;}
+  return 5;
+}

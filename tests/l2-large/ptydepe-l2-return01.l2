@@ -1,0 +1,11 @@
+//test return 0
+// Simple if program
+int main() {
+    int a = 5;
+    int b = 0;
+ 
+    if (a == 5) {
+        return b;
+    }
+    return a;
+}

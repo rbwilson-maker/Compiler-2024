@@ -1,0 +1,23 @@
+//test error
+// missing return statement
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int aa;
+  int bb;
+  int cc;
+  int dd;
+  int ee;
+
+  for(int i=0;i<100;i++) {int ii = i;}
+
+  d = 1;
+  c = -2147483648;
+  b = c/d;
+  a = c*d;
+  e = c-d;
+}

@@ -1,0 +1,284 @@
+//test return 0;
+
+
+int findMatchingClose(int[] progmem, int pc, int progSize)
+{
+    assert(0 <= pc && pc < progSize);
+    if(progmem[pc] != 7)
+    {
+	return -1;
+    }
+
+    int nestedCount = 0;
+    while(true)
+    {
+	pc++;
+	assert(0 <= pc && pc < progSize);
+	if(progmem[pc] == 7)
+	{
+	    nestedCount++;
+	}
+	if(progmem[pc] == 8)
+	{
+	    if(nestedCount == 0)
+	    {
+		return pc;
+	    }
+	    nestedCount--;
+	}
+    }
+
+    //For a properly formatted program, control never reaches here
+    return -1;
+}
+
+int findMatchingOpen(int[] progmem, int pc, int progSize)
+{
+
+    assert(0 <= pc && pc < progSize);
+    if(progmem[pc] != 8)
+    {
+	return -1;
+    }
+
+    int nestedCount = 0;
+    while(true)
+    {
+	pc--;
+	assert(0 <= pc && pc < progSize);
+	if(progmem[pc] == 8)
+	{
+	    nestedCount++;
+	}
+	if(progmem[pc] == 7)
+	{
+	    if(nestedCount == 0)
+	    {
+		return pc;
+	    }
+	    nestedCount--;
+	}
+    }
+
+    //For a properly formatted program, control never reaches here
+    return -1;
+}
+
+
+void exeProg(int[] progmem, int progSize)
+{
+    //This should probably be enough data memory
+    //...Probably
+    int[] data = alloc_array(int, 30000);
+    int dataPointer = 0;
+
+    for(int pc = 0; pc < progSize;)
+    {
+        assert(0 <= pc && pc < progSize);
+
+	int currInst = progmem[pc];
+
+	//Figure out what current instruction is
+	if(currInst == 8)
+	{
+
+	    //8, ]
+	    pc = findMatchingOpen(progmem, pc, progSize);
+	    assert(pc >= 0);
+	}
+	else
+	{
+	    if((currInst & 0x4) == 0)
+	    {
+		//1, 2, or 3
+		if((currInst & 0x2) == 0)
+		{
+		    //1, <
+		    dataPointer--;
+		    pc++;
+		}
+		else
+		{
+		    //2 or 3
+		    if(currInst == 2)
+		    {
+			//2, >
+			dataPointer++;
+			assert(dataPointer >= 0);
+			pc++;
+		    }
+		    else
+		    {
+			//3, +
+			data[dataPointer]++;
+			pc++;
+		    }
+		}
+	    }
+	    else
+	    {
+		//4, 5, 6, or 7
+		if(currInst <= 5)
+		{
+		    //4 or 5
+		    if((currInst & 0x1) == 0)
+		    {
+			//4, -
+			data[dataPointer]--;
+			pc++;
+		    }
+		    else
+		    {
+			//5, .
+			print_int(data[dataPointer]);
+			pc++;
+		    }
+		}
+		else
+		{
+		    //6 or 7
+		    if((currInst & 0x1) == 0)
+		    {
+			//6, ,
+		    	assert(false);
+		    }
+		    else
+		    {
+			//7, [
+			if(data[dataPointer] == 0)
+			{
+			    pc = findMatchingClose(progmem, pc, progSize) + 1;
+			    assert(pc >= 0);
+			}
+			else
+			{
+			    pc++;
+			}
+		    }
+		}
+	    }
+	}
+    }
+}
+
+int main()
+{
+    int progSize = 111;
+    int[] progmem = alloc_array(int, progSize);
+
+    progmem[0] = 3;
+    progmem[1] = 3;
+    progmem[2] = 3;
+    progmem[3] = 3;
+    progmem[4] = 3;
+    progmem[5] = 3;
+    progmem[6] = 3;
+    progmem[7] = 3;
+    progmem[8] = 3;
+    progmem[9] = 3;
+    progmem[10] = 7;
+    progmem[11] = 2;
+    progmem[12] = 3;
+    progmem[13] = 3;
+    progmem[14] = 3;
+    progmem[15] = 3;
+    progmem[16] = 3;
+    progmem[17] = 3;
+    progmem[18] = 3;
+    progmem[19] = 2;
+    progmem[20] = 3;
+    progmem[21] = 3;
+    progmem[22] = 3;
+    progmem[23] = 3;
+    progmem[24] = 3;
+    progmem[25] = 3;
+    progmem[26] = 3;
+    progmem[27] = 3;
+    progmem[28] = 3;
+    progmem[29] = 3;
+    progmem[30] = 2;
+    progmem[31] = 3;
+    progmem[32] = 3;
+    progmem[33] = 3;
+    progmem[34] = 2;
+    progmem[35] = 3;
+    progmem[36] = 1;
+    progmem[37] = 1;
+    progmem[38] = 1;
+    progmem[39] = 1;
+    progmem[40] = 4;
+    progmem[41] = 8;
+    progmem[42] = 2;
+    progmem[43] = 3;
+    progmem[44] = 3;
+    progmem[45] = 5;
+    progmem[46] = 2;
+    progmem[47] = 3;
+    progmem[48] = 5;
+    progmem[49] = 3;
+    progmem[50] = 3;
+    progmem[51] = 3;
+    progmem[52] = 3;
+    progmem[53] = 3;
+    progmem[54] = 3;
+    progmem[55] = 3;
+    progmem[56] = 5;
+    progmem[57] = 5;
+    progmem[58] = 3;
+    progmem[59] = 3;
+    progmem[60] = 3;
+    progmem[61] = 5;
+    progmem[62] = 2;
+    progmem[63] = 3;
+    progmem[64] = 3;
+    progmem[65] = 5;
+    progmem[66] = 1;
+    progmem[67] = 1;
+    progmem[68] = 3;
+    progmem[69] = 3;
+    progmem[70] = 3;
+    progmem[71] = 3;
+    progmem[72] = 3;
+    progmem[73] = 3;
+    progmem[74] = 3;
+    progmem[75] = 3;
+    progmem[76] = 3;
+    progmem[77] = 3;
+    progmem[78] = 3;
+    progmem[79] = 3;
+    progmem[80] = 3;
+    progmem[81] = 3;
+    progmem[82] = 3;
+    progmem[83] = 5;
+    progmem[84] = 2;
+    progmem[85] = 5;
+    progmem[86] = 3;
+    progmem[87] = 3;
+    progmem[88] = 3;
+    progmem[89] = 5;
+    progmem[90] = 4;
+    progmem[91] = 4;
+    progmem[92] = 4;
+    progmem[93] = 4;
+    progmem[94] = 4;
+    progmem[95] = 4;
+    progmem[96] = 5;
+    progmem[97] = 4;
+    progmem[98] = 4;
+    progmem[99] = 4;
+    progmem[100] = 4;
+    progmem[101] = 4;
+    progmem[102] = 4;
+    progmem[103] = 4;
+    progmem[104] = 4;
+    progmem[105] = 5;
+    progmem[106] = 2;
+    progmem[107] = 3;
+    progmem[108] = 5;
+    progmem[109] = 2;
+    progmem[110] = 5;
+
+    exeProg(progmem, 111);
+
+    return 0;
+}

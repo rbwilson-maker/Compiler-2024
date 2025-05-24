@@ -1,0 +1,30 @@
+//test return 4
+// testing args on stack
+int foo(int a, bool b, int c, bool e, bool f, bool g,
+        int h, int i, int j, bool k, bool l, int m) {
+    int res = 0;
+    if (b) {
+        res -= a;
+    }
+    if (e) {
+        res *= c;
+    }
+    if (f) {
+        res = res / h;
+    }
+    if (g) {
+        res ^= i;
+    }
+    if (k) {
+        res = res / j;
+    }
+    if (l) {
+        res |= m;
+    }
+    return res;
+}
+
+int main() {
+    int res =  foo(25, true, 593, false, false, true, 934, -35, 12, true, false, -235);
+    return res;
+}

@@ -1,0 +1,26 @@
+//test memerror
+
+struct s {
+    int a;
+    bool b;
+    int[] c;
+    int *d;
+};
+
+int main() {
+    bool[] a = alloc_array(bool, 1);
+    
+    assert(!a[0]);
+
+    int[] b = alloc_array(int, 1);
+
+    assert(b[0] == 0);
+
+    struct s *c = alloc(struct s);
+
+    assert(c->a == 0);
+    assert(!c->b);
+    assert(c->d == NULL);
+    
+    return (c->c)[0];
+}

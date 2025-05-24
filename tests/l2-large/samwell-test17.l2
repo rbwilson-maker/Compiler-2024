@@ -1,0 +1,12 @@
+//test return 4
+
+int main() { 
+    int x = 7;
+    int y = x >> 2;
+    int z = y << 2;
+    if (x != z)
+    {
+        return z;
+    }
+    return x;
+ }

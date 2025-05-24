@@ -1,0 +1,38 @@
+//test return 15411
+
+typedef int size;
+
+size meatball(bool big);
+void purpose(bool isBees);
+void nopurpose();
+bool bees();
+
+bool bees() {
+  if (true) return true;
+  else return false;
+}
+
+void purpose(bool beeees) {
+  assert(beeees);
+}
+
+void nopurpose() {
+  12 / 0;
+}
+
+size meatball(bool isBig) {
+  if (isBig) {
+    purpose(bees());
+    return 15411;
+  }
+  else {
+    nopurpose();
+    return 0;
+  }
+}
+
+int main() {
+  bool big = true;
+  size me = meatball(big);
+  return me;
+}

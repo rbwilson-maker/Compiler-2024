@@ -1,0 +1,26 @@
+//test error
+
+struct mystruct;
+
+struct mystruct;
+
+struct mystruct {
+    int a;
+    int b;
+}
+
+
+struct mystruct;
+
+int main() {
+
+    struct mystruct s = alloc(struct mystruct);
+
+    s.a = 10000;
+
+    s.b += s.a;
+
+    return s.b;
+}
+
+struct mystruct;

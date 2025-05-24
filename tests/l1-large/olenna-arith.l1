@@ -1,0 +1,15 @@
+//test return 1939968840
+int main(){
+  int x = 51;
+  int y = 22;
+  int z = 500;
+
+  z = y + x;
+  y = z - z;
+  x = x * x;
+  z = x + y + z;
+  z = z * z * z;
+  x = z - y;
+
+  return x;
+}

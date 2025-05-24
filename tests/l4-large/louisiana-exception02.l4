@@ -1,0 +1,14 @@
+//test memerror
+
+int main()
+{
+	int num_truths = 5000;
+	bool[] truths = alloc_array(bool, num_truths);
+	for (int i = 0; i < num_truths; i++)
+	{
+		bool this_truth = (i % 2 == 0 ? true : false);
+		truths[i] = this_truth;
+	}
+	//give me the 5001th truth!
+	return (truths[50001] ? 1 : 0);
+}

@@ -1,0 +1,17 @@
+//test error
+struct b;
+
+struct a {
+    struct b *ptr;
+};
+
+struct b {
+    int a;
+};
+
+int main() {
+    struct A *a;
+    a = alloc(struct a);
+    a->b->a = 1;
+    return a->b->a;
+}

@@ -1,0 +1,15 @@
+//test error
+int main(){
+    int x = 0;
+    int y = 1;
+    int z = 2;
+    int k;
+    for(int i = 0; i < x; i++){
+        k = 22;
+        if(x > 0)
+          return y;
+        else if(z > 4)
+          return k;
+    }
+    return k;
+}

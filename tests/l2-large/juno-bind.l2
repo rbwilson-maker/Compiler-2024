@@ -1,0 +1,12 @@
+//test return 0
+
+// Oops wrong language
+
+int main () {
+    int f = 0;
+    int x = 12;
+
+    f >>= x;
+
+    return 0;
+}

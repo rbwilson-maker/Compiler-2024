@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+    int x = 2;
+    x *= x; // 4
+    x *= x; // 16
+    x *= x; // 256
+    x *= x; // 65,536
+    x *= x / 2; // int_min()
+    return x / -1; // error
+}

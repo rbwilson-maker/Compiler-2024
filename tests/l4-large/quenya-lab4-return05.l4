@@ -1,0 +1,42 @@
+//test return 77
+// a strange sum type using structs
+
+typedef struct int_or_bool* iob;
+
+struct int_or_bool {
+  int* integer;
+  bool* boolean;
+  int which_type;
+};
+
+iob create(int* a, bool* b) {
+  iob t = alloc(struct int_or_bool);
+  t->integer = a;
+  t->boolean = b;
+  t->which_type = b == NULL ? 0 : 1;
+  return t;
+}
+
+bool is_int(iob t) {
+  return t->which_type == 0;
+}
+
+bool is_bool(iob t) {
+  return t->which_type == 1;
+}
+
+int get_int(iob t) {
+  return *(t->integer);
+}
+
+bool get_bool(iob t) {
+  return *(t->boolean);
+}
+
+int main() {
+  int* a = alloc(int);
+  *a = 77;
+  iob t = create(a, NULL);
+  assert(is_int(t));
+  return get_int(t);
+}

@@ -1,0 +1,19 @@
+//test error
+// *s[0] is wrong (need: *(s)[0] )
+
+typedef int i;
+
+struct stuff {
+  i j;
+};
+typedef struct stuff styuff;
+
+int main() {
+  styuff[][]* s = alloc(styuff[][]);
+  *s = alloc_array(styuff[],1);
+  *s[0] = alloc_array(styuff,1);
+
+  *s[0][0].j = 1;
+
+  return 0;
+}

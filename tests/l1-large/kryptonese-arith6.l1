@@ -1,0 +1,7 @@
+//test return 2
+//overflow test
+int main() {
+    int a = -2147483647;
+    a *= 2;
+    return a;
+}

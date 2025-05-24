@@ -1,0 +1,13 @@
+//test return 7
+
+int add(int x, int y) {
+	return x + y + 0;
+}
+
+int main() {
+   int x = 4;
+   int y = 3;
+   int z;
+   int a;
+   return add(x,y) + add(0,0);
+}

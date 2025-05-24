@@ -1,0 +1,9 @@
+//test abort
+void f1 ();
+
+void f1 () {while(true) assert(false);}
+
+int main() {
+	f1();
+	return 0;
+}

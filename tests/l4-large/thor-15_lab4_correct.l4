@@ -1,0 +1,172 @@
+//test memerror
+
+int get_row(int index, int width, int height)
+{
+    int output=index/width;
+    return output;
+}
+
+int get_column(int index, int width, int height)
+{
+    int output=index%width;
+    return output;
+}
+
+
+bool is_valid_pixel(int row, int col, int width, int height)
+{
+    return row<height && col<width && row>=0 && col>=0;
+}
+
+int get_index(int row, int col, int width, int height)
+{
+    int output=row*width +col%width;
+    return output;
+}
+
+
+typedef int pixel;       // Library (concrete) view of a pixel
+typedef pixel pixel_t;   // Client  (abstract) view of a pixel
+// Returns the red component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_red(pixel p)
+//@ensures 0<= \result && \result<=255;
+{
+    pixel wiped=p & 0x00FF0000;
+    int output=wiped>>16;
+    return output;
+}
+
+// Returns the green component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_green(pixel p)
+//@ensures 0<= \result && \result<=255;
+{
+    pixel wiped=p & 0x0000FF00;
+    int output=wiped>>8;
+    return output;
+}
+
+// Returns the blue component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_blue(pixel p)
+//@ensures 0<= \result && \result<=255;
+{
+    int output=p & 0x000000FF;
+    return output;
+}
+
+// Returns the alpha component of the given pixel p.
+// POSTCONDITION: returned value is between 0 and 255, inclusive.
+int get_alpha(pixel p)
+//@ensures 0<= \result && \result<=255;
+{
+    pixel shifted=p>>24;
+    int output=shifted & 0x000000FF;
+    return output;
+}
+
+// Returns an int representing an RGB pixel consisting of the given
+// alpha, red, green and blue intensity values.
+// PRECONDITION: all intensity values must be between 0 and 255,
+// inclusive.
+pixel make_pixel(int alpha, int red, int green, int blue)
+//@requires 0<=alpha && 0<=red && 0<=green && 0<=blue;
+//@requires 255>=alpha && 255>=red && 255>=green && 255>=blue;
+{
+    int first=alpha<<24;
+    int second=red<<16;
+    int third=green<<8;
+    int fourth=blue;
+    pixel output=first|second|third|fourth;
+    return output;
+}
+
+bool safemask(int[] mask, int maskwidth)
+//@requires maskwidth%2==1;
+//@requires is_valid_imagesize(maskwidth, maskwidth);
+//@requires \length(mask)==maskwidth*maskwidth;
+{
+    if(mask[maskwidth*maskwidth/2]==0){
+        return false;}
+    for(int m=0; m<maskwidth*maskwidth; m++)
+    //@loop_invariant m>=0 && m<=maskwidth*maskwidth;
+    {
+        if(mask[m]<0){
+            return false;}
+    }
+    return true;
+}
+
+pixel_t[] blur(pixel_t[] pixels,int width,int height,int[] mask,int maskwidth)
+//@requires is_valid_imagesize(width, height);
+//@requires \length(pixels)==width*height;
+//@requires is_valid_imagesize(maskwidth, maskwidth);
+//@requires \length(mask)==maskwidth*maskwidth;
+//@requires maskwidth%2==1;
+//@requires safemask(mask, maskwidth);
+//@ensures \length(\result)==width*height;
+//@ensures \result!=pixels;
+{
+    pixel_t[] output=alloc_array(pixel_t, width*height);
+    int numr=0; //numerator of the red component of pixel p
+    int numg=0; //numerator of the green component of pixel p
+    int numb=0; //numerator of the blue component of pixel p
+    int dem=1; //denominator for pixel p
+    int cent=maskwidth/2; //the row and column of the center of the mask
+    int mrow=0; //the row of a mask element in the mask
+    int mcol=0; //the column of a mask element in the mask
+    int crow=0; //the row of the center element in pixels
+    int ccol=0; //the column of the center element in pixels
+    int prow=0; //the row of an element of pixels
+    int pcol=0; //the column of an element of pixels
+    int pindex=0; //the index of an element of pixels
+    int alphaval=0;
+    for(int p=0; p<width*height; p++)
+    //@loop_invariant is_valid_pixel(prow,pcol, width, height);
+    //@loop_invariant is_valid_pixel(mrow, mcol, maskwidth, maskwidth);
+    //@loop_invariant pindex<width*height && pindex>=0;
+    //@loop_invariant p>=0 && p<=width*height;
+    //@loop_invariant dem!=0;
+    //@loop_invariant numr/dem>=0 && numr/dem<225;
+    //@loop_invariant numb/dem>=0 && numb/dem<225;
+    //@loop_invariant numg/dem>=0 && numg/dem<225;
+    {
+        prow=get_row(p, width, height);
+        pcol=get_column(p, width, height);
+        alphaval=get_alpha(pixels[p]);
+        dem=0;
+        for(int m=0; m<maskwidth*maskwidth; m++)
+        //@loop_invariant pindex<width*height && pindex>=0;
+        //@loop_invariant is_valid_pixel(mrow, mcol, maskwidth, maskwidth);
+        //@loop_invariant m>=0 && m<=maskwidth*maskwidth;
+        {
+            mrow=get_row(m, maskwidth, maskwidth);
+            mcol=get_column(m, maskwidth, maskwidth);
+            if(is_valid_pixel(prow-cent+mrow,pcol-cent+mcol,width,height))
+            {
+                pindex=get_index(prow-cent+mrow,pcol-cent+mcol,width,height);
+                numr+=mask[m]*get_red(pixels[pindex]);
+                numg+=mask[m]*get_green(pixels[pindex]);
+                numb+=mask[m]*get_blue(pixels[pindex]);
+                dem+=mask[m];
+            }
+        }
+        output[p]=make_pixel(alphaval, numr/dem, numg/dem, numb/dem);
+        numr=0;
+        numg=0;
+        numb=0;
+    }
+    return output;
+}
+
+
+int main()
+{
+pixel_t[] pixels = alloc_array(pixel_t, 6);
+int width = 0;
+int height = 0;
+int[] mask = alloc_array(int, 7);
+int maskwidth = 0;
+pixel_t[] out = blur(pixels, width, height, mask, maskwidth);
+return (out[0] & 0);}

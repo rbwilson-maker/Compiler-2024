@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int main(){
+	int c_is_dangerous = 0;
+	int do_you_want_loops = 1;
+	int at_least_we_have_mod = 2;
+	int mod_is_cool = 3;
+	int but_also = 4;
+	return mod_is_cool + but_also % c_is_dangerous;
+}

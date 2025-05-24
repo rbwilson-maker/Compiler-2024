@@ -1,0 +1,13 @@
+//test div-by-zero
+
+void func(int x)
+{
+    x++;
+}
+
+int main()
+{
+    int x = 0;
+    func(x);
+    return 1/x;
+}

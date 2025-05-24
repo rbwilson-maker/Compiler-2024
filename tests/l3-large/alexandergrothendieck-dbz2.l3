@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int foo() {
+    return 0;
+}
+int bar() {
+    return 0;
+}
+
+int main() {
+    return foo() / bar();
+}

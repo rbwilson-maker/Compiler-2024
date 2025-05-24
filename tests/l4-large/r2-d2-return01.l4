@@ -1,0 +1,21 @@
+//test return 3
+
+int singleNumber(int[] nums, int len) 
+{
+	int result = 0;
+	for (int i = 0; i < len; i++) {
+		result ^= nums[i];
+	}
+	return result;
+}
+
+int main()
+{
+	int[] nums = alloc_array(int, 5);
+	nums[0] = 1;
+	nums[1] = 2;
+	nums[2] = 3;
+	nums[3] = 2;
+	nums[4] = 1;
+	return singleNumber(nums, 5);
+}

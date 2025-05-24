@@ -1,0 +1,8 @@
+//test return 42
+//A test of using 15411-l3.h0
+
+int main(){
+    int x= 42;
+    print_int(x);   //external function
+    return x;
+}

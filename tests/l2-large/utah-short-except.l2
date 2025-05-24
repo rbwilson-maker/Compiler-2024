@@ -1,0 +1,10 @@
+//test div-by-zero
+int main () {
+    int x = 0;
+    int y = 2;
+
+    if (y == y && (y / x == y / x)) {
+        return 1;
+    }
+    return 1;
+}

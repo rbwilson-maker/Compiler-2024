@@ -1,0 +1,13 @@
+//test abort
+
+void end_it(bool x)
+{
+    while (x) 
+    assert(false);
+}
+
+int main()
+{
+  end_it(true);
+  return 0;
+}  

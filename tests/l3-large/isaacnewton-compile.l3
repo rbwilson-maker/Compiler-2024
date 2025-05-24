@@ -1,0 +1,7 @@
+//test compile
+
+int main () {
+  fpt x = 1; 
+  print_fpt(fadd(x, 4)); 
+  return 3; 
+}

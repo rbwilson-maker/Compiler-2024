@@ -1,0 +1,19 @@
+//test return 52
+
+int min(int x, int y) { return x < y ? x : y; }
+int max(int x, int y) { return x > y ? x : y; }
+int delta(int x, int y) { return max(x,y) - min(x,y); }
+
+int main() {
+  int x = 251;
+  int y = 411;
+  int ret;
+  for (int i = 1 << 2; i < min(x,y); i <<= 1) {
+    int d = delta(x,y);
+    x = min(x,y) + d / i;
+    y = max(x,y) - d / i;
+  }
+  ret = delta(x,y);
+  print_int(ret);
+  return ret;
+}

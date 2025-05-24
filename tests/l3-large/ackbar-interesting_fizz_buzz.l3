@@ -1,0 +1,24 @@
+//test return 0
+//Need to practice my interview skills for getting a job at the hot new social
+//network MyFace!
+
+int main(){
+    for(int i = 1; i < 100; i++){
+        bool mod_5 = (i % 5) == 0;
+        bool mod_3 = (i % 3) == 0;
+        if(mod_5 && mod_3){
+            print_hex(0xf);
+            print_hex(0xb);
+        }
+        if(mod_3 && !mod_5){
+            print_hex(0xf);
+        }
+        if(!mod_3 && mod_5){
+            print_hex(0xb);
+        }
+        if(!mod_3 && !mod_5){
+            print_int(i);
+        }
+    }
+    return 0;
+}

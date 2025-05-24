@@ -1,0 +1,11 @@
+//test typecheck
+//test infloop
+
+int f0 (int a, int b) {
+    return main();
+}
+
+int main () {
+    int main = 100;
+    return f0(1,2);
+}

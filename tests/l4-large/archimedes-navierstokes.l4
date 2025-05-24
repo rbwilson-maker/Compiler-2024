@@ -1,0 +1,29 @@
+//test typecheck
+// Compute the RHS of Navier-Stokes equation to win
+// the Millennium Prize
+
+struct size_alias {
+  int dim;
+};
+
+int main() {
+  struct size_alias* sz;
+  sz = alloc(struct size_alias);
+  sz->dim = 50;
+  int[] pressure = alloc_array(int, sz->dim);
+  int[] stress = alloc_array(int, sz->dim);
+  int[] body_force = alloc_array(int, sz->dim);
+
+  int[] golden_out = alloc_array(int, sz->dim);
+  for (int i = 0; i < sz->dim; i++) {
+    golden_out[i] = i;
+  }
+
+  pressure = compute_gradient(pressure);
+  stress = compute_divergence(stress);
+  body_force = compute_force(body_force);
+
+  bool res = vec_check(pressure, stress, body_force, golden_out);
+  if (res) return 0;
+  else return -1;
+}

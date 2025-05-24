@@ -1,0 +1,13 @@
+//test return 5
+int main()
+{
+	int x = 5;
+  int y;
+	{
+	if ((x & 0) == 0)
+		y = 0;
+	else
+		y = 300;
+		}
+		return (x << y);
+	}

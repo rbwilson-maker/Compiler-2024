@@ -1,0 +1,13 @@
+//test div-by-zero
+// division error in the middle of a sequence of ops
+
+int main()
+{
+  int x;
+  int y;
+
+  x = 1;
+  y = 1/0 * 0;
+
+  return x + y;
+}

@@ -1,0 +1,25 @@
+//test return 65536
+
+int four(int x)
+{
+  assert(x >= 0);
+  
+  if (x == 0)
+  {
+    return 1;
+  }
+  
+  int sum = 1;
+  
+  for (int i=0; i<x; i++)
+  {
+    sum += four(i);
+  }
+  
+  return sum;
+}
+
+int main()
+{
+  return four(four(4));
+}

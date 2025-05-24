@@ -1,0 +1,12 @@
+//test return 3
+// Declared inaccessible variable
+
+int main()
+{
+int a;
+int b;
+
+a=3;
+return a;
+b=5;
+}

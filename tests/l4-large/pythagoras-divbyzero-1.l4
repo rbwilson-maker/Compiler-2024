@@ -1,0 +1,19 @@
+//test div-by-zero
+
+int get_idx() {
+    1 / 0;
+    return 1;
+
+}
+int main() {
+    int *a = alloc(int);
+    int *b = alloc(int);
+    *a = 1;
+    *b = 2;
+
+    int[] c = alloc_array(int, 10);
+    c[get_idx()] = *a;
+
+    return c[0];
+    
+}

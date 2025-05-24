@@ -1,0 +1,13 @@
+//test typecheck
+
+struct not_used_struct;
+struct used_struct {
+  struct not_used_struct* a;
+};
+
+int main() {
+  struct used_struct* a = alloc(struct used_struct);
+  a->a = NULL;
+  return 0;
+}
+

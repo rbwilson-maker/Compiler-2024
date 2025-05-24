@@ -1,0 +1,25 @@
+//test return 6
+//test multiple typedef
+
+typedef int t1;
+typedef t1 t2;
+typedef t2 t3;
+typedef t3 t4;
+typedef t4 t5;
+typedef t5 t6;
+typedef t6 t7;
+typedef t7 t8;
+typedef t8 t9;
+
+t4 myadd(t3 a, t6 b) {
+    return a + b;
+}
+
+int main()
+{
+  int x1 = 1;
+  t1 x2 = 2;
+  t5 x3 = myadd(x1, x2);
+  t9 x4 = myadd(x3, 3);
+  return x4;
+}

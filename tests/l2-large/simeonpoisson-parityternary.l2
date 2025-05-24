@@ -1,0 +1,33 @@
+//test return 1
+
+int main() {
+  int x = 3;
+  bool isEven = 
+    x == 0 ? true : 
+    x == 1 ? false :
+    x == 2 ? true : 
+    x == 3 ? false : 
+    x == 4 ? true :
+    x == 5 ? false : 
+    x == 6 ? true :
+    x == 7 ? false : 
+    x == 8 ? true :
+    x == 9 ? false : 
+    x == 10 ? true :
+    x == 11 ? false : 
+    x == 12 ? true : 
+    x == 13 ? false : 
+    x == 14 ? true :
+    x == 15 ? false : 
+    x == 16 ? true :
+    x == 17 ? false : 
+    x == 18 ? true :
+    x == 19 ? false : 
+    x == 20 ? true :
+    x == 21 ? false : 
+    x == 22 ? true :
+    x == 23 ? false : 
+    x == 24 ? true :
+    x == 25 ? false : true;
+  return isEven && isEven && isEven && isEven && isEven && isEven && isEven && isEven && isEven ? 0 : 1;
+}

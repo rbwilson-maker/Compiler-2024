@@ -1,0 +1,16 @@
+//test error
+
+int main(){
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+
+	a = 2;
+	b = 3;
+	c = a * b + undefined;
+	d = b * c - undefined;
+	e = 5;
+	return e;
+}

@@ -1,0 +1,83 @@
+//test return 1
+// linked list implementation
+
+struct Node {
+  int val;
+  struct Node* next;
+  struct Node* prev;
+};
+
+struct Node* new_node(int v){
+  struct Node* node = alloc(struct Node);
+  node->val = v;
+  return node;
+}
+
+struct Linked_list {
+  struct Node* head;
+};
+
+struct Linked_list* new_linked_list(){
+  struct Linked_list* L = alloc(struct Linked_list);
+  return L;
+}
+
+int get(struct Linked_list* L, int idx){
+  struct Node* node = L->head;
+  for (int i = 1; i <= idx; i++){
+    node = node->next;
+  }
+  return node->val;
+}
+
+void append(struct Linked_list* L, int v){
+  struct Node* node = L->head;
+  if (node == NULL){
+    L->head = new_node(v);
+  } else{
+    while (node->next != NULL){
+      node = node->next;
+    }
+    struct Node* node_new = new_node(v);
+    node->next = node_new;
+    node_new->prev = node;
+  }
+}
+
+void insert(struct Linked_list* L, int idx, int v){
+  struct Node* node = L->head;
+  struct Node* node_new = new_node(v);
+  if (idx == 0){
+    node_new->next = node;
+    node->prev = node_new;
+  } else{
+    for (int i = 1; i <= idx; i++){
+      node = node->next;
+    }
+    node_new->next = node;
+    node_new->prev = node->prev;
+    node->prev->next = node_new;
+    node->prev = node_new;
+  }
+}
+
+int main(){
+  struct Linked_list* L = new_linked_list();
+  append(L, 10);
+  append(L, 17);
+  append(L, 23);
+  append(L, 44);
+  assert(get(L, 0) == 10);
+  assert(get(L, 2) == 23);
+  assert(get(L, 1) == 17);
+  assert(get(L, 3) == 44);
+  insert(L, 2, 79);
+  insert(L, 2, 35);
+  assert(get(L, 2) == 35);
+  assert(get(L, 3) == 79);
+  assert(get(L, 4) == 23);
+  assert(get(L, 5) == 44);
+  assert(get(L, 1) == 17);
+  assert(get(L, 0) == 10);
+  return 1;
+}

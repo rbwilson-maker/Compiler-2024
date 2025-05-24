@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main() {
+    int a = 123;
+    bool x = false;
+    int y = x || !x && false ? 0 : a / 0;
+    return 0;
+}

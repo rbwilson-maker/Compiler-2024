@@ -1,0 +1,38 @@
+//test return 0
+
+void collatz_even(int n);
+void collatz_odd(int n);
+
+void collatz_even(int n) {
+  if (n > 1) {
+    collatz_odd(n / 2);
+    return;
+  } else {
+    return;
+  }
+}
+
+void collatz_odd(int n) {
+  if (n > 1) {
+    collatz_even(3 * n + 1);
+    return;
+  } else {
+    return;
+  }
+}
+
+void init_collatz(int n) {
+  if (n % 2 == 0) {
+    collatz_even(n);
+  } else {
+    collatz_odd(n);
+  }
+}
+
+int main() {
+  for (int i = 0; i < 50; i++) {
+    init_collatz(i);
+  }
+
+  return 0;
+}

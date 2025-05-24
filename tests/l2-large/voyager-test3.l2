@@ -1,0 +1,17 @@
+//test error
+// undeclared variable
+
+int main()
+{
+  int y = 10;
+
+  if (y >= 0) 
+  {
+    // variable defined in inner block cannot be accessed in outter scope
+    int x = 1;
+    y += x;
+  }
+
+  int z = x + y;
+  return z;
+}

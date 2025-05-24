@@ -1,0 +1,7 @@
+//test typecheck
+//test infloop
+int main() {
+    int a = -10;
+    for (bool y = true;a < 0;y = y){}
+    return 10;
+}

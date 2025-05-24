@@ -1,0 +1,8 @@
+int rand();
+int srand();
+
+typedef struct rand srand;
+
+struct rand{
+  int srand;
+}

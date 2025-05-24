@@ -1,0 +1,22 @@
+//test typecheck
+//test infloop
+
+//both functions go into an infinite loop
+
+int increment (int x) {
+    x++;
+    return x;
+}
+
+int decrement (int x) {
+    x--;
+    return x;
+}
+
+int main () {
+    int x = 1;
+    while (x == 1) {
+      x = increment(decrement(x)) ;
+    }
+    return x;
+}

@@ -1,0 +1,20 @@
+//test return 23804
+
+int weird_recurse(int x, int y, int sum) {
+    
+    if(x <= 0)
+        return sum;
+
+    int t = x ^ y;
+    int z = x | y;
+    int a = x - y;
+
+    return weird_recurse(x-1, t+z+a, sum+y);
+}
+
+int main()
+{
+    int sum = weird_recurse(50, 10, 0);
+
+    return sum;
+}

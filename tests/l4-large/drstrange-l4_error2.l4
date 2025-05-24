@@ -1,0 +1,7 @@
+//test error
+/// Precedence test, *x++ is ambiguous
+
+int main() {
+    int* x = alloc(int);
+    return *x++;
+}

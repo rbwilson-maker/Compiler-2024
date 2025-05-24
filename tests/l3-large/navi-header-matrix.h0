@@ -1,0 +1,5 @@
+typedef int matrix;
+
+matrix newM(int r, int c);
+matrix mulM(matrix A, matrix B);
+matrix addM(matrix A, matrix B);

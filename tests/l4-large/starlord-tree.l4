@@ -1,0 +1,35 @@
+//test return 21
+
+typedef struct node tree;
+struct node {
+  tree *L;
+  int x;
+  tree *R;
+};
+
+tree *node(tree *L, int x, tree *R) {
+  tree *n = alloc(tree);
+  if(n == NULL) return n;
+
+  n->L = L;
+  n->x = x;
+  n->R = R;
+  return n;
+}
+
+int size(tree *T) {
+  if(T == NULL) return 0;
+  return size(T->L) + size(T->R) + 1;
+}
+
+int main() {
+  tree *L = NULL;
+  tree *R = NULL;
+  for(int i = 0; i < 10; i++) {
+    L = node(L, i / 2, NULL);
+    R = node(NULL, i % 2, R);
+  }
+
+  tree *F = node(L, 150, R);
+  return size(F);
+}

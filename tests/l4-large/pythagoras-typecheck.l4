@@ -1,0 +1,22 @@
+//test typecheck
+int main() {
+    valArr* x = alloc(valArr);
+    valArr* y = alloc(valArr);
+    x->id = 0;
+    y->id = 1;
+    x->vals = alloc_array(int, 3);
+    y->vals = alloc_array(int, 4);
+    x->size = 3;
+    y->size = 4;
+
+    x->vals[0] = 0;
+    x->vals[1] = 1;
+    x->vals[2] = 2;
+    y->vals[0] = 3;
+    y->vals[1] = 4;
+    y->vals[2] = 5;
+    y->vals[3] = 6;
+
+    return x->vals[1]+x->vals[0]+y->vals[0]+y->vals[1];
+
+}

@@ -1,0 +1,31 @@
+//test return 3
+
+struct nested {
+  int x;
+  bool[][] arr;
+  bool y;
+};
+
+struct test {
+  bool x;
+  struct nested n;
+  bool z;
+};
+
+int main() {
+  struct test *t = alloc(struct test);
+  t->x = true;
+  t->z = false;
+  t->n.x = 3;
+  t->n.y = true;
+  t->n.arr = alloc_array(bool[], 5);
+  for (int i = 0; i < 5; i++) {
+    t->n.arr[i] = alloc_array(bool, 5);
+  }
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 5; j++) {
+      t->n.arr[i][j] = (i + j % 2 == 0);
+    }
+  }
+  return t->n.y ? t->n.x : 0;
+}

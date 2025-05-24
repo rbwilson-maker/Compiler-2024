@@ -1,0 +1,14 @@
+//test return 2
+// do some maths
+
+int main() {
+  int x = -2*4+6/3;
+  int y = x;
+  y %= 3;
+  int z = y;
+  z -= y;
+  int w = 4;
+  w /= 2;
+  z = z + w;
+  return z;
+}

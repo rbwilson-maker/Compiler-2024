@@ -1,0 +1,9 @@
+//test return 0
+
+int main () {
+    int *null = NULL;
+    int *not_null = alloc(int);
+    *not_null = 0; 
+    int k = *(true ? not_null: null);
+    return k;
+}

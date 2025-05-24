@@ -1,0 +1,8 @@
+//test div-by-zero
+// by order of operations, becomes 0, div
+int main () {
+	int x;
+
+	x = 4 * 0 / 0;
+	return x;
+}

@@ -1,0 +1,11 @@
+//test error
+
+typedef bool fun;
+
+int fun (){
+	return 43;
+}
+
+int main() {
+	return fun();
+}

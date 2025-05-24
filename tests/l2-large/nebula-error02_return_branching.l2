@@ -1,0 +1,12 @@
+//test error
+//Not all branches have a return statement
+int main ()
+{
+  bool x = true;
+  int y;
+  if (x == true) {
+    return 1;
+  } else {
+    y = 15411;
+  }
+}

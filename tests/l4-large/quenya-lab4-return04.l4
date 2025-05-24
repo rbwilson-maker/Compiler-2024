@@ -1,0 +1,47 @@
+//test return 42
+// compute the sum of a matrix diagonal
+
+typedef struct matrix* matrix;
+
+struct matrix {
+  int[][] vals;
+  int w;
+  int h;
+};
+
+matrix create(int width, int height) {
+  matrix m = alloc(struct matrix);
+  m->w = width;
+  m->h = height;
+  m->vals = alloc_array(int[], width);
+  for (int i = 0; i < width; i++) {
+    m->vals[i] = alloc_array(int, height);
+  }
+  return m;
+}
+
+int min(int a, int b) {
+  return a > b ? b : a;
+}
+
+int diag(matrix m) {
+  int sum = 0;
+  for (int i = 0; i < min(m->h, m->w); i++) {
+    sum += m->vals[i][i];
+  }
+  return sum;
+}
+
+void set(matrix m, int i, int j, int val) {
+  m->vals[i][j] = val;
+}
+
+int main() {
+  matrix m = create(5, 5);
+  set(m, 0, 0, 1);
+  set(m, 1, 1, -1);
+  set(m, 2, 2, 5);
+  set(m, 3, 3, 50);
+  set(m, 4, 4, -13);
+  return diag(m);
+}

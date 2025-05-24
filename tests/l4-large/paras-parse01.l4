@@ -1,0 +1,8 @@
+//test typecheck
+
+typedef int Int;
+
+int main(){
+  Int *** inT;
+  return 0;
+}

@@ -1,0 +1,8 @@
+//test return 84
+int main(){
+    int a = 5;
+    int b = 7;
+    a = a+b;
+    b = b*a;
+    return b;
+}

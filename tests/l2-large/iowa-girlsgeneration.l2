@@ -1,0 +1,25 @@
+//test return 9001
+
+/* main : unit -> int
+ * REQUIRES: u love kpop
+ * ENSURES: i love kpop too! <3 <3
+ */
+int main() {
+    bool kpop_is_the_best = true;
+    bool i_love_kpop = true;
+    bool you_love_kpop;
+    int anger_level = 0;
+
+    if (true == false) 
+        {you_love_kpop = true;} 
+    else 
+        {you_love_kpop = false;}
+
+    if (!you_love_kpop) {
+        for (int i = 0; i <= 9000; i++) {
+            anger_level = i;
+        }
+    }
+
+    return (anger_level + 1);
+}

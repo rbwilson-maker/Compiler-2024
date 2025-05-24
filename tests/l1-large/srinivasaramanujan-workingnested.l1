@@ -1,0 +1,23 @@
+//test return 100 
+
+// The tests you write for 15-411 will all go in this directory. The
+// tests we write will all be provided to you through the public course
+// repository in the directory ../../tests.
+
+// The first line in this file means that the testing harness will
+// expect this to be a file that compiles and returns 1.
+
+int main() {
+{ 
+
+    {
+    int x = 5 + 8 * (12 - 2);
+    int y = (x + (3 * x) - x);
+    int z = (100);
+    return z;
+}
+}
+}
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int main () {
+	int j;
+	int k;
+	j = 0;
+	k = 1;
+	while (j >= 0) {
+		{
+			k = (k+1)/j;
+		}
+		j--;
+	}
+	return j;
+}

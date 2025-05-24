@@ -1,0 +1,27 @@
+//test return 11
+
+int main() {
+    int x = 2;
+
+    if (x < 0) int y;
+    else        x = 5;
+
+    if (x == 5) x = 7;
+    else        int y;
+
+    if (x == 5) int y;
+    else        int y;
+
+    if (x == 7) int y;
+    else        int y;
+
+
+    if (x == 7) {
+        int y = 11;
+        x = y;
+    } else {
+        int y;
+    }
+
+    return x;
+}

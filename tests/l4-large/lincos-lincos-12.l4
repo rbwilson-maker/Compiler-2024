@@ -1,0 +1,26 @@
+//test return 5
+/* just add * to it ya */
+
+struct P { int p; };
+struct PP { struct P* p; };
+struct PPP { struct PP* p; };
+struct PPPP { struct  PPP* p; };
+struct PPPPP { struct PPPP* p; };
+
+int main() {
+  int y = 1;
+  struct P* b = alloc(struct P);
+  struct PP* bb = alloc(struct PP);
+  struct PPP* bbb = alloc(struct PPP);
+  struct PPPP* bbbb = alloc(struct PPPP);
+  struct PPPPP* bbbbb = alloc(struct PPPPP);
+
+  b->p = 1;
+  bb->p = b;
+  bbb->p = bb;
+  bbbb->p = bbb;
+  bbbbb->p = bbbb;
+
+
+  return b->p + bb->p->p + bbb->p->p->p + bbbb->p->p->p->p + bbbbb->p->p->p->p->p;
+}

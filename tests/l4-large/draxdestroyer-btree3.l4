@@ -1,0 +1,23 @@
+//test return 1000
+
+
+struct BTreeNode {
+    struct BTreeNode* left;
+    struct BTreeNode* right;
+    int value;
+};
+typedef struct BTreeNode BT;
+
+int main() {
+
+    BT* root = alloc(BT);
+    root->value = 100;
+    BT* L = alloc(BT);
+    BT* R = alloc(BT);
+    R->value = 1000;
+    L->value = 69;
+    root->left = L;
+    root->right = R;
+
+    return root->right->value;
+}

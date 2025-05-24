@@ -1,0 +1,15 @@
+//test return 102
+
+int main(){
+    int x;
+    int y;
+    int z;
+    int i;
+    z = 10;
+    for(i = 0; i < z * z; i++){
+        x = 1;
+        y = 1;
+        x *= y;
+    }
+    return 102;
+}

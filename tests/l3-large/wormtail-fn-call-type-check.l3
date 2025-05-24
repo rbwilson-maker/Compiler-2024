@@ -1,0 +1,17 @@
+//test error
+int div(int c, int d) {
+    return c/d;
+}
+
+int weird_sum(int a, int b) {
+    bool x = true;
+    return div(a,x) + b;
+}
+
+int main() {
+
+  int e = 1;
+  int d = 2;
+  weird_sum(e,d);
+  return 0;
+}

@@ -1,0 +1,32 @@
+//test return -1800609408
+
+// or should it be test return 35831808?
+
+int bin_coeff(int n, int k) {
+    if(k == n || k == 0) return 1;
+    
+    return bin_coeff(n-1,k-1) + bin_coeff(n-1,k);
+}
+
+int powwow(int b, int e) {
+    if (e == 0) return 1;
+    return b * powwow(b,e-1);
+}
+int main() {
+    int[] coeffs = alloc_array(int,8);
+
+    for(int i = 0; i < 8; i++) {
+        coeffs[i] = bin_coeff(7,i); 
+    }
+
+    int x = 10;
+    int y = 12; 
+    int total = 0;
+
+    //i dont know what i'm doing *dabs*
+    for(int j = 0; j < 8; j++) {
+        total += coeffs[j]* powwow(x,j) * powwow(y,7-j);
+    }
+
+    return total; 
+}

@@ -1,0 +1,19 @@
+//test return 1140
+
+int pascal(int n, int k) {
+  if (k == 0) {
+    return 1;
+  } else {
+    if (k == n) {
+      return 1;
+    } else {
+      int p1 = pascal(n-1, k);
+      int p2 = pascal(n-1, k-1);
+      return p1+p2;
+    }
+  }
+}
+
+int main() {
+  return pascal(20, 3);
+}

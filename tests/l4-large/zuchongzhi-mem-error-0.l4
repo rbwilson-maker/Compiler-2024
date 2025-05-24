@@ -1,0 +1,9 @@
+//test memerror
+struct foo {
+    int bar;
+};
+
+int main() {
+    struct foo[] f = alloc_array( struct foo , 114514 );
+    return f[114515].bar;
+}

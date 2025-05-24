@@ -1,0 +1,14 @@
+//test return 20480
+
+//set variable to function return value
+
+int mario(int a, int b){
+    return a + b << a;
+}
+
+typedef int luigi;
+
+int main(){
+    luigi mario = mario(10, 10);
+    return mario;
+}

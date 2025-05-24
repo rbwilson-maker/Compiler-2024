@@ -1,0 +1,20 @@
+//test return 0
+
+typedef bool foo;
+
+struct bar {
+       foo foo;
+};
+
+typedef struct bar boolean;
+
+int main () {
+    boolean *p;
+	boolean *q; 
+    p = alloc(boolean);
+	q = alloc(boolean);
+    if(p->foo && q->foo) 
+        return 20;
+    return 0; 
+}
+

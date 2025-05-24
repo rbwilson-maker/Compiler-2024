@@ -1,0 +1,18 @@
+//test return 3
+
+int main() {
+  int x = 0;
+  int y = 3;
+  
+  bool h = true;
+  bool a = false;
+  bool l = true;
+  bool p = false;
+
+  bool halp = h && a && l && p;
+  if (halp) {
+    return 420;
+  }
+
+  return y;
+}

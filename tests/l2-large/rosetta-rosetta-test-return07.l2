@@ -1,0 +1,15 @@
+//test return 45
+//tests if statement with hex
+
+int main() {
+	int x = 0XFF;
+	int y = 45;
+	int i = 0;
+	if (i < x) {
+		return y;
+	}
+	else
+	{
+		return 0;
+	}
+}

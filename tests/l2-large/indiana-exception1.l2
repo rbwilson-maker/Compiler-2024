@@ -1,0 +1,12 @@
+//test div-by-zero
+
+//overshifting
+
+int main(){
+    int y = 0;
+    for(int x = 1; true; x<<=y){
+      y++;
+    }
+
+    return y;
+}

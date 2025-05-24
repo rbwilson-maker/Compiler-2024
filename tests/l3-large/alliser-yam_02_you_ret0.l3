@@ -1,0 +1,12 @@
+//test return 0
+
+// A simple function call
+
+bool continue_life (int happiness, int despair) {
+  return (happiness > despair);
+}
+
+int main(){
+  if (continue_life (0,0x7FFFFFFF)) return 1;
+  else return 0;
+}

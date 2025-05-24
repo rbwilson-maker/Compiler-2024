@@ -1,0 +1,8 @@
+//test typecheck
+
+// pointers cannot do arithmetic operations with integers
+
+int main () {
+    int *p = alloc(int);
+    return *p % 1;
+}

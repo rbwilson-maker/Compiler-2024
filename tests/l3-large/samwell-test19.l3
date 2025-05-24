@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+bool foo(bool x){
+  assert(foo(x));
+  return false;
+}
+
+int main() { 
+  if(foo(false))
+    return 0;
+  return 1;
+ }

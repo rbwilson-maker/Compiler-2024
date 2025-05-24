@@ -1,0 +1,83 @@
+//test return 1
+//binomial theorem checker
+
+int main() {
+    int x = 3;
+    int y = 10;
+
+    int original_n = 4;
+    int original_k = 0;
+    int sum = 0;
+
+    int xy_sum = 1;
+    int n = original_n;
+
+    while (n > 0){
+        xy_sum = xy_sum * (x + y);
+        
+        n = n - 1;
+    }
+
+    int k;
+    int numerator;
+    int denominator;
+    int n_minus_k;
+    while (original_n >= original_k) {
+        n = original_n;
+        k = original_k;
+        n_minus_k = original_n - original_k;
+        numerator = 1;
+        denominator = 1; 
+
+        while (k > 0) {
+            denominator = k * denominator;
+            
+            k = k - 1;
+        } 
+
+        while (n_minus_k > 0) {
+            denominator = n_minus_k * denominator;
+            
+            n_minus_k = n_minus_k - 1;
+        } // should calculate the denominator of n choose k 
+
+        while (n > 0) {
+            numerator = n * numerator;
+            
+            n = n - 1;
+        } // should calculate the numerator of n choose k 
+
+        int choose = numerator/denominator; // n choose k
+
+        int x_pow = 1;
+        int y_pow = 1;
+
+        k = original_k;
+        n_minus_k = original_n - original_k;
+
+        while (k > 0 || n_minus_k > 0) {
+            if (k != 0) {
+                x_pow = x * x_pow;
+                k = k - 1;
+            }
+            
+            if (n_minus_k != 0) {
+                y_pow = y * y_pow;
+                n_minus_k = n_minus_k - 1;
+            }
+        }
+
+        // x_pow should be x^(n-k)
+        // y_pow should be y^k
+        sum = sum + (choose * x_pow * y_pow);
+
+        original_k = original_k + 1;
+    }
+
+    if (xy_sum == sum){
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}

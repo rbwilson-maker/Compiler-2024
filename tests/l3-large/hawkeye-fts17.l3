@@ -1,0 +1,11 @@
+//test return 29526
+
+int shift (int x, int y) {
+    return x >> y;
+}
+
+int main () {
+    int x = 120941293;
+    int y = 12;
+    return shift(x, y);
+}

@@ -1,0 +1,6 @@
+//test error
+//hexadecimal constant too large
+int main() {
+	int a = 0xaffffffff;
+	return a;
+}

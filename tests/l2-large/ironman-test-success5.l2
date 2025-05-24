@@ -1,0 +1,9 @@
+//test return 1
+
+int main() {
+    int x = 1;
+    if (false && (1 / 0) == 0){ // short circuiting
+        return 0;
+    }
+    return 1;
+}

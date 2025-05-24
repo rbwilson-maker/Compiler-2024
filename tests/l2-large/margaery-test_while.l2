@@ -1,0 +1,14 @@
+//test return 1597
+
+int main() {
+    int n1 = 1;
+    int n2 = 1;
+
+    while (n2 < 1000) {
+        int tmp = n1 + n2;
+        n1 = n2;
+        n2 = tmp;
+    }
+
+    return n2;
+}

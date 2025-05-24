@@ -1,0 +1,51 @@
+//test return 4
+struct M {
+    bool* who;
+    bool ami;
+};
+
+int foo(int * a, bool * b, int c, bool d, int[] e, int[] f,  struct M [] h,  struct M * i,
+      int * * j, bool * [] k, int [] * l, struct M [] * m, struct M * [] n,
+      int o, int p, int q, int r, int s, int t) {
+    if(*a == 8) {
+        if(*b) {
+            if(d) {
+                if(e[0] == 9) {
+                if(f[0] == 5) {
+                if(h[0].ami) {
+                    if(i->ami) {
+                        if(**j == 7) {
+                            if(*k[0]) {
+                                if((*l)[0] == 6) {
+                                    if((*m)[0].ami) {
+                                        if(n[0]->ami) {
+                                            return c + o + p + q + r + s + t;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }}}
+            }
+        }
+    } 
+    return 12;
+}
+
+int main() {
+    int * a = alloc(int); *a = 8;
+    bool * b = alloc(bool); *b = true;
+    int[] e = alloc_array(int, 7); e[0] = 9;
+    int[] f = alloc_array(int, 1); f[0] = 5;
+    struct M [] h = alloc_array(struct M, 4); h[0].ami = true;
+    struct M * i = alloc(struct M); i->ami = true;
+    int * * j = alloc(int *); *j = alloc(int); **j = 7;
+    bool * [] k = alloc_array(bool *, 99); k[0] = alloc(bool); *k[0] = true;
+    int [] * l = alloc(int []); *l = alloc_array(int, 31); (*l)[0] = 6;
+    struct M [] * m = alloc (struct M []); *m = alloc_array(struct M, 17); (*m)[0].ami = true;
+    struct M * [] n = alloc_array(struct M *, 11); n[0] = alloc(struct M); n[0]->ami = true;
+
+    return foo(a, b, 3, true, e, f, h, i, j, k, l, m, n, -1, -8, 7, 11, -5, -3);
+    return 11;
+}

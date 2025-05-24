@@ -1,0 +1,15 @@
+//test return 14
+// arguments must be evaluated left to right
+
+int many(int a, int b, int c) {
+    return a + b * 2 + c * 3;
+}
+
+int f(int x) {
+    print_int(x);
+    return x;
+}
+
+int main() {
+    return many(f(1), f(2), f(3));
+}

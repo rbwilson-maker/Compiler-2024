@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int f(int x, int n) {
+  if (n == 0) {
+    return x;
+  } else {
+    return 100 / f(x - 1, n - 1);
+  }
+}
+
+int main() {
+  return f(5, 5);
+}

@@ -1,0 +1,14 @@
+//test return 2938
+
+int main() {
+  int x = 12;
+  int z = 1823;
+
+  fpt val = fadd(itof(x), itof(z));
+  print_fpt(val);
+  fpt val2 = fmul(val, itof(3));
+  print_fpt(val2);
+  fpt val3 = fdiv(val2, itof(2));
+  print_fpt(val3);
+  return ftoi(fadd(val3, itof(186)));
+}

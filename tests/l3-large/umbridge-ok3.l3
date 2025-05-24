@@ -1,0 +1,39 @@
+//test return 16
+
+int foo() {
+    int x = -1;
+    // the minus sign is kept when right shift
+    x >>= 31;   // x = -1
+
+    int y = x;
+
+    x++;
+    y += x;
+    x++;
+    y += x;
+    x++;
+    y += x;
+
+    bool z = x << 0 >= 0 && x == y; // z = true
+
+    if (z)
+        return x << 3;
+    else
+        return x + y;
+}
+
+void bar(int N) {
+    for (int i = 0; i < N; i++) {
+        // do nothing
+    }
+    while (N > 0) {
+        return;
+    }
+}
+
+void baz() {}
+
+int main() {
+    bar(100000);
+    return foo();
+}

@@ -1,0 +1,20 @@
+//test error
+
+void mutate(int *p) {
+    (*p)++;
+}
+
+bool check(int *p) {
+    mutate(p);
+    return *p == 42;
+}
+
+bool also_check(int *p)
+//@ ensures check(p);
+{
+    return *p == 42;
+}
+
+int main() {
+    return 0;
+}

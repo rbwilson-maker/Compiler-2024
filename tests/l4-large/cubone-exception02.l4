@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int main() {
+  int[] a = alloc_array(int, 8);
+  a[0] = 0;
+  a[1] = 0;
+
+  while (a[0] == 0) {
+    a[1] += 1;
+  }
+
+  return 0;
+}

@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int main() {
+  int a = 2;
+  int b = a * a; // 2
+  int c = b * b; // 4
+  int d = c * c; // 8
+  int e = d * d; // 16
+  int f = e / 2; // 15
+  int MIN = e * f;
+
+  return MIN / (-1); // should error
+}
+

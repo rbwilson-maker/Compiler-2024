@@ -1,0 +1,11 @@
+//test error
+
+void nothing() {
+    ;
+    ;
+    ;
+}
+
+int main() {
+    return nothing();
+}

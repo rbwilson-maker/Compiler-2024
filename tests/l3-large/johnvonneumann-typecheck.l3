@@ -1,0 +1,9 @@
+//test typecheck
+
+int sus(int x) {
+    return x >> 31;
+}
+
+int main() {
+    return sus(0);
+}

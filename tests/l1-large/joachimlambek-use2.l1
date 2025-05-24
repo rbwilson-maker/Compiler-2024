@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+    int x;
+    int y = 65536;
+    y = x + 16384;
+    return y;
+}

@@ -1,0 +1,11 @@
+//test return 0
+
+int inf(int* n) {
+   if (*n == 0) return *n;
+   return inf(n);
+}
+
+int main() {
+  int * x = alloc(int);
+  return inf(x);
+}

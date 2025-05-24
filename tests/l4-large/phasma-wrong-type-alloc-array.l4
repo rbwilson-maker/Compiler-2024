@@ -1,0 +1,5 @@
+//test error
+int main() {
+  int[] A = alloc_array(bool, 0);
+  return A[-1];
+}

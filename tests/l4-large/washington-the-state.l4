@@ -1,0 +1,32 @@
+//test return -712027
+
+// Did you know?
+// Washington the state looks nothing like Washington the man.
+
+
+struct coords {
+    int latitude;
+    int longitude;
+};
+
+struct city {
+    int population;
+    struct coords location;
+};
+
+struct state {
+    bool named_after_president;
+    struct city capital;
+};
+
+int main() {
+    struct state *washington = alloc(struct state);
+    washington->named_after_president = true;
+    washington->capital.population = 46478;
+    washington->capital.location.latitude = 470425;
+    washington->capital.location.longitude = -1228930;
+    return
+        washington->capital.population +
+        washington->capital.location.latitude +
+        washington->capital.location.longitude;
+}

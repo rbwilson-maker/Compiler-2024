@@ -1,0 +1,16 @@
+//test typecheck
+//test return 3
+
+struct foo {
+  // legal: struct foo and foo are in different namespace
+  int foo;
+  int bar;
+};
+
+int main() {
+  // also legal
+  struct foo * foo = alloc(struct foo);
+  foo->foo = 1;
+  foo->bar = 2;
+  return foo->foo + foo->bar;
+}

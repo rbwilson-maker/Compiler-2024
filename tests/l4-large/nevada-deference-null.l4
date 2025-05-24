@@ -1,0 +1,12 @@
+//test memerror
+
+struct s {
+    bool *p;
+};
+
+int main() {
+    struct s *t = alloc(struct s);
+    *(t->p) = true;
+
+    return 0;
+}

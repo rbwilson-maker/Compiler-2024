@@ -1,0 +1,28 @@
+//test return 1
+
+typedef int I;
+typedef bool B1;
+
+I decl1(B1 b);
+
+typedef B1 B2;
+typedef B2 B3;
+typedef I I1;
+
+int main() {
+	B2 b2 = true;
+	I i = 10;
+	B1 end = false;
+	for(I1 k = 0; k < 10; k ++){
+		B3 b3 = ! ( k % 3 == 0);
+		b2 = b2 && b3 || !b2;
+		end = b2;
+	}
+	return decl1(end);
+}
+
+typedef bool B4;
+
+I1 decl1(B4 b){
+	return b ? 0 : 1;
+}

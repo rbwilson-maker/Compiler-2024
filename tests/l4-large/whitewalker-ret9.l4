@@ -1,0 +1,18 @@
+//test return 9
+
+struct a {
+    int e;
+    int b;
+    int c;
+    struct a *d;
+};
+
+int f(int x) {
+    return 5;
+}
+
+int main () {
+    int[] a = alloc_array(int, 10);
+    a[5] = 5;
+    return a[f(5)] + 4;
+}

@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+    int*[] A = alloc(int*, 32);
+    A[0] = 0;
+    return 1;
+}

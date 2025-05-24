@@ -1,0 +1,26 @@
+//test return 1021
+
+int a(int m, int n) {
+  assert(m >= 0);
+  assert(n >= 0);
+  if (m == 0) {
+    return n + 1;
+  }
+  if (n == 0) {
+    return a(m - 1, 1);
+  }
+  return a(m - 1, a(m, n - 1));
+}
+
+int find_big(int b) {
+  int ack = a(3, b);
+  if (ack > 1000) { // pretty big, let's return it
+    return ack;
+  } else {
+    return find_big(b + 1);
+  }
+}
+
+int main() {
+  return find_big(1);
+}

@@ -1,0 +1,13 @@
+//test return 123
+
+int main() {
+  int n = 10;
+  int*[]*[] p0 = alloc_array(int*[]*, n);
+  p0[1] = alloc(int*[]);
+  *(p0[1]) = alloc_array(int*, n);
+  (*(p0[1]))[2] = alloc(int);
+  *((*(p0[1]))[2]) = 3;
+  if (p0[4] != NULL)
+    assert((*(p0[6]))[7] == NULL);
+  return 123;
+}

@@ -1,0 +1,11 @@
+// library function to calculate catalan numbers
+
+int catalan(int n)
+{
+  if (n == 0) {
+    return 1;
+  }
+  else {
+    return 2*(2*n-1)*catalan(n-1)/(n+1);
+  }
+}

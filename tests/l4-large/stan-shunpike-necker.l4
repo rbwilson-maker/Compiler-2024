@@ -1,0 +1,38 @@
+//test return 0
+
+struct s1 {
+    int *f1;
+    int f2;
+};
+typedef struct s1 s1;
+
+struct s2 {
+    struct s1 f1;
+    struct s1 f2;
+};
+typedef struct s2 s2;
+
+struct s3 {
+    struct s2 f1;
+    struct s2 f2;
+    int f3; 
+};
+typedef struct s3 s3;
+
+struct x {
+    int f1;
+    int *f2;
+};
+
+struct y {
+    int *f1;
+    int f2;
+};
+
+int main(){
+    alloc(struct x);
+    alloc(struct y);
+
+    struct s3 * x = alloc(struct s3);
+    return alloc(struct s3)->f2.f2.f2;
+}

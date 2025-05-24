@@ -1,0 +1,15 @@
+//test div-by-zero
+// divide by 0 in loop
+
+int main ()
+{
+  int n;
+  int x = 5;
+  int r = 0;
+
+  for (n = 0; n <= 5; n++) {
+    r = x / n;
+  }
+
+  return r;
+}

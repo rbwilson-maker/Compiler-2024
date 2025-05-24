@@ -1,0 +1,18 @@
+//test error
+
+void f(int[] l, int i)
+//@ensures \result != 0;
+{
+  l[i];
+}
+
+int main() {
+  int[] l = alloc_array(int, 99);
+  for (int i = 0; i < 99; i++) {
+    l[i] = i;
+  }
+  for (int i = 0; i < 99; i++) {
+    f(l, i);
+  }
+  return 0;
+}

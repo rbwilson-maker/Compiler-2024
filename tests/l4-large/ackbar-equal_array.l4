@@ -1,0 +1,15 @@
+//test return 0
+//arrays with the same values aren't equal
+
+int main(){
+
+    int[] xs = alloc_array(int,4);
+    int[] ys = alloc_array(int,4);
+
+    for(int i=0; i<4; i++){
+        xs[i] = i;
+        ys[i] = i;
+    }
+
+    return xs == ys ? 42 : 0;
+}

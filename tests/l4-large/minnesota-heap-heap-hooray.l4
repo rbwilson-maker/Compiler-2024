@@ -1,0 +1,19 @@
+//test return -12
+// Are 64-bit arguments being spilled correctly?
+
+typedef int* intPtr;
+
+int add_args(int* a, int* b, int* c, int* d, int* e, int* f, int* g, int* h,
+             int* i, int* j, int* k, int* l) {
+  return *a + *b + *c + *d + *e + *f + *g + *h + *i + *j + *k + *l;
+}
+
+int main() {
+  intPtr[] heaps = alloc_array(intPtr, 12);
+  for (int i = 0; i < 12; i++) {
+    heaps[i] = alloc(int);
+    *(heaps[i]) = -1;
+  }
+  return add_args(heaps[0], heaps[1], heaps[2], heaps[3], heaps[4], heaps[5],
+                  heaps[6], heaps[7], heaps[8], heaps[9], heaps[10], heaps[11]);
+}

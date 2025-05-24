@@ -1,0 +1,13 @@
+//test div-by-zero
+// test overflow and divided by 0 together for hex representation
+int main()
+{
+  int x;
+  int y;
+  int z;
+
+  x = 1;
+  y = 0x80000000;
+  z = -1;
+  return x / (y * -1 * (x - x));
+}

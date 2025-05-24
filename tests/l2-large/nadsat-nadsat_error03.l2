@@ -1,0 +1,23 @@
+//test error
+
+int main()
+{
+  int x;
+  int total;
+  int term;
+
+  x = 10;
+  total = 0;
+  term = 5;
+
+  while(true) {
+    total += x;
+    x--;
+    if(x < term) {
+      // Break reserved
+      break;
+    }
+  }
+
+  return x;
+}

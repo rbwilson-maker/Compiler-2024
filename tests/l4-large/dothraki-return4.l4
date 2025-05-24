@@ -1,0 +1,19 @@
+//test return 14641
+
+// calculates num^pow
+int power (int *num, int pow) {
+  if(pow == 0) {
+    return 1;
+  }
+  return *num * power (num, pow - 1);
+}
+
+int main()
+{
+  int *a;
+  a = alloc(int);
+  *a = 11;
+  int b = 4;
+
+  return power(a, b);
+}

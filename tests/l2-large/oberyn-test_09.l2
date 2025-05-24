@@ -1,0 +1,18 @@
+//test div-by-zero
+
+// tests if statements into a div-by-zero
+
+int main() {
+	int i = 0;
+	if (2 < 1) {
+		i = 1;
+	} else if (3 < 1) {
+		i = 1;
+	} else if (4 < 1) {
+		i = 1;
+	} else if (0 > 1) {
+		i = 1;
+	}
+
+	return 1 / i;
+}

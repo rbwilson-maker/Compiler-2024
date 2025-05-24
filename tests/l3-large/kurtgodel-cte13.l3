@@ -1,0 +1,11 @@
+//test error
+/*
+Compile error.
+main is used as a type.
+*/
+
+typedef main m2;
+
+int main() {
+  return 2;
+}

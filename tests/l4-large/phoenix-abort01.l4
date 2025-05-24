@@ -1,0 +1,36 @@
+//test abort
+// assertion failure for swap function that passes by value
+
+typedef int foo;
+
+void swap1(int* x, int* y){
+    int temp; 
+    temp = *x; 
+    *x = *y; 
+    *y = temp;
+}
+
+void swap2(int n, int m) {
+   int temp; 
+   temp = n; 
+   n = m; 
+   m = temp;
+}
+
+int main() {
+  int* a_pointer = alloc(foo);
+  int* b_pointer = alloc(int);
+  *a_pointer = 1;
+  *b_pointer = 2;
+  swap1(a_pointer, b_pointer);
+
+  assert(*a_pointer == 2);
+
+  int a = 1; 
+  foo b = 2;
+  swap2(a,b);
+
+  // This assert will fail because swapping here doesn't work.
+  assert(a == 2);
+  return 0;
+}

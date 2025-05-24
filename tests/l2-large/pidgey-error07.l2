@@ -1,0 +1,9 @@
+//test error
+// test redeclare var
+
+int main() {
+    int x = 3;
+    int x = 4;
+
+    return x + x;
+}

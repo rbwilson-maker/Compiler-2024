@@ -1,0 +1,25 @@
+//test div-by-zero
+int main() {
+    int a = 3;
+    int b = 3;
+    int c = 3;
+    int d = 3;
+    int e = 3;
+    int f = 3;
+    int g = 3;
+    int h = 3;
+    int i = 3;
+    int j = 3;
+    int k = 3;
+    int l = 3;
+    int m = 3;
+    int n = 3;
+    int o = 3;
+    int p = 3;
+    int q = 3;
+    int r = 32;
+    int t = a+b-c+d-e+f-g+h-i+j-k+l-m+n-o+p-q+r;
+    t = t << r;
+    return t;
+
+}

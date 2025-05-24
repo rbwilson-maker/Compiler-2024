@@ -1,0 +1,25 @@
+//test return 0
+// array allocations must be unique
+
+int stress_allocate(int size) {
+  int[][] A = alloc_array(int[], size);
+
+  // allocate
+  for (int i = 0; i < size; i++) {
+    A[i] = alloc_array(int, 0);
+  }
+
+  // uniqueness checking
+  for (int i = 0; i < size; i++) {
+    for (int j = i + 1; j < size; j++) {
+      if (A[i] == A[j])
+        return -1;
+    }
+  }
+  
+  return 0;
+}
+
+int main() {
+  return stress_allocate(10000);
+}

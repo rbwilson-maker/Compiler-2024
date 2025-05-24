@@ -1,0 +1,15 @@
+//test return 74
+
+int decl(int a, int* x, bool c)
+{
+x = NULL;
+return a;
+}
+
+int main() {
+int* x = alloc(int);
+*x = 15;
+*x += 20;
+*x += decl(*x, x, false);
+return *x + decl(4, NULL, false);
+}

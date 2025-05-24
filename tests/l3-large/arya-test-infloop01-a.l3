@@ -1,0 +1,16 @@
+//test abort
+void abort_in_this() {
+  int j = 1;
+  for (int i = 0; i < 100; j++) {
+    assert(false);
+  }
+}
+
+void call_abort() {
+  abort_in_this();
+  1 / 0;
+}
+int main() {
+  call_abort();
+  return 1 / 0;
+}

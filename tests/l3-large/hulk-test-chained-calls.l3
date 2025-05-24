@@ -1,0 +1,31 @@
+//test return -622199454
+
+int func1(){
+    return 3; 
+}
+int func2(int x){
+    return func1() + x;
+}
+int func3(bool b, int x){
+    if(b){
+        return 5 * func2(x);
+    }
+    else{
+        return 181 * func2(x);
+    }
+}
+int func4(int x, int y){
+    return func3(true, x) + func3(false, y);
+}
+int func5(int start, int x){
+    int prev = 0;
+    for(int i = 0; i < x; i++){
+        int temp = start;
+        start = func4(start, prev);
+        prev = start;
+    }
+    return start;
+}
+int main(){
+    return func5(411, 10);
+}

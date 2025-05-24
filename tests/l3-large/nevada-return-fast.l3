@@ -1,0 +1,69 @@
+//test return -1070270179
+// fast fib function using matrix multiplication
+// returns fibonacci of INT_MAX, with overflow
+
+// dot product of <a1, a2> and <b1, b2>
+int dot(int a1, int a2, int b1, int b2) {
+    return a1*b1 + a2*b2;
+}
+
+// mult_ij returns the i,j-th matrix entry of the product of 2x2 matrices A = a_ij and B = b_ij
+int mult_11(int a11, int a12, int a21, int a22, int b11, int b12, int b21, int b22) {
+    return dot(a11, a12, b11, b21);
+}
+
+int mult_12(int a11, int a12, int a21, int a22, int b11, int b12, int b21, int b22) {
+    return dot(a11, a12, b12, b22);
+}
+
+int mult_21(int a11, int a12, int a21, int a22, int b11, int b12, int b21, int b22) {
+    return dot(a21, a22, b11, b21);
+}
+
+int mult_22(int a11, int a12, int a21, int a22, int b11, int b12, int b21, int b22) {
+    return dot(a21, a22, b12, b22);
+}
+
+// O(log n) matrix exponentiation function, returning the top left entry
+int matrix_pow(int a11, int a12, int a21, int a22, int exp) {
+    int res11 = 1;
+    int res12 = 0;
+    int res21 = 0;
+    int res22 = 1;
+    while (exp > 0) {
+        if (exp % 2 == 1) {
+            // res *= a
+            int temp11 = mult_11(res11, res12, res21, res22, a11, a12, a21, a22);
+            int temp12 = mult_12(res11, res12, res21, res22, a11, a12, a21, a22);
+            int temp21 = mult_21(res11, res12, res21, res22, a11, a12, a21, a22);
+            int temp22 = mult_22(res11, res12, res21, res22, a11, a12, a21, a22);
+            res11 = temp11;
+            res12 = temp12;
+            res21 = temp21;
+            res22 = temp22;
+        }
+        // a *= a
+        int temp11 = mult_11(a11, a12, a21, a22, a11, a12, a21, a22);
+        int temp12 = mult_12(a11, a12, a21, a22, a11, a12, a21, a22);
+        int temp21 = mult_21(a11, a12, a21, a22, a11, a12, a21, a22);
+        int temp22 = mult_22(a11, a12, a21, a22, a11, a12, a21, a22);
+        a11 = temp11;
+        a12 = temp12;
+        a21 = temp21;
+        a22 = temp22;
+
+        exp /= 2;
+    }
+
+    return res11;
+}
+
+// F_0 = 0, F_1 = 1, etc.
+int fib(int n) {
+    if (n == 0) return 0;
+    return matrix_pow(1, 1, 1, 0, n-1);
+}
+
+int main() {
+    return fib((1<<31) - 1);
+}

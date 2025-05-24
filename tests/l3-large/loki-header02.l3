@@ -1,0 +1,26 @@
+//test typecheck
+
+int foo();
+int bar();
+
+int main() {
+  return foo();
+}
+
+int bar() {
+  if (test()) {
+    return foo(); 
+  } else {
+    return bar();
+  }
+}
+
+int foo() {
+  if (test()) {
+    return bar();
+  } else {
+    return foo();
+  }
+}
+
+

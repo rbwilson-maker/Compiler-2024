@@ -1,0 +1,8 @@
+//test div-by-zero
+struct secret_value {
+    int nuclear_codes;
+};
+int main() {
+    struct secret_value *sv = alloc(struct secret_value);
+    return 1 / sv->nuclear_codes;
+}

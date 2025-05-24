@@ -1,0 +1,39 @@
+//test abort
+
+typedef struct list_node list;
+struct list_node {
+    int data;
+    list* f;
+    list* b;
+};
+
+void chain(list * head) {
+    list * prev = NULL;
+    list * start = head;
+    for (int i = 0; i < 1024; i += 1) {
+        head->data = i;
+        head->f = alloc(list);
+        head->b = prev;
+        if (i == 1023) {
+            head->f = start;
+            start->b = head;
+        }
+        else {
+            prev = head;
+            head = head->f;
+        }
+    }
+}
+
+int main() {
+    list * bloop = alloc(list);
+    chain(bloop);
+    list * nxt = bloop->f;
+    int res = 0;
+    while (nxt != bloop) {
+        res += nxt->data;
+        nxt = nxt->f;
+    }
+    assert(res != 523776);
+    return res;
+}

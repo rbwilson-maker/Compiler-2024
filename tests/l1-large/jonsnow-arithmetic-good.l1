@@ -1,0 +1,12 @@
+//test return 16
+
+int main() {
+  int main = 2 + 2; // main = 4
+  int x = main + main; // x = 8
+
+  x += main + x; // x = 20
+
+  int y = -(-(-(x / main))); // y = -5
+
+  return x / y + x; // return 16
+}

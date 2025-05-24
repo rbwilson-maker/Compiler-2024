@@ -1,0 +1,13 @@
+//test error
+
+struct s {
+  int a;
+  bool b;
+  struct s* self;
+};
+
+int main(){
+  struct s* thing;
+  thing->self->a = 5;
+  return 10;
+}

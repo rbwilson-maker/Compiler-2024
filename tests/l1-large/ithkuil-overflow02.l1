@@ -1,0 +1,15 @@
+//test div-by-zero
+// test division overflow
+
+int main()
+{
+    int x;
+    int y;
+    // y is not live but still incurs an exception; should not be optimized out
+    y = 0;
+    y /= 0;
+
+    x = 5;
+    x /= -1;
+    return x;
+}

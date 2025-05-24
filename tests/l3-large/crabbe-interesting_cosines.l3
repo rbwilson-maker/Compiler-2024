@@ -1,0 +1,44 @@
+//test return 0
+
+// Fast integer square root function
+int intSqrt(int val) {
+    int a;
+    int b;
+
+    if (val < 2) return val; /* avoid div/0 */
+
+    a = 1255; 
+
+    b = val / a; a = (a+b) /2;
+    b = val / a; a = (a+b) /2;
+    b = val / a; a = (a+b) /2;
+    b = val / a; a = (a+b) /2;
+    return a;
+}
+
+int cosine4x4(int a, int b, int c, int d,
+              int e, int f, int g, int h){
+    int sum = a * e + b * f + c * g + d * h;
+
+    int sig_a = a*a + b*b + c*c + d*d;
+    int sig_b = e*e + f*f + g*g + h*h;
+    
+    return sum / (intSqrt(sig_a) + intSqrt(sig_b));
+}
+
+
+int main(){
+  int a = 4127658;
+  int b = 3444124;
+  int c = 12673180;
+  int d = 9261513;
+
+  int e = 1423564;
+  int f = -12356;
+  int g = 12;
+  int h = 0x15411;
+
+  return cosine4x4(a,b,c,d,e,f,g,h);
+}
+
+

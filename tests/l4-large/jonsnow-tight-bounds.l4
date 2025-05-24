@@ -1,0 +1,77 @@
+//test return 0
+
+typedef int* counter;
+
+counter start() {
+  return alloc(int);
+}
+
+void tick(counter c) {
+  (*c)++;
+}
+
+int count(counter c) {
+  return *c;
+}
+
+void reset(counter c) {
+  *c = 0;
+}
+
+void swap(int[] A, int i, int j) {
+  int temp = A[i];
+  A[i] = A[j];
+  A[j] = temp;
+}
+
+bool lt(counter c, int x, int y) {
+  tick(c);
+  return x < y;
+}
+
+void bubbleSort(counter c, int[] A, int n) {
+  for (int i = 0; i < n; i++) {
+    bool anyOutOfOrder = false;
+    for (int j = 0; j < n - i - 1; j++) {
+      if (lt(c, A[j+1], A[j])) {
+        anyOutOfOrder = true;
+        swap(A, j, j+1);
+      }
+    }
+    if (!anyOutOfOrder) return;
+  }
+}
+
+bool isSorted(int[] A, int n) {
+  for (int i = 0; i < n-1; i++) {
+    if (A[i] > A[i+1]) return false;
+  }
+  return true;
+}
+
+int main() {
+  counter c = start();
+
+  int n1 = 10;
+  int[] A1 = alloc_array(int, n1);
+  for (int i = 0; i < n1; i++) {
+    A1[i] = i;
+  }
+
+  int n2 = 12;
+  int[] A2 = alloc_array(int, n2);
+  for (int i = 0; i < n2; i++) {
+    A2[i] = n2 - i;
+  }
+
+  bubbleSort(c, A1, n1);
+  assert(isSorted(A1, n1));
+  assert(count(c) == n1 - 1);
+
+  reset(c);
+  bubbleSort(c, A2, n2);
+  assert(isSorted(A2, n2));
+  assert(count(c) == n2 * (n2 - 1) / 2);
+
+  return 0;
+}

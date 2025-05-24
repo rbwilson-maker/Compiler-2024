@@ -1,0 +1,23 @@
+//test return 17
+
+int assoc(int a, int b) {
+    int c = 0;
+    if (a > 7)
+        if (a > 10)
+            return 12;
+        else {
+            for(int i = 0; i < a; i++) {
+                c += (b - i);
+            } 
+        }
+    return c;
+}
+
+int main() {
+    // 153
+    int c = assoc(9, 21);
+
+    // 9
+    int d = assoc(9, 5);
+    return c / d;
+}

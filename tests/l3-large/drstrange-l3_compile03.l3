@@ -1,0 +1,14 @@
+//test error
+/// invalid return type for nested function
+
+int func1(int x, int y, int z){
+    return func2(0, 1);
+}
+
+void func2(int x, int y){
+    return;
+}
+
+int main() {
+    return func1(0, 1, 2);
+}

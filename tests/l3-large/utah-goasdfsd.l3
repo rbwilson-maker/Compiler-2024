@@ -1,0 +1,13 @@
+//test return 2900718
+// functions are seperate identifiers
+
+int f(int g) {
+    return g + 1338238;
+}
+
+int main() {
+    // Not shadowed yet.
+    int f = true ? f(12020) : f(2402);
+    int h = f + 200202;
+    return h + f;
+}

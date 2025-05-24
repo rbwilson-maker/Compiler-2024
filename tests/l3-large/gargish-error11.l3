@@ -1,0 +1,12 @@
+//test error
+
+t fun (t input);
+typedef int t;
+
+t fun (t input) {
+    return input;
+}
+
+int main () {
+    return fun(0);
+}

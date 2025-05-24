@@ -1,0 +1,30 @@
+// Header file for office hours
+
+/* Tests:
+ *  - Use of structs defined in header files
+ *  - Use of structs declared in header files
+ *  - Nested calls
+ */
+
+// Define the student struct
+struct student {
+    int andrewID;
+    bool stressed;
+};
+
+typedef struct student student_t;
+
+// Declare linked list
+struct node;
+
+typedef struct node node_t;
+
+node_t *new_node(student_t* student);
+
+student_t *from_node(node_t* node);
+
+void push_back(node_t* head, node_t* new_node);
+
+node_t *pop_front(node_t* head);
+
+

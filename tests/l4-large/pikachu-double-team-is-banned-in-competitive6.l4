@@ -1,0 +1,12 @@
+//test error
+// quick test to make sure you can't do multiple declarations in one line
+// otherwise this would totally be a great test
+
+int main()
+{
+  int* a, b;
+  a = alloc(int);
+  b = 92;
+  *a = b;
+  return *a == b ? 219 : 45;
+}

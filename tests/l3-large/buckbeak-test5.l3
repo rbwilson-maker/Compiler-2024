@@ -1,0 +1,18 @@
+//test error
+
+fpt fadd(int x, bool y) {
+	int j = x;
+	while (y) {
+		j += fadd(j*2, ~y);
+	}
+	return j;
+}
+
+int main() {
+	int j = fadd(100, true);
+	bool f = false;
+	while (j < 100) {
+		j = fadd(j, ~f);
+	}
+	return j;
+}

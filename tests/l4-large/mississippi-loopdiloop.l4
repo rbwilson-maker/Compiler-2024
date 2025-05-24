@@ -1,0 +1,62 @@
+//test return 0
+struct list {
+    struct list* next;
+    int value;
+};
+
+struct list *build_list(int len, int val) {
+    if (len == 0) return NULL;
+    struct list *res = alloc(struct list);
+    
+    res->value = val;
+    res->next = build_list(len - 1, val);
+    return res;
+}
+
+struct list *get_last(struct list *l) {
+    if (l == NULL) return NULL;
+    if (l->next == NULL) return l;
+
+    return get_last(l->next);
+}
+
+struct list *make_loop(int len, int val) {
+    if (len == 0) {
+        1/0;
+        return NULL;
+    }
+    
+    struct list *l = build_list(len, val);
+    struct list *end = get_last(l);
+    end->next = l;
+    return l;
+}
+
+bool has_loop(struct list* l) {
+    struct list *double;
+    struct list *single;
+
+    if (l == NULL) return false;
+    single = l;
+    double = l->next;
+
+    while (true) {
+        if (double == NULL) return false;
+        if (double == single) return true;
+
+        single = single->next;
+        double = double->next;
+        if (double == NULL) return false;
+        double = double->next;
+    }
+
+    return false;
+}
+
+int main() {
+    assert(has_loop(make_loop(10000, 1))); 
+    assert(has_loop(make_loop(1, 1)));
+    assert(!has_loop(build_list(10000, 1)));
+    assert(!has_loop(build_list(1, 1)));
+    return 0;
+}

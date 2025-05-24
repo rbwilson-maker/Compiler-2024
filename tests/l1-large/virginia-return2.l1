@@ -1,0 +1,17 @@
+//test return 0
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int f;
+
+  a = 10;           // 10
+  b = 2;            // 2
+  c = 6;            // 6
+  a = a / c / b;    // 0
+
+  return a;
+}

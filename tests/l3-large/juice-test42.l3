@@ -1,0 +1,35 @@
+//test return 12
+
+typedef int fakeInt;
+typedef fakeInt fakeFakeInt;
+
+fakeFakeInt foo(fakeInt x) {
+  x++;
+  return x;
+}
+
+fakeFakeInt bar(fakeInt x) {
+  x = foo(foo(x));
+  return x;
+}
+
+fakeFakeInt yay(fakeFakeInt x, fakeFakeInt y, fakeFakeInt z, bool a, bool b, bool c) {
+  if (a && b && c) {
+    return 1 + yay(x - 1, y - 1, z - 1, x > 0, b && c, b || c);
+  }
+  return 0;
+}
+
+fakeFakeInt main() {
+  fakeFakeInt x = 2;
+  fakeFakeInt y = 3;
+  fakeFakeInt z = 5;
+  while (z > 0) {
+    assert(z > 0);
+    x = bar(x);
+    y = foo(y);
+    z--;
+  }
+  fakeFakeInt w = yay(x, y, z, true, true, true);
+  return x;
+}

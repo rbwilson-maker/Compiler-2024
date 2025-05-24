@@ -1,0 +1,19 @@
+//test div-by-zero
+
+int badassert() {
+    assert(false);
+    return 5;
+}
+
+int givemenum(int input) {
+    return input * 12 + 3 / 5 - 20 + 60 * 2;
+}
+
+int main() {
+    int c = -10;
+    while (givemenum(c) < 32) {
+        c++;
+    }
+    int y = (3 << givemenum(c)) + badassert();
+    return y;
+}

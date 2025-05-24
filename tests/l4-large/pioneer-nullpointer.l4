@@ -1,0 +1,17 @@
+//test memerror
+//feeling a bit NULL? the classic 15122 student mistake
+
+int main()
+{
+  int* x = alloc(int);
+  int** y = alloc(int*);
+  if (*y == x) //it doesn't
+  {
+    return 5;
+  }
+  else
+  {
+    *x = **y;
+    return **y;
+  }
+}

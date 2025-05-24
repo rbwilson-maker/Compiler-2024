@@ -1,0 +1,28 @@
+//test error
+/*
+    ricotta: struct is defined twice
+
+    Tests:
+    - Compiler raises type-checking error for struct that is defined twice
+    - But naming a function/variable the same thing is okay
+*/
+
+typedef struct ricotta ricotta_t;
+
+void ricotta(ricotta_t *ricotta) {
+    ricotta->weight++;
+}
+
+int main() {
+    ricotta_t *r = alloc(ricotta_t);
+    r->weight = 0;
+    ricotta(r);
+
+    assert(r->weight == 1);
+
+    return 0;
+}
+
+struct ricotta {
+    int weight;
+};

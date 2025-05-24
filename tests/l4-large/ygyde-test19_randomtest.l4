@@ -1,0 +1,24 @@
+//test return 21
+
+int test_fun2(int bad) {
+    if (bad > 5) {
+        return bad;
+    }
+    return bad + test_fun2(bad + 1);
+}
+
+int test_fun1(int[] arr, int length) {
+    int i;
+    for (i = 0; i < length; i += 1) {
+        arr[i] += test_fun2(arr[i]);
+    }
+    return arr[4];
+}
+
+int main() {
+    int [] arr = alloc_array(int, 5);
+
+    int res = test_fun1(arr, 5);
+
+    return res;
+}

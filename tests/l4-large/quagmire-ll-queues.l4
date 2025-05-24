@@ -1,0 +1,50 @@
+//test return 3
+
+typedef struct dll_node dll;
+
+struct dll_node {
+  dll* prev;
+  int data;
+  dll* next;
+};
+
+typedef struct dll_header dll_h;
+
+struct dll_header {
+  dll* start;
+  dll* end;
+};
+
+typedef dll_h queue;
+
+int deq(queue* Q) {
+  int data = Q->start->next->data;
+  Q->start = Q->start->next;
+  return data;
+}
+
+void enq(queue* Q, int x) {
+  Q->end->data = x;
+  dll* new = alloc(dll);
+  Q->end->next = new;
+  new->prev = Q->end;
+  Q->end = new;
+}
+
+int main() {
+  queue* Q = alloc(queue);
+  Q->start = alloc(dll);
+  Q->end = alloc(dll);
+  Q->start->next = Q->end;
+  Q->end->prev = Q->start;
+
+  enq(Q, 1);
+  enq(Q, 2);
+  enq(Q, 3);
+
+  int x = deq(Q);
+  x = deq(Q);
+  x = deq(Q);
+
+  return x;
+}

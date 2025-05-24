@@ -1,0 +1,33 @@
+//test return 32768
+//test exponentiation
+
+int add(int x, int y) {
+  int res = 0;
+  for (int i = 0; i < x; i++) {
+    res++;
+  }
+  for (int i = 0; i < y; i++) {
+    res++;
+  }
+  return res;
+}
+
+int mul(int x, int y) {
+  int res = 0;
+  for (int i = 0; i < x; i++) {
+    res = add(res, y);
+  }
+  return res;
+}
+
+int pow(int x, int y) {
+  int res = 1;
+  for (int i = 0; i < y; i++) {
+    res = mul(res, x);
+  }
+  return res;
+}
+
+int main() {
+  return pow(2, 15);
+}

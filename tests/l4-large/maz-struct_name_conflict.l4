@@ -1,0 +1,24 @@
+//test return 0
+
+typedef int s;
+
+struct s {
+    s a;
+    s b;
+};
+
+int t() {
+    return 0;
+}
+
+struct t {
+    s a;
+    s b;
+};
+
+int main() {
+    struct s *a = alloc(struct s);
+    struct t *b = alloc(struct t);
+    
+    return 0; 
+}

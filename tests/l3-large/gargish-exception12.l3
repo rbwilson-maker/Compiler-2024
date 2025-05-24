@@ -1,0 +1,19 @@
+//test div-by-zero
+
+typedef bool b;
+
+b fun (b x, int y, int z) {
+    if (x) {
+        int k = y / z;
+    } else {
+        int k = z / y;
+    }
+    return x;
+}
+
+int main() {
+    fun(true, 0, 1);
+    fun(false, 1, 0);
+    fun(true, 1, 0); // raise runtime error
+    return 0;
+}

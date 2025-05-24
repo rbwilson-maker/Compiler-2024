@@ -1,0 +1,20 @@
+//test memerror
+
+int[] collatz(int n, int len) {
+   int i = 0;
+   int[] result = alloc_array(int, len);
+   while (n > 1) {
+      result[i] = n;
+
+      i++;
+      if (n % 2 == 0) n = n / 2;
+      else n = 3 * n + 1;
+   }
+   return result;
+}
+
+int main() {
+   int[] collatz_arr = collatz(27, 10);
+   return collatz_arr[3];
+}
+

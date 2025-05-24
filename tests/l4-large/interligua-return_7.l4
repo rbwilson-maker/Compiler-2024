@@ -1,0 +1,12 @@
+//test return 1
+// pointer arrays
+
+int main(){
+    int*[] x = alloc_array(int*, 5);
+    for (int i = 0; i < 5; i++) {
+        x[i] = alloc(int);
+        *x[i] = i;
+    }
+
+    return *x[1];
+}

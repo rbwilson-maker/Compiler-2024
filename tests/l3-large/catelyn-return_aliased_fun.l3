@@ -1,0 +1,21 @@
+//test return 1100
+
+int duplicate(int lol, int haha);
+int fun();
+
+int main(){
+  if(fun() == 13) {
+    return duplicate(360, 711);
+  } else
+    assert(false);
+  return 1;
+}
+
+int fun() {
+  return 13;
+}
+
+int duplicate(int rofl, int lmao) {
+  int fun = 29;
+  return rofl + lmao + fun;
+}

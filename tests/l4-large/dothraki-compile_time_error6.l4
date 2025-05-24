@@ -1,0 +1,25 @@
+//test error
+
+int brainMalfunction(int a, int b, int c, int d) {
+  bool[] item = alloc_array(bool, 100);
+  return a b c d;
+}
+
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int f;
+
+  a = 134;
+  b = 20;
+  c = 432 + a;
+  d = 6789;
+  e = 431;
+  f = 34 + e;
+
+  return brainMalfunction(a, b, c, d);
+}

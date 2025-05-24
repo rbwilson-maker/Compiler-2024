@@ -1,0 +1,17 @@
+//test div-by-zero
+//it's gonna fail no matter what. but it's gotta fail the RIGHT WAY
+
+
+void f(int x, bool y) {
+  f(x, y);
+}
+
+bool g() {
+  assert(false);
+  return true;
+}
+
+int main() {
+  f(1/0, g());
+  return 0;
+}

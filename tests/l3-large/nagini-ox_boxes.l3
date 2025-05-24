@@ -1,0 +1,10 @@
+//test return 229
+
+int print(int x) {
+  print_hex(x);
+  return x;
+}
+
+int main() {
+  return print(print(11) + 218);
+}

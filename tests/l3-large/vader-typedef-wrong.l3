@@ -1,0 +1,6 @@
+//test error
+int main() {
+  typedef int INTTYPE;
+  INTTYPE x = true;
+  return x;
+}

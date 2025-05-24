@@ -1,0 +1,35 @@
+//test typecheck
+// binary search 3: electric booga... huh?
+// this time, we put our array functions in a header,
+// but they're not defined...
+
+int binSearch(array arr, int target, int size) {
+    int i = 0;
+    int j = size - 1;
+
+    while(i < j) {
+        int mid = (i + j) / 2;
+        if(get(arr, mid) == target) {
+            return mid;
+        } else if (get(arr, mid) < target) {
+            i = mid + 1;
+        } else {
+            j = mid;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    array arr = newArray();
+    arr = insert(arr, 0, 0);
+    arr = insert(arr, 1, 1);
+    arr = insert(arr, 2, 2);
+    arr = insert(arr, 3, 3);
+    arr = insert(arr, 4, 4);
+    arr = insert(arr, 5, 5);
+    arr = insert(arr, 6, 6);
+    arr = insert(arr, 7, 7);
+
+    return binSearch(arr, 14, 8);
+}

@@ -1,0 +1,6 @@
+//test return 100
+
+// Tests simple program
+int main(){
+    return true || false && true || false && true || false ? 100 : 99;
+}

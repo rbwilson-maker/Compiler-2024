@@ -1,0 +1,15 @@
+//test memerror
+//Simple access without allocate
+
+typedef int cat;
+typedef int dog;
+
+int main(){
+  cat** doge = alloc(cat*);
+  dog** cade = alloc(dog*);
+
+  **doge = 4;
+  **cade = 5;
+  int mult = **doge * **cade;
+  return mult;
+}

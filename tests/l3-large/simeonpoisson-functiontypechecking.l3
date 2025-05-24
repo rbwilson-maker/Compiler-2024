@@ -1,0 +1,28 @@
+//test error
+
+int f() {
+  if (true) {
+    2;
+    return main();
+    while (false) {
+      if (true) {
+        3;
+      } else {
+        return;
+      }
+    }
+  } else {
+    for (bool b = true; b; b = !b) {
+      if (!b) {
+        return 5;
+      } else if (b) {
+        return 4;
+      }
+    }
+    return main() + main();
+  }
+}
+
+int main() {
+  return f();
+}

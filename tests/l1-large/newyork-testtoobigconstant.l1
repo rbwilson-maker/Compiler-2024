@@ -1,0 +1,5 @@
+//test error
+//uses a constant that is too large
+int main(){
+	return 2147483649;
+}

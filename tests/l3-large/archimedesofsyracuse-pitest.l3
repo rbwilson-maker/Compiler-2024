@@ -1,0 +1,18 @@
+//test return 0
+// Compose 32-bit IEEE floating-point representation of -3.14
+
+int construct_pi();
+
+int main() {
+  int pi = 0xc048f5c2;
+  int res = construct_pi();
+  assert (res == pi);
+  return 0;
+}
+
+int construct_pi() {
+  int signed = 0x1;
+  int exponent = 0x80;
+  int mantissa = 0x48f5c2;
+  return (signed << 31) | (exponent << 23) | mantissa;
+}

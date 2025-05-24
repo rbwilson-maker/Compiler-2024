@@ -1,0 +1,13 @@
+//test return 0
+
+int f(int n);
+
+int main() {
+    return f(0);
+}
+
+int f(int m);
+
+int f(int k) {
+    return 0;
+}

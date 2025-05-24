@@ -1,0 +1,15 @@
+//test return 0
+//struct is NULL
+struct l {
+	struct l* next;
+	int blah;
+};
+
+
+int main()
+{
+	struct l*[] wut = alloc_array(struct l*, 10);
+	assert(wut[0] == NULL);
+
+	return 0;
+}

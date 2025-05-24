@@ -1,0 +1,10 @@
+//test error
+
+void cond (bool x, int y, int z) {
+  int p = y + z;
+  int k = z + p;
+}
+
+int main () {
+  return cond(true, 1, 2);
+}

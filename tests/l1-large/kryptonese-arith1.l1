@@ -1,0 +1,10 @@
+//test return 64
+int main() {
+    int a = 12;
+    int b = 41;
+    int c = a * b; //492
+    int d = c / 7;//70
+    int e = c + d / 2;//527
+    int f = (e * 93) % 7;//4
+    return f * f * f;//64
+}

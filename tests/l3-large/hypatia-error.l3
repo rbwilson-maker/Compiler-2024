@@ -1,0 +1,15 @@
+//test error
+typedef int long;
+typedef long double;
+typedef double float;
+typedef float bloat;
+
+bool akhrot(long song) {
+  return song > 999;
+}
+
+int main() {
+  int goat = 980;
+  bloat throat = akhrot(goat);
+  return -2;
+}

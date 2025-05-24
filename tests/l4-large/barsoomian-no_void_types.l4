@@ -1,0 +1,16 @@
+//test error
+
+/**
+ * @brief Ensures that void cannot appear anywhere within a type.
+ *
+ * Kevin Geng, Team Barsoomian
+ * 15-411 Fall 2020
+ */
+
+void[]**[][][]****[]*[][]**[]*[][]***[]*[]*[][][]*[]*****[]*[][]*[] f() {
+  return alloc_array(void[]**[][][]****[]*[][]**[]*[][]***[]*[]*[][][]*[]*****[]*[][]*, 1);
+}
+
+int main() {
+  return f()[0] == NULL ? 1 : 0;
+}

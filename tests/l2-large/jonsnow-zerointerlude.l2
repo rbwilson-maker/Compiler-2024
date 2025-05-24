@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int main(){
+  int x = 0;
+  int y = x + 2 - 2;
+  while(x >= 0) {
+    if(x==y){
+      return x / y;
+    }
+    else {
+      y++;
+    }
+    x++;
+  }
+  return 0;
+}

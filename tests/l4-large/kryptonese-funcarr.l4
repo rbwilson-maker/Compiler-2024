@@ -1,0 +1,12 @@
+//test return 0
+// arg name can shadow function name when it's an array  
+
+
+int foo( int[] foo, int n) {
+  return foo[n-1];
+}
+
+int main() {
+  int[] fool = alloc_array(int, 3);
+  return foo(fool, 3);
+}

@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+  int i = 1;
+  int j = i << 30;
+  int z = j >> 31;
+  z <<= 30;
+  int y = i << i;
+  y >>= z;
+  bool f = false;
+  return z << 33;
+}

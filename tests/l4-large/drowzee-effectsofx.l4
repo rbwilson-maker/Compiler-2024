@@ -1,0 +1,26 @@
+//test return 1
+
+struct boolean {
+  bool b;
+};
+
+int f(struct boolean* b2) {
+  if(b2->b) {
+    b2->b = false;
+  }
+  else{
+    b2->b = true;
+  }
+  return 0;
+}
+
+int main() {
+  struct boolean* x = alloc(struct boolean);
+  x->b = true;
+  int[] a = alloc_array(int, 1);
+  a[f(x)] += 1; //x->b is now false (should only flip once)
+  if(x->b) {
+    a[0]++;
+  }
+  return a[0];
+}

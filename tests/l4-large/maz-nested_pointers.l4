@@ -1,0 +1,13 @@
+//test return 1
+
+int main() {
+    int ***a = alloc(int **);
+    int **b = alloc(int *);
+    *a = b;
+    int *c = alloc(int);
+    **a = c;
+    int d = 1;
+    ***a = d;
+
+    return ***a;
+}

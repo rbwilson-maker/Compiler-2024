@@ -1,0 +1,29 @@
+//test return 6
+
+int max(int x, int y) {
+    return (x > y) ? x : y;
+}
+
+int max_subarray(int[] arr, int len) {
+    int max_sum = -1000000000;
+    int cur_sum = 0;
+    for (int i = 0; i < len; i += 1) {
+        cur_sum = max(cur_sum + arr[i], arr[i]);
+        max_sum = max(max_sum, cur_sum);
+    }
+    return max_sum;
+}
+
+int main() {
+    int[] inp = alloc_array(int, 9);
+    inp[0] = -2;
+    inp[1] = 1;
+    inp[2] = -3;
+    inp[3] = 4;
+    inp[4] = -1;
+    inp[5] = 2;
+    inp[6] = 1;
+    inp[7] = -5;
+    inp[8] = 4;
+    return max_subarray(inp, 9);
+}

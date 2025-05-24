@@ -1,0 +1,83 @@
+//test return 24693
+
+int[][] alloc_matrix(int m, int n) {
+    int[][] A = alloc_array(int[], m);
+    for (int i = 0; i < m; i++) A[i] = alloc_array(int, n);
+    return A;
+}
+
+// finds dot product of two length-n vectors
+int dot(int[] A, int[] B, int n) {
+    int sum = 0;
+
+    for (int i = 0; i < n; i++) {
+        sum += A[i] * B[i];
+    }
+
+    return sum;
+}
+
+int[] row(int[][] A, int m, int n, int i) {
+    int[] B = alloc_array(int, n);
+
+    for (int j = 0; j < n; j++) {
+        B[j] = A[i][j];
+    }
+
+    return B;
+}
+
+int[] col(int[][] A, int m, int n, int j) {
+    int[] B = alloc_array(int, m);
+
+    for (int i = 0; i < m; i++) {
+        B[i] = A[i][j];
+    }
+    
+    return B;
+}
+
+// multiplies m x n by n x p matrix
+int[][] mult(int[][] A, int[][] B, int m, int n, int p) {
+    int[][] C = alloc_matrix(m, p);
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < p; j++) {
+            C[i][j] = dot(row(A, m, n, i), col(B, n, p, j), n);
+        }
+    }
+
+    return C;
+}
+
+int sum(int[][] A, int m, int n) {
+    int sum = 0;
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < n; j++)
+            sum += A[i][j];
+    return sum;
+}
+
+int prod(int[][] A, int m, int n) {
+    int prod = 1;
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < n; j++)
+            prod *= A[i][j];
+    return prod;
+}
+
+int main() {
+    int[][] A = alloc_matrix(2, 3);
+    for (int i = 0; i < 2; i++)
+        for (int j = 0; j < 3; j++)
+            A[i][j] = i + j;
+
+    int[][] B = alloc_matrix(3, 2);
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 2; j++)
+            B[i][j] = i + j + 1;
+
+    int[][] C = mult(A, B, 2, 3, 2);
+
+    return sum(C, 2, 2) + prod(C, 2, 2);
+}

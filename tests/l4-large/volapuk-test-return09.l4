@@ -1,0 +1,24 @@
+//test return 155117520
+//DP to compute choose(30, 15)
+
+typedef int[] row;
+typedef row[] matrix;
+
+int main(){
+  int n = 31;
+  int m = 31;
+  matrix dp = alloc_array(row, n);
+  for (int i = 0; i < n; i++) {
+    dp[i] = alloc_array(int, m);
+  }
+
+  dp[0][0] = 1;
+  for (int i=1;i<n;i++){
+    dp[i][0] = 1;
+    dp[i][i] = 1;
+    for(int j=1;j<i;j++){
+      dp[i][j] = dp[i-1][j] + dp[i-1][j-1];
+    }
+  }
+  return dp[30][15];
+}

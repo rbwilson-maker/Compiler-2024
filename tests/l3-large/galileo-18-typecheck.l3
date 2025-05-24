@@ -1,0 +1,22 @@
+//test typecheck
+// leetcode 69 Sqrt(x)
+
+int sqrt(int x) {
+    int l = 0;
+    int r = x;
+    while (l < r) {
+        int m = (l - r) / 2 + r;
+        int t = m * m;
+        if (t > x) {
+            r = m - 1;
+        } else {
+            l = m;
+        }
+    }
+    return l;
+}
+
+int main() {
+    assert(sqrt(15411) == 124);
+    return 0;
+}

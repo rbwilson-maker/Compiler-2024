@@ -1,0 +1,22 @@
+//test return 55
+
+struct f;
+struct main;
+struct abort;
+typedef struct f* g;
+
+int f(){
+  int x = 5;
+  return x;
+}
+
+struct f {
+  int z;
+};
+
+struct main {};
+struct abort {};
+
+int main(){
+  return 55;
+}

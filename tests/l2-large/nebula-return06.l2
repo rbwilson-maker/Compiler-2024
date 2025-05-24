@@ -1,0 +1,21 @@
+//test return 0
+//Overflow on the shift operation.
+// 2
+// 4
+// 16
+// 128
+// 2048
+// 65536
+// 4194304
+// 536870912
+// 0
+// 0
+int main ()
+{
+  int x = 2;
+  int i;
+  for(i = 0; i < 10; i++) {
+    x <<= i;
+  }
+  return x;
+}

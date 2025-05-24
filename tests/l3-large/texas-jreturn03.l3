@@ -1,0 +1,15 @@
+//test return -680
+// an arbitrary two-argument function
+// equivalent to jreturn04.l3
+
+int pingPong(int x, bool isPong) {
+	if (x==0)
+		return isPong ? -1000 : 0;
+	int devisor = isPong ? 3 : 2;
+	int addon = isPong ? 10 : 100;
+	return pingPong(x / devisor, !isPong) + addon;
+}
+
+int main() {
+  return pingPong(37, false);	//100 + 10 + 100 + 10 + 100 + -1000
+}

@@ -1,0 +1,38 @@
+//test error
+
+struct linked_list {
+  int val;
+  struct linked_list* next_cell;	
+};
+
+typedef struct linked_list ll;
+
+ll* init(int n) {
+  ll* p;
+  ll* q = NULL;
+  while(n > 0) {
+  p = alloc(ll);
+  p -> val = n;
+  p -> next_cell = q;
+  q = p;
+  }
+  return q;
+}
+int sum(ll* a){
+  int c = 0;
+  c += a -> val;
+  while (a -> next_cell != NULL) {
+    a = a -> next_cell;
+    c += a -> val;  	
+  }
+  return c;	
+}
+void join (ll* a, ll*b) {
+  a -> next_cell = b;	
+}
+int main() {
+  ll* a = init(10);
+  ll* b = init(15);
+  join (a,*b);
+  return sum(a);	
+}

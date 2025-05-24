@@ -1,0 +1,48 @@
+//test return 0
+
+// Use the Babylonian method to approximate the square root
+// to within a certain epsilon.
+// Then use the Stirling approximation of the factorial.
+
+bool within_epsilon(dub x, dub y, dub epsilon) {
+  return dless(dsub(x,y), epsilon) && dless(dsub(y,x), epsilon);
+}
+
+dub dsqrt(dub x) {
+  dub est = x;
+  dub epsilon = ddiv(itod(1), itod(1000));
+  while (!within_epsilon(dmul(est,est), x, epsilon)) {
+    est = ddiv(dadd(est, ddiv(x, est)), itod(2));
+  }
+  return est;
+}
+
+dub dpow(dub x, int n) {
+  if (n == 0) {
+    return itod(1);
+  } else if (n == 1) {
+    return x;
+  } else {
+    dub res = dpow(x, n / 2);
+    if (n % 2 == 0) {
+      return dmul(res, res);
+    } else {
+      return dmul(res, dmul(res, x));
+    }
+  }
+}
+
+dub stirling_factorial(int n) {
+  dub pi = ddiv(itod(314159265),itod(100000000));
+  dub e = ddiv(itod(271828182),itod(100000000));
+  return dmul(dsqrt(dmul(itod(2), dmul(pi, itod(n)))),
+              dpow(ddiv(itod(n), e), n));
+}
+
+int main() {
+  assert(within_epsilon(stirling_factorial(2), itod(2), itod(1)));
+  assert(within_epsilon(stirling_factorial(5), itod(120), itod(2)));
+  // It's not a great approximation...
+  assert(within_epsilon(stirling_factorial(10), itod(3628800), itod(50000)));
+  return 0;
+}

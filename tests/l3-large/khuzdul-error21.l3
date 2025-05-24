@@ -1,0 +1,65 @@
+//test error
+
+\inferrule{
+}{
+    \Delta; \Gamma, x : \tau \vdash x : \tau 
+}\and
+\inferrule{
+    \Delta; \Gamma, x : \tau_1 \vdash e : \tau_2
+}{
+    \Delta; \Gamma \vdash \lambda x : \tau_1. e : \tau_1 \to \tau_2 
+}\and
+\inferrule{
+    \Delta; \Gamma \vdash e_1 : \tau_2\to \tau\\
+    \Delta; \Gamma \vdash e_2 : \tau_2
+}{
+    \Delta; \Gamma \vdash e_1\ e_2: \tau 
+}\and
+\inferrule{
+    \Delta, \alpha; \Gamma \vdash e : \tau
+}{
+    \Delta; \Gamma \vdash \Lambda \alpha. e : \forall \alpha. \tau 
+}\and
+\inferrule{
+    \Delta; \Gamma \vdash e : \forall \alpha. \tau\\
+}{
+    \Delta; \Gamma \vdash e [\tau_1]: [\tau_1/\alpha]\tau 
+}\and
+\inferrule{
+    \Delta; \Gamma \vdash e_1 : \tau_1\\
+    \Delta; \Gamma \vdash e_2 : \tau_2
+}{
+    \Delta; \Gamma \vdash \langle e_1, e_2 \rangle : \tau_1 \times \tau_2 
+}\and
+\inferrule{
+    \Delta; \Gamma \vdash e : \tau_1 \times \tau_2
+}{
+    \Delta; \Gamma \vdash \pi_1 e : \tau_1 
+}\and
+\inferrule{
+    \Delta; \Gamma \vdash e : \tau_1 \times \tau_2
+}{
+    \Delta; \Gamma \vdash \pi_2 e : \tau_2 
+}\and
+\inferrule{
+    \Delta; \Gamma \vdash e : \tau\\
+    \Delta; \Gamma, x: \tau \vdash e : \tau
+}{
+    \Delta; \Gamma \vdash \llet x = e \in e : \tau
+}\and
+\inferrule{
+    \Delta; \Gamma, x : \neg \tau \vdash e : \tau
+}{
+    \Delta; \Gamma\vdash \letcc\{\tau\}(x.e):\tau
+}\and
+\inferrule{
+    \Delta; \Gamma\vdash e_1 : \tau'\\
+    \Delta; \Gamma\vdash e_2 : \neg \tau'
+}{
+    \Delta; \Gamma\vdash \throw\{\tau\}(e_1;e_2) : \tau
+}\and
+\inferrule{
+    E : (\Delta;\Gamma\vdash \tau) \Rightarrow (\Delta;\Gamma \vdash \tau')
+}{
+    \Delta;\Gamma\vdash \cont(E) : \neg \tau
+}

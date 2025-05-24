@@ -1,0 +1,6 @@
+//test error
+//valid in the grammar, but does not match return type
+int main()
+{
+    return true ? true : false;
+}

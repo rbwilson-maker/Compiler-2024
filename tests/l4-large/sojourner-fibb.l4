@@ -1,0 +1,28 @@
+//test return -1431655765
+
+struct s {
+    int a;
+    int b;
+    int c;
+};
+
+struct s *fibb(int n) {
+    if (n == 0) {
+        struct s *blah = alloc(struct s);
+        blah->a = 1;
+        blah->b = 0;
+        blah->c = 0;
+        return blah;
+    } else {
+        struct s *blah = fibb(n-1);
+        int sum = blah->a + blah->b + blah->c;
+        blah->b = blah->a;
+        blah->c = blah->b;
+        blah->a = sum;
+        return blah;
+    }
+}
+
+int main() {
+    return fibb(100000)->a;
+}

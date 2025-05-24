@@ -1,0 +1,14 @@
+//test return 10
+
+int main ()
+{
+  int a;
+  int b;
+  int c;
+
+  a = 0x2;
+  b = 0x8;
+  c = a | b; 
+
+  return c;
+}

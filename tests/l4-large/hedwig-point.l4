@@ -1,0 +1,23 @@
+//test return 2
+struct pair{
+    int x;
+    int y;
+};
+
+typedef struct pair point;
+
+point * add(point * a, point * b){
+    point * sum = alloc(point);
+    sum->x = a->x + b->x;
+    sum->y = a->y + b->y;
+    return sum;
+}
+
+int main(){
+    point * a = alloc(point);
+    point * b = alloc(point);
+    (*a).x = 2;
+    (*b).y = 3;
+    point * s = add(a, b);
+    return s->x;
+}

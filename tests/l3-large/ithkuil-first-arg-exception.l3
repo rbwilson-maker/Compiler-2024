@@ -1,0 +1,10 @@
+//test div-by-zero
+
+void cond (bool x, int y, int z) {
+  cond(false, 1/0, x ? y : z);
+}
+
+int main () {
+  cond(true, 1, 2);
+  return 0;
+}

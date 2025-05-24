@@ -1,0 +1,13 @@
+//test div-by-zero
+// runtime exception: mod 0
+int main(){
+    int x = 10;
+    x -= 10;
+    int y = 10;
+    x += y;
+    x -=20;
+    x += y;
+    int k = y%x;
+    return 0;
+    
+}

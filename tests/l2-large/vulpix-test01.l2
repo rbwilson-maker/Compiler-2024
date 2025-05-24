@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+int main() {
+  int a = 30;
+  bool b = false;
+  while (a < 40) {
+    int c = a;
+    a += 3;
+    for (int i = 0; !b; i++) {
+      a = a + c;
+    }
+  }
+  return 4;
+}

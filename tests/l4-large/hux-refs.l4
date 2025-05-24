@@ -1,0 +1,18 @@
+//test return 15
+
+int main() {
+	int[] a = alloc_array(int, 10);
+	int[] b = alloc_array(int, 5);
+	int[] c = alloc_array(int, 4);
+	int[][] a_ = alloc_array(int[], 3);
+
+	a_[0] = b;
+	a_[1] = a;
+	a_[2] = c;
+
+	assert(a_[0] == b);
+	assert(a_[1] == a);
+	assert(a_[2] == c);
+
+	return 15;
+}

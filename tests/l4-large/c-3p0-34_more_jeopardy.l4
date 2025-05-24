@@ -1,0 +1,17 @@
+//test return 0
+
+struct point{
+    struct point * p;
+    int y;
+};
+
+int[] f(bool x){
+    if(!x) return alloc_array(int,0);
+    int[] ret = alloc_array(int,5);
+    ret[0] = 1;
+    return ret;
+}
+
+int main(){
+    return (alloc_array(struct point,(alloc(struct point))->y+(*alloc(bool)?0:1)+(*alloc(struct point)).y))[*(alloc(int))+(alloc_array(int,2)[f(!!!*alloc(bool))[0]])].y;
+}

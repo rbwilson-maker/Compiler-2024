@@ -1,0 +1,14 @@
+//test typecheck
+
+int main() {
+	my_int a = 0;
+	my_int b = 0;
+	while(b < 435) {
+		a += whacky_function(true, false, 500) * 79;
+	}
+	my_bool chk = true;
+	if(chk) 
+		return 12;
+	else 
+		return 59;
+}

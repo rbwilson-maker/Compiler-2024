@@ -1,0 +1,10 @@
+//test return 0
+
+struct foo;
+
+typedef struct foo foo;
+
+int main () {
+foo * bar;
+return 0;
+}

@@ -1,0 +1,13 @@
+//test div-by-zero
+// Const folding with division by zero in the middle.
+
+int main()
+{
+    int i = 1;
+    int j = 2;
+    int k = i + j * j;
+    int p = k * k + j * k + 1;
+    int v = k / j / 0;
+    int q = v + k * p;
+    return v + q * 10 + j + v;
+}

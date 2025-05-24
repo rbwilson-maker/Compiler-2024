@@ -1,0 +1,15 @@
+//test error
+
+// testing typedef shadowing/collision
+
+typedef bool name;
+
+void f (bool name) {
+    name && name;
+    name || name;
+    assert(name);
+}
+
+int main() {
+    return 1;
+}

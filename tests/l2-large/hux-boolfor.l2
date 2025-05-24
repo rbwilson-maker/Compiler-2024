@@ -1,0 +1,16 @@
+//test return 19
+
+int main() {
+    bool flag = true;
+    int res = 35;
+
+    for (int i = 0; flag; i++) {
+        if (i % 13 == 3 && i > 13) {
+            flag = false;
+        } else {
+            res --;
+        }
+    }
+
+    return res;
+}

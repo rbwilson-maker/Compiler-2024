@@ -1,0 +1,13 @@
+//test return 100
+
+int main() {
+
+    int p0 = 2;
+    int p1 = 3;
+    int p2 = 5;
+    int pz = 17;
+    int concepts = p0 * p2 * 10 + pz * p1; // 151
+    int tcs = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 - 4 + p0 * p2 * p0 * p2 * p0; // 251
+    
+    return tcs - concepts;
+}

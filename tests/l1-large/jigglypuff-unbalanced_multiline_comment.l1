@@ -1,0 +1,28 @@
+//test error
+
+/* Unbalanced Multiline Comment Error
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Saturday, September 12, 2015 at 04:08:52 PM EDT
+ *
+ * This test tests that the compiler can detect an unbalanced nested
+ * multi-line comment.
+ */
+
+/* Uh-oh! /* This comment is
+ * definitely /* not /*
+ * balanced */ At all... */ Seriously */
+
+int main()
+{
+    int x;
+    int y;
+    int z;
+
+    x = 7;
+    y = 42;
+    z = x + y;
+
+    return z;
+}

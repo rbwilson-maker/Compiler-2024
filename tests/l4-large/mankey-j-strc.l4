@@ -1,0 +1,22 @@
+//test return 20000
+//passing struct on stack a lot!
+
+struct hi
+{
+  int a;
+};
+
+int func(int i, struct hi* coco) {
+  if (i == 0)
+    return coco->a;
+  else
+    coco->a += 20;
+    return func(i-1, coco);
+}
+
+int main()
+{
+    struct hi* mankey = alloc(struct hi);
+    return func(1000, mankey);
+}
+

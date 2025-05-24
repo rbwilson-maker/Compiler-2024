@@ -1,0 +1,45 @@
+//test return -1
+
+int value(int[] tree, int node, int end) {
+    if (node > end) {
+        assert(false); 
+    }
+    return tree[node]; 
+}
+int left_child(int node) {
+    return node*2; 
+}
+int right_child(int node) {
+    return node*2+1; 
+}
+
+int binsearch (int[] tree, int curr, int end, int val) {
+    if (curr >= end) {
+        return -1;
+    }
+    if (value(tree, curr, end) == val) {
+        return curr; 
+    } else if (value(tree, curr, end) > val) {
+        return binsearch(tree, left_child(curr), end, val); 
+    } else if (value(tree, curr, end) < val) {
+        return binsearch(tree, right_child(curr), end, val); 
+    } 
+    return -1;
+}
+
+int main() {
+    int end = 1024; 
+    int[] tree = alloc_array(int, end); 
+    int root = 1;
+    tree[0] = -1; 
+
+    tree[1] = 10; 
+    tree[2] = 5; 
+    tree[3] = 15; 
+    tree[4] = 2; 
+    tree[5] = 7; 
+    tree[6] = 12; 
+    tree[7] = 20; 
+
+    return binsearch(tree, root, end, 200); 
+}

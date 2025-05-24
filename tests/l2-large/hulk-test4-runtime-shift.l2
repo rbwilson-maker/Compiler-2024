@@ -1,0 +1,27 @@
+//test div-by-zero
+
+int main(){
+
+    int x = 0;
+    bool b = true;
+
+    while(b){
+        x += 1;
+
+        if(x > 100){
+            b = false;
+        }
+    }
+
+    int shift = 0;
+    int num = 0xFF24;
+    int num2 = 0x5132;
+
+    for(int i = 0; i < x; i++){
+        num = num << i;
+        num += num2;
+        num2 >> i;
+    }
+    
+    return num;
+}

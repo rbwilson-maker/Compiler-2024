@@ -1,0 +1,11 @@
+//test error
+
+// Type names cannot be defined more than once
+
+typedef int multitype;
+typedef bool multitype;
+
+int main () {
+    multitype a;
+    return 0;
+}

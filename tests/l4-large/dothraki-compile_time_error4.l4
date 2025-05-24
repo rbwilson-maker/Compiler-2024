@@ -1,0 +1,19 @@
+//test error
+
+struct chom {
+    int *ba;
+    bool na;
+    int na;
+}
+
+int doSomething(int i) {
+    return i;
+}
+
+int main() { 
+    int chom = 1;
+
+    chom = doSomething(chom);
+
+    return chom;
+}

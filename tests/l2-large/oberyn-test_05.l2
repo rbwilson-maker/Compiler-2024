@@ -1,0 +1,14 @@
+//test return 4950
+
+// tests a loop with empty simpot's
+
+int main() {
+	int sum = 0;
+	int i = 0;
+	for (; i < 100;) {
+		sum += i;
+		i++;
+	}
+
+	return sum;
+}

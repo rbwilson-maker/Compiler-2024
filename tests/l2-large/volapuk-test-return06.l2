@@ -1,0 +1,13 @@
+//test return 0
+
+// Test order of operations for logical ops
+
+int main() {
+  bool a = true;
+  bool b = false;
+  bool c = false;
+  bool d = false;
+  bool e = a && b || c || d && b || a; //true
+  bool f = a && ((b || c) || d) && (b || a); //false
+  return e == f ? -1 : 0;
+}

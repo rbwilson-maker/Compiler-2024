@@ -1,0 +1,11 @@
+//test error
+// tests that we can't return a declared but unassigned variable!
+
+int main() {
+    int m;
+    int a = 1;
+    int b = 2;
+    int z = 3;
+    return m;
+    m = 2;
+}

@@ -1,0 +1,13 @@
+//test error
+
+void f(int x)
+{
+    x = 5;
+    for (int i = 0; i<x; i++)
+        x*=2;
+}
+
+int main()
+{
+    return f(1);
+}

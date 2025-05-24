@@ -1,0 +1,19 @@
+//test error
+
+// make sure scope of argument type is ok
+
+int bad_function(int x, bool y) {
+    int y = 99;
+    if (x > 10) {
+        return x;
+    }
+    if (y > 10) {
+        return 10;
+    }
+    return 123;
+}
+
+int main() {
+    int x = bad_function();
+    return x;
+}

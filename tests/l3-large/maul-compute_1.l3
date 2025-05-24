@@ -1,0 +1,29 @@
+//test return 1
+// iterative is_prime
+
+typedef bool x;
+typedef x y;
+typedef y z;
+
+typedef int p;
+
+z is_prime(p n) {
+    if (n < 2) {
+        return false;
+    }
+    if (n == 2) {
+        return true;
+    }
+    for (int i = 2; i < (n / 2); i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+
+typedef p q;
+
+q main() {
+    y a = is_prime(37);
+    return a ? 1 : 0;
+}

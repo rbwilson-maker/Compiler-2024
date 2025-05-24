@@ -1,0 +1,13 @@
+//test return 5050
+//test deeply recursive function
+
+int myadd(int x, int sum) {
+  if (x == 0) return sum;
+  else return myadd(x - 1, sum + x);
+}
+
+int main()
+{
+  int a = 100;
+  return myadd(a, 0);
+}

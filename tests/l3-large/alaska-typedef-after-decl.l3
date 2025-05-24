@@ -1,0 +1,16 @@
+//test return 4
+
+int function();
+
+int main() {
+  int a = 1;
+  int b = function();
+  return a + b;
+}
+
+typedef int a;
+
+int function() {
+  a b = 3;
+  return b;
+}

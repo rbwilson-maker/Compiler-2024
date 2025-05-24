@@ -1,0 +1,16 @@
+//test return 9
+
+int main() {
+  int a;
+  while(false){
+    a = 0;
+  }
+  int x = 1;
+  int y = 2;
+  int z = 3;
+  a = x+y;
+  int b = a*z;
+
+  return b;
+}
+

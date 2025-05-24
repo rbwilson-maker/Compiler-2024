@@ -1,0 +1,11 @@
+//test div-by-zero
+// Division by zero in dead code
+
+int main()
+{
+    int i = 10;
+    int j = i * i + i;
+    int p = i + j * j;
+    int t = j / 0;
+    return 2 * p + j + 1;
+}

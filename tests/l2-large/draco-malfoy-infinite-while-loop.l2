@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+
+int main ()
+{
+  int x = 1;
+  int i = 0;
+
+  while (i <= 4) {
+    i++;
+    i %= 5;
+  }
+  return x / 0;
+
+}

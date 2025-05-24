@@ -1,0 +1,19 @@
+//test error 
+
+typedef int bloop; 
+
+bloop f(bloop x, bloop y) {
+    return x >> y;
+}
+
+bloop g(bloop x, bloop y, bloop z) {
+    return x << y << z;
+}
+
+int main() {
+    bloop x = 8;
+    bloop y = 2;
+    bloop z = f(x, y); // 2
+    bloop w = g(z, x, y);
+    return f(g(y, y, y), z, w);
+}

@@ -1,0 +1,9 @@
+//test error
+
+int f() {
+  return -1;
+}
+// redeclaring f with a conflicting signature from the header
+int main() {
+  return f();
+}

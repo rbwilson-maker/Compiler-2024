@@ -1,0 +1,27 @@
+//test abort
+
+bool is_happy_number(int n) {
+	if (n == 4 || n < 1) return false;
+	if (n == 1) return true;
+	int sum = 0;
+	while (n > 0) {
+		int digit = n % 10;
+		sum += digit * digit;
+		n /= 10;
+	}
+	return is_happy_number(sum);
+}
+
+bool is_small_number(int n) {
+	int test = n / 100;
+	return n == 0;
+}
+
+int main() {
+	int res = 0;
+	for (int i = 0; i < 100; i++) {
+		assert(is_happy_number(i) ? is_small_number(i) : i*10 >= i*i);
+		res += i;
+	}
+	return res;
+}

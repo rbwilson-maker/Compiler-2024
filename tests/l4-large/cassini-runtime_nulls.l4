@@ -1,0 +1,38 @@
+//test memerror
+
+typedef struct node* node;
+struct node {
+    int val;
+    node next;
+};
+
+void add(node a, node b) {
+    a->next = b;
+    a->val++;
+}
+
+bool find(node start, node end, int val) {
+    for(; start != end; start = start->next) {
+        if (start->next->val == val) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int main() {
+    node start = alloc(struct node);
+    node cur = start;
+    while(true) {
+        node newNode = alloc(struct node);
+        add(cur, newNode);
+        cur = newNode;
+        cur->val = start->val + 5;
+        start->val *= 2;
+
+        if (start->val > 10000 && find(start, NULL, -1)) {
+            return 10;
+        }
+    }
+    return -1; // should not reach
+}

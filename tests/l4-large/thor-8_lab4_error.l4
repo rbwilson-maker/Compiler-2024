@@ -1,0 +1,71 @@
+//test error 
+struct list_ele_t {
+    /**
+     * @brief Pointer to a char array containing a string value.
+     *
+     * The memory for this string should be explicitly allocated and freed
+     * whenever an element is inserted and removed from the queue.
+     */
+    char *value; /*value stores the address of a char. it's also a char
+                   array cuz you can put the other chars right next to it */
+
+    /**
+     * @brief Pointer to the next element in the linked list.
+     */
+    struct list_ele *next; /*next stores the address of a (struct list_ele) */
+};             /* abbreviation for the long
+                              type name (struct list_ele) is list_ele_t */
+
+
+struct queue_t {
+    /**
+     * @brief Pointer to the first element in the queue, or NULL if the
+     *        queue is empty.
+     */
+    list_ele_t *head; /*head is the name of the pointer*/
+    /*
+     * TODO: You will need to add more fields to this structure
+     *       to efficiently implement q_size and q_insert_tail
+     */
+    list_ele_t *tail;
+    size_t size;
+};
+
+void free_q(queue_t *q) {}
+
+void free_l(list_ele_t *l) {}
+
+void queue_free(queue_t *q) {
+    /* How about freeing the list elements and the strings? */
+    /* Free queue structure */
+    /*can't use recursion*/
+    if (q == NULL) {
+        free_q(q);
+        return;
+    }
+    list_ele_t *left;
+    left = (q->head);
+    if (q->head == NULL) {
+        free_l(q->head);
+        free_l(q->tail);
+        free_q(q);
+        return;
+    }
+    while (q->head != q->tail) {
+        (q->head) = (q->head)->next;
+        free(left->value);
+        free(left);
+        left = q->head;
+    }
+    /*free(q -> head -> next);*/
+    free(q->head->value);
+    free(q->head);
+    free(q);
+    return;
+}
+
+int main() {
+struct list_ele_t;
+queue_free();
+return queue_new();
+}

@@ -1,0 +1,30 @@
+//test error
+// embedded structs cannot form a cycle
+
+struct a;
+typedef struct a a_t;
+
+struct c {
+  int val;
+  a_t next;
+};
+typedef struct c c_t;
+
+struct b {
+  int val;
+  c_t next;
+};
+typedef struct b b_t;
+
+struct a {
+  int val;
+  b_t next;
+};
+
+int main() {
+  a_t* p = alloc(struct a);
+  p->val = 1;
+  p->next.val = 2;
+  p->next.next.val = 3;
+  return p->val + p->next.val + p->next.next.val;
+}

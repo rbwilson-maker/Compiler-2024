@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int main() {
+    int s = -2147483648;
+    int t = s + 2147483647;
+    int y = s + 2147483647;
+    int e = s + 2147483647;
+    int w = s + 2147483647;
+    return s / t;
+}

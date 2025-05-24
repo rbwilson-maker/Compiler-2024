@@ -1,0 +1,18 @@
+//test error
+
+typedef struct jan hoffman;
+
+struct jan {
+    int *hoff;
+    int[] man;
+};
+    
+int main() {
+    hoffman *jan = alloc(hoffman);
+    hoff *man = alloc(struct jan);
+    jan->hoff = NULL;
+    man->man = alloc_array(int, 65535);
+    jan->man = man->man;
+    man->hoff = jan->hoff;
+    return jan->hoff + man->man[0];
+}

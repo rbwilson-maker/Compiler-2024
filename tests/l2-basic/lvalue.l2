@@ -1,0 +1,11 @@
+//test return 10
+// ensures that lvalues can have parens
+
+int main ()
+{
+  int x = 5;
+
+  ((((((((((((((x)))))))))))))) += 5;
+
+  return x;
+}

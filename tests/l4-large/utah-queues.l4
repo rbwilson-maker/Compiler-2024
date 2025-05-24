@@ -1,0 +1,356 @@
+//test return 389120
+
+// type elem must be defined
+typedef int elem;
+
+/* Interface section for stacks */
+
+struct stack;
+typedef struct stack* stack;
+
+struct list_node;
+typedef struct list_node* list;
+
+bool stack_empty(stack S);              /* O(1) */
+bool is_stack (stack S);                /* O(n) */
+stack stack_new();                      /* O(1) */
+void push(elem x, stack S);             /* O(1) */
+elem pop(stack S);                      /* O(1) */
+elem peek(stack S);                     /* O(1) */
+stack clone(stack S);                   /* O(n) */
+bool stack_contain(elem x, stack S);    /* O(n) */
+int stack_size(stack S);                /* O(n) */
+
+/* IMPLEMENTATION */
+                                        /*      LINKED LIST           */
+struct list_node
+{
+  elem data;
+  struct list_node* next;
+};
+
+bool is_segment(list start, list end)
+{
+	list p = start;
+	while (p != end)
+	{
+		if (p == NULL) return false;
+		p = p->next;
+	}
+	return true;
+}
+                                        /*      STACK         */
+
+struct stack
+{
+	list top;
+};
+
+bool is_stack (stack S)
+{
+	return is_segment(S->top, NULL);
+}
+
+bool stack_empty(stack S)
+{
+	return S->top == NULL;
+}
+
+stack stack_new()
+{
+	stack S = alloc(struct stack);
+	S->top = NULL;
+	return S;
+}
+
+elem peek(stack S)
+{
+	assert( !stack_empty(S) );
+	return S->top->data;
+}
+
+elem pop(stack S)
+{
+	assert( !stack_empty(S) );
+	elem x = S->top->data;
+	S->top = S->top->next;
+	return x;
+}
+
+void push(elem x, stack S)
+{
+	list first = alloc(struct list_node);
+	first->data = x;
+	first->next = S->top;
+	S->top = first;
+}
+
+int stack_size(stack S)
+{
+	list p = S->top;
+	int size = 0;
+	while (p != NULL)
+	{
+		size++;
+		p = p->next;
+	}
+	return size;
+}
+
+list list_clone(list L)
+{
+	if( L == NULL ) return NULL;
+	else
+	{
+		list p = alloc(struct list_node);
+		p->data = L->data;
+		p->next = list_clone(L->next);
+		return p;
+	}
+}
+
+bool list_contain(elem x, list L)
+{
+	list tmp = L;
+	while (tmp != NULL)
+	{
+		if(x == tmp->data) return true;
+		tmp = tmp->next;
+	}
+
+	return false;
+}
+
+
+stack clone(stack S)
+{
+	stack twin = stack_new();
+	twin->top = list_clone(S->top);
+	return twin;
+}
+
+bool stack_contain(elem x, stack S)
+{
+	return list_contain(x, S->top);
+}
+
+
+/* Interface to queues */
+
+struct queue;
+typedef struct queue* queue;
+
+struct q_node;
+typedef struct q_node* listOfStacks;
+
+bool queue_empty(queue Q);          /* O(1) */
+queue queue_new();                  /* O(1) */
+void enqueue(stack e, queue Q);     /* O(1) */
+stack dequeue(queue Q);             /* O(1) */
+
+/* IMPLEMENTATION */
+                                       /*      LINKED LIST     of stacks      */
+struct q_node
+{
+  stack data;
+  struct q_node* next;
+};
+
+bool isSegment(listOfStacks start, listOfStacks end)
+{
+	listOfStacks p = start;
+	while (p != end)
+	{
+		if (p == NULL) return false;
+		p = p->next;
+	}
+	return true;
+}
+                                        /*      QUEUE         */
+
+struct queue
+{
+	listOfStacks front;
+	listOfStacks back;
+};
+
+bool is_queue(queue Q)
+{
+	return Q->front != NULL && Q->back != NULL  && isSegment(Q->front, Q->back);
+}
+
+bool queue_empty(queue Q)
+{
+	return Q->front == Q->back;
+}
+
+
+queue queue_new()
+{
+	queue Q = alloc(struct queue);
+	listOfStacks L = alloc(struct q_node);
+	Q->front = L;
+	Q->back = L;
+	return Q;
+}
+
+stack dequeue(queue Q)
+{
+	assert(!queue_empty(Q));
+	stack e = Q->front->data;
+	Q->front = Q->front->next;
+	return e;
+}
+
+void enqueue(stack e, queue Q)
+{
+	listOfStacks L = alloc(struct q_node);
+	Q->back->data = e;
+	Q->back->next = L;
+	Q->back = L;
+}
+
+void merge(stack a, stack b) {
+    while (!stack_empty(a)) {
+        push(pop(a), b);
+    }
+}
+
+int merge_all(queue q) {
+    stack s = stack_new();
+    while (!queue_empty(q)) {
+        merge(dequeue(q), s);
+    }
+    int sum = 0;
+    while (!stack_empty(s)) {
+        sum += pop(s);
+    }
+    return sum;
+}
+
+int main () {
+    queue q = queue_new();
+    stack a = stack_new();
+    stack b = stack_new();
+    stack c = stack_new();
+    stack d = stack_new();
+    stack e = stack_new();
+    stack f = stack_new();
+
+    push(5, a);
+    push(10, a);
+    push(15, a);
+    push(15, a);
+    push(15, a);
+    push(15, a);
+    push(15, a);
+    push(15, a);
+    push(15, a);
+    push(15, a);
+    push(15, a);
+    push(15, a);
+    push(20, a);
+    push(25, a);
+    push(30, a);
+
+    push(30, b);
+    push(35, b);
+    push(40, b);
+    push(15, a);
+    push(15, a);
+    push(15, a);
+    push(15, a);
+    push(20, a);
+    push(20, a);
+    push(20, a);
+    push(20, a);
+    push(45, b);
+    push(50, b);
+    push(55, b);
+    push(55, b);
+    push(55, b);
+    push(55, b);
+    push(55, b);
+    push(55, b);
+    push(55, b);
+    push(60, b);
+    push(65, b);
+
+    push(1, c);
+    push(30, c);
+    push(30, c);
+    push(30, c);
+    push(30, c);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push(30, c);
+    push(30, c);
+    push(30, c);
+    
+    push(1, d);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (2, e);
+    push (5, e);
+    push (1, e);
+    push (7, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+    push(30, d);
+   
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+    push (1, e);
+
+    push (2, f);
+    push (2, f);
+    push (2, f);
+    push (2, f);
+    push (2, f);
+    push (2, f);
+    push (2, f);
+    push (2, f);
+    push (2, f);
+    push (2, f);
+    push (2, f);
+    push (2, f);
+
+    stack s = clone(a);
+    for (int i = 0; i < 10; i++) {
+        merge(clone(s), s);
+        enqueue(s, q);
+    }
+
+    return merge_all(q);
+}

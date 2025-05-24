@@ -1,0 +1,15 @@
+//test return -2147483648
+
+typedef int ftp;
+
+int main() {
+  int a = 3;
+  int b = 5;
+  int c = 7;
+  ftp aprime = itof(a);
+  ftp bprime = itof(b);
+  ftp cprime = itof(c);
+
+  ftp last = fdiv(aprime, fsub(fsub(cprime, itof(2)), bprime));
+  return ftoi(last);
+}

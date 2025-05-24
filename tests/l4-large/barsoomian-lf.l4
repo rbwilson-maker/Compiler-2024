@@ -1,0 +1,35 @@
+//test return 1556111435
+
+// 15-122 Lab from Fall 2019
+
+int LF(int i, int j, int k)
+{
+  if (i < k) return i;
+
+  int res = 0;
+  res += LF(i - j, j, k);
+  res += LF(i - k, j, k);
+  return res;
+}
+
+int lf_memo(int[] M, int i, int j, int k)
+{
+  if(M[i] != 0)
+    return M[i];
+  if(i < k)
+    M[i] = i;
+  else
+      M[i] = lf_memo(M, i - j, j, k) + lf_memo(M, i - k, j, k);
+  return M[i];
+}
+
+int fast_lf(int i, int j, int k)
+{
+  int[] M = alloc_array(int, i+1);
+  return lf_memo(M, i, j, k);
+}
+
+int main()
+{
+  return fast_lf(1000, 1, 2);
+}

@@ -1,0 +1,76 @@
+//test return 686
+
+struct transpose_state {
+    int[][] A;
+    int[][] B;
+};
+
+typedef struct transpose_state* transpose_state_t;
+
+
+void transpose_cache(transpose_state_t s){
+
+    for(int i=0; i<256; i++){
+        for(int j=0; j<256; j++){
+            for(int ii=0; ii<16; ii++){
+                for(int jj=0; jj<16; jj++){
+                    s->B[j*16+jj][i*16+ii] = s->A[i*16+ii][j*16+jj];
+                }
+            }
+        }
+    }
+}
+
+void copy_cache(transpose_state_t s){
+    for(int i=0; i<256; i++){
+        for(int j=0; j<256; j++){
+            for(int ii=0; ii<16; ii++){
+                for(int jj=0; jj<16; jj++){
+                    s->A[i*16+ii][j*16+jj] = s->B[i*16+ii][j*16+jj];
+                }
+            }
+        }
+    }
+}
+
+
+int main(){
+
+    transpose_state_t state = alloc(struct transpose_state);
+
+    (*state).A = alloc_array(int[], 4096);
+    (*state).B = alloc_array(int[], 4096);
+    for(int i=0; i<4096; i++){
+        state->A[i] = alloc_array(int, 4096);
+        state->B[i] = alloc_array(int, 4096);
+    }
+
+    for(int i=0; i<256; i++){
+        for(int j=0; j<256; j++){
+            for(int ii=0; ii<16; ii++){
+                for(int jj=0; jj<16; jj++){
+                    state->A[i*16+ii][j*16+jj] = i*16+ii+j*16+jj;
+                }
+            }
+        }
+    }
+
+    for(int i=0; i<3; i++){
+        transpose_cache(state);
+        copy_cache(state);
+    }
+
+    for(int i=0; i<256; i++){
+        for(int j=0; j<256; j++){
+            for(int ii=0; ii<16; ii++){
+                for(int jj=0; jj<16; jj++){
+                    assert(state->B[j*16+jj][i*16+ii] == i*16+ii+j*16+jj);
+                }
+            }
+        }
+    }
+
+
+    return state->B[234][452];
+
+}

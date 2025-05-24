@@ -1,0 +1,8 @@
+//test return 3
+
+int fun(struct s* a, int b) {
+    return b;
+}
+int main() {
+    return fun(NULL, 3);
+}

@@ -1,0 +1,10 @@
+//test error
+
+struct int32 {
+  int int32;
+};
+
+int main () {
+  struct *int32 int32 = alloc(int32);
+  return int32->int32;
+}

@@ -1,0 +1,7 @@
+//test error
+// test hex constant too large
+int main()
+{
+    int x = 0xFFFFFFFFFFFFFFFF;
+    return x;
+}

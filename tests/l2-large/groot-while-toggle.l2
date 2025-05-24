@@ -1,0 +1,14 @@
+//test return 123
+
+int main() {
+  bool c = true;
+
+  int i = 0;
+
+  while (c) {
+    i += 123;
+    c = false;
+  }
+
+  return i;
+}

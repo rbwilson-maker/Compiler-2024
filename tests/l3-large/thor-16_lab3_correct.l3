@@ -1,0 +1,9 @@
+//test return 16
+//pred the inductive way
+
+int pred (int n){
+if (n <= 1) return 0;
+return 1 + (pred (n - 1));
+}
+
+int main () {return pred(17);}

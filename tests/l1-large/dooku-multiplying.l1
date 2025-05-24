@@ -1,0 +1,9 @@
+//test return -24
+int main() { 
+	int tina = 12;	
+	((tina) ) *= 2;
+	tina = tina * -1;
+	return tina;
+}
+
+

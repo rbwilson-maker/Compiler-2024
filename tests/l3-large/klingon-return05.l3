@@ -1,0 +1,12 @@
+//test return 0
+//shadowing
+
+bool foo ();
+
+int main() {
+	if (foo())
+		return 0;
+	else
+		return 1;
+}
+bool foo () {return true;}

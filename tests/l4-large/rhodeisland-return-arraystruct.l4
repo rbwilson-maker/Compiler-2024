@@ -1,0 +1,10 @@
+//test return 6
+struct foo {
+	bool[] y;
+};
+
+int main() {
+	struct foo* x = alloc(struct foo);
+	x->y = alloc_array(bool, 12);
+	return x->y[8] ? 2 : 6;
+}

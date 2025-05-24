@@ -1,0 +1,18 @@
+//test return 12
+
+int main(){
+  int onedance = 1;
+  int ineed = 12;
+  int dances = 0;
+  bool higherpowers = true;
+  while(ineed >= onedance)
+  {
+    if(!higherpowers)
+    {
+      return -1;
+    }
+    dances++;
+    onedance++;
+  }
+  return dances;
+}

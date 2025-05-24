@@ -1,0 +1,24 @@
+//test return 10
+//test arithmetic operation, order of operation 
+
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  
+  a = 1;
+  b = 2;
+  c = 3;
+  
+  d = a * a; /*d = 1*/
+  e = b * b; /*e = 4*/
+
+  d = e - d; /*d= 3*/
+  
+  e = (((d*e)/b)+c-b)*a+c;
+
+  return e;
+}

@@ -1,0 +1,42 @@
+//test memerror
+// ...or is it?
+// try compiling with gcc on Linux  :o
+
+// The following block makes this both valid C and C0...
+/* /* */
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#define print_int(x) printf("%d\n", (x))
+// */
+
+
+typedef int n4; struct s32 { n4 f0; n4 f1; n4 f2; n4 f3; n4 f4; n4 f5; n4 f6;
+n4 f7; }; typedef struct s32 n32; struct s256 { n32 f0; n32 f1; n32 f2; n32 f3;
+n32 f4; n32 f5; n32 f6; n32 f7; }; typedef struct s256 n256; struct s2048 {
+n256 f0; n256 f1; n256 f2; n256 f3; n256 f4; n256 f5; n256 f6; n256 f7; };
+typedef struct s2048 n2048; struct s16384 { n2048 f0; n2048 f1; n2048 f2; n2048
+f3; n2048 f4; n2048 f5; n2048 f6; n2048 f7; }; typedef struct s16384 n16384;
+struct s131072 { n16384 f0; n16384 f1; n16384 f2; n16384 f3; n16384 f4; n16384
+f5; n16384 f6; n16384 f7; }; typedef struct s131072 n131072; struct s1048576 {
+n131072 f0; n131072 f1; n131072 f2; n131072 f3; n131072 f4; n131072 f5; n131072
+f6; n131072 f7; }; typedef struct s1048576 n1048576; struct s4194304 { n1048576
+f0; n1048576 f1; n1048576 f2; n1048576 f3; }; typedef struct s4194304 n4194304;
+struct s4195648 { n4194304 f0; n256 f1; n256 f2; n256 f3; n256 f4; n256 f5; n32
+f6; n32 f7; }; typedef struct s4195648 mystery;
+
+struct infinity {
+    mystery gem;
+    int wat;
+};
+
+void assert_reality(int reality) {
+    assert(reality == reality);
+    print_int(reality);
+}
+
+int main() {
+    struct infinity *aether = NULL;
+    assert_reality(aether->wat);
+    return 0;
+}

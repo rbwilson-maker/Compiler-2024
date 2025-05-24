@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+int main()
+{
+    int i;
+    i = 1;
+    while(i != 3)
+    {
+        i++;
+        while(i != 0) { i--; }
+    }
+    return 0;
+}

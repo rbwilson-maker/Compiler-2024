@@ -1,0 +1,37 @@
+//test return 291
+/*
+ * this computes the 42nd happy number, where a happy number is defined by the process:
+ *  repeatedly replace the number with the sum of the squares of its digits, until
+ *  the number is either 1 (where it will stay) or it loops endlessly. The original
+ *  number is happy if the process ends at 1
+ */
+
+int sumOfSquares(int n);
+
+bool isHappy(int n) {
+    while(n != 1 && n != 4)
+        n = sumOfSquares(n);
+    return n == 1;
+}
+
+int main() {
+    int n = 42;
+    int found = -1;
+    int guess = 0;
+    while (found < n) {
+        guess++;
+        if (isHappy(guess))
+            found++;
+    }
+    return guess;
+}
+
+int sumOfSquares(int n) {
+    int sum = 0;
+    while(n > 0) {
+        int digit = n % 10;
+        sum += digit*digit;
+        n /= 10;
+    }
+    return sum;
+}

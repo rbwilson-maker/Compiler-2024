@@ -1,0 +1,37 @@
+//test return 7
+
+struct Tree;
+typedef struct Tree Tree_t;
+
+struct Tree {
+    Tree_t* left_child;
+    Tree_t* right_child;
+    int value;
+};
+
+int extend(Tree_t* parent) {
+    if(parent->value > 10) {
+        Tree_t* right = alloc(Tree_t);
+        Tree_t* left = alloc(Tree_t);
+
+        parent->right_child = right;
+        parent->left_child = left;
+
+        parent->right_child->value = (parent->value) / 2;
+        parent->right_child->value = ((parent->value) / 2) + 1;
+
+        int right_return = extend(parent->right_child);
+        int left_return = extend(parent->left_child);
+
+        return left_return + right_return;
+    }
+    else {
+        return parent->value;
+    }
+}
+
+int main() {
+    Tree_t* root = alloc(struct Tree);
+    root->value = 700;
+    return extend(root);
+}

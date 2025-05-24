@@ -1,0 +1,20 @@
+//test return 1024
+// Cited from 15122 lecture 1 for details :)
+typedef int long;
+
+int fast_exp(int base, int e) {
+  int r = 1;
+  while (e > 1) {
+    if (e % 2 == 1) {
+      r = base * r;
+    }
+    base = base * base;
+    e = e / 2;
+  }
+  return r * base;
+}
+
+int main() {
+  int res = fast_exp(2, 10);
+  return res;
+}

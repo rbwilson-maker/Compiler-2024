@@ -1,0 +1,12 @@
+//test error
+
+typedef int woof;
+
+int main() {
+    woof* bark = alloc(woof);
+    woof arf = 10;
+    woof yap_yap = 20;
+    *bark = arf + yap_yap;
+    woof* bork = woof * bark; // :(
+    return bork;
+}

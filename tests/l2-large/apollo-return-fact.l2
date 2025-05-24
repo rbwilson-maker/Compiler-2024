@@ -1,0 +1,20 @@
+//test return 0
+//fun fact 10 = 3628800
+int main()
+{
+    int acc = 1;
+    int x;
+    for(x = 10;x > 0; x--)
+    {
+        {acc *= x;}
+    }
+    if(acc != 3628800)
+        return 1;
+    x++;
+    while(acc > 1)
+    {
+        acc /= x;
+        x++;
+    }
+    return acc - 1;
+}

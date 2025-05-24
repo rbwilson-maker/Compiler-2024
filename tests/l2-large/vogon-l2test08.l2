@@ -1,0 +1,9 @@
+//test return 4
+
+int main() { 
+  if ((3 | 4 & 234 - 234 * 12112) > (3 ^ 3 & 234 - 234 * 33)) {
+    return 3;
+  } else {
+    return 4;
+  }
+}

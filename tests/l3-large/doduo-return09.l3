@@ -1,0 +1,14 @@
+//test return 0
+bool isBigger(int a, int b) {
+	return (a > b);
+}
+
+int main() {
+	for(int i = 0; i < 10; i++) {
+		for(int j = 0; j < 10; j++) {
+			if(isBigger(i, j)) assert(i > j);
+			else assert(i <= j);
+		}
+	}
+	return 0;
+}

@@ -1,0 +1,47 @@
+//test return 2048
+
+int main(){
+
+    bool a1;
+    bool a2;
+    bool a3;
+    bool a4;
+    bool a5;
+    bool a6;
+    bool a7;
+    bool a8;
+    bool a9;
+    bool a10;
+    bool a11;
+    bool a12;
+
+    int x = 1;
+    x += 1;
+    a1 = x == 2;
+    x-= 10;
+
+    a2 = x == -8;
+    x*= 10;
+    a3 = x == -80;
+    x/=-16;
+    a4 = x == 5;
+    x %= 3;
+    a5 = x == 2;
+    x &= 0x12;
+    a6 = x == 2;
+    x^=3;
+    a7 = x == 1;
+    x|=-6;
+    a8 = x == -5;
+    x>>=2;
+    a9 = x == -2;
+    x<<=10;
+    a10 = x == -2048;
+    //2048, we win!
+    x = -x;
+    a11 = x == 2048;
+
+    a12 = a1 && a2 && a3 && a4 && a5 && a6 && a7
+             && a8 && a9 && a10 && a11;
+    if(a12) return 2048; else return -1;
+}

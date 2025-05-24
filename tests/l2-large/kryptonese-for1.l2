@@ -1,0 +1,12 @@
+//test return 734899149
+
+int main ()
+{
+    int n = 0;
+    int x = 0xABCDABCD;
+    for (int i = 0; i < 31; i ++) {
+        int mask = 1 << i;
+        n = n + (mask & x);
+    }
+    return n;
+}

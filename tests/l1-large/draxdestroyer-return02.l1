@@ -1,0 +1,11 @@
+//test return 1
+int main() {
+    int negone = 0xffffffff;
+    int max = 0x7fffffff;
+    int min = 0x80000000;
+    int blah = 0;
+    blah += (max + min);
+    return blah * negone;
+}
+
+

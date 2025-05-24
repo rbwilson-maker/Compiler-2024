@@ -1,0 +1,58 @@
+//test return 0
+
+//     d
+//  b     f
+// a c   e g
+
+struct a { int x; int y; int z; };
+struct c { int x; int y; int z; };
+struct e { int x; int y; int z; };
+struct g { int x; int y; int z; };
+struct b { struct a a; struct c c; };
+struct f { struct e e; struct g g; };
+struct d { struct b b; struct f f; };
+
+int main() {
+    struct d * r = alloc(struct d);
+
+    assert(r->b.a.x == 0);
+    assert(r->b.a.y == 0);
+    assert(r->b.a.z == 0);
+    assert(r->b.c.x == 0);
+    assert(r->b.c.y == 0);
+    assert(r->b.c.z == 0);
+    assert(r->f.e.x == 0);
+    assert(r->f.e.y == 0);
+    assert(r->f.e.z == 0);
+    assert(r->f.g.x == 0);
+    assert(r->f.g.y == 0);
+    assert(r->f.g.z == 0);
+
+    r->b.a.x = 1;
+    r->b.a.y = 2;
+    r->b.a.z = 3;
+    r->b.c.x = 4;
+    r->b.c.y = 5;
+    r->b.c.z = 6;
+    r->f.e.x = 7;
+    r->f.e.y = 8;
+    r->f.e.z = 9;
+    r->f.g.x = 10;
+    r->f.g.y = 11;
+    r->f.g.z = 12;
+
+    assert(r->b.a.x == 1);
+    assert(r->b.a.y == 2);
+    assert(r->b.a.z == 3);
+    assert(r->b.c.x == 4);
+    assert(r->b.c.y == 5);
+    assert(r->b.c.z == 6);
+    assert(r->f.e.x == 7);
+    assert(r->f.e.y == 8);
+    assert(r->f.e.z == 9);
+    assert(r->f.g.x == 10);
+    assert(r->f.g.y == 11);
+    assert(r->f.g.z == 12);
+
+    return 0;
+}

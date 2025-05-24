@@ -1,0 +1,18 @@
+//test return 74
+
+int main()
+{
+  int r = 0;
+  for(int p = 2; p <= 100; p++)
+  {
+    for(int d = 2; d * d <= p; d++)
+    {
+      if(p % d == 0)
+      {
+        r++;
+        d = 1111111; // break
+      }
+    }
+  }
+  return r;
+}

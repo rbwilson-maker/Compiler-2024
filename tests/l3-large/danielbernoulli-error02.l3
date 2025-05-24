@@ -1,0 +1,15 @@
+//test error 
+// main mismatching return type
+
+void f(int x, int y, int z) {
+    if(x+y == z) {
+        return;
+    }
+}
+
+int main() {
+    int x = 0;
+    int y = 2; 
+    int z = 3;
+    (x == y) ? return f(x,y,z) : return 0; 
+}

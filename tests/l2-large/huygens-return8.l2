@@ -1,0 +1,19 @@
+//test return 0
+
+int main() {
+    int x = 0;
+    int z = 0;
+    while (x < 10) {
+        int y = 0;
+        while (y < 10) {
+            y++;
+            x = 7;
+            x+=y;
+            for (int q = 0; q < 10; q++) {
+                q += 1;
+            }
+        }
+        x++;
+    }
+    return z;
+}

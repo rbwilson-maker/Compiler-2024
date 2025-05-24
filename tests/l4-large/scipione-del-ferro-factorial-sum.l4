@@ -1,0 +1,26 @@
+//test return 34
+// sum of first 5 factorials
+
+int sum(int[] A, int n) {
+    int total = 0;
+    for (int i = 0; i < n; i++) {
+        total += A[i];
+    }
+    return total;
+}
+
+int factorial(int n) {
+    if (n == 0) {
+        return 1;
+    }
+    return n*factorial(n - 1);
+}
+
+int main() {
+    int n = 5;
+    int[] A = alloc_array(int, n);
+    for (int i = 0; i < n; i++) {
+        A[i] = factorial(i);
+    }
+    return sum(A, n);
+}

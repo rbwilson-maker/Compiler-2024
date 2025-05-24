@@ -1,0 +1,22 @@
+//test return 69
+
+
+struct two {
+    int a;
+    int b;
+};
+
+
+struct one {
+    struct two c;
+    struct two d;
+};
+
+int main() {
+    struct one *test = alloc(struct one);
+    test -> c . a = 5;
+    test -> d . b = 6;
+    test -> c . b = 7;
+    test -> c . a = 69;
+    return test -> c . a;
+}

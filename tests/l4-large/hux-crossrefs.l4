@@ -1,0 +1,60 @@
+//test return 20
+
+struct A {
+	int *a;
+	int[] a_;
+	int[]* a__;
+};
+
+struct B {
+	int b;
+	int *b_;
+	int*[] b__;
+};
+
+struct C {
+	int c;
+};
+
+struct ABC_ {
+	struct A *A;
+	struct B *B;
+	struct C *C;
+};
+
+struct A__B_C {
+	struct A *A;
+	struct B *B;
+	struct C C;
+};
+
+int main() {
+	struct A *A = alloc(struct A);
+	struct B *B = alloc(struct B);
+	struct C *C = alloc(struct C);
+
+	struct ABC_ *ABC_ = alloc(struct ABC_);
+	struct A__B_C *A__B_C = alloc(struct A__B_C);
+
+	A->a = alloc(int);
+	*A->a = 0;
+	A->a_ = alloc_array(int, 10);
+	A->a__ = alloc(int[]);
+	*A->a__ = alloc_array(int, 5);
+
+	B->b_ = A->a;
+	B->b__ = alloc_array(int *, 4);
+	for (int i = 0; i < 4; i++)
+		B->b__[i] = A->a;
+
+	ABC_->A = A;
+	ABC_->B = B;
+	A__B_C->A = A;
+	A__B_C->B = B;
+	
+	*B->b_ += 15;
+	*ABC_->A->a += 4;
+	*A__B_C->A->a += 1;
+
+	return *A->a;
+}

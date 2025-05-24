@@ -1,0 +1,9 @@
+//test return 5
+
+int main () {
+  int x = 4 ^ 1;
+
+  for(;false;) return 0;
+  for(;false;) if(true) return 1;
+  return x;
+}

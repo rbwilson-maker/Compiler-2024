@@ -1,0 +1,16 @@
+//test return 2
+// use comparison operators
+int main() {
+  int a = 88;
+  int b = 67;
+  if (a > b) {
+    a = 67;
+  }
+  if (a == b) {
+    b = 55;
+  }
+  if (a == 67 && b == 55) {
+    return 2;
+  }
+  return 0;
+}

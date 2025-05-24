@@ -1,0 +1,14 @@
+//test div-by-zero
+// test division by zero in special assignment instructions
+// i.e. expressions of the form "x op= e" where op is either +,-,* or /
+
+int main() {
+  int x1 = 2;
+  
+  x1 += x1;
+  x1 *= x1;
+  x1 /= x1;
+  
+  x1 /= 1/(1-x1);
+  return x1;
+}

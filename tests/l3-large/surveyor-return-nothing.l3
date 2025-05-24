@@ -1,0 +1,13 @@
+//test error
+
+int foo() {
+  int a = 5;
+  while (a > 0) {
+    a--;
+  }
+  return;
+}
+
+int main() {
+  return foo();
+}

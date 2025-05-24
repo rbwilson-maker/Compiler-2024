@@ -1,0 +1,19 @@
+//test return 0
+int main()
+{
+  string s = "Hello World!\n";
+  assert(string_charat(s, 0)=='H');
+  assert(string_charat(s, 1)=='e');
+  assert(string_charat(s, 2)=='l');
+  assert(string_charat(s, 3)=='l');
+  assert(string_charat(s, 4)=='o');
+  assert(string_charat(s, 5)==' ');
+  assert(string_charat(s, 6)=='W');
+  assert(string_charat(s, 7)=='o');
+  assert(string_charat(s, 8)=='r');
+  assert(string_charat(s, 9)=='l');
+  assert(string_charat(s, 10)=='d');
+  assert(string_charat(s, 11)=='!');
+  assert(string_charat(s, 12)=='\n');
+  return 0;
+}

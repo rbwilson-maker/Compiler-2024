@@ -1,0 +1,12 @@
+//test abort
+
+bool gather(int x) {
+  return
+    (x != 1) &&
+    ((x % 2) == 0 ? gather(x / 2) : gather(3*x + 1));
+}
+
+int main() {
+  assert(gather(0xFFFFFF));
+  return 0;
+}

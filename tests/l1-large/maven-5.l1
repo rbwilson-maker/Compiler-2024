@@ -1,0 +1,9 @@
+//test error
+
+// Simple Compilation Failure - No main function
+
+int not_main() {
+    int x = 12345;
+    int y = 54321;
+    return x * y;
+}

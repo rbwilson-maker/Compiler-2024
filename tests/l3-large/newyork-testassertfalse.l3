@@ -1,0 +1,8 @@
+//test abort
+int main() {
+    bool check = 2 > 5;
+
+    assert(check);
+
+    return 10;
+}

@@ -1,0 +1,26 @@
+//test return 70
+// compute number of subsets of n of size k
+
+int num_subsets(int n, int k) {
+    if (k == 0) {
+        return 1;
+    }
+    assert (n >= k);
+    int res = 0;
+    if (n - 1 >= k) {
+        res += num_subsets(n - 1, k);
+    }
+    res += num_subsets(n - 1, k - 1);
+    return res;
+}
+
+int main() {
+    int x = num_subsets(6, 4);
+    int y = num_subsets(6, 2);
+    int z = num_subsets(4, 2);
+    int w = num_subsets(4, 3);
+    assert (x == y);
+    assert (y == z + 2 * w + 1);
+    assert (x == z + 2 * w + 1);
+    return num_subsets(8, 4);
+}

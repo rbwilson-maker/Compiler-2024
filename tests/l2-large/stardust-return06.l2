@@ -1,0 +1,16 @@
+//test return 1
+//test if & for
+
+int main() {
+  int x = 21392;
+  int y = 21391;
+  int z = 4343;
+  if (x > 0) {
+    for (int i = 0; i < 200; i++){
+      z++;
+    }
+    return x-y;
+  } else {
+    return x+y;
+  }
+}

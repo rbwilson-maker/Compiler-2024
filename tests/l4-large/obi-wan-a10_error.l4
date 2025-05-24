@@ -1,0 +1,15 @@
+//test error
+
+//type mismatch
+
+int main() {
+    int[] a = alloc_array(int, 1111);
+    bool[] b = alloc_array(int, 1111); //type mismatch
+
+    for(int i = 0; i < 1111; i++) {
+        a[i] = 1111 - i;
+        b[i] = i + 1;
+    }
+
+    return a[1111] - b[1111];
+}

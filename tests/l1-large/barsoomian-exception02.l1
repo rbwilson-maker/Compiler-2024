@@ -1,0 +1,6 @@
+//test div-by-zero
+int main() {
+    int a = 2;
+    int b = a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a * a;
+    return b / -(-(-1));
+}

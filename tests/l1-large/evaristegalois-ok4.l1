@@ -1,0 +1,22 @@
+//test return 256
+
+int main() {
+    // nested comments, variable initialization and assignment and declaration
+
+    int x = 3;
+    int y = 17;
+    int z;
+    int q = x * y + (x - y * (x * y / y) );
+
+    /* This is /* a very
+    */ strange 
+    /* multiline */
+    comment */
+
+    z = (86);
+    z += ((q));
+    z -= x;
+    
+    return z + y * 10;
+
+}

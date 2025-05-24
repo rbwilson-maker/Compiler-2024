@@ -1,0 +1,14 @@
+//test return 1
+//tests a successful run with an uninitialized variable
+int main()
+{
+    int a;
+    int b;
+    int c;
+    int d;
+
+    b = 1;
+    c = 2;
+    return b;
+    d = b + a;
+}

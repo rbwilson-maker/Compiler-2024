@@ -1,0 +1,11 @@
+//test error
+//multi typdef
+
+typedef bool make;
+typedef int make;
+
+int main()
+{
+   make m = 0;
+   return m;
+}

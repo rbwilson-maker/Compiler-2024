@@ -1,0 +1,15 @@
+//test memerror
+
+// did you properly initialize your structs?
+
+struct mrMeeseeks {
+  int* foo;
+  int bar;
+};
+
+int main() {
+  struct mrMeeseeks* m = alloc(struct mrMeeseeks);
+  if ((*m).bar == 0) 
+    return *((*m).foo);
+  return 0;
+}

@@ -1,0 +1,13 @@
+//test return 16381
+// Run the Ackermann function for a small value. Stress testing
+
+int oh_no_not_the_ack(int m, int n) {
+    if (m == 0) return n + 1;
+    if (n == 0) return oh_no_not_the_ack(m - 1, 1);
+    return oh_no_not_the_ack(m - 1,
+        oh_no_not_the_ack(m, n-1));
+}
+
+int main() {
+    return oh_no_not_the_ack(3,11);
+}

@@ -1,0 +1,13 @@
+//test error
+
+int main() {
+  int* a = alloc(int);
+  int** b = alloc(int*);
+  assert(a != NULL); 
+  assert(b != NULL);
+  assert(*a == NULL); // cannot make the comparison, type mismatch
+  assert(*b != NULL);
+  assert(**b == NULL);
+  **b = 3;
+  return **b + *a;
+}

@@ -1,0 +1,4 @@
+//test div-by-zero
+int main() {
+	return 2 * (64 << -8) + 1;
+}

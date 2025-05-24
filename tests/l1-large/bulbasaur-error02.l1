@@ -1,0 +1,11 @@
+//test error
+//usage of undeclared variable (different error than tests0/error01.l1)
+int main()
+{
+  int x;
+  int y;
+
+  x = 5;
+  y = x + z;
+  return y;
+}

@@ -1,0 +1,33 @@
+//test return 42
+
+/* Inline branch test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ *
+ * This test tests inline branch assignments
+ *
+ */
+
+
+int main() 
+{
+
+    int x = 5; 
+    int y = 500; 
+    int z = (x > y) ? 250 : 255; 
+
+    // x = 0
+    x = ((z % x) != (y % x)) ? 3 : 0; 
+
+    // y = 0
+    y = ((y / z) != 2) ? 0 : 5; 
+
+    // z = 0
+    z = (x > y) ? 2 : 0;
+
+    // return x;
+    return (((x == y) && (y == z) && (x == 0)) ? 42 : 43);
+}
+
+

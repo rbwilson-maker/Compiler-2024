@@ -1,0 +1,20 @@
+//test return 10
+
+int main() { 
+    int x = 5;
+    bool y = true;
+    bool z = x > 5 ? y : !y;
+    if (z) 
+    {
+        return 5;
+    } 
+    else 
+    {
+        for(int i = 5; i > 0; i--)
+        {
+            x++;
+        }
+        return x;
+    }
+    return 0;
+ }

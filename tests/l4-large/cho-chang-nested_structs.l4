@@ -1,0 +1,31 @@
+//test return 0
+
+struct person {
+    int height;
+    int weight;
+};
+typedef struct person* person;
+struct dog{
+    int height;
+    int weight;
+    person owner;
+};
+typedef struct dog* dog;
+int main()
+{
+    person owner = alloc(struct person);
+    dog pet = alloc(struct dog);
+    pet->owner = owner;
+    pet->height = 3;
+    pet->weight = 40;
+    owner->height = 6;
+    owner->weight = 200;
+    if(pet->owner->weight + pet->weight > 400)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}

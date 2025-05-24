@@ -1,0 +1,95 @@
+//test abort
+
+typedef bool[][] graph;
+
+bool DFS(graph g, int start, int goal, bool[] * visited) {
+
+  if (start == goal){
+    return true;
+  }
+
+  (*visited)[start] = true;
+
+  for (int i = 0 ; i < 6 ; i++){
+    if(!((*visited)[i])){
+      if (g[start][i]) {
+        if (DFS(g, i, goal, visited)) {
+          return true;
+        }
+      }
+    }
+  }
+
+  return false;
+
+}
+
+int main(){
+
+  bool[] e1 = alloc_array(bool, 6);
+  e1[0] = false;
+  e1[1] = false;
+  e1[2] = true;
+  e1[3] = true;
+  e1[4] = true;
+  e1[5] = false;
+  bool[] e2 = alloc_array(bool, 6);
+  e1[0] = false;
+  e1[1] = false;
+  e2[2] = true;
+  e2[3] = false;
+  e2[4] = true;
+  e2[5] = false;
+  bool[] e3 = alloc_array(bool, 6);
+  e3[0] = true;
+  e3[1] = true;
+  e3[3] = false;
+  e3[4] = false;
+  e3[5] = false;
+  bool[] e4 = alloc_array(bool, 6);
+  e4[0] = true;
+  e4[1] = false;
+  e4[2] = false;
+  e4[3] = false;
+  e4[4] = false;
+  e4[5] = false;
+  bool[] e5 = alloc_array(bool, 6);
+  e5[0] = false;
+  e5[1] = false;
+  e5[2] = false;
+  e5[3] = false;
+  e5[4] = false;
+  e5[1] = true;
+  bool[] e6 = alloc_array(bool, 6);
+  e6[0] = false;
+  e6[1] = false;
+  e6[2] = false;
+  e6[3] = false;
+  e6[4] = false;
+  e6[1] = false;
+
+  graph g = alloc_array(bool[], 6);
+  g[0] = e1;
+  g[1] = e2;
+  g[2] = e3;
+  g[3] = e4;
+  g[4] = e5;
+  g[5] = e6;
+
+  bool[] * visited = alloc(bool[]);
+
+  bool[] visited_list = alloc_array(bool, 6);
+  visited_list[0] = false;
+  visited_list[1] = false;
+  visited_list[2] = false;
+  visited_list[3] = false;
+  visited_list[4] = false;
+  visited_list[5] = false;
+
+  *visited = visited_list;
+
+  assert(DFS(g, 0, 5, visited));
+
+  return 0;
+
+}

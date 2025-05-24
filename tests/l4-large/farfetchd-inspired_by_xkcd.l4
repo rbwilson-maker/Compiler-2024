@@ -1,0 +1,14 @@
+//test error
+
+struct pewpewu{
+    int yay;
+    struct pewpewme;
+}
+
+struct pewpewme{
+    int what;
+}
+
+int main() {
+    return 5;
+}

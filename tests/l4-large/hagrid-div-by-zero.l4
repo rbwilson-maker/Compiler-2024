@@ -1,0 +1,17 @@
+//test div-by-zero
+
+struct a {
+  int x;
+  int y;
+  bool a;
+  bool b;
+};
+
+
+int main(){
+  struct a* b = alloc(struct a);
+  b->x = 1;
+  b->y = 0;
+  return b->x / b->y;
+
+}

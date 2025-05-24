@@ -1,0 +1,11 @@
+//test return 4096
+
+int main() {
+  int q = 1;
+  bool k = true;
+  for(int i = 20; k ; i--) {
+    q += q;
+    k = i >= 10;
+  }
+  return q;
+}

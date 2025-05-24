@@ -1,0 +1,11 @@
+//test div-by-zero
+//mod by 0
+int main()
+{
+  int w = 55;
+  int x = 3;
+  int y = x / 3;
+  int z = y - 1;
+  return w%z;
+}
+

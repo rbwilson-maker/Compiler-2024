@@ -1,0 +1,17 @@
+//test return 491524
+
+int divmod(int x, int n) {
+    if (x < n) {
+        return x;
+    } else {
+        int result = divmod(x - n, n);
+        int q = result >> 15;
+        int r = result & ((1 << 15) - 1);
+        q++;
+        return (q << 15) + r;
+    }
+}
+
+int main() {
+    return divmod(109, 7);
+}

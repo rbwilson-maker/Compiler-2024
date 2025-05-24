@@ -1,0 +1,23 @@
+//test return 1
+
+int main()
+{
+  bool yes = true;
+  bool no = false;
+  yes = yes || no;
+  no = yes && no;
+  
+  if (yes || no)
+  {
+    yes = no;
+  } else {
+    yes = !no;
+  }
+  
+  if ((yes && yes) || (no || !no))
+  {
+    return 1;
+  }
+  
+  return 2;
+}

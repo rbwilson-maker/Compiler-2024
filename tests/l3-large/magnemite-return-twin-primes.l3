@@ -1,0 +1,22 @@
+//test return 41
+
+// This test case computes the first k > n such that both k and k + 2
+// are prime.
+
+bool is_prime(int n) {
+     if (n < 2) return false;
+     for (int test = 2; test * test <= n; test++) {
+         if (n % test == 0) return false;
+     }
+     return true;
+}
+
+int next_twin_prime(int n) {
+    int i;
+    for (i = n; !(is_prime(i) && is_prime(i+2)); i++) {}
+    return i;
+}
+
+int main() {
+    return next_twin_prime(33);
+}

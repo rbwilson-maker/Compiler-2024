@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+
+int func1(int x);
+int func2(int y);
+
+int func1 (int x) {
+  x = 5;
+  return func2(x);
+}
+
+int func2 (int y) {
+  y = 2;
+  return func1(y);
+}
+
+int main(){
+  return func2(0);
+}

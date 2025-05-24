@@ -1,0 +1,18 @@
+//test return -45
+
+typedef x6 x7;
+typedef x7 x8;
+typedef x8 x9;
+typedef x9 x10;
+typedef x10 x11;
+typedef x11 x12;
+
+x2 x64(x3 x14, x4 x15, x5 x16, x6 x17, x7 x18, x8 x19, x9 x20, x10 x21, x11 x22) {
+  x12 x23 = x14 + x15 + x16 + x17 + x18 + x19 + x20 + x21 + x22;
+  return x23;
+}
+
+x1 main() {
+  x6 x86 = x64(-1, -2, -3, -4, -5, -6, -7, -8, -9);
+  return x86;
+}

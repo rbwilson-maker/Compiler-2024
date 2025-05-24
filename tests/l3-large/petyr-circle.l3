@@ -1,0 +1,33 @@
+//test abort
+
+// There are more +1 than -1 so it should terminate
+
+int f1(int n);
+int f2(int n);
+int f3(int n);
+int f4(int n);
+int f5(int n);
+
+int f1(int n) {
+    assert(n>=0);
+    return f2(n-1);
+}
+int f2(int n) {
+    assert(n>=0);
+    return f3(n+1);
+}
+int f3(int n) {
+    assert(n>=0);
+    return f4(n-1);
+}
+int f4(int n) {
+    assert(n>=0);
+    return f5(n+1);
+}
+int f5(int n) {
+    assert(n>=0);
+    return f1(n-1);
+}
+int main() {
+    return f1(100);
+}

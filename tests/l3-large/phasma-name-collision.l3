@@ -1,0 +1,14 @@
+//test error
+
+/* Names of functions and variables may not collide with defined type names. */
+
+typedef bool pain;
+
+int pain() {
+  return -1;
+}
+
+int main() {
+  int pain = 0;
+  return pain;
+}

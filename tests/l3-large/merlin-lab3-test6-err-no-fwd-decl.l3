@@ -1,0 +1,12 @@
+//test error
+// should not compile as function is not declared ahead even though
+// it is declared after
+
+int main() {
+    food();
+    return 42;
+}
+
+void food() {
+    return;
+}

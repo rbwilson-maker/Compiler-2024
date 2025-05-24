@@ -1,0 +1,20 @@
+//test div-by-zero
+
+// Test mod 0 from function return value
+
+int getModVal(int a){
+    return a / 10;
+}
+
+int main(){
+
+    int x = 100;
+    int y = 100;
+    while (y > 0) {
+        y = y / 2;
+        x = x % getModVal(y);
+    }
+
+    return x;
+
+}

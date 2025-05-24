@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+  int i = 0x7FFFFFFE;
+  int j = (i << 2) >> 2;
+  int z = i >> j;
+
+  if (true && z != 2) {
+    return 0;
+  } else {
+    return 3;
+  }
+}

@@ -1,0 +1,42 @@
+//test return 0
+
+struct maybe {
+    int x;
+    int y;
+};
+
+typedef struct maybe Maybe;
+
+Maybe *Just(int x);
+Maybe *of(Maybe *f);
+int _case(Maybe *f);
+
+
+int main() {
+    Maybe *Nothing = alloc(Maybe);
+    int x = 0;
+    int y = -1;
+
+    x <- _case (Just (0)); of
+              (Just (0)) -> x
+            | Nothing    -> y;
+
+    return x;
+}
+
+
+
+Maybe *Just(int x) {
+    Maybe *f = alloc(Maybe);
+    f->x = x;
+    f->y = x;
+    return f;
+}
+
+Maybe *of(Maybe *f) {
+    return f;
+}
+
+int _case(Maybe *f) {
+    return f-> x;
+}

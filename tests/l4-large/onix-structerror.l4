@@ -1,0 +1,20 @@
+//test error
+/* Adding of a bool and a integer */
+
+struct time { int day; int week; int year; };
+struct me { bool alive; };
+
+int main () {
+  struct time *t;
+  struct me *me;
+  t = alloc(struct time);
+  me = alloc(struct me);
+  t->day = 25;
+  t->week = 2;
+  t->year = 2015;
+  me->alive = false;
+  return -1;
+  if (me->alive + t->day)
+    return -1;
+  return -1;
+}

@@ -1,0 +1,21 @@
+//test compile
+struct a
+{
+  int d;
+};
+
+void print_42_is_fun(int x)
+{
+  print_int(x);
+}
+
+int main()
+{
+  struct a* a= alloc(struct a);
+  a->d = 42;
+  while(true)
+  {
+    print_42_is_fun(a->d);
+  }
+  return 0;
+}

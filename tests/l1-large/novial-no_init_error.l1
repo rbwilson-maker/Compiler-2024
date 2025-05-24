@@ -1,0 +1,9 @@
+//test error
+// uninitialized error
+
+int main() {
+    int j = 3;
+    int k;
+    j = k;
+    return 3;
+}

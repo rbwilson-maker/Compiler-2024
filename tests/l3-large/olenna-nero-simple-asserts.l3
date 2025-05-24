@@ -1,0 +1,20 @@
+//test return 0
+//Program checks simple assert statements
+//with multiple kinds of expressions
+
+
+int main() {
+
+  assert(true);
+  assert(!false);
+  assert((2+2) == 4);
+  assert(10102017 < 10102018);
+  assert((true && false) || true);
+  assert(((((true == true) == true) == true) == true) == true);
+  assert(11 + 12 + 13 + 14 + 15 < 16 + 17 + 18 + 19 + 20);
+  assert(true ? true : false);
+
+  return 0;
+}
+
+

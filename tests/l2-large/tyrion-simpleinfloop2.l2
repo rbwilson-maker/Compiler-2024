@@ -1,0 +1,34 @@
+//test typecheck
+//test infloop
+
+// Compilers f2017: Group Tyrion Lannister
+
+int main() {
+    int x = 4;
+    while(true) {
+        int a = 2;
+        bool example = false;
+        while(a < x-1) {
+            bool isaPrime = true;
+            bool isaCPrime = true;
+            for(int i = 2; i < (a / 2); i++) {
+                if(a % i == 0) {
+                    isaPrime = false;
+                }
+            }
+            for(int i = 2; i < (x-a)/2; i++) {
+                if((x-a) % i == 0) {
+                    isaCPrime = false;
+                }
+            }
+            if(isaPrime && isaCPrime) {
+                example = true;
+            }
+        }
+        if(!example) {
+            return x;
+        }
+        x+=2;
+    }
+    return 0;
+}

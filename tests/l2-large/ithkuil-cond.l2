@@ -1,0 +1,16 @@
+//test return 5
+
+int main ()
+{
+  int x = 0;
+  int y = 9;
+  int z = 5;
+  int notx;
+  if (x == 0) {
+    notx = 1;
+  } else {
+    notx = 0;
+  }
+  int mask = notx - 1;
+  return (y & mask) | (z & ~mask);
+}

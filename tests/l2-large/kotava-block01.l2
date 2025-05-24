@@ -1,0 +1,12 @@
+//test error
+// liveness bleeding
+int main()
+{
+	{
+		int x;
+	}
+	{
+		int y = 10;
+		return x;
+	}
+}

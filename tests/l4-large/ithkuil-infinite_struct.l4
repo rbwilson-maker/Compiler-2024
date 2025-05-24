@@ -1,0 +1,14 @@
+//test memerror
+// struct pointers alloc'd to NULL
+
+struct outer;
+
+struct outer {
+    int a;
+    struct outer * outer;
+};
+
+int main() {
+    struct outer * outer = alloc(struct outer);
+    return outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->outer->a;
+}

@@ -1,0 +1,12 @@
+//test compile
+// this strange code should compile
+
+typedef int a;
+typedef a b;
+typedef b c;
+
+c main() {
+  a int_a = 0;
+  b int_b = 0;
+  return int_a + int_b;
+}

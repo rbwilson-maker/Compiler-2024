@@ -1,0 +1,15 @@
+//test typecheck
+// Checks that structs declared in header and defined in file work okay
+
+struct point {
+  int x;
+  int y;
+};
+
+int main() {
+  struct node *n = alloc(struct node);
+  n->p = alloc(struct point);
+  n->p->x = 0;
+  n->p->y = 1;
+  return do_something(n->p);
+}

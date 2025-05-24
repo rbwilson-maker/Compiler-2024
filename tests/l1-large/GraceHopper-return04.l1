@@ -1,0 +1,13 @@
+//test return 12
+// many variables
+
+int main() {
+    int a = 4;
+    int b = 8;
+    int c = -2;
+    int d = 0;
+    int e = a + c; // 2
+    int f = e * c; // -4
+    int g = c - a / e; // -4
+    return b - f * a / (e + 1 * d) + g;
+}

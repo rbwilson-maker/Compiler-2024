@@ -1,0 +1,391 @@
+//test return 1065108314
+#include <stdbool.h>
+#include <stdlib.h>
+extern void _c0_assert(bool param);
+// AVL Trees
+// Ephemeral (imperative) version
+
+int size() { return 2000; }
+
+struct wcount {
+  int word;	
+  int count;		
+};
+
+int key_compare(int s1, int s2) {
+  return s1 < s2 ? -1 : s1 == s2 ? 0 : 1;
+}
+
+int elem_key(struct wcount * wc) {
+  return wc->word;
+}
+
+typedef struct wcount* elem;
+typedef int key;
+
+key elem_key(elem e);
+int key_compare(key k1, key k2);
+
+typedef struct bst_header* bst;
+
+typedef struct tree_node tree;
+
+struct tree_node {
+  elem data;
+  int height;
+  struct tree_node* left;
+  struct tree_node* right;
+};
+
+struct bst_header {
+  tree* root;
+};
+
+struct _c0_rand {
+  int seed;
+};
+typedef struct _c0_rand _c0_rand_t;
+
+struct data { 
+  _c0_rand_t* gen;
+  int cur_t_node; 
+  int cur_w_node;
+  tree** nodes; 
+  elem* counts;
+  elem* A;
+  bst B; 
+  int _c0_checksum;
+};
+typedef struct data Data;
+
+
+// is_ordered(T, lower, upper) checks if all elements in T
+// are strictly in the interval (elem_key(lower),elem_key(kupper)).
+// lower = NULL represents -inf_c0_inity; upper = NULL represents +inf_c0_inity
+bool is_ordered(tree* T, elem lower, elem upper) {
+  if (T == NULL) return true;
+  if (T->data == NULL) return false;
+  key k = elem_key(T->data);
+  if (!(lower == NULL || key_compare(elem_key(lower),k) < 0))
+    return false;
+  if (!(upper == NULL || key_compare(k,elem_key(upper)) < 0))
+    return false;
+  return is_ordered(T->left, lower, T->data)
+    && is_ordered(T->right, T->data, upper);
+}
+
+bool is_ordtree(tree* T) {
+  // _c0_initially, we have no bounds - pass in NULL
+  return is_ordered(T, NULL, NULL);
+}
+
+// height(T) returns the precomputed height of T in O(1)
+int height(tree* T) {
+  return T == NULL ? 0 : T->height;
+}
+
+bool is_balanced(tree* T) {
+  if (T == NULL) return true;
+  int h = T->height;
+  int hl = height(T->left);
+  int hr = height(T->right);
+  if (!(h == (hl > hr ? hl+1 : hr+1))) return false;
+  if (hl > hr+1 || hr > hl+1) return false;
+  return is_balanced(T->left) && is_balanced(T->right);
+}
+
+bool is_avl(tree* T) {
+  return is_ordtree(T) && is_balanced(T);
+}
+
+tree* new_tree_node(Data* data) { 
+  tree* result = data->nodes[data->cur_t_node];
+  data->cur_t_node++; 
+  return result;
+}
+
+tree* leaf(Data* data, elem e) {
+  _c0_assert(e != NULL);
+  tree* T = new_tree_node(data);
+  T->left = NULL;
+  T->data = e;
+  T->right = NULL;
+  T->height = 1;
+  _c0_assert(is_avl(T));
+  return T;
+}
+
+// fix_height(T) calculates the height of T and stores
+// it in T->height, assuming the height of the subtrees
+// is correct.  The result will have correct height, but
+// may not yet be balanced if this is part of a double rotation.
+void fix_height(tree* T) {
+  _c0_assert(T != NULL);
+  _c0_assert(is_balanced(T->left) && is_balanced(T->right));
+  int hl = height(T->left);
+  int hr = height(T->right);
+  T->height = (hl > hr ? hl+1 : hr+1);
+  return;
+}
+
+// rotate_right(T) may not be balanced if first step
+// of a double rotation, but heights will be accurate.
+tree* rotate_right(tree* T){ 
+  if (is_ordtree(T)) {
+    if (T != NULL && T->left != NULL) {
+      tree* root = T->left;
+      T->left = root->right;
+      root->right = T;
+      fix_height(root->right);	// must be first
+      fix_height(root);
+      if (is_ordtree(root)) {
+       if (root != NULL && root->right != NULL) {
+          return root;
+        }
+      }
+    }
+  }
+  _c0_assert(false); 
+  return NULL; 
+}
+
+// rotate_left(T) may not be balanced if first step
+// of a double rotation, but heights will be accurate.
+tree* rotate_left(tree* T){  
+  if (is_ordtree(T)) {
+    if (T != NULL && T->right != NULL) {
+      tree* root = T->right;
+      T->right = root->left;
+      root->left = T;
+      fix_height(root->left);	// must be first
+      fix_height(root);
+      if (is_ordtree(root)) {
+      if (root != NULL && root->left != NULL) {
+          return root;
+        }
+      }
+    }
+  }
+  _c0_assert(false); 
+  return NULL; 
+}
+
+// also requires that T->left is result of insert into T
+tree* rebalance_left(tree* T) {
+  if (T != NULL) {
+    tree* l = T->left;
+    tree* r = T->right;
+    int hl = height(l);
+    int hr = height(r);
+    if (hl > hr+1) {
+      if (hl == hr+2) {
+        if (height(l->left) > height(l->right)) {
+          _c0_assert(height(l->left) == hr+1);
+          T = rotate_right(T);
+          _c0_assert(height(T) == hr+2);
+          return T;
+        } else {
+          _c0_assert(height(l->right) == hr+1);
+          // double rotate right
+          T->left = rotate_left(T->left);
+          T = rotate_right(T);
+          _c0_assert(height(T) == hr+2);
+          return T;
+        }
+      } else { 
+        _c0_assert(false);
+      }
+    } else {
+      fix_height(T);
+      return T;
+    }
+  }
+  _c0_assert(false); 
+  return T;
+}
+
+// also requires that T->right is result of insert into T 
+tree* rebalance_right(tree* T){
+  if (T != NULL) {
+    _c0_assert(is_avl(T->left) && is_avl(T->right));
+    tree* l = T->left;
+    tree* r = T->right;
+    int hl = height(l);
+    int hr = height(r);
+    if (hr > hl+1) {
+      if(hr == hl+2){
+        if (height(r->right) > height(r->left)) {
+          _c0_assert(height(r->right) == hl+1);
+          T = rotate_left(T);
+          _c0_assert(height(T) == hl+2);
+          return T;
+        } else {
+          _c0_assert(height(r->left) == hl+1);
+          // double rotate left
+          T->right = rotate_right(T->right);
+          T = rotate_left(T);
+          _c0_assert(height(T) == hl+2);
+          return T;
+        }
+      } else { 
+        _c0_assert(false);
+      }
+    } else {
+      fix_height(T);
+      return T;
+    }
+  }
+  _c0_assert(false);
+  return NULL;
+}
+
+bool is_bst(bst B) {
+  if (B == NULL) return false;
+  return is_avl(B->root);
+}
+
+bst bst_new(Data* data) {
+  bst B = data->B;
+  B->root = NULL;
+  return B;
+}
+
+elem tree_lookup(tree* T, key k) {
+  if (T == NULL) return NULL;
+  int r = key_compare(k, elem_key(T->data));
+  if (r == 0)
+    return T->data;
+  else if (r < 0)
+    return tree_lookup(T->left, k);
+  else
+    return tree_lookup(T->right, k);
+}
+
+elem bst_lookup(bst B, key k){
+  return tree_lookup(B->root, k);
+}
+
+// tree_insert(T, e) returns the modified tree
+// this avoids some complications in case T = NULL
+tree* tree_insert(Data* data, tree* T, elem e) {
+  if (e != NULL) {
+    if (T == NULL) {
+      T = leaf(data,e);		// create new leaf with data e
+    } else {
+      int r = key_compare(elem_key(e), elem_key(T->data));
+      if (r < 0) {
+        T->left = tree_insert(data, T->left, e);
+        T = rebalance_left(T);	// also fixes height
+      } else if (r == 0) {
+        T->data = e;
+      } else { 
+        T->right = tree_insert(data, T->right, e);
+        T = rebalance_right(T);	// also fixes height
+      }
+    }
+    return T;
+  } 
+  _c0_assert(false); 
+  return NULL;
+}
+
+void bst_insert(Data* data, bst B, elem e) {
+  B->root = tree_insert(data, B->root, e);
+  return;
+}
+
+_c0_rand_t* _c0_init__c0_rand (Data* data, int seed) {
+  data->gen->seed = seed;
+  return data->gen;
+}
+
+int _c0_rand(_c0_rand_t* gen) {
+  gen->seed = gen->seed * 1664525 + 1013904223;
+  return gen->seed;
+}
+
+Data* _c0_init(int param) {
+  Data* data = calloc(1, sizeof(Data));
+  data->gen = calloc(1, sizeof(struct _c0_rand)); 
+  data->B = calloc(1, sizeof(struct bst_header));
+  data->A = calloc(size(), sizeof(elem));
+  for (int i = 0; i < size(); i++) { 
+    data->A[i] = calloc(1, sizeof(struct wcount));
+  }
+  data->counts = calloc(100 * size(), sizeof(elem));
+  data->nodes = calloc(100 * size(), sizeof(tree*));
+  for (int i = 0; i < 2*size(); i++) { 
+    data->counts[i] = calloc(1, sizeof(struct wcount));
+    data->nodes[i] = calloc(1, sizeof(struct tree_node));
+  }
+  return data;
+}
+
+void _c0_prepare(Data* data, int param) {
+  data->gen->seed = 0; 
+  data->_c0_checksum = 0;
+  data->B->root = NULL;
+  for (int i = 0; i < size(); i++) { 
+    data->A[i]->word = 0;
+    data->A[i]->count = 0;
+  }
+  for (int i = 0; i < 2*size(); i++) { 
+    data->nodes[i]->data = NULL; 
+    data->nodes[i]->left = NULL; 
+    data->nodes[i]->right = NULL; 
+    data->nodes[i]->height = 0; 
+    data->counts[i]->word = 0; 
+    data->counts[i]->count = 0;
+  }
+  data->cur_t_node = 0; 
+  data->cur_w_node = 0; 
+}
+
+elem new_wcount(Data* data) { 
+  elem result = data->counts[data->cur_w_node]; 
+  data->cur_w_node++;
+  return result;
+}
+
+elem elem_fromint(Data* data, int k) {
+  elem wc = new_wcount(data);
+  wc->word = k;
+  wc->count = k*k;
+  return wc;
+}
+
+void _c0_run (Data* data, int _) {
+  int n = size()/3;
+  int num_tests = 10;
+  int seed = 0xc0c0ffee;
+  _c0_rand_t* gen = _c0_init__c0_rand(data,seed);
+  bst B = NULL;
+  elem* A = data->A;
+  for (int i = 0; i < n; i++)
+    A[i] = elem_fromint(data,_c0_rand(gen));
+  
+  _c0_assert(n+num_tests > 0);
+  B = bst_new(data);
+  for (int j = 0; j < num_tests; j++) {
+    for (int i = 0; i < n; i++) {
+      elem e = A[(j+i) % n];
+      bst_insert(data, B, e);
+      _c0_assert(bst_lookup(B, elem_key(e)) == e); // insert ok?
+    }
+    // next line violates interface...
+    _c0_assert(is_bst(B)); //repeated insert failed to preserve order
+    data->_c0_checksum += bst_lookup(B, elem_key(A[((num_tests-1) + (n-1)) % n]))->count;
+  } 
+}
+
+int _c0_checksum(Data* data, int param) {
+  return data->_c0_checksum;
+}
+  
+int _c0_main() {
+  int n = size();
+  Data* data = _c0_init(n);
+  _c0_prepare(data, n);
+  _c0_run(data, n);
+  return _c0_checksum(data, n);
+}

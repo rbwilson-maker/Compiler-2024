@@ -1,0 +1,10 @@
+//test return 1
+// parens around lvalue and multiple returns (control flow)
+int main() {
+  bool f = false;
+  ((((((((f)))))))) = true;
+  while (!f) {
+    return 0;
+  }
+  return 1;
+}

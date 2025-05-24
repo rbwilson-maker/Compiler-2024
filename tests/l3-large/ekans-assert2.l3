@@ -1,0 +1,8 @@
+//test error
+int main() {
+    int x = 0;
+    for(assert(1 == 2); x < 10; x++) {
+        return 3;
+    }
+    return 2;
+}

@@ -1,0 +1,14 @@
+//test error
+
+int main();
+int isHappy(int a, int b, int c);
+
+int isHappy(int a, int b, int c){
+    return a + b - c;
+}
+
+int isHappy(int b, int c, int d){
+    return b - c - d;
+}
+
+int main(){ return isHappy(1,2,3);}

@@ -1,0 +1,15 @@
+//test memerror
+
+typedef struct _s s;
+
+struct _s {
+    int i;
+    int j;
+};
+
+int main() {
+    s[] a = alloc_array(struct _s, 0);
+    a[0].i = 1;
+    a[0].j = 2;
+    return a[0].i;
+}

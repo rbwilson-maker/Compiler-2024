@@ -1,0 +1,15 @@
+//test return 1030
+
+int *ptr_returner(int *ptr) {
+  // I return a pointer
+  *ptr += 90;
+  return ptr;
+}
+
+int main() {
+  int *ptr = alloc(int);
+  *ptr = 290;
+  *(ptr_returner(ptr));
+  *ptr += *(ptr_returner(ptr));
+  return *ptr_returner(ptr);
+}

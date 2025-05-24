@@ -1,0 +1,8 @@
+//test error
+// Double declaration/definition
+
+int main() {
+    int a;
+    int a = 4;
+    return -1;
+}

@@ -1,0 +1,9 @@
+//test div-by-zero
+int main () {
+	int x = 9284;
+	x >>= 2;
+	int y = 1;
+	y >>= 1;
+	x %= y;
+	return x;
+}

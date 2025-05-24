@@ -1,0 +1,10 @@
+//test div-by-zero
+
+//this tests to make sure a SIGFPE will be raised upon div by 0
+int main() {
+    int x = 15;
+    x *= 1000;
+    x += 411;
+    x /= 0; //div-by-zero
+    return x;
+}

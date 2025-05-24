@@ -1,0 +1,13 @@
+//test error
+
+int main ()
+{
+  int i;
+  int n;
+
+  for (i = 0; i <= 10; i+=1) {
+    n = i;
+  }
+  
+  return (i==(n+1));
+}

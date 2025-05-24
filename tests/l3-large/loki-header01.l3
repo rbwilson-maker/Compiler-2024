@@ -1,0 +1,13 @@
+//test typecheck
+
+int main() {
+  int i = 0;
+  bool b = true;
+
+  while(true) {
+    i = a_number(b);
+    b = true_or_false(i);
+  }
+
+  return 0;
+}

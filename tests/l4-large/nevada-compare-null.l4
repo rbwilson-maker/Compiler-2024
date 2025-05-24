@@ -1,0 +1,15 @@
+//test return 0
+
+struct s {
+    int *p;
+};
+
+int main() {
+    struct s *t = alloc(struct s);
+    int *a = alloc(int);
+    bool *b = alloc(bool);
+
+    // expressions of two different types being compared to same value
+    assert(a != NULL && b != NULL);
+    return 0;
+}

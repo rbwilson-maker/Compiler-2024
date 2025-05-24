@@ -1,0 +1,11 @@
+//test div-by-zero
+// division error due to overflow of mod
+
+int main() {
+    int x = -2147483647;
+    x -= 1;
+
+    int y = ~0;
+
+    return x / y;
+}

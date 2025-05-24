@@ -1,0 +1,110 @@
+//test return 11012059
+
+struct ural_recursion {
+  struct ural_recursion[] is_so_meta; // even this acronym.
+  int len;
+};
+
+typedef struct ural_recursion s;
+
+s *make(int b, int e) {
+  s[] children;
+  int len;
+  if (e == 0) {
+    len = 0;
+    children = alloc_array(s, len);
+  } else {
+    len = b;
+    children = alloc_array(s, len);
+    for (int i = 0; i < b; i++) {
+      s *child = make(b, e-1);
+      children[i].is_so_meta = child->is_so_meta;
+      children[i].len = child->len;
+    }
+  }
+
+  // We heap-allocate a tuple explicitly
+  s *tuple = alloc(s);
+  tuple->is_so_meta = children;
+  tuple->len = len;
+  return tuple;
+}
+
+int count_elems(s[] children, int len) {
+  int sum = len;
+  for (int i = 0; i < len; i++) {
+    sum += count_elems(children[i].is_so_meta, children[i].len);
+  }
+  return sum;
+}
+
+int count_elems_up_to_depth(s[] children, int len, int depth) {
+  if (depth == 0) return 0;
+  int sum = len;
+  for (int i = 0; i < len; i++) {
+    sum += count_elems_up_to_depth(children[i].is_so_meta, children[i].len, depth - 1);
+  }
+  return sum;
+}
+
+// Create a cycle with alternating levels
+s *loop(int len_x, int len_y) {
+  s *x = alloc(s);
+  s *y = alloc(s);
+  x->len = len_x;
+  y->len = len_y;
+  x->is_so_meta = alloc_array(s, len_x);
+  y->is_so_meta = alloc_array(s, len_y);
+
+  for (int i = 0; i < len_x; i++) {
+    // set x->is_so_meta[i] = y
+    x->is_so_meta[i].len = len_y;
+    x->is_so_meta[i].is_so_meta = y->is_so_meta;
+  }
+
+  for (int i = 0; i < len_y; i++) {
+    // set y->is_so_meta[i] = x
+    y->is_so_meta[i].len = len_x;
+    y->is_so_meta[i].is_so_meta = x->is_so_meta;
+  }
+
+  return x;
+}
+
+// Return b^e + b^(e-1) + b^(e-2) + ... + b^0
+int sum_of_pows(int b, int e) {
+  s *parent = make(b, e);
+  return 1 + count_elems(parent->is_so_meta, parent->len);
+}
+
+// Return:
+// 1 + b + b*a + + b*a*b + b*a*b*a ... (with n + 1 terms total)
+int sum_of_acc_pows(int a, int b, int n) {
+  s *x = loop(b, a);
+  return 1 + count_elems_up_to_depth(x->is_so_meta, x->len, n);
+}
+
+int main() {
+  int x = sum_of_pows(3, 5); // = 364
+                             // = 243 + 81 + 27 + 9 + 3 + 1
+
+  int y = sum_of_pows(2, 8); // = 511
+                             // = 2^9 - 1
+
+  int z = sum_of_acc_pows(2, 3, 5); // = 172
+                                    /* = 1          (= 1)
+                                       + 3          (= 3)
+                                       + 3*2        (= 6)
+                                       + 3*2*3      (= 18)
+                                       + 3*2*3*2    (= 36)
+                                       + 3*2*3*2*3  (= 108)
+                                    */
+
+  int w = sum_of_acc_pows(3, 0, 1000); // = 1
+
+  int a = sum_of_acc_pows(100, 10, 5); // = 11011011
+
+  return x + y + z + w + a;
+    // = 11012059
+    // = 364 + 511 + 172 + 1 + 11011011
+}

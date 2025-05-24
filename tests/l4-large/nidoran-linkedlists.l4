@@ -1,0 +1,21 @@
+//test typecheck
+//test infloop
+
+struct list_node {
+    struct list_node* next;
+    int data;
+};
+
+
+
+int main() {
+    struct list_node* x = alloc(struct list_node);
+    x->data = 5;
+    x->next = x;
+    x->next->data = 6;
+    assert(x -> data == 6);
+    for(struct list_node* w = x; w != NULL; w = w -> next) {
+
+    }
+    return 0;
+}

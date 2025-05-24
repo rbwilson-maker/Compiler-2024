@@ -1,0 +1,7 @@
+//test return 3
+//A test of the reduce conflict
+int main() {
+    int a = 2;
+    (a)++;
+    return a;
+}

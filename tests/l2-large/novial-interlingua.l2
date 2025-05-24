@@ -1,0 +1,6 @@
+//test return -24
+// get result of ternary as expression
+
+int main() {
+  return ((true) ? 938 : -39) / ((false) ? -392 : -38);
+}

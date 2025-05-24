@@ -1,0 +1,27 @@
+//test return 104743
+
+bool is_prime(int [] primes, int biggest, int maybe_prime) {
+	for (int i = 0; i < biggest; i++) {
+		if (primes[i] * primes[i] > maybe_prime) {
+			return true;
+		} else if (maybe_prime % primes[i] == 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+
+int main() {
+	int i = 0;
+	int n = 3;
+	int[] primes = alloc_array(int, 10000);
+	while(i < 10000) {
+		if(is_prime(primes, i, n)) {
+			primes[i] = n;
+			i++;
+		}
+		n += 2;
+	}
+	return primes[9999];
+}

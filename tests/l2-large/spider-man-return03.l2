@@ -1,0 +1,19 @@
+//test return 3
+
+int main() 
+{
+    bool blah = false;
+    int x = 242424;
+    int y;
+    if (12341234 > 12341233 && !blah) {
+        blah = true;
+        x = 242426;
+    }
+    if (x > 242425) {
+        if (blah) {
+            return x - 242423;
+        }
+    }
+    y = 98765432;
+    return y;
+}

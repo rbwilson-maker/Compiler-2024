@@ -1,0 +1,19 @@
+//test return 1870
+
+int mousquetaire(int aramis, bool dartagnan, int athos, bool porthos)
+{
+  int un_pour_tous = athos % aramis;
+  
+  bool et_tous_pour_un = dartagnan && porthos;
+
+  if (et_tous_pour_un) return un_pour_tous;
+  else return un_pour_tous - 1;
+}
+
+int main()
+{
+  int b = mousquetaire(1802, true, 2, false);
+
+  return 1870;
+}
+

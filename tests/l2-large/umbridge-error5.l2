@@ -1,0 +1,14 @@
+//test error
+
+int main()
+{
+    int x = 15;
+    int y = 411;
+
+    if (x > y) {
+        // a is not declared outside
+        int a = 42;
+    }
+
+    return a;
+}

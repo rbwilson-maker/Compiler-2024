@@ -1,0 +1,9 @@
+//test error
+// random characters
+int main() {
+  int a = 5;
+  (
+    a = 7;
+  )
+  return a;
+}

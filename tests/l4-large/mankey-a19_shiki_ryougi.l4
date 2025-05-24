@@ -1,0 +1,129 @@
+//test return 0
+
+typedef int foo;
+
+typedef int perception;
+
+typedef struct foo* sfoos;
+
+struct foo {
+  struct foo* foo;
+  foo sfoos;
+};
+
+typedef foo demon;
+
+typedef sfoos Mystic;
+
+typedef Mystic Death;
+
+demon hunter();
+
+Mystic Eyes(Death prev, perception num) {
+  sfoos* new = alloc(struct foo*);
+  struct foo*[] what = alloc_array(sfoos, 2);
+  what[1] = *new;
+  *new = alloc(struct foo);
+  prev->foo = *new;
+  (*new)->sfoos = num;
+  assert(what[1] == NULL);
+  if(true) {
+    if(true) {
+      if(true) {
+        if(true) {
+          if(true) {
+            if(false) {
+              for (int qw = 0; qw < hunter(); qw ++) {
+                new = alloc(sfoos);
+              }
+            } else {
+              struct foo* *ick;
+              for (int qw = 0; qw < 1000; qw ++) {
+                ick = alloc(struct foo*);
+              }
+              assert(*new != NULL);
+              *new;
+            }
+          }
+        }
+      }
+    }
+  }
+  return *new;
+}
+
+
+foo aaaa() {
+  return 0 + 0 + 0 + 0;
+}
+
+foo main() {
+  sfoos init = alloc(struct foo);
+  sfoos curr = init;
+  for(int q = 0; q < 1001; q++) {
+    curr = Eyes(curr, q);
+    int omg = aaaa();
+    assert(curr->sfoos == q);
+    if (curr->sfoos != q) {
+      assert(false);
+      int i;
+      int j;
+      int k;
+      int l;
+      return -1;
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg +
+      (i + j + k + l + i + j + k + l + i + j + k + l + i + j + k + l)/omg;
+    }
+  }
+  assert(curr->sfoos == 1000);
+  if (curr->sfoos != 1000) {
+    assert(false);
+  }
+  return 0;
+}
+
+demon hunter() {
+  int paradox = 0;
+  bool spiral = true;
+  while(paradox != paradox) {
+    paradox +=1;
+    if (paradox == 666) return paradox;
+    spiral = false;
+  }
+  assert(paradox == paradox);
+  assert(spiral);
+  return -1;
+}
+
+struct foo;

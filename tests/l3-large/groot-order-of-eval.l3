@@ -1,0 +1,21 @@
+//test abort
+
+int raise_error() {
+  assert(false);
+  return 0;
+}
+
+int raise_div() {
+  return 1 / 0;
+}
+
+int func(int x, int y, int z, int a, int b, int c, int d, int e, int f, int g) {
+  return x + y;
+}
+
+int main() {
+  return func(
+    func(
+      raise_error(), 0, 0, 0, 0, 0, 0 ,0 ,0, 0), 
+    raise_div(), 0, 1, 2, 3, 4, 5, 6, 1 / 0);
+}

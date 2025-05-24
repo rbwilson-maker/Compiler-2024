@@ -1,0 +1,40 @@
+//test return 1701073379
+// test arithmetic operations, expressions with
+// multiple operations, and reassignment of variables.
+int main()
+{
+  int x;
+  int y;
+  int z;
+  int a;
+  int b;
+  int c;
+
+  // Misc assignments and binops
+  y = 746;
+  x = 2*1331;
+  z = -y + 4009;
+  a = -z + 940;
+
+  // Expressions with more than 1 operation.
+  // Include constants and variables defined
+  // earlier. Also check for order of operations.
+  b = x-a*x/y;
+  c = z/b*a-37;
+
+  // Try reassignment of some variables
+  c = b;
+  z = -z; 
+  y = y+964/7;
+  int q;
+  q = b*c+c-y;
+  int r;
+  r = -b; 
+  int s;
+  int t;
+  s = y/64+3;
+  t = x*x*x*x*x*x*x*x;
+  int res;
+  res = a+b+c+q+r+s+t+x+y+z;
+  return res;
+}

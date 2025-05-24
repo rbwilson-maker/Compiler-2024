@@ -1,0 +1,14 @@
+//test error
+//operations on incompatible types
+
+int main()
+{
+  int a;
+  int b;
+  a = 5;
+  b = 9;
+  bool c = true;
+  a = a >> c << b;
+
+  return a;
+}

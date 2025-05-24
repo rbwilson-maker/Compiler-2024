@@ -1,0 +1,57 @@
+//test return 35
+
+int read_binary(int v1, int v2, int v3){
+	if(v1 == 0 && v2 == 0 && v3 == 0){
+		return 0;
+	}
+	if(v1 == 0 && v2 == 0 && v3 == 1){
+		return 1;
+	}
+	if(v1 == 0 && v2 == 1 && v3 == 0){
+		return 2;
+	}
+	if(v1 == 0 && v2 == 1 && v3 == 1){
+		return 3;
+	}
+	if(v1 == 1 && v2 == 0 && v3 == 0){
+		return 4;
+	}
+	if(v1 == 1 && v2 == 0 && v3 == 1){
+		return 5;
+	}
+	if(v1 == 1 && v2 == 1 && v3 == 0){
+		return 6;
+	} else {
+		return 7;
+	}
+}
+
+
+int test_stack(int v1, int v2, int v3){
+	if(v3 == 0){
+		return test_stack(v1,v2,v3+1);
+	} else {
+		if(v2 == 0) {
+			return test_stack(v1,v2+1,v3-1);
+		} else {
+			if(v1 == 0){
+				return test_stack(v1+1,v2-1,v3-1);
+			} else {
+				return read_binary(v1, v2, v3);
+			}
+		}
+	}
+	
+}
+
+int main(){
+	int sum = 0;
+	for(int i = 0; i <= 1; i++){
+		for(int j = 0; j <=1; j++){
+			for(int k = 0; k <= 1; k++){
+				sum += read_binary(i,j,k);
+			}
+		}
+	}
+	return sum + test_stack(0,0,0);
+}

@@ -1,0 +1,25 @@
+//test typecheck
+
+// tests for mixups in context via typedef
+
+typedef struct foo bar;
+
+struct foo {
+    int i1;
+    int i2;
+    int i3;
+};
+
+void bad(struct foo *temp) {
+    temp->i1 = 0;
+    temp->i2 = 0;
+    temp->i3 = 0;
+    return;
+}
+
+int main() {
+    bar *str = alloc(bar);
+    str->i1 = 11;
+    assert(str->i1 == 11);
+    return str->i1;
+}

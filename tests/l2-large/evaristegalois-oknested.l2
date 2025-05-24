@@ -1,0 +1,33 @@
+//test return 1 
+
+int main () {
+    
+    int x = 5;
+    int y;
+
+    if (x >= 5) {
+        if (x < 5) {
+            y = 0;
+        }
+        else if (x < 7) {
+            if (x == 100) {
+                y = 0;
+            }
+            else {
+                y = 1;
+            }
+        }
+        else {
+            y = 0;
+        }
+    }
+    else if (x < 0) {
+        y = 0;
+    }
+    else {
+        y = 0;
+    }
+
+    return y;
+
+}

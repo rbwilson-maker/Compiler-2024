@@ -1,0 +1,12 @@
+//test div-by-zero
+// Loop getting a div by zero eror on shifitng
+
+int main () {
+    int y =3589;
+    for (;y>0;){
+        y = y>>1;
+        int x = 10/y;
+    }
+    return y;
+
+}

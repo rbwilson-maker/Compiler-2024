@@ -1,0 +1,11 @@
+//test div-by-zero
+// Test floating point exception in function
+
+int divide(int x, int y) {
+	return x/y;
+}
+
+int main() {
+	divide(1,0);
+	return 0;
+}

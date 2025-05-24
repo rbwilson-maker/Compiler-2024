@@ -1,0 +1,17 @@
+//test return 6
+
+int mult(int x, int y)
+{
+  return x*y;
+}
+
+int pointless(int x, int y)
+{
+  return mult(x,y);
+}
+
+int main()
+{
+  return pointless(2,3);
+}
+

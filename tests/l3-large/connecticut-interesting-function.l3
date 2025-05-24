@@ -1,0 +1,29 @@
+//test return 125
+
+// I didn't want to figure out how to write out a larger value of the function. Also it would probably overflow.
+
+// The wonderful Ackermann function. It might also be a good test for timeouts, though because it doesn't loop forever, that might fail.
+
+int A(int m, int n) {
+	if(m == 0) {
+		return (n + 1);
+	}
+	else {
+		if(m > 0 && n == 0) {
+			return A(m - 1, 1);
+		}
+		else {
+			if(m > 0 && n > 0) {
+				return A(m - 1, A(m, n - 1));
+			}
+			else {
+				assert(false); // A is not defined for negative inputs.
+				return -1;
+			}
+		}
+	}
+}
+
+int main() {
+	return A(3, 4);
+}

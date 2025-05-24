@@ -1,0 +1,14 @@
+//test div-by-zero
+// test bool assignment and test
+int main() {
+	bool a = true;
+	bool b = false;
+	bool c = a || b; // true
+	bool d = a && b; // false
+	int res = 0;
+	if (a) res++;
+	if (b) res++;
+	if (c) res++;
+	if ((d)) res++;
+	return res / 0;
+}

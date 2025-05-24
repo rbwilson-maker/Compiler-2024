@@ -1,0 +1,21 @@
+//test return 10
+
+int main(){
+	int x = 0;
+	int i;
+	for(i=0;i<10;i++){
+		x = (x + i) * (x - i);
+		x -= 1000;
+	}
+
+	if(x == 15411){
+		if(i == 11){
+			return 0;
+		}
+	}
+	else{
+		return i;
+	}
+
+	return 0;
+}

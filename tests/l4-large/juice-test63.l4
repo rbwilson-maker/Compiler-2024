@@ -1,0 +1,45 @@
+//test memerror
+
+struct list_header {
+  struct node* head;
+};
+
+struct node {
+  int data;
+  struct node* next;
+};
+
+struct list_header *gen_list(int n) {
+  struct list_header *list = alloc(struct list_header);
+  struct node *curr_node = NULL;
+  for(int i = 0; i < n; i++) {
+    struct node *new_node = alloc(struct node);
+    new_node->data = i;
+    if (curr_node == NULL) {
+      list->head = new_node;
+      curr_node = new_node;
+    } else {
+      curr_node->next = new_node;
+      curr_node = new_node;
+    }
+  }
+  return list;
+}
+
+int get_value_at_ith(struct list_header *list, int i) {
+  struct node *curr_node = NULL;
+  for(int idx = 0; idx <= i; i++) {
+    if(curr_node == NULL) {
+      curr_node = list->head;
+    } else {
+      curr_node = curr_node->next;
+    }
+  }
+  // should get a memerror here since we dereference a null pointer
+  return curr_node->data;
+}
+
+int main() {
+  struct list_header *list = gen_list(10000);
+  return get_value_at_ith(list, -10000);
+}

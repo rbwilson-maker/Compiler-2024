@@ -1,0 +1,14 @@
+//test error
+
+int pascal(int foo, int bar);
+int pascal(int foo, int bar);
+int pascal(int foo, int bar);
+int pascal(int foo, int bar);
+int pascal(int foo, int bar);
+int pascal(int foo, int bar);
+int pascal(int foo, int bar);
+int pascal(int foo, bool bar);
+
+int main() {
+  return pascal(20, 3);
+}

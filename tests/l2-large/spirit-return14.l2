@@ -1,0 +1,10 @@
+//test return -2147483648
+int main() {
+
+    int count = (1 << 31) - 6;
+    while (count > 0) {
+        1 + 9 << 8;
+        count = count > 0 ? count+1 : count-1;
+    }    
+    return -count;
+}

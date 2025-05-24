@@ -1,0 +1,20 @@
+//test return 50
+// Test += and *= operators, as well as reassignment of variables
+
+int main() {
+    int a;
+    int sum;
+
+    sum = 0;
+    a = 1;
+    sum += a;
+    a = 2;
+    sum += a;
+    a = 3;
+    sum += a;
+    a = 4;
+    sum += a;
+    a = 5;
+    sum *= a;
+    return sum;
+}

@@ -1,0 +1,11 @@
+//test error
+
+bool foo (int x, bool y, int z) {
+  return false;
+}
+
+int foo (int x, bool y, int z) {
+  return 0;
+}
+
+int main () { return 0; }

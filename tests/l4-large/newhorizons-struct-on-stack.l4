@@ -1,0 +1,11 @@
+//test error 
+
+struct x {
+    int y;
+    bool z;
+};
+
+int main () {
+    struct x my_struct;
+    return 0;
+}

@@ -1,0 +1,13 @@
+//test return 1
+
+// It's okay for typedefs to shadow struct names.
+struct nose {int eyes; struct nose **nose;};
+
+typedef struct nose * nose;
+
+int main(){
+    nose mouth = alloc(struct nose);
+    nose *eyes = alloc(nose);
+    mouth->nose = eyes;
+    return 1;
+}

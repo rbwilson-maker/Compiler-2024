@@ -1,0 +1,16 @@
+//test return 187
+// Subra is a car
+
+int _c0_sar(int x, int y) {
+    assert(0 <= y && y <= 31);
+
+    return x >> y;
+}
+
+int sar(int x, int y) {
+    return _c0_sar(x, y);
+}
+
+int main() {
+    return sar(1500, 3);
+}

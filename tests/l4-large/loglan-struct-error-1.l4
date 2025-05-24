@@ -1,0 +1,11 @@
+//test return 0
+struct f {
+    int a;
+    int b;
+};
+
+int main() {
+    struct f *s = alloc(struct f);
+    s->a = 1;
+    return s->b;
+}

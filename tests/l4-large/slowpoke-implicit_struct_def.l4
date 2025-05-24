@@ -1,0 +1,9 @@
+//test return 1
+
+int f(struct foo* y) {
+  return 42;
+}
+
+int main() {
+  return 1;
+}

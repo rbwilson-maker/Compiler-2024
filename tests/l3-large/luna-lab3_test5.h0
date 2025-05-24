@@ -1,0 +1,8 @@
+// header contains a definition of C library srand and rand functions
+
+
+typedef int whooo;
+
+void srand(whooo x);
+
+int rand();

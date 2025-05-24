@@ -1,0 +1,7 @@
+//test error
+int main () {
+  bool a = true;
+  for (;a < 2;) {
+    return 1;
+  }
+}

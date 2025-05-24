@@ -1,0 +1,13 @@
+//test error
+
+int a(int c) {
+  return c;
+}
+
+int a(bool c) {
+  return 1;
+}
+
+int main() { 
+  return 3;
+}

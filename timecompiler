@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Run the "benchCompiler" function of the grading harness from the current dir.
+# USAGE: ../timecompiler ARGS...
+#               (where 'make' is run from the current directory)
+#    OR: ./timecompiler -dir DIR ARGS...
+#               (where 'make' is run from the argument DIR to '-dir'.)
+# The additional arguments ARGS... are passed to benchCompiler to parse.
+
+script_directory=$(dirname "$(python3 -c "import os; print(os.path.realpath('$0'))")")
+
+# If the first two arguments are "-dir <directory>", change the working
+# directory to be the given directory.
+# Mostly intended to be used by autograder
+if [ "$1" = "-dir" ]; then
+   cd "$2" || exit 1
+   shift
+   shift
+fi
+
+"$script_directory/harness/runHarness" benchCompiler --limit-run=200 --limit-compile=30 "$@"

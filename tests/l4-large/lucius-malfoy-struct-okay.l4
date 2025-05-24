@@ -1,0 +1,19 @@
+//test return 1
+
+struct foo {
+    int a;
+};
+
+typedef struct foo foo_t;
+
+foo_t *foo() {
+    foo_t *foo = alloc(foo_t);
+    foo->a = 1;
+    return foo;
+}
+
+int main() {
+    foo_t *foo = foo();
+    assert(foo->a == 1);
+    return 1;
+}

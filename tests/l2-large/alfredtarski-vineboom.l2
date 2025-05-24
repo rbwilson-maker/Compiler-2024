@@ -1,0 +1,4 @@
+//test div-by-zero
+int main() {
+  return 3 << 25 >> 4 << 10 >> -1 << 34 >> 5;
+}

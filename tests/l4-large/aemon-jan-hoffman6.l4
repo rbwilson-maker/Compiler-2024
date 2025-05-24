@@ -1,0 +1,25 @@
+//test memerror
+
+typedef struct jan hoffman;
+
+struct jan {
+    int *jan;
+    int[] hoffman;
+};
+
+int main() {
+    hoffman*[] jan = alloc_array(hoffman*, 8);
+    for (int i = 0; i < 8; i++) {
+        jan[i] = alloc(struct jan);
+        jan[i]->jan = alloc(int);
+        jan[i]->hoffman = alloc_array(int, i);
+    }
+    for (int i = 0; i < 8; i++) {
+        *jan[i]->jan += i;
+        for (int j = 0; j < i; j++) {
+            *jan[j]->jan += i;
+            jan[i]->hoffman[j] = *jan[j]->jan;
+        }
+    }
+    return jan[0]->hoffman[0] + *jan[0]->jan;
+}

@@ -1,0 +1,17 @@
+//test typecheck
+//test infloop
+
+typedef int foo();
+typedef int iti(int x);
+
+int blah()
+{
+  foo* b = &blah;
+  iti* f = fn (int z) { return (*b)(); };
+  return (*f)(251);
+}
+
+int main()
+{
+  return blah();
+}

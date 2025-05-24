@@ -1,0 +1,16 @@
+//test abort
+
+bool is_prime(int n) {
+	for(int i = 1; i < n; i++) {
+		if (n % i == 0)
+			return false;
+	}
+
+	return true;
+}
+
+int main() {
+	assert(is_prime(11));
+
+	return 0;
+}

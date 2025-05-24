@@ -1,0 +1,14 @@
+//test error
+/* mutually recursive struct */
+
+struct dowestartonthedeadlinebecausewedontgetpunishedor {
+    struct dowenotgetpunishedbecausewestartonthedeadlineor heyboy;
+};
+
+struct dowenotgetpunishedbecausewestartonthedeadlineor {
+    struct dowestartonthedeadlinebecausewedontgetpunishedor heyboy;
+}
+
+int main() {
+    return 0;
+}

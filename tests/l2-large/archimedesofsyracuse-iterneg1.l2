@@ -1,0 +1,12 @@
+//test return 0
+// Iteratively form -1 and successfully run.
+
+int main() {
+  int x = -2147483648;
+  while (x != -1) {
+    x >>= 1;
+    x = ~x;
+  }
+  bool isneg1 = (x ^ -1) == 0;
+  return (isneg1 ? 0 : 0x2baadead % x);
+}

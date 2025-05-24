@@ -1,0 +1,12 @@
+//test return 100
+
+int main() {
+    int x = 50 * 2 % 101;
+    int y;
+    return x;
+    int z = y;
+    int a;
+    return z;
+    int b = a + z;
+    return b;
+}

@@ -1,0 +1,10 @@
+//test error
+// unspecified arg types
+
+int something(int x, y) {
+  return x / y;
+}
+
+int main() {
+  return something(10, 5);
+}

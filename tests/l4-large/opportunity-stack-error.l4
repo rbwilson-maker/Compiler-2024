@@ -1,0 +1,55 @@
+//test memerror
+//implements stacks with uba. pops elem off empty stack
+
+
+struct stack{
+  int[] s;
+  int top;
+  int len;
+};
+typedef struct stack stack;
+typedef stack* stack_t;
+
+stack* stack_new(){
+  stack* S = alloc(stack);
+  S->s = alloc_array(int, 5);
+  S->len = 5;
+  S->top= -1;
+  return S;
+}
+
+int pop(stack* S){
+  S->top--;
+  return S->s[S->top+1];
+}
+
+void resize(stack* S){
+  if(S->top<S->len) return;
+  int[] ns = alloc_array(int, S->len*2);
+  for(int i=0; i<S->len; i++) ns[i] = S->s[i];
+  S->len*=2;
+  S->s = ns;
+}
+
+void push(stack* S, int x){
+  resize(S);
+  S->top++;
+  S->s[S->top] = x;
+}
+
+int main(){
+  stack_t S = stack_new();
+  push(S,1);
+  push(S,2);
+  push(S,3);
+  push(S,4);
+  assert(pop(S)==4);
+  assert(pop(S)==3);
+  assert(pop(S)==2);
+  assert(pop(S)==1);
+  pop(S);
+  return 0;
+}
+
+
+

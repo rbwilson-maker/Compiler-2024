@@ -1,0 +1,18 @@
+//test return -41
+// here we test the asnops
+int main()
+{
+    int v1 = 5;
+    
+    v1 *= 4; //20
+    int v2 = 7;
+    v1 %= v2; //6
+
+    v2 -= 2; //5
+
+    v1 *= -30; //-180f
+
+    v1 /= v2; //-36
+
+    return v1 - v2;//-144
+}

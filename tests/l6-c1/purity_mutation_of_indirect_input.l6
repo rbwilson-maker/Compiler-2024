@@ -1,0 +1,28 @@
+//test error
+
+void mutate(int *p) {
+    (*p)++;
+}
+
+int *id(int *p) {
+    return p;
+}
+
+bool check(int *p) {
+    mutate(id(p));
+    return *p == 42;
+}
+
+bool also_check(int *p)
+//@ ensures \result == check(p);
+{
+    return *p == 42;
+}
+
+int main() {
+    int *p = alloc(int);
+    assert(!also_check(p));
+    *p = 42;
+    assert(also_check(p));
+    return *p;
+}

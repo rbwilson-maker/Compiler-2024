@@ -1,0 +1,17 @@
+//test typecheck
+
+int main()
+{
+  int********* p;
+  p = alloc(int********);
+  *p = alloc(int*******);
+  **p = alloc(int******);
+  ***p = alloc(int*****);
+  ****p = alloc(int****);
+  *****p = alloc(int***);
+  ******p = alloc(int**);
+  *******p = alloc(int*);
+  ********p = alloc(int); 
+  return *********
+  pluto(*********p,********p,*******p,******p,*****p,****p,***p,**p,*p);
+}

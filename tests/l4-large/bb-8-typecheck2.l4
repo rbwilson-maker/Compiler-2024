@@ -1,0 +1,35 @@
+//test typecheck
+
+damage output(mana x)
+{
+  if(x == 1)
+  {
+    return arcanemissiles(x);
+  }
+  if(x == 2)
+  {
+    return fireblast(x);
+  }
+  if(x == 4)
+  {
+    return fireball(x);
+  }
+  if(x == 10)
+  {
+    return pyroblast(x);
+  }
+  return 0;
+}
+
+int main()
+{
+    mana z = 10;
+    damage y = output(z);
+    struct character* T = alloc(struct character);
+    T -> level = 0;
+    while(true)
+    {
+      T -> level++;
+    }
+    return 0;
+}

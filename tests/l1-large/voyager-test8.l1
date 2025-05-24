@@ -1,0 +1,13 @@
+//test div-by-zero
+
+//tests 0/0 case
+
+int main()
+{
+	int x = 4;
+    int y = 3;
+    int z = 1;
+    int c = (x-y-z)/(x-y-z);
+    return c;
+}
+

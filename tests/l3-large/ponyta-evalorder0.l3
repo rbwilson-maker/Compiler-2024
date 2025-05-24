@@ -1,0 +1,15 @@
+//test div-by-zero
+// Do you evaluate left to right with right-shift?
+
+int dbz() {
+  return 1/0;
+}
+
+int loop() {
+  while (true) {}
+  return 1;
+}
+
+int main() {
+  return (dbz()) << (loop());
+}

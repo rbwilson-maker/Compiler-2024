@@ -1,0 +1,14 @@
+//test return 50000
+// Test big loop
+
+int main () {
+    int rep = 50000;
+    for (int i = 0; i < rep; i++) {
+        int y = i * 2;
+        int z = y;
+        y += 2;
+        y += 1;
+
+    }
+    return rep;
+}

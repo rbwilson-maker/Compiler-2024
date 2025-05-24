@@ -1,0 +1,11 @@
+//test return 15
+// just a test
+int main()
+{
+  int alice = 1;
+  int bob = 2;
+  int charlie = 3;
+  int alicebobcharlie = 4;
+  int bobalicecharlie = 5;
+  return alice + bob + charlie + alicebobcharlie + bobalicecharlie;
+}

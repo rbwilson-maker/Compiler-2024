@@ -1,0 +1,10 @@
+//test error
+
+// All paths should end in return statement
+
+int main () {
+    int a = 0;
+    if (a == 2) {
+        return 1;
+    }
+}

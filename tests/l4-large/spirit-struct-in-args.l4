@@ -1,0 +1,16 @@
+//test error
+
+struct node {
+    int a;    
+};
+
+int foo (struct node x) {
+    x.a = 5;    
+}
+
+int main() {
+    
+    struct node a = alloc(struct node);
+    foo(*a);
+    return 0;
+}

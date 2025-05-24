@@ -1,0 +1,19 @@
+//test div-by-zero
+// Try to find the smallest divisor for some number
+
+int find_smallest_divisor (int x);
+
+int main() {
+  int val = find_smallest_divisor(30);
+  return val;
+}
+
+int find_smallest_divisor (int x) {
+  int start = 10;
+  int min = 100;
+  while (start > -1) { // WARNING: goes until 0
+    if (x % start == 0) min = start;
+    start--;
+  }
+  return min;
+}

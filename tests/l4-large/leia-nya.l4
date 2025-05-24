@@ -1,0 +1,14 @@
+//test memerror
+
+bool f(int x) {
+     return (x<<5) > 10;
+}
+
+int main() {
+    //im sorry Tony, im sorry
+    int* x = NULL;
+    while (f(0)) {
+        x = alloc(int);
+    }
+    return *x;
+}

@@ -1,0 +1,17 @@
+//test abort
+
+int foo(){
+	int x=0;
+	while(true){
+          assert(false);
+	}
+	return x;
+}
+
+int bar(int x,int y){
+	return x+y;
+}
+
+int main(){
+	return bar(foo(),1/0);
+}

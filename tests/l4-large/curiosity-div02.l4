@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int g(int* x, int* y){
+  return *x >> *y;
+}
+
+int main(){
+  int* x = alloc(int);
+  *x = 2;
+  return g(x,x)/g(x,x);
+}

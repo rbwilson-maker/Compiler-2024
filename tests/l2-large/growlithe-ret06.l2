@@ -1,0 +1,25 @@
+//test return 20
+int main()
+{
+   	 int x;
+   	 int y;
+   	 int z;
+   	 int div = 0;
+
+   	 while(div < 8)
+   	 {
+   		 x = div;
+   		 x++;
+   		 div += x;
+   	 }
+	 z = 0;
+   	 if(div > 10)
+   	 {
+   		 for(y = 0; y < 5; y++)
+   		 {
+   			 z = y + 1;
+   			 z += div;
+   		 }
+   	 }
+   	 return z;
+}

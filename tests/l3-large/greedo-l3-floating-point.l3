@@ -1,0 +1,15 @@
+//test div-by-zero
+
+
+void error_if_nan(fpt v){
+    if((v & 0x7f800000) == 0x7f800000 && (v&0x7fffff) != 0){
+        1/0;
+    }
+}
+
+int main(){
+    fpt i = fdiv(1, 0); //should work
+    fpt j = fdiv(0, 0); //should also work (0/0)
+    error_if_nan(j);
+    return i;
+}

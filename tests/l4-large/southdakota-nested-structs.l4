@@ -1,0 +1,17 @@
+//test return 17
+
+struct apple {
+	int banana;
+	bool pear;
+};
+
+struct orange {
+	struct apple a;
+	bool peach;
+};
+
+int main() {
+	struct orange * o = alloc(struct orange);
+	(*o).a.banana = 17;
+	return o->a.banana;
+}

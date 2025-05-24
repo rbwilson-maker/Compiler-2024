@@ -1,0 +1,42 @@
+//test return 0
+// compile with all sorts of variables, whitespace, and comments
+
+int main()
+{
+  //@ assert: Prepare for trouble!
+  /*@ return: Make it double! */
+  /**
+   * To	protect the world from devastation!
+   * Tounite all peoples within our {nation}!
+   * Todenounce the evils of true false and <3!
+   * Toextend our reach to the * stars * above!
+   */
+
+  int jessie_;
+  int _J4M35;
+
+  jessie_ = (0);             // TEAM ROCKET, BLAST OFF AT THE SPEED OF LIGHT */
+  _J4M35 = ((0) + (((0))));  /* SURRENDER NOW OR PREPARE TO FIGHT! * / */
+
+  /*
+          MEOWTH, THAT'S RIGHT!
+
+                 \
+
+                 .-. \_/ .-.
+               \.-\/=\/.-/
+            '-./___|=|___\.-'
+           .--| \|/`"`\|/ |--.
+          (((_)\  .---.  /(_)))
+           `\ \_`-.   .-'_/ /`_
+             '.__       __.'(_))
+                 /     \     //
+                |       |__.'/
+                \       /--'`
+            .--,-' .--. '----.
+           '----`--'  '--`----'
+  */
+
+  // return 1 / 0; <-- nice try team rocket
+  return 0;
+}

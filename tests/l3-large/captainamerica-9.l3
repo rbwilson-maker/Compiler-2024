@@ -1,0 +1,9 @@
+//test compile
+
+int main() { 
+    int i= 171;
+    fpt ii=itof(i);
+    bool j=fless(i, 10);
+    i= 10*(i+24)/(19%12);
+    return i; 
+}

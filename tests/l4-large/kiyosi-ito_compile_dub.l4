@@ -1,0 +1,14 @@
+//test compile
+
+struct dub {
+  int a0;
+  int a1;
+  int a2;
+  int a3;
+  int a4;
+};
+
+int main() {
+  dub []x = alloc_array(dub, 10000000);
+  return 0;
+}

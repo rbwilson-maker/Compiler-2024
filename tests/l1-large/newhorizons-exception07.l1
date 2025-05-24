@@ -1,0 +1,5 @@
+//test div-by-zero 
+//all-in-one-line parse calculation for error 
+int main() {
+    return 5/(((41*8 + 92 -45)/3 + 7 - 100)/32 - 1);
+}

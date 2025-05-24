@@ -1,0 +1,3 @@
+//test compile
+																																	int main() {   // cannot statically reject this, even though we know what will happen!   
+                            return *(true ? true ? true ? NULL : NULL : alloc(int) : NULL); } 														

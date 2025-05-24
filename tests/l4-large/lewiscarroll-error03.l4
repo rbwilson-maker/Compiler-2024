@@ -1,0 +1,13 @@
+//test error
+
+struct cat {
+	int age;
+	int *meowing;
+};
+
+int main () {
+	struct cat *gertrude = alloc(struct cat);
+	struct cat allpets[3];
+	allpets[0] = gertrude;
+	return 0;
+}	

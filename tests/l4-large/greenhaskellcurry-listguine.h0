@@ -1,0 +1,23 @@
+/*
+    listguine: should compile.
+*/
+
+/*
+    Dynamic Array signature
+*/
+
+typedef int elem_t;
+
+struct dynamic_array {
+    elem_t*[] arr;
+    int arrLen;
+    int watermark;
+};
+
+typedef struct dynamic_array dynamic_array_t;
+
+dynamic_array_t *newArray();
+dynamic_array_t *fromArray(elem_t*[] elems, int length);
+int getLength(dynamic_array_t *L);
+void insert(dynamic_array_t *L, elem_t *elem);
+elem_t *get(dynamic_array_t *L, int idx);

@@ -1,0 +1,13 @@
+//test return 3
+
+struct hello {
+   int world;
+   bool there;
+};
+
+int main() {
+  struct hello[] arr;
+  arr = alloc_array(struct hello, 20);
+  arr[13].world = 3;
+  return arr[13].world;
+}

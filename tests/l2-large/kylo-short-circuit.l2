@@ -1,0 +1,14 @@
+//test return 39916800;
+
+int main() {
+  int x = 1;
+  for (int i = 1; i < 12; i++) {
+    x *= i;
+  }
+  
+  if (x == 39916800 || (x / 0 == 1)) {
+    return x;
+  } else {
+    return x / 0;
+  }
+}

@@ -1,0 +1,17 @@
+//test error
+
+int main() {
+
+  int x;
+  int y;
+  int h = 3;
+
+  x = (-8) % 2;
+  if (x == 0) then {
+  y = x * 2;
+  h = h + y;
+  return h;
+  }
+  else return 1;
+
+}

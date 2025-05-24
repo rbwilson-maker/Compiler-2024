@@ -1,0 +1,12 @@
+//test error
+//too many params
+
+int advancedIncr(int x, int y){
+  int z = x + 1;
+  int p = y + 1;
+  return z+p;
+}
+
+int main(){
+  return advancedIncr(1, 2, 3);
+}

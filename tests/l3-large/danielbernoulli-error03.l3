@@ -1,0 +1,15 @@
+//test error 
+// defn function with different params than decl
+
+int f(int x, int y);
+
+int f(int x, bool y) { 
+    if(y) {
+        return x; 
+    }
+    return x+1;
+}
+
+int main() {
+    return f(1,true); 
+}

@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+  int inner(int x) {
+    return x;
+  }
+  int y = inner(0);
+  return y;
+}

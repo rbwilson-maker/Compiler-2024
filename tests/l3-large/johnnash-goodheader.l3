@@ -1,0 +1,27 @@
+//test typecheck
+
+int main() {
+    iii c = giga_pfunc(0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false,
+               0, true, 1, false, 34, true, 248 - 2 + cool(), (true || true) ? true : false) ? 7 : cool();
+
+    return cool() / c % c;
+}

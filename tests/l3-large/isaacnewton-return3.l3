@@ -1,0 +1,19 @@
+//test return 3
+
+int f(); 
+
+int g() {
+    return f(); 
+}
+
+int f() {
+    if(false) {
+        return g(); 
+    } else {
+        return 3; 
+    }
+}
+
+int main() {
+    return f(); 
+}

@@ -1,0 +1,12 @@
+//test return 6
+
+int main() {
+  int x = 3;
+  int acc;
+  acc = 1;
+  while (x > 0) {
+    acc = acc * x;
+    x--;
+  }
+  return acc;
+}

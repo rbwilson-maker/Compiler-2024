@@ -1,0 +1,6 @@
+//test return 0
+
+int main() {
+  for (int y; false;) {}
+  return 0;
+}

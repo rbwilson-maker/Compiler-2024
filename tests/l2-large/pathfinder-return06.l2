@@ -1,0 +1,9 @@
+//test return 10
+
+int main() {
+    int x = 0;
+    for (; x < 10;) {
+        x += 2;
+    }
+    return x;
+}

@@ -1,0 +1,14 @@
+//test error
+// test non-main functions
+
+int non_main()
+{
+    return 5;
+}
+
+int main()
+{
+    int x;
+    x = 1;
+    return x;
+}

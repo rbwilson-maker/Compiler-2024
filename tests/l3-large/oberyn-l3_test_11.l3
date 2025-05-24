@@ -1,0 +1,13 @@
+//test return 0
+
+// tests shadowing of function name
+
+bool f(int n) {
+	return false;
+}
+
+int main() {
+	bool f = false;
+	assert (!f);
+	return 0;
+}

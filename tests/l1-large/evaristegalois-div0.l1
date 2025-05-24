@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+        //test division by zero with variables, parentheses, and arithmetic
+
+        int x = (50 + 4) * 20;
+        int y = 0;
+        return (x / (y));
+}

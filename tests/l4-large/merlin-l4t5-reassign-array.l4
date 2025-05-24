@@ -1,0 +1,13 @@
+//test return 5
+
+// test successfully reassign array variable to another variab;e
+
+int main() {
+    int *a = alloc(int);
+    *a = 3;
+    int *b = a;
+    int[] c = alloc_array(int, 1);
+    c[0] = 2;
+    int []d = c;
+    return *b + d[0];
+}

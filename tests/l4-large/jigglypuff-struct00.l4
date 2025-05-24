@@ -1,0 +1,32 @@
+//test return 0
+
+/* struct 00 Test 
+ *  
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * 
+ * Test various places for struct definitions and usages
+ */
+
+typedef struct a t;
+typedef struct b tb;
+struct a {
+    int a1;
+    bool a2; 
+    int a3;
+    tb *bb;
+};
+
+
+int main()
+{
+    struct b *bb;
+    return 0;
+}
+
+struct b {
+    int a1;
+    bool a2; 
+    int a3;
+    struct a aa;
+};

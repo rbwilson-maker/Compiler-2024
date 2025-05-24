@@ -1,0 +1,13 @@
+//test error
+
+int f1(int a) {
+    return f2(a);
+}
+
+int f2(int b) {
+    return f1(a);
+}
+
+int main() {
+    return f2(0);
+}

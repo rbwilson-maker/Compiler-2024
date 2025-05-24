@@ -1,0 +1,14 @@
+//test return 1381432297
+
+int z(int n, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j) {
+    if (n<=0)
+        return 0;
+
+    n /= 2;
+    int m = n-1;
+    return a+b+c+d+e+f+g+h+i+j + z(n,a+n,b+n,c+n,d+n,e+n,f+n,g+n,h+n,i+n,j+n)
+           + z(m,a+m,b+m,c+m,d+m,e+m,f+m,g+m,h+m,i+m,j+m);
+}
+int main() {
+    return z(6252629,123,453,74567,944,1334,8887,445,234243,98,123);
+}

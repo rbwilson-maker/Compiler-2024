@@ -1,0 +1,12 @@
+//test return 2
+
+int c(int* x) {
+*x += 1;
+return 1;
+}
+
+int main() {
+int* x = alloc(int);
+int y = c(x)+c(x);
+return *x;
+}

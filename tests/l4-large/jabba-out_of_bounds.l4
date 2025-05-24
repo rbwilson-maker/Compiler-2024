@@ -1,0 +1,19 @@
+//test memerror
+
+struct foo {
+	int x;
+	bool y;
+	int foo;
+};
+
+int main() {
+	struct foo* x = alloc(struct foo);
+	x->x = 42;
+	if((*x).y) {
+		x->x *= x->x;
+	} else {
+		x->x /= x->x;
+	}
+	struct foo[] b = alloc_array(struct foo, (*x).foo);
+	return b[x->x].foo;
+}

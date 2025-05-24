@@ -1,0 +1,13 @@
+//test return 0
+//simple function to negate a number
+
+int negate (int x) {
+    return -x;
+}
+
+int main () {
+    int x = 5;
+    int y = negate(x);
+
+    return x + y;
+}

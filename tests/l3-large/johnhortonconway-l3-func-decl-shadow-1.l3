@@ -1,0 +1,15 @@
+//test return 7
+int bb()
+{
+    return 0;
+}
+
+int tt(int tt, int a2)
+{
+    int bb = 3 * a2;
+    return tt + bb;
+}
+
+int main() {
+    return tt(1, 2) + bb();
+}

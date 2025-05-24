@@ -1,0 +1,13 @@
+//test return 8
+// prints to output twice instead of three times
+
+int effectful(int n) {
+    print_int(n);
+    return n;
+}
+
+int main() {
+    int[] A = alloc_array(int, 100);
+    A[effectful(5)] += 8;
+    return A[effectful(5)];
+}

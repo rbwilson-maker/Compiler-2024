@@ -1,0 +1,14 @@
+//test return 81
+// sum of digits
+
+int main() {
+    int n = 999999999;
+    int sum = 0;
+
+    while (n > 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+
+    return 81;
+}

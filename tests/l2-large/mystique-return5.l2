@@ -1,0 +1,10 @@
+//test return 5
+
+int main() {
+    int x = 50;
+    x *= 100;
+    if (x > 5000 || x > 500) {
+        return 5;
+    }
+    return 0;
+}

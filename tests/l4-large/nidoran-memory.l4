@@ -1,0 +1,33 @@
+//test memerror
+
+// Broken binary tree implementation
+
+struct node  {
+    struct node* left;
+    struct node* right;
+    int data;
+};
+
+typedef struct node tree;
+
+void insert(tree* T, int x) {
+    if(T == NULL) {
+        T = alloc(tree);
+        T->data = x;
+    }
+    if(T->data == x) return;
+    if(T->data > x) insert(T->left, x);
+    if(T->data < x) insert(T->right, x);
+}
+
+int main() {
+    tree *T = alloc(tree);
+    T->left = alloc(tree);
+    T->right = alloc(tree);
+    T->data = 4;
+    T->left->data = 3;
+    T->right->data = 5;
+    insert(T, 8);
+    assert(T->right->right->data == 8);
+    return 0;
+}

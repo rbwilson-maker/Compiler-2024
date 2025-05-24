@@ -1,0 +1,7 @@
+//test return 8
+
+int main() {
+    int x = 1 << 2;
+    x *= 2;
+    return x;
+}

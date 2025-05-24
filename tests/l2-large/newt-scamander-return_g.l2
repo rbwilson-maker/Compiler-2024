@@ -1,0 +1,11 @@
+//test return 16
+
+int main(){
+	int n = 74370;
+	int i = 0;
+	while(n!=0) {
+		i++;
+		n>>=1;
+	}
+	return i-1;
+}

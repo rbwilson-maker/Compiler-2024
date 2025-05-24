@@ -1,0 +1,15 @@
+//test return 0
+// test precedence and associativity
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+
+  a = 3 + 2 * 3;
+  b = 3 + (2 * 3);
+  c = (3 + 2) * 3;
+  d = (30 + (6 - 12 / 2)) / 2;
+  return a - b + c - d;
+}

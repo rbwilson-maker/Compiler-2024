@@ -1,0 +1,9 @@
+//test error
+
+int main()
+{
+    bool a = false;
+    bool b = true;
+    fpt z = fadd(a, b);
+    return ftoi(z);
+}

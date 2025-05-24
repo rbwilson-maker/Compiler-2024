@@ -1,0 +1,13 @@
+//test div-by-zero
+
+void assign(int[] a) {
+    for(int i=0; i<10; i++) {
+        a[i/i] = i;
+    }
+}
+
+int main() {
+    int[] a = alloc_array(int, 10);
+    assign(a);
+    return 0;
+}

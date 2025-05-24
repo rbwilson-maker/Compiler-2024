@@ -1,0 +1,14 @@
+//test error
+
+int main()
+{
+    int x = 0;
+
+    while (x<=10)
+    {
+        int y;
+        y = x + y;
+    }
+
+    return y;
+}

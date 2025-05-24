@@ -1,0 +1,12 @@
+//test return 55
+//A test of a simple while loop
+int main() {
+    int counter = 0;
+    int max = 10;
+    int sum = 0;
+    while(counter < max){
+        counter++;
+        sum += counter;
+    }
+    return sum;
+}

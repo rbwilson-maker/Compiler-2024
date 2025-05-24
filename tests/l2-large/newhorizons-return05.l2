@@ -1,0 +1,8 @@
+//test return 50
+int main() {
+    int y = 0;
+    for (int i = 5; i < 6; i++) {
+        y += (i * 10);
+    }
+    return y;
+}

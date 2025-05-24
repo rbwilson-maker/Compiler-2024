@@ -1,0 +1,16 @@
+//test abort
+
+int[] quads(int n) {
+	int[] A = alloc_array(int, n);
+
+	for (int i = 0; i < n; i++){
+		A[i] = i*i*i*i;
+	}
+	return A;
+}
+
+int main(){
+	int[] A = quads(10);
+	assert(A[6]==0);
+	return A[6];
+}

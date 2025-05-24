@@ -1,0 +1,212 @@
+//test return 1
+
+// This function computes the transpose of A and puts it into B
+// Only works if you give it a reasonably sized matrix, where reasonable
+// means {32x32, 64x64, 61x67}.  That's pretty interesting!
+
+void transpose(int M, int N, int[][] A, int[][] B)
+{
+    int t1 = 9001;
+    int t2 = 9001;
+    int t3 = 9001;
+    int t4 = 9001;
+    int t5 = 9001;
+    int t6 = 9001;
+    int t7 = 9001;
+    int t8 = 9001;
+    int i;
+    int j;
+    int k;
+    if (M == 32) {
+        for (i = 0; i < N / 8; i++) {
+            for (j = 0; j < M / 8; j++) {
+                for (k = 0; k < 8; k++) {
+                    t1 = A[8 * i + k][8 * j + 0];
+                    t2 = A[8 * i + k][8 * j + 1];
+                    t3 = A[8 * i + k][8 * j + 2];
+                    t4 = A[8 * i + k][8 * j + 3];
+                    t5 = A[8 * i + k][8 * j + 4];
+                    t6 = A[8 * i + k][8 * j + 5];
+                    t7 = A[8 * i + k][8 * j + 6];
+                    t8 = A[8 * i + k][8 * j + 7];
+                    B[8 * j + 0][8 * i + k] = t1;
+                    B[8 * j + 1][8 * i + k] = t2;
+                    B[8 * j + 2][8 * i + k] = t3;
+                    B[8 * j + 3][8 * i + k] = t4;
+                    B[8 * j + 4][8 * i + k] = t5;
+                    B[8 * j + 5][8 * i + k] = t6;
+                    B[8 * j + 6][8 * i + k] = t7;
+                    B[8 * j + 7][8 * i + k] = t8;
+                }
+            }
+        }
+    }
+    else if (M == 64) {
+        for (j = 0; j < 8; j++) { // X
+            for (i = 0; i < 8; i++) { // Y
+                if (i == j) { // handle the diagonal separately
+                    for (k = 0; k < 4; k++) {
+                        t1 = A[8 * i + k][8 * j + 0];
+                        t2 = A[8 * i + k][8 * j + 1];
+                        t3 = A[8 * i + k][8 * j + 2];
+                        t4 = A[8 * i + k][8 * j + 3];
+                        t5 = A[8 * i + k + 4][8 * j + 0];
+                        t6 = A[8 * i + k + 4][8 * j + 1];
+                        t7 = A[8 * i + k + 4][8 * j + 2];
+                        t8 = A[8 * i + k + 4][8 * j + 3];
+                        B[8 * j + 0][8 * i + k] = t1;
+                        B[8 * j + 1][8 * i + k] = t2;
+                        B[8 * j + 2][8 * i + k] = t3;
+                        B[8 * j + 3][8 * i + k] = t4;
+                        B[8 * j + 0][8 * i + k + 4] = t5;
+                        B[8 * j + 1][8 * i + k + 4] = t6;
+                        B[8 * j + 2][8 * i + k + 4] = t7;
+                        B[8 * j + 3][8 * i + k + 4] = t8;
+                    }
+                    for (k = 0; k < 4; k++) {
+                        t1 = A[8 * i + k][8 * j + 0 + 4];
+                        t2 = A[8 * i + k][8 * j + 1 + 4];
+                        t3 = A[8 * i + k][8 * j + 2 + 4];
+                        t4 = A[8 * i + k][8 * j + 3 + 4];
+                        t5 = A[8 * i + k + 4][8 * j + 0 + 4];
+                        t6 = A[8 * i + k + 4][8 * j + 1 + 4];
+                        t7 = A[8 * i + k + 4][8 * j + 2 + 4];
+                        t8 = A[8 * i + k + 4][8 * j + 3 + 4];
+                        B[8 * j + 0 + 4][8 * i + k] = t1;
+                        B[8 * j + 1 + 4][8 * i + k] = t2;
+                        B[8 * j + 2 + 4][8 * i + k] = t3;
+                        B[8 * j + 3 + 4][8 * i + k] = t4;
+                        B[8 * j + 0 + 4][8 * i + k + 4] = t5;
+                        B[8 * j + 1 + 4][8 * i + k + 4] = t6;
+                        B[8 * j + 2 + 4][8 * i + k + 4] = t7;
+                        B[8 * j + 3 + 4][8 * i + k + 4] = t8;
+                    }
+                }
+                else {
+                    for (k = 0; k < 4; k++) {
+                        t1 = A[8 * i + k][8 * j + 0];
+                        t2 = A[8 * i + k][8 * j + 1];
+                        t3 = A[8 * i + k][8 * j + 2];
+                        t4 = A[8 * i + k][8 * j + 3];
+                        B[8 * j + 0][8 * i + k] = t1;
+                        B[8 * j + 1][8 * i + k] = t2;
+                        B[8 * j + 2][8 * i + k] = t3;
+                        B[8 * j + 3][8 * i + k] = t4;
+                    }
+                    for (k = 0; k < 4; k++) {
+                        t1 = A[8 * i + k + 4][8 * j + 0];
+                        t2 = A[8 * i + k + 4][8 * j + 1];
+                        t3 = A[8 * i + k + 4][8 * j + 2];
+                        t4 = A[8 * i + k + 4][8 * j + 3];
+                        B[8 * j + 0][8 * i + k + 4] = t1;
+                        B[8 * j + 1][8 * i + k + 4] = t2;
+                        B[8 * j + 2][8 * i + k + 4] = t3;
+                        B[8 * j + 3][8 * i + k + 4] = t4;
+                    }
+                    for (k = 0; k < 4; k++) {
+                        t1 = A[8 * i + k + 4][8 * j + 0 + 4];
+                        t2 = A[8 * i + k + 4][8 * j + 1 + 4];
+                        t3 = A[8 * i + k + 4][8 * j + 2 + 4];
+                        t4 = A[8 * i + k + 4][8 * j + 3 + 4];
+                        B[8 * j + 0 + 4][8 * i + k + 4] = t1;
+                        B[8 * j + 1 + 4][8 * i + k + 4] = t2;
+                        B[8 * j + 2 + 4][8 * i + k + 4] = t3;
+                        B[8 * j + 3 + 4][8 * i + k + 4] = t4;
+                    }
+                    for (k = 0; k < 4; k++) {
+                        t1 = A[8 * i + k][8 * j + 0 + 4];
+                        t2 = A[8 * i + k][8 * j + 1 + 4];
+                        t3 = A[8 * i + k][8 * j + 2 + 4];
+                        t4 = A[8 * i + k][8 * j + 3 + 4];
+                        B[8 * j + 0 + 4][8 * i + k] = t1;
+                        B[8 * j + 1 + 4][8 * i + k] = t2;
+                        B[8 * j + 2 + 4][8 * i + k] = t3;
+                        B[8 * j + 3 + 4][8 * i + k] = t4;
+                    }
+                }
+            }
+        }
+    }
+    else if (M == 61) {
+        // so good
+        //             such elegant
+        //           so fast
+        //   wow
+        //         such caching
+        for (j = 0; j < 9; j++) { // X
+            for (i = 0; i < 9; i++) { // Y
+                for (k = 0; k < 8; k++) {
+                    // Safe array accesses are important.
+                    // Thinking about what this code does is not.
+                    if ((8 * j + 0) < 61 && (8*i+k) < 67)
+                        t1 = A[8 * i + k][8 * j + 0];
+                    if ((8 * j + 1) < 61 && (8*i+k) < 67)
+                        t2 = A[8 * i + k][8 * j + 1];
+                    if ((8 * j + 2) < 61 && (8*i+k) < 67)
+                        t3 = A[8 * i + k][8 * j + 2];
+                    if ((8 * j + 3) < 61 && (8*i+k) < 67)
+                        t4 = A[8 * i + k][8 * j + 3];
+                    if ((8 * j + 4) < 61 && (8*i+k) < 67)
+                        t5 = A[8 * i + k][8 * j + 4];
+                    if ((8 * j + 5) < 61 && (8*i+k) < 67)
+                        t6 = A[8 * i + k][8 * j + 5];
+                    if ((8 * j + 6) < 61 && (8*i+k) < 67)
+                        t7 = A[8 * i + k][8 * j + 6];
+                    if ((8 * j + 7) < 61 && (8*i+k) < 67)
+                        t8 = A[8 * i + k][8 * j + 7];
+                    if ((8 * j + 0) < 61 && (8*i+k) < 67)
+                        B[8 * j + 0][8 * i + k] = t1;
+                    if ((8 * j + 1) < 61 && (8*i+k) < 67)
+                        B[8 * j + 1][8 * i + k] = t2;
+                    if ((8 * j + 2) < 61 && (8*i+k) < 67)
+                        B[8 * j + 2][8 * i + k] = t3;
+                    if ((8 * j + 3) < 61 && (8*i+k) < 67)
+                        B[8 * j + 3][8 * i + k] = t4;
+                    if ((8 * j + 4) < 61 && (8*i+k) < 67)
+                        B[8 * j + 4][8 * i + k] = t5;
+                    if ((8 * j + 5) < 61 && (8*i+k) < 67)
+                        B[8 * j + 5][8 * i + k] = t6;
+                    if ((8 * j + 6) < 61 && (8*i+k) < 67)
+                        B[8 * j + 6][8 * i + k] = t7;
+                    if ((8 * j + 7) < 61 && (8*i+k) < 67)
+                        B[8 * j + 7][8 * i + k] = t8;
+                }
+            }
+        }
+    }
+}
+
+/*
+ * is_transpose - This helper function checks if B is the transpose of
+ *     A. You can check the correctness of your transpose by calling
+ *     it before returning from the transpose function.
+ */
+int is_transpose(int M, int N, int[][] A, int[][] B)
+{
+    int i;
+    int j;
+
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < M; j++) {
+            if (A[i][j] != B[j][i]) {
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
+int main() {
+    int[][] array = alloc_array(int[], 64);
+    int[][] dest = alloc_array(int[], 64);
+    for (int i = 0; i < 64; i++) {
+        array[i] = alloc_array(int, 64);
+        dest[i] = alloc_array(int, 64);
+        for (int j = 0; j < 64; j++) {
+            array[i][j] = (i*57)+(213*j)-41;
+        }
+    }
+
+    transpose(64, 64, array, dest);
+    return is_transpose(64, 64, array, dest);
+}

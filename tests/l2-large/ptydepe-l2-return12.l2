@@ -1,0 +1,16 @@
+//test return 3
+// Simple while loop with if statement program
+int main() {
+    int a = 5;
+    int w = 0;
+    int result = 0;
+ 
+    while(w < a) {
+        if(w < 3) {
+            result += 1;
+        }
+        w += 1;
+    }
+
+    return result;
+}

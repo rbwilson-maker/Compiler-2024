@@ -1,0 +1,12 @@
+//test error
+int main () {
+    struct Foo *x = alloc(struct Foo);
+    if (x->bar == null) {
+        return 0;
+    }
+    return 1;
+}
+
+struct Foo {
+    int *bar;
+};

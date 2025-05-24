@@ -1,0 +1,10 @@
+//test div-by-zero
+// divided by zero
+int f(int n) {
+    return n/0;
+}
+
+int main() {
+    f(10);
+    return 0;
+}

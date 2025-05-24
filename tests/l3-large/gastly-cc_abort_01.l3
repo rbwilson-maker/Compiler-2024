@@ -1,0 +1,20 @@
+//test abort
+int sub(int a, int b) {
+	return a - b;
+}
+int div(int a, int b) {
+	return a/b;
+}
+int main() {
+	assert(true);
+	int x = 5;
+	int y = 10;
+
+	assert(sub(y, x) == x);
+	assert(div(10,5) == 2);
+
+	assert(sub(y, x) != y);
+	assert((x == y) != (y == x));
+	
+	return 0;
+}

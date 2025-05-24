@@ -1,0 +1,17 @@
+//test error
+
+struct s;
+
+struct s {
+	int x;
+	int y;
+	struct s foo;
+};
+
+int main() {
+	struct s* s = alloc(struct s);
+	s->x = 42;
+	s->y = 10;
+	s->s = *(alloc(struct s));
+	return s->s->x;
+}

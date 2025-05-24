@@ -1,0 +1,18 @@
+//test div-by-zero
+int main() {
+
+  // all of the asops - with errors!
+     
+  int x = 5;
+  x += x;
+  x *= x;
+  x /= x;
+  x -= x;
+  x %= x;
+  x ^= x;
+  x |= 1;
+  x <<= x;
+  x >>= x;
+
+  return x;
+}

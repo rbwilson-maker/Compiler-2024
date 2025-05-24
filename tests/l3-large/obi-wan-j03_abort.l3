@@ -1,0 +1,15 @@
+//test abort
+
+void random(int a, bool b)
+{
+    if(b)
+        return;
+    return;
+}
+
+int main()
+{
+    assert(false);
+
+    return 0;
+}

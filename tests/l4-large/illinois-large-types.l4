@@ -1,0 +1,14 @@
+//test error
+// structs cannot be used in ternary expressions
+
+struct s {
+  int a;
+  int b;
+};
+
+int main() {
+  struct s* s = alloc(struct s);
+  (*s).a = 5; // ok
+  s->b = 3; // ok
+  return ((s->a == s->b) ? *s : *s).a; // not ok
+}

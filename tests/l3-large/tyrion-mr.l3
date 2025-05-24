@@ -1,0 +1,70 @@
+//test typecheck
+
+//pls let me run this
+//test return 1
+
+//Miller-Rabin primality test
+
+
+//p is prime, c is not
+
+//as long as modulus < 16 bits, should not overflow
+int expmod(int base, int exponent, int modulus) {
+	if(exponent == 0) {
+		return 1;
+	}
+	int y = 1;
+	while(exponent > 1) {
+		if(exponent % 2 == 0) {
+			base *= base;
+			base %= modulus;
+			exponent >>= 1;
+		} else {
+			y *= base;
+			base *= base;
+			y %= modulus;
+			base %= modulus;
+			exponent >>= 1;
+		}
+	}
+	return (base * y) % modulus;
+}
+
+bool MRround(int candidate, int a) {
+	int n = candidate;
+	int r = 0;
+	int s = candidate - 1;
+	while (s % 2 == 0) {
+		s >>= 1;
+		r ++;
+	}
+	if(expmod(a, s, n) == 1) {
+		return true;
+	}
+	int acc = expmod(a, s, n);
+	for(int j = 0; j < r; j++) {
+		if(acc == n-1) {
+			return true;
+		} else {
+			acc *= expmod(acc, 2, n);
+		}
+	}
+	return false;
+}
+
+int main() {
+	int p = 23027;
+	int c = 24613;
+	bool isP = true;
+	bool isC = true;
+	srand(15411);
+	for(int i = 0; i < 50; i ++) {
+		int t1 = (rand() % (p-1)) + 1;
+		int t2 = (rand() % (c-1)) + 1;
+		isP = isP && MRround(p, t1);
+		isC = isC && MRround(c, t2);
+	}
+
+	return (isP ? (isC ? 0 : 1):(isC ? 2 : 3)); 
+
+}

@@ -1,0 +1,20 @@
+//test return 0
+
+int sumRange(int []l, int i, int j) {
+  int s = 0;
+  for (int ind = i; ind < j; ind++) {
+    s += l[ind];
+  }
+  return s;
+}
+
+int main() {
+  int sum = 0;
+  int []l = alloc_array(int, 10);
+  for (int i = 0; i < 10; i++)
+    //@loop_invariant sumRange(l, 0, i) + sumRange(l, i, 10) == sumRange(l, 0, 10);
+  {
+    sum += l[i];
+  }
+  return 0;
+}

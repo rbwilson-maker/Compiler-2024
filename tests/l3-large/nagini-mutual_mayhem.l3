@@ -1,0 +1,68 @@
+//test return 377088
+
+int opaque(int x) {
+    if (x % 2 == 0) {
+        return x+3;
+    } else {
+        return x+4;
+    }
+}
+
+int foo(int a, int b, int c);
+int bar(int a, int b, int c);
+int baz(int a, int b, int c);
+
+int foo(int a, int b, int c) {
+    if (a == 0) return (111+b+c);
+    int x0 = bar(a-1, b, c+1);
+    int x1 = bar(a-1, b, c+2);
+    int x2 = bar(a-1, b, c+3);
+    int x3 = bar(a-1, b, c+4);
+    int x4 = bar(a-1, b, c+5);
+    int x5 = bar(a-1, b, c+6);
+    int x6 = bar(a-1, b, c+7);
+    int x7 = bar(a-1, b, c+8);
+
+    return x0+x1+x2+x3+x4+x5+x6+x7;
+}
+
+int bar(int a, int b, int c) {
+    if (a == 0) return (222+b+c);
+    int x0 = baz(a-1, b, c+1);
+    int x1 = baz(a-1, b, c+2);
+    int x2 = baz(a-1, b, c+3);
+    int x3 = baz(a-1, b, c+4);
+    int x4 = baz(a-1, b, c+5);
+    int x5 = baz(a-1, b, c+6);
+    int x6 = baz(a-1, b, c+7);
+    int x7 = baz(a-1, b, c+8);
+
+    return x0+x1+x2+x3+x4+x5+x6+x7;
+}
+
+int baz(int a, int b, int c) {
+    if (a == 0) return (333+b+c);
+    int x0 = foo(a-1, b, c+1);
+    int x1 = foo(a-1, b, c+2);
+    int x2 = foo(a-1, b, c+3);
+    int x3 = foo(a-1, b, c+4);
+    int x4 = foo(a-1, b, c+5);
+    int x5 = foo(a-1, b, c+6);
+    int x6 = foo(a-1, b, c+7);
+    int x7 = foo(a-1, b, c+8);
+
+    return x0+x1+x2+x3+x4+x5+x6+x7;
+}
+
+int main()
+{
+  int x0;
+  int x1;
+  int x2;
+
+  x0 = opaque(0);
+  x1 = opaque(1);
+  x2 = opaque(2);
+  return
+     foo(x0, x1, x2) + bar(x0, x1, x2) + baz(x0, x1, x2);
+}

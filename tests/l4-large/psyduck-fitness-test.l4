@@ -1,0 +1,10 @@
+//test error
+
+bool eq(int[] x, int* y)
+{
+return x == y;
+}
+
+int main () {
+return eq(NULL, NULL) ? 0 : 1;
+}

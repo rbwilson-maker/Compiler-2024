@@ -1,0 +1,40 @@
+//test return 1
+
+int main() {
+    int n = 10;
+    int sum = n * (n + 1) / 2;
+    int whilesum;
+    int forsum1;
+    int forsum2;
+    int forsum3;
+    int forsum4;
+
+    whilesum = 0;
+    int temp = 1;
+    while (temp <= n) {
+        whilesum = whilesum + temp;
+        temp++;
+    }
+
+    forsum1 = 0;
+    for (int i = 1; i <= n; i++) forsum1 += i;
+
+    forsum2 = 0;
+    for (int i = n; i > 0;) {
+        forsum2 += i;
+        i--;
+    }
+
+    forsum3 = 0;
+    temp = 1;
+    for (; temp <= n; ) {
+        forsum3 += temp;
+        temp++;
+    }
+
+    forsum4 = 0;
+    for (; n > 0; n--) forsum4 += n;
+
+    return (whilesum == sum && forsum1 == sum && forsum2 == sum 
+            && forsum3 == sum && forsum4 == sum) ? 1 : 0;
+}

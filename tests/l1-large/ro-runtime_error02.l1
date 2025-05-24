@@ -1,0 +1,9 @@
+//test div-by-zero
+// Tests modulous by 0
+
+int main() {
+  int x = 15;
+  int z = 15;
+  int y = (x + z) % (x - z);
+  return y;
+}

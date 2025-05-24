@@ -1,0 +1,17 @@
+//test return 23
+
+int doo_doo_doo_doo(int *x, int **y, int ***z) {
+  *x = **y;
+  return ***z;
+}
+
+int main() {
+  int ***v = alloc(int **);
+  *v = alloc(int *);
+  **v = alloc(int);
+  int **w = alloc(int *);
+  *w = alloc(int);
+  ***v = 87;
+  **w = 23;
+  return doo_doo_doo_doo(**v, w, v);
+}

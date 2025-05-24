@@ -1,0 +1,10 @@
+//test return 3566
+
+int main()
+{
+    if (1 == 2 == true) {
+    return 0x999;
+    } else {
+    return 0xdee;
+    }
+}

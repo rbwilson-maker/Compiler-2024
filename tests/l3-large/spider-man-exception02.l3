@@ -1,0 +1,16 @@
+//test abort
+
+typedef int b;
+
+b bb(b bbb) {
+    b bbbb = 888;
+    b bbbbb = 88;
+    b bbbbbb = 8;
+    return bbb+bbbb-bbbbb+bbbbbb; //bbb+808
+}
+
+int main() {
+    b bbb=bb(88);
+    assert(bbb==888);
+    return bbb;
+}

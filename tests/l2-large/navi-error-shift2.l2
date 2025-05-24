@@ -1,0 +1,11 @@
+//test div-by-zero
+int main() {
+	int a = 33;
+	int sum = 0;
+	for(; a < 100; a++) {
+		int x = 1;
+		x >>= a;
+		sum += x;
+	}
+	return sum;
+}

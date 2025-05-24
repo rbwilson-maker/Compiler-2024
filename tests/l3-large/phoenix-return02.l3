@@ -1,0 +1,18 @@
+//test return 81
+//test out a power function
+
+int pow (int a, int b) {
+    int res = a;
+    for (int i=1; i<b; i++) {
+        res *= a;
+    }
+    return res;
+}
+
+int main () {
+    int power = pow(3, 3) * 5; 
+    power = power / 15; 
+    power = pow(power, 8/4);
+
+    return power;
+}

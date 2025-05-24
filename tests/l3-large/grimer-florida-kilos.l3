@@ -1,0 +1,37 @@
+//test return 2600
+
+
+int main() {
+	int a = 1;
+	int b = a;
+	int c = b;
+	int d = c;
+	int e = d;
+	int f = e;
+	int g = f;
+	int h = g;
+	int i = h;
+	int j = i;
+	int k = j;
+	int l = k;
+	int m = l;
+	int n = m;
+	int o = n;
+	int p = o;
+	int q = p;
+	int r = q;
+	int s = r;
+	int t = s;
+	int u = t;
+	int v = u;
+	int w = v;
+	int x = w;
+	int y = x;
+	int z = y;
+
+	int result = 0;
+	for (int iter = 0; iter < 100; iter++) {
+		result += (a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q + r + s + t + u + v + w + x + y + z);
+	}	
+	return result;
+}

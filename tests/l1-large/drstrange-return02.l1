@@ -1,0 +1,14 @@
+//test return 1
+// overflow by multiplying
+// since -1 is 0xFFFFFFFF
+// INT_MAX is 0x7FFFFFFF
+// INT_MIN is 0x80000000
+
+int main()
+{
+  int value1 = 0x0;
+  value1 = -value1; // this is now 0xFFFFFFFF
+  value1 -= 1;
+  value1 *= -1;
+  return value1;
+}

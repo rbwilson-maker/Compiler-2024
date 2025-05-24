@@ -1,0 +1,9 @@
+//test div-by-zero
+// modding by zero
+
+int main() {
+  int x = 2;
+  x -= x;
+  x %= x;
+  return x;
+}

@@ -1,0 +1,20 @@
+//test return 0
+
+int toInt (bool x) {
+    if(x) {
+    	  return 1;
+    } else {
+      	   return 0;
+    }
+}
+
+bool toBool (int x) {
+     if (x == 0) {
+     	return false;
+     }
+     return true;
+}
+
+int main () {
+    return toInt (toBool (toInt (toBool (0))));
+}

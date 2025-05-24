@@ -1,0 +1,15 @@
+//test error
+// cannot use void function in statement
+
+void run(int a) {
+    assert(a == 0);
+}
+
+void me() {
+    return run(0);
+}
+
+int main() {
+    me();
+    return 0;
+}

@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int reign_of_terror(){
+	return 0 / 0;
+}
+
+int main(){
+	int *nine_thermidor = NULL;
+	*nine_thermidor = reign_of_terror();
+	return 1794;
+}

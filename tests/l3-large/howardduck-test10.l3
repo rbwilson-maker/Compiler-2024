@@ -1,0 +1,18 @@
+//test div-by-zero
+
+void do_something(int l, int m, int r) {
+    int l1 = r;
+    int m1 = m;
+    int r1 = l;
+    while (l < r) {
+        m = l + (r-l) / 2;
+        m <<= m;
+        l++;
+    }
+    do_something(l1, m1, r1);
+}
+
+int main() {
+    do_something(0, 50, 100);
+    return 1;
+}

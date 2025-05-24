@@ -1,0 +1,59 @@
+//test return 1399785944
+// add some encoded rationals together (specifically harmonic numbers)
+
+
+// encode a rational as an integer
+// first 16 bits are numerator, last 16 are denominator
+typedef int rat;
+
+bool in_range(int n) {
+  return 0 <= n && n < 0x10000;
+}
+
+int num(rat r) {
+  return (r >> 16) & 0xffff;
+}
+
+int denom(rat r) {
+  return r & 0xffff;
+}
+
+rat build(int n, int d) {
+  assert(in_range(n));
+  assert(in_range(d));
+  return (n << 16) | d;
+}
+
+int abs(int n) {
+  return n < 0 ? -n : n;
+}
+
+int gcd(int a, int b) {
+  a = abs(a); b = abs(b);
+  return b == 0 ? a : gcd(b, a % b);
+}
+
+rat rational(int n, int d) {
+  int common = gcd(n, d);
+  return build(n / common, d / common);
+}
+
+rat add(rat a, rat b) {
+  int an = num(a);
+  int ad = denom(a);
+  int bn = num(b);
+  int bd = denom(b);
+
+  // crappy addition algorithm avoiding gcd for some reason.
+  return rational(an * bd + bn * ad, ad * bd);
+}
+
+rat harmonic(int i) {
+  if (i == 1) return rational(1, 1);
+  return add(harmonic(i-1), rational(1, i));
+}
+
+int main() {
+  // H_10 + H_9 + H_8 == 21359/2520
+  return add(add(harmonic(10), harmonic(9)), harmonic(8));
+}

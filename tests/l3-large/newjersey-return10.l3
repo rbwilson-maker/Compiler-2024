@@ -1,0 +1,8 @@
+//test return 16
+int split(int n)
+{ 
+  if(n == 0)
+    return 1;
+  return split(n-1) + split(n-1);
+}
+int main(){ return split(4);}

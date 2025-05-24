@@ -1,0 +1,19 @@
+//test return 1
+//test binop unop
+
+int main() {
+  int x = 21392;
+  int y = 834913743;
+  bool z;
+  y = x&y+1923803-2222;
+  if (y!=0){
+    z = true;
+  } else {
+    z = false;
+  }
+  if (!!z){
+    return 1;
+  } else {
+    return 0;
+  }
+}

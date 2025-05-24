@@ -1,0 +1,15 @@
+//test return 246
+
+struct foo {
+  int x;
+};
+
+struct bar {
+  struct foo heh;
+};
+
+int main() {
+  struct bar* hmm = alloc(struct bar);
+  hmm->heh.x = 123;
+  return hmm->heh.x + hmm->heh.x;
+}

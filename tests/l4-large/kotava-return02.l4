@@ -1,0 +1,25 @@
+//test return 5
+//checks alias array modification
+
+typedef int cat;
+typedef cat[] cat_home;
+
+cat_home count_cats (int[] house, int num) {
+  for (int i = 0; i < num; i++) {
+    house[i] += (i + 1) * 2;
+  }
+  return house;
+}
+
+int rename(int x) {
+  return x + 1;
+}
+
+int main() {
+  cat my_cats = 10;
+  cat_home new_home = alloc_array(int, my_cats);
+  cat_home home = count_cats(new_home, my_cats);
+  new_home[0] += rename(new_home[0]);
+  assert(home == new_home);
+  return home[0];
+}

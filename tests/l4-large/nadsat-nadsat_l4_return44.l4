@@ -1,0 +1,24 @@
+//test return 1
+
+/* Passing arrays and pointers as arguments */
+
+void modify_pointer(int* p) {
+  (*p)++;
+}
+
+void modify_array(int[] arr) {
+  arr[0]++;
+}
+
+int main() {
+  int* p = alloc(int);
+  int[] arr = alloc_array(int, 3);
+
+  modify_pointer(p);
+  assert(*p == 1);
+
+  modify_array(arr);
+  assert(arr[0] == 1);
+
+  return 1;
+}

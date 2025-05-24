@@ -1,0 +1,10 @@
+//test error
+// test the non-context free parsing
+
+// typedef bool ty;
+
+int main() {
+  int *x = 3;
+  int *y = x+1;
+  return *y;
+}

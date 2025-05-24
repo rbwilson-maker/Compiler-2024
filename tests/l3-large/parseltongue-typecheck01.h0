@@ -1,0 +1,5 @@
+/* A small snippet of the time.h C library. */
+
+typedef int clock_t;
+
+clock_t clock();

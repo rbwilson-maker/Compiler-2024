@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+  int x = 13535;
+  while (x > 1) {
+    x = x >> 41;
+  }
+  return x;
+}

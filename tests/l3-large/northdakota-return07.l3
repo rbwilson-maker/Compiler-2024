@@ -1,0 +1,16 @@
+//test return 0
+
+typedef bool b;
+b check(int i);
+
+int main()
+{
+	for(int i = 0; check(i); )
+	{
+		return 0;
+	}
+	return 1;
+}
+
+typedef b d;
+d check(int j){return true;}

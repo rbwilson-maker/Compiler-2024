@@ -1,0 +1,10 @@
+//test return 6000
+
+int main() {
+    int[] a = alloc_array(int, 1);
+
+    if(true || a[0] == 1)
+        return 6000;
+
+    return -1;
+}

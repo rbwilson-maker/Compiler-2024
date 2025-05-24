@@ -1,0 +1,24 @@
+//test return 20
+
+typedef int cat;
+typedef cat[] cat_home;
+
+void check(int x) {
+  assert (x > 0 && (x % 2 == 0));
+}
+
+cat_home count_cats (int[] house, int num) {
+  for (int i = 0; i < num; i++) {
+    house[i] += (i + 1) * 2;
+    check(house[i]);
+  }
+  return house;
+}
+
+int main() {
+  cat my_cats = 10;
+  cat_home new_home = alloc_array(int, my_cats);
+  cat_home home = count_cats(new_home, my_cats);
+  assert(home == new_home);
+  return home[my_cats - 1];
+}

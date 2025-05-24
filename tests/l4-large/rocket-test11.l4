@@ -1,0 +1,16 @@
+//test memerror
+// null pointer dereference
+
+struct five {
+  bool b;
+  int i;
+  bool a;
+  bool c;
+  int j;
+};
+
+int main() {
+  struct five * five_pointer = alloc(struct five);
+  five_pointer = NULL;
+  return five_pointer->j;
+}

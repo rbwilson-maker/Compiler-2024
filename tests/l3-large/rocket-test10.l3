@@ -1,0 +1,42 @@
+//test return 0
+// not good conversions lol
+
+int convert_bool_to_int(bool b)
+{
+    if (b)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+bool convert_int_to_bool(int i)
+{
+    if (i == 1)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+int main()
+{
+    bool b = true;
+    int c = convert_bool_to_int(b) - 1;
+    bool d = convert_int_to_bool(c);
+
+    if (d)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}

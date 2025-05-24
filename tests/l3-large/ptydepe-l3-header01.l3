@@ -1,0 +1,10 @@
+//test typecheck
+// simple header test
+
+int main () {
+    int i = 10;
+    int b = square(i);
+    int c = mulByThree(i);
+
+    return 0;
+}

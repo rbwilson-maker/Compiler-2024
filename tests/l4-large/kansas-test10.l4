@@ -1,0 +1,15 @@
+//test error
+
+struct my_struct {
+	int val0;
+	int val1;
+	int val2;
+};
+
+int main() {
+	struct my_struct* my = alloc(struct my_struct);
+  my->val0 = 0;
+  my->val1 = 1;
+  my->val3 = 2;
+	return my->val0 + my->val1 + my->val2;
+}

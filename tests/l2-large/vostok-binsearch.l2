@@ -1,0 +1,21 @@
+//test return 3
+
+// we binary search for target number 4 in the range "array" [0, 20)
+
+int main() {
+    int target = 3;
+    int i = 0;
+    int j = 20;
+
+    while(i < j) {
+        int mid = (i + j) / 2;
+        if(mid == target) {
+            return mid;
+        } else if (mid < target) {
+            i = mid + 1;
+        } else {
+            j = mid;
+        }
+    }
+    return i;
+}

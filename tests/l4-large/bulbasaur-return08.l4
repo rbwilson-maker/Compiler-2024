@@ -1,0 +1,48 @@
+//test return 95
+// Sieve of Eratosthenes
+
+struct elem
+{
+  int val;
+  bool sieved;
+};
+
+typedef struct elem* elem;
+
+void sieve(elem[] nums, int i, int len)
+{
+  if (i >= len || nums[i-2]->sieved) return;
+  int c = 2;
+  while(c * i < len+2)
+  {
+    nums[c*i-2]->sieved = true;
+    c++;
+  }
+}
+
+int main()
+{
+  int len = 499;
+  elem[] nums = alloc_array(elem, len);
+  for(int i = 2; i < len+2; i++)
+  {
+    elem curr = alloc(struct elem);
+    curr->val = i;
+    curr->sieved = false;
+    nums[i-2] = curr;
+  }
+
+  for(int i = 0; i < len; i++)
+  {
+    sieve(nums, nums[i]->val, len);
+  }
+
+  int count = 0;
+  for(int i = 0; i < len; i++)
+  {
+    if(!nums[i]->sieved) count++;
+  }
+
+  return count;
+
+}

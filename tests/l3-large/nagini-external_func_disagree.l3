@@ -1,0 +1,7 @@
+//test error
+
+int f(bool a, int b);
+
+int main() {
+  return f(false, 2);
+}

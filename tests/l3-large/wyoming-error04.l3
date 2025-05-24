@@ -1,0 +1,10 @@
+//test error
+int bar(){
+	return 2;
+}
+int foo(int b){
+	return bar(());
+}
+int main(){
+	return foo(2);
+}

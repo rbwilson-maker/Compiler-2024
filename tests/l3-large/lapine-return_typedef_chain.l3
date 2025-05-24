@@ -1,0 +1,18 @@
+//test return 104
+
+typedef int phineas;
+typedef phineas ferb;
+
+phineas build(bool b);
+
+ferb build(bool b) {
+  return b ? 104 : 0;
+}
+
+typedef bool perry;
+typedef int candace;
+
+candace main() {
+  perry platypus = true;
+  return build(platypus);
+}

@@ -1,0 +1,25 @@
+//test return 1
+
+int functionA(int a) {
+  return a * 2 + 1;
+}
+
+int functionA(int b);
+
+bool functionB(int b) {
+  int x = b + 10;
+  functionA(x);
+  if (x % 5 == 0) {
+    return true;
+  }
+  return false;
+}
+
+int main() {
+  bool res = functionB(20);
+  if (res) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

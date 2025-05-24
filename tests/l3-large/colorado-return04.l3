@@ -1,0 +1,24 @@
+//test return 1
+
+typedef int I;
+typedef bool B1;
+typedef B1 B2;
+
+B2 arr(B2 b2){
+	for(I k = 0; k < 10; k ++){
+		B1 b1 = ! ( k % 3 == 0);
+		b2 = b2 && b1 || !b2;
+	}
+	return b2;
+}
+
+typedef B2 B3;
+
+int main() {
+	B2 b2 = true;
+	B3 b = arr(b2);
+	
+
+
+	return b ? 0 : 1;
+}

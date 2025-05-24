@@ -1,0 +1,17 @@
+//test memerror
+
+int main(){
+    bool[] arr = alloc_array(bool, 10);
+    int total = 0;
+    int[] iarr = alloc_array(int, 10);
+    for (int i = 0; i < 10; i++){
+        iarr[i] = i;
+    }
+    for (int i = 0; i < 10; i++){
+        total -= iarr[i];
+    }
+    if (arr[total]){
+        return total;
+    }
+    return 0;
+}

@@ -1,0 +1,42 @@
+//test return 32768
+
+// test parsing a lot of typedefs, must tell between types and vars
+
+typedef int a;
+typedef a b;
+typedef b c;
+typedef c d;
+typedef d e;
+typedef a a1;
+typedef b b1;
+typedef c c1;
+typedef d d1;
+typedef e e1;
+
+int main(){
+
+	a * aa = alloc(d);
+	* aa = 2;
+	b * bb = alloc(c);
+	* bb = * aa;
+	c * cc = alloc(b);
+	* cc = * bb;
+	d * dd = alloc(a);
+	*dd = *cc;
+	e * ee = alloc(e);
+	*ee = * dd;
+	a1 * a2 = alloc(a);
+	*a2 = 1;
+	b1 * b2 = alloc(b);
+	*b2 = * a2 * * aa;
+	c1 * c2 = alloc(c);
+	*c2 = * b2 * * bb;
+	d1 * d2 = alloc(d);
+	*d2 = * c2 * * cc;
+	e1 * e2 = alloc(e);
+	*e2 = * d2 * * dd;
+
+	return * aa * * a2 * * bb * * b2 * * cc * * c2
+	       * * dd * * d2 * * ee * * e2;
+
+}

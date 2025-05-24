@@ -1,0 +1,12 @@
+//test error
+// non-main function
+
+
+int v() {
+    int v = 5;
+    return v;
+}
+
+int main() {
+    return 0;
+}

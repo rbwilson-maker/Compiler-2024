@@ -1,0 +1,13 @@
+//test return 45
+
+int f(int start) {
+    if (start == 0) {
+        return 0;
+    } else {
+        return start + f(start - 1);
+    }
+}
+
+int main() {
+    return f(9);
+}

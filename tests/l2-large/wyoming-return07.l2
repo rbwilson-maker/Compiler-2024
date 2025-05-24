@@ -1,0 +1,38 @@
+//test return 65536
+int main(){
+int c = 0;
+for(int k1=0;k1<2;k1++){
+for(int k2=0;k2<2;k2++){
+for(int k3=0;k3<2;k3++){
+for(int k4=0;k4<2;k4++){
+for(int k5=0;k5<2;k5++){
+for(int k6=0;k6<2;k6++){
+for(int k7=0;k7<2;k7++){
+for(int k8=0;k8<2;k8++){
+for(int k9=0;k9<2;k9++){
+for(int k10=0;k10<2;k10++){
+for(int k11=0;k11<2;k11++){
+for(int k12=0;k12<2;k12++){
+for(int k13=0;k13<2;k13++){
+for(int k14=0;k14<2;k14++){
+for(int k15=0;k15<2;k15++){
+for(int k16=0;k16<2;k16++){
+c++;
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+return c;
+}

@@ -1,0 +1,14 @@
+//test error
+// Multiple function definitions
+int main() {
+    foo();
+    return 0;
+}
+
+int foo() {
+    return 0xFACEB00C;
+}
+
+int foo() {
+    return 0xDEADBEEF;
+}

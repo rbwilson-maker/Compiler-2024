@@ -1,0 +1,24 @@
+//test abort
+
+bool nightmareWorld () {
+    bool x = false;
+    x = x && true;
+    x = x && true;
+    x = x && true;
+    x = x && true;
+    x = x && true;
+    x = x || true;
+    x = x && false;
+    x = x && true;
+    x = x && true;
+    x = x && true;
+    x = x && true;
+    x = x && true;
+
+    return x;
+}
+
+int main () {
+    assert (nightmareWorld());
+    return 0;
+}

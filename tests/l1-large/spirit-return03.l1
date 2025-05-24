@@ -1,0 +1,12 @@
+//test return 0
+int main() {
+    int x;
+    int y;
+    x = 100;
+    y = x - 5;
+    x = y;
+    int z;
+    z = 1;
+    x = z;
+    return 0;
+}

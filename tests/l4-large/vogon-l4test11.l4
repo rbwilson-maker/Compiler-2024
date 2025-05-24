@@ -1,0 +1,17 @@
+//test error
+
+struct node {
+  int val;
+  struct node* left;
+  struct node* right;
+};
+
+struct node {
+  int val;
+  struct node* left;
+  struct node* right;
+};
+
+int main() { 
+  return 3;
+}

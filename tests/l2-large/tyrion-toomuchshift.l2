@@ -1,0 +1,14 @@
+//test div-by-zero
+
+// Compilers f2017: Group Tyrion Lannister
+
+int main() {
+    int myFavoriteNumber = 0xcdb;
+
+    for (int i=0; i<300; i++) {
+        myFavoriteNumber <<= (i + 3) % 17;
+        myFavoriteNumber >>= i / 2;
+    }
+
+    return myFavoriteNumber;
+}

@@ -1,0 +1,7 @@
+//test memerror
+// In e1[e2], must fully evaluate e1 before evaluating e2.
+
+int main() {
+  int[]* p = NULL;
+  return (*p)[1/0]; 
+}

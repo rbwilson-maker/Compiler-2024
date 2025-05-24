@@ -1,0 +1,12 @@
+//test error
+// structs are not small
+typedef int mane;
+
+struct main {
+    mane main;
+};
+
+mane main() {
+    struct main main = alloc(struct main);
+    return 0;
+}

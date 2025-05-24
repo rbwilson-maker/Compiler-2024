@@ -1,0 +1,14 @@
+//test error
+
+typedef int a;
+typedef int* b;
+
+b f1() {
+  return 1;
+}
+
+
+b main() {
+  int *a = f1();
+  return 1;
+}

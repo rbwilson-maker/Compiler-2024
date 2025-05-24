@@ -1,0 +1,12 @@
+//test error
+// structs in structs, oh my!
+
+struct s {
+  struct s inner;
+  int a;
+};
+
+int main() {
+  struct s* outer = alloc(struct s);
+  return outer->a;
+}

@@ -1,0 +1,14 @@
+//test error
+struct {
+  int x;
+};
+
+struct y {
+  struct x hi;
+};
+
+int main() {
+  struct x* hello = alloc(struct x);
+  struct x hello2 = (*alloc(struct y)).hi;
+  return x.x;
+}

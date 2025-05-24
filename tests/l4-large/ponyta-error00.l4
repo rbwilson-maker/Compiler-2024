@@ -1,0 +1,12 @@
+//test memerror
+
+int main() {
+    int[] a;
+    int[] b;
+    a = alloc_array(int, 42);
+    b = alloc_array(int, 42);
+    a[0] = 42;
+    a[b[a[0]]] = 9;
+
+    return a[1];
+}

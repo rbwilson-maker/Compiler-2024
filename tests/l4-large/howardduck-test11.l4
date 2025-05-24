@@ -1,0 +1,12 @@
+//test error
+
+struct A {
+    int a;
+    int b;
+    int c;
+    struct A w;
+};
+
+int main () {
+    return 0;
+}

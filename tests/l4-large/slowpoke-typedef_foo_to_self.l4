@@ -1,0 +1,18 @@
+//test return 1
+
+struct foo {
+  int a;
+  int b;
+};
+
+typedef struct foo* foo;
+
+int f(foo x) {
+  return x->a;
+}
+
+int main() {
+  foo x = alloc(struct foo);
+  x->a = 1;
+  return f(x);
+}

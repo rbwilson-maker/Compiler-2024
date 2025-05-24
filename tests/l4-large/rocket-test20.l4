@@ -1,0 +1,17 @@
+//test div-by-zero
+
+
+struct zeroone {
+    int zero;
+    int one;
+};
+
+int main()
+{
+    struct zeroone* zzz;
+    zzz = alloc(struct zeroone);
+    zzz->zero = 0;
+    zzz->one = 1;
+    return (zzz->one) / (zzz->zero);
+
+}

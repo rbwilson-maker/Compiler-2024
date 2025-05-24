@@ -1,0 +1,25 @@
+//test return 13
+
+int f(int n);
+int m(int n);
+
+// tests mututal recursion using forward declarations
+int main() {
+    return f(20);
+}
+
+int f(int n) {
+  if(n == 0) {
+    return 1;
+  } else {
+    return n - m(f(n-1));
+  }
+}
+
+int m(int n) {
+  if(n == 0) {
+    return 0;
+  } else {
+    return n - f(m(n-1));
+  }
+}

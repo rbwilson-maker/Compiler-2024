@@ -1,0 +1,71 @@
+//test return 791
+//dog simulator # 2
+
+struct dog {
+    int speed;
+    int agility;
+    int obedience;
+};
+typedef struct dog* dog;
+
+int my_max(int x, int y) {
+    if (y > x) return y;
+    else return x;
+}
+
+void frisbee(dog d, int intensity) {
+    d->speed += 10;
+    d->speed += intensity % 10;
+}
+
+void command(dog d, int time, int num_tricks) {
+    int ob = d->obedience;
+    ob = my_max(100, ob + time * num_tricks);
+    d->obedience = ob;
+}
+
+void obstacle_course(dog d) {
+    int ag = d->agility;
+    ag += 10;
+    ag += 10 * ((d->speed) / ag);
+    ag += 5 * ((d->obedience) / ag);
+    d->agility = ag;
+}
+
+int main() {
+    dog[] nintendogs = alloc_array(dog, 3);
+    dog lucky = alloc(struct dog);
+        lucky->speed = 15;
+        lucky->agility = 6;
+        lucky->obedience = 13;
+    dog daisy = alloc(struct dog);
+        daisy->speed = 25;
+        daisy->agility = 17;
+        daisy->obedience = 2;
+    dog maxwell = alloc(struct dog);
+        maxwell->speed = 10;
+        maxwell->agility = 8;
+        maxwell->obedience = 14;
+    nintendogs[0] = lucky;
+    nintendogs[1] = daisy;
+    nintendogs[2] = maxwell;
+
+    int days = 10;
+    while (days > 0) {
+        for(int i = 0; i < 3; i++)
+        {
+            dog nice_dog = nintendogs[i];
+            command(nice_dog, (11-days) * 2, 3);
+            frisbee(nice_dog, (11-days));
+            obstacle_course(nice_dog);
+        }
+        days--;
+    }
+
+    int lucky_stats = lucky->speed + lucky->agility + lucky->obedience;
+    int daisy_stats = daisy->speed + daisy->agility + daisy->obedience;
+    int maxwell_stats = maxwell->speed + maxwell->agility + maxwell->obedience;
+
+    return my_max(lucky_stats, my_max(daisy_stats, maxwell_stats));
+
+}

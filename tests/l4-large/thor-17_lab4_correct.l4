@@ -1,0 +1,13 @@
+//test error
+
+typedef int pixel;       // Library (concrete) view of a pixel
+typedef pixel pixel_t;   // Client  (abstract) view of a pixel
+
+int main()
+{
+pixel_t[] pixels = alloc_array(6, int);
+int width = 0;
+int height = 0;
+int[] mask = alloc_array(pixel_t, 7);
+int maskwidth = 0;
+return 0;}

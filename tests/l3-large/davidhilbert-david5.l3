@@ -1,0 +1,11 @@
+//test error
+
+typedef zero bool;
+typedef bool zero;
+typedef int bool;
+typedef bool int;
+
+int main() {
+    int bool = bool;
+    return bool;
+}

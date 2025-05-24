@@ -1,0 +1,22 @@
+//test return 1 
+
+bool linear_search(int[] a, int count, int e) {
+  for (int i = 0; i < count; i++) {
+    if (e == a[i]) {
+      return true;  
+    }
+  }
+  return false;
+}
+
+int main() {
+  int[] a = alloc_array(int, 100);
+  for (int i = 0; i < 100; i++) {
+    a[i] = i + 1;
+  }
+  bool b = linear_search(a, 100, 100);
+  bool c = linear_search(a, 100, 0);
+  if (b || c) return 1;
+  return 0;
+}
+

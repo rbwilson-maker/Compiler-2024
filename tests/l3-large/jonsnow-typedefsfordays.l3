@@ -1,0 +1,17 @@
+//test typecheck
+
+typedef bool b;
+typedef int t;
+
+t helper(b x){
+    if(x){
+        return 42;
+    }
+    else {
+        return 21;
+    }
+}
+
+int main(){
+    return helper(true);
+}

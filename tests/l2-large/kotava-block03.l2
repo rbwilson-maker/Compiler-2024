@@ -1,0 +1,19 @@
+//test return 6
+
+int main()
+{
+	int x = 0;
+	int y = 0;
+	int z = 0;
+	{
+		if (x < 3)
+		  y = 6;
+		else
+		  z = ~x;
+
+	}
+	if (x < 3)
+	  return y;
+	else
+	  return z;
+}

@@ -1,0 +1,23 @@
+//test return 5
+//convert boolean array to integer, bitwise
+
+int int_from_boolarray(bool[] A, int n)
+{
+  int accum = 0;
+  for(int i = n - 1; i >= 0; i--)
+  {
+    if(A[i])
+      accum = (accum * 2) + 1;
+    else
+      accum *= 2;
+  }
+  return accum;
+}
+
+int main()
+{
+  bool[] A = alloc_array(bool, 32);
+  A[0] = true;
+  A[2] = true;
+  return int_from_boolarray(A, 32);
+}

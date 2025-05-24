@@ -1,0 +1,16 @@
+//test abort
+
+int good(int i) {
+  return i * i;
+}
+
+bool check(int i) {
+  return good(i) > 0;
+}
+
+int main() {
+  for (int i = 10; i >= 0; i--) {
+    assert(check(i) ? i >= 0 : check(i));
+  }
+  return good(0);
+}

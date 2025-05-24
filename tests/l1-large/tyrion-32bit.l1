@@ -1,0 +1,18 @@
+//test return 1
+
+// Compilers f2017: Group Tyrion Lannister
+
+int main() {
+    int x = 65536;
+    int x2 = x;
+    int y = 32758;
+    int y2 = y;
+    x = x * x;
+    y = y * y;
+    x /= x2;
+    x /= x2;
+    y /= y2;
+    y /= y2;
+    int r = x + y;
+    return r;
+}

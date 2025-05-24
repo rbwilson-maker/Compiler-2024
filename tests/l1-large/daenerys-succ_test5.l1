@@ -1,0 +1,7 @@
+//test return 18
+
+int main() {
+  int x = -6;
+  x *= (3 + x);
+  return x;
+}

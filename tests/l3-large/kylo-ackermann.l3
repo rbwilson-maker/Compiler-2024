@@ -1,0 +1,36 @@
+//test return 65533
+
+int ackermann(int m, int n);
+
+int main(){
+  assert(ackermann(0, 0) == 1);
+  assert(ackermann(0, 1) == 2);
+  assert(ackermann(0, 2) == 3);
+
+  assert(ackermann(1, 0) == 2);
+  assert(ackermann(1, 1) == 3);
+  assert(ackermann(1, 2) == 4);
+
+  assert(ackermann(2, 0) == 3);
+  assert(ackermann(2, 1) == 5);
+  assert(ackermann(2, 2) == 7);
+
+  assert(ackermann(3, 0) == 5);
+  assert(ackermann(3, 1) == 13);
+  assert(ackermann(3, 2) == 29);
+  assert(ackermann(3, 3) == 61);
+  assert(ackermann(3, 4) == 125);
+
+  assert(ackermann(4, 0) == 13);
+  // assert(ackermann(4, 1) == 65533);
+
+  return 65533;
+}
+
+int ackermann(int m, int n){
+  if(m == 0)
+    return n+1;
+  if(n == 0)
+    return ackermann(m-1, 1);
+  return ackermann(m-1, ackermann(m, n-1));
+}

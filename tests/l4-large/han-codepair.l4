@@ -1,0 +1,38 @@
+//test return 1409024
+
+struct pair {
+  int x;
+  int y;
+};
+
+typedef struct pair pair;
+
+// Codes pairs very inefficiently
+int codePair(pair* p) {
+  return (2*p->x + 1) << p->y;
+}
+
+pair* decodePair(int z) {
+  int y;
+  for (y = 0; z % 2 == 0; z >>= 1) {
+    y++;
+  }
+
+  int x = (z - 1) / 2;
+
+  pair* p = alloc(pair);
+  p->x = x;
+  p->y = y;
+  return p;
+}
+
+int main() {
+  pair* p = alloc(pair);
+  p->x = 21;
+  p->y = 15;
+
+  assert(decodePair(codePair(p))->x == p->x);
+  assert(decodePair(codePair(p))->y == p->y);
+
+  return codePair(p);
+}

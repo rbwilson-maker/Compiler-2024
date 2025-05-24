@@ -1,0 +1,8 @@
+//test return -1
+// overflow
+
+int main() {
+    int x = 0xfffffff;
+    return x*x*x*x*x*x % 2;
+}
+

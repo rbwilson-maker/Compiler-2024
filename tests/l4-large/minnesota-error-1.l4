@@ -1,0 +1,12 @@
+//test error
+// Can't store large types as local variables
+
+struct a {
+  int a;
+  int b;
+};
+
+int main() {
+  struct a a;
+  return 0;
+}

@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+int main() {
+    int shifty = 1;
+
+    while (shifty > 0) {
+	shifty = shifty << shifty;
+	shifty--;
+    }
+
+    return shifty;
+}

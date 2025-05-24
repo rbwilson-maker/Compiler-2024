@@ -1,0 +1,12 @@
+//test return ~2
+// -1 is 0xFFFFFFFF
+// INT_MAX is 0x7FFFFFFF
+// INT_MIN is 0x80000000
+
+int main()
+{
+  int value1 = 0x0;
+  int value2 = 0x1;
+  int value3 = (~value1) + (value1 - 1);
+  return value3;
+}

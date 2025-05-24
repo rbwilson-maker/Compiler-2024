@@ -1,0 +1,10 @@
+//test return 10
+
+int main() {
+	for (int i = 0; i < 10 || 1 / 0 == 80085; i++) {
+		if (i == 9) {
+			return 10;
+		}
+	}
+	return 1;
+}

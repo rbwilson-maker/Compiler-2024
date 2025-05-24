@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+bool f(int* a) {
+  (*a)++;
+  return (*a) % 2 == 0;
+}
+
+int main() {
+  int* i = alloc(int);
+  *i = 1;
+  while (f(i)) f(i);
+  return *i;
+}

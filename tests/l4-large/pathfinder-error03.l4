@@ -1,0 +1,11 @@
+//test error
+
+typedef bool sometype;
+
+int *another_bad_array() {
+    return alloc_array(sometype, 10);
+}
+
+int *bad_array() {
+    return another_bad_array();
+}

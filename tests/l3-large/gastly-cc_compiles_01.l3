@@ -1,0 +1,15 @@
+//test compile
+
+int main() {
+	srand(15411);
+
+	int sum = 0;
+
+	for(int i = 0; i < 15411; i++) {
+		sum += rand();
+	}
+
+	int avg = sum/15411;
+
+	return avg;
+}

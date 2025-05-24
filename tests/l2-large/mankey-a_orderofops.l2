@@ -1,0 +1,19 @@
+//test return 6
+//did you order ops?
+int main()
+{
+  int n = 3;
+  bool b = true;
+  bool c = false;
+  int m = 4;
+  if (false && true || b && (n + m == 7 && n != 2) || false && c) {
+    if (1 + n * 2 - m / 2 > 4 && 1 + n * 2 - m / 2 < 7) {
+      if (1 + n * 2 - m / 2 > 4 && 1 + n * 2 - m / 2 < 0) {
+        return 0;
+      }
+      return 6;
+    }
+    return 0;
+  }
+  return 0;
+}

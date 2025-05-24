@@ -1,0 +1,16 @@
+//test memerror
+
+int nth(int[] arr, int idx) {
+    return arr[idx];
+}
+
+int main() {
+    int n = 10;
+
+    int[] arr = alloc_array(int, n);
+
+    for (int i = 0; i < n; i++)
+        arr[i] = i;
+
+    return nth(arr, 20);
+}

@@ -1,0 +1,11 @@
+//test error
+
+int q(int q) {
+    if (q <= 0) return q;
+    return q + q(q - 1); // Can't call a shadowed variable
+}
+
+int main() {
+    int main = 3;
+    return q(main);
+}

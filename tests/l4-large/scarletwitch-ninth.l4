@@ -1,0 +1,26 @@
+//test return 5
+
+struct list{
+    int value; 
+    struct list *next; 
+};
+
+typedef struct list ll; 
+
+int sum(struct list* list){
+    int sum = 0; 
+    while(list != NULL){
+        sum += list->value; 
+        list = list->next; 
+    }
+    return sum;
+}
+
+int main(){
+    ll *first = alloc(struct list); 
+    first->value = 2; 
+    ll *second = alloc(struct list); 
+    first->next = second; 
+    second->value = 3; 
+    return sum(first);
+}

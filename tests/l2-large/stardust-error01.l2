@@ -1,0 +1,10 @@
+//test error
+//inconsistent type
+
+int main()
+{
+	int a = 1;
+	bool b = true;
+	bool c = false
+	return (a+b) && c;
+}

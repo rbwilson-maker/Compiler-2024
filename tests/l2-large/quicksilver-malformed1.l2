@@ -1,0 +1,8 @@
+//test error
+int main() {
+    int y;
+    while (y < 1000) { 
+        y *= 2; 
+    }
+    return y;
+}

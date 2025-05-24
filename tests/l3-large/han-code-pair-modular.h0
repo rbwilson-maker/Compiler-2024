@@ -1,0 +1,9 @@
+// Codes pairs very inefficiently as (2*x + 1) << y;
+int codePair(int x, int y);
+
+// pseudo case analysis
+//
+// When z = codePair(x, y)
+//   lr == true  => x
+//   lr == false => y
+int decodePair(bool lr, int z);

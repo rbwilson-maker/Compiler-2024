@@ -1,0 +1,49 @@
+//test return 42
+struct ner;
+struct nest;
+struct nester;
+struct nestest;
+
+struct nestest {
+  int a;
+  int b;
+};
+
+struct nester {
+  bool *a;
+  bool *b;
+  struct nestest nestest;
+};
+
+struct nest {
+  bool a;
+  bool b;
+  struct nester nester;
+};
+
+struct ner {
+  int *a;
+  int *b;
+  struct nest nest;
+};
+
+struct tuple {
+	int a;
+	int b;
+  struct ner ner;
+};
+
+typedef struct tuple *container;
+
+int main() {
+  container answer = alloc(struct tuple);
+
+  answer->ner.nest.nester.nestest.a = 1;
+  answer->ner.nest.nester.nestest.b = 42;
+  answer->ner.nest.nester.a = alloc(bool);
+  *(answer->ner.nest.nester.a) = true;
+  if(*(answer->ner.nest.nester.a)){
+    return answer->ner.nest.nester.nestest.b;
+  }
+  return answer->ner.nest.nester.nestest.a;
+}

@@ -1,0 +1,14 @@
+//test return 251
+
+int main()
+{
+  string s = "The quick brown fox jumps over the lazy dog.";
+  char [] cs = string_to_chararray(s);
+  int l = string_length(s);
+  for(int i = 0; i < l; i++)
+  {
+    assert(cs[i] == string_charat(s, i));
+    assert(char_ord(cs[i]) > 0);
+  }
+  return 251;
+}

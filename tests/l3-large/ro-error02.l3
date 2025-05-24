@@ -1,0 +1,14 @@
+//test error
+// multiple functions with the same name 
+
+int main() {
+  return f() + f();
+}
+
+int f(){
+  return 2;
+}
+
+int f() {
+  return 2;
+}

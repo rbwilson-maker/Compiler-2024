@@ -1,0 +1,17 @@
+//test error
+
+int increase_dog(int dog) {
+  increase_dog = dog+1;
+  return increase_dog;
+}
+
+int main () {
+  int fluffy = 0;
+  while (fluffy < 10) {
+    fluffy = increase_dog(fluffy);
+  }
+  int increase_dog = fluffy+10;
+
+  return fluffy;
+
+}

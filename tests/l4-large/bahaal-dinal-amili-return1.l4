@@ -1,0 +1,30 @@
+//test return 0
+// Tests pointer equality
+
+typedef int t;
+
+int main() {
+    int* non_null_pointer_int = alloc(int);
+    *non_null_pointer_int = 2;
+    bool* non_null_pointer_bool = alloc(bool);
+    *non_null_pointer_bool = true;
+    int* null_pointer_int = NULL;
+    bool* null_pointer_bool = NULL;
+    t* non_null_pointer_t = alloc(int);
+
+    non_null_pointer_int == null_pointer_int;
+    non_null_pointer_bool == null_pointer_bool;
+    non_null_pointer_int == non_null_pointer_int;
+    null_pointer_int == null_pointer_int;
+    non_null_pointer_bool == non_null_pointer_bool;
+    null_pointer_bool == null_pointer_bool;
+    non_null_pointer_int == NULL;
+    NULL == non_null_pointer_int;
+    non_null_pointer_bool == NULL;
+    NULL == non_null_pointer_bool;
+    NULL == NULL;
+    non_null_pointer_t == NULL;
+    non_null_pointer_int == non_null_pointer_t;
+    null_pointer_int == non_null_pointer_t;
+    return 0;
+}

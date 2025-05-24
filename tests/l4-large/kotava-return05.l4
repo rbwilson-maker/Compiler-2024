@@ -1,0 +1,21 @@
+//test return 100
+
+struct hey {
+  int x;
+};
+typedef struct hey* hey;
+
+struct wow {
+  hey x;  
+};
+typedef struct wow wow;
+
+struct surprise {
+  bool x;
+  wow y;
+};
+typedef struct surprise surprise;
+
+int main() {
+  return alloc(surprise)->x ? (alloc(surprise)->y).x->x : 100;
+}

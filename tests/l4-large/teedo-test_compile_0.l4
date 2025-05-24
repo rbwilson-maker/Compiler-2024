@@ -1,0 +1,36 @@
+//test compile
+
+struct ListNode {
+    int val;
+    struct ListNode *next;
+};
+
+typedef struct ListNode ListNode;
+
+ListNode* removeNthFromEnd(ListNode* head, int n) {
+    ListNode *prev = NULL;
+    ListNode *rover = head;
+    int i = 0;
+
+    while(rover != NULL) {
+        if (i == n) {
+            prev = head;
+        }
+        else if (prev != NULL) {
+            prev = prev->next;
+        }
+        rover = rover->next;
+        i++;
+    }
+    if (prev == NULL) {
+        head = head->next;
+    }
+    else if (prev != NULL && prev->next != NULL) {
+        prev->next = prev->next->next;
+    }
+    return head;
+}
+
+int main() {
+    return 0;
+}

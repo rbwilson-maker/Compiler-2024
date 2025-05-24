@@ -1,0 +1,16 @@
+//test typecheck
+
+typedef int num;
+typedef num number;
+
+number sum(num x, int y);
+
+int sum(int x, int y) {
+  return x + y;
+}
+
+int main() {
+  number x = 3;
+  num y = 4;
+  return sum(x, y);
+}

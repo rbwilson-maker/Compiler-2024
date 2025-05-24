@@ -1,0 +1,13 @@
+//test return 32
+
+int main() {
+  int loops = 5;
+  int to_shift = 1;
+
+  while (loops > 0) {
+    to_shift = to_shift << 1;
+    loops--;
+  }
+
+  return to_shift;
+}

@@ -1,0 +1,18 @@
+//test error
+
+int pure (int x) {
+    return 0;
+}
+
+int bind (int x, int fun) {
+    return 0;
+}
+
+int map (int fun) {
+    return 0;
+}
+
+int join (int doubleboxed) {
+    return map (0);
+}
+

@@ -1,0 +1,10 @@
+//test error
+
+
+
+
+int main() {
+    struct x[] y = alloc_array(struct x, 1000000);
+    y[6];
+    return 0;
+}

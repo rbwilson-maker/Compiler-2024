@@ -1,0 +1,21 @@
+//test error
+// Tests that a struct cannot be accessed before its definition
+
+struct node;
+
+struct node* new_node() {
+  struct node* n = alloc(struct node);
+  n->x = 4;
+  n->y = 5;
+  return n;
+}
+
+struct node {
+  int x;
+  int y;
+}
+
+int main() {
+  struct node* n = new_node();
+  return n->y;
+}

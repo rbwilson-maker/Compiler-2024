@@ -1,0 +1,10 @@
+//test return 10
+// Basic add asop test
+int main()
+{
+  int a;
+  a = 5;
+  a += 5;
+
+  return a;
+}

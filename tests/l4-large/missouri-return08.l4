@@ -1,0 +1,25 @@
+//test return 0
+// Struct forward decleration
+
+struct mini;
+
+struct maxi
+{
+  int name;
+  struct mini* next;
+};
+
+struct mini
+{
+  int name;
+  struct maxi* next;
+};
+
+
+int main () {
+  struct maxi* x = alloc(struct maxi);
+  struct mini* y = alloc (struct mini);
+  x->next = y;
+  y->next = x;
+  return x->name;
+}

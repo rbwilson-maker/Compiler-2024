@@ -1,0 +1,19 @@
+//test return 13
+
+int main ()
+{
+  int x = 12;
+
+  if (x > 5) {
+    int y = 2;
+    x += y;
+  }
+  else{
+    x -= 6;
+  }
+
+  {
+    x--;
+  }
+  return x;
+}

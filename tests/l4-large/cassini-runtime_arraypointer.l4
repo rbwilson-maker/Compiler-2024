@@ -1,0 +1,10 @@
+//test memerror
+
+typedef int[] int_ray;
+
+int main() {
+    int_ray* rp = alloc(int_ray);
+    (*rp)[0];
+
+    return 0;
+}

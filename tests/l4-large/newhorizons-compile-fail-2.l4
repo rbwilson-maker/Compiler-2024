@@ -1,0 +1,21 @@
+//test error
+//assigning a pointer to a pointer pointer
+
+struct b {
+    bool x;
+};
+
+struct s {
+    struct b* x;
+    int a;
+};
+
+struct s* foo() {
+    struct s* temp = alloc(struct s);
+    return temp;
+}
+
+int main() {
+    struct s** a = foo();
+    return 0;
+}

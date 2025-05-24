@@ -1,0 +1,44 @@
+//test return 2
+
+//make 2 bool arrays and then and them and return the sum
+
+int sum_and_bool_arrs(bool[] b1, bool[] b2, int n) {
+    int[] ret = alloc_array(int, n);
+
+    for(int i = 0; i < n; i++) {
+        if(b1[i] && b2[i])
+            ret[i] = 1;
+        else
+            ret[i] = 0;
+    }
+
+    int count = 0;
+
+    for(int i = 0; i < n; i++) {
+        count += ret[i];
+    }
+
+    return count;
+}
+
+int main() {
+    int n = 5;
+
+    bool[] arr1 = alloc_array(bool, n);
+    bool[] arr2 = alloc_array(bool, n);
+
+    arr1[0] = true;
+    arr1[1] = false;
+    arr1[2] = true;
+    arr1[3] = false;
+    arr1[4] = true;
+
+
+    arr2[0] = false;
+    arr2[1] = true;
+    arr2[2] = true;
+    arr2[3] = false;
+    arr2[4] = true;
+
+    return sum_and_bool_arrs(arr1, arr2, n);
+}

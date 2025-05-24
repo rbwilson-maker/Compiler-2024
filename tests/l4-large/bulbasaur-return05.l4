@@ -1,0 +1,57 @@
+//test return 1
+// successful bsts interactions with some bad return style thrown in
+
+typedef struct tree_node tree;
+struct tree_node {
+  int data;
+  tree* left;
+  tree* right;
+};
+
+void insert(tree* T, int i)
+{
+  if (T == NULL) return;
+  if (i == T->data) return;
+  else if (i < T->data)
+  {
+    if (T->left == NULL)
+    {
+      tree* T2 = alloc(tree);
+      T2->data = i;
+      T->left = T2;
+      return;
+    } else {
+      insert(T->left, i);
+    }
+  } else {
+    if (T->right == NULL)
+    {
+      tree* T2 = alloc(tree);
+      T2->data = i;
+      T->right = T2;
+    } else {
+      insert(T->right, i);
+      return;
+    }
+  }
+}
+
+bool find(tree* T, int i)
+{
+  if (T == NULL) return false;
+  if (i == T->data) return true;
+  else if (i < T->data) return find(T->left, i);
+  else return find(T->right, i);
+}
+
+int main()
+{
+  tree* T = alloc(tree);
+  insert(T,1);
+  insert(T,2);
+  insert(T,3);
+  insert(T,4);
+  if (find(T,2)) return 1;
+  return 0;
+}
+

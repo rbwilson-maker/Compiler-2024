@@ -1,0 +1,10 @@
+//test div-by-zero
+
+// tests division by zero, where the code should compile
+// but raise SIGFPE when run.
+
+int main() {
+    int x = 3;
+    int y = 0;
+    return x/y;
+}

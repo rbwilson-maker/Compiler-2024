@@ -1,0 +1,7 @@
+//test memerror
+// left->right
+int main() {
+  int[] A = alloc_array(int, 1);
+  A[-1] = 1/0;
+  return 0;
+}

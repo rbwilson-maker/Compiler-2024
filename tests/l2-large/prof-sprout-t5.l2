@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+  int j = 0;
+  for(int i = 0; i < 7; i++) {
+    int q = 6;
+    j += q;
+  }
+  j += q;
+  return j;
+}

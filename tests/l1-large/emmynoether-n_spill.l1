@@ -1,0 +1,23 @@
+//test return 16
+
+int main() {
+    int x00 = 0;
+    int x01 = x00 + 1;
+    int x02 = x01 + 1;
+    int x03 = x02 + 1;
+    int x04 = x03 + 1;
+    int x05 = x04 + 1;
+    int x06 = x05 + 1;
+    int x07 = x06 + 1;
+    int x08 = x07 + 1;
+    int x09 = x08 + 1;
+    int x10 = x09 + 1;
+    int x11 = x10 + 1;
+    int x12 = x11 + 1;
+    int x13 = x12 + 1;
+    int x14 = x13 + 1;
+    int x15 = x14 + 1;
+    int x16 = x15 + 1;
+
+    return x16;
+}

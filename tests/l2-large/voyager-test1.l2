@@ -1,0 +1,17 @@
+//test error
+// no variable shadowing allowed
+
+int main()
+{
+  int x = 1;
+  int y = 10;
+
+  if (y >= 0) 
+  {
+      int x = 1000; // name conflict
+      y += x;
+  }
+
+  int z = x + y;
+  return z;
+}

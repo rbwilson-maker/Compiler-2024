@@ -1,0 +1,11 @@
+//test return 0
+
+int[] hehe() {
+  int[] x = alloc_array(int, 0);
+  return x;
+}
+
+int main() {
+  int[] x = hehe();
+  return 0;
+}

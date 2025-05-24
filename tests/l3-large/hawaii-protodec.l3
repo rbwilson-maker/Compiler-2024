@@ -1,0 +1,9 @@
+//test error
+
+int main()
+{
+  int cat();
+  cat = 1;
+  cat++;
+  return cat;
+}

@@ -1,0 +1,15 @@
+//test return 3
+//a simple program
+
+int main () {
+  int q;
+  int r;
+  int t;
+  int x1 = 23;
+  int x2 = 10;
+  q = x1 / x2;
+  t = q * x2;
+  r = x1 - t;
+  x1 = 3;
+  return r;
+}

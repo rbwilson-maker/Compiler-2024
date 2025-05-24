@@ -1,0 +1,14 @@
+//test div-by-zero
+// division error due to overflow
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+
+  a = -2147483648;
+  a = a % -1;
+  return a;
+}	

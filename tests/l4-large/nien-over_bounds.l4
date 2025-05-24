@@ -1,0 +1,19 @@
+//test memerror
+
+/* C0 is a memory-safe language, and should raise an error
+   when array accesses are out of bounds */
+
+void traverse_array(int [] array) {
+     int default_traversal = 10;
+     int sum = 0;
+     for (int i = 0; i < default_traversal; i++) {
+        sum += array[i];
+     }
+     assert(sum > 0);
+}
+
+int main() {
+    int [] array = alloc_array(int, 8);
+    traverse_array(array);
+    return 0;
+}

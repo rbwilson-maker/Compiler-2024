@@ -1,0 +1,11 @@
+//test error
+
+// Step statement in a for loop must not be a declaration
+
+int main () {
+    int b = 2;
+    for (int a = 0; a < 2; int a = 2) {
+        b++;
+    }
+    return b;
+}

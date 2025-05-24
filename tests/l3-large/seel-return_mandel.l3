@@ -1,0 +1,103 @@
+//test return 122
+// Computes the Mandelbrot set using fixed-point signed 4.27 numbers.
+// Specifically, checks a grid in the -2-i to 1+i rectangle with a step of
+// 1/16th in each dimension, and counts the number of these points in the set.
+// Each point is tested to 16 iterations (which is very coarse).
+
+typedef int fixed;
+
+fixed fixed_mult(fixed a, fixed b) {
+
+  // Remember and remove sign of each
+  bool result_neg = (a >> 31) != (b >> 31);
+  if (a < 0) a = -a;
+  if (b < 0) b = -b;
+
+  // Separate each into 16-bit components
+  int aH = a >> 16 & 0xFFFF;
+  int aL = a       & 0xFFFF;
+  int bH = b >> 16 & 0xFFFF;
+  int bL = b       & 0xFFFF;
+
+  // Calculate the products of each pair
+  int aLbL = aL * bL;
+  int aHbL = aH * bL;
+  int aLbH = aL * bH;
+  int aHbH = aH * bH;
+
+  // Apply appropriate shifts, removing sign extension
+  aLbL = aLbL >> 27 & 0x0000001F;
+  aHbL = aHbL >> 11 & 0x001FFFFF;
+  aLbH = aLbH >> 11 & 0x001FFFFF;
+  aHbH = aHbH << 5;
+
+  // Finally, combine
+  int c = aLbL + aHbL + aLbH + aHbH;
+
+  // Check sign
+  if (result_neg) {
+    c = -c;
+  }
+
+  return c;
+}
+
+fixed from_int(int n) {
+  return n << 27;
+}
+
+bool is_in_mandelbrot(fixed c_r, fixed c_i) {
+  fixed z_r = c_r;
+  fixed z_i = c_i;
+
+  for (int i = 0; i < 16; i++) {
+
+    // z *= z
+    fixed temp = z_r;
+    z_r = fixed_mult(z_r, z_r) - fixed_mult(z_i, z_i);
+    z_i = fixed_mult(from_int(2), fixed_mult(temp, z_i));
+
+    // z += c
+    z_r += c_r;
+    z_i += c_i;
+
+    // Range check z
+    fixed sq_magn = fixed_mult(z_r, z_r) + fixed_mult(z_i, z_i);
+    if (sq_magn > from_int(4)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+int main() {
+  // A unit-test for fixed-point arithmetic. Not that it matters if it's 100%
+  // correct
+  int fx_5_125 = 0x29000000;
+  int fx_1_0078125 = 0x08100000;
+  int fx_5_1650390625 = 0x29520000;
+  assert(fx_5_1650390625 == fixed_mult(fx_5_125, fx_1_0078125));
+  int fx_m1_0078125 = 0xF7F00000;
+  int fx_m5_1650390625 = 0xD6AE0000;
+  assert(fx_m5_1650390625 == fixed_mult(fx_5_125, fx_m1_0078125));
+
+  // There are 17*25 total points, and out of those... I have no idea how many
+  // are in the Mandelbrot set. Especially a super-coarse 16 iteration
+  // Mandelbrot set.
+  int point_count = 0;
+
+  fixed xmax = from_int(1);
+  fixed ymin = from_int(-1);
+  fixed ymax = from_int(1);
+  fixed step = from_int(1)/8;
+  for (fixed x = from_int(-2); x <= xmax; x += step) {
+    for (fixed y = ymin; y <= ymax; y += step) {
+      if (is_in_mandelbrot(x, y)) {
+        point_count++;
+      }
+    }
+  }
+
+  return point_count;
+}

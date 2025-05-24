@@ -1,0 +1,19 @@
+//test return 5
+
+int main()
+{
+	int ret = 0xffffffff;
+    ret -= 1;
+	{
+		int x = 1;
+		x++;
+		ret += x;
+	}
+	{
+		int x = 0X5;
+        ret -= 2;
+		ret += x;
+        ret += 2;
+	}
+	return ret;
+}

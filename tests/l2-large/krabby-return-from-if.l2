@@ -1,0 +1,11 @@
+//test return 11
+
+int main() {
+    int x = 5;
+    int y = 6;
+    if (x < 8 && y != 17) {
+       return 11;
+    } else {
+       return 12;
+    }
+}

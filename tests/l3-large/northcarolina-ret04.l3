@@ -1,0 +1,18 @@
+//test return 0
+// Tests typedef
+
+typedef bool b;
+typedef int i;
+
+i main() {
+	i x;
+	b y;
+	x = 1;
+	y = (x == 1);
+	if (y) {
+		return 0;
+	}
+	else {
+		return 1;
+	}
+}

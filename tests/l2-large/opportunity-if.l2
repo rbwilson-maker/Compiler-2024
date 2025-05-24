@@ -1,0 +1,8 @@
+//test return 6 
+int main(){
+
+  if(false && 80/0==1)
+    return 40;
+  else
+    return 6;
+}

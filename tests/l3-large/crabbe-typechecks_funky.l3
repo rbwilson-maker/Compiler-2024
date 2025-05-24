@@ -1,0 +1,18 @@
+//test typecheck
+
+int main(){
+
+  bool b = true;
+  bool c = boolfunc(b, false);
+  int n;
+  if (c)
+  {
+    n = intfunc(c, 3);
+  }
+  else
+  {
+    n = intfunc(false, 7);
+  }
+  voidfunc(n);
+  return n;
+}

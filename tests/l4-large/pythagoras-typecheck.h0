@@ -1,0 +1,6 @@
+typedef struct ValueArray_t valArr;
+struct ValueArray_t{
+    int id;
+    int[] vals;
+    int size;
+};

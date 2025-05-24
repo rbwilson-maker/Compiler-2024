@@ -1,0 +1,13 @@
+//test error
+
+int main() {
+  int x = 5;
+  int y = 4;
+  int z = x;
+
+  // Test with constants and variables
+  int y = 3;
+  int y = z;
+
+  return 0;
+}

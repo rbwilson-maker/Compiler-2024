@@ -1,0 +1,10 @@
+//test error
+// missing comma args
+
+int something(int y int x) {
+  return x + y;
+}
+
+int main() {
+  return something(5,3);
+}

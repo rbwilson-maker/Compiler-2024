@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+  int x = 444;
+  int y = 0; 
+
+  while (x > 400) {
+    x -= 1;
+  }
+  
+  return x/ (y * y);
+}

@@ -1,0 +1,21 @@
+//test error
+//nested struct undefined
+
+struct du;
+
+typedef struct du hast;
+
+struct mech
+{
+    int hmm;
+    hast h;
+    struct du d;
+};
+
+typedef struct mech duhastmech;
+
+int main()
+{
+    duhastmech* h = alloc(duhastmech);
+    return 0;
+}

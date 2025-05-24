@@ -1,0 +1,10 @@
+//test div-by-zero
+int main()
+{
+    int i = 10;
+    while(10 / i != 0)
+    {
+        i--;
+    }
+    return 0;
+}

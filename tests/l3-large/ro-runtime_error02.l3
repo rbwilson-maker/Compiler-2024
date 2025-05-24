@@ -1,0 +1,18 @@
+//test div-by-zero
+// Test div overflow
+
+int negate(int val) {
+  return val / -1;
+}
+
+int main() {
+  int sum = 0;
+  // int max 2147483647
+  int i = 2147483647; 
+  while (negate(i) <= 0) {
+    sum += i;
+    i++;
+  }
+
+  return sum;
+}

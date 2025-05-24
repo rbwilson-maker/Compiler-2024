@@ -1,0 +1,9 @@
+//test error
+// Just added a few more data types. Trust me...
+
+int main() {
+    uint16_t x = new_uint(16);
+    uint16_t y = random_uint();
+
+    return uint_to_int(x) + uint_to_int(y);
+}

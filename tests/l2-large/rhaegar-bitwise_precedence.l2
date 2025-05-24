@@ -1,0 +1,9 @@
+//test typecheck
+//test infloop
+
+int main() {
+	int result = 0;
+	while ((1 | 0 & 0) == 1)
+		result++;
+	return result;
+}

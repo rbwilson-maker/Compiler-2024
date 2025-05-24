@@ -1,0 +1,23 @@
+//test return 319
+
+bool is_cool(int[] A, int i) {
+  A[i]++;
+  return A[0] < 12;
+}
+
+void double(int[] A, int n) {
+  for (int i = 0; i < n; i++)
+    A[i] *= 2;
+}
+
+int main() {
+  int n = 18;
+  int[] A = alloc_array(int, n);
+
+  for (int i = 0; i < n; i++)
+    A[i] = i + 1;
+
+  for (int i = 0; is_cool(A, n - 1); double(A, n)) {}
+
+  return A[n - 1];
+}

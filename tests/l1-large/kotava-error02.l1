@@ -1,0 +1,15 @@
+//test error
+// test negative mods
+int main () {
+	int x;
+	int y;
+
+	x = 10;
+	y = 3;
+
+	t1 = -x % y; // -3
+	t2 = x % -y; // -3
+	t3 = -x % -y; // 3
+
+	return t1 * -1 + t2 * -1 + t3;
+}

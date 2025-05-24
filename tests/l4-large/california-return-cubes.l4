@@ -1,0 +1,21 @@
+//test return 0
+
+int[] cubes (int n)
+{
+    int[] A = alloc_array(int, n); // \length(A) == n
+    int x = 0;
+    while (x < n)
+        //@loop_invariant 0 <= x && x <= n;
+    {
+        A[x] = x*x*x;
+        x = x+1;
+    }
+    //@assert x == n;
+    return A;
+}
+
+int main () {
+    int[] B = cubes(10);
+    assert(B[9] == 9*9*9);
+    return 0;
+}

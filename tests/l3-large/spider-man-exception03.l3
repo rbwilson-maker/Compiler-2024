@@ -1,0 +1,23 @@
+//test div-by-zero
+
+typedef fpt f;
+typedef int i;
+
+f ff(f fff, f ffff) {
+    i ifff = ftoi(fff);
+    i iffff = ftoi(ffff);
+    assert (ifff <= iffff);
+    assert (fless(fff, ffff));
+    return (ifff >> iffff) * (ifff + (iffff / (ifff - iffff)));
+}
+
+int main() {
+    int ii = 1;
+    int j = 50000;
+    int main = 1;
+    while (true) {
+        main *= ftoi(ff(ii, j));
+        ii += 1;
+    }
+    return 5;
+}

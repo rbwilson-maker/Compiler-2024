@@ -1,0 +1,13 @@
+//test error
+
+typedef int iti(int x);
+
+int ret4(int x)
+{
+  return 4;
+}
+
+int main()
+{
+  return ret4 4;
+}

@@ -1,0 +1,17 @@
+//test return 1011
+// test variable scope
+
+int main()
+{
+  int y = 10;
+
+  if (y >= 0) 
+  {
+      int x = 1000;
+      y += x;
+  }
+
+  int x = 1; // allowed since inner block x is out-of-scope here
+  int z = x + y;
+  return z;
+}

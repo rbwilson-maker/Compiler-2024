@@ -1,0 +1,16 @@
+//test return 500
+
+int self2(int x, int y) {
+  if (y == 0)
+    return x;
+  
+  return self2(x, y - 1);
+}
+
+int self1(int x, int y) {
+  return self2(x, y);
+}
+
+int main() {
+  return self1(500, 5);
+}

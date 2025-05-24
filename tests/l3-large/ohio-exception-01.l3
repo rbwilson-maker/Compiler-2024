@@ -1,0 +1,11 @@
+//test div-by-zero
+
+void test() {
+  int test = 1;
+  test/0;
+}
+
+int main() {
+  test();
+  return 0;
+}

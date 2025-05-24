@@ -1,0 +1,10 @@
+//test error
+//
+//function definition mismatch
+
+int check(int x, int y);
+bool check(int x, int y);
+
+int check(int x, int y) { return x * y == x + y; }
+
+int main() { return check(2, 6); }

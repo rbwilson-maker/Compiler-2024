@@ -1,0 +1,15 @@
+//test return 701
+
+int main() {
+
+    int p5 = 13;
+    int p0 = 2;
+    int p1 = 3;
+    int p2 = 5;
+    int p3 = 7;
+    int p4 = 11;
+    int joey_birthday = p1 * p1 * p2 * p2 * p0 * p0 + p5; // 913
+    int konwoo_birthday = p4 * p4 + p0 * p2 * p0 * p2 - p1 * p1; // 212
+
+    return joey_birthday - konwoo_birthday;
+}

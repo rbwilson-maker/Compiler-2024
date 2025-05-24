@@ -1,0 +1,15 @@
+//test return 5
+
+// check that local redefinition of pointer variable is just aliased
+
+void foo(int *arr) {
+    arr = alloc(int);
+    *arr = 42;
+}
+
+int main() {
+    int *arr = alloc(int);
+    *arr = 5;
+    foo(arr);
+    return *arr;
+}

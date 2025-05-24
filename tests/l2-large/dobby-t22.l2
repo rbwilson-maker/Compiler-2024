@@ -1,0 +1,15 @@
+//test return 1
+int main() {
+  bool isEven;
+  int k = 2;
+  if (k % 2 == 0) {
+    isEven = true;
+  } else {
+    isEven = false;
+  }
+  if (isEven) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

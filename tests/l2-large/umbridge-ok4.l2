@@ -1,0 +1,25 @@
+//test return 16
+
+// operator precedence test
+
+int main() {
+    int x = -1;
+    // the minus sign is kept when right shift
+    x >>= 31;   // x = -1
+
+    int y = x;
+
+    x++;
+    y += x;
+    x++;
+    y += x;
+    x++;
+    y += x;
+
+    bool z = x << 0 >= 0 && x == y; // z = true
+
+    if (z)
+        return x << 3;
+    else
+        return x + y;
+}

@@ -1,0 +1,27 @@
+//test return 9
+//This program calculates e to various precisions
+
+fpt calcE(int n);
+fpt getExp(fpt base, int pow);
+
+int main() {
+  fpt testE = calcE(2);
+  fpt resultFPoint = fmul(testE, itof(4));
+  int result = ftoi(resultFPoint);
+  return result;
+}
+
+fpt calcE(int n) {
+
+  fpt fraction = fdiv(itof(1), itof(n));
+  fpt result = fadd(itof(1), fraction);
+  result = getExp(result, n);
+  return result;
+}
+
+fpt getExp(fpt base, int pow) {
+  for (int i = 1; i < pow; i++) {
+    base = fmul(base, base);
+  }
+  return base;
+}

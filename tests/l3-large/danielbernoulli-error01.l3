@@ -1,0 +1,14 @@
+//test abort 
+// assert statement fails 
+
+bool f(int x, int y, int z) {
+    return x+y == z;
+}
+
+int main() {
+    int x = 0;
+    int y = 2; 
+    int z = 3;
+    assert(f(x,y,z));
+    return 0; 
+}

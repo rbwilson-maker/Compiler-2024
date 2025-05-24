@@ -1,0 +1,13 @@
+//test memerror
+// null pointer dereference
+
+struct fun {
+  bool b;
+  int i;
+};
+
+int main() {
+  struct fun * more_fun = alloc(struct fun);
+  more_fun = NULL;
+  return more_fun->i;
+}

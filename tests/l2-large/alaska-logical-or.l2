@@ -1,0 +1,6 @@
+//test return 0 
+int main() {
+  bool a = false;
+  bool b = false;
+  return a || b ? 1 : 0;
+}

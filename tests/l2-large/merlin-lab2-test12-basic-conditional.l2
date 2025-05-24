@@ -1,0 +1,9 @@
+//test return 3
+
+// test that basic conditional would work
+
+int main()
+{
+    int res = true ? 3 : 2;
+    return res;
+}

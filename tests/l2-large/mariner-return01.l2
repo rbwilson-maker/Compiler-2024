@@ -1,0 +1,10 @@
+//test return 12
+
+int main() {
+    int x = 5;
+    int y = x > 5 ? 2 : 16;
+    while (y > 12) {
+        y--;
+    }
+    return y;
+}

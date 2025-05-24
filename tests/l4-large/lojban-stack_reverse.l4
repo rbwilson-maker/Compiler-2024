@@ -1,0 +1,59 @@
+//test return 1
+
+typedef struct list_node list;
+struct list_node {
+  int data;
+  list* next;
+};
+
+typedef struct stack_header stack;
+struct stack_header {
+  list* top;
+  list* floor;
+};
+
+int pop(stack* S)
+{
+  int x = S->top->data;
+  S->top = S->top->next;
+  return x;
+}
+
+void push(stack* S, int x)
+{
+  list* p = alloc(list);  // Allocate a new top node
+  p->data = x;
+  p->next = S->top;
+  S->top = p;
+}
+
+typedef stack* stack_t;
+
+stack_t stack_new() {
+   return alloc(stack);
+}
+
+bool stack_empty(stack_t S) {
+   return S->top == S->floor;
+}
+
+stack_t stack_reverse(stack_t S)
+{
+   stack_t RES = stack_new();
+   stack_t TMP = stack_new();
+   while (!stack_empty(S)) {
+      int x = pop(S);
+      push(TMP, x);
+      push(RES, x);
+   }
+   while (!stack_empty(TMP)) push(S, pop(TMP));
+   return RES;
+}
+
+int main() {
+   stack_t S = stack_new();
+   push(S, 1);
+   push(S, 2);
+   push(S, 3);
+   return pop(stack_reverse(S));
+}

@@ -1,0 +1,59 @@
+//test typecheck
+//test infloop
+
+//Klaus says all i need are register machines, but I'm too lazy
+// to put register machines in my register machines
+
+struct com {
+  bool useless; // Padding to make it seem bigger than it actually is
+  int type; // (0 -> ret, 1 -> inc, 2 -> dec/jump)
+  int reg;
+  int next;
+  int jump;
+};
+
+typedef struct com* command;
+
+void run_command(int line, command[] commands, int[] registers) {
+  command c = commands[line];
+  if (c->type == 0) { return; }
+  if (c->type == 1) { 
+    registers[c->reg]++;
+    run_command(c->next, commands, registers);
+    return;
+  }
+  if (c->type == 2) { 
+    if (registers[c->reg] <= 0) {
+      run_command(c->jump, commands, registers);
+      return;
+    }
+    registers[c->reg]--;
+    run_command(c->next, commands, registers);
+    return;
+  }
+}
+
+command gen_com(int type, int reg, int next, int jump) {
+  command d = alloc(struct com);
+  d->type = type;
+  d->reg = reg;
+  d->next = next;
+  d->jump = jump;
+  return d;
+}
+
+command[] init_commands() {
+  command[] commands = alloc_array(command, 9);
+  commands[0] = gen_com(1, 0, 1, 0);
+  commands[1] = gen_com(1, 0, 0, 1);
+  return commands;
+}
+
+int main() {
+  command[] commands = init_commands();
+  int[] registers = alloc_array(int, 3);
+  registers[0] = 1337;
+  run_command(0, commands, registers);
+  return registers[2];
+}
+

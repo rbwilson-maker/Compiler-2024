@@ -1,0 +1,31 @@
+//test return 0
+
+typedef int a; // int
+typedef a b; // int
+typedef b c; // int
+typedef bool d; // bool
+typedef bool e; // bool
+typedef d f; // bool
+typedef e g; // bool
+typedef c h; // int
+typedef b i; // int
+typedef g j; // bool
+typedef h k; // int
+typedef g l; // bool
+typedef l m; // bool
+typedef e n; // bool
+typedef i o; // int
+typedef o p; // int
+typedef h q; // int
+typedef j r; // bool
+typedef c s; // int
+
+k main() {
+  i A = 3;
+  q B = 5;
+  m C = A == B;
+  n D = !C;
+  s E = (D ? 2 : B);
+  l F = D && B == 5;
+  return (F ? 0 : E);
+}

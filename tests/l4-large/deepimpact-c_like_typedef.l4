@@ -1,0 +1,12 @@
+//test error
+
+typedef int foo;
+
+typedef struct node {
+    int data;    
+} node_t;
+
+int main() {
+    node_t *n = alloc(node_t);
+    return 0;
+}

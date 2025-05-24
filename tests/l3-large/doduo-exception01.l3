@@ -1,0 +1,15 @@
+//test div-by-zero
+int shift(int a, int b) {
+	return a << b;
+}
+
+int main() {
+	int c = 0;
+	for(int i = 0; i < 10; i++) {
+		for(int j = 0; i < 33; j++) {
+			c += shift(i, j);
+		}
+	}
+	return c;
+}	
+

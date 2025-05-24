@@ -1,0 +1,14 @@
+//test error
+//A prompt B is like set difference if you view propositions as sets.
+// it's dual to A -> B
+bool prompt(bool A, bool B) = ~A ^ B
+
+int main() {
+bool x = prompt (true, false);
+int prompt = 6;
+bool y = prompt(false, true);
+return 0;
+}
+
+
+

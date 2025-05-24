@@ -1,0 +1,15 @@
+//test return 21
+
+int main() {
+  int x = (52 + (90 - 21)/21 % 55) * 2;
+  if (x % 3 == 0) {
+    return 0;
+  } else {
+    while (x < 0) {
+      bool potato = x < 1;
+      for ( ; false; ) {
+      }
+    }
+  }
+  return 21;
+}

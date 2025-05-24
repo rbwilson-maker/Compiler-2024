@@ -1,0 +1,21 @@
+//test return -1
+
+int main()
+{
+    int x = 1010101;
+    int y = x ^ x;
+    bool boolean = x > y;
+
+    // for loop
+    for (;boolean;)
+        boolean = false;
+
+    return boolean?(y):(y-1);
+}
+
+
+
+
+
+
+

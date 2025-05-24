@@ -1,0 +1,11 @@
+//test error
+// undefined ident
+int main()
+{
+  int a;
+
+  while (false) 
+    a = 1;
+
+  return a;
+}

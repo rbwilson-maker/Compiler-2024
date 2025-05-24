@@ -1,0 +1,9 @@
+//test return -1
+
+int foo(int a, bool b) {
+    return -1;
+}
+
+int main() {
+    return foo(1, false || true);
+}

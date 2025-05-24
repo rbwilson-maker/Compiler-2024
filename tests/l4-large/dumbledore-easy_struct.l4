@@ -1,0 +1,32 @@
+//test return 12;
+
+struct person {
+  int id;
+  int name;
+  int age;
+};
+
+typedef struct person* person;
+
+struct thing {
+  int name;
+  int id;
+  bool age;
+};
+
+int main() {
+  struct person * p = alloc (struct person);
+  struct thing * t = alloc (struct thing);
+  
+  assert (p->id == 0); // check initialized to 0
+
+  p->id = 1;
+  p->name = 12;
+  p->age = 10222;
+  
+  t->name = 1;
+  t->id = 12;
+  t->age = false;
+
+  return t->id;
+}

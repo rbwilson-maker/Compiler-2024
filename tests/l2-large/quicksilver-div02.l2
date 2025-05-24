@@ -1,0 +1,10 @@
+//test div-by-zero
+int main() {
+    bool c = true;
+    int d = 3;
+    int f = 0;
+    if (c) {
+        return d/f;
+    }
+    return f/d;
+}

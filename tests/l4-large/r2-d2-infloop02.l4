@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+
+int main()
+{
+	int count = 0;
+	int[] a = alloc_array(int, 100);
+	while (a[0] != 1) {
+		count++;
+	}
+	return count;
+}

@@ -1,0 +1,8 @@
+//test typecheck
+
+int main() {
+  struct List* thing = alloc(struct List);
+  list l = alloc(struct List);
+  struct thing *a;
+  return 0;
+}

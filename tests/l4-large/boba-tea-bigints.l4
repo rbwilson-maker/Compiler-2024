@@ -1,0 +1,132 @@
+//test return 1729143587
+// Uses a naive big-int representation and tries some addition.
+
+// Little-endian
+struct bignat {
+  int len;
+  int used;
+  int[] segs;
+} ;
+
+typedef struct bignat bignat;
+
+bignat* add(bignat* x, bignat* y)
+{
+  bignat* z = alloc(bignat);
+  int max_used_possible = x->used > y->used ? x->used + 1 : y->used + 1;
+  z->len = max_used_possible;
+  z->segs = alloc_array(int, max_used_possible);
+
+  bignat* xa;
+  bignat* ya;
+  // Want xa's to be smaller.
+  if (x->used > y->used)
+  {
+    xa = y;
+    ya = x;
+  }
+  else
+  {
+    xa = x;
+    ya = y;
+  }
+
+  int i = 0;
+  bool carry = false;
+  for(; i < xa->used; i++)
+  {
+    int res = xa->segs[i] + ya->segs[i] + (carry ? 1 : 0);
+    if (res < 0)
+    {
+      res &= 0x7fffffff;
+      carry = true;
+    }
+    else
+      carry = false;
+    z->segs[i] = res;
+  }
+  for(; i < ya->used; i++)
+  {
+    int res = ya->segs[i] + (carry ? 1 : 0);
+    if (res < 0)
+    {
+      res &= 0x7fffffff;
+      carry = true;
+    }
+    else
+      carry = false;
+    z->segs[i] = res;
+  }
+  if (carry)
+  {
+    z->segs[i] = 1;
+    z->used = i + 1;
+  }
+  else
+    z->used = i;
+  return z;
+}
+
+int test1()
+{
+  int[] x_segs = alloc_array(int, 4);
+  int[] y_segs = alloc_array(int, 4);
+  x_segs[0] = 257356937;
+  x_segs[1] = 187153221;
+  x_segs[2] = 574484307;
+  x_segs[3] = 368749056;
+  y_segs[0] = 455484282;
+  y_segs[1] = 844498502;
+  y_segs[2] = 959206562;
+  y_segs[3] = 360681310;
+
+  bignat* x = alloc(bignat);
+  bignat* y = alloc(bignat);
+  x->segs = x_segs;
+  x->len = 4;
+  x->used = 4;
+  y->segs = y_segs;
+  y->len = 4;
+  y->used = 4;
+
+  bignat* z = add(x, y);
+  int acc = 0;
+  for (int i = 0; i < z->used; i++)
+    acc ^= z->segs[i];
+
+  return acc;
+}
+
+
+int test2()
+{
+  int[] x_segs = alloc_array(int, 4);
+  int[] y_segs = alloc_array(int, 4);
+  x_segs[0] = 1;
+  y_segs[0] = 0x7fffffff;
+  y_segs[1] = 0x7fffffff;
+  y_segs[2] = 0x7fffffff;
+  y_segs[3] = 0x7fffffff;
+
+  bignat* x = alloc(bignat);
+  bignat* y = alloc(bignat);
+  x->segs = x_segs;
+  x->len = 4;
+  x->used = 1;
+  y->segs = y_segs;
+  y->len = 4;
+  y->used = 4;
+
+  bignat* z = add(x, y);
+  int acc = 0;
+  for (int i = 0; i < z->used; i++)
+    acc ^= z->segs[i];
+
+  return acc;
+}
+
+int main()
+{
+  assert(test2() == 1);
+  return test1();
+}

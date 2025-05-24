@@ -1,0 +1,15 @@
+//test div-by-zero
+
+typedef int zero;
+typedef int one;
+
+void divide(one a, zero b) {
+  int c = a / b; 
+}
+
+int main() {
+  one a = 1;
+  zero b = 0;
+  divide(a, b);
+  return 1;
+}

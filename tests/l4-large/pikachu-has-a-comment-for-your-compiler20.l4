@@ -1,0 +1,12 @@
+//test return 84
+
+int main()
+{
+  int* a = alloc(int);
+  *a = 42;
+
+  int y = 84;
+  int x = (y /*a );
+  int** z = alloc(int*/);
+  return x;
+}

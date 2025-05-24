@@ -1,0 +1,18 @@
+//test return 32
+// f[0] = 1, f[even] = 2 * f[even-1], f[odd] = 3 * f[odd-1] + 2
+
+int f(int n) {
+    if (n == 0) {
+       return 1;
+    }
+
+    if (n % 2 == 0) {
+      return 2 * f(n-1);
+    } else {
+      return 3 * f(n-1) + 2;
+    }
+}
+
+int main() {
+    return f(3);
+}

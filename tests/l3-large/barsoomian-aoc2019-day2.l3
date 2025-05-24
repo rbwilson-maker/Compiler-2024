@@ -1,0 +1,515 @@
+//test return 2842648
+
+/**
+ * @brief This program solves Day 2, Star 1 of Advent of Code 2019.
+ *
+ * Writeup: https://adventofcode.com/2019/day/2
+ *
+ * Kevin Geng, Team Barsoomian
+ * 15-411 Fall 2019
+ */
+
+int main() {
+    /* Array state */
+    int array0 = 1;
+    int array1 = 12;
+    int array2 = 2;
+    int array3 = 3;
+    int array4 = 1;
+    int array5 = 1;
+    int array6 = 2;
+    int array7 = 3;
+    int array8 = 1;
+    int array9 = 3;
+    int array10 = 4;
+    int array11 = 3;
+    int array12 = 1;
+    int array13 = 5;
+    int array14 = 0;
+    int array15 = 3;
+    int array16 = 2;
+    int array17 = 10;
+    int array18 = 1;
+    int array19 = 19;
+    int array20 = 1;
+    int array21 = 19;
+    int array22 = 6;
+    int array23 = 23;
+    int array24 = 2;
+    int array25 = 13;
+    int array26 = 23;
+    int array27 = 27;
+    int array28 = 1;
+    int array29 = 27;
+    int array30 = 13;
+    int array31 = 31;
+    int array32 = 1;
+    int array33 = 9;
+    int array34 = 31;
+    int array35 = 35;
+    int array36 = 1;
+    int array37 = 35;
+    int array38 = 9;
+    int array39 = 39;
+    int array40 = 1;
+    int array41 = 39;
+    int array42 = 5;
+    int array43 = 43;
+    int array44 = 2;
+    int array45 = 6;
+    int array46 = 43;
+    int array47 = 47;
+    int array48 = 1;
+    int array49 = 47;
+    int array50 = 6;
+    int array51 = 51;
+    int array52 = 2;
+    int array53 = 51;
+    int array54 = 9;
+    int array55 = 55;
+    int array56 = 2;
+    int array57 = 55;
+    int array58 = 13;
+    int array59 = 59;
+    int array60 = 1;
+    int array61 = 59;
+    int array62 = 6;
+    int array63 = 63;
+    int array64 = 1;
+    int array65 = 10;
+    int array66 = 63;
+    int array67 = 67;
+    int array68 = 2;
+    int array69 = 67;
+    int array70 = 9;
+    int array71 = 71;
+    int array72 = 2;
+    int array73 = 6;
+    int array74 = 71;
+    int array75 = 75;
+    int array76 = 1;
+    int array77 = 75;
+    int array78 = 5;
+    int array79 = 79;
+    int array80 = 2;
+    int array81 = 79;
+    int array82 = 10;
+    int array83 = 83;
+    int array84 = 1;
+    int array85 = 5;
+    int array86 = 83;
+    int array87 = 87;
+    int array88 = 2;
+    int array89 = 9;
+    int array90 = 87;
+    int array91 = 91;
+    int array92 = 1;
+    int array93 = 5;
+    int array94 = 91;
+    int array95 = 95;
+    int array96 = 2;
+    int array97 = 13;
+    int array98 = 95;
+    int array99 = 99;
+    int array100 = 1;
+    int array101 = 99;
+    int array102 = 10;
+    int array103 = 103;
+    int array104 = 1;
+    int array105 = 103;
+    int array106 = 2;
+    int array107 = 107;
+    int array108 = 1;
+    int array109 = 107;
+    int array110 = 6;
+    int array111 = 0;
+    int array112 = 99;
+    int array113 = 2;
+    int array114 = 14;
+    int array115 = 0;
+    int array116 = 0;
+
+    /* Command enum */
+    int COMMAND_GET = 1;
+    int COMMAND_SET = 2;
+    int COMMAND_EXIT = 3;
+    int COMMAND_NONE = 4;
+
+    /* Current program step (i.e. program counter) */
+    int step = 0;
+
+    /* Current program command */
+    int cmd = 0;
+
+    /* Command-specific: get and set */
+    int cmd_getset_idx = -1;
+    int cmd_getset_val = -1;
+
+    /* Program-specific state */
+    int prg_pos = 0;
+    int prg_op = 0;
+    int prg_x = 0;
+    int prg_y = 0;
+    int prg_z = 0;
+    int prg_temp1 = 0;
+    int prg_temp2 = 0;
+
+    while (true) {
+
+        if (step == 0) {
+            // op <- A[pos] (step 1/2)
+            cmd = COMMAND_GET;
+            cmd_getset_idx = prg_pos;
+
+            step++;
+        }
+
+        else if (step == 1) {
+            // op <- A[pos] (step 2/2)
+            prg_op = cmd_getset_val;
+
+            if (prg_op == 99) {
+                // exit
+                cmd = COMMAND_EXIT;
+                step = -1;
+            }
+
+            else {
+                // x <- A[pos + 1]  (step 1/1)
+                cmd = COMMAND_GET;
+                cmd_getset_idx = prg_pos + 1;
+                step++;
+            }
+        }
+
+        else if (step == 2) {
+            // x <- A[pos + 1]  (step 2/2)
+            prg_x = cmd_getset_val;
+
+            // y <- A[pos + 2]  (step 1/2)
+            cmd = COMMAND_GET;
+            cmd_getset_idx = prg_pos + 2;
+
+            step++;
+        }
+
+        else if (step == 3) {
+            // y <- A[pos + 2]  (step 2/2)
+            prg_y = cmd_getset_val;
+
+            // z <- A[pos + 3]  (step 1/2)
+            cmd = COMMAND_GET;
+            cmd_getset_idx = prg_pos + 3;
+
+            step++;
+        }
+
+        else if (step == 4) {
+            // z <- A[pos + 3]  (step 2/2)
+            prg_z = cmd_getset_val;
+
+            // temp1 <- A[x]  (step 1/2)
+            cmd = COMMAND_GET;
+            cmd_getset_idx = prg_x;
+
+            step++;
+        }
+
+        else if (step == 5) {
+            // temp1 <- A[x]  (step 2/2)
+            prg_temp1 = cmd_getset_val;
+
+            // temp2 <- A[y]  (step 1/2)
+            cmd = COMMAND_GET;
+            cmd_getset_idx = prg_y;
+            step++;
+        }
+
+        else if (step == 6) {
+            // temp2 <- A[y]  (step 2/2)
+            prg_temp2 = cmd_getset_val;
+
+            if (prg_op == 1) {
+                // A[z] = temp1 + temp2
+                cmd = COMMAND_SET;
+                cmd_getset_idx = prg_z;
+                cmd_getset_val = prg_temp1 + prg_temp2;
+                step++;
+            }
+
+            else if (prg_op == 2) {
+                // A[z] = temp1 * temp2
+                cmd = COMMAND_SET;
+                cmd_getset_idx = prg_z;
+                cmd_getset_val = prg_temp1 * prg_temp2;
+                step++;
+            }
+
+            else {
+                // Invalid op
+                1 / 0;
+            }
+        }
+
+        else if (step == 7) {
+            // pos <- pos + 4
+            prg_pos += 4;
+            cmd = COMMAND_NONE;
+            step = 0;
+        }
+
+        else {
+            // invalid step
+            1 / 0;
+        }
+
+        if (cmd == COMMAND_GET) {
+            if (cmd_getset_idx == 0) cmd_getset_val = array0;
+            else if (cmd_getset_idx == 1) cmd_getset_val = array1;
+            else if (cmd_getset_idx == 2) cmd_getset_val = array2;
+            else if (cmd_getset_idx == 3) cmd_getset_val = array3;
+            else if (cmd_getset_idx == 4) cmd_getset_val = array4;
+            else if (cmd_getset_idx == 5) cmd_getset_val = array5;
+            else if (cmd_getset_idx == 6) cmd_getset_val = array6;
+            else if (cmd_getset_idx == 7) cmd_getset_val = array7;
+            else if (cmd_getset_idx == 8) cmd_getset_val = array8;
+            else if (cmd_getset_idx == 9) cmd_getset_val = array9;
+            else if (cmd_getset_idx == 10) cmd_getset_val = array10;
+            else if (cmd_getset_idx == 11) cmd_getset_val = array11;
+            else if (cmd_getset_idx == 12) cmd_getset_val = array12;
+            else if (cmd_getset_idx == 13) cmd_getset_val = array13;
+            else if (cmd_getset_idx == 14) cmd_getset_val = array14;
+            else if (cmd_getset_idx == 15) cmd_getset_val = array15;
+            else if (cmd_getset_idx == 16) cmd_getset_val = array16;
+            else if (cmd_getset_idx == 17) cmd_getset_val = array17;
+            else if (cmd_getset_idx == 18) cmd_getset_val = array18;
+            else if (cmd_getset_idx == 19) cmd_getset_val = array19;
+            else if (cmd_getset_idx == 20) cmd_getset_val = array20;
+            else if (cmd_getset_idx == 21) cmd_getset_val = array21;
+            else if (cmd_getset_idx == 22) cmd_getset_val = array22;
+            else if (cmd_getset_idx == 23) cmd_getset_val = array23;
+            else if (cmd_getset_idx == 24) cmd_getset_val = array24;
+            else if (cmd_getset_idx == 25) cmd_getset_val = array25;
+            else if (cmd_getset_idx == 26) cmd_getset_val = array26;
+            else if (cmd_getset_idx == 27) cmd_getset_val = array27;
+            else if (cmd_getset_idx == 28) cmd_getset_val = array28;
+            else if (cmd_getset_idx == 29) cmd_getset_val = array29;
+            else if (cmd_getset_idx == 30) cmd_getset_val = array30;
+            else if (cmd_getset_idx == 31) cmd_getset_val = array31;
+            else if (cmd_getset_idx == 32) cmd_getset_val = array32;
+            else if (cmd_getset_idx == 33) cmd_getset_val = array33;
+            else if (cmd_getset_idx == 34) cmd_getset_val = array34;
+            else if (cmd_getset_idx == 35) cmd_getset_val = array35;
+            else if (cmd_getset_idx == 36) cmd_getset_val = array36;
+            else if (cmd_getset_idx == 37) cmd_getset_val = array37;
+            else if (cmd_getset_idx == 38) cmd_getset_val = array38;
+            else if (cmd_getset_idx == 39) cmd_getset_val = array39;
+            else if (cmd_getset_idx == 40) cmd_getset_val = array40;
+            else if (cmd_getset_idx == 41) cmd_getset_val = array41;
+            else if (cmd_getset_idx == 42) cmd_getset_val = array42;
+            else if (cmd_getset_idx == 43) cmd_getset_val = array43;
+            else if (cmd_getset_idx == 44) cmd_getset_val = array44;
+            else if (cmd_getset_idx == 45) cmd_getset_val = array45;
+            else if (cmd_getset_idx == 46) cmd_getset_val = array46;
+            else if (cmd_getset_idx == 47) cmd_getset_val = array47;
+            else if (cmd_getset_idx == 48) cmd_getset_val = array48;
+            else if (cmd_getset_idx == 49) cmd_getset_val = array49;
+            else if (cmd_getset_idx == 50) cmd_getset_val = array50;
+            else if (cmd_getset_idx == 51) cmd_getset_val = array51;
+            else if (cmd_getset_idx == 52) cmd_getset_val = array52;
+            else if (cmd_getset_idx == 53) cmd_getset_val = array53;
+            else if (cmd_getset_idx == 54) cmd_getset_val = array54;
+            else if (cmd_getset_idx == 55) cmd_getset_val = array55;
+            else if (cmd_getset_idx == 56) cmd_getset_val = array56;
+            else if (cmd_getset_idx == 57) cmd_getset_val = array57;
+            else if (cmd_getset_idx == 58) cmd_getset_val = array58;
+            else if (cmd_getset_idx == 59) cmd_getset_val = array59;
+            else if (cmd_getset_idx == 60) cmd_getset_val = array60;
+            else if (cmd_getset_idx == 61) cmd_getset_val = array61;
+            else if (cmd_getset_idx == 62) cmd_getset_val = array62;
+            else if (cmd_getset_idx == 63) cmd_getset_val = array63;
+            else if (cmd_getset_idx == 64) cmd_getset_val = array64;
+            else if (cmd_getset_idx == 65) cmd_getset_val = array65;
+            else if (cmd_getset_idx == 66) cmd_getset_val = array66;
+            else if (cmd_getset_idx == 67) cmd_getset_val = array67;
+            else if (cmd_getset_idx == 68) cmd_getset_val = array68;
+            else if (cmd_getset_idx == 69) cmd_getset_val = array69;
+            else if (cmd_getset_idx == 70) cmd_getset_val = array70;
+            else if (cmd_getset_idx == 71) cmd_getset_val = array71;
+            else if (cmd_getset_idx == 72) cmd_getset_val = array72;
+            else if (cmd_getset_idx == 73) cmd_getset_val = array73;
+            else if (cmd_getset_idx == 74) cmd_getset_val = array74;
+            else if (cmd_getset_idx == 75) cmd_getset_val = array75;
+            else if (cmd_getset_idx == 76) cmd_getset_val = array76;
+            else if (cmd_getset_idx == 77) cmd_getset_val = array77;
+            else if (cmd_getset_idx == 78) cmd_getset_val = array78;
+            else if (cmd_getset_idx == 79) cmd_getset_val = array79;
+            else if (cmd_getset_idx == 80) cmd_getset_val = array80;
+            else if (cmd_getset_idx == 81) cmd_getset_val = array81;
+            else if (cmd_getset_idx == 82) cmd_getset_val = array82;
+            else if (cmd_getset_idx == 83) cmd_getset_val = array83;
+            else if (cmd_getset_idx == 84) cmd_getset_val = array84;
+            else if (cmd_getset_idx == 85) cmd_getset_val = array85;
+            else if (cmd_getset_idx == 86) cmd_getset_val = array86;
+            else if (cmd_getset_idx == 87) cmd_getset_val = array87;
+            else if (cmd_getset_idx == 88) cmd_getset_val = array88;
+            else if (cmd_getset_idx == 89) cmd_getset_val = array89;
+            else if (cmd_getset_idx == 90) cmd_getset_val = array90;
+            else if (cmd_getset_idx == 91) cmd_getset_val = array91;
+            else if (cmd_getset_idx == 92) cmd_getset_val = array92;
+            else if (cmd_getset_idx == 93) cmd_getset_val = array93;
+            else if (cmd_getset_idx == 94) cmd_getset_val = array94;
+            else if (cmd_getset_idx == 95) cmd_getset_val = array95;
+            else if (cmd_getset_idx == 96) cmd_getset_val = array96;
+            else if (cmd_getset_idx == 97) cmd_getset_val = array97;
+            else if (cmd_getset_idx == 98) cmd_getset_val = array98;
+            else if (cmd_getset_idx == 99) cmd_getset_val = array99;
+            else if (cmd_getset_idx == 100) cmd_getset_val = array100;
+            else if (cmd_getset_idx == 101) cmd_getset_val = array101;
+            else if (cmd_getset_idx == 102) cmd_getset_val = array102;
+            else if (cmd_getset_idx == 103) cmd_getset_val = array103;
+            else if (cmd_getset_idx == 104) cmd_getset_val = array104;
+            else if (cmd_getset_idx == 105) cmd_getset_val = array105;
+            else if (cmd_getset_idx == 106) cmd_getset_val = array106;
+            else if (cmd_getset_idx == 107) cmd_getset_val = array107;
+            else if (cmd_getset_idx == 108) cmd_getset_val = array108;
+            else if (cmd_getset_idx == 109) cmd_getset_val = array109;
+            else if (cmd_getset_idx == 110) cmd_getset_val = array110;
+            else if (cmd_getset_idx == 111) cmd_getset_val = array111;
+            else if (cmd_getset_idx == 112) cmd_getset_val = array112;
+            else if (cmd_getset_idx == 113) cmd_getset_val = array113;
+            else if (cmd_getset_idx == 114) cmd_getset_val = array114;
+            else if (cmd_getset_idx == 115) cmd_getset_val = array115;
+            else if (cmd_getset_idx == 116) cmd_getset_val = array116;
+            else 1 / 0;
+        }
+        else if (cmd == COMMAND_SET) {
+            if (cmd_getset_idx == 0) array0 = cmd_getset_val;
+            else if (cmd_getset_idx == 1) array1 = cmd_getset_val;
+            else if (cmd_getset_idx == 2) array2 = cmd_getset_val;
+            else if (cmd_getset_idx == 3) array3 = cmd_getset_val;
+            else if (cmd_getset_idx == 4) array4 = cmd_getset_val;
+            else if (cmd_getset_idx == 5) array5 = cmd_getset_val;
+            else if (cmd_getset_idx == 6) array6 = cmd_getset_val;
+            else if (cmd_getset_idx == 7) array7 = cmd_getset_val;
+            else if (cmd_getset_idx == 8) array8 = cmd_getset_val;
+            else if (cmd_getset_idx == 9) array9 = cmd_getset_val;
+            else if (cmd_getset_idx == 10) array10 = cmd_getset_val;
+            else if (cmd_getset_idx == 11) array11 = cmd_getset_val;
+            else if (cmd_getset_idx == 12) array12 = cmd_getset_val;
+            else if (cmd_getset_idx == 13) array13 = cmd_getset_val;
+            else if (cmd_getset_idx == 14) array14 = cmd_getset_val;
+            else if (cmd_getset_idx == 15) array15 = cmd_getset_val;
+            else if (cmd_getset_idx == 16) array16 = cmd_getset_val;
+            else if (cmd_getset_idx == 17) array17 = cmd_getset_val;
+            else if (cmd_getset_idx == 18) array18 = cmd_getset_val;
+            else if (cmd_getset_idx == 19) array19 = cmd_getset_val;
+            else if (cmd_getset_idx == 20) array20 = cmd_getset_val;
+            else if (cmd_getset_idx == 21) array21 = cmd_getset_val;
+            else if (cmd_getset_idx == 22) array22 = cmd_getset_val;
+            else if (cmd_getset_idx == 23) array23 = cmd_getset_val;
+            else if (cmd_getset_idx == 24) array24 = cmd_getset_val;
+            else if (cmd_getset_idx == 25) array25 = cmd_getset_val;
+            else if (cmd_getset_idx == 26) array26 = cmd_getset_val;
+            else if (cmd_getset_idx == 27) array27 = cmd_getset_val;
+            else if (cmd_getset_idx == 28) array28 = cmd_getset_val;
+            else if (cmd_getset_idx == 29) array29 = cmd_getset_val;
+            else if (cmd_getset_idx == 30) array30 = cmd_getset_val;
+            else if (cmd_getset_idx == 31) array31 = cmd_getset_val;
+            else if (cmd_getset_idx == 32) array32 = cmd_getset_val;
+            else if (cmd_getset_idx == 33) array33 = cmd_getset_val;
+            else if (cmd_getset_idx == 34) array34 = cmd_getset_val;
+            else if (cmd_getset_idx == 35) array35 = cmd_getset_val;
+            else if (cmd_getset_idx == 36) array36 = cmd_getset_val;
+            else if (cmd_getset_idx == 37) array37 = cmd_getset_val;
+            else if (cmd_getset_idx == 38) array38 = cmd_getset_val;
+            else if (cmd_getset_idx == 39) array39 = cmd_getset_val;
+            else if (cmd_getset_idx == 40) array40 = cmd_getset_val;
+            else if (cmd_getset_idx == 41) array41 = cmd_getset_val;
+            else if (cmd_getset_idx == 42) array42 = cmd_getset_val;
+            else if (cmd_getset_idx == 43) array43 = cmd_getset_val;
+            else if (cmd_getset_idx == 44) array44 = cmd_getset_val;
+            else if (cmd_getset_idx == 45) array45 = cmd_getset_val;
+            else if (cmd_getset_idx == 46) array46 = cmd_getset_val;
+            else if (cmd_getset_idx == 47) array47 = cmd_getset_val;
+            else if (cmd_getset_idx == 48) array48 = cmd_getset_val;
+            else if (cmd_getset_idx == 49) array49 = cmd_getset_val;
+            else if (cmd_getset_idx == 50) array50 = cmd_getset_val;
+            else if (cmd_getset_idx == 51) array51 = cmd_getset_val;
+            else if (cmd_getset_idx == 52) array52 = cmd_getset_val;
+            else if (cmd_getset_idx == 53) array53 = cmd_getset_val;
+            else if (cmd_getset_idx == 54) array54 = cmd_getset_val;
+            else if (cmd_getset_idx == 55) array55 = cmd_getset_val;
+            else if (cmd_getset_idx == 56) array56 = cmd_getset_val;
+            else if (cmd_getset_idx == 57) array57 = cmd_getset_val;
+            else if (cmd_getset_idx == 58) array58 = cmd_getset_val;
+            else if (cmd_getset_idx == 59) array59 = cmd_getset_val;
+            else if (cmd_getset_idx == 60) array60 = cmd_getset_val;
+            else if (cmd_getset_idx == 61) array61 = cmd_getset_val;
+            else if (cmd_getset_idx == 62) array62 = cmd_getset_val;
+            else if (cmd_getset_idx == 63) array63 = cmd_getset_val;
+            else if (cmd_getset_idx == 64) array64 = cmd_getset_val;
+            else if (cmd_getset_idx == 65) array65 = cmd_getset_val;
+            else if (cmd_getset_idx == 66) array66 = cmd_getset_val;
+            else if (cmd_getset_idx == 67) array67 = cmd_getset_val;
+            else if (cmd_getset_idx == 68) array68 = cmd_getset_val;
+            else if (cmd_getset_idx == 69) array69 = cmd_getset_val;
+            else if (cmd_getset_idx == 70) array70 = cmd_getset_val;
+            else if (cmd_getset_idx == 71) array71 = cmd_getset_val;
+            else if (cmd_getset_idx == 72) array72 = cmd_getset_val;
+            else if (cmd_getset_idx == 73) array73 = cmd_getset_val;
+            else if (cmd_getset_idx == 74) array74 = cmd_getset_val;
+            else if (cmd_getset_idx == 75) array75 = cmd_getset_val;
+            else if (cmd_getset_idx == 76) array76 = cmd_getset_val;
+            else if (cmd_getset_idx == 77) array77 = cmd_getset_val;
+            else if (cmd_getset_idx == 78) array78 = cmd_getset_val;
+            else if (cmd_getset_idx == 79) array79 = cmd_getset_val;
+            else if (cmd_getset_idx == 80) array80 = cmd_getset_val;
+            else if (cmd_getset_idx == 81) array81 = cmd_getset_val;
+            else if (cmd_getset_idx == 82) array82 = cmd_getset_val;
+            else if (cmd_getset_idx == 83) array83 = cmd_getset_val;
+            else if (cmd_getset_idx == 84) array84 = cmd_getset_val;
+            else if (cmd_getset_idx == 85) array85 = cmd_getset_val;
+            else if (cmd_getset_idx == 86) array86 = cmd_getset_val;
+            else if (cmd_getset_idx == 87) array87 = cmd_getset_val;
+            else if (cmd_getset_idx == 88) array88 = cmd_getset_val;
+            else if (cmd_getset_idx == 89) array89 = cmd_getset_val;
+            else if (cmd_getset_idx == 90) array90 = cmd_getset_val;
+            else if (cmd_getset_idx == 91) array91 = cmd_getset_val;
+            else if (cmd_getset_idx == 92) array92 = cmd_getset_val;
+            else if (cmd_getset_idx == 93) array93 = cmd_getset_val;
+            else if (cmd_getset_idx == 94) array94 = cmd_getset_val;
+            else if (cmd_getset_idx == 95) array95 = cmd_getset_val;
+            else if (cmd_getset_idx == 96) array96 = cmd_getset_val;
+            else if (cmd_getset_idx == 97) array97 = cmd_getset_val;
+            else if (cmd_getset_idx == 98) array98 = cmd_getset_val;
+            else if (cmd_getset_idx == 99) array99 = cmd_getset_val;
+            else if (cmd_getset_idx == 100) array100 = cmd_getset_val;
+            else if (cmd_getset_idx == 101) array101 = cmd_getset_val;
+            else if (cmd_getset_idx == 102) array102 = cmd_getset_val;
+            else if (cmd_getset_idx == 103) array103 = cmd_getset_val;
+            else if (cmd_getset_idx == 104) array104 = cmd_getset_val;
+            else if (cmd_getset_idx == 105) array105 = cmd_getset_val;
+            else if (cmd_getset_idx == 106) array106 = cmd_getset_val;
+            else if (cmd_getset_idx == 107) array107 = cmd_getset_val;
+            else if (cmd_getset_idx == 108) array108 = cmd_getset_val;
+            else if (cmd_getset_idx == 109) array109 = cmd_getset_val;
+            else if (cmd_getset_idx == 110) array110 = cmd_getset_val;
+            else if (cmd_getset_idx == 111) array111 = cmd_getset_val;
+            else if (cmd_getset_idx == 112) array112 = cmd_getset_val;
+            else if (cmd_getset_idx == 113) array113 = cmd_getset_val;
+            else if (cmd_getset_idx == 114) array114 = cmd_getset_val;
+            else if (cmd_getset_idx == 115) array115 = cmd_getset_val;
+            else if (cmd_getset_idx == 116) array116 = cmd_getset_val;
+            else 1 / 0;
+        }
+        else if (cmd == COMMAND_EXIT) {
+            return array0;
+        }
+        else if (cmd == COMMAND_NONE) {}
+        else {
+            1 / 0;
+        }
+    }
+    return 1 / 0;
+}

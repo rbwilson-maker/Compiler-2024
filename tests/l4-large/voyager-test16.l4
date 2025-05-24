@@ -1,0 +1,10 @@
+//test error
+
+int main()
+{
+    int*** test = alloc(int*);
+    *test = alloc(int*);
+    **test = alloc(int*);
+    ***test = 4;
+    return ***test;
+}

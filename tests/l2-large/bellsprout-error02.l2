@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+	bool i_am_false = 1 == 2;
+	while (i_am_false) {
+		a++; /* an undeclared variable in an unreachable block */
+	}
+	return 0;
+}

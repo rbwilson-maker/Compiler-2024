@@ -1,0 +1,12 @@
+//test error
+//need to specify arg type
+
+int foo (a, b) {
+	return a - b;
+}
+
+int main() {
+
+  return(2, 1);
+  
+}

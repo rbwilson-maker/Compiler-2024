@@ -1,0 +1,19 @@
+//test error
+//implicit treatement of int as a bool
+
+int main()
+{
+    int a = 0;
+    int b = 1;
+    int c = 2;
+
+    if(a)
+    {
+        c += 5;
+    }
+    if(b)
+    {
+        c += 7;
+    }
+    return c;
+}

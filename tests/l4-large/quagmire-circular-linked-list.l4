@@ -1,0 +1,46 @@
+//test return 3
+
+typedef struct list_node list;
+
+struct list_node {
+  int data;
+  list* next;
+};
+
+list* copy_ll(list* in) {
+  list* start = alloc(list);
+  start->data = in->data;
+  list* curr_copy = start;
+
+  in = in->next;
+
+  while (in != NULL) {
+    list* new_node = alloc(list);
+    new_node->data = in->data;
+    curr_copy->next = new_node;
+
+    curr_copy = new_node;
+    in = in->next;
+  }
+
+  return start;
+}
+
+int main() {
+  list* a = alloc(list);
+  list* b = alloc(list);
+  list* c = alloc(list);
+  list* d = alloc(list);
+
+  a->data = 1;
+  a->next = b;
+  b->data = 2;
+  b->next = c;
+  c->data = 3;
+  c->next = d;
+  d->data = 4;
+
+  list* result = copy_ll(a);
+
+  return result->next->next->data;
+}

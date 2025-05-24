@@ -1,0 +1,13 @@
+//test error 
+
+typedef int add;
+typedef int number;
+
+number add(number x, number y) {
+  return x + y;
+}
+
+// tests conflicting function and type name
+int main() {
+    return add(10, 5);
+}

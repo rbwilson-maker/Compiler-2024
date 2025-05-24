@@ -1,0 +1,12 @@
+//test error
+
+void woops () {
+    struct b* = NULL;
+}
+
+struct b;
+
+int main () {
+    woops();
+    return 0;
+}

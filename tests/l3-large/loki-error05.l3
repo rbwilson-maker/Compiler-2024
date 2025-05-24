@@ -1,0 +1,20 @@
+//test error
+
+typedef int cow;
+typedef bool boo;
+
+cow moo(int x) {
+    return x > 4 ? 2 : 52;
+}
+
+boo moop(boo x) {
+    return x ^ false;
+}
+
+int main() {
+    int cow = 2;
+    bool res = moop(moo(cow));
+    return res ? 1 : 0;
+}
+
+

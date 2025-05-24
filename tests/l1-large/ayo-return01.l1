@@ -1,0 +1,28 @@
+//test return 4
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int f;
+  int g;
+  int h;
+  int i;
+  int j;
+  int k;
+
+  a = 0;
+  b = -a;
+  c = b + 1;
+  d = c + 1;
+  e = d +1;
+  f = d * 2;
+  g = d - 1;
+  h = d - 2;
+  i = d - 3;
+  j = d - 4;
+  k = d - 5;
+  return f;
+}

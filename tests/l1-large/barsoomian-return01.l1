@@ -1,0 +1,12 @@
+//test return 20200915
+// evaluate unused expressions
+int main()
+{
+  int x;
+  int y;
+  int z;
+  x = 67 * 67 + 1;
+  y = x * 4;
+  z = x * x + 40815;
+  return z;
+}

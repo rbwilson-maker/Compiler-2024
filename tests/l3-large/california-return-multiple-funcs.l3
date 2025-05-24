@@ -1,0 +1,18 @@
+//test return 27
+
+int firstfunc(int x) {
+    return 2*x + 5;
+}
+
+
+int secondfunc(int y) {
+    return 3*y;
+}
+
+
+int main() {
+    int x = 2;
+    x = firstfunc(x);
+    x = secondfunc(x);
+    return x;
+}

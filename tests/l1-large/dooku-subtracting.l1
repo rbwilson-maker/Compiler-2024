@@ -1,0 +1,10 @@
+//test return 6
+int main() { 
+	int a = 5;	
+	a -= 0;
+	a = a - 1;
+	a = a - -2;
+	return a; 
+}
+
+

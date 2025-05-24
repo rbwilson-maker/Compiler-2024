@@ -1,0 +1,25 @@
+//test return 343
+
+int imafunction(int param, int paramparam);
+
+int imafunction(int param, int paramparam) {
+    return param + paramparam;
+}
+
+void imafunctiontoo() {
+    return;
+}
+
+int imafunction(int param, int paramparam);
+
+int main() {
+    imafunctiontoo();
+
+    int arg1;
+    arg1 = 1;
+    int arg2 = 342;
+
+    int imnotafunction = imafunction(arg1, arg2);
+
+    return imnotafunction;
+}

@@ -1,0 +1,10 @@
+//test return 0
+
+int main ()
+{
+  int m8  = 1;
+  int m16 = m8  | m8  << 8;
+  int fillx = 0 & m16;
+  return fillx;
+}
+

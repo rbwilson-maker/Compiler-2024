@@ -1,0 +1,9 @@
+//test typecheck
+
+int main() {
+	a e = 3;
+	b f = 4;
+	c g = 5;
+	d h = e + f + g;
+	return h;
+}

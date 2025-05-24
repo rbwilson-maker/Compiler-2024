@@ -1,0 +1,10 @@
+//test error
+
+int main()
+{
+    int [] array = alloc_array(bool, 1);
+
+    array[0] = true;
+
+    return array[0];
+}

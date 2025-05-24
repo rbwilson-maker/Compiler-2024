@@ -1,0 +1,6 @@
+//test div-by-zero
+int main() {
+	int x = 0x80A;
+	x = x / (x - 0x80A);
+	return x;
+}

@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+    int a = 300;
+
+    while(a > 1) {
+        a %= a;
+        a /= a;
+    }
+
+    return a;
+}

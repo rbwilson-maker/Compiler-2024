@@ -1,0 +1,13 @@
+//test error
+// scoped access fail
+
+int main() {
+  int y = 0;
+  {
+    int z = 1201880;
+    y = 5;
+    z++;
+    z = y;
+  }
+  return z;
+}

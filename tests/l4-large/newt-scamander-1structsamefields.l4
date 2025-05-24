@@ -1,0 +1,13 @@
+//test error
+
+struct oh_my {
+	int a;
+	bool b;
+	int *c;
+	bool *a;
+}
+
+
+int main(){
+	return 0;
+}

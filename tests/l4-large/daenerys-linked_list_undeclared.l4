@@ -1,0 +1,9 @@
+//test error
+
+typedef struct node node_t;
+
+int main()
+{
+  node_t *start = alloc(node_t);
+  return 0;
+}

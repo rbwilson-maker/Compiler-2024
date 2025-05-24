@@ -1,0 +1,12 @@
+//test error
+
+int main() {
+  int a;
+  int b;
+  int c;
+  a = 14;
+  b = -50;
+  c = (a * b) + (a - b);
+  return (a * b * c);
+
+// } yoloswagggg {

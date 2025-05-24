@@ -1,0 +1,15 @@
+//test return 15
+
+int count_bits(int n)
+{
+    if (n == 0) return 0;
+
+    return count_bits(n >> 1) + (n & 1);
+}
+
+int main()
+{
+    int x = 123148129;
+
+    return count_bits(x);
+}

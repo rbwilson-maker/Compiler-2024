@@ -1,0 +1,35 @@
+//test return 464375821
+
+typedef int ip_addr;
+
+bool elite_training() {
+  return true;
+}
+
+ip_addr trace_the_killers_ip_address() {
+  if (elite_training()) {
+    return 0x1badd00d;
+  } else {
+    return 1337 / 0;
+  }
+}
+
+bool oh_no_i_got_rekt(int failure) {
+  if (failure == 0) {
+    return (-1 << 32) < 0;
+  } else {
+    return false;
+  }
+}
+
+int main() {
+  bool have_5k1llz = elite_training();
+  while (have_5k1llz) {
+    ip_addr suspect = trace_the_killers_ip_address();
+    if (suspect > 0)
+      return suspect;
+    else
+      have_5k1llz = oh_no_i_got_rekt(suspect);
+  }
+  return 0;
+}

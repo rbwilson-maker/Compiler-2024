@@ -1,0 +1,19 @@
+//test error
+//Large vs small types
+
+struct str{
+	int a;
+	bool b;
+};
+
+void foo(struct str x){
+	if(x.b){
+		x.a *= -1;
+	}
+}
+
+int main(){
+	struct str *x = alloc(struct str);
+	foo(*x);
+	return x->b;
+}

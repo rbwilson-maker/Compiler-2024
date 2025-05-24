@@ -1,0 +1,9 @@
+//test error
+//ternary without if
+
+int main()
+{
+	int x = 5;
+	int y = ? x - 5;
+	return y;
+}

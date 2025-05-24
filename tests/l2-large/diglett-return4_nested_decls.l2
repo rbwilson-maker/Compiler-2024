@@ -1,0 +1,15 @@
+//test return 4
+
+int main()
+{
+int x;
+int y;
+x = 0;
+while (x < 4)
+  {
+      y = x + 1;
+      int z = 1;
+      x += z;
+  }
+return x;
+}

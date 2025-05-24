@@ -1,0 +1,32 @@
+//test return -986052544
+
+typedef int inte;
+typedef inte integ;
+typedef integ intege;
+typedef intege integer;
+
+struct A {
+	integer x;
+};
+
+typedef struct A SAS;
+
+typedef SAS ASA;
+
+int rand(int x) {
+	return 1103515245 * x + 12345;
+}
+
+int main() {
+	ASA[] A = alloc_array(ASA, 1000);
+	int sd = 8924;
+	for (int i = 0; i < 1000; i++) {
+		sd = rand(sd);
+		A[i].x = sd;
+	}
+	int prod = 32;
+	for (int i = 0; i < 1000; i+=2) {
+		prod *= A[i].x;
+	}
+	return prod << 1;
+}

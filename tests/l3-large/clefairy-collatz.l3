@@ -1,0 +1,16 @@
+//test return 111
+// returns the number of iterations for a number 
+// to become one using the "3n+1" process.
+
+int collatz_helper(int x, int acc) {
+	if (x == 1) return acc;
+	return collatz_helper((x & 1) == 0 ? x / 2 : x * 3 + 1, acc + 1);
+}
+
+int collatz_count(int x) {
+	return collatz_helper(x, 0);
+}
+
+int main() {
+	return (collatz_count(27));
+}

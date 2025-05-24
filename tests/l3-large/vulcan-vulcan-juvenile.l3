@@ -1,0 +1,11 @@
+//test error
+
+int lol() {
+  int lol = 9;
+  lol();
+  return 5;
+}
+
+int main() {
+  return lol();
+}

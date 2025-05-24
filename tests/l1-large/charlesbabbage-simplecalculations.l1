@@ -1,0 +1,13 @@
+//test return 3852
+//random calculations with multicase variable names
+
+int main(){
+    int A = 12;
+    int b = -321;
+    int c = 2; // this is a comment
+    int C = A - (b + b);
+    C += 2;
+    C *= 2;
+    C = (A * b) + (c / A);
+    return -C;
+}

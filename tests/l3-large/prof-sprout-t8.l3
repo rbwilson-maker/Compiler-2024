@@ -1,0 +1,12 @@
+//test return 5
+// shadowing a function
+
+bool haha(int q) {
+  return q > 5;
+}
+
+int main() {
+  bool x = haha(4);
+  int haha = 3 + (x ? 1 : 2);
+  return haha;
+}

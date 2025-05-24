@@ -1,0 +1,12 @@
+//test return 1
+
+int func(int x);
+
+int func(int x) {
+  return x;
+}
+
+int main() {
+ return 1;
+ return func(5);
+}

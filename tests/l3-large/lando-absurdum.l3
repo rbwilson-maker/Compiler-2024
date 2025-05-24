@@ -1,0 +1,12 @@
+//test return 155117520
+//returns 15th number in 30th row of pascal's triangle
+
+int p(int n, int d) {
+  assert(0 <= d && d <= n);
+  if (d == 0 || d == n) return 1;
+  else return p(n - 1, d - 1) + p(n - 1, d);
+}
+
+int main() {
+  return p(30, 15);
+}

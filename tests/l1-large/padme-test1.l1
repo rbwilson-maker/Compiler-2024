@@ -1,0 +1,12 @@
+//test return 6384
+
+
+int main() {
+    int a = 0xff;
+    int b = 152;
+    int c;
+    (c) = b;
+    (c) = 42;
+    return c * b;
+}
+

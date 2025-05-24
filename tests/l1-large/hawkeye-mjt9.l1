@@ -1,0 +1,10 @@
+//test return 2147483647
+
+int main()
+{
+    int TMIN;
+    TMIN = -2147483648;
+    TMIN = TMIN + 2147483648;
+
+    return TMIN + 1 +  2147483646;
+}

@@ -1,0 +1,16 @@
+//test error
+
+struct test;
+
+struct outer {
+    struct test test;
+};
+
+struct test {
+    int a;
+};
+
+int main() {
+    struct outer * outer = alloc(struct outer);
+    return 0;
+}

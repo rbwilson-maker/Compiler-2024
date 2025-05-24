@@ -1,0 +1,11 @@
+//test abort
+// Forcibly make pointer point to NULL after alloc
+
+int main() {
+  int *some_ptr = alloc(int);
+  if (true) {
+    some_ptr = NULL;
+  }
+  assert(some_ptr != NULL);
+  return 0;
+}

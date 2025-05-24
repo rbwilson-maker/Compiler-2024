@@ -1,0 +1,15 @@
+//test return 9
+int main() {
+    int s = 0;
+    int j = 0;
+    int k = 0;
+    for (j = 0; j  < 3; j++) {
+        for (k = 0 ; k < 2 ; k++) {
+            s += j;
+            s += k;
+        }
+    }
+    return s;
+}
+
+

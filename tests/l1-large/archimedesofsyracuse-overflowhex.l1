@@ -1,0 +1,8 @@
+//test div-by-zero
+// Hexadecimal division overflow with -1 divisor
+int main() {
+  int min_hex = 0x80000000;
+  int overflow;
+  overflow = min_hex / (0x00000000 - 1);
+  return overflow;
+}

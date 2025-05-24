@@ -1,0 +1,16 @@
+//test return 256
+
+int fastExpo(int base,int exp){
+    if (exp == 0){
+        return 1;
+    }
+    if (exp == 1){
+        return base;
+    }
+    int oneHalf = fastExpo(base,exp/2);
+    return oneHalf * oneHalf * fastExpo(base,exp%2);
+}
+
+int main(){
+    return fastExpo(2, 8);
+}

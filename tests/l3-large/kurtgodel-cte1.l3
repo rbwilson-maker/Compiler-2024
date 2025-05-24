@@ -1,0 +1,15 @@
+//test error
+/*
+Compile error.
+Illegal typedef (bool is restricted.)
+*/
+
+typedef int bool;
+
+bool r() {
+  return 3;
+}
+
+int main() {
+  return r();
+}

@@ -1,0 +1,14 @@
+//test return 9273593
+
+int f(int x, int acc) {
+  if (x == 0) {
+    return acc;
+  }
+  else {
+    return f(x - 1, acc + 1);
+  }
+}
+
+int main() {
+  return 9273593;
+}

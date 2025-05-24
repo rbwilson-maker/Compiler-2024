@@ -1,0 +1,19 @@
+//test div-by-zero
+struct a
+{
+  int d;
+};
+
+int main()
+{
+  struct a* f = alloc(struct a);
+  f -> d = 100;
+  int x;
+  while(true)
+  {
+    int y = f -> d;
+    x = 1/y;
+    f -> d --;
+  }
+  return 0;
+}

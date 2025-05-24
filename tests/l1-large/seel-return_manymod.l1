@@ -1,0 +1,22 @@
+//test return 21
+// Tests a lot of mods, for maximum register collisions
+
+int main()
+{
+  int a = 19131;
+  int b = 10479;
+
+  // Run Euclid's algorithm to find the GCD of a and b
+  a = a % b; // a==8652
+  b = b % a; // b==1827
+  a = a % b; // a==1344
+  b = b % a; // b==483
+  a = a % b; // a==378
+  b = b % a; // b==105
+  a = a % b; // a==63
+  b = b % a; // b==42
+  a = a % b; // a==21
+  b = b % a; // b==0
+
+  return a;
+}

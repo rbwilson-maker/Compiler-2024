@@ -1,0 +1,16 @@
+//test error
+// namespaces
+
+struct foo {
+  int foo;
+};
+typedef struct foo *foo;
+
+foo foo(foo foo) {
+  foo->foo = 0;
+  return foo;
+}
+
+int main() {
+  return 42;
+}

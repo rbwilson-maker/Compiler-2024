@@ -1,0 +1,11 @@
+//test error
+//and lex
+
+int main ()
+{
+  int truefalse;
+
+  for (truefalse = 10; truefalse >= 0; truefalse /= truefalse) {
+    truefalse -= 1;
+  }
+}

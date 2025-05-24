@@ -1,0 +1,7 @@
+//test memerror
+
+int main() {
+    int[] seth_goldstein = alloc_array(int, 10); 
+    seth_goldstein[-1] = 10; 
+    return seth_goldstein[0];
+}

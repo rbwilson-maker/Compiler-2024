@@ -1,0 +1,13 @@
+//test error
+
+typedef int x;
+typedef x y;
+
+int main() {
+  x var1 = 3;
+  y var2 = 4;
+
+  bool x = true;
+
+  return var1 + var2;
+}

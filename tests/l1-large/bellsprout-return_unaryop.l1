@@ -1,0 +1,8 @@
+//test return 2
+// unary op -
+int main(){
+    int a;
+    a = 5;
+    a = a + (-3);
+    return a;
+}

@@ -1,0 +1,56 @@
+//test typecheck
+//test infloop
+// tail recursive max function
+
+struct list;
+typedef struct list* list_t;
+
+struct list {
+  int data;
+  list_t next;
+};
+
+int max(list_t l, int m) {
+  if (l == NULL) return m;
+
+  m = l->data > m ? l->data : m;
+
+  return max(l->next, m);
+}
+
+int main() {
+  list_t a = alloc(struct list);
+  list_t b = alloc(struct list);
+  list_t c = alloc(struct list);
+  list_t d = alloc(struct list);
+  list_t e = alloc(struct list);
+  list_t f = alloc(struct list);
+  list_t g = alloc(struct list);
+  list_t h = alloc(struct list);
+
+  a->next = b;
+  a->data = 9;
+
+  b->next = c;
+  b->data = 4;
+
+  c->next = d;
+  c->data = 0x15;
+
+  d->next = e;
+  d->data = 7;
+
+  e->next = f;
+  e->data = 39;
+
+  f->next = g;
+  f->data = 3;
+
+  g->next = h;
+  g->data = 1;
+
+  h->next = a;
+  h->data = 4;
+  
+  return max(a, -1);
+}

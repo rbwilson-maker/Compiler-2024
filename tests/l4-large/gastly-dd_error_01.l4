@@ -1,0 +1,9 @@
+//test error
+typedef struct foo {
+	foo x;
+	foo y;
+};
+
+int main() {
+    return 0;
+}

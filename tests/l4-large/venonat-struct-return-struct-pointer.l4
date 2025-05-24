@@ -1,0 +1,19 @@
+//test return 7
+// returns struct pointer
+
+struct mystruct {
+  int x;
+  int y;
+};
+
+struct mystruct* new_mystruct(int x, int y){
+  struct mystruct* s = alloc(struct mystruct);
+  s->x = x;
+  s->y = y;
+  return s;
+}
+
+int main(){
+  struct mystruct* s = new_mystruct(3, 4);
+  return s->x + s->y;
+}

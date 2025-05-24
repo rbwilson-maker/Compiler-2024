@@ -1,0 +1,17 @@
+//test error
+
+// Error if using binop on variables of type bool
+
+int main() {
+  bool a;
+  bool b;
+  bool c;
+  bool d;
+  bool e;
+  a = true;
+  b = false;
+  c = a || b;
+  d = a && b && c;
+  e = a + b - c % d;
+  return 0;
+}

@@ -1,0 +1,31 @@
+//test return 110
+//check modification of array elements in void function
+
+typedef int cat;
+typedef cat[] cat_home;
+
+void check(cat[] x, int index) {
+  for (int i = 0; i < index; i += 1) {
+    x[i] += x[index];
+  }
+  assert (x[index] > 0 && (x[index] % 2 == 0));
+}
+
+cat_home count_cats (int[] house, int num) {
+  for (int i = 0; i < num; i++) {
+    house[i] += (i + 1) * 2;
+    check(house, i);
+  }
+  return house;
+}
+
+int main() {
+  cat my_cats = 10;
+  cat_home new_home = alloc_array(int, my_cats);
+  cat_home home = count_cats(new_home, my_cats);
+  assert(home == new_home);
+  for (int check = 0; check < my_cats - 1; check += 1) {
+    assert(home[check] > home[check + 1]);
+  }
+  return home[0];
+}

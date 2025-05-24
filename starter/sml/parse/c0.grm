@@ -1,0 +1,133 @@
+(* L1 Compiler
+ * L1 grammar
+ * Author: Kaustuv Chaudhuri <kaustuv+@cs.cmu.edu>
+ * Modified: Frank Pfenning <fp@cs.cmu.edu>
+ * Modified: Anand Subramanian <asubrama@andrew.cmu.edu> Fall 2010
+ *
+ * Modified: Taegyun Kim <taegyunk@cmu.edu> Fall 2014
+ * Now conforms to the L1 fragment of C0.
+ *
+ * Update this file to create appropriate AST node for each rule in the grammar.
+ *)
+
+structure A = Ast
+
+(* for simplicity, we only mark expressions, not statements *)
+
+(* mark e with region (left, right) in source file *)
+fun mark (e, (left, right)) =
+  A.Marked (Mark.mark' (e, ParseState.ext (left, right)))
+fun marks (s, (left, right)) =
+  A.Markeds (Mark.mark' (s, ParseState.ext (left, right)))
+
+fun make_lval (A.Var(id)) _ = id
+  | make_lval (A.Marked(exp)) ext = make_lval (Mark.data exp) (Mark.ext exp)
+  | make_lval exp ext = (ErrorMsg.error ext "Malformed lvalue"; Symbol.bogus)
+
+(* expand_asnop (id, "op=", exp) region = "id = id op exps"
+ * or = "id = exp" if asnop is "="
+ * syntactically expands a compound assignment operator
+ *)
+fun expand_asnop (exp1, NONE, exp2) (left, right) =
+      A.Assign(make_lval exp1 NONE, exp2)
+  | expand_asnop (exp1, SOME(oper), exp2) (left, right) =
+      A.Assign(make_lval exp1 NONE, mark(A.OpExp(oper, [exp1, exp2]), (left, right)))
+
+%%
+%header (functor L1LrValsFn (structure Token : TOKEN))
+
+%term
+   EOF
+ | SEMI
+ | INTCONST of Word32.word
+ | IDENT    of Symbol.symbol
+ | RETURN
+ | INT
+ | MAIN
+ | PLUS | MINUS | STAR | SLASH | PERCENT
+ | ASSIGN | PLUSEQ | MINUSEQ | STAREQ | SLASHEQ | PERCENTEQ
+ | LBRACE | RBRACE
+ | LPAREN | RPAREN
+ | UNARY | ASNOP
+ | STRUCT
+ | TYPEDEF
+ | IF | ELSE | WHILE | FOR | CONTINUE | BREAK
+ | ASSERT | TRUE | FALSE
+ | NULL | ALLOC | ALLOCARR
+ | BOOL | VOID | CHAR | STRING
+ | MINUSMINUS
+(* UNARY and ASNOP are dummy terminals.
+ * We need dummy terminals if we wish to assign a precedence
+ * to a rule that does not correspond to the precedence of
+ * the rightmost terminal in that rule.
+ * Implicit in this is that precedence can only be infered
+ * terminals. Therefore, don't try to assign precedence to "rules"
+ *)
+
+%nonterm
+   program  of A.stm list
+ | decl     of A.stm
+ | stmts    of A.stm list
+ | stmt     of A.stm
+ | simp     of A.stm
+ | exp      of A.exp
+ | lvalue   of A.exp
+ | asnop    of A.oper option
+
+%verbose       (* print summary of errors *)
+%pos int       (* positions *)
+%start program (* what is the top-most non-terminal expected to be ? *)
+%eop EOF       (* which terminal ends parsing? *)
+%noshift EOF   (* we should never shift an EOF *)
+
+%name L1
+
+(* The precedence grows down! *)
+%right ASSIGN PLUSEQ MINUSEQ STAREQ SLASHEQ PERCENTEQ
+%left PLUS MINUS
+%left STAR SLASH PERCENT
+%right UNARY
+%left LPAREN
+
+%%
+
+(* Note that 'main' is not intended to be a reserved keyword. *)
+program    : INT MAIN LPAREN RPAREN LBRACE stmts RBRACE (stmts)
+
+stmts      :                       ([])
+           | stmt stmts            (stmt :: stmts)
+           | LBRACE stmts RBRACE   (stmts)
+
+stmt       : decl SEMI             (decl)
+           | simp SEMI             (marks (simp, (simpleft, simpright)))
+           | RETURN exp SEMI       (marks ((A.Return exp), (RETURNleft, expright)))
+
+decl       : INT IDENT             (marks ((A.Decl(IDENT)), (IDENTleft, IDENTright)))
+           | INT MAIN              (marks ((A.Decl(Symbol.symbol "main")), (MAINleft, MAINright)))
+           | INT IDENT ASSIGN exp  (marks ((A.DeclAssn(IDENT, exp)), (IDENTleft, expright)))
+           | INT MAIN ASSIGN exp   (marks ((A.DeclAssn(Symbol.symbol "main", exp)), (MAINleft, expright)))
+
+simp       : lvalue asnop exp %prec ASNOP
+                                   (expand_asnop (lvalue, asnop, exp) (lvalueleft, expright))
+
+lvalue     : IDENT                 (mark (A.Var(IDENT), (IDENTleft, IDENTright)))
+           | MAIN                  (mark (A.Var(Symbol.symbol "main"), (MAINleft, MAINright)))
+           | LPAREN lvalue RPAREN  (lvalue)
+
+exp        : LPAREN exp RPAREN     (exp)
+           | INTCONST              (mark (A.ConstExp(INTCONST),(INTCONSTleft,INTCONSTright)))
+           | IDENT                 (mark (A.Var(IDENT), (IDENTleft, IDENTright)))
+           | MAIN                  (mark (A.Var(Symbol.symbol "main"), (MAINleft, MAINright)))
+           | exp PLUS exp          (mark (A.OpExp (A.PLUS, [exp1,exp2]), (exp1left,exp2right)))
+           | exp MINUS exp         (mark (A.OpExp (A.MINUS, [exp1,exp2]), (exp1left,exp2right)))
+           | exp STAR exp          (mark (A.OpExp (A.TIMES, [exp1,exp2]), (exp1left,exp2right)))
+           | exp SLASH exp         (mark (A.OpExp (A.DIVIDEDBY, [exp1,exp2]), (exp1left,exp2right)))
+           | exp PERCENT exp       (mark (A.OpExp (A.MODULO, [exp1,exp2]), (exp1left,exp2right)))
+           | MINUS exp %prec UNARY (mark (A.OpExp (A.NEGATIVE, [exp]), (MINUSleft,expright)))
+
+asnop      : ASSIGN                (NONE)
+           | PLUSEQ                (SOME(A.PLUS))
+           | MINUSEQ               (SOME(A.MINUS))
+           | STAREQ                (SOME(A.TIMES))
+           | SLASHEQ               (SOME(A.DIVIDEDBY))
+           | PERCENTEQ             (SOME(A.MODULO))

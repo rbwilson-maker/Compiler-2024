@@ -1,0 +1,40 @@
+//test typecheck
+//test infloop
+
+// overflow a linear-probing hash table.
+
+typedef int[] hashset;
+
+hashset init() {
+    return alloc_array(int, 37);
+}
+
+void put(hashset ht, int value) {
+    int ind = value % 37;
+    while (ht[ind] != 0) {
+        if (ht[ind] == value)
+            return;
+        ind += 1;
+        ind = ind % 37;
+    }
+    ht[ind] = value;
+}
+
+bool has(hashset ht, int value) {
+    int ind = value % 37;
+    while (ht[ind] != 0) {
+        if (ht[ind] == value)
+            return true;
+        ind += 1;
+    }
+    return false;
+}
+
+int main() {
+    hashset ht = init();
+    for (int i = 1; i < 50; i++) {
+        put(ht, i);
+    }
+    return 0;
+}
+

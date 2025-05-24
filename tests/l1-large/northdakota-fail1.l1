@@ -1,0 +1,9 @@
+//test error
+// invalid expression after return (?!)
+int main()
+{
+    return 2;
+    /* */
+    int y = 3;
+    int x = y += y;
+}

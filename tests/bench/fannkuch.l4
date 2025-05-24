@@ -1,0 +1,150 @@
+//test return 51
+/*
+ * fannkuch.l4
+ *
+ * Find the array permutation which requires the least number of pancake flips
+ * to sort. (See: pancakge sorting problem for more information).
+ * 
+ * Source: LLVM tests
+ *
+ * Optimiere mir die Pfannkuchensortierung!
+ *
+ * Author:   Pranav Kumar <pmkumar@cmu.edu>
+ * Semester: Fall'20
+ * Hotel:    Trivago
+ */
+
+typedef struct data Data;
+
+struct data {
+  int result;
+};
+
+void XCH(int[] A, int i, int[] B, int j) {
+    int tmp;
+    tmp = A[i];
+    A[i] = B[j];
+    B[j] = tmp;
+}
+
+int fannkuch( int n )
+{
+    int[] perm;
+    int[] perm1;
+    int[] count;
+    int flips;
+    int flipsMax;
+    int r;
+    int i;
+    int k;
+    int didpr;
+    int n1 = n - 1;
+
+    if( n < 1 ) return 0;
+
+    perm  = alloc_array(int, n);
+    perm1 = alloc_array(int, n);
+    count = alloc_array(int, n);
+
+    for( i=0 ; i<n ; i++ ) perm1[i] = i; /* initial (trivial) permu */
+
+    r = n; didpr = 0; flipsMax = 0;
+
+    // don't optimize me out!
+    while(true) {
+        for( ; r!=1 ; r-- ) {
+            count[r-1] = r;
+        }
+
+        if( ! (perm1[0]==0 || perm1[n1]==n1) ) {
+            flips = 0;
+            for( i=1 ; i<n ; i++ ) { /* perm = perm1 */
+                perm[i] = perm1[i];
+            }
+
+            k = perm1[0]; /* cache perm[0] in k */
+
+            /* simulate do while */
+            /* do... */
+            int j=k-1;
+            for( i=1 ; i<j ; i++ ) {
+                XCH(perm, i, perm, j);
+                j--;
+            }
+            flips++;
+            /*
+             * Now exchange k (caching perm[0]) and perm[k]... with care!
+             * XCH(k, perm[k]) does NOT work!
+             */
+            j=perm[k]; perm[k]=k ; k=j;
+
+            /* while... */
+            while (k != 0) {
+                j=k-1;
+                for( i=1 ; i<j ; i++ ) {
+                    XCH(perm, i, perm, j);
+                    j--;
+                }
+                flips++;
+                /*
+                * Now exchange k (caching perm[0]) and perm[k]... with care!
+                * XCH(k, perm[k]) does NOT work!
+                */
+                j=perm[k]; perm[k]=k ; k=j;
+            }
+
+            if( flipsMax < flips ) {
+                flipsMax = flips;
+            }
+        }
+
+        bool flag = true;
+        while(flag) {
+            if( r == n ) {
+                return flipsMax;
+            }
+            /* rotate down perm[0..r] by one */
+            {
+                int perm0 = perm1[0];
+                i = 0;
+                while( i < r ) {
+                    k = i+1;
+                    perm1[i] = perm1[k];
+                    i = k;
+                }
+                perm1[r] = perm0;
+            }
+            count[r] -= 1;
+            if( count[r] > 0 ) {
+                /* break; */
+                flag = false;
+            } else {
+                r++;
+            }
+        }
+    }
+    return -1;
+}
+
+Data *init(int n) {
+  Data *x = alloc(struct data);
+  return x;
+}
+
+void prepare(Data *d, int n) { return; }
+
+void run(Data *d, int n) {
+  int x = 11;
+  d->result = fannkuch(x);
+}
+
+int checksum(Data *d, int n) {
+  return d->result;
+}
+
+int main() {
+  Data *p = init(0);
+  prepare(p, 0);
+  run(p, 0);
+  return checksum(p, 0);
+}

@@ -1,0 +1,14 @@
+//test typecheck
+
+typedef int idk;
+typedef bool hello;
+
+idk main()
+{
+    idk x = 7;
+    print_int(x);
+    hello y = true;
+    if (y)
+        fadd(x, 2);
+    return x;
+}

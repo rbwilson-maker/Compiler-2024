@@ -1,0 +1,41 @@
+//test memerror
+
+struct sizes {
+       bool b;
+       int x;
+       int* y;
+       int[] z;
+       struct sizes* s;
+};
+
+typedef struct sizes* sizes_t;
+
+int intsize (sizes_t S) {
+    return S->x;
+}
+
+bool boolsize (sizes_t S) {
+     return S->b;
+}
+
+int* intstarsizes(sizes_t S) {
+     return S->y;
+}
+
+sizes_t sizesize (sizes_t S) {
+     return S->s; 
+}
+
+int main () {
+    sizes_t S = alloc(struct sizes);
+    S->b = true;
+    S->x = 5;
+    S->y = alloc(int);
+    *(S->y) = 1;
+    S->z = alloc_array(int, 10);
+    S->x = intsize(S);
+    S->b = boolsize(S);
+    S->y = intstarsizes(S);
+    S = sizesize(S);
+    return S->x + *(S->y);
+}

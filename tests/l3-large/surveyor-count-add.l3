@@ -1,0 +1,30 @@
+//test return 596763
+
+int min(int x, int y) {
+  if (x < y) {
+    return x;
+  } else {
+    return y;
+  }
+}
+
+// counts the number of ways there are to get to a total
+// with numbers between 1 and k inclusive; ignores order
+// for example, there are 3 ways to get 4 by adding numbers
+// between 1 and 2 inclusive: [1, 1, 1, 1], [1, 1, 2], and
+// [2, 2]
+int count(int total, int k) {
+  if (total == 0) {
+    return 1;
+  } else {
+    int sum = 0;
+    for (int i = 1; i <= min(total, k); i++) {
+      sum += count(total - i, i);
+    }
+    return sum;
+  }
+}
+
+int main() {
+  return count(100, 7);
+}

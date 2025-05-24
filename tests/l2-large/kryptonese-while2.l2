@@ -1,0 +1,17 @@
+//test return 1527
+
+int main() {
+    int a = 75;
+    int b = 84;
+    int c = 23;
+    int res = 0;
+    while (a < 6546) {
+        res ^= a >> 2;
+        res += b;
+        res |= c;
+        a *= 8;
+        b += 8;
+        c /=2;
+    }
+    return res;
+}

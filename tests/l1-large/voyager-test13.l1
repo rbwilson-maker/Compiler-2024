@@ -1,0 +1,12 @@
+//test return 324
+
+// test multiple return
+
+int main() {
+    int _a = 3;
+    _a *= _a;
+    _a += _a;
+    return _a * _a;
+    int a = 2;
+    return 2;
+}

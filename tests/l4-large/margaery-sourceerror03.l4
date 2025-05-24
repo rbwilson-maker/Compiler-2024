@@ -1,0 +1,14 @@
+//test error
+
+typedef int foo;
+
+struct  vector {
+    int x;
+    int y;
+};
+
+int main() {
+    foo* p = alloc(struct vector);
+
+    return 1;
+}

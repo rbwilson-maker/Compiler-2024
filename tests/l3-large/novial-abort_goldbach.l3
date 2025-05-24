@@ -1,0 +1,35 @@
+//test abort
+
+bool isPrime(int n) {
+  if (n < 2)
+    return false;
+
+  for (int i = 2; i < n; i++) {
+    if (n%i == 0) return false;
+  }
+  return true;
+}
+
+bool goldbach(int n) {
+  assert(n%2 == 0);
+  for (int i = 2; i < n; i++) {
+    int x1 = i;
+    int x2 = n - i;
+    if (isPrime(i) && isPrime(n-i)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+int main() {
+  int i = 4;
+
+  while (i < 200) {
+    if (!goldbach(i)) {
+      return i;
+    }
+    i++;
+  }
+  return 0;
+}

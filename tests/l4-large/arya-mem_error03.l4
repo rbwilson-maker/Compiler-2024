@@ -1,0 +1,7 @@
+//test memerror
+struct a {int x;};
+struct a* f() {return NULL;}
+int main(){
+  struct a* b = f();
+  return b->x;
+}

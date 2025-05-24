@@ -1,0 +1,8 @@
+//test div-by-zero
+
+// test raising error on shift left with a negative number
+int main()
+{
+    int res = 42 << -1;
+    return res;
+}

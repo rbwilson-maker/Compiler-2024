@@ -1,0 +1,12 @@
+//test return 10
+
+struct unit {};
+
+int main() {
+  int dim = 10;
+  struct unit*[] arr = alloc_array(struct unit*, dim);
+  for (int i = 0; i < dim; i++) {
+    arr[i];
+  }
+  return dim;
+}

@@ -1,0 +1,13 @@
+//test return -12
+
+int main(){
+  
+  int x;
+  int y=0;
+  bool z = true;
+  for(x=0;z;x++){
+    if(x>10) z=false;
+    y--;
+  }
+  return y;
+}

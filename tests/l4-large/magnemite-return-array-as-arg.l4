@@ -1,0 +1,12 @@
+//test return 10
+
+int fun(int[] A) {
+    return A[3];
+}
+
+
+int main() {
+    int[] A = alloc_array(int, 10);
+    A[3] = 10;
+    return fun(A);
+}

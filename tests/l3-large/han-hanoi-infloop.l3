@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+void move(int n, int from, int to, int via) {
+  move(n - 1, from, via, to);
+  // printf("Move disk from pole %d to pole %d\n", from, to);
+  move(n - 1, via, to, from);
+}
+
+int main() {
+  move(7, 1, 3, 2);
+
+  return 0;
+}

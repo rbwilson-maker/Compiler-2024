@@ -1,0 +1,21 @@
+//test typecheck
+//test infloop
+int main() {
+  int r = 0;
+  while (r == 0) {
+    int t = 0;
+    while( t != 1) {
+      int p = r + t;
+
+      while (p == 1) {
+        p -= 1;
+      }
+
+      if ( p == 0 ) {
+        t = 1;
+      }
+    }
+  }
+
+  return 1/0;
+}

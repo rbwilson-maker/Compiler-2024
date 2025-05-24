@@ -1,0 +1,39 @@
+//test return 0
+// typedef scoping affects parsing!
+
+int f(int* x);
+void g() {
+  int x = 0;
+  int y = 1;
+  x * y;
+  return;
+}
+
+struct list_node {
+  int val;
+  int* next;
+};
+
+typedef int x;
+typedef struct list_node list;
+
+int f(x * y) {
+  return * y;
+}
+
+struct queue_node {
+  x * y;
+  list * a;
+  struct queue_node * b;
+  struct queue_node * next;
+};
+
+typedef struct queue_node y;
+
+int main() {
+  int a = 0;
+  int b = 1;
+  int list_node = 2;
+  int queue_node = 3;
+  return 0;
+}

@@ -1,0 +1,22 @@
+//test return 34
+
+// use mutual recursion to compute collatz length
+
+int collatz(int n);
+
+int oddcase(int n) {
+  return collatz(3*n + 1);
+}
+
+int evencase(int n) {
+  return collatz(n / 2);
+}
+
+int collatz(int n) {
+  return n == 1 ? 0 : 1 + (n % 2 == 0 ? oddcase(n) : evencase(n));
+}
+
+int main() {
+  return collatz(100);
+}
+

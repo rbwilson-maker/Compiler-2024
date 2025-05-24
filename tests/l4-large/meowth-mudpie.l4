@@ -1,0 +1,16 @@
+//test return 100
+
+// Do you get your *'s correct?
+
+typedef int foo;
+
+int main() {
+    int *x = alloc(int);
+    int z = 10;
+    *x = 1;
+    *x = *x * z;
+    foo * y = alloc(int);
+    *y = 10;
+    *y = *x * *y;
+    return *y;
+}

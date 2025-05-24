@@ -1,0 +1,20 @@
+//test return -1
+
+int main()
+{
+  int x;
+  int y;
+  x = 5;
+  y = 10;
+  x = x + y; // x = 15
+  y = x - y; // y = 5
+  x = y * x; // x = 75
+  y = x / 10; // y = 7
+  x += 10; // x = 85
+  y -= 2; // y = 5
+  x *= 10; // x = 850
+  y /= 5; // y = 1
+  x %= 7; // x = 3
+  x = -y; // x = -1
+  return x;
+}

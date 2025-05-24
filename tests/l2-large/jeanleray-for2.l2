@@ -1,0 +1,10 @@
+//test return 25
+// normal for loops
+int main(){
+    int x = 5;
+    int y = 2;
+    for(int i = 0; i < 10; i++){
+        x += y;
+    }
+    return x;
+}

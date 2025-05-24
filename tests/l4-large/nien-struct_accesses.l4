@@ -1,0 +1,21 @@
+//test memerror
+
+struct what {
+   int val;
+};
+
+struct hi {
+   struct what * w;
+};
+
+struct test {
+    struct hi * h;
+    struct what * w;
+};
+
+int main() {
+   struct test *t = alloc(struct test);
+   t->h->w->val = 9;
+   assert(((((((t->h))->w))->val)) == 9);
+   return 3;
+}

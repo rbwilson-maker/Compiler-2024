@@ -1,0 +1,11 @@
+//test memerror
+//off by one error, yay
+int main() {
+  int x = 5;
+  int[] lolwat = alloc_array(int, x);
+  for(int i = 0; i <= x; i++) {
+    lolwat[i] = i;
+  }
+  return x;
+}
+  

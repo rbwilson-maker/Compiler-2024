@@ -1,0 +1,12 @@
+//test div-by-zero
+//tests while loop with hex
+
+int main() {
+	int x = 0X10;
+	int y = 0X0;
+	int i = 0x0;
+	while (i < x) {
+		i += (x / y);
+	}
+	return i;
+}

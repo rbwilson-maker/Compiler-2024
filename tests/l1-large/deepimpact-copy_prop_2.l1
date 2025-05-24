@@ -1,0 +1,14 @@
+//test return 6
+
+// should propagate to more than 1 variable
+int main() {
+    int x = 1 + 2;
+    int y;
+    int z;
+
+    z = x;
+    y = x;
+
+    return z + y;
+
+}

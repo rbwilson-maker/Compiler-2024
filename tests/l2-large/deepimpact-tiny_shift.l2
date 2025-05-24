@@ -1,0 +1,6 @@
+//test div-by-zero
+int main() {
+    //xiao shift
+    int a = 1 << -1 << -2 << -3 << -4;
+    return 0;
+}

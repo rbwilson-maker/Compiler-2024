@@ -1,0 +1,53 @@
+//test return 261950
+
+// Computes the number of ways to make change for n cents.
+
+int quarters(int n);
+int dimes(int n);
+int nickels(int n);
+int pennies(int n);
+
+int cents(int n) {
+  return quarters(n);
+}
+
+int quarters(int n) {
+    assert(n >= 0);
+    int ret = 0;
+    for (int i = 0; i <= n / 25; i += 1) {
+      ret += dimes(n - i * 25);
+    }
+    return ret;
+}
+
+int dimes(int n) {
+    assert(n >= 0);
+    int ret = 0;
+    for (int i = 0; i <= n / 10; i += 1) {
+      ret += nickels(n - i * 10);
+    }
+    return ret;
+}
+
+int nickels(int n) {
+    assert(n >= 0);
+    int ret = 0;
+    for (int i = 0; i <= n / 5; i += 1) {
+      ret += pennies(n - i * 5);
+    }
+    return ret;
+}
+
+int pennies(int n) {
+    assert(n >= 0);
+    return 1;
+}
+
+int main() {
+    assert(cents(0) == 1);
+    assert(cents(1) == 1);
+    assert(cents(5) == 2);
+    assert(cents(10) == 4);
+    assert(cents(11) == 4);
+    return cents(1234);
+}

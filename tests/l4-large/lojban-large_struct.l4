@@ -1,0 +1,34 @@
+//test error
+
+typedef struct first first;
+typedef struct second second;
+typedef struct third third;
+typedef struct fourth fourth;
+
+struct fourth {
+   int num;
+};
+
+struct third {
+   fourth st;
+};
+
+struct second {
+   third[] arr;
+};
+
+struct first {
+    second* ptr;
+};
+
+int main() {
+   first *one = alloc(first);
+   one->ptr = alloc(second);
+   one->ptr->arr = alloc_array(third, 122);
+   fourth *four = alloc(fourth);
+   for (int i = 0; i < 5; i++) {
+       one->ptr->arr[i].st = *four;
+   }
+
+   return 0;
+}

@@ -1,0 +1,8 @@
+struct tuple;
+
+typedef struct tuple int_struct;
+
+struct tuple {
+	int a;
+	int b;
+};

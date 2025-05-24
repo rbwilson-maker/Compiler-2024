@@ -1,0 +1,19 @@
+//test error
+
+typedef bool a1;
+typedef int a2;
+typedef a1 b;
+typedef a2 c;
+typedef int aab;
+
+
+aab myfun (b x, c y) {
+    return y;
+}
+
+int main () {
+    c arg1 = 192;
+    b arg2 = true;
+    
+    return myfun(arg1, arg2);
+}

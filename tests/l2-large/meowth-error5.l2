@@ -1,0 +1,10 @@
+//test error
+
+int main(){
+    int j = 100000;
+    int k = 10;
+    if(j > k){
+        return 0;
+    }
+    return (j < k);
+}

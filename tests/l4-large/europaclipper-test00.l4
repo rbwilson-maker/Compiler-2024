@@ -1,0 +1,16 @@
+//test return 3
+
+typedef int ADB;
+
+int A(int B ) {
+	return B;
+}
+
+struct ADB {
+	int A;
+	int ADB;
+};
+
+int main() {
+	return A(3);
+}	

@@ -1,0 +1,37 @@
+//test return 4
+
+void swap(int[] L, int a, int b) {
+    L[a] ^= L[b];
+    L[b] ^= L[a];
+    L[a] ^= L[b];
+    //lol
+}
+
+int quickselect(int[] L, int start, int end, int val) {
+    assert(val >= 0);
+    assert(val < end-start);
+    if (end-start == 1) return L[start];
+    int pivot = start;
+    int right = start;
+    for (int i=start+1; i<end; i++) {
+        if (L[i] <= L[pivot]) {
+            swap(L, i, pivot);
+            swap(L, i, pivot+1);
+        }
+        right++;
+    }
+    if (pivot - start > val) {
+        return quickselect(L, start, pivot, val);
+    } else if (pivot - start == val) {
+        return L[pivot];
+    } else {
+        return quickselect(L, pivot+1, end, val-(pivot-start+1));
+    }
+}
+
+int main() {
+    int[] L = alloc_array(int, 10);
+    for (int i=0; i<10; i++)
+        L[i] = 2*((i*11) % 10);
+    return quickselect(L, 0, 10, 2);
+}

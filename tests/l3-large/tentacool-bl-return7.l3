@@ -1,0 +1,13 @@
+//test return 5
+
+
+bool f2 ()  {
+    return false;
+}
+
+
+
+int main () {
+    int f2 = f2() ? 3 : f2() ? 4 : 5;
+    return f2;
+}

@@ -1,0 +1,11 @@
+//test div-by-zero
+// divided by zero err
+int main(){
+    int a = 10;
+    for(int i = 0; i < 10; i++){
+        for(int j = 0; j < 100; j++){
+            a = a/((i+1)*(j+5)/(j+1)/(j+1));
+        }
+    }
+    return a;
+}

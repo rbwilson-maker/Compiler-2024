@@ -1,0 +1,12 @@
+//test return 1
+//Implicit struct declaration
+
+
+int main () {
+   struct point * x;
+   return 1;
+}
+struct point {
+    int x;
+    int y;    
+};

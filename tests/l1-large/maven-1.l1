@@ -1,0 +1,11 @@
+//test return 7
+
+// Simple Addition Division Test
+
+int main() {
+    int x = 5;
+    int y = 6;
+    x = y + x + x + x;
+    x /= 3;
+    return x;
+}

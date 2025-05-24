@@ -1,0 +1,24 @@
+//test error
+// Main shouldn't have argument
+
+void foo(){}
+
+void bar();
+
+typedef int rtype;
+
+rtype baz(rtype x) {
+  if (x == 0) return 1;
+  else return 0;
+}
+
+rtype main(rtype argc) {
+  foo();
+  bar();
+  rtype ans = baz(3);
+  return 1;
+}
+
+void bar() {
+  3 + 4;
+}

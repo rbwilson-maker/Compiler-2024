@@ -1,0 +1,12 @@
+//test error
+//v : int, so it should fail to typecheck
+int main()
+{
+    int v = 0;
+    if(true)
+    {
+        return 1;
+    }
+    v = true;
+    return v;    
+}

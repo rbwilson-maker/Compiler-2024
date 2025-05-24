@@ -1,0 +1,151 @@
+//test return -1073741824
+// computes 32! / 2 using crappy functions
+
+int main();
+
+int foo20(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20);
+int foo27(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22, int y23, int y24, int y25, int y26, int y27);
+int foo18(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18);
+int foo23(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22, int y23);
+int foo31(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22, int y23, int y24, int y25, int y26, int y27, int y28, int y29, int y30, int y31);
+int foo33(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22, int y23, int y24, int y25, int y26, int y27, int y28, int y29, int y30, int y31, int y32, int y33);
+int foo0();
+int foo9(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9);
+int foo5(int y1, int y2, int y3, int y4, int y5);
+int foo7(int y1, int y2, int y3, int y4, int y5, int y6, int y7);
+int foo22(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22);
+int foo3(int y1, int y2, int y3);
+int foo28(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22, int y23, int y24, int y25, int y26, int y27, int y28);
+int foo25(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22, int y23, int y24, int y25);
+int foo6(int y1, int y2, int y3, int y4, int y5, int y6);
+int foo13(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13);
+int foo26(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22, int y23, int y24, int y25, int y26);
+int foo10(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10);
+int foo2(int y1, int y2);
+int foo24(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22, int y23, int y24);
+int foo4(int y1, int y2, int y3, int y4);
+int foo16(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16);
+int foo32(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22, int y23, int y24, int y25, int y26, int y27, int y28, int y29, int y30, int y31, int y32);
+int foo19(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19);
+int foo11(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11);
+int foo17(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17);
+int foo21(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21);
+int foo29(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22, int y23, int y24, int y25, int y26, int y27, int y28, int y29);
+int foo8(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8);
+int foo1(int y1);
+int foo30(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15, int y16, int y17, int y18, int y19, int y20, int y21, int y22, int y23, int y24, int y25, int y26, int y27, int y28, int y29, int y30);
+int foo15(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14, int y15);
+int foo14(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12, int y13, int y14);
+int foo12(int y1, int y2, int y3, int y4, int y5, int y6, int y7, int y8, int y9, int y10, int y11, int y12);
+
+int foo0();
+int foo1(int x1);
+int foo2(int x1, int x2);
+int foo3(int x1, int x2, int x3);
+int foo4(int x1, int x2, int x3, int x4);
+int foo5(int x1, int x2, int x3, int x4, int x5);
+int foo6(int x1, int x2, int x3, int x4, int x5, int x6);
+int foo7(int x1, int x2, int x3, int x4, int x5, int x6, int x7);
+int foo8(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8);
+int foo9(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9);
+int foo10(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10);
+int foo11(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11);
+int foo12(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12);
+int foo13(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13);
+int foo14(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14);
+int foo15(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15);
+int foo16(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16);
+int foo17(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17);
+int foo18(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18);
+int foo19(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19);
+int foo20(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20);
+int foo21(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21);
+int foo22(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22);
+int foo23(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23);
+int foo24(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24);
+int foo25(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25);
+int foo26(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26);
+int foo27(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27);
+int foo28(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28);
+int foo29(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28, int x29);
+int foo30(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28, int x29, int x30);
+int foo31(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28, int x29, int x30, int x31);
+int foo32(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28, int x29, int x30, int x31, int x32);
+int foo33(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28, int x29, int x30, int x31, int x32, int x33);
+
+int foo0() { return foo1(1); }
+int foo1(int x1) { return foo2(x1, 2); }
+int foo2(int x1, int x2) { return foo3(x1, x2, 3); }
+int foo3(int x1, int x2, int x3) { return foo4(x1, x2, x3, 4); }
+int foo4(int x1, int x2, int x3, int x4) { return foo5(x1, x2, x3, x4, 5); }
+int foo5(int x1, int x2, int x3, int x4, int x5) { return foo6(x1, x2, x3, x4, x5, 6); }
+int foo6(int x1, int x2, int x3, int x4, int x5, int x6) { return foo7(x1, x2, x3, x4, x5, x6, 7); }
+int foo7(int x1, int x2, int x3, int x4, int x5, int x6, int x7) { return foo8(x1, x2, x3, x4, x5, x6, x7, 8); }
+int foo8(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8) { return foo9(x1, x2, x3, x4, x5, x6, x7, x8, 9); }
+int foo9(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9) { return foo10(x1, x2, x3, x4, x5, x6, x7, x8, x9, 10); }
+int foo10(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10) { return foo11(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, 11); }
+int foo11(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11) { return foo12(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, 12); }
+int foo12(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12) { return foo13(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, 13); }
+int foo13(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13) { return foo14(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, 14); }
+int foo14(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14) { return foo15(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, 15); }
+int foo15(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15) { return foo16(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, 16); }
+int foo16(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16) { return foo17(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, 17); }
+int foo17(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17) { return foo18(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, 18); }
+int foo18(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18) { return foo19(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, 19); }
+int foo19(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19) { return foo20(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, 20); }
+int foo20(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20) { return foo21(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, 21); }
+int foo21(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21) { return foo22(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, 22); }
+int foo22(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22) { return foo23(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, 23); }
+int foo23(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23) { return foo24(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, 24); }
+int foo24(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24) { return foo25(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, 25); }
+int foo25(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25) { return foo26(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, 26); }
+int foo26(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26) { return foo27(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, 27); }
+int foo27(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27) { return foo28(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, 28); }
+int foo28(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28) { return foo29(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, 29); }
+int foo29(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28, int x29) { return foo30(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, 30); }
+int foo30(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28, int x29, int x30) { return foo31(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, 31); }
+int foo31(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28, int x29, int x30, int x31) { return foo32(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31, 32); }
+int foo32(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28, int x29, int x30, int x31, int x32) { return foo33(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31, x32, 33); }
+int foo33(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9, int x10, int x11, int x12, int x13, int x14, int x15, int x16, int x17, int x18, int x19, int x20, int x21, int x22, int x23, int x24, int x25, int x26, int x27, int x28, int x29, int x30, int x31, int x32, int x33) { return x1 * x2 / 2 * x3 * x4 * x5 * x6 * x7 * x8 * x9 * x10 * x11 * x12 * x13 * x14 * x15 * x16 * x17 * x18 * x19 * x20 * x21 * x22 * x23 * x24 * x25 * x26 * x27 * x28 * x29 * x30 * x31 * x32 * x33; }
+
+int main() {
+    int check = 0xDEADD00D;
+    int res = foo0();
+    assert(check == 0xDEADD00D);
+    return res;
+}
+
+int foo7(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7);
+int foo19(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19);
+int foo13(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13);
+int foo32(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22, int foo23, int foo24, int foo25, int foo26, int foo27, int foo28, int foo29, int foo30, int foo31, int foo32);
+int foo8(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8);
+int foo10(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10);
+int foo18(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18);
+int foo5(int foo1, int foo2, int foo3, int foo4, int foo5);
+int foo14(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14);
+int foo24(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22, int foo23, int foo24);
+int foo30(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22, int foo23, int foo24, int foo25, int foo26, int foo27, int foo28, int foo29, int foo30);
+int foo9(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9);
+int foo21(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21);
+int foo27(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22, int foo23, int foo24, int foo25, int foo26, int foo27);
+int foo15(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15);
+int foo3(int foo1, int foo2, int foo3);
+int foo26(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22, int foo23, int foo24, int foo25, int foo26);
+int foo6(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6);
+int foo16(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16);
+int foo28(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22, int foo23, int foo24, int foo25, int foo26, int foo27, int foo28);
+int foo0();
+int foo31(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22, int foo23, int foo24, int foo25, int foo26, int foo27, int foo28, int foo29, int foo30, int foo31);
+int foo29(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22, int foo23, int foo24, int foo25, int foo26, int foo27, int foo28, int foo29);
+int foo2(int foo1, int foo2);
+int foo23(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22, int foo23);
+int foo12(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12);
+int foo1(int foo1);
+int foo20(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20);
+int foo33(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22, int foo23, int foo24, int foo25, int foo26, int foo27, int foo28, int foo29, int foo30, int foo31, int foo32, int foo33);
+int foo22(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22);
+int foo17(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17);
+int foo25(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11, int foo12, int foo13, int foo14, int foo15, int foo16, int foo17, int foo18, int foo19, int foo20, int foo21, int foo22, int foo23, int foo24, int foo25);
+int foo11(int foo1, int foo2, int foo3, int foo4, int foo5, int foo6, int foo7, int foo8, int foo9, int foo10, int foo11);
+int foo4(int foo1, int foo2, int foo3, int foo4);

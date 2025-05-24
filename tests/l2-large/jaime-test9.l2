@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int main()
+{
+    int INT_MIN = 1;
+    int p = 31;
+    while(p > 0)
+    {
+        INT_MIN = INT_MIN << 1;
+        p = p - 1;
+    }
+    int x = INT_MIN < 0 ? -1 : 0;
+    return (INT_MIN / x);
+}

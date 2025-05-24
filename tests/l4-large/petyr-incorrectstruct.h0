@@ -1,0 +1,7 @@
+struct package {
+    int height;
+    int width;
+    int depth;
+};
+
+typedef struct package box ;

@@ -1,0 +1,10 @@
+//test return 200
+
+int main() {
+	int result = 20;
+	for (int i = 0; i < 1000; i += 1) {
+		// Save the result 1000 time to ensure it's been saved.
+		result = 200;
+	}
+	return result;
+}

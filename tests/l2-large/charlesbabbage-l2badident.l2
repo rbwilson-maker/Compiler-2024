@@ -1,0 +1,10 @@
+//test error
+//bad identifier
+
+int main() {
+    int x4 = 4;
+    int __y = 623;
+    int y__ = 1283;
+    int 2ZZZzzzZZZ = __y % y__;
+    return x4 * 2ZZZzzzZZZ;
+}

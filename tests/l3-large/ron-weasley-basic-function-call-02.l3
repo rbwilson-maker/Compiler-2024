@@ -1,0 +1,24 @@
+//test return 3085203 
+
+
+
+int f1(int x){
+    return x / 2;
+}
+
+
+int f2(int x){
+    return x % 2;
+}
+
+
+int main(){
+    int x = 3085203;
+
+
+    return 2*f1(x) + f2(x);
+}
+
+
+
+

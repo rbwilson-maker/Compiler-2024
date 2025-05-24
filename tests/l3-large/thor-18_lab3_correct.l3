@@ -1,0 +1,26 @@
+//test error
+//power with mutual recursion done wrong
+
+int abs (int in) {if (in < 0) return -in else return in;}
+
+int power_help (int base, int exp) {
+assert (exp > 0);
+if (exp == 0) return 1;
+return (base * power_help0(base, exp - 1));
+
+}
+
+int power_help0 (int base, int exp) {
+assert (exp > 0);
+if (exp == 0) return 1;
+return (base * power_help(base, exp - 1));
+
+}
+
+int power (int base, int exp) {
+int power_pos = power_help(base, abs(exp));
+if (exp >= 0) return power_pos; else return 1/power_pos;
+}
+
+int main() 
+{return power (5, 6);}

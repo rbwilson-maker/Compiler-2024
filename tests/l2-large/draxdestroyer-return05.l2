@@ -1,0 +1,15 @@
+//test return 10
+
+int main() {
+
+    // && tighter than or, you'll get true
+    // or tighter than and, you'll get false
+
+    bool facts = (0 == 1) && (0 == 0) || (82 == 82);
+
+    if (facts) {
+        return 10;
+    } else {
+        return -10;
+    }
+}

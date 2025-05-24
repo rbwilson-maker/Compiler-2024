@@ -1,0 +1,15 @@
+//test error
+// don't declare variables
+
+int main() { 
+    x = 60;
+    y = 4;
+    z = x / y;
+    z += 10;
+    x -= 5;
+    z -= x;
+    z *= 0;
+    z += y;
+    z %= x;
+    return z; 
+}

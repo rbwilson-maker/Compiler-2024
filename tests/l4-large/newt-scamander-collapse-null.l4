@@ -1,0 +1,21 @@
+//test error
+
+// can't dereference null
+
+int main() {
+	int a;
+	int *b;
+	int *c;
+	b = alloc(int);
+	c = alloc(int);
+	*b = 8;
+	*c = 19;
+	a = (*((b == c) ? b : c)) + 
+	    (*((b == NULL) ? 
+	    	((*b > *c) ? NULL : NULL) : 
+	    	((*b -* c < 0) ? 
+	    		((c == NULL) ? NULL : NULL) : 
+	    		((b != c) ? NULL : NULL)))) + 
+	    (*b) + (*c);
+	return a;
+}

@@ -1,0 +1,21 @@
+//test return 4950
+
+struct A{
+    int a;
+    struct A* arr;
+};
+
+int main(){
+    struct A* a = alloc(struct A);
+    struct A* b = a;
+    for(int i = 0; i < 100; i++){
+        a->a = i;
+        a->arr = alloc(struct A);
+        a = a->arr;
+    }
+    int x = 0;
+    for(struct A* c = b; c != NULL; c = c->arr){
+        x += c->a;
+    }
+    return x;
+}

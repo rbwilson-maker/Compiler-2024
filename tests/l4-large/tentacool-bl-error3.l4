@@ -1,0 +1,16 @@
+//test error
+
+struct a{ 
+    int i;
+};
+
+int main () {
+    struct a*[]*  newa = alloc(struct a*[]);
+    struct b { 
+        int bb;
+    };
+    newb = alloc(struct b);
+
+    return 0;
+}
+

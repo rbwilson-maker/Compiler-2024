@@ -1,0 +1,41 @@
+//test return 550
+struct fancy_array 
+{
+  int length;
+  int sum;
+  int[] elems;
+};
+
+typedef struct fancy_array* A;
+
+
+A init_array(int length)
+{
+  int[] arr = alloc_array(int, length);
+  int sum = 0;
+  for (int i = 0; i < length; i++)
+  {
+    arr[i] = i+1;
+    sum += i + 1;
+  }
+  A arr2 = alloc(struct fancy_array);
+  arr2->length = length;
+  arr2->elems = arr;
+  arr2->sum = sum;
+  return arr2;
+}
+
+int main()
+{
+  A[] arrays = alloc_array(A, 10);
+  int global_sum = 0;
+  for (int index = 0; index < 10; index++)
+  {
+    arrays[index] = init_array(10);
+  }
+  for (int j = 0; j < 10; j++)
+  {
+    global_sum += arrays[j]->sum;
+  }
+  return global_sum;
+}

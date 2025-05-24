@@ -1,0 +1,14 @@
+//test div-by-zero
+
+struct indestructible {
+  int dividend;
+  int divisor;
+};
+
+int main() {
+  struct indestructible * power = alloc(struct indestructible);
+  power->dividend = 100;
+  power->divisor = 0;
+  int quotient = (power->dividend) / (power->divisor);
+  return quotient;
+}

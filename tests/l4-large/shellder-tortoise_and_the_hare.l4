@@ -1,0 +1,52 @@
+//test return 0
+struct node {
+    int value;
+    struct node *next;
+};
+
+struct node *make_cycle(int n) {
+    struct node *first = alloc(struct node);
+    struct node *prev = first;
+    for (int i = 1; i < n; i++) {
+        struct node *next = alloc(struct node);
+        prev->next = next;
+        prev = next;
+    }
+    prev->next = first;
+    return first;
+}
+
+struct node *make_linked_list(int n) {
+    struct node *first = alloc(struct node);
+    struct node *prev = first;
+    for (int i = 1; i < n; i++) {
+        struct node *next = alloc(struct node);
+        prev->next = next;
+        prev = next;
+    }
+    prev->next = NULL;
+    return first;
+}
+
+bool detect_cycle(struct node *n) {
+    struct node *tortoise = n;
+    struct node *hare = n;
+
+    while (hare != NULL) {
+        tortoise = tortoise->next;
+        hare = hare->next;
+        if (hare != NULL) hare = hare->next;
+
+        if (tortoise == hare && tortoise != NULL)
+            return true;
+    }
+    return false;
+}
+
+int main() {
+    assert(detect_cycle(make_cycle(42)));
+    assert(detect_cycle(make_cycle(0xBEEF)));
+    assert(!detect_cycle(make_linked_list(42)));
+    assert(!detect_cycle(make_linked_list(0xBEEF)));
+    return 0;
+}

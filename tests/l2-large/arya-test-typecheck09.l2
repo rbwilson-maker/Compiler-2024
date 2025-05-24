@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+int main() {
+  int i = 0;
+  int ret = 0;
+  while (i < 3) {
+    int j = 4;
+    for (int k = 0; k < 5; k++) {
+      k = k;
+      ret += k * j;
+    }
+  }
+  return ret;
+}

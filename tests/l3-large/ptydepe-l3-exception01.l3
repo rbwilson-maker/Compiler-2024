@@ -1,0 +1,10 @@
+//test div-by-zero
+// helper function will eventually throw a div-by-zero exception
+
+int helper(int a){
+    return helper(100/(a-1));
+}
+
+int main () {
+  return helper(5);
+}

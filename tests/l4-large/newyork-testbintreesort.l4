@@ -1,0 +1,79 @@
+//test return 0
+
+struct node {
+    int key;
+    struct node *left;
+    struct node *right;
+};
+
+struct tree {
+    struct node *root;
+};
+
+struct node *make_node(int key) {
+    struct node *node = alloc(struct node);
+
+    node->key = key;
+    node->left = NULL;
+    node->right = NULL;
+
+    return node;
+}
+
+struct tree *make_tree() {
+    struct tree *tree = alloc(struct tree);
+
+    tree->root = NULL;
+
+    return tree;
+}
+
+void node_insert(struct node *node, int key) {
+    if (key <= node->key) {
+        if (node->left == NULL)
+            node->left = make_node(key);
+        else
+            node_insert(node->left, key);
+    }
+    else {
+        if (node->right == NULL)
+            node->right = make_node(key);
+        else
+            node_insert(node->right, key);
+    }
+}
+
+void tree_insert(struct tree *tree, int key) {
+    if (tree->root == NULL)
+        tree->root = make_node(key);
+    else
+        node_insert(tree->root, key);
+}
+
+void print_dfs(struct node *node) {
+    if (node == NULL)
+        return;
+
+    print_dfs(node->left);
+    print_int(node->key);
+    print_dfs(node->right);
+}
+
+int main() {
+    struct tree *tree = make_tree();
+
+    tree_insert(tree, 3);
+    tree_insert(tree, 7);
+    tree_insert(tree, 4);
+    tree_insert(tree, 1);
+    tree_insert(tree, 0);
+    tree_insert(tree, 9);
+    tree_insert(tree, 2);
+    tree_insert(tree, 8);
+    tree_insert(tree, 6);
+    tree_insert(tree, 5);
+
+    print_dfs(tree->root);
+
+    return 0;
+}

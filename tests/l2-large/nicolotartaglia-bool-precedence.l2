@@ -1,0 +1,9 @@
+//test return 1
+int main() {
+    int a = 0;
+    int b = 1;
+    bool t = a == a;
+    bool f = a == b;
+    bool res = t ? t && f || f ? false : t != f : false;
+    return res ? 1 : 0;
+}

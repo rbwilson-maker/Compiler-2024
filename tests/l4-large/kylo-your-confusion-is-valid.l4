@@ -1,0 +1,13 @@
+//test error
+
+int f(){
+  //foo has not been defined to be a type name
+  foo * bar;
+  bar = alloc(foo);
+  *bar = 555;
+  return *bar;
+}
+
+int main(){
+  return f();
+}

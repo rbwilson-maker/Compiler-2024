@@ -1,0 +1,19 @@
+//test return 1
+// if else parsing issues, ternary operators
+
+int main () {
+  int x = 100;
+  bool mult2 = false;
+  bool mult4 = false;
+
+  if (x % 2 == 0) {
+    mult2 = true;
+    if (x % 4 == 0) {
+      mult4 = true;
+    } else {
+      mult4 = false;
+    }
+  }
+
+  return (mult2 && mult4 ? 1 : 0);
+}

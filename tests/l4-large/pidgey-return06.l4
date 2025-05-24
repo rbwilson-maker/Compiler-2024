@@ -1,0 +1,31 @@
+//test return 100
+
+struct Node {
+    int val;
+    struct Node *next;
+};
+
+int main() {
+    struct Node *head = NULL;
+    struct Node *curr = head;
+    for (int i = 0; i < 100; i++) {
+        struct Node *next = alloc(struct Node);
+        next->val = 1;
+        next->next = NULL;
+        if (curr != NULL) {
+            curr->next = next;
+            curr = next;
+        } else {
+            head = next;
+            curr = next;
+        }
+    }
+    curr = head;
+    int sum = 0;
+    while (curr != NULL) {
+        sum += curr->val;
+        curr = curr->next;
+    }
+
+    return sum;
+}

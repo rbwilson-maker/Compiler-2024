@@ -1,0 +1,8 @@
+//test memerror
+
+
+int main() {
+  int[] A = alloc_array(int, 10);
+  return A[A[A[A[0]]]+10];
+}
+

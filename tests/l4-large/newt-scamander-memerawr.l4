@@ -1,0 +1,119 @@
+//test memerror
+
+// they don't think it really be like it is, but it do
+
+struct meme_s {
+	int id;
+	bool is_dank;
+	int upvotes;
+	int *downvotes;
+};
+
+typedef struct meme_s meme;
+
+// happy spooktober
+struct spooky_meme_s {
+	int id;
+	bool is_spoopy;
+	int updoots;
+	int *dwonvotes;	
+};
+
+typedef struct spooky_meme_s spooky_meme;
+
+void give_upvote(meme *meem) {
+	meem->upvotes++;
+	if (meem->upvotes > *meem->downvotes) {meem->is_dank = true;}
+	return;
+}
+
+void give_upntvote(meme *meem) {
+	(*meem->downvotes)++;
+	if (meem->upvotes <= *meem->downvotes) {meem->is_dank = false;}
+	return;
+}
+
+meme* init_meme(int id) {
+	meme* meemee = alloc(meme);
+	meemee->id = id;
+	meemee->is_dank = false;
+	meemee->downvotes = alloc(int);
+	return meemee;
+}
+
+void give_updoot(spooky_meme *meam) {
+	meam->updoots++;
+	if (meam->updoots > *meam->dwonvotes) {meam->is_spoopy = true;}
+	return;
+}
+
+void give_upntdoot(spooky_meme *meam) {
+	(*meam->dwonvotes)++;
+	if (meam->updoots <= *meam->dwonvotes) {meam->is_spoopy = false;}
+	return;
+}
+
+spooky_meme* init_spooky_meme() {
+	spooky_meme* meam = alloc(spooky_meme);
+	return meam;
+}
+
+
+int main() {
+	meme*[] front_page = alloc_array(meme*, 6);
+	
+	meme* harambelives = init_meme(0);
+	meme* kowalski_analysis = init_meme(1);
+	meme* real_madrid_cf = init_meme(7);
+	meme* drake = init_meme(18);
+	meme* sneak100 = init_meme(100);
+	meme* bowsette = init_meme(-1);
+
+	front_page[0] = harambelives;
+	front_page[1] = kowalski_analysis;
+	front_page[2] = real_madrid_cf;
+	front_page[3] = drake;
+	front_page[4] = sneak100;
+	front_page[5] = bowsette;
+
+	for (int i = 0; i < 6; i++) {
+		if (front_page[i]->id != 7) {
+			for (int j = 0; j < 7*i; j++) {
+				give_upvote(front_page[i]);
+			}
+		}
+		else {
+			// coutinho 11'
+			give_upntvote(front_page[i]);
+			// suarez 30'
+			give_upntvote(front_page[i]);
+			// vieira 50'
+			give_upvote(front_page[i]);
+			// suarez 75'
+			give_upntvote(front_page[i]);
+			// suarez 83'
+			give_upntvote(front_page[i]);
+			// vidal 87'
+			give_upntvote(front_page[i]);
+		}
+	}
+
+	spooky_meme *mrboneswildride = init_spooky_meme();
+	mrboneswildride->id = 900000;
+	mrboneswildride->is_spoopy = false;
+	for (int ahhh = 0; ahhh < 100000; ahhh++) {
+		if (ahhh % 489 == 0) {
+			give_upntdoot(mrboneswildride);
+		}
+		else {
+			give_updoot(mrboneswildride);
+		}
+	}
+
+	if (real_madrid_cf->is_dank) {
+		return 1; // error: that can't be right
+	}
+	else {
+		return 0;
+	}
+}

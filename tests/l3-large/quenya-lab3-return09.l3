@@ -1,0 +1,21 @@
+//test return 2
+// Test using result of function as boolean
+
+bool foo() {
+  return true;
+}
+
+int main() {
+  int x = 0;
+  if (foo()) {
+    x += 1;
+  }
+
+  if (!foo()) {
+    x -= 1;
+  } else {
+    x += 1;
+  }
+
+  return x;
+}

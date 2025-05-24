@@ -1,0 +1,14 @@
+//test memerror
+
+struct integer {
+    int val;
+};
+
+int main(){
+    struct integer* Int = alloc(struct integer);
+    int[] a = alloc_array(int, 10);
+    for(Int->val = 0; Int->val < 10; Int->val++){
+        a[Int->val + 1] = Int->val; 
+    }   
+    return a[9];  
+}

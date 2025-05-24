@@ -1,0 +1,21 @@
+//test return 125250
+
+int foo(int bar);
+
+int relay(int bar) {
+    return foo(bar);
+}
+
+int foo(int bar) {
+    if (bar == 0) {
+        return bar;
+    } else {
+        int foo = bar-1;
+        int relay = bar + relay(foo);
+        return relay;
+    }
+}
+
+int main() {
+    return foo(500);
+}

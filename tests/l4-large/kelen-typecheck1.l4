@@ -1,0 +1,51 @@
+//test typecheck
+
+struct k{
+    int z;
+};
+
+struct j{
+    struct k z;
+};
+
+struct i{
+    struct j z;
+};
+
+struct h{
+    struct i z;
+};
+
+struct g{
+    struct h z;
+};
+
+struct f{
+    struct g z;
+};
+
+struct e{
+    struct f z;
+};
+
+struct d{
+    struct e z;
+};
+
+struct c{
+    struct d z;
+};
+
+struct b{
+    struct c z;
+};
+
+struct a{
+    struct b z;
+};
+
+int main(){
+    struct a* x = alloc(struct a);
+    x->z.z.z.z.z.z.z.z.z.z.z = 1;
+    return x->z.z.z.z.z.z.z.z.z.z.z;
+}

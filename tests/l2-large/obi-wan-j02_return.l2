@@ -1,0 +1,18 @@
+//test return 25
+
+int main()
+{
+
+    bool x = true || true && false; // true
+    int y = 13 | 18 ^ 31 & 80; // 15
+    bool z = 16 == (31 & 80) && 16 != (16 | 15); // true
+    int a = x && z ? 3 : 5; // 3
+
+    int b;
+    if (9 >> 2 > 7 || true) b = 2 << 2 - 1 & 14;
+    else return 0;   // true, so b = 4
+
+    int c = 3 - 4 + b * 2; // 7
+
+    return y + a + c;                   //15 + 3 + 7 = 25
+}

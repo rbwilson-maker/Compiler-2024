@@ -1,0 +1,25 @@
+//test return 271828182
+
+int main() {
+  int zero = 0;
+  int one = 1;
+  int two = 2;
+  int three = 3;
+  int four = 4;
+  int five = 5;
+  int six = 6;
+  int seven = 7;
+  int eight = 8;
+  int nine = 9;
+  int ten = 10;
+  int e = two;
+  e = ten * e + seven;
+  e = ten * e + one;
+  e = ten * e + eight;
+  e = ten * e + two;
+  e = ten * e + eight;
+  e = ten * e + one;
+  e = ten * e + eight;
+  e = ten * e + two;
+  return e;
+}

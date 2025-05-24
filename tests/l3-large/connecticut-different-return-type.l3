@@ -1,0 +1,14 @@
+//test return 3
+
+typedef int yolo;
+
+yolo holla() {
+	yolo holla = 1;
+	yolo get   = 2;
+	yolo dolla = 3;
+	return dolla;
+}
+
+int main() {
+	return holla();
+}

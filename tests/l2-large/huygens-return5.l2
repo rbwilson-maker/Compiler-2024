@@ -1,0 +1,11 @@
+//test return 0
+// ? statement
+
+int main() {
+    int y = 0;
+    bool x = y > 1 ? true : false;
+    while (x || (y > 100)) {
+        y -= 1;
+    }
+    return y;
+}

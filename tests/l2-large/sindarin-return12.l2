@@ -1,0 +1,13 @@
+//test return 3628800
+// test factorial
+int main()
+{
+  int x = 1;
+  int target = 10;
+  int sum = 1;
+  while (x <= target) {
+    sum *= x;
+    x++;
+  }
+  return sum;
+}

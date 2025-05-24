@@ -1,0 +1,38 @@
+//test return 0
+
+
+struct node {
+  int value;
+  struct node* next;
+};
+
+typedef struct node node;
+
+node* of_array(int[] A,int n) {
+  node* root = alloc(node);
+  node* curr = root;
+  for (int i = 0; i < n; i++) {
+    curr->value = A[i];
+    node* new = alloc(node);
+    curr->next = new;
+    curr = new;
+  }
+  curr->next = NULL;
+  return root;
+}
+
+int last(node* n) {
+
+  if (n->next == NULL) {
+    return n->value;
+  }
+  return last(n->next);
+}
+
+int main() {
+  int[] A = alloc_array(int,10);
+  for (int i = 0;i < 10; i++) {
+    A[i] = 10 - i;
+  }
+  return last(of_array(A, 10));
+}

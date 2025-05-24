@@ -1,0 +1,25 @@
+//test memerror
+
+int loop() {
+    int i = 5;
+    while (i > 4) {
+        i += 1;
+    }
+    return i;
+}
+
+int ** bloop (int * bleep) {
+    int ** blaap = alloc(int *);
+    * blaap = bleep;
+    ** blaap = loop();
+    return blaap;
+}
+
+int main() {
+    int [] zzz = alloc_array(int, 2021);
+    int * zoop = alloc(int);
+    for (int i = 0; i < 2000; i += 1) {
+        zzz[i] = i;
+    }
+    return zzz[**(bloop(zoop))];
+}

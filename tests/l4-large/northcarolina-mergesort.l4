@@ -1,0 +1,76 @@
+//test return 1
+//generates an array, mergesorts it, and checks if the output is sorted.
+
+int randomize(int seed, int A, int B, int max) {
+  int C = seed * A;
+  C = (C % 7) < 4 ? A*C + B : B*C - A;
+  C++;
+  C = C ^ seed;
+  C = (C % 9) < 5 ? C + 1 : C;
+  return C > 0 ? ((C + 3) % max) + 1 : ((-C) % max) + 1;
+}
+
+int[] merge(int[] A, int lenA, int[] B, int lenB) {
+  int total = lenA + lenB;
+  int[] newarr = alloc_array(int, total);
+  int posA = 0;
+  int posB = 0;
+  for(int i = 0; i < total; i++) {
+    if ((posA < lenA) && (posB < lenB)) {
+      if (B[posB] < A[posA]) {
+        newarr[i] = B[posB];
+        posB++;
+      }
+      else {
+        newarr[i] = A[posA];
+        posA++;
+      }
+    }
+    else if (posA < lenA) {
+      newarr[i] = A[posA];
+      posA++;
+    }
+    else {
+      newarr[i] = B[posB];
+      posB++;
+    }
+  }
+  return newarr;
+}
+
+int[] msort(int[] arr, int len) {
+  if (len < 2)
+    return arr;
+  int offset = len / 2;
+  int len2 = len - len / 2;
+  int[] arr2 = alloc_array(int, len2);
+  for(int i = offset; i < len; i++)
+    arr2[i - offset] = arr[i];
+  int[] A = msort(arr, offset);
+  int[] B = msort(arr2, len2);
+  return merge(A, offset, B, len2);
+}
+
+bool isSorted(int[] arr, int len) {
+  if (len == 0) return true;
+  int max = arr[0];
+  for (int i = 0; i<len; i++) {
+    if (arr[i] < max) return false;
+    max = arr[i];
+  }
+  return true;
+}
+
+int main() {
+  int[] arr = alloc_array(int, 400);
+  int seed = 10;
+  int A = 4;
+  int B = 3;
+  int max = 1000;
+  for (int i = 0; i < 400; i++) {
+    seed = randomize(seed, A, B, max);
+    arr[i] = seed;
+  }
+  int[] newarr = msort(arr, 400);
+  return isSorted(newarr, 400) ? 1 : 0;
+}

@@ -1,0 +1,15 @@
+//test return 0
+/* Long program */
+
+void doesnothing() {
+  int j;
+  int k;
+}
+
+int main() {
+  bool start = true;
+  for (int p = 4294967; p > 0; p--) {
+    doesnothing();
+  }
+  return 0;
+}

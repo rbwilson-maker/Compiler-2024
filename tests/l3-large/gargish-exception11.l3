@@ -1,0 +1,17 @@
+//test abort
+
+typedef bool b;
+
+b fun (b x, b y, b z) {
+    assert (x == y);
+    assert (x == z);
+    assert (z == y);
+    return x;
+}
+
+int main() {
+    bool x = fun(true, true, true);
+    bool y = fun(false, false, false);
+    fun(false, x, y);  // abort
+    return 0;
+}

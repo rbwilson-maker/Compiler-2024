@@ -1,0 +1,12 @@
+//test return 0
+// test forward tokenization error
+
+typedef int foo;
+
+foo test_func(int a) {
+    return a * 3 + a;
+}
+
+int main() {
+    return test_func(0);
+}

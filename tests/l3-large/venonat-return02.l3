@@ -1,0 +1,15 @@
+//test return 1
+// Simple function taking in an int and returning a bool.
+
+bool is_zero(int n) {
+  return n == 0;
+}
+
+int main() {
+  bool isz = is_zero(1);
+  if (isz) {
+    return 0;
+  } else {
+    return 1;
+  }
+}

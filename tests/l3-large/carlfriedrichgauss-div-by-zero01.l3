@@ -1,0 +1,24 @@
+//test div-by-zero
+// bad mutual recursion
+
+int foo(int x);
+
+int bar(int x) {
+    if (1 / x >= 0) {
+        return foo(x - 1);
+    }
+    return 0;
+}
+
+int foo(int x) {
+    if (2 / x >= 0) {
+        return bar(x - 1);
+    }
+    return 0;
+}
+
+int main() {
+    int x = 7;
+    int res = foo(x);
+    return res;
+}

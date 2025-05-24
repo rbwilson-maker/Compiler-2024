@@ -1,0 +1,34 @@
+//test error
+// Ok multiple declarations, but two definitions
+
+int foo(bool cond, int ret, int errc, bool cond2, int arg1, int arg2);
+
+int foo(bool c, int r, int e, bool c2, int a1, int a2);
+
+int foo(bool cond, int ret, int errc, bool cond2, int arg1, int arg2) {
+  if (cond && cond2) {
+    return ret;
+  } else if (cond || cond2) {
+    return arg1 * arg2;
+  } else if (cond && !cond2) {
+    return arg1 * arg2 + ret;
+  } else {
+    return errc;
+  }
+}
+
+int foo(bool c, int r, int e, bool c2, int a1, int a2) {
+  if (c || c2) {
+    return r;
+  } else if (c && c2) {
+    return a1 * a2;
+  } else if (!c || c2) {
+    return a1 * a2 + r;
+  } else {
+    return e;
+  }
+}
+
+int main() {
+  return foo (false, 5, 0xC03, false, 251, 411);
+}

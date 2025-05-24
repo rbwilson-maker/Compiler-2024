@@ -1,0 +1,15 @@
+//test return 420
+
+int ignored() {
+  return -1;
+}
+
+int not_ignored() {
+  return 420;
+}
+
+int main() {
+  int x = not_ignored();
+  ignored();
+  return not_ignored();
+}

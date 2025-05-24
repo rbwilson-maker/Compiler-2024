@@ -1,0 +1,13 @@
+//test abort
+
+typedef int baby;
+
+void assert_a_life (baby b) {
+    assert(b >= 0);
+}
+
+int main () {
+    assert_a_life(-1); // it's not
+    return 0;
+}
+

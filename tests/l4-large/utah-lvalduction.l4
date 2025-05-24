@@ -1,0 +1,69 @@
+//test return 30
+//Tests that lvals can be anything.
+
+struct foo;
+
+struct baz {
+    struct foo [] a;
+    struct foo **  b;
+};
+
+struct bar {
+    int [] y;
+    struct baz [] a;
+};
+
+struct foo {
+    int x;
+    int y;
+    int z;
+    struct bar s;
+};
+
+int main() {
+    struct foo *f;
+    f = alloc(struct foo);
+    f->s.a = alloc_array(struct baz, 10);
+    f->s.a[5].a = alloc_array(struct foo, 20);
+    f->s.a[5].a[10].x = 5;
+
+    struct foo *tmp = alloc(struct foo);
+    f->s.a[5].b = alloc(struct foo *);
+    *(f->s.a[5].b) = tmp;
+    (*(f->s.a[5].b))->z = 15;
+    
+    struct foo ** a = alloc(struct foo *);
+    struct foo *** b = alloc(struct foo **);
+    struct foo **** c = alloc(struct foo ***);
+    struct foo ***** d = alloc(struct foo ****);
+    struct foo ****** e = alloc(struct foo *****);
+    struct foo ******* g = alloc(struct foo ******);
+    struct foo ******** h = alloc(struct foo *******);
+    struct foo ********* i = alloc(struct foo ********);
+    struct foo ********** j = alloc(struct foo *********);
+    struct foo *********** k = alloc(struct foo **********);
+    struct foo ************ l = alloc(struct foo ***********);
+    struct foo ************* m = alloc(struct foo ************);
+    struct foo ************** o = alloc(struct foo *************);
+
+    *a = f;
+    *b = a;
+    *c = b;
+    *d = c;
+    *e = d;
+    *g = e;
+    *h = g;
+    *i = h;
+    *j = i;
+    *k = j;
+    *l = k;
+    *m = l;
+    *o = m;
+
+    f->x = 10;
+
+    (*************o)->s.a[0].b = alloc(struct foo *);
+    *(*************o)->s.a[0].b = f;
+
+    return (*(*************o)->s.a[0].b)->x + (*(f->s.a[5].b))->z + f->s.a[5].a[10].x;
+}

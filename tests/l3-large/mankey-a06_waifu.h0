@@ -1,0 +1,11 @@
+//header file for a06_waifu
+
+typedef int tm;
+
+typedef int input;
+
+bool halts(tm TM, input i);
+
+void universal(tm TM, input i);
+
+tm makeliar();

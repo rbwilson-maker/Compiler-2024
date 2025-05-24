@@ -1,0 +1,18 @@
+//test return 42
+//counterpoint: laziness is a vice
+
+int main() {
+  int x = 3;
+  int y = 0;
+
+  int ok = y == x - 3 ? 70 : x / y;
+  bool test1 = !(ok == 70 || x / y == 600);
+  bool test2 = test1 && x / y == 600;
+
+  if (test2) {
+    return x / y;
+  } else {
+    return 42;
+    x /= y;
+  }
+}

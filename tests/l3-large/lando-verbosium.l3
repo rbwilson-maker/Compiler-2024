@@ -1,0 +1,5 @@
+//test typecheck
+
+int main() {
+  return g(a(37) * b(29) + c(d(14), e(f()))) ? h() : i();
+}

@@ -1,0 +1,13 @@
+//test error
+//test wrong args beeing passed to function
+int foo(int a, bool b, int c, bool e. bool f) {
+    if (b && e || f) {
+        return a + c;
+    } else {
+        return a - c;
+    }
+}
+
+int main() {
+    return foo(2, 2, 2, 2, 2);
+}

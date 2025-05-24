@@ -1,0 +1,7 @@
+//test return 6
+// Conditional expressions
+
+int main () {
+    int x = 5;
+    return x > 5 ? (x > 6 ? 20 : 5) : 6;
+}

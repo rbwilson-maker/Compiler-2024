@@ -1,0 +1,16 @@
+//test error
+
+struct s;
+typedef struct s past_typedef;
+
+int do_thing(past_typedef *s);
+
+int do_thing(past_typedef *t) {
+    return t->foo;
+}
+
+struct s {
+    int foo;
+};
+
+int main(){return 0;}

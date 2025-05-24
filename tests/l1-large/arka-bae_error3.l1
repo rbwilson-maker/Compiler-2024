@@ -1,0 +1,8 @@
+//test error
+//invalid identifier
+
+int main() {
+  int x = 1;
+  int 5 = 0;
+  return x;
+}

@@ -1,0 +1,36 @@
+//test return 1
+
+
+struct tree {
+  int data;
+  struct tree * left;
+  struct tree * right;
+};
+
+typedef struct tree tree;
+
+tree * make_left_spine(int n) {
+  if (n<=0) {return NULL;}
+  tree* root;
+  root = alloc(tree);
+  root->data = n;
+  root->left = make_left_spine(n-1);
+  return root;
+}
+
+tree* flip(tree* root) {
+  tree* t1 = root;
+  while (t1->left != NULL) t1 = t1->left;
+  tree* t2 = root;
+  while (t2->left != NULL && t2->left != t1) t2 = t2->left;
+  t1->right = t2;
+  return t1;
+
+}
+
+int main() {
+  tree* root = make_left_spine(5);
+  tree* new_root = flip(root);
+  return new_root->data;
+}
+

@@ -1,0 +1,11 @@
+//test error
+
+int void() {
+
+	return 12;
+
+}
+
+int main() {
+	return void();
+}

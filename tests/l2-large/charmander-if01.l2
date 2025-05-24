@@ -1,0 +1,16 @@
+//test return 0
+
+int main ()
+{
+  int sum = 0;
+  int x = -1;
+  int y = 1;
+
+  if(x > 0) 
+  	if(y > 0)
+  		sum = 1;
+  else
+  	sum = 10;
+
+  return sum; // should return 0
+}

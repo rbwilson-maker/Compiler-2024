@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int incr(int x) {
+  int y = x + 1;
+  return y;
+}
+
+int main () {
+  int x = 0;
+  int cat = 1;
+  while (incr(x) < 40) {
+    x = incr(x);
+    cat <<= x;
+  }
+  return cat;			/* should be unreachable */
+}

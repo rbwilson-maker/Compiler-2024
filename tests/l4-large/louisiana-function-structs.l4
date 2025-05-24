@@ -1,0 +1,25 @@
+//test return 100
+
+struct hello {
+    int mahint;
+};
+
+
+struct hello * modifier(struct hello * s) {
+    s->mahint++;
+
+    struct hello *ret = alloc(struct hello);
+    ret->mahint = s->mahint;
+    return ret;
+}
+
+int main(){
+    struct hello *s = alloc(struct hello);
+
+    while (s->mahint < 100) {
+        s = modifier(s);
+    }
+
+    return s->mahint;
+}
+       

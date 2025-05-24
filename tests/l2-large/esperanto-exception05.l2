@@ -1,0 +1,19 @@
+//test div-by-zero
+
+int main(){
+    int a;
+    int b;
+    int c;
+    int d;
+    int i;
+
+    a = 2400;
+    b = 10;
+    while(b > 0){
+        a -= 100;
+        b -= 1;
+    }
+    c = 100;
+    d = a % c;
+    return 1/d;
+}

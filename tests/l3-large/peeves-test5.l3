@@ -1,0 +1,27 @@
+//test return 136
+
+// given an n x m board, calculate the number of ways to go from
+// the bottom left corner (0,0) to the top right corner (r,c) if the 
+// only valid moves are moving up and moving right
+
+int num_ways(int r, int c) {
+	if (r == 0 && c == 0) return 1;
+	if (r == 0) return num_ways(r, c-1);
+	if (c == 0) return num_ways(r-1, c);
+	return num_ways(r-1, c) + num_ways(r, c-1);
+}
+
+// given an integer coordinate on the 2D plane, calculate the
+// number of ways to go from the origin to the point if you are 
+// only allowed to move closer to the point
+
+int general_num_ways(int x, int y) {
+	if (x > 0 && y > 0) return num_ways(x, y);
+	if (x > 0) return num_ways(x, -y);
+	if (y > 0) return num_ways(-x, y);
+	return num_ways(-x, -y);
+}
+
+int main() {
+	return general_num_ways(4,5) + general_num_ways(-2,3);
+}

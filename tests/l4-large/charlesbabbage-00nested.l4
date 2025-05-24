@@ -1,0 +1,37 @@
+//test return 7
+//nested structs
+
+struct a {
+    int hello;
+    int world;
+};
+
+struct b {
+    struct a l;
+    struct a r;
+};
+
+struct c {
+    struct b l;
+    struct b r;
+};
+
+struct d {
+    struct c l;
+    struct c r;
+};
+
+
+int main() {
+    struct d* woohoo = alloc(struct d);
+    woohoo->l.r.r.world += 1;
+    woohoo->l.r.l.world += 1;
+    woohoo->r.r.l.world += 1;
+    woohoo->r.l.l.world += 1;
+    woohoo->l.l.l.world += 1;
+    woohoo->l.l.l.hello += 1;
+    woohoo->l.l.l.hello += woohoo->l.l.l.world;
+    woohoo->l.l.l.hello += woohoo->l.l.l.world + woohoo->l.r.r.world;
+    int x = woohoo->l.r.l.world + woohoo->r.l.l.world + woohoo->l.r.r.world + woohoo->l.l.l.hello;
+    return x;
+}

@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+    /* testing shifting limits */
+    int x = 0xFFFF;
+    int y = 12;
+    int z = y << x;
+    return z;
+}

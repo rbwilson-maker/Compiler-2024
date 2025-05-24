@@ -1,0 +1,9 @@
+//test abort
+
+int main()
+{
+  string s = "hello";
+  for(int waldo = 0; waldo <= string_length(s); waldo++)
+    string_charat(s,waldo);
+  return 251;
+}

@@ -1,0 +1,17 @@
+//test return 5
+
+// tests nested array pointers
+
+int main() {
+    int [][]x = alloc_array(int[], 2);
+    int global_count = 0;
+    for(int i = 0; i < 2; i++) {
+        x[i] = alloc_array(int, 3);
+        x[i][0] = global_count;
+        x[i][1] = global_count + 1;
+        x[i][2] = global_count + 2;
+        global_count += 3;
+    }
+
+    return x[1][2];
+}

@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int main() {
+    int a;
+    int b;
+
+    a = 10;
+
+    b = 15;
+    while (b >= 0) {
+        a--;
+        b--;
+    }
+
+    return b >> a;
+}

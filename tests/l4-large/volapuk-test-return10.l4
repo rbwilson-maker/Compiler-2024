@@ -1,0 +1,46 @@
+//test return 15
+
+struct a{
+  int x;
+};
+
+struct b{
+  int x;
+  struct a *y;
+};
+
+struct c{
+  int x;
+  struct b *y;
+};
+
+struct d{
+  int x;
+  struct c *y;
+};
+
+struct e{
+  int x;
+  struct d *y;
+};
+
+int main(){
+  struct e *ee = alloc(struct e);
+  struct d *dd = alloc(struct d);
+  struct c *cc = alloc(struct c);
+  struct b *bb = alloc(struct b);
+  struct a *aa = alloc(struct a);
+  
+  ee->x = 5;
+  dd->x = 4;
+  cc->x = 3;
+  bb->x = 2;
+  aa->x = 1;
+
+  ee->y = dd;
+  dd->y = cc;
+  cc->y = bb;
+  bb->y = aa;
+
+  return ee->x + ee->y->x + ee->y->y->x + ee->y->y->y->x + ee->y->y->y->y->x;
+}

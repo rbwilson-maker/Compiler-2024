@@ -1,0 +1,22 @@
+//test abort
+
+void addOne(int[] arr, int size) {
+  arr = alloc_array(int, size);
+  for (int i = 0; i < size; i++) {
+    arr[i] += 1;
+  }
+}
+
+int main()
+{
+  int array_size = 2;
+
+  int[] a = alloc_array(int, array_size);
+  int[] b = a;
+
+  addOne(a, array_size);
+
+  assert (a[0] == 1 && a[1] == 1);
+  assert (b[0] == 1 && b[1] == 1);
+  return 0;
+}

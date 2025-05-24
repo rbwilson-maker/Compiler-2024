@@ -1,0 +1,11 @@
+//test return 1
+// ternary operator shouldn't evaluate the branch that isn't taken
+
+int bad() {
+    assert(false);
+    return 0;
+}
+
+int main() {
+    return true ? 1 : bad();
+}

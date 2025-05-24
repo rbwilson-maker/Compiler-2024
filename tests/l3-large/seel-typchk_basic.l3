@@ -1,0 +1,28 @@
+//test typecheck
+// Tests some basic properties of headers
+
+int a() {
+  return some_func(4);
+}
+
+int b();
+
+int c() {
+  return b();
+}
+
+int b() {
+  return a();
+}
+
+// Redeclaration with different names? Totally cool
+int some_func(int four_please);
+
+// Some other external declaration? Sure why not
+int not_exist(bool b, int x);
+
+int main() {
+  i32 x = some_func(4);
+  another_func(some_func(~4));
+  return x;
+}

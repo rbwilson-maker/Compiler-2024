@@ -1,0 +1,12 @@
+//test error
+
+void d(int x) {
+    assert(x);
+    x * 100;
+    return;
+}
+
+int main() {
+    d(1);
+    return 0;
+}

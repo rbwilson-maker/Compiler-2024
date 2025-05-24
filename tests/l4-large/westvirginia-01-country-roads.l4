@@ -1,0 +1,14 @@
+//test error
+//Expressions used as statements must have small type
+
+struct johndenver;
+
+struct johndenver {
+    int* takemehomecountryroads;
+};
+
+int main() {
+    struct johndenver* almostheaven = alloc(struct johndenver);
+    *almostheaven;
+    return 0;
+}

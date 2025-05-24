@@ -1,0 +1,63 @@
+//test return 16
+
+struct a {
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+	int f;
+};
+
+struct b {
+	struct a a;
+	struct a b;
+	struct a c;
+	struct a d;
+	struct a e;
+	struct a f;
+};
+
+struct c {
+	struct b a;
+	struct b b;
+	struct b c;
+	struct b d;
+	struct b e;
+	struct b f;
+};
+
+struct d {
+	struct c a;
+	struct c b;
+	struct c c;
+	struct c d;
+	struct c e;
+	struct c f;
+};
+
+struct e {
+	struct d a;
+	struct d b;
+	struct d c;
+	struct d d;
+	struct d e;
+	struct d f;
+};
+
+struct f {
+	struct e a;
+	struct e b;
+	struct e c;
+	struct e d;
+	struct e e;
+	struct e f;
+};
+
+int main()
+{
+	struct f[] a = alloc_array(struct f, 1024);
+	a[60].a.a.c.a.b.f = 10;
+	a[30].b.d.f.e.a.c = 6;
+	return a[30].b.d.f.e.a.c + a[60].a.a.c.a.b.f;
+}

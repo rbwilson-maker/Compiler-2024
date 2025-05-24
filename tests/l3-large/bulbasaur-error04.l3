@@ -1,0 +1,11 @@
+//test error
+// bad placement of typedef
+int main()
+{
+  typedef int number;
+
+  number x = 5;
+  number y = 7;
+
+  return x + y;
+}

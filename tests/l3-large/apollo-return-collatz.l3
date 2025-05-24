@@ -1,0 +1,23 @@
+//test return 0
+//runs the collatz function on 150
+
+int collatz(int n)
+{
+	if(n % 2 == 0)
+	{
+		return n / 2;
+	}
+	else
+	{
+		return 3 * n + 1;
+	}
+}
+
+
+int main()
+{
+	int n = 150;
+	while(n != 1) { n = collatz(n);}
+
+	return 0;
+}

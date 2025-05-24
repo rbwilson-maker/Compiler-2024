@@ -1,0 +1,17 @@
+//test return 2
+
+// returns in all control flow paths, but at different depths
+
+int main() {
+  int x = 5;
+  int y = 3;
+
+  if (x > y) {
+    if (x > 2 * y) {
+      return 1;
+    }
+    return 2;
+  }
+
+  return -1;
+}

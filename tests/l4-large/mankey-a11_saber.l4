@@ -1,0 +1,76 @@
+//test return 1
+
+typedef int foo;
+
+typedef struct foo* sfoos;
+
+struct foo {
+  struct foo* a;
+  sfoos b;
+  foo foo;
+};
+
+struct Grail {
+  bool holy;
+};
+
+struct Game {
+  foo[] masters;
+  foo[] servants;
+};
+
+typedef struct Grail* lesser;
+
+lesser battle(struct Game* a);
+
+foo main() {
+  struct Game* time = alloc(struct Game);
+  lesser grail = battle(time);
+  if (grail->holy == false) {
+    return 1;
+  }
+  return 0;
+}
+
+void summon (struct Game* city) {
+  city->masters = alloc_array(foo, 7);
+  for (int i = 0; i < 7; i++) {
+    city->masters[i] = 1;
+  }
+  city->servants = alloc_array(foo, 7);
+  for (int i = 0; i < 7; i++) {
+    city->servants[i] = 1;
+  }
+}
+
+foo assassin (struct Game * city) {
+  int oof = 5;
+  for (int i = 1; i < 7; i++) {
+    city->servants[oof] = 0;
+    oof += 6;
+    oof %= 7;
+  }
+  for (int i = 0; i < 7; i++) {
+    if (city->servants[i] != 0) {
+      return i+ 1;
+    }
+  }
+  return -1;
+}
+
+lesser battle(struct Game* city) {
+  summon(city);
+  foo survivor = assassin(city);
+  if (survivor == 7)
+  {
+    lesser g = alloc(struct Grail);
+    g->holy = false;
+    return g;
+  } else {
+    lesser g = alloc(struct Grail);
+    g->holy = true;
+    return g;
+  }
+}
+
+struct foo;

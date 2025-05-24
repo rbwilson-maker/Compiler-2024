@@ -1,0 +1,16 @@
+//test return 2
+
+int main() {
+
+    int i = 16;
+    
+    int j = 32;
+    int jk = j + 2;
+    
+    int k = 4;
+    
+    i = 32 >> 4;
+    
+    return (jk & i);
+}
+

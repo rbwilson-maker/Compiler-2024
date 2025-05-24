@@ -1,0 +1,29 @@
+//test error
+//try generating all possible values for a pixel
+struct pix
+{
+    int r;
+    int g;
+    int b;
+    int a;
+};
+
+typedef struct pix pixel;
+
+pixel* generate_next_pixel(pixel[] p)
+{
+   return p[0];
+}
+
+int main()
+{
+    pixel[] p = alloc_array(pixel,2);
+    pixel* cur = generate_next_pixel(p);
+    int i = 0;
+    while (cur != NULL)
+    {
+       cur = generate_next_pixel(p);
+       i++;
+    }
+    return 0;
+}

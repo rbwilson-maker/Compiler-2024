@@ -1,0 +1,14 @@
+//test return 1
+
+int write_to_ptr(int* g) {
+    *g = 42;
+    return 1;
+}
+
+int main() {
+    int[] p = alloc_array(int, 1);
+    int* g = alloc(int);
+    p[0] += write_to_ptr(g);
+    assert(*g == 42);
+    return p[0];
+}

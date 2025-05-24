@@ -1,0 +1,8 @@
+//test div-by-zero
+// shifting by bad amounts should raise SIGFPE
+
+int main()
+{
+  int x = 32;
+  return 0 << x;
+}

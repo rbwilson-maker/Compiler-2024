@@ -1,0 +1,103 @@
+//test return 0
+// Solves a simplified instance of weighted fair queueing
+// where all packets arrive at the start.
+
+struct Queue {
+	int[] packets;
+	int num_packets;
+	int cur_index;
+	bool empty;
+	int weight;
+	int next_finish;
+};
+
+int next_queue(struct Queue[] queues, int num_queues, int line_rate) {
+	for (int i = 0; i < num_queues; i++) {
+		if (!queues[i].empty) {
+			queues[i].next_finish = queues[i].packets[queues[i].cur_index] /
+				(line_rate * queues[i].weight);
+		}
+	}
+
+	int next = -1;
+	int earliest_finish = 0x7fffffff;
+	for (int i = 0; i < num_queues; i++) {
+		if (!queues[i].empty && queues[i].next_finish < earliest_finish) {
+			next = i;
+			earliest_finish = queues[i].next_finish;
+		}
+	}
+	return next;
+}
+
+void update_queues(struct Queue[] queues, int num_queues, int chosen_queue, int line_rate) {
+	int bits = line_rate * queues[chosen_queue].next_finish;
+	for (int i = 0; i < num_queues; i++) {
+		if (!queues[i].empty) {
+			queues[i].packets[queues[i].cur_index] -= bits;
+			if (i == chosen_queue) {
+				queues[i].cur_index++;
+				if (queues[i].cur_index == queues[i].num_packets) {
+					queues[i].empty = true;
+				}
+			}
+		}
+	}
+}
+
+int main() {
+	int line_rate = 50;
+	int num_queues = 4;
+	struct Queue[] queues = alloc_array(struct Queue, num_queues);
+
+	queues[0].packets = alloc_array(int, 2);
+	queues[0].packets[0] = 300;
+	queues[0].packets[1] = 500;
+	queues[0].num_packets = 2;
+	queues[0].cur_index = 0;
+	queues[0].empty = false;
+	queues[0].weight = 1;
+
+	queues[1].packets = alloc_array(int, 2);
+	queues[1].packets[0] = 200;
+	queues[1].packets[1] = 400;
+	queues[1].num_packets = 2;
+	queues[1].cur_index = 0;
+	queues[1].empty = false;
+	queues[1].weight = 2;
+
+	queues[2].packets = alloc_array(int, 2);
+	queues[2].packets[0] = 300;
+	queues[2].packets[1] = 500;
+	queues[2].num_packets = 2;
+	queues[2].cur_index = 0;
+	queues[2].empty = false;
+	queues[2].weight = 2;
+
+	queues[3].packets = alloc_array(int, 1);
+	queues[3].packets[0] = 650;
+	queues[3].num_packets = 1;
+	queues[3].cur_index = 0;
+	queues[3].empty = false;
+	queues[3].weight = 1;
+
+	int total_packets = 0;
+	for (int i = 0; i < num_queues; i++) {
+		total_packets += queues[i].num_packets;
+	}
+	int[] order = alloc_array(int, total_packets);
+
+	int i = 0;
+	int chosen_queue = next_queue(queues, num_queues, line_rate);
+	while (chosen_queue >= 0) {
+		order[i] = chosen_queue;
+		i++;
+		int next_finish = queues[chosen_queue].next_finish;
+		update_queues(queues, num_queues, chosen_queue, line_rate);
+		chosen_queue = next_queue(queues, num_queues, line_rate);
+	}
+
+	assert(order[0] == 1 && order[1] == 2 && order[2] == 0 && order[3] == 1
+		&& order[4] == 2 && order[5] == 3 && order[6] == 0);
+	return 0;
+}

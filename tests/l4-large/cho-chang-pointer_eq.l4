@@ -1,0 +1,23 @@
+//test error
+
+struct a {
+    bool *b_pt;
+}
+typedef a* a;
+
+typedef int* candy;
+
+struct b {
+    candy i_pt;
+}
+typedef b* b;
+
+int main()
+{
+    a p1 = alloc(a);
+    b p2 = alloc(b);
+    p2->b_pt = alloc(bool);
+    p1->i_pt = alloc(int);
+    assert(b_pt != i_pt);
+    return 0;
+}

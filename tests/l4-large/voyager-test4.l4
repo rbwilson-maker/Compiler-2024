@@ -1,0 +1,44 @@
+//test return 10
+
+// test multiple struct
+
+struct s1 {
+    bool x;
+    int y;
+};
+
+struct s2 {
+    int a;
+    bool b;
+};
+
+struct s3 {
+    int var1;
+    struct s1 var2;
+    bool var3;
+    struct s2 var4;
+    bool var5;
+};
+
+int main() {
+    struct s3[] p = alloc_array(struct s3, 2);
+    p[0].var1 = 10;
+    p[0].var2.x = true;
+    p[0].var5 = false;
+    p[0].var4.b = true;
+    
+    p[1].var3 = true;
+    p[1].var2.y = 5;
+    p[1].var4.a = 7;
+    
+    assert(p[0].var1 == 10);
+    assert(p[0].var2.x == true);
+    assert(p[0].var5 == false);
+    assert(p[0].var4.b == true);
+    
+    assert(p[1].var3 == true);
+    assert(p[1].var2.y == 5);
+    assert(p[1].var4.a == 7);
+
+    return 10;
+}

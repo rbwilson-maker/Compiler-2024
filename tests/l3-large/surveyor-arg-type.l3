@@ -1,0 +1,16 @@
+//test error
+
+int foo(int a, bool b) {
+  return a;
+}
+
+int equal(int a, int b) {
+  if (a == b)
+    return 0;
+  else
+    return 1;
+}
+
+int main() {
+  return foo(3, equal(5, 6));
+}

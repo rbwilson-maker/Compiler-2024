@@ -1,0 +1,13 @@
+//test error
+int f(int a, int b, bool c) {
+	return  c ? a : b;
+}
+bool f(bool a, bool b, bool c) {
+	return  c ? a : b;
+}
+
+int main() {
+	int a = f(1, 2, true);
+	bool b = f(true, true, true);
+	return 1 + 2 + 500 / 1;
+}

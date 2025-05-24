@@ -1,0 +1,12 @@
+//test return 6192
+
+int f (int n, int m);
+int f (int m, int j);
+
+int f (int x, int y) {
+    return x * y + x / y;
+}
+
+int main() {
+    return f(411, 15);
+}

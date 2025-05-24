@@ -1,0 +1,15 @@
+//test return 6
+
+struct numbers {
+  int one;
+  int two;
+  int three;
+};
+
+int main() {
+  struct numbers * s = alloc(struct numbers);
+  s->one = 1;
+  s->two = 2;
+  s->three = 3;
+  return (s->one) * (s->two) * (s->three);
+}

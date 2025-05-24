@@ -1,0 +1,9 @@
+//test return 14
+
+int main() {
+  int i = 0;
+  while (i < 12 ? true : false) {
+    i += 7;
+  }
+  return i;
+}

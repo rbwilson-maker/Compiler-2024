@@ -1,0 +1,15 @@
+//test return 1
+/// shift right by 0 with two function calls
+/// func2 shouldn't affect 0
+
+int func2(int x){
+    return -x;
+}
+
+int func1(int x, int y, int z){
+    return 1 >> func2(x);
+}
+
+int main() {
+    return func1(0, 1, 2);
+}

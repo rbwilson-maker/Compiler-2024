@@ -1,0 +1,13 @@
+//test return 31
+
+int calculate_quadratic_sum(int x) {
+    int x_squared = x * x;
+    int sum = 1 + x + x_squared;
+    return sum;
+}
+
+int main()
+{
+    int res = calculate_quadratic_sum(5);
+    return res;
+}

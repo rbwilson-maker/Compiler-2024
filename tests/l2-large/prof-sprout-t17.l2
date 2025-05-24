@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+  int result = 0;
+  for(int i = 10; i == false; i--) {
+    result += i;
+  }
+  return result;
+}

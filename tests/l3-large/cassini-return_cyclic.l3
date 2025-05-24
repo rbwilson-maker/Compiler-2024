@@ -1,0 +1,39 @@
+//test return -50
+
+typedef int round;
+typedef bool round2;
+
+round c(int as, round2 as1); round i(round question); round r(round r); round l(round asdfasd);
+round e(int asdfbasdfsd);
+
+round c(round x, bool is_c1) {
+    return is_c1 ? i(x + 1) : l(x + 1);
+}
+
+round i(round r1) {
+    return r(r1);
+}
+
+round r(round r) {
+    if (r >= 65) {
+        return r;
+    }
+    return c(r, false);
+}
+
+round l(round r) {
+    return e(r - 1);
+}
+
+round e(round r) {
+    return c(r + 10, true);
+}
+
+int main() {
+    round i = 0;
+    round2 x = true;
+    i = c(i, x);
+
+    assert(i >= 65);
+    return -50;
+}

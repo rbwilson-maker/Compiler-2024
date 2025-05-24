@@ -1,0 +1,11 @@
+//test error
+//both sides of the ternary operator need to match
+int main()
+{
+    for(bool p = true; p;p = bp && false)
+    {
+        if(!p)
+            return 1;
+    }
+    return true ? 0 : false;
+}

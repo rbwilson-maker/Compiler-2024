@@ -1,0 +1,17 @@
+//test error
+
+struct bin {
+  int redblocks;
+  int blueblocks;
+  int greenblocks;
+  int yellowblocks;
+};
+
+int main() {
+  struct bin *mybin = alloc(struct bin);
+  (*mybin).redblocks = 2;
+  mybin->blueblocks = 4;
+  (*mybin)->greenblocks = 3;
+  mybin.yellowblocks = 1;
+  return 0;
+}

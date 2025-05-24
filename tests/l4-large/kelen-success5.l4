@@ -1,0 +1,8 @@
+//test error
+
+// Test void**
+int main(){
+    void** x = alloc(void*);
+    void* y = *x;
+    return 0;
+}

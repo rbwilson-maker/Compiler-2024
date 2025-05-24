@@ -1,0 +1,25 @@
+//test return 14
+
+struct args {
+  int x;
+  int y;
+  int z;
+  int a;
+  int b;
+  int c;
+};
+
+int compute(struct args* args) {
+  return args->x + args->y * args->z % args->a << args->b - args->c;
+}
+
+int main() {
+  struct args *args = alloc(struct args);
+  args->x = 4;
+  args->y = 5;
+  args->z = 6;
+  args->a = 9;
+  args->b = 8;
+  args->c = 7;
+  return compute(args);
+}

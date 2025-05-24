@@ -1,0 +1,12 @@
+//test error
+
+//tests if the typechecker works by assiging a typedef'ed type into (not) its reference type
+
+typedef bool bad;
+
+int main() {
+    int x = 1;
+    bad terrible = x;
+
+    return 0;
+}

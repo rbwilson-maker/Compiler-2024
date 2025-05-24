@@ -1,0 +1,10 @@
+//test div-by-zero
+// shift is >= 32
+
+int main()
+{
+	int x = 1;
+	int y = 42;
+	int z = x << y;
+	return z;
+}

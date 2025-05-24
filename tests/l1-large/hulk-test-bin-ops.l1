@@ -1,0 +1,22 @@
+//test return 0
+
+int main(){
+    int a = 5;
+    int b = 15; 
+
+    int c = -a * 15;
+    c += a;
+    c -= a;
+    c *= b;
+    c %= (a+1)*16;
+    c /= 2;
+
+    a -= 10;
+    a += b;
+    a /= c + 15;
+    a %= 23;
+    a *= 80;
+
+    return a * c;
+
+}

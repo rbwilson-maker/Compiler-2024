@@ -1,0 +1,7 @@
+//test error
+int main()
+{
+    int x = 0;
+    true ? x : false; // this is valid in the grammar but should fail typechecking
+    return x;
+}

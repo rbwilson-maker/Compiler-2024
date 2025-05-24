@@ -1,0 +1,13 @@
+//test return 45
+//tests while loop with integer
+
+int main() {
+	int x = 10;
+	int y = 0;
+	int i = 0;
+	while (i < x) {
+		y += i;
+		i++;
+	}
+	return y;
+}

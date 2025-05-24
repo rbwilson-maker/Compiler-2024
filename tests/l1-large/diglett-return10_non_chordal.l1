@@ -1,0 +1,19 @@
+//test return 10
+
+int main() {
+
+  int a = 5;
+  int b = 6;
+  b = b + a + 7;
+
+  int c = 5;
+  c += b;
+  b += c;
+  int d = c + b;
+
+  a = 5;
+  a += 5;
+  int e = a;
+
+  return e;
+}

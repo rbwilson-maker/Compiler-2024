@@ -1,0 +1,13 @@
+//test error
+int main() {
+    bool a = true;
+
+
+    if (3 == 4) {
+        while (true) {};
+    }  else {
+        int a = 100;
+    }
+
+    return 69420;
+}

@@ -1,0 +1,16 @@
+//test error
+// Cannot assign struct to another struct
+
+struct a {int x; int y};
+struct b {int w; int z; struct a a};
+
+int main() {
+    struct a *a = alloc(struct a);
+    (*a).x = 1;
+    (*a).y = 2;
+
+    struct b *b = alloc(struct b);
+    (*b).a = *a; 
+
+    return b->a.x;
+}

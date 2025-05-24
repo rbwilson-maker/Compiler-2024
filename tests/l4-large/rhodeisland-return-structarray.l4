@@ -1,0 +1,17 @@
+//test return 4
+struct bar {
+	int z;
+};
+struct foo {
+	int x;
+	struct bar* y;
+};
+
+int main() {
+	struct foo*[] arr = alloc_array(struct foo*, 3);
+	struct foo* x = alloc(struct foo);
+	x->x = 4;
+	x->y = alloc(struct bar);
+	arr[2] = x;
+	return arr[2]->x;
+}

@@ -1,0 +1,90 @@
+//test return 1
+
+struct graph {
+    int nodes;
+    bool[][] adj_mtrx;
+};
+typedef struct graph * graph;
+
+int greedy_color(graph g, int idx, int[] colors, int * max_color) {
+    bool[] colored = alloc_array(bool, *max_color + 1);
+    bool[] is_neighbor = g->adj_mtrx[idx];
+    for (int i = 0; i < g->nodes; i++) {
+        if (i != idx && is_neighbor[i]) {
+            colored[colors[i]] = true;
+        }
+    }
+
+    for (int i = 0; i < *max_color; i++) {
+        if (!colored[i]) {
+            colors[idx] = i;
+            return i;
+        }
+    }
+    (*max_color)++;
+    colors[idx] = *max_color;
+    return colors[idx];
+}
+
+int[] seo(graph g) {
+    int[] weights = alloc_array(int, g->nodes);
+    bool[] deleted = alloc_array(bool, g->nodes);
+    int[] order = alloc_array(int, g->nodes);
+
+    for (int i = 0; i < g->nodes; i++) {
+        int cur_idx = i;
+        int cur_wt = weights[i];
+        for (int j = i; j < g->nodes; j++) {
+            if (cur_wt < weights[j] && !deleted[j]) {
+                cur_wt = weights[j];
+                cur_idx = j;
+            }
+        }
+        order[i] = cur_idx;
+        deleted[cur_idx] = true;
+        for (int j = 0; j < g->nodes; j++) {
+            if (g->adj_mtrx[i][j] && !deleted[j]) {
+                weights[j]++;
+            }
+        }
+    }
+    return order;
+}
+
+int[] color_graph(graph g) {
+    int[] colors = alloc_array(int, g->nodes);
+    int[] order = seo(g);
+    int *max_color = alloc(int);
+    *max_color = 0;
+    for (int i = 0; i < g->nodes; i++) {
+        int idx = order[i];
+        greedy_color(g, idx, colors, max_color);
+    }
+    return colors;
+}
+
+
+
+int main() {
+    graph gr = alloc(struct graph);
+    bool[][] g = alloc_array(bool[], 12);
+    for (int i = 0; i < 12; i++) {
+        g[i] = alloc_array(bool, 12);
+    }
+    g[3][4] = true;
+    g[4][3] = true;
+    g[3][5] = true;
+    g[5][3] = true;
+    g[3][6] = true;
+    g[6][3] = true;
+    g[7][9] = true;
+    g[9][7] = true;
+    g[10][11] = true;
+    g[11][10] = true;
+
+    gr->adj_mtrx = g;
+    gr->nodes = 12;
+    int[] coloring = color_graph(gr);
+    return coloring[10];
+}
+

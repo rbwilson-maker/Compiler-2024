@@ -1,0 +1,18 @@
+//test error
+// No reusing function definition code for structs!
+
+typedef struct foo * bar;
+typedef struct foo * baz;
+struct foo {
+  bar x;
+};
+
+struct foo{
+  baz x;
+};
+
+int main() {
+  return 0;
+}
+
+

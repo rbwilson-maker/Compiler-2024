@@ -1,0 +1,4 @@
+typedef int vertex;
+typedef vertex[][] graph;
+
+int DFS(graph g, vertex start, vertex v);

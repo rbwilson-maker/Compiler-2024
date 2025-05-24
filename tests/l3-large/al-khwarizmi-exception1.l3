@@ -1,0 +1,15 @@
+//test div-by-zero
+
+int countNumbers(int a, int b) {
+    int res = 0;
+    for (int i = a; i <= b; i++) {
+        if (i > 100) {
+            res += i;
+        }
+    }
+    return res;
+}
+
+int main() {
+    return 5 % countNumbers(50, 75);
+}

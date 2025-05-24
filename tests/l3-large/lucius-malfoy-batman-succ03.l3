@@ -1,0 +1,19 @@
+//test return 1
+
+void na(int main) {
+    if (main == 0) {
+        print_hex(871889);
+        return;
+    }
+
+    print_int(0);
+    na(main - 1);
+
+    int na = 1;
+    assert(na == 1);
+}
+
+int main() {
+    na(100);
+    return 1;
+}

@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int ohno(bool a, int b, int c, int d)
+{
+    return a ? b : ((b + c) / d);
+}
+
+int main()
+{
+    return ohno(false, 1, 2, 0);
+}

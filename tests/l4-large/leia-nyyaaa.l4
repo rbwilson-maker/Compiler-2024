@@ -1,0 +1,24 @@
+//test memerror
+
+typedef int* intp;
+
+int foo(int x) {
+    if (x == 0) { return 1;}
+    return x*foo(x-1);
+}
+
+int main() {
+    int n = 10000000;
+    int j = 10000;
+    intp[] m = alloc_array(intp, n);
+    int k = foo(10);
+    for (int i = 0; i < n; i++) {
+        if(i!=k+1000) { m[i] = alloc(int);}
+    }
+    int result = 0;
+    for (int i = 0; i < j; i++) {
+        result += *(m[k+i]);
+    }
+    return result;
+    
+}

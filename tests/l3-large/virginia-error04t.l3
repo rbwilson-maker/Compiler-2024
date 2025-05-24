@@ -1,0 +1,14 @@
+//test error
+//ensure floating statements outside of functions are an error
+
+int main()
+{
+	return 0;
+}
+
+int x;
+
+int lol()
+{
+	return 0xDEADBEEF;
+}

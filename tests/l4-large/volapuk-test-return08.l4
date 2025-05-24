@@ -1,0 +1,49 @@
+//test return 0
+//quick sort
+
+void swap(int[] arr, int i, int j){
+  int temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+}
+
+int partition(int[] arr, int l, int r){
+  int p = arr[l];
+  int j = l+1;
+  for(int i=l+1;i<=r;i++){
+    if(arr[i] < p){
+      swap(arr, i, j);
+      j++;
+    }
+  }
+  swap(arr, l, j-1);
+  return j-1;
+}
+
+void quicksort(int[] arr, int l, int r){
+  if(l < r){
+    int k = partition(arr, l, r);
+
+    quicksort(arr, l, k-1);
+    quicksort(arr, k+1, r);
+  }
+}
+
+int main() {
+  int[] arr = alloc_array(int, 5);
+  arr[0] = 113847814;
+  arr[1] = 124813455;
+  arr[2] = 48347553;
+  arr[3] = 232563425;
+  arr[4] = -1;
+
+  quicksort(arr, 0, 4);
+  
+  assert(arr[0]==-1);
+  assert(arr[1]==48347553);
+  assert(arr[2]==113847814);
+  assert(arr[3]==124813455);
+  assert(arr[4]==232563425);
+
+  return 0;
+}

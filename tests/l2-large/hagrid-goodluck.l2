@@ -1,0 +1,13 @@
+//test return 256
+//phew, sure is lucky that we hit the target
+
+int main()
+{
+  int total = 1;
+  for(int i=2;i!=10;i+=4)
+  /* wow that looks tough to parse */
+  {
+    total <<= i;
+  }
+  return total;
+}

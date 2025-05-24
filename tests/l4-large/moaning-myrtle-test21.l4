@@ -1,0 +1,6 @@
+//test typecheck
+//test infloop
+
+int main() {
+    return alloc_array(int, main())[1/0];
+}

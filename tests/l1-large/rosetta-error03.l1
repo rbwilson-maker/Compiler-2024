@@ -1,0 +1,14 @@
+//test error
+//variable declared after return
+
+int main()
+{
+  int x;
+  int y;
+
+  x = 19;
+  y = 20;
+
+  return d;
+  int d;
+}

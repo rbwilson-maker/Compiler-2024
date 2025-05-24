@@ -1,0 +1,34 @@
+//test return 1155;
+int main(){
+    for(int i = 0; i < 34; i++)
+    {
+        int j = i + 2;
+    }
+
+    for(int i = 0; i < 34; i++)
+    {
+        int j = i + 4;
+    }
+
+    for(int i = 0; i < 34; i++)
+    {
+        int j = i + 6;
+    }
+
+    for(int i = 0; i < 34; i++)
+    {
+        int j = i + 8;
+    }
+
+    for(int i = 0; i < 34; i++)
+    {
+        int j = i + 20;
+    }
+    int k = 0;
+    for(int i = 0; i < 34; i++)
+    {
+        k = i + 2;
+        k = k * i;
+    }
+    return k;
+}

@@ -1,0 +1,9 @@
+//test return 0
+int main() {
+    int a = 4;
+    int b = 8;
+    int c = 15;
+    int d = 16;
+    int e = 23;
+    return a << b >> c << d >> e;
+}

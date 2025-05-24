@@ -1,0 +1,16 @@
+//test error
+//assigning integer to boolean
+
+int main()
+{
+  int a;
+  int b;
+  a = 5;
+  b = 9;
+
+  bool t;
+
+  t = a ^ b | a;
+
+  return t;
+}

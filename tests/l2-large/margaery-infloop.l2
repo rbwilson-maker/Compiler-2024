@@ -1,0 +1,16 @@
+//test typecheck
+//test infloop
+
+int main() {
+    int sum = 0;
+
+    for ( int i = 0; sum < 100000; ) {
+        sum += i;
+        int upper = sum;
+        for ( int j = 0; j < upper; j++ ) {
+            sum += 1;
+        }
+    }
+
+    return sum;
+}

@@ -1,0 +1,21 @@
+//test typecheck
+/*
+Should typecheck.
+Function name is not shadowed by for loop.
+*/
+
+bool w(bool r) {
+  while (w(r)) {
+    if (w(r)) {
+      for (int w=0; w<10; w++) {
+        
+      }
+      w(false);
+    }
+  }
+  return true;
+}
+
+int main() {
+  return (w(true) || w(false) ? 1 : 2);
+}

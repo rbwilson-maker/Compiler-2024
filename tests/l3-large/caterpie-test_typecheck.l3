@@ -1,0 +1,12 @@
+//test typecheck
+
+typedef int int2;
+typedef bool bool2;
+
+bool2 test(int a, bool b);
+bool test(int2 b, bool2 a);
+bool2 test(int2 xiaotiaj, bool hongliy);
+
+int2 main() {
+  return 0;
+}

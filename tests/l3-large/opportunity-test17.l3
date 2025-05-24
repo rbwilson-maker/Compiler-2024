@@ -1,0 +1,17 @@
+//test return 0
+
+
+int subtract(int a, int b){
+  assert(b>=0);
+  if(b==0) return a;
+  return subtract(a-1,b-1);
+}
+
+int main(){
+  assert(subtract(3,0)==3);
+  assert(subtract(3,3)==0);
+  assert(subtract(3,400)==-397);
+  assert(subtract(50,12)==38);
+
+  return 0;
+}

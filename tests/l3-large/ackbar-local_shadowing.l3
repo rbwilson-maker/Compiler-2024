@@ -1,0 +1,15 @@
+//test return 42
+//A test local vars shadowing function names
+
+int foo(){ return 99;}
+int always42();
+
+int main(){
+    return always42();
+}
+
+int always42(){
+    // local var shadowing a function
+    int foo = 42;
+    return foo;
+}

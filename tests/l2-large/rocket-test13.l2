@@ -1,0 +1,15 @@
+//test error
+
+int main ()
+{
+  int x;
+
+  x = 1;  // 1
+  x <<= x; // 2
+  x <<= 1; // 4
+  x >>= 1; // 2
+  x = ~x; // -3
+  x >>= 1; // -2
+  break;
+  return x;
+}

@@ -1,0 +1,12 @@
+//test return -1
+
+
+int main() {
+	int x = 3; 
+	int y = 5;
+	if (x > y) {
+		return -1;
+	} else {
+		return -1;
+	}
+}

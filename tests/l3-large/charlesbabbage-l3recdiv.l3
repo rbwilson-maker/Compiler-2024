@@ -1,0 +1,12 @@
+//test div-by-zero
+//recurse until division fails
+
+int f(int n, int q) {
+    int g = n / q;
+    return f(n + 1, q - 1);
+}
+
+int main(){
+    f(13442384, 1024);
+    return 0;
+}

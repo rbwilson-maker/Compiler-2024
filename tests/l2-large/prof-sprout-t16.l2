@@ -1,0 +1,8 @@
+//test error
+// test implicit casting disallowed
+
+int main() {
+    int x = 5;
+    int y = 0;
+    return x && y;
+}

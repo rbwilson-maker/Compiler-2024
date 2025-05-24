@@ -1,0 +1,23 @@
+//test typecheck
+
+int main()
+{
+    snowball fred;
+    smokey pumpkin;
+    spots tabitha;
+    conductorwhiskers bandit;
+    chairmanmeow marshmallow;
+    saintpurrtrick lexy;
+
+    lexy = 100;
+    marshmallow = 74856672;
+
+    for (ladymeowmeow breezy = 30; breezy < lexy; breezy++)
+    {
+	fred = breezy / 2;
+	tabitha = lexy * 7;
+	pumpkin = tabitha % fred;
+	marshmallow ^= pumpkin;
+    }
+    return marshmallow;
+}

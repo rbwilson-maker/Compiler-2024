@@ -1,0 +1,24 @@
+//test return 89
+// use an array of structs like a gradebook
+
+typedef struct entry* entry;
+
+struct entry {
+  int student_id;
+  int score;
+};
+
+entry create(int student, int score) {
+  entry e = alloc(struct entry);
+  e->student_id = student;
+  e->score = score;
+  return e;
+}
+
+int main() {
+  entry[] grades = alloc_array(entry, 3);
+  grades[0] = create(42, 97);
+  grades[1] = create(55, 89);
+  grades[2] = create(77, 100);
+  return grades[1]->score;
+}

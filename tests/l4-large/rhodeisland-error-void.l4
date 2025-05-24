@@ -1,0 +1,11 @@
+//test error
+//void* isn't allowed
+
+void* foo() {
+	return alloc(void);
+}
+
+int main() {
+	void* a;
+	return 0;
+}

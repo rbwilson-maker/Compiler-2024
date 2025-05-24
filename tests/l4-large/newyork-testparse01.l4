@@ -1,0 +1,17 @@
+//test return 5
+
+//general parsing of *, [], etc
+
+typedef int * foo;
+
+int main(){
+	foo[] f = alloc_array(foo,10);
+
+	f[0] = alloc(int);
+
+	foo y = f[0];
+
+	*y = 5;
+	return *f[0];
+
+}

@@ -1,0 +1,36 @@
+//test div-by-zero
+
+/* fabre d'eglantine was responsible for the creation of teh french republican
+   calendar. it featured 10 months, each with 4 weeks of 10 days each */
+
+typedef int day;
+
+struct week {
+    day[] days;
+};
+typedef struct week week;
+
+struct month {
+    week*[] weeks;
+};
+typedef struct month month;
+
+int main(){
+    month[] year = alloc_array(month, 10);
+    week* w1 = alloc(week);
+    week* w2 = alloc(week);
+    week* w3 = alloc(week);
+    week* w4 = alloc(week);
+    for(int i = 0; i < 10; i++){
+        year[i].weeks = alloc_array(week*, 4);
+        year[i].weeks[0] = w1;
+        year[i].weeks[0] = w2;
+        year[i].weeks[0] = w3;
+        year[i].weeks[0] = w4;
+    }
+
+    // fabre d'eglantine was eventually executed during the reign of terror
+    int *fabre = alloc(int); 
+    *fabre <<= 32;
+    return 0;
+}

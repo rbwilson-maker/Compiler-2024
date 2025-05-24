@@ -1,0 +1,10 @@
+//test abort
+
+int div(int x, int y) {
+  assert(y != 0);
+  return x / y;
+}
+
+int main() {
+    return div(5, 0);
+}

@@ -1,0 +1,24 @@
+//test return 1280
+
+int main ()
+{
+    int a = 3;
+    int b = 41;
+    int counter = 0;
+    while (a < 1000) {
+        while (a % 8 != 0) {
+            a *= a;
+            a %= b;
+            counter++;
+        }
+        if (a % 3 != 0) {
+            a = a << 1;
+            b += 2;
+        } else {
+            a += 1000;
+        }
+    }
+    return a;
+}
+
+

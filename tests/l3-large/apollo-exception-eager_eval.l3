@@ -1,0 +1,10 @@
+//test div-by-zero
+int foo(int i)
+{
+	return foo(1 / i);
+}
+
+int main()
+{
+	return foo(0);
+}

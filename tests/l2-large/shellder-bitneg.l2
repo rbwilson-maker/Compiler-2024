@@ -1,0 +1,5 @@
+//test return -42
+int main() {
+    int foo = 42;
+    return ~foo + 1;
+}

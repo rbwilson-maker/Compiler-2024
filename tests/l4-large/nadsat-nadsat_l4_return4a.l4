@@ -1,0 +1,18 @@
+//test return -1
+
+//test namespace, zero-init, and struct pointer allocation
+typedef int s;
+struct s {
+    int a;
+    int b;
+};
+
+int h2 (struct s*b, int c){
+    return c + b->b;
+}
+
+int main(){
+  int c = -1;
+  struct s* h = alloc(struct s);
+  return h2(h, c);
+}

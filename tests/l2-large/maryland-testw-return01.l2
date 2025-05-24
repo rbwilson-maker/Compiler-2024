@@ -1,0 +1,9 @@
+//test return 60
+// single statement body of if
+int main() {
+  int x = 5;
+  if (true)
+    x += 1;
+  x *= 10;
+  return x;
+}

@@ -1,0 +1,28 @@
+//test return 6
+
+// compute euler's totient function on 9
+
+bool coprime(int a, int b) {
+    int factor = 2;
+    int bound = (a < b) ? a : b;
+    while (factor <= bound) {
+        if (a % factor == 0 && b % factor == 0)
+            return false;
+        factor++;
+    }
+    return true;
+}
+
+int phi(int n) {
+    int totatives = 1; // 1 is always a totative
+    for (int i = 2; i < n; i++) {
+        if (coprime(i, n)) {
+            totatives += 1;
+        }
+    }
+    return totatives;
+}
+int main() {
+    return phi(9);
+}
+

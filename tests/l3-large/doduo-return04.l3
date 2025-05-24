@@ -1,0 +1,10 @@
+//test return -2
+bool isNegative(int k) {
+	return (k < 0);
+}
+
+int main() {
+	int k1 = -2;
+	int k2 = 0;
+	return isNegative(k1)?k1:k2;
+}

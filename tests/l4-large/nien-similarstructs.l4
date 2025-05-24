@@ -1,0 +1,33 @@
+//test return 0
+
+struct a
+{
+    int x;
+    int y;
+};
+
+
+typedef struct a* aPtr;
+
+
+int diversion(int q)
+{
+    if(q == 0)
+    {
+	return q;
+    }
+    return q + diversion(q - 1);
+}
+
+
+int main()
+{
+    aPtr a = alloc(struct a);
+    aPtr b = alloc(struct a);
+
+    a -> x = 0;
+    b -> x = 1;
+
+    return (diversion(10) > 0 ? a : b) -> x;
+
+}

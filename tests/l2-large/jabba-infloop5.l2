@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+
+int main() {
+    int x = 31;
+    while (true) {
+        bool y = x == 0;
+        if (y) {
+            return -1;
+        }
+        x += 2;
+    }
+    return x;
+}

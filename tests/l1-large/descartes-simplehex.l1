@@ -1,0 +1,16 @@
+//test return 65535
+//Simple check that ensures "hexnum" constants works
+
+int main() {
+    int t1;
+    int t2;
+    int t3;
+    int t4;
+
+    t1 = 1;
+    t2 = 2;
+    t2 = 0xffff;
+    t3 = 0xffff0001;
+
+    return ((0)*(t2 + t3)) + (t1*t2);
+}

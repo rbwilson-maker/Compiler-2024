@@ -1,0 +1,10 @@
+//test div-by-zero
+int main() { 
+    int i=1788905-19204;
+    int j=10;
+    j = j+1;
+    i= j*24;
+    i-=11*24;
+    j /= i;
+    return j;
+}

@@ -1,0 +1,17 @@
+//test error
+
+struct a{
+  struct b b;
+};
+
+struct b{
+  struct c c;
+};
+
+struct c{
+  struct a a;
+};
+
+int main(){
+  return 15122;
+}

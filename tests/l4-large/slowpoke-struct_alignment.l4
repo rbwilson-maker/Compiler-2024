@@ -1,0 +1,32 @@
+//test return 200
+// Test alignment of struct elements.
+
+// Structs with only ints must store ints continuously.
+struct intStruct {
+  int a;
+  int b;
+  int c;
+};
+
+typedef struct intStruct* s;
+
+// Structs with only pointers must store them continuously.
+struct pointerStruct {
+  s s1;
+  s s2;
+  s s3;
+};
+
+int main() {
+  s intStruct = alloc(struct intStruct);
+  struct pointerStruct *pointerStruct = alloc(struct pointerStruct);
+
+  intStruct->a = 0;
+  intStruct->b = 0;
+  intStruct->c = 100;
+  pointerStruct->s1 = NULL;
+  pointerStruct->s2 = intStruct;
+  pointerStruct->s3 = NULL;
+
+  return intStruct->c + pointerStruct->s2->c;
+}

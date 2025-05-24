@@ -1,0 +1,28 @@
+//test return 42
+
+struct p {
+    int a;
+    int b;
+    int c;
+};
+
+int func1() { 
+    struct p * bl = alloc(struct p);
+    int t1 = 122;
+    bl->a = 12;
+    bl->b = 14;
+    int t2 = t1 + 4;
+    int t3 = t2 + t1;
+    int t5 = t2 - t1 + 4;
+    int t6 = t3+t2-t1;
+    int t7 = 0;
+    for(int i = 0; i<1; i++){
+        t7 = t6 - t2 - t1;
+    }
+    return t7*3 + 4 + bl->a + bl->b;
+}
+
+int main(){
+    return func1();
+}
+

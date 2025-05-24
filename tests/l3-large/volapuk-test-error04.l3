@@ -1,0 +1,13 @@
+//test error
+
+void unreachable(int i);
+
+int main() {
+  int i = 0;
+  int r = 100;
+  while (i < r) {
+    if (i < 0) unreachable(i);
+    else i++;
+  }
+  return r;
+}

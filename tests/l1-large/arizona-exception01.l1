@@ -1,0 +1,9 @@
+//test div-by-zero
+// division by 0
+int main()
+{
+  int a;
+
+  a = 5;
+  return a/0;
+}

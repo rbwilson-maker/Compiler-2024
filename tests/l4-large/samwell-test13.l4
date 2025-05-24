@@ -1,0 +1,19 @@
+//test memerror
+
+void addone(int* i){
+  (*i)++;
+}
+
+int main()
+{
+  int* i = alloc(int);
+  bool[] barr = alloc_array(bool, 100000);
+  bool x;
+  *i = 1;
+  while(*i > 0){
+    addone(i);
+    x = barr[*i];
+  }
+  return 0;
+}
+

@@ -1,0 +1,14 @@
+//test return 4
+/*
+AC. (returns 4)
+
+nname and int reduce to same basic type of int.
+*/
+
+typedef int nname;
+
+nname main();
+
+int main() {
+  return 4;
+}

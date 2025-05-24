@@ -1,0 +1,149 @@
+//test return 44
+struct c0l_data {
+    int type;
+    int val;
+    struct c0l_data *car;
+    struct c0l_data *cdr;
+};
+typedef struct c0l_data *c0lisp;
+
+// cons
+c0lisp C(c0lisp car, c0lisp cdr) {
+    c0lisp cons = alloc(struct c0l_data);
+    cons->type = 0;
+    cons->car = car;
+    cons->cdr = cdr;
+    return cons;
+}
+c0lisp N(int n) {
+    c0lisp integer = alloc(struct c0l_data);
+    integer->type = 1;
+    integer->val = n;
+    return integer;
+}
+c0lisp S(int n) {
+    c0lisp symbol = alloc(struct c0l_data);
+    symbol->type = 2;
+    symbol->val = n;
+    return symbol;
+}
+
+// Symbol table (because we don't have global constants)
+c0lisp NIL(){return S(0);}
+c0lisp PLUS(){return S(1);}
+c0lisp TIMES(){return S(2);}
+c0lisp DIV(){return S(3);}
+c0lisp SEQ(){return S(4);}
+c0lisp LET(){return S(5);}
+
+// variables
+c0lisp X(){return S(-1);}
+
+c0lisp plus(c0lisp a, c0lisp b) {
+    return N(a->val + b->val);
+}
+c0lisp times(c0lisp a, c0lisp b) {
+    return N(a->val * b->val);
+}
+c0lisp div(c0lisp a, c0lisp b) {
+    return N(a->val / b->val);
+}
+c0lisp eql(c0lisp a, c0lisp b) {
+    if (a->type != b->type)
+        return N(0);
+    if (a->type == 0)
+        return N(a == b ? 1 : 0);
+    else
+        return N(a->val == b->val ? 1 : 0);
+}
+c0lisp length(c0lisp cons) {
+    if (eql(cons, NIL())->val == 1)
+        return N(0);
+    assert(cons->type == 0);
+    return plus(N(1), length(cons->cdr));
+}
+
+c0lisp seq(c0lisp a, c0lisp b) {
+    return b;
+}
+
+c0lisp push(c0lisp val, c0lisp list) {
+    return C(val, list);
+}
+c0lisp pop(c0lisp list) {
+    return list->cdr;
+}
+
+c0lisp get(c0lisp locals, c0lisp key) {
+    while (eql(locals, NIL())->val == 0) {
+        if (eql(locals->car, key)->val == 1)
+            return locals->cdr->car;
+        locals = locals->cdr->cdr;
+    }
+    assert(false);
+    return NIL();
+}
+
+c0lisp eval(c0lisp *locals, c0lisp prg) {
+    if (prg->type == 1)
+        return prg;
+    else if (prg->type == 0) {
+        c0lisp fn = prg->car;
+        c0lisp arg_list = prg->cdr;
+
+        if (eql(fn, LET())->val == 1) {
+            c0lisp name = arg_list->car;
+            c0lisp value = arg_list->cdr->car;
+            *locals = push(value, *locals);
+            *locals = push(name, *locals);
+
+            // Evaluate following expressions in sequence
+            c0lisp next_exp = arg_list->cdr->cdr;
+            c0lisp result = NIL();
+            while (eql(next_exp, NIL())->val == 0) {
+                result = eval(locals, next_exp->car);
+                next_exp = next_exp->cdr;
+            }
+
+            *locals = pop(pop(*locals));
+            return result;
+        }
+
+        int nargs = length(prg->cdr)->val;
+        c0lisp[] args = alloc_array(c0lisp, nargs);
+        c0lisp cur_arg = prg->cdr;
+        int i = 0;
+        while (eql(cur_arg, NIL())->val == 0) {
+            args[i] = eval(locals, cur_arg->car);
+            cur_arg = cur_arg->cdr;
+            i++;
+        }
+        if (eql(fn, PLUS())->val == 1) {
+            return plus(args[0], args[1]);
+        }
+        else if (eql(fn, TIMES())->val == 1) {
+            return times(args[0], args[1]);
+        }
+        else if (eql(fn, DIV())->val == 1) {
+            return div(args[0], args[1]);
+        }
+    }
+    else if (prg->type == 2)
+        return get(*locals, prg);
+    assert(false);
+    return NULL;
+}
+
+int main(){
+    c0lisp program =
+    C(LET(), C(X(), C(N(420), C(
+      C(PLUS(),
+        C( C(TIMES(), C(N(1), C(N(2), NIL()))),
+        C( C(DIV(), C(X(), C(C(TIMES(), C(N(2), C(N(5), NIL()))), NIL()))),
+           NIL() ))),
+      NIL()))));
+    c0lisp locals = NIL();
+    c0lisp *locals_ptr = alloc(c0lisp);
+    *locals_ptr = locals;
+    return eval(locals_ptr, program)->val;
+}

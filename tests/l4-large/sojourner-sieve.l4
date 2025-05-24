@@ -1,0 +1,35 @@
+//test return 9999991
+
+bool[] sieve(int n) {
+    bool[] res = alloc_array(bool, n);
+    for (int i = 0; i < n; i++)
+        res[i] = true;
+    res[0] = false;
+    res[1] = false;
+    for (int i = 2; i < n; i++) {
+        if (res[i]) {
+            for (int j = 2 * i; j < n; j += i)
+                res[j] = false;
+        }
+    }
+    return res;
+}
+
+int find_last(bool[] arr, int n) {
+    for (int i = n - 1; i >= 0; i--)
+        if (arr[i])
+            return i;
+    return -1;
+}
+
+int main() {
+    bool[] prime = sieve(10000000);
+    assert(prime[59]);
+    assert(prime[101]);
+    assert(prime[26393]);
+    assert(prime[45259]);
+    assert(prime[83689]);
+    assert(prime[101531]);
+    assert(prime[104729]);
+    return find_last(prime, 10000000);
+}

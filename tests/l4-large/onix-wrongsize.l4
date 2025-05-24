@@ -1,0 +1,11 @@
+//test error
+/* Test wrong size for a struct */
+
+struct point { int x; int y; };
+
+int main () {
+  struct point * p;
+  p = alloc(struct point);
+  p->x = p;
+  return -1;
+}

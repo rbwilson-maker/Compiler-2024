@@ -1,0 +1,19 @@
+//test return 35
+int main () {
+  int a = 13;
+  int b = 35;
+  int c = 102;
+  int d = -23;
+  if (c % a <= b + d) {
+    if (a < b) {
+      if (c < d) {
+        return a;
+      } else {
+        return b;
+      }
+    } else {
+      return c;
+    }
+  }
+  return d;
+}

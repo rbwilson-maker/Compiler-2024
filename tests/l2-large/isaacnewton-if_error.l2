@@ -1,0 +1,9 @@
+//test error
+int main() {
+    bool val = true; 
+    if(val) {
+        return 1; 
+    } else {
+        val = false; 
+    }
+}

@@ -1,0 +1,13 @@
+//test return 10
+typedef int people;
+
+bool die(people p) {
+	return p < 5;
+}
+
+int main() {
+	people p = 0;
+	people count = 0;
+	for(; die(p); p++) count += p;
+	return count;
+}

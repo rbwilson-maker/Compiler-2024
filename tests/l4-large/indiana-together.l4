@@ -1,0 +1,15 @@
+//test error
+//572
+
+struct together{
+  struct scavengerhunt{
+    int indian_head_penny;
+    int snake_skin;
+    bool happiness;
+  };
+};
+
+int main(){
+  struct togther* hunt = alloc(struct together);
+  return 572;
+}

@@ -1,0 +1,21 @@
+//test return 0
+// pointers and arrays should combine properly
+
+int main() {
+    int**[][]*[] a;
+    int**[][]*[] b;
+    a = alloc_array(int**[][]*, 1);
+    assert(a[0] == NULL);
+    a[0] = alloc(int**[][]);
+    *a[0] = alloc_array(int**[], 1);
+    (*a[0])[0] = alloc_array(int**, 1);
+    (*a[0])[0][0] = alloc(int*);
+    *(*a[0])[0][0] = alloc(int);
+    **(*a[0])[0][0] = 15;
+    b = a;
+    assert(**(*b[0])[0][0] == 15);
+    **(*a[0])[0][0] = 411;
+    assert(**(*b[0])[0][0] == 411);
+    return 0;
+}
+

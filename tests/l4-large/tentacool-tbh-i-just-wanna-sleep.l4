@@ -1,0 +1,22 @@
+//test return 0
+
+void whee(int[] a, int n) { // i hope you have no correctness bugs
+	a[0] = 1;
+	for (int i = 1; i < n; i++) {
+		a[i] += a[i-1]; // powers of 2, ez life
+	}
+	int j = n-1;
+	while (j > 1) {
+		a[j] = a[j] % 3 * a[j-1]; // i don't really know what this does
+		j--;
+	}
+	for (int i = 1; i < n; i++) {
+		a[i] = a[i-1] % 17 > 9 ? a[i] + 1 : a[i-1] / 2; // good luck <33333333333
+	}
+}
+
+int main() {
+	int[] a = alloc_array(int, 11);
+	whee(a, 11);
+	return a[7]; // i'm hungry...maybe time to go to 7-11
+}

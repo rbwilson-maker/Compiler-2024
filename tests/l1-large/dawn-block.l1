@@ -1,0 +1,9 @@
+//test return 25
+
+int main() {
+   int x = 5;
+   {
+      int z = x * x;
+      return z;
+   }
+}

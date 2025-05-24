@@ -1,0 +1,11 @@
+//test return -1000
+
+void i_hate_x(int *x) {
+  *x = -1000;
+}
+
+int main() {
+  int *x = alloc(int);
+  i_hate_x(x);
+  return *x;
+}

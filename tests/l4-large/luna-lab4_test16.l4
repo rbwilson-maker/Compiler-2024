@@ -1,0 +1,23 @@
+//test memerror
+
+void srand(int x) {}
+
+int rand() { return 42; }
+
+int f(int* x){
+  *x = (*x-1);
+  return *x;
+}
+
+
+int main(){
+   srand(15611);
+   int* i = alloc(int);
+   *i = rand();
+   int[][] arrr = alloc_array(int[], *i+rand());
+
+   while(true){     
+     arrr[f(i)] = alloc_array(int, *i-1);
+   }
+   return 0;
+}

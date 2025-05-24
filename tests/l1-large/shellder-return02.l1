@@ -1,0 +1,12 @@
+//test return 42
+// test negative operands to division
+int main()
+{
+  int x;
+  int y;
+  
+  x = -85;
+  y = -2;
+
+  return x / y;
+}

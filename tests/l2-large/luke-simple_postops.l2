@@ -1,0 +1,9 @@
+//test return 8
+
+int main() {
+    int x = 1;
+    int y = 5;
+    x++;
+    y--;
+    return x * y;
+}

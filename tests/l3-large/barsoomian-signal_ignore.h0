@@ -1,0 +1,4 @@
+// Set the disposition of a signal handler.
+// The second argument is actually a function pointer, which we can't
+// represent, but SIG_DFL and SIG_IGN should still work.
+int signal(int signum, int handler);

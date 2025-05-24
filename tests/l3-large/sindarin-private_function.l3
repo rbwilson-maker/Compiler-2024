@@ -1,0 +1,11 @@
+//test error
+// test functions inside function 
+
+int outer(int a, int b) {
+    int inner();
+    return a + b;
+}
+
+int main() {
+    return outer(3, 4);
+}

@@ -1,0 +1,42 @@
+//test return 9
+
+int main() {
+  int p = 3;
+  int q = 7;
+
+  int n = p*q;
+
+  int e = 2;
+  int phi = (p-1) * (q-1);
+  for(int gcd_e_phi = 0; e < phi && gcd_e_phi != 1; e++) {
+    int a = e;
+    int h = phi;
+    gcd_e_phi = a % h;
+    while(gcd_e_phi != 0) {
+      a = h;
+      h = gcd_e_phi;
+      gcd_e_phi = a % h;
+    }
+  }
+
+  int k = 2;
+  int d = (1 + (k * phi)) / e;
+
+  int msg = 20;
+
+  int c = 1;
+  while(e > 0) {
+    c *= msg;
+    e--;
+  }
+  c %= n;
+
+  int m = 1;
+  while(d > 0) {
+    m *= c;
+    d--;
+  }
+  m %= n;
+
+  return m;
+}

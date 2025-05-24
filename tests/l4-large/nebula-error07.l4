@@ -1,0 +1,10 @@
+//test error
+
+struct a {
+  int aa;
+  int aa; // cannot have duplicate struct field names
+};
+
+int main() {
+  return 0;
+}

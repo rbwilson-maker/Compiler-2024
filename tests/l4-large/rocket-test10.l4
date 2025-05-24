@@ -1,0 +1,33 @@
+//test return 3
+// convert base 10 number into base 2 number and find number of ones
+
+int get_num_ones(int num) {
+  int i;
+  int count = 0;
+  while (num > 0) {
+    int rem = num % 10;
+    if (rem == 1) {
+      count += 1;
+    }
+    num /= 10;
+  }
+  return count;
+}
+
+int dec_to_bin_num_ones(int dec_num) {
+  int bin_num = 0;
+  int rem = 0;
+  int multiplier = 1;
+  while (dec_num > 0) {
+    rem = dec_num % 2;
+    bin_num += rem * multiplier;
+    dec_num /= 2;
+    multiplier *= 10;
+  }
+  return get_num_ones(bin_num);
+}
+
+int main() {
+  int res = dec_to_bin_num_ones(42);
+  return res;
+}

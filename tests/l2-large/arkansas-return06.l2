@@ -1,0 +1,8 @@
+//test return -36
+// test shift operator
+int main() {
+    int a = 2;
+    int b = a << 3;
+    int c = (b << a) - 100;
+    return c;
+}

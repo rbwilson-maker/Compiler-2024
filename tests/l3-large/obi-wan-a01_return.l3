@@ -1,0 +1,13 @@
+//test return 1
+
+int random(int a, bool b)
+{
+    if(b)
+        return a;
+    return 0;
+}
+
+int main()
+{
+    return random(1, true);
+}

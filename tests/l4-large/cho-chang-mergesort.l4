@@ -1,0 +1,71 @@
+//test return 0
+// Mergesort
+// Taken from Frank Pfenning, Fall 2010 course 122
+
+bool is_sorted(int[] A, int lower, int upper)
+{
+    int i;
+    for (i = lower; i < upper-1; i++)
+    {
+        if (!(A[i] <= A[i+1]))
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+/* merge(A, lower, mid, upper) merges two adjacent sorted
+ * segments A[lower..mid) and A[mid..upper) into A[lower..upper)
+ */
+void merge(int[] A, int lower, int mid, int upper)
+{
+    int[] B = alloc_array(int, upper-lower);
+    int i = lower; int j = mid; int k = 0;
+    while (i < mid && j < upper)
+    {
+      if (A[i] <= A[j]) {
+	    B[k] = A[i]; i++;
+      } else {
+	    B[k] = A[j]; j++;
+      }
+      k++;
+    }
+  while (i < mid)
+    { B[k] = A[i]; i++; k++; }
+  while (j < upper)
+    { B[k] = A[j]; j++; k++; }
+  for (k = 0; k < upper-lower; k++)
+    { A[lower+k] = B[k]; }
+}
+
+void mergesort (int[] A, int lower, int upper)
+{
+    if (upper-lower <= 1) return;
+    else {
+        int mid = lower + (upper-lower)/2;
+        mergesort(A, lower, mid);
+        assert(is_sorted(A, lower, mid));
+        mergesort(A, mid, upper);
+        assert(is_sorted(A, mid, upper));
+        merge(A, lower, mid, upper);
+    }
+}
+int main()
+{
+    int[] A = alloc_array(int, 6);
+    A[0] = 23;
+    A[1] = 2;
+    A[2] = 5;
+    A[3] = 20;
+    A[4] = -5;
+    A[5] = 10;
+
+    mergesort(A, 0, 6);
+    for(int i = 0; i < 5; i++)
+    {
+        if(A[i] > A[i + 1])
+            return 1;
+    }
+    return 0;
+}

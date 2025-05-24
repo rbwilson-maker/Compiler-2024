@@ -1,0 +1,21 @@
+//test error
+// calling undeclared function
+
+bool impoliteCaller() {
+    int cannotwait = 0;
+    for (int i = 0; i <= 99; i+=1) {
+        cannotwait += 1;
+    }
+    bool x = dontcallme();
+    return x;
+}
+
+bool dontcallme() {
+    int iamsleeping = 0
+    return false;
+}
+
+int main() {
+    bool x = impoliteCaller();
+    return 0;
+}

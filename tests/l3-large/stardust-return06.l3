@@ -1,0 +1,39 @@
+//test return 1009
+//isPrime returns true if input is a prime number
+//firstPrimeInRange returns the first prime in the given range, returns 0 if
+//there's no prime in range
+//as the input is 1000 and 2000, function will return 1009
+
+bool isPrime(int x) {
+  if (x < 2) {
+    return false;
+  } else {
+    int y = 2;
+    while (y < x) {
+      if (x % y == 0) {
+        return false;
+      }
+      y++;
+    }
+    return true;
+  }
+}
+
+int firstPrimeInRange(int x, int y) {
+  int n = x;
+  while (n < y) {
+    if (isPrime(n)){
+      return n;
+    } else {
+      n++;
+    }
+  }
+  return 0;
+}
+
+
+int main() {
+  int x = 1000;
+  int y = 2000;
+  return firstPrimeInRange(x, y);
+}

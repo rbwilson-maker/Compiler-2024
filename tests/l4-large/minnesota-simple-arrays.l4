@@ -1,0 +1,8 @@
+//test return 42
+
+int main() {
+  int[][] x = alloc_array(int[], 10);
+  x[5] = alloc_array(int, 3);
+  x[5][2] = 42;
+  return x[5][2];
+}

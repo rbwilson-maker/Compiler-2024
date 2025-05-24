@@ -1,0 +1,36 @@
+//test abort
+
+bool bleh(bool blah) {
+
+  int x;
+
+  x = blah ? 5 : -5;
+
+  return x > 0;
+  
+}
+
+int main(){
+
+  int x;
+  int y;
+
+  int z = 95;
+
+  73;
+
+  if (bleh(z < 7)) {
+    y = 99;
+
+    for (x = 8 ; x < y ; x++) {
+      z ++;
+    }
+    
+  } else {
+    assert(false);
+  }
+
+  return z;
+
+  
+}

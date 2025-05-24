@@ -1,0 +1,52 @@
+//test return 1
+// Bruteforce the game called Nim with two coin stacks
+// In the game Nim, each player takes turns to choose one of the stacks to remove, and
+// remove a positive number of coins to remove from that stack.
+// The player who cannot make a move loses.
+
+// Returns true iff player 1 can win on the stacks n,m
+bool player2(int n, int m);
+bool player1(int n, int m) {
+	if (n <= 0 && m <= 0) {
+		return false;
+	}
+	for (int i = 1; i <= n; i++) {
+		if (player2(n-i,m) == false) {
+			return true;
+		}
+	}
+	for (int i = 1; i <= m; i++) {
+		if (player2(n,m-i) == false) {
+			return true;
+		}
+	}
+	return false;
+}
+
+// Returns true iff player 2 can win on the stacks n,m
+bool player2(int n, int m) {
+	if (n <= 0 && m <= 0) {
+		return false;
+	}
+	for (int i = 1; i <= n; i++) {
+		if (player1(n-i,m) == false) {
+			return true;
+		}
+	}
+	for (int i = 1; i <= m; i++) {
+		if (player1(n,m-i) == false) {
+			return true;
+		}
+	}
+	return false;
+}
+
+int main() {
+	// Who wins if we have stack A having 1 coin, and stack B having 2 coins?
+	if (player1(1,2)) {
+		return 1;
+	}
+	else {
+		return 2;
+	}
+}

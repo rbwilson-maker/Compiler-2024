@@ -1,0 +1,59 @@
+//test return 3
+// test a "polymorphic" stack, of type int
+//		"contents" does not commit to an exact form until needed
+
+/*    HEADER-polymorphic    */
+struct contents;	//"polymorphic" contents; exact type to be decided later
+struct _stackNode {
+	struct contents* val;
+	struct _stackNode* next;
+};
+struct stack {
+	struct _stackNode* top;
+};
+void push(struct stack* stack, struct contents* value);
+struct contents* pop(struct stack* stack);
+
+
+/*    MAIN-specific    */
+struct contents {int val;};
+struct contents* makeC(int v) {
+	struct contents* c = alloc(struct contents);
+	c->val = v;
+	return c;
+}
+int contentsToVal(struct contents* c) {
+	return c->val;
+}
+
+int main() {
+	struct stack* s = alloc(struct stack);
+	push(s,makeC(1));
+	push(s,makeC(2));
+	push(s,makeC(3));
+	push(s,makeC(4));
+	push(s,makeC(5));	//s: 1 2 3 4 5
+	pop(s);			//s: 1 2 3 4
+	push(s,makeC(6));	//s: 1 2 3 4 6
+	pop(s);			//s: 1 2 3 4
+	pop(s);			//s: 1 2 3
+	push(s,makeC(7));  	//s: 1 2 3 7
+	pop(s);			//s: 1 2 3
+	return contentsToVal(pop(s));	//s: 1 2
+}
+
+
+/*    FUNCTIONS-polymorphic    */
+void push(struct stack* s, struct contents* v) {
+	struct _stackNode* newNode = alloc(struct _stackNode);
+	newNode->val = v;
+	newNode->next = s->top;
+	s->top = newNode;
+}
+struct contents* pop(struct stack* s) {
+	if (s->top == NULL)
+		return NULL;
+	struct contents* toReturn = s->top->val;
+	s->top = s->top->next;
+	return toReturn;
+}

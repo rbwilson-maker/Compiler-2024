@@ -1,0 +1,10 @@
+//test return -1
+int main() {
+    int i = 0;
+    if( 1 == ~(0) + 2 )
+    {
+        return -1;
+        // EHAHAHAHAHA
+    }
+    return i;
+}

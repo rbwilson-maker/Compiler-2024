@@ -1,0 +1,11 @@
+//test return 6
+
+int main () {
+    int x = 64;
+    int y = 0;
+    while (x > 1) {
+        x /= 2;
+        y++;
+    }
+    return y;
+}

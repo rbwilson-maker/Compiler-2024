@@ -1,0 +1,25 @@
+//test abort
+/* Alloc variable over functions */
+
+struct nosay {
+  int a;
+  int b;
+  int c;
+  int d;
+};
+
+typedef struct nosay nosay_t;
+
+nosay_t *makenew() {
+  nosay_t * new = alloc(struct nosay);
+  new->a = 1;
+  new->b = 2;
+  new->c = 3;
+  new->d = 4;
+  return new;
+}
+
+int main() {
+  assert(makenew()==makenew());
+  return 0;
+}

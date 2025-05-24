@@ -1,0 +1,9 @@
+//test return -2147483647
+
+// Assign int an exp that would be larger than decnum max if optimized
+
+int main()
+{
+	int a = 2147483648 + 1;
+	return a;
+}

@@ -1,0 +1,6 @@
+//test memerror
+
+int main() {
+    int* badptr = NULL;
+    return *badptr;
+}

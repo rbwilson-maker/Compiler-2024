@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main(){
+  for(int x=0; x < 90; x += 8 / 0)
+    x++;
+  return 10;
+}

@@ -1,0 +1,22 @@
+//test return 1
+
+/* use two mutually recursive functions to check if 50 is even or odd
+   return 1 if 50 is even, 0 if odd
+ */
+bool is_even(int num);
+
+bool is_odd(int n) {
+    return is_even(n-1);
+}
+
+bool is_even(int n) {
+    return (n == 1) ? false : ((n == 0) || is_odd(n-1));
+}
+
+int main() {
+    int n = 50;
+    bool is_even = is_even(n);
+    bool is_odd = is_odd(n);
+    assert(is_even != is_odd);
+    return is_even ? 1 : 0;
+}

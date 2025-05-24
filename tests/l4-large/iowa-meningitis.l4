@@ -1,0 +1,7 @@
+//test return 2147450880  
+
+int sum(int[] A, int i, int j) {     int sum = 0;     for (int k = i; k < j; 
+k++) {         sum += A[k];     }      return sum; }  
+void enum(int[] A, int i, int j) {     for (int k = i; k < j; k++) 
+{         A[k] = k;     }      return; }  int main() {     int[] A = 
+alloc_array(int, 1<<16);     enum(A, 0, 1<<16);     return sum(A, 0, 1<<16); } 

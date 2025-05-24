@@ -1,0 +1,17 @@
+//test return 0
+
+struct lolz {
+	int a;
+};
+
+struct lolzies {
+	bool a;
+};
+
+int main() {
+	struct lolz * b = alloc(struct lolz);
+	b->a = 15;
+	struct lolzies*c = alloc(struct lolzies);
+	c->a = b->a == 13;
+	return (c->a) ? 1:0;
+}

@@ -1,0 +1,26 @@
+//test return 10
+
+struct s1 {
+    int f1;
+    int f2;
+};
+typedef struct s1 s1;
+
+struct s2 {
+    s1 f1;
+    s1 f2;
+};
+typedef struct s2 s2;
+
+struct s3 {
+    s2* f1;
+    s2* f2;
+};
+typedef struct s3 s3;
+
+int main(){
+    s3* a = alloc(s3);
+    a->f1 = alloc(s2);
+    a->f1->f2.f2 = 5;
+    return a->f1->f2.f2 * 2;
+}

@@ -1,0 +1,14 @@
+//test return 13
+// tests various new operators
+
+int main() {
+  bool x = (true || false) && false;
+  int y;
+  if (x) {
+    y = 2 >> 4;
+  } else {
+    y = 2 << 4;
+  }
+
+  return y ^ 45;
+}

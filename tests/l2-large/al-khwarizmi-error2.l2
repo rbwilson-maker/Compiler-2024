@@ -1,0 +1,8 @@
+//test error
+// typecheck failure
+
+int main() {
+  int x;
+  x = true;
+  return 1;
+}

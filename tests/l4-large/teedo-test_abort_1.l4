@@ -1,0 +1,19 @@
+//test abort
+
+void swap(int* p, int* q) {
+    assert(p != NULL && q != NULL);
+
+    int tmp = *p;
+    *p = *q;
+    *q = tmp;
+}
+
+int main() {
+    int* p = alloc(int);
+    int* q = NULL;
+
+    *p = 3;
+
+    swap(p, q);
+    return *p;
+}

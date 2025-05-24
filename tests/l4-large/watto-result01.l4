@@ -1,0 +1,42 @@
+//test return 1
+
+int main() {
+  int a = 1;
+  /*int b = 10;*/
+  /*int c = 2147483647;*/
+  return a;
+}
+typedef int a;
+typedef int type4;
+typedef type4 type1;
+typedef type1 type5;
+typedef type5 type2;
+typedef bool b;
+typedef b typeb1;
+
+typeb1 baz()
+{
+    return false;
+}
+
+type2 foo()
+{
+    a f = 0;
+    type2 f1 = 0;
+    type4 f2 = f1;
+    type2 f3 = f1;
+    f3 + f1;
+    f3++;
+    f1 = f3 + f2;
+
+    typeb1 x = true;
+    typeb1 baz;
+    
+    if(4 < 5) 
+        return 0;
+
+    /*y = x && y;*/
+
+    return 0;
+}
+

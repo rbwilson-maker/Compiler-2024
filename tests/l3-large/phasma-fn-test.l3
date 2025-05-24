@@ -1,0 +1,10 @@
+//test typecheck
+
+void fn() {
+  bool yes;
+}
+
+int main() {
+  fn();
+  return 0;
+}

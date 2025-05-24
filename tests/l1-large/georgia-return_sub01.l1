@@ -1,0 +1,11 @@
+//test return 7
+// Basic subtract unit test
+int main()
+{
+  int a;
+  int b;
+
+  a = 15;
+  b = 8;
+  return a - b;
+}

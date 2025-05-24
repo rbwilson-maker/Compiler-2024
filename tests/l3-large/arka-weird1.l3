@@ -1,0 +1,19 @@
+//test return 339754
+
+int weird_sum(int x, int y) {
+    int t = x ^ y;
+    int z = x * y;
+    int a = x - y;
+
+    return t + z + a * a;
+}
+
+int main()
+{
+    int sum = 0;
+    for(int i = 0; i < 100; i++) {
+        sum += weird_sum(i, i+2);
+    }
+
+    return sum;
+}

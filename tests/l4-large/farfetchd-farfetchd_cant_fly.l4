@@ -1,0 +1,12 @@
+//test return 7;
+
+int Feeder(int target) {
+   int meat = 7;
+   return meat;
+}
+
+typedef int* meat;
+
+int main() {
+    return Feeder(5);
+}

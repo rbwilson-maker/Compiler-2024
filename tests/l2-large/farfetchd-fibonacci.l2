@@ -1,0 +1,23 @@
+//test return 6765
+
+int main()
+{
+  int n = 20;
+
+  int x0 = 0;
+  int x1 = 1;
+
+  if (n == 0)
+    return x0;
+  else if (n == 1)
+    return x1;
+  else {
+    for (; n > 1; n--) {
+      int temp = x1;
+      x1 = x0 + x1;
+      x0 = temp;
+    }
+
+    return x1;
+  }
+}

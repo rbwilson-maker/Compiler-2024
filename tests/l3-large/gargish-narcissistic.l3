@@ -1,0 +1,7 @@
+//test typecheck
+
+int main() {
+    assert(isNarcissistic(153) == true);
+    assert(isNarcissistic(155) == false);
+    return 0;
+}

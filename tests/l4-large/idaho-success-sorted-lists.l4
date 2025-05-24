@@ -1,0 +1,80 @@
+//test return 0
+typedef struct list_node list;
+struct list_node {
+  int data;
+  list* next;
+};
+
+typedef struct sortedlist_header sortedlist;
+struct sortedlist_header {
+  list* start;
+};
+
+bool is_in(sortedlist* L, int n)
+{
+  list* cur = L->start;
+  while (cur != NULL) {
+    if (cur->data == n) {
+      return true;
+    } else if (cur->data > n) {
+      return false;
+    } else {
+      cur = cur->next;
+    }
+  }
+  return false;
+}
+
+sortedlist* insert(sortedlist* L, int n)
+{
+  if (L->start == NULL || L->start->data > n) {
+    //list is empty
+    list* node = alloc(struct list_node);
+    node->data = n;
+    node->next = L->start;
+    L->start = node;
+  } else {
+    list* cur = L->start;
+    while (cur->data < n) {
+      if (cur->next == NULL || cur->next->data > n) {
+        list* node = alloc(struct list_node);
+        node->data = n;
+        node->next = cur->next;
+        cur->next = node;
+      }
+      cur = cur->next;
+    }
+  }
+  return L;
+}
+
+sortedlist* nil() {
+  return alloc(sortedlist);
+}
+
+sortedlist* cons(int x, sortedlist* L) {
+  list* node = alloc(list);
+  node->data = x;
+  node->next = L->start;
+  L->start = node;
+  return L;
+}
+
+bool equal_list(list* L1, list* L2) {
+  if (L1 == NULL && L2 == NULL) return true;
+  if (L1 == NULL || L2 == NULL) return false;
+  return (L1->data == L2->data) && equal_list(L1->next, L2->next);
+}
+
+bool equal(sortedlist* L1, sortedlist* L2) {
+  if (L1 == NULL || L2 == NULL) return false;
+  return equal_list(L1->start, L2->start);
+}
+
+int main() {
+  assert(equal(cons(0, nil()), insert(nil(), 0)));
+  assert(equal(cons(0, cons(1, nil())), insert(cons(0, nil()), 1)));
+  assert(equal(cons(-1, cons(0, nil())), insert(cons(0, nil()), -1)));
+  assert(equal(cons(0, cons(1, cons(2, nil()))), insert(cons(0, cons(2, nil())), 1)));
+  return 0;
+}

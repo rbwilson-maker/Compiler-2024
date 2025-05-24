@@ -1,0 +1,19 @@
+//test memerror
+
+struct point {
+  int x;
+  int y;
+};
+
+typedef struct point point_t;
+
+struct line_seg {
+  point_t* start;
+  point_t* end;
+};
+
+int main() {
+  struct line_seg *line = alloc(struct line_seg);
+  int start_x = line->start->x;
+  return 0;
+}

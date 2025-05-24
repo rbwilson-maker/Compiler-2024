@@ -1,0 +1,12 @@
+//test return -97
+
+int main() {
+    int a = 98;
+    int b = 123;
+    int c = 948;
+    int d = 2308;
+    int e = 90148;
+    int f = 202;
+    int g = 0x41;
+    return f == g ? 1 / 0 : 1 - a | b / -c & d * e;
+}

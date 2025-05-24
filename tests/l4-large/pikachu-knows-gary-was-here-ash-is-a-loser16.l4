@@ -1,0 +1,32 @@
+//test error
+// tests non-compilation of recursive structs (use size before defn)
+
+struct ash_ketchum_accomplishments;
+struct gary_oak_accomplishments;
+
+struct ash_ketchum_accomplishments
+{
+  int battles_won_by_skill;
+  int* real_championships_attained;
+  int[] friends_kept_in_touch_with;
+  bool saved_world_by_punching_mewtwo;
+  struct gary_oak_accomplishments annoying_rival;
+};
+
+struct gary_oak_accomplishments
+{
+  int[] gym_badges;
+  bool famous_grandfather;
+  struct ash_ketchum_accomplishments loser_friend;
+};
+
+int main()
+{
+  struct ash_ketchum_accomplishments* none =
+    alloc(struct ash_ketchum_accomplishments);
+  ash_ketchum_accomplishments->battles_won_by_skill = 0;
+  *ash_ketchum_accomplishments->real_championships_attained = 0;
+  ash_ketchum_accomplishments->friends_kept_in_touch_with; // already empty...
+  ash_ketchum_accomplishments->saved_world_by_punching_mewtwo = false;
+  return ash_ketchum_accomplishments->gary_oak_accomplishments->gym_badges[0];
+}

@@ -1,0 +1,6 @@
+//test memerror
+
+int main() {
+  bool[] arr = alloc_array(bool, 0);
+  return arr[0] ? 123 : 456;
+}

@@ -1,0 +1,20 @@
+//test error
+
+struct b;
+
+struct a {
+  int a;
+  int b;
+  int c;
+  struct b *d;
+};
+
+struct b {
+  struct a; // invalid
+  struct a *b;
+};
+
+int main()
+{
+  return 0;
+}

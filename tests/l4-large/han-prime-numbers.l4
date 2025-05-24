@@ -1,0 +1,22 @@
+//test return 29
+int[] listPrimes(int length) {
+  int[] primes = alloc_array(int, length);
+  int found = 0;
+  for(int i = 2; found < length; i++) {
+    bool isPrime = true;
+    for(int j = 2; j < i; j++) {
+      if(i % j == 0)
+        isPrime = false;
+    }
+    if(isPrime) {
+      primes[found] = i;
+      found++;
+    }
+  }
+  return primes;
+}
+
+int main() {
+  int[] p = listPrimes(10);
+  return p[9];
+}

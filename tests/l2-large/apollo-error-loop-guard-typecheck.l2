@@ -1,0 +1,9 @@
+//test error
+// loop guard does not typecheck
+
+int main () {
+  int x = 1;
+  while (x) {
+  }
+  return 0;
+}

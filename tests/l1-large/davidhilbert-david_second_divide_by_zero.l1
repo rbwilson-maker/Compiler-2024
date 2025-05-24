@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+    int neg = -1;
+    int pos = 1;
+    int five = 5;
+    five /= pos + neg;
+    return five;
+}

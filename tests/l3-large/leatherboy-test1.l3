@@ -1,0 +1,19 @@
+//test return 16
+
+int func1() { 
+    int t1 = 122;
+    int t2 = t1 + 4;
+    int t3 = t2 + t1;
+    int t5 = t2 - t1 + 4;
+    int t6 = t3+t2-t1;
+    int t7 = 0;
+    for(int i = 0; i<1; i++){
+        t7 = t6 - t2 - t1;
+    }
+    return t7*3 + 4;
+}
+
+int main(){
+    return func1();
+}
+

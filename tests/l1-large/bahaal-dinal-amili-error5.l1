@@ -1,0 +1,9 @@
+//test error
+// cannot use the result of assignment as an expression
+
+int main()
+{
+  int a = 0;
+  int b = (a = 1);
+  return b;
+}

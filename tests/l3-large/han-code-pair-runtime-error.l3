@@ -1,0 +1,37 @@
+//test abort
+
+// Codes pairs very inefficiently
+int codePair(int x, int y) {
+  return (2*x + 1) << y;
+}
+
+// pseudo case analysis
+//
+// When z = codePair(x, y)
+//   lr == true  => x
+//   lr == false => y
+int decodePair(bool lr, int z) {
+  int y;
+  for (y = 0; z % 2 == 0; z >>= 1) {
+    y++;
+  }
+
+  int x = (z - 1) / 2;
+
+  return lr ? x : y;
+}
+
+int main() {
+  bool left  = true;
+  bool right = false;
+
+  int x = 21;
+  int y = 15;
+
+  assert(decodePair(left,  codePair(x, y)) == x);
+
+  // wrong: it's actually equal to y, and x != y.
+  assert(decodePair(right, codePair(x, y)) == x);
+
+  return codePair(x, y);
+}

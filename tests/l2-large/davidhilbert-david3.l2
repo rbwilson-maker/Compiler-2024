@@ -1,0 +1,8 @@
+//test div-by-zero
+int main() {
+    int zero = 0;
+    while (zero < 1) {
+        int err = 4 / zero;
+    }
+    return 0;
+}

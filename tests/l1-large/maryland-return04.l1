@@ -1,0 +1,7 @@
+//test return 0
+// check assignment operator /=
+int main() {
+  int x = 42;
+  x /= 4;
+  return x - 10;
+}

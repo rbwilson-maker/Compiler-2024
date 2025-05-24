@@ -1,0 +1,17 @@
+//test return 1
+//test statement and expression
+
+typedef int myint;
+
+int main() {
+	myint* x;
+	x = alloc(myint);
+	*x = 1;
+	*x += 1;
+	*x -= 1;
+	*x *= 2;
+	*x /= 2;
+	*x <<= 2;
+	*x >>= 2;
+	return *x;
+}

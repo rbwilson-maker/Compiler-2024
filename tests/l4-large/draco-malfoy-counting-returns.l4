@@ -1,0 +1,158 @@
+//test return 111
+//large-ish structs should be okay
+
+struct wastefulint {
+	bool bit1;
+	bool bit2;
+	bool bit3;
+	bool bit4;
+	bool bit5;
+	bool bit6;
+	bool bit7;
+	bool bit8;
+	bool bit9;
+	bool bit10;
+	bool bit11;
+	bool bit12;
+	bool bit13;
+	bool bit14;
+	bool bit15;
+	bool bit16;
+	bool bit17;
+	bool bit18;
+	bool bit19;
+	bool bit20;
+	bool bit21;
+	bool bit22;
+	bool bit23;
+	bool bit24;
+	bool bit25;
+	bool bit26;
+	bool bit27;
+	bool bit28;
+	bool bit29;
+	bool bit30;
+	bool bit31;
+	bool bit32;
+};
+
+typedef struct wastefulint * bint;
+
+void incr(bint i){
+	(i -> bit32) = !(i -> bit32);
+	if (i -> bit32) return;
+	(i -> bit31) = !(i -> bit31) ;
+	if (i -> bit31) return;
+	(i -> bit30) = !(i -> bit30);
+	if (i -> bit30) return;
+	(i -> bit29) = !(i -> bit29);
+	if (i -> bit29) return;
+	(i -> bit28) = !(i -> bit28);
+	if (i -> bit28) return;
+	(i -> bit27) = !(i -> bit27);
+	if (i -> bit27) return;
+	(i -> bit26) = !(i -> bit26);
+	if (i -> bit26) return;
+	(i -> bit25) = !(i -> bit25);
+	if (i -> bit25) return;
+	(i -> bit24) = !(i -> bit24);
+	if (i -> bit24) return;
+	(i -> bit23) = !(i -> bit23);
+	if (i -> bit23) return;
+	(i -> bit22) = !(i -> bit22);
+	if (i -> bit22) return;
+	(i -> bit21) = !(i -> bit21);
+	if (i -> bit21) return;
+	(i -> bit20) = !(i -> bit20);
+	if (i -> bit20) return;
+	(i -> bit19) = !(i -> bit19);
+	if (i -> bit19) return;
+	(i -> bit18) = !(i -> bit18);
+	if (i -> bit18) return;
+	(i -> bit17) = !(i -> bit17);
+	if (i -> bit17) return;
+	(i -> bit16) = !(i -> bit16);
+	if (i -> bit16) return;
+	(i -> bit15) = !(i -> bit15);
+	if (i -> bit15) return;
+	(i -> bit14) = !(i -> bit14);
+	if (i -> bit14) return;
+	(i -> bit13) = !(i -> bit13);
+	if (i -> bit13) return;
+	(i -> bit12) = !(i -> bit12);
+	if (i -> bit12) return;
+	(i -> bit11) = !(i -> bit11);
+	if (i -> bit11) return;
+	(i -> bit10) = !(i -> bit10);
+	if (i -> bit10) return;
+	(i -> bit9) = !(i -> bit9);
+	if (i -> bit9) return;
+	(i -> bit8) = !(i -> bit8);
+	if (i -> bit8) return;
+	(i -> bit7) = !(i -> bit7);
+	if (i -> bit7) return;
+	(i -> bit6) = !(i -> bit6);
+	if (i -> bit6) return;
+	(i -> bit5) = !(i -> bit5);
+	if (i -> bit5) return;
+	(i -> bit4) = !(i -> bit4);
+	if (i -> bit4) return;
+	(i -> bit3) = !(i -> bit3);
+	if (i -> bit3) return;
+	(i -> bit2) = !(i -> bit2);
+	if (i -> bit2) return;
+	(i -> bit1) = !(i -> bit1);
+	return;
+}
+
+int evalbint(bint i){
+	int res = 0;
+
+	if (i->bit32) res += 1<<0;
+	if (i->bit31) res += 1<<1;
+	if (i->bit30) res += 1<<2;
+	if (i->bit29) res += 1<<3;
+	if (i->bit28) res += 1<<4;
+	if (i->bit27) res += 1<<5;
+	if (i->bit26) res += 1<<6;
+	if (i->bit25) res += 1<<7;
+	if (i->bit24) res += 1<<8;
+	if (i->bit23) res += 1<<9;
+	if (i->bit22) res += 1<<10;
+	if (i->bit21) res += 1<<11;
+	if (i->bit20) res += 1<<12;
+	if (i->bit19) res += 1<<13;
+	if (i->bit18) res += 1<<14;
+	if (i->bit17) res += 1<<15;
+	if (i->bit16) res += 1<<16;
+	if (i->bit15) res += 1<<17;
+	if (i->bit14) res += 1<<18;
+	if (i->bit13) res += 1<<19;
+	if (i->bit12) res += 1<<20;
+	if (i->bit11) res += 1<<21;
+	if (i->bit10) res += 1<<22;
+	if (i->bit9) res += 1<<23;
+	if (i->bit8) res += 1<<24;
+	if (i->bit7) res += 1<<25;
+	if (i->bit6) res += 1<<26;
+	if (i->bit5) res += 1<<27;
+	if (i->bit4) res += 1<<28;
+	if (i->bit3) res += 1<<29;
+	if (i->bit2) res += 1<<30;
+	if (i->bit1) res += 1<<31;
+	
+	return res;
+}
+
+int main(){
+	bint one = alloc(struct wastefulint);
+	for (int i = 0; i<1200; i++){
+		incr(one);
+	}
+	int v1 = evalbint(one);
+	for (int i = 0; i<111; i++){
+		incr(one);
+	}
+	int v2 = evalbint(one);
+	return v2-v1;
+}

@@ -1,0 +1,13 @@
+//test return 0
+int main() { 
+  int *t = NULL;
+
+  int n = 10000;
+  for(; n > 0; n--) {
+    // check that each alloc is unique.
+    if (alloc(int) == alloc(int)) {
+      return *t;
+    }
+  }
+  return 0;
+}

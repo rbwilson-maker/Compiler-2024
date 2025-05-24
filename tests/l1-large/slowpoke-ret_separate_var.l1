@@ -1,0 +1,10 @@
+//test return 0
+// A variable need not be initialized if a return statement separates its
+// declaration from its use.
+
+int main() {
+  int x;
+  return 0;
+  x = 5;
+  return x;
+}

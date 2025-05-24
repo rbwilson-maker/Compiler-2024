@@ -1,0 +1,13 @@
+//test return 2
+
+int myfunc(int a) {
+	if (a > 2) {
+		return myfunc(a - 1);
+	} else {
+		return a;
+	}
+}
+
+int main() {
+	return myfunc(4);
+}

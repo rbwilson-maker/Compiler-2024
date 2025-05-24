@@ -1,0 +1,12 @@
+//test error 
+
+// wrong return type 
+
+void f(int a, int b) {
+    int x = 1; 
+}
+
+int main() {
+    int x = f(1, 2); 
+    return 2; 
+}

@@ -1,0 +1,14 @@
+//test return 1
+// test addition, multipication and division
+
+int main()
+{
+    int x = 10;
+    x = x/2;
+    x = x*3 + 1;
+    x /= 2;
+    x /= 2;
+    x = x/2;
+    x /= 2;
+    return x;
+}

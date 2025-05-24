@@ -1,0 +1,18 @@
+//test return 4613732
+// Solution to Project Euler Problem 2
+
+int main () {
+  int prevfib = 1;
+  int currfib = 1;
+
+  int sum = 0;
+
+  while(currfib <= 4000000) {
+    sum = currfib % 2 == 0 ? sum + currfib : sum;
+    int temp = currfib;
+    currfib = currfib + prevfib;
+    prevfib = temp;
+  }
+
+  return sum;
+}

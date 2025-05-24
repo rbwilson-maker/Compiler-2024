@@ -1,0 +1,7 @@
+//test typecheck
+
+int main(){
+    int x = 3;
+    if(gated_positive(x, true)) return x;
+    else return -x;
+}

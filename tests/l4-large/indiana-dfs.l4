@@ -1,0 +1,51 @@
+//test return 10
+//761
+//like the comic, this test took way too much of my time to write.
+
+struct node {
+  int label;
+  struct node*[] neighbors;
+  int size;
+};
+
+typedef struct node*[] graph;
+
+
+//creates an graph where (u,v) is an edge if (u ^ v % 3 == 1)
+
+graph generator(int n){
+  struct node*[]  returngraph = alloc_array(struct node*, n+1);
+  int[] neighborcount = alloc_array(int, n+1);
+  for(int i = 1; i <= n; i++){
+    returngraph[i] = alloc(struct node);
+    returngraph[i]->label = i;
+    for(int j = 1; j <= n; j++){
+      if((i ^ j) % 3 == 1){
+        neighborcount[i]++;
+      }
+    }
+  }
+
+  for(int i = 1; i <= n; i++){
+    struct node*[] neighbors = alloc_array(struct node*, neighborcount[i]);
+    int index = 0;
+    for(int j = 1; j <= n; j++){
+      if((i ^ j) % 3 == 1)
+        {
+          neighbors[index]=returngraph[j];
+          index++;
+        }
+    }
+    returngraph[i]->neighbors = neighbors;
+    returngraph[i]->size = index;
+  }
+  return returngraph;
+}
+
+
+int main(){
+  graph G = generator(10);
+  //a path from 1 -> 6 - >7 -> 10
+  int dest = G[1]->neighbors[1]->neighbors[2]->neighbors[2]->label;
+  return dest;
+}

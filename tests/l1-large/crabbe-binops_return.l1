@@ -1,0 +1,7 @@
+//test return 750
+// test some binary operators and order of operations
+
+int main() {
+    int x = (379 - 4) * 2 + 5 / 7 % 71;
+    return x;
+}

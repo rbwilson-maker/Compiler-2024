@@ -1,0 +1,6 @@
+//test return 10
+
+int main () {
+  fpt x = itof(10);
+  return ftoi(x);
+}

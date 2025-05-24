@@ -1,0 +1,9 @@
+//test error 
+
+int main() {
+    int[] arr; 
+    arr = alloc_array(int, 5);
+    arr[0] = 411;
+    int result = (*arr).arr;
+    return result;    
+}

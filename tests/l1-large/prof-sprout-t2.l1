@@ -1,0 +1,11 @@
+//test return 0
+// a valid short program
+
+int main() {
+  int x;
+  int a = 3;
+  x = -a;
+  x *= x;
+  x %= x - a;
+  return x / a - 1;
+}

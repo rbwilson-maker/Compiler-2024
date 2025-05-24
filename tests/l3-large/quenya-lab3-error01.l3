@@ -1,0 +1,8 @@
+//test error
+// Use undefined and undeclared function calls
+int main() {
+    foo();
+    bar();
+    baz();
+    return 0;
+}

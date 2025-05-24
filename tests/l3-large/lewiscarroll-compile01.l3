@@ -1,0 +1,8 @@
+//test compile
+
+fpt main () {
+	fpt x = 5;
+	fpt y = 10;
+	fpt xy = fadd(5, 10);
+	return xy;
+}

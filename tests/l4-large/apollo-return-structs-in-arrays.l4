@@ -1,0 +1,28 @@
+//test return -1612574783
+
+struct integerstruct {
+  bool sign;
+  int val;
+};
+
+typedef struct integerstruct* integer;
+
+integer[] initialize_integer_array(int n, int v){
+  integer[] a = alloc_array(integer, n);
+  for (int i = 0; i < n; i++) {
+    integer this = alloc(struct integerstruct);
+    this->sign = v >= 0;
+    this->val = v < 0 ? -v : v;
+    a[i] = this;
+  }
+  return a;
+}
+
+int main() {
+  integer[] ints = initialize_integer_array(100, -15);
+  int curr = 1;
+  for (int i = 0; i < 100 ; i++) {
+    curr *= ints[i] -> val;
+  }
+  return curr;
+}

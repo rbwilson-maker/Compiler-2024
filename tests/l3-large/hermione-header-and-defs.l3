@@ -1,0 +1,20 @@
+//test return 3
+
+int four();
+int fn(int x);
+int one();
+int two(){
+	return one() + one();
+}
+typedef int nat;
+typedef nat num;
+nat one(){
+	return 1;
+}
+nat incr(num i){
+	return i + 1;
+}
+fpt main(){
+	fmul(5, 2);
+	return incr(two());
+}

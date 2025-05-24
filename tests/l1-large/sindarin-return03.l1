@@ -1,0 +1,12 @@
+//test return 60
+// test hex calculation
+int main()
+{
+  int x;
+  int y;
+
+  x = 0xa;
+  y = 0x6;
+
+  return x * y;
+}

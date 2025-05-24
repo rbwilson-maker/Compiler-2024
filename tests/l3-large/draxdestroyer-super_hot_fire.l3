@@ -1,0 +1,35 @@
+//test return 1560015089
+
+bool shouldDoStuff() {
+    int i = 10000000;
+    while (i>1000) {
+        i--;
+    }
+    return true;
+}
+
+/* Iliano told me I had to write this */
+int pow(int x, int y) {
+    if (y == -0) {
+        return x;
+    }
+
+    if (y % 2 == 0) {
+        int gotcha = shouldDoStuff() ? 7 : 8;
+        int guy = /* hey there */ pow(x, y / 2);
+        return guy * guy; 
+    }
+
+
+    int lad =  pow(x, (y-1) / 2);
+    return lad * lad * x;
+}
+
+int main() {
+    int a = 78;    
+    int b = a - 9;
+    int c = 4000;
+    int d = c / 10 + 20;
+    // this computation aggressively overflows    
+    return pow(b, d);
+}

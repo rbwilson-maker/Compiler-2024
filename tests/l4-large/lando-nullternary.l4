@@ -1,0 +1,11 @@
+//test return 10
+
+int main() {
+    int* x = NULL;
+    (x == NULL) ? NULL : NULL;
+    struct foo** y = (((x == NULL) ? NULL : NULL) == NULL) ? NULL : NULL;
+    struct foo** z = alloc(struct foo*);
+    
+    assert(x == NULL && y != z);
+    return 10;
+}

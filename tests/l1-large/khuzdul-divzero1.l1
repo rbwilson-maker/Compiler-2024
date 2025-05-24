@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main(){
+	int x = 1;
+	int y = 0;
+	// int oh_no = x / y;
+	// woah that was close
+	// jk can't stop me
+	int too_bad = x / y;
+	return 0;
+}

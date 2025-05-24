@@ -1,0 +1,7 @@
+typedef int queue_t;
+
+int malloc(int in);
+int sizeof();
+void set_tail(queue_t q, int v);
+void set_head(queue_t q, int v);
+void set_size(queue_t q, int v);

@@ -1,0 +1,10 @@
+//test return 37422
+
+int main() {
+    int x = 150; 
+    int y = 312; 
+
+    int z = (x + y) * (y - x); 
+
+    return (z / 2);
+}

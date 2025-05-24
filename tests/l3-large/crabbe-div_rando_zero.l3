@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int rando(int a, int b){
+   return (((a ^ b) % 41) < 3) ? 0 : 1;
+}
+
+int main(){
+  return 0x1 / rando(0x2,0x3);
+}

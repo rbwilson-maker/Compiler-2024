@@ -1,0 +1,18 @@
+//test return 12
+
+/* Operator precedence check */
+
+int main() {
+  int* a = alloc(int);
+  *a = 1;
+  int* b = alloc(int);
+  *b = 2;
+  int* c = alloc(int);
+  *c = 3;
+  int* d = alloc(int);
+  *d = 4;
+
+  int mix = *a**d-*b**b == 0 ? *c**b+*b**c**a : *d**d-*c;
+
+  return mix;
+}

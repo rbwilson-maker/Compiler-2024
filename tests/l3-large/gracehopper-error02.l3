@@ -1,0 +1,19 @@
+//test div-by-zero
+
+bool divByZero(int arg) {
+    if (arg < 10000) {
+        1 / 0;
+        return false;
+    }
+    return true;
+}
+
+int main() {
+    int ret = 0;
+
+    int i = 0;
+    while (i <= 10000) {
+        ret = divByZero(i) ? 0 : 1;
+    }
+    return ret;
+} 

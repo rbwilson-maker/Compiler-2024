@@ -1,0 +1,24 @@
+//test return 203
+
+int sum_n(int n, int acc) {
+    if(n == 0)
+        return acc;
+    return sum_n(n-1, acc+n);
+}
+
+int sum_n2(int n, int acc) {
+    if(n == 0)
+        return acc;
+    return sum_n(n-1, acc+n*n);
+}
+
+int main()
+{
+    int sum = 0;
+    for(int i = 0; i < 40; i++) {
+        sum += (sum_n(i+1, 0) % 7);
+        sum += (sum_n2(i+1, 0) % 11);
+    }    
+
+    return sum;
+}

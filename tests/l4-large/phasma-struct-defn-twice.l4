@@ -1,0 +1,13 @@
+//test error
+
+struct bread {
+  int salty;
+};
+
+struct bread {
+  int salty;
+};
+
+int main() {
+  return 0;
+}

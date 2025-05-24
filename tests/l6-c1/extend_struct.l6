@@ -1,0 +1,17 @@
+//test return 0
+
+struct s {
+    int i;
+    bool b;
+    bool c;
+    int * a;
+};
+
+int main() {
+    struct s[] S = alloc_array(struct s, 2);
+    S[1].b = true;
+    S[0].b = false;
+    //@assert \exists {S} (\element.b);@assert \forall {S} (!\element.c);
+    return 0;
+}
+

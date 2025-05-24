@@ -1,0 +1,108 @@
+//test return 500
+
+struct list{
+
+	struct list * left;
+	struct list * right;
+	int key;
+	int value;
+};
+
+typedef struct list * tree;
+
+tree create(int key, int value){
+	tree t = alloc(struct list);
+	t->left = NULL;
+	t->right = NULL;
+	t->key = key;
+	t->value = value;
+	return t;
+}
+
+//overwrites value on re-insertion
+void insert(tree t, int key, int value){
+	assert(t != NULL);
+
+	if (key == t->key){
+		t->value = value;
+		return;
+	}
+
+	else if (key > t->key){
+		if ((t->right) == NULL){
+			t->right = create(key,value);
+			return;
+		}
+		insert(t->right, key, value);
+		return;
+	}
+
+	else{
+		if ((t->left) == NULL){
+			t->left = create(key,value);
+			return;
+		}
+		insert(t->left, key, value);
+		return;
+	}
+
+	
+	
+}
+
+bool contains(tree t, int key){
+	assert(t != NULL);
+	if (t->key == key)
+		return true;
+
+	else if(key > t->key){
+		if (t->right == NULL)
+			return false;
+
+		return contains(t->right, key);
+	}
+
+	else{
+		if (t->left == NULL)
+			return false;
+
+		return contains(t->left, key);
+	}
+}
+
+//returns the value
+//raises an exception if the key is not in the tree
+int get(tree t, int key){
+	assert(t != NULL);
+
+	if(t->key == key)
+		return t->value;
+
+	else if (key > t->key)
+		return get(t->right, key);
+
+	else
+		return get(t->left, key);
+}
+
+int main(){
+
+	tree t = create(1,11);
+	insert(t,2,12);
+	insert(t,-5,31);
+	insert(t,4,55);
+	insert(t,-158,6);
+	insert(t,448,1);
+	assert(get(t,2) == 12);
+	insert(t,2,444);
+	assert(get(t,2) == 444);
+
+	insert(t,84,49291);
+	insert(t,0,128);
+	int x = 0;
+	x += get(t,4);
+	x += get(t,2);
+	x += get(t,448);
+
+	return x;
+}

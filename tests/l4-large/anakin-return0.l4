@@ -1,0 +1,59 @@
+//test return 0
+// copyright http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15122-s14/www/rec/08.pdf
+
+void swap(int[] A, int i, int j) {
+     int tmp = A[j];
+     A[j] = A[i];
+     A[i] = tmp;
+}
+
+int partition(int[] A, int lower, int pivot_index, int upper) {
+    int pivot = A[pivot_index];
+    swap(A, lower, pivot_index);
+    int left = lower+1;
+    int right = upper;
+    while (left < right) {
+          if (A[left] < pivot) {
+                    left++;
+          } else {
+            assert(A[left] >= pivot);
+            swap(A, left, right-1);
+            right--;
+          }
+    }
+    assert(left == right);
+    swap(A, lower, left-1);
+    return left-1;
+}
+
+void sort(int[] A, int lower, int upper) {
+     if (upper - lower <= 1) {
+        return ;
+     }
+     int pivot_index = lower;
+     int new_pivot_index = partition(A, lower, pivot_index, upper);
+     sort(A, lower, new_pivot_index);
+     sort(A, new_pivot_index+1, upper);
+}
+
+int main() {
+    int len = 12;
+    int[] A = alloc_array(int, len);
+    A[0] = 123;
+    A[1] = 102;
+    A[2] = 99;
+    A[3] = 145;
+    A[4] = 910;
+    A[5] = 19;
+    A[6] = 99;
+    A[7] = 100;
+    A[8] = 111;
+    A[9] = 93;
+    A[10] = 44;
+    A[11] = 122;
+    sort(A, 0, len);
+    for (int i = 0; i < len-1; i++) {
+        assert(A[i] <= A[i+1]);
+    }
+    return 0;
+}

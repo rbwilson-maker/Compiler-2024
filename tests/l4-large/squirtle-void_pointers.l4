@@ -1,0 +1,7 @@
+//test error
+void f() {}
+
+int main() {
+  void *f = new alloc(void);
+  return 0;
+}

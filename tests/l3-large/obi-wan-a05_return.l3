@@ -1,0 +1,13 @@
+//test return 0
+
+bool dumFiller(int a, int b)
+{
+    return false;
+}
+
+int main()
+{
+    if(dumFiller(2, 3))
+        return 20;
+    return 0;
+}

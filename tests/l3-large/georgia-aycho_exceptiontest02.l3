@@ -1,0 +1,9 @@
+//test abort
+/* assert -> abort */
+
+int main() {
+  int n = 1;
+  int m = 2;
+  assert( n > m );
+  return 0;
+}

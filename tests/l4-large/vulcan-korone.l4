@@ -1,0 +1,21 @@
+//test return 13371337
+
+void rr(int []x, int n) {
+	if (n == 0) return;
+	int never = 0;
+	int gonna = never;
+	int give = never;
+	int you = never;
+	int up = never;
+	int never_ = never;
+	int gonna_ = never;
+	int let = never;
+	int you_ = never;
+	int down = never;
+	rr(alloc_array(int, (10 + never + gonna + give + you + up + never_ + gonna_ + let + you_ + down) / n), n - 1 + never + gonna + give + you + up + never_ + gonna_ + let + you_ + down);
+}
+
+int main() {
+	rr(alloc_array(int, 0), 30000);
+	return 13371337;
+}

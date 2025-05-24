@@ -1,0 +1,220 @@
+//test return 3
+
+//Just a lot of functions and function calls
+
+int alt0() {
+	return 0;
+}
+
+int alt1() {
+	return 1;
+}
+
+int alt2() {
+	return 2;
+}
+
+int alt3() {
+	return alt2() - alt1() + alt0();
+}
+
+int alt4() {
+	return alt3();
+}
+
+int alt5() {
+	return alt4() - alt3() + alt2();
+}
+
+int alt6() {
+	return alt5();
+}
+
+int alt7() {
+	return alt6() - alt5() + alt4();
+}
+
+int alt8() {
+	return alt7();
+}
+
+int alt9() {
+	return alt8() - alt7() + alt6();
+}
+
+int alt10() {
+	return alt9();
+}
+
+int alt11() {
+	return alt10() - alt9() + alt8();
+}
+
+int alt12() {
+	return alt11();
+}
+
+int alt13() {
+	return alt12() - alt11() + alt10();
+}
+
+int alt14() {
+	return alt13();
+}
+
+int alt15() {
+	return alt14() - alt13() + alt12();
+}
+
+int alt16() {
+	return alt15();
+}
+
+int alt17() {
+	return alt16() - alt15() + alt14();
+}
+
+int alt18() {
+	return alt17();
+}
+
+int alt19() {
+	return alt18() - alt17() + alt16();
+}
+
+int alt20() {
+	return alt19();
+}
+
+int alt21() {
+	return alt20() - alt19() + alt18();
+}
+
+int alt22() {
+	return alt21();
+}
+
+int alt23() {
+	return alt22() - alt21() + alt20();
+}
+
+int alt24() {
+	return alt23();
+}
+
+int alt25() {
+	return alt24() - alt23() + alt22();
+}
+
+int alt26() {
+	return alt25();
+}
+
+int alt27() {
+	return alt26() - alt25() + alt24();
+}
+
+int alt28() {
+	return alt27();
+}
+
+int alt29() {
+	return alt28() - alt27() + alt26();
+}
+
+int alt30() {
+	return alt29();
+}
+
+int alt31() {
+	return alt30() - alt29() + alt28();
+}
+
+int alt32() {
+	return alt31();
+}
+
+int alt33() {
+	return alt32() - alt31() + alt30();
+}
+
+int alt34() {
+	return alt33();
+}
+
+int alt35() {
+	return alt34() - alt33() + alt32();
+}
+
+int alt36() {
+	return alt35();
+}
+
+int alt37() {
+	return alt36() - alt35() + alt34();
+}
+
+int alt38() {
+	return alt37();
+}
+
+int alt39() {
+	return alt38() - alt37() + alt36();
+}
+
+int alt40() {
+	return alt39();
+}
+
+int alt41() {
+	return alt40() - alt39() + alt38();
+}
+
+int alt42() {
+	return alt41();
+}
+
+int alt43() {
+	return alt42() - alt41() + alt40();
+}
+
+int alt44() {
+	return alt43();
+}
+
+int alt45() {
+	return alt44() - alt43() + alt42();
+}
+
+int alt46() {
+	return alt45();
+}
+
+int alt47() {
+	return alt46() - alt45() + alt44();
+}
+
+int alt48() {
+	return alt47();
+}
+
+int alt49() {
+	return alt48() - alt47() + alt46();
+}
+
+int alt50() {
+	return alt49();
+}
+
+int alt51() {
+	return alt50() - alt49() + alt48();
+}
+
+int alt52() {
+	return alt51();
+}
+
+
+int main() {
+	return alt30() + alt40();
+}

@@ -1,0 +1,17 @@
+//test return 23
+
+int main() {
+  int next = 0;
+  int current = 0;
+  while (next < 10) {
+    current++;
+    bool isPrime = true;
+    for (int x = 2; x < current; x++) {
+      if (current % x == 0) {
+        isPrime = false;
+      }
+    }
+    if (isPrime) next++;
+  }
+  return current;
+}

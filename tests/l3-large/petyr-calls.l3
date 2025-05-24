@@ -1,0 +1,15 @@
+//test return 1
+
+typedef bool t1;
+typedef t1 t2;
+typedef int t3;
+typedef t3 t4;
+
+t4 foo (t3 x) {
+    return x;
+}
+
+t4 main() {
+    t1 b = (foo(0) == 0);
+    return b?1:0;
+}

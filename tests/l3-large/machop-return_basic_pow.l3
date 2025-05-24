@@ -1,0 +1,14 @@
+//test return 1024
+// Tests function definition loaded from header
+
+int loop_pow (int base, int pow) {
+  int res = 1;
+  for (int i = 1; i <= pow; i++) {
+    res = res * base;
+  }
+  return res;
+}
+
+int main () {
+  return loop_pow(2, 10);
+}

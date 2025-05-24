@@ -1,0 +1,18 @@
+//test memerror
+int mainy(int a);
+
+int mainy(int a){
+    int i=10;
+    int j=a;
+    int[] s=alloc_array(int, 5);
+    while(i>~2) {
+        j+=10/1;
+        i--;
+    }
+    s[5]=j;
+    return s[0]+s[4];
+}
+int main()
+{
+    return mainy(0);
+}

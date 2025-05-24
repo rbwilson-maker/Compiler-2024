@@ -1,0 +1,17 @@
+//test return 0
+
+int main() {
+  int x = 1;
+  int b = 1;
+
+  while(x < 100) {
+    x = x << b;
+  }
+  if(x == 0) {
+    return x;
+  }
+  else {
+    while (x != 0) x--;
+    return x;
+  }
+}

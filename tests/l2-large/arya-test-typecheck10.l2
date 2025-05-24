@@ -1,0 +1,11 @@
+//test return 30
+int main() {
+  bool i = true;
+  int ret = 5;
+  while (i == true) {
+    int j = 4;
+    ret *= j + 2;
+    i = false;
+  }
+  return ret;
+}

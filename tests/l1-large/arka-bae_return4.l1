@@ -1,0 +1,9 @@
+//test return 1
+//sign of mod
+
+int main() {
+  int x = 5 % 3;  //  2
+  int y = -5 % 2; //- 1
+  int z = x + y;
+  return z;
+}

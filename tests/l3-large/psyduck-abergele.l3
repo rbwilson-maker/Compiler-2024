@@ -1,0 +1,16 @@
+//test return 47
+
+int test();
+
+typedef int verb;
+verb test();
+
+int main () {
+return test();
+}
+
+typedef verb noun;
+
+noun test () {
+return 47;
+}

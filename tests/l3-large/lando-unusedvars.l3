@@ -1,0 +1,25 @@
+//test return -1179669184
+
+int recursive(int x) {
+    int a = x;
+    int b = a;
+    int c = b;
+    int d = c;
+    int e = d;
+    int f = e;
+    int g = f;
+    int h = g;
+    int i = h;
+    int j = i;
+    int k = j;
+    int l = k;
+    if (x == 0) {
+        return 0;
+    }
+    int y = recursive(x-1);
+    return y + a + b + c + d + e;
+}
+
+int main() {
+    return recursive(80000);
+}

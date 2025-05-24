@@ -1,0 +1,27 @@
+//test memerror
+
+/* Size Check
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, October 26, 2015 at 05:51:11 PM EDT
+ *
+ * Checks that size checks are performed for memory allocations, and
+ * the compiler will abort at runtime if the size is invalid.
+ */
+
+int[] foo(int size)
+{
+    int[] x = alloc_array(int, size);
+    x[0] = 11;
+
+    return x;
+}
+
+int main()
+{
+    foo(10);
+    foo(-5);
+
+    return 77;
+}

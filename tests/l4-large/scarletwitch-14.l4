@@ -1,0 +1,6 @@
+//test typecheck
+
+int main() {
+    int[] a = alloc_array(int, 1);
+    return abort(a);
+}

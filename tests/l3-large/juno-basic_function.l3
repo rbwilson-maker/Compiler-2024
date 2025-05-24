@@ -1,0 +1,11 @@
+//test return 1
+
+// Tests basic function
+
+int help(int x) {
+    return x;
+}
+
+int main () {
+    return help(1);
+}

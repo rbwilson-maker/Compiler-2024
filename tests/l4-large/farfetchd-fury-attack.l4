@@ -1,0 +1,29 @@
+//test return 0
+
+struct attack;
+int b (struct attack* hi);
+
+int a(struct attack* f) {
+  struct attack *g = f;
+  return b(g);
+}
+
+struct fury {
+  int *a;
+  int[] b;
+  bool c;
+  int d;
+};
+
+struct attack {
+  struct fury attack;
+  int hit_4_times;
+};
+
+int b(struct attack *f) {
+  return f->attack.d;
+}
+
+int main () {
+  return a(alloc(struct attack));
+}

@@ -1,0 +1,131 @@
+//test return 130020
+//overcomplicated summation
+
+int add1(int x, int y) {
+    return 2 * (x + y) / 2;
+}
+int add2(int x, int y) {
+    return x + y - y + y;
+}
+int add3(int x, int y) {
+    for (int i = 0; i < y; i++) {
+        x += 1;
+    }
+    return x;
+}
+int add4(int x, int y) {
+    return x + y - 1 + 1;
+}
+int add5(int x, int y) {
+    return x + y + x+ x-x-x;
+}
+int add6(int x, int y) {
+    return -(-(x + y));
+}
+int add7(int x, int y) {
+    return (~(~(x + y)));
+}
+int add8(int x, int y) {
+    return (~~x) + (~~y);
+}
+int add9(int x, int y) {
+    return x + y;
+}
+int add10(int x, int y) {
+    return x + y;
+}
+int add11(int x, int y) {
+    return x + y;
+}
+int add12(int x, int y) {
+    return x + y;
+}
+int add13(int x, int y) {
+    return x + y;
+}
+int add14(int x, int y) {
+    return x + y;
+}
+int add15(int x, int y) {
+    return x + y;
+}
+int add16(int x, int y) {
+    return x + y;
+}
+int add17(int x, int y) {
+    return x + y;
+}
+int add18(int x, int y) {
+    return x + y;
+}
+int add19(int x, int y) {
+    return x + y;
+}
+int add20(int x, int y) {
+    return x + y;
+}
+
+int main(){
+    int a1 = 45;
+    int a2 = 234;
+    int a3 = 1237;
+    int a4 = 2534;
+    int a5 = 125337;
+    int a6 = 13;
+    int a7 = 65;
+    int a8 = 235;
+    int a9 = 86;
+    int a10 = 234;
+
+    return  (
+        add1(
+            add2 (
+                add3 (
+                    a1
+                    ,
+                    add4 (
+                        a2
+                        ,
+                        a3
+                    )
+
+                )
+
+                ,
+                add5 (
+                    a4
+                    ,
+                    add6 (
+                        a5
+                        ,
+                        a6
+                    )
+
+                )
+
+            )
+
+            ,
+
+            add7 (
+                add8 (
+                    a7
+                    ,
+                    a8
+                )
+                ,
+                add9 (
+                    a9
+                    ,
+                    a10
+                )
+
+            )
+
+        )
+
+
+    );
+
+
+}

@@ -1,0 +1,22 @@
+//test return 4
+
+struct Hi
+{
+  int hello;
+  bool hi;
+};
+
+int main()
+{
+  struct Hi *s = alloc(struct Hi);
+  s->hello = 4;
+  s->hi = true;
+  if ((*s).hi)
+  {
+    return (*s).hello;
+  }
+  else
+  {
+    return 8;
+  }
+}

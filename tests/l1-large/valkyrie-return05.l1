@@ -1,0 +1,6 @@
+//test return -18
+// Order of operations
+// From : https://www.basic-mathematics.com/hard-order-of-operations-problems.html
+int main(){
+	return -10 / (20 / (2 * 2) * 5 / 5) * 8 - 2;
+}

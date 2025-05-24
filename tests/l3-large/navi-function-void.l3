@@ -1,0 +1,16 @@
+//test error
+
+void time(int a) {
+	while(a > 0) {
+		a--;
+	}
+}
+int add(int a, int b) {
+	return a + b;
+}
+
+int main() {
+	time(100);
+	return f(time(10), 10);
+}
+

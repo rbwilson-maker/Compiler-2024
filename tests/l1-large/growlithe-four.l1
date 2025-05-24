@@ -1,0 +1,12 @@
+//test div-by-zero
+//negative modulo check and then divide by zero.
+int main()
+{
+  int max = 0x7fffffff;
+
+  int zero = ((-5)%3)+2;
+
+  int what = 13/zero;
+
+  return what;
+}

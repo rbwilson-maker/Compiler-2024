@@ -1,0 +1,7 @@
+//test abort
+
+int main() {
+    bool* b = alloc(bool);
+    assert(*b);
+    return 0;
+}

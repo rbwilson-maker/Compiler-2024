@@ -1,0 +1,10 @@
+//test return 45
+
+int main(){
+  int y = 0;
+  for(int x=1; x < 10;){
+    y += x;
+    x++;
+  }
+  return y;
+}

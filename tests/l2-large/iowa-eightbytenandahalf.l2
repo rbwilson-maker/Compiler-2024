@@ -1,0 +1,16 @@
+//test return 84
+
+int main() {
+    int eight = 8;
+    int ten = 10;
+    int onehalf = 1 / 2;
+
+    if (onehalf != 0) {
+        return 0;
+    }
+    else {
+        return 84;
+    }
+
+    return 0;
+}

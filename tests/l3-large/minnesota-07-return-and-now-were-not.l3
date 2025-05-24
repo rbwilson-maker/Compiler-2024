@@ -1,0 +1,12 @@
+//test return 15
+//test assert
+
+int adder(int a, int b) {
+  return a+b;
+}
+
+int main() {
+  int a = adder(5, 10);
+  assert (a == 15);
+  return a;
+}

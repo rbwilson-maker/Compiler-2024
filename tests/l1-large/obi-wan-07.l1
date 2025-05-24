@@ -1,0 +1,11 @@
+//test return 2
+
+// this tests all of the binary operations for L1
+int main()
+{
+    int x = (6 + 7) * (5 - 3); // 13 * 2 = 26
+    int y = (x / 13) + (x % 13);  // 2 + 0 = 2
+
+    return y;
+}
+

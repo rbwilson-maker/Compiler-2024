@@ -1,0 +1,29 @@
+//test abort
+
+int ackermann(int a, int b, int[] memo) { // with memoization!
+    if (a == 1 && memo[b] != -1) {
+        return memo[b];
+    }
+    if (a == 0) {
+        return b + 1;
+    }
+    int res;
+    if (b == 0) {
+        res = ackermann(a - 1, 1, memo);
+    } else {
+        res = ackermann(a - 1, ackermann(a - 1, b, memo), memo);
+    }
+    if (a == 1) {
+        memo[b] = res;
+    }
+    return res;
+}
+
+int main() {
+    int[] memo = alloc_array(int, 10);
+    for (int i = 0; i < 10; i++) {
+        memo[i] = -1;
+    }
+    assert(ackermann(2, 1, memo) != 5);
+    return 15611;
+}

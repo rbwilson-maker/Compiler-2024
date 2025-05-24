@@ -1,0 +1,17 @@
+//test return 14
+
+int bar (int x, int y);
+
+int foo (int x, int count) {
+    if (x == 1) return count;
+    return bar(x, count);
+}
+
+int bar (int x, int count) {
+    x = x + 1;
+    return foo(x / 2, count + 1);
+}
+
+int main () {
+    return foo(15411, 0);
+}

@@ -1,0 +1,19 @@
+//test return 36990790
+
+// A translation of a putnam problem.
+// What is the number of ways to make n!*N with coins of size k!, 1<=k<=n?
+// (The actual problem is much harder)
+
+// requires n >= 1, N >= 0
+int ways(int n, int N) {
+  assert(n >= 1 && N >= 0);
+  if (n == 1 || N == 0) {
+    return 1;
+  } else {
+    return ways(n, N-1) + ways(n-1, n*N);
+  }
+}
+
+int main() {
+  return ways(6, 3);
+}

@@ -1,0 +1,10 @@
+//test error
+
+struct y {
+  int ref;
+}
+
+int main(){
+  int x = 4;
+  return x->a;
+}

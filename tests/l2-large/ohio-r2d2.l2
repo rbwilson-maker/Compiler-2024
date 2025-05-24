@@ -1,0 +1,9 @@
+//test div-by-zero
+int main() {
+  int divisor = 0;
+  int dividend = 0;
+  if (divisor == 0) {
+    return dividend / divisor;
+  }
+  return 888888;
+}

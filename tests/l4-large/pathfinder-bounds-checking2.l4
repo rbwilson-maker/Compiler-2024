@@ -1,0 +1,11 @@
+//test memerror
+
+int foo() {
+    return 100;
+}
+
+int main() {
+    int[] x = alloc_array(int, 10);
+    x[100] = 1;
+    return 0;
+}

@@ -1,0 +1,18 @@
+//test return 65
+
+int f(int a, int b, int c);
+
+// Tests using variable b not in the scope
+int main() {
+    int a = 5;
+    int sum = 0;
+    for (int c = 0; c < 5; c++) {
+        int b = 6;
+        sum += f(a, b, c);
+    }
+    return sum;
+}
+
+int f(int a, int b, int c) {
+    return a + b + c;
+}

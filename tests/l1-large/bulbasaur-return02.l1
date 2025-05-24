@@ -1,0 +1,19 @@
+//test return 5
+// test register allocation with long liveness and lots of interference
+int main()
+{
+  int x1;
+  int x2;
+  int x3;
+  int x4;
+  int x5;
+  int x6;
+
+  x1 = 1;
+  x2 = 1;
+  x3 = x1 + x2;
+  x4 = x2 + x3;
+  x5 = x3 + x4;
+  x6 = x1 + x2;
+  return x3 + x4;
+}

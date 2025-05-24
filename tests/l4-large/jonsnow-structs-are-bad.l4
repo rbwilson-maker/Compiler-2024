@@ -1,0 +1,90 @@
+//test return 1
+// Pointers to structs can be used without a definition. Nice!
+
+struct definitionless;
+typedef struct definitionless* undef;
+
+undef get(undef x) {
+  return NULL == x ? NULL : x;
+}
+
+struct latedef;
+struct latedef;
+struct latedef;
+
+typedef struct latedef* latedef;
+
+struct it_is_also_okay_to_declare_a_struct_that_is_never_used_multiple_times;
+struct it_is_also_okay_to_declare_a_struct_that_is_never_used_multiple_times;
+struct it_is_also_okay_to_declare_a_struct_that_is_never_used_multiple_times;
+
+struct s {
+  undef x;
+  undef y;
+  undef z;
+  undef[] friends;
+  latedef[] enemies;
+};
+
+struct s[] do_weird_things(int len) {
+  undef x = get(NULL);
+  undef y = get(x);
+
+  undef[] friends = alloc_array(undef, len);
+  for (int i = 0; i < len; i++) {
+    friends[i] = get(friends[i]);
+  }
+
+  assert(x == y);
+  for (int i = 0; i < len; i++) {
+    for (int j = 0; j < len; j++) {
+      assert(friends[i] == friends[j]);
+    }
+  }
+
+  struct s[] enemies = alloc_array(struct s, len);
+  for (int i = 0; i < len; i++) {
+    enemies[i].x = get(enemies[i].x);
+    enemies[i].y = get(enemies[i].y);
+    enemies[i].z = get(enemies[i].z);
+    enemies[i].friends = friends;
+    enemies[i].enemies = alloc_array(latedef, len);
+  }
+
+  return enemies;
+}
+
+// finally define (but not undef!)
+struct latedef {
+  undef undef;
+  undef x;
+  undef y;
+  latedef z;
+};
+
+int main() {
+  int len = 10;
+  struct s[][] weird = alloc_array(struct s[], len);
+  for (int i = 0; i < len; i++) {
+    weird[i] = do_weird_things(i);
+  }
+  
+  for (int i = 1; i < len; i++) {
+    undef u = weird[i][i-1].friends[i-1];
+    latedef x = weird[i][i-1].enemies[i-1];
+    assert(u == NULL);
+    assert(x == NULL);
+    weird[i][i-1].enemies[i-1] = alloc(struct latedef);
+    
+    // Check not equal to all other ones
+    for (int j = 1; j < len; j++) {
+      if (j != i) {
+        assert(weird[i][i-1].enemies[i-1]
+               != weird[j][j-1].enemies[j-1]);
+        assert(weird[i][i-1].enemies != weird[j][j-1].enemies);
+      }
+    }
+  }
+
+  return 1;
+}

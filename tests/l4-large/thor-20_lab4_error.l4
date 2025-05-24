@@ -1,0 +1,9 @@
+//test memerror
+
+int main()
+{
+int[] pixels = alloc_array(int, 6);
+int height = 0;
+int[] mask = alloc_array(int, 100);
+mask[5] = 6;
+return mask[-5];}

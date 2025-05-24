@@ -1,0 +1,13 @@
+//test return 2
+
+int f(int[] x) {
+    x[1] = 2;
+    x = alloc_array(int, 1);
+    x[0] = 1;
+    return 1;
+}
+
+int main() {
+    int[] x = alloc_array(int, 2);
+    return x[f(x)] + x[0];
+}

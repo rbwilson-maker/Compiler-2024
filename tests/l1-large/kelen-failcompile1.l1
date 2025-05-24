@@ -1,0 +1,12 @@
+//test error
+
+// Tests using an invalid variable name ("assert")
+int main(){
+
+    int x = 5;
+    x = x + 1;
+    int assert = 3; // should raise compile-time error due to variable named assert
+    x = assert + x;
+    return x;
+
+}

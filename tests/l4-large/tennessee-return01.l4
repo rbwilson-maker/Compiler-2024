@@ -1,0 +1,17 @@
+//test return 0
+
+struct str {
+  int i;
+  bool b;
+};
+
+int main() {
+  int n = 0;
+  struct str* ins = alloc (struct str);
+  ins->i = n;
+  ins->b = ins->i == n;
+  if (ins->b) 
+    return ins->i;
+  else
+    return 1;
+}

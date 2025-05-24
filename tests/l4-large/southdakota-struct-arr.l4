@@ -1,0 +1,24 @@
+//test return 7
+
+struct moon {
+	int mars;
+};
+
+typedef struct moon* pluto;
+
+typedef pluto[] mercury;
+
+pluto makePluto(int i) {
+	pluto p = alloc(struct moon);
+	p->mars = i*2;
+	return p;
+}
+
+int main() {
+	mercury m = alloc_array(struct moon*, 5);
+	for (int i = 0; i < 5; i++) {
+		m[i] = makePluto(i);
+	}
+	(*m[3]).mars++;
+	return (*m[3]).mars;
+}

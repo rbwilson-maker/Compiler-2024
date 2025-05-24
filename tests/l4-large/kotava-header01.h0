@@ -1,0 +1,27 @@
+
+typedef struct lab1* lab1_report;
+typedef struct lab2* lab2_report;
+typedef struct lab3* lab3_report;
+typedef struct lab4* lab4_report;
+
+struct lab1 {
+  int hours;
+  int score;
+  bool is_happy;
+};
+
+struct lab2 {
+  lab1_report prev;
+  int hours;
+  int score;
+  bool is_happy;
+};
+
+struct lab3 {
+  lab2_report prev;
+  int hours;
+  int score;
+  bool is_happy;
+};
+
+struct lab4;

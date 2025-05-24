@@ -1,0 +1,9 @@
+//test error
+
+// tests redefn of header function
+
+int main() { return 0; }
+
+int asdf(int cantouchthis) {
+	return 0;
+}

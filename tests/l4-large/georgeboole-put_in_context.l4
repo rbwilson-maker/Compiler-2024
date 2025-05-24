@@ -1,0 +1,10 @@
+//test abort
+
+typedef int bruh;
+
+int main() {
+    bruh * ment = alloc(int);
+    assert(false);
+    *ment = 21;
+    return 0;
+}

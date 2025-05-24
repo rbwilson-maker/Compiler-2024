@@ -1,0 +1,15 @@
+//test error
+
+/*
+ * ops between pointer and int
+ */
+
+
+int main() {
+    int* a = alloc (int);
+    int b = 10;
+
+    a += b;
+
+    return 0;
+}

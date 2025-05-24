@@ -1,0 +1,13 @@
+//test error
+
+int main() {
+
+    i = 5;
+
+    int i;
+
+    int j = {{{3}}};
+
+    return i / j;
+
+}

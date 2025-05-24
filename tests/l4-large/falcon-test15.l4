@@ -1,0 +1,21 @@
+//test error
+// Noo don't allow structs to be returned your so sexy ahaha
+
+// You wouldn't turn this poor thing into an int, would you?
+struct small_boi {
+    int i;
+};
+
+typedef struct small_boi sb;
+
+sb foo(int a) {
+    sb x;
+    x.i = a;
+
+    return x;
+}
+
+
+int main() {
+    return foo(5).i;
+}

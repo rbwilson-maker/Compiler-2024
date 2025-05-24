@@ -1,0 +1,19 @@
+//test error
+// structs must have distinct fields
+
+struct good {
+    int a;
+    bool b;
+    int[] c;
+};
+
+struct bad {
+    int a;
+    bool b;
+    int[] c;
+    bool* a;
+};
+
+int main () {
+    return 0;
+}

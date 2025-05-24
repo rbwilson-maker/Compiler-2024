@@ -1,0 +1,18 @@
+//test memerror
+
+//null pointer init in struct
+typedef struct s s_t;
+struct s {
+    int a;
+    int b;
+    s_t* what;
+};
+
+int h1 (struct s*b){
+    return b->what->b;
+}
+
+int main(){
+  s_t* h = alloc(s_t);
+  return h1(h);
+}

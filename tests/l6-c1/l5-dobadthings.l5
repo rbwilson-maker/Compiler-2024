@@ -1,0 +1,17 @@
+//test error
+
+typedef string boolean;
+
+void print(string s){
+  0;
+}
+
+int main()
+{
+  boolean test_is_dumb = "true";
+  while(test_is_dumb)
+  {
+    print("I wish I was sleeping right now\n");
+  }
+  return 251;
+}

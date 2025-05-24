@@ -1,0 +1,18 @@
+//test abort
+
+int sigfpe() {
+    return 1 / 0;
+}
+
+int sigabrt() {
+    assert(false);
+    return 8;
+}
+
+bool which_one() {
+    return false;
+}
+
+int main() {
+    return which_one() ? sigfpe() : sigabrt();
+}

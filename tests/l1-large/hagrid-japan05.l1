@@ -1,0 +1,9 @@
+//test div-by-zero
+// more arithmetic but bad
+int main()
+{
+    int y = 2;
+    int x = 5 % y;
+    int z = 4 / (x-1);
+    return z;
+}

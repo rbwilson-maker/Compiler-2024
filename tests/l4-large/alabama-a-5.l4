@@ -1,0 +1,25 @@
+//test error
+
+struct strcut {
+  struct strcut *stcurt;
+  struct strcut **sturct;
+};
+
+typedef struct strcut hi;
+
+void clear(hi *hai) {
+  //lhs + rhs have different types
+  hai->stcurt = (*(hai->sturct))->sturct;
+  hai = NULL;
+}
+
+int main() {
+  hi *hai = alloc(hi);
+  hai -> stcurt = hai;
+  hai->sturct = alloc(hi *);
+  (*(hai->sturct))->stcurt = NULL;
+  (*(hai->sturct))->sturct = NULL;
+  clear(hai);
+  hai->stcurt->stcurt = NULL;
+  return 0;
+}

@@ -1,0 +1,13 @@
+//test error
+
+typedef int iiti(int a, int b);
+
+int div(int x, int y)
+{
+  return x / y;
+}
+
+int main()
+{
+  return (*(&div))(251,0);
+}

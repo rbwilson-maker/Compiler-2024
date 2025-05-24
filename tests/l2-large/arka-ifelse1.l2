@@ -1,0 +1,28 @@
+//test return 33
+// if
+
+int main() {
+
+   int z = 23;
+   int f = 100;
+
+   int a = 0;
+
+   if(z < 50) {
+     if(f > 20)
+        a += 10;
+     else
+        a -= 20;
+    
+     if(true)
+        a += 23;
+    else
+        a -= 7;
+
+   }
+   else
+    a = 42;
+
+   return a;
+
+}

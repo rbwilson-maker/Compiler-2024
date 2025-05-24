@@ -1,0 +1,55 @@
+//test return 54
+//if i hash it, it must be better, right? 
+
+int hash(int key, int length) {
+    return (17*key + 19*key + 29 * key) % length; 
+}
+
+void set(int[] map, int length, int key, int val) {
+    map[hash(key, length)] = val;
+    return; 
+}
+int get(int[] map, int length, int key) {
+    return map[hash(key, length)]; 
+    // hash collisions? what are those? 
+}
+
+int main() {
+    int len = 100;
+    int[] map = alloc_array(int, len);
+    set(map, len, 110, 15210); 
+    set(map, len, 10, 15150); 
+    set(map, len, 20, 15122); 
+    set(map, len, 30, 15151); 
+    set(map, len, 32, 15112); 
+    set(map, len, 12, 15251); 
+    set(map, len, 21342, 15213); 
+    set(map, len, 123, 4); 
+    set(map, len, 15, 1); 
+    set(map, len, 324, 2); 
+    set(map, len, 6543, 4); 
+    set(map, len, 7154, 2); 
+    set(map, len, 1754, 2); 
+    set(map, len, 7514, 2); 
+    set(map, len, 7541, 2); 
+    set(map, len, 75114, 2); 
+    set(map, len, 7534, 29); 
+    set(map, len, 7554, 28); 
+    set(map, len, 7654, 26); 
+    set(map, len, 7754, 24); 
+    set(map, len, 1223, 43); 
+    set(map, len, 155, 132); 
+    set(map, len, 3234, 21); 
+    set(map, len, 65143, 54); 
+    set(map, len, 75154, 32); 
+    set(map, len, 17154, 24); 
+    set(map, len, 73514, 287); 
+    set(map, len, 75341, 29); 
+    set(map, len, 756114,82); 
+    set(map, len, 77534, 72); 
+    set(map, len, 75545, 52); 
+    set(map, len, 76854, 22); 
+    set(map, len, 77754, 24); 
+
+    return get(map, len, 6543); 
+}

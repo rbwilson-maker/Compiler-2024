@@ -1,0 +1,12 @@
+//test return 100
+
+// Bizarrely, main doesn't have to be pre-declared
+
+void f() {
+  if (false) main();
+}
+
+int main() {
+  f();
+  return 100;
+}

@@ -1,0 +1,11 @@
+//test error
+
+int main( ) {
+  int a = 1 + 2;
+
+  int b = a * a;
+  int c = b * a;
+  int d = c * a;
+  return d;
+}
+/*/**/

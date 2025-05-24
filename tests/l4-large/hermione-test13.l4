@@ -1,0 +1,9 @@
+//test typecheck
+//test infloop
+
+int main () {
+    while (true) {
+        int[] wag = alloc_array(int, 0);
+    }
+    return 0;
+}

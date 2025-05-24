@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+    int a;
+    int b = 150;
+    a /= b;
+    return b % a;
+}

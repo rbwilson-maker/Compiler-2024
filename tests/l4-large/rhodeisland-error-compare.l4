@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+	int* p = alloc(int);
+	int* x = alloc(int);
+	*p = 2;
+	*x = 3;
+	return (p < x) ? 1 : 0;
+}

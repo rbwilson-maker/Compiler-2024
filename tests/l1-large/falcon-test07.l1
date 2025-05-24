@@ -1,0 +1,17 @@
+//test return 34
+
+int main() {
+    int a = 0;
+    int b = 1;
+
+    a += b; //  1  1
+    b += a; //  1  2
+    a += b; //  3  2
+    b += a; //  3  5
+    a += b; //  8  5
+    b += a; //  8 13
+    a += b; // 21 13
+    b += a; // 21 34
+
+    return b;
+}

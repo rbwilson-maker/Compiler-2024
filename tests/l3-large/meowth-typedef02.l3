@@ -1,0 +1,26 @@
+//test return 1
+/* Test typedefs and typedeffing typedefs */
+
+typedef int boole;
+typedef bool inte;
+typedef inte float;
+typedef int floate;
+typedef boole confusion;
+
+floate floaty(float floatt);
+boole floaty(bool boo) {
+  return boo ? 1 : 0;
+}
+
+confusion main () {
+  floate boolea = 0;
+  float yes = true;
+  boole okay = 1;
+  inte no = false;
+
+  for (confusion intt = 0; intt != 0;) {
+    return okay / boolea;
+  }
+
+  return floaty(yes);
+}

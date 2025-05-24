@@ -1,0 +1,9 @@
+//test error
+// we don't check loops for returns and so this function does not return
+
+int main() {
+	int x = 3;
+	while (true) {
+		return x;
+	}
+}

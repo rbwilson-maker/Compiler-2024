@@ -1,0 +1,19 @@
+//test abort
+
+int sum(int n)
+/*@requires n >= 0; @*/
+/*@ensures true; @*/
+{
+    int result = 0;
+    for (int i = 0; i < n+1; i++)
+    /*@ loop_invariant 0 <= i; @*/
+    /*@ loop_invariant i <= n; @*/
+    {
+        result += i;
+    }
+    return result;
+}
+
+int main() {
+    return sum(100);
+}

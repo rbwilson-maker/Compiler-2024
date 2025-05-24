@@ -1,0 +1,17 @@
+//test return 6
+// Non-chordal graph return
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+
+  a = 0;
+  b = 1;
+  c = a + b;
+  a = b + c;
+  d = 2;
+  c = d + a;
+  return (c + d);
+}

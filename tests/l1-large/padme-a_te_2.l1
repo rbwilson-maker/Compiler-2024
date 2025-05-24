@@ -1,0 +1,11 @@
+//test error
+
+/* This test should raise a type error since ant is not a proper type,
+   for l1 int is the only proper type.
+*/
+
+int main ()
+  {
+    ant var = 1;
+    return var;
+  }

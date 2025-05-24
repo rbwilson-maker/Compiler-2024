@@ -1,0 +1,14 @@
+//test error
+/* Using undeclared functions */
+
+void undeclared() {
+  declared();
+}
+
+void declared() {
+}
+
+int main () {
+  undeclared();
+  return 0;
+}

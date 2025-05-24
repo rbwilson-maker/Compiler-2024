@@ -1,0 +1,17 @@
+//test abort
+
+int divide(int x, int y) {
+	return x/y;
+}
+
+int main() {
+	int x = 1;
+	int y = 2;
+	int z = 3;
+	bool* a = alloc(bool);
+	bool* b = alloc(bool);
+	*a = true;
+	*b = false;
+	assert(*a && *b);
+	return 1;
+}

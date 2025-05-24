@@ -1,0 +1,25 @@
+//test memerror
+
+struct blah {
+    int bleh;
+    int bleeh;
+};
+
+struct bloop {
+    int bloooh;
+    int blooooh;
+};
+
+struct blargh {
+    int blahh;
+    int blahhh;
+};
+
+int main() {
+    struct blah[] *blooogh;
+    struct bloop *[] *bleerfgh=alloc(struct bloop *[]);
+    struct blargh[] *bleh = alloc(struct blargh[]);
+    (*bleh) = alloc_array(struct blargh, 1);
+    (*bleh)[0].blahh = (*bleerfgh)[0]->bloooh;
+    return (*bleh)[0].blahh;
+}

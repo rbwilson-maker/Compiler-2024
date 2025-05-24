@@ -1,0 +1,13 @@
+//test memerror
+
+typedef int* happy_halloween;
+
+happy_halloween spooky(int seven) {
+    return NULL;
+}
+
+int main(){
+    int spooky_value = *(spooky(7));
+
+    return spooky_value;
+}

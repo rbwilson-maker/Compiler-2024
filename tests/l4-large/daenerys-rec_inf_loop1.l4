@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+int inf(int* n) {
+   if (*n == 0) return *n;
+   return inf(n);
+}
+
+int main() {
+  int * x = alloc(int);
+  *x = 5;
+  return inf(x);
+}

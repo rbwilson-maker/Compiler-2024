@@ -1,0 +1,13 @@
+//test return 0
+
+int inc(int* p) {
+  (*p)++;
+  return *p;
+}
+
+int main() {
+  int[] A = alloc_array(int, 10);
+  int* p = alloc(int);
+  A[inc(p)] += 1;
+  return A[2];
+}

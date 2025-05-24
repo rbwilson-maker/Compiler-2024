@@ -1,0 +1,61 @@
+//test return 0
+
+struct randoms {
+  int a;
+  int b;
+  bool c;
+  bool d;
+  int e;
+  int *f;
+  int **g;
+  bool *h;
+};
+
+int bool_to_int(bool b)
+{
+  if (b) {
+    return 1;
+  }
+  return 0;
+}
+
+int int_star_to_int(int *p)
+{
+  if (p == NULL) {
+    return 0;
+  }
+  return 1000;
+}
+
+int int_star_star_to_int(int **p)
+{
+  if (p == NULL) {
+    return 0;
+  }
+  return 100000;
+}
+
+int bool_star_to_int(bool *p)
+{
+  if (p == NULL) {
+    return 0;
+  }
+  return 9;
+}
+
+int main()
+{
+  int accum = 0;
+  struct randoms[] r = alloc_array(struct randoms, 10);
+  for (int i = 0; i < 10; i++) {
+    accum += r[i].a
+            + r[i].b
+            + bool_to_int(r[i].c)
+            + bool_to_int(r[i].d)
+            + r[i].e
+            + int_star_to_int(r[i].f)
+            + int_star_star_to_int(r[i].g)
+            + bool_star_to_int(r[i].h);
+  }
+  return accum;
+}

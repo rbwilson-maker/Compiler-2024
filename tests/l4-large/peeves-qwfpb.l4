@@ -1,0 +1,9 @@
+//test typecheck
+//test infloop
+int main(){
+    int *p;
+    while(true){
+        p=alloc(int);
+    }
+    return 0;
+}

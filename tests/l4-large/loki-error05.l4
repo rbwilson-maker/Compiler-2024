@@ -1,0 +1,12 @@
+//test error
+
+struct s {
+  int a;
+  int b;
+};
+
+int main() {
+  struct s *dummy;
+  s->a = 0;
+  return 0;
+}

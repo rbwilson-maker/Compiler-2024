@@ -1,0 +1,47 @@
+//test return 1
+
+/* Basic branching function calls. */
+
+int test1() {
+  return 1;
+}
+int test3() {
+  return 3;
+}
+
+int test2(int n) {
+  if (n == 2) return 2;
+  if (n < 2) {
+    return test1();
+  } else {
+    return test3();
+  } 
+}
+
+int test7() {
+  return 7;
+}
+
+int test5() {
+  return 5;
+}
+
+int test6(int n) {
+  if (n == 6) return 6;
+  if (n < 6) {
+    return test5();
+  } else {
+    return test7();
+  } 
+}
+
+
+int main() {
+  int n = 1;
+  if (n == 4) return 4;
+  if (n < 4) {
+    return test2(n);
+  } else {
+    return test6(n);
+  } 
+}

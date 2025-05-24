@@ -1,0 +1,11 @@
+//test error
+
+int mk_course(int department, int course) {
+  return 15 * 1000 + course;
+}
+
+int main () {
+  int yeehaw;
+  yeehaw = mk_course(15,true);
+  return true ? yeehaw : 1 / 0;
+}

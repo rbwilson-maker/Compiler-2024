@@ -1,0 +1,9 @@
+//test return 1000
+int main() {
+	int x = 0;
+	for (;x < 1000;) {
+		if (true)
+			x++;
+	}
+	return x;
+}

@@ -1,0 +1,16 @@
+//test return 3
+
+int f(int *x){
+    (*x)++;
+    return 0;
+}
+
+int main(){
+    int[][][] a = alloc_array(int[][], 1);
+    a[0] = alloc_array(int[], 1);
+    a[0][0] = alloc_array(int, 1);
+    int *x = alloc(int);
+    a[f(x)][f(x)][f(x)] += 1;
+    assert(a[0][0][0] == 1);
+    return *x;
+}

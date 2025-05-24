@@ -1,0 +1,35 @@
+//test return 4
+void swap(int[] A, int i, int j){
+	int tmp = A[i];
+	A[i] = A[j];
+	A[j] = tmp;
+}
+int min_index(int[] A, int lower, int upper)
+{
+  int m = lower;
+  int min = A[lower];
+  for (int i = lower+1; i < upper; i++)
+    if (A[i] < min) {
+      m = i;
+      min = A[i];
+    }
+  return m;
+}
+
+void sort(int[] A, int lower, int upper)
+{
+  for (int i = lower; i < upper; i++)
+    {
+      int m = min_index(A, i, upper);
+      swap(A, i, m);
+    }
+  return;
+}
+
+int main(){
+	int[] a = alloc_array(int, 100);
+	int i;
+	for(i=0;i<100;i++) a[i]=100-i;
+	sort(a, 0, 100);
+	return a[3];
+}

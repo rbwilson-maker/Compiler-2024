@@ -1,0 +1,9 @@
+//test div-by-zero
+// Test correct handling of shift
+
+int main() {
+    int x = 1;
+    x>>=31;
+    x<<=32;
+    return x;
+}

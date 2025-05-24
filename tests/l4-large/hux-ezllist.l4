@@ -1,0 +1,28 @@
+//test memerror
+
+struct node {
+	int data;
+	struct node *next;
+};
+
+typedef struct node* node;
+
+struct llist {
+	node start;
+};
+
+typedef struct llist* llist;
+
+int main() {
+	llist l = alloc(struct llist);
+
+	l->start = alloc(struct node);
+	node start = l->start;
+
+	start->next = alloc(struct node);
+	start->next->next = alloc(struct node);
+
+	while(true) start = start->next;
+
+	return 0;
+}

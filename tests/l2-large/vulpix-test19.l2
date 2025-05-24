@@ -1,0 +1,8 @@
+//test return 0
+int main () {
+  bool a = true;
+  bool b = false;
+  int y = ((a || b && !b) != b == (!a || !b)) ? 30 : 100;
+  int x = a && !b || (b == !a) ? -30 : -80;
+  return y + x;
+}

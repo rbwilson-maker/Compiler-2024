@@ -1,0 +1,9 @@
+//test return 0;
+
+int a (int x) {
+	return x == 0 ? x : a(x-1);
+}
+
+int main () {
+	return a(100000);
+}

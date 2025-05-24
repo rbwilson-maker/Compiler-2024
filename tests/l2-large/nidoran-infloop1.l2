@@ -1,0 +1,9 @@
+//test typecheck
+//test infloop
+// Tests that unitialized variables in uncreachable code
+int main()
+{
+    while(1 < 2) {
+    }
+    return 1;
+}

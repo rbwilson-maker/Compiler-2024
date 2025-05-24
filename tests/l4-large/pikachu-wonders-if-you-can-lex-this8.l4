@@ -1,0 +1,24 @@
+//test return 445
+// tests lexing typedefs in the right order and ambiguous *
+
+typedef int pika;
+typedef pika pichu;
+
+// this is a thing in the manga, i promise
+pichu megavolt()
+{
+  pichu pikachu = 64;
+  return pikachu;
+}
+
+typedef pichu raichu;
+typedef raichu pikachu;
+
+pichu main()
+{
+  pikachu*thunderbolt=alloc(raichu);
+  *thunderbolt=5;
+  pika thundershock=megavolt();
+  *thunderbolt*=*thunderbolt**thunderbolt+thundershock;
+  return*thunderbolt;
+}

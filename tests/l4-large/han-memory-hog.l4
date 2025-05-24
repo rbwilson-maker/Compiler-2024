@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+
+void whatWillFailFirst() {
+    int*[] notUsed = alloc_array(int*, 1024);
+    whatWillFailFirst();
+}
+
+int main() {
+    whatWillFailFirst();
+    return 0;
+}

@@ -1,0 +1,27 @@
+//test return 0
+
+/*  Calculates your GPA for this semester, assuming you take 5 courses. */
+int gpa5(
+    int creds1, int grade1,
+    int creds2, int grade2,
+    int creds3, int grade3,
+    int creds4, int grade4,
+    int creds5, int grade5
+) {
+    int creds = creds1 + creds2 + creds3 + creds4 + creds5;
+
+    fpt res = itof(creds1 * grade1);
+    res = fadd(res, itof(creds2 * grade2));
+    res = fadd(res, itof(creds3 * grade3));
+    res = fadd(res, itof(creds4 * grade4));
+    res = fadd(res, itof(creds5 * grade5));
+
+    return ftoi(fdiv(res, itof(creds)));
+}
+
+int main() {
+    assert(gpa5(1, 0, 1, 0, 1, 0, 1, 0, 1, 0) == 0);
+    assert(gpa5(9, 4, 9, 4, 9, 4, 10, 4, 12, 4) == 4);
+
+    return 0;
+}

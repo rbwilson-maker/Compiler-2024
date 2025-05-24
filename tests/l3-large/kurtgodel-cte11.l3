@@ -1,0 +1,12 @@
+//test error
+/*
+Compile error.
+Typedefs in wrong order, a not defined as of first typedef.
+*/
+
+typedef a b;
+typedef int a;
+
+b main() {
+  return 3;
+}

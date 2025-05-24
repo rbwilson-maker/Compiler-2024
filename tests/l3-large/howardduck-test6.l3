@@ -1,0 +1,13 @@
+//test return 0
+
+// isolate sign bit of input n
+int get_sign(int n) {
+    return (n >> 31) << 31;
+}
+
+int main() {
+    assert(get_sign(0) == 0);
+    assert(get_sign(-1234) != 0);
+    assert(get_sign(134) == 0);
+    return get_sign(239857);
+}

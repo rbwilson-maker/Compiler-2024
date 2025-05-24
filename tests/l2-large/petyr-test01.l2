@@ -1,0 +1,9 @@
+//test div-by-zero
+
+// The testing harness will expect this to be a file that compiles but raises SIGFPE.
+// Test 01: shift divide by zero
+
+int main() {
+  int x = 1024 >> 22 ;
+   return 1 / x ;
+   }

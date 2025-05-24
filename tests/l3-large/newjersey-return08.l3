@@ -1,0 +1,18 @@
+//test return 4
+bool test1(){
+  bool b1 = true;
+  bool b2 = true;
+  return b1 && b2;
+}
+
+bool test2(){
+  return false;
+}
+
+int main(){
+  if(test1() && test2())
+  {
+    return 0;
+  }
+  return 4;
+}

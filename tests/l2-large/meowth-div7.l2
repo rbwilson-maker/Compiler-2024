@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int main(){
+    int i = 0;
+    int j;
+    int k;
+    for(k = 100; k > 0; k--){
+        i++;
+    }
+    for(j = 10; j > 0; j--){
+        j = j / k;
+    }
+    return 100;
+}

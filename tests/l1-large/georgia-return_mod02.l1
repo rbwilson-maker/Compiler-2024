@@ -1,0 +1,13 @@
+//test return 2
+//test mod
+int main()
+{
+  int a;
+  int b;
+
+  a = 11;
+  b = 3;
+  a %= b;
+ 
+  return a;
+}

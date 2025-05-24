@@ -1,0 +1,72 @@
+//test memerror
+
+struct Ox10 {
+  int *a;
+  int *b;
+};
+struct Ox40 {
+  struct Ox10 a;
+  struct Ox10 b;
+  struct Ox10 c;
+  struct Ox10 d;
+};
+struct Ox100 {
+  struct Ox40 a;
+  struct Ox40 b;
+  struct Ox40 c;
+  struct Ox40 d;
+};
+struct Ox400 {
+  struct Ox100 a;
+  struct Ox100 b;
+  struct Ox100 c;
+  struct Ox100 d;
+};
+struct Ox1000 {
+  struct Ox400 a;
+  struct Ox400 b;
+  struct Ox400 c;
+  struct Ox400 d;
+};
+struct Ox4000 {
+  struct Ox1000 a;
+  struct Ox1000 b;
+  struct Ox1000 c;
+  struct Ox1000 d;
+};
+struct Ox10000 {
+  struct Ox4000 a;
+  struct Ox4000 b;
+  struct Ox4000 c;
+  struct Ox4000 d;
+};
+struct Ox40000 {
+  struct Ox10000 a;
+  struct Ox10000 b;
+  struct Ox10000 c;
+  struct Ox10000 d;
+};
+struct Ox100000 {
+  struct Ox40000 a;
+  struct Ox40000 b;
+  struct Ox40000 c;
+  struct Ox40000 d;
+};
+struct Ox400000 {
+  struct Ox100000 a;
+  struct Ox100000 b;
+  struct Ox100000 c;
+  struct Ox100000 d;
+};
+struct Ox400800 {
+  struct Ox400000 a;
+  struct Ox400 b;
+  struct Ox400 c;
+  int get_get_get_get_got_got_got_got;
+};
+
+int main() {
+  struct Ox400800 *lol = NULL;
+  lol->get_get_get_get_got_got_got_got = 0xDEADBEEF;
+  return 0;
+}

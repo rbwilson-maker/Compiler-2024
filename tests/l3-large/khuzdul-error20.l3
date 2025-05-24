@@ -1,0 +1,346 @@
+//test error
+
+%{
+
+let mark
+  (data : 'a)
+  (start_pos : Lexing.position)
+  (end_pos : Lexing.position) : 'a Mark.t =
+  let src_span = Mark.of_positions start_pos end_pos in
+  Mark.mark data src_span
+
+
+%}
+
+%token Eof
+%token Semicolon
+%token Colon Question_mark
+%token <Int32.t> Dec_const
+%token <Int32.t> Hex_const
+%token <Symbol.t> Ident
+%token Return
+%token Main
+%token Plus Minus Star Slash Percent
+%token Shiftl Shiftr 
+%token Bitwise_and Bitwise_xor Bitwise_or
+%token Compare_lt Compare_gt Compare_lte Compare_gte Compare_eq Compare_neq
+%token Logical_and Logical_or
+%token And_eq Or_eq Xor_eq
+%token Shiftl_eq Shiftr_eq
+%token Assign Plus_eq Minus_eq Star_eq Slash_eq Percent_eq
+%token L_brace R_brace
+%token L_paren R_paren
+%token Minus_minus  Plus_plus
+%token Logical_not Bitwise_not
+%token If Else While For
+%token Bool Int
+%token True False
+
+(* Unary is a dummy terminal.
+ * We need dummy terminals if we wish to assign a precedence
+ * to a production that does not correspond to the precedence of
+ * the rightmost terminal in that production.
+ * Implicit in this is that precedence can only be inferred for
+ * terminals. Therefore, don't try to assign precedence to "rules"
+ * or "productions".
+ *
+ * Minus_minus is a dummy terminal to parse-fail on.
+ *)
+
+%start program
+
+(* It's only necessary to provide the type of the start rule,
+ * but it can improve the quality of parser type errors to annotate
+ * the types of other rules.
+ *)
+%type <Ast.mstm list> program
+%type <Ast.mstm list> stmts
+%type <Ast.mstm option> elseopt
+%type <Ast.stm> stmt
+%type <Ast.mstm> m(stmt)
+%type <Ast.dec> decl
+%type <Ast.sym> lvalue
+%type <Ast.exp> exp
+%type <Core.Int32.t> int_const
+%type <Ast.unop> unop
+%type <Ast.simp> simp
+%type <Ast.simp> simp_nodec
+%type <Ast.simp option> simpopt
+%type <Ast.simp option> simpopt_nodec
+
+%%
+
+(* This higher-order rule produces a marked result of whatever the
+ * rule passed as argument will produce.
+ *)
+m(x) :
+  | x = x;
+      (* $startpos(s) and $endpos(s) are menhir's replacements for
+       * Parsing.symbol_start_pos and Parsing.symbol_end_pos, but,
+       * unfortunately, they can only be called from productions. *)
+      { mark x $startpos(x) $endpos(x) }
+  ;
+
+program :
+  | Int;
+    Main;
+    L_paren R_paren;
+    block = block;
+    Eof;
+      { block }
+  ;
+
+block :
+  | L_brace;
+    body = stmts;
+    R_brace;
+    { body }
+  ;
+
+typ :
+  | Int;
+    { Ast.TInt }
+  | Bool;
+    { Ast.TBool }
+  ;
+
+decl :
+  | typ = typ; lhs = Ident;
+      { Ast.DVar {typ; lhs} }
+  | typ = typ; lhs = Ident; Assign; rhs = exp;
+      { Ast.DInit {typ; lhs; rhs;} }
+  | typ = typ; Main;
+      { Ast.DVar {typ; lhs=(Symbol.symbol "main"); }}
+  | typ = typ; Main; Assign; rhs = exp;
+      { Ast.DInit {typ; lhs=(Symbol.symbol "main"); rhs;} }
+  ;
+
+stmts :
+  | (* empty *)
+      { [] }
+  | hd = m(stmt); tl = stmts;
+      { hd :: tl }
+  ;
+
+stmt :
+  | simp = simp; Semicolon;
+      { Ast.SSimp simp }
+  | control = control;
+      { Ast.SControl control}
+  | block = block;
+      { Ast.SBlock block}
+
+simp :
+  | lhs = lvalue; opr = asop; rhs = exp;
+      { Ast.SAsn {lhs; opr; rhs; }}
+  | lhs = lvalue; Plus_plus;
+      { Ast.SAsn {lhs; opr=Some Ast.Add; rhs=Ast.EInt 1l;}}
+  | lhs = lvalue; Minus_minus;
+      { Ast.SAsn {lhs; opr=Some Ast.Sub; rhs=Ast.EInt 1l;}}
+  | decl = decl;
+      {Ast.SDec decl}
+  | exp = exp;
+      { Ast.SExp exp }
+  ;
+
+simpopt : 
+  | (* empty *)
+      { None }
+  | simp = simp
+      {Some simp}
+  ;
+simpopt_nodec : 
+  | (* empty *)
+      { None }
+  | simp = simp_nodec
+      {Some simp}
+  ;
+simp_nodec :
+  | lhs = lvalue; opr = asop; rhs = exp;
+      { Ast.SAsn {lhs; opr; rhs; }}
+  | lhs = lvalue; Plus_plus;
+      { Ast.SAsn {lhs; opr=Some Ast.Add; rhs=Ast.EInt 1l;}}
+  | lhs = lvalue; Minus_minus;
+      { Ast.SAsn {lhs; opr=Some Ast.Sub; rhs=Ast.EInt 1l;}}
+  | exp = exp;
+      { Ast.SExp exp }
+  ;
+
+lvalue :
+  | ident = Ident;
+      { ident }
+  | Main;
+      { Symbol.symbol "main" }
+  | L_paren; lhs = lvalue; R_paren;
+      { lhs }
+  ;
+
+elseopt : 
+  | (* empty *)
+      { None } 
+  | Else; stmt = m(stmt);
+      { Some stmt}
+  ;
+
+control :
+  | If; L_paren; cnd = exp; R_paren; stm = m(stmt); els = elseopt;
+      { Ast.If {cnd; stm; els;} }
+  | While; L_paren; cnd = exp; R_paren; stm = m(stmt);
+      { Ast.While {cnd; stm;}}
+  | For; L_paren; ini = simpopt; Semicolon; cnd = exp; Semicolon; inc = simpopt_nodec; R_paren; stm = m(stmt);
+      { Ast.For {ini; cnd; inc; stm; } }
+  | Return; e = exp; Semicolon;
+      { Ast.Return e }
+  ;
+
+
+
+exp :
+  | e = ternexp;
+      { e }
+
+ternexp :
+  | e = orexp;
+      { e }
+  | cnd = orexp; Question_mark; ift = ternexp; Colon; iff = ternexp;
+      { Ast.EIte {cnd; ift; iff;}}
+
+orexp :
+  | e = andexp;
+      { e }
+  | lhs = andexp; Logical_or; rhs = orexp;
+      { Ast.EIte {cnd=lhs; ift=Ast.EBool true; iff=rhs} }
+
+andexp :
+  | e = bitorexp;
+      { e }
+  | lhs = bitorexp; Logical_and; rhs = andexp;
+      { Ast.EIte {cnd=lhs; ift=rhs; iff=Ast.EBool false } }
+
+bitorexp : 
+  | e = bitxorexp;
+      {e}
+  | lhs = bitorexp; Bitwise_or; rhs = bitxorexp;
+      {Ast.EBinop {lhs; opr=Ast.Or; rhs}}
+
+bitxorexp : 
+  | e = bitandexp;
+      {e}
+  | lhs = bitandexp; Bitwise_xor; rhs = bitxorexp;
+      {Ast.EBinop {lhs; opr=Ast.Xor; rhs}}
+
+bitandexp : 
+  | e = cmpeqexp;
+      {e}
+  | lhs = cmpeqexp; Bitwise_and; rhs = bitandexp;
+      {Ast.EBinop {lhs; opr=Ast.And; rhs}}
+
+cmpeqexp : 
+  | e = cmpexp;
+      {e}
+  | lhs = cmpexp; Compare_eq; rhs = cmpeqexp;
+      {Ast.EBinop {lhs; opr=Ast.Eq; rhs}}
+  | lhs = cmpexp; Compare_neq; rhs = cmpeqexp;
+      {Ast.EBinop {lhs; opr=Ast.Neq; rhs}}
+
+cmpexp:
+  | e = shiftexp;
+      {e}
+  | lhs = shiftexp; Compare_lt; rhs = cmpexp;
+      {Ast.EBinop {lhs; opr=Ast.Lt; rhs}}
+  | lhs = shiftexp; Compare_gt; rhs = cmpexp;
+      {Ast.EBinop {lhs; opr=Ast.Gt; rhs}}
+  | lhs = shiftexp; Compare_lte; rhs = cmpexp;
+      {Ast.EBinop {lhs; opr=Ast.Le; rhs}}
+  | lhs = shiftexp; Compare_gte; rhs = cmpexp;
+      {Ast.EBinop {lhs; opr=Ast.Ge; rhs}}
+
+shiftexp:
+  | e = addsubexp;
+      {e}
+  | lhs = addsubexp; Shiftl; rhs = shiftexp;
+      {Ast.EBinop {lhs; opr=Ast.Shl; rhs}}
+  | lhs = addsubexp; Shiftr; rhs = shiftexp;
+      {Ast.EBinop {lhs; opr=Ast.Shr; rhs}}
+
+addsubexp:
+  | e = multexp;
+      {e}
+  | lhs = multexp; Plus; rhs = addsubexp;
+      {Ast.EBinop {lhs; opr=Ast.Add; rhs}}
+  | lhs = multexp; Minus; rhs = addsubexp;
+      {Ast.EBinop {lhs; opr=Ast.Sub; rhs}}
+
+multexp:
+  | e = unaryexp;
+      {e}
+  | lhs = unaryexp; Star; rhs = multexp;
+      {Ast.EBinop {lhs; opr=Ast.Mul; rhs}}
+  | lhs = unaryexp; Percent; rhs = multexp;
+      {Ast.EBinop {lhs; opr=Ast.Mod; rhs}}
+  | lhs = unaryexp; Slash; rhs = multexp;
+      {Ast.EBinop {lhs; opr=Ast.Div; rhs}}
+
+unaryexp:
+  | e = atomexp
+      { e }
+  | opr = unop ; rhs = unaryexp ;
+      { Ast.EUnop {opr; rhs}}
+
+atomexp :
+  | L_paren; e = exp; R_paren;
+      { e }
+  | x = Ident;
+      { Ast.ESym x }
+  | Main;
+      { Ast.ESym (Symbol.symbol "main") }
+  | c = int_const;
+      { Ast.EInt c }
+  | True;
+      { Ast.EBool true }
+  | False;
+      { Ast.EBool false }
+  ;
+
+int_const :
+  | c = Dec_const;
+      { c }
+  | c = Hex_const;
+      { c }
+  ;
+
+asop :
+  | Assign
+      { None }
+  | Plus_eq
+      { Some Ast.Add }
+  | Minus_eq
+      { Some Ast.Sub }
+  | Star_eq
+      { Some Ast.Mul }
+  | Slash_eq
+      { Some Ast.Div }
+  | Percent_eq
+      { Some Ast.Mod }
+  | And_eq
+      { Some Ast.And}
+  | Or_eq
+      { Some Ast.Or}
+  | Xor_eq
+      { Some Ast.Xor}  
+  | Shiftl_eq
+      { Some Ast.Shl}
+  | Shiftr_eq
+      { Some Ast.Shr}  
+  ;
+
+unop :
+  | Logical_not;
+      {Ast.Not}
+  | Minus;
+      {Ast.Neg}
+  | Bitwise_not;
+      {Ast.Inv}
+  ;
+  
+%%

@@ -1,0 +1,8 @@
+//test error
+// undefined operation
+
+int main() {
+  int x = 2;
+  int y = x ** 2;
+  return x;
+}

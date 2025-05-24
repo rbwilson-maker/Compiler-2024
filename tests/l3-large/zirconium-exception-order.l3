@@ -1,0 +1,15 @@
+//test abort
+
+int except(){
+  return 1/0;
+}
+
+bool art(){
+  assert(false);
+  return true;
+}
+
+int main(){
+  if (art()) return except();
+  else return 0;
+}

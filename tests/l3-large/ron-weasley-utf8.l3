@@ -1,0 +1,50 @@
+//test return 0
+
+/*  Converts a Unicode codepoint to a UTF-8 sequence. The sequence is atmost 4
+    bytes long so it can be packed into one 32-bit integer. */
+int codepoint_to_utf8(int codepoint) {
+    if (codepoint <= 0x7f) {
+        return codepoint;
+    }
+    else if (codepoint <= 0x7ff) {
+        int b0 = (codepoint & 0x3f) | 0x80;
+        int b1 = ((codepoint >> 6) & 0x1f) | 0xc0;
+        return (b1 << 8) | b0;
+    }
+    else if (codepoint <= 0xffff) {
+        int b0 = (codepoint & 0x3f) | 0x80;
+        int b1 = ((codepoint >> 6) & 0x3f) | 0x80;
+        int b2 = ((codepoint >> 12) & 0xf) | 0xe0;
+        return (b2 << 16) | (b1 << 8) | b0;
+    }
+    else {
+        int b0 = (codepoint & 0x3f) | 0x80;
+        int b1 = ((codepoint >> 6) & 0x3f) | 0x80;
+        int b2 = ((codepoint >> 12) & 0x3f) | 0x80;
+        int b3 = ((codepoint >> 18) & 0x7) | 0xf0;
+        return (b3 << 24) | (b2 << 16) | (b1 << 8) | b0;
+    }
+
+    assert(false);
+    return 0;
+}
+
+int main() {
+    //  SOLIDUS
+    //  www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=47&mode=decimal
+    assert(codepoint_to_utf8(47) == 0x2f);
+
+    //  LATIN SMALL LETTER Y WITH ACUTE
+    //  www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=253&mode=decimal
+    assert(codepoint_to_utf8(253) == 0xc3bd);
+
+    //  PARENTHESIZED HANGUL CHIEUCH A
+    //  www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=12823&mode=decimal
+    assert(codepoint_to_utf8(12823) == 0xe38897);
+
+    //  ????
+    //  www.ltg.ed.ac.uk/~richard/utf-8.cgi?input=174168&mode=decimal
+    assert(codepoint_to_utf8(174168) == 0xf0aaa198);
+
+    return 0;
+}

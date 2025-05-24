@@ -1,0 +1,32 @@
+//test return 0
+
+bool isPalindrome(int n) 
+{    
+  assert (n >= 0);
+  int div = 1; 
+  while (n / div >= 10) {
+    div *= 10;
+  }
+
+  while (n != 0) { 
+    if ((n / div) != (n % 10))   
+        return false; 
+
+    n = (n % div) / 10; 
+
+    div = div / 100; 
+  } 
+  return true; 
+} 
+
+ 
+int main() {
+  
+  assert(isPalindrome(0));
+  assert(isPalindrome(101));
+  assert(isPalindrome(1001));
+  assert(isPalindrome(1234321));
+  assert(isPalindrome(321123));
+  assert(!isPalindrome(10010001));
+  return 0;
+}

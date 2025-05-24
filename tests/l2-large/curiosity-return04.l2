@@ -1,0 +1,30 @@
+//test return 0
+//test if else correspondence
+
+int main()
+{
+  int a = 0;
+  if(true){
+    if(false)
+      a += 2;
+    a += 3;
+    }else{
+      a += 4;
+    }
+
+  if(false)
+    a += 5;
+  if(false)
+    a += 6;
+  else
+    a += 7;
+
+  if(false)
+  if(false)
+    a += 8;
+  else
+    a += 9;
+  else
+    a += 10;
+  return (a == 20)? 1 * 0 : 10 / 0;
+}

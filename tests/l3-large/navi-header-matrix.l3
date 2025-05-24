@@ -1,0 +1,22 @@
+//test typecheck
+
+matrix powM(matrix b, int e) {
+	matrix r = newM(1,1);
+	while(e > 0) {
+		if((e & 1) > 0) {
+			r = mulM(r, b);
+		}
+		b = mulM(b,b);
+		e /= 2;
+	}
+	//matrix is an int so should be fine
+	return 1 + r;
+}
+
+int solve() {
+	return powM(2, 100);
+}
+
+int main() {
+	return solve();
+}

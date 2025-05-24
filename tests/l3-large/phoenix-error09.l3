@@ -1,0 +1,10 @@
+//test error 
+//test when the parameter of a function is a int
+
+int f(int a, 5, int f) {
+    return a + f - (a * f);
+}
+
+int main() {
+    return f(5, 5, 5) * f(5, 5, 5);
+}

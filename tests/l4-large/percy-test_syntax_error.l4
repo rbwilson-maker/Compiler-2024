@@ -1,0 +1,7 @@
+//test error
+typedef bool b;
+
+int main() {
+  int* a = alloc(b);
+  return *a;
+}

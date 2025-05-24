@@ -1,0 +1,14 @@
+//test error
+//fails to compile due to missing main function
+
+int _c0_main(){
+    return 0;
+}
+
+int __c0_main(){
+    return 0;
+}
+
+int _main(){
+    return 0;
+}

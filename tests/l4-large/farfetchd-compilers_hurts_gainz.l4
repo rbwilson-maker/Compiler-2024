@@ -1,0 +1,13 @@
+//test error
+
+typedef int meat;
+typedef bool* meaty;
+
+meat* Feeder(int target) {
+   return 7;
+}
+
+int main() {
+    meaty x = Feeder(5);
+    return *x;
+}

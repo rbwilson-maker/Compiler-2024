@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+    int x = 7;
+    int y = x * 7;
+
+    int z = 0xFFFFFFFF * y * y;
+
+    int g = x / (z + 2401);
+
+    return y;
+}

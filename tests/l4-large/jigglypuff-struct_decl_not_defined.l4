@@ -1,0 +1,31 @@
+//test error
+
+/* Struct Declared Not Defined Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, October 25, 2015 at 08:59:49 PM EDT
+ *
+ * Tests that a declared, but not yet defined struct can only be used in places
+ * where it is not relevant. Specifically, forward struct declarations are not
+ * permitted in C0.
+ */
+
+struct s2;
+
+struct s1 {
+    int x;
+    struct s2 y;
+};
+
+struct s2 {
+    int y;
+    int x;
+};
+
+int main()
+{
+    struct s1 *x = alloc(struct s1);
+
+    return x->y.y;
+}

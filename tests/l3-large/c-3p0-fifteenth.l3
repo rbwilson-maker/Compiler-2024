@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+  typedef int alps;
+  alps a = 5;
+  return a;
+} 

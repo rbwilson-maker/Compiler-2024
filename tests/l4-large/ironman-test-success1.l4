@@ -1,0 +1,14 @@
+//test return 1
+
+int main() {
+    int* x = alloc(int);
+    int* y = alloc(int);
+    *x = 1;
+    *y = 2;
+    assert(*(true ? x : y) == 1);
+    int[] a = alloc_array(int, 1);
+    int[] b = alloc_array(int, 1);
+    a[0] = 1;
+    b[0] = 2;
+    return (true ? a : b)[0];
+}

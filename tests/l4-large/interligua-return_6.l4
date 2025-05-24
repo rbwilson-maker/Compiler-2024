@@ -1,0 +1,16 @@
+//test return 4
+// test some pointer math
+
+int main(){
+    int **x = alloc(int*);
+    *x = alloc(int);
+
+    int **y = alloc(int*);
+    *y = alloc(int);
+
+    **x = 4;
+    **y = 5;
+    *y = *x;
+
+    return **y;
+}

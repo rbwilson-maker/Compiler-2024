@@ -1,0 +1,6 @@
+//test div-by-zero
+int main() {
+    int x = 1234567890;
+    x += x;
+    return (x+1)/0;
+}

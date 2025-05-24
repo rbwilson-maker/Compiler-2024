@@ -1,0 +1,33 @@
+//test return 3
+// Tests that your parser correctly pairs if/elses
+
+int main () {
+
+    int x = 0;
+    int y = 20;
+
+    int i;
+    for(i = 0; i < 10; i++) { x++; y--; }
+
+    if(x == y)
+     if((x & y) == x)
+      if((x & y) == y)
+       if((x ^ y) == 0) 
+        if(x - y == 0)
+         if((x | y) == x)
+          if((x | y) == y)
+           if(x * y == 0)  // nope.
+            if(x + y == 0)  // nope.
+             if(x / y == 1) 
+              if(x == y) return -1;
+              else return -1;
+             else return -1;
+            else return -1;
+           else
+            if (x != y) return -1;
+            else        return  3; // <-- this one! could conceivably be paried with (x | y == x)
+          else return -1;
+         else return -1;
+
+    return -1;
+}

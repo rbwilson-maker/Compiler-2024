@@ -1,0 +1,15 @@
+ // These library functions are for classifying characters.
+
+   typedef int i;
+
+   /* Returns 1 if c is a lower-case letter. */
+      i islower(i c);
+
+   /* Returns 1 if c is an upper-case letter. */
+      i isupper(i c);
+
+   /* Returns 1 if c is an alphabetic character (a letter). */
+      i isalpha(i c);
+
+   /* Returns 1 if c is a decimal digit (‘0’ through ‘9’). */
+      i isdigit(i c);

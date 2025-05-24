@@ -1,0 +1,22 @@
+typedef bool a;
+typedef a b;
+typedef b c;
+typedef c d;
+typedef d e;
+typedef e f;
+typedef f g;
+
+typedef int A_Train;
+typedef A_Train Homelander;
+typedef Homelander Starlight;
+typedef Starlight Stormfront;
+typedef Stormfront Noir;
+typedef Noir Deep;
+typedef Deep Maeve;
+
+Homelander I_can_do_whatever_I_Want(a v1, A_Train v7);
+Homelander I_can_do_whatever_I_Want(b v2, Starlight v8);
+Homelander I_can_do_whatever_I_Want(c v3, Stormfront v9);
+Homelander I_can_do_whatever_I_Want(d v4, Noir v10);
+Homelander I_can_do_whatever_I_Want(e v5, Deep v11);
+Homelander I_can_do_whatever_I_Want(f v6, Maeve v12);

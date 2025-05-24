@@ -1,0 +1,17 @@
+//test return 1446309633;
+
+struct node {
+    int a;    
+};
+
+int main() {
+    
+    struct node[] A = alloc_array(struct node, 1729);
+
+    A[0].a = 1;
+    for (int i = 1; i < 1729; i++) {
+        A[i].a = A[i-1].a * 3;
+    }
+
+    return A[1728].a;
+}

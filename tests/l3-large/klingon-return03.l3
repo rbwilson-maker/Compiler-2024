@@ -1,0 +1,16 @@
+//test return -2047
+//test recursive functions
+
+int rec(int x, int y) {
+	if (x < 0)
+		return y;
+	else
+		return rec(x - 1, y * 2 - 1);
+
+}
+
+int main() {
+
+  return rec(10, 0);
+
+}

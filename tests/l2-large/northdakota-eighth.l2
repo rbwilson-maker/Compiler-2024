@@ -1,0 +1,7 @@
+//test div-by-zero
+int main()
+{
+    int x = 2;
+    if ( (x << 30) < 0) return x/0;
+    else return 1;
+}

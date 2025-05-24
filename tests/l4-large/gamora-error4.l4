@@ -1,0 +1,16 @@
+//test error
+
+struct b;
+
+typedef int a;
+typedef a b;
+typedef struct b c;
+typedef c d;
+typedef d e;
+typedef e f;
+
+int main()
+{
+  c *invalid = alloc(c);
+  return -1;
+}

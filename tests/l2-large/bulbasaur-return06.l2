@@ -1,0 +1,7 @@
+//test return 0
+// tests proper order of operations
+
+int main() {
+  if (true || (1/0 >= 5)) return 0;
+  else return 1;
+}

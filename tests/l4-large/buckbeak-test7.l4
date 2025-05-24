@@ -1,0 +1,26 @@
+//test return 399
+
+struct aaa {
+	int[] a;
+	int[] b;
+};
+
+int main () {
+	struct aaa* a = alloc(struct aaa);
+	a->a = alloc_array(int, 5);
+	a->b = alloc_array(int, 5);
+
+	for (int i = 0; i < 5; i++) {
+		a->a[i] = i;
+		a->b[i] = i;
+	}
+
+	for (int i = 1; i < 5; i++) {
+		for (int j = 1; j < 5; j++) {
+			a->b[j] += a->a[i-1] + a->b[j-1];
+		}
+		a->a[i] += a->a[i-1] + a->b[i-1];
+	}
+
+	return a->a[4] + a->b[4];
+}

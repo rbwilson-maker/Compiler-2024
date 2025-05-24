@@ -1,0 +1,20 @@
+//test return 10100
+
+// Tests function call as parameter
+
+int getParamOne(){
+    return 1;
+}
+
+int bigAdder(int a, int b){
+    int sum = 0;
+    for (int i = 0; i < 100; i++){
+        sum += (a + b);
+    }
+    return sum;
+}
+
+int main(){
+    int x = 100;
+    return bigAdder(x, getParamOne());
+}

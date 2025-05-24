@@ -1,0 +1,27 @@
+//test typecheck
+ //test infloop
+
+   /*
+    * This function creates an infinite loop using
+    * recursion, which is very bad if gone undetected.
+    *
+    */
+
+    void loop(int n)
+    {
+        if(n > 999999)
+	    loop(n-1);
+        if(n > 0)
+            loop(n+1);
+        else
+            return;
+    }
+
+    int main()
+    {
+        int a = 5;
+
+        loop(a);
+
+        return 1;
+    }

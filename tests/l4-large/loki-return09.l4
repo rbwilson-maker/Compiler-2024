@@ -1,0 +1,15 @@
+//test return 160
+
+int main() {
+  int *a = alloc(int);
+  *a = 4;
+
+  int *b = alloc(int);
+  *b = 5;
+
+  int **c = alloc(int*);
+  *c = alloc(int);
+  **c = 8;
+
+  return *a * *b * **c;
+}

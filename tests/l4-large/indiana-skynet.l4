@@ -1,0 +1,21 @@
+//test error
+//1046
+
+typedef struct ure* destroy;
+
+structure{
+  int time;
+  int day;
+  int target;
+};
+
+
+
+int main(){
+  destroy humans = alloc(struct ure);
+  humans -> time = 10;
+  humans -> day = 10;
+  humans -> target = 0;
+
+  return humans -> time;
+}

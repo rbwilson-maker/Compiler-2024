@@ -1,0 +1,71 @@
+//test return 485114
+
+/* linked strcut Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, October 25, 2015 at 09:03:59 PM EDT
+ * 
+ * Tests if your structs can be linked
+ */
+
+typedef struct a a; 
+typedef struct b b;
+
+struct a {
+    struct a *aa;
+    struct b *bb;
+    int id; 
+};
+
+struct b {
+    struct a *aa;
+    struct b *bb;
+    int id; 
+};
+
+
+
+int main() {
+    a *ta = alloc(struct a);
+    b *tb = alloc(struct b);
+    a *starta = ta; 
+    b *startb = tb; 
+
+    startb->aa = starta; 
+    startb->bb = startb; // loop back
+    startb->id = -1;
+
+    for (int i = 0; i < 100; i++) {
+        if (i % 2 == 0) {
+            // go to a
+            ta->aa = alloc(struct a);
+            ta->bb = tb;
+            ta->id = i;
+            ta = ta->aa; 
+        } else {
+            // go to b
+            tb->bb = alloc(struct b);
+            tb->aa = ta; 
+            tb->id = i;
+            tb = tb->bb;
+        }
+    }
+    ta->aa = starta; 
+    ta->bb = startb; 
+    tb->aa = starta; 
+    tb->bb = startb; 
+
+    // now lets have some fun with it
+    int sum = 0; 
+    for (int i = 0; i<10000; i++) {
+        if (((i * 0xdead - 0xbeef) % 0xc00c) % 2 == 0) {
+            sum += starta->aa->id; 
+            starta = starta->aa; 
+        } else {
+            sum += startb->bb->id; 
+            startb = startb->bb; 
+        }
+    }
+    return sum; 
+}

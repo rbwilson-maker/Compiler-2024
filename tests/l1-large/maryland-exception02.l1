@@ -1,0 +1,6 @@
+//test div-by-zero
+// modulus by 0
+int main() {
+  int x = 5;
+  return x % 0;
+}

@@ -1,0 +1,6 @@
+//test error
+
+int main() {
+    "this is n\0t okay";
+    return 0;
+}

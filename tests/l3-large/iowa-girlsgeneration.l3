@@ -1,0 +1,18 @@
+//test abort
+
+typedef bool kpop_group;
+typedef kpop_group kg;
+
+bool isTheBest(kg g);
+
+int main() {
+    kpop_group gg = true;
+    assert(!isTheBest(gg));
+
+    return 0;
+}
+
+bool isTheBest(kg g) {
+    return g;
+}
+

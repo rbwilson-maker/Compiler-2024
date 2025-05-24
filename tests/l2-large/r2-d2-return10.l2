@@ -1,0 +1,21 @@
+//test return 5040
+
+int main()
+{
+  int i;
+  int x = 100;
+  int fac = 1;
+
+  int sum = 0;
+  for (i = 0; i < x; i++) {
+      sum += i;
+  }
+
+  i = 7;
+  while (i > 0) {
+    fac *= i;
+    i--;
+  }
+
+  return (fac > sum) ? fac : sum;
+}

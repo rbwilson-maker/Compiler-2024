@@ -1,0 +1,12 @@
+//test return 5
+// Simple unused loop with program
+int main() {
+    int a = 5;
+    int w = 0;
+ 
+    for(int i = 0; i < a; i++) {
+        w += i;
+    }
+
+    return a;
+}

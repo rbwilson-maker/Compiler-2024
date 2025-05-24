@@ -1,0 +1,9 @@
+//test return 0
+int main()
+{
+    // i can has infinite loop?
+    // C-style for(;;) is invalid
+    for (;true;) return 0;
+    // need a return because we "don't know" that the loop will execute
+    return 1;
+}

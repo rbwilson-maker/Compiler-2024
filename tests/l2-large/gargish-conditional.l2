@@ -1,0 +1,8 @@
+//test return 3
+// test conditional operator
+int main()
+{
+    int x = 10;
+    int y = (x % 3) * 34;
+    return (y > 1000) ? 2 : 3;
+}

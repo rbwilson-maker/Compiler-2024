@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+
+typedef int apple;
+
+void pineapple(apple a) {
+	while (a > 0) {
+		int b;
+	}
+}
+
+int main() {
+	pineapple(3);
+	return 0;
+}

@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int raise() {
+  return 1/0;
+}
+
+int main() {
+  assert(true);
+  return 1 + 2 + raise();
+}

@@ -1,0 +1,18 @@
+//test return 7
+
+int main()
+{
+	int r = 7;
+	int s = 0;
+	if (true)
+		if (true)
+			r = 5;
+		if (true)
+			r = 7;
+		else
+			if (true)
+				s = 100;
+			else
+				int z = 10;
+	return r + s;
+}

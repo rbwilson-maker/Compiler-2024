@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int parity (int n) {
+    return n % 2;
+}
+
+bool helper (int n) {
+    int y = n / parity(n);
+    return y == parity(n+1);
+}
+
+int main () {
+    int x = 4;
+    helper(x);
+    return 4;
+}

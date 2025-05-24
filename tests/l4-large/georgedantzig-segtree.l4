@@ -1,0 +1,478 @@
+//test return 19602
+
+/* Tests:
+ *  - Structs containing lists
+ *  - Struct accesses chained with list accesses
+ */
+
+// Implements SegTrees based on the Range Queries lecture from 451:
+// https://www.cs.cmu.edu/~15451-f23/lectures/lecture07-segtrees.pdf
+
+typedef struct segtree segtree_t;
+
+struct segtree {
+    int n;
+    int[] A;
+};
+
+int left_child(int u) {
+    return 2 * u + 1;
+}
+
+int right_child(int u) {
+    return 2 * u + 2;
+}
+
+void build(segtree_t* segtree, int u, int L, int R) {
+    int mid = (L + R) / 2;
+    if (left_child(u) < segtree->n - 1) {
+        build(segtree, left_child(u), L, mid);
+    }
+    if (right_child(u) < segtree->n - 1) {
+        build(segtree, right_child(u), mid, R);
+    }
+    (segtree->A)[u] = segtree->A[left_child(u)] + segtree->A[right_child(u)];
+}
+
+// Takes in the list of integers A and the number of elements n
+// Implements a segtree that solves RangeSum
+segtree_t *new_segtree(int[] A, int n) {
+    // Make n into a power of 2
+    int ceil_n = 1;
+    while (ceil_n < n) {
+        ceil_n <<= 1;
+    }
+    segtree_t* segtree = alloc(segtree_t);
+    segtree->n = ceil_n;
+    segtree->A = alloc_array(int, 2 * ceil_n - 1);
+    for (int i = 0; i < ceil_n - 1; i++) {
+        if (i < n) segtree->A[ceil_n + i - 1] = A[i];
+        else segtree->A[ceil_n + i - 1] = 0;
+    }
+    build(segtree, 0, 0, n);
+    return segtree;
+}
+
+// Computes the RangeSum in O(log n)
+int compute_sum(segtree_t* segtree, int u, int i, int j, int L, int R) {
+    if (i <= L && R <= j) {
+        return segtree->A[u];
+    }
+    int mid = (L + R) / 2;
+    if (i >= mid) return compute_sum(segtree, right_child(u), i, j, mid, R);
+    else if (j <= mid) return compute_sum(segtree, left_child(u), i, j, L, mid);
+    else {
+        int left_sum = compute_sum(segtree, left_child(u), i, j, L, mid);
+        int right_sum = compute_sum(segtree, right_child(u), i, j, mid, R);
+        return left_sum + right_sum;
+    }
+}
+
+int range_sum(segtree_t* segtree, int i, int j) {
+    return compute_sum(segtree, 0, i, j, 0, segtree->n);
+}
+
+int main () {
+    // Make a tiny segtree containing [1, 5, 4, 1, 1]
+    int[] test1 = alloc_array(int, 5);
+    test1[0] = 1;
+    test1[1] = 5;
+    test1[2] = 4;
+    test1[3] = 1;
+    test1[4] = 1;
+    segtree_t* seg1 = new_segtree(test1, 5);
+
+    // Test RangeSum
+    assert(range_sum(seg1, 0, 1) == 1);
+    assert(range_sum(seg1, 0, 2) == 6);
+    assert(range_sum(seg1, 0, 5) == 12);
+    assert(range_sum(seg1, 2, 5) == 6);
+
+    // Make a medium segtree containing [1, 5, 4, 1, 1, 1, 5, 1, 5, 0, 1, 5, 2, 1, 3]
+    int[] test2 = alloc_array(int, 15);
+    test2[0] = 1;
+    test2[1] = 5;
+    test2[2] = 4;
+    test2[3] = 1;
+    test2[4] = 1;
+    test2[5] = 1;
+    test2[6] = 5;
+    test2[7] = 1;
+    test2[8] = 5;
+    test2[9] = 0;
+    test2[10] = 1;
+    test2[11] = 5;
+    test2[12] = 2;
+    test2[13] = 1;
+    test2[14] = 3;
+    segtree_t* seg2 = new_segtree(test2, 15);
+
+    // Test RangeSum
+    assert(range_sum(seg2, 12, 14) == 3);
+    assert(range_sum(seg2, 2, 6) == 7);
+    assert(range_sum(seg2, 6, 8) == 6);
+    assert(range_sum(seg2, 8, 10) == 5);
+    assert(range_sum(seg2, 0, 5) == 12);
+    assert(range_sum(seg2, 5, 7) == 6);
+    assert(range_sum(seg2, 3, 5) == 2);
+    assert(range_sum(seg2, 5, 11) == 13);
+    assert(range_sum(seg2, 2, 9) == 18);
+    assert(range_sum(seg2, 1, 5) == 11);
+
+    // Make a large segtree
+    int[] test3 = alloc_array(int, 200);
+    test3[0] = 43;
+    test3[1] = 120;
+    test3[2] = 33;
+    test3[3] = 166;
+    test3[4] = 59;
+    test3[5] = 14;
+    test3[6] = 196;
+    test3[7] = 23;
+    test3[8] = 113;
+    test3[9] = 62;
+    test3[10] = 111;
+    test3[11] = 139;
+    test3[12] = 40;
+    test3[13] = 48;
+    test3[14] = 35;
+    test3[15] = 1;
+    test3[16] = 24;
+    test3[17] = 25;
+    test3[18] = 90;
+    test3[19] = 170;
+    test3[20] = 55;
+    test3[21] = 27;
+    test3[22] = 124;
+    test3[23] = 29;
+    test3[24] = 154;
+    test3[25] = 21;
+    test3[26] = 138;
+    test3[27] = 165;
+    test3[28] = 62;
+    test3[29] = 115;
+    test3[30] = 194;
+    test3[31] = 114;
+    test3[32] = 75;
+    test3[33] = 187;
+    test3[34] = 44;
+    test3[35] = 12;
+    test3[36] = 18;
+    test3[37] = 172;
+    test3[38] = 155;
+    test3[39] = 47;
+    test3[40] = 173;
+    test3[41] = 92;
+    test3[42] = 24;
+    test3[43] = 120;
+    test3[44] = 163;
+    test3[45] = 26;
+    test3[46] = 155;
+    test3[47] = 139;
+    test3[48] = 132;
+    test3[49] = 107;
+    test3[50] = 188;
+    test3[51] = 189;
+    test3[52] = 96;
+    test3[53] = 152;
+    test3[54] = 45;
+    test3[55] = 131;
+    test3[56] = 153;
+    test3[57] = 151;
+    test3[58] = 82;
+    test3[59] = 6;
+    test3[60] = 126;
+    test3[61] = 70;
+    test3[62] = 18;
+    test3[63] = 61;
+    test3[64] = 68;
+    test3[65] = 41;
+    test3[66] = 57;
+    test3[67] = 134;
+    test3[68] = 17;
+    test3[69] = 36;
+    test3[70] = 86;
+    test3[71] = 105;
+    test3[72] = 42;
+    test3[73] = 134;
+    test3[74] = 185;
+    test3[75] = 104;
+    test3[76] = 195;
+    test3[77] = 198;
+    test3[78] = 20;
+    test3[79] = 46;
+    test3[80] = 172;
+    test3[81] = 113;
+    test3[82] = 164;
+    test3[83] = 92;
+    test3[84] = 68;
+    test3[85] = 118;
+    test3[86] = 127;
+    test3[87] = 184;
+    test3[88] = 123;
+    test3[89] = 87;
+    test3[90] = 134;
+    test3[91] = 87;
+    test3[92] = 94;
+    test3[93] = 35;
+    test3[94] = 151;
+    test3[95] = 31;
+    test3[96] = 34;
+    test3[97] = 94;
+    test3[98] = 178;
+    test3[99] = 125;
+    test3[100] = 109;
+    test3[101] = 2;
+    test3[102] = 69;
+    test3[103] = 43;
+    test3[104] = 149;
+    test3[105] = 33;
+    test3[106] = 151;
+    test3[107] = 16;
+    test3[108] = 14;
+    test3[109] = 179;
+    test3[110] = 32;
+    test3[111] = 45;
+    test3[112] = 198;
+    test3[113] = 122;
+    test3[114] = 95;
+    test3[115] = 77;
+    test3[116] = 138;
+    test3[117] = 94;
+    test3[118] = 135;
+    test3[119] = 155;
+    test3[120] = 199;
+    test3[121] = 21;
+    test3[122] = 14;
+    test3[123] = 142;
+    test3[124] = 96;
+    test3[125] = 95;
+    test3[126] = 88;
+    test3[127] = 150;
+    test3[128] = 159;
+    test3[129] = 108;
+    test3[130] = 119;
+    test3[131] = 54;
+    test3[132] = 118;
+    test3[133] = 159;
+    test3[134] = 156;
+    test3[135] = 49;
+    test3[136] = 161;
+    test3[137] = 107;
+    test3[138] = 103;
+    test3[139] = 97;
+    test3[140] = 160;
+    test3[141] = 160;
+    test3[142] = 156;
+    test3[143] = 117;
+    test3[144] = 145;
+    test3[145] = 97;
+    test3[146] = 73;
+    test3[147] = 29;
+    test3[148] = 154;
+    test3[149] = 29;
+    test3[150] = 94;
+    test3[151] = 181;
+    test3[152] = 90;
+    test3[153] = 16;
+    test3[154] = 12;
+    test3[155] = 8;
+    test3[156] = 112;
+    test3[157] = 145;
+    test3[158] = 152;
+    test3[159] = 41;
+    test3[160] = 181;
+    test3[161] = 142;
+    test3[162] = 111;
+    test3[163] = 162;
+    test3[164] = 105;
+    test3[165] = 52;
+    test3[166] = 175;
+    test3[167] = 87;
+    test3[168] = 189;
+    test3[169] = 102;
+    test3[170] = 117;
+    test3[171] = 94;
+    test3[172] = 40;
+    test3[173] = 17;
+    test3[174] = 146;
+    test3[175] = 188;
+    test3[176] = 115;
+    test3[177] = 127;
+    test3[178] = 17;
+    test3[179] = 186;
+    test3[180] = 26;
+    test3[181] = 88;
+    test3[182] = 77;
+    test3[183] = 60;
+    test3[184] = 108;
+    test3[185] = 95;
+    test3[186] = 82;
+    test3[187] = 44;
+    test3[188] = 64;
+    test3[189] = 119;
+    test3[190] = 170;
+    test3[191] = 1;
+    test3[192] = 69;
+    test3[193] = 40;
+    test3[194] = 137;
+    test3[195] = 108;
+    test3[196] = 41;
+    test3[197] = 23;
+    test3[198] = 47;
+    test3[199] = 130;
+    segtree_t* seg3 = new_segtree(test3, 200);
+    // Test RangeSum
+    assert(range_sum(seg3, 181, 193) == 977);
+    assert(range_sum(seg3, 139, 182) == 4535);
+    assert(range_sum(seg3, 5, 99) == 9152);
+    assert(range_sum(seg3, 9, 28) == 1458);
+    assert(range_sum(seg3, 84, 200) == 11574);
+    assert(range_sum(seg3, 61, 105) == 4200);
+    assert(range_sum(seg3, 127, 147) == 2448);
+    assert(range_sum(seg3, 162, 186) == 2484);
+    assert(range_sum(seg3, 0, 11) == 940);
+    assert(range_sum(seg3, 66, 114) == 4732);
+    assert(range_sum(seg3, 3, 66) == 5932);
+    assert(range_sum(seg3, 18, 48) == 3060);
+    assert(range_sum(seg3, 66, 178) == 11742);
+    assert(range_sum(seg3, 44, 55) == 1392);
+    assert(range_sum(seg3, 109, 146) == 4300);
+    assert(range_sum(seg3, 73, 120) == 4949);
+    assert(range_sum(seg3, 112, 194) == 8576);
+    assert(range_sum(seg3, 170, 190) == 1810);
+    assert(range_sum(seg3, 174, 187) == 1315);
+    assert(range_sum(seg3, 182, 196) == 1174);
+    assert(range_sum(seg3, 166, 178) == 1397);
+    assert(range_sum(seg3, 52, 79) == 2513);
+    assert(range_sum(seg3, 128, 167) == 4289);
+    assert(range_sum(seg3, 48, 58) == 1344);
+    assert(range_sum(seg3, 85, 171) == 9047);
+    assert(range_sum(seg3, 129, 143) == 1707);
+    assert(range_sum(seg3, 109, 134) == 2792);
+    assert(range_sum(seg3, 143, 191) == 4781);
+    assert(range_sum(seg3, 39, 74) == 3366);
+    assert(range_sum(seg3, 58, 177) == 12087);
+    assert(range_sum(seg3, 49, 171) == 12699);
+    assert(range_sum(seg3, 50, 55) == 670);
+    assert(range_sum(seg3, 22, 55) == 3627);
+    assert(range_sum(seg3, 101, 138) == 3742);
+    assert(range_sum(seg3, 145, 156) == 783);
+    assert(range_sum(seg3, 50, 193) == 14525);
+    assert(range_sum(seg3, 86, 131) == 4531);
+    assert(range_sum(seg3, 12, 46) == 2939);
+    assert(range_sum(seg3, 108, 195) == 8983);
+    assert(range_sum(seg3, 144, 153) == 892);
+    assert(range_sum(seg3, 68, 113) == 4419);
+    assert(range_sum(seg3, 52, 77) == 2295);
+    assert(range_sum(seg3, 65, 181) == 12012);
+    assert(range_sum(seg3, 61, 62) == 70);
+    assert(range_sum(seg3, 127, 137) == 1233);
+    assert(range_sum(seg3, 111, 197) == 8907);
+    assert(range_sum(seg3, 51, 90) == 3996);
+    assert(range_sum(seg3, 60, 88) == 2781);
+    assert(range_sum(seg3, 148, 178) == 3184);
+    assert(range_sum(seg3, 99, 118) == 1691);
+    assert(range_sum(seg3, 133, 183) == 5347);
+    assert(range_sum(seg3, 168, 200) == 2867);
+    assert(range_sum(seg3, 132, 181) == 5300);
+    assert(range_sum(seg3, 159, 179) == 2208);
+    assert(range_sum(seg3, 79, 88) == 1084);
+    assert(range_sum(seg3, 37, 134) == 10030);
+    assert(range_sum(seg3, 148, 172) == 2551);
+    assert(range_sum(seg3, 63, 131) == 6787);
+    assert(range_sum(seg3, 67, 113) == 4553);
+    assert(range_sum(seg3, 63, 155) == 9304);
+    assert(range_sum(seg3, 146, 162) == 1459);
+    assert(range_sum(seg3, 146, 148) == 102);
+    assert(range_sum(seg3, 54, 146) == 9408);
+    assert(range_sum(seg3, 48, 124) == 7618);
+    assert(range_sum(seg3, 45, 200) == 15610);
+    assert(range_sum(seg3, 34, 135) == 10260);
+    assert(range_sum(seg3, 104, 146) == 4663);
+    assert(range_sum(seg3, 56, 91) == 3517);
+    assert(range_sum(seg3, 63, 196) == 13403);
+    assert(range_sum(seg3, 100, 197) == 9704);
+    assert(range_sum(seg3, 156, 169) == 1654);
+    assert(range_sum(seg3, 166, 181) == 1626);
+    assert(range_sum(seg3, 129, 145) == 1969);
+    assert(range_sum(seg3, 59, 190) == 13098);
+    assert(range_sum(seg3, 185, 199) == 1040);
+    assert(range_sum(seg3, 54, 153) == 10058);
+    assert(range_sum(seg3, 159, 193) == 3397);
+    assert(range_sum(seg3, 184, 192) == 683);
+    assert(range_sum(seg3, 134, 144) == 1266);
+    assert(range_sum(seg3, 101, 127) == 2402);
+    assert(range_sum(seg3, 31, 55) == 2625);
+    assert(range_sum(seg3, 61, 172) == 11367);
+    assert(range_sum(seg3, 160, 183) == 2544);
+    assert(range_sum(seg3, 22, 117) == 9576);
+    assert(range_sum(seg3, 98, 182) == 8792);
+    assert(range_sum(seg3, 19, 96) == 7925);
+    assert(range_sum(seg3, 184, 195) == 929);
+    assert(range_sum(seg3, 187, 190) == 227);
+    assert(range_sum(seg3, 75, 78) == 497);
+    assert(range_sum(seg3, 19, 77) == 5881);
+    assert(range_sum(seg3, 137, 197) == 5960);
+    assert(range_sum(seg3, 61, 165) == 10551);
+    assert(range_sum(seg3, 171, 179) == 744);
+    assert(range_sum(seg3, 20, 142) == 12557);
+    assert(range_sum(seg3, 188, 194) == 463);
+    assert(range_sum(seg3, 34, 61) == 2898);
+    assert(range_sum(seg3, 165, 196) == 2940);
+    assert(range_sum(seg3, 5, 101) == 9386);
+    assert(range_sum(seg3, 14, 45) == 2825);
+    assert(range_sum(seg3, 41, 51) == 1146);
+    assert(range_sum(seg3, 85, 141) == 5813);
+    assert(range_sum(seg3, 168, 185) == 1697);
+    assert(range_sum(seg3, 62, 192) == 13067);
+    assert(range_sum(seg3, 101, 187) == 8802);
+    assert(range_sum(seg3, 139, 196) == 5709);
+    assert(range_sum(seg3, 110, 139) == 3189);
+    assert(range_sum(seg3, 65, 156) == 9183);
+    assert(range_sum(seg3, 51, 87) == 3602);
+    assert(range_sum(seg3, 141, 177) == 3834);
+    assert(range_sum(seg3, 54, 168) == 11559);
+    assert(range_sum(seg3, 149, 198) == 4585);
+    assert(range_sum(seg3, 66, 179) == 11759);
+    assert(range_sum(seg3, 121, 127) == 456);
+    assert(range_sum(seg3, 167, 169) == 276);
+    assert(range_sum(seg3, 187, 190) == 227);
+    assert(range_sum(seg3, 184, 200) == 1278);
+    assert(range_sum(seg3, 19, 41) == 2251);
+    assert(range_sum(seg3, 126, 180) == 5952);
+    assert(range_sum(seg3, 16, 157) == 14179);
+    assert(range_sum(seg3, 103, 157) == 5504);
+    assert(range_sum(seg3, 154, 166) == 1223);
+    assert(range_sum(seg3, 1, 38) == 3175);
+    assert(range_sum(seg3, 74, 174) == 10555);
+    assert(range_sum(seg3, 113, 157) == 4644);
+    assert(range_sum(seg3, 49, 52) == 484);
+    assert(range_sum(seg3, 174, 182) == 893);
+    assert(range_sum(seg3, 115, 139) == 2697);
+    assert(range_sum(seg3, 67, 133) == 6732);
+    assert(range_sum(seg3, 52, 152) == 10216);
+    assert(range_sum(seg3, 102, 154) == 5441);
+    assert(range_sum(seg3, 19, 67) == 4843);
+    assert(range_sum(seg3, 32, 161) == 13191);
+    assert(range_sum(seg3, 180, 183) == 191);
+    assert(range_sum(seg3, 140, 146) == 835);
+    assert(range_sum(seg3, 144, 197) == 5060);
+    assert(range_sum(seg3, 22, 42) == 2091);
+    assert(range_sum(seg3, 60, 104) == 4177);
+    assert(range_sum(seg3, 70, 156) == 8898);
+    assert(range_sum(seg3, 150, 187) == 3740);
+    assert(range_sum(seg3, 119, 162) == 4644);
+    assert(range_sum(seg3, 108, 156) == 5000);
+    assert(range_sum(seg3, 139, 145) == 835);
+    assert(range_sum(seg3, 36, 89) == 5620);
+    assert(range_sum(seg3, 29, 117) == 8883);
+    assert(range_sum(seg3, 132, 167) == 3849);
+    assert(range_sum(seg3, 146, 196) == 4777);
+    assert(range_sum(seg3, 6, 35) == 2581);
+    assert(range_sum(seg3, 185, 195) == 821);
+    assert(range_sum(seg3, 170, 197) == 2376);
+    assert(range_sum(seg3, 79, 148) == 7245);
+
+    return range_sum(seg3, 0, 200);
+}

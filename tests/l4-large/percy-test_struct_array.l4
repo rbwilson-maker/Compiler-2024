@@ -1,0 +1,25 @@
+//test return 2
+typedef int* asdf;
+
+struct q;
+
+
+struct p;
+
+struct p {
+  int a;
+};
+
+int zxcv(struct p* v) {
+    return v->a;
+}
+
+int main(){
+    int* i = alloc(int);
+    int* j = alloc(int);
+    bool b = i !=  j;
+    struct p[] z = alloc_array(struct p, 6);
+    int[]* l = alloc(int[]);
+    int x = 2;
+    return x;
+}

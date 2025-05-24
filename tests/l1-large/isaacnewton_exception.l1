@@ -1,0 +1,12 @@
+//test div-by-zero
+// division error due to overflow
+
+// you may fail this test if you used 64-bit moves/division.
+int main()
+{
+  int x = 5;
+  int y = 0;
+  x /= 0;
+  int overflow = 2;
+  return overflow;
+}

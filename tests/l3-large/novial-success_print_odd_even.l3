@@ -1,0 +1,32 @@
+//test return 0
+// mutually recurse on input to determine whether input is odd or even
+
+
+bool is_odd(int input);
+bool is_even(int input);
+
+bool is_odd(int input) {
+  if (input == 0) return false;
+  else return is_even(input-1);
+}
+
+bool is_even(int input) {
+  if (input == 0) return true;
+  else return is_odd(input-1);
+}
+
+int main() {
+  int x = 20;
+
+  if (is_odd(x)) {
+    print_int(1);
+    return 1;
+  }
+
+  if (is_even(x)) {
+    print_int(0);
+    return 0;
+  }
+
+  return 1;
+}

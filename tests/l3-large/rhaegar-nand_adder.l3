@@ -1,0 +1,52 @@
+//test return 426
+// We're electrical engineers now.
+
+int nand(int a, int b) {
+	if (a == 1 && b == 1) {
+		return 0;
+	} else {
+		return 1;
+	}
+}
+
+int or(int a, int b) {
+	return nand(nand(a, a), nand(b, b));
+}
+
+int half_adder_sum(int a, int b) {
+	int n1 = nand(a, b);
+	int n3 = nand(a, n1);
+	int n4 = nand(b, n1);
+	return nand(n3, n4);
+}
+
+int half_adder_carry(int a, int b) {
+	int n1 = nand(a, b);
+	return nand(n1, n1);
+}
+
+int full_adder_sum(int a, int b, int carry_in) {
+	return half_adder_sum(half_adder_sum(a, b), carry_in);
+}
+
+int full_adder_carry(int a, int b, int carry_in) {
+	return or(half_adder_carry(a, b),
+		half_adder_carry(half_adder_sum(a, b), carry_in));
+}
+
+int add(int a, int b) {
+	int sum = 0;
+	int carry = 0;
+	for (int i = 0; i < 32; i++) {
+		int a_bit = (a >> i) & 0x1;
+		int b_bit = (b >> i) & 0x1;
+		sum |= full_adder_sum(a_bit, b_bit, carry) << i;
+		carry = full_adder_carry(a_bit, b_bit, carry);
+	}
+
+	return sum;
+}
+
+int main() {
+	return add(15, 411);
+}

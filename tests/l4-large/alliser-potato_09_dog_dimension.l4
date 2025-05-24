@@ -1,0 +1,24 @@
+//test typecheck
+//test infloop
+
+struct puppy {
+    bool cute;
+    bool fluffy;
+    bool good_boy;
+};
+typedef struct puppy* puppy;
+
+int main() {
+
+    int num_puppies = 0;
+    int enough_puppies = 2147483647;
+    while(num_puppies <= enough_puppies) {
+        puppy new_puppy = alloc(struct puppy);
+        new_puppy->cute = true;
+        new_puppy->fluffy = true;
+        new_puppy->good_boy = true;
+    }
+
+    return num_puppies;
+
+}

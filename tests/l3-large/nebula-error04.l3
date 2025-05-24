@@ -1,0 +1,15 @@
+//test error
+
+int functionA(int a) {
+  a = a + 1;
+  return functionB(a); // not forward declared
+}
+
+int functionB(int b) {
+  b = functionA(b);
+  return b;
+}
+
+int main() {
+  return 0;
+}

@@ -1,0 +1,10 @@
+//test return 0
+//Ensures that division and multiplication works as inverses (assuming no remainders come from it)
+
+int main () {
+    int x = 143;
+    int d = 11;
+    int y = x/d;
+    int z = y*d;
+    return x-z;
+}

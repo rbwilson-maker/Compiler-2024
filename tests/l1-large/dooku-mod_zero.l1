@@ -1,0 +1,6 @@
+//test div-by-zero 
+int main() { 
+	int tina = 12;	
+	((tina)) %= 0;
+	return tina;
+}

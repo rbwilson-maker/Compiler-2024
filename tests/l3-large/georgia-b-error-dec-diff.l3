@@ -1,0 +1,12 @@
+//test error
+// Test declaration function definition conflict
+
+int hi(int x, int y, int z) {
+
+int main() {
+    return 0;
+}
+
+int hi(int x, int y) {
+    return x - y;
+}

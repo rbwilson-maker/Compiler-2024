@@ -1,0 +1,14 @@
+//test return 2
+
+bool what() {
+    return false;
+}
+
+int main() {
+    if (what()) {
+        return 1;
+    }
+    else {
+        return 2;
+    }
+}

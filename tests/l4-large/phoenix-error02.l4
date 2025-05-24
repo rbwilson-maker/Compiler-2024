@@ -1,0 +1,29 @@
+//test error
+
+typedef int foo;
+typedef int* bar;
+struct foobar {
+    foo x;
+    bar y;
+};
+typedef struct foobar something;
+typedef something* foobar_pointer;
+struct barfoo {
+    foo x;
+    bar y;
+};
+typedef struct barfoo* nothing;
+
+foobar_pointer helper(nothing bf) {
+    // nothing is a pointer to struct barfoo, 
+    // and foobar_pointer is a pointer to struct foobar
+    return bf;
+}
+
+int main() {
+    nothing bf = alloc(struct barfoo);
+    bf->x = 1010101;
+    bf->y = alloc(int);
+    foobar_pointer res = helper(bf);
+    return 0;
+}

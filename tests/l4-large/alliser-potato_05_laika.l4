@@ -1,0 +1,31 @@
+//test error
+
+struct space_dog {
+    int kindness;
+    int innocence;
+    bool alive;
+}
+typedef struct space_dog* space_dog;
+
+void go_to_space(space_dog nice_dog) {
+    nice_dog->alive = false; // :(
+}
+
+void take_home(space_dog nice_dog) {
+    nice_dog->kindness++;
+    nice_dog->innocence++;
+}
+
+int main() {
+    space_dog laika = alloc(struct space_dog);
+    laika->kindness = 100;
+    laika->innocence = 100;
+
+    take_home(laika);
+
+    go_to_space(laika);
+
+    // ........ :(
+
+    return 0;
+}

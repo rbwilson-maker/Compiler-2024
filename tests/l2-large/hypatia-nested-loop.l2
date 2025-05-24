@@ -1,0 +1,14 @@
+//test return 1785
+int main() {
+  int num = 0;
+
+  for(int i = 1; i < 256;) {
+    int j = 1;
+    while(j < i) {
+      num += (i + j);
+      j <<= 1;
+    }
+    i <<= 1;
+  }
+  return num;
+}

@@ -1,0 +1,16 @@
+//test return 12
+
+// Test for loop with empty body
+int main()
+{
+  int x;
+  int stop;
+  int add;
+
+  stop = 10;
+  add = 3;
+
+  for(x = 0; x < stop; x += add) {}
+
+  return x;
+}

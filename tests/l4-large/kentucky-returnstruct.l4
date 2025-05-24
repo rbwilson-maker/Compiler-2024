@@ -1,0 +1,33 @@
+//test error
+
+struct sally {
+int jams;
+
+int slams;
+
+
+
+};
+
+struct sally balls() {
+
+struct sally * b = alloc(struct sally);
+s->jams = 999;
+s->slams = 42395;
+
+return *b;
+
+}
+
+
+
+
+int main() {
+
+struct sally shoop = balls();
+
+return shoop.slams;
+
+
+
+}

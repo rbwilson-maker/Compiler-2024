@@ -1,0 +1,9 @@
+//test error
+
+int main ()
+{
+  int x; 
+  int y = 411; 
+  (x+1) = y; 
+  return x;
+}

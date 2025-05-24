@@ -1,0 +1,34 @@
+//test return 8
+
+// sum of a list of linked values
+
+struct llist {
+    int value;
+    struct llist * next;
+};
+
+int sumlist (struct llist * l) {
+   if (l == NULL) return -1 ;
+   int res = l->value;
+   while (l->next != NULL) {
+     l = l->next;
+     res += l->value ;
+   }
+   return res;
+}
+
+int main () {
+    struct llist * listptr = alloc(struct llist) ;
+    int i = 0 ;
+    struct llist * l = listptr ;
+    while ( i < 7 ) {
+       (*l).value = 1;
+       (*l).next = alloc(struct llist) ;
+       l = (*l).next ;
+       i++ ;
+    }
+    (*l).value = 1;
+    (*l).next = NULL ;
+
+    return sumlist(listptr);
+}

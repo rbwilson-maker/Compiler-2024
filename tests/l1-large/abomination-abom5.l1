@@ -1,0 +1,13 @@
+//test return 25
+
+int main(){
+    int a = 33;
+    int b = 12;
+    int c = a + b; // 45
+    int d = c / a; // 1
+    int e = c + (d - b); // 56
+    c /= 5; // 9
+    e -= c; // 47
+    return e;
+    int x = 5 / 0;
+}

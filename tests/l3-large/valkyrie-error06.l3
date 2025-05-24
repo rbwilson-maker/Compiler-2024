@@ -1,0 +1,11 @@
+//test error
+typedef void nothing;
+
+int foo(int x){
+	return x - 5;
+}
+
+int main(){
+	int x = 2*3;
+	return foo(x);
+}

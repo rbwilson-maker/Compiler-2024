@@ -1,0 +1,19 @@
+//test return 519
+//Implementation of Fast Modular Exponentiation
+int main()
+{
+    int mod = 1007;
+
+    int r = 1;
+    int b = 2;
+    int e = 32;
+    for (b %= mod; e > 0; e >>= 1) {
+        if ((e & 1) == 1) {
+            r *= b;
+            r %= mod;
+        }
+        b *= b;
+        b %= mod;
+    }
+    return r; // 2^32 % 1007
+}

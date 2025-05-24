@@ -1,0 +1,13 @@
+//test return 4
+int main() {
+  int z;
+  int x = 1;
+  if (x == 2) {
+    z = 3;
+  } else {
+    int c = 3;
+    c++;
+    z = c;
+  }
+  return z;
+}

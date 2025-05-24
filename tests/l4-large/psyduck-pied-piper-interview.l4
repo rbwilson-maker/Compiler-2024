@@ -1,0 +1,13 @@
+//test return 0
+
+int* c(int* x) {
+if (x == NULL)
+  return alloc(int);
+return NULL;
+}
+
+int main() {
+int* x = NULL;
+x = c(c(c(c(c(c(c(c(c(x)))))))));
+return *x;
+}

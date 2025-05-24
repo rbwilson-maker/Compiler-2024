@@ -1,0 +1,14 @@
+//test typecheck
+//test infloop
+// simple infinite loop
+
+void minnnesodaSoBM()
+{
+}
+
+
+int main () {
+	while(true)
+		minnnesodaSoBM();
+  return 0;
+}

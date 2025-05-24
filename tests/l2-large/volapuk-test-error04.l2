@@ -1,0 +1,18 @@
+//test error
+
+// Compiler should error when checking proper returns
+
+int main() {
+  int i;
+  bool b = true;
+  while (b) {
+    return 1;
+  }
+  if (b) {
+    i = 1;
+  }
+  else {
+    i = 2;
+    return 5 % i;
+  }
+}

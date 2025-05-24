@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+	bool x = true;
+	bool y = false;
+	bool z;
+	bool a = x && y && z;
+	return a;
+}

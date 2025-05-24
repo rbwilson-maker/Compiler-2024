@@ -1,0 +1,31 @@
+//test return 5
+
+// Calculating log2 using mutually recursive functions
+// with silly typedefs
+
+int g(int x);
+
+typedef int s;
+typedef int t;
+
+s h(t y);
+
+s f(int x) {
+  if (x == 1) return 0;
+  return 1 + g(x / 2);
+}
+
+t h(int x) {
+  s y = 0;
+  return x == 1 ? y : 1 + f(x / 2);
+}
+
+t g(s x) {
+  t y = x;
+  if (y == 1) return y - y;
+  return 1 + h(x / 2);
+}
+
+int main() {
+  return g(32);
+}

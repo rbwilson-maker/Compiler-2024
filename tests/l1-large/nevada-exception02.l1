@@ -1,0 +1,11 @@
+//test div-by-zero
+// division overflow
+
+int main() {
+  int min_int;
+  min_int = -2147483648;
+  
+  int a;
+  a = min_int / -1;
+  return a;
+}

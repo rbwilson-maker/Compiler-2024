@@ -1,0 +1,16 @@
+//test abort
+
+int fastpow(int b, int e) {
+    if (b == 0) return 0;
+    if (e == 0) return 1;
+    int half = fastpow(b, e/2);
+    if (e % 2 == 1) {
+        return b * half;
+    }
+    assert(e % 2 != 0);
+    return half;
+}
+
+int main() {
+    return fastpow(6, 5);
+}

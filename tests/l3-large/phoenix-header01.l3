@@ -1,0 +1,16 @@
+//test typecheck
+//this tests the linker in that all functions in the header class are called
+//and then runs a function from the header on the helper function, which runs
+//all the header functions
+
+int helper() {
+    int j = 0;
+    f(5);
+    g();
+    h(j);
+    return j;
+}
+
+int main() {
+    return f(helper());
+}

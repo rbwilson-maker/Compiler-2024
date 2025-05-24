@@ -1,0 +1,37 @@
+//test typecheck
+//test infloop
+
+bool isPrime ( int n )	{
+  for ( int i = 2; i * i <= n; i++ )	{
+    if (n%i == 0)	{
+      return false;
+    }
+  }
+  return true;
+}
+int gcd(int a, int b);
+int main() {
+  for ( int i = 11; true; i++){
+    if (!isPrime(i))	{
+      int num = 0;
+      int quo = i;
+      for ( int p = 2; quo!=1; p++ )	{
+	if (isPrime(p))	{
+	  while (quo%p == 0)	{
+	    num+=p;
+	    quo/=p;
+	  }
+	}
+      }
+      int gcd = gcd(num, i);
+      if (num/gcd == 7 && i/gcd == 10)	{
+	return i;
+      }
+    }
+  }
+  return -1;
+}
+
+int gcd ( int a, int b )	{
+  return !(a<=b)? gcd(b, a): a == 0? b:gcd(b%a, a);
+}

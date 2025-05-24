@@ -1,0 +1,12 @@
+//test return 1
+// test dead return statements
+
+int main()
+{
+    int x;
+    x = 1;
+    return x;
+
+    x = 2;
+    return x;
+}

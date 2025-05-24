@@ -1,0 +1,15 @@
+//test error
+
+struct s{
+  void* _int;
+  /* sticking our nose in places we *s *void *_int be */
+};
+
+typedef struct s* _void;
+typedef struct s*[] int_;
+
+int main(){
+  int_ essay = alloc_array(_void,1);
+  /* *essay */
+  return essay[0]->_int;
+}

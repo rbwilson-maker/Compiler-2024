@@ -1,0 +1,15 @@
+//test error
+// variable out of scope
+int main(){
+    int a;
+    for(int i =10; i < 100; i++){
+        a++;
+        while(a<1000){
+            a+=10;
+            if(a >500)break;
+            for(int k = 0; k< 10;k++);
+        }
+        k+10;
+    }
+    return a;
+}

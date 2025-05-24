@@ -1,0 +1,26 @@
+//test error
+
+typedef int i;
+typedef bool ever;
+typedef struct i* two;
+typedef int best;
+typedef int one;
+typedef bool em;
+typedef struct meme* be;
+
+struct meme {
+    i aint;
+    ever seen;
+    two pretty;
+    best friends;
+    struct always {
+        one of;
+        em gotta;
+        be ugly;
+    }
+}
+
+int main() {
+    struct meme* tiktok = alloc(struct meme);
+    return (tiktok->seen ? tiktok->always : tiktok->always).of;
+}

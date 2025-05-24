@@ -1,0 +1,19 @@
+//test return 0
+
+
+int superzero(int x) {
+    int a = superzero(x - 1);
+    int b = superzero(x - 1);
+
+    return a - b;
+}
+
+int main() {
+    int a = 0;
+
+    for(int i = 10; i >= 0 != true; i--) {
+        a += superzero(i);
+    }
+
+    return a;
+}

@@ -1,0 +1,45 @@
+//test return 200
+
+/* array access Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, October 25, 2015 at 09:03:59 PM EDT
+ * 
+ * Tests how you access your array
+ */
+
+struct a {
+    int *aa; 
+};
+
+int calc_index(int *a) {
+    int old = *a; 
+    *a = old + 1; 
+    return old; 
+}
+
+
+int main() {
+    int[] arr = alloc_array(int, 100); 
+    struct a* tester = alloc(struct a);
+    tester->aa = alloc(int); // init to 0
+
+    for (int i = 0; i < 100; i++) {
+        arr[i] = 1;
+    }
+
+    for (int i = 0; i < 100; i++) {
+        arr[calc_index(tester->aa)] += 1;
+    }
+
+    int sum = 0; 
+
+    for (int i = 0; i < 100; i++) {
+        assert(arr[i] == 2);
+        sum += arr[i];
+    }
+
+    return sum; 
+
+}

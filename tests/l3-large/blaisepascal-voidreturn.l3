@@ -1,0 +1,13 @@
+//test typecheck
+
+void helper() {
+  if (true) {
+    1 / 0;
+    return;
+  }
+}
+
+int main() {
+  helper();
+  return 0;
+}

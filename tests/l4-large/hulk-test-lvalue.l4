@@ -1,0 +1,22 @@
+//test error
+
+struct arr{
+    int[][][] arr;
+};
+
+int add_one(int i){
+    return i + 1;
+}
+
+int[][][] get_arr(struct arr* a){
+    return a->arr;
+}
+
+int main(){
+    struct arr* a = alloc(struct arr);
+    a->arr = alloc_array(int[][], 1);
+    a->arr[0] = alloc_array(int[], 1);
+    a->arr[0][0] = alloc_array(int, 1);
+    get_arr(a)[0][0][0] = 5;
+    return 0;
+}

@@ -1,0 +1,16 @@
+//test return 48
+// tests multiple multiplications and *= operator
+
+int main()
+{
+  int s1;
+  int s2;
+  int s5;
+  
+  s1 = 2;
+  s2 = 4;
+  s5 = s1*3;
+  s5 *= s1*s2;
+
+  return s5;
+}

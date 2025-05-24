@@ -1,0 +1,30 @@
+//test return 42
+
+/* returns -1 if need to guess lower,
+ *          1 if need to guess higher,
+ *          0 if correct
+ */
+int check(int guess) {
+    int answer = 42; // the answer: pre-defined number in [0,100)
+
+    if (answer < guess)
+        return -1;
+    if (answer > guess)
+        return 1;
+    return 0;
+}
+
+/* inclusive on left, exclusive on right */
+int bin_search(int left, int right) {
+    int mid = (left + right) / 2;
+    int report = check(mid);
+    if (report < 0)
+        return bin_search(left, mid);
+    if (report > 0)
+        return bin_search(mid+1, right);
+    return mid;
+}
+
+int main() {
+    return bin_search(0,100);
+}

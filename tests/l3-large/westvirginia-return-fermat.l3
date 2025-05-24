@@ -1,0 +1,32 @@
+//test return 5
+// Look for counterexamples to Fermat's Last Theorem
+
+int fast_pow(int base, int exp) {
+    if (exp == 0) return 1;
+    int reduced = fast_pow(base, exp >> 1);
+    return reduced * reduced * (exp % 2 == 1 ? base : 1);
+}
+
+int main(){
+    int maxExp = 10;
+    int maxInt = 0xff;
+    int a;
+    int b;
+    int c;
+    int ct = 0;
+    for (int e = 5; e < maxExp; e++){
+        for (int i = 1; i < maxInt; i++){
+            for(int j = i; j < maxInt; j++) {
+                for(int k = j; k < maxInt; k++){
+                    a = fast_pow(i, e);
+                    b = fast_pow(j, e);
+                    c = fast_pow(k, e);
+                    if (a + b == c && a != 0 && b != 0 && c != 0){
+                        ct += 1;
+                    }
+                }
+            }
+        }
+    }
+    return ct;
+}

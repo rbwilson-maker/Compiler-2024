@@ -1,0 +1,41 @@
+//test return 0;
+//test empty structs and struct namespaces
+
+struct a{
+};
+
+typedef int d;
+
+struct c{
+    struct a d;
+};
+
+struct b{
+    struct a b;
+    struct a ba;
+    struct a bb;
+    struct a bc;
+    struct a bd;
+    struct a be;
+    struct a bf;
+    struct a bg;
+    struct a bh;
+    struct a bi;
+    struct a bj;
+    struct a bk;
+    struct c bl;
+    struct c bm;
+    struct c bn;
+    struct c bo;
+    struct c bp;
+    struct c bq;
+    struct c br;
+    struct c bs;
+    struct c bt;
+
+};
+
+int main(){
+    struct b[] arr = alloc_array(struct b, 10000000);  
+    return 0;
+}

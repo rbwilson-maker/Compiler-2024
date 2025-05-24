@@ -1,0 +1,17 @@
+//test error
+//variable use out of scope
+
+int f(int a, int b) {
+	int c = a+b;
+	int d = 2*c;
+	return d;
+}
+
+
+int main()
+{
+	int a = 0;
+	int b = 1;
+	int e = f(a, b);
+	return c+d;
+}

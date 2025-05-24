@@ -1,0 +1,12 @@
+//test memerror
+
+typedef int i;
+typedef i* a;
+typedef a* b;
+
+
+int main () {
+    b c = NULL;
+    **c = (29126 / (7 + 5 - 12));
+    return 0;
+}

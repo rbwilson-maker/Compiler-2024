@@ -1,0 +1,55 @@
+//test return 2048
+
+int merge(int a, int b) {
+  return a + b;
+}
+
+int make_2() {
+  return 2;
+}
+
+int make_4() {
+  return merge(make_2(), make_2());
+}
+
+int make_8() {
+  return merge(make_4(), make_4());
+}
+
+int make_16() {
+  return merge(make_8(), make_8());
+}
+
+int make_32() {
+  return merge(make_16(), make_16());
+}
+
+int make_64() {
+  return merge(make_32(), make_32());
+}
+
+int make_128() {
+  return merge(make_64(), make_64());
+}
+
+int make_256() {
+  return merge(make_128(), make_128());
+}
+
+int make_512() {
+  return merge(make_256(), make_256());
+}
+
+int make_1024() {
+  return merge(make_512(), make_512());
+}
+
+int make_2048() {
+  return merge(make_1024(), make_1024());
+}
+
+int main() {
+  int a = make_2048();
+  assert(a == 2048);
+  return a;
+}

@@ -1,0 +1,16 @@
+//test return 5766992
+int add(int a, int b)
+{
+    return a+b;
+}
+bool greater(int a, int b)
+{
+    return a>b;
+}
+int main()
+{
+    int i = 9+79;
+    int j = 0xffff*i;
+    int k= 0x11111111 & j;
+    return j-i;
+}

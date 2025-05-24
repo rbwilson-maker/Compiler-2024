@@ -1,0 +1,19 @@
+//test return 213
+
+bool tf(int a, int b){
+  if((b - a) % 2 == 0){
+    return true;
+  }
+  return false;
+}
+
+int main()
+{
+  int a = 15;
+  int b = 411;
+
+  if(tf(a, b)) {
+    return a + (b - a) / 2;
+  }
+  return a + (b - a + 5) / 4;
+}

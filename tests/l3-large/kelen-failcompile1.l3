@@ -1,0 +1,19 @@
+//test error
+
+typedef bool mybool;
+
+bool myfunc(int a) {
+    {mybool t = true;}
+    {mybool f = false;}
+    {return a == 0 ? t : f;}
+    return false;
+}
+
+// Tests using bool to receive the result from f()
+int main() {
+    int a = 5;
+    if (myfunc(5)) {
+        return true;
+    }
+    return false;
+}

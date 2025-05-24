@@ -1,0 +1,12 @@
+//test error
+
+struct point {
+   int x;
+   int y;
+}
+typedef struct point point;
+
+int main() {
+   point p = alloc(point);
+   return 0;
+}

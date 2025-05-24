@@ -1,0 +1,13 @@
+//test memerror
+// array out of bounds
+
+int main() {
+    int[] a = alloc_array(int, 100);
+    int* x = alloc(int);
+    for (int i = 0; i < 101; i++) {
+        (*x) += a[i];
+    }
+    return 0;
+}
+
+

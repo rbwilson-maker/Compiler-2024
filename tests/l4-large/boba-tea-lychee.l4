@@ -1,0 +1,53 @@
+//test return -980107325
+// Did I mention I like Haskell?  Laziness isn't my favorite but it can be useful, sometimes.
+
+// Should really be a union.
+struct thunk_evaled {
+  int val;
+};
+
+struct thunk_suspension {
+  struct thunk* p1;
+  struct thunk* p2;
+};
+
+struct thunk {
+  struct thunk_evaled val;
+  struct thunk_suspension delay;
+  bool is_evaled;
+};
+
+int eval(struct thunk* t)
+{
+  if (t->is_evaled)
+    return t->val.val;
+  else
+  {
+    int x = eval(t->delay.p1);
+    int y = eval(t->delay.p2);
+    t->val.val = x + y;
+    t->is_evaled = true;
+    return t->val.val;
+  }
+}
+
+int main()
+{
+  struct thunk*[] memotable = alloc_array(struct thunk*, 101);
+  struct thunk* first = alloc(struct thunk);
+  first->is_evaled = true;
+  first->val.val = 1;
+  struct thunk* second = alloc(struct thunk);
+  second->is_evaled = true;
+  second->val.val = 1;
+  memotable[1] = first;
+  memotable[2] = second;
+  for(int i = 3; i <= 100; i++)
+  {
+    struct thunk* new = alloc(struct thunk);
+    new->delay.p1 = memotable[i - 1];
+    new->delay.p2 = memotable[i - 2];
+    memotable[i] = new;
+  }
+  return eval(memotable[100]);
+}

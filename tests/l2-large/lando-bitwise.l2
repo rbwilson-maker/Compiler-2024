@@ -1,0 +1,12 @@
+//test return -2
+
+int main() {
+    int a = 0xF0F0F0F0;
+    int b = 0x0F0F0F0F;
+    int c = a & b;
+    int d = a | b;
+    int x = 1;
+    int y = x << 31;
+    int z = y >> 31;
+    return c + d + z;
+}

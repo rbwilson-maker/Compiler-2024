@@ -1,0 +1,19 @@
+//test memerror
+
+struct node {
+    int val;
+    struct node* next;
+};
+
+int main() {
+    struct node* segfault = alloc(struct node);
+    segfault->val = 5;
+    segfault->next = alloc(struct node);
+    segfault->next->next = alloc(struct node);
+    segfault->next->next->next = alloc(struct node);
+
+    while (true) {
+        segfault = segfault->next;
+    }
+    return 123012312;
+}

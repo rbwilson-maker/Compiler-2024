@@ -1,0 +1,17 @@
+//test return 12
+
+
+typedef int i;
+
+struct s {
+    i x;
+    i y;
+    i *z;
+};
+
+int main() {
+    struct s *st = alloc(struct s);
+    st->z = alloc(i);
+    *st->z = 12;
+    return *st->z;
+}

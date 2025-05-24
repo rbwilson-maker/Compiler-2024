@@ -1,0 +1,37 @@
+//test return 122
+typedef int banana;
+typedef int[] barr;
+typedef int* jeff;
+
+struct sessions {
+    banana donald;
+    barr attorney_general;
+    jeff man;
+};
+
+typedef struct sessions impossible;
+typedef impossible burger;
+typedef burger* well_done;
+
+void interesting_function(well_done input) {
+    input = alloc(burger);
+}
+
+int main() {
+    well_done order = alloc(burger);
+
+    order->attorney_general = alloc_array(banana, 7); // supreme court justices
+
+    banana b = 12;
+    banana c = 14;
+    order->attorney_general[3] = b;
+    order->attorney_general[4] = c;
+
+    order->man = alloc(int);
+    *order->man = 46;
+
+    interesting_function(order);
+
+    return order->attorney_general[3] * order->attorney_general[4] - *order->man;
+}
+

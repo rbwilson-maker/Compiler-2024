@@ -1,0 +1,19 @@
+//test return 3
+int [] blow_up (int [] A, int n){
+  int [] B = alloc_array(int, 2*n);
+  for (int i = 0; i < n; i++) {
+    B[i] = A[i] + 1*(i % 2);
+    B[i + n] = A[i];
+  } 
+  return B;
+}
+int main(){
+  int [] seed = alloc_array(int, 1);
+  seed[0] = 1;
+  int [] b1 = blow_up(seed,1);
+  int [] b2 = blow_up(b1,2);
+  int [] b3 = blow_up(b2,4);
+  int [] b4 = blow_up(b3,8);
+  int [] b5 = blow_up(b4,16);
+  return b5[13];
+}

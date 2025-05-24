@@ -1,0 +1,13 @@
+//test memerror
+
+struct with_array {
+   int x;
+   int[] f;
+};
+
+int main() {
+   struct with_array *A = alloc(struct with_array);
+   A->f[1] = 122;
+   return A->f[1];
+}
+

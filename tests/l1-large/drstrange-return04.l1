@@ -1,0 +1,12 @@
+//test return 268435456
+// INT_MAX is 0x7FFFFFFF
+// INT_MIN is 0x80000000
+// -1 is 0xFFFFFFFF
+
+int main()
+{
+  int value1 = 0xEFFFFFFF;
+  value1 = -value1; // this is now 0xEFFFFFFF
+  value1 -= 1;
+  return value1;
+}

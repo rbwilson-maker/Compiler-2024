@@ -1,0 +1,16 @@
+//test div-by-zero
+//because of shift
+
+int main()
+{
+  int a;
+  int b;
+
+  a = 20;
+  b = 20;
+
+  if (a==b)
+    a = a << (a + b);
+
+  return a;
+}

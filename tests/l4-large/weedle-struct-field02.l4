@@ -1,0 +1,14 @@
+//test error
+// ensure types on fields are checked
+
+struct a {
+	int foo;
+	bool bar;
+};
+
+int main() {
+	struct a* b = alloc(struct a);
+	int x = b->bar;
+	
+	return 1234;
+}

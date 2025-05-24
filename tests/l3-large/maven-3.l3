@@ -1,0 +1,22 @@
+//test return 0
+// Shift till 0
+
+int add(int x, int y) {
+  return x - y;
+}
+
+int shift(int w) {
+  if (w == 0) {
+    return w;
+  }
+  return w >> 1;
+}
+
+
+int main() {
+  int w = 123124123;
+  while (w > 0) {
+    w = shift(w);
+  }
+  return w;
+}

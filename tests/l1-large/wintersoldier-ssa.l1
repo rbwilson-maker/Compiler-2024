@@ -1,0 +1,11 @@
+//test return 2
+
+// The tests you write for 15-411 will all go in this directory. The
+// tests we write will all be provided to you through the public course
+// repository in the directory ../../tests.
+
+int main() {
+    int x = 1;
+    x = x + 1;
+    return x;
+}

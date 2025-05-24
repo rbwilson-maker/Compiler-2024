@@ -1,0 +1,13 @@
+//test error
+
+typedef struct foo bar;
+
+struct foo {
+    int bar;
+};
+
+int main() {
+    // tries to access nonexistent field
+    bar[] b = alloc_array(bar, 20);
+    return b[0].foo;
+}

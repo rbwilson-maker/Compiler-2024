@@ -1,0 +1,15 @@
+//test div-by-zero
+//simple function test
+
+int shiftyshift(int i) {
+	return (i << 1);
+}
+int main() {
+	int a = 1;
+	int b = 1;
+	for(int i = 0; i < 33; i++) {
+		a = shiftyshift(a);
+	}
+
+	return b/a;
+}

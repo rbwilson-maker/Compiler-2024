@@ -1,0 +1,14 @@
+//test return 4
+typedef int t;
+
+t freedom(t i){
+  return i+1;
+}
+
+int main(){
+  int x = 0;
+  for(t i = 0; i < 4; i++){
+    x = freedom(i);
+  }
+  return x;
+}

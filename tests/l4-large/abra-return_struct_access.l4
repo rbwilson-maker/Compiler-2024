@@ -1,0 +1,13 @@
+//test return 6
+
+struct lol {
+	int rofl;
+	int roflharder;
+};
+
+int main () {
+	struct lol *haha = alloc(struct lol);
+	haha->rofl = 6;
+	haha->roflharder = 7;
+	return (haha->rofl);
+}

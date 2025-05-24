@@ -1,0 +1,93 @@
+//test return 1593021063
+// Heap Sort in C(0) (courtesy of https://www.programiz.com/dsa/heap-sort)
+
+// Function to swap the the position of two elements
+void swap(int[] a, int i, int j)
+{
+  int temp = a[i];
+  a[i] = a[j];
+  a[j] = temp;
+}
+
+void heapify(int[] arr, int n, int i)
+{
+  // Find largest among root, left child and right child
+  int largest = i;
+  int left = 2 * i + 1;
+  int right = 2 * i + 2;
+
+  if (left < n && arr[left] > arr[largest])
+    largest = left;
+
+  if (right < n && arr[right] > arr[largest])
+    largest = right;
+
+  // Swap and continue heapifying if root is not largest
+  if (largest != i)
+  {
+    swap(arr, i, largest);
+    heapify(arr, n, largest);
+  }
+}
+
+// Main function to do heap sort
+void heapSort(int[] arr, int n)
+{
+  // Build max heap
+  for (int i = n / 2 - 1; i >= 0; i--)
+    heapify(arr, n, i);
+
+  // Heap sort
+  for (int i = n - 1; i >= 0; i--)
+  {
+    swap(arr, 0, i);
+
+    // Heapify root element to get highest element at root again
+    heapify(arr, i, 0);
+  }
+}
+
+int random_generator(int seed)
+{
+  return (seed * 1103515245 + 12345) & 1234567;
+}
+
+int second_time_causes_error(int i, int *count) {
+  if (*count > 1) {
+    assert(false);
+  }
+
+  *count += 1;
+  return i;
+}
+
+
+// Driver code
+int main()
+{
+  int n = 100000;
+  int[] arr = alloc_array(int, n);
+
+  for (int i = 0; i < n; i++)
+  {
+    arr[i] = random_generator(i);
+  }
+
+  heapSort(arr, n);
+
+  int *p = alloc(int);
+  *p = 0;
+
+  int result = 0;
+  for (int i = 0; i < n; i++) {
+    arr[second_time_causes_error(i, p)] *= i;
+    *p = 0;
+  }
+
+  for (int i = 0; i < n; i++)
+  {
+    result += arr[i];
+  }
+
+  return result;
+}

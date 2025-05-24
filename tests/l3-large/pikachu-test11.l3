@@ -1,0 +1,7 @@
+//test error
+// tests that void main... is rejected
+void main()
+{
+  int i = 3;
+  return;
+}

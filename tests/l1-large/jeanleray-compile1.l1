@@ -1,0 +1,8 @@
+//test error
+// undefined variables
+int main(){
+    int x = 5;
+    int y = 6;
+    z = x + y;
+    return z;
+}

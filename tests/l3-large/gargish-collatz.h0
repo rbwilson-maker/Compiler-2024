@@ -1,0 +1,4 @@
+// function for collatz conjecture
+// return the steps it take to stop
+// the next element in the sequence is: n % 2 == 0 ? n / 2 : n * 3 + 1
+int collatz(int input);

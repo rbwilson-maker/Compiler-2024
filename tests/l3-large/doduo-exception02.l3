@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+int loop(int c) {
+	while(c >= -1) {
+		c = c * 0;
+	}
+	return c;
+}
+
+int main() {
+	return loop(2);
+}	

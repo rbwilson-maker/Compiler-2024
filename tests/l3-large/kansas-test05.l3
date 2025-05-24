@@ -1,0 +1,21 @@
+//test return 3
+
+// This is designed to test a boolean function call with arguments
+bool func(int x, int y, int z) {
+  if (x < y && z == y) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+int main() {
+  bool y = func(3, 4, 4);
+  if (y) {
+    return 3;
+  }
+  else {
+    return 4;
+  }
+}

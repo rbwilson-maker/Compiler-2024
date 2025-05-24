@@ -1,0 +1,15 @@
+//test return 14
+
+int main() {
+
+    int i = 4;
+    int j = 7;
+    int x;
+
+    x = 5;
+
+    j = x + 4;
+
+    return x + j;
+
+}

@@ -1,0 +1,21 @@
+//test return 23
+
+struct A;
+
+struct A* id(struct A* as) {
+	return as;
+}
+
+struct A {
+	int a;
+};
+
+int main() {
+	struct A* c = alloc(struct A);
+	c->a = 3;
+	if (NULL == NULL && (3 + id(c)->a) == 6) {
+		return 23;
+	} else {
+		return 89;
+	}
+}

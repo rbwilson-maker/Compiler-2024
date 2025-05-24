@@ -1,0 +1,12 @@
+//test return 1
+
+// Judgemental Defn of naturals
+
+bool nat(int x) {
+	return x == 0 || nat(x - 1);
+}
+
+int main() {
+	bool is_nat = nat(5);
+	return is_nat ? 1 : 0;
+}

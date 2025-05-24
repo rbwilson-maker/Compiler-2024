@@ -1,0 +1,9 @@
+//test return 5120
+// normal for loops
+int main(){
+    int x = 5;
+    for(int i = 0; i < 10; i++){
+        x += x;
+    }
+    return x;
+}

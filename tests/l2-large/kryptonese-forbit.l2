@@ -1,0 +1,10 @@
+//test return 12
+int main () {
+  int j = 0;
+  for (int i = -100; i < 0; i++) {
+    if (i / 8 == i >> 3) {
+        j++;
+    }
+  }
+  return j;
+}

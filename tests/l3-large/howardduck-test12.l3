@@ -1,0 +1,14 @@
+//test abort
+
+bool not_true(int i) {
+    if (i < 0) return false;
+    if (i % 2 == 0) return false;
+    if (i > 2) return false;
+    if (i == 1) return false;
+    return true;
+}
+
+int main() {
+    assert(not_true(47));
+    return 0;
+}

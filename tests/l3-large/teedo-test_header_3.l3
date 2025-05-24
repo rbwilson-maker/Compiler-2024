@@ -1,0 +1,7 @@
+//test typecheck
+
+int main() {
+    int n = 0;
+    foo3();
+    return bar3(n);
+}

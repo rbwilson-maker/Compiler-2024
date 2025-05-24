@@ -1,0 +1,30 @@
+//test memerror
+
+typedef struct list_node list;
+
+struct list_node {
+  int data;
+  list* next;
+};
+
+int main() {
+  list* a = alloc(list);
+  a->data = 100;
+  list* b = alloc(list);
+  b->data = 200;
+  list* c = alloc(list);
+  c->data = 300;
+
+  a->next = b;
+  b->next = c;
+
+  list* temp = a;
+  int total = 0;
+
+  while (true) {
+    total += temp->data;
+    temp = temp->next;
+  }
+
+  return total;
+}

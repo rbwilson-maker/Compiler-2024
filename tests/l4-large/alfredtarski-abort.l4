@@ -1,0 +1,12 @@
+//test abort
+
+int main() {
+	int[] arr = alloc_array(int, 5);
+
+	for (int i = 0; i < 5; i++) {
+		arr[i] = i;
+	}
+	assert(arr[0] == arr[1]);
+	
+	return 0;
+}

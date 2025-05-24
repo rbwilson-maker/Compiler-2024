@@ -1,0 +1,31 @@
+//test return 31422711
+//O(n) square root
+
+int abs(int x);
+int distance(int x, int y);
+int square_root(int n);
+
+int main() {
+  return square_root(0x3423094);
+}
+
+int abs(int x) {
+  return x < 0 ? -x : x;
+}
+
+int distance(int x, int y) {
+  return abs(x*x - y*y);
+}
+
+int square_root(int n) {
+  int sqrt = 0;
+  int minDist = n;
+  for (int i = 0; i < n; i++) {
+    int dist = distance(i*i, n);
+    if (dist < minDist) {
+      sqrt = i;
+      minDist = dist;
+    }
+  }
+  return sqrt;
+}

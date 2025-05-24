@@ -1,0 +1,88 @@
+//test return 1
+
+typedef struct dog* dog;
+struct dog {
+    int HP;
+    int ATK;
+    int DEF;
+};
+
+typedef struct vacuum* vacuum;
+struct vacuum {
+    int HP;
+    int LOUDNESS;
+    int SUC;
+};
+
+bool defeated(dog[] party, int size) {
+    bool all_gone = true;
+    for(int i = 0; i < size; i++) {
+        dog d = party[i];
+        if (d->HP > 0) all_gone = false;
+    }
+    return all_gone;
+}
+
+void bark(dog d, vacuum v) {
+    if (d->HP < 0 || v->HP < 0) return;
+
+    int base_atk = d->ATK;
+    int adj_atk = base_atk - (base_atk / v->SUC);
+    v->HP -= adj_atk;
+}
+
+void scare(vacuum v, dog d) {
+    if (v->HP < 0 || d-> HP < 0) return;
+
+    int base_scare = v->LOUDNESS;
+    int adj_scare = base_scare / (d->DEF);
+    d->HP -= adj_scare;
+}
+
+int fight(dog[] party, int partysize, vacuum v) {
+    while(!defeated(party, partysize) && (v->HP > 0)) {
+        for(int i = 0; i < partysize; i++) {
+            dog d = party[i];
+            bark(d, v);
+        }
+        for(int i = 0; i < partysize; i++) {
+            dog d = party[i];
+            scare(v, d);
+        }
+    }
+    if (defeated(party, partysize)) return 0;
+    else return 1;
+}
+
+int main() {
+    dog woofles = alloc(struct dog);
+        woofles->HP = 431;
+        woofles->ATK = 68;
+        woofles->DEF = 59;
+    dog max = alloc(struct dog);
+        max->HP = 453;
+        max->ATK = 52;
+        max->DEF = 78;
+    dog charlie = alloc(struct dog);
+        charlie->HP = 414;
+        charlie->ATK = 45;
+        charlie->DEF = 39;
+    dog buddy = alloc(struct dog);
+        buddy->HP = 456;
+        buddy->ATK = 34;
+        buddy->DEF = 72;
+
+    vacuum hoover = alloc(struct vacuum);
+        hoover->HP = 6408;
+        hoover->LOUDNESS = 626;
+        hoover->SUC = 10;
+
+    dog[] party = alloc_array(dog, 4);
+    party[0] = woofles;
+    party[1] = max;
+    party[2] = charlie;
+    party[3] = buddy;
+
+    return fight(party, 4, hoover);
+
+}

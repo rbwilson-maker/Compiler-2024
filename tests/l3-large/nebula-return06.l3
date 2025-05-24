@@ -1,0 +1,14 @@
+//test return 2
+
+int functionA(int a);
+
+int functionB(int b); // ok since unused
+
+int functionA(int aa) {
+  return aa + 1;
+}
+
+
+int main() {
+  return functionA(1);
+}

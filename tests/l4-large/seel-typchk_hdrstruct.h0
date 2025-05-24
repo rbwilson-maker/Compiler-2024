@@ -1,0 +1,6 @@
+
+struct node {
+  struct point* p;
+};
+
+int do_something(struct point *p);

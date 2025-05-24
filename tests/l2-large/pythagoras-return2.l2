@@ -1,0 +1,23 @@
+//test return 2
+
+int main () {
+    {
+        {
+            {
+                int x = 123;
+                int y = 0;
+                {
+                    int z = y < x ? 1 : 42;
+                    int count = 0;
+                    while (z > 0) {
+                        count += 2;
+                        z -= 1;
+                    }
+                    if (count > 2) return 42;
+                    return count;
+                }
+                
+            }
+        }
+    }
+}

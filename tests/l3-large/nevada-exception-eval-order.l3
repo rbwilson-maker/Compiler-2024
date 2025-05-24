@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int infinite() {
+    return infinite();
+}
+
+int f(int a, int b) {
+    return 0;
+}
+
+int main() {
+    return f(1/0, infinite());
+}

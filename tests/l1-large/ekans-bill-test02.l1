@@ -1,0 +1,16 @@
+//test div-by-zero
+// division by zero, with some extra random computation
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+
+  a = 7758;
+  b = 12;
+  c = 862;
+  d = 9;
+  a -= c*d;
+  return b/a;
+}

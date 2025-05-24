@@ -1,0 +1,8 @@
+//test return -1
+
+int main() { 
+    int y = -1;
+    y %= 2;
+    bool x = false;
+    return (x && true) ? 0 : y;
+}

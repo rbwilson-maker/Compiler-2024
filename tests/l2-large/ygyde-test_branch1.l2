@@ -1,0 +1,11 @@
+//test return 75
+
+// tests: branching, l1 subset of language
+// test if branch is not taken
+int main() {
+    int x = 5 + 2;
+    if (x == 0) {
+        x = 0;
+    }
+    return 526 / x;
+}

@@ -1,0 +1,17 @@
+//test return 198399392
+// nested loop and typedef
+
+typedef int x;
+typedef x y;
+typedef y z;
+
+z main() {
+    int ret = 0;
+
+    for (int i = 0; i < 1000; i++)
+        for (int j = 0; j < 1000; j++)
+            for (int k = 0; k > -100; k--)
+                ret += i * j * k;
+
+    return ret;
+}

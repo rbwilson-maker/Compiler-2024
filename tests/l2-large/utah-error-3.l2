@@ -1,0 +1,12 @@
+//test error
+// Tests that bitwise operators are bound less tightly than ==
+
+int main () {
+
+    int x = 3;
+    int y = 6;
+
+    bool b = x & y == 2;
+
+    return b ? x : y;
+}

@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main() {
+	while (1 / 0 != 1000) {
+		return 1;
+	}
+	return 0;
+}

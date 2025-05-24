@@ -1,0 +1,23 @@
+//test error
+
+//uninitialized struct pointer
+typedef struct some s0;
+typedef struct some* s1;
+typedef struct some** s2;
+typedef struct some*** s3;
+typedef struct some**** s4;
+typedef struct some***** s5;
+
+s5 fact(s4 orig) {
+  s5 res = alloc(s4);
+  return res;
+}
+
+int main() {
+  s1 some1;
+  s2 some2;
+  s3 some3;
+  s4 some4;
+  s5 some5 = fact(some4);
+  return 47;
+}

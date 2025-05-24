@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+    int x = 0;
+    return x%0;
+    int y;
+    return 0%x;
+    int z = y;
+}

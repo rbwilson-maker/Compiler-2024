@@ -1,0 +1,19 @@
+//test error
+int main()
+{
+    {
+        {
+            {
+                {
+                    {
+                        {
+                            int lol;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    lol = 0;
+    return lol;
+}

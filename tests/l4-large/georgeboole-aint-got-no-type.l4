@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+    int* saweetie = alloc(int);
+    int x = saweetie + 4; // Cannot add 4 to int pointer 
+    return 0;
+}

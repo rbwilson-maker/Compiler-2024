@@ -1,0 +1,11 @@
+//test div-by-zero
+
+void f(int n, int d) {
+  n/d;
+  return;
+}
+
+int main() {
+  f(1, 0);
+  return 0;
+}

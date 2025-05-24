@@ -1,0 +1,15 @@
+//test memerror
+
+
+struct adb {
+	int[]*[] jaja;
+};
+
+int main() {
+	struct adb *a = alloc(struct adb);
+	a->jaja = alloc_array(int[]*, 30);
+	for (int i = 0; i < 30; i++) {
+		*(((a->jaja))[3]) = alloc_array(int,3);
+	}
+	return (*((a->jaja)[3]))[3];
+}

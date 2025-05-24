@@ -1,0 +1,8 @@
+//test return 6
+
+int main() {
+	int[]* a = alloc(int[]);
+	*a = alloc_array(int, 1);
+	(*a)[0] = 6;
+	return (*a)[0];
+}

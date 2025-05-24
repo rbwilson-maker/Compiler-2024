@@ -1,0 +1,20 @@
+/*int weird_succ(int n) {
+    int a = n;
+    int b = n*n;
+    if(n % 2 == 0)
+        return a+1;
+    else
+        return b+1;
+}*/
+int weird_succ(int n);
+int weird_pred(int n);
+/*
+int weird_pred(int n) {
+    int a = n*n*n;
+    int b = 4 - n;
+
+    if(n % 3 == 0)
+        return a - 1;
+    else
+        return b - 1;
+}*/

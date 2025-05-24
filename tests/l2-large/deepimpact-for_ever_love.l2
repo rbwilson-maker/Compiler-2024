@@ -1,0 +1,8 @@
+//test error
+int main() {
+    for (;;) { //this works in C, so it must work in C0
+        int a = 0;
+        return a;
+    }
+    return 0;
+}

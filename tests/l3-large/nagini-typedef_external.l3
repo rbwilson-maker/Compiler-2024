@@ -1,0 +1,8 @@
+//test typecheck
+
+typedef a c;
+typedef b d;
+
+c main() {
+  return 0;
+}

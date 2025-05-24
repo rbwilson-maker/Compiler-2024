@@ -1,0 +1,16 @@
+//test return 1
+
+struct foo{
+  int x;
+  bool y;
+};
+
+int main() {
+  struct foo* a = alloc(struct foo);
+  a -> x = 1;
+  a -> y = false;
+  return ((*a).x);
+}
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

@@ -1,0 +1,55 @@
+//test return 7
+//nested function call
+//the best post-rock album of all time
+//picking the english letter that looks the most similar
+
+int Gobbledigook(int x) {
+    return x & 0x10101010;
+}
+int Inni_mer_syngur_vitleysingur(int x) {
+    return x * x * x + 2;
+}
+
+int godan_daginn(int x) {
+    if (x > 33) {return 33;}
+    return x;
+} 
+
+int Vid_spilum_endalaust(int x) {
+    return (x << 4) / 7 + 23;
+}
+
+int Festival(int x) {
+    return (x  ^ (x+1234)) * x;
+}
+
+int Med_sud_i_eyrum(int x) {
+    if (x > 0){return x;}
+    else{return x-22;}
+} 
+
+int Ara_batur(int x) {
+    return x+33;
+} 
+
+int illgresi(int x) {
+    return -x;
+} 
+int Fljotavik(int x) {
+    return x>0 ? Ara_batur(x) : illgresi(x);
+} 
+int Straumnes(int x) {
+    return x % 23;
+}
+int main() {
+    int all_alright = 11;
+    return  Straumnes(
+                Fljotavik(
+                    Med_sud_i_eyrum(
+                        Festival(
+                            Vid_spilum_endalaust(
+                                godan_daginn(
+                                    Inni_mer_syngur_vitleysingur(
+                                        Gobbledigook(all_alright))))))));
+
+}

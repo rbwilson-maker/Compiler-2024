@@ -1,0 +1,17 @@
+//test div-by-zero
+
+int main ()
+{
+  int zero;
+  int if90;
+  int return0;
+
+  return0 = 0;
+  zero = 0;
+  if90 = 90;
+  if(if90 > return0)
+    if90 / return0;
+  else
+    int elseZer0 = 0;
+  return if90;
+}

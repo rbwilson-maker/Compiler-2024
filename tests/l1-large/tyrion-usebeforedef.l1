@@ -1,0 +1,12 @@
+//test error
+
+// Compilers f2017: Group Tyrion Lannister
+
+int main() {
+    int y = 5;
+    int x = 3;
+    x += z; // Issue here
+    int z = 5;
+
+    return x;
+}

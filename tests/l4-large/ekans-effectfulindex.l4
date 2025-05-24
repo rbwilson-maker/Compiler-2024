@@ -1,0 +1,19 @@
+//test return 9
+int f(bool* hasbeencalled) {
+    if(*hasbeencalled) {
+        return 100;
+    } else {
+        *hasbeencalled = true;
+        return 3;
+    }
+}
+
+int main() {
+    bool * b = alloc(bool);
+    *b = false;
+    int[] list = alloc_array(int, 9);
+    list[f(b)] += 9;
+    return list[3];
+}
+    
+

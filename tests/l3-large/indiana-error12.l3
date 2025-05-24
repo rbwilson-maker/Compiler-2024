@@ -1,0 +1,13 @@
+//test error
+
+
+
+int woof(int a, int b){
+     return a;
+}
+
+typedef int woof;
+
+int main(){
+    return woof(10, 10);
+}

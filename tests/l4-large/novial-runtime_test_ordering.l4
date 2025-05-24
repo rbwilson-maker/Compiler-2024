@@ -1,0 +1,14 @@
+//test div-by-zero
+// ensure that appropriate ordering is followed
+
+int compute_pointer(int *ptr) {
+  *ptr += 1 / 0;
+  *ptr += 1 % 0;
+  *ptr += 12;
+  return *ptr;
+}
+
+int main() {
+  int* x = NULL;
+  return compute_pointer(x);
+}

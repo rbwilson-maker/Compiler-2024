@@ -1,0 +1,5 @@
+//test div-by-zero
+// mod 0
+int main() {
+  return (5 + 6) % 0;
+}

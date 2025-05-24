@@ -1,0 +1,9 @@
+//test typecheck
+// This test uses an header file referencing a function
+// that ought to be defined in libc: sleep. This test
+// should timeout as it is supposed to sleep for 10 seconds.
+
+int main() {
+    sleep(10);
+    return 0;
+}

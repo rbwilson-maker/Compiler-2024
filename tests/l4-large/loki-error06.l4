@@ -1,0 +1,11 @@
+//test error
+
+struct s {
+  int a;
+  int b;
+};
+
+int main() {
+  struct s[] arr = alloc_array(struct s, 4);
+  return s[2]->a;
+}

@@ -1,0 +1,53 @@
+//test return 83412000
+
+struct honolulu;
+struct hawaii
+{
+  struct honolulu* start;
+};
+
+struct honolulu
+{
+  int x;
+  struct honolulu* next;
+  struct honolulu* next2;
+};
+
+int main()
+{
+  struct honolulu* first = alloc(struct honolulu);
+  struct honolulu* second = alloc(struct honolulu);
+  first->x = 83754;
+  first->next = second;
+  first->next2 = NULL;
+  second->x = 16246;
+  second->next = NULL;
+  second->next2 = NULL;
+
+  struct hawaii* luau = alloc(struct hawaii);
+  luau->start = first;
+
+  struct honolulu* prev = second;
+  struct honolulu* prev2 = first;
+
+  for(int i = 0; i <= 1600; i++) {
+    struct honolulu* new = alloc(struct honolulu);
+    new->x = (i % 2 == 0) ? (prev->x) + (prev2->x) : 10;
+    new->next = NULL;
+    new->next2 = NULL;
+    prev->next = new;
+    prev2->next2 = new;
+
+    prev2 = prev;
+    prev = new;
+  }
+
+  struct honolulu* traverse = luau->start;
+  int sum = 0;
+  while(traverse != NULL) {
+    sum += traverse->x;
+    traverse = traverse->next;
+  }
+
+  return sum;
+}

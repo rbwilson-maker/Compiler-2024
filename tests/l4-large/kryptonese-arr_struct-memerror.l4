@@ -1,0 +1,25 @@
+//test memerror
+
+struct map {
+    int id;
+    bool is_senior;
+    struct map* peer;
+};
+
+int main() {
+    struct map[] students = alloc_array(struct map, 10); 
+    for (int i = 0; i < 9; i++) {
+        students[i].id = i;
+        bool is_senior = (i % 4 == 0);
+        students[i].is_senior = is_senior;
+        students[i].peer = alloc(struct map);
+    }
+    for (int i = 9; i >= 0; i--) {
+        struct map* last = students[i].peer;
+        if (last->id == 0) {
+            return 1;
+        }
+    }
+    return 0;
+
+}

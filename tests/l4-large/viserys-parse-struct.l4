@@ -1,0 +1,17 @@
+//test error
+
+// you cannot typedef a struct while defining it (unlike in c)
+
+struct point {
+  int x;
+  int y;
+};
+
+typedef struct point2 {
+  int x;
+  int y;
+} buu;
+
+int main() {
+  return 4;
+}

@@ -1,0 +1,19 @@
+//test typecheck
+
+int main () {
+  potato p = new_potato();
+  
+  for (int i = 0; i < 150; i++)
+    p = grow_potato(p);
+
+  eat_potato(p);  
+  eat_potato(p);
+
+  print_potato(p);
+
+  mashed_potatoes m = mash(p);
+
+  consume_potato(p);
+
+  return m ? 1 : 0;  
+}

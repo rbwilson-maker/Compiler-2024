@@ -1,0 +1,9 @@
+//test error
+//testing that uninitialized cals checked when calling library stuff
+
+int main(){
+  int x;
+  fpt y = itof(int n);
+  print_fpt(fpt y);
+  return 1;
+}

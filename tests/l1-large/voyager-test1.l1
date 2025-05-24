@@ -1,0 +1,19 @@
+//test return 103
+
+// this test is mainly to test comments and basic arithmetic operations
+
+// single-line comments
+
+/*  
+    test special characters: !@#$%^&*()_+-=~`,./?><;':"[]{}|\' +=  -= *= /= %=
+    test special strings: struct int while continue NULL return void string char
+*/
+
+int main() { 
+    int/* intersection comments */ a =  0x1F;// end-of-line comments
+    int b /* intersection comments */= 3;   // end-of-line comments
+    int c = /* intersection comments */ 10;
+    int d = 0/* intersection comments */;
+
+    return a * b + c - d; 
+}

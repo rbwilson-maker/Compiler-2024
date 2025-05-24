@@ -1,0 +1,8 @@
+//test error
+//no nested typedefs
+
+int main(){
+	typedef int x;
+	x z = 1;
+	return z;
+}

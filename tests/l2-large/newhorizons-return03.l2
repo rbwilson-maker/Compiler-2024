@@ -1,0 +1,10 @@
+//test return 122
+int main() {
+    int x = 5;
+    int y = 488;
+    while (x > 3) {
+        y >>= 1;
+        x--;
+    }
+    return y;
+}

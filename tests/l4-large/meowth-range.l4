@@ -1,0 +1,10 @@
+//test error
+
+//Recursive struct, not by pointer.
+
+struct blah{struct blah b;};
+
+int main(){
+    struct blah *b = alloc(struct blah);
+    return 0;
+}

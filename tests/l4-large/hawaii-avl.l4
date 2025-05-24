@@ -1,0 +1,112 @@
+//test return 12
+
+struct node {
+  struct node* left;
+  struct node* right;
+  int value;
+};
+
+typedef struct node* tree;
+
+int max(int x, int y)
+{
+  if (x > y)
+  {
+    return x;
+  } else {
+    return y;
+  }
+}
+
+int tree_height(tree t)
+{
+  if (t == NULL)
+  {
+    return 0;
+  }
+  
+  return 1 + max(tree_height(t->left), tree_height(t->right));
+}
+
+int tree_balancing_factor(tree t)
+{
+  if (t == NULL)
+  {
+    return 0;
+  }
+  
+  return tree_height(t->left) - tree_height(t->right);
+}
+
+tree tree_insert(tree t, int v)
+{
+  if (t == NULL)
+  {
+    tree new_node = alloc(struct node);
+    new_node->value = v;
+    
+    return new_node;
+  }
+  
+  if (t->value > v)
+  {
+    t->left = tree_insert(t->left, v);
+  } else {
+    t->right = tree_insert(t->right, v);
+  }
+  
+  if (tree_balancing_factor(t) == 2)
+  {
+    if (tree_balancing_factor(t->left) == -1)
+    {
+      tree one = t->left;
+      tree two = t->left->right;
+      
+      t->left = two;
+      one->right = t->left->left;
+      t->left->left = one;
+    }
+    
+    tree one = t->left;
+    
+    t->left = t->left->right;
+    one->right = t;
+    t = one;
+  } else if (tree_balancing_factor(t) == -2)
+  {
+    if (tree_balancing_factor(t->right) == 1)
+    {
+      tree one = t->right;
+      tree two = t->right->left;
+    
+      t->right = two;
+      one->left = t->right->right;
+      t->right->right = one;
+    }
+  
+    tree one = t->right;
+  
+    t->right = t->right->left;
+    one->left = t;
+    t = one;
+  }
+  
+  return t;
+}
+
+int main()
+{
+  tree t = NULL;
+  
+  for (int i=0; i<1024; i++)
+  {
+    t = tree_insert(t, i);
+  }
+  
+  for (int i=0; i<1024; i++)
+  {
+    t = tree_insert(t, 2048 - i);
+  }
+  
+  return tree_height(t);
+}

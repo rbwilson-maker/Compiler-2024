@@ -1,0 +1,14 @@
+//test memerror
+
+struct s{
+    int x;
+    int* y;
+    int[] z;
+};
+
+int main(){
+    struct s* test = alloc(struct s);
+    *((*test).y) = 10; // y is uninitialized
+    test->z = alloc_array(int, *(test->y));
+    return (test->z)[9];
+}

@@ -1,0 +1,12 @@
+//test return 1
+
+int solve (int a, int b, int c);
+
+
+int main(){
+    return solve(3,2,1);
+}
+
+int solve (int c, int b, int a){
+    return c / b * a;
+}

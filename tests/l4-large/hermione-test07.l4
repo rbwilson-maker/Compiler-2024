@@ -1,0 +1,19 @@
+//test return 1
+
+struct h {
+  int h;
+};
+
+struct g {
+  struct h h;
+};
+
+struct f {
+  struct g g;
+};
+
+int main () {
+  struct f * f = alloc(struct f);
+  f->g.h.h += 1;
+  return f->g.h.h;
+}

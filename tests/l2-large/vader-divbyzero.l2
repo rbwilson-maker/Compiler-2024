@@ -1,0 +1,8 @@
+//test div-by-zero
+
+// Ternary op results in dividing by zero.
+int main() {
+    int x = ((0 == 0) ? 1 : 2) / ((1 == 1) ? 0 : 1);
+    return x;
+}
+

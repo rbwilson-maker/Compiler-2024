@@ -1,0 +1,6 @@
+//test return 2147483624
+int main() {
+  int j = 2147483640;
+  j = j * 0x3;
+  return j;
+}

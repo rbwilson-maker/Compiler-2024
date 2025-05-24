@@ -1,0 +1,16 @@
+//test error
+
+struct biiiiiiiig {
+  int so;
+  int very;
+  int large;
+};
+
+int chew(struct biiiiiiiig bite) {
+  return 0;
+}
+
+int main() {
+  struct biiiiiiiig *bitePtr = alloc(struct biiiiiiiig);
+  return foo(*bitePtr);
+}

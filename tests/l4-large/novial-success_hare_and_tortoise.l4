@@ -1,0 +1,48 @@
+//test return 1
+
+struct A {
+  struct A* next;
+};
+
+typedef struct A node;
+
+node* move_once(node* cur) {
+  return cur->next;
+}
+node* move_twice(node* cur) {
+  node* step1 = move_once(cur);
+  if (step1 != NULL) {
+    return move_once(step1);
+  }
+  return NULL;
+}
+
+int main() {
+  node* node1 = alloc(node);
+  node* node2 = alloc(node);
+  node* node3 = alloc(node);
+  node* node4 = alloc(node);
+  node* node5 = alloc(node);
+  node* node6 = alloc(node);
+
+  node1->next = node2;
+  node2->next = node3;
+  node3->next = node4;
+  node4->next = node5;
+  node5->next = node6;
+  node6->next = node4;
+
+  node* hare = node1;
+  node* tortoise = node1;
+
+  while (hare != NULL && tortoise != NULL) {
+    hare = move_twice(hare);
+    tortoise = move_once(tortoise);
+
+    if (hare == tortoise) {
+      return 1;
+    }
+  }
+
+  return 0;
+}

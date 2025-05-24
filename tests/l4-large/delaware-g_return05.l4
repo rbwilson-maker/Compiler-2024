@@ -1,0 +1,22 @@
+//test return 8
+
+struct foo {
+  int[] x;
+};
+
+
+struct nested {
+  struct foo*[] y;
+};
+
+int main() {
+  struct foo* f = alloc(struct foo);
+  struct nested* n = alloc(struct nested);
+  f->x = alloc_array(int,15);
+  f->x[4] = 8;
+
+  n->y = alloc_array(struct foo*, 4);
+  n->y[1] = f;
+
+  return n->y[1]->x[4];
+}

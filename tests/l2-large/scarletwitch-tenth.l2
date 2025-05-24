@@ -1,0 +1,26 @@
+//test return 0
+
+int main ()
+{
+  int result;
+  int x = 0;
+  int y = 0;
+
+  result = 0;
+  bool flag = false;
+  if (flag)
+    {
+      x++;
+      if (!flag)
+        y++;
+      else
+        y++;
+    }
+  else
+    x++;
+    if (flag)
+      x++;
+
+  return result;
+}
+

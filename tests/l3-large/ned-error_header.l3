@@ -1,0 +1,16 @@
+//test error
+
+#use "typedefs.h0"
+
+
+truthy foo(color x) {
+	return x;
+}
+
+int main() {
+	int x = -217638045;
+	
+	if (foo(x)) return x;
+	
+	return 0;
+}

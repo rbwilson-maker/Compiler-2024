@@ -1,0 +1,17 @@
+//test return ~27
+// -1 is 0xFFFFFFFF
+// INT_MAX is 0x7FFFFFFF
+// INT_MIN is 0x80000000
+
+int main()
+{
+  int value1 = -75;
+  int value2 = -50;
+
+  while(value2 < -1){
+    value1++;
+    value2++;
+  }
+  int value3 = (~value2) + (value1 - 1);
+  return value3;
+}

@@ -1,0 +1,7 @@
+//test error
+
+//There should be individual tests for each of the reserved keywords, but that's a pain to make, so I'm just doing one here.
+int main() {
+	int assert = 3;
+	return assert;
+}

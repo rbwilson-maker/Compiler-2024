@@ -1,0 +1,16 @@
+//test return 25
+// leetcode 204 Count Primes
+
+int main() {
+    int res = 0;
+    for (int i = 2; i <= 100; i++) {
+        bool flag = true;
+        for (int j = 2; flag && j * j <= i; j++) {
+            if (i % j == 0)
+                flag = false;
+        }
+        if (flag)
+            res++;
+    }
+    return res;
+}

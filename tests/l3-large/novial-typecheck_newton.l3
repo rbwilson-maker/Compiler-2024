@@ -1,0 +1,7 @@
+//test typecheck
+
+int main() {
+  int approx1 = approx_newton(12, 21, 33);
+  int approx2 = approx_newton(approx1, 23, 13);
+  return approx_newton(approx2, 342, -2);
+}

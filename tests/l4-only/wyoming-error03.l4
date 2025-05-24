@@ -1,0 +1,6 @@
+//test error
+struct foo;
+int main(){
+    void * a = NULL;
+    return 0;
+}

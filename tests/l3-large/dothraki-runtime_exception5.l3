@@ -1,0 +1,14 @@
+//test abort
+
+int boringFun(bool bop) {
+  assert(bop);
+  return 5;
+}
+
+int main() {
+  int x = 444;
+  int y = 0; 
+  bool beep = (x == y);
+
+  return boringFun(beep);
+}

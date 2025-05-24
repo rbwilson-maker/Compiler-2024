@@ -1,0 +1,11 @@
+//test error
+
+struct infinite {
+    struct infinite self;
+    int interesting_stuff;
+}
+
+int main() {
+    struct infinite *black_hole = alloc(struct infinite);
+    return black_hole->interesting_stuff;
+}

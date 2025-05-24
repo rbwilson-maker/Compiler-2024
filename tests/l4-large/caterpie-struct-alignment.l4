@@ -1,0 +1,41 @@
+//test return 0
+// a single linked list that supports insert and member
+struct node {
+  int val;
+  struct node *next;
+};
+
+typedef struct node node_t;
+typedef struct node* node_p;
+
+void insert(node_p node, int val)
+{
+  while(node->next != NULL)
+  {
+    node = node->next;
+  }
+  node_p new_node = alloc(node_t);
+  new_node->val = val;
+  node->next = new_node;
+}
+
+bool member(node_p node, int val)
+{
+  node = node->next;
+  while(node != NULL)
+  {
+    if (node->val == val) return true;
+    node = node->next;
+  }
+  return false;
+}
+
+int main()
+{
+  node_p dummy_head = alloc(node_t);
+  insert(dummy_head, 3);
+  insert(dummy_head, 5);
+  insert(dummy_head, 7);
+  assert(member(dummy_head, 5));
+  return 0;
+}

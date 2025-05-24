@@ -1,0 +1,11 @@
+//test error
+void loopn (int* n) {
+assert (*n > 0);
+loopn(*n-1);
+return;
+}
+
+int main() {
+loopn(NULL);
+return 0;
+}

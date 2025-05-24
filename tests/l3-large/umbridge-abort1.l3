@@ -1,0 +1,14 @@
+//test abort
+
+void abort() {
+    assert(false);
+}
+
+int main() {
+    int x = 256;     // 2^8
+    x <<= 8;         // 2^16
+
+    abort();
+    int y = 1;
+    return x << y;
+}

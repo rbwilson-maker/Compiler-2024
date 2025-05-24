@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+//loop forever
+int main()
+{
+  int i = 999;
+  int j = 999;
+  int sum = 0;
+  while (i == j) {
+    sum = 5;
+  }
+  return i;
+}

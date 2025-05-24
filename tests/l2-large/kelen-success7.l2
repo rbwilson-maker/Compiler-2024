@@ -1,0 +1,16 @@
+//test return 79364098
+
+// Tests simple program
+int main() {
+    int a = 1111100110;
+    int bit = 3;
+    for (; a != 0; a -= a & -a) {
+        bit *= bit;
+        if (bit % 2 == 0) {
+            bit /= 2;
+        } else {
+            bit = (3 * bit + 1) / 2;
+        }
+    }
+    return bit;
+}

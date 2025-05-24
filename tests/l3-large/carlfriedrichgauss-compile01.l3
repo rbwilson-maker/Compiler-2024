@@ -1,0 +1,19 @@
+//test compile
+// Test using 15411 library
+
+// A dummy gradient function
+fpt gradient(fpt x, int seed) {
+    fpt fseed = itof(seed);
+    fpt res = fadd(fmul(fsub(x, fseed), fsub(x, fseed)), fsub(x, fseed));
+    return res;
+}
+
+// A dummy gradient descent process
+int main() {
+    fpt lr = itof(1);  // learning rate
+    fpt x = itof(100);  // initial value
+    for (int i = 0; i < 100; i += 1) {
+        x -= gradient(x, i);
+    }
+    return x;
+}

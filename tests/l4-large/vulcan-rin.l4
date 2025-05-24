@@ -1,0 +1,258 @@
+//test return 0
+struct a0 { int n; };
+struct a1 {
+struct a0 a0;
+};
+struct a2 {
+struct a0 a0;
+struct a1 a1;
+};
+struct a3 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+};
+struct a4 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+};
+struct a5 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+};
+struct a6 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+};
+struct a7 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+};
+struct a8 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+};
+struct a9 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+};
+struct a10 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+struct a9 a9;
+};
+struct a11 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+struct a9 a9;
+struct a10 a10;
+};
+struct a12 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+struct a9 a9;
+struct a10 a10;
+struct a11 a11;
+};
+struct a13 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+struct a9 a9;
+struct a10 a10;
+struct a11 a11;
+struct a12 a12;
+};
+struct a14 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+struct a9 a9;
+struct a10 a10;
+struct a11 a11;
+struct a12 a12;
+struct a13 a13;
+};
+struct a15 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+struct a9 a9;
+struct a10 a10;
+struct a11 a11;
+struct a12 a12;
+struct a13 a13;
+struct a14 a14;
+};
+struct a16 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+struct a9 a9;
+struct a10 a10;
+struct a11 a11;
+struct a12 a12;
+struct a13 a13;
+struct a14 a14;
+struct a15 a15;
+};
+struct a17 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+struct a9 a9;
+struct a10 a10;
+struct a11 a11;
+struct a12 a12;
+struct a13 a13;
+struct a14 a14;
+struct a15 a15;
+struct a16 a16;
+};
+struct a18 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+struct a9 a9;
+struct a10 a10;
+struct a11 a11;
+struct a12 a12;
+struct a13 a13;
+struct a14 a14;
+struct a15 a15;
+struct a16 a16;
+struct a17 a17;
+};
+struct a19 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+struct a9 a9;
+struct a10 a10;
+struct a11 a11;
+struct a12 a12;
+struct a13 a13;
+struct a14 a14;
+struct a15 a15;
+struct a16 a16;
+struct a17 a17;
+struct a18 a18;
+};
+struct a20 {
+struct a0 a0;
+struct a1 a1;
+struct a2 a2;
+struct a3 a3;
+struct a4 a4;
+struct a5 a5;
+struct a6 a6;
+struct a7 a7;
+struct a8 a8;
+struct a9 a9;
+struct a10 a10;
+struct a11 a11;
+struct a12 a12;
+struct a13 a13;
+struct a14 a14;
+struct a15 a15;
+struct a16 a16;
+struct a17 a17;
+struct a18 a18;
+struct a19 a19;
+};
+int main() {
+struct a20 *homura = alloc(struct a20);
+for (int i = 0; i < 50000; i++) {
+homura->a19.a18.a17.a16.a15.a14.a13.a12.a11.a10.a9.a8.a7.a6.a5.a4.a3.a2.a1.a0.n = 0;}
+return 0;
+}

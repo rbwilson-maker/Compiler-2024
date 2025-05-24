@@ -1,0 +1,8 @@
+//test error
+// ill-formed for loop
+int main() {
+  for (int i; i < 5) {
+    return 0;
+  }
+  return 1;
+}

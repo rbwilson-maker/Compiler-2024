@@ -1,0 +1,8 @@
+typedef int squiggle;
+typedef squiggle tigger;
+typedef tigger snigger;
+
+tigger converttigsn(snigger snig);
+tigger converttigsq(squiggle squig);
+snigger convertsq(tigger tig);
+squiggle convertsn(tigger tig);

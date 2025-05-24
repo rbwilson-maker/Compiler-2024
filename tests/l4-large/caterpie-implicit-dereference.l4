@@ -1,0 +1,12 @@
+//test memerror
+// implicitly dereference a NULL pointer
+struct foo {
+  int val;
+};
+
+int main()
+{
+  struct foo *f = NULL;
+  f->val = 1;
+  return 0;
+}

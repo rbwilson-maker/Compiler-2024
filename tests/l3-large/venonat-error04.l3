@@ -1,0 +1,11 @@
+//test error
+// Return value specified in void function.
+
+void no_return(int x) {
+  return 0;
+}
+
+int main() {
+  no_return(0);
+  return 0;
+}

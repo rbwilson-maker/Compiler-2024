@@ -1,0 +1,22 @@
+//test return 1
+
+//test pass by reference
+int*[] add_one(int*[] A, int n) {
+  assert(n > 0);
+  for (int i=0; i<n; i++)
+    (*A[i])++;
+  return A;
+}
+
+int main() {
+  int*[] A = alloc_array(int*, 10);
+  for (int i=0; i<10; i++)
+    A[i] = alloc(int);
+  int*[] B = alloc_array(int*, 10);
+  B = add_one(A, 10);
+  for (int j=0; j<10; j++) {
+    assert(*B[j] == 1);
+    assert(*A[j] == 1);
+  }
+  return 1;
+}

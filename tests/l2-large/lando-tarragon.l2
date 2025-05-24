@@ -1,0 +1,15 @@
+//test return 3524578
+// Code based on Rosetta Code version
+
+int main() {
+  int fnow = 0;
+  int fnext = 1; 
+  int tempf;
+
+  for (int i = 0; i < 32; i++) {
+    tempf = fnow + fnext;
+    fnow = fnext;
+    fnext = tempf;
+  }
+  return fnext;	
+}

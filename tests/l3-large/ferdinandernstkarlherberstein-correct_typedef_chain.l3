@@ -1,0 +1,17 @@
+//test return 15411
+
+typedef int type1;
+typedef bool type2;
+typedef type2 type3;
+typedef type3 type4;
+typedef type1 type5;
+
+int main() {
+    type1 x = 0;
+    type5 y = 1;
+    type2 a = (x ^ y) == 0;
+    type3 b = (x & y) == 0;
+    type4 c = x == y ? a : b;
+    if (c) return 15411;
+    else return 0;
+}

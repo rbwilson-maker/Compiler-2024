@@ -1,0 +1,10 @@
+//test typecheck
+
+int main() {
+    int x;
+    x = f(10);
+
+    if (g(x))
+        return h(g(x));
+    return f(x);
+}

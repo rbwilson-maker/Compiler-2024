@@ -1,0 +1,13 @@
+//test error
+
+struct large {
+  int n;
+};
+
+typedef struct large large;
+
+large function(int x){
+  large* thing = alloc(large);
+  thing->n = x;
+  return *thing;
+}

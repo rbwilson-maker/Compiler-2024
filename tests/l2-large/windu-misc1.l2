@@ -1,0 +1,21 @@
+//test return 4
+
+int main() {
+    int x = 2;
+    int y = 3;
+
+    int accum = 0;
+
+    if (x > 1) {
+        accum += 1;
+    } else {
+        accum += 0;
+    }
+
+    while (y > 0) {
+        y--;
+        accum++;
+    }
+    
+    return accum;
+}

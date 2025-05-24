@@ -1,0 +1,28 @@
+//test return -40212983 
+
+// The tests you write for 15-411 will all go in this directory. The
+// tests we write will all be provided to you through the public course
+// repository in the directory ../../tests.
+
+// The first line in this file means that the testing harness will
+// expect this to be a file that compiles and returns 1.
+
+int main() {
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+    int f;
+    a = 213;
+    b = a + 0xfe;
+    c = a + b -9;
+    d = (a - b) * c / 234;
+    e = a * b * c - d;
+    f = 0xbeef * 0xdead;
+    return f % e;
+
+}
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

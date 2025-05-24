@@ -1,0 +1,19 @@
+//test return 100
+
+int momentum (int m, int v) {
+    return m * v;
+}
+
+int force1 (int momentum, int time) {
+    return momentum / time;
+}
+
+int force2 (int mass, int accel) {
+    return mass * accel;
+}
+
+int main() {
+    int m = momentum(20, 10);
+    return force1(m, 2);
+    return force2(20, 5);
+}

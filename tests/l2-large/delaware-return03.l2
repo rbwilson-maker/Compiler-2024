@@ -1,0 +1,17 @@
+//test return 68
+// I've got an asop for you.
+
+int main() {
+  int a = 14;
+
+  a += 2;
+  a -= 1;
+  a *= 3;
+  a |= 14;
+  a %= 17;
+  a ^= 255;
+  a /= 7;
+  a <<= 3;
+  a >>= 2;
+  return a;
+}

@@ -1,0 +1,17 @@
+//test error
+/*
+Compile error.
+Void is not a value, cannot be a parameter type.
+*/
+
+int c(void r) {
+  return 1;
+}
+
+void j() {
+  return;
+}
+
+int main() {
+  return 3;
+}

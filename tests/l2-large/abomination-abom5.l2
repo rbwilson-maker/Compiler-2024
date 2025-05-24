@@ -1,0 +1,30 @@
+//test return -3
+
+int main() {
+    int a = 5 >> 2;
+    if(a > 3) {
+        a++;
+    }
+    int b = a % 5 + 2;
+    while(a > 0) {
+        a /= b;
+    }
+    bool c = a > (7 + 2);
+    if(c || false) {
+        while(5 > 7) {
+            return a - b;
+        }
+        b *= 6;
+    }
+    c = c && true;
+    a |= b;
+    for(int i = 0; i < 3; i++) {
+        a--;
+    }
+    for(bool i = true; i; i = i && false) {
+        int d = 2;
+        d *= 3;
+        a -= d;
+    }
+    return a + b;
+}

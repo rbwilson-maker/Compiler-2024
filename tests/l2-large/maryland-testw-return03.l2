@@ -1,0 +1,15 @@
+//test return 192
+// if,else
+int main() {
+  int x = 5;
+  if (x == 5)
+    x += 1;
+  else
+    x -= 1;
+  if (x == 6) {
+    x << 5;
+    x <<= 5;
+  }
+  else { }
+  return x;
+}

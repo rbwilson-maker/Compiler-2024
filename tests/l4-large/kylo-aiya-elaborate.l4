@@ -1,0 +1,21 @@
+//test return 880
+
+typedef int the;
+
+int open(int* x){
+  int result = *x;
+  *x += 1;
+  return result;
+}
+
+int main(){
+  the[] list = alloc_array(int, 10);
+  the* box = alloc(int);
+  for(the i=9; i >= 0; i--)
+    list[open(box)] += 88;
+
+  int result = 0;
+  for(int k=0; k < 10; k++)
+    result += list[k];
+  return result;
+}

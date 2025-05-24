@@ -1,0 +1,31 @@
+//test return 0
+// test basic integer operations
+int main()
+{
+  int m = 1;
+  int n = 0;
+  if(m>n){
+    m = n;
+  }
+  else{
+    n = m;
+  }
+
+  int a;
+  a = 1;
+  int b;
+  b = a;
+  int c;
+  c = a+b;
+  int d;
+  d = b-c;
+  int e;
+  e = a*d;
+  int f;
+  f = e/c;
+  int g;
+  g = 5;
+  int h;
+  h = g % c;
+  return 0;
+}

@@ -1,0 +1,16 @@
+//test return 1
+
+// Tests using variable main in other function
+
+int helper(int a){
+    int main = 5;
+    while (main > 0) {
+        a = a * a;
+        main--;
+    }
+    return a;
+}
+
+int main(){
+    return helper(1);
+}

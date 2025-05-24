@@ -1,0 +1,20 @@
+//test error
+//Returning in void
+
+int foo(){
+	int x = 0;
+	for(int i=0;i<10;i++){
+		x++;
+	}
+}
+
+void bar(){
+	int x;
+	x = foo();
+	return 10;
+}
+
+int main(){
+	bar();
+	return foo();
+}

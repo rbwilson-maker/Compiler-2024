@@ -1,0 +1,36 @@
+//test return 15411
+
+int idx(int i, int j, int size) {
+  return i * size + j;
+}
+
+int idxt(int i, int j, int size) {
+  return idx(j,i,size);
+}
+
+int main() {
+  int size = 1600;
+  int[] M = alloc_array(int, size * size);
+
+  int s = 23;
+  for(int i = 0; i < size * size; i++) {
+    M[i] = s;
+    s = (s + 313) % 71;
+  }
+
+  int[] N = alloc_array(int, size * size);
+
+  for(int i = 0; i < size; i++) {
+    for(int j = 0; j < size; j++) {
+      N[idx(i,j,size)] = M[idxt(i,j,size)];
+    }
+  }
+
+  for(int i = 0; i < size; i++) {
+    for(int j = 0; j < size; j++) {
+      assert(N[idx(i,j,size)] == M[idxt(i,j,size)]);
+    }
+  }
+
+  return 15411;
+}

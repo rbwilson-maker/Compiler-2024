@@ -1,0 +1,11 @@
+//test return 1
+
+
+int main()
+{
+  int a;
+  a = 0xFFFFFFFF;
+  a = a + 1;
+  a = a + 1;
+  return a;
+}

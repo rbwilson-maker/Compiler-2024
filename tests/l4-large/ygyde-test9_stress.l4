@@ -1,0 +1,22 @@
+//test return 0
+
+// stress tests memory allocator
+
+void set(int[] arr, int length) {
+    int i;
+    for (i = 0; i < length; i += 1) {
+        arr[i] = 0;
+        assert(arr[i] == 0);
+        arr[i] = arr[i] + 1;
+        assert(arr[i] == 1);
+    }
+}
+
+int main() {
+    int[] foobar = alloc_array(int, 1);
+    int[] foo = alloc_array(int, 5000000);
+    int[] bar = alloc_array(int, 100);
+    set(foobar, 1);
+    set(foo, 5000000);
+    return 0;
+}

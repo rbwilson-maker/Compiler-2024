@@ -1,0 +1,13 @@
+//test error
+
+int bar() {
+  return foo();
+}
+
+void foo() {
+  bar();
+}
+
+int main() {
+  return 0;
+}

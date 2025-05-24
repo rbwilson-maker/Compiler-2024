@@ -1,0 +1,21 @@
+//test return 101010
+
+//convert a positive number from decimal to binary representation
+// 42 --> 101010
+
+int convert_base (int number) {
+    int pos = 1;
+    int bin = 0;
+    while (number > 0) {
+      bin += (number & 0x1)*pos;
+      pos *= 10;
+      number >>= 1;
+    }
+    return bin;
+}
+
+int main () {
+    int n = 42;
+    int rv = convert_base(n);
+    return rv;
+}

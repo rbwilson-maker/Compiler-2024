@@ -1,0 +1,10 @@
+//test error
+typedef int numer;
+
+numer main(){
+    numer x = 0;
+    number y = x;
+    return y;
+}
+
+typedef numer number;

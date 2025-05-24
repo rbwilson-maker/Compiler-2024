@@ -1,0 +1,7 @@
+//test return 4
+int main() {
+    int a = 1;
+    a |= 2+2;
+    a &= 2+2;
+    return a;
+}

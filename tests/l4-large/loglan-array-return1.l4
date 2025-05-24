@@ -1,0 +1,9 @@
+//test return 1
+
+int main() {
+
+  int[] x = alloc_array(int,1);
+  int[] y = alloc_array(int,2);
+  x[0] = 1;
+  return x[0]+y[1];
+}

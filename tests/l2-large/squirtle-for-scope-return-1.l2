@@ -1,0 +1,22 @@
+//test return 2
+
+int main () {
+  int a = 1;
+  int b = 2;
+  
+  int counter = 0;
+  int res;
+  res = 0;
+
+  for (counter = 1; counter < 10; counter += 11) { 
+   if (counter %2 == 0)
+   {
+     int v = a;
+     res = v;    
+   } else {
+     int v = b;
+     res = v;
+   }
+  }
+  return res;
+}

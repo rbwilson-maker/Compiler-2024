@@ -1,0 +1,9 @@
+//test return 2016
+//A test of a simple if statement, taking the else
+int main() {
+    if(1 == 0){
+        return 2015;
+    }else{
+        return 2016;
+    }
+}

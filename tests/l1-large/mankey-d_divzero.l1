@@ -1,0 +1,11 @@
+//test div-by-zero
+// division by 0
+int main()
+{
+  int a = 1;
+  int b = 1 + 2 + 3;
+  b = a + b;
+  b += b;
+  a = 0;
+  return b  /a;
+}

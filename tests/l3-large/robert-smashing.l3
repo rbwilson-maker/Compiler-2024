@@ -1,0 +1,17 @@
+//test typecheck
+
+// No stack smashing in our house
+
+int main() {
+	enable_canary();
+
+	ptr buffer = 0;
+	int amt = read(buffer);
+
+	ptr buffer_2 = 0;
+	int amt_2 = read(buffer); 
+
+	check_canary();
+
+	return 0;
+}

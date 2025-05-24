@@ -1,0 +1,10 @@
+//test return 755
+// What the... why does the C compiler gives 243?
+
+int main() {
+    int i = 10;
+    int sum = 2 * i + 1;
+    for (i = 1; i < 10; i += 2)
+        sum += sum + i;
+    return sum;
+}

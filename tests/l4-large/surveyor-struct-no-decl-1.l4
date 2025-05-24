@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+  struct heh* hmm = NULL;
+  hmm->x = 3;
+  return 123;
+}

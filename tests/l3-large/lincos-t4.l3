@@ -1,0 +1,122 @@
+//test return 69
+// test bool assignment and test
+
+int quack(int num) {
+  if (num == 1) return 69;
+  return quack(num+1);
+}
+
+int main() {
+  int zz = quack(1); // does not loop forever
+	bool e = true;
+	bool b = false;
+	bool c = e || b; // true
+	bool d = e && b; // false
+  int a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+  a = 1;
+
+
+	int res = 0;
+	if (e) res++;
+	if (b) res++;
+	if (c) res++;
+	if ((d)) res++;
+	return zz;
+}

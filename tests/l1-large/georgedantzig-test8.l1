@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int main(){
+    int x;
+    int y;
+
+    x = 500+750+430;
+    y = x-2502;
+    x+=y;
+    x/=(x-2*y-2502);
+
+    return x;
+}
+

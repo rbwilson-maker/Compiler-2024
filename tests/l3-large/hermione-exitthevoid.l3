@@ -1,0 +1,15 @@
+//test error
+
+void f() {
+  return;
+}
+
+void g() {
+  return;
+}
+
+int main () {
+  bool z = false;
+  z ? g() : f();
+  return 1;
+}

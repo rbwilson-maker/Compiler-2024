@@ -1,0 +1,13 @@
+//test abort
+
+int main () {
+    int i = 1000000;
+    while(true) {
+    	i++;
+	if (i < -1) {
+	   assert(false);
+	}
+    }
+    return i;
+}
+    

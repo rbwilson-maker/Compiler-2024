@@ -1,0 +1,24 @@
+//test div-by-zero
+int main() {
+    int o = 0;
+    int h = 13;
+    int p = 716;
+    int z = 756;
+    int e = 1088;
+    int y = 4095;
+    int v = 5832;
+    int n = 301;
+    int s = 2424;
+    int m = 4401;
+    int d = 4830;
+    int i = 7755;
+    int f = 3552;
+    int l = 5291;
+    int t = 280;
+    int b = 10020;
+    int k = 9696;
+    int j = 4624;
+    int c = 15102;
+    int a = 10982;
+    return 256 / (h * p * z * e * y * v * n * s * m * d * i * f * l * t * b * k * j * c * a * o);
+}

@@ -1,0 +1,16 @@
+//test error
+// Main method calls helper, which is not guaranteed to return
+
+bool helper(int x) {
+    bool flag = false;
+    for (int i = 1; i < x; i++) {
+        if (x % i == 3) {
+            flag = true;
+            return flag;
+        }
+    }
+}
+
+int main() {
+    return helper(3);
+}

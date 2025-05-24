@@ -1,0 +1,12 @@
+//test error
+// Expressions used as statements must have small type
+
+struct a {};
+
+int main() {
+    struct a[] A = alloc_array(struct a, 10);
+    for (int i = 0; i < 10; i++) {
+        A[i];
+    }
+    return 0;
+}

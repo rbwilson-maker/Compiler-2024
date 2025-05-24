@@ -1,0 +1,17 @@
+//test return 2
+// Elaborate A[f(x)]++ correctly!
+
+int f(int* a) {
+    (*a) += 3;
+    return 0;
+}
+
+int main() {
+    int* a = alloc(int);
+    int[] b = alloc_array(int, 1);
+    int count = 0;
+    for(*a = 5; *a < 9; b[f(a)]++) {
+        count++;
+    }
+    return count;
+}

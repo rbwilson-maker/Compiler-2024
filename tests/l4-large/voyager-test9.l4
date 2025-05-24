@@ -1,0 +1,26 @@
+//test return 0
+
+typedef int p1;
+typedef int p2;
+
+void foo() {
+    
+}
+
+struct z {
+    int p1;
+};
+
+struct y {
+    struct z p2;
+};
+
+struct x {
+    struct y foo;
+    bool p;
+};
+
+int main() {
+    struct x *val = alloc(struct x);
+    return val->foo.p2.p1;
+}

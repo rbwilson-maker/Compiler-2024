@@ -1,0 +1,9 @@
+//test error
+
+struct foo {};
+
+int main() {
+    // cannot have direct struct variables, only pointers
+    struct foo a;
+    return 0;
+}

@@ -1,0 +1,19 @@
+//test return 5050
+
+int count(int[] a, int count) {
+  int sum = 0;
+  for (int i = 0; i < count; i++) {
+    sum += a[i];
+  }
+  return sum;
+}
+
+int main() {
+  int[] a = alloc_array(int, 100);
+  for (int i = 0; i < 100; i++) {
+    a[i] = i + 1;
+  }
+  int sum = count(a, 100);
+  return sum;
+}
+

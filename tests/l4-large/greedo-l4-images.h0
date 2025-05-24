@@ -1,0 +1,7 @@
+typedef int pixel;
+int get_red(pixel p);
+int get_green(pixel p);
+int get_blue(pixel p);
+pixel make_pixel(int a, int r, int g, int b);
+int get_index(int y, int x, int width, int height);
+bool is_valid_pixel(int y, int x, int width, int height);

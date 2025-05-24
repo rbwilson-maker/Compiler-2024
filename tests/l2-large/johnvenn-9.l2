@@ -1,0 +1,8 @@
+//test return 3
+
+int main() {
+  int x = 0;
+  int y = 3;
+  bool b = false;
+  return b ? x : y;
+}

@@ -1,0 +1,19 @@
+//test return 0
+
+// tests make sure functions do not mutate arguments
+
+void f(int a, int b) {
+	a = 1;
+	b = 2;
+}
+
+int main() {
+	int x = 0;
+	int y = 0;
+
+	f(x, y);
+
+	assert(x == 0 && y == 0);
+
+	return 0;
+}

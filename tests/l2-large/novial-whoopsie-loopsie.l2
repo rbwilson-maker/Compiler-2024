@@ -1,0 +1,14 @@
+//test return 47748
+// test incorrect constant propagation
+
+int main() {
+  bool k = true;
+
+  k = !k;
+
+  if (k) {
+    while(k){}
+  }
+
+  return 47748;
+}

@@ -1,0 +1,91 @@
+//test return 0
+
+bool stack_smasher() {
+    int a01 = 0;
+    int a02 = 0;
+    int a03 = 0;
+    int a04 = 0;
+    int a05 = 0;
+    int a06 = 0;
+    int a07 = 0;
+    int a08 = 0;
+    int a09 = 0;
+    int a10 = 0;
+    int a11 = 0;
+    int a12 = 0;
+    int a13 = 0;
+    int a14 = 0;
+    int a15 = 0;
+    int a16 = 0;
+
+    // Constant propogation won't save you now! :P
+    for(int i = 0; i < 100; i++) {
+        a01 += i;
+        a02 += i;
+        a03 += i;
+        a04 += i;
+        a05 += i;
+        a06 += i;
+        a07 += i;
+        a08 += i;
+        a09 += i;
+        a10 += i;
+        a11 += i;
+        a12 += i;
+        a13 += i;
+        a14 += i;
+        a15 += i;
+        a16 += i;
+    }
+
+    return ((a01 / a02) + (a03 / a04)) % 2 == 0 ? false : true;
+}
+
+int short_term_memory() {
+    int a01 = 15411;
+    int a02 = 15412;
+    int a03 = 15413;
+    int a04 = 15414;
+    int a05 = 15415;
+    int a06 = 15416;
+    int a07 = 15417;
+    int a08 = 15418;
+    int a09 = 15419;
+    int a10 = 15420;
+    int a11 = 15421;
+    int a12 = 15422;
+    int a13 = 15423;
+    int a14 = 15424;
+    int a15 = 15425;
+    int a16 = 15426;
+
+    bool b = stack_smasher();
+
+    assert(a01 == 15411);
+    assert(a02 == 15412);
+    assert(a03 == 15413);
+    assert(a04 == 15414);
+    assert(a05 == 15415);
+    assert(a06 == 15416);
+    assert(a07 == 15417);
+    assert(a08 == 15418);
+    assert(a09 == 15419);
+    assert(a10 == 15420);
+    assert(a11 == 15421);
+    assert(a12 == 15422);
+    assert(a13 == 15423);
+    assert(a14 == 15424);
+    assert(a15 == 15425);
+    assert(a16 == 15426);
+
+    return b ? 0 : 0 + a01;
+}
+
+
+int main () {
+    for(int i = 0; i < 20; i++) {
+        assert(short_term_memory() == 15411);
+    }
+
+    return 0;
+}

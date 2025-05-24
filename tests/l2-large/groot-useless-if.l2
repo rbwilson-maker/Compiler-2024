@@ -1,0 +1,12 @@
+//test error
+
+int main() {
+  bool b = true;
+
+  if (b) bool c;
+  else bool d;
+
+  c = d;
+
+  return 0;
+}

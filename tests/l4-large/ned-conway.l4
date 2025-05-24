@@ -1,0 +1,132 @@
+//test typecheck
+
+//Conway's game of life
+//Tests a period 1 pattern and a period 2 pattern
+
+//I've tested the code, and it runs and returns 0
+//Ideally the directive would be //test return 0
+
+conway_board copy_board(conway_board oldboard, int boardsize) {
+	conway_board board = alloc_array(bool[], boardsize);
+  
+	for(int i = 0; i < boardsize; i++) {
+		board[i] = alloc_array(bool, boardsize);
+		
+		for(int j = 0; j < boardsize; j++) {
+			board[i][j] = oldboard[i][j];
+		}
+	}
+	
+	return board;
+}
+
+int boundPositive(int x) {
+	if (x < 0) {
+		return 0;
+	}
+	return x;
+}
+
+bool should_live(conway_board board, int boardsize, int x, int y) {
+	int count = 0;
+	for(int i = boundPositive(x - 1); i <= x + 1 && i < boardsize; i++) {
+		for(int j = boundPositive(y - 1); j <= y + 1 && j < boardsize; j++) {
+			if (!(i == x && j == y) && (board[i][j])) {
+				count += 1;
+			}
+		}
+	}
+	
+	if (board[x][y]) {
+		return (count == 2 || count == 3);
+	} else {
+		return count == 3;
+	}
+}
+
+// void printBoard(conway_board board, int boardsize) {
+// 	for(int i = 0; i < boardsize; i++) {
+// 		for(int j = 0; j < boardsize; j++) {
+// 			if (board[i][j]) {
+// 				print("X");
+// 			} else {
+// 				print(".");
+// 			}
+// 		}
+// 		print("\n");
+// 	}
+// }
+
+int main() {
+	int boardsize = 10;
+	conway_board board = alloc_array(bool[], boardsize);
+
+	for(int i = 0; i < boardsize; i++) {
+		board[i] = alloc_array(bool, boardsize);
+	}
+	
+	//tub
+	board[4][4] = true;
+	board[5][5] = true;
+	board[5][3] = true;
+	board[6][4] = true;
+	
+	conway_board altBoard = copy_board(board, boardsize);
+	
+	
+	//one iteration
+	for(int i = 0; i < boardsize; i++) {
+		for(int j = 0; j < boardsize; j++) {
+			altBoard[i][j] = should_live(board, boardsize, i, j);
+		}
+	}
+	
+	//should be the same
+	for(int i = 0; i < boardsize; i++) {
+		for(int j = 0; j < boardsize; j++) {
+			assert(altBoard[i][j] == board[i][j]);
+		}
+	}
+	
+	//blinker
+	board[4][4] = false;
+	board[5][5] = true;
+	board[5][4] = true;
+	board[5][3] = true;
+	board[6][4] = false;
+	
+	//one iteration
+	for(int i = 0; i < boardsize; i++) {
+		for(int j = 0; j < boardsize; j++) {
+			altBoard[i][j] = should_live(board, boardsize, i, j);
+		}
+	}
+	
+	assert(altBoard[5][5] == false);
+	assert(altBoard[5][4] == true);
+	assert(altBoard[5][3] == false);
+	assert(altBoard[6][4] == true);
+	assert(altBoard[4][4] == true);
+	
+	//two iteration
+	conway_board altaltboard = copy_board(altBoard, boardsize);
+	for(int i = 0; i < boardsize; i++) {
+		for(int j = 0; j < boardsize; j++) {
+			altaltboard[i][j] = should_live(altBoard, boardsize, i, j);
+		}
+	}
+	
+	//should be the same as start
+	for(int i = 0; i < boardsize; i++) {
+		for(int j = 0; j < boardsize; j++) {
+			assert(altaltboard[i][j] == board[i][j]);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	return 0;
+}

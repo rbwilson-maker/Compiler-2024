@@ -1,0 +1,11 @@
+//test error
+
+struct clash {
+    int continue;
+};
+
+int main() {
+    clash = alloc(struct clash);
+
+    return 1;
+}

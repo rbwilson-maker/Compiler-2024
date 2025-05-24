@@ -1,0 +1,17 @@
+//test return 3
+
+
+
+
+int main(){
+    int* a1 = alloc(int);
+    int* a2 = alloc(int);
+    *a1 = 1;
+    *a2 = 2;
+    return *a1 + *a2;
+}
+
+
+
+
+

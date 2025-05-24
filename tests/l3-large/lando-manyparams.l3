@@ -1,0 +1,24 @@
+//test return 59
+
+typedef int a;
+typedef a c;
+typedef c e;
+typedef e g;
+typedef g i;
+typedef i k;
+typedef k m;
+typedef m o;
+typedef o q;
+typedef q s;
+typedef s u;
+typedef u w;
+typedef w y;
+
+a b(c d, e f, g h, i j, k l, m n, o p, q r, s t, u v, w x, y z,
+    a rg,u ment,s are,q uit,e fun,w hen,y ou,c an,m ak,e word,s out,o fth,e mr,i ght) {
+    return d+are + l+ou+d + fun+d;
+}
+
+int main() {
+    return b(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26);
+}

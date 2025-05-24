@@ -1,0 +1,9 @@
+//test error
+
+// Tests error when variable is used but not initialized
+
+int main() {
+    int i;
+    int j = i - 1;
+    return 0;
+}

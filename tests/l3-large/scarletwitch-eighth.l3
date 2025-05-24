@@ -1,0 +1,17 @@
+//test typecheck
+
+int main()
+{
+  int z;
+  int y;
+  y = 1;
+  z = 2;
+  int result = one(z);
+  if(result == 1)
+    return result;
+  result = magic();
+  if(result > 0)
+    return result;
+  useless();
+  return 0;
+}

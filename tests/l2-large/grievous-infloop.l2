@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+
+// checking simple math.
+int main() {
+  // This is a comment for testing
+  int x = 1;
+  int y = x + 1;
+  // another comment
+  int z = (x + y) % y;
+  while(true){
+    z = z + 1;
+  }
+  return z; 
+}

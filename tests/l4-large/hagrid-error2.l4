@@ -1,0 +1,23 @@
+//test error
+
+
+struct y {
+  struct a *;
+  int x;
+  int y;
+  int * a;
+};
+
+struct x {
+  int x;
+  struct *y;
+};
+
+int main(){
+  struct x* X = alloc(struct x);
+  x->x = 2;
+  //y is a Null pointer
+  x->y->x = 2;
+  return 2;
+
+}

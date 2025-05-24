@@ -1,0 +1,14 @@
+//test return 42
+//array allocations of 0 still get a unique pointer
+
+int main(){
+
+    int[] xs = alloc_array(int,0);
+
+    for(int i=0;i<1000;i++){
+        int[] ys = alloc_array(int,0);
+        if(xs == ys){ return -1;}
+    }
+
+    return 42;
+}

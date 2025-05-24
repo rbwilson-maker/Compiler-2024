@@ -1,0 +1,13 @@
+//test error
+//178
+
+struct pikachu{
+  int* pikapika;
+};
+
+int main(){
+  int* pikapika = alloc_array(int, 25);
+  struct pikachu pikachu = alloc(struct pikachu); //this line is OKAY
+  pikachu->pikapika = pikapika; //this line is not
+  return pikachu->pikapika[-1];
+}

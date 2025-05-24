@@ -1,0 +1,20 @@
+//test return 0
+// mutual recursion
+int bar(int x, int lim);
+int foo(int x, int lim){
+    if (x < lim){
+        bar(x + 1, lim);
+    }
+    return x;
+}
+
+int bar(int x, int lim){
+    if (x < lim){
+        foo(x + 1, lim);
+    }
+    return x;
+}
+
+int main(){
+    return foo(0, 10000);
+}

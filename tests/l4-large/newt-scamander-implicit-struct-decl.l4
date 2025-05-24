@@ -1,0 +1,13 @@
+//test return 0
+
+struct s0;
+struct s1;
+
+typedef struct s1 empty;
+
+int main() {
+	struct s0 * a;
+	empty * c;
+	return 0;
+}
+

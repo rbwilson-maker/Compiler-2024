@@ -1,0 +1,85 @@
+//test return 5
+
+typedef struct list_node * dll;
+typedef struct list_start * list;
+
+struct list_node {
+  int data;
+  dll next;
+  dll prev;
+};
+
+struct list_start {
+  dll start;
+  dll end;
+};
+
+list las(list mylist) {
+  if (mylist->start == NULL)
+    return mylist;
+  dll current_node = mylist->start;
+  int current_val = current_node->data;
+  int current_count = 0;
+  list newlist = alloc(struct list_start);
+  while (current_node != NULL) {
+    if (current_node->data == current_val) {
+      current_count++;
+      current_node = current_node->next;
+    }
+    else {
+      dll newNode1 = alloc(struct list_node);
+      newNode1->data = current_count;
+      dll newNode2 = alloc(struct list_node);
+      newNode2->data = current_val;
+      newNode1->next = newNode2;
+      newNode2->prev = newNode1;
+      current_count = 0;
+      current_val = (current_node->next == NULL) ? current_val : current_node->next->data;
+      if (newlist->start == NULL) {
+        newlist->start = newNode1;
+        newlist->end = newNode2;
+      }
+      else {
+        newlist->end->next = newNode1;
+        newlist->end = newNode2;
+      }
+      current_node = current_node->next;
+    }
+  }
+  dll newNode1 = alloc(struct list_node);
+  newNode1->data = current_count;
+  dll newNode2 = alloc(struct list_node);
+  newNode2->data = current_val;
+  newNode1->next = newNode2;
+  newNode2->prev = newNode1;
+  if (newlist->start == NULL) {
+    newlist->start = newNode1;
+    newlist->end = newNode2;
+  }
+  else {
+    newlist->end->next = newNode1;
+    newlist->end = newNode2;
+  }
+  return newlist;
+}
+
+
+int main() {
+  dll start = alloc(struct list_node);
+  start->next = NULL;
+  start->prev = NULL;
+  start->data = 1;
+  list mylist = alloc(struct list_start);
+  mylist->start = start;
+  mylist->end = start;
+  for(int i = 0; i < 400; i++) {
+    mylist = las(mylist);
+  }
+  dll node = mylist->start;
+  int sum = 0;
+  while (node != NULL) {
+    sum += node->data;
+    node = node->next;
+  }
+  return sum;
+}

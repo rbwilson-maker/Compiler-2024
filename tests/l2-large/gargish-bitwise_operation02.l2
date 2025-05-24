@@ -1,0 +1,9 @@
+//test return 1
+
+int main() {
+    int a = 0x81;    
+    int b = 0x80;
+    int c = a | b;  // c = 0x81
+    int d = c ^ b;  // d = 1
+    return d;
+}

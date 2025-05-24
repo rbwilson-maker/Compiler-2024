@@ -1,0 +1,45 @@
+//test return 123456789
+
+void swap(int* a, int* b) {
+  if (*a == *b)
+    return;
+  *a += *b;
+  *b = *a - *b;
+  *a -= *b;
+}
+
+void bubble_sort(int*[] list, int size) {
+  for (int i = 0; i < size; i++) {
+    for (int j = 0; j < size - 1; j++) {
+      if (*list[j] > *list[j+1]) {
+        swap(list[j], list[j+1]);
+      }
+    }
+  }
+}
+
+int squish(int[] list, int size) {
+  int result = 0;
+  for (int i = 0; i < size; i++) {
+    result *= 10;
+    assert(list[i] < 10);
+    assert(list[i] >= 0);
+    result += list[i];
+  }
+  return result;
+}
+
+int main() {
+  int size = 10;
+  int*[] list = alloc_array(int*, size);
+  for (int i = 0; i < size; i++) {
+    list[i] = alloc(int);
+    *list[i] = (size - i) - 1;
+  }
+  bubble_sort(list, size);
+  int[] sorted_list = alloc_array(int, size);
+  for (int i = 0; i < size; i++) {
+    sorted_list[i] = *list[i];
+  }
+  return squish(sorted_list, size);
+}

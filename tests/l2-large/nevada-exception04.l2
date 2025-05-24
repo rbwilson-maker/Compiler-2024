@@ -1,0 +1,17 @@
+//test div-by-zero
+// mod overflow in loop
+
+int main ()
+{
+  int n;
+  int x = -2147483648;
+  int r = 0;
+
+  for (n = 5; n >= -5; n--) {
+    if (n < 0) r = x % n;
+    else if (n > 0) r = x / n;
+    else r = 0;
+  }
+
+  return r;
+}

@@ -1,0 +1,9 @@
+//test div-by-zero
+//check division by zero in conditional
+int main() {
+    int y = 2;
+    if (-2 < y / 0) {
+        y = y + 1;
+    }
+    return y;
+}

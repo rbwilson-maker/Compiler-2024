@@ -1,0 +1,12 @@
+//test return 2
+
+// Ensures that the compiler adds interference with declared (even unused) variables
+// and subsequently used variables
+
+// Here, even though y is never live, it can't go in the same register as x.
+
+int main() {
+    int x = 2;
+    int y = 3;
+    return x;
+}

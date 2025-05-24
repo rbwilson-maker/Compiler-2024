@@ -1,0 +1,26 @@
+//test typecheck
+//test infloop
+
+/* creates a recursive struct definition that references itself,
+   traverses forever */
+
+struct loop {
+    int i;
+    struct loop *next;
+};
+
+void traverse(struct loop* l) {
+    struct loop* cur = l;
+    while(cur != NULL) {
+        assert(l->i == 0);
+        cur = cur->next;
+    }
+}
+
+int main() {
+    struct loop* l = alloc(struct loop);
+    l->i = 0;
+    l->next = l;
+    traverse(l);
+    return 0;
+}

@@ -1,0 +1,31 @@
+//test return 396
+
+void scan(int[] xs, int n) {
+  for (int i = 1; i < n; i++) {
+    xs[i] += xs[i - 1];
+  }
+}
+
+int sum(int[] xs, int n) {
+  int result = 0;
+
+  for (int i = 0; i < n; i++) {
+    result += xs[i];
+  }
+
+  return result;
+}
+
+int main() {
+  int n = 5;
+  int[] xs = alloc_array(int, n);
+
+  xs[0] = 42;
+  xs[1] = 18;
+  xs[2] = 17;
+  xs[3] = 21;
+  xs[4] = 21;
+
+  scan(xs, n);
+  return sum(xs, n);
+}

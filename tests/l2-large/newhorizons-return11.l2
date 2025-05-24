@@ -1,0 +1,14 @@
+//test return 2012
+// ternary, bool, while 
+int main()
+{
+    int x = 0;
+    bool y = false;
+    while (x < 5)
+    {
+        y = !y;
+        x++;
+    }
+    int a = y ? 2012 : 2;
+    return a;
+}

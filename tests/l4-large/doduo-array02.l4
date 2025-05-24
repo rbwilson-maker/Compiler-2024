@@ -1,0 +1,11 @@
+//test return 1
+struct numbers {
+  int[] array;
+};
+
+int main() {
+  struct numbers* number = alloc(struct numbers);
+  number->array = alloc_array(int, 5);
+  number->array[3] = 1;
+  return number->array[3];
+}

@@ -1,0 +1,11 @@
+//test error
+
+int main()
+{
+    int i = 9+79;
+    int j = 0xffff*i;
+    int k= 0x11111111 & j;
+    i= (j*k)(k +k);
+
+    return j-i;
+}

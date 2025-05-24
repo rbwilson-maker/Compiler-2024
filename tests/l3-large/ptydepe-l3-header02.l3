@@ -1,0 +1,9 @@
+//test typecheck
+// simple header test
+
+int main () {
+    int i = 15411;
+    i = doSomething(i);
+
+    return i;
+}

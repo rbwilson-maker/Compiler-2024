@@ -1,0 +1,14 @@
+//test error
+// program must fail to compile due to an L3 source error
+
+int f(int* x){
+  return 2;
+}
+
+int main() {
+  return f(NULL);
+}
+
+int f(bool* x) {
+  return 2;
+}

@@ -1,0 +1,9 @@
+//test error
+// nested multi-line comment
+
+int main() {
+  /*            
+  pass; // /*
+  */
+  return 0;
+}

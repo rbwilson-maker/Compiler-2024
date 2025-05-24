@@ -1,0 +1,13 @@
+//test return 11
+// while/if binds to one statement only
+int main() {
+    int x = 5;
+    int y = 0;
+    
+    // not infinite loop!
+    while (y < x)
+        y++;
+        x++;
+
+    return x + y;
+}

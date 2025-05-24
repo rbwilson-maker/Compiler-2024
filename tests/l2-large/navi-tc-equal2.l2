@@ -1,0 +1,11 @@
+//test return 1 
+int main() {
+	int a = 0;
+	int b = 1;
+	bool c = a != 1;
+	bool d = b <= 0;
+	while(d == c && a == b) {
+		b++;
+	}
+	return (a + b);
+}

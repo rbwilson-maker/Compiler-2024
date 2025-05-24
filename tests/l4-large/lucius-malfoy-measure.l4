@@ -1,0 +1,79 @@
+//test return 1
+
+struct c { };
+struct b { struct c c; };
+struct a { struct b b; };
+
+struct size08_1 { int  a; int  b; };
+struct size08_2 { bool a; bool b; };
+struct size08_3 { int* a;         };
+
+struct size12_1 { int  a; int  b; int  c; };
+struct size12_2 { bool a; bool b; bool c; };
+
+struct size16_1 { int  a; int  b; int* c;         };
+struct size16_2 { int  a; int* b;                 };
+struct size16_3 { int* a; int  b;                 };
+struct size16_4 { int* a; int* b;                 };
+struct size16_5 { int  a; int  b; int  c; int  d; };
+struct size16_6 { bool a; bool b; bool c; bool d; };
+
+struct size20_1 { int  a; int  b; int  c; int  d; int  e; };
+
+struct size24_1 { int* a; int  b; int  c; int  d; int  e; };
+struct size24_2 { int  a; int* b; int  c; int  d;         };
+
+struct size28_1 { int  a; int  b; int  c; int  d; int  e; int  f; int  g; };
+
+struct size32_1 { int* a; int  b; int  c; int  d; int  e; int  f; int  g; };
+struct size32_2 { int  a; int* b; int  c; int  d; int  e;                 };
+
+int main() {
+    //89478484
+    int MAX_SIZE00_ELTS = 0x7FFFFFFF;
+    int MAX_SIZE08_ELTS = 0x07FFFFFF;
+    int MAX_SIZE12_ELTS = 0x05555554;
+    int MAX_SIZE16_ELTS = 0x03FFFFFF;
+    int MAX_SIZE20_ELTS = 0x03333332;
+    int MAX_SIZE24_ELTS = 0x02AAAAAA;
+    int MAX_SIZE28_ELTS = 0x02492492;
+    int MAX_SIZE32_ELTS = 0x01FFFFFF;
+
+    // Note: These checks only ensure that structs are *no larger than* the
+    // expected size. They could be smaller.
+
+    alloc_array(struct c, MAX_SIZE00_ELTS);
+    alloc_array(struct b, MAX_SIZE00_ELTS);
+    alloc_array(struct a, MAX_SIZE00_ELTS);
+
+    alloc_array(struct size08_1, MAX_SIZE08_ELTS);
+    alloc_array(struct size08_2, MAX_SIZE08_ELTS);
+    alloc_array(struct size08_3, MAX_SIZE08_ELTS);
+
+    alloc_array(struct size12_1, MAX_SIZE12_ELTS);
+    alloc_array(struct size12_2, MAX_SIZE12_ELTS);
+
+    alloc_array(struct size16_1, MAX_SIZE16_ELTS);
+    alloc_array(struct size16_2, MAX_SIZE16_ELTS);
+    alloc_array(struct size16_3, MAX_SIZE16_ELTS);
+    alloc_array(struct size16_4, MAX_SIZE16_ELTS);
+    alloc_array(struct size16_5, MAX_SIZE16_ELTS);
+    alloc_array(struct size16_6, MAX_SIZE16_ELTS);
+
+    alloc_array(struct size20_1, MAX_SIZE20_ELTS);
+
+    alloc_array(struct size24_1, MAX_SIZE24_ELTS);
+    alloc_array(struct size24_2, MAX_SIZE24_ELTS);
+
+    alloc_array(struct size28_1, MAX_SIZE28_ELTS);
+
+    alloc_array(struct size32_1, MAX_SIZE32_ELTS);
+    alloc_array(struct size32_2, MAX_SIZE32_ELTS);
+
+    assert(MAX_SIZE00_ELTS == 0x7FFFFFFF);
+    assert(MAX_SIZE08_ELTS == 0x07FFFFFF);
+    assert(MAX_SIZE12_ELTS == 0x05555554);
+    assert(MAX_SIZE16_ELTS == 0x03FFFFFF);
+
+    return 1;
+}

@@ -1,0 +1,14 @@
+//test return 241
+
+int main() {
+  int x = 0;
+
+  x += 11;
+  x -= 1;
+  x *= 3;
+  x %= 9;
+  x <<= 5;
+  x |= 0xf1;
+
+  return x;
+}

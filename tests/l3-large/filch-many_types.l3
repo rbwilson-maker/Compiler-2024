@@ -1,0 +1,25 @@
+//test return 2
+
+typedef bool fun;
+typedef int even_more_fun;
+typedef even_more_fun even_even_more_fun;
+typedef fun funner;
+typedef funner funniest;
+typedef funniest the_funnest;
+
+the_funnest is_even(int x)
+{
+  return (x % 2 == 0);
+}
+
+int main()
+{
+  bool even = is_even(2); // true
+
+  even_even_more_fun sum = 1;
+
+  if (even) sum += 1;
+  
+  return sum;
+
+}

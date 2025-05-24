@@ -1,0 +1,11 @@
+//test typecheck
+
+int main() {
+  for (int i = 0; i < 150201; i++) {
+    srand(128048201);
+    assert(genrand() > 0);
+    rrand();
+  }
+
+  return 0;
+}

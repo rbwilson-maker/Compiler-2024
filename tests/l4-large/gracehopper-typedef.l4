@@ -1,0 +1,12 @@
+//test typecheck
+
+foo* test() {
+    foo* t = alloc(int);
+    return t;
+}
+
+int main() {
+    foo* blah = test();
+    foo x = 3;
+    return x * 3;
+}

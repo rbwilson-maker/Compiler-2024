@@ -1,0 +1,19 @@
+//test return 10
+// Check for multiple typedefs which all should evaluate
+// to the same type
+
+
+typedef int hello1;
+typedef hello1 hello2;
+typedef hello2 hello3;
+typedef hello3 hello4;
+
+int main() {
+    int a = 0;
+    hello1 b = 1;
+    hello2 c = 2;
+    hello3 d = 3;
+    hello4 e = 4;
+
+    return a + b + c + d + e;
+}

@@ -1,0 +1,24 @@
+//test div-by-zero
+// use correct evaluation order
+
+bool raiseArithmeticException();
+bool raiseAssertException();
+int combinerFn(bool arg1, bool arg2);
+
+int main() {
+  return combinerFn(raiseArithmeticException(), raiseAssertException());
+}
+
+bool raiseArithmeticException() {
+	int x = 1 / 0;
+	return true;
+}
+
+bool raiseAssertException() {
+	assert(false);
+	return true;
+}
+
+int combinerFn(bool arg1, bool arg2) {
+	return (arg1 && arg2) ? 5 : 4;
+}

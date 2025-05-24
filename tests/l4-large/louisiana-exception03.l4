@@ -1,0 +1,39 @@
+//test memerror
+//exception03.l4
+
+struct ll
+{
+	int data;
+	struct ll* next;
+};
+
+struct ll* add_node(struct ll* node, int value)
+{
+	struct ll* new_node = alloc(struct ll);
+	new_node->next = node;
+	new_node->data = value;
+	return new_node;
+}
+
+int get_nth_value(struct ll* node, int n)
+{
+	if (n == 0)
+	{
+		return node->data; //dat no bound check
+	}
+	return get_nth_value(node->next, n-1);
+}
+
+int main()
+{
+	int num_structs = 123;
+
+	struct ll* current_node = alloc(struct ll);
+	for (int i = 0; i < num_structs; i++)
+	{
+		struct ll* next_node = add_node(current_node, i);
+        current_node = next_node;
+	}
+
+	return get_nth_value(current_node, 1234); //too far
+}

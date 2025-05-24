@@ -1,0 +1,12 @@
+//test return 1
+int inc(int* c) {
+	(*c)++;
+	return *c;
+}
+
+int main() {
+	int[] arr = alloc_array(int, 4);
+	int* c = alloc(int);
+	arr[inc(c)]++;
+	return arr[*c];
+}

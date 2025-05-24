@@ -1,0 +1,11 @@
+//test return 720
+
+int main () {
+    int x = 1;
+    int y = 1;
+    while (y < 6) {
+        y++;
+        x = x * y;
+    }
+    return x;
+}

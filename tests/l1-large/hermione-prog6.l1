@@ -1,0 +1,10 @@
+//test return 7
+
+int main () {
+    int x = 20;
+    int y;
+    y = 8;
+    int z = x + y;
+    z = z / 4;
+    return z;
+}

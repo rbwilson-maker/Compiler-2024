@@ -1,0 +1,10 @@
+//test memerror
+/* runtime null dereference */
+
+int *f () {
+  return NULL;
+}
+
+int main () {
+  return *(f ());
+}

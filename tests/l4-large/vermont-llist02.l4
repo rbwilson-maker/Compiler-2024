@@ -1,0 +1,25 @@
+//test memerror
+
+struct list_node {
+  int data;
+  struct list_node* next;
+};
+
+int main() {
+  struct list_node* head = alloc(struct list_node);
+  int i = 0;
+  struct list_node* p = head;
+  while (i < 6) {
+    p->data = i;
+    p->next = alloc(struct list_node);
+    p = p->next;
+    i += 1;
+  }
+  p = head;
+  int len = 0;
+  while (p != NULL) {
+    p = p->next->next;
+    len += 1;
+  }
+  return len;
+}

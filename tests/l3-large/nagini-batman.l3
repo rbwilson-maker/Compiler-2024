@@ -1,0 +1,15 @@
+//test return 0;
+
+void na() {
+  fpt one = 0x3f800000;
+  fpt zero = 0x00000000;
+  fpt inf = fdiv(one, zero);
+  fpt nan = fsub(inf, inf);
+  print_fpt(nan);
+}
+
+int main() {
+  for (int i = 0; i < 16; i++)
+    na();
+  return 0;
+}

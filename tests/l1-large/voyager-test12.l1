@@ -1,0 +1,10 @@
+//test return 98990
+
+// test negative mudule
+
+int main() {
+    int a = (-17) % 4;    // -1
+    int b = (-17) % (-4); // -1
+    int c = 17 % (-4);    // 1
+    return a * 10 + b * 1000 + c * 100000;
+}

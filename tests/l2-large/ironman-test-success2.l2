@@ -1,0 +1,11 @@
+//test return 0
+
+int main() {
+    int x = 1;
+    int y = 0;
+    while (false && x > 0 && true){
+        x--;
+        y++;
+    }
+    return 0;
+}

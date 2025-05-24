@@ -1,0 +1,19 @@
+//test error
+
+// test function that shouldn't type check
+
+int bad_function() {
+    int x = 123;
+    if (x > 10) {
+        return 0;
+    } else {
+        // this case should never be reached but it should still fail compile
+        int z = 1;
+        return z == x;
+    }
+}
+
+int main() {
+    int x = bad_function();
+    return x;
+}

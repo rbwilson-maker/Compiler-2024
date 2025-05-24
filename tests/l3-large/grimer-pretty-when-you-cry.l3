@@ -1,0 +1,16 @@
+//test abort
+
+
+int coneyIsland(int a) {
+	if (a > 10)
+		return 1;
+	else 
+		return 0;
+}
+
+
+int main() {
+	int a = 4;
+	assert(a == coneyIsland(4));
+	return 0;
+}

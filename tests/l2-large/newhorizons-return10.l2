@@ -1,0 +1,9 @@
+//test return 420 
+// ternary and precedence of boolean operators
+// (true || (false && false)) || false;
+int main()
+{
+    bool x = true || false && false || false;
+    int y = x ? 420 : 12;
+    return y;
+}

@@ -1,0 +1,19 @@
+//test memerror
+//dereferences null pointer on return
+
+struct e {
+	int *p;
+};
+
+int main(){
+	struct e[] hi = alloc_array(struct e, 5);
+
+	for (int i = 1; i < 5; i++) {
+	  hi[i].p = alloc(int);
+
+	}
+	
+	return *(hi[1].p) * *(hi[0].p);
+
+
+}

@@ -1,0 +1,15 @@
+//test div-by-zero
+struct what{
+    int integer;
+    bool boolean;
+};
+
+int main(){
+
+    int test_this = 1;
+    struct what* ah = alloc(struct what);
+    ah->integer = 1/0;
+    ah->boolean = true;
+    
+    return ah->integer;
+}

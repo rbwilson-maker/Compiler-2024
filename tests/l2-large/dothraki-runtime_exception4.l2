@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+  int a = 6;
+  
+  while (a < 32) {
+    a += 5;
+  }
+  int b = 4;
+  b = b << a;
+
+  return b;
+}

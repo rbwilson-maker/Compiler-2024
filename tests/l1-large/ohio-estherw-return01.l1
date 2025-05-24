@@ -1,0 +1,38 @@
+//test return 960
+// test register spilling with division
+int main() {
+  int q0;
+  int q1;
+  int q2;
+  int q3;
+  int q4;
+  int q5;
+  int q6;
+  int r0;
+  int r1;
+  int r2;
+  int r3;
+  int r4;
+  int r5;
+  int r6;
+
+  int x = 17300;
+  int y = 3;
+  q0 = x / y; /* 5766 */
+  q1 = q0 / y; /* 1922 */
+  q2 = q1 / y; /* 640 */
+  q3 = q2 / y; /* 213 */
+  q4 = q3 / y; /* 71 */
+  q5 = q4 / y; /* 23 */
+  q6 = q5 / y; /* 7 */
+  r0 = x % y; /* 2 */
+  r1 = q0 % y; /* 0 */
+  r2 = q1 % y; /* 2 */
+  r3 = q2 % y; /* 1 */
+  r4 = q3 % y; /* 0 */
+  r5 = q4 % y; /* 2 */
+  r6 = q5 % y; /* 2 */
+  return (q0 + q1 + q2 + q3 + q4 + q5 + q6)
+    / (r0 + r1 + r2 + r3 + r4 + r5 + r6);
+}
+

@@ -1,0 +1,16 @@
+//test return 100
+// test all decl types
+
+int main()
+{
+  int a;
+  int b = (10);
+  int c = (b);
+  int d = (10 + 10);
+  int e = (-10);
+  int f = -10 + -10;
+  int g = 20;
+  int h = g - 10;
+  int i = (h * 2);
+  return b + c + d + e - f + g + h + i;
+}

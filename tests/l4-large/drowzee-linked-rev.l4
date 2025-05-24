@@ -1,0 +1,43 @@
+//test return 1
+
+typedef struct Node Node;
+
+struct Node {
+    int value;
+    struct Node* next;
+};
+
+void rev_halp(Node* a, Node* prev) {
+    if (a==NULL) return;
+
+    struct Node* next = a->next;
+
+    a->next = prev;
+
+    rev_halp(next,a);
+}
+
+
+void rev(Node* a) {
+    rev_halp(a,NULL);
+}
+
+int main() {
+    struct Node* a = alloc(struct Node);
+    struct Node* b = alloc(struct Node);
+    struct Node* c = alloc(struct Node);
+    struct Node* d = alloc(struct Node);
+
+    a->next = b;
+    b->next = c;
+    c->next = d;
+
+    rev(a);
+
+    assert(d->next==c);
+    assert(c->next==b);
+    assert(b->next==a);
+    assert(a->next==NULL);
+
+    return 1;
+}

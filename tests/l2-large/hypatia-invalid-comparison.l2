@@ -1,0 +1,9 @@
+//test error
+int main() {
+  int a = 10;
+  bool b = false;
+  if (a >= b) {
+    a++;
+  }
+  return -1;
+}

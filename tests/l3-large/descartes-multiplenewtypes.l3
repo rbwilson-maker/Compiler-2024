@@ -1,0 +1,21 @@
+//test typecheck
+
+//creates and utilizes multiple types 
+
+typedef int type1;
+typedef int type2;
+typedef int type3;
+typedef int type4;
+
+int main() {
+    type1 x1 = 0;
+    type2 x2 = 0;
+    type3 x3 = 0;
+    type4 x4 = 0;
+
+    assert (x1 == x2);
+    assert (x2 == x3);
+    assert (x3 == x4);
+
+    return 0;
+}

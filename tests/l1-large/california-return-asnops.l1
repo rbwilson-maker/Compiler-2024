@@ -1,0 +1,13 @@
+//test return 0
+
+int main () {
+    int a = 0;
+
+    a += 1;
+    a -= 2;
+    a *= 6;
+    a /= 3;
+    a %= 2;
+
+    return a;
+}

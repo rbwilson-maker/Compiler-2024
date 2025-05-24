@@ -1,0 +1,14 @@
+//test abort
+
+int myfunc() {
+	return 0;
+}
+
+int main() {
+    int i = 0;
+	while (myfunc() == 0) {
+	  assert(myfunc() > 0);
+      i++;
+	}
+	return 5 / myfunc();
+}

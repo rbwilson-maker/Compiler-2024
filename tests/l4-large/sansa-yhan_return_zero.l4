@@ -1,0 +1,34 @@
+//test return 0
+struct A;
+struct hello {
+    int a;
+    int b;
+    struct A *c;
+};
+
+struct A {
+    int c;
+};
+
+typedef struct hello hi;
+typedef int hpt;
+
+hpt f(int *x) {
+    *x = *x + 1;
+    return *x;
+}
+
+int g() {
+    hi * b = alloc(hi);
+    hpt[] arr = alloc_array(hpt, 4);
+    int *x = alloc(int);
+    *x = 0;
+    arr[f(x)] += 2;
+    return 0;
+}
+
+int main() {
+    hi * b = alloc(hi);
+    b -> b = 2;
+    return 0;
+}

@@ -1,0 +1,11 @@
+//test typecheck
+
+foo foooo(struct foo *fooo) {
+  fooo->foo = 1;
+  return fooo->foo;
+}
+
+bar main() {
+  struct foo *fooo = alloc(struct foo);
+  return foooo(fooo);
+}

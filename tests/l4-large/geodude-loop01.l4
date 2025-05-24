@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+struct A{
+    int a;
+};
+
+int main(){
+    for(int i = 0; true;){
+        struct A[] x = alloc_array(struct A, 1000000);
+    }
+    return 0;
+}

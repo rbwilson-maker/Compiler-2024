@@ -1,0 +1,13 @@
+//test return 0;
+// "An odd case arises when there is no control flow path connecting the use of
+//  a variable to its declaration. In L1, this can arise when a return
+//  statement separates the declaration of a variable from its use. In such a
+//  case, the variable need not be initialized. However, each variable must
+//  still be declared and the use lie in the scope of the declaration."
+//  This test case exercises that check.
+int main()
+{
+  int x;
+  return 0;
+  int y = x + 3;
+}

@@ -1,0 +1,11 @@
+//test error
+// invalid pointer dereference
+
+int main(){
+    int* x = alloc(int);
+    *x = 0;
+    int y = *x;
+    int z = *y;
+
+    return y;
+}

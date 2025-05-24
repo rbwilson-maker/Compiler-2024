@@ -1,0 +1,27 @@
+//test return 42
+
+int f2(int i);
+int f1(int i);
+
+
+int f0 (int i) {
+    if (i > 40) {
+        return i;
+    }
+    return f1(i+1);
+}
+
+int f1 (int i) {
+    return f2(i+1);
+}
+
+int main () {
+    return f0(0);
+}
+
+
+int f2 (int i) {
+    return f0(i+1);
+}
+
+

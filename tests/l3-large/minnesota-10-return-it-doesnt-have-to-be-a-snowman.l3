@@ -1,0 +1,14 @@
+//test return 1
+//test typedef
+
+int return_one();
+
+typedef int SILLYSTRING;
+
+int main() {
+  return return_one();
+}
+
+SILLYSTRING return_one() {
+  return 1;
+}

@@ -1,0 +1,12 @@
+//test error
+
+struct biiiiiiiig {
+  int so;
+  int very;
+  int large;
+};
+
+int main() {
+  struct biiiiiiiig b;
+  return b.so;
+}

@@ -1,0 +1,8 @@
+//test return 3
+
+int main() {
+  int a = 1;
+  ((((a))));
+  ((a)) = ((((a))) + ((a) * 2));
+  return a;
+}

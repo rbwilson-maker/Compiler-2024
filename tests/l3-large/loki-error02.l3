@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+  return undefined();
+}
+
+int undefined() {
+  return 0;
+}

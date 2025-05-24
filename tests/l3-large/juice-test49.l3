@@ -1,0 +1,8 @@
+//test typecheck
+
+int main() {
+  testBool tb = true;
+  testInt tI = 3;
+  testInt result = 123 + tI;
+  return result;
+}

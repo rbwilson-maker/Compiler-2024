@@ -1,0 +1,28 @@
+//test return 0
+
+void swap(int[] A, int i, int j) {
+    int temp = A[i];
+    A[i] = A[j];
+    A[j] = temp;
+}
+
+void sort(int[] A, int len) {
+    for (int curr = 0; curr < len; curr++) {
+        for (int i = curr; (i > 0) && (A[i] < A[i-1]); i--) {
+            swap(A, i, i-1);
+        }
+    }
+}
+
+int main() {
+    int n = 10;
+    int[] array = alloc_array(int, n);
+    for (int i = 0; i < n; i++) {
+        array[i] = (i * 5 + 3) % 17;
+    }
+    sort(array, n);
+    for (int i = 1; i < n; i++) {
+        assert(array[i-1] <= array[i]);
+    }
+    return 0;
+}

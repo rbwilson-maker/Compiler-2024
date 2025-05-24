@@ -1,0 +1,22 @@
+//test abort
+int myfuncB(int b);
+int myfuncA(int a) {
+    assert(a > -10000);
+	if (a > 3) {
+		return myfuncB(a - 1);
+	} else {
+		return myfuncB(a - 1);
+	}
+}
+
+int myfuncB(int a) {
+	if (a > 3) {
+		return myfuncA(a - 1);
+	} else {
+		return myfuncA(a - 1);
+	}
+}
+
+int main() {
+	return myfuncA(400);
+}

@@ -1,0 +1,17 @@
+//test error
+
+int main(){
+ int * poops = alloc(int);
+
+  *poops = 67;
+
+
+poops += 1;
+
+
+
+return *poops;
+
+
+
+}

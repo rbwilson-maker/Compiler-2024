@@ -1,0 +1,8 @@
+//test return 1
+
+int main(){
+  fpt half = fdiv(itof(1),itof(2));// 1/2
+  fpt TWICE = fadd(half,half);//back to 1
+  print_fpt(TWICE);
+  return ftoi(TWICE);
+}

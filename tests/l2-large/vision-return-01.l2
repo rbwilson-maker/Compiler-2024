@@ -1,0 +1,9 @@
+//test return 1
+
+int main() {
+    int x = 100;
+    int y = 101;
+    int z = x;
+    z >>= 2;
+    return (y - (4 * z));
+}

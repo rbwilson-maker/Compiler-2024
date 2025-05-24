@@ -1,0 +1,16 @@
+//test return 1
+
+// 1 should propagate to all arithmetic operations
+int main() {
+    int x = 1;
+    int z;
+
+    z = x;   // z = 1
+    z += x;  // z += 1
+    z -= x;  // z -= 1
+    z *= x;  // z *= 1
+    z /= x;  // z /= 1
+
+    return z;
+
+}

@@ -1,0 +1,8 @@
+//test error
+// Postops only on one line
+
+int main() {
+  int x = 23;
+
+  return x++ + x--;
+}

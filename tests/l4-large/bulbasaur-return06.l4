@@ -1,0 +1,54 @@
+//test return 1
+// stress test unbalanced bst
+
+typedef struct tree_node tree;
+struct tree_node {
+  int data;
+  tree* left;
+  tree* right;
+};
+
+void insert(tree* T, int i)
+{
+  if (T == NULL) return;
+  if (i == T->data) return;
+  else if (i < T->data)
+  {
+    if (T->left == NULL)
+    {
+      tree* T2 = alloc(tree);
+      T2->data = i;
+      T->left = T2;
+      return;
+    } else {
+      insert(T->left, i);
+    }
+  } else {
+    if (T->right == NULL)
+    {
+      tree* T2 = alloc(tree);
+      T2->data = i;
+      T->right = T2;
+    } else {
+      insert(T->right, i);
+      return;
+    }
+  }
+}
+
+bool find(tree* T, int i)
+{
+  if (T == NULL) return false;
+  if (i == T->data) return true;
+  else if (i < T->data) return find(T->left, i);
+  else return find(T->right, i);
+}
+
+int main()
+{
+  tree* T = alloc(tree);
+  for (int i = 0; i < 100; i++) insert(T,i);
+  if (find(T,53) && find(T,67)) return 1;
+  return 0;
+}
+

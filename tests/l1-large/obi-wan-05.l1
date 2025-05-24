@@ -1,0 +1,10 @@
+//test return 15411
+
+// angel makes a somewhat redundant 15411 test
+// all this is basically covered in 06.l1 also
+int main() {
+    int x = 15;
+    x *= 1000;
+    x += 411;
+    return x;
+}

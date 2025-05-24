@@ -1,0 +1,14 @@
+//test return 5
+
+int recur(int x, int y) {
+    if(x < 10000)
+        return recur(x+1,y);
+    return y;
+}
+
+
+int main() {
+    int x = 5;
+    int y = 5;
+    return recur(x,y);
+}

@@ -1,0 +1,10 @@
+//test return 12
+
+int main() { 
+    bool x = true;
+    bool y = false; 
+    if (x && y) {
+        return 1;
+    }
+    return 12;
+ }

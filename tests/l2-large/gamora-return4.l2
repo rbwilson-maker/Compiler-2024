@@ -1,0 +1,9 @@
+//test return 1
+// test boolean logical operators
+
+int main()
+{
+  bool yee = true;
+  bool haw = false;
+  return !((yee && haw) && (yee || haw)) ? 1 : 0;
+}

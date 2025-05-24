@@ -1,0 +1,12 @@
+//test error
+
+void* lol() {
+return lol();
+}
+
+int main()
+{
+void** x = NULL;
+*x = lol();
+return 0;
+}

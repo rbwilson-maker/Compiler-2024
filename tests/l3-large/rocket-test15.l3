@@ -1,0 +1,12 @@
+//test error
+// no parameter passed to function
+
+int helper(int x) {
+    return x;
+}
+
+int main()
+{
+    int res = helper();
+    return res;
+}

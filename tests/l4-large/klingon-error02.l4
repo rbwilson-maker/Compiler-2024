@@ -1,0 +1,15 @@
+//test error
+
+struct foo {
+  int bar;
+};
+
+int ret (struct foo* foo) {
+	return foo.bar;
+}
+
+int main() {
+  struct foo* test;
+  test = alloc(struct foo);
+  return ret(test);
+}

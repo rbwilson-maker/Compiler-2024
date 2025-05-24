@@ -1,0 +1,59 @@
+//test return 39088169
+
+struct node;
+struct queue;
+typedef struct node* node;
+typedef struct queue* queue;
+struct node {
+  int val;
+  node next;
+};
+struct queue {
+  node start;
+  node end;
+  int size;
+};
+
+queue new() {
+  return alloc(struct queue);
+}
+
+void enq(queue q, int x) {
+  node n = alloc(struct node);
+  n->val = x;
+  if (q->size == 0) {
+    q->start = n;
+    q->end = n;
+  } else {
+    q->end->next = n;
+    q->end = n;
+  }
+  q->size++;
+}
+
+int deq(queue q) {
+  node n = q->start;
+  q->start = n->next;
+  if (q->end == n) q->end = NULL;
+  q->size--;
+  return n->val;
+}
+
+int peek(queue q) {
+  return q->start->val;
+}
+
+int main() {
+  queue q = new();
+  enq(q, 0);
+  enq(q, 1);
+  int a; int b;
+  for(int i = 0; i < 37; i++) {
+    a = deq(q);
+    b = peek(q);
+    enq(q, a+b);
+  }
+  int x = 0;
+  while (q->size > 0) x = deq(q);
+  return x;
+}

@@ -1,0 +1,22 @@
+//test abort
+
+int main()
+{
+    int x=5+7;
+    int y=x;
+    y+=1;
+    x+=1;
+    y+=1;
+    x+=1;
+    y+=1;
+    x+=1;
+    y+=1;
+    x+=1;
+    y+=1;
+    x+=1;
+    y+=1;
+    x+=1;
+    y+=1;
+    assert(x==y);
+    return 0;
+}

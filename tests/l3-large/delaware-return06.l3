@@ -1,0 +1,12 @@
+//test return 4
+
+typedef int compiler;
+typedef bool is;
+
+is my (compiler good) {
+   return false;
+}
+
+int main () {
+    return (my (4) ? 3 : 4);
+}

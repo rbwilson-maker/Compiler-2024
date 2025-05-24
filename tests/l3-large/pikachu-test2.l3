@@ -1,0 +1,15 @@
+//test return 3749923
+
+int find_leftmost_digit(int n){
+  while (n >= 10){
+    n /= 10;
+  }
+  return n;
+}
+
+int main() {
+  int n = 3749923;
+  bool b;
+  if (find_leftmost_digit(n) != 3) b = false;
+  return n;
+}

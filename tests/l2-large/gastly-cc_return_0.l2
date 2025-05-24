@@ -1,0 +1,14 @@
+//test return 0
+//basic loop test
+
+int main() {
+	int x = 100;
+	int sum = 0;
+	for(int i = 0; i < x; i++) {
+		sum += i;
+	}	
+	while(sum > 0) {
+		sum--;
+	}
+	return sum;
+}

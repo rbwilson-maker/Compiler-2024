@@ -1,0 +1,9 @@
+//test return 64
+
+int main() {
+    int res = 1;
+    while (res < 50) {
+        res = res << 1;
+    }
+    return res;
+}

@@ -1,0 +1,36 @@
+//test memerror
+// tests bad memory references
+
+// simple linked list
+struct node {
+    int val;
+    bool isEnd;
+    struct node *next;
+};
+typedef struct node node_t;
+
+int main() {
+    node_t *head = NULL;
+    node_t *prevNode = NULL;
+
+    // we forget to create a dummy node at the end...
+    for(int i = 0; i < 10; i++) {
+        node_t *newNode = alloc(node_t);
+        newNode->val = i * 2;
+        newNode->isEnd = false;
+
+        if(prevNode != NULL) {
+            prevNode->next = newNode;
+        } else {
+            head = newNode;
+        }
+        prevNode = newNode;
+    }
+
+    // so when we traverse looking for a dummy node, we should get a memerror.
+    int sum = 0;
+    for(node_t *curr = head; !curr->isEnd; curr = curr->next) {
+        sum += curr->val;
+    }
+    return sum;
+}

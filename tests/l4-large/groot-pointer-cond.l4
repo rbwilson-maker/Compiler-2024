@@ -1,0 +1,11 @@
+//test memerror
+
+struct wrapper { int value; };
+typedef struct wrapper wrapper;
+
+int main() {
+  wrapper***** p = alloc(wrapper****);
+  int v = true ? (*****p).value : 123;
+
+  return v;
+}

@@ -1,0 +1,5 @@
+//test return 1
+
+int main() {
+return alloc(int) == alloc(int) ? 0 : 1;
+}

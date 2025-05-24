@@ -1,0 +1,232 @@
+//test return 1
+
+/*
+ * Hash sets, implemented with separate chaining
+ *
+ * 15-122 Principles of Imperative Computation
+ */
+
+struct student_info{
+   int andrew_id;
+   int days_present;
+   int days_absent;
+};
+
+int hash_student(int x)
+{
+  return x;
+}
+
+bool students_same_andrewid(int x, int y)
+{
+  return x == y;
+}
+
+/************************/
+/*** Client interface ***/
+/************************/
+
+// typedef ______ key;
+typedef int key;
+
+// typedef _____* value;
+typedef struct student_info* value;
+
+/*************************/
+/*** Library interface ***/
+/*************************/
+
+// typedef ______* hset_t;
+typedef struct hset_header* hset_t;
+
+hset_t hset_new(int capacity)
+  /*@requires capacity > 0 && equiv != NULL && hash != NULL; @*/
+  /*@ensures \result != NULL; @*/ ;
+
+value hset_lookup(hset_t H, key k)
+  /*@requires H != NULL; @*/ ;
+
+void hset_insert(hset_t H, key k, value v)
+  /*@requires H != NULL && v != NULL; @*/
+  /*@ensures hset_lookup(H, k) == v; @*/ ;
+
+/**********************/
+/*** Implementation ***/
+/**********************/
+
+typedef struct chain_node chain;
+struct chain_node {
+  key k;
+  value val;
+  chain* next;
+};
+
+typedef struct hset_header hset;
+struct hset_header {
+  int size;
+  int capacity;               /* 0 < capacity */
+  chain*[] table;             /* \length(table) == capacity */
+};
+
+bool keyequiv(hset* H, key x, key y)
+//@requires H != NULL && H->equiv != NULL;
+{
+return students_same_andrewid(x, y);
+}
+
+int abs(int n) {
+  if (n < 0) {
+    return -n;
+  }
+  return n;
+}
+
+int keyhash(hset* H, key k)
+//@requires H != NULL && H->capacity > 0 && H->hash != NULL;
+//@ensures 0 <= \result && \result < H->capacity;
+{
+  return abs(hash_student(k) % H->capacity);
+}
+
+// All hash values are correct for the current index
+bool is_chain(hset* H, chain* p, int i)
+//@requires H != NULL && H->capacity > 0 && H->hash != NULL;
+{
+if (p == NULL) return true;
+return p->val != NULL
+  && keyhash(H, p->k) == i
+  && is_chain(H, p->next, i);
+}
+
+bool is_chains(hset* H, int lo, int hi)
+//@requires H != NULL && H->capacity > 0 && H->hash != NULL;
+//@requires \length(H->table) == H->capacity;
+//@requires 0 <= lo && lo <= hi && hi <= H->capacity;
+{
+if (lo == hi) return true;
+return is_chain(H, H->table[lo], lo)
+  && is_chains(H, lo+1, hi);
+}
+bool is_hset(hset* H) {
+  return  H != NULL
+    && H->capacity > 0
+    && H->size >= 0
+    && is_chains(H, 0, H->capacity);
+}
+
+hset* hset_new(int capacity)
+//@requires capacity > 0;
+//@ensures is_hset(\result);
+{
+  hset* H = alloc(hset);
+  H->size = 0;
+  H->capacity = capacity;
+  H->table = alloc_array(chain*, capacity);
+  return H;
+}
+
+value hset_lookup(hset* H, key k)
+//@requires is_hset(H);
+{
+  int i = keyhash(H, k);
+  for (chain* p = H->table[i]; p != NULL; p = p->next)
+  //@loop_invariant is_chain(H, p, i);
+  {
+    if (keyequiv(H, p->k, k)) {
+      return p->val;
+    }
+  }
+
+  return NULL;
+}
+
+void hset_insert(hset* H, key k, value val)
+//@requires is_hset(H);
+//@requires val != NULL;
+//@ensures is_hset(H);
+//@ensures val == hset_lookup(H, k);
+{
+  int i = keyhash(H, k);
+  for (chain* p = H->table[i]; p != NULL; p = p->next)
+  //@loop_invariant is_chain(H, p, i);
+  {
+    if (keyequiv(H, p->k, k)) {
+      p->val = val;
+      return;
+    }
+  }
+
+  // prepend new element
+  chain* p = alloc(chain);
+  p->k = k;
+  p->val = val;
+  p->next = H->table[i];
+  H->table[i] = p;
+  (H->size)++;
+}
+
+hset_t new_roster(int[] andrew_ids, int len)
+//@requires \length(andrew_ids) == len;
+{
+  hset* H = hset_new(len);
+
+  for(int i = 0; i < len; i++)
+  {
+    struct student_info* S = alloc(struct student_info);
+    S->andrew_id = andrew_ids[i];
+    S->days_present = 0;
+    S->days_absent = 0;
+    hset_insert(H, andrew_ids[i], S);
+  }
+
+  return H;
+}
+void mark_present(hset_t H, int andrew_id)
+//@requires H != NULL && hset_lookup(H, andrew_id) != NULL;
+{
+  struct student_info* S = hset_lookup(H,andrew_id);
+  (S->days_present)++;
+}
+
+void mark_absent(hset_t H, int andrew_id)
+//@requires H != NULL && hset_lookup(H, andrew_id) != NULL;
+{
+  struct student_info* S = hset_lookup(H, andrew_id);
+  (S->days_absent)++;
+}
+
+void present(hset_t H, int id, bool expected)
+//@requires H != NULL;
+{
+  // Print status
+  struct student_info* s = hset_lookup(H, id);
+
+  // Check whether that is an error
+  assert((s != NULL) == expected);
+}
+
+int main() {
+
+  // Initialize, ensure there will always be some input
+  int[] A = alloc_array(int, 4);
+  for(int i = 0; i < 4; i++) {
+    A[i] = i;
+  }
+
+  // Attempt to call the first student function
+  hset_t H = new_roster(A, 4);
+
+  // Check for presence or absence of various students
+  present(H, 5, false);
+  present(H, 1, true);
+  present(H, 2, true);
+  present(H, 6, false);
+
+  mark_present(H, 1);
+
+  if((hset_lookup(H, 1))->days_present == 1) {
+    return 1;
+  } else {
+    return -1;
+  }
+}

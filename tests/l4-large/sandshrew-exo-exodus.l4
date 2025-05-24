@@ -1,0 +1,7 @@
+//test typecheck
+//test infloop
+
+int main() {
+  for (int* i = alloc(int); *i == 0; i = alloc(int)) { }
+  return 0;
+}

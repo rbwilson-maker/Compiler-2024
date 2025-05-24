@@ -1,0 +1,8 @@
+//test return 5
+// div by 0 is fine after returns because div by 0 should raise a runtime error,
+// not a compile time error
+int main()
+{
+    return (5);
+    int x = 4/0;
+}

@@ -1,0 +1,21 @@
+//test return 239
+
+// Compilers f2017: Group Tyrion Lannister
+
+int main() {
+    int cube = 0xcdbcdb;
+    int lo = 0;
+    int hi = 0xfffffff;
+
+    while (lo < hi) {
+        int mid = lo + (hi - lo) / 2;
+
+        if (mid < cube && cube / mid >= mid && cube / mid / mid >= mid && mid * mid * mid < cube) {
+            lo = mid + 1;
+        } else {
+            hi = mid;
+        }
+    }
+
+    return lo;
+}

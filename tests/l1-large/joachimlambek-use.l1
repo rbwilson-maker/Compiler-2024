@@ -1,0 +1,8 @@
+//test return 65536
+
+int main() {
+    int x;
+    int y = 65536;
+    return y;
+    y = x + 16384;
+}

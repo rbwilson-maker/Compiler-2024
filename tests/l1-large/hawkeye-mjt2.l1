@@ -1,0 +1,19 @@
+//test return 14
+// test register spilling
+int main() {
+    int x0;
+    int x1;
+    int x2;
+    int x3;
+    int x4;
+
+
+    x0 = 1;
+    x1 = 2;
+    x2 = 3;
+    x3 = 4;
+    x4 = 5;
+
+    x0 = x1 + x2;
+    return x0 + x3 + x4;
+}

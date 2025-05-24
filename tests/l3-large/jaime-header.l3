@@ -1,0 +1,8 @@
+//test typecheck
+
+int main()
+{
+    errorzero(1);
+    int i = matrixmult(1, 1, 2, -3, 5, 4);
+    return fun(i);
+}

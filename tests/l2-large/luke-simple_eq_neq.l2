@@ -1,0 +1,23 @@
+//test return 1
+
+int main() {
+    int x = 6 * 7;
+    int y = 44;
+    bool b1 = x == y;
+    bool b2 = x != y;
+    bool b3 = x == x;
+    bool b4 = x != x;
+    bool check1 = !b1 && b2 && b3 && !b4;
+
+    bool u = false;
+    bool v = true;
+    bool b5 = u == v;
+    bool b6 = u != v;
+    bool b7 = u == u;
+    bool b8 = u != u;
+    bool check2 = !b5 && b6 && b7 && !b8;
+
+    bool okay = check1 && check2;
+
+    return okay ? 1 : 0;
+}

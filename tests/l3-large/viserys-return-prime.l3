@@ -1,0 +1,49 @@
+//test return 541
+
+// returns the nth prime
+
+int pred(int n) {
+  return n - 1;
+}
+
+int sub2(int n) {
+  return pred(pred(n));
+}
+
+bool even(int n) {
+  if (n == 0) return true;
+  else if (n == 1) return false;
+  else return even(sub2(n));
+}
+
+bool div(int n, int i) {
+  return n % i == 0;
+}
+
+bool is_prime(int n) {
+  if (n < 2) return false;
+  if (even(n) && n != 2) return false;
+  if (n == 2) return true;
+
+  for (int i=3; i<n; i+=2) {
+    if (div(n, i)) return false;
+  }
+  return true;
+}
+
+int prime(int n) {
+  int count = 0;
+  int i = 0;
+  while (count < n) {
+    i++;
+    if (is_prime(i)) {
+      count++;
+    }
+  }
+  return i;
+}
+
+int main() {
+  int n = 100;
+  return prime(n);
+}

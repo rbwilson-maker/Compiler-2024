@@ -1,0 +1,12 @@
+//test error
+//using reserved keywords
+int main()
+{
+	int x = 3;
+	int a = 5;
+	int int = x * a + 3;
+
+	int += 3;
+
+	return int * 5;
+}

@@ -1,0 +1,11 @@
+//test return 12
+int main() {
+    if (true) {
+        if (2==2) {
+            return 12;
+        }
+    }
+    return 13;
+}
+
+

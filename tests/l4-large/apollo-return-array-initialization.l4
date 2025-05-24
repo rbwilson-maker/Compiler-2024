@@ -1,0 +1,14 @@
+//test return 15
+
+int main() {
+  int[] a = alloc_array(int, 100);
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 9; j++) {
+      a[10*i+j] = 1;
+    }
+  }
+  // Now all indices ending in 9 are not initialized. Should default to 0.
+  assert(a[9] == 0 && a[19] == 0 && a[29] == 0 && a[39] == 0 && a[49] == 0 &&
+         a[59] == 0 && a[69] == 0 /* ayy */ && a[79] == 0 && a[89] == 0 && a[99] == 0);
+  return 15;
+}

@@ -1,0 +1,13 @@
+//test typecheck
+//test infloop
+
+int break_prog(int i) {
+	if (i >= 0)
+		return 0;
+
+	return break_prog(i);
+}
+
+int main() {
+	return break_prog(-1);
+}

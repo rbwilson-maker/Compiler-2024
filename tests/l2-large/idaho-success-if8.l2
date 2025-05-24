@@ -1,0 +1,5 @@
+//test return 42
+int main() {
+  int x = 42;
+  if (x <= 54) return x; else return 2;
+}

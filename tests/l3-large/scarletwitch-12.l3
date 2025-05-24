@@ -1,0 +1,10 @@
+//test return 1
+
+int raise() {
+  return 1/0;
+}
+
+int main() {
+  assert(true);
+  return 1;
+}

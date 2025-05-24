@@ -1,0 +1,8 @@
+//test return 0
+int main();
+typedef int newt;
+newt main();
+typedef newt newnewt;
+newnewt main() {
+    return 0;
+}

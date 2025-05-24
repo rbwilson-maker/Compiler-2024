@@ -1,0 +1,8 @@
+//test div-by-zero
+// ...and this is why dynamic semantics are important!
+
+int main() {
+    int* kappa = NULL;
+    assert(1/0 == *kappa);
+    return 100;
+}

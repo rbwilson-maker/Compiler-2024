@@ -1,0 +1,8 @@
+//test error
+// shadowing different types
+int main()
+{
+	bool x = false;
+	int x = 0;
+	return x;
+}

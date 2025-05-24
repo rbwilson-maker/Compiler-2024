@@ -1,0 +1,38 @@
+//test return 12
+
+struct point {
+  int x;
+  int y;
+};
+
+typedef struct point point_t;
+
+void set(point_t[] arr, int i, int x, int y)
+{
+  arr[i].x = x;
+  arr[i].y = y;
+}
+
+int main()
+{
+  point_t[] arr = alloc_array(point_t, 4);
+  set(arr, 0, 0, 0);
+  set(arr, 1, 0, 5);
+  set(arr, 2, 5, 0);
+  set(arr, 0, 0, 0);
+  
+  int leftSum = 0;
+  int rightSum = 0;
+
+  // Shoelace algorithm for area of polygon
+  for (int i = 0; i < 3; i++)
+  {
+    leftSum += arr[i].x * arr[i+1].y;
+    rightSum += arr[i+1].x * arr[i].y;
+  }
+
+  int sum = leftSum - rightSum;
+  sum = (sum > 0) ? sum : -sum;
+
+  return sum / 2;
+}

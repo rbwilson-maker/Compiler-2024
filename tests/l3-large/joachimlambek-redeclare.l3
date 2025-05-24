@@ -1,0 +1,9 @@
+//test typecheck
+
+int f(int x, int y);
+
+int f(int p, int q);
+
+int main() {
+    return f(2, 5);
+}

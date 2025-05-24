@@ -1,0 +1,8 @@
+//test div-by-zero
+// attempt to reconstruct with div and mod
+int main()
+{
+  int i = 0x7fffffff;
+  int k = 0;
+  return k * i / k + (i % k);
+}

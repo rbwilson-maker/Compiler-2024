@@ -1,0 +1,19 @@
+//test return 13
+// Life is more fun when not primitive recursive: compute
+// Ackermann's function on the input (3, 1).
+// https://en.wikipedia.org/wiki/Ackermann_function
+
+int ack(int m, int n) {
+  if(m == 0) {
+    return n + 1;
+  }
+  if (n == 0) {
+    return ack(m - 1, 1);
+  } else {
+    return ack(m - 1, ack(m, n - 1));
+  }
+}
+
+int main(){
+  return ack(3, 1);
+}

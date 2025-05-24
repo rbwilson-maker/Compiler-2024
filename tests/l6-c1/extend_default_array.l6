@@ -1,0 +1,13 @@
+//test memerror
+
+int[] test()
+//@ensures \forall {\result} (\element == 0);
+{
+    int[]* A = alloc(int[]);
+    return *A;
+}
+
+int main() {
+    int [] result = test();
+    return 0;
+}

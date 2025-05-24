@@ -1,0 +1,11 @@
+//test error
+// struct fields may not be void
+
+struct a {
+	void foo;
+};
+
+int main() {
+	
+	return 0;
+}

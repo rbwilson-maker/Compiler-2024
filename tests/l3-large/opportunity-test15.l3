@@ -1,0 +1,20 @@
+//test return 0
+
+//reverses bits in input
+int reverse_number(int x){
+  int i=0;
+  int res=0;
+  while(i<32){
+    res<<=1;
+    res|=x>>i & 1;
+    i++;
+  }
+  return res;
+}
+
+int main(){
+  assert(reverse_number(-1)==-1);
+  assert(reverse_number(0)==0);
+  assert(reverse_number(0xFFFF)==0xFFFF0000);
+  return 0;  
+}

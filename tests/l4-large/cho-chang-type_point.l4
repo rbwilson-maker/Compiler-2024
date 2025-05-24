@@ -1,0 +1,21 @@
+//test return 0
+
+typedef int* a;
+typedef a b;
+typedef b c;
+typedef c d;
+typedef int other;
+int main()
+{
+    a p1 = alloc(int);
+    b p2 = alloc(int);
+    c p3 = alloc(int);
+    d p4 = alloc(other);
+    assert(p1 != p2);
+    assert(p2 != p3);
+    assert(p3 != p4);
+    assert(NULL == NULL);
+    p4 = p3;
+    assert(p3 == p4);
+    return 0;
+}

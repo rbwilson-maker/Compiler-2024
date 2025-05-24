@@ -1,0 +1,11 @@
+//test return 0
+typedef int mane;
+
+struct main {
+    mane main;
+};
+
+mane main() {
+    struct main *main = alloc(struct main);
+    return 0;
+}

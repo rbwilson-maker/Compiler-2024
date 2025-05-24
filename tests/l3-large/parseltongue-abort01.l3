@@ -1,0 +1,13 @@
+//test abort
+
+typedef bool b;
+typedef int i;
+
+i main() {
+  i a = 0xBEEF;
+  i c = 0xDEAD;
+  b m = a >= c;   // false
+  assert(m ? false : true);    // passes
+  assert(a + c > 0 ? a > 0 ? m : !m || c < 0 ? !m : m : m);    // false
+  return a + c;
+}

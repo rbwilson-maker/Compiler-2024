@@ -1,0 +1,20 @@
+//test memerror
+
+struct c {
+       bool areyoukiddingme;
+};
+
+struct b {
+       struct c[] b;
+};
+
+struct a {
+       struct b[] a;
+};
+
+int main() {
+    struct a* manwhy = alloc(struct a);
+    manwhy->a = alloc_array(struct b, 10);
+    manwhy->a[0].b[0].areyoukiddingme = true;
+    return 0;
+}

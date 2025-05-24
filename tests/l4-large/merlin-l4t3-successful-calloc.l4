@@ -1,0 +1,15 @@
+//test return 3
+
+// tests that alloc and alloc_array works properly
+
+int main() {
+    int *x = alloc(int);
+    assert(*x == 0);
+
+    int[] y = alloc_array(int, 3);
+    assert(y[0] == 0);
+    assert(y[1] == 0);
+    assert(y[2] == 0);
+
+    return 3;
+}

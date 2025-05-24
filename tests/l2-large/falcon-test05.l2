@@ -1,0 +1,23 @@
+//test div-by-zero
+
+int main() {
+    int a = 5;
+    int b = 4;
+    int c = 11;
+    bool x = c > 0;
+    if(!!!!!!!!!x) {
+        c = c + 1 - 1;
+    }
+    x = x || x;
+    x = x && x;
+    bool y = x || x;
+    bool z = x || y || x;
+    int d = c - 2 * a - 1;
+    int e = b % d;
+    int f = d + 2;
+    if(y) {
+        return f / 1;
+    } else {
+        return -1;
+    }
+}

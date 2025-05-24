@@ -1,0 +1,10 @@
+//test error
+
+int get_rekt_nub(int n) {
+    the_rek_type x = 5;
+    return x;
+}
+
+typedef int the_rek_type;
+
+int main() { return get_rekt_nub(2); }

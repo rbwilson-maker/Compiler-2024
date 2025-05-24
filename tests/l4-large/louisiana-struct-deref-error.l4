@@ -1,0 +1,10 @@
+//test error
+
+struct mystruct {
+    int hello;
+};
+
+int main(){
+    struct mystruct **s = alloc(struct mystruct*);
+    return *s->hello;
+}

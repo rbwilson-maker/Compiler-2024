@@ -1,0 +1,39 @@
+//test error
+
+struct a
+{
+    int x;
+    int y;
+};
+
+struct b
+{
+    int w;
+    int x;
+};
+
+typedef struct a* aPtr;
+typedef struct b* bPtr;
+
+
+int diversion(int q)
+{
+    if(q == 0)
+    {
+	return q;
+    }
+    return q + diversion(q - 1);
+}
+
+
+int main()
+{
+    aPtr a = alloc(struct a);
+    bPtr b = alloc(struct b);
+
+    a -> x = 0;
+    b -> x = 1;
+
+    return (diversion(10) > 0 ? a : b) -> x;
+
+}

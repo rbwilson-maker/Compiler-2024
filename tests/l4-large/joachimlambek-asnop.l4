@@ -1,0 +1,16 @@
+//test return 8
+
+int call_cnt(int* a) {
+    (*a)++;
+    return *a;
+}
+
+int main(){
+    int* a = alloc(int);
+    int[] x = alloc_array(int, 3);
+    x[1] = 4;
+    x[call_cnt(a)] += 2;
+    x[2] = 1;
+    x[call_cnt(a)]++;
+    return x[1]+x[2];
+}

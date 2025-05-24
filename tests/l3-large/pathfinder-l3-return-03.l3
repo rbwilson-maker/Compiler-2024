@@ -1,0 +1,15 @@
+//test return 65536
+
+// exponential number of function calls
+
+// calculates 2 ^ x
+int branch(int x) {
+    if (x == 0) {
+        return 1;
+    }
+    return branch(x - 1) + branch(x - 1);
+}
+
+int main() {
+    return branch(16);
+}

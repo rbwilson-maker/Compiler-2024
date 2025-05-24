@@ -1,0 +1,12 @@
+//test memerror
+struct a {
+  struct a*[] a_list;
+  int n;
+};
+
+int main() {
+  struct a *a_p = alloc(struct a);
+  a_p->a_list = alloc_array(struct a*, 3);
+  a_p->a_list[0]->n += 1; // attempt to dereference null pointer
+  return 0;
+}

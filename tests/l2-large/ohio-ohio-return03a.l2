@@ -1,0 +1,12 @@
+//test return -2147483648
+int main() {
+  int i = 0;
+  for (int k = 30; k > 15; k--) {
+    i += 1 << k;
+  }
+
+  while (i != -i) {
+    i++;
+  }
+  return i;
+}

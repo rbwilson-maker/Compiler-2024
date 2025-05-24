@@ -1,0 +1,15 @@
+//test return 12339
+
+int main () {
+
+    int i=0;
+    int j;
+    {
+        j=0x3033;
+    while (i!=5) {
+        i++;
+        
+    }
+    }
+    return j==i ? i : j;
+}

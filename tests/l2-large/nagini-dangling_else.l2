@@ -1,0 +1,11 @@
+//test return 1
+
+int main() {
+    int z = 0;    
+    if (true) 
+    if (true)
+    if (false) 1/0;
+    else z++;
+    else 1/0;
+    return z;
+}

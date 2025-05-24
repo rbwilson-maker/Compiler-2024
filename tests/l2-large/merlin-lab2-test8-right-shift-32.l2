@@ -1,0 +1,8 @@
+//test div-by-zero
+
+// test raising error on shift right with a number 32 or greater
+int main()
+{
+    int res = 42 >> 32;
+    return res;
+}

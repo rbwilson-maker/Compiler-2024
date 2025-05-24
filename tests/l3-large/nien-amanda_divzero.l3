@@ -1,0 +1,13 @@
+//test div-by-zero
+
+typedef int new_type;
+
+int returns_zero(new_type in) {
+    return 0 / in;
+}
+
+int main() {
+    new_type failure = 0x5689;
+    new_type what = returns_zero(failure);
+    return failure / what;
+}

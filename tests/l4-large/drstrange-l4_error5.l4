@@ -1,0 +1,11 @@
+//test error
+/// Access struct field by . not ->
+
+struct item {
+  int value;
+};
+
+int main() {
+  struct item* item1 = alloc(struct item);
+  return (*item)->value;
+}

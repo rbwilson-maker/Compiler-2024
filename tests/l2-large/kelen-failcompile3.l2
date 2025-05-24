@@ -1,0 +1,16 @@
+//test error
+
+// Tests variables not in scope in loop
+int main(){
+
+    int x = 50;
+
+    while (x > 0){
+        {int y = 5;}
+        x--;
+    }
+
+    return y;
+
+
+}

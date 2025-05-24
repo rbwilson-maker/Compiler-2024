@@ -1,0 +1,19 @@
+//test div-by-zero
+// shift int max by int min
+
+int main() {
+    bool x = true;
+    bool y = false;
+    bool z = true;
+
+    if (x || y) {
+        z = x && y;
+    }
+
+    if (!z) {
+        return 2147483647 >> -2147483648;
+    }
+
+    return -1;
+    
+}

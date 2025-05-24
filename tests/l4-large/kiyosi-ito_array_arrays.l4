@@ -1,0 +1,16 @@
+//test return 0
+
+struct s{
+	int a;
+};
+
+int main() {
+	struct s [][][][] t = alloc_array(struct s [][][], 5);
+	t[0] = alloc_array(struct s[][], 5);
+	t[0][0] = alloc_array(struct s[], 5);
+	t[0][0][0] = alloc_array(struct s, 5);
+	t[0][0][0][0].a = 5;
+
+	return t[0][0][0][1].a;
+
+}

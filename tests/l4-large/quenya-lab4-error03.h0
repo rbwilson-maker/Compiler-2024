@@ -1,0 +1,5 @@
+struct object;
+
+typedef struct object* object_t;
+
+object_t create();

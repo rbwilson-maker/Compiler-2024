@@ -1,0 +1,9 @@
+//test typecheck
+//struct definition in header
+
+int main() {
+    struct s* value = alloc(struct s);
+    (*value).a = 4;
+    (*value).b = 6;
+    return (*value).a + (*value).b;
+}

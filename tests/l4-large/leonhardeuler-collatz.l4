@@ -1,0 +1,33 @@
+//test return 0
+
+void step(int* n) {
+    if ((*n) % 2 == 0) {
+        *n = (*n) / 2;
+    } else {
+        *n = 3 * (*n) + 1;
+    }
+}
+
+void collatz(int* n) {
+    while ((*n) > 1) {
+        step(n);
+    }
+}
+
+int main() {
+    int *ptr = alloc(int);
+
+    *ptr = 15;
+    collatz(ptr);
+
+    *ptr = 411;
+    collatz(ptr);
+
+    *ptr = 15411;
+    collatz(ptr);
+
+    *ptr = 8202003;
+    collatz(ptr);
+
+    return 0;
+}

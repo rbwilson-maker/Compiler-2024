@@ -1,0 +1,29 @@
+//test return 0
+//don't mess with my boi the linked list
+
+struct list_node {
+  int data;
+  struct list_node* next;
+};
+
+typedef struct list_node node;
+
+struct linkedlist_header {
+  node* start;
+  node* end;
+};
+
+typedef struct linkedlist_header list;
+
+int main()
+{
+  list* L = alloc(list);
+  L->start = alloc(node);
+  L->end = alloc(node);
+  L->start->next = alloc(node);
+  L->start->next->next = L->end;
+  if (L->end->next == NULL)
+    return 0;
+  else
+    return 1;
+}

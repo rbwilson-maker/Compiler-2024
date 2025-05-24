@@ -1,0 +1,10 @@
+//test return 1
+// test return assign operations(/=, %=)
+
+int main() {
+    int a = 3;
+    a *= 5;
+    a /= 3;
+    a %= 4;
+    return a;
+}

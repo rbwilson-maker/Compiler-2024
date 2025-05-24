@@ -1,0 +1,25 @@
+//test return 10
+
+struct node {
+  int val;
+  struct node *next;
+};
+typedef struct node node_t;
+
+int main()
+{
+  node_t* start = NULL;
+  int* i = alloc(int);
+  for (*i = 0; *i < 5; (*i)++) {
+    node_t *temp = alloc(node_t);
+    temp->next = start;
+    temp->val = *i;
+    start = temp;
+  }
+  int sum = 0;
+  while (start != NULL) {
+    sum += start->val;
+    start = start->next;
+  }
+  return sum;
+}

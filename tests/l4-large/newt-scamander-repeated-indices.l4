@@ -1,0 +1,28 @@
+//test return 20
+
+//tests that indices are calculated the correct number of times
+
+int foo(int*a) {
+	int res = *a;
+	(*a)++;
+	return res;
+}
+
+int main() {
+	int*a;
+	a = alloc(int);
+	*a = 0;
+
+	int[][] L;
+	L = alloc_array(int[], 7);
+	for (int i = 0; i < 7; i++) {
+		L[i] = alloc_array(int, 8);
+		for (int j = 0; j < 8; j++) {
+			L[i][j] = 8*i+j;
+		}
+	}
+
+	L[foo(a)][foo(a)] += L[foo(a)][foo(a)];
+	*a = 0;
+	return L[foo(a)][foo(a)];
+}

@@ -1,0 +1,18 @@
+//test error
+
+struct s1 {
+  int x;
+  int y;
+}
+
+struct s2 {
+  struct s1 foo;
+  struct s1 bar;
+}
+
+int main() {
+  struct s2 floop = alloc(struct s2);
+  s2->foo = alloc(struct s1);
+  s2->foo;
+  return 10;
+}

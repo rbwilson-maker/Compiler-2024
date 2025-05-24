@@ -1,0 +1,9 @@
+//test abort
+
+int main() {
+  bool[] a = alloc_array(bool, 1);
+  a[0] = false;
+  assert(a[0]);
+
+  return 0;
+}

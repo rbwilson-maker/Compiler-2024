@@ -1,0 +1,16 @@
+//test error
+//fail02.l4
+
+int add_pointers(int* x, int* y)
+{
+	return x+y
+}
+
+int main()
+{
+	int* x = alloc(int);
+	int* y = alloc(int);
+	*x = 1;
+	*y = 2;
+	return add_pointers(x,y);
+}

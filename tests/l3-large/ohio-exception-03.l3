@@ -1,0 +1,19 @@
+//test div-by-zero
+
+int manyRegs(int a, int b, int c, int d, int e, int x, int y, int z) {
+  int f = a / b;
+  int g = b / f;
+  int h = c / g;
+  int i = d / h;
+  int j = e / i;
+  int k = j / g; // 0
+  int l = k / k;
+  x = a / x;
+  y = b / x;
+  z = c / y;
+  return x + y + z + f + g + h + i + j + k;
+}
+
+int main() {
+  return manyRegs(1 << 5, 1 << 4, 1 << 3, 1 << 2, 1 << 1, 0, 1, 2);
+}

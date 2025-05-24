@@ -1,0 +1,22 @@
+//test return 20400
+//array sum
+
+int sum(int[] a, int n) {
+    int sum = 0;
+    int rev = -1;
+    for(int i=0; i < n; i++) {
+        sum += (rev * a[i]*a[i]);
+        rev *= (-1);
+    }
+    return sum;
+}
+
+int main() {
+    int n = 100;
+    int[] a = alloc_array(int, n);    
+    for(int i=0; i<n; i++) {
+        a[i] = 2*i+3;
+    }    
+
+    return sum(a, n);
+}

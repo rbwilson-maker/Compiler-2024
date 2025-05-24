@@ -1,0 +1,68 @@
+//test return 1504
+
+int det(int[][] mat, int n) {
+    if (n == 2) {
+        return mat[0][0] * mat[1][1] - mat[0][1] * mat[1][0];
+    }
+    int tot = 0;
+    int sgn = 1;
+    for (int i = 0; i < n; i += 1) {
+        int[][] submat;
+        submat = alloc_array(int[], n - 1);
+        for (int j = 0; j < n - 1; j += 1) {
+          submat[j] = alloc_array(int, n - 1);
+        }
+        for (int j = 0; j < n - 1; j += 1) {
+            for (int k = 0; k < n; k += 1) {
+                if (k < i) {
+                    submat[j][k] = mat[j + 1][k];
+                }
+                else if (k > i) {
+                    submat[j][k - 1] = mat[j + 1][k];
+                }
+            }
+        }
+        tot += sgn * mat[0][i] * det(submat, n - 1);
+        sgn *= -1;
+    }
+    return tot;
+}
+
+int main() {
+    int[][] mat;
+    mat = alloc_array(int[], 5);
+    for (int i = 0; i < 5; i += 1) {
+        mat[i] = alloc_array(int, 5);
+    }
+    mat[0][0] = 3;
+    mat[0][1] = 4;
+    mat[0][2] = 2;
+    mat[0][3] = 9;
+    mat[0][4] = 4;
+
+    mat[1][0] = 9;
+    mat[1][1] = 4;
+    mat[1][2] = 1;
+    mat[1][3] = 8;
+    mat[1][4] = 1;
+
+    mat[2][0] = 5;
+    mat[2][1] = 4;
+    mat[2][2] = 1;
+    mat[2][3] = 4;
+    mat[2][4] = 0;
+
+    mat[3][0] = 8;
+    mat[3][1] = 4;
+    mat[3][2] = 4;
+    mat[3][3] = 0;
+    mat[3][4] = 1;
+
+    mat[4][0] = 6;
+    mat[4][1] = 5;
+    mat[4][2] = 7;
+    mat[4][3] = 6;
+    mat[4][4] = 4;
+
+    return det(mat, 5);
+}

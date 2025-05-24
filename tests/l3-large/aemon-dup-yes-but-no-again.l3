@@ -1,0 +1,10 @@
+//test return 10
+
+int f(int n) {
+    return n * n;
+}
+
+int main() {
+    int f = 5;
+    return f + f;
+}

@@ -1,0 +1,186 @@
+//test return 33554432
+
+int merge(int a, int b) {
+  return a + b;
+}
+
+int make_2() {
+  int a = 1;
+  int b = 1;
+  int c = merge(a, b);
+  return c;
+}
+
+int make_4() {
+  int a = make_2();
+  int b = make_2();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_8() {
+  int a = make_4();
+  int b = make_4();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_16() {
+  int a = make_8();
+  int b = make_8();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_32() {
+  int a = make_16();
+  int b = make_16();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_64() {
+  int a = make_32();
+  int b = make_32();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_128() {
+  int a = make_64();
+  int b = make_64();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_256() {
+  int a = make_128();
+  int b = make_128();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_512() {
+  int a = make_256();
+  int b = make_256();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_1024() {
+  int a = make_512();
+  int b = make_512();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_2048() {
+  int a = make_1024();
+  int b = make_1024();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_4096() {
+  int a = make_2048();
+  int b = make_2048();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_8192() {
+  int a = make_4096();
+  int b = make_4096();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_16384() {
+  int a = make_8192();
+  int b = make_8192();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_32768() {
+  int a = make_16384();
+  int b = make_16384();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_65536() {
+  int a = make_32768();
+  int b = make_32768();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_131072() {
+  int a = make_65536();
+  int b = make_65536();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_262144() {
+  int a = make_131072();
+  int b = make_131072();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_524288() {
+  int a = make_262144();
+  int b = make_262144();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_1048576() {
+  int a = make_524288();
+  int b = make_524288();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_2097152() {
+  int a = make_1048576();
+  int b = make_1048576();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_4194304() {
+  int a = make_2097152();
+  int b = make_2097152();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_8388608() {
+  int a = make_4194304();
+  int b = make_4194304();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_16777216() {
+  int a = make_8388608();
+  int b = make_8388608();
+  int c = merge(a, b);
+  return c;
+}
+
+int make_33554432() {
+  int a = make_16777216();
+  int b = make_16777216();
+  int c = merge(a, b);
+  return c;
+}
+
+int main() {
+  int a = make_33554432();
+  assert(a == 33554432);
+  return a;
+}

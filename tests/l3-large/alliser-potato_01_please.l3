@@ -1,0 +1,13 @@
+//test return 256
+int fetch(int x) {
+    return x;
+}
+
+int bark(int y) {
+    return y * y;
+}
+
+int main() {
+    int stick = 2;
+    return fetch(bark(bark(fetch(bark(stick)))));
+}

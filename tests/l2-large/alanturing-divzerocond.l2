@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+    int x = 5;
+    int y;
+    if (x > 6) {
+       y = 3;
+    } else {
+       y = 0;
+    }
+    return x/y;
+ } 

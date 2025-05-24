@@ -1,0 +1,20 @@
+//test return 0
+
+int **hello()
+{
+  return alloc(int *);
+}
+
+int *helloo()
+{
+  return alloc(int);
+}
+
+int main()
+{
+  int **val = hello();
+  *val = helloo();
+  **val = 60;
+  *val = alloc(int);
+  return **val;
+}

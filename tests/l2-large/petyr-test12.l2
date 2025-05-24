@@ -1,0 +1,15 @@
+//test return 2
+
+// The testing harness will expect this program to return 2.
+
+// Test 12: if else precedence
+
+int main() {
+
+   int y = 1;
+
+   if ( true) if (false ) { } else y=2;
+
+   return y ;
+
+   }

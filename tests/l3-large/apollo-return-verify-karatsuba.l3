@@ -1,0 +1,58 @@
+//test return 0
+// compute karatsuba, a more complex divide-and-conquer algorithm with lots of
+// moving parts.
+
+// recursively computes b^e
+int pow (int b, int e) {
+  assert ( e >= 0 );
+  if (e == 0) { return 1; }
+  return b * pow (b, e - 1);
+}
+
+// computes number of digits in base 10 representation of x.
+int numdigits (int x) {
+  assert ( x >= 1 );
+  int digits = 0;
+  while (x != 0) {
+    digits++;
+    x /= 10;
+  }
+  return digits;
+}
+
+int karatsuba (int x, int y) {
+  assert ( x >= 0 && y >= 0 );
+
+  // base cases.
+  if (x < 10 || y < 10) { return x * y; }
+
+  int sizex = numdigits (x);
+  int sizey = numdigits (y);
+  int splitatdigit = sizex < sizey ? sizex / 2 : sizey / 2;
+  int splitat = pow (10, splitatdigit);
+
+  int xu = x / splitat;
+  int xl = x % splitat;
+  int yu = y / splitat;
+  int yl = y % splitat;
+
+  // check we split properly.
+  assert ( xu * splitat + xl == x && yu * splitat + yl == y );
+
+  // divide-and-conquer
+  int z2 = karatsuba (xu, yu);
+  int z1 = karatsuba (xu + xl, yu + yl);
+  int z0 = karatsuba (xl, yl);
+
+  // reform target.
+  return z2 * pow (splitat, 2) + (z1 - z2 - z0) * splitat + z0;
+}
+
+int main () {
+  for (int x = 0; x < 251; x++) {
+    for (int y = 0; y < 251; y++) {
+      assert ( x * y == karatsuba (x, y) );
+    }
+  }
+  return 0;
+}

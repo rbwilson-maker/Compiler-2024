@@ -1,0 +1,12 @@
+//test error
+
+int main_exn(int a, int b, int c, int d, int e, int f, int i, int h) { 
+    bool j = false && true;
+    int s=0;
+    return (s==j)?(10):(0); 
+}
+
+int main(){
+    main_exn(1,4,5,2,6,1,-2147483648);
+    return 0;
+}

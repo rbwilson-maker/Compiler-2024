@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+    int bad = 0xbad;
+    int good = ~bad;
+    while (good < 0) {
+        good /= 2;
+    }
+
+    return (bad / good);
+}

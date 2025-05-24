@@ -1,0 +1,21 @@
+//test return 4
+
+typedef int i;
+typedef int j;
+typedef bool k;
+typedef int l;
+typedef bool m;
+typedef int n;
+
+int monster(i ax, j bx, k cx, l dx, m ex, n fx,
+            int gx,
+            int hx,
+            int ix,
+            int jx,
+            int kx){
+    return cx ? ax + bx + jx - ix : dx + gx * fx / hx;
+}
+
+int main(){
+    return monster(1,2,true,4,false,6,7,8,9,10,11);
+}

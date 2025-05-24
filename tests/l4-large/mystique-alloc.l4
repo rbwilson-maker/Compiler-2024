@@ -1,0 +1,10 @@
+//test return 15
+
+int main() {
+    bool *p = alloc(bool);
+    if (p != NULL) {
+        return 15;
+    } else {
+        return 15;
+    }
+}

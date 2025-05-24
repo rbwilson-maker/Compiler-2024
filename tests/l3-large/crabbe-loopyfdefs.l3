@@ -1,0 +1,25 @@
+//test typecheck
+//test infloop
+
+int h(int n);
+int g(int n);
+int f(int n);
+
+int h(int n) {
+  return f(n / 3);
+}
+
+int g(int n) {
+  return h(n % 6);
+}
+
+int f(int n) {
+  return g(n + 2);
+}
+
+int main(){
+
+  int k = 7;
+
+  return f(k);
+}

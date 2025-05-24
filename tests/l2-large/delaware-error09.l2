@@ -1,0 +1,11 @@
+//test error
+//variable scoping
+
+int main() {
+  for(int i = 1; i < 11; i++) {
+    int z = 11;
+    z++;
+  }
+
+  return z;
+}

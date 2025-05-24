@@ -1,0 +1,12 @@
+//test return 1
+// Functions may be redeclared
+
+int foo(int a);
+int foo(int b) {
+  return b;
+}
+int foo(int c);
+
+int main() {
+  return foo(1);
+}

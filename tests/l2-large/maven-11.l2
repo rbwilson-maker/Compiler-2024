@@ -1,0 +1,11 @@
+//test return 908
+
+int main() {
+  int x = 100;
+  int y = 1000;
+  if (x < y) {
+    return x^y;
+  } else {
+    return x|y;
+  }
+}

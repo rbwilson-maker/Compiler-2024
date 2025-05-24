@@ -1,0 +1,23 @@
+//test return 102334155
+// 40th fiboonacci number
+
+int fib_helper(int n, int[] memo) {
+    if (memo[n] != -1) return memo[n];
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    int result = fib_helper(n - 1, memo) + fib_helper(n - 2, memo);
+    memo[n] = result;
+    return result;
+}
+
+int fib(int n) {
+    int[] memo = alloc_array(int, n + 1);
+    for (int i = 0; i <= n; i++) {
+        memo[i] = -1;
+    }
+    return fib_helper(n, memo);
+}
+
+int main() {
+    return fib(40);
+}

@@ -1,0 +1,14 @@
+//test error
+/*
+Compile error.
+Function call is not lvalue.
+*/
+
+int c(int r) {
+  return r + 1;
+}
+
+int main() {
+  int c(2) = 3;
+  return 3;
+}

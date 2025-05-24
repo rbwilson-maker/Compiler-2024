@@ -1,0 +1,15 @@
+//test error
+
+struct q {
+  int a;
+  bool b;
+};
+
+int bad(struct q a) {
+  return a.a;
+}
+
+int main() {
+
+return 5;
+}

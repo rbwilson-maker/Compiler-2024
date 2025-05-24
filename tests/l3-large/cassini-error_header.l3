@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+    header_is_awesome(); // GOOD
+    int x = header_void(); // bad
+    return x;
+}

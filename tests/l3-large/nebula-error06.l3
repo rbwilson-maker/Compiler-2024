@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+  a = 1;
+  assert(a == 1);
+  assert(bool); // assert must take in expressions
+}

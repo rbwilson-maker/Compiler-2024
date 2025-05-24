@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int loop() {
+  return loop();
+}
+
+int cause_error() {
+  return 1 / 0;
+}
+
+int main() {
+  return (cause_error() + loop());
+}

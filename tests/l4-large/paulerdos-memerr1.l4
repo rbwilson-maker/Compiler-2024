@@ -1,0 +1,7 @@
+//test memerror
+
+int main() {
+    int ***ptr = alloc(int**);
+    ***ptr = 1/0;
+    return ***ptr;
+}

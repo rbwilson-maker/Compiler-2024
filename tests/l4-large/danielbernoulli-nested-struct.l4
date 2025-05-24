@@ -1,0 +1,33 @@
+//test return 1
+
+struct s4  {
+    int[] f1; 
+    bool* f2; 
+    int i; 
+}; 
+
+struct s3 {
+    int[] f1; 
+    int* f2; 
+    int f3; 
+    struct s4 t4; 
+}; 
+
+struct s2 { 
+    int f1; 
+    int f2; 
+    int* t; 
+    struct s3 t3; 
+}; 
+typedef struct s2 s2_t; 
+
+struct s1 {
+    int i; 
+    s2_t t2; 
+};
+
+int main() {
+    struct s1* s = alloc(struct s1); 
+    s->t2.t3.t4.i++; 
+    return s->t2.t3.t4.i; 
+}

@@ -1,0 +1,12 @@
+//test error
+// Short and sweet
+
+struct apple {
+    int orange;
+};
+
+int main() {
+    struct apple *fruit = alloc(struct apple);
+    return fruit->orange;
+    return fruit->strawberry;
+}

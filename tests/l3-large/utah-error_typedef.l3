@@ -1,0 +1,8 @@
+//test error
+// Tests that you can't typedef primitive types to other primitive types.
+
+typedef int void;
+
+void main () {
+
+}

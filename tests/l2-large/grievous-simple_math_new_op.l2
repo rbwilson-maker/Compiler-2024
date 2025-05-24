@@ -1,0 +1,13 @@
+//test return 15
+
+// checking simple math.
+int main() {
+  // This is a comment for testing
+  int x = 1;
+  int y = x + 3;
+  y++;
+  x += 3;
+  int z = 2;
+  z *= 3;  
+  return x + y + z; 
+}

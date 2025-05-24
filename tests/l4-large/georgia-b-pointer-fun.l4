@@ -1,0 +1,47 @@
+//test return 171
+// Lots of pointer operations and spilling
+
+
+int main() {
+    int *a = alloc(int);
+    int *b = alloc(int);
+    int *c = alloc(int);
+    int *d = alloc(int);
+    int *e = alloc(int);
+    int *f = alloc(int);
+    int *g = alloc(int);
+    int *h = alloc(int);
+    int *i = alloc(int);
+    int *j = alloc(int);
+    int *k = alloc(int);
+    int *l = alloc(int);
+    int *m = alloc(int);
+    int *n = alloc(int);
+    int *o = alloc(int);
+    int *p = alloc(int);
+    int *q = alloc(int);
+    int *r = alloc(int);
+
+    *a = 1;
+    *b = 2;
+    *c = 3;
+    *d = 4;
+    *e = 5;
+    *f = 6;
+    *g = 7;
+    *h = 8;
+    *i = 9;
+    *j = 10;
+    *k = 11;
+    *l = 12;
+    *m = 13;
+    *n = 14;
+    *o = 15;
+    *p = 16;
+    *q = 17;
+    *r = 18;
+
+
+    return *a + *b + *c + *d + *e + *f + *g + *h + *i + *j + *k + *l + *m +
+    *n + *o + *p + *q + *r;
+}

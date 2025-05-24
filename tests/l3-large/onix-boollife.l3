@@ -1,0 +1,19 @@
+//test abort
+/* Confusing abort */
+
+bool flip(bool flip) {
+  return !flip;
+}
+
+bool flipone(bool one, bool two) {
+  if (two == true) {
+    return false;
+  }
+  return flipone(flip(one), false);
+}
+
+int main() {
+  bool fliptwo = true;
+  assert(flipone(flip(fliptwo),fliptwo) && false);
+  return 0;
+}

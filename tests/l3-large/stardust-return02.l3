@@ -1,0 +1,14 @@
+//test return 1
+//test ternary and function call
+
+bool f(int a, int b) 
+{
+	return a < b;
+}
+
+int main() {
+	int x = 1;
+	int y = 348925783;
+	bool b = true;
+	return f(x, y) && b ? x : y;
+}

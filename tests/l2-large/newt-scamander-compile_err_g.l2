@@ -1,0 +1,12 @@
+//test error
+
+int main(){
+	int x = 1;
+	int y = 100;
+	while(y != 0) {
+		int x = 2;
+		x += 2 * 123;
+		y--;
+	}
+	return x;
+}

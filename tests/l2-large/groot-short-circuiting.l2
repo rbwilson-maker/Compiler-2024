@@ -1,0 +1,9 @@
+//test return 135
+
+int main() {
+  bool b = true;
+  bool c = false;
+  bool d = true;
+
+  return b ? (c ? (1 / 0) : (d ? 135 : (1 / 0))) : 1 / 0;
+}

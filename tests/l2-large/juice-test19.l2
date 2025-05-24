@@ -1,0 +1,12 @@
+//test error
+
+int main() {
+  int x = 3;
+  int acc;
+  while (x > 0) {
+    acc = 1;
+    acc = acc * x;
+    x--;
+  }
+  return acc;
+}

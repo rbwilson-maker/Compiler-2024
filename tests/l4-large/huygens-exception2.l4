@@ -1,0 +1,14 @@
+//test abort
+
+struct A {
+    bool a;
+    bool b;
+};
+
+int main() {
+    struct A *a = alloc(struct A);
+    a->a = true;
+    a->b = false;
+    assert(a->a && a->b);
+    return 0;
+}

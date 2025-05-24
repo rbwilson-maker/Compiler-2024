@@ -1,0 +1,13 @@
+//test return 0
+// Should return 0 as true branch isn't executed
+
+int main() {
+  int x = 0;
+  int y = 1;
+
+  if (x != 0) {
+    return y / x;
+  } else {
+    return x / y;
+  }
+}

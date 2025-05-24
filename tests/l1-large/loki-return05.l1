@@ -1,0 +1,8 @@
+//test return 0
+
+// declarations with expressions
+int main() {
+  int a = 5 + 5 * 5;
+  int b = 6 / 9 + 2;
+  return a % b;
+}

@@ -1,0 +1,10 @@
+//test typecheck
+// pointers have size 8, so the inner struct does not need to be declared
+
+struct ricky {
+    struct the* raccoon;
+};
+
+int main() {
+    return 1+1;
+}

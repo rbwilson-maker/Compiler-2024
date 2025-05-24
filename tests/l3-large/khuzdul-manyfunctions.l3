@@ -1,0 +1,37 @@
+//test return 1
+
+int f1(int a);
+int f2(int a);
+int f3(int a);
+int f4(int a);
+int f5(int a);
+int f6(int a);
+
+
+int f1(int a){
+  return f2(f3(f4(f5(f6(a)))));
+}
+
+int f2(int a){
+  return f3(f4(f5(f6(a))));
+}
+
+int f3(int a){
+  return f4(f5(f6(a)));
+}
+
+int f4(int a){
+  return f5(f6(a));
+}
+
+int f5(int a){
+  return f6(a);
+}
+
+int f6(int a){
+  return a;
+}
+
+int main(){
+  return f1(1);
+}

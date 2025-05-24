@@ -1,0 +1,10 @@
+//test return 34
+
+int main() {
+int x = 34;
+int y = 166;
+bool a = x != y && y != x;
+int z = x + y;
+int q = a ? x : y;
+return q;
+}

@@ -1,0 +1,239 @@
+//test return 1
+
+int main() {
+
+    /* a finite tape turing machine */
+    /* because I'm way too lazy to figure out
+     * how to make an infinite tape one */
+    /* actually I'm fairly sure it's impossible without
+     * arrays */
+
+    /* decides the language consisting of binary strings
+     * with equal numbers of 0s and 1s */
+
+    /* input: binary string is the input_length number of
+     * least significant digits from input */
+
+    int input = 0x0597107E;
+
+    int input_length = 28;
+
+    /* tape representation */
+
+    int input_symbols_left_tape = 0;
+
+    int input_symbols_right_tape = 0;
+
+    int mark_blanks_left_tape = 0xFFFFFFFF;
+
+    int mark_blanks_right_tape = 0xFFFFFFFF;
+
+    int mark_symbols_left_tape = 0;
+
+    int mark_symbols_right_tape = 0;
+
+    /* initialize tape representation */
+    while (input_length > 0) {
+        input_symbols_right_tape = ((input_symbols_right_tape >> 1) & 0x7FFFFFFF);
+
+        if ((input & 1) == 1) {
+            input_symbols_right_tape |= 0x80000000;
+        }
+
+        input >>= 1;
+
+        mark_blanks_right_tape = (mark_blanks_right_tape >> 1) & 0x7FFFFFFF;
+
+        input_length--;
+    }
+
+    /* define some states */
+    int q0 = 0;
+    int q1 = 1;
+    int q2 = 2;
+    int q3 = 3;
+    int qa = 4;
+    int qr = 5;
+
+    /* define some tape characters */
+    int c0 = 0;
+    int c1 = 1;
+    int c_blank = 2;
+    int c_mark = 3;
+
+    int state = q0;
+
+    while (true) {
+
+        /* read character from tape */
+
+        int this_c;
+
+        if (mark_blanks_right_tape >> 31 == -1) {
+            this_c = c_blank;
+        } else if (mark_symbols_right_tape >> 31 == -1) {
+            this_c = c_mark;
+        } else {
+            this_c = (input_symbols_right_tape >> 31) & 1;
+        }
+
+        /* perform step */
+
+        if (state == q0) {
+            if (this_c == c0) {
+                state = q2;
+
+                input_symbols_left_tape = (input_symbols_left_tape << 1) | ((input_symbols_right_tape >> 31) & 1);
+                input_symbols_right_tape <<= 1;
+                mark_blanks_left_tape = (mark_blanks_left_tape << 1) | ((mark_blanks_right_tape >> 31) & 1);
+                mark_blanks_right_tape <<= 1;
+                mark_symbols_left_tape = (mark_symbols_left_tape << 1) | 1 ;
+                mark_symbols_right_tape <<= 1;
+
+            } else if (this_c == c1) {
+                state = q1;
+
+                input_symbols_left_tape = (input_symbols_left_tape << 1) | ((input_symbols_right_tape >> 31) & 1);
+                input_symbols_right_tape <<= 1;
+                mark_blanks_left_tape = (mark_blanks_left_tape << 1) | ((mark_blanks_right_tape >> 31) & 1);
+                mark_blanks_right_tape <<= 1;
+                mark_symbols_left_tape = (mark_symbols_left_tape << 1) | 1;
+                mark_symbols_right_tape <<= 1;
+
+           } else if (this_c == c_blank) {
+                state = qa;
+
+                input_symbols_left_tape = (input_symbols_left_tape << 1) | ((input_symbols_right_tape >> 31) & 1);
+                input_symbols_right_tape <<= 1;
+                mark_blanks_left_tape = (mark_blanks_left_tape << 1) | ((mark_blanks_right_tape >> 31) & 1);
+                mark_blanks_right_tape <<= 1;
+                mark_symbols_left_tape = (mark_symbols_left_tape << 1) | 1;
+                mark_symbols_right_tape <<= 1;
+
+           } else {
+                state = q0;
+
+                input_symbols_left_tape = (input_symbols_left_tape << 1) | ((input_symbols_right_tape >> 31) & 1);
+                input_symbols_right_tape <<= 1;
+                mark_blanks_left_tape = (mark_blanks_left_tape << 1) | ((mark_blanks_right_tape >> 31) & 1);
+                mark_blanks_right_tape <<= 1;
+                mark_symbols_left_tape = (mark_symbols_left_tape << 1) | ((mark_symbols_right_tape >> 31) & 1);
+                mark_symbols_right_tape <<= 1;
+            }
+       } else if (state == q1) {
+            if (this_c == c0) {
+                state = q3;
+
+                input_symbols_right_tape = ((input_symbols_right_tape >> 1) & 0x7FFFFFFF) | (input_symbols_left_tape << 31);
+                input_symbols_left_tape >>= 1;
+                mark_blanks_right_tape = ((mark_blanks_right_tape >> 1) & 0x7FFFFFFF) | (mark_blanks_left_tape << 31);
+                mark_blanks_left_tape >>= 1;
+                mark_symbols_right_tape = ((mark_symbols_right_tape >> 1) & 0x7FFFFFFF) | (mark_symbols_left_tape << 31) | 0x40000000;
+                mark_symbols_left_tape >>= 1;
+
+            } else if (this_c == c1) {
+                state = q1;
+
+                input_symbols_left_tape = (input_symbols_left_tape << 1) | ((input_symbols_right_tape >> 31) & 1);
+                input_symbols_right_tape <<= 1;
+                mark_blanks_left_tape = (mark_blanks_left_tape << 1) | ((mark_blanks_right_tape >> 31) & 1);
+                mark_blanks_right_tape <<= 1;
+                mark_symbols_left_tape = (mark_symbols_left_tape << 1) | ((mark_symbols_right_tape >> 31) & 1);
+                mark_symbols_right_tape <<= 1;
+
+            } else if (this_c == c_blank) {
+                state = qr;
+
+                input_symbols_left_tape = (input_symbols_left_tape << 1) | ((input_symbols_right_tape >> 31) & 1);
+                input_symbols_right_tape <<= 1;
+                mark_blanks_left_tape = (mark_blanks_left_tape << 1) | ((mark_blanks_right_tape >> 31) & 1);
+                mark_blanks_right_tape <<= 1;
+                mark_symbols_left_tape = (mark_symbols_left_tape << 1) | ((mark_symbols_right_tape >> 31) & 1);
+                mark_symbols_right_tape <<= 1;
+
+           } else {
+                state = q1;
+
+                input_symbols_left_tape = (input_symbols_left_tape << 1) | ((input_symbols_right_tape >> 31) & 1);
+                input_symbols_right_tape <<= 1;
+                mark_blanks_left_tape = (mark_blanks_left_tape << 1) | ((mark_blanks_right_tape >> 31) & 1);
+                mark_blanks_right_tape <<= 1;
+                mark_symbols_left_tape = (mark_symbols_left_tape << 1) | ((mark_symbols_right_tape >> 31) & 1);
+                mark_symbols_right_tape <<= 1;
+
+           }
+
+        } else if (state == q2) {
+            if (this_c == c0) {
+                state = q2;
+
+                input_symbols_left_tape = (input_symbols_left_tape << 1) | ((input_symbols_right_tape >> 31) & 1);
+                input_symbols_right_tape <<= 1;
+                mark_blanks_left_tape = (mark_blanks_left_tape << 1) | ((mark_blanks_right_tape >> 31) & 1);
+                mark_blanks_right_tape <<= 1;
+                mark_symbols_left_tape = (mark_symbols_left_tape << 1) | ((mark_symbols_right_tape >> 31) & 1);
+                mark_symbols_right_tape <<= 1;
+
+            } else if (this_c == c1) {
+                state = q3;
+
+                input_symbols_right_tape = ((input_symbols_right_tape >> 1) & 0x7FFFFFFF) | (input_symbols_left_tape << 31);
+                input_symbols_left_tape >>= 1;
+                mark_blanks_right_tape = ((mark_blanks_right_tape >> 1) & 0x7FFFFFFF) | (mark_blanks_left_tape << 31);
+                mark_blanks_left_tape >>= 1;
+                mark_symbols_right_tape = ((mark_symbols_right_tape >> 1) & 0x7FFFFFFF) | (mark_symbols_left_tape << 31) | 0x40000000;
+                mark_symbols_left_tape >>= 1;
+
+            } else if (this_c == c_blank) {
+                state = qr;
+
+                input_symbols_left_tape = (input_symbols_left_tape << 1) | ((input_symbols_right_tape >> 31) & 1);
+                input_symbols_right_tape <<= 1;
+                mark_blanks_left_tape = (mark_blanks_left_tape << 1) | ((mark_blanks_right_tape >> 31) & 1);
+                mark_blanks_right_tape <<= 1;
+                mark_symbols_left_tape = (mark_symbols_left_tape << 1) | ((mark_symbols_right_tape >> 31) & 1);
+                mark_symbols_right_tape <<= 1;
+
+           } else {
+                state = q2;
+
+                input_symbols_left_tape = (input_symbols_left_tape << 1) | ((input_symbols_right_tape >> 31) & 1);
+                input_symbols_right_tape <<= 1;
+                mark_blanks_left_tape = (mark_blanks_left_tape << 1) | ((mark_blanks_right_tape >> 31) & 1);
+                mark_blanks_right_tape <<= 1;
+                mark_symbols_left_tape = (mark_symbols_left_tape << 1) | ((mark_symbols_right_tape >> 31) & 1);
+                mark_symbols_right_tape <<= 1;
+
+           }
+        } else if (state == q3) {
+            if (this_c == c_blank) {
+                state = q0;
+
+                input_symbols_left_tape = (input_symbols_left_tape << 1) | ((input_symbols_right_tape >> 31) & 1);
+                input_symbols_right_tape <<= 1;
+                mark_blanks_left_tape = (mark_blanks_left_tape << 1) | ((mark_blanks_right_tape >> 31) & 1);
+                mark_blanks_right_tape <<= 1;
+                mark_symbols_left_tape = (mark_symbols_left_tape << 1) | ((mark_symbols_right_tape >> 31) & 1);
+                mark_symbols_right_tape <<= 1;
+
+           } else {
+                state = q3;
+
+                input_symbols_right_tape = ((input_symbols_right_tape >> 1) & 0x7FFFFFFF) | (input_symbols_left_tape << 31);
+                input_symbols_left_tape >>= 1;
+                mark_blanks_right_tape = ((mark_blanks_right_tape >> 1) & 0x7FFFFFFF) | (mark_blanks_left_tape << 31);
+                mark_blanks_left_tape >>= 1;
+                mark_symbols_right_tape = ((mark_symbols_right_tape >> 1) & 0x7FFFFFFF) | (mark_symbols_left_tape << 31);
+                mark_symbols_left_tape >>= 1;
+            }
+        } else if (state == qa) {
+            return 1;
+        } else {
+            return 0;
+        }
+
+    }
+
+    // should not return 2 on any valid inputs
+    return 2;
+}

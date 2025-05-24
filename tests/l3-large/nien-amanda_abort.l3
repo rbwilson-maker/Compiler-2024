@@ -1,0 +1,13 @@
+//test abort
+
+bool check_invariants(int num) {
+   assert(num > 0);
+   return true;
+}
+
+int main() {
+    int num = 0;
+    if (false) {num++;}
+    check_invariants(num);
+    return 0;
+}

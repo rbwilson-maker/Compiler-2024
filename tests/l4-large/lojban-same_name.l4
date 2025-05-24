@@ -1,0 +1,20 @@
+//test return 1
+
+typedef struct same same;
+
+struct same {
+   same** same;
+};
+
+int main() {
+   same* a = alloc(same);
+   a->same = alloc(same*);
+   *a->same = NULL;
+
+   struct same* b = alloc(struct same);
+   b->same = alloc(same*);
+   *b->same = NULL;
+
+   return (*a->same) == *b->same ? 1 : 2;
+}
+

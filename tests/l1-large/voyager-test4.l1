@@ -1,0 +1,22 @@
+//test return -5
+
+// this file tests uninitialized declaration 
+
+int main() { 
+    int a;
+    int b = 0x4;
+    int c;
+
+    int x;
+    int y;
+    int z;
+
+    a = 3;
+    c = a - b * a + b;
+    return c;
+
+    // x and y are declared before return =>
+    // therefore no control flow path =>
+    // so without initialization is fine
+    z = x + y; 
+}

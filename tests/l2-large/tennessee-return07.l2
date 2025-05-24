@@ -1,0 +1,11 @@
+//test return 5
+
+int main() {
+  bool f = true;
+
+  if (f) {
+    return 5;
+  }
+
+  return 1;
+}

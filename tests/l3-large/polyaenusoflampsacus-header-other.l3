@@ -1,0 +1,11 @@
+//test typecheck
+
+int test2() {
+  my_int my_int_2 = 12;
+  return my_int_2;
+}
+
+int main() {
+  my_double_int test = test();
+  return test;
+}

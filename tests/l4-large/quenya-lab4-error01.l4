@@ -1,0 +1,11 @@
+//test error
+// try to use struct literal
+
+struct person {
+  int id;
+};
+
+int main() {
+  struct person p = { id = 5 };
+  return p.id;
+}

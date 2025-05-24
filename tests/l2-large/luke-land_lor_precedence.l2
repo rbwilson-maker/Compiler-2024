@@ -1,0 +1,13 @@
+//test return 1
+
+int main() {
+    bool x = false;
+    bool y = true;
+    bool z = true;
+
+    // Note: (x && y) || z == true; x && (y || z) == false.
+    bool b1 = x && y || z;
+    bool b2 = z || x && y;
+
+    return b1 && b2 ? 1 : -1;
+}

@@ -1,0 +1,10 @@
+//test return 1234
+
+int main() {
+  int x = 1;
+  for(int i = 0; i < 32; i++) {
+    x <<= 1;
+  }
+  if (~x + 1 == x) return 1234;
+  return 0;
+}

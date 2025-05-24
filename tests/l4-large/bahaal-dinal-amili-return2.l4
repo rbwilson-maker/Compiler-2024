@@ -1,0 +1,17 @@
+//test return 1
+// LHS and RHS of asnop should only be evaluated once
+
+int f(int* p) {
+    *p = *p + 1;
+    return 0;
+}
+
+int main() {
+    int* p = alloc(int);
+    int[] A = alloc_array(int, 1);
+
+    A[f(p)] += 2;
+
+    assert(A[0] == 2);
+    return *p;
+}

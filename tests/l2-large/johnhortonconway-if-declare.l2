@@ -1,0 +1,13 @@
+//test error
+
+int main() {
+  int a;
+  bool b = false;
+  if (b) {
+    a = 1;
+  } else {
+    b = true;
+  }
+  // a should be undeclared, so this should fail
+  return a;
+}

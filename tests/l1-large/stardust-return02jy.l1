@@ -1,0 +1,25 @@
+//test return 1
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int f;
+  int g;
+  int h;
+  int i;
+
+  a = 20;
+  b = 140;
+  c = a*b+0xff;
+  d = 230 - c/7*12;
+  e = a + b * d - c*19/23;
+  f = e + 0x82;
+  g = a / b * c + d - e;
+  h = 2000;
+  i = (a + b) * h - c * d;
+
+  return 1;
+}

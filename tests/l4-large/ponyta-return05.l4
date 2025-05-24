@@ -1,0 +1,17 @@
+//test return 21
+
+int main() {
+    int [][] a;
+    a = alloc_array(int [], 4);
+    a[0] = alloc_array(int, 4);
+    a[1] = alloc_array(int, 4);
+    a[2] = alloc_array(int, 4);
+    a[3] = alloc_array(int, 4);
+
+    a[1][1] = 7;
+    a[2][2] = 14;
+
+    a[3][3] = a[1][1] + a[2][2];
+
+    return a[3][3];
+}

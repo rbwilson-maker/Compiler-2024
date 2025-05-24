@@ -1,0 +1,11 @@
+//test div-by-zero
+//tests for loop with hex
+
+int main() {
+	int x = 0x10;
+	int y = 0x0;
+	for (int i = (x / y); i < x; i++) {
+		y += i;
+	}
+	return y;
+}

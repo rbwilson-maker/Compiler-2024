@@ -1,0 +1,19 @@
+//test div-by-zero
+
+int foo();
+
+void bar(int x, int y, int z);
+
+int main() {
+    bar(1 << 100, foo(), 2);
+
+    return 1;
+}
+
+int foo() {
+    while (true) {}
+
+    return 1;
+}
+
+void bar(int x, int y, int z) {}

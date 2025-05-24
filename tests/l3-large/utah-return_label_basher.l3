@@ -1,0 +1,138 @@
+//test return 5
+// Tests that your compiler makes sure labels don't clash.
+// I feel bad about this one...
+
+void done () { }
+void done_0 () { }
+void done_1 () { }
+void done_2 () { }
+void done_3 () { }
+void fin () { }
+void fin_0 () { }
+void fin_1 () { }
+void fin_2 () { }
+void fin_3 () { }
+void else_0 () { }
+void else_1 () { }
+void else_2 () { }
+void else_3 () { }
+void else_done () { }
+void else_done_0 () { }
+void else_done_1 () { }
+void else_done_2 () { }
+void else_done_3 () { }
+void else_fin () { }
+void else_fin_0 () { }
+void else_fin_1 () { }
+void else_fin_2 () { }
+void else_fin_3 () { }
+void if_0 () { }
+void if_1 () { }
+void if_2 () { }
+void if_3 () { }
+void if_done () { }
+void if_done_0 () { }
+void if_done_1 () { }
+void if_done_2 () { }
+void if_done_3 () { }
+void if_fin () { }
+void if_fin_0 () { }
+void if_fin_1 () { }
+void if_fin_2 () { }
+void if_fin_3 () { }
+void if_else () { }
+void if_else_0 () { }
+void if_else_1 () { }
+void if_else_2 () { }
+void if_else_3 () { }
+void if_else_done () { }
+void if_else_done_0 () { }
+void if_else_done_1 () { }
+void if_else_done_2 () { }
+void if_else_done_3 () { }
+void if_else_fin () { }
+void if_else_fin_0 () { }
+void if_else_fin_1 () { }
+void if_else_fin_2 () { }
+void if_else_fin_3 () { }
+void main_0 () { }
+void main_1 () { }
+void main_2 () { }
+void main_3 () { }
+void main_done () { }
+void main_done_0 () { }
+void main_done_1 () { }
+void main_done_2 () { }
+void main_done_3 () { }
+void main_fin () { }
+void main_fin_0 () { }
+void main_fin_1 () { }
+void main_fin_2 () { }
+void main_fin_3 () { }
+void main_else () { }
+void main_else_0 () { }
+void main_else_1 () { }
+void main_else_2 () { }
+void main_else_3 () { }
+void main_else_done () { }
+void main_else_done_0 () { }
+void main_else_done_1 () { }
+void main_else_done_2 () { }
+void main_else_done_3 () { }
+void main_else_fin () { }
+void main_else_fin_0 () { }
+void main_else_fin_1 () { }
+void main_else_fin_2 () { }
+void main_else_fin_3 () { }
+void main_if () { }
+void main_if_0 () { }
+void main_if_1 () { }
+void main_if_2 () { }
+void main_if_3 () { }
+void main_if_done () { }
+void main_if_done_0 () { }
+void main_if_done_1 () { }
+void main_if_done_2 () { }
+void main_if_done_3 () { }
+void main_if_fin () { }
+void main_if_fin_0 () { }
+void main_if_fin_1 () { }
+void main_if_fin_2 () { }
+void main_if_fin_3 () { }
+void main_if_else () { }
+void main_if_else_0 () { }
+void main_if_else_1 () { }
+void main_if_else_2 () { }
+void main_if_else_3 () { }
+void main_if_else_done () { }
+void main_if_else_done_0 () { }
+void main_if_else_done_1 () { }
+void main_if_else_done_2 () { }
+void main_if_else_done_3 () { }
+void main_if_else_fin () { }
+void main_if_else_fin_0 () { }
+void main_if_else_fin_1 () { }
+void main_if_else_fin_2 () { }
+void main_if_else_fin_3 () { }
+
+
+
+
+
+
+
+
+int main () {
+
+    int x = 3;
+    int y = 4;
+    int z;
+
+    if (x < y) {
+        z = 4;
+    } else {
+        z = 5;
+    }
+
+    return 5;
+}

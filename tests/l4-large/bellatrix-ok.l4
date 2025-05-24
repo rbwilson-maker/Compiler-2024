@@ -1,0 +1,24 @@
+//test typecheck
+//test infloop
+struct fee;
+typedef struct fee fee;
+typedef struct foo foo;
+struct foo{
+    struct fee* fee;
+    bool * b;
+};
+struct fee {
+    struct foo* foo;
+    int fee;
+};
+int main() {
+    fee * x = alloc(fee);
+    foo* y = alloc(foo);
+    (*x).foo = y;
+    y->fee = x;
+    while (x->foo != NULL) {
+        x = (*x->foo).fee; // -> > *
+    }
+    return 0;
+}
+    

@@ -1,0 +1,9 @@
+//test return 20621811
+
+int main() {
+    int x = 1235123;
+    int y = -2134;
+    int z = 12341;
+
+    return (x % y) * z;
+}

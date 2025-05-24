@@ -1,0 +1,7 @@
+//test typecheck
+//test infloop
+
+//also checks for implicit defs
+int main(){
+	return main();
+}

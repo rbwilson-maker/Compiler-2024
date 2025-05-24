@@ -1,0 +1,12 @@
+//test return 16
+
+int main() { 
+  int x = -1;
+  int y = 80;
+  int z = y - x;
+  int a = z / 9;
+  int b = z % 9;
+  int c = y % 9;
+  int d = x % 9;
+  return a + b + c + d;
+}

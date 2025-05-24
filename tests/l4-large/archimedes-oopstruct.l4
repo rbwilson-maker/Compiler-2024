@@ -1,0 +1,15 @@
+//test error
+// Forgot to write down the full name of struct variable.
+
+struct some_struct {
+  int a;
+  int b;
+  int c;
+  int d;
+};
+
+int main() {
+  struct some_struct v0;
+  0.a; // Maybe you mean v0?
+  return 0;
+}

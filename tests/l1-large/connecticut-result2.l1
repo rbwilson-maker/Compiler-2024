@@ -1,0 +1,18 @@
+//test return 2
+
+int main() {
+	int t1 = 1;
+	t1 = 0x2;
+	t1 = 0x30;
+	t1 = 0xf00;
+	t1 = 4;
+	t1 += t1;
+	t1 -= (t1 + t1);
+	t1 /= t1;
+	t1 += (t1 * 3);
+	t1 = - (-t1);
+	t1 %= 3;
+	t1 += t1;
+
+	return t1;
+}

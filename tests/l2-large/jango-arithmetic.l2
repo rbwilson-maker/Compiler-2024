@@ -1,0 +1,19 @@
+//test return 2
+
+int main() {
+  int x = 0;
+  x += 3;
+  x *= 4;
+  x /= 6;
+  x *= 50;
+
+  if (x >= 100) {
+    if (x == 100) {
+      return 2;
+    } else {
+      return x;
+    } 
+  } else {
+    return 0;
+  }
+}

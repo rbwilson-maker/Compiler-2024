@@ -1,0 +1,259 @@
+//test return 2097130
+
+// A somewhat pathological program whose interference is complete.
+// (It also happens to compute 2**21 - 22, which is a little cool.)
+int main() {
+    int z = 0;
+
+    int a = 1;
+    z += a;
+
+    int b = 2;
+    b += a;
+    z += b;
+
+    int c = 3;
+    c += a;
+    c += b;
+    z += c;
+
+    int d = 4;
+    d += a;
+    d += b;
+    d += c;
+    z += d;
+
+    int e = 5;
+    e += a;
+    e += b;
+    e += c;
+    e += d;
+    z += e;
+
+    int f = 6;
+    f += a;
+    f += b;
+    f += c;
+    f += d;
+    f += e;
+    z += f;
+
+    int g = 7;
+    g += a;
+    g += b;
+    g += c;
+    g += d;
+    g += e;
+    g += f;
+    z += g;
+
+    int h = 8;
+    h += a;
+    h += b;
+    h += c;
+    h += d;
+    h += e;
+    h += f;
+    h += g;
+    z += h;
+
+    int i = 9;
+    i += a;
+    i += b;
+    i += c;
+    i += d;
+    i += e;
+    i += f;
+    i += g;
+    i += h;
+    z += i;
+
+    int j = 10;
+    j += a;
+    j += b;
+    j += c;
+    j += d;
+    j += e;
+    j += f;
+    j += g;
+    j += h;
+    j += i;
+    z += j;
+
+    int k = 11;
+    k += a;
+    k += b;
+    k += c;
+    k += d;
+    k += e;
+    k += f;
+    k += g;
+    k += h;
+    k += i;
+    k += j;
+    z += k;
+
+    int l = 12;
+    l += a;
+    l += b;
+    l += c;
+    l += d;
+    l += e;
+    l += f;
+    l += g;
+    l += h;
+    l += i;
+    l += j;
+    l += k;
+    z += l;
+
+    int m = 13;
+    m += a;
+    m += b;
+    m += c;
+    m += d;
+    m += e;
+    m += f;
+    m += g;
+    m += h;
+    m += i;
+    m += j;
+    m += k;
+    m += l;
+    z += m;
+
+    int n = 14;
+    n += a;
+    n += b;
+    n += c;
+    n += d;
+    n += e;
+    n += f;
+    n += g;
+    n += h;
+    n += i;
+    n += j;
+    n += k;
+    n += l;
+    n += m;
+    z += n;
+
+    int o = 15;
+    o += a;
+    o += b;
+    o += c;
+    o += d;
+    o += e;
+    o += f;
+    o += g;
+    o += h;
+    o += i;
+    o += j;
+    o += k;
+    o += l;
+    o += m;
+    o += n;
+    z += o;
+
+    int p = 16;
+    p += a;
+    p += b;
+    p += c;
+    p += d;
+    p += e;
+    p += f;
+    p += g;
+    p += h;
+    p += i;
+    p += j;
+    p += k;
+    p += l;
+    p += m;
+    p += n;
+    p += o;
+    z += p;
+
+    int q = 17;
+    q += a;
+    q += b;
+    q += c;
+    q += d;
+    q += e;
+    q += f;
+    q += g;
+    q += h;
+    q += i;
+    q += j;
+    q += k;
+    q += l;
+    q += m;
+    q += n;
+    q += o;
+    q += p;
+    z += q;
+
+    int r = 18;
+    r += a;
+    r += b;
+    r += c;
+    r += d;
+    r += e;
+    r += f;
+    r += g;
+    r += h;
+    r += i;
+    r += j;
+    r += k;
+    r += l;
+    r += m;
+    r += n;
+    r += o;
+    r += p;
+    r += q;
+    z += r;
+
+    int s = 19;
+    s += a;
+    s += b;
+    s += c;
+    s += d;
+    s += e;
+    s += f;
+    s += g;
+    s += h;
+    s += i;
+    s += j;
+    s += k;
+    s += l;
+    s += m;
+    s += n;
+    s += o;
+    s += p;
+    s += q;
+    s += r;
+    z += s;
+
+    int t = 20;
+    t += a;
+    t += b;
+    t += c;
+    t += d;
+    t += e;
+    t += f;
+    t += g;
+    t += h;
+    t += i;
+    t += j;
+    t += k;
+    t += l;
+    t += m;
+    t += n;
+    t += o;
+    t += p;
+    t += q;
+    t += r;
+    t += s;
+    z += t;
+
+    return z;
+}

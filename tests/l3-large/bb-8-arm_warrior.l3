@@ -1,0 +1,24 @@
+//test return 0
+
+int mortal_strke(int x)
+{
+  return 3 * x;
+}
+
+int main()
+{
+  int x = 5;
+  int dps = mortal_strke(x);
+  int cd = 5;
+  bool colossus_smash = false;
+  while(!colossus_smash)
+  {
+    if(cd == 0)
+    {
+      colossus_smash = true;
+    }
+    dps = mortal_strke(x);
+    cd--;
+  }
+  return dps * 0; 
+}

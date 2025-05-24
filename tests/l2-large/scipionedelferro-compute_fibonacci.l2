@@ -1,0 +1,19 @@
+//test return 89
+// returns 10th fibonacci number
+
+int main () {
+
+    int f1 = 1;
+    int f2 = 2;
+
+    int i = 3;
+    int n = 10;
+    while (i <= n) {
+        int temp;
+        temp = f2;
+        f2 = f1 + f2;
+        f1 = temp;
+        i += 1;
+    }
+    return f2;
+}

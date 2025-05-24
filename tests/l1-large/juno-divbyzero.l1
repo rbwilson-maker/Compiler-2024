@@ -1,0 +1,10 @@
+//test div-by-zero
+
+// Very simple, one division that works and one that doesn't
+
+int main() {
+    int a = 1;
+    int b = a - 1;
+
+    return a / b;
+}

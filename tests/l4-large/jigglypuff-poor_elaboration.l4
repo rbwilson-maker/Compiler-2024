@@ -1,0 +1,30 @@
+//test return 30
+
+/* Poor Elaboration Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, October 26, 2015 at 05:29:52 PM EDT
+ *
+ * This test tests that expressions of the form A[f(x)] += i are not
+ * elaborated in A[f(x)] = A[f(x)] = i.
+ */
+
+int foo(int x, int *y)
+{
+    int tmp = x / *y;
+    *y = 0;
+    return tmp;
+}
+
+int main()
+{
+    int[] A = alloc_array(int, 20);
+    int* divide = alloc(int);
+    *divide = 2;
+
+    A[foo(10, divide)] += 30;
+    assert(*divide == 0);
+
+    return A[5];
+}

@@ -1,0 +1,9 @@
+//test error
+// tests when a variable is not defined in a loop
+int main() {
+    int a = 2;
+    for (a = 3; a < 4; a++) {
+        b = 42;
+    }
+    return a;
+}

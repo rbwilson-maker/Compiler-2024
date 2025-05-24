@@ -1,0 +1,183 @@
+//test return 9168
+//median heaps
+
+struct sized_heap {
+    int size;
+    int next;
+    int[] heap;
+};
+
+struct median_heap {
+    struct sized_heap* less;
+    struct sized_heap* more;
+    int rootv;
+};
+
+void min_heap_insert(struct sized_heap* h, int key) {
+    
+    h->heap[h->next] = key;
+
+    //percolate up
+    int i = h->next;
+    while (i != 1 && 
+           h->heap[i] < h->heap[i / 2]) {
+        int temp = h->heap[i / 2];
+        h->heap[i / 2] = h->heap[i];
+        h->heap[i] = temp;
+        i /= 2;
+    }
+
+    h->size++;
+    h->next++;
+    return;
+}
+
+void max_heap_insert(struct sized_heap* h, int key) {
+    
+    h->heap[h->next] = key;
+
+    //percolate up
+    int i = h->next;
+    while (i != 1 && 
+           h->heap[i] > h->heap[i / 2]) {
+        int temp = h->heap[i / 2];
+        h->heap[i / 2] = h->heap[i];
+        h->heap[i] = temp;
+        i /= 2;
+    }
+
+    h->size++;
+    h->next++;
+    return;
+}
+
+int min_heap_deletemin(struct sized_heap* h) {
+    int min = h->heap[1];
+
+    int i = 1;
+    h->heap[i] = h->heap[h->next - 1];
+    h->next--;
+    //percolate down
+    bool cont = true;
+    while (cont) {
+        if (2 * i >= h->next) {
+            cont = false;
+        } else if ((2*i + 1) == h->next) {
+            if (h->heap[i] > h->heap[2*i]) {
+                int temp = h->heap[2*i];
+                h->heap[2*i] = h->heap[i];
+                h->heap[i] = temp;
+            }
+            cont = false;
+        } else {
+            int smaller = (h->heap[2*i] < h->heap[2*i + 1]) ? 2 * i : 2 * i + 1;
+            if (h->heap[smaller] < h->heap[i]) {
+                int temp = h->heap[smaller];
+                h->heap[smaller] = h->heap[i];
+                h->heap[i] = temp;
+                i = smaller;
+            } else {
+                cont = false;
+            }
+        }
+    }
+
+    h->size--;
+    return min;
+}
+
+int max_heap_deletemax(struct sized_heap* h) {
+    int max = h->heap[1];
+
+    int i = 1;
+    h->heap[i] = h->heap[h->next - 1];
+    h->next--;
+    //percolate down
+    bool cont = true;
+    while (cont) {
+        if (2 * i >= h->next) {
+            cont = false;
+        } else if ((2*i + 1) == h->next) {
+            if (h->heap[i] < h->heap[2*i]) {
+                int temp = h->heap[2*i];
+                h->heap[2*i] = h->heap[i];
+                h->heap[i] = temp;
+            }
+            cont = false;
+        } else {
+            int larger = (h->heap[2*i] < h->heap[2*i + 1]) ? 2 * i + 1 : 2 * i;
+            if (h->heap[larger] > h->heap[i]) {
+                int temp = h->heap[larger];
+                h->heap[larger] = h->heap[i];
+                h->heap[i] = temp;
+                i = larger;
+            } else {
+                cont = false;
+            }
+        }
+    }
+
+    h->size--;
+    return max;
+}
+
+void median_heap_insert(struct median_heap* h, int key) {
+    if (key < h->rootv) {
+        max_heap_insert(h->less, key);
+        if (h->less->size - h->more->size == 2) {
+            //keep it balanced!
+            int new_median = max_heap_deletemax(h->less);
+            min_heap_insert(h->more, h->rootv);
+            h->rootv = new_median;
+        }
+    } else {
+        min_heap_insert(h->more, key);
+        if (h->more->size - h->less->size == 2) {
+            //keep it balanced!
+            int new_median = min_heap_deletemin(h->more);
+            max_heap_insert(h->less, h->rootv);
+            h->rootv = new_median;
+        }
+    }
+}
+
+int whatsthemedian(struct median_heap* h) {
+    return h->rootv;
+}
+
+struct median_heap* gimmeaheap(int initval) {
+    struct median_heap* mh = alloc(struct median_heap);
+    mh->rootv = initval;
+    mh->less = alloc(struct sized_heap);
+    mh->less->size = 0;
+    mh->less->next = 1;
+    mh->less->heap = alloc_array(int, 10000);
+    mh->more = alloc(struct sized_heap);
+    mh->more->size = 0;
+    mh->more->next = 1;
+    mh->more->heap = alloc_array(int, 10000);
+    return mh;
+}
+
+
+int main() {
+    struct median_heap* shouldhave = gimmeaheap(9000);
+
+    //bunch of inserts
+    int been = 500;
+    for (int home = 0; home < 30; home++) {
+        if (home % 2 == 0) {
+            int yesterday1 = whatsthemedian(shouldhave);
+            for (int nextkey = yesterday1; nextkey < yesterday1 + been; nextkey++) {
+                median_heap_insert(shouldhave, nextkey);
+            }
+        } else {
+            int yesterday2 = whatsthemedian(shouldhave);
+            for (int nextkey = yesterday2; nextkey > yesterday2 - been; nextkey--) {
+                median_heap_insert(shouldhave, nextkey);
+            }
+        }
+    }
+
+    return whatsthemedian(shouldhave);
+}

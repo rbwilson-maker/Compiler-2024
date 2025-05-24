@@ -1,0 +1,25 @@
+//test return 131071
+
+struct node {
+	struct node *left;
+	struct node *right;
+	int value;
+};
+
+struct node * construct(int depth) {
+       if (depth == 0) return NULL;
+       struct node * root = alloc(struct node);
+       root->left = construct(depth-1);
+       root->right = construct(depth-1);
+       return root;
+}
+
+int count(struct node *root) {
+    if (root == NULL) return 0;
+    return 1 + count(root->left) + count(root->right);
+}
+
+int main() {
+    struct node *root = construct(17);
+    return count(root);
+}

@@ -1,0 +1,47 @@
+//test return 4
+// Implements a stack
+
+typedef struct node* node;
+
+struct node {
+  int val;
+  node next;
+};
+
+typedef struct list* list;
+
+struct list {
+  node head;
+  int length;
+};
+
+list create() {
+  return alloc(struct list);
+}
+
+void push(list ll, int x) {
+  node next = alloc(struct node);
+  next->val = x;
+  next->next = ll->head;
+  ll->head = next;
+  ll->length++;
+}
+
+int pop(list ll) {
+  int x = ll->head->val;
+  ll->head = ll->head->next;
+  ll->length--;
+  return x;
+}
+
+bool empty(list ll) {
+  return ll->length == 0;
+}
+
+int main() {
+  list ll = create();
+  for (int i = 0; i < 5; i++) {
+    push(ll, i);
+  }
+  return pop(ll);
+}

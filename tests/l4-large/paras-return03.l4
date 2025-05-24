@@ -1,0 +1,19 @@
+//test return 42
+struct bar {
+  int x;
+  int *y;
+  int **z;
+  int w;
+};
+
+typedef struct bar foo;
+int * x(foo* y){
+  return y -> y;
+}
+
+int main(){
+  foo * z = alloc(foo);
+  (*z).y = alloc(int);
+  *(z -> y) = 42;
+  return *(x(z));
+}

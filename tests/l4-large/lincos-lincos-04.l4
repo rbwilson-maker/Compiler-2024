@@ -1,0 +1,111 @@
+//test return 42
+
+struct node {
+    struct node*[] neighbors;
+    int num_neighbors;
+    int color;
+};
+
+// solver for 3-col, return 1 if graph is 3 colorable, 0 otherwise
+int color(struct node*[] G, int n, int i) {
+    // colorable, if we colored all the nodes
+    if (i == n) return 1;
+
+    // try color node i with all 3 colors
+    // color 0
+    G[i]->color = 0;
+    bool colorable = true;
+    for (int j = 0; j < G[i]->num_neighbors; j++) {
+        if (G[i]->neighbors[j]->color == 0) colorable = false;
+    }
+    if (colorable && color(G, n, i+1) == 1) return 1;
+
+    // color 1
+    G[i]->color = 1;
+    colorable = true;
+    for (int j = 0; j < G[i]->num_neighbors; j++) {
+        if (G[i]->neighbors[j]->color == 1) colorable = false;
+    }
+    if (colorable && color(G, n, i+1) == 1) return 1;
+
+    // color 2
+    G[i]->color = 2;
+    colorable = true;
+    for (int j = 0; j < G[i]->num_neighbors; j++) {
+        if (G[i]->neighbors[j]->color == 2) colorable = false;
+    }
+    if (colorable && color(G, n, i+1) == 1) return 1;
+
+    // not colorable
+    return 0;
+}
+
+int main() {
+    struct node*[] K3 = alloc_array(struct node*, 3); // K_3, better known as a triangle
+    for (int i = 0; i < 3; i++) {
+        K3[i] = alloc(struct node);
+        K3[i]->num_neighbors = 2;
+        K3[i]->neighbors = alloc_array(struct node*, 2);
+        K3[i]->color = -1; // init color to be -1
+    }
+    for (int i = 0; i < 3; i++) {
+        K3[i]->neighbors[0] = K3[(i+1) % 3];
+        K3[i]->neighbors[1] = K3[(i+2) % 3];
+    }
+
+    struct node*[] K4 = alloc_array(struct node*, 4); // K_4, the smallest non 3-colorable graph
+    for (int i = 0; i < 4; i++) {
+        K4[i] = alloc(struct node);
+        K4[i]->num_neighbors = 3;
+        K4[i]->neighbors = alloc_array(struct node*, 3);
+        K4[i]->color = -1; // init color to be -1
+    }
+    for (int i = 0; i < 4; i++) {
+        K4[i]->neighbors[0] = K4[(i+1) % 4];
+        K4[i]->neighbors[1] = K4[(i+2) % 4];
+        K4[i]->neighbors[2] = K4[(i+3) % 4];
+    }
+
+    struct node*[] K420 = alloc_array(struct node*, 420); // K_420, probably also not 3-colorable...
+    for (int i = 0; i < 420; i++) {
+        K420[i] = alloc(struct node);
+        K420[i]->num_neighbors = 419;
+        K420[i]->neighbors = alloc_array(struct node*, 419);
+        K420[i]->color = -1; // init color to be -1
+    }
+    for (int i = 0; i < 420; i++)
+        for (int j = 0; j < 419; j++)
+            K420[i]->neighbors[j] = K420[(i+j+1) % 420];
+
+    struct node*[] K33 = alloc_array(struct node*, 6); // K_{3,3}, a complete bipartite graph
+    for (int i = 0; i < 6; i++) {
+        K33[i] = alloc(struct node);
+        K33[i]->num_neighbors = 3;
+        K33[i]->neighbors = alloc_array(struct node*, 3);
+        K33[i]->color = -1; // init color to be -1
+    }
+    for (int i = 0; i < 6; i++) {
+        K33[i]->neighbors[0] = K33[i < 3 ? 3 : 0];
+        K33[i]->neighbors[1] = K33[i < 3 ? 4 : 1];
+        K33[i]->neighbors[2] = K33[i < 3 ? 5 : 2];
+    }
+
+    struct node*[] C42 = alloc_array(struct node*, 42); // C42, a cycle of length 42
+    for (int i = 0; i < 42; i++) {
+        C42[i] = alloc(struct node);
+        C42[i]->num_neighbors = 2;
+        C42[i]->neighbors = alloc_array(struct node*, 2);
+        C42[i]->color = -1; // init color to be -1
+    }
+    for (int i = 0; i < 42; i++) {
+        C42[i]->neighbors[0] = C42[(i+43) % 42];
+        C42[i]->neighbors[1] = C42[(i+41) % 42];
+    }
+
+    assert(color(K3, 3, 0) == 1); // K_3 is 3-colorable
+    assert(color(K4, 4, 0) == 0); // K_4 is, however, not
+    assert(color(K420, 420, 0) == 0); // K_420 is also not 3-colorable
+    assert(color(K33, 6, 0) == 1); // K_{3,3}, or any bipartite graph, is 3-colorable
+    assert(color(C42, 42, 0) == 1); // C_42, or any cycle, is 3-colorable
+    return 42;
+}

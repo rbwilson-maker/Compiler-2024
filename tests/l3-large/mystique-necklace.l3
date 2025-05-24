@@ -1,0 +1,75 @@
+//test return 79419180
+
+// how many necklaces can we make with 12 beads 
+// using exactly 6 different colors?
+
+int pow(int b, int e) {
+    if (e == 0) return 1;
+    if (e == 1) return b;
+    return b * pow(b, e - 1);
+}
+
+int gcd(int n1, int n2) {
+    int gcd = 1;
+    int max_gcd;
+    if (n1 <= n2) {
+        max_gcd = n1;
+    } else {
+        max_gcd = n2;
+    }
+    for (int i = 2; i <= max_gcd; i++) {
+        if (n1 % i == 0 && n2 % i == 0) {
+            gcd = i;
+        }
+    }
+    return gcd;
+}
+
+int fact(int n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * fact(n-1);
+}
+
+// computes stirling number of the second kind
+int s2(int n, int k) {
+    if (n == 0 && k == 0) {
+        return 1;
+    }
+    if (n == 0 || k == 0) {
+        return 0;
+    }
+    return k * s2(n - 1, k) + s2(n - 1, k-1);
+}
+
+
+// euler's totient function
+int phi(int n) {
+    int count = 1;
+    for (int i = 2; i < n; i++) {
+        if (gcd(i, n) == 1) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// how many necklaces can we make with n beads 
+// using exactly k different colors?
+// https://oeis.org/A087854
+int necklace(int n, int k) {
+    int sum = 0;
+    for (int d = 1; d <= n; d++) {
+        if (n % d == 0) {
+            sum += phi(d) * s2(n/d, k);
+        }
+    }
+    return (sum * fact(k))/n;
+}
+
+int main() {
+    int n = 12;
+    int k = 6;
+    return necklace(n, k);
+}

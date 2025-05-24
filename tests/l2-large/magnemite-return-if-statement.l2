@@ -1,0 +1,14 @@
+//test return 4
+//if grammar ambiguity
+
+int main() {
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    if (a == 0)
+       if (b == 1)
+          return 3;
+       else
+          return 4; //else matches the most recent if
+    return 5;
+}

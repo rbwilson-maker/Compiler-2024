@@ -1,0 +1,12 @@
+
+struct s1 {};
+struct s2 {int x0; struct s1 s1;};
+struct s3 {int x0; struct s2 s2; int x1; struct s1 s1;};
+struct s4 {int x0; struct s3 s3; int x1; struct s2 s2; int x2; struct s1 s1;};
+
+struct a1 {struct s4[] s4s; struct s3 s3; struct s1* s1p;};
+struct a2 {struct a1 a1; struct a2* a2;};
+struct a3 {struct a4* a4; struct a5*[] a5s;};
+struct a4 {struct a2[] a2s; struct a5* a5;};
+struct a5;
+

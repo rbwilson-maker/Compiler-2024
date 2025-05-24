@@ -1,0 +1,15 @@
+//test return 0
+// test functions
+
+bool int_to_bool(int x) {
+  return x == 1;
+}
+
+int bool_to_int(bool a) {
+  int x = a ? 1 : 0;
+  return x;
+}
+
+int main() {
+  return bool_to_int(int_to_bool(bool_to_int(int_to_bool(bool_to_int(int_to_bool(0))))));
+}

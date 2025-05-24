@@ -1,0 +1,22 @@
+//test typecheck
+
+/*
+ * https://en.wikipedia.org/wiki/Weierstrass_function
+ *
+ * Supposedly it's a function that is continuous everywhere but differentiable
+ * nowhere :O 
+ *
+ */
+
+int weierstrass(int x, int n) {
+    int res = 0;
+    for (int i = 0; i < n; i++) {
+        res = res + cos(pow(3, n) * pi() * x) / pow(2, n);
+    }
+    return res;
+}
+
+int main() {
+    weierstrass(2, 3);
+    return 0;
+}

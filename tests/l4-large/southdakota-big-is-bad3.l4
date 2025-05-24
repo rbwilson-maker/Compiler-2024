@@ -1,0 +1,16 @@
+//test error
+
+struct biiiiiiiig {
+  int so;
+  int very;
+  int large;
+};
+
+struct biiiiiiiig spit() {
+  struct biiiiiiiig *ptr = alloc(struct biiiiiiiig);
+  return *ptr;
+}
+
+int main() {
+  return spit().so;
+}

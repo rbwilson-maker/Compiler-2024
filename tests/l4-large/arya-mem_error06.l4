@@ -1,0 +1,6 @@
+//test memerror
+int main(){
+  int **a = alloc(int*);
+  **a = 1000;
+  return **a;
+}

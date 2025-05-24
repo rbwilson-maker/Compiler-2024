@@ -1,0 +1,8 @@
+//test return 96
+int main () {
+  int a = 6;
+  int b = 90;
+
+  b += a;
+  return b;
+}

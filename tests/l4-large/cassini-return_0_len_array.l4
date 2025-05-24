@@ -1,0 +1,9 @@
+//test return 0
+
+int main() {
+    int[] a = alloc_array(int, 0);
+    //@assert \length(a) == 0;
+
+    int[] b = alloc_array(int, 1);
+    return b[0];
+}

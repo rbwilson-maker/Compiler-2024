@@ -1,0 +1,16 @@
+//test return 2
+
+void check_safe_div(int x, int y) {
+  assert(y != 0);
+  assert(x != 0x8000000 || y != -1);
+  return;
+}
+
+int divide(int x, int y) {
+  check_safe_div(x, y);
+  return x / y;
+}
+
+int main() {
+  return divide(6, 3);
+}

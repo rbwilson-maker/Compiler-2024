@@ -1,0 +1,19 @@
+//test return 0
+// fun with pointers
+
+int main(){
+  int **x = alloc(int*);
+  *x = alloc(int);
+  assert(**x == 0);
+  int *y = alloc(int);
+  *y = 10;
+  *x = y;
+  assert(**x == 10);
+  int *z = alloc(int);
+  *z = 20;
+  *x = z;
+  assert(**x == 20);
+  *z = -1;
+  assert(**x == -1);
+  return 0;
+}

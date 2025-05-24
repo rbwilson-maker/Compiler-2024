@@ -1,0 +1,14 @@
+//test memerror
+
+int main () {
+
+    int[] arr = alloc_array(int, 15251);
+    
+    int index = 0;
+    while (true) {
+    	  arr[index] = index;
+    	  index++;
+    }
+
+    return index;
+}

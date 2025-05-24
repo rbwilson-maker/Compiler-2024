@@ -1,0 +1,49 @@
+//test return 1026646244
+
+// Uses ternary search to find any local maxima of the input polynomial over the input range within 5e-4 absolute error.
+
+// For the constants used here, we search the range [-2, 0.8] for a local maximum for the polynomial 0.1 x^4 + 2 x^3 - 3 x^2 + 0.25 x - 1.
+// The answer we find should be around -0.994637 at x = 0.0435706.
+
+fpt find_max(fpt start, fpt end, fpt c4, fpt c3, fpt c2, fpt c1, fpt c0);
+fpt eval_poly(fpt x, fpt c4, fpt c3, fpt c2, fpt c1, fpt c0);
+
+int main() {
+	fpt start = itof(-2);
+	fpt end = fdiv(itof(4), itof(5));
+	fpt c4 = fdiv(itof(1), itof(10));
+	fpt c3 = itof(2);
+	fpt c2 = itof(-3);
+	fpt c1 = fdiv(itof(1), itof(4));
+	fpt c0 = itof(-1);
+	fpt ans = find_max(start, end, c4, c3, c2, c1, c0);
+	print_fpt(ans);
+	print_fpt(eval_poly(ans, c4, c3, c2, c1, c0));
+	return ans;
+}
+
+fpt find_max(fpt start, fpt end, fpt c4, fpt c3, fpt c2, fpt c1, fpt c0) {
+	if (fless(fsub(end, start), fdiv(itof(1), itof(2000)))) {
+		return start;
+	}
+
+	fpt step_size = fdiv(fsub(end, start), itof(3));
+	fpt left = fadd(start, step_size);
+	fpt right = fsub(end, step_size);
+	fpt ly = eval_poly(left, c4, c3, c2, c1, c0);
+	fpt ry = eval_poly(right, c4, c3, c2, c1, c0);
+
+	return find_max(
+		fless(ly, ry) ? left : start,
+		fless(ly, ry) ? end : right,
+		c4, c3, c2, c1, c0);
+}
+
+fpt eval_poly(fpt x, fpt c4, fpt c3, fpt c2, fpt c1, fpt c0) {
+	fpt y = c4;
+	y = fadd(fmul(y, x), c3);
+	y = fadd(fmul(y, x), c2);
+	y = fadd(fmul(y, x), c1);
+	y = fadd(fmul(y, x), c0);
+	return y;
+}

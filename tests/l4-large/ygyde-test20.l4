@@ -1,0 +1,29 @@
+//test compile
+
+struct link {
+    int val;
+    struct link *next_link;
+};
+
+struct link *add_node(int val, struct link *ptr) {
+    struct link *new_ptr = alloc(struct link);
+    new_ptr->val = val;
+    new_ptr->next_link = NULL;
+    if (ptr == NULL) {
+        return new_ptr;
+    }
+    else {
+        new_ptr->next_link = ptr;
+        return new_ptr;
+    }
+}
+
+int main() {
+    struct link *ptr = NULL;
+    ptr = add_node(0, ptr);
+    ptr = add_node(0, ptr);
+    ptr = add_node(0, ptr);
+    ptr = add_node(0, ptr);
+    ptr = add_node(0, ptr);
+    return 0;
+}

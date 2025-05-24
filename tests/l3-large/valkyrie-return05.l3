@@ -1,0 +1,18 @@
+//test return 10
+//Binomial
+
+//Compute n choose k
+int fact(int n){
+	if(n == 0){
+		return 1;
+	}
+	return n * fact(n-1);
+}
+
+int compute(int n, int k){
+	return fact(n) / fact(k) / fact(n-k);
+}
+
+int main(){
+	return compute(5,2);
+}

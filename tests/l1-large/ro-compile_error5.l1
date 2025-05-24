@@ -1,0 +1,7 @@
+//test error
+// Int Overflow Declaration
+
+int main() {
+  int x = 2500000000;
+  return x;
+}

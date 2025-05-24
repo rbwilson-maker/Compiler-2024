@@ -1,0 +1,35 @@
+//test return 5
+
+struct s1 {
+    struct s2 *abc;
+};
+
+struct s2 {
+    struct s3 *abq;
+    struct s1[] useless;
+};
+
+struct s3 {
+    struct s1 *abc;
+    int[] useful;
+};
+
+typedef struct s1 * a;
+typedef struct s2 * b;
+typedef struct s3 * c;
+
+int main() {
+    a x = alloc(struct s1);
+    b y = alloc(struct s2);
+    c z = alloc(struct s3);
+
+    x->abc = y;
+    y->abq = z;
+    z->abc = x;
+    y->useless = alloc_array(struct s1, 100);
+    x->abc->abq->abc->abc->abq->useful = alloc_array(int, 10);
+    z->abc->abc->abq->useful = alloc_array(int, y->abq->useful[y->abq->useful[x->abc->abq->useful[0]]] + 1);
+
+    y->abq->useful[0] = 5;
+    return x->abc->abq->abc->abc->abq->abc->abc->abq->useful[0];
+}

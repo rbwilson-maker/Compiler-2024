@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+    int b = 15411;
+    bool x = false;
+    x ||= b > 0; // this is not part of the L2 spec
+    int c = x ? 5 : 4;
+    return c;
+}

@@ -1,0 +1,16 @@
+//test typecheck
+
+int a(int arg_a) {
+  return z(arg_a);
+}
+
+int b(int arg_b) {
+  return a(arg_b);
+}
+
+int main() {
+  int c1 = z(0);
+  int c2 = zz(0);
+  int c = 0;
+  return a(c);
+}

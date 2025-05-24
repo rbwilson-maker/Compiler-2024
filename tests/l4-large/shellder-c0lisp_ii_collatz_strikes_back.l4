@@ -1,0 +1,268 @@
+//test return 144
+struct c0l_data {
+    int type;
+    int val;
+    struct c0l_data *car;
+    struct c0l_data *cdr;
+};
+typedef struct c0l_data *c0lisp;
+
+// cons
+c0lisp C(c0lisp car, c0lisp cdr) {
+    c0lisp cons = alloc(struct c0l_data);
+    cons->type = 0;
+    cons->car = car;
+    cons->cdr = cdr;
+    return cons;
+}
+c0lisp N(int n) {
+    c0lisp integer = alloc(struct c0l_data);
+    integer->type = 1;
+    integer->val = n;
+    return integer;
+}
+c0lisp S(int n) {
+    c0lisp symbol = alloc(struct c0l_data);
+    symbol->type = 2;
+    symbol->val = n;
+    return symbol;
+}
+
+// List creator helper functions
+c0lisp NIL();
+c0lisp L1(c0lisp A) {
+    return C(A, NIL());
+}
+c0lisp L2(c0lisp A, c0lisp B) {
+    return C(A, C(B, NIL()));
+}
+c0lisp L3(c0lisp a, c0lisp b, c0lisp c) {
+    return C(a, C(b, C(c, NIL())));
+}
+c0lisp L4(c0lisp a, c0lisp b, c0lisp c, c0lisp d) {
+    return C(a, C(b, C(c, C(d, NIL()))));
+}
+c0lisp L5(c0lisp a, c0lisp b, c0lisp c, c0lisp d, c0lisp e) {
+    return C(a, C(b, C(c, C(d, C(e, NIL())))));
+}
+
+// Symbol table (because we don't have global constants)
+c0lisp COLLATZ(){return S(1);}
+c0lisp DIV(){return S(2);}
+c0lisp EQL(){return S(3);}
+c0lisp I(){return S(4);}
+c0lisp IF(){return S(5);}
+c0lisp K(){return S(6);}
+c0lisp LAMBDA(){return S(7);}
+c0lisp LET(){return S(8);}
+c0lisp LTE(){return S(9);}
+c0lisp M(){return S(10);}
+c0lisp MAX(){return S(11);}
+c0lisp MOD(){return S(12);}
+c0lisp NIL(){return S(13);}
+c0lisp PLUS(){return S(14);}
+c0lisp SET(){return S(15);}
+c0lisp TIMES(){return S(16);}
+c0lisp WHILE(){return S(17);}
+c0lisp X(){return S(18);}
+
+c0lisp plus(c0lisp a, c0lisp b) {
+    return N(a->val + b->val);
+}
+c0lisp times(c0lisp a, c0lisp b) {
+    return N(a->val * b->val);
+}
+c0lisp div(c0lisp a, c0lisp b) {
+    return N(a->val / b->val);
+}
+c0lisp mod(c0lisp a, c0lisp b) {
+    return N(a->val % b->val);
+}
+c0lisp eql(c0lisp a, c0lisp b) {
+    if (a->type != b->type)
+        return N(0);
+    if (a->type == 0)
+        return N(a == b ? 1 : 0);
+    else
+        return N(a->val == b->val ? 1 : 0);
+}
+c0lisp lte(c0lisp a, c0lisp b) {
+    assert(a->type == 1);
+    assert(b->type == 1);
+    return N(a->val <= b->val ? 1 : 0);
+}
+c0lisp max(c0lisp a, c0lisp b) {
+    assert(a->type == 1);
+    assert(b->type == 1);
+    return N(a->val <= b->val ? b->val : a->val);
+}
+c0lisp length(c0lisp cons) {
+    if (eql(cons, NIL())->val == 1)
+        return N(0);
+    assert(cons->type == 0);
+    return plus(N(1), length(cons->cdr));
+}
+
+c0lisp seq(c0lisp a, c0lisp b) {
+    return b;
+}
+
+c0lisp push(c0lisp val, c0lisp list) {
+    return C(val, list);
+}
+c0lisp pop(c0lisp list) {
+    return list->cdr;
+}
+
+void def(c0lisp *locals, c0lisp name, c0lisp val) {
+    c0lisp loc = *locals;
+    loc = push(val, loc);
+    loc = push(name, loc);
+    *locals = loc;
+}
+c0lisp set(c0lisp locals, c0lisp key, c0lisp val) {
+    while (eql(locals, NIL())->val == 0) {
+        if (eql(locals->car, key)->val == 1) {
+            locals->cdr->car = val;
+            return NIL();
+        }
+        locals = locals->cdr->cdr;
+    }
+    assert(false);
+    return NIL();
+}
+c0lisp get(c0lisp locals, c0lisp key) {
+    while (eql(locals, NIL())->val == 0) {
+        if (eql(locals->car, key)->val == 1)
+            return locals->cdr->car;
+        locals = locals->cdr->cdr;
+    }
+    assert(false);
+    return NIL();
+}
+
+bool true_exp(c0lisp exp) {
+    return (exp->type == 1 && exp->val != 0)
+        || (exp->type == 2 && eql(exp, NIL())->val != 0)
+        || (exp->type == 0);
+}
+
+c0lisp eval(c0lisp *locals, c0lisp prg) {
+    if (prg->type == 1)
+        return prg;
+    else if (prg->type == 0) {
+        c0lisp fn = prg->car;
+        c0lisp arg_list = prg->cdr;
+
+        if (eql(fn, LET())->val == 1) {
+            c0lisp name = arg_list->car;
+            c0lisp value = arg_list->cdr->car;
+            *locals = push(value, *locals);
+            *locals = push(name, *locals);
+
+            // Evaluate following expressions in sequence
+            c0lisp next_exp = arg_list->cdr->cdr;
+            c0lisp result = NIL();
+            while (eql(next_exp, NIL())->val == 0) {
+                result = eval(locals, next_exp->car);
+                next_exp = next_exp->cdr;
+            }
+
+            *locals = pop(pop(*locals));
+            return result;
+        }
+        else if (eql(fn, IF())->val == 1) {
+            c0lisp cond = eval(locals, arg_list->car);
+            return eval(locals,
+                        cond->val == 1
+                          ? arg_list->cdr->car
+                          : arg_list->cdr->cdr->car);
+        }
+        else if (eql(fn, WHILE())->val == 1) {
+            c0lisp cond_exp = arg_list->car;
+            c0lisp body_exp = arg_list->cdr;
+
+            c0lisp result = NIL();
+            while (true_exp(eval(locals, cond_exp))) {
+                for (c0lisp body = body_exp; eql(body, NIL())->val == 0;
+                     body = body->cdr)
+                    result = eval(locals, body->car);
+            }
+            return result;
+        }
+        else if (eql(fn, LAMBDA())->val == 1) {
+            return prg; // store function definition literally
+        }
+        else if (eql(fn, SET())->val == 1) {
+            return set(*locals, prg->cdr->car,
+                                eval(locals, prg->cdr->cdr->car));
+        }
+
+        int nargs = length(prg->cdr)->val;
+        c0lisp[] args = alloc_array(c0lisp, nargs);
+        c0lisp cur_arg = prg->cdr;
+        int i = 0;
+        while (eql(cur_arg, NIL())->val == 0) {
+            args[i] = eval(locals, cur_arg->car);
+            cur_arg = cur_arg->cdr;
+            i++;
+        }
+        if (eql(fn, DIV())->val == 1) { return div(args[0], args[1]); }
+        else if (eql(fn, EQL())->val == 1) { return eql(args[0], args[1]); }
+        else if (eql(fn, LTE())->val == 1) { return lte(args[0], args[1]); }
+        else if (eql(fn, MAX())->val == 1) { return max(args[0], args[1]); }
+        else if (eql(fn, MOD())->val == 1) { return mod(args[0], args[1]); }
+        else if (eql(fn, PLUS())->val == 1) { return plus(args[0], args[1]); }
+        else if (eql(fn, TIMES())->val == 1) { return times(args[0], args[1]); }
+        else {
+            c0lisp fdefn = get(*locals, fn);
+            c0lisp var_list = fdefn->cdr->car;
+            c0lisp body = fdefn->cdr->cdr;
+            c0lisp result = NIL();
+            // Store function arguments as locals
+            for (i = 0; i < nargs; i++) {
+                def(locals, var_list->car, args[i]);
+                var_list = var_list->cdr;
+            }
+            while (eql(body, NIL())->val == 0) {
+                result = eval(locals, body->car);
+                body = body->cdr;
+            }
+            for (i = 0; i < nargs; i++) {
+                *locals = pop(pop(*locals));
+            }
+            return result;
+        }
+    }
+    else if (prg->type == 2)
+        return get(*locals, prg);
+    assert(false);
+    return NULL;
+}
+
+int main(){
+    c0lisp locals = NIL();
+    c0lisp *locals_ptr = alloc(c0lisp);
+    *locals_ptr = locals;
+    c0lisp program =
+    L4(LET(), COLLATZ(),
+                L3(LAMBDA(),
+                     L2(X(), K()),
+                     L4(IF(),
+                        L3(LTE(), X(), N(1)),
+                        K(),
+                        L3(COLLATZ(),
+                           L4(IF(),
+                              L3(EQL(), L3(MOD(), X(), N(2)), N(0)),
+                              L3(DIV(), X(), N(2)),
+                              L3(PLUS(), L3(TIMES(), X(), N(3)), N(1))),
+                           L3(PLUS(), K(), N(1))))),
+         L4(LET(), I(), N(1),
+            L5(LET(), M(), N(0),
+               L4(WHILE(), L3(LTE(), I(), N(411)),
+                  L3(SET(), M(),
+                     L3(MAX(), M(), L3(COLLATZ(), I(), N(1)))),
+                  L3(SET(), I(), L3(PLUS(), I(), N(1)))),
+               M())));
+    return eval(locals_ptr, program)->val;
+}

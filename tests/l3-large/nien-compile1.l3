@@ -1,0 +1,8 @@
+//test compile
+
+int main()
+{
+    fpt x = itof(7);
+    fpt y = itof(12);
+    return ftoi(fdiv(y, x));
+}

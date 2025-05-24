@@ -1,0 +1,44 @@
+//test return 0
+
+struct struct_t {
+};
+
+struct struct_t_t {
+    struct struct_t structt;
+    struct struct_t strucct;
+    struct struct_t* structp;
+};
+
+struct struct_t_t_t;
+
+typedef struct struct_t_t* dysentery;
+
+struct struct_t_t_T {
+    dysentery d;
+    dysentery y;
+    dysentery s;
+    dysentery e;
+    dysentery n;
+    dysentery t;
+    dysentery E;
+    dysentery r;
+    dysentery Y;
+};
+
+struct struct_t_t_t {
+    dysentery* p;
+    int** ipp;
+};
+
+typedef struct struct_t_t_T foo;
+
+int main() {
+    int s = 9999;
+
+    foo*[] bar = alloc_array(foo*, s);
+    for (int i = 0; i < s; i++) {
+        bar[i] = alloc(foo);
+    }
+
+    return 0;
+}

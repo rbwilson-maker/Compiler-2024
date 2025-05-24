@@ -1,0 +1,33 @@
+//test return 2048
+
+struct ans {
+	int[] arr;
+	int n;
+};
+
+struct ans* insert(int[] A, int n, int i, int x) {
+	struct ans* ptr = alloc(struct ans);
+	int[] newA;
+	if (i < n) {
+		A[i] = x;
+		newA = A;
+	} else {
+		n *= 2;
+		newA = alloc_array(int, n);
+	}
+	ptr->arr = newA;
+	ptr->n = n;
+	return ptr;
+}
+
+int main() {
+	int[] A = alloc_array(int, 10);
+	int n = 1;
+	struct ans* res;
+	for(int i = 0; i < 1025; i++) {
+		res = insert(A, n, i, i);
+		A = res->arr;
+		n = res->n;
+	}
+	return n;
+}

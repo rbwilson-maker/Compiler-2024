@@ -1,0 +1,31 @@
+//test return 3
+
+typedef int bloop; 
+
+bloop f(bloop x, bloop y) {
+    return x >> y;
+}
+
+bloop g(bloop x, bloop y, bloop z) {
+    return x << y << z;
+}
+
+bloop h(bloop x, bloop y, bloop z, bloop w) {
+    assert (x + y + z <= w);
+    return x - y + z / w;
+}
+
+bloop fgh(bloop x, bloop y, bloop z, bloop w, bloop h) {
+    assert (x == y);
+    assert (w == h);
+    assert (z == h);
+    return x / y + z / w + h / h;
+}
+
+int main() {
+    bloop x = 8;
+    bloop y = 2;
+    bloop z = f(x, y); // 2
+    bloop w = g(z, x, y);
+    return fgh(h(0, 0, 0, 1) + 1, 1, 1, 1, 1);
+}

@@ -1,0 +1,7 @@
+//test return 2
+
+int main() {
+  bool a = true || (1/0 == 0);
+  bool b = false && (1/0 == 0);
+  return a ? b ? 1 : 2 : 3;
+}

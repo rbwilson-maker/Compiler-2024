@@ -1,0 +1,39 @@
+//test memerror
+
+struct big_boi {
+    
+    int a;
+    int[] arr1;
+    int *b;
+    int c;
+    int d;
+    int *e;
+    int[] arr2;
+    int f;
+    int *g;
+    int h;
+    int *i;
+    int[] arr3;
+    int *j;
+};
+
+int main() {
+    
+    struct big_boi* a = alloc(struct big_boi);
+    
+    a->a = 5;
+    a->b = alloc(int);
+    a->g = alloc(int);
+    *(a->b) = a->a;
+
+    a->arr3 = alloc_array(int, 11);
+
+    for (int i = 0; i < 11; i++) {
+        a->arr3[i] = i;    
+    }
+
+    *(a->g) = a->arr3[a->a+10];
+
+    assert (*(a->g) == *(a->b));
+    return 0;
+}

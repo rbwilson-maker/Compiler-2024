@@ -1,0 +1,14 @@
+//test typecheck
+// Funky matrix multiplication
+
+int[][] matrix_power(int[][] A, int n) {
+    int[][] initial = give_me_a_matrix(alloc(int), alloc(int *));
+    for(int i = 0; i < n; i++) {
+        initial = warp_speed_mat_mul(initial, A);
+    }
+    return initial;
+}
+
+int main() {
+    return matrix_power(give_me_a_matrix(NULL, NULL), 1100)[-3][4];
+}

@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+
+int main() {
+  int[] A = alloc_array(int, 4);
+  A[0] = 3; A[3] = 1; A[1] = 2; A[2] = 0;
+  int cur = A[0];
+  while (0 <= cur && cur < 4) {
+    cur = A[cur];
+  }
+  return cur;
+}

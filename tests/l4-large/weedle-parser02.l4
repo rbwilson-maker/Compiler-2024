@@ -1,0 +1,19 @@
+//test return 1
+struct a {
+  int x;
+};
+
+int main() {
+  struct a* a = alloc(struct a);
+  struct a[] arr = alloc_array(struct a, 10);
+  int x = 1;
+
+  ((x)) = 1;
+  ((a))->x = 1;
+  (((*a))).x = 1;
+  (((arr))[1+2]).x = 1;
+  arr[1+2].x = 1;
+  (((arr))[a->x]).x = 1;
+
+  return 1;
+}

@@ -1,0 +1,11 @@
+//test return 0
+
+struct s1 {
+    struct s2* ptr;
+};
+
+int main() {
+    struct s1 *tmp = alloc(struct s1);
+    assert(tmp->ptr == NULL);
+    return 0;
+}

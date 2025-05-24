@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+    int a = 0;
+    for (int i = 0; i < 5; i++) {
+        a++;
+        int x = a;
+    }
+    // x not in scope here
+    return x;
+}

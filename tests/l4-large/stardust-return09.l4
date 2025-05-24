@@ -1,0 +1,20 @@
+//test return 30
+//russianPeasant returns x*y using Russian Peasant's theorem
+//as the given inputs are 5 and 6, the result should be 30.
+
+int russianPeasant(int x, int y) {
+  int* result = alloc(int);
+  *result = 0;
+  while (y > 0) {
+    if (y % 2 == 1) {
+      *result += x;
+    }
+    x *= 2;
+    y /= 2;
+  }
+  return *result;
+}
+
+int main() {
+  return russianPeasant(5, 6);
+}

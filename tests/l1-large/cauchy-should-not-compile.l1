@@ -1,0 +1,6 @@
+//test error
+int main() {
+    int a = b + 2;
+    int b = a + 2;
+    int a = b + 2;
+}

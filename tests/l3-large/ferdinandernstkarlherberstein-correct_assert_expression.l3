@@ -1,0 +1,12 @@
+//test return 1
+
+int h(int n) {
+    return n * n;
+}
+
+int main() {
+    int x = 1;
+    int y = x + 1;
+    assert(h(y) == 4);
+    return 1;
+}

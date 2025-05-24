@@ -1,0 +1,8 @@
+//test error
+// const overflow
+int main()
+{
+  int x;
+  x = 0xfffffffff;    
+  return x;
+}

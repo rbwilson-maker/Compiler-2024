@@ -1,0 +1,10 @@
+//test error
+// Main can't be recrusive
+
+int main() {
+  int final_res = 1;
+  for (int i = 1; i < y; i++) {
+    final_res += i * i + i - i / i % i;
+  }
+  return (main(main(main())));
+}

@@ -1,0 +1,16 @@
+//test return 3
+
+// Cant elaborate A[f(x)] += 3 to assign(A[f(x)], A[f(x)]+3)
+
+int f(int* x) {
+	int res = *x;
+	*x += 1;
+	return res;
+}
+
+int main () {
+	int* x = alloc(int);
+	int[] A = alloc_array(int, 4);
+	A[f(x)] += 3;
+	return A[0];
+}

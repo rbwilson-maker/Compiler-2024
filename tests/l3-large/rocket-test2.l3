@@ -1,0 +1,13 @@
+//test return 2
+
+int two(int x) {
+  return 2;
+}
+
+int fake_one(int x) {
+  return two(1);
+}
+
+int main() {
+  return fake_one(1);
+}

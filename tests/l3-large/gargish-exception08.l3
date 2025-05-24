@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int shift(int l, int r) {
+    return l >> r;
+}
+
+int main() {    
+    shift(1, 1);
+    shift(23, 10);
+    // raise div-by-zero
+    return shift(1, 32);
+}

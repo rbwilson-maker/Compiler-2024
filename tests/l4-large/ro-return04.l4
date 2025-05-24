@@ -1,0 +1,19 @@
+//test return -10
+// pointers to pointers galore
+
+
+int main(){
+  int **********x;
+  x = alloc(int*********);
+  *x = alloc(int********);
+  **x = alloc(int*******);
+  ***x = alloc(int******);
+  ****x = alloc(int*****);
+  *****x = alloc(int****);
+  ******x = alloc(int***);
+  *******x = alloc(int**);
+  ********x = alloc(int*);
+  *********x = alloc(int);
+  **********x = -10;
+  return **********x;
+}

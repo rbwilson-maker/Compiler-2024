@@ -1,0 +1,86 @@
+//test return 0
+
+// mergesort
+
+int lcg(int seed) {
+	int m = 1<<31;
+	int a = 1103515245;
+	int c = 12345;
+
+	return (seed * a + c) % m;
+}
+
+bool isPow2(int x) {
+	return (x != 0) && ((x & (x-1)) == 0);
+}
+
+void mergesort (int[] arr, int len) {
+	assert(isPow2(len)); // I don't want to deal with that yo
+
+	if(len == 1) {
+		return;
+	}
+	else if(len == 2) {
+		if(arr[0] > arr[1]) {
+			int temp = arr[0];
+			arr[0] = arr[1];
+			arr[1] = temp;
+		}
+	}
+	else {
+		int[] lhs = alloc_array(int, len/2);
+		int[] rhs = alloc_array(int, len/2);
+
+		for(int k = 0; k < len/2; k++) {
+			lhs[k] = arr[k];
+			rhs[k] = arr[len/2+k];
+		}
+
+		mergesort(lhs, len/2);
+		mergesort(rhs, len/2);
+
+		int lhs_idx = 0;
+		int rhs_idx = 0;
+
+		for(int k = 0; k < len; k++) {
+			if(lhs_idx == len/2) {
+				arr[k] = rhs[rhs_idx];
+				rhs_idx++;
+			}
+			else if(rhs_idx == len/2) {
+				arr[k] = lhs[lhs_idx];
+				lhs_idx++;
+			}
+			else {
+				int lval = lhs[lhs_idx];
+				int rval = rhs[rhs_idx];
+				arr[k] = lval < rval ? lval : rval;
+				lhs_idx = lval < rval ? lhs_idx + 1 : lhs_idx;
+				rhs_idx = lval < rval ? rhs_idx : rhs_idx + 1;
+			}
+		}
+	}
+}
+
+void print_arr(int[] arr, int len) {
+	for(int k = 0; k < len; k++) {
+		print_int(arr[k]);
+	}
+}
+
+int main () {
+	int arr_len = 16;
+	int[] arr = alloc_array(int, arr_len);
+	int prev_rand = 0;
+	for(int k = 0; k < arr_len; k++) {
+		prev_rand = lcg(prev_rand);
+		arr[k] = prev_rand;
+	}
+	print_arr(arr, arr_len);
+	mergesort(arr, arr_len);
+	print_arr(arr, arr_len);
+	for(int k = 0; k < arr_len-1; k++) {
+		assert(arr[k] < arr[k+1]);
+	}
+	return 0;
+}

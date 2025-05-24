@@ -1,0 +1,11 @@
+//test return 1
+
+// Tests that program returns properly if both branches of if statement return
+
+int main () {
+    if (true) {
+        return 1;
+    } else {
+        return 0;
+    }
+}

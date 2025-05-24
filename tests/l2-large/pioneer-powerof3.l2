@@ -1,0 +1,19 @@
+//test return 19683
+//Using cool power function algorithm from 15-122, calculate 3^9
+
+int main()
+{
+  int r = 1;
+  int y = 9;
+  int x = 3;
+  while (y > 1)
+  {
+    if (y % 2 == 1)
+    {
+      r = x * r;
+    }
+    x = x * x;
+    y = y / 2;
+  }
+  return r * x;
+}

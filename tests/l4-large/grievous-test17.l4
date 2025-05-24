@@ -1,0 +1,7 @@
+//test return 1
+typedef int* a;
+typedef int b;
+
+int main(){
+    return alloc(a) == alloc(b*) ? 0 : 1;
+}

@@ -1,0 +1,8 @@
+//test return -1 
+//make sure that shifts are arithmetic
+int main()
+{
+	int x = -1;
+	int y = x >> 31;
+	return y;
+}

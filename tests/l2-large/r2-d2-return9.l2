@@ -1,0 +1,21 @@
+//test return 3
+
+int main()
+{
+  int x;
+  int y = 30;
+  if (y < 20) {
+     for (;true;) {
+     }
+     return 1;
+  }
+  else if (y == 20) {
+     while (true) {
+     }
+     return 2;
+  }
+  else {
+    return 3;
+  }
+  return 0;
+}

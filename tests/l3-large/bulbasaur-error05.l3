@@ -1,0 +1,9 @@
+//test error
+// tests namespace collision for types and variables
+
+typedef int type
+
+type main() {
+  type type = 5;
+  return type;
+}

@@ -1,0 +1,15 @@
+//test error
+
+typedef bool cool_name;
+typedef cool_name var;
+
+var distraction(cool_name v1, int v2);
+
+cool_name another_distration() {
+    int var = 23;
+    return (1 + 2 + 3) == (1 * 2 * 3);
+}
+
+int main() {
+    return 0;
+}

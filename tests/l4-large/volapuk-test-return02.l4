@@ -1,0 +1,26 @@
+//test return 500000
+
+typedef int[] col;
+typedef col[] matrix;
+
+int main() {
+  // create a 1000 x 1000 matrix
+  int w = 1000;
+  int h = 1000;
+  matrix m = alloc_array(col, w);
+  for (int i = 0; i < w; i++) {
+    m[i] = alloc_array(int, h);
+    for(int j = 0; j < h; j++) {
+      m[i][j] = i + j;
+    }
+  }
+
+  // count the number of odd elements in the matrix
+  int odd_count = 0;
+  for (int i = 0; i < w; i++) {
+    for (int j = 0; j < h; j++) {
+      if(m[i][j] % 2 == 1) odd_count++;
+    }
+  }
+  return odd_count;
+}

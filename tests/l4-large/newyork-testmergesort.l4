@@ -1,0 +1,77 @@
+//test return 0
+
+void partition(int[] arr, int[] a1, int[] a2, int l1, int l2) {
+    for (int i = 0; i < l1; i++)
+        a1[i] = arr[i];
+
+    for (int i = 0; i < l2; i++)
+        a2[i] = arr[i + l1];
+}
+
+void merge(int[] arr, int[] a1, int[] a2, int l1, int l2) {
+    int i1 = 0;
+    int i2 = 0;
+    int i = 0;
+
+    for (; i < l1 + l2 && i1 < l1 && i2 < l2; i++) {
+        if (a1[i1] < a2[i2]) {
+            arr[i] = a1[i1];
+            i1++;
+        }
+        else {
+            arr[i] = a2[i2];
+            i2++;
+        }
+    }
+
+    for (; i1 < l1; i1++) {
+        arr[i] = a1[i1];
+        i++;
+    }
+
+    for (; i2 < l2; i2++) {
+        arr[i] = a2[i2];
+        i++;
+    }
+}
+
+void quicksort(int[] arr, int len) {
+    if (len <= 1)
+        return;
+
+    int l1 = len / 2;
+    int l2 = len - l1;
+
+    int[] arr_l = alloc_array(int, l1);
+    int[] arr_r = alloc_array(int, l2);
+
+    partition(arr, arr_l, arr_r, l1, l2);
+
+    quicksort(arr_l, l1);
+    quicksort(arr_r, l2);
+
+    merge(arr, arr_l, arr_r, l1, l2);
+}
+
+int main() {
+    int len = 10;
+    int[] arr = alloc_array(int, len);
+
+    arr[0] = 3;
+    arr[1] = 7;
+    arr[2] = 4;
+    arr[3] = 1;
+    arr[4] = 0;
+    arr[5] = 9;
+    arr[6] = 2;
+    arr[7] = 8;
+    arr[8] = 6;
+    arr[9] = 5;
+
+    quicksort(arr, len);
+
+    for (int i = 0; i < len; i++)
+        print_int(arr[i]);
+
+    return 0;
+}

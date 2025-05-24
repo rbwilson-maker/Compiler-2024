@@ -1,0 +1,20 @@
+//test return 1;
+
+bool subset_sum(int[] A, int n, int target) {
+  if (n == 0) {
+    return target == 0;
+  }
+  else {
+    int last = A[n-1];
+    return subset_sum(A, n-1, target - last) || subset_sum(A, n-1, target);
+  }
+}
+
+
+int main() {
+  int[] A = alloc_array(int, 8);
+  A[0] = 1; A[1] = -2; A[2] = 73; A[3] = 26;
+  A[4] = 23; A[5] = -3; A[6] = -11; A[7] = 3;
+  if (subset_sum(A, 8, 13)) return 1;
+  else return 0;
+}

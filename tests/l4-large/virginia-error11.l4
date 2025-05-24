@@ -1,0 +1,12 @@
+//test error
+//ensure alloc, alloc_array are distinctly typechecked
+
+struct ayy_lmao {int elem; struct ayy_lmao* next;};
+int main()
+{
+	struct ayy_lmao[] test;
+	struct ayy_lmao* test2;
+	test2 = alloc_array(struct ayy_lmao, 5);
+	test = alloc(struct ayy_lmao);
+	return 5;
+}

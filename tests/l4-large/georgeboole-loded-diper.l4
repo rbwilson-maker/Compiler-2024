@@ -1,0 +1,20 @@
+//test return 0;
+
+typedef int greg;
+
+typedef int rowley;
+
+typedef bool rodrick;
+
+struct losers {
+    greg g;
+    rowley r;
+    rodrick k;
+};
+
+typedef struct losers loded_diper;
+
+int main() {
+    loded_diper[] loaded_diapers = alloc_array(loded_diper, 69);
+    return loaded_diapers[42].g;
+}

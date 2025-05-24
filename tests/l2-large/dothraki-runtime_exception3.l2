@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+  int a = 6;
+  int c = 6 - 10;
+  int b = a << c;
+
+  return b;
+}

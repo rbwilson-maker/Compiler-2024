@@ -1,0 +1,10 @@
+//test return 0
+//Hex
+
+int main() {
+	int x = 0xF;
+	int y = 9;
+	int fleventy_five = 135;
+
+	return fleventy_five - x * y;
+}

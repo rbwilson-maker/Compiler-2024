@@ -1,0 +1,24 @@
+//test return 4
+
+int main() {
+    int x = 512;
+    int y = 252;
+
+    int rem = x;
+    int rem2 = y;
+    rem2 *= (x / y);
+    rem -= rem2;
+
+    x = y;
+    y = rem;
+
+    rem = x;
+    rem2 = y;
+    rem2 *= (x / y);
+    rem -= rem2;
+
+    x = y;
+    y = rem;
+
+    return y;
+}

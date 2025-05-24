@@ -1,0 +1,85 @@
+//test return 0
+
+struct tree
+{
+  int data;
+  struct tree* left;
+  struct tree* right;
+};
+typedef struct tree* tree;
+
+tree make_tree(int r) {
+  tree t = alloc(struct tree);
+  t->data = r; t->left = NULL; t->right = NULL;
+  return t;
+}
+
+void insert_left(tree t, tree l) {
+  t->left = l;
+}
+
+void insert_right(tree t, tree r) {
+  t->right = r;
+}
+
+struct array {
+  int[] array;
+  int next;
+};
+
+typedef struct array* array;
+array make_array(int size) {
+  array new = alloc(struct array);
+  new->array = alloc_array(int, size);
+  new->next = 0;
+  return new;
+}
+
+void insert_array(array a, int n) {
+  a->array[a->next] = n;
+  a->next++;
+}
+
+void inorder(tree t, array res) {
+  if (t == NULL) {
+    return;
+  }
+  inorder(t->left, res);
+  insert_array(res, t->data);
+  inorder(t->right, res);
+}
+
+int check_inorder(array res) {
+  int[] arr = res->array;
+  assert(arr[0] == 1);
+  assert(arr[1] == 2);
+  assert(arr[2] == 3);
+  assert(arr[3] == 4);
+  assert(arr[4] == 5);
+  assert(arr[5] == 6);
+  assert(arr[6] == 7);
+  return 0;
+}
+
+int main() {
+  tree one = make_tree(1);
+  tree two = make_tree(2);
+  tree three = make_tree(3);
+  tree four = make_tree(4);
+  tree five = make_tree(5);
+  tree six = make_tree(6);
+  tree seven = make_tree(7);
+  
+  insert_left(two, one);
+  insert_right(two, three);
+
+  insert_left(six, five);
+  insert_right(six, seven);
+
+  insert_left(four, two);
+  insert_right(four, six);
+
+  array result = make_array(7);
+  inorder(four, result);
+  return check_inorder(result);
+}

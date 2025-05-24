@@ -1,0 +1,13 @@
+//test return -3
+// test various arithmetic operations
+
+int main() { 
+    int x = -1;
+    int y = 4;
+    y *= x;
+    x = x + 1;
+    x -= 1;
+    y %= 3;
+    x = x + y;
+    return y + x; 
+}

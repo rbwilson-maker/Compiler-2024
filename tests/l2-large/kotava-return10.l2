@@ -1,0 +1,13 @@
+//test return 57344
+
+int main () {
+	int x0;
+	int x1_x0;
+
+	x0 = 55;
+	x1_x0 = x0 + 1;
+	for (int x1_ = x1_x0 - x0; x1_ < 5; x1_++)
+	  ((x1_x0)) <<= x1_;
+	
+	return x1_x0;
+}

@@ -1,0 +1,10 @@
+//test return 13
+
+int main() {
+  int x = 13;
+  if (x == 10)
+    while (x > 0) {
+      x -= 1;
+    }
+  return x;
+}

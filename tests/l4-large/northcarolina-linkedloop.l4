@@ -1,0 +1,21 @@
+//test typecheck
+//test infloop
+
+typedef struct node * point;
+struct node {
+  point next;
+};
+
+int main() {
+  point A = alloc(struct node);
+  point B = alloc(struct node);
+  point C = alloc(struct node);
+  (*A).next = B; //Let's also test how this parses....
+  B->next = C;
+  C->next = A;
+  point current = A;
+  while (current != NULL) {
+    current = current->next;
+  }
+  return 0;
+}

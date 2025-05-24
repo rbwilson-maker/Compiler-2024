@@ -1,0 +1,10 @@
+//test error
+// Use before declaration
+
+int main() {
+    return abs(10);
+}
+
+int abs(int x) {
+    return x > 0 ? x : -x;
+}

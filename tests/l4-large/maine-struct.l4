@@ -1,0 +1,15 @@
+//test error
+// name clash
+struct du
+{
+    int a;
+};
+
+typedef struct du d;
+
+int main()
+{
+    struct du* d = alloc(struct du);
+    d->a = 1;
+    return d->a;
+}

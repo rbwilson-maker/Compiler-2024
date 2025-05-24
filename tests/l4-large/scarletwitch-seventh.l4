@@ -1,0 +1,18 @@
+//test return 3
+
+int loop(int *p, int a){
+    *p +=  a * a; 
+    while(*p % 3 != 0){
+        *p += 2; 
+        a += 1; 
+        if(a == 4)
+           a -= 4; 
+    }
+    return a + 1; 
+}
+
+int main(){
+    int *p = alloc(int); 
+    *p = 21; 
+    return loop(p, 1);
+}

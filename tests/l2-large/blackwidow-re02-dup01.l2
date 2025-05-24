@@ -1,0 +1,38 @@
+//test return 0
+// test basic operations
+int main()
+{
+
+  int m = 1;
+  int n = 0;
+  if(m>n){
+    m = n;
+  }
+  else{
+    n = m;
+  }
+
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+  int aa;
+  int bb;
+  int cc;
+  int dd;
+  int ee;
+
+  d = 1;
+  c = -2147483648;
+  b = -c;
+  a = c+d;
+  e = c-d;
+
+  dd = 1;
+  cc = -2147483648;
+  bb = cc/dd;
+  aa = cc*dd;
+  ee = dd/cc;
+  return ee;
+}

@@ -1,0 +1,29 @@
+//test return 0
+
+struct colours {
+	int violet;
+	int indigo;
+	int blue;
+	int green;
+	int yellow;
+	int orange;
+	int red;
+};
+
+typedef struct colours colours_t;
+
+void leprechaun (colours_t* rainbow) {
+	rainbow->violet = 1;
+	rainbow->indigo = 2;
+	rainbow->blue = 3;
+	rainbow->green = 4;
+	rainbow->yellow = 5;
+	rainbow->orange = 6;
+	rainbow->red = 7;
+}
+
+int main() {
+	colours_t* rainbow = alloc(colours_t);
+	leprechaun(rainbow);
+	return 0;
+}

@@ -1,0 +1,6 @@
+//test memerror
+
+int main() {
+    alloc_array(bool, 100)[100];
+	return 0;
+}

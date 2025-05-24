@@ -1,0 +1,13 @@
+//test error
+
+typedef struct pointer pointer;
+
+struct s{
+  int bloop;
+  pointer* void;
+}
+
+int main(){
+  struct s* = alloc(struct s);
+  return s->bool;
+}

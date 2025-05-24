@@ -1,0 +1,47 @@
+//test return 1048576
+
+int main() {
+  int out = 0;
+  for(int c0 = 0; c0 < 2; c0++) {
+    for(int c1 = 0; c1 < 2; c1++) {
+      for(int c2 = 0; c2 < 2; c2++) {
+        for(int c3 = 0; c3 < 2; c3++) {
+          for(int c4 = 0; c4 < 2; c4++) {
+            for(int c5 = 0; c5 < 2; c5++) {
+              for(int c6 = 0; c6 < 2; c6++) {
+                for(int c7 = 0; c7 < 2; c7++) {
+                  for(int c8 = 0; c8 < 2; c8++) {
+                    for(int c9 = 0; c9 < 2; c9++) {
+                      for(int c10 = 0; c10 < 2; c10++) {
+                        for(int c11 = 0; c11 < 2; c11++) {
+                          for(int c12 = 0; c12 < 2; c12++) {
+                            for(int c13 = 0; c13 < 2; c13++) {
+                              for(int c14 = 0; c14 < 2; c14++) {
+                                for(int c15 = 0; c15 < 2; c15++) {
+                                  for(int c16 = 0; c16 < 2; c16++) {
+                                    for(int c17 = 0; c17 < 2; c17++) {
+                                      for(int c18 = 0; c18 < 2; c18++) {
+                                        for(int c19 = 0; c19 < 2; c19++) {
+                                          out++;
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return out;
+}

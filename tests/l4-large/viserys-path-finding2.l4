@@ -1,0 +1,216 @@
+//test return 198
+
+typedef bool[][] grid;
+typedef int[][] lens;
+typedef int rand;
+
+rand init_random() {
+  return 0xDEADFEED;
+}
+
+rand next_random(rand n) {
+  return (n * 1103515245 + 12345) % 0x7FFFFFFF;
+}
+
+int abs(int x) {
+  if (x < 0) return -x;
+  return x;
+}
+
+bool bernoulli_from_rand(rand n, int frac_of_100) {
+  assert(frac_of_100 >= 0 && frac_of_100 <= 100);
+  return (abs(n) % 100) < frac_of_100;
+}
+
+bool bool_from_rand(rand n) {
+  return n % 2 == 0;
+}
+
+grid generate_grid(int n, int prob) {
+  bool[][] gr = alloc_array(bool[], n);
+  for (int i=0; i<n; i++) {
+    gr[i] = alloc_array(bool, n);
+  }
+
+  rand seed = init_random();
+  // randomly fill grid with true/false
+  for (int i=0; i<n; i++) {
+    for (int j=0; j<n; j++) {
+      seed = next_random(seed);
+      gr[i][j] = bernoulli_from_rand(seed, prob);
+    }
+  }
+  gr[0][0] = false;
+  gr[n-1][n-1] = false;
+
+  return gr;
+}
+
+grid generate_long() {
+  int n = 5;
+  bool[][] gr = alloc_array(bool[], n); 
+  for (int i=0; i<n; i++) {
+    gr[i] = alloc_array(bool, n); 
+  }
+
+  for (int i=0; i<4; i++) {
+    gr[1][i] = true;
+  }
+
+  for (int i=1; i<5; i++) {
+    gr[3][i] = true;
+  }
+
+  return gr; 
+}
+
+struct coords {
+  int x;
+  int y;
+};
+
+typedef struct coords coords;
+
+// queue functions
+
+struct data {
+  coords *loc;
+  int dist;
+};
+typedef struct data * data;
+
+struct node {
+  data val;
+  struct node *next;
+};
+
+typedef struct node * node;
+
+struct queue {
+  node head;
+};
+
+typedef struct queue * queue;
+
+queue init_queue() {
+  return alloc(struct queue);
+}
+
+void push_queue(queue q, data n) {
+  node new_node = alloc(struct node);
+  new_node->val = n;
+  new_node->next = NULL;
+
+  if (q->head == NULL) {
+    q->head = new_node;
+  } else {
+    // traverse
+    node curr = q->head;
+    while (curr->next != NULL) {
+      curr = curr->next;
+    }
+    curr->next = new_node;
+  }
+}
+
+bool queue_empty(queue q) {
+  return q->head == NULL;
+}
+
+data pop_queue(queue q) {
+  assert(!queue_empty(q));
+  node top = q->head;
+  q->head = q->head->next;
+  return top->val;
+}
+
+// end queue functions
+
+void add_neighbors(grid board, lens distances, data curr_node, queue next, int n) {
+  coords *curr = curr_node->loc;
+  coords[] neighbors = alloc_array(coords, 4);
+  // above
+  neighbors[0].x = curr->x;
+  neighbors[0].y = curr->y - 1;
+  // right
+  neighbors[1].x = curr->x + 1;
+  neighbors[1].y = curr->y;
+  // below
+  neighbors[2].x = curr->x;
+  neighbors[2].y = curr->y + 1;
+  // left
+  neighbors[3].x = curr->x - 1;
+  neighbors[3].y = curr->y;
+
+  for (int i=0; i<4; i++) {
+    // check not out of bounds and we haven't visited it yet
+    int x = neighbors[i].x;
+    int y = neighbors[i].y;
+    if (0 <= x && x < n && 0 <= y && y < n) {
+      if (!board[x][y] && distances[x][y] == -1) {
+        data to_add = alloc(struct data);
+        to_add->loc = alloc(coords);
+        to_add->loc->x = x;
+        to_add->loc->y = y;
+        to_add->dist = curr_node->dist + 1;
+        push_queue(next, to_add);
+      }
+    }
+  }
+}
+
+int bfs(grid board, lens distances, queue next, int n) {
+  if (queue_empty(next)) {
+    // no path from start to goal.
+    return -1;
+  }
+  data next_point = pop_queue(next);
+
+  int x = next_point->loc->x;
+  int y = next_point->loc->y;
+  if (distances[x][y] != -1) {
+    // we have already visited this, so skip.
+    return bfs(board, distances, next, n);
+  }
+
+  // update distances
+  distances[x][y] = next_point->dist;
+  if (x == n-1 && y == n-1) {
+    // we have reached the goal (the bottom right corner)
+    return next_point->dist;
+  }
+
+  add_neighbors(board, distances, next_point, next, n);
+  return bfs(board, distances, next, n);
+}
+
+int find_path(grid board, int n) {
+  lens distances = alloc_array(int[], n);
+  for (int i=0; i<n; i++) {
+    distances[i] = alloc_array(int, n);
+    for (int j=0; j<n; j++) {
+      distances[i][j] = -1;
+    }
+  }
+
+  // bfs
+  data start = alloc(struct data);
+  start->dist = 0;
+  start->loc = alloc(coords);
+  start->loc->x = 0;
+  start->loc->y = 0;
+  queue next_nodes = init_queue();
+  push_queue(next_nodes, start);
+  return bfs(board, distances, next_nodes, n);
+}
+
+int main() {
+  int n = 100;
+  // low probs give emptier boards
+  int prob = 18;
+  grid board = generate_grid(n, prob);
+
+  int path_length = find_path(board, n);
+
+  return path_length;
+}

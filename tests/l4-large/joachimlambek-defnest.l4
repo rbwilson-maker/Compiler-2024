@@ -1,0 +1,20 @@
+//test return 45
+
+typedef int foo;
+
+typedef foo* bar;
+
+typedef bar[] baz;
+
+int main() {
+    baz x = alloc_array(bar, 10);
+    for (foo i = 0; i < 10; i++) {
+        x[i] = alloc(foo);
+        *x[i] = i;
+    }
+    foo y = 0;
+    for (foo i = 0; i < 10; i++) {
+        y += *x[i];
+    }
+    return y;
+}

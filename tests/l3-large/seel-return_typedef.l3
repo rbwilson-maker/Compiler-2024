@@ -1,0 +1,16 @@
+//test return 21
+// Checks typedefs
+
+typedef int pirateNinja;   // We're coming for you Watney
+
+pirateNinja add(pirateNinja a, int b) {
+    return a + b;
+}
+
+int main() {
+    int a = 7;
+    pirateNinja b = 14;
+    int c = add(a, b);
+
+    return c;
+}

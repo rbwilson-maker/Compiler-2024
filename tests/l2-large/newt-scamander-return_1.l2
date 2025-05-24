@@ -1,0 +1,23 @@
+//test return 16128
+
+int main () {
+
+	int a = 1;
+
+	while (a < 100) {
+		a << 1;
+		a++;
+	}
+
+	// a = 127
+
+	while (a % 42 != 0) {
+		a++;
+	}	
+
+	// a = 168
+
+	return a << (a >> 4); 
+
+
+}

@@ -1,0 +1,325 @@
+//test return 0
+
+// A working csim implementation on a big cache
+
+// All important data about cache
+struct cacheparems
+{
+    int s;
+    int b;
+    int E;
+    int S;
+    int B;
+    int hits;
+    int misses;
+    int evicts;
+    int dirty_bits_in;
+    int dirty_bits_ev;
+};
+
+typedef struct cacheparems cacheP;
+
+// Some structs for some generic cache
+
+struct cache_lines
+{
+    int valid;
+    int tag;
+    int LRU;
+    bool dirty;
+};
+typedef struct cache_lines c_lines;
+
+struct cache_sets
+{
+    c_lines*[] c_lines;
+};
+
+typedef struct cache_sets c_sets;
+
+struct cache_cache
+{
+    c_sets*[] c_sets;
+};
+typedef struct cache_cache c_cache;
+
+// Initialize cache
+c_cache* initCache(int nofSets, int nofLines, int sofBlock)
+{
+    c_lines *the_line;
+    c_sets *the_set;
+    c_cache *the_Cache = alloc(c_cache);
+
+    // the cache
+    the_Cache->c_sets = alloc_array(c_sets*, nofSets);
+
+    for (int iSets = 0; iSets < nofSets; iSets++)
+    {
+        // the sets
+        the_Cache->c_sets[iSets] = alloc(c_sets);
+        the_set = the_Cache->c_sets[iSets];
+        the_set->c_lines = alloc_array(c_lines*, nofLines);
+
+        for (int iLines = 0; iLines < nofLines; iLines++)
+        {
+            the_set->c_lines[iLines] = alloc(c_lines);
+            the_line = the_set->c_lines[iLines];
+            the_line->valid = 0;
+            the_line->tag = 0;
+            the_line->LRU = 0;
+            the_line->dirty = false;
+        }
+    }
+
+    return the_Cache;
+}
+
+// Check if a line is present in a given set or not
+int l_exists (c_sets* the_set, int tag, int nofLines)
+{
+    c_lines *temp;
+
+    for(int i = 0; i < nofLines; i++)
+    {
+        temp = the_set->c_lines[i];
+        if ( (temp->valid != 0) && (temp->tag == tag) )
+        {
+            return i;
+        }
+    }
+
+    // not present so return invalid address
+    return -1;
+}
+
+// check whether an empty line is present or not
+int l_empty (c_sets* the_set, cacheP* cprems)
+{
+    for(int i = 0; i < cprems->E; i++)
+    {
+        if (the_set->c_lines[i]->valid == 0) return i;
+    }
+
+    // no empty line so return invalid
+    return -1;
+}
+
+// helpful counting function for LRU
+void min_max_f(c_sets* the_set, cacheP* cprems, int[] freq)
+{
+    int k;
+    freq[0] = the_set->c_lines[0]->LRU;
+    freq[1] = the_set->c_lines[0]->LRU;
+
+    // Just go through all lines and see the min and max
+    for(int i = 1; i < cprems->E; i++)
+    {
+        k = the_set->c_lines[i]->LRU;
+        if(k < freq[0]) freq[0] = k;
+        if(k > freq[1]) freq[1] = k;
+    }
+}
+
+// decide the line to evict
+int l_evict (c_sets* the_set, cacheP *cprems, int min)
+{
+    for(int i = 0; i < cprems->E; i++)
+    {
+        if(the_set->c_lines[i]->LRU == min) return i;
+    }
+
+    // should never get here
+    return -1;
+}
+
+// put the data in the cache
+void c_putter (int type, c_sets* the_set, cacheP *cprems, int tag)
+{
+    // check for empty line
+    int e_line = l_empty(the_set, cprems);
+
+    // get the min and max for LRU
+    int[] freq_use = alloc_array(int, 2);
+    min_max_f(the_set, cprems, freq_use);
+    int min = freq_use[0];
+    int max = freq_use[1];
+
+    if (e_line >= 0)
+    {
+        // empty line exists so change its components
+        the_set->c_lines[e_line]->valid = 1;
+        the_set->c_lines[e_line]->LRU = max + 1;
+        the_set->c_lines[e_line]->tag = tag;
+        if(type == 1) the_set->c_lines[e_line]->dirty = true;
+
+        // return as nothing else to do
+        return;
+    }
+
+    // no empty line so evict one
+    e_line = l_evict(the_set, cprems, min);
+
+    // Should not be possible
+    if (e_line == -1) //exit(-1);
+
+    // set the new line components
+    if (the_set->c_lines[e_line]->dirty == true) cprems->dirty_bits_ev++;
+    the_set->c_lines[e_line]->valid = 1;
+    the_set->c_lines[e_line]->LRU = max + 1;
+    the_set->c_lines[e_line]->tag = tag;
+    if(type == 1) the_set->c_lines[e_line]->dirty = true;
+    else the_set->c_lines[e_line]->dirty = false;
+
+    cprems->evicts ++;
+}
+
+// call to the cache with values read.
+// This function breaks those values for ease of use in above functions
+void cache_call (int type, c_cache* the_cache, cacheP *cprems,
+                 int mem_address)
+{
+    int s = cprems->s;
+    int b = cprems->b;
+
+    int tag = mem_address >> (s+b);
+
+    int set_mask = 0;
+    for (int i = 0; i < s; i++) set_mask = (set_mask << 1) + 1;
+
+    int tagsize = 32 - s - b;
+    int iSet = ((mem_address << tagsize) >> (tagsize + b)) & set_mask;
+
+    // check if already in cache or not
+    int catch = l_exists(the_cache->c_sets[iSet], tag, cprems->E);
+
+
+    if (catch < 0)
+    {
+        cprems->misses++;
+        c_putter(type, the_cache->c_sets[iSet], cprems, tag);
+    }
+    else
+    {
+        cprems->hits++;
+
+        // if get a store instruction after load
+        if(type == 1) the_cache->c_sets[iSet]->c_lines[catch]->dirty = true;
+    }
+}
+
+// to calculate nOf dirty buts at the end
+int c_dirty_bits (c_cache* the_cache, cacheP *cprems)
+{
+    int d_bits = 0;
+
+    // Just go through all lines
+    for(int i = 0; i < cprems->S; i++)
+    {
+        c_sets* the_set = the_cache->c_sets[i];
+        for(int j = 0; j < cprems->E; j++)
+        {
+            if(the_set->c_lines[j]->dirty == true) d_bits ++;
+        }
+    }
+    return d_bits;
+}
+
+// free all allocated mem
+// not used since free not in c0
+// should type check tho
+void free_fun (c_cache* the_cache, cacheP *cprems)
+{
+    for(int i = 0; i < cprems->S; i++)
+    {
+        for (int j = 0; j < cprems->E; j++){
+            if( (the_cache->c_sets[i]->c_lines[j]) != NULL)
+            {
+                //free(the_cache->c_sets[i]->c_lines);
+            }
+        }
+    }
+    //free(the_cache.c_sets);
+    //free(cprems);
+}
+
+// Start  here
+int main ()
+{
+
+    cacheP* cprems = alloc(cacheP);
+
+    int address;
+
+    cprems->s = 14;
+    cprems->E = 1024;
+    cprems->b = 10;
+    cprems->S = 16384;
+    cprems->B = 1024;
+    c_cache* the_Cache = initCache(cprems->S, cprems->E, cprems->B);
+
+    cprems->hits = 0;
+    cprems->misses = 0;
+    cprems->evicts = 0;
+    cprems->dirty_bits_in = 0;
+    cprems->dirty_bits_ev = 0;
+
+    // read file start
+    /*
+    pfile = fopen(trace_file, "r");
+    while ((fscanf(pfile, " %c %lx, %d", &access_type, &address, &size)) > 0)
+    {
+        switch(access_type)
+        {
+            case 'L' :
+                cache_call(access_type, the_Cache, cprems, address);
+                break;
+            case 'S' :
+                cache_call(access_type, the_Cache, cprems, address);
+                break;
+            default :
+                break;
+        }
+    }*/
+
+    //call cache ourself since no file to read from
+
+    cache_call(0, the_Cache, cprems, 0x121233);
+    cache_call(0, the_Cache, cprems, 0x12ab3);
+    cache_call(0, the_Cache, cprems, 0x123123);
+    cache_call(0, the_Cache, cprems, 0x121233);
+    cache_call(0, the_Cache, cprems, 0x12beef3);
+    cache_call(0, the_Cache, cprems, 0x111321);
+    cache_call(1, the_Cache, cprems, 0x111123);
+    cache_call(1, the_Cache, cprems, 0x123321);
+    cache_call(0, the_Cache, cprems, 0x123321);
+    cache_call(1, the_Cache, cprems, 0x123123);
+    cache_call(1, the_Cache, cprems, 0x321);
+    cache_call(0, the_Cache, cprems, 0x321);
+    cache_call(1, the_Cache, cprems, 0x111123);
+    cache_call(1, the_Cache, cprems, 0x321);
+    cache_call(0, the_Cache, cprems, 0x321);
+    cache_call(1, the_Cache, cprems, 0x123);
+    cache_call(1, the_Cache, cprems, 0x312321);
+    cache_call(0, the_Cache, cprems, 0xfffff321);
+    cache_call(1, the_Cache, cprems, 0xaaa123);
+    cache_call(1, the_Cache, cprems, 0xfffff321);
+
+
+    cprems->dirty_bits_in = c_dirty_bits(the_Cache, cprems);
+
+    /*printSummary(cprems->hits, cprems->misses, cprems->evicts,
+                 cprems->dirty_bits_in * cprems->B,
+                 cprems->dirty_bits_ev * cprems->B);*/
+    
+    // since no printing, just check some values
+
+    assert(cprems->hits == 11);
+    assert(cprems->misses == 9);
+    assert(cprems->evicts == 0);
+    assert(cprems->dirty_bits_in == 6);
+
+    //free_fun(the_Cache, cprems);
+    //fclose(pfile);
+
+    return 0;
+}

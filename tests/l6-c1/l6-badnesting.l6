@@ -1,0 +1,29 @@
+//test error
+
+typedef int iti(int i);
+typedef iti* itti(iti* f);
+typedef itti* ittti(itti* g);
+
+int square(int x)
+{
+  return x*x;
+}
+
+iti* fsquare(iti* f)
+{
+  return &square;
+}
+
+itti* ffsquare(itti* f)
+{
+  return (*f)(&square);
+}
+
+int main()
+{
+  iti* s = &square;
+  itti* ss = &fsquare;
+  ittti* sss = &ffsquare;
+  return (*sss)(*ss)(*s)(4);
+}
+

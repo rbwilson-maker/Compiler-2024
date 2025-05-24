@@ -1,0 +1,9 @@
+//test return 10
+// make sure library files work
+int main() {
+  fpt x = itof(3);
+  fpt y = itof(7);
+  fpt z = fadd(x, y);
+  print_fpt(z);
+  return ftoi(z);
+}

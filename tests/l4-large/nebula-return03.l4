@@ -1,0 +1,14 @@
+//test return 1
+
+struct a {
+  bool aa;
+};
+
+
+typedef struct a a;
+
+int main() {
+  struct a *p1;
+  p1 = alloc(struct a);
+  return (p1->aa? 0: 1);
+}

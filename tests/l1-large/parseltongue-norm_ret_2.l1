@@ -1,0 +1,15 @@
+//test return 10
+
+// Test the binops
+
+int main(){
+    int a;
+    a = 10;
+
+    a = a * 1;
+    a = a / 1;
+    a = a + 1;
+    a = a - 1;
+    
+    return a;
+}

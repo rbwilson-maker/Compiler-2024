@@ -1,0 +1,17 @@
+//test abort
+// Ensure that assertions work properly
+
+int fact(int n) 
+  //@requires n >= 0;
+{
+  assert(n >= 0);
+
+  if(n == 0)
+    return 1;
+
+  return n * fact(n - 1);
+}
+
+int main() {
+  return fact(-1);
+}

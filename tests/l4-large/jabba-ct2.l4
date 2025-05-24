@@ -1,0 +1,49 @@
+//test return 26
+
+void reverse(int[] L, int n) {
+	for(int i = 0; i < n / 2; i++) {
+		int temp = L[i];
+		L[i] = L[n-i-1];
+		L[n-i-1] = temp;
+	}
+	return;
+}
+
+
+int[] ct2(int[][] L, int n) {
+	for(int i = 0; i < n; i++) {
+		if (i == 2) {
+			L[i] = L[i-1];
+		}
+		reverse(L[i], n);
+	}
+	int[] result = alloc_array(int, n);
+	for(int i = 0; i < n; i++) {
+		result[i] = L[i][i];
+	}
+	return result;
+}
+
+int sum(int[] L, int n) {
+	int total = 0;
+	for(int i = 0; i < n; i++) {
+		total += L[i];
+	}
+	return total;
+}
+
+int main() {
+	int n = 4;
+	//initialize L
+	int[][] L = alloc_array(int[], n);
+	for(int i = 0; i < n; i++) {
+		L[i] = alloc_array(int, n);
+		for(int j = 0; j < n; j++) {
+			L[i][j] = i*n + j;
+		}
+	}
+
+	int[] result = ct2(L, n);
+	return sum(result, n);
+}
+

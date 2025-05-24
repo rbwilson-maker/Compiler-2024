@@ -1,0 +1,10 @@
+//test error
+/* mismatched types between function params and args */
+
+int wrong_type(int x, bool y, int z) {
+  return y ? x + z : x - z;
+}
+
+int main () {
+  return wrong_type(1, wrong_type(1, false, 1), 0);
+}

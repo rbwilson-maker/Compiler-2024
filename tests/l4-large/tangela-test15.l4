@@ -1,0 +1,6 @@
+//test error
+
+int main() {
+	int * x = alloc_array(bool, 6);
+	return *x + 6;
+}

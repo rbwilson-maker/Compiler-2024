@@ -1,0 +1,12 @@
+//test error
+
+int main()
+{
+  int T_MIN;
+  int denom = 8 % 7 - 6 + 5 - 2 * 3 + 4 + 1;
+  int overflow;
+
+  T_MIN = -2147483648;
+  overflow = T/_1_MIN % denom;
+  return overflow;
+}

@@ -1,0 +1,22 @@
+//test return -680
+// an arbitrary two-function recursion
+// equivalent to jreturn03.l3
+
+int ping(int x);
+int pong(int x);
+
+int ping(int x) {
+	if (x==0)
+		return 0;
+	return pong(x/2) + 100;
+}
+
+int pong(int x) {
+	if (x==0)
+		return -1000;
+	return ping(x/3) + 10;
+}
+
+int main() {
+  return ping(37);	//100 + 10 + 100 + 10 + 100 + -1000
+}

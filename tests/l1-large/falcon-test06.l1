@@ -1,0 +1,23 @@
+//test return 5040
+
+int main() {
+    int a = 1;
+    int i = 1;
+
+    a = a * i;
+    i = i + 1;
+    a = a * i;
+    i = i + 1;
+    a = a * i;
+    i = i + 1;
+    a = a * i;
+    i = i + 1;
+    a = a * i;
+    i = i + 1;
+    a = a * i;
+    i = i + 1;
+    a = a * i;
+    i = i + 1;
+
+    return a;
+}

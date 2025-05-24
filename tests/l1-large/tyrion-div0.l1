@@ -1,0 +1,21 @@
+//test div-by-zero
+
+// Compilers f2017: Group Tyrion Lannister
+
+int main() {
+    int x = 0;
+    int y = 1;
+    int z = x;
+    int w = y;
+    int q = y;
+    int b = q;
+    int a = b;
+    int c = x;
+    int d = a;
+    int e = w;
+    int f = c;
+    int g = 1000000000;
+    int m = d / f;
+    int r = a+b+c+d+e+f+g+q+w+x+y+z;
+    return r;
+}

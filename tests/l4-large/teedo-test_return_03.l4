@@ -1,0 +1,66 @@
+//test return 5
+
+// https://leetcode.com/problems/kth-largest-element-in-an-array/
+
+void swap(int[] A, int i, int j) {
+    int tmp = A[i];
+    A[i] = A[j];
+    A[j] = tmp;
+}
+
+int partition(int[] nums, int start, int end) {
+    int pivot = nums[start];
+    int i = start;
+    int j = end + 1;
+
+    while (i < j) {
+        while(i < end && nums[i+1] >= pivot) {
+            i++;
+        }
+        i++;
+        while(j > start && nums[j-1] <= pivot) {
+            j--;
+        }
+        j--;
+        if (i < j) {
+            swap(nums, i, j);
+        }
+    }
+    swap(nums, start, j);
+    return j;
+}
+
+int findKthElement(int[] nums, int n, int k) {
+    assert(n > 0);
+    assert(k >= 1 && k <= n);
+
+    int start = 0;
+    int end = n - 1;
+    int pos = 0;
+
+    while (start <= end) {
+        pos = partition(nums, start, end);
+        if (pos == k - 1) {
+            return nums[pos];
+        }
+        else if (pos > k - 1) {
+            end = pos - 1;
+        }
+        else {
+            start = pos + 1;
+        }
+    }
+    return nums[pos];
+}
+
+int main() {
+    int[] A = alloc_array(int, 10);
+
+    A[0] = 3;
+    A[1] = 2;
+    A[2] = 1;
+    A[3] = 5;
+    A[4] = 6;
+    A[5] = 4;
+    return findKthElement(A, 6, 2);
+}

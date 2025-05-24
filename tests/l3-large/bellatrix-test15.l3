@@ -1,0 +1,24 @@
+//test error
+
+void f(){};
+
+void f(){};
+
+void g(int m){
+
+  m << 33;
+
+  return;
+  
+}
+
+
+
+int main(){
+
+  g(7);
+
+  return 5;
+    
+  
+}

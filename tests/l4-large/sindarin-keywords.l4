@@ -1,0 +1,16 @@
+//test return 42
+// "keywords"
+
+int Int(int **null) {
+  *null = NULL;
+  return 0;
+}
+
+int main() {
+  int[] Alloc_array = alloc_array(int, 5);
+  Alloc_array[0] = 41;
+  int **Alloc = alloc(int*);
+  *Alloc = alloc(int);
+  **Alloc = 1;
+  return **Alloc + Alloc_array[Int(Alloc)];
+}

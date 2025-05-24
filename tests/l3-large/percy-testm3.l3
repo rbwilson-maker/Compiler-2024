@@ -1,0 +1,22 @@
+//test div-by-zero 
+
+typedef int int1;
+
+typedef int1 int2;
+
+typedef int2 intf; 
+
+
+int2 return_zero(int sum){
+	if(sum == 0){
+		return sum + 2 - 2;
+	} else {
+		return return_zero(sum-1);
+	}
+}
+
+int main(){
+	
+	intf x = 1;
+	return x/return_zero(1000);
+}

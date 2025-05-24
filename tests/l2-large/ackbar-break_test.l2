@@ -1,0 +1,12 @@
+//test return 8
+//A test of returning during a loop
+int main() {
+    int sum = 0;
+    for(int i = 0; i < 10; i++){
+        sum += i;
+        if(sum == 36){
+            return i;
+        }
+    }
+    return 0;
+}

@@ -1,0 +1,16 @@
+//test return 10
+
+// Short circuiting should avoid the divide-by-zeros.
+int main() {
+    int x = ((0 == 0) ? 10 : (2 / 0));
+    int y = ((1 == 0) ? (2 / 0) : 10);
+    
+    if ((x == y) || (1 / 0 == 2)) {
+        if ((x != y) && (1 / 0 == 2)) {
+            return 5;
+        }
+        return 10;
+    }
+    return 0;
+}
+

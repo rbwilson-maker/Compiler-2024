@@ -1,0 +1,13 @@
+//test return 0
+int main() {
+    int a = 1;
+    int b = 2;
+    int c = 3;
+    int d = 4;
+    int e = 5;
+    int x = 3;
+    for (x = 2; x < 4; x++) {
+      return a / b / c / d / e;
+    }
+    return a / b / c / d / e;
+}

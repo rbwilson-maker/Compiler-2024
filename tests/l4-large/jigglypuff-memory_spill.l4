@@ -1,0 +1,42 @@
+//test return 464
+
+/* Memory Spill Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, October 26, 2015 at 05:38:28 PM EDT
+ *
+ * Tests that memory addresses are handled both when they are spilled as local
+ * variables, and when they need to be passed on the stack.
+ */
+
+int sum(int x1, int x2, int x3, int x4, int x5, int x6, int x7, int *x8)
+{
+    return x1 + x2 + x3 + x4 + x5 + x6 + x7 + *x8;
+}
+
+int main()
+{
+    int eax = 9;
+    int ebx = 111111;
+    int ecx = 11;
+    int edx = 88;
+    int edi = 17;
+    int esi = 42;
+    int ebp = 999;
+    int r8d = 77;
+    int r9d = 99;
+    int r10d = 7777;
+    int r11d = 777;
+    int r12d = 908;
+    int r13d = 15411;
+    int r14d = 90210;
+    int r15d = 2;
+
+    int *stack1 = alloc(int);
+    *stack1 = 22;
+    int *stack2 = alloc(int);
+    *stack2 = 108;
+
+    return sum(edi, esi, edx, ecx, r8d, r9d, *stack1, stack2);
+}

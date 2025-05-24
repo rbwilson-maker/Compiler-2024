@@ -1,0 +1,14 @@
+//test return 1
+
+int main() {
+    int x = 1;
+    int y = 1;
+    int z = x + 1;
+    z = x + y;
+    x = y * z;
+    y = z / y;
+    y = x - z;
+    y = y % 2;
+    y = -(-1);
+    return y;
+}

@@ -1,0 +1,10 @@
+//test error
+
+typedef int dog;
+typedef dog myDog;
+
+int main () {
+  int x = 0;
+  dog y = myDog(x);
+  return y;
+}

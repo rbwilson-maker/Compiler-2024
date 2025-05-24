@@ -1,0 +1,13 @@
+//test div-by-zero
+// Loop getting a div by zero eror on decrementing
+
+int main () {
+    int x = 1;
+    int y = 93;
+    while (x>-10) {
+        y--;
+        x/= (y);
+    }
+    return x;
+
+}

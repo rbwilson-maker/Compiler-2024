@@ -1,0 +1,10 @@
+//test error
+
+
+int main() {
+    bool b = false;
+    b = true;
+
+    int a = b == true ? false : true;
+    return 0;
+}

@@ -1,0 +1,9 @@
+//test return 122
+
+int main() {
+    int x = 0x1;
+    int y = 0xA;
+    int z = 0X2;
+    int a = 0xa;
+    return a * y + y * z + z * x;
+}

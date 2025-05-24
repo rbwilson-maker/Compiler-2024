@@ -1,0 +1,17 @@
+//test error
+
+int main()
+{
+  bool a = true;
+  bool b = true;
+  bool c = false;
+
+  if (a && b & c)
+  {
+    return 0;
+  }
+  else
+  {
+    return 1;
+  }
+}

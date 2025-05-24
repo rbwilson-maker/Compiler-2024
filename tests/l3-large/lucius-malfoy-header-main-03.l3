@@ -1,0 +1,6 @@
+//test error
+// main is defined in the header (not allowed)
+
+int foo() {
+    return 1;
+}

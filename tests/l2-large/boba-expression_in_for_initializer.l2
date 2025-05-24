@@ -1,0 +1,10 @@
+//test return 13
+int main()
+{
+  int x = 3;
+  for(x++; x < 8; x--)
+  {
+    x *= 2;
+  }
+  return x;
+}

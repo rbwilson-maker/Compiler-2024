@@ -1,0 +1,71 @@
+//test return -15147515
+
+// ...alignment?
+
+struct A {
+  bool a;
+  bool b;
+  bool c;
+  int d;
+  int *e;
+  bool f;
+  int *g;
+  int h;
+  int *i;
+  int j;
+  int k;
+  bool pp;
+  struct A *p;
+  bool l;
+  int m;
+};
+
+struct B {
+  int a;
+  bool b;
+  bool c;
+  int *d;
+  int *e;
+  bool f;
+  int g;
+  int h;
+  struct A *i;
+  struct A j;
+};
+
+struct C {
+  struct A a;
+  struct B b;
+  struct A c;
+  struct A d;
+  struct B e;
+};
+
+struct D {
+  bool a;
+  struct C b;
+  struct A c;
+  struct B d;
+};
+
+int main() {
+  struct D *S1 = alloc(struct D);
+  S1->a = true;
+  S1->d.f = true;
+  S1->d.e = NULL;
+  S1->d.g = -1251251251;
+  S1->b.c.h = 5;
+  S1->b.c.e = alloc(int);
+  *(S1->b.c.e) = 29;
+  S1->d.j.m = 15411;
+  S1->d.i = alloc(struct A);
+  (S1->d.i)->h = 20001;
+  S1->d.e = alloc(int);
+  *(S1->d.e) = -15151515;
+  S1->c.e = NULL;
+  if (S1->d.f) {
+    return (S1->d.i)->h / S1->b.c.h + *(S1->d.e);
+  } else {
+    return S1->b.c.h << *(S1->b.c.e);
+  }
+}

@@ -1,0 +1,7 @@
+//test return 1
+
+int main() {
+    int[] a = alloc_array(int, 15411);
+    //@assert(\length(a) == 15411);
+    return 1;
+}

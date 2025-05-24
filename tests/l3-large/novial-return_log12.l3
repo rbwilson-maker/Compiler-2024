@@ -1,0 +1,10 @@
+//test return 3
+
+int log2(int input) {
+  if (input < 2) return 0;
+  return 1 + log2(input / 2);
+}
+
+int main() {
+  return log2(12);
+}

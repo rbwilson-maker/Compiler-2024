@@ -1,0 +1,25 @@
+//test div-by-zero
+
+// Find cosine squared angle between two 3d vectors
+
+fpt dotProd (fpt x1, fpt x2, fpt x3, fpt y1, fpt y2, fpt y3) {
+  return fadd(fadd(fmul(x1, y1), fmul(x2, y2)), fmul(x3, y3));
+}
+
+int cosSquaredTheta (int x1, int x2, int x3, int y1, int y2, int y3) {
+  fpt fx1 = itof(x1);
+  fpt fx2 = itof(x2);
+  fpt fx3 = itof(x3);
+  fpt fy1 = itof(y1);
+  fpt fy2 = itof(y2);
+  fpt fy3 = itof(y3);
+  fpt dp = dotProd(fx1, fx2, fx3, fy1, fy2, fy3);
+  fpt xMagSquared = dotProd(fx1, fx2, fx3, fx1, fx2, fx3);
+  fpt yMagSquared = dotProd(fy1, fy2, fy3, fy1, fy2, fy3);
+  return ftoi(dp*dp/xMagSquared/yMagSquared);
+}
+
+int main() {
+  int cosSquared = cosSquaredTheta(1,2,3,4,5,6);
+  return cosSquared / cosSquared;
+}

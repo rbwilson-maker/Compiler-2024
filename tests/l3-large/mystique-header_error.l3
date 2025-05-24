@@ -1,0 +1,14 @@
+//test error
+
+int bad_function(int x) {
+    int y = 0;
+    while (x > 0) {
+        y++;
+        x--;
+    }
+    return y;
+}
+
+int main() {
+    return bad_function(1000);
+}

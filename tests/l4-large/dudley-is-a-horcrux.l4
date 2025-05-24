@@ -1,0 +1,5 @@
+//test error
+														int main() {  bool[][][]**[] a = alloc_array(bool[][][]**, 10);																									  a[0] = alloc(bool[][][]*);																					  *a[0] = alloc(bool[][][]);			  *(a[0]) = alloc(bool[][][]);
+  **(a[0]) = alloc(bool[][]);																						
+  return (**a[0])[0][1][2] ? 0 : 1; }
+

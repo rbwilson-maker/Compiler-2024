@@ -1,0 +1,14 @@
+//test error
+// define a struct more than once
+
+struct a {
+  int x;
+};
+
+int main() {
+  return 0;
+}
+
+struct a {
+  int x;
+};

@@ -1,0 +1,15 @@
+//test return 101
+/* Test elaboration of assign with side effects */
+
+int f(int *x) {
+  (*x)++;
+  return 0;
+}
+
+int main () {
+  int *x = alloc(int);
+  *x = 0;
+  int[] A = alloc_array(int, 1);
+  A[f(x)] += 100;
+  return *x + A[0];
+}

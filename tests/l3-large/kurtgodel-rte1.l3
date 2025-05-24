@@ -1,0 +1,16 @@
+//test abort
+/*
+RTE (assertion failed).
+(also, resolve typedef during assert)
+*/
+
+typedef bool ret;
+
+ret v() {
+  return false;
+}
+
+int main() {
+  assert(v() == (false == false));
+  return 4;
+}

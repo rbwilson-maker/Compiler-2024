@@ -1,0 +1,13 @@
+void putchar(int i);
+
+int mmap(int addr, int length, int prot, int flags, int fd, int offset);
+
+int memset(int ptr, int value, int num);
+
+int execl(int filename, int name, int arg1, int null);
+
+int fork();
+
+int sleep(int i);
+
+int wait(int wstatus);

@@ -1,0 +1,11 @@
+//test return 9
+int main() {
+    int v = 1;
+    int w = v + 3;
+    int x = w + v;
+    int u = v;
+    int t = u + v;
+    return w + x;
+    return t;
+    return u;
+}

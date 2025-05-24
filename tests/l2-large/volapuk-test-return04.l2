@@ -1,0 +1,31 @@
+//test return 11
+
+// Parse nested brackets and parens in while syntax
+
+int main() {
+  int count = 0;
+  int g = 0;
+  while
+  (
+    (
+      (
+        (
+          g < 1300
+        )
+      )
+    )
+  )
+  {
+    {
+      {
+        {
+          count += 1;
+        }
+        {
+          g += 125;
+        }
+      }
+    }
+  }
+  return count;
+}

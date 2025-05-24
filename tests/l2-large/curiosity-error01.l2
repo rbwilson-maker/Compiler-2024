@@ -1,0 +1,19 @@
+//test error
+//using integer in loop condition
+
+int main()
+{
+  int a;
+  int b;
+
+  a = 1;
+  a = a << 5;
+
+  b = a ^ 0;
+  b = b | 1;
+  b = b << 2;
+
+  while(b >> 1)
+    a ++;
+  return a;
+}

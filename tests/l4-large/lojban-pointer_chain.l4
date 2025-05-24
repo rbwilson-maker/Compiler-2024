@@ -1,0 +1,41 @@
+//test return 102839
+
+typedef struct first first;
+typedef struct second second;
+typedef struct third third;
+typedef struct fourth fourth;
+
+struct fourth {
+   int* num;
+};
+
+struct third {
+   fourth[]* st;
+};
+
+struct second {
+   third[] arr;
+};
+
+struct first {
+    second* ptr;
+};
+
+int main() {
+   first *one = alloc(first);
+   one->ptr = alloc(second);
+   one->ptr->arr = alloc_array(third, 122);
+   int count = 1;
+   for (int i = 0; i < 122; i++) {
+      one->ptr->arr[i].st = alloc(fourth[]);
+      *one->ptr->arr[i].st = alloc_array(fourth, 42);
+      for (int j = 0; j < 42; j++) {
+         (*one->ptr->arr[i].st)[j].num = alloc(int);
+         *(*one->ptr->arr[i].st)[j].num = count;
+         count += j;
+      }
+      count += i;
+   }
+
+   return *(*one->ptr->arr[112].st)[20].num;
+}

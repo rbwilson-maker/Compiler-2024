@@ -1,0 +1,8 @@
+//test typecheck
+
+typedef struct boba *bb;
+
+int main() {
+	bb star = alloc(struct boba);
+	return **(star->am.peach);
+}

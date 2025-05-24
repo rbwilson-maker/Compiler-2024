@@ -1,0 +1,9 @@
+//test return 88
+int main() {
+  if (0 != 0) {
+    return -88;
+  }
+  else {
+    return 88;
+  }
+}

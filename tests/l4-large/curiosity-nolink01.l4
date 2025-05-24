@@ -1,0 +1,11 @@
+//test typecheck
+//header not impelmented
+
+int main(){
+  int* p = alloc(int);
+  *p = 5;
+  int x = *p;
+  int y;
+  y = fact(x);
+  return y;
+}

@@ -1,0 +1,12 @@
+//test return 15
+
+int rangeSum(int lo, int hi) {
+	if (lo > hi)
+		return 0;
+	
+	return lo + rangeSum(lo + 1, hi);
+}
+
+int main() {
+	return rangeSum(0, 5);
+}

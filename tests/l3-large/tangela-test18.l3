@@ -1,0 +1,17 @@
+//test return 33554432
+
+int pow_of_two(int pow);
+
+int main() {
+  int pow5 = pow_of_two(5);
+  int pow6 = pow_of_two(6);
+  int pow25 = pow_of_two(25);
+  return pow25;
+}
+
+int pow_of_two(int pow) {
+  assert(pow >= 0);
+  if (pow == 0)
+    return 1;
+  return pow_of_two(pow - 1) * 2;
+}

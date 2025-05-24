@@ -1,0 +1,15 @@
+//test memerror
+struct s1 {
+  int a;
+  struct s2* b;
+  int[] c;
+};
+
+typedef struct s1 s1;
+typedef s1* ps1;
+
+int main() {
+  ps1 v1 = alloc(s1);
+  (v1->c)[3] = 2;
+  return 1;
+}

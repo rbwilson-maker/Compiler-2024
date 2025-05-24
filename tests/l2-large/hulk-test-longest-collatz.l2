@@ -1,0 +1,23 @@
+//test return 106239
+
+int main() {
+  int max_niters = 0;
+  int max_n = 0;
+  for(int n = 1; n < 110000; n++) {
+    int x = n;
+    int niters = 0;
+    while(x != 1) {
+      if(x % 2 == 0) {
+        x = x / 2;
+      } else {
+        x = 3*x + 1;
+      }
+      niters++;
+    }
+    if(max_niters < niters) {
+      max_niters = niters;
+      max_n = n;
+    }
+  }
+  return max_n;
+}

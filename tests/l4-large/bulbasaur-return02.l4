@@ -1,0 +1,16 @@
+//test return 1
+// test that elaboration of asnop works as specified
+int f(int* a)
+{
+  (*a)++;
+  return 3;
+}
+
+int main()
+{
+  int[] A = alloc_array(int, 5);
+  int* p = alloc(int);
+  *p = 0;
+  A[f(p)] += 1;
+  return *p;
+}

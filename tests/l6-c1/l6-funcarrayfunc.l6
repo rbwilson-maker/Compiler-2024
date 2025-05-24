@@ -1,0 +1,13 @@
+//test error
+
+typedef int iti(int x);
+
+iti[] give_unit()
+{
+  return alloc_array(iti, 0);
+}
+
+int main()
+{
+  return 0;
+}

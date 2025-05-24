@@ -1,0 +1,14 @@
+//test return 1
+
+// testing modulo behavior
+int main() {
+  int x;
+  int y;
+  int z;
+
+  x = 5;
+  z = 6;
+  y = 5;
+
+  return y/(z-x%2);
+}

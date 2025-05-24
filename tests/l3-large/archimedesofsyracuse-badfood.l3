@@ -1,0 +1,30 @@
+//test abort
+// Abort if you eat bad food
+
+int contaminate(int d, int s);
+
+void consume() {
+  int cafe_food = 0xcafef00d; // Food from Cafe
+  int dead_beef = 0xdeadbeef; // Rotten beef next to it
+
+  // Food got contaminated
+  int food_stat = contaminate(cafe_food, dead_beef);
+
+  // Food must be fresh to consume
+  assert (food_stat != 0xbaadf00d);
+}
+
+int main() {
+  consume();
+  return 0;
+}
+
+int contaminate(int d, int s) {
+  int bad = 0xbaad << 16;
+  if (((s >> 16) & 0xffff) == 0xdead) {
+    return d & 0xffff | bad;
+  }
+  else {
+    return 0xf00d;
+  }
+}

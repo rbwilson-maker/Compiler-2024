@@ -1,0 +1,17 @@
+//test return 73
+
+int smallestPrime(int num) {
+    for (int i = 2; i < 1000000; i++) {
+        if (num % i == 0) {
+            return i;
+        }
+    }
+    return 1;
+}
+
+// Tests finding the smallest prime factor in a positive number >= 1
+int main() {
+    assert(3 == smallestPrime(15));
+    assert(7 == smallestPrime(77));
+    return smallestPrime(43873);
+}

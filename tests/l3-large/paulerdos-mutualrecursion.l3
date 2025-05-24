@@ -1,0 +1,31 @@
+//test return 123
+
+typedef bool ret1;
+typedef ret1 ret2;
+
+typedef int var1;
+typedef var1 var2;
+
+ret1 even(var1 v);
+
+ret2 odd(var2 v) {
+    if (v == 0) {
+        return false;
+    }
+    return even(v - 1);
+}
+
+ret1 even(var1 v) {
+    if (v == 0) {
+        return true;
+    }
+    return odd(v - 1);
+}
+
+int main() {
+    int num = 100;
+    if (odd(num) == even(num - 1)) {
+        return 123;
+    }
+    return 0;
+}

@@ -1,0 +1,16 @@
+
+typedef bool char0;
+typedef char0 char1;
+typedef int size_t;
+typedef int queue_t;
+typedef int list_ele_t;
+void free(int in);
+int malloc(int in);
+int sizeof();
+void set_tail(queue_t q, int v);
+void set_head(queue_t q, int v);
+void set_size(queue_t q, int v);
+list_ele_t get_head(queue_t q);
+list_ele_t get_tail(queue_t q);
+list_ele_t get_next(list_ele_t in);
+int get_value(list_ele_t in);

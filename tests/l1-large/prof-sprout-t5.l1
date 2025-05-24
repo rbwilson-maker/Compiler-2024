@@ -1,0 +1,11 @@
+//test div-by-zero
+// division by zero via arithmetic
+
+int main() {
+  int w = 6;
+  int x = 7;
+  int y = 3;
+  int z = 5;
+  
+  return w / (x - w/y - z);
+}

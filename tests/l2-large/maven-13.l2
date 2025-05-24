@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+  int z = 0;
+  while(int i = 0; i < 500; ++i) {
+    z += 12345;
+  }
+  return z;
+}

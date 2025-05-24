@@ -1,0 +1,57 @@
+//test return -729379967
+
+typedef int data;
+
+// a vector struct that can dynamically increase the capacity
+struct vector {
+    int sz;
+    int cap;
+    data[] arr;
+};
+
+int max(int a, int b) {
+    return a > b ? a : b;
+}
+
+void init(struct vector* vec, int size, data val) {
+    vec->sz = size;
+    vec->cap = max(8, 2 * size);
+    vec->arr = alloc_array(data, vec->cap);
+    for (int i = 0; i < vec->sz; i++) {
+        vec->arr[i] = val;
+    }
+}
+
+void push_back(struct vector* vec, data val) {
+    vec->sz++;
+    if (vec->sz >= vec->cap / 2) {
+        vec->cap = vec->cap * 2;
+        data[] old_arr = vec->arr;
+        vec->arr = alloc_array(data, vec->cap);
+        for (int i = 0; i < vec->sz-1; i++) {
+            vec->arr[i] = old_arr[i];
+        }
+    }
+    vec->arr[vec->sz-1] = val;
+}
+
+data at(struct vector* vec, int idx) {
+    assert(idx >= 0 && idx < vec->sz);
+    return vec->arr[idx];
+}
+
+// Tests vector operations, now it only supports init, push_back, at
+int main() {
+    struct vector* v = alloc(struct vector);
+    init(v, 100, 3);
+    for (int i = 0; i < 100; i++) {
+        assert(at(v, i) == 3);
+    }
+    for (int i = 100; i < 1000000; i++) {
+        push_back(v, i * i);
+    }
+    for (int i = 100; i < 1000000; i++) {
+        assert(at(v, i) == i * i);
+    }
+    return at(v, 999999);
+}

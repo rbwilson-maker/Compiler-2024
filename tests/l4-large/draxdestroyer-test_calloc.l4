@@ -1,0 +1,21 @@
+//test return 0
+// Formal verification of calloc
+//
+//
+int main() {
+    int sum = 0;
+    int[] arr = alloc_array(int, 4096);
+    for (int i = 0 ; i < 4096; i++) {
+        sum += arr[i];
+    }
+
+    assert(sum == 0);
+
+    // Frankly I think calloc messed up
+    int[] arr2 = alloc_array(int, 4096);
+    for (int i = 0 ; i < 4096; i++) {
+        sum += arr2[i];
+    }
+
+    return sum;
+}

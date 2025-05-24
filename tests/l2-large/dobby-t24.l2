@@ -1,0 +1,14 @@
+//test return -349354316
+int main() {
+  int res = 0;
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 5; j++) {
+      for (int k = 0; k < 5; k++) {
+        res = res + k;
+      }
+      res = res * (j + 1);
+    }
+    res = res / (i + 1);
+  }
+  return res;
+}

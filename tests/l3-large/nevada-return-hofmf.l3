@@ -1,0 +1,19 @@
+//test return 111
+// Hofstadter's mutually recursive Male-Female sequences
+
+int HofM(int n);
+int HofF(int n);
+
+int HofM(int n) {
+    if (n == 0) return 0;
+    else return n - HofF(HofM(n-1));
+}
+
+int HofF(int n) {
+    if (n == 0) return 1;
+    else return n - HofM(HofF(n-1));
+}
+
+int main() {
+    return HofF(180);
+}

@@ -1,0 +1,17 @@
+//test return 65536
+int foo(int i, int k);
+int bar(int i, int k);
+
+int foo(int i, int k) {
+    if (i == 0) return k;
+    return bar(foo(i-1, k+1),1);
+}
+
+int bar(int i, int k) {
+    if (i == 0) return k;
+    return bar(i-1, 2*k);
+}
+
+int main() {
+  return foo(2, 2);
+}

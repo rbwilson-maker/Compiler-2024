@@ -1,0 +1,18 @@
+//test return 5328
+
+int main() {
+    int p = 20;
+    int q = 70;
+
+    while (p > 0) {
+        p = p + q;
+        p = p - 3 * q;
+        q += 2;
+        if (q > 75) {
+            q = p + q;
+            return q;
+        }
+    }
+
+    return (2 + q) * q;
+}

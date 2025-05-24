@@ -1,0 +1,9 @@
+/* 
+ * A header file for chom choms
+ */
+
+// Returns some integer value based on the chomChomness determined by boolean inputs
+int chomChom(bool chom1, bool chom2);
+
+// Creates a banana out of two integers
+void banana(int a, int b);

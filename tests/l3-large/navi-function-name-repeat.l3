@@ -1,0 +1,11 @@
+//test return 5
+
+int f(int a);
+int f(int b);
+int f(int c) {
+	return c + 1;
+}
+
+int main() {
+	return f(4);
+}

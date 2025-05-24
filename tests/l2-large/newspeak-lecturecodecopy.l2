@@ -1,0 +1,16 @@
+//test return 9
+int main() {
+    int v = 1;
+    int w = v + 3;
+    int x = w + v;
+    int u = v;
+    int t = u + v;
+    if (w+x != 9) {
+        for (w = 0; w+x != 9; w++) {
+            int a = 0;
+        }
+    }
+    return w + x;
+    return t;
+    return u;
+}

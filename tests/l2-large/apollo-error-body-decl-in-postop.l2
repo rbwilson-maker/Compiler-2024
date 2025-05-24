@@ -1,0 +1,10 @@
+//test error
+// use a body declaration in a postop
+int main() {
+  int x = 0;
+  for (; x < 150; y++) {
+    int y = 0;
+    x += 2;
+  }
+  return x;
+}

@@ -1,0 +1,13 @@
+//test div-by-zero
+//Tests modulus of 0 and returns an exception
+
+int main()
+{
+    int i = 2;
+    int j = 0;
+    while(i % 0 < 2)
+    {
+        j++;
+    }
+    return j;
+}

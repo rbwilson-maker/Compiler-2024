@@ -1,0 +1,25 @@
+//test compile
+
+struct str1 {
+    bool a;
+    int b;
+    int c;
+    int* d;
+};
+
+struct str2 {
+    int a;
+    bool b;
+    int c;
+    int* d;
+};
+
+int main() {
+    struct str1 * var1 = alloc(struct str1);
+    struct str2 * var2 = alloc(struct str2);
+
+    var1->b = 10;
+    var2->a = 10;
+
+    return var1->b + var2->a;
+}

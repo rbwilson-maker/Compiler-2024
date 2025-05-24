@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main()
+{
+  if (false)
+    return 5 % 1;
+  else
+    return 5 % 0;
+}

@@ -1,0 +1,7 @@
+//test typecheck
+
+int main() {
+  int N = 3;
+  assert(int2bool(intint2int(int2int(intint2int(0, 3)), N)));
+  return N;
+}

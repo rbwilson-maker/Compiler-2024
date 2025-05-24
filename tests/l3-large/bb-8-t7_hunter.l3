@@ -1,0 +1,26 @@
+//test return 30
+
+int face(int turn)
+{
+  if(turn == 1)
+  {
+    return 2;
+  }
+  if(turn == 2)
+  {
+    return 3;
+  }
+  else
+  {
+    return 5;
+  }
+}
+int main()
+{
+  int damage = 0;
+  for(int turn = 1; turn <= 7; turn++)
+  {
+    damage += face(turn);
+  }
+  return damage;
+}

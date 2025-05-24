@@ -1,0 +1,394 @@
+//test return 487332
+// we are going to huffman encode the word DEADBEEF
+// that should be 1110110111110100100 represented as binary
+
+struct table_node {
+  struct table_node* left;
+  struct table_node* right;
+  int key;
+  int value;
+};
+
+typedef struct table_node* table;
+
+int max(int x, int y)
+{
+  if (x > y)
+  {
+    return x;
+  } else {
+    return y;
+  }
+}
+
+int table_height(table t)
+{
+  if (t == NULL)
+  {
+    return 0;
+  }
+  
+  return 1 + max(table_height(t->left), table_height(t->right));
+}
+
+int table_balancing_factor(table t)
+{
+  if (t == NULL)
+  {
+    return 0;
+  }
+  
+  return table_height(t->left) - table_height(t->right);
+}
+
+table table_insert(table t, int k, int v)
+{
+  if (t == NULL)
+  {
+    table new_node = alloc(struct table_node);
+    new_node->key = k;
+    new_node->value = v;
+    
+    return new_node;
+  }
+  
+  if (t->key == k)
+  {
+    t->value = v;
+  } else if (t->key > k)
+  {
+    t->left = table_insert(t->left, k, v);
+  } else {
+    t->right = table_insert(t->right, k, v);
+  }
+  
+  if (table_balancing_factor(t) == 2)
+  {
+    if (table_balancing_factor(t->left) == -1)
+    {
+      table one = t->left;
+      table two = t->left->right;
+      
+      t->left = two;
+      one->right = t->left->left;
+      t->left->left = one;
+    }
+    
+    table one = t->left;
+    
+    t->left = t->left->right;
+    one->right = t;
+    t = one;
+  } else if (table_balancing_factor(t) == -2)
+  {
+    if (table_balancing_factor(t->right) == 1)
+    {
+      table one = t->right;
+      table two = t->right->left;
+    
+      t->right = two;
+      one->left = t->right->right;
+      t->right->right = one;
+    }
+  
+    table one = t->right;
+  
+    t->right = t->right->left;
+    one->left = t;
+    t = one;
+  }
+  
+  return t;
+}
+
+int table_lookup(table t, int k)
+{
+  if (t == NULL)
+  {
+    return -1;
+  }
+  
+  if (t->key == k)
+  {
+    return t->value;
+  }
+  
+  if (t->key > k)
+  {
+    return table_lookup(t->left, k);
+  } else {
+    return table_lookup(t->right, k);
+  }
+}
+
+struct list_node {
+  struct list_node* next;
+  int value;
+};
+
+typedef struct list_node* list;
+
+list list_nil()
+{
+  return NULL;
+}
+
+list list_cons(int i, list l)
+{
+  list t = alloc(struct list_node);
+  t->next = l;
+  t->value = i;
+  
+  return t;
+}
+
+list list_append(list l1, list l2)
+{
+  if (l1 == NULL)
+  {
+    return l2;
+  }
+  
+  return list_cons(l1->value, list_append(l1->next, l2));
+}
+
+struct huffman_tree {
+  struct huffman_tree* left;
+  struct huffman_tree* right;
+  int data;
+  int weight;
+};
+
+typedef struct huffman_tree* huffman;
+
+list huffman_lookup(huffman t, int k)
+{
+  if (t == NULL)
+  {
+    return list_cons(2, list_nil());
+  }
+  
+  if (t->data == k)
+  {
+    return list_nil();
+  }
+  
+  list temp = huffman_lookup(t->left, k);
+  if ((temp != NULL) && (temp->value == 2))
+  {
+    temp = huffman_lookup(t->right, k);
+    
+    if ((temp != NULL) && (temp->value == 2))
+    {
+      return list_cons(2, list_nil());
+    } else {
+      return list_cons(1, temp);
+    }
+  } else {
+    return list_cons(0, temp);
+  }
+}
+
+struct heap_container {
+  huffman[] data;
+  int size;
+  int capacity;
+};
+
+typedef struct heap_container* heap;
+
+heap heap_new()
+{
+  heap temp = alloc(struct heap_container);
+  temp->size = 0;
+  temp->capacity = 1;
+  temp->data = alloc_array(huffman, 1);
+  
+  return temp;
+}
+
+void heap_insert(heap h, huffman t)
+{
+  if (h == NULL)
+  {
+    return;
+  }
+
+  if (h->size + 1 > h->capacity)
+  {
+    huffman[] temp = alloc_array(huffman, h->capacity*2);
+    for (int i=0; i<h->size; i++)
+    {
+      temp[i] = h->data[i];
+    }
+    
+    h->data = temp;
+    h->capacity *= 2;
+  }
+  
+  h->data[h->size] = t;
+  
+  int cur = h->size;
+  while (cur != 0)
+  {
+    int parent = (cur - 1) / 2;
+    if (h->data[cur]->weight < h->data[parent]->weight)
+    {
+      huffman temp = h->data[cur];
+      h->data[cur] = h->data[parent];
+      h->data[parent] = temp;
+    }
+    
+    cur = parent;
+  }
+  
+  h->size++;
+}
+
+huffman heap_delete(heap h)
+{
+  if (h == NULL)
+  {
+    return NULL;
+  }
+  
+  if (h->size == 1)
+  {
+    h->size = 0;
+    
+    return h->data[0];
+  }
+  
+  huffman temp = h->data[0];
+  h->size--;
+  h->data[0] = h->data[h->size];
+  
+  bool cont = true;
+  int cur = 0;
+  while (cont)
+  {
+    int left = (cur + 1) * 2 - 1;
+    int right = (cur + 1) * 2;
+    
+    if (left > h->size)
+    {
+      cont = false;
+    } else if (right > h->size)
+    {
+      if (h->data[cur]->weight < h->data[left]->weight)
+      {
+        cont = false;
+      } else {
+        huffman temp2 = h->data[left];
+        h->data[left] = h->data[cur];
+        h->data[cur] = temp2;
+      
+        cur = left;
+      }
+    } else if ((h->data[cur]->weight < h->data[left]->weight) && (h->data[cur]->weight < h->data[right]->weight))
+    {
+      cont = false;
+    } else {
+      if (h->data[left]->weight < h->data[right]->weight)
+      {
+        huffman temp2 = h->data[left];
+        h->data[left] = h->data[cur];
+        h->data[cur] = temp2;
+        
+        cur = left;
+      } else {
+        huffman temp2 = h->data[right];
+        h->data[right] = h->data[cur];
+        h->data[cur] = temp2;
+      
+        cur = right;
+      }
+    }
+  }
+  
+  return temp;
+}
+
+int heap_size(heap h)
+{
+  if (h == NULL)
+  {
+    return 0;
+  }
+  
+  return h->size;
+}
+
+void create_priority_from_table(heap h, table t)
+{
+  if (t == NULL)
+  {
+    return;
+  }
+  
+  huffman leaf = alloc(struct huffman_tree);
+  leaf->data = t->key;
+  leaf->weight = t->value;
+  
+  heap_insert(h, leaf);
+  
+  create_priority_from_table(h, t->left);
+  create_priority_from_table(h, t->right);
+}
+
+int main()
+{
+  int length = 8;
+  int[] to_encode = alloc_array(int, length);
+  to_encode[0] = 68; // D
+  to_encode[1] = 69; // E
+  to_encode[2] = 65; // A
+  to_encode[3] = 68; // D
+  to_encode[4] = 66; // B
+  to_encode[5] = 69; // E
+  to_encode[6] = 69; // E
+  to_encode[7] = 70; // F
+  
+  table freq_table = alloc(struct table_node);
+  for (int i=0; i<length; i++)
+  {
+    int v = table_lookup(freq_table, to_encode[i]);
+    
+    if (v == -1)
+    {
+      freq_table = table_insert(freq_table, to_encode[i], 1);
+    } else {
+      freq_table = table_insert(freq_table, to_encode[i], v+1);
+    }
+  }
+  
+  heap priority = heap_new();
+  create_priority_from_table(priority, freq_table);
+
+  while (heap_size(priority) > 1)
+  {
+    huffman temp = alloc(struct huffman_tree);
+    temp->left = heap_delete(priority);
+    temp->right = heap_delete(priority);
+    temp->weight = temp->left->weight + temp->right->weight;
+    
+    heap_insert(priority, temp);
+  }
+  
+  huffman encoding = heap_delete(priority);
+  list result = list_nil();
+  for (int i=0; i<length; i++)
+  {
+    result = list_append(result, huffman_lookup(encoding, to_encode[i]));
+  }
+  
+  int final = 0;
+  while (result != NULL)
+  {
+    final *= 2;
+    final += result->value;
+    result = result->next;
+  }
+  
+  return final;
+}

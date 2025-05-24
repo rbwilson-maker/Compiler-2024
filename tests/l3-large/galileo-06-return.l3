@@ -1,0 +1,24 @@
+//test return 1119744
+// mutually recursive function
+
+int g(int n);
+
+int f(int n) {
+  if (n > 1000000)
+    return n;
+  else
+    return g(n * 2);
+}
+
+int g(int n) {
+  if (n > 1000000)
+    return n;
+  else
+    return f(n * 3);
+}
+
+int main() {
+    int x = 2;
+
+    return f(x);
+}

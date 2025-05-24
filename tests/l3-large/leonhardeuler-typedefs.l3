@@ -1,0 +1,35 @@
+//test return 6
+
+typedef int i1;
+typedef i1 i2;
+typedef i2 i3;
+typedef i3 i4;
+typedef i4 i5;
+typedef i5 i6;
+typedef i6 i7;
+typedef i7 i8;
+typedef i8 i9;
+typedef i9 i10;
+typedef i10 i11;
+typedef i11 i12;
+typedef i12 i13;
+typedef i13 i14;
+typedef i14 i15;
+typedef i15 i16;
+typedef i16 i17;
+typedef i17 i18;
+typedef i18 i19;
+
+i19 heh (i12 i20, i18 i21) {
+    i2 i40 = i20 + i21;
+    return i40 * 2;
+}
+
+int main()
+{
+    i5 i30 = 1;
+    i8 i40 = 2;
+
+    assert (heh (i30, i40) == (heh (i40, i30)));
+    return heh (i30, i40);
+}

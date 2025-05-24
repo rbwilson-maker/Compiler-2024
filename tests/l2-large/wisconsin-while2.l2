@@ -1,0 +1,8 @@
+//test return 0
+
+int main() {
+    int a = 456;
+    while(a!=0) a/=2;
+
+    return a;
+}

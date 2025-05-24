@@ -1,0 +1,23 @@
+//test error
+
+struct a {
+    int b;
+    int c;
+};
+
+typedef struct a foo;
+
+int hello(foo s) {
+    s.b = 3;
+    s.c = 4;
+}
+
+int main() {
+    foo* s = alloc(foo);
+    s->b = 1;
+    s->c = 2;
+
+    hello(*s);
+
+    return s->b + s->c;
+}

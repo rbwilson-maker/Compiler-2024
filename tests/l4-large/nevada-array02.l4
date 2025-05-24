@@ -1,0 +1,17 @@
+//test return 1
+// arrays can be passed and returned; works by reference; also tests parsing on array access on a function call
+
+int[] array_maker(int n) {
+    return alloc_array(int, n);
+}
+
+int[] array_inc(int[] A, int n) {
+    for (int i = 0; i < n; i++)
+        A[i]++;
+    return A;
+}
+
+int main() {
+    int[] A = array_maker(100);
+    return array_inc(A, 100)[2];
+}

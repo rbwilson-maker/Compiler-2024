@@ -1,0 +1,15 @@
+//test error
+// Test undefined variable
+int main()
+{
+  int a;
+  int b;
+  int c;
+
+  a = 6;
+  b = 4;
+
+  c = a + b;
+  foo = c;
+  return foo;
+}

@@ -1,0 +1,9 @@
+//test return 0
+
+struct arr {int[] i;};
+
+int main(){
+	struct arr *test = alloc(struct arr);
+	test -> i = alloc_array(int,2);
+	return test -> i[0];
+}

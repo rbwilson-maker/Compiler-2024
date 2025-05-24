@@ -1,0 +1,26 @@
+//test return 100000
+
+typedef struct list_node *list;
+struct list_node {
+  int data;
+  list next;
+};
+
+list make_list(int n) {
+  list start = NULL;
+  for (int i = n; i > 0; i--) {
+    list new_node = alloc(struct list_node);
+    new_node->data = i;
+    new_node->next = start;
+    start = new_node;
+  }
+  return start;
+}
+
+int main() {
+  list l = make_list(100000);
+  while (l->next != NULL) {
+    l = l->next;
+  }
+  return l->data;
+}

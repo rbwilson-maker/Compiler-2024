@@ -1,0 +1,49 @@
+//test typecheck
+
+/* Performs inplace element wise exponentiation */
+void elem_wise_exp(mtrx m, int r, int c) {
+  for (int i = 0; i < r; i++) {
+    for (int j = 0; j < c; j++) {
+      set_elem(m, r, c, i, j, exp(get_elem(m, r, c, i, j)));
+    }
+  }
+}
+
+/* Performs inplace element wise natural log */
+void elem_wise_log(mtrx m, int r, int c) {
+  for (int i = 0; i < r; i++) {
+    for (int j = 0; j < c; j++) {
+      set_elem(m, r, c, i, j, log(get_elem(m, r, c, i, j)));
+    }
+  }
+}
+
+/* Performs inplace element wise addition */
+void elem_wise_add(mtrx m, int r, int c, dbl val) {
+  for (int i = 0; i < r; i++) {
+    for (int j = 0; j < c; j++) {
+      set_elem(m, r, c, i, j, get_elem(m, r, c, i, j) + val);
+    }
+  }
+}
+
+/* Performs inplace element wise multiplication */
+void elem_wise_mul(mtrx m, int r, int c, dbl val) {
+  for (int i = 0; i < r; i++) {
+    for (int j = 0; j < c; j++) {
+      set_elem(m, r, c, i, j, get_elem(m, r, c, i, j) * val);
+    }
+  }
+}
+
+int main() {
+  mtrx m = mk_mtrx(4000, 6000);
+  /* Transform matrix into log space */
+  elem_wise_log(m, 4000, 6000);
+  /* Perform some ops on log space matrix */
+  elem_wise_mul(m, 4000, 6000, 3);
+  elem_wise_add(m, 4000, 6000, 1);
+  /* Transform matrix out of log space */
+  elem_wise_exp(m, 4000, 6000);
+  return 0;
+}

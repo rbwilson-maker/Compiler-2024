@@ -1,0 +1,12 @@
+//test error
+// Declared in diffrently
+
+int abs(int x);
+
+int main() {
+    return abs(10);
+}
+
+int abs(bool x) {
+    return 10;
+}

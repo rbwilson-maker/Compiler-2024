@@ -1,0 +1,33 @@
+//test return 71
+
+int f(int x, bool y);
+bool g(int x, bool y, bool z);
+
+int f(int x, bool y) {
+  if (x < 100) return y ? x + 1 : x + 2;
+  x--;
+  bool z;
+  if (x == 1) {
+    x *= 2;
+    z = true;
+  }
+  else {
+    z = false;
+    x /= 2;
+  }
+  return f(f(x, z), g(x,y,z));
+}
+
+bool g(int x, bool y, bool z) {
+  bool xx = (x == 1) ? true : false;
+  bool a = (y || z) && ((x != 0) && !y);
+  a = z || a;
+  bool b  = y && z;
+  bool c = y || z;
+  bool d = (a || ((b && c) || z)) && (!a || !((b && c) || z));
+  return a || b || c || d || xx || y || z;
+}
+
+int main() {
+  return f(1000,false); 
+}

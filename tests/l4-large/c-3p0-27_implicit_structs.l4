@@ -1,0 +1,8 @@
+//test error
+
+typedef struct a b;
+
+int main(){
+    b * z = alloc(struct a);
+    return 0;
+}

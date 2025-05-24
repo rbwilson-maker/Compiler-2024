@@ -1,0 +1,53 @@
+//test return 1
+struct hugenum {
+    int length;
+    bool[] bits;
+};
+typedef struct hugenum *hugenum_t;
+
+hugenum_t small_to_huge(int a) {
+    hugenum_t h = alloc(struct hugenum);
+    bool[] bits = alloc_array(bool, 32);
+    for (int b = 0; b < 32; b++) {
+        bits[b] = (a & 1) != 0;
+        a >>= 1;
+    }
+    h->bits = bits;
+    h->length = 32;
+    return h;
+}
+
+int max(int a, int b) {
+    return a > b ? a : b;
+}
+
+// What's so nice about Switzerland?
+// Well, the flag is a
+hugenum_t huge_plus(hugenum_t a, hugenum_t b) {
+    int length = max(a->length, b->length) + 1;
+    bool[] bits = alloc_array(bool, length);
+    hugenum_t h = alloc(struct hugenum);
+    bool carry = false;
+    for (int i = 0; i < length; i++) {
+        bool a_bit = i < a->length ? a->bits[i] : false;
+        bool b_bit = i < b->length ? b->bits[i] : false;
+        // No XOR for bools :(
+        bool bit = (a_bit && !b_bit) || (b_bit && !a_bit);
+        bool next_carry = (a_bit || b_bit) && ! bit;
+        bit = (bit && !carry) || (carry && !bit);
+        bits[i] = bit;
+        carry = next_carry || (a_bit || b_bit) && ! bit;
+    }
+    h->length = length;
+    h->bits = bits;
+    return h;
+}
+
+int main() {
+    hugenum_t a = small_to_huge(0xDEADBEEF);
+    hugenum_t b = small_to_huge(0xBADC0FFE);
+    hugenum_t sum = a;
+    for (int i = 0; i < 100; i++)
+        sum = huge_plus(sum, b);
+    return sum->bits[35] ? 1 : 0;
+}

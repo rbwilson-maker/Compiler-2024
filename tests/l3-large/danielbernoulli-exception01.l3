@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int main() {
+    int x = 2; 
+    if(x == 0) {
+        return 5; 
+    } else {
+        return (1 / (x - 2)) * 0;
+    }
+}

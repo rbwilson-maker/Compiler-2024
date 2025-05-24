@@ -1,0 +1,57 @@
+//test typecheck
+//test infloop
+/**
+ * Compute Graham's number! Or run out of stack space and die trying!
+ * see https://en.wikipedia.org/wiki/Graham%27s_number
+ */
+
+
+/**
+ * starting simple
+ */
+int pow(int m, int n) {
+  if (n == 0) {
+    return 1;
+  }
+  return m * pow(m, n-1);
+}
+
+/**
+ * let ^ := Knuth's up arrow
+ * then
+ * m ^ n = m * m * m * m (n times)
+ * m ^^ n = m ^ m ^ m ^ m (n times)
+ * m ^k^ n = m ^k-1^ m ^k-1^ m ^k-1^ m (n times)
+ */
+int knuth_up_arrow(int m, int n, int k) {
+  if (k == 0) {
+    return m * n;
+  }
+  if (n == 0) {
+    return 1;
+  }
+
+  // brace yourself
+  return knuth_up_arrow(m, knuth_up_arrow(m, n-1, k), k-1);
+}
+
+/**
+ * gn = 3 ^gn-1^ 3
+ * g1 = 3 ^^^^ 3
+ */
+int g(int n) {
+  if (n == 1) {
+    return knuth_up_arrow(3, 3, 4);
+  }
+
+  // oh baby
+  return knuth_up_arrow(3, 3, g(n-1));
+}
+
+int main () {
+  // LET'S DO THIS
+  // I'M SO PUMPED
+  // WE DEFINITELY HAVE ENOUGH STACK SPACE FOR THIS
+  // MY BODY IS READY
+  return g(64);
+}

@@ -1,0 +1,7 @@
+/* Approximates PI */
+
+typedef int coord_x;
+typedef int coord_y;
+
+bool in_circle(coord_x x, coord_y y, int radius);
+int calculation(int squarewidth);

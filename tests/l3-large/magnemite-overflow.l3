@@ -1,0 +1,18 @@
+//test typecheck
+//test infloop
+
+// This test case computes the ackermann function on arbitrary
+// values m and n. Recursion and 32-bit ints may not be well suited
+// to solving this problem.
+
+int ackermann(int m, int n) {
+    if (m < 0 || n < 0) return 1 / 0; // Error: expected natual numbers
+    if (m == 0) return n + 1;
+    if (n == 0) return ackermann(m-1,1);
+    return ackermann(m-1, ackermann(m, n-1));
+}
+
+int main() {
+    // let's just run this on a small input
+    return ackermann(4,2);
+}

@@ -1,0 +1,16 @@
+//test error
+
+int main()
+{
+    int x = 15;
+    int y = 411;
+
+    if (x < y) {
+        return 42;
+    }
+
+    // type error compare int with bool
+    5 == (x < y);
+
+    return 0;
+}

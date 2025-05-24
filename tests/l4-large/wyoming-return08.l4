@@ -1,0 +1,66 @@
+//test return 1067900027
+//attempt to compute conway's constant
+struct seq{
+    int length;
+    int capacity;
+    int[] array;
+};
+typedef struct seq seq;
+seq * newseq(int capacity){
+    seq * ret = alloc(seq);
+    ret -> capacity = capacity;
+    ret -> array = alloc_array(int,capacity);
+    return ret;
+}
+int get(seq * s,int i){
+    assert(i<s->length);
+    return s->array[i];
+}
+void append(seq *s,int a){
+    assert(s->length<s->capacity);
+    s->array[s->length]=a;
+    s->length++;
+}
+void lookAndSay(seq *in,seq *out){
+    out->length=0;
+    int elem = get(in,0);
+    int count = 1;
+    for(int i=1;i<in->length;i++){
+        if(get(in,i)==elem){
+            count++;
+        }else{
+            append(out,count);
+            append(out,elem);
+            elem=get(in,i);
+            count=1;
+        }
+    }
+    append(out,count);
+    append(out,elem);
+}
+seq *lookAndSayNew(seq *in){
+    seq * out = newseq(in->length*2);
+    lookAndSay(in,out);
+    return out;
+}
+void printseq(seq * a){
+    for(int i=0;i<a->length;i++){
+        print_int(get(a,i));
+    }
+    print_int(1000);
+}
+int main(){
+    seq * s = newseq(1);
+    append(s,1);
+    for(int i=0;i<43;i++){
+        s = lookAndSayNew(s);
+    }
+    seq *s1 = lookAndSayNew(s);
+    print_int(s->length);
+    print_int(s1->length);
+    int a = itof(s->length);
+    int b = itof(s1->length);
+    int x = fdiv(b,a);
+    print_fpt(x);
+    return x;
+}

@@ -1,0 +1,10 @@
+//test error
+//confusing typedef
+
+typedef int x;
+
+int main () {
+	bool x;
+	x = true;
+	return !x;
+}

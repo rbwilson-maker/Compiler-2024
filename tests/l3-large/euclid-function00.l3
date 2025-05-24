@@ -1,0 +1,10 @@
+//test return 4;
+// simplest function you'll see lol
+
+int incr(int x) {
+    return x+1; 
+}
+
+int main() {
+    return incr(3);
+}

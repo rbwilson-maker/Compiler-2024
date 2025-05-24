@@ -1,0 +1,18 @@
+//test error
+//cannot assign void variable with void function
+
+void should_i_stay_or_should_i_go() {
+	int r = 0;
+	bool stay = false;
+	bool go = false;
+	while (!stay && !go) {
+		r++;
+		if (r % 13 == 0) r *= r - 1;
+		if (r < 0) stay = !stay;
+		else if (r > 2000000000) go = !go;
+	}
+}
+
+void innocent() {
+	void x = should_i_stay_or_should_i_go();
+}

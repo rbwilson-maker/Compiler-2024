@@ -1,0 +1,33 @@
+//test return 4
+
+int main() {
+    int accum = 0;
+
+    if (true && true) {
+        accum += 1;
+    } 
+    if (true && false) {
+        accum += 1;
+    } 
+    if (false && true) {
+        accum += 1;
+    } 
+    if (false && false) {
+        accum += 1;
+    } 
+
+    if (true || true) {
+        accum += 1;
+    } 
+    if (true || false) {
+        accum += 1;
+    } 
+    if (false || true) {
+        accum += 1;
+    } 
+    if (false || false) {
+        accum += 1;
+    } 
+
+    return accum;
+}

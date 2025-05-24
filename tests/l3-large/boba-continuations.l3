@@ -1,0 +1,53 @@
+//test div-by-zero
+
+int dispatch(int state, int commands);
+int a(int state, int commands);
+int b(int state, int commands);
+int c(int state, int commands);
+int d(int state, int commands);
+
+int main()
+{
+  return dispatch(3, 0x12342331);
+}
+
+int dispatch(int state, int commands)
+{
+  if (commands == 0)
+    return state;
+  int hd = commands & 0xF;
+  int tl = commands >> 4;
+  if (hd == 1)
+    return a(state, tl);
+  else if (hd == 2)
+    return b(state, tl);
+  else if (hd == 3)
+    return c(state, tl);
+  else if (hd == 4)
+    return d(state, tl);
+  else
+  {
+    assert(false);
+    return 0;
+  }
+}
+
+int a(int state, int commands)
+{
+  return dispatch(state - 3, commands);
+}
+
+int b(int state, int commands)
+{
+  return dispatch(state << 2, commands);
+}
+
+int c(int state, int commands)
+{
+  return dispatch(42 / state, commands);
+}
+
+int d(int state, int commands)
+{
+  return dispatch(state * 5, commands);
+}

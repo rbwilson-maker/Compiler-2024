@@ -1,0 +1,16 @@
+//test return 10
+//simple pointer test
+int main() {
+	int* ptr = alloc(int);
+	int** ptr_1 = alloc(int*);
+	int*** ptr_2 = alloc(int**);
+	int**** ptr_3 = alloc(int***);
+
+    *ptr_3 = ptr_2;
+	*ptr_2 = ptr_1;
+	*ptr_1 = ptr;
+
+	*ptr = 10;
+
+	return *(*(*(*(ptr_3))));
+}

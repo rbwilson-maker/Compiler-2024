@@ -1,0 +1,5 @@
+//test typecheck
+
+int main() {
+    return inv(fact(nck(5, 3)), 1000000007);
+}

@@ -1,0 +1,15 @@
+//test return 98
+// Test null assignment
+
+struct sb { int x; int y; };
+
+int main() {
+    struct sb *sb = alloc(struct sb);
+    sb->x = 42;
+    sb->y = 98;
+
+    int *pointer = alloc(int);
+    pointer = NULL;
+
+    return pointer == NULL ? sb->y : sb->x;
+}

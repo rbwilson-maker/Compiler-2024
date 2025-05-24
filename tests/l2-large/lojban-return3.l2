@@ -1,0 +1,14 @@
+//test return 4 
+
+int main()
+{
+	bool b = true;
+	int x = 2;
+	while(b) {
+		x *= x;
+		if(x/x == 1) {
+			b = false;
+		}
+	}
+	return x;
+}

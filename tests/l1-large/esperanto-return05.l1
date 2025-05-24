@@ -1,0 +1,18 @@
+//test return 64
+
+int main(){
+	int c1;
+	int c2;
+	int c3;
+	int c4;
+	int c5;
+	int c6;
+	
+	c1 = 5;
+	c2 = 1;
+	c3 = 2 * c1 - c2;
+	c4 = 2 * c2 - c3;
+	c5 = 2 * c3 - c4;
+	c6 = 2 * c4 - c5;
+	return c5 - c6;
+}

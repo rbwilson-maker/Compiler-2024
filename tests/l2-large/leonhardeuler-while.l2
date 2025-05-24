@@ -1,0 +1,13 @@
+//test error
+
+int main()
+{
+    int x = 0;
+    int y = 0;
+
+    while (x * x) {
+        y += 1;
+    }
+
+    return y;
+}

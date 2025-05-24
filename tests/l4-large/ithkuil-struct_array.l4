@@ -1,0 +1,29 @@
+//test return 450
+// nested arrays with structs!
+
+struct inner {
+    int[] things;
+};
+
+struct outer {
+    struct inner[] inners;
+};
+
+int main() {
+    struct inner[] inners = alloc_array(struct inner, 10);
+    for (int i = 0; i < 10; i++) {
+        inners[i].things = alloc_array(int, 10);
+        for (int j = 0; j < 10; j++) {
+            inners[i].things[j] = j;
+        }
+    }
+
+    int result = 0;
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            result += inners[i].things[j];
+        }
+    }
+
+    return result;
+}

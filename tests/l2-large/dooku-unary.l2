@@ -1,0 +1,10 @@
+//test return 1
+int main() {
+    bool woo = !(false);
+    if (woo) {
+        return 1;
+    }
+    return 2;
+}
+
+

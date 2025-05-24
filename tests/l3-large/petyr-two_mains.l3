@@ -1,0 +1,15 @@
+//test error
+
+//main is defined twice
+
+int main () {
+    int x = 1;
+    int y = 2;
+    return 0;
+}
+
+int main () {
+    int x = 1;
+    int y = 2;
+    return 0;
+}

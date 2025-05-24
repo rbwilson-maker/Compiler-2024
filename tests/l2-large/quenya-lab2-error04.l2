@@ -1,0 +1,8 @@
+//test error
+// declaration in if statement
+int main() {
+  if (int x = 5; x > 7) {
+    return 0;
+  }
+  return 1;
+}

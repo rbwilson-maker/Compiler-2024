@@ -1,0 +1,7 @@
+//test error
+//function name cannot be void
+
+int void() {
+	int a = 42;
+	return a << a;
+}

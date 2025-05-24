@@ -1,0 +1,10 @@
+//test error
+
+struct bad_linked_list {
+    int num;
+    struct bad_linked_list next;
+}
+
+int main() {
+    return 0;
+}

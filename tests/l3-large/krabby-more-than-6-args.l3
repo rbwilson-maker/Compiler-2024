@@ -1,0 +1,12 @@
+//test return 8
+
+int sumArgs(int a, int b, int c, int d, int e, int f, int g, int h) {
+    return a + b + c + d + e + f + g + h;
+    }
+
+int main() {
+    int x = sumArgs(1, 1, 1, 1, 1, 1, 1, 1);
+    return x;
+}
+
+

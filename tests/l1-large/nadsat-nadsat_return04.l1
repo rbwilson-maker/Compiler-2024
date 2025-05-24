@@ -1,0 +1,10 @@
+//test return -1
+// return not last statement
+int main()
+{
+  int x;
+  x = 0;
+  x = x-1;
+  return x;
+  return 1;
+}

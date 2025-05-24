@@ -1,0 +1,12 @@
+//test return 58
+// Tests if parser handles expressions in function calls
+// and function calls as expressions
+
+int add(int a, int b) {    // Error!
+    return a + b;
+}
+
+int main() {
+    int a = -7;
+    return add(2*(-a+5), add(14, (20)));
+}

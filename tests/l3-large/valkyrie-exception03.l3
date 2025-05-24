@@ -1,0 +1,15 @@
+//test abort
+//Test expression order evaluation
+int bar(bool x){
+	assert(x);
+	return 0;
+}
+
+void foo(int x, int y){
+	int z = x + y;
+}
+
+int main(){
+	foo(bar(false), 5 / 0);
+	return 0;
+}

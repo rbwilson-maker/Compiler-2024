@@ -1,0 +1,24 @@
+//test return 10101
+
+int from_bools(bool a, bool b, bool c, bool d, bool e) {
+	int i;
+	int j;
+	int k;
+	int l;
+	int m;
+	if(a) i = 10000;
+	else i = 0;
+	if(b) j = 1000;
+	else j = 0;
+	if(c) k = 100;
+	else k = 0;
+	if(d) l = 10;
+	else l = 0;
+	if(e) m = 1;
+	else m = 0;
+	return i + j+ k + l + m;
+}
+
+int main() {
+	return from_bools(true, false, true, false, true);
+}

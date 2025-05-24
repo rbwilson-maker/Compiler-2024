@@ -1,0 +1,10 @@
+//test typecheck
+
+int main()
+   {
+           int a;
+
+           a = 9;
+
+           return isdigit(a);
+   }

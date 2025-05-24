@@ -1,0 +1,16 @@
+//test return 1025
+
+int main ()
+{
+  int x = 10;
+  int y;
+
+  for (y = 0; y < 10; y++) {
+    if (y == 9) {
+      return x % (y - 9);
+    }
+    y <<= x;
+  }
+
+  return y;
+}

@@ -1,0 +1,19 @@
+//test return 256
+// many live variables at the same time
+
+int main()
+{
+  int a = 2 + 0;
+  int b = 4 * 1;
+  int c = 6 - 2;
+  int d = 8 / 3;
+  int e = 10 % 4;
+  int f = 12 + 5;
+  int g = 14 * 6;
+  int h = 16 - 7;
+  int i = 18 / 8;
+  int j = 20 % 9;
+  int k = a + b + c + d + e + f + g + h + i + j;
+
+  return (a + b + c + d + e + f + g + h + i + j + k);
+}

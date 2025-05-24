@@ -1,0 +1,10 @@
+//test return 3141
+
+int main() {
+	if(false == (3 >= 3)) {
+		return 314;
+	}
+	else {
+		return 3141;
+	}
+}

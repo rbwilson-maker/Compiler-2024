@@ -1,0 +1,21 @@
+//test return 3
+
+// Test early return
+int main()
+{
+  int x;
+  int y;
+  int z;
+
+  x = 1;
+  y = 2;
+  z = 3;
+
+  if(x < y) {
+    return z;
+  } else {
+    z = 5;
+  }
+
+  return y + z;
+}

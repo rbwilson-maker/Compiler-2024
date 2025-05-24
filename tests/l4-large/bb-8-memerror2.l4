@@ -1,0 +1,17 @@
+//test memerror
+struct a
+{
+  int d;
+  int *a;
+  int c;
+};
+
+int main()
+{
+  struct a* lol = alloc(struct a);
+  lol->d = 0;
+  lol->a = NULL;
+  lol->c = 0;
+  int x = *(lol->a);
+  return 0;
+}

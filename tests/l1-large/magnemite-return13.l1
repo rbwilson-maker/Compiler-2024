@@ -1,0 +1,7 @@
+//test return 2147483647;
+// test substraction defined in modulo 2**32(INT_MIN - 1 = INT_MAX)
+
+int main() {
+    int a = -2147483648;
+    return a-1;
+}

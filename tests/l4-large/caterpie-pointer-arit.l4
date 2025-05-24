@@ -1,0 +1,9 @@
+//test error
+// ok pointer arithmetic does not work here...
+// lvalue is in form of "*l, l[e], l.f or l->f"
+int main()
+{
+  int[] x = alloc_array(int, 10);
+  *(x+1) = 1;
+  return 0;
+}

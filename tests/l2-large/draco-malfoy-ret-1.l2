@@ -1,0 +1,15 @@
+//test return -1
+
+int main ()
+{
+  int x = 0;
+  bool b = false;
+  int i;
+
+  for (i = 1; i < 10; i++) {
+  	b = !b;
+  }
+
+  return b ? ~x : 101;
+
+}

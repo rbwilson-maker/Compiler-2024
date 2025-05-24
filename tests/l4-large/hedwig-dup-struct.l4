@@ -1,0 +1,14 @@
+//test error
+struct pair{
+    int x;
+    int y;
+};
+
+struct pair{
+    bool z;
+    int y;
+};
+
+int main(){
+    return 0;
+}

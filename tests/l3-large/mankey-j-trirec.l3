@@ -1,0 +1,31 @@
+//test return 372
+
+int r1(int x);
+int r2(int y, int z);
+int r3(int w);
+
+int r1(int x) {
+  if (x < 0) {
+    return 0;
+  } else {
+    return 1 + r2(r1(x-1), x-1);
+  }
+}
+
+int main() {
+  return r1(5);
+}
+
+int r3(int w) {
+  if (w < -1000) return 123;
+  return r2(r1(w-1),r2(r3(w-1),w-1)) + r3(w-100);
+}
+
+int r2(int y, int z) {
+  if (y < 0 || z < -10) {
+    return 115;
+  } else {
+    return 123 + r1(z-1);
+  }
+}
+

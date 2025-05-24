@@ -1,0 +1,12 @@
+//test error
+// assert is a reserved keyword
+
+bool assert(int x, int y) {
+  return (x > y);
+}
+
+int main(int a, int b, int c) {
+  int x = 1000;
+  int y = 100;
+  return assert(x, y);
+}

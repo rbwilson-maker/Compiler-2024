@@ -1,0 +1,31 @@
+//test typecheck
+/* infinite recursion, but should typecheck */
+
+bool f(int x) {
+  if (x > 0)
+    return false;
+  return true;
+}
+
+int g(int x) {
+  if (x > 0) {
+    return g((3*x)/2);
+  }
+  return 1;
+}
+
+int h(bool x, bool y, int z) {
+  return x && y ? z : (z/(z - 42));
+}
+
+int main() {
+  bool x = f(999);
+  bool y = f(999);
+  int z = 42;
+  if (x == y) {
+    z = g(z);
+    return g(z);
+  } else {
+    return h(x, y, z);
+  }
+}

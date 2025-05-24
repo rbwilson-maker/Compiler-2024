@@ -1,0 +1,40 @@
+//test return 15411
+
+/* Binary Search Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Tuesday, October 13, 2015 at 02:11:57 PM EDT
+ *
+ * This tests a relatively complex recursive function, where the size of the
+ * stack does not grow too large (as it requires O(log n) recursive calls).
+ * This tests solves the euqation 4x^2 + 99x - 951521373. Magically, by pure
+ * coincidence, the answer to this happens to be 15411.
+ */
+
+int generator(int x)
+{
+    return 4*x*x + 99*x - 951521373;
+}
+
+int bin_search(int low, int hi)
+{
+    int index;
+    int mid = low + (hi - low) / 2;
+
+    int value = generator(mid);
+    if (value < 0) {
+        index = bin_search(mid+1, hi);
+    } else if (value > 0) {
+        index = bin_search(low, mid-1);
+    } else {
+        index = mid;
+    }
+
+    return index;
+}
+
+int main()
+{
+    return bin_search(0, 20000);
+}

@@ -1,0 +1,19 @@
+//test memerror
+
+//Don't pre-allocate pointer targets, even in structs.
+
+typedef struct foo * bar;
+typedef struct a * b;
+
+struct foo {
+  b z;
+};
+
+struct a {
+  int x;
+};
+
+int main() {
+  bar c = alloc(struct foo);
+  return ((*(c->z)).x);
+}

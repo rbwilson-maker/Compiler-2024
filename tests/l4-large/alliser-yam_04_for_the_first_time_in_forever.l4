@@ -1,0 +1,59 @@
+//test memerror
+
+// Can I say something crazy?
+// array out of bound
+
+/*
+            .-~~\
+           /     \ _
+           ~x   .-~_)_
+             ~x".-~   ~-.
+         _   ( /         \   _
+         ||   T  o  o     Y  ||
+       ==:l   l   <       !  I;==
+          \\   \  .__/   /  //
+           \\ ,r"-,___.-'r.//
+            }^ \.( )   _.'//.
+           /    }~Xi--~  //  \
+          Y    Y I\ \    "    Y
+          |    | |o\ \        |
+          |    l_l  Y T       |  -Row
+          l      "o l_j       !
+           \                 /
+    ___,.---^.     o       .^---.._____
+"~~~          "           ~            ~~~"
+*https://www.ascii-code.com/ascii-art/holiday-and-events/christmas/snowmen.php*
+*/
+
+struct openable
+{
+  bool open;
+};
+
+struct food
+{
+  int plates;
+  int taste;
+};
+
+int main()
+{
+  struct openable* window;
+  struct openable* door;
+  window = alloc(struct openable);
+  door = alloc(struct openable);
+  window -> open = true;
+  door -> open = true;
+
+  struct food* [] salad_plates;
+  salad_plates = alloc_array(struct food*, 1000);
+
+  int i;
+  for (i = 0; i < (1000 + (window -> open ? 1 : 0) + (door -> open ? 1 : 0)); i++) {
+    salad_plates[i] = alloc(struct food);
+    salad_plates[i] -> plates = i;
+    salad_plates[i] -> taste = 1000 - i;
+  }
+
+  return 0;
+}

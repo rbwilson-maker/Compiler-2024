@@ -1,0 +1,22 @@
+//test error
+// What the struct? Part 2
+
+struct short_term_memory {
+    int apple;
+    bool banana;
+    int crabapple;
+    bool blueberry;
+    int adamsapple;
+    bool berries;
+    int evesapple;
+    bool bongos;
+    int satansapple;
+    bool bulgaria;
+    int apple;
+    bool burger;
+};
+
+
+int main() {
+    return alloc(struct short_term_memory) == NULL ? 0 : 1;
+}

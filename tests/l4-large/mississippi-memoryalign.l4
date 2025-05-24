@@ -1,0 +1,12 @@
+//test return 0
+// No name clashes here
+
+typedef int s;
+
+struct s {
+    int s;
+};
+
+int main() {
+    return *alloc(int);
+}

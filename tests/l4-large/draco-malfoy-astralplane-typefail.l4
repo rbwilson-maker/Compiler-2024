@@ -1,0 +1,15 @@
+//test error
+
+struct portablehole {
+	bool trap;
+	struct bagofholding b;
+};
+
+struct bagofholding {
+	int inventory;
+	struct portablehole p;
+};
+
+int main(){
+	return 1;
+}

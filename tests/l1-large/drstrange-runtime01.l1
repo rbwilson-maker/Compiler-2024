@@ -1,0 +1,12 @@
+//test div-by-zero
+// mod 0 causes divide exception
+
+int main()
+{
+  int value1 = 3;
+  int value2 = 256;
+  value1 -= 1;
+  value1 -= 2;
+  value2 %= value1;
+  return value2;
+}

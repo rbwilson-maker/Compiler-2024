@@ -1,0 +1,80 @@
+//test return 376799727
+/*
+    fusilli: Dereferences a long chain of pointers in a loop.
+
+    Tests:
+    - Multilayer pointers
+    - Dereferencing performance
+*/
+
+int main() {
+    int pointer0 = 15411;
+    int result = 0;
+
+    for (int i = 0; i < 3368789; i++) {
+        int *pointer1 = alloc(int);
+        *pointer1 = pointer0;
+        int **pointer2 = alloc(int*);
+        *pointer2 = pointer1;
+        int ***pointer3 = alloc(int**);
+        *pointer3 = pointer2;
+        int ****pointer4 = alloc(int***);
+        *pointer4 = pointer3;
+        int *****pointer5 = alloc(int****);
+        *pointer5 = pointer4;
+        int ******pointer6 = alloc(int*****);
+        *pointer6 = pointer5;
+        int *******pointer7 = alloc(int******);
+        *pointer7 = pointer6;
+        int ********pointer8 = alloc(int*******);
+        *pointer8 = pointer7;
+        int *********pointer9 = alloc(int********);
+        *pointer9 = pointer8;
+        int **********pointer10 = alloc(int*********);
+        *pointer10 = pointer9;
+        int ***********pointer11 = alloc(int**********);
+        *pointer11 = pointer10;
+        int ************pointer12 = alloc(int***********);
+        *pointer12 = pointer11;
+        int *************pointer13 = alloc(int************);
+        *pointer13 = pointer12;
+        int **************pointer14 = alloc(int*************);
+        *pointer14 = pointer13;
+        int ***************pointer15 = alloc(int**************);
+        *pointer15 = pointer14;
+        int ****************pointer16 = alloc(int***************);
+        *pointer16 = pointer15;
+        int *****************pointer17 = alloc(int****************);
+        *pointer17 = pointer16;
+        int ******************pointer18 = alloc(int*****************);
+        *pointer18 = pointer17;
+        int *******************pointer19 = alloc(int******************);
+        *pointer19 = pointer18;
+        int ********************pointer20 = alloc(int*******************);
+        *pointer20 = pointer19;
+        int *********************pointer21 = alloc(int********************);
+        *pointer21 = pointer20;
+        int **********************pointer22 = alloc(int*********************);
+        *pointer22 = pointer21;
+        int ***********************pointer23 = alloc(int**********************);
+        *pointer23 = pointer22;
+        int ************************pointer24 = alloc(int***********************);
+        *pointer24 = pointer23;
+        int *************************pointer25 = alloc(int************************);
+        *pointer25 = pointer24;
+        int **************************pointer26 = alloc(int*************************);
+        *pointer26 = pointer25;
+        int ***************************pointer27 = alloc(int**************************);
+        *pointer27 = pointer26;
+        int ****************************pointer28 = alloc(int***************************);
+        *pointer28 = pointer27;
+        int *****************************pointer29 = alloc(int****************************);
+        *pointer29 = pointer28;
+        int ******************************pointer30 = alloc(int*****************************);
+        *pointer30 = pointer29;
+
+        result += ******************************pointer30;
+    }
+
+    return result;
+}

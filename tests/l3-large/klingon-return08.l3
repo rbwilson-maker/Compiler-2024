@@ -1,0 +1,7 @@
+//test return -2147483648
+
+int main() {
+	int x = 1;
+	fpt y = 0;
+	return ftoi(fdiv(itof(x), y));
+}

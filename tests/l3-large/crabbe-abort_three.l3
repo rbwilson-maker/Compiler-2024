@@ -1,0 +1,17 @@
+//test abort
+
+bool two (int three){
+  if (three == 3) assert(true);
+  else assert(3 == three);
+  return three == 3;
+}
+
+int main(){
+  int one = 0; 
+  int four = -1;
+  for (bool three = two(one); three == one < four; three = !three)
+  {
+    return one;
+  }
+  return four;
+}

@@ -1,0 +1,14 @@
+//test error
+//test invalid variable name
+int main()
+{
+  int false;
+  int b;
+  int c;
+
+  false = 11;
+  b = 3;
+  c= false + b;
+ 
+  return c;
+}

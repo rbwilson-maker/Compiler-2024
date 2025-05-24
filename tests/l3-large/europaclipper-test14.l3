@@ -1,0 +1,17 @@
+//test return 15
+
+int h(int a) {
+  return a;
+}
+
+int g(int a, int b, int c) {
+  return h(a) + h(b) + h(c);
+}
+
+int f(int a, int b, int c, int d, int e) {
+  return g(a, b, c) + g(d, e, 0);
+}
+
+int main() {
+  return f(1,2,3,4,5);
+}

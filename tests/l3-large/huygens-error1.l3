@@ -1,0 +1,10 @@
+//test error
+
+int x(int x, int y) {
+    return x(x, y);
+}
+
+int main() {
+    assert (x (3,4) > 0);
+    return x(1,2);
+}

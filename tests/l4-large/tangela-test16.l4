@@ -1,0 +1,10 @@
+//test memerror
+
+int fun(int x, int y) {
+  return x + y;
+}
+
+int main() {
+  int *x = NULL;
+  return fun(*x, 5/0);
+}

@@ -1,0 +1,16 @@
+//test return 5
+// Dangling elses with no brackets
+
+int main () {
+    int x = 1;
+    if (x>0)
+    if (x >= 1)
+    if( x< 2)
+    if (x==0)
+    return 1;
+    else
+    return 5;
+    else 
+    return 6;
+    return 5;
+}

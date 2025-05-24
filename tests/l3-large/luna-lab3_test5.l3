@@ -1,0 +1,10 @@
+//test error
+// Defines a library function
+
+int rand(int x) {
+    return (x * x) % 0xFF;
+}
+
+int main() {
+    return libsqr(10);
+}

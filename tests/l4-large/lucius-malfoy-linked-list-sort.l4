@@ -1,0 +1,64 @@
+//test return 30
+
+struct node
+{
+    struct node *next;
+    int data;
+};
+
+struct node *insert(struct node *head, int data);
+void sort(struct node *head);
+void swap(struct node *a, struct node *b);
+
+int main()
+{
+    struct node *head = NULL;
+    head = insert(head, 58);
+    head = insert(head, -39);
+    head = insert(head, 22);
+    head = insert(head, 69);
+    head = insert(head, 31);
+    head = insert(head, 6);
+
+    sort(head);
+    return head->data + head->next->next->next->next->next->data;
+}
+
+struct node *insert(struct node *head, int data)
+{
+    struct node *new = alloc(struct node);
+    new->data = data;
+    new->next = head;
+    return new;
+}
+
+void sort(struct node *head)
+{
+    int swapped = 1;
+    struct node *lptr = NULL;
+    if (head == NULL) return;
+
+    while (swapped > 0)
+    {
+        swapped = 0;
+        struct node *start = head;
+
+        while (start->next != lptr)
+        {
+            if (start->data > start->next->data)
+            {
+                swap(start, start->next);
+                swapped = 1;
+            }
+            start = start->next;
+        }
+        lptr = start;
+    }
+}
+
+void swap(struct node *a, struct node *b)
+{
+    int temp = a->data;
+    a->data = b->data;
+    b->data = temp;
+}

@@ -1,0 +1,22 @@
+//test return 100
+// Tests the functionality of fdecls (i.e. Prototypes)
+
+int xorEncrypt(int plainNumber, int cipher);
+int xorDecrypt(int cipherNumber, int cipher);
+
+int main() {
+    int a = 100;
+    int myCipher = 1585652448;
+    int encryptedA = xorEncrypt(a, myCipher);
+
+    return xorDecrypt(encryptedA, myCipher);
+}
+
+
+int xorEncrypt(int plainNumber, int cipher) {
+    return plainNumber ^ cipher;
+}
+
+int xorDecrypt(int cipherNumber, int cipher) {
+    return cipherNumber ^ cipher;
+}

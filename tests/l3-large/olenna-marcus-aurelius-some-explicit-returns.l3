@@ -1,0 +1,32 @@
+//test return 4
+//Tests to see if the program can handle compicated control flow that only partially end in return statements.
+
+void f(int x);
+
+int main(){
+  f(40);
+  f(10);
+  f(0);
+  return 4;
+}
+
+void f(int x){
+  if (x == 0){
+    return;
+  }
+
+  while (false) return;
+  if (x <= 10) {
+    if (x >= 40) {
+      return;
+    } else {
+      x++;
+    }
+  }
+
+  while (x < 40) x++;
+  if (x == 40) {
+  } else {
+    return;
+  }
+}

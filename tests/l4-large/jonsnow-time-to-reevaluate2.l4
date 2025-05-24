@@ -1,0 +1,62 @@
+//test div-by-zero
+
+struct s;
+
+typedef struct s s;
+
+struct s {
+  s* x;
+  s*[][] xs;
+};
+
+int abort_int() {
+  assert(false);
+  return 0;
+}
+
+s*[] abort_s_star_arr() {
+  assert(false);
+  return alloc_array(s*, 0);
+}
+
+int div_by_zero() {
+  return 1 / 0;
+}
+
+int use_evaluated_ltor() {
+  int[][] A = alloc_array(int[], 0);
+  int x = A[div_by_zero()][abort_int()];
+  return x;
+}
+
+int assign_evaluated_ltor() {
+  s *x = alloc(s);
+  x->xs = alloc_array(s*[], 0);
+  x->xs[use_evaluated_ltor()][abort_int()]->xs[abort_int()] = abort_s_star_arr();
+  return 0;
+}
+
+int null_okay_lhs() {
+  int *x = NULL;
+  *x = assign_evaluated_ltor();
+  return *x;
+}
+
+int[] lhs_evaluated_first() {
+  int[] A = alloc_array(int, 0);
+  A[null_okay_lhs()] += abort_int();
+  return A;
+}
+
+int array_evaluated_first() {
+  return lhs_evaluated_first()[abort_int()];
+}
+
+int index_into_default_array() {
+  int[]* A = alloc(int[]);
+  return (*A)[array_evaluated_first()];
+}
+
+int main() {
+  return index_into_default_array();
+}

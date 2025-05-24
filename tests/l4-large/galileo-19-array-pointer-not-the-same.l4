@@ -1,0 +1,9 @@
+//test error
+// cannot compare array with NULL
+
+int main() {
+  int[] arr;
+  arr = alloc_array(int, 0);
+  assert(arr != NULL);
+  return 0;
+}

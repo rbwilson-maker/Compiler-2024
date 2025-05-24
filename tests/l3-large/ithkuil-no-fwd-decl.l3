@@ -1,0 +1,16 @@
+//test error
+
+int main (int a, int b) {
+    return 0;
+}
+
+void cond (bool x, int y, int z) {
+  int p = y + z;
+  int k = z + p;
+  main(3+4+5, x ? y : z);
+}
+
+int main () {
+  cond(true, 1, 2);
+  return 0;
+}

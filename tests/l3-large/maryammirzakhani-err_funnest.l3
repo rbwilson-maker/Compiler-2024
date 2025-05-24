@@ -1,0 +1,12 @@
+//test error
+
+int out() {
+    int x = 5;
+
+    int in() {
+        int y = 10;
+        return y;
+    }
+
+    return x + in();
+}

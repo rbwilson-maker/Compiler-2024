@@ -1,0 +1,13 @@
+//test return 100
+
+void mutate(int* wow) {
+    *wow += 1;
+}
+
+int main() {
+    int* wow = alloc(int);
+    for (int i = 0; i < 100; i++) {
+        mutate(wow);
+    }
+    return *wow;
+}

@@ -1,0 +1,48 @@
+//test abort
+typedef int pixel;
+
+int get_red(pixel p)
+{
+    return (p & 0x00FF0000) >> 16;
+}
+
+int get_green(pixel p)
+{
+    return (p & 0x0000FF00) >> 8;
+}
+
+int get_blue(pixel p)
+{
+    return p & 0x000000FF;
+}
+
+int get_alpha(pixel p)
+{
+    return (p & 0xFF000000) >> 24;
+}
+
+pixel make_pixel(int alpha, int red, int green, int blue)
+{
+    return (alpha << 24) | (red << 16) | (green << 8);
+}
+
+
+typedef pixel pixel_t;   // Client (abstract) view of a pixel
+
+int main(){
+    assert(get_alpha(make_pixel(255, 128, 123, 47)) == 255);
+    assert(get_red(make_pixel(255, 128, 123, 47)) == 128);
+    assert(get_green(make_pixel(255, 128, 123, 47)) == 123);
+    assert(get_blue(make_pixel(255, 128, 123, 47)) == 47);
+    pixel boundary = make_pixel(0, 0, 0, 0);
+    assert(get_alpha(boundary) == 0);
+    assert(get_red(boundary) == 0);
+    assert(get_green(boundary) == 0);
+    assert(get_blue(boundary) == 0);
+    boundary = make_pixel(255, 255, 255, 255);
+    assert(get_alpha(boundary) == 255);
+    assert(get_red(boundary) == 255);
+    assert(get_blue(boundary) == 255);
+    assert(get_green(boundary) == 255);
+    return 0;
+}

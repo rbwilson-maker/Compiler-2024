@@ -1,0 +1,25 @@
+//test return -529506709
+
+// I tried to implement cosine but it did not work out ;-;
+// hopefully this code is still "interesting"
+int cos(int x, int n) {
+    int res = 0;
+
+    int neg = -1;
+    int dividend = 1;
+    int divisor = 1;
+
+    for (int i = 1; i <= n; i++) {
+        neg = neg * (-1);
+        divisor *= i;
+        dividend *= x * x;
+
+        res += neg * dividend / divisor;
+    }
+
+    return res;
+}
+
+int main() {
+    return cos(180, 10);
+}

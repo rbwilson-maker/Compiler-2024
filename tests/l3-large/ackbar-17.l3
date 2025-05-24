@@ -1,0 +1,13 @@
+//test div-by-zero
+//A test of a runtime error in a void function
+
+void div7byX(int x){
+    7/x;
+}
+
+int main(){
+    div7byX(1);
+    div7byX(7);
+    div7byX(0);
+    return 42;
+}

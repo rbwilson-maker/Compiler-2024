@@ -1,0 +1,15 @@
+//test error
+// two fields in a struct with the same name
+
+struct s {
+	int a;
+	bool b;
+	struct s* c;
+	int* d;
+	bool* a;
+};
+
+int main() {
+	struct s* st = alloc(struct s);
+	return st->b;
+}

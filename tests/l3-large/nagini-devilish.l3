@@ -1,0 +1,105 @@
+//test return 666
+
+// A collection of interesting facts about 666, from the web
+
+int triangle(int n) {
+  if (n == 0) {
+    return 0;
+  } else {
+    return n + triangle(n-1);
+  }
+}
+
+int square(int n) {
+  if (n == 0) {
+    return 0;
+  } else {
+    return 2*n - 1 + square(n-1);
+  }
+}
+
+int cube(int n) {
+  if (n == 0) {
+    return 0;
+  } else {
+    return 3*square(n) - 3*n + 1 + cube(n-1);
+  }
+}
+
+bool is_prime(int n) {
+  if (n <= 1) {
+    return false;
+  }
+  for (int i = 2; square(i) <= n; i++) {
+    if (n % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+int sqrt(int n) {
+  int i = 0;
+  while (square(i) <= n) {
+    if (square(i) == n) {
+      return i;
+    }
+    i++;
+  }
+  return 1/0;
+}
+
+int devil_0() {
+  return 666;
+}
+
+int devil_1() {
+  return triangle(square(6));
+}
+
+int devil_2() {
+  return square(triangle(5)) + square(triangle(6));
+}
+
+int devil_3() {
+  return triangle(triangle(8));
+}
+
+int devil_4() {
+  return 6 + 6 + 6 + cube(6) + cube(6) + cube(6);
+}
+
+int devil_5() {
+  int count = 0;
+  int acc = 0;
+  int i = 0;
+  while (count < 7) {
+    if (is_prime(i)) {
+      acc += square(i);
+      count++;
+    }
+    i++;
+  }
+  return acc;
+}
+
+int devil_6() {
+  return square(cube(1)) - square(cube(2)) + square(cube(3));
+}
+
+int devil_7() {
+  return
+    cube(1) + cube(2) + cube(3) + cube(4) + cube(5) + cube(6)
+    + cube(5) + cube(4) + cube(3) + cube(2) + cube(1);
+}
+
+int main() {
+  assert(devil_1() == devil_0());
+  assert(devil_2() == devil_0());
+  assert(devil_3() == devil_0());
+  assert(devil_4() == devil_0());
+  assert(devil_5() == devil_0());
+  assert(devil_6() == devil_0());
+  assert(devil_7() == devil_0());
+  return sqrt( square(cube(6)) + square(devil_0() - square(6)) );
+}

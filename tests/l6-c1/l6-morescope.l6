@@ -1,0 +1,10 @@
+//test return 5
+
+typedef int iti(int x);
+
+int main()
+{
+  int x = 4;
+  iti* f = fn (int x) {return x + 2;};
+  return (*f)(3);
+}

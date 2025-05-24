@@ -1,0 +1,14 @@
+//test error
+
+typedef struct thing thingthing;
+struct thing {
+    int thing1;
+    int thing2;
+};
+
+int main() {
+    thingthing *thing = alloc(thingthing);
+    int x = 100;
+    *x++; //shouldn't be allowed to parse I think.
+    return 0;
+}

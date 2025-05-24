@@ -1,0 +1,41 @@
+//test return 5
+// Test collision of identifiers
+
+int k(int k) {
+  return k+1;
+}
+
+typedef int a;
+struct b {
+  int a;
+  int b;
+  int c;
+};
+
+int foo(struct b *c) {
+  return k(c->c);
+}
+
+typedef struct b c;
+struct c {
+  int d;
+  int e;
+};
+
+typedef int b;
+b f(int f) {
+  return f;
+}
+
+int d() {
+  int d = 0;
+  return d;
+}
+
+int main() {
+  c *test = alloc(struct b);
+  test->a = 0;
+  test->b = 1;
+  (*test).c = 2;
+  return k(f(f(test->a) + f(test->b) + f(foo(test)) + d()));
+}

@@ -1,0 +1,13 @@
+//test return 10
+struct Circular {
+  int data;
+  struct Circular* next;
+};
+
+int main() {
+  struct Circular *c = alloc(struct Circular);
+  c->data = 10;
+  c->next = c;
+
+  return c->next->next->next->next->next->next->next->next->next->next->next->next->next->next->next->next->data;
+}

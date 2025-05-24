@@ -1,0 +1,14 @@
+//test abort
+
+int main() {
+    int len = 42;
+    int[] A = alloc_array(int, len);
+    for (int i = 0; i < len; i++) {
+        assert(A[i] == 0);
+    }
+    for (int i = 0; i < len; i++) {
+        A[i] = i;
+    }
+    assert(A[32] == 0);
+    return 0;
+}

@@ -1,0 +1,79 @@
+//test return 8
+// This test has a hard-coded tree represented as functions and it evaluates
+// an expression with more operators
+
+int add(int L, int R) {
+  return L + R;
+}
+
+int subtract(int L, int R) {
+    return L - R;
+}
+
+int bitwiseAnd (int L, int R) {
+    return L & R;
+}
+
+int leaf1() {
+  return 4;
+}
+
+int leaf2() {
+  return 6;
+}
+
+int leaf3() {
+  return 6;
+}
+
+int leaf4() {
+  return 3;
+}
+
+int leaf5() {
+  return 15;
+}
+
+int leaf6() {
+  return 12;
+}
+
+int leaf7() {
+  return 41;
+}
+
+int leaf8() {
+  return 13;
+}
+
+int node1() {
+  return add(leaf1(), leaf2());
+}
+
+int node2() {
+  return bitwiseAnd(leaf3(), leaf4());
+}
+
+int node3() {
+  return add(leaf5(), leaf6());
+}
+
+int node4() {
+  return subtract(leaf7(), leaf8());
+}
+
+int node5() {
+  return add(node1(), node2());
+}
+
+int node6() {
+  return bitwiseAnd(node3(), node4());
+}
+
+int root() {
+  return bitwiseAnd(node5(), node6());
+}
+
+int main() {
+  return root();
+}

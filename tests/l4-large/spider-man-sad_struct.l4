@@ -1,0 +1,47 @@
+//test error
+
+struct s {
+    int o1;
+    int o2;
+    int o3;
+    int o4;
+    int o5;
+    int o6;
+    int o7;
+    int o8;
+    int o9;
+    int o10;
+    int o12;
+    int o13;
+    int o14;
+    int o15;
+    int o16;
+    int o17;
+    int o18;
+    int o19;
+    int o20;
+};
+
+int main() {
+    struct s * nums = alloc(struct s);
+    s->o1 = 1;
+    s->o2 = 2;
+    s->o3 = 3;
+    s->o4 = 4;
+    s->o5 = 5;
+    s->o6 = 6;
+    s->o7 = 7;
+    s->o8 = 8;
+    s->o9 = 9;
+    s->o10 = 10;
+    s->o12 = 12;
+    s->o13 = 13;
+    s->o14 = 14;
+    s->o15 = 15;
+    s->o16 = 16;
+    s->o17 = 17;
+    s->o18 = 18;
+    s->o19 = 19;
+    s->o20 = 20;
+    return s->o11;
+}

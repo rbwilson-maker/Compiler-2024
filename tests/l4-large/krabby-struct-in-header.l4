@@ -1,0 +1,9 @@
+//test return 5
+
+typedef struct point pt;
+
+int main() {
+    pt* p = alloc(pt);
+    p->x = 5;
+    return (*p).x;
+}

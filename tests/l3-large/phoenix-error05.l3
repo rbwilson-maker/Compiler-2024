@@ -1,0 +1,16 @@
+//test error
+//trying to assert an int
+
+int f(bool a) {
+    if a {
+        return 5;
+    }
+    else { 
+        return 0;
+    }
+}
+
+int main() {
+    assert (f);
+    return;
+}

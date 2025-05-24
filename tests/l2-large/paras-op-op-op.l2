@@ -1,0 +1,6 @@
+//test return 4
+// so many things
+
+int main() {
+    return !(false || !true || !!(true && false)) ?  (4 * 42 / 123 << 2 >> 1 % 89 - 1) : 0;
+}

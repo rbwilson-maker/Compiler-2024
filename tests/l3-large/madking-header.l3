@@ -1,0 +1,8 @@
+//test typecheck
+
+typedef int nil;
+
+int main () {
+    nil x = 10;
+    return x;
+}

@@ -1,0 +1,22 @@
+//test typecheck
+//test infloop
+//consider the struct of all structs that do not contain themselves...
+
+struct s {
+  struct s* self;
+};
+
+void f(struct s* x) {
+  if (x == NULL) {
+    return;
+  } else {
+    f(x->self);
+  }
+}
+
+int main() {
+  struct s* x = alloc(struct s);
+  x->self = x;
+  f(x);
+  return 0;
+}

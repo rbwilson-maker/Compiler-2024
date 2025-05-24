@@ -1,0 +1,43 @@
+//test return 3
+//Does an in-order traversal of a tree
+
+struct node {
+  struct node* left;
+  int value;
+  struct node* right;
+};
+
+bool dfs(struct node* n, int target, int* order) {
+  if ((n -> left != NULL) && (dfs(n -> left, target, order)))
+    return true;
+  
+  *order += 1;
+
+  if (n -> value == target)
+    return true;
+
+  return (n -> right != NULL) && (dfs(n -> right, target, order));
+}
+
+int main() {
+  struct node* a = alloc(struct node);
+
+  a -> left = alloc(struct node);
+  a -> left -> left = NULL;
+  a -> left -> value = 5;
+  a -> left -> right = NULL;
+
+  a -> value = 3;
+
+  a -> right = alloc(struct node);
+  a -> right -> left = NULL;
+  a -> right -> value = 6;
+  a -> right -> right = NULL;
+
+  int* order = alloc(int);
+  
+  if (dfs(a, 6, order))
+    return *order;
+  else
+    return -1;
+}

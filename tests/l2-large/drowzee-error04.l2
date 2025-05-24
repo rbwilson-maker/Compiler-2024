@@ -1,0 +1,13 @@
+//test error
+//applies relational operator to bools
+
+int main () {
+
+  bool a = (1 > 0); //true
+  bool b = (1 < 0); //false
+  bool c = a > b;
+  if(c) {
+    return 1;
+  }
+  return 0;
+}

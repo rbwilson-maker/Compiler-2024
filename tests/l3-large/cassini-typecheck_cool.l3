@@ -1,0 +1,15 @@
+//test typecheck
+
+int main() {
+    cool_dude cooldude = make_cool_dude(25, 100, true);
+    cool_dude notsocooldude = make_cool_dude(26, -10, false);
+    cool_dude bab = make_cool_baby(cooldude, notsocooldude);
+    if (get_coolness(bab) > 50) {
+        // bab is cool;
+        return 0;
+    } else {
+        // bab is not cool, destroy bab
+        destroy_cool_dude(bab);
+        return -1;
+    }
+}

@@ -1,0 +1,35 @@
+//test div-by-zero
+// test initialization to 0
+
+typedef int *fun;
+
+typedef fun *funfun;
+
+typedef funfun *funfunfun;
+
+int ***funfunfun_math(funfun f)
+{
+  funfunfun ff = alloc(funfun);
+  *ff = f;
+  return ff;
+}
+
+int ***funfun_math(fun f)
+{
+  fun ff = f;
+  funfun fff = alloc(fun);
+  *fff = ff;
+  return funfunfun_math(fff);
+}
+
+funfunfun fun_math()
+{
+  fun f = alloc(int);
+  return funfun_math(f);
+}
+
+int main()
+{
+  funfunfun funny = fun_math();
+  return (***funny)/(***funny);
+}

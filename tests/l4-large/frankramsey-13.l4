@@ -1,0 +1,21 @@
+//test return 373
+
+struct A {
+    int a;
+    int b;
+    int c;
+    int d;
+};
+
+struct B {
+    int i;
+    struct A* a;
+    int j;
+};
+
+int main() {
+    struct B* x = alloc(struct B);
+    x->a = alloc(struct A);
+    x->a->b = 373;
+    return x->a->b;
+}

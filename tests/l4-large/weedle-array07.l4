@@ -1,0 +1,45 @@
+//test return 91
+// test spilled stuff
+int main() {
+  int A = 5;
+  int B = 5;
+  int C = 5;
+  int D = 5;
+  int E = 5;
+  int F = 5;
+  int G = 5;
+  int H = 5;
+  int I = 5;
+  int J = 5;
+  int K = 5;
+  int L = 5;
+  int M = 5;
+  int N = 5;
+  int O = 5;
+  int P = 5;
+  int Q = 5;
+  int R = 5;
+  int[][] grid = alloc_array(int[], A);
+  grid[0] = alloc_array(int, C);
+  grid[0][0] = 1;
+  return
+  grid[0][0] +
+  A +
+  B +
+  C +
+  D +
+  E +
+  F +
+  G +
+  H +
+  I +
+  J +
+  K +
+  L +
+  M +
+  N +
+  O +
+  P +
+  Q +
+  R;
+}

@@ -1,0 +1,12 @@
+//test compile
+
+spazz f(spazz i) {
+   f(i);
+   spazz spazzz = i + 1;
+   f(f(f(f(f(f(f(f(f(f(spazzz))))))))));
+   return i;
+}
+
+spazz main() {
+   return f(0);
+}

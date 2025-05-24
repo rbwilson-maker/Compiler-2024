@@ -1,0 +1,29 @@
+//test typecheck
+//test infloop
+//this could be alarming
+
+int f1(int a);
+int f2(int b);
+int f3(int c);
+
+int main() {
+    return f1(1);
+}
+
+int f1(int a) {
+    a = a + a + a + a + a + a;
+    if (a > 500) {
+        while(true) {}
+    }    
+    return f2(a);
+}
+
+int f2(int b) {
+    b = b + b + b + b + b + b;
+    return f3(b);
+}
+
+int f3(int c) {
+    c = c + c + c + c + c + c + c + c + c + c + c + c;
+    return f1(c);
+}

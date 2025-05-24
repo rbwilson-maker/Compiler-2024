@@ -1,0 +1,20 @@
+//test typecheck
+//test infloop
+
+// linear search through an array infinitely
+
+int find(int[] array, int len, int value) {
+    int index = 0;
+    while (true) { 
+        if (array[index] == value)
+            return index;
+        index = (index + 1) % len;
+    }
+    return -1;
+}
+
+int main() {
+    int[] arr = alloc_array(int, 100);
+    return find(arr, 100, 1);
+}
+

@@ -1,0 +1,20 @@
+//test abort
+
+int main() {
+  for (int i = 1; i < 200; i++) {
+    if (i % i == 0) {
+      if (i / i == 1) {
+        for (int j = 1; j < i; j++) {
+          assert((i-j) < 198);
+        }
+      } else {
+        assert(false);
+      }
+    } else {
+      assert(false);
+    }
+  }
+  
+  return 0;
+}
+

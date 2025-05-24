@@ -1,0 +1,8 @@
+//test typecheck
+
+// see how good the typechecker is
+int main() {
+  int* thing = alloc(int);
+  print_dub(itod(*thing));
+  return *thing;
+}

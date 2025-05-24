@@ -1,0 +1,17 @@
+//test return 0
+
+int main () {
+
+    int i = 0;
+    int j = 0;
+
+    if (i==0){
+        int k = 3;
+    }else if (j == 0){
+        int k = 2;
+        j += 3;
+    }
+
+    return i + j;
+
+}

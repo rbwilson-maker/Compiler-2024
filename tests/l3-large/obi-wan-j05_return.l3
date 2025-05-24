@@ -1,0 +1,19 @@
+//test return 42
+
+
+// functions without returns
+void summy(bool b)
+{
+    if(b)
+    {
+        int x = 3 + 4;
+        int y = 7;
+    }
+}
+
+int main()
+{
+    summy(true);
+
+    return 42;
+}

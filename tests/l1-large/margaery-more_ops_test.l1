@@ -1,0 +1,7 @@
+//test return 108
+
+int main() {
+    int x = (100 % 7) - -4;
+    int y = 1 % 2 + 3 * 4 + 5;
+    return x * y;
+}

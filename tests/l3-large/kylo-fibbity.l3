@@ -1,0 +1,24 @@
+//test typecheck
+
+fpt some_math(fpt a, fpt b) {
+  if (fless(a, b)) {
+    return some_math(b, a);
+  }
+
+  if (fless(b, itof(-150))) return b;
+
+  fpt x = fsub(a, b);
+  fpt z = fdiv(x, a + b);
+  if (fless(z, fdiv(itof(1), itof(2)))) {
+    return some_math(fadd(a, x), fsub(b, x));
+  }
+  return some_math(fsub(b, x), fadd(a, x));
+}
+
+int main() {
+  fpt a = itof(123123);
+  fpt b = itof(109119191);
+  fpt x = some_math(a, b);
+  print_fpt(x);
+  return ftoi(x);
+}

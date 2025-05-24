@@ -1,0 +1,8 @@
+//test abort
+
+// This is designed to test assert
+int main() {
+  assert(false);
+  5 / 0;
+  return 5;
+}

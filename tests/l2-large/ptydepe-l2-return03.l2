@@ -1,0 +1,16 @@
+//test return 4
+// Nested if then else program
+int main() {
+    int a = 5;
+    int b = 0;
+ 
+    if(a == 5) {
+        if(b == 4) {
+            return 6;
+        } else {
+            return 4;
+        }
+    } else{
+        return 0;
+    }
+}

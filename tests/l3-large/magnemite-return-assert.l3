@@ -1,0 +1,8 @@
+//test return 0
+//assert
+
+int main() {
+    int x = 3 + 4;
+    assert( x == 7);
+    return 0;
+}

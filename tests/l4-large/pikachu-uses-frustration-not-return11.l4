@@ -1,0 +1,21 @@
+//test return -2147483648
+// tests arbitrary combinations of pointers, arrays
+
+int main()
+{
+  int*[][]**[]***[]* tangela = alloc(int*[][]**[]***[]);
+  *tangela = alloc_array(int*[][]**[]***, 1);
+  (*tangela)[0] = alloc(int*[][]**[]**);
+  *((*tangela)[0]) = alloc(int*[][]**[]*);
+  **((*tangela)[0]) = alloc(int*[][]**[]);
+  ***((*tangela)[0]) = alloc_array(int*[][]**, 1);
+  (***((*tangela)[0]))[0] = alloc(int*[][]*);
+  *((***((*tangela)[0]))[0]) = alloc(int*[][]);
+  **((***((*tangela)[0]))[0]) = alloc_array(int*[], 1);
+  (**((***((*tangela)[0]))[0]))[0] = alloc_array(int*, 1);
+  ((**((***((*tangela)[0]))[0]))[0])[0] = alloc(int);
+  *(((**((***((*tangela)[0]))[0]))[0])[0]) = 2147483647;
+  *(((**((***((*tangela)[0]))[0]))[0])[0]) += 1;
+  return *(((**((***((*tangela)[0]))[0]))[0])[0]);
+}
+

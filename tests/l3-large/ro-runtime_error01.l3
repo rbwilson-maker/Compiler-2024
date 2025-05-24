@@ -1,0 +1,12 @@
+//test div-by-zero
+// Test shift in function
+
+int f(int val);
+
+int main() {
+  return f(1) << f(-1);
+}
+
+int f(int val) {
+  return val * 100;
+}

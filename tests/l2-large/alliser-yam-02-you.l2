@@ -1,0 +1,12 @@
+//test return 10
+
+// A simple for loop
+
+int main(){
+  int a = 0;
+  int b = 0;
+  for (a;a<10;a++) {
+    b += 1;
+  }
+  return b;
+}

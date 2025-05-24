@@ -1,0 +1,11 @@
+//test error
+// test comment behavior
+
+int main()
+{
+    int x;
+    x = 0;
+    // comments cannot break tokens.
+    x+/* this is a breaking comment */=5;
+    return x;
+}

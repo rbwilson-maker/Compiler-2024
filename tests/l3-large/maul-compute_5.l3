@@ -1,0 +1,23 @@
+//test return -141398206
+// function with large number of variables
+
+
+int z(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l) {
+    return a ^ b ^ c ^ d ^ e ^ f ^ g ^ h ^ i ^ j ^ k ^ l;
+}
+
+int main() {
+    int a = 1; 
+    int b = 7; 
+    int c = 3; 
+    int d = 16; 
+    int e = -1; 
+    int f = 10; 
+    int g = 4; 
+    int h = -1234; 
+    int i = 1; 
+    int j = 8; 
+    int k = -23423; 
+    int l = 141414144;
+    return z(a, b, c, d, e, f, g, h, i, j, k, l);
+}

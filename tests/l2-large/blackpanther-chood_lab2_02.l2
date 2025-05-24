@@ -1,0 +1,25 @@
+//test return 14
+
+int main()
+{
+	int y = 0;
+	int x = 0;
+	int max = 7;
+	bool cond = true;
+	while (cond) {
+		if (x < y) {
+			x++;
+		} else {
+			y += 1;
+		}
+
+		if (x > y) {
+			// This should never be reached
+			return 0;
+		}
+
+		if (x == max) { cond = false; }
+	}
+
+	return x + y;
+}

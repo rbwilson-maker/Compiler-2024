@@ -1,0 +1,15 @@
+//test abort
+// weird for loops with bools abort
+
+int main () {
+  bool hi;
+  for(hi = false; hi != true; hi = true)
+    for(hi = true; hi != false; hi = false) {
+      if (hi == true)
+        assert(hi == false);
+      else
+        assert(true);
+    }
+  return 1/0;
+}
+

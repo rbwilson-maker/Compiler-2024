@@ -1,0 +1,9 @@
+//test abort
+
+int main() {
+   bool x = true;
+   bool y = true;
+   assert(x && y);
+   assert(4 < 3);
+   return 1;
+}

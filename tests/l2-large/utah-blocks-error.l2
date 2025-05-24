@@ -1,0 +1,23 @@
+//test error
+// Tests blocks and their scope.
+int main () {
+    int block = 0; {
+        bool have = false; 
+        {
+           bool vars = true; 
+           { 
+              bool in = true; 
+              { 
+                bool baz = true;
+                return 0;   
+              } 
+              bool them = true; 
+              {
+                bool res = baz == have == vars == in || 0/0 == 0/0;
+              }
+           }
+        } 
+        int foo = 1; {bool baz = foo == 1; }
+    }
+    return 0;
+}

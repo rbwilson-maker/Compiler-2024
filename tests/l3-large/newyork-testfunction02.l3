@@ -1,0 +1,21 @@
+//test return 0
+
+int f(int x1, int x2, int x3){
+	int x4 = x1 << x2;
+	int x5 = x3 >> x2;
+	int x6 = (5);
+	return (x4 << x6) * (x5 >> x6);
+}
+
+
+int main(){
+
+	int a = 9;
+	int b = 3;
+	int c = 8;
+
+	int d = f(a,b,c);
+	int e = d << 1;
+	int f = e * (f(d,b,e) >> 1);
+	return f * e / (d + c + a);
+}

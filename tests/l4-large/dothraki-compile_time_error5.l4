@@ -1,0 +1,22 @@
+//test error
+
+int funSum(int[] stuff) {
+  if (isKombuch(a)) {
+    return stuff[0] + stuff[1] + stuff[2] + stuff[3] + stuff[4] + stuff[5];
+  } else {
+    return 0;
+  }
+}
+
+int main()
+{
+  int[] stuff = alloc_array(int, 6)
+  stuff[0] = 134;
+  stuff[1] = 20;
+  stuff[2] = 432 + stuff[0];
+  stuff[3] = 6789;
+  stuff[4] = 431;
+  stuff[5] = 34 + stuff[4];
+
+  return funSum(stuff);
+}

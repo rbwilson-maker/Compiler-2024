@@ -1,0 +1,27 @@
+//test memerror
+// I didn't actually encode a message, and particularly
+// doubt if you can make a valid replacement of letters for
+// stars. Tell me if you can.
+
+void p(int p) { }
+
+typedef int f;
+typedef f b;
+
+void punctuation(b l, f*** *** **** ** *****x) {
+  f*** ***k;
+  k = alloc(f*****);
+  b *t;
+  t = alloc(b);
+  l**t;
+  l** *****k;
+  f***m = ***k;
+  ***m = l**** ***k;
+  ****  * ** *** ** *** **x ** *****k;
+  p(*t);
+}
+
+int main() {
+  punctuation(0, alloc(f****************));
+  return 0;
+}

@@ -1,0 +1,13 @@
+//test error
+
+int some_garbage(int x) {
+    return (x << 13) >> 20 ^ 3700 | -241;
+}
+
+int main() {
+    while (true) {
+        int i = 0;
+        return some_garbage(i);
+        i++;
+    }
+}

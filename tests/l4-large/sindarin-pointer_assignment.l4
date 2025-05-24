@@ -1,0 +1,17 @@
+//test return 5
+// pointer assignment
+
+struct a {int x; int y; struct b *b;};
+
+int main() {
+    struct a *a = alloc(struct a);
+    a->x = 3;
+    a->y = 5;
+
+    struct a *b = alloc(struct a);
+    b->x = 4;
+    b->y = 6;
+
+    b = a;
+    return b->y;
+}

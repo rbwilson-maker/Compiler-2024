@@ -1,0 +1,19 @@
+//test return 0
+
+int a(){
+    int a = 2;
+    int b = a << 2;
+    int c = a << 2;
+    int d = c << b;
+    int e = d << d;
+    int f = e << a;
+    int g = f << f;
+    int i = g << g;
+    int k = i << g;
+    int h = k << k;
+    return 0;
+}
+
+int main(){
+    return 0;
+}

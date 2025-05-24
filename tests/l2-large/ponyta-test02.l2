@@ -1,0 +1,14 @@
+//test return 15
+
+// precedence with bitwise operators
+int main() {
+    int p = 7;
+	int e = 6;
+	int m = 5;
+	int d = 4;
+	int a = 3;
+	int s = 2;
+
+    return p * e / m + d - a * s << 1 & 9 | 3 ^ 4;
+}
+        

@@ -1,0 +1,79 @@
+//test return 11
+//Tests to see if program can handle no explicit return statements in void
+//functions
+
+void f1();
+void f2();
+void f3();
+void f4();
+void f5();
+void f6();
+void f7();
+void f8();
+void f9();
+void f10();
+int f11();
+
+int main() {
+
+  f1();
+  f2();
+  f3();
+  f4();
+  f5();
+  f6();
+  f7();
+  f8();
+  f9();
+  f10();
+
+  return f11();
+}
+
+void f1(){
+  1;
+}
+
+void f2(){
+  2;
+}
+
+void f3(){
+  3;
+}
+
+void f4(){
+  4;
+}
+
+void f5(){
+  5;
+}
+
+void f6(){
+  6;
+}
+
+void f7(){
+  7;
+}
+
+void f8(){
+  8;
+}
+
+void f9(){
+  9;
+}
+
+void f10(){
+  10;
+}
+
+int f11(){
+  return 11;
+}
+
+
+
+

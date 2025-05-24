@@ -1,0 +1,16 @@
+//test div-by-zero
+
+/* error = div by 0 */
+int main()
+{
+    int a;
+    int b;
+    int c;
+
+    a = 3;
+    a = a + 1;
+    b = 4;
+    c = a - b;
+    
+    return b / c;
+}

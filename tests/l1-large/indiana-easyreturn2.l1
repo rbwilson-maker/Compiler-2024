@@ -1,0 +1,18 @@
+//test return -559038737
+//spacing but simple test
+
+int main()
+
+
+{
+
+  int decnum = 48879 /* 0xBEEF */;
+  int hexnum = 0xDEAD0000;
+
+  return decnum + hexnum;
+
+
+
+
+
+}

@@ -1,0 +1,9 @@
+//test error
+
+int abc(int x, bool y){
+    return 3;
+}
+
+int main(){
+    return abc(true, false);
+}

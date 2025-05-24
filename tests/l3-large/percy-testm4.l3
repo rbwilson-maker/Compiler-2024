@@ -1,0 +1,39 @@
+//test return 114
+
+bool is_sorted(int v1, int v2, int v3, int v4, int v5, int v6, int v7, int v8){
+	if(v1 <= v2 && v2 <= v3 && v3 <= v4 &&
+	   v4 <= v5 && v5 <= v6 && v6 <= v7 && v7 <= v8){
+	   return true;
+	} else {
+		return false;
+	}
+}
+
+int find_min(int v1, int v2, int v3, int v4, int v5, int v6, int v7, int v8){
+	
+	int min = v1;
+	min = min > v2 ? v2 : min;
+	min = min > v3 ? v3 : min;
+	min = min > v4 ? v4 : min;
+	min = min > v5 ? v5 : min;
+	min = min > v6 ? v6 : min;
+	min = min > v7 ? v7 : min;
+	min = min > v8 ? v8 : min;
+	return min;
+}
+
+int main(){
+	int n1 = 489;
+	int n2 = 265;
+	int n3 = 114;
+	int n4 = 648;
+	int n5 = 348;
+	int n6 = 731;
+	int n7 = 621;
+	int n8 = 487;
+	if(is_sorted(n1,n2,n3,n4,n5,n6,n7,n8)){
+		return n1;
+	} else {
+		return find_min(n1,n2,n3,n4,n5,n6,n7,n8);
+	}
+}

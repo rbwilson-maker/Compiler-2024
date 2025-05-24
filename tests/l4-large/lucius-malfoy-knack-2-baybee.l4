@@ -1,0 +1,24 @@
+//test div-by-zero
+// here comes the money
+
+int dunk(int[] A) {
+    if (A[0] == 0) {
+        A[1] = 1;
+        A[0] = A[1];
+        return A[1];
+    }
+    else if (A[0] == 1) {
+        A[1] = 0;
+        return A[0];
+    }
+    else {
+        int *foo = NULL;
+        return *foo;
+    }
+}
+
+int main() {
+    int[] A = alloc_array(int, 69);
+    A[dunk(A)] /= A[dunk(A)];
+    return 0;
+}

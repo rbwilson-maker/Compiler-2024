@@ -1,0 +1,16 @@
+//test typecheck
+
+typedef struct s s;
+
+typedef s t;
+typedef t v;
+
+struct s {
+	int i;
+};
+
+int main() {
+  t* z = alloc(s);
+  z->i = 5;
+  return z->i;
+}

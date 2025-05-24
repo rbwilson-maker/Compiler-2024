@@ -1,0 +1,11 @@
+//test error
+
+//types wrong
+
+int main(){
+    bool x = true;
+    if(x) return 2;
+    else return (x!=true);
+
+
+}

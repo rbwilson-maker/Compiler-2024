@@ -1,0 +1,8 @@
+//test return 1
+//A test of what would be a runtime error after a reurn
+int main() {
+    int x=1;
+    bool z;
+    return x;
+    z = (1/0 == 1);
+}

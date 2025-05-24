@@ -1,0 +1,11 @@
+//test error
+// the helper function is called in main with the wrong amount of arguments
+
+int square (int x)
+{
+  return x*x;
+}
+
+int main(){
+  return square(1,1);
+}

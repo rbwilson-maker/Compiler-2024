@@ -1,0 +1,14 @@
+//test return 5
+// use the pythagorean theorem naively
+
+int main() {
+  int x = 3;
+  int y = 4;
+  int z = 5;
+  int answer;
+
+  int sum = x * x + y * y;
+  answer = sum/z;
+
+  return(answer);
+}

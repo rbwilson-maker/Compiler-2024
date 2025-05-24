@@ -1,0 +1,13 @@
+//test memerror
+
+int main() {
+  int len = 4;
+  int[] arr = alloc_array(int, len);
+  int acc = 0;
+
+  for(int i = 0; i <= len; i++){
+    acc += arr[i];
+  }
+
+  return acc;
+}

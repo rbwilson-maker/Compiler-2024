@@ -1,0 +1,30 @@
+//test return 1
+
+struct node {
+	int elem;
+	struct node* next;
+};
+
+bool willItStop(struct node* x);
+
+int main() {
+	struct node* l1 = alloc(struct node);
+	l1->elem = 10;
+	if (willItStop(l1)) {
+		return 1;
+	}
+	else {
+		return 2;
+	}
+}
+
+typedef struct node* node;
+
+bool willItStop(node L) {
+	if (L->elem > 1) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}

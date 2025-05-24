@@ -1,0 +1,18 @@
+//test return 5
+
+typedef int a;
+
+
+a * b(){
+	a * val = alloc(a);
+	*val = 5;
+	return val;
+
+}
+
+int main(){
+
+	a * b = b();
+	return * b;
+
+}

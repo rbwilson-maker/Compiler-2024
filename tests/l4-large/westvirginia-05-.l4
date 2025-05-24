@@ -1,0 +1,109 @@
+//test return 1434451968
+//Matrix transpose, multiply, and sum
+
+void init(int dim, int[][] A) {
+    for (int i = 0; i < dim; i++) {
+        for (int j = 0; j < dim; j++) {
+            A[i][j] = i * dim + j;
+        }
+    }
+}
+
+// Fancy recursive transpose from 213!
+void transpose(int M, int i, int N, int j, int[][] A, int[][] B) {
+    if (i == 4 || j == 4) {
+        int k; int l;
+        int temp = 0;
+        int diag = 0;
+
+        if (M == N) diag = 1;
+        if ((N - 4) == M) diag = 2;
+        if ((M - 4) == N) {
+            diag = 3;
+        }
+
+        for (k = N; k < N+j; k++) {
+            for (l = M; l < M+i; l++) {
+                if (k==l || (k-4) == l || (l-4) == k) {
+                    temp = A[k][l];
+                }
+                else {
+                    B[l][k] = A[k][l];
+                 }
+            }
+            if (diag == 1) {
+                B[k][k] = temp;
+            }
+            else if (diag == 2) {
+                B[k-4][k] = temp;
+            }
+            else if (diag == 3) {
+                B[k+4][k] = temp;
+            }
+        }
+        return;
+    }
+
+    int rowMid; int colMid;
+
+    rowMid = j / 2;
+    colMid = i / 2;
+
+    transpose(M,colMid,N,rowMid,A,B);
+    transpose(M,colMid,N+rowMid,j-rowMid,A,B);
+    transpose(M+colMid,i-colMid,N+rowMid,j-rowMid,A,B);
+    transpose(M+colMid,i-colMid,N,rowMid,A,B);
+    return;
+}
+
+// Multiplies matrices together and stores them in A
+void multiply(int dim, int[][] A, int[][] B) {
+
+    int[][] C = alloc_array(int[], dim);
+    for (int i = 0; i < dim; i++) {
+        C[i] = alloc_array(int, dim);
+    }
+    for (int row = 0; row < dim; row++) {
+        for (int col = 0; col < dim; col++) {
+            for (int k = 0; k < dim; k++) {
+                C[row][col] += A[row][k] * B[k][col];
+            }
+        }
+    }
+
+    for (int row = 0; row < dim; row++) {
+        for (int col = 0; col < dim; col++) {
+            A[row][col] = C[row][col];
+        }
+    }
+}
+
+int sum(int dim, int[][] A) {
+    int sum = 0;
+    for (int i = 0; i < dim; i++) {
+        for (int j = 0; j < dim; j++) {
+            sum += A[i][j];
+        }
+    }
+    return sum;
+}
+
+
+int main() {
+    int PAINTED_ON_THE_SKY = 256;
+
+    int[][] mistytaste = alloc_array(int[], PAINTED_ON_THE_SKY);
+    for (int of = 0; of < PAINTED_ON_THE_SKY; of++) {
+        mistytaste[of] = alloc_array(int, PAINTED_ON_THE_SKY);
+    }
+
+    int[][] moonshine = alloc_array(int[], PAINTED_ON_THE_SKY);
+    for (int teardrop = 0; teardrop < PAINTED_ON_THE_SKY; teardrop++) {
+        moonshine[teardrop] = alloc_array(int, PAINTED_ON_THE_SKY);
+    }
+
+    init(PAINTED_ON_THE_SKY, mistytaste);
+    transpose(0, PAINTED_ON_THE_SKY, 0, PAINTED_ON_THE_SKY, mistytaste, moonshine);
+    multiply(PAINTED_ON_THE_SKY, mistytaste, moonshine);
+    return sum(PAINTED_ON_THE_SKY, mistytaste);
+}

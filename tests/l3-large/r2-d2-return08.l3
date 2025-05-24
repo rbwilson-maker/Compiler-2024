@@ -1,0 +1,17 @@
+//test return 3
+
+typedef int work;
+
+void f()
+{
+  return;
+}
+
+int main()
+{
+  f();
+  bool x = true;
+  int y = 3;
+  work z = y;
+  return z;
+}

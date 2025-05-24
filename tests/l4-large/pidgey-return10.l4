@@ -1,0 +1,24 @@
+//test return 2
+
+int main() {
+  int* a0         = alloc(int);
+  *a0             = 1;
+  int** a1        = alloc(int*);
+  *a1 = a0;
+  int*** a2       = alloc(int**);
+  *a2 = a1;
+  int**** a3      = alloc(int***);
+  *a3 = a2;
+  int***** a4     = alloc(int****);
+  *a4 = a3;
+  int****** a5    = alloc(int*****);
+  *a5 = a4;
+  int******* a6   = alloc(int******);
+  *a6 = a5;
+  int******** a7  = alloc(int*******);
+  *a7 = a6;
+  int********* a8 = alloc(int********);
+  *a8 = a7;
+  dub d = dadd(itod(*********a8), itod(1));
+  return dtoi(d);
+}

@@ -1,0 +1,6 @@
+//test error
+int main() {
+	int* p = alloc(int);
+	bool* b = alloc(bool);
+	return (*p <= *b) ? 1 : 2;
+}

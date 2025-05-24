@@ -1,0 +1,12 @@
+//test error
+
+int main () {
+  NULL = alloc(NULL);
+  NULL = alloc(int);
+  NULL = alloc(bool);
+  NULL = alloc(char);
+  NULL = alloc(int *);
+  NULL = alloc(int[]);
+  NULL = alloc();
+  return NULL;
+}

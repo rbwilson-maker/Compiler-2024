@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main()
+{
+    int w_w = 8-8;
+    int u_u = 4+4;
+    int v_v = 9-9;
+    return 1 / (34 << (1 | w_w ^ u_u ^ v_v | 1) >> 34);
+}

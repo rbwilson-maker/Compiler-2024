@@ -1,0 +1,40 @@
+//test error
+
+struct thread {
+    int tid;
+    int[] mutexes;
+    int *stack_base;
+    int *stack_limit;
+    int state;
+    struct thread *next;
+};
+
+struct page_directory;
+
+struct scheduler_info;
+
+struct process {
+    int pid;
+    struct thread main;
+    struct thread *threads;
+    int[] mutexes;
+    struct state {
+        int suspended;
+        int ready;
+        struct scheduler_info *info;
+    } state;
+    struct page_directory *pdir;
+    struct process *next;
+};
+
+int main() {
+    struct process *p1 = alloc(struct process);
+    p1->pid = 0;
+    p1->main.tid = 0;
+    p1->threads = alloc(struct thread);
+    p1->threads->tid = 1;
+    p1->mutexes = alloc_array(int, 10);
+    p1->main.mutexes = p1->mutexes;
+    p1->threads->mutexes = p1->mutexes;
+    p1->state.suspended = 1;
+}

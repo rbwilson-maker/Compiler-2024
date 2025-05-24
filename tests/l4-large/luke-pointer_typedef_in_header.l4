@@ -1,0 +1,15 @@
+//test typecheck
+
+int main() {
+    int *a        = alloc(int);
+    number *b     = alloc(int);
+    number_ptr c  = alloc(int);
+    int *d        = alloc(number);
+    number *e     = alloc(number);
+    number_ptr f  = alloc(number);
+    number_ptr *g = alloc(int *);
+    assert(*a == 0 && *b == 0 && *c == 0);
+    assert(*d == 0 && *e == 0 && *f == 0);
+    assert(*g == NULL);
+    return 123;
+}

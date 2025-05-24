@@ -1,0 +1,36 @@
+//test typecheck
+
+// we can do binary search
+// perhaps not the most interesting bit of code, but I believe a sample kernel startup main would be meaningful
+int main() {
+
+    int vm_ec = setup_vm();
+    if (vm_ec != 0) {
+        panic();
+    }
+
+    // ! setting up external device interrupts
+    int interrupt_ec = setup_interrupts();
+
+    // ! setting up interprocessor core interrupts
+    // note that since L3 does not allow the passage of main, 
+    // we cannot provide bios specific information 
+    // and can only hardcode
+    // said information in the code
+    int core_intrinsics = setup_ipc();
+    if (core_intrinsics != 0) {
+        panic();
+    }
+
+    int task_ec = setup_tasking();
+    if (task_ec != 0) {
+        panic();
+    }
+
+    int load_init = load_init_task();
+    if (load_init != 0) {
+        panic();
+    }
+
+    return 0;
+}

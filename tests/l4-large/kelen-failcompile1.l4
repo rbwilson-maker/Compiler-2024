@@ -1,0 +1,10 @@
+//test error
+
+typedef bool[]*[]***[]***[][][] a;
+
+// Tests adding bool to new type
+int main() {
+    a b;
+    b += true;
+    return 0;
+}

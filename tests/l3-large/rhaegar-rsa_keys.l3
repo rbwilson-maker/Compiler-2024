@@ -1,0 +1,91 @@
+//test return 223
+// Starting from two primes, generates an RSA keypair.
+// (Small numbers, so naive function implementations are OK.)
+
+int lcm(int a, int b) {
+	int am = a;
+	int bm = b;
+
+	while (true) {
+		if (am < bm) {
+			am += a;
+		} else if (am > bm) {
+			bm += b;
+		} else {
+			return am;
+		}
+	}
+
+	return 0;
+}
+
+bool is_prime(int n) {
+	if (n < 2) {
+		return false;
+	}
+
+	for (int i = 2; i < n; i++) {
+		if (n % i == 0) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+bool is_coprime(int a, int b) {
+	if (a > b) {
+		return is_coprime(b, a);
+	}
+
+	for (int i = 2; i <= a; i++) {
+		if (a % i == 0 && b % i == 0) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+int bezout_coefficient_a(int a, int b) {
+	int s = 0;
+	int old_s = 1;
+	int t = 1;
+	int old_t = 0;
+	int r = b;
+	int old_r = a;
+
+	while (r != 0) {
+		int quotient = old_r / r;
+		int temp;
+
+		temp = r;
+		r = old_r - quotient * r;
+		old_r = temp;
+
+		temp = s;
+		s = old_s - quotient * s;
+		old_s = temp;
+
+		temp = t;
+		t = old_t - quotient * t;
+		old_t = temp;
+	}
+
+	return old_s;
+}
+
+int main() {
+	int p = 61;
+	int q = 53;
+	int totient = lcm(p - 1, q - 1);
+	for (int i = 2; true; i++) {
+		if (is_prime(i) && is_coprime(i, totient)) {
+			int key = bezout_coefficient_a(i, totient);
+			assert((i * key) % totient == 1);
+			return key;
+		}
+	}
+
+	return 0;
+}

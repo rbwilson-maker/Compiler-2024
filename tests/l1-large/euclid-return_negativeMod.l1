@@ -1,0 +1,8 @@
+//test return 1393
+// simple test, positive mod
+
+int main() {
+    int a = 432897;
+    int b = -2384;
+    return a % b;
+}

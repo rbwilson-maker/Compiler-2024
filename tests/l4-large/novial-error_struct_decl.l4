@@ -1,0 +1,12 @@
+//test error
+// can't define a struct in the body of a function
+
+int except() {
+  return 1/0/0/0/0/0/0/0/000/0;
+}
+
+int main() {
+  struct S { int foo; int *bar; int ****baz; }
+
+  return except();
+}

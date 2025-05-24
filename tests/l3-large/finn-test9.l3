@@ -1,0 +1,9 @@
+//test typecheck
+
+int main()
+{
+  int sum = add(5,6);
+  int prod = mult(5,6);
+  
+  return sum + prod;
+}

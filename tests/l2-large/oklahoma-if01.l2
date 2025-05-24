@@ -1,0 +1,17 @@
+//test return 1
+//If statement parsing check
+
+int main () {
+
+  int a = 500;
+  int b = 62 - a;
+
+  if (b < a)
+    if (a % 100 != b * 0)
+      return 0;
+    else
+      return 1;
+
+  return 2;
+
+}

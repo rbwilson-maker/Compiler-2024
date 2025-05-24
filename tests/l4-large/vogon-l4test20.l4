@@ -1,0 +1,10 @@
+//test error
+
+struct a {
+
+};
+
+int main() { 
+  int[] arr = alloc_array(a, 3);
+  return 0;
+}

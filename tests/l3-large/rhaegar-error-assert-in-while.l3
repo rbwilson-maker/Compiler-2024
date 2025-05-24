@@ -1,0 +1,13 @@
+//test error
+
+int myfunc() {
+	return 0;
+}
+
+int main() {
+    int i = 0;
+	while (assert(myfunc())) {
+      i++;
+	}
+	return 5 / myfunc();
+}

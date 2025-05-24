@@ -1,0 +1,12 @@
+//test return 3
+int main() {
+    int x = 0;
+    x++;
+    while (x < 3) {
+        x += 30;
+    }
+    while (x > 3) {
+        x--;
+    }
+    return x;
+}

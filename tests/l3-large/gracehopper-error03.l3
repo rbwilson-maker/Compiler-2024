@@ -1,0 +1,9 @@
+//test error
+// Test that typedefs aren't reused by any other symbols
+
+typedef int t;
+
+int main() {
+    int t = 0;
+    return t;
+}

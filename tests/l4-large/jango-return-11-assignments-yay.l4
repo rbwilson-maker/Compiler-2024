@@ -1,0 +1,21 @@
+//test return 11
+
+struct simple {
+  int field1;
+};
+typedef struct simple simple;
+
+struct complex {
+  simple*[] field1;
+};
+typedef struct complex* complex;
+
+int main() {
+  complex jj = alloc(struct complex);
+  jj->field1 = alloc_array(simple*, 5);
+  jj->field1[0] = alloc(simple);
+  jj->field1[0]->field1 = 10;
+  jj->field1[0]->field1++;
+
+  return jj->field1[0]->field1;
+}

@@ -1,0 +1,29 @@
+//test return 233684719
+/* I was hungry... */
+
+int main() {
+  int bread;
+  int lettuce;
+  int tomato;
+  int cheese;
+  int meat;
+
+  bread = 0xbad;
+  lettuce = 0xbad;
+  tomato = 0xbad;
+  cheese = 0xbad;
+  meat = 0xdedbeef;
+
+  int veggies;
+  veggies = lettuce + tomato;
+
+  int grilled_cheese;
+  grilled_cheese = bread + cheese + bread;
+
+  int cheeseburger;
+  int bun;
+  bun = bread;
+  cheeseburger = bun + meat + cheese + veggies + bun;
+
+  return meat;
+}

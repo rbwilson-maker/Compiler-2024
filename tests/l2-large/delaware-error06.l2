@@ -1,0 +1,6 @@
+//test error
+// typechecking is important, kids.
+
+int main() {
+  return 1 || true;
+}

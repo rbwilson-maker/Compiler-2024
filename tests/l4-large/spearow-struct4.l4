@@ -1,0 +1,15 @@
+//test return 1
+
+struct _s {
+    int i;
+    int j;
+};
+
+typedef struct _s s;
+
+int main() {
+    s *a = alloc(struct _s);
+    a->i = 1;
+    a->j = 2;
+    return a->i;
+}

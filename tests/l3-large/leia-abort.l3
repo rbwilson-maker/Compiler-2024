@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int abortme(int a) {
+    assert(false);
+    return 0;
+}
+int main() {
+    return abortme(1 >> 32);
+}

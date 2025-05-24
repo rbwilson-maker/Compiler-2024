@@ -1,0 +1,17 @@
+//test error 
+
+int main () {
+    int x = 0;
+    {
+        int y = 15;
+    }
+    y = 16; // raise error
+    for (((i=4; i <= 6; (i++)))) {
+        x *= 2;
+    }
+
+
+    return x;
+}
+
+

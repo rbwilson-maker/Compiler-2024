@@ -1,0 +1,22 @@
+//test return 10
+//ouch, too spicy! test for appropriate liasing
+
+struct simple {
+  int* a;
+  bool c;
+};
+
+typedef struct simple simp;
+
+int main()
+{
+    simp* a = alloc(simp);
+    a->a = alloc(int);
+    simp* b = a;
+    a->c = true;
+    *(a->a) = 5;
+    if(a->c && (*b).c)
+      return *(b->a) + *((*a).a);
+    else
+      return 0;
+}

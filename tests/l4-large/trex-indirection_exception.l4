@@ -1,0 +1,10 @@
+//test memerror
+
+int main()
+{
+  int********** p;
+  p = alloc(int*********);
+  
+  **********p = 1;
+  return **********p;
+}

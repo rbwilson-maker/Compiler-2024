@@ -1,0 +1,13 @@
+//test error
+
+typedef int hello;
+
+struct hi {
+    int   imafield
+    hello imafield
+}
+
+int main() {
+    return 0;
+}
+

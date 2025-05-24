@@ -1,0 +1,39 @@
+//test return 1
+//linked list
+
+struct node {
+  int val;
+  struct node* next;
+};
+
+void list_from_array(struct node* hd, int[] arr, int n){
+  struct node *cur = hd;
+  for(int i=0;i<n;i++){
+    cur->val = arr[i];
+    cur->next = alloc(struct node);
+    cur = cur->next;
+  }
+}
+
+int find(struct node* hd, int x){
+  while(hd!=NULL){
+    if(hd->val == x){
+      return 1;
+    }
+    hd = hd->next;
+  }
+  return 0;
+}
+
+int main(){
+  int[] arr = alloc_array(int, 5);
+  arr[0] = 1;
+  arr[1] = 5;
+  arr[2] = 3;
+  arr[3] = 9;
+  arr[4] = 10;
+
+  struct node* list = alloc(struct node);
+  list_from_array(list, arr, 5);
+  return find(list, 3);
+}

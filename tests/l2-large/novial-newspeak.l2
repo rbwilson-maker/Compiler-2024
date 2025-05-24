@@ -1,0 +1,43 @@
+//test return 0
+// test bool asnops
+
+int main() {
+  bool x = true;
+
+  x = x && true; //true
+  if (!x) {
+    return -2;
+  }
+
+  x = x || false; //true
+  if (!x) {
+    return 2;
+  }
+
+  x = x || true; //true
+  if (!x) {
+    return 2;
+  }
+
+  x = x && false; //false
+  if (x) {
+    int y = 5/0;
+  }
+
+  x = x || false; //false
+  if (x) {
+    int y = 1/0;
+  }
+
+  x = x && true; //false
+  if (x) {
+    int y = 1/0;
+  }
+
+  x = x || true; //true
+  if (!x) {
+    int y = 1/0;
+  }
+
+  return 0;
+}

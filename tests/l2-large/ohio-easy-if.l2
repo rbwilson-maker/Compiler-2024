@@ -1,0 +1,8 @@
+//test return 88
+int main() {
+  int result = 8;
+  if (true) {
+    result *= 11;
+  }
+  return result;
+}

@@ -1,0 +1,33 @@
+//test error
+
+Test programs should have extension .l4 and start with one of the following lines:
+//test return i program must execute correctly and return i
+//test div-by-zero program must compile but raise SIGFPE
+//test abort program must compile and run but raise SIGABRT
+//test memerror program must compile and run and raise SIGUSR2
+//test error program must fail to compile due to an L3 source error
+//test typecheck program must typecheck correctly (see below)
+//test compile program must typecheck, compile, and link (see below)
+followed by the program text. In L4, the exceptions defined are SIGABRT (6), SIGFPE (8), and
+SIGUSR2 (12).
+Since the language now supports function calls, the runtime environment contains external
+functions providing output capabilities (see the runtime section for details). However, we do not
+check that the output is correct, merely that correct values are eventually returned from library
+calls.
+If the test program $test.l4 is accompanied by a file $test.h0 (same base name, but h0
+extension), then we will compile the test treating $test.h0 as the header file. Otherwise, we will
+treat ../runtime/15411-l4.h0 as the header file for all l4 tests, and we will pass that header file
+to your compiler with the -l argument. The 15411-l4.h0 header file describes a library for doubleprecision floating point arithmetic and printing operations; our testing framework will ignore any
+output performed from the printing operations. You are strongly encouraged, but not required, to
+write tests that take advantage of this library.
+If your tests use a header file that you wrote, your test must start with the line //test error or
+//test typecheck. If you include a note that explains what your header file and your test is doing,
+we might change it to allow the autograder to try to compile (//test compile) or run (anything
+else). Only tests utilizing header files that you wrote should begin with //test typecheck.
+L4 is the first Turing-complete language explored in this class. As such, you should be able to
+write some very interesting tests, perhaps adapted from the programs and libraries you wrote in
+the 15-122 course on Principles of Imperative Computation that uses C0.
+Please do not submit test cases that are only slightly different from each other in terms of
+the behavior exercised. In addition, we would like some fraction of your test programs to perform
+“interesting” computations; please briefly describe such examples in a comment in the file. Disallowed are programs which compute Fibonacci numbers, factorials, greatest common divisors, the
+Ackermann function, and minor variations thereon. Please use your imagination!

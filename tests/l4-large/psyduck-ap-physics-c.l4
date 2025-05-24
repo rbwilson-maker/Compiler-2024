@@ -1,0 +1,14 @@
+//test return 6
+
+int c(int* x) {
+*x += 1;
+return 1;
+}
+
+int main() {
+int* x = alloc(int);
+int[] y = alloc_array(int, 15);
+y[c(x)] += y[c(x)] + c(x);
+y[c(x)] >>= y[c(x)] + c(x);
+return *x;
+}

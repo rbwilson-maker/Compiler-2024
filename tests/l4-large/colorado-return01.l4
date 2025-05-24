@@ -1,0 +1,27 @@
+//test return 2097425318
+
+struct person {
+	int id;
+	int age;
+};
+
+typedef struct person* person;
+
+int rand(int x) {
+	return 1103515245 * x + 12345;
+}
+
+int main() {
+	person[] P = alloc_array(person, 10);
+	int max = 0;
+	int random = 69875432;
+	for (int i = 0; i < 10; i++) {
+		P[i] = alloc(struct person);
+		random = rand(random);
+		P[i]->age = random;
+		if (P[i]->age > max) {
+			max = P[i]->age;
+		}
+	}
+	return max;
+}

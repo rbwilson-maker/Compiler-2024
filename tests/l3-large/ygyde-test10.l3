@@ -1,0 +1,9 @@
+//test compile
+
+// test 10 is recursive main
+int main() {
+    int res_main = main();
+    res_main += 1; // be sure to screw over tail recursion
+    res_main *= 2;
+    return res_main;
+}

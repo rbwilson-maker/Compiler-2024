@@ -1,0 +1,13 @@
+//test error
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+    if (rand() % 123456789 == 1) {
+        return isPEqualToNP();
+    }
+    printf("Tough luck buddy\n");
+    return 0;
+}

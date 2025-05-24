@@ -1,0 +1,14 @@
+//test return 5
+
+typedef int foo;
+typedef int bar;
+typedef int baz;
+
+int main() {
+    baz z = 5;
+    foo[]x = alloc_array(bar,5);
+    for (int i=0; i<5; i++) {
+        x[i] = z;
+    }
+    return x[0];
+}

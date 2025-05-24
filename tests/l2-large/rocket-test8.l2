@@ -1,0 +1,19 @@
+//test return 52
+
+int main ()
+{
+  int return2;
+  int if50;
+
+  
+  return2 = 2;
+  if50 = 50;
+
+  if (if50 < 100){
+      return return2+if50;
+  }
+  else {
+      return 10;
+  }
+  
+}

@@ -1,0 +1,12 @@
+//test return 78
+// tests argument discipline (e.g. register and stack discipline)
+
+int calc(int one, int two, int three, int four, int five, int six,
+        int seven, int eight, int nine, int ten, int eleven, int twelve) {
+            return one + two + three + four + five + six + seven + 
+                    eight + nine + ten + eleven + twelve;
+}
+
+int main() {
+    return calc(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+}

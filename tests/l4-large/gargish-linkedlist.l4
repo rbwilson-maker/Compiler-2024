@@ -1,0 +1,25 @@
+//test return 10
+
+struct node {
+    int val;
+    struct node *next;
+};
+
+struct node *prepend(struct node *front, int value) {
+    struct node *n = alloc(struct node);
+    n->val = value;
+    n->next = front;
+    return n;
+}
+
+int sum(struct node *front) {
+    int total = 0;
+    for(struct node *cur = front; cur != NULL; cur = cur->next) {
+        total += cur->val;
+    }
+    return total;
+}
+
+int main() {
+    return sum(prepend(prepend(NULL, 8), 2));
+}

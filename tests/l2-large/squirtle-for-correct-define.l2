@@ -1,0 +1,23 @@
+//test return 0
+
+int main() {
+    int x;
+    int y;
+    int prod;
+
+    x = 9001; /* ITS OVER 9000 */
+    
+    for (y = 1; y <= 6000; y++) {
+        if (y % 3 == 0) {
+            prod = 0;    
+        } else {
+            if (y % 3 == 1) {
+                prod = 1;    
+            } else {
+                prod = 2;
+            }
+        }
+        x = y * prod;
+    }
+    return x;
+}

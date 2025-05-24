@@ -1,0 +1,9 @@
+//test memerror
+
+// Cannot dereference null pointer
+
+int main () {
+    int* null_ptr = NULL;
+    int deref_null_ptr =  *null_ptr;
+    return 0;
+}

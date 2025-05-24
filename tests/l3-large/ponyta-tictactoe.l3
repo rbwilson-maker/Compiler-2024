@@ -1,0 +1,105 @@
+//test return 3
+
+// tic-tac-toe state fits in an int!
+/*
+ * 31      | 30...18 | 17...9 | 8...0 
+ * to_move | unused  | oes    | xes
+*/
+
+int get_oes(int state) {
+	return (state >> 9) & 511;
+}
+
+int get_xes(int state) {
+	return state & 511;
+}
+
+bool is_xes(int state) {
+	return state >> 31 != 0;
+}
+
+bool is_occupied(int state, int pos) {
+	return ((get_xes(state) | get_oes(state)) & (1 << pos)) != 0;
+}
+
+bool is_won(int side) {
+	return (side & 0x1c0) == 0x1c0 // top row
+		|| (side & 0x111) == 0x111 // left-to-right diagonal
+		|| (side & 0x54) == 0x54 // right-to-left diagonal
+		|| (side & 0x38) == 0x38 // middle row
+		|| (side & 7) == 7 // bottom row
+		|| (side & 0x124) == 0x124 // left column
+		|| (side & 0x92) == 0x92 // middle column
+		|| (side & 0x49) == 0x49 // right column
+	;
+}
+
+int winner (int state) {
+	int xes = get_xes(state);
+	int oes = get_oes(state);
+
+	if (is_won(xes)) {
+		return 1;
+	} else if (is_won(oes)) {
+		return 2;
+	} else if ((oes | xes) == 0x1ff) {
+		return 3;
+	} else {
+		return 0;
+	}
+}
+
+int mini_max(int state) {
+	int winner_ = winner(state);
+	if (winner_ == 3) {
+		return 0;
+	} else if (winner_ == 2) {
+		return -1;
+	} else if (winner_ == 1) {
+		return 1;
+	}
+	int side = is_xes(state) ? 1 : -1;
+	int best_score = 2 * -side;
+	for (int i = 0; i < 9; i++) {
+		if (!is_occupied(state, i)) {
+			int score = mini_max((state ^ (1 << 31)) 
+				| (1 << ((is_xes(state) ? 0 : 9) + i)));
+			if (score * side > best_score * side) {
+				best_score = score;
+			}
+		}
+	}
+	return best_score;
+}
+
+int best_move(int state) {
+	int best = -1;
+	int side = is_xes(state) ? 1 : -1;
+	int best_score = 2 * -side;
+	for (int i = 0; i < 9; i++) {
+		if (!is_occupied(state, i)) {
+			int score = mini_max((state ^ (1 << 31)) 
+				| (1 << ((is_xes(state) ? 0 : 9) + i)));
+			if (score * side > best_score * side) {
+				best = i;
+				best_score = score;
+			}
+		}
+	}
+	return best;
+}
+
+int main() {
+	int state = 1 << 31;
+	while (winner(state) == 0) {
+		int move = best_move(state);
+		if (is_xes(state)) {
+			state |= 1 << move;
+		} else {
+			state |= 1 << (move + 9);
+		}
+		state ^= 1 << 31;
+	}
+	return winner(state);
+}
+

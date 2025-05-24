@@ -1,0 +1,28 @@
+//test abort
+//
+
+int main(){
+  int* a = alloc(int);
+  int* h = alloc(int);
+  int* b;
+  int* c;
+  int* d;
+  int* e;
+  int* f;
+  int* g;
+
+  b = a;
+  c = b;
+  d = c;
+  e = d;
+  f = e;
+  g = f;
+  *h = 4;
+  *a = 4;
+  assert(a == g);
+  assert(f == b);
+  a = NULL;
+  assert (e == NULL);
+  assert (*a == *h);
+  return 0;
+}

@@ -1,0 +1,13 @@
+//test abort
+
+typedef int no;
+typedef bool boo;
+
+bool impossible(no a, boo b) {
+    return (a - a) == 1 && b;
+}
+
+int main() {
+    assert(impossible(0, true));
+    return 1;
+}

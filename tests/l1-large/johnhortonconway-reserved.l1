@@ -1,0 +1,29 @@
+//test error
+
+int main() {
+    int struct = 1595197531;
+    int typedef = -1634993201;
+    int if = 1685500262;
+    int else = -1565634126;
+    int while = -14124990;
+    int for = 95781270;
+    int continue = -1234291604;
+    int break = -1217271330;
+    int return = 1554664001;
+    int assert = -722566443;
+    int true = 1980422519;
+    int false = 2140531311;
+    int NULL = 1071223917;
+    int alloc = 2039057853;
+    int alloc_array = 161978065;
+    int int = 1274752084;
+    int bool = -1702458480;
+    int void = -896600235;
+    int char = 1688341523;
+    int string = 354009926;
+    return struct + typedef + if + else + while +
+           for + continue + break + return +
+           assert + true + false + NULL + alloc +
+           alloc_array + int + bool + void +
+           char + string;
+}

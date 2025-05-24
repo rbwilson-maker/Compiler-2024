@@ -1,0 +1,13 @@
+//test return 3
+
+int main() {
+  int x = 3;
+  for (int y; x > 0; y = 0) {
+    y = x;
+    x--;
+  }
+  for (; x < 3;) {
+    x++;
+  }
+  return x;
+}

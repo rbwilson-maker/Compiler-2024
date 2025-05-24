@@ -1,0 +1,14 @@
+//test error
+// test to make sure NULL isn't handled as void
+
+void test(int a) {
+    if (a + 10 << 3 == 3) {
+        return;
+    }
+    return NULL;
+}
+
+int main() {
+    test(4);
+    return 0;
+}

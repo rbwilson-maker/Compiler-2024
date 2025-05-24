@@ -1,0 +1,14 @@
+//test return 1
+
+struct a {
+    int[][] b;
+};
+
+int main() {
+    struct a[] a = alloc_array(struct a, 3);
+    a[0].b = alloc_array(int[], 3);
+    a[0].b[0] = alloc_array(int, 3);
+    a[0].b[0][0] = 1;
+    int x = a[0].b[0][0];
+    return x;
+}

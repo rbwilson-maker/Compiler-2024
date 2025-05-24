@@ -1,0 +1,13 @@
+//test return 505
+
+int main() {
+  int x = 0;
+  int y = 1;
+  int z = 2;
+  int w = 3;
+  return x == y ?
+          x == z - 2 * y ? x + 3 : y + 4
+        : z != w - (w / w) - x ?
+          true ? 7 : 8
+        : x == y - y ? 505 : 507;
+}

@@ -1,0 +1,15 @@
+//test typecheck
+
+int main() {
+    int a = 1;
+    int b = 2;
+    int c = 4;
+
+    bool b1 = b1();
+
+    if (b1) {
+        return f1(a, b, c);
+    }
+
+    return c;
+}

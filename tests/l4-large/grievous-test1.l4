@@ -1,0 +1,11 @@
+//test error
+struct test{
+    int x;
+};
+
+typedef struct test* ts;
+int main(){
+    int[] a = alloc_array(int, 10);
+    struct test* t = alloc(struct test);
+    a[0] = t;
+}

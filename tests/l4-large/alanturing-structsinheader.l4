@@ -1,0 +1,8 @@
+//test typecheck
+
+
+int main () {
+    struct s *x = alloc(struct s);
+    (*x).t = 3;
+    return (x->t) ;
+}

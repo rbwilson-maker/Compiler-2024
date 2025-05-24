@@ -1,0 +1,10 @@
+//test return 0
+
+int main(){
+  
+  int x;
+  int y=0;
+  for(x=0;false;x++)
+    y++;
+  return y;
+}

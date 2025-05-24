@@ -1,0 +1,29 @@
+//test return 2021
+
+typedef struct bbbb cccc;
+
+struct s {
+    int d;
+};
+
+struct bbbb {
+    int d;
+    int e;
+    struct s *f;
+};
+
+struct aaaa {
+    cccc * g;
+    int d;
+};
+
+
+int main() {
+    struct aaaa * h = alloc(struct aaaa);
+    h->g = alloc(cccc);
+    h->g->f = alloc(struct s);
+    struct s [] bloop = alloc_array(struct s, 1);
+    bloop[0].d = 2021;
+    int tot = h->g->f->d + h->g->d + h->d + bloop[0].d;
+    return tot;
+}

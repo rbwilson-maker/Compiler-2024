@@ -1,0 +1,19 @@
+//test return 3
+typedef int my_int;
+
+my_int int_to_my_int(int i) {
+	if(i < 0) return -i;
+	return i;
+}
+
+int my_int_to_int(my_int i) {
+	return i;
+}
+
+int main() {
+	for(int i = -50; i < 50; i++) {
+		int x = my_int_to_int(int_to_my_int(i));
+		assert((i >= 0 && i == x) || (i < 0 && -i == x));
+	}
+	return 3;
+}

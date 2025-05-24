@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int main() {
+  if (true)
+    if (true)
+      if (true)
+        if (true)
+          if (true)
+            if (true)
+              if (true)
+                if (true)
+                  if (true)
+                    if (true)
+                      1 / 0;
+  return 0;
+}

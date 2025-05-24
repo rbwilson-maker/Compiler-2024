@@ -1,0 +1,13 @@
+//test return 9
+
+void func() {
+  int x = 2 + 2;
+  return;
+}
+
+int main() {
+  int x;
+  func();
+  x = 9;
+  return x;
+}

@@ -1,0 +1,18 @@
+/*
+ * Integer Buffer Library
+ *
+ * Modified 15-122 Principles of Imperative Computation
+ * This version exposes the externals, requires
+ * discipline from client! */
+
+struct intbuf {
+  int limit;   /* limit > 0, bytes allocated for buf */
+  int len;     /* len < limit */
+  int []buf;    /* buf != NULL, buf[len] == 0, sizeof(buf)/sizeof(int) == len */
+};
+bool is_intbuf(struct intbuf *sb);
+
+struct intbuf *intbuf_new(int init_limit);
+int *intbuf_dealloc(struct intbuf *sb);
+
+void intbuf_add(struct intbuf *sb, int intval, int len);

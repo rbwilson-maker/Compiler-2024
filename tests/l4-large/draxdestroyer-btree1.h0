@@ -1,0 +1,6 @@
+struct BTreeNode {
+    struct BTreeNode* left;
+    struct BTreeNode* right;
+    int value;
+};
+typedef struct BTreeNode BT;

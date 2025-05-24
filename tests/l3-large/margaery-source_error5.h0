@@ -1,0 +1,7 @@
+typedef int myint;
+typedef myint myintint;
+typedef bool mybool;
+typedef bool myboolbool;
+
+myint myintint(myint a, myint b);
+mybool myboolbool(myint a);

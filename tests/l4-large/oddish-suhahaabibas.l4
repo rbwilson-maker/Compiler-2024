@@ -1,0 +1,28 @@
+//test return 0
+
+typedef bool name;
+
+struct list_node {
+  struct list_node* next;
+  name name1;
+};
+
+typedef struct list_node* list;
+
+int main () {
+  list x = alloc(struct list_node);
+  list y = alloc(struct list_node);
+
+  x->next = y;
+  x->name1 = true;
+  y->next = x;
+  y->name1 = false;
+
+  list i = x;
+
+  while (i != NULL && i->name1) {
+    i = i->next;
+  }
+
+  return i->name1 ? 1 : 0;
+}

@@ -1,0 +1,48 @@
+//test error
+// Lots of dependence, undefined var
+
+int main () {
+    int a = 0;
+    int b = 54;
+    int c = 12;
+    int d = 912123;
+    int e = 15;
+    int f = 0xa;
+    int g = -0x21;
+    int h = 40440404;
+    int i = 12;
+    int j = 135;
+    int k;
+    f += i + d + e + g + h + b + a + j + c;
+    f += h + j + i + g + d + b + e + c + a;
+    a += i + d + g + b + c + h + e + f + j;
+    h += f + g + a + d + b + i + c + e + j;
+    d += h + j + f + c + b + e + a + i + g;
+    f += j + h + d + a + b + c + e + i + g;
+    g += j + b + e + f + c + d + h + i + a;
+    c += a + b + f + d + i + h + g + e + j;
+    i += d + j + e + a + b + c + g + h + f;
+    b += f + e + g + c + i + h + a + j + d;
+    h += i + c + e + f + j + b + a + d + g;
+    b += d + j + g + i + e + c + a + f + h;
+    a += f + b + h + c + d + g + i + j + e;
+    b += h + c + j + e + g + d + i + f + a;
+    b += c + a + d + f + i + j + e + h + g;
+    b += i + c + e + j + d + a + g + h + f;
+    i += c + h + j + b + e + g + d + a + f;
+    d += a + c + h + b + f + j + e + g + i;
+    a += j + f + c + d + h + e + b + i + g;
+    e += b + c + a + f + j + i + d + h + g;
+    b += f + h + d + i + e + j + c + g + a;
+    j += d + h + b + a + i + c + e + g + f;
+    d += a + i + f + g + j + c + h + e + b;
+    c += d + f + b + i + g + e + a + h + j;
+    a += b + d + e + h + i + j + c + f + g;
+    f += b + e + c + j + g + a + h + d + i;
+    j += d + g + a + i + h + e + b + c + f;
+    d += c + i + a + j + h + b + f + e + g;
+    d += j + b + f + g + e + h + i + a + c;
+    e += a + d + b + c + h + g + j + i + f;
+    a += d + h + b + a + i + c + e + g + f + k;
+    return e;
+}

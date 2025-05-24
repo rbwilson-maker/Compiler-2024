@@ -1,0 +1,9 @@
+//test return ~1
+// hex numbers
+
+int main() {
+  int h = 0xf0f0f0f0;
+  int i = 0x0f0f0f0f;
+
+  return i+h; // 0xffffffff;
+}

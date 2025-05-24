@@ -1,0 +1,12 @@
+//test error
+
+int main () {
+  bool b;
+
+  if false
+    return 314;
+
+  b = 628;
+
+  return 628;
+}

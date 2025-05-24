@@ -1,0 +1,29 @@
+//test return 5
+
+// this piece of code takes a number in base 2 and outputs the number in base 10
+// for example: base_2_to_base_10(101) -> 5
+
+int pow(int a, int b){
+    int p = 1;
+    for (int i = 0; i < b; i++){
+        p *= a;
+    }
+    return p;
+}
+
+int base_2_to_base_10(int num){
+    int tot = 0;
+    int i = 0;
+    while(num != 0){
+        int x = num % 10;
+        num /= 10;
+
+        tot += x * pow(2,i);
+        i++;
+    }
+    return tot;
+}
+
+int main() {
+    return base_2_to_base_10(101);
+}

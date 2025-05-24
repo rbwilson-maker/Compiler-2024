@@ -1,0 +1,11 @@
+//test return 1
+int main() {
+  assert(*alloc(int[]) == *alloc(int[]));
+  assert(*alloc(int[]) == *alloc(int[]));
+  assert(*alloc(int[]) == *alloc(int[]));
+  assert(*alloc(int[]) == *alloc(int[]));
+  assert(*alloc(int[]) == *alloc(int[]));
+  assert(*alloc(int[]) == *alloc(int[]));
+  assert(*alloc(int[]) == *alloc(int[]));
+  return 1;
+}

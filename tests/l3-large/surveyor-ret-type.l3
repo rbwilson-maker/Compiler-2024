@@ -1,0 +1,10 @@
+//test error
+
+// bad way to calculate this
+bool equal(int a, int b) {
+  return (a - b == 0);
+}
+
+int main() {
+  return equal(3, 3);
+}

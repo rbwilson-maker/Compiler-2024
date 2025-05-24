@@ -1,0 +1,11 @@
+//test return 1
+int main() {
+  int x = 1;
+  int[]*[]* y = alloc(int[]*[]);
+  *y = alloc_array(int[]*, x);
+  (*y)[0] = alloc(int[]);
+  *((*y)[0]) = alloc_array(int, x);
+  (*((*y)[0]))[0] = x;
+
+  return (*((*y)[0]))[0];
+}

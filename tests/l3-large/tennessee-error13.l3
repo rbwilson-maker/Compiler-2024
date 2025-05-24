@@ -1,0 +1,9 @@
+//test error
+
+int badarg (int i = 0) {
+    return i;
+}
+
+int main () {
+    return badarg(2);
+}

@@ -1,0 +1,15 @@
+//test div-by-zero 
+
+int main() {
+	bool t;
+	bool f;
+
+    int x = 3;
+    int y = 4-4;
+    
+	t = true;
+
+	if (t) return x/y;
+
+	return 0;
+}

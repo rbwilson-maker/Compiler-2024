@@ -1,0 +1,12 @@
+//test return 37
+int main() {
+    if (false) {
+        int i = 10;
+        while (true) {
+            i += 31;
+            i /= 2;
+            i >>= i;
+        }
+    }
+    return (1 << 5) + 5;
+}

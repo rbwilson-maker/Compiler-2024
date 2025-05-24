@@ -1,0 +1,12 @@
+//test return 2 
+
+int countSetBits(int n) {
+	if (n == 0) return 0;
+	return (n & 1) + countSetBits(n >> 1);
+}
+
+int main() {
+	countSetBits(4);
+	int x = countSetBits(34);
+	return x;
+}

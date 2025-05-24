@@ -1,0 +1,15 @@
+//test error
+
+int main() {
+
+  int t0 = 0;
+  int t1;
+
+  while (t1 > -1000) {
+    t1 = t0 * 2 - 1;
+    t0 = t1;
+  }
+
+  return t0;
+
+}

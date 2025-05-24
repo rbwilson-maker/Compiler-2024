@@ -1,0 +1,41 @@
+//test return 0
+
+// I'm Gazelle. Welcome to Zootopia
+// A test on struct including structs
+
+typedef int try_everything;
+typedef int oh;
+typedef int I_wont_give_up;
+typedef bool Till_I_reach_the_end;
+
+struct everything
+{
+  I_wont_give_up No_I_wont_give_in;
+  Till_I_reach_the_end And_then_ill_start_again;
+};
+
+struct birds
+{
+  struct everything* everything;
+  I_wont_give_up They_fall_down_and_get_up;
+  Till_I_reach_the_end dont_just_fly;
+};
+
+try_everything I_wanna_try_everything (oh ooh, oh ohh, oh ohhh, oh oooh, struct birds* I_wanna_try_everything){
+  return ((ooh - (I_wanna_try_everything -> everything -> No_I_wont_give_in)) 
+        * (ohh + ((I_wanna_try_everything -> everything -> And_then_ill_start_again) ? 1 : 0))) 
+        / (ohhh + oooh);
+}
+
+try_everything main() {
+  struct everything* even_though_I_could_fail;
+  even_though_I_could_fail = alloc(struct everything);
+  even_though_I_could_fail -> No_I_wont_give_in = 1;
+  even_though_I_could_fail -> And_then_ill_start_again = true;
+  struct birds* Nobody_learns_without_getting_it_wrong;
+  Nobody_learns_without_getting_it_wrong = alloc(struct birds);
+  Nobody_learns_without_getting_it_wrong -> dont_just_fly = true;
+  Nobody_learns_without_getting_it_wrong -> They_fall_down_and_get_up = 1;
+  Nobody_learns_without_getting_it_wrong -> everything = even_though_I_could_fail;
+  return I_wanna_try_everything (1, 10, 100, 1000, Nobody_learns_without_getting_it_wrong);
+}

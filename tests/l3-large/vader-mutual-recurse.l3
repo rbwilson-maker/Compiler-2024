@@ -1,0 +1,17 @@
+//test return 14
+int _c0_mult2 (int count, int x);
+int _c0_add2 (int count, int x) {
+  if (count == 0)
+    return x;
+  return _c0_mult2(count-1, x+2);
+}
+
+int _c0_mult2 (int count, int x) {
+  if (count == 0)
+    return x;
+  return _c0_add2(count-1, x*2);
+}
+
+int main() {
+  return _c0_add2(5, 0);
+}

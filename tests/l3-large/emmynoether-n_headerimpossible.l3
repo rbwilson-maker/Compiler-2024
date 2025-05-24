@@ -1,0 +1,9 @@
+//test typecheck
+
+int main() {
+    // implement twin primes conjecture
+
+    for (int n = 0; another_twin_prime_after(n); n++) {}
+
+    return 0;
+}

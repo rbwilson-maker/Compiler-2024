@@ -1,0 +1,11 @@
+//test error
+//expressions in assert should be booleans.
+
+int f() {
+    return 3;
+}
+
+int main() {
+    assert(f());
+    return 0;
+}

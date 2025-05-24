@@ -1,0 +1,13 @@
+//test error
+
+typedef int test*;
+
+int main() {
+  int i = 0;
+  while(true) {
+    i++;
+    alloc(test*);
+    if(i == -123) break;
+  }
+  return 0;
+}

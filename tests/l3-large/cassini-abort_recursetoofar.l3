@@ -1,0 +1,17 @@
+//test abort
+
+int rec1(int abc);
+
+int rec2(int r) {
+    assert(r > 0);
+    return rec1(r + 1);
+}
+
+int rec1(int r) {
+    assert(r > 0);
+    return rec2(r / 3);
+}
+
+int main() {
+    return rec1(100);
+}

@@ -1,0 +1,24 @@
+//test return 5
+
+// Find a non-null value in an array.
+
+int* nonnull(int*[] A, int n) {
+  for (int i = 0; i < n; i++)
+    if (A[i] != NULL)
+      return A[i];
+  return NULL;
+}
+
+int main() {
+  int n = 15;
+  int*[] A = alloc_array(int*, n);
+
+  A[11] = alloc(int);
+  *A[11] = 4;
+
+  for (int i = 0; i < n; i++)
+    if (A[i] != NULL)
+      (*A[i])++;
+
+  return *nonnull(A, n);
+}

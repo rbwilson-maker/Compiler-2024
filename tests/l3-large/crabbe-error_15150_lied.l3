@@ -1,0 +1,7 @@
+//test error
+
+int fun(int x) { return x++;}
+
+int main(){
+  return fun //unfortunately, not a value
+}

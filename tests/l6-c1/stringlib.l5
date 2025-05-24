@@ -1,0 +1,12 @@
+//test return 10
+
+int main() {
+  string s1 = "abcde";
+  string s2 = "cd";
+  string s3 = "";
+  string s4 = "123";
+  string s12 = string_join(s1, s2);
+  string s34 = string_join(s3, s4);
+  string s = string_join(s12, s34);
+  return string_length(s);
+}

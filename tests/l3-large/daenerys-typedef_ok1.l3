@@ -1,0 +1,23 @@
+//test return 1
+
+typedef int a_type;
+typedef bool b_type;
+
+a_type getValue() {
+   a_type x;
+   b_type b = true;
+   if (b) {
+      x = 5;
+   } else {
+      b = false;
+      x = 10;
+   }
+   return x;
+}
+
+int main() {
+  a_type x = getValue();
+  b_type b = (x == 5);
+  if (b) return 1;
+  return 0;
+}

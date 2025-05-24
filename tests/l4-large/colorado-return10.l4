@@ -1,0 +1,23 @@
+//test return 475240270
+
+int factorial (int*[] mem, int n) {
+	if (n == 0) return 1;
+	if(mem[n] == NULL) {
+		int* r = alloc(int);
+		*r = n * factorial(mem, n-1);
+		mem[n] = r;
+		return *r;
+	} else {
+		return *(mem[n]);
+	}
+}
+
+int main() {
+	int*[] mem = alloc_array(int*, 1000);
+	factorial(mem,60);
+	int s = 0;
+	for (int i = 0; i < 100000; i++) {
+		s += factorial(mem,i % 60);
+	}
+	return s;
+}

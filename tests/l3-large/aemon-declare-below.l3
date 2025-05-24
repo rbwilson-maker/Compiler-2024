@@ -1,0 +1,14 @@
+//test error
+
+int a(int n) {
+    return n + b(n);
+}
+
+int b(int n) {
+    return n + n;
+}
+
+int main() {
+    assert(a(5) == 15);
+    return 0
+}

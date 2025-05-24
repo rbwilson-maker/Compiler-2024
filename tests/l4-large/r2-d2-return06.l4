@@ -1,0 +1,26 @@
+//test return 6
+
+void reverseArray(int[] arr, int start, int end)
+{
+	int temp;
+	while (start < end) {
+		temp = arr[start];
+		arr[start] = arr[end];
+		arr[end] = temp;
+		start++;
+		end--;
+	}
+}
+
+int main()
+{
+	int[] arr = alloc_array(int, 6);
+	arr[0] = 1;
+	arr[1] = 2;
+	arr[2] = 3;
+	arr[3] = 4;
+	arr[4] = 5;
+	arr[5] = 6;
+	reverseArray(arr, 0, 5);
+	return arr[0];
+}

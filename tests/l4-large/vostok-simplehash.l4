@@ -1,0 +1,90 @@
+//test return 30
+// construct a VERY simple hash table
+
+struct node {
+    int key;
+    int val;
+    struct node *next;
+};
+typedef struct node node_t;
+
+struct table {
+    node_t*[] arr;
+    int numElems;
+    int size;
+};
+typedef struct table table_t;
+
+// dummy hash function
+int hash(int k, int size) {
+    return k % size;
+}
+
+table_t* createTable(int size) {
+    table_t *tbl = alloc(table_t);
+    tbl->arr = alloc_array(node_t*, size);
+    tbl->numElems = 0;
+    tbl->size = size;
+    return tbl;
+}
+
+int getSize(table_t *tbl) {
+    return tbl->numElems;
+}
+
+int get(table_t *tbl, int key) {
+    int hashVal = hash(key, tbl->size);
+    for(node_t *curr = tbl->arr[hashVal]; curr != NULL; curr = curr->next) {
+        if(curr->key == key)
+            return curr->val;
+    }
+    return -1;
+}
+
+void insert(table_t *tbl, int key, int val) {
+    if(val < 0) {
+        return;
+    } else {
+        int currVal = get(tbl, key);
+        if(currVal == val)
+            return;
+        if(currVal != -1) {
+            int hashVal = hash(key, tbl->size);
+            for(node_t *curr = tbl->arr[hashVal]; curr != NULL; curr = curr->next) {
+                if(curr->key == key) {
+                    curr->val = val;
+                    return;
+                }
+            }
+        }
+    }
+
+    int hashVal = hash(key, tbl->size);
+    node_t *newNode = alloc(node_t);
+    newNode->key = key;
+    newNode->val = val;
+
+    if(tbl->arr[hashVal] == NULL) {
+        tbl->arr[hashVal] = newNode;
+    } else {
+        newNode->next = tbl->arr[hashVal];
+        tbl->arr[hashVal] = newNode;
+    }
+    tbl->numElems++;
+}
+
+int main() {
+    // our hash table only supports non-negative inserts
+    int size = 20;
+    table_t *tbl = createTable(size);
+    for(int i = 0; i < size; i++) {
+        insert(tbl, i, i*2);
+        insert(tbl, i*2, i);
+    }
+
+    assert(get(tbl, 50) == -1);
+    assert(get(tbl, 38) == 19);
+    assert(get(tbl, 37) == -1);
+
+    return getSize(tbl);
+}

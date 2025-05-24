@@ -1,0 +1,15 @@
+//test return 44
+
+struct Foo {
+    int *data;
+    struct Foo *bar;
+};
+
+int main() {
+    int *n = alloc(int);
+    *n = 44;
+    struct Foo *x = alloc(struct Foo);
+    (*x).bar = alloc(struct Foo);
+    x->bar->data = n;
+    return *(x->bar->data);
+}

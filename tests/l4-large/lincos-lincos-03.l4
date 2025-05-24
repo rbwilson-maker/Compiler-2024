@@ -1,0 +1,15 @@
+//test div-by-zero
+// Test structs in arrays
+
+struct node {
+    int color;
+};
+
+int main() {
+    struct node[] nodes = alloc_array(struct node, 100);
+    for (int i = 0; i < 100; i++)
+        nodes[i].color = 42;
+    nodes[0].color;
+    nodes[0].color -= (nodes[1].color - nodes[2].color + nodes[2].color);
+    return nodes[1].color / nodes[0].color;
+}

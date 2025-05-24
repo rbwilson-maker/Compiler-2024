@@ -1,0 +1,21 @@
+//test return 0
+// Test void functions that do nothing 
+
+void jan(bool y) {
+}
+
+void yo(int x) {
+    x++;
+}
+
+
+int main() {
+    bool test = true;
+    if (test) {
+        yo(4);
+    } else {
+        jan(false);
+    }
+
+    return 0;
+}

@@ -1,0 +1,8 @@
+//test return 256
+
+// This is designed to test the ternary operator
+int main() {
+  int a = true ? 5 : 3;
+  int b = false ? 6 : 8;
+  return 8 << 5;
+}

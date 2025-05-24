@@ -1,0 +1,98 @@
+//test return 0
+
+struct node;
+typedef struct node node_t;
+
+struct node {
+    int data;
+    node_t *left;
+    node_t *right;
+};
+
+node_t *node_new(int n) {
+    node_t *new = alloc(node_t);
+    new->data = n;
+    new->left = NULL;
+    new->right = NULL;
+    return new;
+}
+
+node_t *node_insert(node_t *node, int n) {
+    if (node == NULL) {
+        return node_new(n);
+    }
+
+    if (n < node->data) {
+        node->left = node_insert(node->left, n);
+    }
+    else if (n > node->data) {
+        node->right = node_insert(node->right, n);
+    }
+
+    return node;
+}
+
+bool node_contains(node_t *node, int n) {
+    if (node == NULL) {
+        return false;
+    }
+
+    if (n == node->data) {
+        return true;
+    }
+
+    if (n < node->data) {
+        return node_contains(node->left, n);
+    }
+    else {
+        return node_contains(node->right, n);
+    }
+}
+
+struct tree;
+typedef struct tree tree_t;
+
+struct tree {
+    node_t *root;
+};
+
+tree_t *tree_new() {
+    tree_t *new = alloc(tree_t);
+    new->root = NULL;
+    return new;
+}
+
+bool tree_empty(tree_t *tree) {
+    return (tree->root == NULL);
+}
+
+void tree_insert(tree_t *tree, int n) {
+    tree->root = node_insert(tree->root, n);
+}
+
+bool tree_contains(tree_t *tree, int n) {
+    return node_contains(tree->root, n);
+}
+
+int main() {
+    tree_t *tree = tree_new();
+
+    assert(tree_empty(tree));
+
+    tree_insert(tree, 5);
+    tree_insert(tree, 7);
+    tree_insert(tree, 3);
+    tree_insert(tree, 2);
+    tree_insert(tree, 4);
+
+    assert(tree_contains(tree, 2));
+    assert(tree_contains(tree, 3));
+    assert(tree_contains(tree, 4));
+    assert(tree_contains(tree, 5));
+    assert(tree_contains(tree, 7));
+    assert(!tree_contains(tree, 100));
+    assert(!tree_contains(tree, 15411));
+    assert(!tree_contains(tree, 0xdeadbeef));
+
+    return 0;
+}

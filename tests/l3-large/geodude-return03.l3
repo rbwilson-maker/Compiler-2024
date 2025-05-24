@@ -1,0 +1,18 @@
+//test return 2
+
+
+int foo(int a1);
+int foo(int a2);
+int foo(int a3);
+int foo(int a4);
+int foo(int a5);
+int foo(int a6) {
+	return a6 + 1;
+}
+int foo(int a7);
+int foo(int a8);
+int foo(int a9);
+
+int main() {
+	return foo(1);
+}

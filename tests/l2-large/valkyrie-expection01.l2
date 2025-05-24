@@ -1,0 +1,5 @@
+//test div-by-zero
+int main(){
+    int x = 1;
+    return (x * 15210 + 3000 - 1000) << (-1000);
+}

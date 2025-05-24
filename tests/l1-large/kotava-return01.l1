@@ -1,0 +1,12 @@
+//test return 6
+// test different strings for variable name 
+int main () {
+	int x0;
+	int x1_x0;
+	int X;
+
+	x0 = 5;
+	x1_x0 = x0 * 2;
+	X = x1_x0 - 4;
+	return X;
+}

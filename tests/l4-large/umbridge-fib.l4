@@ -1,0 +1,17 @@
+//test return 55
+
+typedef int foo;
+typedef int bar;
+typedef int baz;
+
+int main() {
+    baz N = 10;
+    foo[] x = alloc_array(bar, N);
+    x[0] += 1;
+    x[1] += 1;
+    for (int i = 2; i < N; i++)
+    {
+        x[i] = x[i-2] + x[i-1];
+    }
+    return x[N-1];
+}

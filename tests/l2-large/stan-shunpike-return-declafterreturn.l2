@@ -1,0 +1,12 @@
+//test return 37
+
+int main(){
+    bool cond = (1 < 2) ? true : false;
+    if (cond) {
+        return 37;
+    } else {
+        int x;
+        return 37;
+        return x;
+    }
+}

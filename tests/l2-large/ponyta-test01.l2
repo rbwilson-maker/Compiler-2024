@@ -1,0 +1,13 @@
+//test return 0;
+
+//boolean order of operations
+int main() {
+	bool a = true && true || false && true;
+	bool b = a ? true ? false : true : false ? true : false;
+	bool c = true || false && false || true;
+	if (a && b && c) {
+		return 1;
+	} else {
+		return 0;
+	}
+}

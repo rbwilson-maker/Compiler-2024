@@ -1,0 +1,6 @@
+//test error
+int main() {
+  bool y = false;
+  for (int x = 1; x < 3; x++) { x += y; }
+  return y;
+}

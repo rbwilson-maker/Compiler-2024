@@ -1,0 +1,47 @@
+//test return 563
+
+int sum_squares_digits(int n){
+	int s = 0;
+	while(n > 0) {
+		int d = n%10;
+		s += (d*d);
+		n /= 10;
+	}
+	return s;
+}
+
+bool is_happy(int n){
+	if(n < 1) return false;
+	while (true) {
+		if(n == 1) return true;
+		else if (n == 4) return false;
+		n = sum_squares_digits(n);
+	}
+	return false;
+}
+
+
+bool is_prime(int n) {
+	if(n < 2) return false;
+	for(int f = 2; f < n; f++){
+		if(n % f == 0) return false;
+	}
+	return true;
+}
+
+
+int nth_happy_prime(int n) {
+	int guess = 0;
+	int found = 0;
+	while(found <= n) {
+		if(is_prime(guess) && is_happy(guess)) found++;
+		guess++;
+	}
+	return guess - 1;
+}
+
+
+int main() {
+	int n = 23;
+	return nth_happy_prime(n);
+}

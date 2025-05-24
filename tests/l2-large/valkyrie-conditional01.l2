@@ -1,0 +1,14 @@
+//test return 6
+int main(){
+    bool flag = true;
+    int x = 64;
+    int y = 0;
+    while (flag) {
+        y += 1;
+        x >>= 1;
+        if (x == 0) {
+            flag = false;
+        }
+    }
+    return y - 1;
+}

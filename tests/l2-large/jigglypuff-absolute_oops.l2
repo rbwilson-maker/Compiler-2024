@@ -1,0 +1,39 @@
+//test typecheck
+//test infloop
+
+/* Absolute Oops Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, September 28, 2015 at 04:53:04 PM EDT
+ *
+ * This test tests that the loop variable is properly modified by an assignemnt.
+ * In this case, someone is attempting to compute the difference between the sum
+ * and product of the absolute values of the number in the range [-1024, 1024].
+ * However, they mistakenly modify the loop variable by taking the absolute
+ * value when it's negative, leading to an infinite loop.
+ */
+
+int main()
+{
+    int NO_WAY = 1;
+    int abs_sum = 0;
+
+    // Accumlate the absolute sum and product
+    for (int i = 1024; i >= -1024; i--)
+    {
+        // Get the absolute value of i
+        if (i < 0) {
+            i = -i;
+        }
+
+        // Accumlate a product and sum of the absolute values
+        if (i != 0) {
+            NO_WAY *= i;
+            abs_sum += i;
+        }
+    }
+
+    // You should never reach here
+    return NO_WAY - abs_sum;
+}

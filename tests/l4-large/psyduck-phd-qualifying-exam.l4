@@ -1,0 +1,19 @@
+//test error
+
+struct a;
+
+struct a* id(struct a* b)
+{
+return b;
+}
+
+int main() {
+struct a* b = NULL;
+if (b != NULL)
+    b = id(b);
+return 3;
+}
+
+struct a {
+int a;
+};

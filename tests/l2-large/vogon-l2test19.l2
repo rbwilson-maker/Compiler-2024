@@ -1,0 +1,9 @@
+//test return 5107948
+
+int main() { 
+  int x = 12;
+  for (int i = 21; i < 234; i++) {
+    x += 32+ 234 * 234 / i + 23324;
+  }
+  return x; 
+}

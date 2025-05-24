@@ -1,0 +1,49 @@
+//test return 16170
+typedef struct node node;
+
+struct node {
+  int data;
+  node* next;
+};
+
+node *create(int n) {
+  node *t = NULL;
+  for (; n > 0; n--) {
+    node *new = alloc(node);
+    new->data = n;
+    new->next = t;
+    t = new;
+  }
+  return t;
+}
+
+node *rev(node *L) {
+  if (L->next == NULL) return L;
+  node *prev = L;
+  node *curr = L->next;
+  prev->next = NULL;
+
+  while (curr != NULL) {
+    node *next = curr->next;
+    curr->next = prev;
+    prev = curr;
+    curr = next;
+  }
+  return prev;
+}
+
+int evil(node *L) {
+  int total = 0;
+  int count = 0;
+  for (node *p = L; p != NULL; p = p->next) {
+    count += 1;
+    total += count * p->data * p->data;
+  }
+  return total;
+}
+
+int main() {
+  node *h = create(20);
+  h = rev(h);
+  return evil(h);
+}

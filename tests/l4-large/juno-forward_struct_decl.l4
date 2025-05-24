@@ -1,0 +1,17 @@
+//test return 0
+
+struct foo;
+
+struct bar {
+    struct foo* fighters;
+};
+
+struct foo {
+    int ham;
+};
+
+int main () {
+    struct bar* test = alloc(struct bar);
+    test->fighters = alloc(struct foo);
+    return test->fighters->ham;
+}

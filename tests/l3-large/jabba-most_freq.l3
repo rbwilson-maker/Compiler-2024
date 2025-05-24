@@ -1,0 +1,32 @@
+//test return 4
+/*
+ * This computes the most frequent digit in a number
+ * Ties go to the larger digit.
+ */
+
+typedef int a;
+
+a dc(a i, a d) {
+  a dc = 0;
+  i = i < 0 ? -i : i;
+  while (i > 0) {
+    if (i % 10 == d) dc++;
+    i /= 10;
+  }
+  return dc;
+}
+
+a mfd(a n) {
+  a mfd = 0;
+  for (a i=0; i<10; i++) {
+    if (dc(n, i) >= dc(n, mfd)) mfd = i;
+  }
+  return mfd;
+}
+
+a main() {
+  assert(mfd(123456789) == 9);
+  assert(mfd(112345678) == 1);
+  assert(mfd(361816222) == 2);
+  return mfd(122333444);
+}

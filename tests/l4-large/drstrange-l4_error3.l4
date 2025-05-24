@@ -1,0 +1,7 @@
+//test error
+/// Using pointer as array
+
+int main() {
+    int* x = alloc(int);
+    return x[0];
+}

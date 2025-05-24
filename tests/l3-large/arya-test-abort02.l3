@@ -1,0 +1,5 @@
+//test abort
+int f(bool t){assert(t); return -3;}
+int main(){
+  return f(false);
+}

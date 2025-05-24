@@ -1,0 +1,13 @@
+//test error
+// pointer addition not allowed
+
+struct foo {
+    int bar;
+};
+
+int main() {
+    struct foo * p = alloc( struct foo );
+    p->bar = 0;
+    * (p + 1).bar = 1; // not allowed
+    return 0; // Shouldn't reach here
+}

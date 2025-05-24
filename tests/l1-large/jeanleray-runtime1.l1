@@ -1,0 +1,10 @@
+//test div-by-zero
+// runtime error: divided by zero
+int main(){
+    int x = 3;
+    int y = 5;
+    y = y - 5;
+    int z = x / y;
+    return z;
+    
+}

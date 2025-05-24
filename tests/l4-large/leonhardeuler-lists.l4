@@ -1,0 +1,75 @@
+//test div-by-zero
+typedef struct list_node list_node;
+
+struct list_node {
+    int data;
+    list_node *next;
+};
+
+struct list {
+    list_node *head;
+};
+typedef struct list list;
+
+int list_sum(list *l)
+{
+    list_node *n = l->head;
+    int sum = 0;
+    while (n != NULL) {
+        sum += n->data;
+        n = n->next;
+    }
+    return sum;
+}
+
+list * list_from_array(int[] arr, int length)
+{
+    list *l = alloc(list);
+    list_node *n = NULL;
+    for (int i = length - 1; i >= 0; i--) {
+        list_node *new_node = alloc(list_node);
+        new_node->data = arr[i];
+        new_node->next = n;
+        n = new_node;
+    }
+    l->head = n;
+    return l;
+}
+int list_length(list *l)
+{
+    int length = 0;
+    list_node *n = l->head;
+    while (n != NULL) {
+        length++;
+        n = n->next;
+    }
+    return length;
+}
+
+int[] list_to_array(list *l)
+{
+    int length = list_length(l);
+    int[] arr = alloc_array(int, length);
+    list_node *n = l->head;
+    for (int i = 0; i < length; i++) {
+        arr[i] = n->data;
+        n = n->next;
+    }
+    return arr;
+}
+
+int main()
+{
+    int n = 100000;
+    int[] arr = alloc_array(int, n);
+    for (int i = 0; i < n / 2; i+=2) {
+        arr[i] = i;
+        arr[i+1] = -i;
+    }
+
+    list *l = NULL;
+    for (int i = 0; i < 120; i++) {
+        l = list_from_array(list_to_array(list_from_array(arr, n)), n);
+    }
+    return 123123123 / list_sum(l);
+}

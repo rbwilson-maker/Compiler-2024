@@ -1,0 +1,15 @@
+//test error
+
+typedef int foo;
+foo func();
+
+foo func() {
+    return 0;
+}
+
+int main() {
+    int foo = 0;
+    foo * bar;
+    bar = alloc(foo);
+    return *foo;
+}

@@ -1,0 +1,29 @@
+//test return 2656
+
+int mutual_rec1(int x, int y, int sum);
+int mutual_rec2(int x, int y, int sum);
+
+int mutual_rec1(int x, int y, int sum) {
+    
+    if(x+y <= 5)
+        return sum;
+    
+    
+    return mutual_rec2(x-1, y-2, sum + (x | y));
+}
+
+int mutual_rec2(int x, int y, int sum) {
+    
+    if(x+y <= 6)
+        return sum;
+
+    return mutual_rec1(x-2, y-3, sum + (x ^ y));
+    
+}
+
+int main()
+{
+    int sum = mutual_rec1(100, 100, 0);
+
+    return sum;
+}

@@ -1,0 +1,12 @@
+//test error
+
+int main() {
+	int* elt = alloc(int);
+
+	if (elt == 0) {
+		return 0;
+	}
+
+	return 1;
+
+}

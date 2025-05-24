@@ -1,0 +1,14 @@
+//test return 8
+
+struct heh {
+  int x;
+};
+
+int main() {
+  struct heh[] arr = alloc_array(struct heh, 2);
+  arr[0].x = 3;
+  arr[1].x = 4;
+  arr[0].x++;
+  arr[1].x += arr[0].x;
+  return arr[1].x;
+}

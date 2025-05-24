@@ -1,0 +1,29 @@
+//test return 0
+//test basic arithmetic operations, modular, min, max
+
+int main()
+{
+  int a;
+  int b;
+
+  int TMIN;
+  int TMAX;
+  int negOne;
+  int zero;
+  a = 0;
+  b = 10;
+
+  TMAX = 2147483647;
+  TMIN = TMAX + 1;
+
+  negOne = TMIN+TMAX;
+  a += negOne;
+  negOne = TMIN/TMAX;
+  a += negOne;
+
+  TMIN = TMIN * TMAX;
+  zero = TMIN + negOne + TMAX - a;
+  b *= zero;
+
+  return b;
+}

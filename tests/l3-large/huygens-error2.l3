@@ -1,0 +1,25 @@
+//test error
+
+void getVoidArg() {
+    int x = 0;
+    x += 1;
+}
+
+int getIntArg() {
+    return 3/2;
+}
+
+Bool getBoolArg() {
+    return (1>2);
+}
+
+int new(Bool x, int y, int z) {
+    if (x)
+        return y;
+    else
+        return z + y + 1;
+}
+
+int main() {
+    return new(getBoolArg(), getIntArg, getVoidArg);
+}

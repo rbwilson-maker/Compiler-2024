@@ -1,0 +1,19 @@
+//test return 39
+
+int nest3(int in) {
+  return in / 2;
+}
+
+int nest2(int in) {
+  return in + 10;
+}
+
+int nest1(int in) {
+  return in * 3;
+}
+
+int main() {
+  int x = 7;
+  int y = nest1(nest2(nest3(x)));
+  return y;
+}

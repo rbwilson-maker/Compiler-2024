@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main()
+{
+    int x = 256;     // 2^8
+    x <<= 8;         // 2^16
+
+    (x + x)/(x - x);   // divide by 0
+
+    return x;
+}

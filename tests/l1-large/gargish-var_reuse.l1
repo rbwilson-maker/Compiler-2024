@@ -1,0 +1,15 @@
+//test return 147926
+// test the re-use of variable names
+
+int main() {
+    int a;
+    int b;
+    int c;
+
+    a = 10;
+    b = 148234;
+    c = 318;
+    a = a + b - c;
+
+    return a;
+}

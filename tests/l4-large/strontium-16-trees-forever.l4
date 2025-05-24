@@ -1,0 +1,73 @@
+//test return 1111209829
+// trees!
+
+struct tree
+{
+    int data;
+    struct tree * left;
+    struct tree * right;
+};
+
+typedef struct tree* T;
+
+void fill_tree(int level, T t)
+{
+    t->data = 1;
+
+    if(level == 0)
+    {
+        t->left = NULL;
+        t->right = NULL;
+        return;
+    }
+
+    t->left = alloc(struct tree);
+    t->right = alloc(struct tree);
+    fill_tree(level - 1, t->left);
+    fill_tree(level - 1, t->right);
+}
+
+void loopy_tree(T t, T top)
+{
+    if(t == NULL)
+    {
+        return;
+    }
+
+    if(t == top)
+    {
+        return;
+    }
+
+    if(t->left == NULL)
+    {
+        t->left = top;
+    }
+
+    loopy_tree(t->left, top);
+}
+
+    
+
+int count_tree(T t, int* counter)
+{
+    (*counter)++;
+    if(t == NULL)
+        return 0;
+
+    if (*counter > 300000) {
+      return *counter;
+    }
+
+    return 1 + count_tree(t->left, counter) + count_tree(t->right, counter);
+}
+
+int main()
+{
+    int* counter = alloc(int);
+    T t = alloc(struct tree);
+    fill_tree(5, t);
+    loopy_tree(t->right, t);
+
+    return count_tree(t, counter);
+}

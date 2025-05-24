@@ -1,0 +1,16 @@
+//test return 1679616
+int f(int a, int b) {
+	return a * b;
+}
+
+int g(int a, int b) {
+	return f(f(a,b), f(a,b));
+}
+
+int h(int a, int b) {
+	return g(g(a,b), g(a,b));
+}
+
+int main() {
+	return h(2,3);
+}

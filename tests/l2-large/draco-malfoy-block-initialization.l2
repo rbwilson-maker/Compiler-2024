@@ -1,0 +1,12 @@
+//test return 5
+int main(){
+    int x;
+    {
+        bool y;
+        {
+            y = true;
+        }
+        x = y ? 5 : (5/0);
+    }
+    return x;
+}

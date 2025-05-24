@@ -1,0 +1,10 @@
+//test compile
+
+bool f() {
+  return true;
+}
+
+int main() {
+  bool f = f();
+  return 0;
+}

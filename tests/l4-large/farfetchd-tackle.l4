@@ -1,0 +1,33 @@
+//test return 17
+
+struct ll;
+struct ll {
+  struct ll* next;
+  int val;
+};
+
+struct ll * makeLL(int n) {
+  struct ll * ll = NULL;
+  struct ll * cur = NULL;
+  for (int i = 0; i < n; i++) {
+    if (i == 0) {
+      ll = alloc(struct ll);
+      cur = ll;
+      cur->val = 0;
+    } else {
+      cur -> next = alloc(struct ll);
+      cur -> next -> val = i;
+      cur = cur -> next;
+    }
+  }
+  return ll;
+}
+
+int lookupLL(int n, struct ll *ll) {
+  assert (n >= 0);
+  if (n == 0) return ll -> val; else return lookupLL(n - 1, ll->next);
+}
+
+int main() {
+  return lookupLL(17, makeLL(20));
+}

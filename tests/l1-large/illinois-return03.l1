@@ -1,0 +1,17 @@
+//test return 1210491185
+// valid hex numbers, identifier, overflow
+
+int main() {
+	int a = 0xdeadbeef;
+	int b = 0xABAD1DEA;
+	int c = 0xfaceb00C;
+	int d = 0x00Bada55;
+	int e = 0x0ff1ce00;
+	int f = 0X0000000000000000000000000001;
+	int g = 0X8badf00d;
+	int h = 0Xb105f00d;
+	int i = 0Xbaddcafe;
+	int j = 0Xbabec0de;
+	int _ = a + b + c + d + e + f + g + h + i + j;
+	return _;
+}

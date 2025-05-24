@@ -1,0 +1,24 @@
+//test return 7
+
+struct a {
+  struct a*[] a_list;
+  int n;
+};
+
+int incre(struct a *aa) {
+  (*aa).n += 1;
+  return aa->n;
+}
+
+int main() {
+  struct a *a_p = alloc(struct a);
+  a_p->a_list = alloc_array(struct a*, 3);
+  a_p->a_list[0] = alloc(struct a);
+  a_p->a_list[2] = alloc(struct a);
+
+  a_p->a_list[0]->n += 1;
+  a_p->a_list[incre(a_p->a_list[0])]->n = 5;
+
+  // Note that a_p->a_list[1] is never allocated.
+  return a_p->a_list[0]->n + a_p->a_list[2]->n;
+}

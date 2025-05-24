@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+  int[] hello = alloc_array(int, 6);
+  int abc = 2;
+  [hello][abc];
+}

@@ -1,0 +1,45 @@
+//test return 0
+// some basic array functions
+
+/*    DEFINE BASIC FUNCTIONS    */
+int sum(int[] arr, int size) {
+	int sum = 0;
+	for (int i=0; i<size; i++)
+		sum += arr[i];
+	return sum;
+}
+int avg(int[] arr, int size) {
+	return sum(arr, size) / size;
+}
+bool allTrue(bool[] arr, int size) {
+	for (int i=0; i<size; i++)
+		if (arr[i]==false)
+			return false;
+	return true;
+}
+bool anyTrue(bool[] arr, int size) {
+	for (int i=0; i<size; i++)
+		if (arr[i]==true)
+			return true;
+	return false;
+}
+
+
+/*    MAIN    */
+int main() {
+	int ITEMSINLIST = 20;
+	int[] listInts = alloc_array(int, ITEMSINLIST);
+	bool[] listBools = alloc_array(bool, ITEMSINLIST);
+	for (int i=0; i<ITEMSINLIST; i++) {
+		listInts[i] = (3*i) % 11;
+		listBools[i] = ! (i%3 == 2);
+	}
+	//listInts should be:  0 3 6 9 1 4 7 10 2 5 8 0 3 6 9 1 4 7 10 2
+	//listBools should be: T T F T T F T T F T T F T T F T T F T T
+	int s = sum(listInts,ITEMSINLIST);
+	assert(s == 97);
+	assert(avg(listInts,ITEMSINLIST) == s / ITEMSINLIST);
+	assert(!allTrue(listBools,ITEMSINLIST));
+	assert(anyTrue(listBools,ITEMSINLIST));
+	return 0;
+}

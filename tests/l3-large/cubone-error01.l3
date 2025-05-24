@@ -1,0 +1,9 @@
+//test error
+
+int subcall {
+  return 1;
+}
+
+int main () {
+  return subcall();
+}

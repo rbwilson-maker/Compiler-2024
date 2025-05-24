@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+    int unsupported_operator = 0 << 31;
+    return -1;
+    int hi = 0;
+}

@@ -1,0 +1,27 @@
+//test memerror
+
+struct s1 {
+  int x;
+};
+
+struct s2 {
+  struct s1 *s1;
+};
+
+typedef struct s2 s1;
+
+int main () {
+
+  s1[] haha = alloc_array(s1, 0);
+  s1[] haha2 = alloc_array(s1, 0);
+
+  assert(haha != haha2);
+
+  haha = alloc_array(s1, 10);
+  haha[9].s1->x = -1;
+
+  struct s1 *test = haha[9].s1;
+  int z = (*test).x;
+
+  return -1;
+}

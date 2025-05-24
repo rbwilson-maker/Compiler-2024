@@ -1,0 +1,10 @@
+//test typecheck
+bool _c0_gt5(int x) {
+  return (x > 5);
+}
+int main() {
+  int x = 10;
+  if (_c0_gt5(x))
+    return 1;
+  return 0;
+}

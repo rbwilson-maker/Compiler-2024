@@ -1,0 +1,15 @@
+/* 
+ * A header file that has external functions with strange names
+ */
+
+// mangled main
+void _c0_main(bool b);
+
+// mangled main Mac version
+void __c0_main(int x);
+
+// a label?
+void l1();
+
+// a label?
+void L1();

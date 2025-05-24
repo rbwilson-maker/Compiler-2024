@@ -1,0 +1,21 @@
+//test return 244992
+
+/* A 4th time head TA of a major CS course at CMU: Alexandru Stanescu */
+
+bool knows_more_about_systems_than_70percent_phD(int person, int year) {
+    if (person == 4 && year == 2020) {
+        return true;
+    }
+    return false;
+}
+int classes_that_he_got_As(int person) {
+    return (15213+15214+15410+15411) * person;
+}
+int main() {
+    int alexandru = 4;
+    if (knows_more_about_systems_than_70percent_phD(alexandru, 2020)) {
+        return classes_that_he_got_As(alexandru);
+    } else {
+        return 0;
+    }
+}

@@ -1,0 +1,26 @@
+//test return 1515
+//counts total optimal number of moves to solve towers of hanoi for 1-9 disks
+
+int move(int n, int source, int target, int temp) {
+    if (n == 1) {
+        return 1;
+    }
+    else {
+        int depth1 = move(n-1, source, temp, target);
+        int depth2 = move(  1, source, target, temp);
+        int depth3 = move(n-1, temp, target, source);
+        return depth1 + depth2 + depth3 + 1;
+    }
+}
+
+int hanoi(int n) {
+  return move(n, 0, 1, 2);
+}
+
+int main() {
+  int num_moves = 0;
+  for(int i = 1; i < 10; i++) {
+    num_moves += hanoi(i);
+  }
+  return num_moves;
+}

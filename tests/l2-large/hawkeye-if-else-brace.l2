@@ -1,0 +1,9 @@
+//test return 0
+int main() {
+    if (true)
+        int b = 0;
+    else {
+        int a = 0;
+    }
+    return 0;
+}

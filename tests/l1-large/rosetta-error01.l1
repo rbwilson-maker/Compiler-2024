@@ -1,0 +1,13 @@
+//test error
+//variable name must not start with number
+
+int main()
+{
+  int 9;
+  int y;
+
+  x = 9;
+  y = 10;
+  z = x + y + y;
+  return z;
+}

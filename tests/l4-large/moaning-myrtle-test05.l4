@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main() {
+    int[] x = alloc_array(int[], 1)[0];
+    x[1<<100] = 1>>100;
+    return 0;
+}

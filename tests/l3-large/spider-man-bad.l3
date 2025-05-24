@@ -1,0 +1,11 @@
+//test typecheck
+// Uses bad.h0
+
+int main() {
+   if (infinite_twin_primes()) {
+       return 0;
+   }
+   else {
+       return 1;
+   }
+}

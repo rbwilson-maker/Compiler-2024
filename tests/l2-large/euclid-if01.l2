@@ -1,0 +1,11 @@
+//test return 40
+//testing if statement
+
+int main(){
+  int x = 10;
+  int y = 2;
+  if (x/y >= 5){
+    x = 20;
+  }
+  return x * y;
+}

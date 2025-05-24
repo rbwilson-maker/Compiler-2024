@@ -1,0 +1,14 @@
+//test return 10
+
+int main()
+{
+    int x = 2;
+    int y = 3;
+    int z = 4;
+    if (x == 2)
+        if (y != 3)
+            return 9;
+        else
+            return 10;
+    return 11;
+}

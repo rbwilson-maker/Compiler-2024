@@ -1,0 +1,18 @@
+//test return 0
+
+int abs(int i, int j)
+//@ensures \result >= 0;
+{
+  if (i >= j) {
+    return i - j;
+  } else {
+    return j - i;
+  }
+}
+
+int main() {
+  for (int i = 0; i < 999; i++) {
+    abs(i, 42);
+  }
+  return 0;
+}

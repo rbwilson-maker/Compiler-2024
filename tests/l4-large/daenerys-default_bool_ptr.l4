@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+
+int inf(bool* n) {
+   if (*n) return 0;
+   return inf(n);
+}
+
+int main() {
+  bool * x = alloc(bool);
+  return inf(x);
+}

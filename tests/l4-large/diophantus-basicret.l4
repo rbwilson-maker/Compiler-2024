@@ -1,0 +1,20 @@
+//test memerror
+
+int main() {
+    int *******bigpointer = alloc(int******);
+    int ******smallerpointer = alloc(int*****);
+    int *****smallerpointer2 = alloc(int****);
+    int ****smallerpointer3 = alloc(int***);
+    int ***smallerpointer4 = alloc(int**);
+    int **smallerpointer5 = alloc(int*);
+    int *smallestpointer = alloc(int);
+    smallerpointer3 = NULL;
+    *smallestpointer = -1;
+    *smallerpointer2 = smallerpointer3;
+    *smallerpointer4 = smallerpointer5;
+    *smallerpointer3 = smallerpointer4;
+    *bigpointer = smallerpointer;
+    *smallerpointer = smallerpointer2;
+    *smallerpointer5 = smallestpointer;
+    return *******bigpointer + 1 - *smallestpointer;
+}

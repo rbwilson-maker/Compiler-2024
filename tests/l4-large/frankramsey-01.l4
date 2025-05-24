@@ -1,0 +1,7 @@
+//test return 32
+
+int main() {
+    int* a = alloc(int);
+    *a = 32;
+    return *a;
+}

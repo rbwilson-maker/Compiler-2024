@@ -1,0 +1,37 @@
+//test return 1000000
+
+struct dog {
+    int confidant_level;
+    bool baton_pass;
+    bool follow_up;
+    bool endure;
+    bool protect;
+    bool is_your_best_friend;
+};
+typedef struct dog* dog;
+
+void hang_out(dog d) {
+    int level = d->confidant_level;
+    level++;
+    d->confidant_level = level;
+    if (level == 2) d->baton_pass = true;
+    if (level == 5) d->follow_up = true;
+    if (level == 8) d->endure = true;
+    if (level == 9) d->protect = true;
+}
+
+void love_and_cherish(dog d) {
+    if (d->confidant_level >= 9) d->is_your_best_friend = true;
+}
+
+int main() {
+
+    dog marshmallow  = alloc(struct dog);
+    while(marshmallow->confidant_level < 10)
+        hang_out(marshmallow);
+
+    love_and_cherish(marshmallow);
+
+    return 1000000;
+
+}

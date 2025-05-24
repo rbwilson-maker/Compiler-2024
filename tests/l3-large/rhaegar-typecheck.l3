@@ -1,0 +1,15 @@
+//test typecheck
+
+int myfunc() {
+	return 0;
+}
+
+typedef int sometype;
+
+int main() {
+    sometype i = 0;
+	while (i < 5) {
+      i++;
+	}
+	return i;
+}

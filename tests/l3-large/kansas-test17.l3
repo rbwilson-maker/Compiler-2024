@@ -1,0 +1,12 @@
+//test return 50
+
+// This is designed to test declarations
+int foo(int x, int y);
+
+int main() {
+  return foo(5, 10);
+}
+
+int foo (int x, int y) {
+  return x * y;
+}

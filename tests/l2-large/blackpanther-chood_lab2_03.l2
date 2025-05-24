@@ -1,0 +1,22 @@
+//test error
+
+int main()
+{
+	int i = 0;
+	int x = -i;
+
+	return x;
+
+	while (i) {
+		if (i > 0) {
+			return false;
+		} else {
+			return true;
+		}
+
+		x++;
+		x /= i;
+	}
+
+	return i;
+}

@@ -1,0 +1,17 @@
+//test return 57649320
+int main() {
+    int deg_sum = 0;
+    int x;
+    int y; int z;
+    int w = 0;
+    for(x = 0; x < 1000; x++) {
+        for(y = 0; y < 1000; y++) {
+            for(z = 0; z < 1000; z++) {
+                if((x & y) == (z & y)) {
+                    w++;
+                }
+            }
+        }
+    }
+    return w;
+}

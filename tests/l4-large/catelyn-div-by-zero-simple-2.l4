@@ -1,0 +1,67 @@
+//test div-by-zero
+
+void find_factors(int arg, int[] arr) {
+	int div = 2;
+	int offset = 0;
+
+	while (arg > 1) {
+		if (arg%div == 0) {
+			arr[offset] = div;
+			arg = arg/div;
+			div = 2;
+		}
+		else {
+			div += 1;
+		}
+	}
+}
+
+bool is_factors(int arg, int[] factors, int max) {
+	for (int i = 0; i < max; i++) {
+		if (arg%factors[i] != 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+void find_factors_pt(int arg, int[]* arrr) {
+	int[] arr = *arrr;
+
+	int div = 2;
+	int offset = 0;
+
+	while (arg > 1) {
+		if (arg%div == 0) {
+			arr[offset] = div;
+			arg = arg/div;
+			div = 2;
+		}
+		else {
+			div += 1;
+		}
+	}
+}
+
+bool is_factors_pt(int arg, int[]* factors, int max) {
+	for (int i = 0; i < max; i++) {
+		if (arg%((*factors)[i]) != 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+int main() {
+	int[] arr = alloc_array(int, 5);
+	int[]* arr2 = alloc(int[]);
+	*arr2 = alloc_array(int, 5);
+
+	find_factors(2310, arr);
+	assert(is_factors(2310, arr, 5));
+
+	find_factors_pt(15411, arr2);
+	assert(is_factors_pt(15411, arr2, 5));
+
+	return 0;
+}

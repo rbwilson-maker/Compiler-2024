@@ -1,0 +1,7 @@
+//test return 325
+
+typedef int a;a fa(){return 0;}typedef int b;b fb(){return 1;}typedef int c;c fc(){return 2;}typedef int d;d fd(){return 3;}typedef int e;e fe(){return 4;}typedef int f;f ff(){return 5;}typedef int g;g fg(){return 6;}typedef int h;h fh(){return 7;}typedef int i;i fi(){return 8;}typedef int j;j fj(){return 9;}typedef int k;k fk(){return 10;}typedef int l;l fl(){return 11;}typedef int m;m fm(){return 12;}typedef int n;n fn(){return 13;}typedef int o;o fo(){return 14;}typedef int p;p fp(){return 15;}typedef int q;q fq(){return 16;}typedef int r;r fr(){return 17;}typedef int s;s fs(){return 18;}typedef int t;t ft(){return 19;}typedef int u;u fu(){return 20;}typedef int v;v fv(){return 21;}typedef int w;w fw(){return 22;}typedef int x;x fx(){return 23;}typedef int y;y fy(){return 24;}typedef int z;z fz(){return 25;}
+
+int main() {
+  return fa()+fb()+fc()+fd()+fe()+ff()+fg()+fh()+fi()+fj()+fk()+fl()+fm()+fn()+fo()+fp()+fq()+fr()+fs()+ft()+fu()+fv()+fw()+fx()+fy()+fz();
+}

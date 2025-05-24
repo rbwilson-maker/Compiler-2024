@@ -1,0 +1,16 @@
+//test typecheck
+//test infloop
+
+int main() {
+    bool b0 = true;
+    bool b1 = false;
+    bool b2 = true;
+
+    while (b0 || b1 || b2) {
+        b0 = !b0;
+        b1 = !b1;
+        b2 = !b2;
+    }
+
+    return 0;
+}

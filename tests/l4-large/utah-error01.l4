@@ -1,0 +1,9 @@
+//test error
+// Tests that a typedef can only appear once.
+
+typedef int foo;
+typedef int foo;
+
+int main () {
+    return 0;
+}

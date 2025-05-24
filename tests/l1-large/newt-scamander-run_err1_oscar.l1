@@ -1,0 +1,10 @@
+//test div-by-zero
+
+
+int main() {
+    int a = 1024;
+    int b = 1023;
+    int c = 543;
+    int d = b / a;
+    return c / d;
+}

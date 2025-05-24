@@ -1,0 +1,9 @@
+//test return 6
+
+int add(int a) {
+    return a + 1;
+}
+
+int main() {
+    return add(5);
+}

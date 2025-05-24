@@ -1,0 +1,32 @@
+//test return 45
+//build a linked list and sum over it
+
+struct node {
+    struct node *prev;
+    int payload;
+};
+
+
+int main() {
+    struct node *[] nodes = alloc_array(struct node *, 10);
+
+    nodes[0] = alloc(struct node);
+    nodes[0]->prev = NULL;
+    nodes[0]->payload = 0;
+
+    for (int i = 1; i < 10; i++) {
+        nodes[i] = alloc(struct node);
+        nodes[i]->payload = i;
+        nodes[i]->prev = nodes[i - 1];
+    }
+
+    struct node *node = nodes[9];
+    int sum = 0;
+
+    while (node != NULL) {
+        sum += node->payload;
+        node = node->prev;
+    }
+
+    return sum;
+}

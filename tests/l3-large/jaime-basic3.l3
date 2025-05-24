@@ -1,0 +1,16 @@
+//test return 10
+
+int ret(int a)
+{
+    return a;
+}
+
+int main()
+{
+    int output = 100000;
+    int output2 = ret(output/10);
+    int output3 = ret(output2/10);
+    int output4 = ret(output3/10);
+    int output5 = ret(output3/100);
+    return output5;
+}

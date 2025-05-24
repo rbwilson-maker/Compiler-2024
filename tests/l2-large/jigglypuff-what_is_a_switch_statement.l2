@@ -1,0 +1,50 @@
+//test return 2185596
+
+/* "What is a switch statement?" Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, September 28, 2015 at 09:57:54 PM EDT
+ *
+ * This test exercises and if-else if pattern that resembles a large switch
+ * statement. This basically tests whether or not the compiler is generating
+ * correct branching code for large cases.
+ */
+
+int main()
+{
+    int x = 4;
+    int y = 7;
+    int z = 42;
+
+    if (x == 0) {
+        x *= 2;
+        y = y * y * y;
+        z = z / y;
+    } else if (x == 1) {
+        x += 99;
+        y = z + x + y;
+        z = z % y + z * y;
+    } else if (x == 2) {
+        x += 4;
+    } else if (x == 3) {
+        x = 42;
+        y = 42;
+    } else if (x == 4) {
+        x *= 7;
+        y = x + y + x*z;
+        z = z * z * z / z;
+    } else if (x == 5) {
+        z = 0;
+    } else if (x == 6) {
+        x %= 0;
+        y = x - y;
+        z = 0 - z;
+    } else {
+        x = 0;
+        y = 0;
+        z = 0;
+    }
+
+    return (x + y) * z;
+}

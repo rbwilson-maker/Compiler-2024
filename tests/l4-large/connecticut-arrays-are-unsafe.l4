@@ -1,0 +1,18 @@
+//test memerror
+
+/* This function performs a linear search through an array to find the first
+ * index at which the value is its input.
+ */
+int first_index_of(int y, int[] arr) {
+	int i = 0;
+	for(;arr[i] != y; i++) {}
+	return i;
+}
+
+int main() {
+	int[] arr = alloc_array(int, 10);
+	for(int i = 0; i < 10; i++) {
+		arr[i] = 13 - i;
+	}
+	return first_index_of(3, arr);
+}

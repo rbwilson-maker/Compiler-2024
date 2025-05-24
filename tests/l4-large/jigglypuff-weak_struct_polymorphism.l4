@@ -1,0 +1,23 @@
+//test return 0
+
+/* Weak Struct Polymorphism Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Sunday, October 25, 2015 at 11:58:12 PM EDT
+ *
+ * Tests that the language permits a weak version of polymorphism for structs.
+ * We can pass a struct pointer of a (previously) undeclared/undefined struct
+ * type to a function, and use it as long as the fields are not reference, or
+ * the underlying size is not needed.
+ */
+
+int coerce_null(struct s *x)
+{
+    return (x == NULL) ? 0 : -555;
+}
+
+int main()
+{
+    return coerce_null(NULL);
+}

@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+  int typedef = 62;
+  int void = 27;
+  int x = 30;
+  return x * typedef + void;
+}

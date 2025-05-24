@@ -1,0 +1,13 @@
+//test return 25
+// Simple double loop program
+int main() {
+    int a = 5;
+    int b = 0;
+ 
+    for(int i = 0; i < a; i++) {
+        for(int j = 0; j < a; j++) {
+            b += 1;
+        }
+    }
+    return b;
+}

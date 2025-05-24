@@ -1,0 +1,27 @@
+//test return 0
+bool odd(int x);
+
+bool even(int x) {
+    if (x == 0) return true;
+    return odd(x - 1);
+}
+
+bool odd(int x) {
+    if (x == 0) return false;
+    return even(x - 1);
+}
+
+int main() {
+    int result = 0;
+    for (int i = 1; i <= 100; i++) {
+        if (even(i)) {
+            assert(!odd(i));
+            result += 1;
+        } else {
+            assert(odd(i));
+            result -= 1;
+        }
+    }
+    return result;
+}
+

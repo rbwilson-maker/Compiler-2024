@@ -1,0 +1,16 @@
+//test return 42
+int main() {
+    
+    int a = 5;
+    int b = 5;
+    int c = 2;
+    int d = 9;
+    a += b;
+    b += a;
+    b *= c;
+    b -= d;
+    b *= c * 2;
+    b /= c;
+    return b;
+
+}

@@ -1,0 +1,17 @@
+//test return 500
+
+void self2(int x, int y) {
+  if (y == 0)
+    x;
+  else
+    self2(x, y - 1);
+}
+
+void self1(int x, int y) {
+  self2(x, y);
+}
+
+int main() {
+  self1(500, 5);
+  return 500;
+}

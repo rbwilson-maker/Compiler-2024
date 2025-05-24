@@ -1,0 +1,14 @@
+//test return 100
+// nested typedef checks
+
+typedef int num1;
+typedef num1 num2;
+typedef num2 num;
+
+int add(num a, num b) {
+    return a + b;
+}
+
+int main() {
+    return add(1, 99);
+}

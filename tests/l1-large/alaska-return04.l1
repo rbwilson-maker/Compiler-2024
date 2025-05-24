@@ -1,0 +1,23 @@
+//test return -557218733
+int main() {
+    int a = 12;
+    int b = a;
+    int c = 1234;
+    int d = 8123;
+    int e = 11142;
+    int f = 0x1323;
+    int g = 999;
+    int h = 0xdeadbeef;
+    int i = 12385;
+    int j = f + e;
+    int k = a / a;
+    int l = 881075;
+    int m = h - l;
+    int n = l - h;
+    int o = m / n;
+    int p = l % h;
+    int q = e - d - a;
+    int r = k / j;
+    return a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q + r;
+}
+

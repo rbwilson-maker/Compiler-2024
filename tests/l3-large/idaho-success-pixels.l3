@@ -1,0 +1,34 @@
+//test return 0
+typedef int pixel;
+
+int get_red(pixel p) {
+  return (p >> 16) & 0xFF;
+}
+
+int get_green(pixel p) {
+  return (p >> 8) & 0xFF;
+}
+
+int get_blue(pixel p) {
+  return p & 0xFF;
+}
+
+int get_alpha(pixel p) {
+  return (p >> 24) & 0xFF;
+}
+
+pixel make_pixel(int a, int r, int g, int b) {
+  return (a << 24) | (r << 16) | (g << 8) | b;
+}
+
+pixel avg_color(pixel p) {
+  int avg = (get_red(p) + get_blue(p) + get_green(p)) / 3;
+  p = make_pixel(get_alpha(p), avg, avg, avg);
+  return p;
+}
+
+int main() {
+  pixel p = make_pixel(0xFF, 0xAB, 0xCD, 0xEF);
+  assert(avg_color(p) == make_pixel(255, 205, 205, 205));
+  return 0;
+}

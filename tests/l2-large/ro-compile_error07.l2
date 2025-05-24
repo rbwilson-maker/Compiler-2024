@@ -1,0 +1,15 @@
+//test error
+// Variable defined in all branches
+
+int main() {
+  int val = 1;
+  int ans;
+
+  if (val == 1) {
+    ans = 10;
+  } else {
+    val *= 20;
+  }
+
+  return ans;
+}

@@ -1,0 +1,30 @@
+//test return 4
+
+bool fequal(fpt x, fpt y) {
+    return !fless(x, y) && !fless(y, x);
+}
+
+// Computes square root, rounded, with a very bad algorithm
+fpt sqrt(fpt x) {
+    assert(!fless(x, itof(0)));
+
+    int try;
+    for (try = 0; fless(itof(try*try), x); try++) {
+
+    }
+
+    if (fequal(itof(try * try), x)) {
+        return itof(try);
+    }
+
+    fpt f = itof(try - 1);
+    fpt incr = fdiv(itof(1), itof(1000));
+    for (; fless(fmul(f, f), x); f = fadd(f, incr)) {
+
+    }
+    return f;
+}
+
+int main() {
+    return ftoi(sqrt(itof(20)));
+}

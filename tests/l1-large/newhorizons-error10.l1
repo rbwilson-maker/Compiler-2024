@@ -1,0 +1,6 @@
+//test error 
+//return before initializing 
+int main () {
+    return x; 
+    int x = 1;
+}

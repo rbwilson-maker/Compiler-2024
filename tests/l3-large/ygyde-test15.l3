@@ -1,0 +1,23 @@
+//test div-by-zero
+
+// testing multiple recursions
+
+// simple double recursion call to test multiple invocations
+int search(int val, int key) {
+    if (val == key) {
+        return key;
+    }
+    if (val < key) {
+        return val;
+    }
+    int res1 = search(val / 2, key);
+    int res2 = search(val - val / 2, key);
+    // I know this is logically not tree traversal, but still.
+    return res1;
+}
+
+int main() {
+    int val = 0;
+    int key = 0;
+    return 1 / search(val, key);
+}

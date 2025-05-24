@@ -1,0 +1,30 @@
+//test return 0
+
+/**
+ * @brief Ensures that the compiler uses movl and movq appropriately when
+ * writing to memory.
+ *
+ * Kevin Geng, Team Barsoomian
+ * 15-411 Fall 2020
+ */
+
+void check_movq() {
+  dub x = ddiv(itod(1), itod(0));
+  dub[] arr = alloc_array(dub, 1);
+  arr[0] = x;
+  assert(arr[0] == x);
+}
+
+void check_movl() {
+  int[] arr = alloc_array(int, 2);
+  arr[1] = 0x1234;
+  arr[0] = 0x5678;
+  assert(arr[1] == 0x1234);
+  assert(arr[0] == 0x5678);
+}
+
+int main() {
+  check_movq();
+  check_movl();
+  return 0;
+}

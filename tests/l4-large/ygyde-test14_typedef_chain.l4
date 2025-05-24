@@ -1,0 +1,50 @@
+//test return 4
+
+// typedef chain
+// stresses the typechecker
+
+struct foo {
+    fpt val;
+};
+
+typedef struct foo foo1;
+typedef foo1 foo2;
+typedef foo2 foo3;
+typedef foo3 foo4;
+typedef foo4 foo5;
+typedef foo5 foo6;
+typedef foo6 foo7;
+typedef foo7 foo8;
+typedef foo8 foo9;
+typedef foo9 foo10;
+typedef foo10 foo11;
+typedef foo11 foo12;
+typedef foo12 foo13;
+typedef foo13 foo14;
+typedef foo14 foo15;
+
+struct beats1 {
+    foo15 val;
+};
+typedef struct beats1 foo16;
+typedef foo16 foo17;
+typedef foo17 foo18;
+typedef foo18 foo19;
+typedef foo19 foo20;
+typedef foo20 foo21;
+typedef foo21 foo22;
+typedef foo22 foo23;
+typedef foo23 foo24;
+
+int main() {
+    foo3 *x1 = alloc(foo3);
+    foo12 *x2 = alloc(foo12);
+    foo15 *res = alloc(foo15);
+    foo24 *res2 = alloc(foo24);
+    x1->val = itof(2);
+    x2->val = itof(3);
+    res->val = fdiv(x1->val, x2->val);
+    res2->val.val = fmul(res->val, itof(6));
+    int res3 = ftoi(res2->val.val);
+    return res3;
+}

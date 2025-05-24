@@ -1,0 +1,8 @@
+//test return 3
+int main()
+{
+  int a = 1;
+  int b;
+  for (a;a<3;a++) {a+=a;}
+  return a;
+}

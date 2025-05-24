@@ -1,0 +1,122 @@
+//target 5
+[
+ {
+  "Uses": [], 
+  "Defines": [ "%t34" ],
+  "Live_out": [ "%t34" ],
+  "Move": false,
+  "Line": 0
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t37" ],
+  "Live_out": [ "%t34", "%t37" ],
+  "Move": false,
+  "Line": 1
+ },
+ {
+  "Uses": [ "%t34", "%t37" ], 
+  "Defines": [ "%t38" ],
+  "Live_out": [ "%t38" ],
+  "Move": false,
+  "Line": 2
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t41" ],
+  "Live_out": [ "%t41", "%t38" ],
+  "Move": false,
+  "Line": 3
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t44" ],
+  "Live_out": [ "%t44", "%t41", "%t38" ],
+  "Move": false,
+  "Line": 4
+ },
+ {
+  "Uses": [ "%t44", "%t41" ], 
+  "Defines": [ "%t45" ],
+  "Live_out": [ "%t45", "%t38" ],
+  "Move": false,
+  "Line": 5
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t48" ],
+  "Live_out": [ "%t48", "%t45", "%t38" ],
+  "Move": false,
+  "Line": 6
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t51" ],
+  "Live_out": [ "%t51", "%t48", "%t45", "%t38" ],
+  "Move": false,
+  "Line": 7
+ },
+ {
+  "Uses": [ "%t48", "%t51" ], 
+  "Defines": [ "%t52" ],
+  "Live_out": [ "%t52", "%t45", "%t38" ],
+  "Move": false,
+  "Line": 8
+ },
+ {
+  "Uses": [ "%t52", "%t45" ], 
+  "Defines": [ "%t53" ],
+  "Live_out": [ "%t53", "%t38" ],
+  "Move": false,
+  "Line": 9
+ },
+ {
+  "Uses": [ "%t53", "%t38" ], 
+  "Defines": [ "%t54" ],
+  "Live_out": [ "%t54" ],
+  "Move": false,
+  "Line": 10
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t57" ],
+  "Live_out": [ "%t54", "%t57" ],
+  "Move": false,
+  "Line": 11
+ },
+ {
+  "Uses": [], 
+  "Defines": [ "%t60" ],
+  "Live_out": [ "%t60", "%t54", "%t57" ],
+  "Move": false,
+  "Line": 12
+ },
+ {
+  "Uses": [ "%t60", "%t57" ], 
+  "Defines": [ "%t61" ],
+  "Live_out": [ "%t61", "%t54" ],
+  "Move": false,
+  "Line": 13
+ },
+ {
+  "Uses": [ "%t54", "%t61" ], 
+  "Defines": [ "%t62" ],
+  "Live_out": [ "%t62" ],
+  "Move": false,
+  "Line": 14
+ },
+ {
+  "Uses": [ "%t62" ], 
+  "Defines": [ "%eax" ],
+  "Live_out": [],
+  "Move": true,
+  "Line": 15
+ },
+ {
+  "Uses": [], 
+  "Defines": [],
+  "Live_out": [],
+  "Move": false,
+  "Line": 16
+ }
+]

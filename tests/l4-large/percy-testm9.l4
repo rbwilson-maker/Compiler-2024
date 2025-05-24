@@ -1,0 +1,12 @@
+//test memerror
+
+int main(){
+	int* ptr = NULL;
+	int* ptr2 = alloc(int);
+	int x = 0;
+	while(x >= 0){
+		x++;
+		*ptr;
+	}
+	return 0;
+}

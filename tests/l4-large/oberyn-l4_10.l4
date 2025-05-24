@@ -1,0 +1,57 @@
+//test return 0
+// copious typedef's
+
+typedef int i;
+typedef int n;
+typedef int t;
+typedef bool b;
+typedef bool o;
+typedef bool l;
+
+struct stuff {
+  i j;
+  n m;
+  t s;
+  b a;
+  o p;
+  l k;
+};
+typedef struct stuff styuff;
+typedef styuff[] styuffs;
+typedef styuffs[] styuffss;
+typedef styuffss* styuffssstve;
+
+int main() {
+  styuffssstve s = alloc(styuffss);
+  *s = alloc_array(styuffs,2);
+  (*s)[0] = alloc_array(styuff,2);
+  (*s)[1] = alloc_array(styuff,2);
+
+  (*s)[0][0].j = 1;
+  (*s)[0][0].m = 1;
+  (*s)[0][0].s = 1;
+  (*s)[0][0].a = true;
+  (*s)[0][0].p = true;
+  (*s)[0][0].k = true;
+  (*s)[0][1].j = 1;
+  (*s)[0][1].m = 1;
+  (*s)[0][1].s = 1;
+  (*s)[0][1].a = true;
+  (*s)[0][1].p = true;
+  (*s)[0][1].k = true;
+  (*s)[1][0].j = 1;
+  (*s)[1][0].m = 1;
+  (*s)[1][0].s = 1;
+  (*s)[1][0].a = true;
+  (*s)[1][0].p = true;
+  (*s)[1][0].k = true;
+  (*s)[1][1].j = 1;
+  (*s)[1][1].m = 1;
+  (*s)[1][1].s = 1;
+  (*s)[1][1].a = true;
+  (*s)[1][1].p = true;
+  (*s)[1][1].k = true;
+
+  return 0;
+}
+

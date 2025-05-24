@@ -1,0 +1,18 @@
+//test return 6
+
+struct inner {
+   int z;
+};
+
+struct first {
+	struct inner* y;
+};
+
+int main() {
+	struct first* x = alloc(struct first);
+	struct inner* i = alloc(struct inner);
+	i->z = 6;
+	x->y = i;
+
+	return x -> y -> z;
+}

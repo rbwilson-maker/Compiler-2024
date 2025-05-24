@@ -1,0 +1,26 @@
+//test return 7607
+int sqroot(int x){
+  int lo = 0;
+  int hi = 10000;
+  while(hi-lo > 1){
+    int mid = (hi+lo)>>1;
+    if(mid*mid <= x){
+      lo = mid;
+    }else
+      hi = mid;
+  }
+  return lo;
+}
+
+int nth_prime(int next, int val){
+  for(int i = 2; i<sqroot(val); i++){
+    if(val % i == 0)
+      return nth_prime(next, val+1);
+  }
+  if(next == 1)
+    return val;
+  return nth_prime(next-1, val+1);
+}
+int main(){
+  return nth_prime(1000, 2);
+}

@@ -1,0 +1,12 @@
+//test typecheck
+
+// apparently we need header files.
+// this is how i guess we could check the ints are actually 4 bytes.
+
+int main() {
+	int x = 0;
+	int* x_ptr = addressOf(x);
+	assign(increment(x_ptr, 4), 0xFFFFFFFF);
+	assert(x == 0);
+	return -1;
+}

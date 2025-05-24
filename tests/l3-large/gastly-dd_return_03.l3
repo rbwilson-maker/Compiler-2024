@@ -1,0 +1,13 @@
+//test return 625
+typedef int a;
+typedef a b;
+typedef b c;
+typedef c d;
+
+d e(a x, b y, c z, d w) {
+  return x*y*z*w;
+}
+
+int main() {
+    return e(5, 5, 5, 5);
+}

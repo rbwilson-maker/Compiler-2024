@@ -1,0 +1,35 @@
+//test return 1
+
+typedef int dog;
+typedef dog cat;
+typedef bool fish;
+typedef fish shark;
+
+fish countFish(shark hasShark) {
+  return !hasShark;
+}
+
+shark countShark(dog numDogs, cat numCats) {
+  if (numDogs + numCats >= 10) {
+    return true;
+  }
+  return false;
+}
+
+dog countDog() {
+  return 100 >> 2;
+}
+
+cat countCat() {
+  return countDog() % 3 + 1;
+}
+
+int main () {
+  dog numDogs = countDog();
+  cat numCats = countCat();
+  if (countFish(countShark(numDogs, numCats))) {
+    return 1/0; // should never be reached
+  } else {
+    return 1; 
+  }
+}

@@ -1,0 +1,15 @@
+//test return 0
+//the void type
+
+void fun(int x) {
+     int y = x;
+     if (true) {
+        return;
+     } // void does not require an explicit return 
+       // statement at the end of each control flow
+}
+
+int main() {
+    fun(3);
+    return 0;
+}

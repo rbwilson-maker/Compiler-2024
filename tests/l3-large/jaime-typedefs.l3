@@ -1,0 +1,15 @@
+//test return 2
+
+typedef int newt;
+
+int add(newt x, newt y)
+{
+  return x + y;
+}
+
+int main()
+{
+  newt x = 1;
+  newt y = 1;
+  return add(1, 1);
+}

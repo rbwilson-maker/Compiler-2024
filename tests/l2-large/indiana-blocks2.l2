@@ -1,0 +1,19 @@
+//test error
+
+//scoping issues with blocks
+
+int main(){
+    {int x = 2;
+     x = x + 1;
+     return x;}
+
+    {int y = 2;
+     y = y + 1;
+     return y;}
+
+    {int y = x;
+     y = y + x;
+     return y;}
+
+
+}

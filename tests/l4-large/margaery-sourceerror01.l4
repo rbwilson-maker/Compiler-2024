@@ -1,0 +1,12 @@
+//test error
+
+struct point {
+    int x;
+    bool x;
+};
+
+int main() {
+    struct point* p = alloc(struct point);
+
+    return 0;
+}

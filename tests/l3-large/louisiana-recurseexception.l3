@@ -1,0 +1,11 @@
+//test div-by-zero
+// shift value too large
+
+int excn(int toshift, int shift){
+    return excn(toshift << shift, shift + 1);
+}
+
+int main(){
+    return excn(1,1);
+}
+

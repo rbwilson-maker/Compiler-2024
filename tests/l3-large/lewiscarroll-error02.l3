@@ -1,0 +1,14 @@
+//test error
+
+void another (int x, int y) {
+	x += 4;
+	a /= 0;
+	y += 3;
+	return;
+}
+
+int main () {
+	int a = 0;
+	another (10, 8);
+	return a;
+}

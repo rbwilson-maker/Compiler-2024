@@ -1,0 +1,23 @@
+//test error 
+
+typedef int f;
+typedef bool g;
+
+f fff(f ff) {
+    return ff;
+}
+
+f main() {
+    f ffgg = 0;
+    g ggff = false;
+    f fg = 0;
+    g gf = true;
+    if (ggff || gf) {
+        f fgfg = fg >> ffgg << fg;
+    }
+    return f(ggff && gf ? ffgg + fg / ffgg : fgfg);
+}
+
+g ggg(g gg) {
+    return g g;
+}

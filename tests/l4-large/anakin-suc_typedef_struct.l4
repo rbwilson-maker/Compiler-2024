@@ -1,0 +1,14 @@
+//test return 1
+typedef struct s s;
+struct s {
+    int x;
+    int y;
+};
+int main() {
+    s * x;
+    x = alloc(s);
+    x->x = 2;
+    struct s[] arr = alloc_array(s, 4);
+    arr[x->x].y = 1;
+    return arr[2].y;
+}

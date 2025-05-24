@@ -1,0 +1,58 @@
+//test return 0
+
+struct Node {
+    int value;
+    struct Node* left;
+    struct Node* right;
+};
+
+typedef struct Node tree;
+
+// sum all node values
+int sum(tree* root) {
+    if (root == NULL) {
+       return 0;
+    }
+    int s = root->value;
+    s += sum(root->left);
+    s += sum(root->right);
+    return s;
+}
+
+// return true if v is found in bst
+bool found(tree* root, int v) {
+     if (root == NULL) {
+         return false;
+     }
+     if (root->value == v) {
+         return true;
+     }
+     else {
+        if (root->value > v) {
+            return found(root->right, v);
+        }
+        else {
+            return found(root->left, v);
+        }
+     }
+}
+
+int main() {
+    // make a binary search tree
+    tree* root = alloc(struct Node);
+    root->value = 200;
+    root->left = alloc(struct Node);
+    root->right = alloc(struct Node);
+    root->left->value = 100;
+    root->right->value = 300;
+    root->left->left = alloc(struct Node);
+    root->left->right = alloc(tree);
+    root->left->right->value = 150;
+
+    if (found(root, 120)) {
+        return sum(root);
+    }
+    else {
+        return 0;
+    }
+}

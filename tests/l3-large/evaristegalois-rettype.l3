@@ -1,0 +1,11 @@
+//test error
+
+bool gt_ten(int check) {
+    return check > 10;
+}
+
+int main() {
+
+    return gt_ten(20);
+
+}

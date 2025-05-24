@@ -1,0 +1,21 @@
+//test return 1596939835
+
+// Tests multiple loop types nested
+
+int main(){
+
+  int a = 0;
+  int b = 0;
+
+  for (int i = 100; i > 0; i--){
+    int j = i;
+    while (j > -5){
+      a = a + b + j;
+      b = b + a + i;
+      j--;
+    }
+  }
+
+  return a;
+
+}

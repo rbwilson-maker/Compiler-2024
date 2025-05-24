@@ -1,0 +1,12 @@
+//test return ~1412567295
+// test good hex
+int main() {
+	int x;
+	int y;
+	int z;
+
+	x = 0xabcdef01; 
+	y = 0xABCDEF01;
+	z = 0xaBcDeF01;
+	return x;
+}

@@ -1,0 +1,9 @@
+//test return -1
+int main()
+{
+
+  int a = -2147483648;
+  int b = a-1;
+  int res = a + b;
+  return res;
+}

@@ -1,0 +1,15 @@
+//test typecheck
+//simple sum function
+
+int main() {
+    int sum1 = sum(0,10);
+    assert(sum1 == 55);
+
+    int sum2 = sum(10,10);
+    assert(sum2 == 10);
+
+    int sum3 = sum(10,0);
+    assert(sum3 == 55);
+
+    return 0;
+}

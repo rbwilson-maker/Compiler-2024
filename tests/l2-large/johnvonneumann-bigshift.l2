@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main() {
+	int x = 0;
+	x = x << 500;
+	return x;
+}

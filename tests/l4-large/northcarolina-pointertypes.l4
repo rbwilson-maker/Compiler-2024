@@ -1,0 +1,17 @@
+//test error
+
+//Checks that typechecking actually checks what a pointer points to, and
+//not that it's just a pointer.
+
+int main() {
+  int x = 0;
+  int *y = alloc(int);
+  int **z = alloc(int*);
+  bool *a = alloc(bool);
+  bool **b = alloc(bool*);
+  z = b;
+  a = b;
+  y = a;
+  y = x;
+  return 0;
+}

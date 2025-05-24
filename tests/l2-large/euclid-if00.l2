@@ -1,0 +1,13 @@
+//test return 10
+//testing if statements and bools
+
+int main(){
+  int x = 10;
+  int y = 20;
+  bool path = true;
+  if (path){
+    return x;
+  } else{
+    return y;
+  }
+}

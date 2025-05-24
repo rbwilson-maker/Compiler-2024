@@ -1,0 +1,22 @@
+//test return 5
+int fn_1(int a);
+  
+int fn_2(int a){
+  if(a == 5) {
+    return a;
+  }
+  return fn_1(a+1);
+}
+
+int fn_1(int a) {
+  if(a == 6) {
+    return a;
+  }
+  return fn_2(a+2);
+
+}
+
+int main() {
+  int a = 0;
+  return fn_1(a);
+}

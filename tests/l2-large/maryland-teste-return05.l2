@@ -1,0 +1,16 @@
+//test return 18688
+int main() {
+  int a;
+  int b;
+  int c = 9000;
+  int d;
+  int e;
+  int f;
+
+  for(a = 73; a < c; d++) {
+    d = 4;
+    a = a * d;
+  }
+
+  return a;
+}

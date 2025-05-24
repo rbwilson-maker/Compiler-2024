@@ -1,0 +1,18 @@
+//test return 2
+
+int main()
+{
+  int x = -100;
+  bool b = (x == 2);
+  
+  while (b != true)
+  {
+    while (x < 2)
+      x += 5;
+    while (x > 2)
+      x -= 4;
+    b = (x == 2);
+  }
+
+  return x;
+}

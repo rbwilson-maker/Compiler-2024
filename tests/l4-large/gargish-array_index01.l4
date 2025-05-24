@@ -1,0 +1,11 @@
+//test memerror
+
+int main() {
+    int[] a;
+    int sum = 0;
+    a = alloc_array(int, 42);    
+    for (int i = 1; i <= 42; i++) {
+        sum += a[i];
+    }
+    return sum;    
+}

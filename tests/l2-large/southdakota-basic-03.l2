@@ -1,0 +1,5 @@
+//test return 488
+
+int main() {
+  return (3 & 6) + (18 | 36) + (144 ^ 288);
+}

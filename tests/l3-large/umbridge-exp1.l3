@@ -1,0 +1,17 @@
+//test div-by-zero
+
+typedef bool boolean;
+typedef int integer;
+
+int main()
+{
+    boolean b = true;
+    assert(b);
+    int sum = 0;
+    int N = 100;
+    for (integer x = N; x >=0; x--)
+    {
+        sum += N/x;
+    }
+    return sum;
+}

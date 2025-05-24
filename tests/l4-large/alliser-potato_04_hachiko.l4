@@ -1,0 +1,38 @@
+//test return 5397355
+
+struct dog {
+    int good_boy_points;
+    bool alive;
+};
+typedef struct dog* dog;
+
+struct human {
+    bool alive;
+    bool came_back_home;
+};
+typedef struct human* human;
+
+void wait(dog d, int day) {
+    d->good_boy_points += day;
+    if (day >= 9 * 365) d->alive = false; // :(
+}
+
+int main() {
+    dog hachiko = alloc(struct dog);
+    hachiko->good_boy_points = 100;
+    hachiko->alive = true;
+
+    human professor = alloc(struct human);
+    professor->alive = false;
+    professor->came_back_home = false;
+
+    int day = 0;
+    while (!(professor->came_back_home) && hachiko->alive)
+    {
+        wait(hachiko, day);
+        day++;
+    }
+
+    return hachiko->good_boy_points;
+
+}

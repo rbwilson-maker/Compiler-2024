@@ -1,0 +1,71 @@
+//test return 7
+// DFS on a whopping 3 nodes
+
+/* alias for sets */
+typedef int bitset;
+
+bitset newSet() {
+    return 0;
+}
+
+int size(bitset set) {
+    int currNum = set;
+    int size = 0;
+    for(int i = 0; i < 32; i++) {
+        size += (0x1 & currNum);
+        currNum = currNum >> 1;
+    }
+    return size;
+}
+
+bitset insert(bitset set, int i) {
+    return set | (0x1 << i);
+}
+
+bool contains(bitset set, int i) {
+    return (((set >> i) & 0x1) == 1);
+}
+
+int dfs(bitset node0, bitset node1, bitset node2, bitset visited, int src, int size) {
+    bitset adjlist;
+    if(src == 0) {
+        adjlist = node0;
+    } else if(src == 1) {
+        adjlist = node1;
+    } else {
+        adjlist = node2;
+    }
+
+    visited = insert(visited, src);
+    for(int i = 0; i < size; i++) {
+        // if it is a neighbor but not visited
+        if(contains(adjlist, i) && !contains(visited, i)) {
+            visited = dfs(node0, node1, node2, visited, i, size);
+        }
+    }
+    return visited;
+}
+
+int main() {
+    // define size of this graph
+    int size = 3;
+
+    // define empty adjlists
+    bitset adj0 = newSet();
+    bitset adj1 = newSet();
+    bitset adj2 = newSet();
+
+    // add edges
+    adj0 = insert(adj0, 1);
+    adj0 = insert(adj0, 2);
+    adj1 = insert(adj1, 0);
+    adj1 = insert(adj1, 2);
+    adj2 = insert(adj2, 0);
+    adj2 = insert(adj2, 1);
+
+    bitset visited = newSet();
+    visited = dfs(adj0, adj1, adj2, visited, 0, 3);
+
+    // last 3 nodes should be set in visited
+    return visited;
+}

@@ -1,0 +1,29 @@
+//test return 559038737
+// Wackety stack
+
+// How are you handling  stack args with funky sizes?
+void foo(int a, int b, int c, int d, int e, int f, int g, int *h, int i, int j) {
+    // I sure hope the pointer didn't clobber anything
+    assert(a == 12);
+    assert(b == 34);
+    assert(c == 56);
+    assert(d == 78);
+    assert(e == 90);
+    assert(f == 24);
+    assert(g == 68);
+    assert(i ==  3);
+    assert(j == 69);
+
+    *h = -0xDEADBEEF;
+
+    return;
+}
+
+
+int main() {
+    int* x = alloc(int);
+
+    foo(12, 34, 56, 78, 90, 24, 68, x,  3, 69);
+    
+    return *x;
+}

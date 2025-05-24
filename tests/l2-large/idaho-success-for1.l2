@@ -1,0 +1,12 @@
+//test return 42
+int main() {
+  int x = 0;
+  for (; x < 42; x += 2) {
+    if (x % 3 == 0) {
+      x++;
+    } else {
+      x--;
+    }
+  }
+  return x;
+}

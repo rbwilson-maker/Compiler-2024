@@ -1,0 +1,16 @@
+//test error
+int main() {
+    int x;
+    int y;
+    int z;
+    // This should not be allowed since struct is a reserved keyword
+    int struct;
+    z = 0;
+    y = z * 5 + 4;
+    x = y + z - 1;
+    struct = x * x * y;
+    while(struct > 0) {
+        struct--;
+    }
+    return struct;
+}

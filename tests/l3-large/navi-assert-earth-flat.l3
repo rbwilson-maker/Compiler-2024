@@ -1,0 +1,20 @@
+//test abort
+
+int main() {
+	assert(1 < 2);
+	assert(2 < 3);
+	assert(3 < 4);
+	assert(4 < 5);
+	assert(5 < 5);
+	assert(1 < 2);
+	assert(1 << 4 == 16);
+	assert(true == true);
+	assert(6 < 7);
+	assert(2 + 2 == 4);
+
+	assert(6 < 10);
+	int earth = 1;
+	int flat = 2;
+	assert(earth == flat);
+	return 2;
+}

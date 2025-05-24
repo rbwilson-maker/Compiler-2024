@@ -1,0 +1,8 @@
+//test div-by-zero
+// Shifting amount out-of-bound
+
+int main() {
+  int x = 0xdeadbeef;
+  int y = x >> 33;
+  return y;
+}

@@ -1,0 +1,11 @@
+//test return -1920641054
+
+int main() { 
+   int x = 2;
+  for (int i = 1; i < 100000; i++) {
+    for (int j = 1; j < 1000; j++) {
+      x = x * i + 3;
+    }
+  }
+  return x;
+}

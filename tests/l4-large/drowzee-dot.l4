@@ -1,0 +1,15 @@
+//test return 1
+
+struct llama {
+  int humps;
+};
+
+int llama_humps(struct llama* l) {
+  return (*l).humps;
+}
+
+int main() {
+  struct llama* l = alloc(struct llama);
+  l->humps = 1;
+  return llama_humps(l);
+}

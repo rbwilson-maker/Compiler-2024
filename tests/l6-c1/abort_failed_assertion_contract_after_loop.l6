@@ -1,0 +1,14 @@
+//test abort
+
+int main() {
+    int n = 10;
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    //@ loop_invariant i <= n;
+    {
+        sum += 1;
+        // @assert i < n;
+    }
+    //@ assert sum < n;
+    return sum;
+}

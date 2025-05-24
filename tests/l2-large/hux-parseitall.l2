@@ -1,0 +1,24 @@
+//test return 0
+
+int main() {
+    int a = 0;
+    int b = 1;
+    for (; a < 5; a++)
+        b *= a;
+
+    (((((b))))) >>= 2;
+
+    (5 + 3) / 7;
+
+    while (b != 0)
+        b -= 5;
+
+    if (false) {
+        (b + (a + b));
+    }
+
+    if (true)
+        ((a));
+
+    return 0;
+}

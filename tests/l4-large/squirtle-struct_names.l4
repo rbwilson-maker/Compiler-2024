@@ -1,0 +1,26 @@
+//test return 5
+
+/* checks typedefs of structs, and proper ordering */
+
+typedef struct lol lol2;
+
+struct lol {
+  lol2 * lol;
+  int value;
+};
+
+struct lol * lol(struct lol * wow) {
+  wow->lol = alloc(struct lol);
+  wow->lol->value = 5;
+  return wow->lol;
+}
+
+int main () {
+  lol2 * wow = alloc(struct lol);
+  wow->lol = alloc(lol2);
+  wow->lol->lol = alloc(struct lol);
+  wow->lol->lol->value = 4;
+  assert(lol(wow->lol) == wow->lol->lol);
+  assert(wow->lol->lol != lol(wow->lol));
+  return wow->lol->lol->value;
+}

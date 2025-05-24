@@ -1,0 +1,22 @@
+//test div-by-zero
+
+struct rainbow {
+  int red;
+  int* orange;
+  int yellow;
+  int green;	
+  int blue;
+  int* indigo;
+  bool purple;
+};
+
+typedef struct rainbow* rainbow;
+
+int main() {
+  rainbow mine = alloc(struct rainbow);
+  mine->red = 1;
+  mine->blue = 10;
+  mine->green = 100;
+  assert(mine->orange == mine->indigo);
+  return (!mine->purple) ? (1 / mine->yellow) : (1 / mine->red);
+}

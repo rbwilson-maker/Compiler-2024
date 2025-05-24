@@ -1,0 +1,28 @@
+//test return 17
+
+int main() {
+  bool w;
+  int x = 4;
+  int y = 16;
+  int z;
+
+  if (x <= y)
+  w = true;
+  else
+  w = false;
+
+  { z = 0; }
+
+  if (x < 2) {
+    return 0;
+  }
+
+  else if (x == 4) {
+    if (true) { y++; }
+    if (!(false || true && false || true)) { return 1; }
+    else { return y; }
+  }
+
+  else
+    return w ? 2 + z : z + 2;
+}

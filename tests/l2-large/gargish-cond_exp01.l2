@@ -1,0 +1,13 @@
+//test return 2
+
+int main() {
+    int a = 3;    
+    bool flag = true;
+    int result = 0;
+
+    for (int i = 1; i < a; i++) {
+        result = flag ? result + i : i;
+        flag = !flag;
+    }
+    return result;
+}

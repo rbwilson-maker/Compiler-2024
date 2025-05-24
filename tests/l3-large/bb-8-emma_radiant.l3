@@ -1,0 +1,18 @@
+//test return 5
+
+typedef int bubble;
+
+bubble tea(){
+	bubble gum = 4;
+	bubble bath = 7;
+	assert(gum != bath);
+	return gum > bath ?  gum : bath;
+}
+
+int main() {
+	bubble beer = 5;
+	bool ean = false;
+	tea();
+	return ean ? beer : beer;
+}
+

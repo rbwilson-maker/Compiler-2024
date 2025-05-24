@@ -1,0 +1,30 @@
+//test return 15
+
+int increase(int* p) {
+  (*p)++;
+  return *p;
+}
+
+int sum(int[] A, int n) {
+  int sum = 0;
+  for (int i = 0; i < n; i++) {
+    sum += A[i];
+  }
+  return sum;
+}
+
+int main() {
+  int[] A = alloc_array(int, 6);
+  int* p = alloc(int);
+  *p = -1;
+
+  A[increase(p)] += 0;
+  A[increase(p)] += 1;
+  A[increase(p)] += 2;
+  A[increase(p)] += 3;
+  A[increase(p)] += 4;
+  A[increase(p)] += 5;
+
+  assert(*p == 5);
+  return sum(A, 6);
+}

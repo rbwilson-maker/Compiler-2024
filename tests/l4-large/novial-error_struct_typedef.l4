@@ -1,0 +1,10 @@
+//test error
+// Fail on struct declaration in typedef
+
+typedef struct foo { int a; int b; } bar;
+
+
+int main() {
+  bar var1;
+  return -29384;
+}

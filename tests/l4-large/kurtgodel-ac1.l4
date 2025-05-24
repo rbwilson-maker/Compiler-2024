@@ -1,0 +1,14 @@
+//test return 4
+// tests lexer hack with **
+
+typedef int t;
+
+int main() {
+    int *a = alloc(int);
+    *a = 2;
+    int[] b = alloc_array(int, 1);
+    b[0] = 2;
+    int c = b[0] ** a; // exponentiation!?
+    t ** d;
+    return c;
+}

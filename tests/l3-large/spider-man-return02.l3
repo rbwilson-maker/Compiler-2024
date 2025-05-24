@@ -1,0 +1,107 @@
+//test return 357378594
+
+fpt nth_cat(int n) {
+    fpt prod = itof(1);
+    for (int k = 2; k <= n; k+=1) {
+        prod = fmul(prod, fdiv(itof(n + k), itof(k)));
+    }
+    return prod;
+}
+
+fpt fiden(fpt x) {
+    return fmul(x, itof(1)) + itof(0);
+}
+
+int bloooooop(int n) {
+    return n - 3004;
+}
+
+int ssssss(int x) {
+    x >>= 2;
+    x <<= 2;
+    x -= 2;
+    x += 2;
+    x /= 2;
+    x *= 2;
+    return x;
+}
+
+bool asdf(bool x) {
+    assert(x);
+    return x ? x : x;
+}
+bool bsdf(bool x) {
+    assert(!x);
+    return x ? x : x;
+}
+bool csdf(bool x) {
+    return x ? x : x;
+}
+bool dsdf(bool x) {
+    return x ? x : x;
+}
+bool esdf(bool x) {
+    return x ? x : x;
+}
+
+int incr_27 (int num, int iters) {
+    if(iters == -1) {
+        return incr_27(num, 27);
+    } else {
+        if (iters == 0) {
+            return num;
+        } else {
+            return incr_27(num + 1, iters - 1);
+        }
+    }
+}
+
+int main() {
+    int c_9 = ftoi(nth_cat(ftoi(nth_cat(3)) * 2 - 1));
+    int c_4 = ftoi(nth_cat(3 * 2 - 2));
+    int c_5 = ftoi(nth_cat(3 * 2 - 1));
+    int x = 0;
+    int csum = 0;
+    int c_8 = 111111;
+    while (x <= 411) {
+        c_9 = fiden(c_9);
+        int c_6 = ftoi(nth_cat(3 * 2 - 0));
+        c_8 = ssssss(csum);
+        x += 1;
+        if (x <= 9 && x >= 2) {
+            csum += nth_cat(x);
+            csum -= (c_4 + c_5 + c_6);
+        }
+    }
+    if (csum >= c_8) {
+        return csum;
+    }
+
+    // Joey's code
+    int can = 0x1234;
+    int we = ~can;
+    assert(we < 0);
+    int reform = can << 4;
+    int the = reform + can;
+    int ottoman = -(the + we);
+    int empire = 0;
+    int done = can + we + reform + the + ottoman + empire;
+
+    int ff = incr_27(55, -1);
+    int hff = incr_27(0x55, 78);
+
+    assert(ff - 27 == 55);
+    assert(hff - 78 == 0x55);
+    int intmxpo = 2147483648;
+    int intmn = -2147483648;
+    int hehexd = 0x00001000; // one followed by zeros;
+    int position = 0;
+    while(hehexd != 0) {
+        position += 1;
+        hehexd <<= 1;
+    }
+    assert(position == 13);
+    assert(intmxpo == intmn);
+
+    return csum + done + intmxpo + intmn + (ff & hff) - position;
+}

@@ -1,0 +1,15 @@
+//test return 5
+
+// this tests basic branching recursion
+int recurse(int i, int count) {
+    if (i == 0) {
+        return count;
+    }
+    else {
+        return recurse(i - 1, count + 1);
+    }
+}
+
+int main() {
+    return recurse(5, 0);
+}

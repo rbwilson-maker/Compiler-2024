@@ -1,0 +1,31 @@
+//test div-by-zero
+/* not an lvalue */
+
+int f() {
+  return 1 + 2 + 3;
+}
+
+
+int main () {
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  f();
+  1/0;
+  return 0;
+}

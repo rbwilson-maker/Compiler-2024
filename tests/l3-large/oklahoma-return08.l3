@@ -1,0 +1,12 @@
+//test return 1
+//types are not abstract
+
+typedef int t;
+typedef int u;
+
+t f() { return 1; }
+u g() { return 1; }
+
+int main () {
+  return (f() == g() ? 1 : 0);
+}

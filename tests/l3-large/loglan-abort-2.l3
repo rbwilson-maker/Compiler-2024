@@ -1,0 +1,16 @@
+//test abort
+
+
+bool compiler(bool x) {
+  return !x;
+}
+
+bool my(bool x) {
+  return !!!x;
+}
+
+int main() {
+  bool works = false; 
+  assert(my(compiler(works)));
+  return 0;
+}

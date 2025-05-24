@@ -1,0 +1,11 @@
+//test return -11
+//unary op
+
+int main() {
+    int i = 3;
+
+    if (!(i == -3)) {
+       return ~10;
+    }
+    return 10;
+}

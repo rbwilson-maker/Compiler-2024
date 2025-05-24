@@ -1,0 +1,17 @@
+//test error
+
+typedef void noOne; 
+
+noOne myHeart(int nothing) {
+    
+}
+
+int main()
+{
+    int cool = 7;
+    int a;
+    {
+        a = myHeart(cool);
+    }
+    return 0;
+}

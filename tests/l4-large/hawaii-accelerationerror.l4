@@ -1,0 +1,34 @@
+//test return 196502250
+
+int main() {
+  int*[] errarray = alloc_array(int*, 500);
+
+  int g = 10;
+  int tt = 500;
+
+  int xfa = (g * tt * tt) / 2;
+
+  for(int nx = 1; nx <= 500; nx++) {
+    int t = 0;
+    int dt = tt / nx;
+    int x = 0;
+    int v = 0;
+
+    for (int n = 1; n <= nx; n++) {
+      x += v * dt;
+      v += g * dt;
+      t += dt;
+    }
+
+    errarray[nx - 1] = alloc(int);
+    *errarray[nx - 1] = x > xfa ? x - xfa : xfa - x;
+  }
+
+  int errsum = 0;
+  for(int i = 0; i < 500; i++) {
+    errsum += *errarray[i];
+  }
+
+  return errsum;
+}
+

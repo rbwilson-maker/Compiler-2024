@@ -1,0 +1,172 @@
+//test return 0
+/*
+ * Adapted from 15-122 Lecture Notes
+ */
+
+typedef struct ufs_header ufs;
+struct ufs_header {
+  int size;
+  int[] data;
+};
+
+typedef int size_t;
+
+/* ufs_elem(eqs, i) if i is a valid element in eqs */
+bool ufs_elem(ufs *eqs, int i) {
+  return eqs != NULL
+    && (0 <= i && i < eqs->size);
+}
+
+/* ufs_rep(eqs, i) if i is the representative of an equivalence class */
+bool ufs_rep(ufs *eqs, int i) {
+  return ufs_elem(eqs, i) 
+    && eqs->data[i] < 0;
+}
+
+bool is_ufs (ufs *eqs) {
+  if (eqs == NULL) return false;
+  if (eqs->size < 0) return false;
+  for (int i = 0; i < eqs->size; i++)
+    if (!(ufs_elem(eqs, eqs->data[i]) || ufs_rep(eqs, i)))
+      return false;
+  return true;
+}
+
+/* singletons(n) returns an eqs where each node
+ * [0..n) is in its own equivalence class
+ */
+ufs* singletons(int n) {
+  ufs *eqs = alloc(ufs);
+  eqs->data = alloc_array(int, n);
+
+  for (int i = 0; i < n; i++)
+    eqs->data[i] = -1;
+  eqs->size = n;
+
+  return eqs;
+}
+
+bool is_equiv(ufs *eqs, int i, int j) {
+  int i2 = i;
+  int j2 = j;
+  while (eqs->data[i2] >= 0) i2 = eqs->data[i2];
+  while (eqs->data[j2] >= 0) j2 = eqs->data[j2];
+  return i2 == j2;
+}
+
+/* ufs_find(eqs, i) finds the representative of the
+ * equivalence class of i
+ */
+int ufs_find(ufs *eqs, int i) {
+  int j = i;
+  while (eqs->data[j] >= 0) {
+    assert(is_equiv(eqs, i, j));
+    j = eqs->data[j];
+  }
+
+  assert(is_equiv(eqs, i, j));
+  assert(ufs_rep(eqs, j));
+
+  /* eqs->data[i] = j; weak path compression */
+  /* strong compression would redirect all intermediate notes to j */
+
+  assert(is_ufs(eqs));
+  assert(ufs_rep(eqs, j));
+  return j;
+}
+
+/* ufs_union(eqs, i, k) takes the union of equivalence
+ * classes of i and k
+ */
+void ufs_union(ufs *eqs, int i, int k) {
+  int[] A = eqs->data;
+  int irep = ufs_find(eqs, i);
+  int krep = ufs_find(eqs, k);
+  if (irep == krep) return;
+  if (A[irep] < A[krep]) {         /* i has greater depth */
+    A[krep] = irep;
+  } else if (A[krep] < A[irep]) {  /* k has greater depth */
+    A[irep] = krep;
+  } else {
+    A[krep] = irep;                /* direction is arbitrary */
+    A[irep]--;                     /* depth increases by 1 */
+  }
+
+  return;
+}
+
+typedef struct edge_info edge;
+struct edge_info {
+  int v;
+  int u;
+  int weight;
+};
+
+int node_name(int v) {
+  return v + 0x61;
+}
+
+// pre-sorted edge list
+edge*[] nine_edges() {
+  edge*[] result = alloc_array(edge*, 9);
+  for(int i = 0; i<9; i++) {
+    result[i] = alloc(edge);
+  }
+  result[0]->v = 0;
+  result[0]->u = 3;
+  result[0]->weight = 1;
+
+  result[1]->v = 4;
+  result[1]->u = 5;
+  result[1]->weight = 2;
+
+  result[2]->v = 2;
+  result[2]->u = 4;
+  result[2]->weight = 3;
+
+  result[3]->v = 4;
+  result[3]->u = 3;
+  result[3]->weight = 4;
+
+  result[4]->v = 3;
+  result[4]->u = 5;
+  result[4]->weight = 5;
+
+  result[5]->v = 2;
+  result[5]->u = 3;
+  result[5]->weight = 5;
+
+  result[6]->v = 0;
+  result[6]->u = 2;
+  result[6]->weight = 8;
+
+  result[7]->v = 0;
+  result[7]->u = 1;
+  result[7]->weight = 13;
+
+  result[8]->v = 1;
+  result[8]->u = 2;
+  result[8]->weight = 15;
+  return result;
+}
+
+int main () {
+  edge*[] edges = nine_edges();
+  ufs *eqs = singletons(6);
+  size_t num_edges = 0;
+  size_t next_edge = 0;
+  
+  while ( num_edges < 5 && next_edge < 9 ) {
+    edge* e = edges[next_edge];
+    if (ufs_find(eqs, e->v) != ufs_find(eqs, e->u) ) {
+      ufs_union(eqs, e->v, e->u);
+      num_edges++;
+    }
+    next_edge++;
+  }
+
+  for (int i = 0; i < 6-1; i++)
+    assert(ufs_find(eqs,i) == ufs_find(eqs,i+1)); // a spanning tree?
+
+  return 0;			// all tests passed
+}

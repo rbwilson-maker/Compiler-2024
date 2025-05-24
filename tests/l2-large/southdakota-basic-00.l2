@@ -1,0 +1,5 @@
+//test return -65536
+
+int main() {
+  return ~(65535);
+}

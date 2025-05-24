@@ -1,0 +1,13 @@
+//test return 65537
+int main() {
+	int *[]a = alloc_array(int *, 500000);
+	int *b;
+	a[499999] = alloc(int);
+	b = a[499999];
+	*a[499999] = 65537;
+	for (int i = 0; i < 500000; i++) {
+		b = a[499999];
+		a[499999] = b;
+	}
+	return *b;
+}

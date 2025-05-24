@@ -1,0 +1,12 @@
+//test error
+
+
+
+int main() {
+  int[] a = alloc_array(int, 100);
+  bool[] b = a;
+  for (int i = 0; i < 100; i++) {
+    i += b[i];
+  }
+  return 1;
+}

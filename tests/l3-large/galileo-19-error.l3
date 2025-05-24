@@ -1,0 +1,8 @@
+//test error
+// not allowed to define external function, even it is main
+
+int main () {
+    int ultimate_answer = 42;
+    assert(ultimate_answer != 0);
+    return ultimate_answer;
+}

@@ -1,0 +1,17 @@
+//test return 3
+
+// test that if and return statements work inside the loop
+
+int main()
+{
+    int count = 0;
+    while (count < 42)
+    {
+        count = count + 1;
+        if (count == 3)
+        {
+            return count;
+        }
+    }
+    return -1;
+}

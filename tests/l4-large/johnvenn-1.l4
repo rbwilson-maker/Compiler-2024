@@ -1,0 +1,9 @@
+//test abort
+
+int main () {
+    bool[] barray = alloc_array(bool, 0);
+    bool[] barray2 = alloc_array(bool, 0);
+    // assert(!barray[0]);
+    assert(barray == barray2);
+    return 0;
+}

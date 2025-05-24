@@ -1,0 +1,31 @@
+//test compile 
+// tests linking, typedef-ing a struct, and array of structs
+
+struct object {
+    int weight;
+    bool clear;
+};
+
+typedef struct object tool;
+
+int main() {
+    tool * wrench = alloc(tool);
+    wrench->weight = 10;
+    wrench->clear = false;
+
+    tool * hammer = alloc(tool);
+    hammer->weight = 25;
+    hammer->clear = true;
+
+    tool*[] toolbox = alloc_array(tool*, 2);
+    for(int i=0; i<2; i++) {
+        if (i == 0) {
+            toolbox[i] = wrench;
+        }
+        else {
+            toolbox[i] = hammer;
+        }
+    }
+
+    return 0;
+}

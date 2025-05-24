@@ -1,0 +1,12 @@
+//test memerror
+
+typedef int g;
+
+int main()
+{
+   g* check = alloc(g);
+   *check = 6;
+   g[] arr = alloc_array(g, 5);
+   arr[*check] = 3;
+   return arr[*check];
+}

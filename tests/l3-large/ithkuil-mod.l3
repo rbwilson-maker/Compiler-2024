@@ -1,0 +1,14 @@
+//test return 4096
+
+typedef int hello;
+
+int page_align (hello x) {
+  if (x % 4096 == 0) return x;
+  return page_align(x-1);
+
+  page_align(1/0 + 2/0);
+}
+
+int main () {
+  return page_align(8000);
+}

@@ -1,0 +1,7 @@
+//test typecheck
+
+typedef bool fpt;
+
+int hello_world(int a, int b);
+
+fpt is_correct(fpt a, fpt b);

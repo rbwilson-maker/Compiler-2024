@@ -1,0 +1,12 @@
+//test error
+// arrays are not pointers
+
+int main() {
+  assert(alloc_array(int, 0) != alloc_array(int, 0));
+  
+  int[] A = alloc_array(int, 10);
+  int[] B = A;
+  assert(A == B);
+  assert(B != NULL);
+  return -42;
+}

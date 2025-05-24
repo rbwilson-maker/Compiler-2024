@@ -1,0 +1,6 @@
+typedef int t1;
+typedef bool t2;
+
+t1 fh1 (int a, int b, int c, t2 d);
+t2 fh2 (int s, bool w);
+bool fh3 () {return false;}

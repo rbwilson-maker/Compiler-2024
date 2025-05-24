@@ -1,0 +1,14 @@
+//test div-by-zero
+//shifts by number > 31
+
+int main()
+{
+  int a;
+  int b;
+  int c;
+
+  a = 1;
+  b = 32;
+  c = a << b;
+  return c;
+}

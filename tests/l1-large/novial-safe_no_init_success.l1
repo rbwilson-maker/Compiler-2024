@@ -1,0 +1,9 @@
+//test return 0
+// v uninitialized and div-by-zero but use only after return
+
+int main() {
+    int v;
+    return 0;
+
+    int k = (v * 2) / 0 % 0;
+}

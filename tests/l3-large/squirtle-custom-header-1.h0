@@ -1,0 +1,15 @@
+/* A header file to do fake/silly IO on files that consist
+only of positive integers */
+
+/* open the file with id (file_id), returns -1 on error */
+int open(int file_id);
+
+/* read from file with file descriptor (fd), returns -1 on error or EOF */
+int read(int fd);
+
+/* write to file with file descriptor (fd) a single line consisting of (data)
+ returns -1 on error */
+int write(int fd, int data);
+
+/* close the file with file descriptor (fd) returns -1 on error */
+int close(int fd);

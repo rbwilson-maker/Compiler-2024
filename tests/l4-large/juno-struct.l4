@@ -1,0 +1,20 @@
+//test return 1
+
+struct s {
+    int x;
+    bool y;
+    bool *z;
+    int[][] a;
+};
+
+typedef struct s* r;
+
+r foo() {
+    return NULL;
+}
+
+int main() {
+    struct s* x = foo();
+
+    return 1;
+}

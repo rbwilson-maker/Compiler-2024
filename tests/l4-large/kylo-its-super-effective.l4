@@ -1,0 +1,36 @@
+//test return 56
+
+typedef struct voltorb* voltorb;
+struct voltorb {
+  voltorb self;
+  voltorb[] destruct;
+  int anger_level;
+};
+
+int attack(voltorb v, int* pointer){
+  print_int(v->anger_level);
+  *pointer += 1;
+  v->self->self->self->anger_level += *pointer;
+  return *pointer - 1;
+}
+
+int main(){
+  voltorb angry = alloc(struct voltorb);
+  angry->self = angry;
+  angry->destruct = alloc_array(voltorb, 10);
+  for(int i=0; i<10; i++)
+    angry->destruct[i] = angry;
+  int* anger = alloc(int);
+  angry->self->destruct[attack(angry, anger)]
+       ->self->destruct[attack(angry, anger)]
+       ->self->destruct[attack(angry, anger)]
+       ->self->destruct[attack(angry, anger)]
+       ->self->destruct[attack(angry, anger)]
+       ->self->destruct[attack(angry, anger)]
+       ->self->destruct[attack(angry, anger)]
+       ->self->destruct[attack(angry, anger)]
+       ->self->destruct[attack(angry, anger)]
+       ->self->destruct[attack(angry, anger)]
+       ->anger_level++;
+  return angry->anger_level;
+}

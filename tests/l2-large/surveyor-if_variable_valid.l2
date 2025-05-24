@@ -1,0 +1,14 @@
+//test return 11
+
+int main() {
+  int x;
+  int y = 10;
+
+  if (y == 0) {
+    x = y;
+  } else {
+    x = 11;
+  }
+
+  return x;
+}

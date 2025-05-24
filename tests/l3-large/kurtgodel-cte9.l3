@@ -1,0 +1,12 @@
+//test error
+/*
+Compile error.
+Typedef identifier disallows use as identifier.
+*/
+
+typedef int main;
+
+int main() {
+  return 4;
+}
+

@@ -1,0 +1,18 @@
+//test error
+
+void f() {
+}
+
+void g() {
+     return;
+}
+
+/* main takes a int parameter */
+int main(int i)
+{
+    f();
+    g();
+    return i;
+    f();
+    g();
+}

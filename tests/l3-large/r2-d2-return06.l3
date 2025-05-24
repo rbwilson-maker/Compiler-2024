@@ -1,0 +1,49 @@
+//test return 8191
+// calculate mersenne prime
+
+int pwr2_help(int n, int product)
+{
+  if (n == 0) {
+     return product;
+  }
+  else {
+     return pwr2_help(n-1, 2*product);
+  }
+}
+
+int pwr2(int n)
+{
+  return pwr2_help(n, 1);
+}
+
+int mprime(int p)
+{
+  return pwr2(p)-1;
+}
+
+bool is_prime(int n)
+{
+  int i;
+  for (i = 2; i*i <= n; i++) {
+      if (n % i == 0) {
+      	 return false;
+      }
+  }
+  return true;
+}
+
+int main()
+{
+  int p = 11;
+  int mp = mprime(p);
+  while (p < 15) {
+    if (is_prime(p) && is_prime(mp)) {
+       return mp;
+    }
+    else {
+    	 p++;
+	 mp = mprime(p);
+    }
+  }
+  return mp;
+}

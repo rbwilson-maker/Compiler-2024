@@ -1,0 +1,15 @@
+//test div-by-zero
+/* Test stackspace. Need to get to div_by_zero before running out. */
+void div_by_zero() {
+  1/0;
+}
+
+void recursion(int n) {
+  if (n == 0) div_by_zero();
+  recursion(n-1);
+}
+
+int main() {
+  recursion(35000);
+  return 0;
+}

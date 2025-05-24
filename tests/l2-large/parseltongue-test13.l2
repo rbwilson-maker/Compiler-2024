@@ -1,0 +1,22 @@
+//test error
+
+int main()
+{
+    {
+        int a = 10;
+        int b = 10;
+        int c = 10;
+    }
+
+    while (a > 0)
+    {
+        while (b > 0)
+        {
+            while (c > 0) 
+            {
+                int d = 10;
+            }
+        }
+    }
+    return d;
+}

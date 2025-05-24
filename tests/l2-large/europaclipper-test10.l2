@@ -1,0 +1,17 @@
+//test return 998
+int main() {
+
+  int sum = 0;
+  int i;
+  int j;
+  int k;
+  for (i = 0; i < 1000; i++) {
+    for (j = i; j < 1000; j++) {
+      for (k = i; k < j; k++) {
+        sum = i;
+      }
+    }
+  }
+
+  return sum;
+}

@@ -1,0 +1,13 @@
+//test error
+//No main function
+int foo(){
+	int x = 0;
+	for(int i=0;i<10;i++){
+		x++;
+	}
+}
+
+void bar(){
+	int x;
+	x = foo();
+}

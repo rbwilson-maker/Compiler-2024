@@ -1,0 +1,28 @@
+//test abort
+
+int good(){
+  return 1;
+  bool i_love_15213 = false;
+  assert (i_love_15213);
+}
+
+int bad(){
+  int randy = 1;
+  int bryant = 2;
+  assert(randy == bryant);
+  return 0/100;
+}
+
+int neutral_evil(){
+  assert(1/0 == 0/1);
+  return -1 / 12;
+}
+
+int main(){
+  for (int i = 0; i < 0x15213; i++)
+  {
+    if (i % 17 == 0) bad();
+    if (i % 13 == 0) good();
+  }
+  return 0;
+}

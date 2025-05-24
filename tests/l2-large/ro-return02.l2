@@ -1,0 +1,6 @@
+//test return 10
+// Test tertiary
+
+int main() {
+  return 10 == 10 ? 10 : 5 == 5 ? 3 != 3 ? 2 : 3 : 5;
+}

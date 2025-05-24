@@ -1,0 +1,14 @@
+//test error
+
+// declaration error
+
+int main_exn(bool f) { 
+    int i= 64*2;
+    i= i/j;
+    return i; 
+}
+
+int main(){
+    int* i=alloc_array(int, 5);
+    return main_exn(true);
+}

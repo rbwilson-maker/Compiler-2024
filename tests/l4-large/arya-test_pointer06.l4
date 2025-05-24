@@ -1,0 +1,9 @@
+//test return 0
+struct b;
+struct a{struct b* x;};
+struct b{int x; int* y;};
+int main(){
+  struct a* a = alloc(struct a);
+  a->x = alloc(struct b);
+  return a->x->x;
+}

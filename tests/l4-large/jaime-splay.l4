@@ -1,0 +1,223 @@
+//test return 13
+
+struct tree{
+    int value;
+    struct tree* right;
+    struct tree* left;
+    struct tree* parent;
+};
+
+typedef struct tree* tree_t;
+
+tree_t parent(tree_t x)
+{
+    if(x == NULL)
+    {
+        return NULL;   
+    }
+    else
+    {
+        return x->parent;
+    }
+}
+
+tree_t right(tree_t x)
+{
+    if(x == NULL)
+    {
+        return NULL;
+    }
+    else
+    {
+        return x->right;
+    }
+}
+
+tree_t left(tree_t x)
+{
+    if(x == NULL)
+    {
+        return NULL;
+    }
+    else
+    {
+        return x->left;
+    }
+}
+
+tree_t init_tree(int size)
+{
+    tree_t root = alloc(struct tree);
+    root->left = NULL;
+    root->right = NULL;
+    for(int i = 0; i < size-1; i++)
+    {
+        root->value = i;
+        root->parent = alloc(struct tree);
+        root->parent->left = root;
+        root->parent->right = NULL;
+        root = root->parent;
+    }
+    root->value = size-1;
+    root->parent = NULL;
+    return root;
+}
+
+void rotateleft(tree_t y)
+{
+    tree_t z = y->parent;
+    tree_t x = y->right;
+    if(z == NULL)
+    {
+    }
+    else if (z->left == y)
+    {
+        z->left = x;
+    }
+    else
+    {
+        z->right = x;
+    }
+    y->right = left(x);
+    x->left = y;
+    x->parent = z;
+    y->parent = x;
+    if(y->right != NULL)
+    {
+        y->right->parent = y;
+    }
+    return;
+}
+
+void rotateright(tree_t y)
+{
+    tree_t z = y->parent;
+    tree_t x = y->left;
+    if(z == NULL)
+    {
+    }
+    else if(z->right == y)
+    {
+        z->right = x;
+    }
+    else
+    {
+        z->left = x;
+    }
+    y->left = x->right;
+    x->right = y;                                                                                    
+    x->parent = z;
+    y->parent = x;
+    if(y->left != NULL)
+    {
+        y->left->parent = y;
+    }
+    return;
+}
+
+tree_t splay(tree_t x)
+{
+    while(parent(x) != NULL)
+    {
+        if(x == left(parent(x)))
+        {
+            if(parent(parent(x)) == NULL)
+            {
+                rotateright(x->parent);
+            }
+            else if(parent(x) == left(parent(parent(x))))
+            {
+                rotateright(x->parent->parent);
+                rotateright(x->parent);
+            }
+            else if(parent(x) == right(parent(parent(x))))
+            {
+                rotateright(x->parent);
+                rotateleft(x->parent);
+            }
+        }
+        if(x == right(parent(x)))
+        {
+            if(parent(parent(x)) == NULL)
+            {
+                rotateleft(x->parent);
+            }
+            else if (parent(x) == right(parent(parent(x))))
+            {
+                rotateleft(x->parent->parent);
+                rotateleft(x->parent);
+            }
+            else if(parent(x) == left(parent(parent(x))))
+            {
+                rotateleft(x->parent);
+                rotateright(x->parent);
+            }
+        }
+    }
+    return x;
+}
+
+tree_t find(tree_t t, int val)
+{
+    if(t == NULL)
+    {
+        return NULL;
+    }
+    else
+    {
+        if(t->value == val)
+        {
+            return t;
+        }
+        else if(t->value > val)
+        {
+            return find(t->left, val);
+        }
+        else
+        {
+            return find(t->right, val);
+        }
+    }
+}
+
+int finddepth(tree_t t, int val)
+{
+    if(t == NULL)
+    {
+        return -1;
+    }
+    if(t->value == val)
+    {
+        return 0;
+    }
+    if(t->value > val)
+    {
+        return 1 + finddepth(t->left, val);
+    }
+    if(t->value < val)
+    {
+        return 1 + finddepth(t->right, val);
+    }
+    return 0;
+}
+
+int main()
+{
+    int size = 100;
+    tree_t root = init_tree(size);
+    int splays = 20;
+    int[] tosplay = alloc_array(int, splays);
+    for(int i = 0; i < splays; i++)
+    {
+        tosplay[i] = 2*i;
+    }
+    int d;
+    int averaged = 0;
+    for(int i = 0; i < splays; i++)
+    {
+        d = finddepth(root, tosplay[i]);
+        averaged += d;
+        root = splay(find(root, tosplay[i]));
+    }
+    return averaged/splays;
+}

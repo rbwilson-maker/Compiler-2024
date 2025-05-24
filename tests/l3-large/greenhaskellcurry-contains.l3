@@ -1,0 +1,31 @@
+//test typecheck
+
+/*
+    contains: Defines a function `contains` that returns a boolean representing
+    whether the given range [lo, hi) contains an integer satisfying a predicate.
+
+    The predicate is expected to be linked in.
+
+    Tests:
+    - The typechecker: getting type from header file, conditioning on the
+    results of function calls.
+*/
+
+
+bool contains(int lo, int hi) {
+    for (int i = lo; i < hi; i++) {
+        if (predicate(i)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+int main() {
+    int lo = 15210;
+    int hi = 15220;
+    assert(contains(lo, hi));
+
+    return 0;
+}

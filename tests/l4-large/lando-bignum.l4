@@ -1,0 +1,74 @@
+//test return 237
+
+struct bignum {
+  bool[] bits;
+  int length;
+};
+
+typedef struct bignum* bignum;
+
+int max(int a, int b) {
+  return (a > b) ? a : b;
+}
+
+int logbasetwo(int n) {
+  for (int i = 31; i >= 0; i--) {
+    if ((n & (1 << i)) != 0) return (i + 1);
+  }
+  return 0;
+}
+
+bignum new(int val) {
+  bignum n = alloc(struct bignum);
+  int numbits = logbasetwo(val);
+  n->length = numbits;
+  n->bits = alloc_array(bool, numbits);
+  for (int i = 0; i < numbits; i++) {
+    if ((val & (1 << i)) != 0) n->bits[i] = true;
+  }
+  return n;
+}
+
+bignum add(bignum a, bignum b) {
+  int maxlength = max(a->length, b->length);
+  bool[] res = alloc_array(bool, maxlength + 1); 
+  bool carry = false;
+  for (int i = 0; i < maxlength + 1; i++) {
+    bool b1 = i < a->length ? a->bits[i] : false;
+    bool b2 = i < b->length ? b->bits[i] : false;
+    res[i] = (b1 != b2) != carry;
+    carry = (b1 && b2) || (b1 && carry) || (b2 && carry);
+  }
+
+  bignum r = alloc(struct bignum);
+  r->length = maxlength + 1;
+  r->bits = res;
+
+  if (!res[maxlength]) {
+    bool[] newres = alloc_array(bool, maxlength);
+    for (int i = 0; i < maxlength; i++) {
+      newres[i] = res[i];
+    }
+    r->bits = newres;
+    r->length--;
+  }
+  return r;
+}
+
+bool equal(bignum a, bignum b) {
+  if (a->length != b->length) return false;
+  for (int i = 0; i < a->length; i++) {
+    if (a->bits[i] != b->bits[i]) return false;
+  }
+  return true;
+}
+
+int main() {
+  bignum a = new(0);
+  bignum b = new(23);
+  bignum c = new(49);
+  bignum d = new(72);
+  assert(equal(add(a, b), b));
+  assert(equal(add(c, b), d));
+  return 237;
+}

@@ -1,0 +1,10 @@
+//test error
+
+typedef int* bad;
+
+int main() {
+    int good = 10;
+    int out = good * good;
+    int lol = bad * good;
+    return out;
+}

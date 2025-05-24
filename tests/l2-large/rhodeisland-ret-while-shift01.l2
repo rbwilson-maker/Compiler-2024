@@ -1,0 +1,17 @@
+//test return 32
+int main()
+{
+    int i = 0;
+    int shifts = 5;
+    int base = 1;
+    int ret;
+
+    while (i < shifts)
+    {
+        base = base << 1;
+        i++;
+    }
+
+    ret = base;
+    return ret;
+}

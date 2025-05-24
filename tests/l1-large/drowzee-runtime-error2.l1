@@ -1,0 +1,11 @@
+//test div-by-zero
+// overflow
+
+int main() {
+  int y = 0x7fffffff;
+  int z = 0xffffffff;
+  int x = y*z;
+  int w = x-1;
+
+  return w/z;
+}

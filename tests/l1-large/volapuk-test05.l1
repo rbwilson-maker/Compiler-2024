@@ -1,0 +1,11 @@
+//test div-by-zero
+
+// Tests division by zero raises a runtime exception
+
+int main() {
+    int a = 1350;
+    int b = 3500;
+    int c = b / a - a;
+    int d = b / (a - a);
+    return c;
+}

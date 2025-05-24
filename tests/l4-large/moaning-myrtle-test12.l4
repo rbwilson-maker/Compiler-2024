@@ -1,0 +1,15 @@
+//test return 42
+
+int f(int** x) {
+    *x = NULL;
+    return 1;
+}
+
+int main() {
+    int** x = alloc(int*);
+    int* y = alloc(int);
+    *x = y;
+    **x += f(x);
+    assert(*x == NULL && *y == 1);
+    return 42;
+}

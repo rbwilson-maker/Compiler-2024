@@ -1,0 +1,13 @@
+//test return 28
+
+int main()
+{
+    int x = 4;
+    x = 5;
+    int y = x + 3;
+    x = y;
+    int z = x + 9;
+    x = 2;
+    x = 3;
+    return x + y + z;
+}

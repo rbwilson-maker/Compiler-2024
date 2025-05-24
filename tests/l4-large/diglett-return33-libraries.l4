@@ -1,0 +1,11 @@
+//test return 33
+
+struct dub{
+    bool isInitialized;
+    int bigEnd;
+    int smallEnd;
+};
+
+int main(){
+    return 33;
+}

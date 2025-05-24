@@ -1,0 +1,23 @@
+//test return 0
+// Neverending Nulls
+
+int main() {
+    assert(alloc(int) != NULL);
+    assert(alloc(bool) != NULL);
+    assert(alloc(int*) != NULL);
+    assert(alloc(bool*) != NULL);
+
+    assert(NULL == NULL);
+    assert(NULL == (true ? NULL : NULL));
+    assert(NULL != (true ? alloc(int) : alloc(int)));
+    assert(NULL == (false ? alloc(int) : NULL));
+    assert((true ? alloc(int) : NULL) != (false ? *(alloc(int*)) : NULL));
+    
+    int* i = NULL;
+    int* j = NULL;
+
+    assert(i == NULL);
+    assert(i == j);
+
+    return 0;
+}

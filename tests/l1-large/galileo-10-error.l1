@@ -1,0 +1,12 @@
+//test error
+// redeclaration of a unused variable after return
+
+int main() {
+    int x;
+    int y = 42;
+    int z = 42;
+    z = y * z + z;
+    return y;
+    int x = 1;
+}
+

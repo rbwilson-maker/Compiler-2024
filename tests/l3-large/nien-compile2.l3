@@ -1,0 +1,14 @@
+//test compile
+
+int main()
+{
+    int heh = 0xDEADBEEF;
+    int drink = 0xC0FFEE;
+    int anime = 0xBAEB1ADE;
+
+    print_fpt(itof(heh));
+    print_int(drink);
+    print_hex(anime);
+
+    return 0;
+}

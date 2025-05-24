@@ -1,0 +1,7 @@
+//test error
+
+int main() {
+	int[] adbforlife = alloc_array(int,3);
+	*adbforlife = 15251;
+	return *adbforlife;
+}

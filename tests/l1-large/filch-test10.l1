@@ -1,0 +1,8 @@
+//test return 44
+
+int main()
+{
+  int a = 2;
+  int b = a + /* hello there :-) */ 42;
+  return b;
+}

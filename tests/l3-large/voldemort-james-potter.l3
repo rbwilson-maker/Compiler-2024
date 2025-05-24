@@ -1,0 +1,107 @@
+//test return 0
+
+// Here we introduce the type of lists into C0 and perform some operations on lists.
+// Our implementation of lists is highly memory-efficient. In fact, it takes constant
+// space regardless of the number of elements in the list.
+// It also supports an ergonomic interface, with purely functional constructors
+// and destructors.
+
+bool is_prime(int n) {
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int nth_prime(int n) {
+    int counter = 0;
+    if (n == 1) return 2;
+    for (int i = 3; true; i += 2) {
+        if (is_prime(i)) {
+            counter++;
+            if (counter == n - 1) {
+                return i;
+            }
+        }
+    }
+    return 0;
+}
+
+int component(int n, int p) {
+    int max = n;
+    for (int i = 0; i < max; i++) {
+        if (n % p != 0) {
+            return i;
+        }
+        n /= p;
+    }
+    return 0;
+}
+
+int pow(int x, int b) {
+    int j = 1;
+    for (int i = 0; i < b; i++) {
+        j *= x;
+    }
+    return j;
+}
+
+typedef int list;
+
+list nil() {
+    return 1;
+}
+
+int len(list l) {
+    if (l <= 1) {
+        return 0;
+    }
+    int len = 1;
+    while (l > 1 && component(l, nth_prime(len)) > 0) {
+        len++;
+    }
+    return len - 1;
+}
+
+list cons(int x, list l) {
+    return pow(nth_prime(len(l) + 1), x) * l;
+}
+
+int head(list l) {
+    return component(l, nth_prime(len(l)));
+}
+
+list tail(list l) {
+    return l / pow(nth_prime(len(l)), head(l));
+}
+
+int main() {
+    assert(is_prime(2));
+    assert(is_prime(3));
+    assert(!is_prime(4));
+    assert(nth_prime(1) == 2);
+    assert(nth_prime(2) == 3);
+    assert(component(4, 2) == 2);
+    assert(nil() == nil());
+    assert(len(nil()) == 0);
+    assert(len(cons(1, nil())) == 1);
+    assert(len(cons(2, nil())) == 1);
+    assert(head(cons(1, nil())) == 1);
+    assert(head(cons(2, nil())) == 2);
+    assert(tail(cons(2, nil())) == nil());
+    assert(tail(cons(1, cons(2, nil()))) == cons(2, nil()));
+
+    int l = cons(1, cons(2, cons(3, cons(4, cons(5, nil())))));
+    int acc = 0;
+    int prod = 1;
+    while (l != nil()) {
+        int h = head(l);
+        l = tail(l);
+        acc += h;
+        prod *= h;
+    }
+    assert(acc == 15 && prod == 120);
+    return 0;
+}

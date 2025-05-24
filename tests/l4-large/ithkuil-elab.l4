@@ -1,0 +1,15 @@
+//test return 4
+
+int f(int[] A) {
+    A[2]++;
+    return 2;
+}
+
+
+int main() {
+    int[] A = alloc_array(int, 3);
+    A[2] = 0;
+    A[f(A)] += 3;
+
+    return A[2];
+}

@@ -1,0 +1,13 @@
+//test error
+// Function names should not be shadowed by local variables when called
+
+void foo() {
+  int foo = 5;
+  foo();
+}
+
+int main()
+{
+  foo();
+  return 0;
+}

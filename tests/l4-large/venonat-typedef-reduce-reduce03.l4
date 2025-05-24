@@ -1,0 +1,12 @@
+//test return 8
+// typedef reduce reduce conflict
+
+typedef int B;
+
+int main(){
+  B[] A = alloc_array(B, 5);
+  A[0] = 3;
+  B x = 5;
+  A[1] = x;
+  return A[0] + A[1];
+}

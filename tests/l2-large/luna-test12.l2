@@ -1,0 +1,13 @@
+//test error
+// Lexical scoping causes redefinition error?
+
+int main() {
+    int x = 10;
+    if (x > 0) {
+        int x = 20;
+        while (x - 15 > 0) {
+            x += 20;
+        }
+        return 2 * x;
+    }
+}

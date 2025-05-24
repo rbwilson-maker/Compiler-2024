@@ -1,0 +1,10 @@
+//test abort
+int f(int n, int m) {
+    assert((n&m) == (n|m));
+    return 0;
+}
+
+int main() {
+    int x = 0x325a7d9e;
+    return f(x, 0x325b7d9e);
+}

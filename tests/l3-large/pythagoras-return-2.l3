@@ -1,0 +1,33 @@
+//test return 3
+
+// links h0 file
+
+typedef int int4;
+
+int foo (int1 x, int2 y) {
+    return x + y;
+}
+
+int bar (int1 x, int2 y, bool z) {
+    if (z) {
+        return x + y;
+    } else {
+        return x - y;
+    }
+}
+
+int main() {
+
+    int4 a;
+    int b;
+    int c = 0;
+    a = foo (1, 2);
+    b = bar (a, 3, false);
+    assert(a == 3);
+
+    for (int i=0; i < b; i++) {
+        c += foo(1, 1);
+    }
+
+    return a + b * c;
+}

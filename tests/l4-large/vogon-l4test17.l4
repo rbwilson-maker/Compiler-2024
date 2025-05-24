@@ -1,0 +1,8 @@
+//test error
+
+struct node;
+
+int main() { 
+  struct node* n = alloc(node);
+  return 4;
+}

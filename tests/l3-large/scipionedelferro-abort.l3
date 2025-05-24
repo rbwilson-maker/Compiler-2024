@@ -1,0 +1,14 @@
+//test error
+/* function name doesn't exist */
+
+void conjecture() {
+    infinity = 1000000;
+    sum = 0;
+    for (int i = 0; i < infinity; i++)
+        sum += i;
+    assert(sum == -1/12);
+}
+
+int main() {
+  return conjecture();
+}

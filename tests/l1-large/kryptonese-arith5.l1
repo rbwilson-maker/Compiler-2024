@@ -1,0 +1,9 @@
+//test return -2147483638
+//overflow test
+int main() {
+    int a = 715827882;
+    a *= 5;
+    int b = 2147483647;
+    b *= 3;
+    return a * b;
+}

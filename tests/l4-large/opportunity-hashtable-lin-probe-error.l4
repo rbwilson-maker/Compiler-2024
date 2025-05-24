@@ -1,0 +1,54 @@
+//test memerror
+//linear probing hash table. dereferences null while looking up somehting not in ht
+
+struct entry{
+  int key;
+  int* data;
+};
+
+struct ht{
+  struct entry*[] table;
+  int len;
+};
+
+
+typedef struct ht ht;
+
+int abs(int x){ return x<0 ? -x : x;}
+
+ht* ht_new(int len){
+  ht* ret = alloc(ht);
+  ret -> len = len;
+  ret -> table = alloc_array(struct entry*,len);
+  return ret;
+}
+
+void ht_add(ht* h, int key, int* data){
+  struct entry* n = alloc(struct entry);
+  n->key = key;
+  n->data = data;
+  while(h->table[abs(key%h->len)]!=NULL) key = (key+1)%h->len;
+  h->table[abs(key%h->len)] = n;
+}
+
+int* ht_lookup(ht* h,int key){
+  int loc = key;
+  while(h->table[abs(loc%h->len)]->key!=key) loc = (loc+1)%h->len;
+  return h->table[abs(loc%h->len)]->data;
+}
+
+int main(){
+  ht* H = ht_new(5);
+  int* A = alloc(int);
+  int* B = alloc(int);
+  int* C = alloc(int);
+  ht_add(H,5,A);
+  ht_add(H,6,B);
+  ht_add(H,11,C);
+  assert(ht_lookup(H,6)==B);
+  assert(ht_lookup(H,5)==A);
+  assert(ht_lookup(H,11)==C);
+  assert(ht_lookup(H,10)==C);
+  return 0;
+  
+}

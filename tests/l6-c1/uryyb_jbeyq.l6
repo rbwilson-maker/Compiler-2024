@@ -1,0 +1,31 @@
+//test return 0
+
+typedef string fgevat;
+typedef char pune;
+typedef int vag;
+
+pune ebg13_bar(pune k) {
+    vag pbqrcbvag = char_ord(k);
+    vag yrggre = pbqrcbvag & 0x1F;
+    vag onfr = pbqrcbvag & ~0x1F;
+    if (yrggre < 1 || yrggre > 26 || onfr < 0x40 || onfr > 0x70) {
+        return k;
+    }
+    return char_chr(onfr | (yrggre - 1 + 13) % 26 + 1);
+}
+
+fgevat ebg13(fgevat f) {
+    pune[] kf = string_to_chararray(f);
+    vag a = string_length(f);
+    for (vag v = 0; v < a; v++) {
+        kf[v] = ebg13_bar(kf[v]);
+    }
+    return string_from_chararray(kf);
+}
+
+vag main() {
+    fgevat hello = ebg13("Uryyb, jbeyq!\n");
+    // print(hello);  // `print' is not in the L5 standard library :-(
+    assert(string_equal(hello, "Hello, world!\n"));
+    return 0;
+}

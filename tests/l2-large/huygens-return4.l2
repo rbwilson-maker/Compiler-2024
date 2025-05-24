@@ -1,0 +1,16 @@
+//test return 54
+//test while loop
+
+int main() {
+    int x = 1;
+    int y = 0;
+    int z = 0;
+    while (x < 10) {
+        x++;
+        y += x;
+        if ( y - x > 10) {
+            z += 1;
+        }
+    }
+    return y;
+}

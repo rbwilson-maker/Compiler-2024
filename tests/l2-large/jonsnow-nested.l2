@@ -1,0 +1,13 @@
+//test return 35
+
+int main() {
+  int sum = 0;
+  for(int x = 1; x<=5; x++)
+  {
+    for(int y = 1; y<=x; y++)
+    {
+      sum+=y;
+    }
+  }
+  return sum;
+}

@@ -1,0 +1,12 @@
+//test return 17711
+
+int main(){
+  int a = 1;
+  int b = 1;
+  for(int i=0; i<20; i=i+1){
+    int c = a + b;
+    a = b;
+    b = c;
+  }
+  return b;
+}

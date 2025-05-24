@@ -1,0 +1,6 @@
+//test return -904
+
+int main() {
+    int x = 7;
+    return ~(x + (x << x));
+}

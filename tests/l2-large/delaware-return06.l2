@@ -1,0 +1,6 @@
+//test return 42
+// ternary short-circuit, again
+
+int main() {
+  return true ? 42 : (3 / 0);
+}

@@ -1,0 +1,35 @@
+//test return -396
+
+int int_min();
+int int_max();
+
+void clamp(int min, int *x, int max) {
+    assert(min <= max);
+    if (*x < min) *x = min;
+    if (*x > max) *x = max;
+}
+
+int relu(int x) {
+    int *p = alloc(int);
+    *p = x;
+    clamp(0, p, int_max());
+    return *p;
+}
+
+int main() {
+    assert(relu(int_min()) == 0);
+    assert(relu(-5) == 0);
+    assert(relu(-1) == 0);
+    assert(relu(0) == 0);
+    assert(relu(1) == 1);
+    assert(relu(5) == 5);
+    assert(relu(int_max()) == int_max());
+    return 15-411;
+}
+
+int int_min() {
+    return 1 << 31;
+}
+int int_max() {
+    return ~int_min();
+}

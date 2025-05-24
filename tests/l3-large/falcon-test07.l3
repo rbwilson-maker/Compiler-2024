@@ -1,0 +1,37 @@
+//test return 120
+// A factorial implementation fit for industry
+
+// The hacktorial function
+int hack(int x, int i) {
+    if(i == 0) return x;
+    if(i == 1) return x ^ 0xDEADBEEF;
+    return hack(x, i - 1) ^ 0XDEADBEEF;
+}
+
+// The backtorial function
+int back(int x) {
+    if(x == 1) return 0;
+    return 1 + back(x - 1);
+}
+
+// The stacktorial function
+int stack(int x) {
+    if(x == 0) return x;
+
+    return 1 + stack(x - 1);
+}
+
+// The clactorial function
+int clac(int x, int y) {
+    return hack(x, y + y) * hack(y, x + x);
+}
+
+// The factorial function
+int fact(int x) {
+    if(x == 0) return 1;
+    return clac(stack(x), fact(back(hack(x, x << 1))));
+}
+
+int main() {
+    return fact(5);
+}

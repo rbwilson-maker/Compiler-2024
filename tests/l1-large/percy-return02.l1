@@ -1,0 +1,8 @@
+//test return 7
+
+int main() {
+  int a = 53;
+  int b = 8;
+  int c = 1;
+  return a / (b - c);
+}

@@ -1,0 +1,15 @@
+//test div-by-zero
+
+struct a{
+    int* x;
+    int* y;
+};
+
+int main(){
+    struct a* a1 = alloc(struct a);
+    a1->x = alloc(int);
+    a1->y = alloc(int);
+    *(a1->x) = 0;
+    *(a1->y) = 1;
+    return *(a1->y) / *(a1->x);
+}

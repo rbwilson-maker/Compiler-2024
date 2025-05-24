@@ -1,0 +1,7 @@
+//test error
+// compile time error
+
+int main(){
+    int abc = (int x = 3); 
+    return abc;
+}

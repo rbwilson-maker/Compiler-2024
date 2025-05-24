@@ -1,0 +1,11 @@
+//test typecheck
+
+int main() {
+    struct h *h = alloc(struct h);
+    h->hp = alloc(int);
+    *h->hp = 1;
+    h->hehehe.hehe.he = 2;
+    h->hehe.e = h->hehehe.hehee->e;
+    struct hehe *hehehe = h->hehehe.hehee;
+    return h->hehehe.hehee->he;
+}

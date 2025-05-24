@@ -1,0 +1,24 @@
+//test return -2047
+//test recursive functions
+
+int rec(int *x, int *y) {
+	if (*x < 0)
+		return *y;
+	else {
+		*x = *x - 1;
+		*y = *y * 2 - 1;
+		return rec(x, y);
+	}
+
+}
+
+int main() {
+
+	int * a;
+	int * b;
+	a = alloc(int);
+	b = alloc(int);
+	* a = 10;
+	return rec(a, b);
+
+}

@@ -1,0 +1,16 @@
+//test return 1
+// checks whether we handle clashes between idents correctly
+int penguin () {
+    int not_penguin = 1;
+    int a = 0;
+    not_penguin * a;
+    return not_penguin; 
+}
+
+typedef int not_penguin;
+
+int main() {
+    not_penguin * penguin = alloc(not_penguin);
+    *penguin = 1;
+    return *penguin;
+}

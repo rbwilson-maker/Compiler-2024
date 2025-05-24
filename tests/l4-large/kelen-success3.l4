@@ -1,0 +1,26 @@
+//test return 5
+
+struct obj {
+    int a;
+    bool b;
+    int* c;
+    bool* d;
+    int[] e;
+    bool[] f;
+    struct obj* g;
+    struct obj[] h;
+};
+
+// Tests creating obj
+int main() {
+    struct obj* newObj = alloc(struct obj);
+    newObj->a = 5;
+    newObj->b = true;
+    newObj->c = alloc(int);
+    newObj->d = alloc(bool);
+    newObj->e = alloc_array(int, 10);
+    newObj->f = alloc_array(bool, 10);
+    newObj->g = alloc(struct obj);
+    newObj->h = alloc_array(struct obj, 10);
+    return newObj->a + (*(newObj->c)) + (newObj->e[5]) + newObj->g->a;
+}

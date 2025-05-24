@@ -1,0 +1,15 @@
+//test typecheck
+int f(a5000 x, b5000 y) { // a5000 is int, b5000 is int*
+	*y = x;
+	return x + 1;
+}
+
+int main() {
+	// a2500 is int, b2500 is int*
+	a2500 x = 10;
+	b2500 y = alloc(int);
+	f(x * x, y); // need to efficient handle type and exp
+	a2500 * ptr;
+	*y * *y;
+	return f(*y, y);
+}

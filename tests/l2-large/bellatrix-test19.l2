@@ -1,0 +1,18 @@
+//test div-by-zero
+
+int main(){
+
+  int x = 17;
+  int y = 20345;
+
+  x += y;
+  y -= 34;
+
+  int z = x >> 3;
+  int w = y << 33;
+
+  int j = w >> 32;
+
+  return j;
+  
+}

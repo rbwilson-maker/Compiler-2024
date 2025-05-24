@@ -1,0 +1,12 @@
+//test abort
+
+int main() {
+  int x = 5;
+
+  for (;x >= 0; x--) {
+    assert(x > 0);
+    print_int(x);
+  }
+
+  return x;
+}

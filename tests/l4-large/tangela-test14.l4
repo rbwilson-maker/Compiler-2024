@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+  int[] somes = alloc_array(int, 4*5);
+  for (int i = 2; i < 10; i++) {
+    somes[i >> 32] = 0;
+  }
+  return somes[4];
+}

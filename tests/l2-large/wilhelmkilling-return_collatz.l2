@@ -1,0 +1,21 @@
+//test return 10000
+
+int main() {
+  int count = 0;
+
+  /* run the collatz conjecture for 2^31 numbers */ 
+
+  for (int i = 1; i <= 10000; i++) {
+      int n = i;
+      while (n != 1) {
+          if (n % 2 == 0) {
+              n = n / 2;
+          } else {
+              n = 3 * n + 1;
+          }
+      }
+      count++;
+  }
+
+  return count;
+}

@@ -1,0 +1,25 @@
+//test memerror
+
+int f(int* pointer);
+
+int main(){
+  int* null = NULL;
+  int x = 10 == 5 ? *null : 88;
+  int y = 10 == 5 ? *null : *null;
+
+  int[] A = alloc_array(int, 10);
+  int z = A[*null];
+
+  *null = 5;
+  int zz = *null;
+  *null = *null;
+
+  int* legit = alloc(int);
+  f(legit);
+
+  return 10;
+}
+
+int f(int* pointer){
+  return *(pointer == NULL ? pointer : NULL);
+}

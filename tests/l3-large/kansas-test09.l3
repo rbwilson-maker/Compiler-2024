@@ -1,0 +1,17 @@
+//test return 20
+
+// This is designed to test a function call with complex arguments
+bool func(int a, int b, bool c, bool d) {
+  return a > b && c && d;
+}
+
+int main() {
+  bool y = func(3 + 4 * 9 - 2, 5 < 7 ? 6 : 10, true || false,
+                7 == 7 ? false : true);
+  if (y || 10 < 9) {
+    return 10;
+  }
+  else {
+    return 20;
+  }
+}

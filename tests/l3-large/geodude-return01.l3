@@ -1,0 +1,26 @@
+//test return 2
+   
+int gcd_it (int a, int b)
+{
+  int c;
+  while ( a != 0 ) {
+     c = a; a = b%a;  b = c;
+  }
+  return b;
+}
+
+int gcd_re (int a, int b)
+{
+  if ( a==0 ) return b;
+  int tmp  = b%a;
+  return gcd_re (tmp, a);
+}
+
+int main() {
+    int a = 72;
+    int b = 50;
+    int re1 = gcd_it(a, b);
+    int re2 = gcd_re(a, b);
+    assert(re1 == re2);
+    return re1;
+}

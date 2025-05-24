@@ -1,0 +1,23 @@
+//test return 1024
+// Naive integer power algorithm with 2^n calls
+
+int fastpow(int b, int e)
+{
+  if (e == 0) {
+    return 1;
+  }
+  else if (e == 1) {
+    return b;
+  }
+  else if ((e % 2) != 0 ) {
+    return (b * fastpow(b, (e - 1)));
+  }
+  else {
+    int new_e = e / 2;
+    return fastpow(b, new_e) * fastpow(b, new_e);
+  }
+}
+
+int main () {
+  return fastpow(2, 10);
+}

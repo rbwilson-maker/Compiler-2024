@@ -1,0 +1,15 @@
+//test return 10 
+
+struct meow {
+  int a; 
+  int b; 
+};
+
+int main() {
+  struct meow *woof = alloc(struct meow);
+  woof->a = 10;
+  woof->b = 20; 
+  (*woof).a = 15;
+  int meow = 2; 
+  return meow * (woof->b - woof->a);
+}

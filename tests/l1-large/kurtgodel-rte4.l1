@@ -1,0 +1,6 @@
+//test div-by-zero
+// short-circuit multiplication?
+int main()
+{
+    return 0 * (1 / 0);
+}

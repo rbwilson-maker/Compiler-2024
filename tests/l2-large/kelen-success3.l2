@@ -1,0 +1,23 @@
+//test return 5
+
+// Tests simple program
+int main(){
+    int a = 1;
+    int tmp = 0;
+    {
+        int b = 2;
+        tmp *= b;
+    }
+    {
+        int c = 2;
+        tmp += 2;
+    }
+    {
+        int d = 3;
+        tmp -= d;
+    }
+    {
+        int e = 4;
+        return a + e;
+    }
+}

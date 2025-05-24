@@ -1,0 +1,8 @@
+//test return 13
+
+int main() {
+    int x = 13;
+    int y = x != 13 ? x : 0;
+    y ^= ~y;
+    return y + 14;
+}

@@ -1,0 +1,15 @@
+//test return 251
+
+typedef char itc(int x);
+typedef string cts(char c);
+
+string compose(cts* f, itc* g, int x)
+{
+  return (*f)(((*g)(x)));
+}
+
+int main()
+{
+  assert(string_equal("C",compose(&string_fromchar,&char_chr,67)));
+  return 251;
+}

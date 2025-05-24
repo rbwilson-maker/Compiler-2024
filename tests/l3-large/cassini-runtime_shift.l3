@@ -1,0 +1,10 @@
+//test div-by-zero
+
+int shifty(int amt) {
+    if (amt < 0) return amt;
+    return amt >> shifty(amt - 1);
+}
+
+int main() {
+    return shifty(100);
+}

@@ -1,0 +1,19 @@
+//test error
+//Function used before definition
+int main(){
+	bar();
+
+	return 0;
+}
+
+int foo(){
+	int x = 0;
+	for(int i=0;i<10;i++){
+		x++;
+	}
+}
+
+void bar(){
+	int x;
+	x = foo();
+}

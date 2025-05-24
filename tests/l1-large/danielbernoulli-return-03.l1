@@ -1,0 +1,8 @@
+//test return 16 
+int main() {
+    int x = -2;
+    int w = -3; 
+    int y1 = x % w; 
+    int y2 = y1 % 4;
+    return y2 - 3 * 4 / 2 + 4 * 5 + 2 + 2; 
+}

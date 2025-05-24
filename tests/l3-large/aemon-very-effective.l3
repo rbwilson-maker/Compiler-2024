@@ -1,0 +1,21 @@
+//test div-by-zero
+
+bool f(int x) {
+    return x > -2;
+}
+
+int g(int y) {
+    return (y > 0) ? 5 : 3;
+}
+
+int main() {
+    int a = 1;
+    bool g = g(a) > 4;
+    int ct = 0x0FFFFFFF;
+    while (f(a) && g) {
+        a--;
+        g = a < 17;
+        ct /= a;
+    }
+    return ct;
+}

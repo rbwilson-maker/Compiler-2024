@@ -1,0 +1,19 @@
+//test return 99 
+
+int f2(int j);
+
+int f1(int i) {
+  if (i == 0) return 0;
+  return f2(i - 1);
+}
+
+int f2(int j) {
+  if (j < 100) return f1(j);
+  return j - 1;
+}
+
+int main() {
+  int a = f1(101);
+  int b = f1(100);
+  return (a + b);
+}

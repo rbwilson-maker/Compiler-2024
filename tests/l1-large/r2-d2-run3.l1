@@ -1,0 +1,12 @@
+//test return 2
+
+int main()
+{
+  int longlonglongnameabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ;
+  int x = 0x00000000; // x = 0
+  int y = 0XFFFFFFFF; // y = -1;
+  int z = 1073741825; // z = 2**30
+  z /= 536870912; // z = 2
+  longlonglongnameabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ = z;
+  return (longlonglongnameabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ + x);
+}

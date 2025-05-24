@@ -1,0 +1,11 @@
+//test return 9
+
+int main() {
+  int x = 1;
+  int y = 9;
+  int z = 11;
+  while (x < y) {
+    x += (y > z) ? 2 : 1;
+  }
+  return x;
+}

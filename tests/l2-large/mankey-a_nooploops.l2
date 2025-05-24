@@ -1,0 +1,28 @@
+//test return 2
+//no op these loops do
+int main()
+{
+  int a = 1;
+  bool b = false;
+  if (b) {
+    for (int i = 0; i < 100; i ++) {
+      a++;
+    }
+    bool c = true;
+    while (c) {
+      a++;
+      c = false;
+    }
+  }
+  b = true;
+  if (b) {
+    a = 2;
+    for (int i = 0; i > 100; i++) {
+      a--;
+    }
+    while (false) {
+      a -= 2;
+    }
+  }
+  return a;
+}

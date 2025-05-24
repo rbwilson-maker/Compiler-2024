@@ -1,0 +1,49 @@
+//test return 1
+
+int mult1(int a, int b, int c, int d, int e, int f, int g) {
+    assert(a == 1);
+    assert(b == 2);
+    assert(c == 3);
+    assert(d == 4);
+    assert(e == 5);
+    assert(f == 6);
+    assert(g == 7);
+    return a * b * c * d * e * f * g;
+}
+
+int mult2(int a, int b, int c, int d, int e, int f, int g, int h) {
+    assert(a == 1);
+    assert(b == 2);
+    assert(c == 3);
+    assert(d == 4);
+    assert(e == 5);
+    assert(f == 6);
+    assert(g == 7);
+    assert(h == 8);
+    return a * b * c * d * e * f * g * h;
+}
+
+int main() {
+    int f = 6;
+    int c = 3;
+    int b = 2;
+    int h = 8;
+    int e = 5;
+    int a = 1;
+    int g = 7;
+    int d = 4;
+
+    assert(5040 == mult1(a, b, c, d, e, f, g));
+    assert(40320 == mult2(a, b, c, d, e, f, g, h));
+
+    assert(a == 1);
+    assert(b == 2);
+    assert(c == 3);
+    assert(d == 4);
+    assert(e == 5);
+    assert(f == 6);
+    assert(g == 7);
+    assert(h == 8);
+
+    return 1;
+}

@@ -1,0 +1,36 @@
+//test return 2
+
+struct node {
+    int num;
+    struct node *next;
+};
+
+typedef struct node * node;
+
+void add_to_front(node n, int num) {
+    node head = alloc(struct node);
+    head->num = n->num;
+    head->next = n->next;
+    n->num = num;
+    n->next = head; 
+}
+
+/* Must not be only element */
+int remove_from_front(node n) {
+    int num = n->num;
+    node next = n->next;
+
+    n->num = next->num;
+    n->next = next->next;
+    return num;
+}
+
+int main() {
+    node n = alloc(struct node);
+    add_to_front(n, 1);
+    add_to_front(n, 2);
+
+    return remove_from_front(n);
+}
+
+

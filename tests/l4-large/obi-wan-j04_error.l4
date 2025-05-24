@@ -1,0 +1,17 @@
+//test error
+
+typedef index bool;
+
+int main() {
+    index i = true;
+
+
+    index[] arr = alloc_array(bool, 5);
+
+    arr[i] = 17;
+
+    return 0;
+}
+
+
+

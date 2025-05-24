@@ -1,0 +1,16 @@
+//test typecheck
+
+testtypedef square(testtypedef x) {
+  return x * x;
+}
+
+int main() {
+  bool2 a = true;
+  assert(a);
+
+  int x = 2;
+  int y = 5;
+  int z = mystery(square(x), square(y), x < y);
+
+  return z;
+}

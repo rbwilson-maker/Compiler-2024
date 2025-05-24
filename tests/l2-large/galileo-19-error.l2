@@ -1,0 +1,8 @@
+//test error
+// never a good idea... :-)
+
+int main () {
+    int thq = 42;
+    thq++--++--;
+    return thq;
+}

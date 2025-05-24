@@ -1,0 +1,8 @@
+//test return 1;
+int main ()
+{
+  int b = 20;
+  int[] a = alloc_array(int, (b > 30)?10:20);
+  a[19] = 15;
+  return 1;
+}

@@ -1,0 +1,14 @@
+//test return 19
+
+int main() {
+    int base = 2;
+    int num = 1000000;
+
+    int log = 0;
+    while(num != 1) {
+        num /= 2;
+        log++;
+    }
+
+    return log;
+}

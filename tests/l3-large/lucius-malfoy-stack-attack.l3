@@ -1,0 +1,14 @@
+//test return 42069
+// pushes the stack to its limits (on some compilers, on some systems)
+
+int magic(int x) {
+    if (x <= 0) {
+        return 42069;
+    } else {
+        return magic(x - 1);
+    }
+}
+
+int main() {
+    return magic(262081 * 5 / 8);
+}

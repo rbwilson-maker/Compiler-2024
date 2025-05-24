@@ -1,0 +1,14 @@
+//test div-by-zero
+//modulo overflow in if expression
+
+int main()
+{
+	int x = 6;
+	if(x % 0 == 9)
+	{
+		return 4;
+	}
+	return 0;
+	
+
+}

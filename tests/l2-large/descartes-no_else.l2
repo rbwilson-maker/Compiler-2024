@@ -1,0 +1,21 @@
+//test return 122
+// If any of the true branches are execture, will arithmetic error instead of returning 122
+
+int main() {
+  int x = 0;
+  int y = 1;
+
+  if (x != 0) {
+    return y / x;
+  }
+
+  if (x != 0) {
+    return 1 / 0;
+  }
+
+  if (y != 1) {
+    return y / 0;
+  }
+
+  return 122;
+}

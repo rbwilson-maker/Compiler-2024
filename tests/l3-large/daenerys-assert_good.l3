@@ -1,0 +1,11 @@
+//test return 1
+
+void isEven(int x) {
+   int y = ((x / 2) % 2) + (x % 2);
+   assert(y == 0);
+}
+
+int main() {
+   isEven(4);
+   return 1;
+}

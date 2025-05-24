@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main() {
+    int x = 256;     // 2^8
+    x <<= 8;         // 2^16
+
+    // raise div-by-zero here because shift quantity out of range
+    // left shift count < 0
+    int y = x << -1;
+
+    return x;
+}

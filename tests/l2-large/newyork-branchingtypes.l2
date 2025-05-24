@@ -1,0 +1,13 @@
+//test return 0
+int main(){
+	
+	if (true){
+		bool x = true;
+	} else {
+		bool x = false;
+	}
+
+	int x = 0;
+	return x;
+	
+}

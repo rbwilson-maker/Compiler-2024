@@ -1,0 +1,6 @@
+//test return 0
+int main() {
+	int[]* p = alloc(int[]);
+	*p = alloc_array(int, 4);
+	return (*p)[0];
+}

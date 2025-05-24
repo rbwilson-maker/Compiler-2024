@@ -1,0 +1,14 @@
+//test return 0
+
+int main() {
+    assert(string_length("three") == 5);
+    assert(string_length("ten") == 3);
+    assert(string_length("") == 0);
+
+    assert(string_equal("", ""));
+    assert(!string_equal("hello", "goodbye"));
+
+    assert(string_equal(string_join("15", "411"), "15411"));
+
+    return 0;
+}

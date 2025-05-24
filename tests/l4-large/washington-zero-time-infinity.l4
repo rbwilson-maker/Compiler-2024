@@ -1,0 +1,13 @@
+//test return 0
+
+// ...is zero.
+
+struct empty {
+};
+
+int main() {
+    for (int i = 0; i < 1000; i++) {
+        alloc_array(struct empty, 1 << 30);
+    }
+    return 0;
+}

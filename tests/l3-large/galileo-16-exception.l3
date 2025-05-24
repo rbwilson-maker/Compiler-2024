@@ -1,0 +1,27 @@
+//test div-by-zero
+// must handle external abort in correct way
+
+void abort() {
+    int d = 9;
+    int n = 0;
+    /* use loop to confuse constant folding */
+    for (int i = 0; i < 9; i++) {
+        n++;
+        d--;
+    }
+    n / d; // div-by-zero
+}
+
+int main() {
+    bool t = true;
+    bool f = false;
+    /* use loop to confuse constant folding */
+    for (int i = 0; i < 2; i++) {
+        t = !t;
+        f = !f;
+    }
+    assert(t);
+    abort();
+    assert(f);
+    return 0;
+}

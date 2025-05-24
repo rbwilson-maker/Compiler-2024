@@ -1,0 +1,10 @@
+//test return 4
+// just checks parsing of booleans
+int main() {
+	int a = 0;
+	if (1 < 2) a++;
+	if (2 <= 2) a++;
+	if (3 > 2) a++;
+	if (2 >= 2) a++;
+	return a;
+}

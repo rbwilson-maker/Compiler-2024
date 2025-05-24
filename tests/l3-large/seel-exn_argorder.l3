@@ -1,0 +1,15 @@
+//test abort
+// This tests argument evaluation order for functions
+
+int a() {
+  assert(false);
+  return 2;
+}
+
+void b(int a, int b, int c) {
+}
+
+int main() {
+  b(4, a(), 1/0);
+  return 0;
+}

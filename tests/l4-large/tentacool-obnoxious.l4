@@ -1,0 +1,14 @@
+//test return 0
+
+typedef struct a b;
+typedef b c;
+struct a {
+    int d;
+};
+struct z {
+    c d;
+};
+int main() {
+    c* p = alloc(c);
+    return 0;
+}

@@ -1,0 +1,41 @@
+//test return 10
+// Simple linked list that stores the position of each node in the node
+// and returns the position of the final node.
+
+struct node {
+    int val;
+    bool blah;
+    int pos;
+    struct node* next;
+};
+
+typedef struct node* node;
+
+int main() {
+    node head = NULL;
+    node prev = NULL;
+
+    for(int i = 0; i < 10; i++) {
+        node new = alloc(struct node);
+        new->val = i * 2;
+        new->pos = prev == NULL ? i + 1 : prev->pos + 1;
+
+        if (prev != NULL) {
+            prev->next = new;
+        } else {
+            head = new;
+        }
+
+        prev = new;
+    }
+
+    node curr = head;
+    int final_pos = 0;
+
+    while(curr != NULL) {
+        final_pos = curr->pos;
+        curr = curr->next;
+    }
+    
+    return final_pos;
+}

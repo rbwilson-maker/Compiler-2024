@@ -1,0 +1,29 @@
+//test return 42
+
+void mutate() {
+    int *p = alloc(int);
+    (*p)++;
+}
+
+bool check(int *p) {
+    mutate();
+    return *p == 42;
+}
+
+bool also_check(int *p)
+// Our purity heuristic is "if a function accepts a pointer or array,
+// and it has any memory writes, then it is not known-pure", so the
+// following call fails even though we _could_ statically guarantee that
+// `p` is not modified.
+//@ ensures \result == check(p);
+{
+    return *p == 42;
+}
+
+int main() {
+    int *p = alloc(int);
+    assert(!also_check(p));
+    *p = 42;
+    assert(also_check(p));
+    return *p;
+}

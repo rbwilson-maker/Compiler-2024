@@ -1,0 +1,20 @@
+//test return 1
+
+int main ()
+{
+
+  bool one = true;
+  bool two = true;
+  bool three = false;
+
+  if (one && three){
+    return 3;
+  } else {
+    if (two && three){
+      return 2;
+    } else {
+      return 1;
+    }
+  }
+
+}

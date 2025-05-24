@@ -1,0 +1,12 @@
+//test return 150
+// tests ability to declare variables in the middle of statements
+
+int main() {
+  int x;
+  x = 5;
+  int y;
+  int z;
+  y = 10;
+  z = x + y;
+  return z * 10;
+}

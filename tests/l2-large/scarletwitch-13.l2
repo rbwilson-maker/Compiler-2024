@@ -1,0 +1,22 @@
+//test return 25
+int main(){
+    int x = 0;
+    int y = 0;
+    int z = 4;
+    int a;
+    int b;
+    int c;
+    for(int i = 0; i < 5; i++){
+        x = i;
+        y = i + 3;
+        z += i;
+    }
+    if(true)
+      x = x;
+    else
+      x = 6;
+    return x + y + z;
+    return a;
+    return b;
+    return c;
+}

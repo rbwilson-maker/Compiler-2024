@@ -1,0 +1,18 @@
+//test typecheck
+
+int second_fun ();
+
+int first_fun () {
+    internal_fun();
+    return second_fun ();
+}
+
+int second_fun () {
+    external_fun();
+    return first_fun ();
+}
+
+int main () {
+    return first_fun ();
+}
+

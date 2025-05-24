@@ -1,0 +1,21 @@
+//test return 0
+//prove the collatz conjecture
+
+int collatz_f(int n) {
+    if (n % 2 == 0) {
+        return n / 2;
+    } else {
+        return 3 * n + 1;
+    }
+}
+
+void collatz(int n) {
+    while (n != 1) {
+        n = collatz_f(n);
+    }
+}
+
+int main(){
+    collatz(1234);
+    return 0;
+}

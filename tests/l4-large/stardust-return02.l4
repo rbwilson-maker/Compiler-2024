@@ -1,0 +1,20 @@
+//test return 1
+//test struct
+
+struct mystruct {
+	int x;
+	int y;
+};
+
+bool f(int a, int b) 
+{
+	return a < b;
+}
+
+int main() {
+	struct mystruct* s = alloc(struct mystruct);
+	s->x = 1;
+	s->y = 348925783;
+	bool b = true;
+	return f(s->x, s->y) && b ? s->x : s->y;
+}

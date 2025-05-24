@@ -1,0 +1,50 @@
+//test return 0
+//try generating all possible values for a pixel
+struct pix
+{
+    int r;
+    int g;
+    int b;
+    int a;
+};
+
+typedef struct pix pixel;
+
+pixel* generate_next_pixel(pixel* p)
+{
+   if (p->r >= 0 && p->r < 128)
+   {
+      p->r++;
+   }
+   else
+   {
+
+      p->r = 0;
+      if (p->g >= 0 && p->g < 1024)
+         p->g++;
+      else
+      {
+          p->g = 0;
+          if (p->b >= 0 && p->b < 1024)
+             p->b++;
+          else
+          {
+              return NULL;
+          }
+      }
+   }
+   return p;
+}
+
+int main()
+{
+    pixel* p = alloc(pixel);
+    pixel* cur = p;
+    int i = 0;
+    while (cur != NULL)
+    {
+       cur = generate_next_pixel(p);
+       i++;
+    }
+    return 0;
+}

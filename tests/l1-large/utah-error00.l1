@@ -1,0 +1,9 @@
+//test error
+// this program should fail to compile since it has an otherwise valid
+// statement outside of main.
+
+int main() {
+    return 0;
+}
+
+return 1;

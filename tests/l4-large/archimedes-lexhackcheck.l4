@@ -1,0 +1,17 @@
+//test return 42
+// Do you have a proper lexer hack
+
+typedef int a;
+typedef a b;
+typedef a c;
+typedef b d;
+typedef c e;
+typedef e f;
+typedef d g;
+typedef f h;
+
+int main() {
+  h * val = alloc(int);
+  *val = 42;
+  return *val;
+}

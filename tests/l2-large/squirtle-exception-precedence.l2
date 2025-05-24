@@ -1,0 +1,11 @@
+//test div-by-zero
+// Test an exception which occurs due to operator precedence
+int main() {
+  int x = 100;
+ 
+  while( x != 1) {
+    int compute = x^x % (x^x);
+  }
+
+  return 0;
+}

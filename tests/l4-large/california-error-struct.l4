@@ -1,0 +1,18 @@
+//test error
+
+struct dickdag {
+    bool iamheavyweaponsguy;
+    int andthisismyweapon;
+};
+
+struct medic {
+    int bbq;
+};
+
+
+int main() {
+    struct medic *one = alloc(struct medic);
+    one -> andthisismyweapon = 5;
+    return one->andthisismyweapon;
+}
+

@@ -1,0 +1,15 @@
+//test error
+//
+//
+
+int f(int a);
+
+int main(){
+  return f(3);
+}
+
+
+
+int f(int a){
+  return true;
+}

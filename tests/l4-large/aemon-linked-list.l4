@@ -1,0 +1,33 @@
+//test return 0
+
+struct list {
+	int data;
+	struct list *next;
+};
+
+bool tortoise_and_hare(struct list *l)
+{
+	struct list *tortoise = l;
+	if (l == NULL)
+		return false;
+	struct list *hare = l->next;
+	while (tortoise != NULL && hare != NULL && tortoise != hare) {
+		tortoise = l->next;
+		if (hare->next == NULL)
+			return false;
+		hare = hare->next->next;
+	}
+	if (tortoise == NULL || hare == NULL)
+		return false;
+	return true;
+}
+
+int main()
+{
+	struct list *l = alloc(struct list);
+	l->next = alloc(struct list);
+	l->next->next = alloc(struct list);
+	l->next->next->next = l;
+	assert(tortoise_and_hare(l));
+	return 0;
+}

@@ -1,0 +1,46 @@
+//test return 1
+
+void quicksort(int[] array, int from, int to)
+{
+        if(from>=to)return;
+        int pivot = array[from]; 
+        int i = from; 
+        int j; int temp;
+        for(j = from + 1;j <= to;j++)
+        {
+                if(array[j] < pivot) 
+                {
+                        i = i + 1;
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                }
+        }
+        temp = array[i];
+        array[i] = array[from];
+        array[from] = temp;
+        quicksort(array,from,i-1);
+        quicksort(array,i+1,to);
+}
+
+int check_sorted(int[] a, int n) {
+  for (int i = 0; i < n - 1; i++) {
+    if (a[i] > a[i+1]) return 0;
+  }
+  return 1;
+}
+
+int main() {
+  int n = 8;
+  int[] a = alloc_array(int, n);
+  a[0] = 8;
+  a[1] = 7;
+  a[2] = 6;
+  a[3] = 5;
+  a[4] = 4;
+  a[5] = 3;
+  a[6] = 2;
+  a[7] = 1;
+  quicksort(a, 0, 7);
+  return check_sorted(a, n);
+}

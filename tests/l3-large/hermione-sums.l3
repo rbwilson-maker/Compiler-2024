@@ -1,0 +1,23 @@
+//test div-by-zero
+
+bool sum (int target) {
+    int total = 0;
+    for (int i = 1; total < target; i++) {
+        total += i;
+        if (total == target) {
+            return true;
+        }
+    } 
+
+    return false;
+}
+
+int main () {
+    int count = 0;
+    for (int i = 1; i < 111; i++) {
+        if (sum(i)) {
+            count++;
+        }
+    }
+    return (111 / (count % 2));
+}

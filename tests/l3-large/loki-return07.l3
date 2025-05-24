@@ -1,0 +1,17 @@
+//test return 13
+
+int moo(int x) {
+    return x * 2;
+}
+
+int foo(int y) {
+    return moo(y) + 2;
+}
+
+int boo(int z) {
+    return foo(z) / 2;
+}
+
+int main() {
+    return boo(2) + moo(2) + foo(2);
+}

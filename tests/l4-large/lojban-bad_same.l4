@@ -1,0 +1,19 @@
+//test error
+
+typedef struct same same;
+
+struct same {
+   same** same;
+};
+
+same same() {
+   same* same = alloc(same);
+   same->same = alloc(same*);
+   *same->same = NULL;
+   return same;
+}
+
+int main() {
+   return same() == NULL ? 1 : 2;
+}
+

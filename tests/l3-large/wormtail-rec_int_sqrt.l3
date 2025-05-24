@@ -1,0 +1,18 @@
+//test return 1231
+int sqrt(int x) {
+  if(x==0) {
+    return 0;
+
+  }
+  int z = x/4;
+  int r2 = 2 * sqrt(z);
+  int r3 = r2+1;
+  if (x < r3*r3) {
+    return r2;
+  }
+  return r3;
+}
+
+int main() {
+  return sqrt(1515361);
+}

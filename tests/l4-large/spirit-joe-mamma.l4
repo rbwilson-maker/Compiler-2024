@@ -1,0 +1,24 @@
+//test return 90000;
+
+struct joe {
+    int a;
+    bool b;
+    int[] nums;    
+};
+
+typedef struct joe mamma;
+
+int main() {
+    
+    mamma *m = alloc(mamma);
+    m->nums = alloc_array(int, 1000);
+    
+    if (m->b) m->a = 10;
+    else m->a = 100;
+
+    for (int i = m->a; i < 1000; i++) {
+        m->nums[i] += m->nums[i-1] + m->a;
+    }
+    
+    return m->nums[999];
+}

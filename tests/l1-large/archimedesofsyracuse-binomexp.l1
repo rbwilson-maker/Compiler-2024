@@ -1,0 +1,21 @@
+//test return 625
+// Binomial expansion of degree 4
+// Parenthesis around expressions to check if that gets parsed properly also
+int main() {
+  int a = 1;
+  int b = 1;
+
+  int c = a + b;
+  c += a;
+  int d = c;
+
+  int e = c + d;
+  c += a;
+  d = c;
+
+  int x = 2;
+  int y = 3;
+
+  return (((a*x*x*x*x) + (c*x*x*x*y)) + (e*x*x*y*y) + 
+          ((d*x*y*y*y) + (b*y*y*y*y)));
+}

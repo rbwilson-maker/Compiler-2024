@@ -1,0 +1,8 @@
+//test return 5 
+
+int main() {
+    int x = 0;
+    int i;
+    for (i = 0; i < 3; i++) x++;
+    return i == 3 ? 5 : x; 
+}

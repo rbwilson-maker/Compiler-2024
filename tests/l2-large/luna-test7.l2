@@ -1,0 +1,8 @@
+//test error
+// Type mismatch
+
+int main() {
+    int x = 3;
+    bool y = x - 3;
+    return x + 1;
+}

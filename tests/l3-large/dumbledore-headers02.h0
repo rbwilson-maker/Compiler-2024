@@ -1,0 +1,5 @@
+//test for error when function in header file has no definition
+
+  int foo (int a, int b);
+
+  bool bar (bool a);

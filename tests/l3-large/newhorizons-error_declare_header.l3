@@ -1,0 +1,12 @@
+//test error
+// redefines this function which was declared in header
+
+int super_cool_function(int i)
+{
+    return i;
+}
+
+int main()
+{
+    return super_cool_function(411);
+}

@@ -1,0 +1,26 @@
+//test error
+//test circular decl typechecking
+
+struct du
+{
+   int crazy;
+};
+
+typedef struct du hast;
+
+struct mech;
+
+struct mech
+{
+    int hmm;
+    struct mech m;
+    struct du d;
+};
+
+typedef struct mech duhastmech;
+
+int main()
+{
+    duhastmech* h = alloc(duhastmech);
+    return 0;
+}

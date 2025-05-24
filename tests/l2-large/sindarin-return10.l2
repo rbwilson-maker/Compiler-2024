@@ -1,0 +1,10 @@
+//test return 8
+// test many parenthesis
+int main()
+{
+  int x = 2;
+  if (x == 2)
+    return (((((((((((((((((((((((((((x + 3))))))))))))))))))))))))) + 3));
+  else
+    return x;
+}

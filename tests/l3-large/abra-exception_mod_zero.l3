@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int imSoDumb(int n, int b) {
+	return n%(b+2);
+}
+
+int main() {
+	return imSoDumb(9, -2);
+}

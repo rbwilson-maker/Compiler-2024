@@ -1,0 +1,10 @@
+//test typecheck
+
+int main() {
+    // according to https://www2.stetson.edu/~efriedma/mathmagic/0803.html
+    assert(Snumber(100) == 89);
+    assert(Snumber(300) == 264);
+    assert(Snumber(1000) == 445);
+
+    return  Snumber(100000);
+}

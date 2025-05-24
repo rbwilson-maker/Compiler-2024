@@ -1,0 +1,16 @@
+//test error
+// Forward declarations don't have information about size of struct
+
+struct c;
+
+struct d {
+    struct c hello;
+};
+
+struct c {
+    int world;
+};
+
+int main() {
+    return 1;
+}

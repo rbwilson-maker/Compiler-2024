@@ -1,0 +1,13 @@
+//test return 7
+
+typedef bool b;
+typedef int i;
+
+i main () {
+i ie;
+for (ie = 0; ie < 2; ie++)
+{
+return 7;
+}
+return 3;
+}

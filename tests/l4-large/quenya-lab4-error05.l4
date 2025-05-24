@@ -1,0 +1,7 @@
+//test error
+// allocate an array of null
+
+int main() {
+  int*[] arr = alloc_array(NULL, 2);
+  return *(arr[0]);
+}

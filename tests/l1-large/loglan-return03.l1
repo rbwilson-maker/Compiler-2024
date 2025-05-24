@@ -1,0 +1,11 @@
+//test return 178
+
+int main () {
+    int a = 2;
+    int b = 3;
+    int d = a*b;
+    int e = d*b;
+    int f = d*a*e;
+    int g = f - 38;
+    return 178;
+}

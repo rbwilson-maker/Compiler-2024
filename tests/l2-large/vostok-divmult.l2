@@ -1,0 +1,19 @@
+//test return 524288
+
+int main() {
+    int base = 2;
+    int num = 1000000;
+
+    int log = 0;
+    while(num != 1) {
+        num /= 2;
+        log++;
+    }
+
+    int total = 1;
+    for(int i = 0; i < log; i++) {
+        total *= base;
+    }
+
+    return total;
+}

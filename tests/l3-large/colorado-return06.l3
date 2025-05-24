@@ -1,0 +1,23 @@
+//test return 1
+bool isOdd (int z);
+
+bool isEven (int z) {
+	if (z < 0) return isEven(-z);
+	if (z == 0) return true;
+	else return isOdd(z-1);
+}
+
+bool isOdd (int z) {
+	if (z == 0) return false;
+	if (z < 0) return isOdd(-z);
+	if (z == 1) return true;
+	else return isEven(z-1);
+}
+
+int main() {
+  if (isOdd(55) && isEven(-80)) {
+  	return 1;
+  } else {
+  	return 0;
+  }
+}

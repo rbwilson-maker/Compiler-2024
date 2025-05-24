@@ -1,0 +1,23 @@
+//test div-by-zero
+int gcd(int* a, int* b);
+
+int main(){
+  int* p1 = alloc(int);
+  *p1 = 8;
+  int* p2 = alloc(int);
+  *p2 = 16;
+  assert(gcd(p1,p2) == 8);
+  return 1;
+}
+
+int gcd(int* p1, int* p2){
+  int x = *p1;
+  int y = *p2;
+
+  int* newp1 = alloc(int);
+  *newp1 = y;
+  int* newp2 = alloc(int);
+  *newp2 = x % y;
+
+  return gcd(newp1, newp2);
+}

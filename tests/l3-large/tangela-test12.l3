@@ -1,0 +1,7 @@
+//test abort
+int main() {
+  for (int i = -7483647; i < 5; i++) {
+    assert(i > 0);
+  }
+  return 0;
+}

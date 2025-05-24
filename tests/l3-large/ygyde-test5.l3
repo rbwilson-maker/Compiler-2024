@@ -1,0 +1,11 @@
+//test typecheck
+
+int test_function(int fun) {
+    return test_function(fun + 1);
+}
+
+// this will purposefully terminate
+int main() {
+    int fun = 0;
+    return test_function(fun);
+}

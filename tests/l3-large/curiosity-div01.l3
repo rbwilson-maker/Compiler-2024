@@ -1,0 +1,11 @@
+//test div-by-zero
+int gcd(int a, int b);
+
+int main(){
+  assert(gcd(24,16) == 8);
+  return 1;
+}
+
+int gcd(int x, int y){
+  return gcd(y, x % y);
+}

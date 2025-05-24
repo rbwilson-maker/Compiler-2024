@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+
+int func(int x)
+{
+    return func(x - 2) / func(x - 1);
+}
+
+int main()
+{
+    return func(5);
+}

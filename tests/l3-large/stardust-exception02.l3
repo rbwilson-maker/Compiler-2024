@@ -1,0 +1,16 @@
+//test div-by-zero
+//test division by zero
+
+int divide(int x, int y) {
+	return x/y;
+}
+
+int main() {
+	int x = 1;
+	int y = 2;
+	int z = 3;
+	bool a = true;
+	bool b = false;
+	x = divide(x, 0);
+	return 1;
+}

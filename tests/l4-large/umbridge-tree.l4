@@ -1,0 +1,34 @@
+//test return 1000
+
+struct Node {
+    int value;
+    struct Node* left;
+    struct Node* right;
+};
+
+typedef struct Node tree;
+
+// return the sum of all values in the tree
+int sum(tree* root) {
+    if (root == NULL) {
+       return 0;
+    }
+    int s = root->value;
+    s += sum(root->left);
+    s += sum(root->right);
+    return s;
+}
+
+int main() {
+    // make a binary tree
+    tree* root = alloc(struct Node);
+    root->value = 100;
+    root->left = alloc(struct Node);
+    root->right = alloc(struct Node);
+    root->left->value = 200;
+    root->right->value = 300;
+    root->left->left = alloc(struct Node);
+    root->left->right = alloc(tree);
+    root->left->right->value = 400;
+    return sum(root);
+}

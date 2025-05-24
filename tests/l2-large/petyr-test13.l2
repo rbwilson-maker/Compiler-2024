@@ -1,0 +1,12 @@
+//test return 0
+
+// The testing harness will expect this program to return 0.
+
+// Test 13: conditional operator
+
+int main() {
+   int x =0 ;
+
+   return (x>0)?1:0 ;
+
+   }

@@ -1,0 +1,11 @@
+//test error
+
+int main() {
+    int x = 4;
+    bool y = true;
+    bool z = y || false;
+    bool a = z && y;
+    int q = x << 4;
+    int r = a ? q & x + 4 : q | x * 20;
+    return r ? r + 1 : r - 1;
+}

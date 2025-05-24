@@ -1,0 +1,21 @@
+//test return 4
+
+struct treenode {
+       int value;
+       struct treenode* [] children;
+
+};
+
+int main() {
+ 
+    struct treenode* p1 = alloc(struct treenode);
+    struct treenode* p2 = alloc(struct treenode);
+    struct treenode* p3 = alloc(struct treenode);
+    (*p1).value = 3;
+    (*p2).value = 4;
+    (*p3).value = 0;
+    (*p1).children = alloc_array(struct treenode *, 2);
+    (*p1).children[0] = p2;
+    (*p1).children[1] = p3;
+    return (*p1).children[0]->value;
+}

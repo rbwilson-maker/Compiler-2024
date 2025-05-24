@@ -1,0 +1,32 @@
+//test return 16777191
+//Generates a medium-sized binary tree
+
+struct node;
+
+typedef struct node * tree;
+
+struct node{
+    tree left;
+    tree right;
+    int value;
+};
+
+tree make_tree(int depth){
+    if(depth == 0) return NULL;
+    
+    tree t = alloc(struct node);
+    t->left = make_tree(depth-1);
+    t->right = make_tree(depth-1);
+    t->value = depth;
+    return t;
+}
+
+int sum(tree t){
+    if(t == NULL) return 0;
+    return sum(t->left) + t->value + sum(t->right);
+}
+
+int main(){
+    tree t = make_tree(23);
+    return sum(t);
+}

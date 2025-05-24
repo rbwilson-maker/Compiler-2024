@@ -1,0 +1,9 @@
+//test div-by-zero
+int b(int n) {
+  int x = n / n;
+  return b(n - 1);
+}
+
+int main() {
+  return b(20);
+}

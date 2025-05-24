@@ -1,0 +1,47 @@
+//test error
+typedef struct a* A;
+typedef struct b* B;
+typedef struct c* C;
+typedef struct d* D;
+
+struct d
+{
+  int x;
+};
+
+struct c
+{
+  int x;
+  D d;
+};
+
+struct b
+{
+  int x;
+  D d;
+  C c;
+};
+
+struct a
+{
+  int x;
+  B b;
+  C c;
+  D d;
+};
+
+int main()
+{
+  A a = alloc(struct a);
+  B b = alloc(struct b);
+  C c = alloc(struct c);
+  D d = alloc(struct d);
+  a->b = b;
+  a->c = c;
+  a->d = d;
+  b->c = c;
+  b->d = d;
+  c->d =d;
+  a->b->c->d = false;
+  return 1;
+}

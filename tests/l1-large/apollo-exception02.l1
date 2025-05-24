@@ -1,0 +1,10 @@
+//test div-by-zero
+// test by dividing by 0 through addition overflow.
+
+int main() {
+  int TMIN;
+  int y;
+
+  TMIN = -2147483648;
+  return 1 / (TMIN + TMIN);
+}

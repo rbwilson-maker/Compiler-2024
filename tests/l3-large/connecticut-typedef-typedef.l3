@@ -1,0 +1,8 @@
+//test error
+
+typedef int typedef; // <- pls halp
+
+int main() {
+	typedef x = 5;
+	return x;
+}

@@ -1,0 +1,21 @@
+//test return 9083254
+
+struct IntHolder {
+    int value;
+};
+typedef struct IntHolder Hodl;
+
+int main() {
+    
+    Hodl*[] hodlers = alloc_array(Hodl*, 10000);
+
+    hodlers[0] = alloc(Hodl);
+    hodlers[0]->value = 39;
+
+    for (int i = 1; i < 10000; i++) {
+        hodlers[i] = alloc(Hodl);
+        hodlers[i]->value = hodlers[i-1]->value + i % 1891;
+    }
+    
+    return hodlers[9999]->value;
+}

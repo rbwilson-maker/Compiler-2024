@@ -1,0 +1,16 @@
+//test typecheck
+//test infloop
+
+int main(){
+
+  int x = 1;
+  while(x == 1){
+    for (int i = 0; i < 30; i++){
+      x = 0x1 << i;
+    }
+    x++;
+    x = x & 1; // l00p
+  }
+
+  return 0; //dummy
+}

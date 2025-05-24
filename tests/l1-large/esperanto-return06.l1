@@ -1,0 +1,24 @@
+//test return 65
+
+int main(){
+	int d1;
+	int d2;
+	int d3;
+	int d4;
+	int d5;
+	int d6;
+	int d7;
+	int d8;
+	int d9;
+	
+	d1 = 55;
+	d2 = d1 - 10;
+	d3 = d2 - 9;
+	d4 = d3 * d2;
+	d5 = d3 * d4 - d1;
+	d6 = d4 + d1 - d2;
+	d7 = d4 + d3 - d2;
+	d8 = d4 + d6 - d5;
+	d9 = d4 + d3 - d6;
+	return 65;
+}

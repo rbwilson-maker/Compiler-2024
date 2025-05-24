@@ -1,0 +1,12 @@
+//test error
+
+struct my_struct {
+  int x;
+  bool y;
+};
+
+int main() {
+  struct my_struct *x = alloc(my_struct);
+  struct my_struct y = *x;
+  return my_struct.x;
+}

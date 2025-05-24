@@ -1,0 +1,7 @@
+//test div-by-zero
+// don't eagerly optimize out
+
+int main() {
+	int x = 0;
+	return 5 * x / x;
+}

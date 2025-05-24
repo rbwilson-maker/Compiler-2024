@@ -1,0 +1,22 @@
+//test memerror
+
+int abort() {
+	assert(false);
+	return 0;
+}
+int mem() {
+	int* a = NULL;
+	*a = 0;
+	return 0;
+}
+int div() {
+	return 1/0;
+}
+
+int order(int a, int b, int c) {
+	return a + b + c;
+}
+
+int main() {
+	return order(mem(), abort(), div());
+}

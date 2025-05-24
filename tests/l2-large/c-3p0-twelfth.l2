@@ -1,0 +1,39 @@
+//test return 3
+
+int main()
+{
+  int a = 0;
+  bool b = true;
+  bool c = false;
+
+  if (b && c)
+  {
+    return a;
+  }
+  else
+  {
+    a--;
+    if (b || c)
+    {
+      if (!b && !c)
+      {
+        return a;
+      }
+      else
+      {
+        a--;
+        for (int i = 0; i < 5; i++)
+        {
+          a++;
+        }
+        return a;
+      }
+    }
+    else 
+    {
+      return a;
+    }
+  } 
+
+  return a;
+}

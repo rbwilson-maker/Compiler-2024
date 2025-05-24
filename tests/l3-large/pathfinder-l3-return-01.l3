@@ -1,0 +1,21 @@
+//test return 21
+
+// mutually recursive function calls
+
+int func1(int x);
+int func2(int x);
+
+int func1(int x) {
+    return func2(x + 1);
+}
+
+int func2(int x) {
+    if (x >= 20) {
+        return x;
+    }
+    return func1(x + 1);
+}
+
+int main() {
+    return func1(0);
+}

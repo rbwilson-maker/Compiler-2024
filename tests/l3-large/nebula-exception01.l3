@@ -1,0 +1,18 @@
+//test div-by-zero
+
+int functionA(int a) {
+  if (a < 32) {
+    a *= 2;
+  }
+  return a;
+}
+
+int main() {
+  int res = 3;
+  int a = 2;
+  for (int i = 0; i < 15; i++) {
+    a = functionA(a);
+    res = res << a; // shift by more than 32
+  }
+  return res; // unreachable
+}

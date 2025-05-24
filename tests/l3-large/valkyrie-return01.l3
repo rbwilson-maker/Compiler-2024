@@ -1,0 +1,12 @@
+//test return 0
+int foo();
+
+int main(){
+	print_int(15210);
+	int x = foo();
+	return 0;
+}
+
+int foo(){
+	return 42;
+}

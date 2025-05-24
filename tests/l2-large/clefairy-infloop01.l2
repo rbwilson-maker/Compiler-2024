@@ -1,0 +1,10 @@
+//test typecheck
+//test infloop
+
+int main() {
+    int i = 0x8aeb5201;
+    for (; i < 0; i >>= 1) {
+        i = i;
+    }
+    return i;
+}

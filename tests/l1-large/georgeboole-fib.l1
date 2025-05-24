@@ -1,0 +1,26 @@
+//test return 1596
+// sum of fib(i) from i=0..16
+
+int main() {
+    int fib_0 = 0;
+    int fib_1 = 1;
+    int fib_2 = fib_0 + fib_1;
+    int fib_3 = fib_1 + fib_2;
+    int fib_4 = fib_2 + fib_3;
+    int fib_5 = fib_3 + fib_4;
+    int fib_6 = fib_4 + fib_5;
+    int fib_7 = fib_5 + fib_6;
+    int fib_8 = fib_6 + fib_7;
+    int fib_9 = fib_7 + fib_8;
+    int fib_10 = fib_8 + fib_9;
+    int fib_11 = fib_9 + fib_10;
+    int fib_12 = fib_10 + fib_11;
+    int fib_13 = fib_11 + fib_12;
+    int fib_14 = fib_12 + fib_13;
+    int fib_15 = fib_13 + fib_14;
+    
+    int sum = fib_0 + fib_1 + fib_2 + fib_3 + fib_4 + fib_5 + fib_6 + fib_7 + 
+        fib_8 + fib_9 + fib_10 + fib_11 + fib_12 + fib_13 + fib_14 + fib_15;
+
+    return sum;
+}

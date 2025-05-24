@@ -1,0 +1,17 @@
+//test return 0
+
+void ret(bool x) {
+  if (x) {
+    return;
+  }
+  else {
+    int d = 10 / 20;
+  }
+}
+
+int main() {
+  ret(true);
+  bool yes = false;
+  ret(yes);
+  return 0;
+}

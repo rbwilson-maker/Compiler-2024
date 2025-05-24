@@ -1,0 +1,23 @@
+//test div-by-zero
+
+int sqrt(int x) {
+  if (x < 0) return 1 / 0;    // Cannot take the square root of negative number
+  if (x == 0) return 0;
+  if (x >= 1 && x <= 3) return 1;
+  int rt = 2;
+  for (; rt * rt < x; rt++) { }
+  assert(rt * rt >= x);
+  if (rt * rt == x) return rt;
+  return rt - 1;
+}
+
+int main() {
+  int i = -1;
+  assert(sqrt(0) == 0);
+  assert(sqrt(1) == 1);
+  assert(sqrt(4) == 2);
+  assert(sqrt(67) == 8);
+  assert(sqrt(810582) == 900);
+  assert(sqrt(-1) == i);    // Nope
+  return sqrt(-100);
+}

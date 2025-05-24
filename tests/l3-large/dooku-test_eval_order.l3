@@ -1,0 +1,18 @@
+//test div-by-zero
+int div_zero() {
+    return 1/0;
+}
+
+int assert_false() {
+    assert(false);
+    return 3;
+}
+
+int foo(int a, int b) {
+    return 3;
+}
+
+int main() {
+    foo(div_zero(), assert_false());
+    return 0;
+}

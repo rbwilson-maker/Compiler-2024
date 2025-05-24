@@ -1,0 +1,11 @@
+//test error
+
+bool f(int a, int b, int c)
+{
+	return true;
+}
+
+int main()
+{
+	return f(1, 2, 3);
+}

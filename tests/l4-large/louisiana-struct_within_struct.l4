@@ -1,0 +1,16 @@
+//test return 0
+
+struct me0;
+struct me0 {
+    int hi;
+};
+struct me1 {
+    struct me0 within;
+};
+
+
+
+int main(){
+    struct me1 *s = alloc(struct me1);
+    return s->within.hi;
+}

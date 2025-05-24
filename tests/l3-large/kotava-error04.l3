@@ -1,0 +1,31 @@
+//test error
+
+typedef int dog;
+typedef dog cat;
+typedef bool fish;
+typedef fish shark;
+
+shark get_shark(dog numDogs, cat numCats);
+fish get_fish(cat numCats);
+
+shark get_shark(dog numDogs, cat numCats) {
+  return numDogs > numCats;
+}
+
+fish get_fish(cat numCats) {
+  shark has_shark;
+  {
+    has_shark = ((numCats >> 3) > 3);
+  }
+  return !has_shark;
+}
+
+int main() {
+  fish f1 = true;
+  dog numDogs = 5;
+  cat numCats = 6;
+  if (get_shark(numDogs, get_fish(numCats))) {
+    return 1;
+  }
+  return 0;
+}

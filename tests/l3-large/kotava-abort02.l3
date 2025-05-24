@@ -1,0 +1,13 @@
+//test abort
+
+void rec() {
+  assert(false);
+  rec();
+}
+
+int main() {
+  while (true) {
+    rec();
+  }
+  return 1 / 0;
+}

@@ -1,0 +1,25 @@
+//test div-by-zero
+
+int double(int* x) {
+	if (*x < 32768) {
+    *x = *x * 2;
+		return double(x);
+  }
+	else
+		return *x;
+}
+
+int main()
+{
+  int TMIN;
+  int* x;
+  x = alloc(int);
+  *x = *x + 1;
+  int overflow;
+
+  TMIN = double(x);
+
+  TMIN = TMIN * TMIN * (-2);
+  overflow = TMIN / -1;
+  return overflow;
+}

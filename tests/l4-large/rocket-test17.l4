@@ -1,0 +1,30 @@
+//test return 1
+
+bool* bar(bool* b) {
+    if (*b)
+    {
+        *b = false;
+        return b;
+    }
+    else
+    {
+        *b = true;
+        return b;
+    }
+}
+
+int main() {
+  bool* b;
+  b = alloc(bool);
+  *b = true;
+  bool* c = bar(b);
+  bool* d = bar(bar(bar(bar(bar(c))))); 
+  if (*d)
+  {
+      return 1;
+  }
+  else
+  {
+      return 0;
+  }
+}

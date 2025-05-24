@@ -1,0 +1,16 @@
+//test div-by-zero
+// hex multiplication overflow
+int main()
+{
+  int x;
+  int y;
+  int m;
+  int n;
+
+  x = 0x80000000;
+  y = 0xffffffff;
+  m = 0;
+  n = 0;
+
+  return x * y * m % n;
+}

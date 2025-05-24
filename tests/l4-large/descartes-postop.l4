@@ -1,0 +1,12 @@
+//test error
+/// *x++ needs to fail to align with C
+
+int main() {
+    int* x = alloc(int);
+    int** y = alloc(int*);
+
+    (**y)++;
+    *x++;
+
+    return *x++;
+}

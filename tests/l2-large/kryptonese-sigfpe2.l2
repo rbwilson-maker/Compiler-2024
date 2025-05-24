@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main ()
+{
+    int n = 0;
+    int x = 0x12345678;
+    for (int i = 0; i < 47; i ++) {
+        int mask = 1 << i;
+        n = n + (mask & x);
+    }
+    return n;
+}

@@ -1,0 +1,23 @@
+//test typecheck
+//test infloop
+
+int f(int[] arr, int n, int i) {
+    return arr[(i * 2 + arr[5] * i + i / arr[4] / 3 + 2) % n];
+}
+
+int main() {
+    int snoke = 600000;
+    int[] arr = alloc_array(int, snoke);
+    int i;
+    for (i = 0; i < snoke; i++) {
+        arr[i] = i;
+    }
+
+    int res = 100;
+
+    while (res >= 0 && res < snoke) {
+          res = f(arr, snoke, res);
+    }
+
+    return 0;
+}

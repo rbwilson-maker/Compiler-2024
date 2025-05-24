@@ -1,0 +1,10 @@
+//test return 20
+
+int main(){
+  int x = 4>>2;
+  int y = 21;
+  int z = 80149;
+  int t = (x*y)/z + 3 << 2 * x/4;
+  int g = t<=21 ? x ^ y : z | y;
+  return g;
+}

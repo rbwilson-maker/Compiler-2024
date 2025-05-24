@@ -1,0 +1,10 @@
+//test abort
+
+void decr(int x) { x--; }
+
+int main() {
+    int x = 1;
+    decr(x);
+    assert(x == 0);
+    return x;
+}

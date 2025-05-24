@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+  int[] arr = alloc_array(bool, 6);
+  arr[0] = true;
+  arr[1] = false;
+  return 0;
+}

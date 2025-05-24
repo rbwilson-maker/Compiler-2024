@@ -1,0 +1,9 @@
+//test div-by-zero
+int main(){
+  int a = 20;
+  while (true){
+    print_int(1/a);
+    a--; 
+  }
+  return 0;  
+}

@@ -1,0 +1,21 @@
+//test return 1111
+
+int main()
+{
+    int a = 1010;
+    int b = 1111;
+    int c = 1001;
+    int n = 10001;
+    //Lets go jugling
+    while(n > 0)
+    {
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+        a = a ^ c;
+        c = a ^ c;
+        a = a ^ c;
+        n = n - 1;
+    }
+    return a;
+}

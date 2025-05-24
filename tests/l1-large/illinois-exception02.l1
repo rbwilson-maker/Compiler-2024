@@ -1,0 +1,7 @@
+//test div-by-zero
+// order of operations, division by 0
+
+int main() {
+	int x = 10 / 5 / 10;
+	return 5 + 5 / x;
+}

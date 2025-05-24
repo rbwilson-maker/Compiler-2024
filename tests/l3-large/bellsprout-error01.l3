@@ -1,0 +1,12 @@
+//test error
+typedef void nothing;
+
+nothing empty_function() {
+    return;
+}
+
+int main() {
+    // return void from function that does not return any values
+    nothing much = empty_function();
+    return 0;
+}

@@ -1,0 +1,17 @@
+//test abort
+
+struct basic_struct {
+    bool x; 
+    int y;
+};
+
+typedef struct basic_struct hello;
+
+int main() 
+{
+    hello* h = alloc(hello);
+    h->x = false;
+    h->y = 1000;
+    assert((h->y) < 100);
+    return 0;
+}

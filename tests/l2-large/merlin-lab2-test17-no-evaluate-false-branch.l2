@@ -1,0 +1,10 @@
+//test return 41
+
+// test to not evaluate the false branch of a conditional
+
+int main()
+{
+    bool temp = true;
+
+    return temp ? 41 : 1 / 0;
+}

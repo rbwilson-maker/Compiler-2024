@@ -1,0 +1,16 @@
+//test return 126
+int main ()
+{
+  int x = 2;
+  int y = 0;
+
+  while (x < 100) {
+    if (x % 2 == 1) {
+        y = x / 0; // This case is never hit.
+    } else {
+        y += x;
+    }
+    x *= 2;
+  }
+  return y;
+}

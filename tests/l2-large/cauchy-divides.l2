@@ -1,0 +1,10 @@
+//test div-by-zero
+int main() {
+    int i_wanna_get_smaller = 10;
+    int yeo = 4;
+    while(yeo > 0) {
+        yeo -= 1;
+        i_wanna_get_smaller /= yeo;
+    }
+    return 69;
+}

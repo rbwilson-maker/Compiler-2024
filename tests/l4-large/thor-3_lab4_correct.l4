@@ -1,0 +1,53 @@
+//test error
+
+typedef int size_t;
+
+struct list_ele_t {
+    /**
+     * @brief Pointer to a int array containing a string value.
+     *
+     * The memory for this string should be explicitly allocated and freed
+     * whenever an element is inserted and removed from the queue.
+     */
+    int *value; /*value stores the address of a int. it's also a int
+                   array cuz you can put the other ints right next to it */
+
+    /**
+     * @brief Pointer to the next element in the linked list.
+     */
+    struct list_ele *next; /*next stores the address of a (struct list_ele) */
+};             /* abbreviation for the long
+                              type name (struct list_ele) is list_ele_t */
+
+
+struct queue_t {
+    /**
+     * @brief Pointer to the first element in the queue, or NULL if the
+     *        queue is empty.
+     */
+    struct list_ele_t *head; /*head is the name of the pointer*/
+    /*
+     * TODO: You will need to add more fields to this structure
+     *       to efficiently implement q_size and q_insert_tail
+     */
+    struct list_ele_t *tail;
+    size_t size;
+};
+
+int *queue_new() {
+    queue_t *q = alloc(struct queue_t);
+    /* What if malloc returned NULL? */
+    /*if malloc returns null then you can't get the head thing*/
+    if (q == NULL)
+        return q;   /*added this*/
+    q->head = NULL; /*dereferences the pointer and gets the head
+                        value out*/
+                    /*note that head is also a pointer*/
+    q->tail = NULL; /*added*/
+    q->size = 0;    /*added*/
+    return q -> size;
+}
+
+int main() {
+return queue_new();
+}

@@ -1,0 +1,77 @@
+//test return 31414464
+// https://en.wikipedia.org/wiki/Mersenne_Twister#Pseudocode
+struct twister {
+    int[] arr;
+    int index;
+};
+
+struct twister *seed(int s) {
+    int n = 624;
+    int f = 1812433253;
+
+    struct twister *mt = alloc(struct twister);
+    mt->arr = alloc_array(int, n);
+    mt->arr[0] = s;
+
+    for (int i = 1; i < n; i++) {
+        mt->arr[i] = f * (mt->arr[i-1] ^ (mt->arr[i-1] >> 30)) + i;
+    }
+
+    mt->index = n;
+    return mt;
+}
+
+void twist(struct twister *mt) {
+    int n = 624;
+    int m = 397;
+    int r = 31;
+    int a = 0x9908B0DF;
+
+    for (int i = 0; i < n; i++) {
+        int lower_mask = (1 << r) - 1;
+        int upper_mask = ~ lower_mask;
+
+        int x = (mt->arr[i] & upper_mask)
+                + (mt->arr[(i+1) % n] & lower_mask);
+        int xA = x >> 1;
+        if ((x % 2) != 0)
+            xA = xA ^ a;
+        mt->arr[i] = mt->arr[(i+m) % n] ^ xA;
+    }
+
+    mt->index = 0;
+}
+
+int rand(struct twister *mt) {
+    int n = 624;
+    int u = 11;
+    int d = 0xFFFFFFFF;
+    int s = 7;
+    int b = 0x9D2C5680;
+
+    if (mt->index >= n) {
+        twist(mt);
+    }
+
+    int y = mt->arr[mt->index];
+    y = y ^ ((y >> u) & d);
+    y = y ^ ((y << s) & b);
+    y = y ^ (y >> 1);
+
+    mt->index++;
+    return y;
+}
+
+int main(){
+    struct twister *twister = seed(0xDEADC0DE);
+    // If a and b are uniform on the interval [0,n],
+    // then P(a^2 + b^2 < n^2) = pi/4
+    int pi = 0;
+    for (int i = 0; i < 10000000; i++) {
+        int n = rand(twister);
+        int a = n % (1<<15);
+        int b = (n >> 15) % (1<<15);
+        if (a*a + b*b < (1<<30)) pi++;
+    }
+    return pi*4;
+}

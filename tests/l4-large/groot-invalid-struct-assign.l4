@@ -1,0 +1,17 @@
+//test error
+
+struct Wrapper {
+  int val;
+  int val2;
+  int val3;
+};
+
+int main() {
+  struct Wrapper* a = alloc(struct Wrapper);
+  struct Wrapper* b = alloc(struct Wrapper);
+  b->val = 123;
+
+  *a = *b;
+
+  return a->val;
+}

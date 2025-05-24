@@ -1,0 +1,15 @@
+//test error
+
+int main() {
+  return -1;
+}
+
+int foo(bool bar) {
+  if (bar) {
+    return 1;
+  } else {
+    return 1002;
+  }
+}
+
+bool foo(int bar);

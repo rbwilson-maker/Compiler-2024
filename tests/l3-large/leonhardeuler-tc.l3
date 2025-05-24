@@ -1,0 +1,13 @@
+//test typecheck
+
+int f(int a, bool b) {
+    if (b) {
+        return a;
+    } else {
+        return -1 * a;
+    }
+}
+
+int main() {
+    return f(15, true);
+}

@@ -1,0 +1,13 @@
+//test error
+
+int main() {
+    int j = 50;
+    for(int i = 0; i < 50; i++) {
+        if(i % 2 == 0) {
+            j = j / 2;
+        } else {
+            j = j * 2;
+        }
+    }
+    return i;
+}

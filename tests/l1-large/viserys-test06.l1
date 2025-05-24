@@ -1,0 +1,14 @@
+//test return 17
+
+// tests evaluation of the *= and /= operator, specifically
+// whether the rhs is evaluated first before expanding x *= e to x = x * e etc.
+
+int main()
+{
+  int a = 5;
+  int b = 4;
+  a *= 3 + 4;
+  b /= 5 - 1 * 3;
+
+  return a / b;
+}

@@ -1,0 +1,9 @@
+//test error
+// test comment interpretation
+
+int main() {
+  ///* this is a one line comment
+  int x = 6;
+  */
+  return 4;
+}

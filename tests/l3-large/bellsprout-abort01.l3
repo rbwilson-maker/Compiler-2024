@@ -1,0 +1,27 @@
+//test abort
+
+// count the permutations that sums to a target value
+int permutation(int a1, int a2, int target) {
+    assert(target >= 0);
+    assert(a1 != a2);
+    assert(a1 > 0 && a2 > 0);
+
+    int count = 0;
+
+    if (a1 < target)
+        count += permutation(a1, a2, target - a1);
+    else if (a1 == target)
+        count += 1;
+
+    if (a2 < target)
+        count += permutation(a1, a2, target - a2);
+    else if (a2 == target)
+        count += 1;
+
+    return count;
+}
+
+int main() {
+    return permutation(1, 0, 5);
+}
+

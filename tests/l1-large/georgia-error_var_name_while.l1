@@ -1,0 +1,14 @@
+//test error
+//test invalid variable name
+int main()
+{
+  int while;
+  int b;
+  int c;
+
+  while = 11;
+  b = 3;
+  c= while + b;
+ 
+  return c;
+}

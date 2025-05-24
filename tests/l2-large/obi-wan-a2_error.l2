@@ -1,0 +1,13 @@
+//test error
+
+int main()
+{
+    bool t = true;
+    bool f = false;
+
+    int x = t ? 15000 : (411 / 0);      //eval to 1500
+    int y = f ? (15000 / 0) : 411;      //eval to 411
+    int z = t ? 15411 : f;              //type error
+
+    return x + y;
+}

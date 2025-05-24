@@ -1,0 +1,15 @@
+//test return 0
+
+// basic testing of parsing errors
+
+typedef int[] foo;
+
+int main() {
+    int b;
+    foo arr = alloc_array(int, 5);
+    for (b = 1; b < 5; b += 1) {
+        assert(arr[b] == 0);
+        arr[b] = arr[b - 1] + arr[b];
+    }
+    return arr[4];
+}

@@ -1,0 +1,62 @@
+//test return 6
+// Computes the number of unique paths from one vertex to another.
+
+struct Vertex {
+	int id;
+	bool visited;
+	int[] neighbors;
+	int num_neighbors;
+};
+
+int num_paths(struct Vertex[] graph, int start_vertex, int end_vertex) {
+	int result = 0;
+
+	for (int i = 0; i < graph[start_vertex].num_neighbors; i++) {
+		if (graph[start_vertex].neighbors[i] == end_vertex) {
+			result++;
+		}
+	}
+
+	for (int i = 0; i < graph[start_vertex].num_neighbors; i++) {
+		int neighbor_vertex = graph[start_vertex].neighbors[i];
+		if (!graph[neighbor_vertex].visited) {
+			graph[neighbor_vertex].visited = true;
+			result += num_paths(graph, neighbor_vertex, end_vertex);
+			graph[neighbor_vertex].visited = false;
+		}
+	}
+
+	return result;
+}
+
+int main() {
+	int num_vertices = 10;
+	struct Vertex[] graph = alloc_array(struct Vertex, num_vertices);
+	for (int i = 0; i < num_vertices; i++) {
+		graph[i].id = i;
+		graph[i].visited = false;
+		if (i == 0) {
+			graph[i].neighbors = alloc_array(int, 3);
+			graph[i].num_neighbors = 3;
+		} else {
+			graph[i].neighbors = alloc_array(int, 1);
+			graph[i].num_neighbors = 1;
+		}
+	}
+
+	graph[0].neighbors[0] = 1;
+	graph[0].neighbors[1] = 2;
+	graph[0].neighbors[2] = 3;
+	graph[1].neighbors[0] = 4;
+	graph[2].neighbors[0] = 5;
+	graph[3].neighbors[0] = 6;
+	graph[4].neighbors[0] = 7;
+	graph[5].neighbors[0] = 7;
+	graph[6].neighbors[0] = 8;
+	graph[7].neighbors[0] = 9;
+	graph[8].neighbors[0] = 9;
+	graph[9].neighbors[0] = 9;
+
+	graph[0].visited = true;	
+	return num_paths(graph, 0, 9);
+}

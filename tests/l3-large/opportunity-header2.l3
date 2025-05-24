@@ -1,0 +1,8 @@
+//test typecheck
+//tests header files
+
+int main(){
+  assert(max_prime_below(3)==2);
+  assert(max_prime_below(10)==7);
+  return 0;
+}

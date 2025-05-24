@@ -1,0 +1,9 @@
+//test error
+
+int main ()
+{
+  int continue = 5;
+  while (true) continue;
+  continue;
+  return 0;
+}

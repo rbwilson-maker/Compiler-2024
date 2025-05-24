@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int div(int a, int b) {
+    int c = a > b ? a : b;
+    int d = a > b ? b : a;
+    return c / d;
+}
+
+int main() {    
+    return div(1, 0);
+}

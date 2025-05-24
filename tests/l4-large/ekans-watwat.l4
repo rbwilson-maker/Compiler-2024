@@ -1,0 +1,22 @@
+//test typecheck
+//test infloop
+
+struct S {
+    struct S * nxt;
+};
+
+int wat() {
+    struct S *a = alloc(struct S);
+    struct S *b = alloc(struct S);
+    a->nxt = b;
+    b->nxt = a;
+    struct S *c = a;
+    while (c == a || c == b) {
+        c = c->nxt;
+    }
+    return 0;
+}
+
+int main() {
+  return 1/wat();
+}

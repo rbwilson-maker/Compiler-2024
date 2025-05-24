@@ -1,0 +1,24 @@
+//test memerror
+
+struct tree {
+  int data;
+  struct tree * left;
+  struct tree * right;
+};
+
+typedef struct tree * tree;
+
+
+int main() {
+  tree root = alloc(struct tree);
+  root->data = 1000;
+  root->left = alloc(struct tree);
+  root->right = alloc(struct tree);
+  //NULL pointer dereference
+  if (root->left->left->right->data == 125) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+

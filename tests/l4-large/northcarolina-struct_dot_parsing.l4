@@ -1,0 +1,20 @@
+//test error
+
+//* and -> can't be used together without some serious parens.
+
+typedef struct A * B;
+typedef struct C * D;
+
+struct A {
+  D x;
+};
+
+struct C {
+  int y;
+};
+
+int main() {
+  B z = alloc(struct A);
+  *z.x = alloc(struct C);
+  return (*(z->x)).y;
+}

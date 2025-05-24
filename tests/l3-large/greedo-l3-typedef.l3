@@ -1,0 +1,7 @@
+//test error
+
+DWORD f(DWORD n){ return n; }
+
+DWORD main(){
+    return f(10);
+}

@@ -1,0 +1,22 @@
+//test return 5555;
+
+fpt bloop(fpt blah) {
+    return fmul(blah, fmul(blah, fmul(blah, blah))); 
+}
+
+fpt det (fpt m0, fpt m1, fpt m2, fpt m3) {
+    return m0 * m3 - m1 * m2;
+}
+
+int main() {
+    fpt ot = fdiv(itof(1), itof(2)); // 0.5
+    fpt ot4 = bloop(ot); 
+    fpt ot16 = bloop(ot4);
+    fpt ot64 = bloop(ot16);
+    fpt o3 = fdiv(itof(999995), itof(999999));
+    fpt o34 = bloop(o3);
+    fpt o316 = bloop(o34);
+    fpt o364 = bloop(o316);
+    fpt dddddddd = det(o364, o364, ot64, ot64);
+    return ftoi(bloop(bloop(dddddddd))) + 5555 - ftoi(ot64) * ftoi(ot64 ) + ftoi(ot64) / (ot64 + 212341234);
+}

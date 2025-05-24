@@ -1,0 +1,17 @@
+//test div-by-zero
+
+int main()
+{
+  int value1 = 3;
+  int value2 = 256;
+  value1 -= 1;
+  value1 -= 2;
+  value2 %= value1;
+
+
+  while(true){
+    value2 >>= 0x1;
+  }
+  
+  return value2;
+}

@@ -1,0 +1,17 @@
+//test error
+//Unique structs
+
+struct s{
+	int a;
+	int b;
+};
+
+struct s{
+	int a;
+	int b;
+};
+
+int main(){
+	struct s* = alloc(struct s);
+	return s.a;
+}

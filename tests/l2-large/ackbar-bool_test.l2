@@ -1,0 +1,10 @@
+//test return 15
+//A test of boolean equality
+int main() {
+    bool test = false;
+    if(test == false){
+        return 15;
+    }else{
+        return 16;
+    }
+}

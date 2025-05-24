@@ -1,0 +1,25 @@
+//test return 110
+
+typedef int iiti(int x, int y);
+
+int fold(iiti* f, int b, int[] L, int l)
+{
+  for(int i = 0; i < l; i++)
+  {
+    b = (*f)(b,L[i]);
+  } 
+  return b;
+}
+
+int twosum(int a, int b)
+{
+  return a + 2*b;
+}
+
+int main()
+{
+  int[] xs = alloc_array(int, 10);
+  for(int i = 0; i < 10; i++)
+    xs[i] = i+1;
+  return fold(&twosum, 0, xs, 10);
+}

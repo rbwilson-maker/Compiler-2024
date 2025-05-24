@@ -1,0 +1,22 @@
+//test return 63028
+
+int f(int i)
+{
+    return i*i;
+}
+
+int g(int x, int y)
+{
+    return x * y; 
+}
+
+int h(int a, int b, int c)
+{
+    return (a + b)/c;
+}
+
+
+int main()
+{
+    return h(g(411, 3), 122, f(7)) + f(251);
+}

@@ -1,0 +1,17 @@
+//test return -4
+// test arithmetic expressions +, -, *
+int main()
+{
+  int a;
+  int b;
+  int c;
+  int d;
+  int e;
+
+  a = 0;
+  b = 2;
+  c = a+b;
+  d = a-b;
+  e = c*d;
+  return e;
+}

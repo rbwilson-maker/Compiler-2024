@@ -1,0 +1,11 @@
+//test error
+//Compilation error since c is not declared
+int main () {
+	int a;
+    int b;
+    a = 15;
+    b = 411;
+    c = a * 100;
+    a += b;
+	return b;
+}

@@ -1,0 +1,5 @@
+// prints a single character to stdout
+int putchar(int ch);
+
+// suspend exection for `usec` microseconds
+int usleep(int usec);

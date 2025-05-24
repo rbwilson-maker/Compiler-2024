@@ -1,0 +1,12 @@
+//test typecheck
+//test infloop
+// Another infinite loop
+
+int main() {
+    int a = 3;
+    int b = 10;
+    while (b > a) {
+    }
+
+    return 0;
+}

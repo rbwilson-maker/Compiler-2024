@@ -1,0 +1,13 @@
+//test return 0
+int main()
+{
+  int x = -2147483648;
+  if (x > 5)
+  {
+    return 1;
+  }
+  else
+  {
+    return 0;
+  }
+}

@@ -1,0 +1,14 @@
+//test div-by-zero
+
+void f (int i);
+
+void f (int i) {
+     int x = 1/i;
+     int y = i + 1;
+     f(y);
+}
+
+int main () {
+  f(-4);
+  return 0;
+}

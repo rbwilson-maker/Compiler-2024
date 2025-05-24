@@ -1,0 +1,16 @@
+//test error
+//helper function defined after main
+
+int main(){
+    int x = 1;
+    int y = 1;
+    int* px = alloc(int);
+    *px = x;
+    int* py = alloc(int);
+    *py = y;
+	return mult(px, py);
+}
+
+int mult (int* x, int* y) {
+	return (*x) * (*y);
+}

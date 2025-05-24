@@ -1,0 +1,13 @@
+//test return 120
+
+int fib(int x)
+{
+    if (x <= 0)
+        return 1;
+    return x * fib(x-1);
+}
+
+int main() {
+    int x = fib(5);
+    return x;
+}

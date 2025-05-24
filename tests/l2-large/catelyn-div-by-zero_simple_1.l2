@@ -1,0 +1,24 @@
+//test div-by-zero
+
+int main()
+{
+	int a = 1/1;
+	int b = 2 << 3 + a;
+	int c = b * a * 32 % 48;
+
+	int shifter = 0x7F;
+	int simple_shift = 0;
+	for (int i = 0; i < 100; i++)
+	{
+		shifter <<= 1;
+		if (i % 5 == 3)
+		{
+			shifter >>= 2;
+		}
+		if (i % 71 == 68)
+		{
+			return shifter << i;
+		}
+	}
+	return -1;
+}

@@ -1,0 +1,15 @@
+//test error
+/*
+Compile error.
+Illegal function name (typedef already uses that name).
+*/
+
+typedef int r;
+
+int r() {
+  return 3;
+}
+
+int main() {
+  return r();
+}

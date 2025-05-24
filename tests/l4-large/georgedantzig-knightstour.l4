@@ -1,0 +1,99 @@
+//test return 0
+
+/* Tests:
+ *  - Nested arrays
+ *  - Recursive calls with arrays as arguments
+ *  - Lists of structs
+ */
+
+// C0 solution to the 15-112 problem knightsTour (as a decision problem)
+struct move {
+    int drow;
+    int dcol;
+};
+
+typedef struct move move_t;
+
+// knightsTourHelper backtracks to find a path for the knight to take
+bool knightsTourHelper(int[][] board, int row, int col, int step, int rows, int cols) {
+    board[row][col] = step;
+
+    // Check if we are done
+    if (step == rows * cols) {
+        return true;
+    }
+
+    // Initialize move_t with the possible moves a knight can make
+    move_t[] possibleMoves = alloc_array(move_t, 8);
+    possibleMoves[0].drow = -2;
+    possibleMoves[0].dcol = -1;
+    possibleMoves[1].drow = -1;
+    possibleMoves[1].dcol = -2;
+    possibleMoves[2].drow = 1;
+    possibleMoves[2].dcol = -2;
+    possibleMoves[3].drow = 2;
+    possibleMoves[3].dcol = -1;
+    possibleMoves[4].drow = -2;
+    possibleMoves[4].dcol = 1;
+    possibleMoves[5].drow = -1;
+    possibleMoves[5].dcol = 2;
+    possibleMoves[6].drow = 1;
+    possibleMoves[6].dcol = 2;
+    possibleMoves[7].drow = 2;
+    possibleMoves[7].dcol = 1;
+
+    // Loop over all possible moves and check if they're legal
+    for (int i = 0; i < 8; i++) {
+        int newRow = row + possibleMoves[i].drow;
+        int newCol = col + possibleMoves[i].dcol;
+
+        // Check for validity
+        if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols &&
+            board[newRow][newCol] == 0) {
+            bool sol = knightsTourHelper(board, newRow, newCol, step + 1, rows, cols);
+            if (sol) return sol;
+        }
+    }
+
+    // Undo the move and return false
+    board[row][col] = 0;
+    
+    return false;
+}
+
+// knightsTour returns a list of steps
+bool knightsTour(int rows, int cols) {
+    // Initialize an empty board full of NULL pointers
+    int[][] board = alloc_array(int[], rows);
+    for (int r = 0; r < rows; r++) {
+        board[r] = alloc_array(int, cols);
+    }
+
+    // Loop over every possible starting row and column
+    for (int r = 0; r < rows; r++) {
+        for (int c = 0; c < cols; c++) {
+            bool sol = knightsTourHelper(board, r, c, 1, rows, cols);
+            
+            if (sol) return sol;
+        }
+    }
+
+    return false;
+}
+
+void testKnightsTour() {
+    assert(knightsTour(4, 3));
+    assert(!knightsTour(4, 4));
+    assert(knightsTour(4, 5));
+    assert(knightsTour(3, 4));
+    assert(!knightsTour(3, 6));
+    assert(knightsTour(3, 7));
+    assert(knightsTour(5, 5));
+    assert(knightsTour(7, 7));
+    assert(knightsTour(7, 8));
+}
+
+int main() {
+    testKnightsTour();
+    return 0;
+}

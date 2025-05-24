@@ -1,0 +1,31 @@
+//test return 30
+
+struct node {
+	int val;
+	struct node* next;
+};
+
+typedef struct node Node;
+
+int traverse_linked(Node* node){
+	if(node == NULL){
+		assert(false);
+	}
+	if(node->next == NULL){
+		return node->val;
+	}
+	return traverse_linked(node->next);
+}
+
+int main(){
+	Node* n1 = alloc(Node);
+	Node* n2 = alloc(Node);
+	Node* n3 = alloc(Node);
+	n1->val = 10;
+	n2->val = 20;
+	(*n3).val = 30;
+	n1->next = n2;
+	n2->next = n3;
+	n3->next = NULL;
+	return traverse_linked(n1);
+}

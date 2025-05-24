@@ -1,0 +1,39 @@
+//test div-by-zero
+// error due to division by zero from modular arithmetic
+int main()
+{
+    int x0 = 1;
+    int x1 = x0 * 2;
+    int x2 = x1 * 2;
+    int x3 = x2 * 2;
+    int x4 = x3 * 2;
+    int x5 = x4 * 2;
+    int x6 = x5 * 2;
+    int x7 = x6 * 2;
+    int x8 = x7 * 2;
+    int x9 = x8 * 2;
+    int x10 = x9 * 2;
+    int x11 = x10 * 2;
+    int x12 = x11 * 2;
+    int x13 = x12 * 2;
+    int x14 = x13 * 2;
+    int x15 = x14 * 2;
+    int x16 = x15 * 2;
+    int x17 = x16 * 2;
+    int x18 = x17 * 2;
+    int x19 = x18 * 2;
+    int x20 = x19 * 2;
+    int x21 = x20 * 2;
+    int x22 = x21 * 2;
+    int x23 = x22 * 2;
+    int x24 = x23 * 2;
+    int x25 = x24 * 2;
+    int x26 = x25 * 2;
+    int x27 = x26 * 2;
+    int x28 = x27 * 2;
+    int x29 = x28 * 2;
+    int x30 = x29 * 2;
+    int x31 = x30 * 2;
+    int x32 = x31 * 2;
+    return x31/x32;
+}

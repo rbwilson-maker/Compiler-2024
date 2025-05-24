@@ -1,0 +1,263 @@
+//test compile
+struct ndarray {
+    int dims;
+    int[] shape;
+    dub[] values;
+};
+
+typedef struct ndarray* ndarray;
+
+ndarray ndarray__consts(int dims, int[] shape, int base) {
+    ndarray res = alloc(struct ndarray);
+    res->dims = dims;
+    res->shape = alloc_array(int, dims);
+    int total_len = 1;
+    for (int i = 0; i < dims; i++) {
+        res->shape[i] = shape[i];
+        total_len *= shape[i];
+    }
+    res->values = alloc_array(dub, total_len);
+    for (int i = 0; i < total_len; i++) {
+        res->values[i] = itod(base);
+    }
+    return res;
+}
+
+
+ndarray ndarray__copy(ndarray arr) {
+    ndarray res = alloc(struct ndarray);
+    res->dims = arr->dims;
+    res->shape = alloc_array(int, res->dims);
+    for (int i = 0; i < res->dims; i++) {
+        res->shape[i] = arr->shape[i];
+    }
+    res->shape = alloc_array(int, res->dims);
+
+    int total_len = 1;
+    for (int dim = 0; dim < res->dims; dim++) {
+        total_len *= res->shape[dim];
+    }
+
+    for (int i = 0; i < total_len; i++) {
+        res->values[i] = arr->values[i];
+    }
+    return res;
+}
+
+ndarray ndarray__reshape(ndarray arr, int dims, int[] shape) {
+    ndarray arr_cp = ndarray__copy(arr);
+    arr_cp->dims = dims;
+    for (int i=0; i < dims; i++) {
+        arr_cp->shape[i] = shape[i];
+    }
+    return arr_cp;
+}
+
+
+ndarray ndarray__dot(ndarray arr1, ndarray arr2) {
+    ndarray result = alloc(struct ndarray);
+
+    if (arr1->dims == 1 && arr2->dims == 1) {
+        assert(arr1->shape[0] == arr2->shape[0]);
+        result->values = alloc_array(dub, 1);
+        result->values[0] = itod(0);
+        for (int i = 0; i < arr1->shape[0]; i++) {
+            dub product = dmul(arr1->values[i], arr2->values[i]);
+            result->values[0] = dadd(result->values[0], product);
+        }
+
+    } else if (arr1->dims == 2 && arr2->dims == 2) {
+        assert(arr1->shape[1] == arr2->shape[0]);
+
+        result->dims = 2;
+        result->shape = alloc_array(int, 2);
+
+        result->shape[0] = arr1->shape[0];
+        result->shape[1] = arr2->shape[1];
+        result->values = alloc_array(dub, result->shape[0] * result->shape[1]);
+
+        for (int i = 0; i < result->shape[0]; i++) {
+            for (int j = 0; j < result->shape[1]; j++) {
+                int idx = i * result->shape[1] + j;
+                result->values[idx] = itod(0);
+                for (int k = 0; k < arr1->shape[1]; k++) {
+                    result->values[idx] = dadd(dmul(arr1->values[i * arr1->shape[1] + k], arr2->values[k * arr2->shape[1] + j]), result->values[idx]);
+                }
+            }
+        }
+    } else if (arr1->dims == 0 || arr2->dims == 0) {
+        dub scalar;
+        ndarray arr;
+        if (arr1->dims == 0) {
+            scalar = arr1->values[0];
+            arr = arr2;
+        } else {
+            scalar = arr2->values[0];
+            arr = arr1;
+        }
+
+        result = ndarray__consts(arr->dims, arr->shape, 0);
+        int total_len = 1;
+        for (int i = 0; i < arr->dims; i++) {
+            total_len *= arr->shape[i];
+        }
+
+        for (int i = 0; i < total_len; i++) {
+            result->values[i] = dmul(arr->values[i], scalar);
+        }
+    } else if (arr2->dims == 1) {
+        int last_dim_size = arr1->shape[arr1->dims - 1];
+        assert(last_dim_size == arr2->shape[0]);
+        result = ndarray__consts(arr1->dims - 1, arr1->shape, 0);
+        int last_dim_vec_ct = 1;
+
+        for (int i = 0; i < result->dims; i++) {
+            last_dim_vec_ct *= result->shape[i];
+        }
+        for (int i = 0; i < last_dim_vec_ct; i++) {
+            for (int j = 0; j < last_dim_size; j++) {
+                result->values[i] = dadd(result->values[i], dmul(arr1->values[i * last_dim_size + j], arr2->values[j]));
+            }
+        }
+    } else {
+        //unimplemented nd dot product
+        assert(false);
+    }
+    return result;
+}
+
+int calc_total(int dims, int[] shape) {
+    int total = 1;
+    for (int i = 0; i < dims; i++) {
+        total *= shape[i];
+    }
+    return total;
+}
+
+ndarray ndarray__pw_add(ndarray arr1, ndarray arr2) {
+    assert(arr1->dims == arr2->dims);
+    for (int i = 0; i < arr1->dims; i++) {
+        assert(arr1->shape[i] == arr2->shape[1]);
+    }
+    ndarray res = ndarray__consts(arr1->dims, arr1->shape, 0);
+    int tot_len = calc_total(arr1->dims, arr1->shape);
+    for (int i = 0; i < tot_len; i++) {
+        res->values[i] = dadd(arr1->values[i], arr2->values[i]);
+    }
+    return res;
+}
+
+ndarray ndarray__pw_sub(ndarray arr1, ndarray arr2) {
+    assert(arr1->dims == arr2->dims);
+    for (int i = 0; i < arr1->dims; i++) {
+        assert(arr1->shape[i] == arr2->shape[1]);
+    }
+    ndarray res = ndarray__consts(arr1->dims, arr1->shape, 0);
+    int tot_len = calc_total(arr1->dims, arr1->shape);
+    for (int i = 0; i < tot_len; i++) {
+        res->values[i] = dsub(arr1->values[i], arr2->values[i]);
+    }
+    return res;
+}
+
+ndarray ndarray__pw_mul(ndarray arr1, ndarray arr2) {
+    assert(arr1->dims == arr2->dims);
+    for (int i = 0; i < arr1->dims; i++) {
+        assert(arr1->shape[i] == arr2->shape[1]);
+    }
+    ndarray res = ndarray__consts(arr1->dims, arr1->shape, 0);
+    int tot_len = calc_total(arr1->dims, arr1->shape);
+    for (int i = 0; i < tot_len; i++) {
+        res->values[i] = dmul(arr1->values[i], arr2->values[i]);
+    }
+    return res;
+}
+
+ndarray ndarray__pw_div(ndarray arr1, ndarray arr2) {
+    assert(arr1->dims == arr2->dims);
+    for (int i = 0; i < arr1->dims; i++) {
+        assert(arr1->shape[i] == arr2->shape[1]);
+    }
+    ndarray res = ndarray__consts(arr1->dims, arr1->shape, 0);
+    int tot_len = calc_total(arr1->dims, arr1->shape);
+    for (int i = 0; i < tot_len; i++) {
+        res->values[i] = ddiv(arr1->values[i], arr2->values[i]);
+    }
+    return res;
+}
+
+
+int main() {
+    ndarray square = alloc(struct ndarray);
+    square->dims = 2;
+    square->shape = alloc_array(int, square->dims);
+    square->shape[0] = 4;
+    square->shape[1] = 4;
+    square->values[0] = itod(0);
+    square->values[1] = itod(1);
+    square->values[2] = itod(2);
+    square->values[3] = itod(3);
+    square->values[4] = itod(4);
+    square->values[5] = itod(5);
+    square->values[6] = itod(6);
+    square->values[7] = itod(7);
+    square->values[8] = itod(8);
+    square->values[9] = itod(9);
+    square->values[10] = itod(10);
+    square->values[11] = itod(11);
+    square->values[12] = itod(12);
+    square->values[13] = itod(13);
+    square->values[14] = itod(14);
+    square->values[15] = itod(15);
+
+    ndarray rect = alloc(struct ndarray);
+    rect->dims = 2;
+    rect->shape = alloc_array(int, rect->dims);
+    rect->shape[0] = 4;
+    rect->shape[1] = 3;
+    rect->values[0] = itod(-1);
+    rect->values[1] = itod(0);
+    rect->values[2] = itod(1);
+    rect->values[3] = itod(2);
+    rect->values[4] = itod(3);
+    rect->values[5] = itod(4);
+    rect->values[6] = itod(5);
+    rect->values[7] = itod(6);
+    rect->values[8] = itod(7);
+    rect->values[9] = itod(8);
+    rect->values[10] = itod(9);
+    rect->values[11] = itod(10);
+
+    ndarray const = alloc(struct ndarray);
+    const->dims = 2;
+    const->shape = alloc_array(int, const->dims);
+    const->shape[0] = 4;
+    const->shape[1] = 3;
+    const->values[0] = itod(23);
+    const->values[1] = itod(24);
+    const->values[2] = itod(25);
+    const->values[3] = itod(26);
+    const->values[4] = itod(27);
+    const->values[5] = itod(28);
+    const->values[6] = itod(29);
+    const->values[7] = itod(30);
+    const->values[8] = itod(31);
+    const->values[9] = itod(32);
+    const->values[10] = itod(33);
+    const->values[11] = itod(34);
+
+    ndarray result = ndarray__pw_add(ndarray__dot(square, rect), const);
+    assert(dtoi(result->values[0]) == 59);
+    assert(dtoi(result->values[1]) == 66);
+    assert(dtoi(result->values[2]) == 73);
+    assert(dtoi(result->values[3]) == 118);
+    assert(dtoi(result->values[4]) == 141);
+    assert(dtoi(result->values[5]) == 164);
+    assert(dtoi(result->values[6]) == 177);
+    assert(dtoi(result->values[7]) == 216);
+    assert(dtoi(result->values[8]) == 255);
+    assert(dtoi(result->values[9]) == 236);
+    assert(dtoi(result->values[10]) == 291);
+    assert(dtoi(result->values[11]) == 346);
+    return 0;
+}

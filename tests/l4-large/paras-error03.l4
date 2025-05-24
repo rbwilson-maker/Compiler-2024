@@ -1,0 +1,10 @@
+//test error
+// can't implicit declare structs from within a struct
+
+struct foo {
+    struct bar baz;
+};
+
+int main() {
+    return 0;
+}

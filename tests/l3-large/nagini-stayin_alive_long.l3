@@ -1,0 +1,106 @@
+//test return 402108746
+
+int f(int a, int b, int c) {
+  return a + b + c;
+}
+
+int g(int a, int b, int c) {
+  return a*b + b*c + a*c;
+}
+
+int h(int a, int b, int c) {
+  return a*b*c;
+}
+
+int i(int x0, int x1, int x2, int x3, int x4, int x5, int x6, int x7,
+      int x8, int x9, int x10, int x11, int x12, int x13, int x14) {
+  x0 = f(x0, x1, x2);
+  x1 = g(x0, x1, x2);
+  x2 = h(x0, x1, x2);
+  x3 = f(x3, x4, x5);
+  x4 = g(x3, x4, x5);
+  x5 = h(x3, x4, x5);
+  x6 = f(x6, x7, x8);
+  x7 = g(x6, x7, x8);
+  x8 = h(x6, x7, x8);
+  x9 = f(x9, x10, x11);
+  x10 = g(x9, x10, x11);
+  x11 = h(x9, x10, x11);
+  x12 = f(x12, x13, x14);
+  x13 = g(x12, x13, x14);
+  x14 = h(x12, x13, x14);
+
+  return x0 + x1 + x2 + x3 + x4 + x5 + x6
+    + x7 + x8 + x9 + x10 + x11 + x12 + x13
+    + x14;
+}
+
+int main() {
+  int alive_0 = 0;
+  int alive_1 = 1;
+  int alive_2 = 2;
+  int alive_3 = 3;
+  int alive_4 = 4;
+  int alive_5 = 5;
+  int alive_6 = 6;
+  int alive_7 = 7;
+  int alive_8 = 8;
+  int alive_9 = 9;
+  int alive_10 = 10;
+  int alive_11 = 11;
+  int alive_12 = 12;
+  int alive_13 = 13;
+  int alive_14 = 14;
+
+  // these variables are all live!
+
+  alive_0 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+              alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_1 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+              alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_2 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+              alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_3 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+              alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_4 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+              alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_5 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+              alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_6 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+              alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_7 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+              alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_8 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+              alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_9 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+              alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_10 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+               alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_11 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+               alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_12 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+               alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_13 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+               alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+              alive_13, alive_14);
+  alive_14 = i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+               alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+               alive_13, alive_14);
+  return i(alive_0, alive_1, alive_2, alive_3, alive_4, alive_5, alive_6,
+           alive_7, alive_8, alive_9, alive_10, alive_11, alive_12,
+           alive_13, alive_14);
+
+}

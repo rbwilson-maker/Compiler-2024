@@ -1,0 +1,29 @@
+//test return -40 
+
+int ensure_live(int x) {
+  return x;
+}
+
+int function(int QUACK) {
+  int a = ensure_live(1);
+  int b = ensure_live(1);
+  int c = ensure_live(1);
+  int d = ensure_live(1);
+  int e = ensure_live(1);
+  int f = ensure_live(1);
+  int g = ensure_live(1);
+  int h = ensure_live(1);
+  int i = ensure_live(1);
+  int j = ensure_live(1);
+  int k = ensure_live(1);
+  int l = ensure_live(1);
+  int m = ensure_live(1);
+  int n = ensure_live(1);
+  int o = ensure_live(1);
+  int p = ensure_live(1);
+  return a+b+c+d+e*f+g+h+i+j+k+l+m+n+o+p - QUACK ;
+}
+
+int main() {
+  return function(55);
+}

@@ -1,0 +1,12 @@
+// from 15122
+struct strbuf {
+  int limit;
+  int len;
+  int[] buf;
+};
+
+bool is_strbuf(struct strbuf* sb);
+struct strbuf* strbuf_new(int init_limit);
+int[] strbuf_str(struct strbuf* sb);
+void strbuf_add(struct strbuf* sb, int[] str, int len);
+void strbuf_addstr(struct strbuf* sb, int[] str);

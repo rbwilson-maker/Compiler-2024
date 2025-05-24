@@ -1,0 +1,27 @@
+//test return 38
+
+void shift_right_by_m (int[] A, int n, int m) {
+  int j;
+  for (j = 0; j < m; j++) {
+    int p = A[0];
+    int i;
+    for (i = 0; i < n-1; i++){
+      A[i] = A[i+1];
+    }
+    A[n-1] = p;
+  }
+}
+
+void init (int[] A, int n) {
+  int i;
+  for (i = 0; i < n; i++){
+    A[i] = i;
+  }
+}
+int main () {
+  int [] A = alloc_array(int, 100);
+  init(A,100);
+  shift_right_by_m(A,100,25);
+  return A[13];
+  
+}

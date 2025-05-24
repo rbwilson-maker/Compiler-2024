@@ -1,0 +1,28 @@
+//test return 11
+//simple linked list, testing . operator
+struct l {
+	struct l* next;
+};
+
+
+int main()
+{
+	struct l* prev = alloc(struct l);
+	struct l* init = prev;
+	for(int i = 0; i < 10; i++)
+	{
+		struct l* l1 = alloc(struct l);
+		(*prev).next = l1;
+		prev = l1;
+	}
+
+	int c = 0;
+	while(init != NULL)
+	{
+		c++;
+		init = init->next;
+	}
+
+
+	return c;
+}

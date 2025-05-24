@@ -1,0 +1,17 @@
+//test error
+//test void function returns int
+
+void f(int x, int y) {
+  x += y;
+  x *= y;
+  y -= x;
+  if (x < y) {
+    return 0;
+  }
+  return;
+}
+
+int main() {
+  f(2, 3);
+  return 0;
+}

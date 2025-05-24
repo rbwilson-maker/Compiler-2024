@@ -1,0 +1,14 @@
+//test memerror
+
+struct a {
+  int a;
+};
+
+
+int main() {
+  struct a *a_p = NULL;
+  if (a_p->a == 0) { // mem error: cannot dereference NULL
+    return 1;
+  }
+  return 0;
+}

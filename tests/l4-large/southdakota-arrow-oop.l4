@@ -1,0 +1,11 @@
+//test return 1
+
+struct jeans {
+	int beans;
+};
+
+int main() {
+	struct jeans * beans = alloc(struct jeans);
+	beans->beans = 7;
+	return 3*beans -> beans%5;
+}

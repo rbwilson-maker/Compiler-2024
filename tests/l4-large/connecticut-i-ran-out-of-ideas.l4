@@ -1,0 +1,14 @@
+//test error
+struct empty {
+};
+
+typedef struct empty y;
+
+void empt(y* empty) {
+	return;
+}
+
+int main() {
+	y* x = alloc(y);
+	return (x -> elt);
+}

@@ -1,0 +1,43 @@
+//test return 15
+
+int main()
+{
+  int x = 10;
+  int y = 50;
+  int z = (y / x) % 10;
+  int select = 0;
+  if (z == 0) {
+     select = 10;
+  }
+  else if (z == 1) {
+     select = 11;
+  }
+  else if (z == 2) {
+     select = 12;
+  }
+  else if (z == 3) {
+     select = 13;
+  }
+  else if (z == 4) {
+     select = 14;
+  }
+  else if (z == 5) {
+     select = 15;
+  }
+  else if (z == 6) {
+     select = 16;
+  }
+  else if (z == 7) {
+     select = 17;
+  }
+  else if (z == 8) {
+     select = 18;
+  }
+  else if (z == 9) {
+     select = 19;
+  }
+  else if (z == 10) {
+     select = 20;
+  }
+  return select;
+}

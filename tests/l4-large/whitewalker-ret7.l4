@@ -1,0 +1,14 @@
+//test return 7 
+
+struct a {
+    int e;
+    int b;
+    int c;
+    struct a *d;
+};
+
+int main () {
+    int[] a = alloc_array(int, 10);
+    struct a *b = NULL;
+    return 7;
+}

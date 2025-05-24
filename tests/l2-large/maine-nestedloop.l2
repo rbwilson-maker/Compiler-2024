@@ -1,0 +1,14 @@
+//test return -2147483648
+//nested loops
+int main()
+{
+   int x = 1 << 31;
+   int y = 1 << 31;
+   while (x > 0)
+   {
+      while (y > 0)
+         y--;
+      x--;
+   }
+   return -x;
+}

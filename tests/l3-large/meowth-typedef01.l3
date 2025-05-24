@@ -1,0 +1,24 @@
+//test return 1
+/* Test typedefs, naming scopes */
+
+typedef int number;
+typedef bool truth;
+
+truth is_it_true(bool truthy) {
+  return truthy;
+}
+
+int main () {
+  number zero = 0;
+  number one = 1;
+  number two = 2;
+  truth one_is_one = 1 == 1;
+  truth one_is_two = 1 == 2;
+
+  if (is_it_true(one_is_two)) {
+    return two;
+  } else if (is_it_true(one_is_one)) {
+    return one;
+  }
+  return zero;
+}

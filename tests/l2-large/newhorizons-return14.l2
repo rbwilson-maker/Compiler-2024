@@ -1,0 +1,13 @@
+//test return 3
+// using asops 
+int main () {
+    int y = 0x5;
+    int z = 0x6;
+    int x = y ^ z;
+    x ^= y;
+    x *= 2;
+    x += 7;
+    x -= 10;
+    x /= 3;
+    return x;
+}

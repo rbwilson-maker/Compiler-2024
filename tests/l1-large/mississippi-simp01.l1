@@ -1,0 +1,14 @@
+//test return 0
+// test simp and all asnops
+
+int main()
+{
+  int x = 10;
+  x = 20;
+  (x) += 30;
+  ((x)) /= 5;
+  ((((((((x)))))))) *= 2;
+  x -= 0;
+  (x) %= 10;
+  return x;
+}

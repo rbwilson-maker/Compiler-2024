@@ -1,0 +1,10 @@
+//test error
+// use variable before declaration
+
+int main() { 
+    int x = 0;
+    y += x;
+    int y = 1;
+    int z = x/y;
+    return z;
+}

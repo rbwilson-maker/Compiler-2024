@@ -1,0 +1,9 @@
+//test return 33
+
+int main() {
+
+    int a0 = 15 + 4 + 11; // 30
+    int m0 = -15 - 4 - 11; // -30
+    int md0 = 15 / 4 * 11; // 33 
+    return a0 + m0 + md0;
+}

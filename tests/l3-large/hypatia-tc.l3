@@ -1,0 +1,10 @@
+//test typecheck
+typedef int pint;
+typedef pint night;
+
+int fun(int loose);
+night fun(pint booze);
+
+int main() {
+  return 0;
+}

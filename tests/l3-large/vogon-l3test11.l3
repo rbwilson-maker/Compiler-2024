@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int r(int c) {
+  return c + 31212312;
+}
+
+int main() { 
+  return 234 / r(-31212312);
+}

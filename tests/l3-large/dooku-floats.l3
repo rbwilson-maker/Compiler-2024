@@ -1,0 +1,8 @@
+//test return 0 
+
+int main () {
+    fpt a = 10; 
+    fpt b = 10;
+    fpt c = fadd(a,b);
+    return 0;
+}

@@ -1,0 +1,37 @@
+//test return 25;
+// tests pointer reference allocation and dereferencing
+
+typedef int pokeball;
+
+int main()
+{
+  int PIKACHU = 25; // pikachu dex number, don't you forget it
+  pokeball************************* pikachu;
+  pikachu = alloc(pokeball************************);
+  *pikachu = alloc(pokeball***********************);
+  **pikachu = alloc(pokeball**********************);
+  ***pikachu = alloc(pokeball*********************);
+  ****pikachu = alloc(pokeball********************);
+  *****pikachu = alloc(pokeball*******************);
+  ******pikachu = alloc(pokeball******************);
+  *******pikachu = alloc(pokeball*****************);
+  ********pikachu = alloc(pokeball****************);
+  *********pikachu = alloc(pokeball***************);
+  **********pikachu = alloc(pokeball**************);
+  ***********pikachu = alloc(pokeball*************);
+  ************pikachu = alloc(pokeball************);
+  *************pikachu = alloc(pokeball***********);
+  **************pikachu = alloc(pokeball**********);
+  ***************pikachu = alloc(pokeball*********);
+  ****************pikachu = alloc(pokeball********);
+  *****************pikachu = alloc(pokeball*******);
+  ******************pikachu = alloc(pokeball******);
+  *******************pikachu = alloc(pokeball*****);
+  ********************pikachu = alloc(pokeball****);
+  *********************pikachu = alloc(pokeball***);
+  **********************pikachu = alloc(pokeball**);
+  ***********************pikachu = alloc(pokeball*);
+  ************************pikachu = alloc(pokeball);
+  *************************pikachu = PIKACHU;
+  return *************************pikachu;
+}

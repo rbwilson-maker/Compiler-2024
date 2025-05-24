@@ -1,0 +1,34 @@
+//test return 63466 
+
+int main(){
+    //calculate fibonacci
+
+    int first = 1;
+    int second = 1;
+
+    for(int i = 0; i < 20; i++){
+        int num = second + first;
+        first = second;
+        second = num;
+    }
+
+    int num = second;
+
+    int res = 0;
+
+    for(int inc = 10; inc < 5; inc ++){
+
+    }
+
+    for(int inc = 0; inc < 10; inc++){
+        res += (num  >> inc) ^ (num >> (inc*2));
+        res = res | num;
+    }
+
+    for(int inc = 0; inc < 10; inc++){
+        res += (num | inc) ^ (num ^ (inc ^ 2));
+        res = ~res;
+    }
+
+    return res;
+}

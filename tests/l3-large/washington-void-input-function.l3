@@ -1,0 +1,17 @@
+//test error
+//Void type expression is not a valid input type
+
+int main() {
+  return 5;
+}
+
+int voidFunction(void v, int i) {
+  int x = i;
+  int result = 0;
+  while (x < 200) {
+    result *= x;
+    x++;
+  }
+}
+
+

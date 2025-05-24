@@ -1,0 +1,17 @@
+//test error
+/*
+Compile error.
+Function overloading (by return type) disallowed.
+*/
+
+bool r() {
+  return 3;
+}
+
+int r() {
+  return 2;
+}
+
+int main() {
+  return r();
+}

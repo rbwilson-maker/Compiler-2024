@@ -1,0 +1,23 @@
+//test return 25
+
+/* count the number of prime numbers from 2 to 100 */
+
+int main() {{
+    int _count = 0;
+    for (int i = 2; i <= 100; i++)
+    {
+        bool isprime = true;
+        for (int j = 2; j < i; j++)
+        {
+            if (i % j == 0)
+            {
+                isprime = false;
+                j = i; // to break the loop
+            }
+        }
+        if (isprime)
+            _count++;
+    }
+
+    return _count;
+}}

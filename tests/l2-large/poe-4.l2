@@ -1,0 +1,17 @@
+//test return 55
+
+//Trying a fibonnacci thing with a really weird return statement thing
+
+int main() {
+	int i = 0;
+	int a = 0;
+	int b = 1;
+	while (true) {
+		if (i == 10) return a;
+		int temp = a+b;
+		a = b;
+		b = temp;
+		i = i+1;
+	}
+	return -1;
+}

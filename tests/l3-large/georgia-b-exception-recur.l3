@@ -1,0 +1,13 @@
+//test div-by-zero
+// Exception resulting from calling recursive function
+
+int crasher(int x);
+
+int main() {
+    return crasher(100);
+}
+
+int crasher(int x) {
+    int result = 1000 / x;
+    return result + crasher(x - 1);
+}

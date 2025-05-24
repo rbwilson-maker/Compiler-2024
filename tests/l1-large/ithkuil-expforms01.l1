@@ -1,0 +1,12 @@
+//test return -1
+// test expression forms
+
+int main()
+{
+    int x;
+    // value "bigger" than word size, but still valid
+    x = 0X0000000000000000000a;
+    x -= 0xB;
+    x += -0x0;
+    return x;
+}

@@ -1,0 +1,16 @@
+//test return 1
+
+// Using a bool in a for loop should work as long as the types check out
+int main() {
+    bool b = true;
+    int x = 0;
+    for (bool a = false; b != a; a = !a && b) {
+        if (x < 4) {
+          x ++;
+        } else {
+          a = true;
+        }
+    }
+
+    return x;
+}

@@ -1,0 +1,6 @@
+//test return 3
+
+int main() {
+    bool b = true && true || true;  // should parse as true && (true || true)
+    return 3;
+}

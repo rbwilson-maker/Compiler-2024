@@ -1,0 +1,10 @@
+//test error
+// Tokenizable keyword "assert", but not allowed in L2
+
+int main() {
+  int x = 30;
+  int y = 212;
+  bool check = (x / 10 != y / 70);
+  assert (!check);
+  return 0;
+}

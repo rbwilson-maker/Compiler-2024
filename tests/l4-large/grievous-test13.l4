@@ -1,0 +1,7 @@
+//test return 1
+
+int main(){
+    int* a = alloc(int);
+    int* b = alloc(int);
+    return a == b ? 0 : 1;
+}

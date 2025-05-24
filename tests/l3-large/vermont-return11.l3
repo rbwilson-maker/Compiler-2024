@@ -1,0 +1,8 @@
+//test return 10
+
+int main () {
+  fpt x = itof(10);
+  // x = fmul(x,fdiv(fadd(x,itof(5)),itof(2)));
+  print_fpt(x);
+  return ftoi(x);
+}

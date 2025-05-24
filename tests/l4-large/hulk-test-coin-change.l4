@@ -1,0 +1,39 @@
+//test return 3
+
+/* computes the minimum number of coins to get to the amount
+where coins[] contains the possible value of coins */
+
+
+int num_coins(int[] coins, int len, int amount){
+    int[] dp = alloc_array(int, amount+1);
+    for(int i = 1; i <= amount; i++){
+        dp[i] = 0x7FFFFFFF;
+    }
+
+    for(int i = 1; i <= amount; i++){
+        for(int j = 0; j < len; j++){
+            if(coins[j] <= i){
+                int num = dp[i - coins[j]] + 1;
+                if(num < dp[i]){
+                    dp[i] = num;
+                }
+            }
+        }
+    }
+    return dp[amount];
+}
+
+int main(){
+    int[] coins = alloc_array(int, 4);
+    coins[0] = 1;
+    coins[1] = 4;
+    coins[2] = 5;
+    coins[3] = 12;
+
+    assert(num_coins(coins, 4, 12) == 1);
+    assert(num_coins(coins, 4, 13) == 2);
+    assert(num_coins(coins, 4, 7) == 3);
+    assert(num_coins(coins, 4, 8) == 2);
+
+    return num_coins(coins, 4, 15);
+}

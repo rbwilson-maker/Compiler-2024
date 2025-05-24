@@ -1,0 +1,11 @@
+//test return 0
+
+int main() { 
+  int x = 26;
+  int y = 26;
+  int z = x - y;
+  z += z;
+  y += x;
+  x *= z;
+  return z + x;
+}

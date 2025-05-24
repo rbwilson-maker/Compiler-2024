@@ -1,0 +1,14 @@
+//test error
+
+typedef struct a a;
+typedef struct b b;
+
+a {};
+b {
+    a a;
+    b *b;
+}
+
+int main () {
+    return 0;
+}

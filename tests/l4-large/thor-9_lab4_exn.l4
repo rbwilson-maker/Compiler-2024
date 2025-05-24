@@ -1,0 +1,12 @@
+//test memerror
+void loopn (int* n) {
+assert (*n > 0);
+*n = *n - 1;
+loopn(n);
+return;
+}
+
+int main() {
+loopn(NULL);
+return 0;
+}

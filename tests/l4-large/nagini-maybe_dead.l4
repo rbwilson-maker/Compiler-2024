@@ -1,0 +1,27 @@
+//test typecheck
+//test infloop
+
+/* implementing aggressive dead code elimination?
+   don't remove the output-free infinite loop!
+*/
+
+int opaque(int* blah, int a, int b) {
+    (*blah)++;
+    if (a == 0) {
+        return b;
+    }
+    return opaque(blah, a-1, (*blah)^(a >> 1)^(b << 1)^b + 0x1337);
+}
+
+int main() {
+    int* blah = alloc(int);
+    int x = opaque(blah, 100, 54321) & 0xFFFF;
+    int y = opaque(blah, 100, 11111) & 0xFFFF;
+    int z = opaque(blah, 100, 12312) & 0xFFFF;
+    while (x > 0 && y > 0 && z > 0) {
+        x = x%2 + 1;
+        y = y%3 + 10;
+        z = z%15 + 23;
+    }
+    return 12345;
+}

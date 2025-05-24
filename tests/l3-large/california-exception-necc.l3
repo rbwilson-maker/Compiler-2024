@@ -1,0 +1,20 @@
+//test abort
+
+int main() {
+    int x = 5;
+    int y = 6;
+    int z = 7;
+    int t = 8;
+    int r = 9;
+    int o = 10;
+    int l = 11;
+    bool medic = true;
+    bool doktor = false;
+    for(x = 6; x < 10; x++)
+    {
+        y++;
+    }
+    if(x > 0)
+        assert(medic == doktor);
+    return -5;
+}

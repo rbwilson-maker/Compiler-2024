@@ -1,0 +1,15 @@
+//test div-by-zero
+
+struct foo{
+  int bar;
+};
+typedef struct foo foo;
+
+int main(){
+  foo * myfoo;
+  myfoo = alloc(foo);
+  myfoo->bar = 0;
+  
+  int a = 5;
+  return a/(myfoo->bar);
+}

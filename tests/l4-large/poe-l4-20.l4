@@ -1,0 +1,32 @@
+//test return 314
+
+// everybody loves circles
+
+struct circleImpl {
+	dub x;
+	dub y;
+	dub r;
+};
+
+typedef struct circleImpl* Circle;
+
+Circle new(int x, int y, int r) {
+	Circle res = alloc(struct circleImpl);
+
+	res->x = itod(x);
+	res->y = itod(y);
+	res->r = itod(r);
+
+	return res;
+}
+
+dub area(Circle c) {
+	dub pi = ddiv(itod(355), itod(113));
+
+	return dmul(pi, dmul(c->r, c->r));
+}
+
+int main() {
+	Circle c = new(0, 0, 10);
+	return dtoi(area(c));
+}

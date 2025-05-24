@@ -1,0 +1,33 @@
+//test memerror
+
+struct list_header {
+  struct node* head;
+};
+
+struct node {
+  int data;
+  struct node* next;
+};
+
+struct list_header *gen_list(int n) {
+  struct list_header *list = alloc(struct list_header);
+  struct node *curr_node = NULL;
+  for(int i = 0; i < n; i++) {
+    struct node *new_node = alloc(struct node);
+    new_node->data = i;
+    if (curr_node == NULL) {
+      list->head = new_node;
+      curr_node = new_node;
+    } else {
+      curr_node->next = new_node;
+      curr_node = new_node;
+    }
+  }
+  return list;
+}
+
+int main() {
+  struct list_header *list = gen_list(-1);
+  // results in a memory error since we deref a null pointer
+  return list->head->data;
+}

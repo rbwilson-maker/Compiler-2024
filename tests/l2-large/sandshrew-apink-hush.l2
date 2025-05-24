@@ -1,0 +1,6 @@
+//test return 1
+int main(){
+   bool hi = true;
+   bool nothi = !(hi);
+   return nothi ? 0 : 1;
+}

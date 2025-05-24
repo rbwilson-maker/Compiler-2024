@@ -1,0 +1,20 @@
+//test return 640942080
+// simple test defines types t1 and t2
+
+int foo(int b){
+    b = b * 1000;
+    {
+        // nothing
+    }
+    return b;
+}
+
+int main () {
+    int start = 8;
+    int count = 5;
+    while(count > 0){
+        start = foo(start);
+        count --;
+    }
+    return start;
+}

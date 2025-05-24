@@ -1,0 +1,23 @@
+//test return 20
+
+typedef int myint;
+typedef bool mybool;
+typedef myint myintint;
+typedef mybool myboolbool;
+
+int rec2(bool b, int a);
+
+int main() {
+    myintint a = 10;
+    myboolbool b = true;
+
+    return rec2(b, a);
+}
+
+myint rec2(mybool b, myint a) {
+    if (b) {
+        return a + a;
+    } else {
+        return a * a;
+    }
+}

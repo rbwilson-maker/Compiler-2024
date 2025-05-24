@@ -1,0 +1,12 @@
+//test return 13
+
+int main() {
+    int[] a;
+    int[] b;
+    a = alloc_array(int, 42);
+    b = alloc_array(int, 42);
+    b[7] = 13;
+    a[13] = 7;
+
+    return b[a[b[a[b[a[b[a[b[a[b[a[b[a[b[a[b[a[b[a[b[a[b[a[13]]]]]]]]]]]]]]]]]]]]]]]];
+}

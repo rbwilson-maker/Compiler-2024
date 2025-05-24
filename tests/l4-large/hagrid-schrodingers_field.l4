@@ -1,0 +1,21 @@
+//test error
+//unfortunately, L4 does not support quantum mechanics
+
+typedef bool alive
+typedef int dead
+
+alive f (struct box x) {
+  return x.cat
+}
+
+dead f (struct box y) {
+  return y.cat
+}
+
+struct box {
+  alive cat;
+}
+
+int main() {
+  return 0;
+}

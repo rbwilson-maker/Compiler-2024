@@ -1,0 +1,9 @@
+//test return -12
+// precedence of several operators
+
+int main() {
+    int x = 3;
+    int y = 8;
+    int z = y - x * 2;
+    return -x * 4 + y % z;
+}

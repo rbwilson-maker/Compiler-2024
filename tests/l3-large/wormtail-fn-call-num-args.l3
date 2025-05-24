@@ -1,0 +1,12 @@
+//test error
+int sum(int a, int b, int c) {
+    return a + b + c;
+}
+int main() {
+
+  int c = 3;
+  int d = 2;
+  sum(c,d);
+  sum(c,d,d,c);
+  return 0;
+}

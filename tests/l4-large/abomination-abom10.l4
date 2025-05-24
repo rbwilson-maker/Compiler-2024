@@ -1,0 +1,23 @@
+//test abort
+
+struct cooper;
+
+struct cooper {
+    bool wearingHat;
+    bool onFloor;
+    struct cooper *clone; // Now the cooper is a valid self-referencing struct
+};
+
+int main() {
+    struct cooper *theoneandonly;
+    theoneandonly = alloc(struct cooper); // Got it, fine, actual allocation, let's do it
+    int result =  (*theoneandonly).wearingHat ? 0 : 1; // What if we try other methods of access now - perhaps with proper dereferencing
+
+    for(struct cooper *oneofmany = theoneandonly; true; oneofmany = oneofmany->clone) {
+        result++; // Let us count the clones
+
+        assert(oneofmany->clone != NULL); //We know how to fix errors here, if we assert them they are true
+    }
+
+    return result;
+}

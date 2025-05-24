@@ -1,0 +1,10 @@
+//test typecheck
+
+int main() {
+  print_check();
+  int result = recursive(get_depth(get_check()), get_check());
+  assert(result == 100); // should pass typecheck
+  int result_2 = recursive(get_depth(get_check()), get_check());
+  assert(result_2 == 200); // should pass typecheck no matter if it is implementation-wise correct
+  return recursive((result_2 - result), get_check());
+}

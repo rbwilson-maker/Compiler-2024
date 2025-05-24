@@ -1,0 +1,10 @@
+//test div-by-zero
+int apply(int x) {
+  return x << 31;
+}
+
+typedef int THIS_IS_A_TYPEDEF;
+
+THIS_IS_A_TYPEDEF main() {
+  return apply(1)/-1;
+}

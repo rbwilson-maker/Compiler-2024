@@ -1,0 +1,10 @@
+//test return 25
+// test mixture of hexnum and decnum
+int main() {
+	int a = 1;
+	int b = 0xf;
+	int c = 0xa;
+	int d = (b + c) * a;
+
+	return d;
+}

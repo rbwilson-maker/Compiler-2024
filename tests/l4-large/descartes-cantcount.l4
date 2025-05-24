@@ -1,0 +1,12 @@
+//test memerror
+// a simple bad indexing example using loops
+
+int main() {
+    int[] compilers = alloc_array(int, 15411);
+    for (int i=0; i<15418; i++) {
+        //oops wrong class
+        compilers[i] = i;
+    }
+
+    return 0;
+}

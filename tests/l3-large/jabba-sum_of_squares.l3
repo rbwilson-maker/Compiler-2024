@@ -1,0 +1,30 @@
+//test error
+
+bool sumOfSquares(int n);
+int pow(int a, int b);
+
+bool sumOfSquares(int a) {
+    for(int x = 0; x < a + 1; x++) {
+        for(int y = 0; y < a + 1; y++) {
+            if (pow(x, 2) + pow(y, 2) == a) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+bool sumOfSquares(int b) {
+    for(int x = 0; x <= b; x++) {
+        for(int y = x; y <= b; y++) {
+            if(pow(x, 2) + pow(y, 2) == b) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+int main() {
+    return sumOfSquares(25) ? 1 : 0;
+}

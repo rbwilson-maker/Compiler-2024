@@ -1,0 +1,26 @@
+//test return 15
+
+struct hi
+{
+  int a;
+  bool *q;
+  struct yo *hehe;
+};
+
+struct yo
+{
+  int quack;
+};
+
+int main()
+{
+    struct hi *hey;
+    struct yo *wollop;
+    hey = alloc(struct hi);
+    wollop = alloc(struct yo);
+    hey->a = 5;
+    hey->hehe = wollop;
+    (hey->hehe)->quack = 10;
+    return hey->a + (hey->hehe)->quack;
+}
+

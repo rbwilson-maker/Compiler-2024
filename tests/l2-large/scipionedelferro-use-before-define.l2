@@ -1,0 +1,11 @@
+//test error
+// z used before it is defined
+
+int main()
+{
+	int x = z;
+	{
+		int z = 42;
+	}
+	return x;
+}

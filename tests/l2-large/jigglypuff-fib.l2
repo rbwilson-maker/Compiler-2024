@@ -1,0 +1,33 @@
+//test return -1869596475
+
+/* Fibonacci Test
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Monday, September 28, 2015 at 09:45:38 PM EDT
+ *
+ * Performs a fibonacci calculation with n = 100. Exercises a basic while loop.
+ */
+
+int main()
+{
+    int fib;
+    int prev_fib;
+    int tmp;
+    int n;
+
+    n = 100;
+    fib = 1;
+    prev_fib = 0;
+
+    while (n > 0)
+    {
+        tmp = fib;
+        fib = fib + prev_fib;
+        prev_fib = tmp;
+
+        n -= 1;
+    }
+
+    return fib;
+}

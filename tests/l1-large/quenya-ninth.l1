@@ -1,0 +1,8 @@
+//test error
+// uses variable before define
+int main() {
+  int b = a + 5;
+  int a = 0;
+  
+  return b;
+}

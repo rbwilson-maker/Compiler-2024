@@ -1,0 +1,10 @@
+//test error
+
+//Struct defined within a function
+
+int main() {
+  struct foo {
+    int x;
+  };
+  return 0;
+}

@@ -1,0 +1,10 @@
+//test abort
+
+bool f(bool k) {
+	return !k;
+}
+
+int main() {
+	assert(f(f(f(f(f(f(f(f(f(true))))))))));
+	return 0;
+}

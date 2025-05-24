@@ -1,0 +1,36 @@
+//test return 1009
+
+int main()
+{
+  int x = 1009;
+  int y = 1011;
+  int prime;
+  int i = 2;
+
+  // prime test x;
+  bool prime_x = true;
+  while ((i*i <= x) && prime_x) {
+    if (x % i == 0) {
+       prime_x = false;
+    }
+    i++;
+  }
+
+  // prime test y;
+  bool prime_y = true;
+  i = 2;
+  while ((i*i <= y) && prime_y) {
+    if (y % i == 0) {
+       prime_y = false;
+    }
+    i++;
+  }
+
+  if (prime_x && (!prime_y)) {
+     prime = x;
+  }
+  else {
+     prime = y;
+  }
+  return prime;
+}

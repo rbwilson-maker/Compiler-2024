@@ -1,0 +1,14 @@
+//test return 55
+/// memoized fib(10)
+
+int main() {
+  int[] fib = alloc_array(int, 10);
+  fib[0] = 1;
+  fib[1] = 1;
+
+  for (int i = 2; i < 10; i++) {
+    fib[i] = fib[i-2]+ fib[i-1];
+  }
+
+  return fib[9];
+}

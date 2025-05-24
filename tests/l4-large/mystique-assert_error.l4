@@ -1,0 +1,8 @@
+//test abort
+
+int main() {
+    int *x = alloc(int);
+    int *y = alloc(int);
+    assert(x == y);
+    return 0;
+}

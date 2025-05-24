@@ -1,0 +1,14 @@
+//test div-by-zero
+
+int main() {
+  int x = 5;
+  int y = 7;
+  int z = 0;
+
+  z = x % y;
+
+  // sig fpe
+  y = z % 0;
+
+  return 0;
+}

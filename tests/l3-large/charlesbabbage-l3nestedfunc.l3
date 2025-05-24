@@ -1,0 +1,15 @@
+//test error
+//local function not allowed
+
+int f(int a) {
+    int g (int b) {
+        return a + b;
+    }
+    return g;
+}
+
+int main(){
+    int x = 123;
+    int y = 38437;
+    return f(x)(y);
+}

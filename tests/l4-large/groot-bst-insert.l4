@@ -1,0 +1,55 @@
+//test return 12
+
+typedef struct bst_header tree;
+struct bst_header {
+  int data;
+  tree* left; tree* right;
+};
+
+tree* bst_insert(tree* T, int data) {
+  if (T == NULL) {
+    tree* result = alloc(tree);
+    result->data = data;
+
+    return result;
+  }
+
+  if (T->data > data)
+    T->left = bst_insert(T->left, data);
+  else
+    T->right = bst_insert(T->right, data);
+
+  return T;
+}
+
+int* bst_lookup(tree* T, int data) {
+  if (T == NULL)
+    return NULL;
+
+  if (T->data == data) {
+    int* p = alloc(int);
+    *p = T->data;
+    return p;
+  }
+
+  if (T->data < data) {
+    return bst_lookup(T->right, data);
+  } 
+
+  assert(T->data > data);
+  return bst_lookup(T->left, data);
+}
+
+int main() {
+  tree* T = NULL;
+
+  T = bst_insert(T, 5);
+  T = bst_insert(T, 3);
+  T = bst_insert(T, 7);
+  T = bst_insert(T, 2);
+  T = bst_insert(T, 4);
+  T = bst_insert(T, 6);
+  T = bst_insert(T, 8);
+
+  return *bst_lookup(T, 5) + *bst_lookup(T, 7);
+}

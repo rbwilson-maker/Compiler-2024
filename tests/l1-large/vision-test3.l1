@@ -1,0 +1,9 @@
+//test return -570
+
+int main() {
+    int a = 42;
+    int b = 654;  
+    int c = (a * b);
+    int d = c + (a - b);
+    return (d + a - c);
+}

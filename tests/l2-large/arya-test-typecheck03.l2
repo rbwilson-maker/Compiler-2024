@@ -1,0 +1,9 @@
+//test return 0
+int main(){
+  int as1a = ~12;
+  for (int i=as1a; i< 2*as1a; i++){
+    as1a += 1;
+    i ++ ;
+  }
+  return 0;
+}

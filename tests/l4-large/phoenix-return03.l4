@@ -1,0 +1,36 @@
+//test return 4
+
+struct node {
+    int value;
+    struct node* next;
+};
+
+typedef struct node* ll_list;
+
+ll_list empty() {
+    return NULL;
+}
+
+ll_list cons(int x, ll_list l) {
+    ll_list new_l = alloc(struct node);
+    new_l->value = x;
+    new_l->next = l;
+    return new_l; 
+}
+
+int main () {
+    ll_list l = empty();
+
+    for (int i=0; i<5; i++){
+        l = cons(1, l);
+    }
+    // should have a linked list 1 <- 1 <- 1 <- 1 <- 1
+
+    int sum = 0;
+    while ((*l).next != NULL) {
+        sum += (*l).value;
+        l = (*l).next;
+    }
+
+    return sum;
+}

@@ -1,0 +1,19 @@
+//test compile
+
+int poop() {
+    return 2;
+}
+
+int pee() {
+    return 1;
+}
+
+int potty_break() {
+    return pee()/poop();
+}
+
+int main() {
+    assert(potty_break() == 0);
+    return potty_break();
+}
+

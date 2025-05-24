@@ -1,0 +1,22 @@
+//test return 10
+
+int max(int a, int b) {
+    return a > b ? a : b;
+}
+
+int findMax(int[] A, int n) {
+    assert(n > 0);
+    int maxValue = A[0];
+    for (int i = 1; i < n; i++) {
+        maxValue = max(maxValue, A[i]);
+    }
+    return maxValue;
+}
+
+int main() {
+    int[] A = alloc_array(int, 10);
+    for (int i = 0; i < 10; i++) {
+        A[i] = i + 1;
+    }
+    return findMax(A, 10);
+}

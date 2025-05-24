@@ -1,0 +1,18 @@
+//test abort
+//
+
+int loop(int start);
+
+int main() {
+  return loop(0);
+}
+
+int loop(int start) {
+  int i;
+  for (i = start; i < 339; i++){
+    339;
+    assert(i < 339);
+  }
+  assert(i < 339);
+  return 0;
+}

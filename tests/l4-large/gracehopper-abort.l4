@@ -1,0 +1,19 @@
+//test abort
+// Access pointer in struct that has not been initialized
+
+struct s {
+    int* x;
+};
+
+typedef struct s* s;
+
+int f(s test) {
+    assert(test != NULL);
+    assert(test->x != NULL);
+    return *(test->x);
+}
+
+int main() {
+    s test = alloc(struct s);
+    return f(test);
+}

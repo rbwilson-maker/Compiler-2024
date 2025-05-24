@@ -1,0 +1,10 @@
+//test return 0
+struct a {
+  int b;
+};
+
+int main() {
+  struct a[] A = alloc_array(struct a, 4);
+  A[0].b = 24;
+  return 0;
+}

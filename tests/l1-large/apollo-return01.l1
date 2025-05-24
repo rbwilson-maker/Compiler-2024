@@ -1,0 +1,13 @@
+//test return 251
+// tests ability to handle hex
+
+int main() {
+  int x;
+  int y;
+  int z;
+
+  x = 0x1f;
+  y = 0xb3;
+  z = x + y;
+  return z + 0x29;
+}

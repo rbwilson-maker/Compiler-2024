@@ -1,0 +1,28 @@
+//test compile
+// Test using 15411 library
+
+typedef fpt[] vec;
+
+// A dummy vector dot product function
+fpt vec_dot(vec a, vec b, int n) {
+    fpt res = itof(0);
+    for (int i = 0; i < n; i += 1) {
+        res = fadd(res, fmul(a[i], b[i]));
+    }
+    return res;
+}
+
+// A dummy gradient descent process
+int main() {
+    int n = 10;
+    vec a = alloc_array(fpt, n);
+    for (int i = 0; i < n; i += 1) {
+        a[i] = itof(i);
+    }
+    vec b = alloc_array(fpt, n);
+    for (int i = 0; i < n; i += 1) {
+        b[i] = itof(n - i);
+    }
+    fpt x = vec_dot(a, b, n);
+    return x;
+}

@@ -1,0 +1,12 @@
+//test div-by-zero
+
+int main(){
+	int c_is_super_dangerous = 0;
+	int we_now_have_loops = 5;
+    int who_knows_about_recursion = c_is_super_dangerous - we_now_have_loops;
+    while(false)
+    {
+        int x = 1;
+    }
+	return who_knows_about_recursion + we_now_have_loops % c_is_super_dangerous;
+}

@@ -1,0 +1,26 @@
+//test abort
+
+typedef int flint;
+
+struct t {
+  int b;
+  bool c;
+  flint g;
+};
+
+typedef struct t jhol;
+
+struct s {
+  int a;
+  jhol *b;
+  flint c;
+};
+
+int main() {
+  struct s *hella = alloc(struct s);
+  hella->b = alloc(jhol);
+  
+  assert(hella->b->b != 0);
+
+  return 0;
+}

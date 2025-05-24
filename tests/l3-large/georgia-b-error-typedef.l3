@@ -1,0 +1,13 @@
+//test error
+//test bad typedefs
+
+typedef bool int;
+typedef int bool;
+
+int main() {
+    return compute(3, 4);
+}
+
+int compute(int x, int y) {
+    return x * y + x * y + y * y;
+}

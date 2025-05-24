@@ -1,0 +1,7 @@
+//test return 1
+// use ternaries
+int main() {
+  int a = 6;
+  int b = a == 6 ? 7 : 0;
+  return b == 7 ? 1 : 0;
+}

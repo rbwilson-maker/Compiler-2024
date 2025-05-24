@@ -1,0 +1,14 @@
+//test typecheck 
+
+int main() {
+  bool a = fun5() && fun4(10);
+  bool b = a || fun3(1, 2, 3);
+  int c = fun2(3, 2, 1, true) + 10;
+  fun6(true, false, true);
+  if (fun5())
+    return fun1(1, true, 2, 3, 4, 5, false);
+  else
+    return -1;
+}
+
+

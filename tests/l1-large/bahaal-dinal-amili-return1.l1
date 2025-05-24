@@ -1,0 +1,4 @@
+//test return 1
+// can return within a nested block
+
+int main() { { return 1; } }

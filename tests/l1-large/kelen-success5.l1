@@ -1,0 +1,12 @@
+//test return -36
+
+// Tests a valid program with hex number
+int main(){
+    int a = 0xFFFFFFFF;
+    a *= 5;
+    int b = a + 1;
+    int c = a + b;
+    int d = a + b + c;
+    int e = a + b + c + d;
+    return e;
+}

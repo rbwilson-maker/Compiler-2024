@@ -1,0 +1,33 @@
+//test typecheck
+//pretends i can do a queue with header
+void queue_free(queue_t q) {
+    /* How about freeing the list elements and the strings? */
+    /* Free queue structure */
+    /*can't use recursion*/
+    int null = 0;
+    if (q == null) {
+        free(q);
+        return;
+    }
+    list_ele_t left;
+    left = (get_head(q));
+    if (get_head(q) == null) {
+        free(get_head(q));
+        free(get_tail(q));
+        free(q);
+        return;
+    }
+    while (get_head(q) != get_tail(q)) {
+        queue_t qhead = get_next(get_head(q));
+        free(get_value(left));
+        free(left);
+        left = get_head(q);
+    }
+    /*free(q -> head -> next);*/
+    free(get_value(get_head(q)));
+    free(get_head(q));
+    free(q);
+    return;
+}
+
+int main (){queue_free(5); return 0; }

@@ -1,0 +1,36 @@
+//test return 1866
+// here we have some simple matrix multiplication
+
+typedef int[][] matrix;
+
+int main() {
+    matrix m1 = alloc_array(int[], 5);
+    for(int i = 0; i < 5; i++) {
+        m1[i] = alloc_array(int, 7);
+        for(int j = 0; j < 7; j++) {
+            // some random function
+            m1[i][j] = i * j + ((i-j) / 2);
+        }
+    }
+
+    matrix m2 = alloc_array(int[], 7);
+    for(int i = 0; i < 7; i++) {
+        m2[i] = alloc_array(int, 5);
+        for(int j = 0; j < 5; j++) {
+            // some random function
+            m2[i][j] = j - i + ((i * j) / 2);
+        }
+    }
+
+    int sum = 0;
+    for(int i = 0; i < 5; i++) {
+        for(int j = 0; j < 5; j++) {
+            int result = 0;
+            for(int k = 0; k < 7; k++) {
+                result += m1[i][k] * m2[k][j];
+            }
+            sum += result;
+        }
+    }
+    return sum;
+}

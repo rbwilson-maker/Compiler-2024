@@ -1,0 +1,28 @@
+//test return 3
+// test bool assignment and test
+
+bool isEven(int a) {
+  if (a == 0) return true;
+  if (a == 1) return false;
+  if (a == 2) return true;
+  return false;
+}
+
+int main() {
+  bool eVeN = isEven(2);
+  bool not0dd = isEven(0);
+	bool e = true;
+	bool b = false;
+	bool c = e || b; // true
+	bool d = e && b; // false
+  int a = 1;
+  a = 1;
+  a = 1;
+
+	int res = 0;
+	if (e) res++;
+	if (b) res++;
+	if (c) res++;
+	if ((d)) res++;
+	return a + a + a;
+}

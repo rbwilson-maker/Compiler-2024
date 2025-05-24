@@ -1,0 +1,31 @@
+//test return 0
+
+struct point {
+  int x;
+  int y;
+};
+
+struct coord {
+  int x;
+  int y;
+};
+
+bool equal(struct point *p, struct coord *c) {
+  return p->x == c->x && p->y == c->y;
+}
+
+int main() {
+  struct point *p = alloc(struct point);
+  p->x = 5;
+  p->y = -5;
+
+  struct coord *c = alloc(struct coord);
+  c->x = -5;
+  c->y = 5;
+
+  if (equal(p, c)) {
+    return 1;
+  } else {
+    return 0;
+  }
+}

@@ -1,0 +1,11 @@
+//test return 1
+
+int main() {
+    int size = 50;
+	int[][][][] A = alloc_array(int[][][], size);
+	A[0] = alloc_array(int[][], size);
+	A[0][0] = alloc_array(int[], size);
+	A[0][0][0] = alloc_array(int, size);
+	A[0][0][0][0] = 1;
+	return A[0][0][0][0];
+}

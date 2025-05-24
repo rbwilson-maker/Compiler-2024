@@ -1,0 +1,14 @@
+/* A small snippet of math.h in the C library */
+
+typedef int dbl;
+typedef int mtrx;
+
+/* Creates a matrix of shape r x c */
+mtrx mk_mtrx(int r, int c);
+
+/* Matrix m of shape r x c get and set x,y */
+dbl get_elem(mtrx m, int r, int c, int x, int y);
+void set_elem(mtrx m, int r, int c, int x, int y, dbl val);
+
+dbl exp(dbl x);
+dbl log(dbl x);

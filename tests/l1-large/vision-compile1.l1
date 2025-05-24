@@ -1,0 +1,6 @@
+//test error
+
+int main() {
+    x *%= 3;
+    return x;
+}

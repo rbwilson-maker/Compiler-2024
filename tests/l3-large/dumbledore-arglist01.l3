@@ -1,0 +1,32 @@
+//test return -12
+
+// Tests function scoping, typechecking on if statements, lists of args.
+
+bool foo (bool a, bool b) {
+  a = true;
+  b = false;
+  return a || b;
+}
+
+int main () {
+  int a;
+  int b;
+  int c; 
+  bool d;
+  bool e;
+
+  a = 12;
+  b = -12;
+
+  d = false;
+  e = false;
+
+  if (foo(d, e)) {
+    c = b;
+  }
+  else {
+    c = a;
+  }
+
+  return c;
+}

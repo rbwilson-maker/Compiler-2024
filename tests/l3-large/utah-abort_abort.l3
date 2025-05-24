@@ -1,0 +1,12 @@
+//test abort
+// Tests that you can declare a function abort and aborts still work.
+
+void abort () {
+    
+}
+
+
+int main () {  
+    assert (false);
+    return 0;
+}

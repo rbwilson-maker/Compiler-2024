@@ -1,0 +1,10 @@
+//test return 1
+// Order of operations for div and mod
+int main() {
+    int x = 5;
+    int y = 3;
+    int z = 1;
+    int mod = x % y % z; // 0
+    int div = x / y / z; // 1
+    return mod + div;
+}

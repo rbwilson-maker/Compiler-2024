@@ -1,0 +1,14 @@
+//test return 10
+// testing for correct order of operations
+
+int main() {
+    int a;
+    int b;
+    int c;
+
+    a = 3;
+    b = 4;
+    c = 5;
+
+    return (a * b - c) - (a * (b - c));
+}

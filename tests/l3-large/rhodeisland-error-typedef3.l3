@@ -1,0 +1,12 @@
+//test error
+
+void myinttype(int x, int y) {
+    x = x + y;
+}
+
+typedef int myinttype;
+
+int main () {
+    return myinttype(1, 2);
+}
+

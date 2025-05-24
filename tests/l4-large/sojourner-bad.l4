@@ -1,0 +1,8 @@
+//test error
+
+int main() {
+    int[] arr = NULL;
+    (((arr)))[123] = 1 / 0;
+    return arr[(((123)))];
+    (((arr)))((([123]))) = 1;
+}

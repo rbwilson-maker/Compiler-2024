@@ -1,0 +1,14 @@
+//test abort
+
+bool isNotPowerOfTwo(int n) {
+    if (n%2 == 1) return false;
+    assert(n==2 ? false : isNotPowerOfTwo(n/2));
+    return true;
+}
+
+int main() {
+    for (int i=2345; i< 12423; i++) {
+        isNotPowerOfTwo(i);
+    }
+    return 0;
+}

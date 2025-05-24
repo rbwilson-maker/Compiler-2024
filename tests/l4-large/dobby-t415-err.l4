@@ -1,0 +1,11 @@
+//test error
+bool returnsBool() {
+  bool x = true && false;
+  return (true && false || x || !(!x));
+}
+
+int main() {
+  int[] x = alloc_array(int, 15);
+  x[returnsBool()];
+  return 1;
+}

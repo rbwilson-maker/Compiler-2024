@@ -1,0 +1,15 @@
+//test return 0
+
+/* This test takes the mod by 1 successively starting from 4, which 
+   essentially just counts down from 4 to zero by 1, until 0 remains.
+*/
+
+int main ()
+  {
+    int i = 0x4;
+    i %= 1;
+    i %= 1;
+    i %= 1;
+    i %= 1;
+    return i;
+  }

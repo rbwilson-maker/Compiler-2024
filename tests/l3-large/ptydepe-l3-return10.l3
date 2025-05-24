@@ -1,0 +1,26 @@
+//test return 5120
+// simple test defines types t1 and t2
+
+typedef int int_t1;
+typedef int_t1 int_t2;
+typedef bool bool_t;
+
+bool_t foo(int_t1 a, int_t2 b){
+    int max;
+    if (a > b)
+        max = a;
+    else
+        max = b;
+
+    return (max % 2 == 0);
+}
+
+int main () {
+    int_t1 a = 5;
+    int_t2 b = 10;
+    bool_t flag = (a != b);
+    if (flag)
+        if (foo(b, a))
+            return a << b;
+    return 0;
+}

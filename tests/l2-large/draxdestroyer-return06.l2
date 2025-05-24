@@ -1,0 +1,16 @@
+//test return 10
+
+int main() {
+    // should be 14
+    int facts = 3 * 3 + 5;
+
+    // & before or, you'll get ~facts
+    // or before and, you'll get 0
+    int w = ~facts | ~facts & facts;
+
+    if (~facts == w) {
+        return 10;
+    } else {
+        return -10;
+    }
+}

@@ -1,0 +1,20 @@
+//test compile
+// inf loop in while
+
+typedef struct s s;
+
+struct s {
+	int i;
+	s *b;
+};
+
+int main() {
+  s* z = alloc(s);
+  z->i = 5;
+  z->b = z;
+	
+  while (z->b != NULL) {
+	  z = z->b;
+  }
+  return z->i;
+}

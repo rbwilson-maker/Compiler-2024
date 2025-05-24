@@ -1,0 +1,17 @@
+//test return 42
+// multi-dimensional arrays
+
+int main() {
+    int[][][] mat = alloc_array(int[][], 50);
+    for (int i = 0; i < 50; i++) {
+        mat[i] = alloc_array(int[], 50);
+        for (int j = 0; j < 50; j++) {
+            mat[i][j] = alloc_array(int, 3);
+            for (int k = 0; k < 3; k++) {
+                mat[i][j][k] = i + j + k;
+            }
+        }
+    }
+
+    return mat[10][30][2];
+}

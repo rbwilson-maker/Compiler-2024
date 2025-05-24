@@ -1,0 +1,14 @@
+//test return 4599954
+
+// test compound expression
+int main() {
+    dub[] d = alloc_array(dub, 4);
+
+    int i;
+    for (i = 0; i < 4; i++) {
+        d[i] = dmul(itod(i + 10), itod(99999));
+        if (i > 0) d[i] = dadd(d[i], d[i - 1]);
+    }
+
+    return dtoi(d[3]);
+}

@@ -1,0 +1,13 @@
+//test return 32
+// tests while loops and bit shift assign
+
+int main() {
+  int x = -1;
+  int y = 0;
+  while(x != 0) {
+    x <<= 1;
+    y++;
+  }
+
+  return y;
+}

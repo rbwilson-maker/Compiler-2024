@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+  int a = 2;
+  int b = 628318;
+  a *= a;  // 2^2
+  a *= a;  // 2^4
+  a *= a;  // 2^8
+  a *= a;  // 2^16
+  a *= a;  // 2^32 === 0
+  int c = b / a;
+  return c;
+}

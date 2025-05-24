@@ -1,0 +1,52 @@
+//test return 1836311903
+
+int main() {
+    int fib0 = 0;
+    int fib1 = 1;
+    int fib2 = fib0 + fib1;
+    int fib3 = fib1 + fib2;
+    int fib4 = fib2 + fib3;
+    int fib5 = fib3 + fib4;
+    int fib6 = fib4 + fib5;
+    int fib7 = fib5 + fib6;
+    int fib8 = fib6 + fib7;
+    int fib9 = fib7 + fib8;
+    int fib10 = fib8 + fib9;
+    int fib11 = fib9 + fib10;
+    int fib12 = fib10 + fib11;
+    int fib13 = fib11 + fib12;
+    int fib14 = fib12 + fib13;
+    int fib15 = fib13 + fib14;
+    int fib16 = fib14 + fib15;
+    int fib17 = fib15 + fib16;
+    int fib18 = fib16 + fib17;
+    int fib19 = fib17 + fib18;
+    int fib20 = fib18 + fib19;
+    int fib21 = fib19 + fib20;
+    int fib22 = fib20 + fib21;
+    int fib23 = fib21 + fib22;
+    int fib24 = fib22 + fib23;
+    int fib25 = fib23 + fib24;
+    int fib26 = fib24 + fib25;
+    int fib27 = fib25 + fib26;
+    int fib28 = fib26 + fib27;
+    int fib29 = fib27 + fib28;
+    int fib30 = fib28 + fib29;
+    int fib31 = fib29 + fib30;
+    int fib32 = fib30 + fib31;
+    int fib33 = fib31 + fib32;
+    int fib34 = fib32 + fib33;
+    int fib35 = fib33 + fib34;
+    int fib36 = fib34 + fib35;
+    int fib37 = fib35 + fib36;
+    int fib38 = fib36 + fib37;
+    int fib39 = fib37 + fib38;
+    int fib40 = fib38 + fib39;
+    int fib41 = fib39 + fib40;
+    int fib42 = fib40 + fib41;
+    int fib43 = fib41 + fib42;
+    int fib44 = fib42 + fib43;
+    int fib45 = fib43 + fib44;
+    int fib46 = fib44 + fib45;
+    return fib46;
+}

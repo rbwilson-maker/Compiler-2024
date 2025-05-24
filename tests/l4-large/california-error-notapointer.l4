@@ -1,0 +1,13 @@
+//test error
+
+struct bby {
+    int cri;
+    bool isCring;
+};
+
+int main() {
+    struct bby lel = alloc(struct bby);
+    bby -> cri = 1;
+    bby -> isCring = true;
+    return 0;
+}

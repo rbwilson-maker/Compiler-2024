@@ -1,0 +1,10 @@
+//test return 42
+// Pre-emptively return in the program
+int main() {
+  return 42;
+  {
+    int x = 10;
+    x += 10;
+    return x;
+  }
+}

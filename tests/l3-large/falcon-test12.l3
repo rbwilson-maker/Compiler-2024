@@ -1,0 +1,33 @@
+//test return 66
+
+// simple integer "stack" which holds up to 8 4-bit integers using different parts of the integer.
+typedef int stack;
+
+stack init() {
+    return 0;
+}
+
+stack push(stack k, int x) {
+    return (k << 4) | x;
+}
+
+int top(stack k) {
+    return k & 0xF;
+}
+
+stack pop(stack k) {
+    return k >> 4;
+}
+
+int mul_top_2(stack k) {
+    return ((k & 0xF0) >> 4) * (k & 0x0F);
+}
+
+int main() {
+    stack k = init();
+    k = push(k, 6);
+    k = push(k, 11);
+    k = push(k, 9);
+    k = pop(k);
+    return mul_top_2(k);
+}

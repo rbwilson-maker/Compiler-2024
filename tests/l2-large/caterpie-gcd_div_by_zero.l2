@@ -1,0 +1,16 @@
+//test div-by-zero
+
+int main ()
+{
+  int m = 130;
+  int n = 0;
+  int gcd = 0;
+
+  while (m % n != 0) {
+    gcd = m % n;
+    m = n;
+    n = gcd;
+  }
+
+  return gcd;
+}

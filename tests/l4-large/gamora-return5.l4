@@ -1,0 +1,16 @@
+//test return 0
+
+int *brr(int *i)
+{
+  while (*i < 10000) {
+    (*i)++;
+  }
+  return alloc(int);
+}
+
+int main()
+{
+  int *i = alloc(int);
+  int *j = brr(i);
+  return *j;
+}

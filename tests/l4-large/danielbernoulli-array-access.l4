@@ -1,0 +1,11 @@
+//test return 0
+
+struct s {
+    int i; 
+};
+
+int main() {
+  struct s*[] arr = alloc_array(struct s*, 10);
+  arr[9] = alloc(struct s);
+  return arr[9]->i;
+}

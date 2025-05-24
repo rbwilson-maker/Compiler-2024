@@ -1,0 +1,10 @@
+//test error
+int main(){
+ int c = 0;
+ while (1 > 0){
+     if(c == 5){
+     	return c;
+     }
+     c++;
+ }
+}

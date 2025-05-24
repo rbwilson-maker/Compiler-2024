@@ -1,0 +1,16 @@
+//test return 0
+
+// Test logical operators
+
+int main() {
+  bool a = true;
+  bool b = !a;
+  if (a || b) {
+    b != b;
+  }
+  if (a && b) {
+    b != b;
+  }
+  a = ((a && b) || (a && !b)) && ((!a && b) || (!a && !b));
+  return a ? 1 : 0;
+}

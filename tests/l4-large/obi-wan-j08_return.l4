@@ -1,0 +1,93 @@
+//test return 49
+
+
+
+
+struct tree {
+    int data;
+    struct tree* left;
+    struct tree* right;
+};
+typedef struct tree* tree;
+
+
+tree empty() {
+    return NULL;
+}
+
+bool node(tree t) {
+    return t != empty();
+}
+
+tree insert(int x, tree t) {
+    int y;
+
+    if(node(t)) {
+
+        if(t->data > x)
+            t->left = insert(x, t->left);
+        else
+            t->right = insert(x, t->right);
+        return t;
+    }
+    else {
+        tree t2 = alloc(struct tree);
+        t2->data = x;
+        return t2;
+    }
+}
+
+
+void sum(int *acc, tree t) {
+    if(node(t)){
+        *acc = *acc + t->data;
+
+        sum(acc, t->left);
+        sum(acc, t->right);
+    }
+
+    return;
+
+    5 / 0; // respecting the return as usual!
+}
+
+int sum_arr(int [] arr, int len) {
+    int sum = 0;
+
+    for (int i = 0; i < len; i++) {
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+int main() {
+
+    int[] arr = alloc_array(int, 10);
+
+    for(int i = 0; i < 10; i++) {
+        arr[i] = (5 * i) % 11; // 0 5 10 4 9 3 8 2 7 1
+    }
+
+    tree t = empty();
+
+    for(int i = 0; i < 10; i++) {
+        t = insert((5 * i) % 11, t);
+    }
+
+
+    int sumr = sum_arr(arr, 10);
+
+    int *sumt = alloc(int);
+
+    sum(sumt, t);
+
+    assert(*sumt == sumr);
+
+    return *sumt;
+}
+
+
+
+
+

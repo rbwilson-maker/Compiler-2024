@@ -1,0 +1,20 @@
+//test return 4
+// struct implicit declaration
+
+struct mystruct {
+  int x;
+};
+
+int bar(struct undecl_struct3* s3){
+  return 1;
+}
+
+int foo(struct undecl_struct1* s1, struct undecl_struct2* s2, struct mystruct* s){
+  return s->x;
+}
+
+int main(){
+  struct mystruct* s = alloc(struct mystruct);
+  s->x = 4;
+  return foo(NULL, NULL, s);
+}

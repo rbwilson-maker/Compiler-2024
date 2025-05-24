@@ -1,0 +1,26 @@
+//test abort
+
+//implementation of two-thread peterson's algorithm for mutual exclusion
+
+void peterson_enter(bool[] flags, int index, int[] turn) {
+    flags[index] = true;
+    assert(turn[0] == index);
+    turn[0] = (turn[0] + 1) % 2;
+    while (flags[index] == true && turn[0] == 1) {
+        assert(false);
+    }
+}
+
+void peterson_exit(bool[] flags, int index) {
+    flags[index] = false;
+}
+
+int main() {
+    bool[] test_arr = alloc_array(bool, 2);
+    int[] turn = alloc_array(int, 1);
+    turn[0] = 0;
+    peterson_enter(test_arr, 0, turn);
+    // do stuff here.
+    peterson_exit(test_arr, 0);
+    return 0;
+}

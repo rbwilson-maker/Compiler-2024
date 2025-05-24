@@ -1,0 +1,10 @@
+//test typecheck
+// Use a stack header instead of impl
+
+int main() {
+  list ll = create();
+  for (int i = 0; i < 5; i++) {
+    push(ll, i);
+  }
+  return pop(ll);
+}

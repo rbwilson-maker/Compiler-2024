@@ -1,0 +1,17 @@
+//test return 20100
+//while loop
+int main()
+{
+    int n;
+    int sum;
+    int i;
+
+    n = 200;
+    sum = 0;
+    i = 0;
+    while (i <= n) {
+        sum += i;
+        i += 1;
+    }
+    return sum;
+}

@@ -1,0 +1,41 @@
+//test return 0
+// remove the nth node from the end of a single linked list
+struct node {
+  int val;
+  struct node *next;
+};
+
+typedef struct node node_t;
+
+node_t* remove_nth_from_end(node_t* head, int n) {
+    node_t* first_ptr = NULL;
+    node_t* second_ptr = head;
+    for(int i = 0; i < n; i++) {
+        second_ptr = second_ptr->next;
+    }
+    while(second_ptr != NULL) {
+        if(first_ptr != NULL) first_ptr = first_ptr->next;
+        else first_ptr = head;
+        second_ptr = second_ptr->next;
+    }
+    if(first_ptr != NULL) first_ptr->next = first_ptr->next->next;
+    else head = head->next;
+    return head;
+}
+
+int main()
+{
+  node_t *head = alloc(node_t);
+  head->val = 1;
+  head->next = alloc(node_t);
+  head->next->val = 2;
+  head->next->next = alloc(node_t);
+  head->next->next->val = 3;
+
+  remove_nth_from_end(head, 2);
+  assert(head->val == 1);
+  assert(head->next->val == 3);
+  assert(head->next->next == NULL);
+  
+  return 0;
+}

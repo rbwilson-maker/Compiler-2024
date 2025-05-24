@@ -1,0 +1,11 @@
+//test div-by-zero 
+// x[5] contains 0, used in division 
+
+int main() {
+    int[] x = alloc_array(int, 10);
+    for(int i = 0; i < 10; i++) {
+        x[i] = i-5;
+    }
+    x[2] = x[9]/x[5];
+    return 0;
+}

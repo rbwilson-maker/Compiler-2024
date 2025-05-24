@@ -1,0 +1,17 @@
+//test error
+// Return value is only initialized in if branch of conditional
+
+int main() {
+    int x = 6;
+    bool isEven = (x % 2 == 0);
+    int result;
+    int y = 10; 
+    int z = 20;
+
+    if (isEven) {
+        result = y + z;
+    } else {
+        y *= z;
+    }
+    return result;
+}

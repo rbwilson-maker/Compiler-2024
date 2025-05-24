@@ -1,0 +1,40 @@
+//test return 2
+
+typedef struct tree* tree_t;
+
+struct tree
+{
+  int* data;
+  tree_t left;
+  tree_t right;
+};
+
+tree_t new_tree(int node_val)
+{
+  tree_t taxi = alloc(struct tree);
+  taxi->data = alloc(int);
+  *(taxi->data) = node_val;
+  taxi->left = NULL;
+  taxi->right = NULL;
+  return taxi;
+}
+
+int main()
+{
+  tree_t library = new_tree(2);
+
+  library->left = alloc(struct tree);
+  library->right = alloc(struct tree);
+
+  library->left->data = alloc(int);
+  *(library->left->data) = 22;
+  library->left->left = alloc(struct tree);
+  library->left->right = alloc(struct tree);
+
+  library->right->data = alloc(int);
+  *(library->right->data) = 9;
+  library->right->left = alloc(struct tree);
+  library->right->right = alloc(struct tree);
+
+  return 2;
+}

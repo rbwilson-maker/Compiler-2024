@@ -1,0 +1,9 @@
+//test error
+struct a {
+  int x;
+}
+
+int main() {
+  struct a;
+  return a->x;
+}

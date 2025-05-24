@@ -1,0 +1,13 @@
+//test error
+/*
+Compile error.
+Typedef cannot be assigned.
+*/
+
+typedef int typ;
+typedef int typ2;
+
+int main() {
+  typ = 2;
+  return 3;
+}

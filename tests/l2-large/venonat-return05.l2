@@ -1,0 +1,13 @@
+//test return 0
+// Simple loop updating two variables.
+int main() {
+    int x;
+    int y;
+    y = 0;
+    x = 0;
+    for (int i = 10; i < 20; i++){
+        x += i;
+        y -= i;
+    }
+    return x + y;
+}

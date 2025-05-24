@@ -1,0 +1,40 @@
+//test return 255
+
+//we can now do the first real assignment of 15-122!
+
+typedef int pixel;
+
+// Returns the red component of the given pixel p.
+int get_red(pixel p)
+{
+  return (p >> 16) & 0xff;
+}
+
+// Returns the green component of the given pixel p.
+int get_green(pixel p)
+{
+  return (p >> 8) & 0xff;
+}
+
+// Returns the blue component of the given pixel p.
+int get_blue(pixel p)
+{
+  return p & 0xff;
+}
+
+// Returns the alpha component of the given pixel p.
+int get_alpha(pixel p)
+//@ensures 0 <= \result && \result < 256;
+{
+  return (p >> 24) & 0xff;
+}
+
+// Returns an int representing an RGB pixel consisting of the given components
+pixel make_pixel(int a, int r, int g, int b) {
+  return (a << 24) + (r << 16) + (g << 8) + b;
+}
+
+int main() {
+  pixel p = make_pixel(0x0d,0x80,0x40,0x32);
+  return get_red(p) + get_blue(p) + get_green(p) + get_alpha(p);
+}

@@ -1,0 +1,14 @@
+//test return 1
+
+int f (int* x) {
+  (*x)++;
+  return *x;
+}
+
+int main () {
+  int *x = alloc(int);
+  *x = -1;
+  int[] a = alloc_array(int, 2);
+  a[f(x)] += f(x);
+  return a[0];
+}

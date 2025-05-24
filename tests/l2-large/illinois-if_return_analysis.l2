@@ -1,0 +1,15 @@
+//test return 0
+// if statements with else should have return analysis
+
+int main() {
+    int cat = 0;
+    int dog = 0;
+    
+    if (cat <3) {
+        return 0;
+    } else if (dog <3) {
+        return 1;
+    } else {
+        return -1;
+    }
+}

@@ -1,0 +1,15 @@
+//test error
+// cannot have struct in cond
+
+struct A {
+    int a;
+}
+
+int main () {
+    struct A *a = alloc(struct A);
+    if (*a > 1) {
+        return 1;
+    } else {
+        return 0;
+    }
+}

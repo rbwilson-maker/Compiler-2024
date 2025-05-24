@@ -1,0 +1,13 @@
+//test return 600
+
+int main () { 
+    int x = 150; 
+    int y = 150;
+    int z = x + y;
+
+    x = 200;
+    y += 50;
+    z -= 100;
+
+    return (x + y + z);
+}

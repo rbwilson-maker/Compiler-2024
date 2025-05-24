@@ -1,0 +1,38 @@
+//test return 4592975
+// Performs flood fill on a grid and verifies with a crude checksum
+
+void floodfill(int[][] board, int y, int x) {
+  if (board[y][x] > 0) return;
+  board[y][x] = 1;
+
+  for (int dy = -1; dy <= 1; dy++) {
+    for (int dx = -1; dx <= 1; dx++) {
+      if (dx + dy == 1 || dx + dy == -1) {
+        int ny = y + dy;
+        int nx = x + dx;
+        if (ny >= 0 && ny < 100 && nx >= 0 && nx < 100) {
+          floodfill(board, ny, nx);
+        }
+      }
+    }
+  }
+}
+
+int main() {
+  int[][] board = alloc_array(int[], 100);
+  for (int i = 0; i < 100; i++) {
+    board[i] = alloc_array(int, 100);
+  }
+  for (int i = 0; i < 100; i++) {
+    board[i][99-i] = 2;
+  }
+  floodfill(board, 0, 0);
+
+  int checksum = 0;
+  for (int i = 0; i < 100; i++) {
+    for (int j = 0; j < 100; j++) {
+      checksum += board[i][j] * (i + 1) * (j + 1);
+    }
+  }
+  return checksum;
+}

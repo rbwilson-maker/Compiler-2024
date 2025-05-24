@@ -1,0 +1,100 @@
+//test return 0
+//implements gale shapley in a super naive way
+//and then checks that a matching output on an instance w 5 men and 5 women is stable
+
+
+int getrank(int[] preflist, int target, int n) {
+	for (int i = 0; i<n; i++){
+		if (preflist[i] == target) return i;
+	}
+
+	return -1;
+
+}
+
+bool check_stable(int[] matching, int n, int[][] mprefs, int[][] wprefs){
+	for (int i = 0; i < n; i++) {
+		for (int j =0; j < n; j++) {
+				if(i != j) {
+					if (getrank(mprefs[i],matching[j],n) > getrank(mprefs[i],matching[i],n)) {
+						if (getrank(wprefs[matching[j]],i,n) > getrank(wprefs[matching[j]],j,n)) return false;
+					}
+					
+				}
+		}
+		
+	}
+
+	return true;
+
+}
+
+int next_unmatched(int[] matching, int n) {
+	for(int i = 0; i < n; i++) {
+		if (matching[i] == -1) return i;
+	}
+	return -1;
+
+}
+int[] gs(int[][] mprefs, int[][] wprefs, int n) {
+	
+	int[] matching = alloc_array(int, n);
+  int[] wmatch =  alloc_array(int, n);
+	for(int i = 0; i < n; i++){
+		matching[i] = -1;
+		wmatch[i] = -1;
+	}
+	int[] mon = alloc_array(int, n);
+
+	int x = next_unmatched(matching, n);
+
+	while (x > -1) {
+		int w = mon[x];
+		mon[x] += 1;
+		if (wmatch[w]==-1 || (getrank(wprefs[w], x, n) > getrank(wprefs[w],wmatch[w],n))) {
+			matching[x] = w;
+			wmatch[w] = x;
+		}
+
+		x = next_unmatched(matching,n);
+
+	}
+	
+	return matching;
+
+
+  
+}
+
+int main(){
+	int [][] mprefs = alloc_array(int[],5);
+	int [][] wprefs = alloc_array(int[], 5);
+	
+	int[] prefs1 = alloc_array(int, 5);
+	int[] prefs2 = alloc_array(int, 5);
+	int[] prefs3 = alloc_array(int, 5);
+	
+	for(int i = 0; i< 5; i++) {
+		prefs1[i] = i;
+		prefs2[i] = 4-i;
+		if(i==0) prefs3[i] = 4;
+		else prefs3[i] = i-1;
+	}
+
+	wprefs[0] = prefs1;
+	mprefs[0] = prefs2;
+	wprefs[1] = prefs2;
+	mprefs[1] = prefs3;
+	wprefs[2] = prefs3;
+	mprefs[2] = prefs1;
+	wprefs[3] = prefs3;
+	mprefs[3] = prefs3;
+	wprefs[4] = prefs1;
+	mprefs[4] = prefs3;
+		
+	int[] matching = gs(mprefs,wprefs,5);
+	assert(check_stable(matching, 5, mprefs, wprefs));
+	return 0;
+
+}
+

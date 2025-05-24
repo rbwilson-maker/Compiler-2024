@@ -1,0 +1,8 @@
+//test return 0
+int main() {
+    char c = 'y';
+    assert(c == 'y');
+    assert(c < 'z');
+    assert(c > 'x');
+    return 0;
+}

@@ -1,0 +1,14 @@
+//test return 3
+
+int idk(int c) {
+  int count = 0;
+  while (c > 0) {
+    count += c & 1;
+    c >>= 1;
+  }
+  return count;
+}
+
+int main() { 
+  return idk(100);
+}

@@ -1,0 +1,12 @@
+//test return 2
+
+int first(int[] a) {
+	a[0]++;
+	return a[0];
+}
+
+int main() {
+	int[] a = alloc_array(int, 3);
+	assert(a[first(a)] == 0);
+	return first(a);
+}

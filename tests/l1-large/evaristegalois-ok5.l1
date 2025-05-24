@@ -1,0 +1,14 @@
+//test return 14001
+
+int main() {
+    // assignment, negatives 
+
+    int x = 14001;
+
+    int y = x + 2003;
+    int z = -20;
+    z += x;
+
+    return x;
+
+}

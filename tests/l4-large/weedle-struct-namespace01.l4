@@ -1,0 +1,18 @@
+//test return 96342
+// Field names occupy their own namespace, so they cannot clash with variable,
+// function, or type names (but they must be distinct from keywords).
+// The same field names can be used in different struct definitions.
+
+typedef int foo;
+
+struct a {
+	int foo;
+};
+
+struct b {
+	int foo;
+};
+
+int main() {
+	return 96342;
+}

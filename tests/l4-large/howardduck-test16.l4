@@ -1,0 +1,14 @@
+//test return 20
+
+void count (int *j, int max) {
+    for (int i = 0; i < max; i++) {
+        (*j)++;
+    }
+}
+
+int main () {
+    int *p = alloc(int);
+    *p = 0;
+    count(p, 20);
+    return *p;
+}

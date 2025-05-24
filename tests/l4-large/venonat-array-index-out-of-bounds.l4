@@ -1,0 +1,7 @@
+//test memerror
+// array index out of bounds
+
+int main(){
+  int[] A = alloc_array(int, 5);
+  return A[6];
+}

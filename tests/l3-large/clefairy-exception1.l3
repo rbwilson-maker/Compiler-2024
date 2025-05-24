@@ -1,0 +1,11 @@
+//test div-by-zero
+
+fpt foo(fpt x) {
+	fpt three = itof(3);
+	return fadd(x, three);
+}
+
+int main() {
+	return 1 / ftoi(foo(itof(-3)));
+}
+

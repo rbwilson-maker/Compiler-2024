@@ -1,0 +1,13 @@
+//test return 1
+
+int main() {
+  if (NULL == NULL) {
+    if (NULL != NULL) {
+      return 2;
+    } else {
+      return 1;
+    }
+  } else {
+    return 0;
+  }
+}

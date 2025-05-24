@@ -1,0 +1,18 @@
+//test return 1
+// Tests that order of operations are followed.
+
+int main () {
+
+    int a = 0;
+    int b = 1;
+    int c = 2;
+
+    int d = a * b | c; // should be 2
+
+    int e = -a + b - c; // should be -1;
+
+    int f = b << d + c; // should be 16
+
+    return f % d | b; // should be 1
+
+}

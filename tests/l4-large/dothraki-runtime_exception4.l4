@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int funFunction(int chom, int bom) {
+  return chom >> (bom - 2);
+}
+
+int main() {
+  int[] chom = alloc_array(int, 4);
+  for(int i = 0; i < 4; i++) {
+    chom[i] = 2 - i;
+  }
+  return funFunction(chom[2], chom[1]);
+}

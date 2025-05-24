@@ -1,0 +1,15 @@
+//test return 9
+
+// test evaluation order
+
+int *foo(int *p) {
+    *p += 1;
+    return p;
+}
+
+int main() {
+    int *p = alloc(int);
+    *p += 1;
+    *p += *foo(p) * *foo(p);
+    return *p;
+}

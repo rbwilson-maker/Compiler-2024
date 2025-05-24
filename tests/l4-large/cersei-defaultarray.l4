@@ -1,0 +1,16 @@
+//test div-by-zero
+
+struct pkg {
+  int x;
+  int[] arr;
+};
+
+int main() {
+  int[] fresh = alloc_array(int, 0);
+  struct pkg *p = alloc(struct pkg);
+  if (fresh == p->arr) {
+    return 1;
+  } else {
+    return 1/0;
+  }
+}

@@ -1,0 +1,36 @@
+//test error
+typedef bool boolean;
+      /*
+       * No return statement in func1.
+       */
+       int func1(int x, boolean bee);
+      
+           int main()
+           {
+	       boolean bee = true;
+
+               if(3 < 5)
+                   return func1(5, bee);
+               else
+	       { while (true)
+	         { assert(true);}
+	       }         
+	       return 0;      
+
+           }
+ 	   
+	   int func1(int x, boolean bee)
+	   {
+	     if (x<10)
+	       return func1(x+1, bee);
+	     
+	     assert (bee == true);
+	     assert (bee == false);
+	
+	     if (x==0)
+	       return 0;
+             if (x==9)
+	       assert(true);
+	     else 
+	       return 2;	
+	   }

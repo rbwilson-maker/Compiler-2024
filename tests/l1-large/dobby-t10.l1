@@ -1,0 +1,5 @@
+//test return -2147483644
+int main() {
+  int x = 2147483647 + 5;
+  return x;
+}

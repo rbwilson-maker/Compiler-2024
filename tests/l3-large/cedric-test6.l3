@@ -1,0 +1,26 @@
+//test return 0
+
+int c(int z)
+{
+    if (z == 0) return 0;
+
+    return c(z-1);
+}
+
+int b(int y)
+{
+    return c(y >> 1);
+}
+
+
+int a(int x)
+{
+    return b(x<<1);
+}
+
+
+
+int main()
+{
+    return a(100);
+}

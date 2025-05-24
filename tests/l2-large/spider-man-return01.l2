@@ -1,0 +1,25 @@
+//test return 1
+
+int main() 
+{
+    int hi = 84;
+    int lo = 0;
+    int target = 42;
+    bool done = false; 
+    while (lo < hi && !done) {
+        int mid = (lo + hi) >> 1;
+        if (mid > target) {
+            hi = mid - 1;
+        }
+        else {
+            if (mid == target) {
+                lo = mid;
+                done = true;
+            }
+            else {
+                lo = mid + 1;
+            }
+        }
+    }
+    return lo - 41;
+}

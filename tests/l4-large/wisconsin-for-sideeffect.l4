@@ -1,0 +1,16 @@
+//test memerror
+
+int side_effect(int** i) {
+   int j = **i;
+   *i = NULL;
+   return j;
+}
+
+int main() {
+   int j = 0;
+   int** i = alloc(int*);
+   *i = alloc(int);
+   for(**i = 5; side_effect(i) > 0; (**i)--)
+      j++;
+   return 0;
+}

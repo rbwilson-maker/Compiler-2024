@@ -1,0 +1,7 @@
+//test return 0
+
+int main() {
+  int[] h = alloc_array(int, 3);
+  h[0] = 1;
+  return h[2];
+}

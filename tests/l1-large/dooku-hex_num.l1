@@ -1,0 +1,6 @@
+//test return 11
+int main() { 
+	int tina = 0x16;	
+	((tina) ) /= 2;
+	return tina;
+}

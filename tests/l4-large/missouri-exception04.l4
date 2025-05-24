@@ -1,0 +1,13 @@
+//test memerror
+//Attempt to dereference null pointer
+
+struct foo
+{
+    int v;
+    struct foo* next;
+};
+
+int main() {
+    struct foo* bar = alloc(struct foo);
+    return bar->next->v;
+}

@@ -1,0 +1,19 @@
+//test abort
+
+struct s1 {
+  int x;
+  int *y;
+};
+
+struct s2 {
+  struct s1 *s1;
+};
+
+int main() {
+  struct s2* test2 = alloc(struct s2);
+  test2->s1 = alloc(struct s1);
+
+  assert(test2->s1->y != NULL);
+
+  return 0;
+}

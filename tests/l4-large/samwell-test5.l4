@@ -1,0 +1,16 @@
+//test return 0
+
+struct foo{};
+
+int params(int* a, int* b, int* c, int* d, int* e, int* f, int* g, int* h, struct foo* i, struct foo* j, struct foo* k, struct foo* l){
+  return *a + *b + *c + *d + *e + *f + *g + *h;
+}
+
+int main() {
+    int* a = alloc(int);
+    struct foo* b = alloc(struct foo);
+    return params(a, a, a, a, a, a, a, a, b, b, b, b);
+}
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

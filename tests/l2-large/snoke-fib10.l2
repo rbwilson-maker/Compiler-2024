@@ -1,0 +1,13 @@
+//test return 89
+
+int main() {
+	int i;
+	int fib = 2;
+	int fibprev = 1;
+	for (i = 3; i <= 10; i += 1) {
+		int tmp = fib;
+		fib += fibprev;
+		fibprev = tmp;
+	}
+	return fib;
+}

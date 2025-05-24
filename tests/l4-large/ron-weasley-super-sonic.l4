@@ -1,0 +1,41 @@
+//test memerror
+
+
+
+
+
+int main(){
+    // gas gas gas
+    int s = 0x73;
+    int u = 0x75;
+    int p = 0x70;
+    int e = 0x65;
+    int r = 0x72;
+
+    // Im gonna step on the gas
+    int o = 0x6F;
+    int n = 0x6E;
+    int i = 0x69;
+    int c = 0x63;
+
+    // Tonight I'll fly!
+    int a = 0x61;
+    int g = 0x67;
+
+    bool[] data = alloc_array(bool, 42);
+
+    // EVERYBODY's
+    assert(data[(s * u * p * e * r * s * o * n * i * c * r * a * c * i * n * g)]);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+

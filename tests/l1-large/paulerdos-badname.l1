@@ -1,0 +1,7 @@
+//test error
+// malformed variable name
+int main()
+{
+  int 005a = 3;
+  return 005a;
+}

@@ -1,0 +1,13 @@
+//test return 69
+// conditional, | or, bool
+int main()
+{
+    bool t = true;
+    bool y = t || false;
+    if (y) {
+        return 69;
+    }
+    else {
+        return 420; 
+    }
+}

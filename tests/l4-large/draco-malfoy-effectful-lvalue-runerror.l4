@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+	int temp = 42;
+	int[] a = alloc_array(int, temp);
+	int i;
+	i = 0;
+	while (i < temp) {
+		a[temp/i] = i;
+		i++;
+	}
+	return a[2];
+}

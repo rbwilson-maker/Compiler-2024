@@ -1,0 +1,14 @@
+//test return 0
+
+int main() {
+   int i=1;
+
+   if (i==1)
+   if (i==2)
+   if (i==3) return 1;
+   else return 2;
+   else if(i==4) return 4;
+   else return 0;
+   else return 3;
+   return -1;
+}

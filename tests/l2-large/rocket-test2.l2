@@ -1,0 +1,11 @@
+//test error
+
+int main ()
+{
+  int x;
+  int y;
+
+  while (true) y = 0;
+  x = y+1;
+  return x;
+}

@@ -1,0 +1,13 @@
+//test return 3
+
+// checking simple math.
+int main() {
+  bool x = true;
+  bool y = !x;
+  if(x && y){
+    return 2;
+  }
+  else{
+    return 3;
+  }
+}

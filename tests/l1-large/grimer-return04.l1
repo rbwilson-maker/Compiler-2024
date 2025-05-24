@@ -1,0 +1,8 @@
+//test return 12
+
+int main() {
+	int r = 2;
+	int pi = 3;
+	int area = pi * r * r;
+	return area;
+}

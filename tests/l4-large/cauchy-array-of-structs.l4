@@ -1,0 +1,16 @@
+//test return 0
+struct creative_name {
+    int info;
+    bool status;
+};
+typedef struct creative_name cn_t;
+int main() {
+    cn_t[] arr = alloc_array(cn_t, 4);
+    for(int i = 0; i < 4; i++) {
+        arr[i].info = i;
+    }
+    for(int i = 0; i < 4; i++) {
+        assert(arr[i].info == i);
+    }
+    return 0;
+}

@@ -1,0 +1,13 @@
+//test return 0
+
+typedef int* meat;
+
+meat Feeder(int target) {
+   int *hi = alloc(int);
+   return hi;
+}
+
+int main() {
+    int* x = Feeder(5);
+    return *x;
+}

@@ -1,0 +1,27 @@
+//test return 123
+
+typedef int int1;
+typedef int1 int2;
+
+typedef bool bool1;
+typedef bool1 bool2;
+
+void f1();
+
+bool1 f2(int2 a) {
+    f1();
+    return a - 1 == 1;
+}
+
+int main() {
+    if (f2(2)) {
+        return 123;
+    }
+    return 0;
+}
+
+void f1();
+
+void f1() {
+    1 == 1;
+}

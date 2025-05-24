@@ -1,0 +1,45 @@
+//test typecheck
+
+
+int main()
+{
+  
+  int run_the_hidden_pine_trails_of_the_forest = 0;
+  int taste_the_sun_sweet_berries_of_the_Earth = 0;
+  int roll_in_all_the_riches_all_around_you = 0;
+  int never_wonder_what_theyre_worth = 0;
+  int sing_with_the_voices_of = 0;
+  int paint_with_all_the_colors_of = 0;
+
+  struct nature* nature;
+  nature = alloc(struct nature);
+  struct creature* wolf;
+  struct creature* bobcat;
+  struct creature* mountain;
+  struct creature* wind;
+  wolf = alloc(struct creature);
+  bobcat = alloc(struct creature);
+  mountain = alloc(struct creature);
+  wind = alloc(struct creature);
+
+  nature->earth = alloc_array(struct creature*, 4);
+  nature->earth[0] = wolf;
+  nature->earth[1] = bobcat;
+  nature->earth[2] = mountain;
+  nature->earth[3] = wind;
+
+  nature->blue_corn_moon = 1024;
+
+  have_you_ever heard;
+  cry(wolf, nature->blue_corn_moon);
+  have_you_ever asked_why;
+  grin(bobcat, 0);
+  can_you(sing_with_the_voices_of, mountain);
+  can_you(paint_with_all_the_colors_of, wind);
+
+  come(run_the_hidden_pine_trails_of_the_forest);
+  come(taste_the_sun_sweet_berries_of_the_Earth);
+  come(roll_in_all_the_riches_all_around_you);
+
+  return never_wonder_what_theyre_worth;
+}

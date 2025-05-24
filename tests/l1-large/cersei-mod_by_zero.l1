@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main() {
+    int x = 0;
+    int y = 283957;
+    int z = y % x; // this should cause a runtime error
+    return z + 24;
+}

@@ -1,0 +1,8 @@
+//test div-by-zero
+
+int main() {
+    //this program will raise an exception
+    int a = 0;
+    int b = 10 % a;
+    return b;
+}

@@ -1,0 +1,25 @@
+//test return 15
+//simple recursive get sum of a tree structure
+struct Node {
+  int val;
+  struct Node* left;
+  struct Node* right;
+};
+
+int getSum (struct Node* n) {
+  if (n == NULL)
+    return 0;
+  return n->val + getSum(n->left) + getSum(n->right);
+}
+
+int main() {
+  struct Node* lnode = alloc(struct Node);
+  lnode->val = 5;
+  struct Node* rnode = alloc(struct Node);
+  rnode->val = 6;
+  struct Node* root = alloc(struct Node);
+  root->left = lnode;
+  root->right = rnode;
+  root->val = 4;
+  return getSum(root);
+}

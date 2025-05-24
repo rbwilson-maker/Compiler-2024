@@ -1,0 +1,65 @@
+//test memerror
+// shh! don't wake the null!
+
+struct s0 {
+    int x;
+};
+struct s1 {
+    int shh;
+    struct s0* s;
+    int quiet;
+};
+struct s2 {
+    int x;
+    bool y;
+    bool z;
+    int w;
+    struct s1* s;
+};
+struct s3 {
+    int x;
+    bool y;
+    bool z;
+    struct s2* s;
+    int w;
+};
+struct s4 {
+    int x;
+    bool y;
+    struct s3* s;
+    bool z;
+    int w;
+};
+struct s5 {
+    int x;
+    struct s4* s;
+    bool y;
+    bool z;
+    int w;
+};
+struct s6 {
+    struct s5* s;
+    int x;
+    bool y;
+    bool z;
+    int w;
+};
+
+int main() {
+    struct s1* s1 = NULL;
+    struct s2* s2 = alloc(struct s2);
+    struct s3* s3 = alloc(struct s3);
+    struct s4* s4 = alloc(struct s4);
+    struct s5* s5 = alloc(struct s5);
+    struct s6* s6 = alloc(struct s6);
+
+    // all tucked in!
+    s6->s = s5;
+    s5->s = s4;
+    s4->s = s3;
+    s3->s = s2;
+    s2->s = s1;
+
+    s6->s->s->s->s->s->s->x = 12345; // WHAT HAVE YOU DONE
+    return 54321;
+}

@@ -1,0 +1,18 @@
+//test return 2
+
+struct foo {
+	int x;
+	int y;
+};
+typedef struct foo s;
+
+int main() {
+	s* foo = alloc(struct foo);
+	struct foo *bar = foo;
+	struct foo* foobar = alloc(s);
+	foo->x = 2;
+	foo->y = 3;
+	int z = (foo == bar) ? 2 : 3;
+	z += (foo == foobar) ? 1 : 0;
+	return z;
+}

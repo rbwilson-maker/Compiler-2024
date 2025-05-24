@@ -1,0 +1,15 @@
+//test typecheck
+//test infloop
+struct Node {
+  struct Node* next;
+};
+
+void longlist (struct Node* n) {
+  n->next = alloc(struct Node);
+  longlist(n->next);
+}
+
+int main() {
+  longlist(alloc(struct Node));
+  return 0;
+}

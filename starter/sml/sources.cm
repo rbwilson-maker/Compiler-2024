@@ -1,0 +1,39 @@
+Group is
+  $/basis.cm
+  $/smlnj-lib.cm
+  $/ml-yacc-lib.cm
+
+  util/mark.sml
+  util/flag.sml
+  util/symbol.sml
+  util/errormsg.sml
+  util/safe-io.sml
+  util/word32.sml
+
+  parse/ast.sig
+  parse/ast.sml
+  parse/parsestate.sig
+  parse/parsestate.sml
+  parse/c0.grm.sig
+  parse/c0.grm.sml
+  parse/c0.lex.sml
+  parse/parse.sig
+  parse/parse.sml
+
+  type/typechecker.sig
+  type/typechecker.sml
+
+  trans/temp.sig
+  trans/temp.sml
+  trans/tree.sig
+  trans/tree.sml
+  trans/trans.sig
+  trans/trans.sml
+
+  codegen/assem.sig
+  codegen/assem.sml
+  codegen/codegen.sig
+  codegen/codegen.sml
+
+  top/top.sml
+  top/go.sml

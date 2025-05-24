@@ -1,0 +1,51 @@
+//test return 37120907
+
+// Iteratively compute Mandelbrot set membership by seeing if c diverges
+int mandel(dub c_re, dub c_im, int count) {
+  dub z_re = c_re;
+  dub z_im = c_im;
+  int i;
+
+  for(i = 0; i < count; i++) {
+    if(dless(itod(4), dadd(dmul(z_re, z_re), dmul(z_im, z_im)))) {
+      return i;
+    }
+
+    dub new_re = dsub(dmul(z_re, z_re), dmul(z_im, z_im));
+    dub new_im = dmul(itod(2), dmul(z_re, z_im));
+    z_re = dadd(c_re, new_re);
+    z_im = dadd(c_im, new_im);
+  }
+
+  return i;
+}
+
+// Determine the number of total iterations needed in an image visualizing
+// the Mandelbrot set before the complex number corresponding to a pixel 
+// could be rejected from the set
+int mandelbrotSerial(dub x0, dub y0, dub x1, dub y1,
+                     int width, int height, int maxIterations) {
+  dub dx = ddiv(dsub(x1, x0), itod(width));
+  dub dy = ddiv(dsub(y1, y0), itod(height));
+  int out = 0;
+
+  for(int j = 0; j < height; j++) {
+    for(int i = 0; i < width; i++) {
+      dub x = dadd(x0, dmul(itod(i), dx));
+      dub y = dadd(y0, dmul(itod(j), dy));
+
+      int index = j * width + i;
+      out += mandel(x, y, maxIterations);
+    }
+  }
+
+  return out;
+}
+
+int main() {
+  dub x0 = ddiv(itod(-13), itod(6)); // -2.167
+  dub x1 = ddiv(itod(7), itod(6)); // 1.167
+  dub y0 = itod(-1); // -1
+  dub y1 = itod(1); // 1
+  return mandelbrotSerial(x0, y0, x1, y1, 640, 480, 512);
+}

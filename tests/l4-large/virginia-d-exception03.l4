@@ -1,0 +1,15 @@
+//test memerror
+//struct is not initialized
+struct l {
+	struct l* next;
+	int blah;
+};
+
+
+int main()
+{
+	struct l*[] wut = alloc_array(struct l*, 10);
+	wut[0]->blah;
+
+	return 0;
+}

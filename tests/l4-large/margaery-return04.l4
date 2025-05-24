@@ -1,0 +1,23 @@
+//test return 2
+
+struct rec_struct {
+    int x;
+    struct rec_struct* inner_rec;
+};
+
+int main() {
+
+    struct rec_struct* rec = alloc(struct rec_struct);
+    (*rec).x = 199999;
+    int res = (*rec).x;
+
+    while((*rec).x > 1) {
+        res = (*rec).x;
+        (*rec).inner_rec = alloc(struct rec_struct);
+        (*rec).inner_rec->x = (*rec).x - 1;
+        rec = (*rec).inner_rec;
+    }
+
+
+    return res;
+}

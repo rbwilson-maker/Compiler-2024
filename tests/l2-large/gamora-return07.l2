@@ -1,0 +1,24 @@
+//test return 5
+// stupid nesting :)
+
+
+int main()
+{
+  while (true)
+  {
+    while (true)
+    {
+      while (true)
+      {
+        for (int i = 0; i < 10; i++)
+        {
+          while (true)
+          {
+            return 5;
+          }
+        }
+      }
+    }
+  }
+  return -1;
+}

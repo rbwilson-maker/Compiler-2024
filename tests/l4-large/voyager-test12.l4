@@ -1,0 +1,23 @@
+//test return 1
+//testing correct propagation of function calls
+
+int getidx(int* i, int[] idx)
+{
+    int id = *i;
+    *i = id-1;
+    return idx[id];
+}
+
+int main()
+{
+    int[] idxs = alloc_array(int, 4);
+    idxs[0] = 3;
+    idxs[1] = 2;
+    idxs[2] = 1;
+    idxs[3] = 0;
+
+    int* i = alloc(int);
+    *i = 2;
+    idxs[getidx(i, idxs)] += idxs[getidx(i, idxs)];
+    return idxs[2];
+}

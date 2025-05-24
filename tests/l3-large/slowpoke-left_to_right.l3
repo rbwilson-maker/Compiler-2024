@@ -1,0 +1,19 @@
+//test typecheck
+//test infloop
+
+int add(int x, int y) {
+  return x + y;
+}
+
+int f(int x) {
+  if(x == 1) {
+    return f(0);
+  } else {
+    return f(1);
+  }
+}
+
+// should loop forever and never actually divide by 0
+int main() {
+    return add(f(1), 2/0);
+}

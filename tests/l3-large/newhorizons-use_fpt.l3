@@ -1,0 +1,19 @@
+//test return 0
+// uses the given header and effect-ful functions
+
+int main () {
+  fpt x = itof(411);
+  fpt y = itof(122);
+  fpt z = itof(251);
+
+  fpt a = itof(4 + 6 - (7%2));
+
+  print_fpt(a); 
+  print_int(251);
+  print_hex(122);
+
+  fpt b = fmul(a, fdiv(y, x));
+  fpt c = fsub(b, b);
+
+  return ftoi(c);
+}

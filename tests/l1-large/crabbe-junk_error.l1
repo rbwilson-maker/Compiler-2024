@@ -1,0 +1,14 @@
+//test error
+// junk text in program
+int main()
+{
+    qwertyuiop
+    int x;
+    int y;
+    int z;
+
+    x = 91;
+    y += x;
+    z = y-x;
+    return z;
+}

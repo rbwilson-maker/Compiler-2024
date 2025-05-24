@@ -1,0 +1,60 @@
+//test div-by-zero
+/* struct that divides by something in struct */
+
+struct s1 {
+  int a;
+  int* b;
+  int* c;
+  int d;
+  int e;
+  int f;
+  int* g;
+  int* h;
+  int* i;
+  int j;
+  int k;
+};
+
+struct s2 {
+  int a;
+  int b;
+  int* c;
+  int* d;
+  int* e;
+  int* f;
+  int g;
+  int h;
+  int i;
+  int* j;
+  int* k;
+};
+
+void initializeOne(struct s1 * s) {
+  s->a = 0;
+  s->d = 1;
+  s->e = 2;
+  s->f = 3;
+  s->j = 4;
+  s->k = 5;
+}
+
+void initializeTwo(struct s2 * s) {
+  s->a = 0;
+  s->b = 1;
+  s->g = 2;
+  s->h = 0;
+  s->i = 3;
+}
+
+int main () {
+  struct s1 * structOne;
+  struct s2 * structTwo;
+  structOne = alloc(struct s1);
+  structTwo = alloc(struct s2);
+  initializeOne(structOne);
+  initializeTwo(structTwo);
+  print_int(structOne->f);
+  print_int(structTwo->g);
+  (structOne->e)/(structTwo->h);
+  return -1;
+}

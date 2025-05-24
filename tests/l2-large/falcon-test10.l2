@@ -1,0 +1,14 @@
+//test error
+
+int main() {
+    int b = 15411;
+
+    int 2b = b + b; // Illegal name for a variable
+
+    while(b > b) {
+        int x = b;
+        bool z = x > 4;
+    }
+
+    return 2b;
+}

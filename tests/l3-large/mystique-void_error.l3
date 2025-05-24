@@ -1,0 +1,16 @@
+//test error
+
+typedef void v;
+
+int three(bool b) {
+    if (b) {
+        return 3;
+    } else {
+        return -3;
+    }
+}
+
+int main() {
+    int x = three(true);
+    return x;
+}

@@ -1,0 +1,37 @@
+//test return 31
+struct main {
+	int why;
+	int would;
+	int you;
+	int do;
+	bool this;
+};
+
+typedef struct main foo;
+
+int sum(foo* s) {
+	int why = (*s).why;
+	int would = (*s).would;
+	int you = (*s).you;
+	int do = (*s).do;
+	bool this = (*s).this;
+	return why + would + you + do + (this ? why : why);
+}
+
+int f(foo* a_struct, int an_int) {
+	a_struct -> why += an_int;
+	a_struct -> would += an_int;
+	a_struct -> you += an_int;
+	a_struct -> do += an_int;
+	return sum(a_struct);
+}
+
+int main() {
+	foo* a_main = alloc(foo);
+	a_main -> why = 0;
+	a_main -> would = 1;
+	a_main -> you = 2;
+	a_main -> do = 3;
+	a_main -> this = false;
+	return f(a_main, 5);
+}

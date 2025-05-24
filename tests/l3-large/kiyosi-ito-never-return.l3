@@ -1,0 +1,13 @@
+//test compile
+
+int main() {
+  int i = 5;
+  while (true) {
+    if (fadd(i, i + 1) < 0) {
+      i = fadd(i, i + 1);
+    } else {
+      return main();
+    }
+  }
+  return main();
+}

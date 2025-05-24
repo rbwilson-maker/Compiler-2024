@@ -1,0 +1,84 @@
+//test return 1200
+// a big struct used in an array
+
+struct asdf {
+  int* i0;
+  int* i1;
+  int* i2;
+  int* i3;
+  int* i4;
+  int* i5;
+  int* i6;
+  int* i7;
+  int* i8;
+  int* i9;
+  int* i10;
+  int* i11;
+  int* i12;
+  int* i13;
+  int* i14;
+  int* i15;
+};
+
+int main() {
+  struct asdf[] A = alloc_array(struct asdf, 10);
+  for (int i = 0; i < 10; i++) {
+    int* i0 = alloc(int);
+    *i0 = 0;
+    A[i].i0 = i0;
+    int* i1 = alloc(int);
+    *i1 = 1;
+    A[i].i1 = i1;
+    int* i2 = alloc(int);
+    *i2 = 2;
+    A[i].i2 = i2;
+    int* i3 = alloc(int);
+    *i3 = 3;
+    A[i].i3 = i3;
+    int* i4 = alloc(int);
+    *i4 = 4;
+    A[i].i4 = i4;
+    int* i5 = alloc(int);
+    *i5 = 5;
+    A[i].i5 = i5;
+    int* i6 = alloc(int);
+    *i6 = 6;
+    A[i].i6 = i6;
+    int* i7 = alloc(int);
+    *i7 = 7;
+    A[i].i7 = i7;
+    int* i8 = alloc(int);
+    *i8 = 8;
+    A[i].i8 = i8;
+    int* i9 = alloc(int);
+    *i9 = 9;
+    A[i].i9 = i9;
+    int* i10 = alloc(int);
+    *i10 = 10;
+    A[i].i10 = i10;
+    int* i11 = alloc(int);
+    *i11 = 11;
+    A[i].i11 = i11;
+    int* i12 = alloc(int);
+    *i12 = 12;
+    A[i].i12 = i12;
+    int* i13 = alloc(int);
+    *i13 = 13;
+    A[i].i13 = i13;
+    int* i14 = alloc(int);
+    *i14 = 14;
+    A[i].i14 = i14;
+    int* i15 = alloc(int);
+    *i15 = 15;
+    A[i].i15 = i15;
+  }
+
+  int sum = 0;
+  for (int i = 0; i < 10; i++) {
+    sum += *(A[i].i0) + *(A[i].i1) + *(A[i].i2) + *(A[i].i3) + *(A[i].i4) + *(A[i].i5)
+	    + *(A[i].i6) + *(A[i].i7) + *(A[i].i8) + *(A[i].i9) + *(A[i].i10) + *(A[i].i11)
+		+ *(A[i].i12) + *(A[i].i13) + *(A[i].i14) + *(A[i].i15);
+  }
+
+  return sum;
+}

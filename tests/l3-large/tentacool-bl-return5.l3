@@ -1,0 +1,15 @@
+//test return 310
+
+int f1 ( ) {
+    return 100;
+}
+
+int f0 (int a, int b) {
+    int f0 = a + b;
+    int f1 = f0 + f1();
+    return f0 + f1;
+}
+
+int main () {
+    return f0(5, 100);
+}

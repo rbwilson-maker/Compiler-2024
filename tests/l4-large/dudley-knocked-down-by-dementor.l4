@@ -1,0 +1,16 @@
+//test return -1
+																																		struct xd {     int mouth;				    int soul;     int eyes;
+    int heart;};																typedef struct xd dementor;																							 bool is_same(int x, int y){
+    return x == y;																			} 
+bool is_same_but_better(dementor* x, dementor* d){     if (!is_same(x->mouth, d->mouth)){																													        return false;     }     if (!is_same(x->soul, d->soul)){
+        return false;
+    }     if (!is_same(x->eyes, d->eyes)){																											        return false;
+    }
+    if (!is_same(x->heart, d->heart)){         return false;     }																													    return true;																							}  bool is_same_but_worse(dementor* x, dementor* d, int counter_bae){																			    int x_ = 1;     int b = 2;     int c = 3;
+    int d_ = 4;	    int e = 5;     int f = 6;
+    int g = 7;
+    if(counter_bae == 0){																		        return is_same_but_better(x,d);     }																									    if (is_same_but_better(x,d)){         return is_same_but_worse(x,d,counter_bae-1);
+    }     return is_same_but_worse(x, d, counter_bae-1); }																		int main(){     dementor *x = alloc(dementor);																								    dementor *d = alloc(dementor);	    x->eyes = 1;																							    x->soul = 1;																						    x->heart = 1;
+    x->mouth = 1;
+    d->eyes = 1;     d->soul = 1;																												    d->heart = 1;     d->mouth = 1;     if(is_same_but_worse(x,d, 1 << 16)){																												        return -1;											    }																							    return 0;													}
+

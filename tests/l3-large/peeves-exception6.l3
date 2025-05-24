@@ -1,0 +1,14 @@
+//test abort
+
+int f(int x);
+
+int main(){
+    bool a = true;
+    int x =5;
+    return f(x);
+}
+
+int f(int x) {
+	assert(false);
+	return x/0;
+}

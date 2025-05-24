@@ -1,0 +1,101 @@
+//test return 6
+//this is not an avl tree
+
+typedef struct tree_node tree;
+struct tree_node {
+   int data;
+   int height;
+   tree* left;
+   tree* right;
+};
+
+int height(tree* T) {
+   return T == NULL ? 0 : T->height;
+}
+
+int new_height(tree* T) {
+   int max = height(T->left);
+   if (height(T->right) > max) max = height(T->right);
+   return max + 1;
+}
+
+tree* bst_insert(tree* T, int e)
+{
+   if (T == NULL) {
+      /* create new node and return it */
+      tree* R  = alloc(tree);
+      R->data  = e;
+      R->left  = NULL;  // Not required (initialized to NULL)
+      R->right = NULL;  // Not required (initialized to NULL)
+      R->height = 1;
+      return R;
+   }
+
+   if (e == T->data) T->data = e;
+   else if (e < T->data) T->left = bst_insert(T->left, e);
+   else {
+      T->right = bst_insert(T->right, e);
+   }
+   T->height = new_height(T);
+   return T;
+}
+
+tree* rotate_right(tree* T)
+//@requires T != NULL && T->left != NULL;
+{
+  tree* R = T->left;
+  T->left = T->left->right;
+  R->right = T;
+  return R;
+}
+
+tree* rotate_left(tree* T)
+//@requires T != NULL && T->right != NULL;
+{
+  tree* R = T->right;
+  T->right = T->right->left;
+  R->left = T;
+  return R;
+}
+
+tree* new_avl_insert(tree* T, int x)
+{
+   T = bst_insert(T, x);
+
+   if (height(T->left) > height(T->right) + 1) {
+      if (height(T->left->left) < height(T->left->right)) {
+         T->left = rotate_left(T->left);
+      }
+      T = rotate_right(T);
+   }
+   if (height(T->right) > height(T->left) + 1) {
+      if (height(T->right->right) < height(T->right->left)) {
+         T->right = rotate_right(T->right);
+      }
+      T = rotate_left(T);
+   }
+   if (T->left != NULL) T->left->height = new_height(T->left);
+   if (T->right != NULL) T->right->height = new_height(T->right);
+   T->height = new_height(T);
+   return T;
+}
+
+tree* add(tree* T, int x) {
+   T = new_avl_insert(T, x);
+   return T;
+}
+
+int main() {
+   tree* T = NULL;
+   T = add(T, 0);
+   T = add(T, 1);
+   T = add(T, 5);
+   T = add(T, 4);
+   T = add(T, 3);
+   T = add(T, 2);
+   for (int i = 6; i < 8; i++) {
+      T = add(T, i);
+   }
+   return T->right->right->data;
+}
+

@@ -1,0 +1,11 @@
+//test abort
+
+int f(int x, int y) {
+  if (x == 0) assert(false);
+  return f(f(x-1, y), f(x, y));
+}
+
+int main() {
+  return f(1000, 200);
+}
+

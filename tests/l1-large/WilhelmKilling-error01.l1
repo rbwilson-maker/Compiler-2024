@@ -1,0 +1,11 @@
+//test error 
+
+int main() 
+{
+
+  int a;
+  a = 260; 
+  int b; 
+  b = 267; 
+  return a * b / 1 / 1 / -1 / -1 / --1;
+}

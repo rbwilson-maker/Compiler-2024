@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main() {
+    int twenty_five = 25;
+    int five = 5;
+    return ((12 + 13) - twenty_five) % (twenty_five % five);
+}

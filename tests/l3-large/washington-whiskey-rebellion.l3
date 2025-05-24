@@ -1,0 +1,12 @@
+//test error
+
+void tax(void x) {
+}
+
+void whiskey() {
+}
+
+int main() {
+    tax(whiskey());
+    return 0;
+}

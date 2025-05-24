@@ -1,0 +1,29 @@
+//test return 3
+
+int num_digit_occur(int input)
+{
+    int digit = 2;
+    int ones_digit;
+    int zeroed_out;
+    int divided;
+    int count_digits = 0;
+
+    while (input != 0)
+    {
+        ones_digit = input % 10;
+        if (ones_digit == digit)
+        {
+            count_digits += 1;
+        }
+        zeroed_out = input - ones_digit;
+        divided = zeroed_out / 10;
+        input = divided;
+    }
+    return count_digits;
+}
+
+int main()
+{
+    /* interesting: return number of times a digit (2) appears in a number */
+    return num_digit_occur(12323241);
+}

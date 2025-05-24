@@ -1,0 +1,13 @@
+//test error
+
+// Test variable scope with same names
+// Should error since variable 'x' is declared twice.
+
+int main()
+{
+	int x = 3;
+	{
+		int x = 5;
+		return x;
+	}
+}

@@ -1,0 +1,40 @@
+//test return 63
+// tests for function composition.
+
+int diff (int x, int y) {
+  if (x < y) { return y - x; }
+  return x - y;
+}
+
+int ppp (int x, int y) {
+  return x + y + 2;
+}
+
+int main () {
+  int x = 2;
+  int y = 5;
+  int x1 = diff (x, y);
+  int x2 = diff (x1, y);
+  int x3 = diff (x1, x2);
+  int x4 = diff (x3, x2);
+  int x5 = diff (x3, x4);
+  int x6 = diff (x5, x4);
+  int x7 = diff (x5, x6);
+  int x8 = diff (x7, x6);
+  int x9 = diff (x7, x8);
+  int x10 = diff (x9, x8);
+  int x11 = diff (x9, x10);
+  int x12 = diff (x11, x10);
+  int x13 = diff (x11, x12);
+  int x14 = diff (x13, x12);
+  int x15 = diff (x13, x14);
+  int x16 = diff (x15, x14);
+  int x17 = diff (x15, x16);
+  int x18 = diff (x17, x16);
+  int x19 = diff (x17, x18);
+  int x20 = diff (x19, x18);
+  int x21 = diff (x19, x20);
+  return ppp (x1, ppp (x2, ppp (x3, ppp (x4, ppp (x5, ppp (x6, ppp (x7, ppp (x8,
+  ppp (x9, ppp (x10, ppp (x11, ppp (x12, ppp (x13, ppp (x14, ppp (x15, ppp (x16,
+  ppp (x17, ppp (x18, ppp (x19, ppp (x20, ppp (x21, diff (x, y))))))))))))))))))))));
+}

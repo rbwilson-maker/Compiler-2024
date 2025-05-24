@@ -1,0 +1,12 @@
+//test error
+// function clash with struct field 
+
+int foo();
+
+struct lolz {
+	bool foo;
+}
+
+int main(){	
+	return 0;
+}

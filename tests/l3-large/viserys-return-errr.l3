@@ -1,0 +1,17 @@
+//test error
+
+typedef d bool;
+typedef d int;
+typedef e d;
+
+int main() {
+  return four(400000);
+}
+
+d four(e v) {
+  return five(v + 0 + 0 + 0 + 0 + 0 + 0 + 0x00);
+}
+
+d five(d d) {
+  return d > 0;
+}

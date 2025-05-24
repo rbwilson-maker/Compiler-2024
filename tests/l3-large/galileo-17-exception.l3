@@ -1,0 +1,19 @@
+//test abort
+// continuation passing style with weird names
+
+int _c0_main(int x) {
+    assert(x > 0);
+    return 15411 / x;
+}
+
+int l1(int x) {
+    return _c0_main(x + 9);
+}
+
+int L1(int x) {
+    return l1(x - 9);
+}
+
+int main() {
+    return L1(0);
+}

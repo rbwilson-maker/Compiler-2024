@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main() {
+    int x = 1;
+    for (int i = 1; i <= 10; i++) x *= i;
+    if (x != 3628800) return 1; // assert x = 10 factorial
+    for (int i = 10; i >= 0; i--) x /= i; // division by 0
+    return 0;
+}

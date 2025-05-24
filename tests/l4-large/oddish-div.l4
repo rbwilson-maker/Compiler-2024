@@ -1,0 +1,24 @@
+//test div-by-zero
+
+struct div {
+  int num;
+  int div;
+};
+
+int div(struct div *d) {
+  return d->num / d->div;
+}
+
+int main() {
+  for (int i=0; i <= 1000; i++) {
+    for (int j = 0; j <= 1000; j++) {
+      struct div *d = alloc(struct div);
+      d->num = i % 1000;
+      d->div = j % 1000;
+
+      assert(i / j == div(d));
+    }
+  }
+
+  return 0;
+}

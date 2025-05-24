@@ -1,0 +1,8 @@
+//test return 12
+int main(){
+    int x = 35;
+    int y = 25;
+    int z = 10;
+    int q = (x < y && z < y) ? (x > y || z > y) ? !(x > y) ? 4 : 5 : 7 : 12;
+    return q;
+}

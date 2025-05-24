@@ -1,0 +1,124 @@
+//test return 6233
+struct hugenum {
+    int length;
+    bool[] bits;
+};
+typedef struct hugenum *hugenum_t;
+
+hugenum_t small_to_huge(int a) {
+    hugenum_t h = alloc(struct hugenum);
+    bool[] bits = alloc_array(bool, 32);
+    for (int b = 0; b < 32; b++) {
+        bits[b] = (a & 1) != 0;
+        a >>= 1;
+    }
+    h->bits = bits;
+    h->length = 32;
+    return h;
+}
+
+// Return 2^n-1
+hugenum_t huge_mersenne(int a) {
+    int length = a;
+    bool[] bits = alloc_array(bool, length);
+    for (int b = 0; b < length; b++)
+        bits[b] = true;
+    hugenum_t h = alloc(struct hugenum);
+    h->length = length;
+    h->bits = bits;
+    return h;
+}
+
+int max(int a, int b) {
+    return a > b ? a : b;
+}
+
+// What's so nice about Switzerland?
+// Well, the flag is a
+hugenum_t huge_plus(hugenum_t a, hugenum_t b) {
+    int length = max(a->length, b->length) + 1;
+    bool[] bits = alloc_array(bool, length);
+    hugenum_t h = alloc(struct hugenum);
+    bool carry = false;
+    for (int i = 0; i < length; i++) {
+        bool a_bit = i < a->length ? a->bits[i] : false;
+        bool b_bit = i < b->length ? b->bits[i] : false;
+        // No XOR for bools :(
+        bool bit = (a_bit && !b_bit) || (b_bit && !a_bit);
+        bool next_carry = (a_bit || b_bit) && ! bit;
+        bit = (bit && !carry) || (carry && !bit);
+        bits[i] = bit;
+        carry = next_carry || (a_bit || b_bit) && ! bit;
+    }
+    h->length = length;
+    h->bits = bits;
+    return h;
+}
+
+// Shift left by 1 (actually shifting "right" in our array)
+hugenum_t huge_shl(hugenum_t a) {
+    int n = a->length;
+    if (! a->bits[n-1]) {
+        for (int i = n-1; i > 0; i--)
+            a->bits[i] = a->bits[i-1];
+        a->bits[0] = false;
+        return a;
+    }
+    else {
+        bool[] new_bits = alloc_array(bool, n+1);
+        for (int i = 0; i < n; i++)
+            new_bits[i] = a->bits[i];
+        a->bits = new_bits;
+        a->length = n+1;
+        return huge_shl(a);
+    }
+}
+
+hugenum_t huge_shr(hugenum_t a) {
+    int n = a->length;
+    for (int i = 0; i+1 < n; i++)
+        a->bits[i] = a->bits[i+1];
+    a->bits[n-1] = false;
+    return a;
+}
+
+hugenum_t huge_copy(hugenum_t a) {
+    hugenum_t copy = alloc(struct hugenum);
+    int len = a->length;
+    bool[] bits = alloc_array(bool, len);
+    for (int i = 0; i < len; i++)
+        bits[i] = a->bits[i];
+    copy->length = len;
+    copy->bits = bits;
+    return copy;
+}
+
+hugenum_t collatz_step(hugenum_t n) {
+    if (n->bits[0]) {
+        hugenum_t one = small_to_huge(1);
+        hugenum_t nx2 = huge_copy(n);
+        nx2 = huge_shl(nx2);
+        return huge_plus(huge_plus(n, nx2), one);
+    }
+    else {
+        return huge_shr(n);
+    }
+}
+
+bool hugenum_is_one(hugenum_t n) {
+    int len = n->length;
+    if (len == 0 || ! n->bits[0]) return false;
+    for (int i = 1; i < len; i++)
+        if (n->bits[i]) return false;
+    return true;
+}
+
+int main() {
+    hugenum_t n = huge_mersenne(0xC0 | 411);
+    int k = 1;
+    while (!hugenum_is_one(n)) {
+        n = collatz_step(n);
+        k++;
+    }
+    return k;
+}

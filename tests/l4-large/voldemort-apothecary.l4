@@ -1,0 +1,107 @@
+//test return 2
+struct graph {
+    int nodes;
+    bool[][] adj_mtrx;
+};
+typedef struct graph * graph;
+
+int greedy_color(graph g, int idx, int[] colors, int * max_color) {
+    bool[] colored = alloc_array(bool, *max_color + 1);
+    bool[] is_neighbor = g->adj_mtrx[idx];
+    for (int i = 0; i < g->nodes; i++) {
+        if (i != idx && is_neighbor[i]) {
+            colored[colors[i]] = true;
+        }
+    }
+
+    for (int i = 0; i < *max_color; i++) {
+        if (!colored[i]) {
+            colors[idx] = i;
+            return i;
+        }
+    }
+    (*max_color)++;
+    colors[idx] = *max_color;
+    return colors[idx];
+}
+
+int[] seo(graph g) {
+    int[] weights = alloc_array(int, g->nodes);
+    bool[] deleted = alloc_array(bool, g->nodes);
+    int[] order = alloc_array(int, g->nodes);
+
+    for (int i = 0; i < g->nodes; i++) {
+        int cur_idx = i;
+        int cur_wt = weights[i];
+        for (int j = i; j < g->nodes; j++) {
+            if (cur_wt < weights[j] && !deleted[j]) {
+                cur_wt = weights[j];
+                cur_idx = j;
+            }
+        }
+        order[i] = cur_idx;
+        deleted[cur_idx] = true;
+        for (int j = 0; j < g->nodes; j++) {
+            if (g->adj_mtrx[i][j] && !deleted[j]) {
+                weights[j]++;
+            }
+        }
+    }
+    return order;
+}
+
+int[] color_graph(graph g) {
+    int[] colors = alloc_array(int, g->nodes);
+    int[] order = seo(g);
+    int *max_color = alloc(int);
+    *max_color = 0;
+    for (int i = 0; i < g->nodes; i++) {
+        int idx = order[i];
+        greedy_color(g, idx, colors, max_color);
+    }
+    return colors;
+}
+
+
+
+int main() {
+    bool[][] adj_mtrx = alloc_array(bool[], 10);
+    for (int i = 0; i < 10; i++) {
+        adj_mtrx[i] = alloc_array(bool, 10);
+    }
+    adj_mtrx[0][5] = true;
+    adj_mtrx[5][0] = true;
+    adj_mtrx[7][5] = true;
+    adj_mtrx[5][7] = true;
+    adj_mtrx[0][5] = true;
+    adj_mtrx[5][0] = true;
+    adj_mtrx[5][9] = true;
+    adj_mtrx[9][5] = true;
+    adj_mtrx[5][2] = true;
+    adj_mtrx[2][5] = true;
+    adj_mtrx[6][8] = true;
+    adj_mtrx[8][6] = true;
+    adj_mtrx[1][0] = true;
+    adj_mtrx[0][1] = true;
+    adj_mtrx[5][9] = true;
+    adj_mtrx[9][5] = true;
+    adj_mtrx[6][3] = true;
+    adj_mtrx[3][6] = true;
+    adj_mtrx[1][8] = true;
+    adj_mtrx[8][1] = true;
+    adj_mtrx[8][7] = true;
+    adj_mtrx[7][8] = true;
+    adj_mtrx[7][9] = true;
+    adj_mtrx[9][7] = true;
+    adj_mtrx[6][9] = true;
+    adj_mtrx[9][6] = true;
+    adj_mtrx[3][5] = true;
+    adj_mtrx[5][3] = true;
+
+    graph g = alloc(struct graph);
+    g->adj_mtrx = adj_mtrx;
+    g->nodes = 10;
+    int[] coloring = color_graph(g);
+    return coloring[5];
+}
+

@@ -1,0 +1,9 @@
+//test error
+
+int main() {
+    int [][][][] a;
+    a = alloc_array(int [][][], 2);
+    a[0] = alloc_array(int [][][][], 2);
+
+    return 21;
+}

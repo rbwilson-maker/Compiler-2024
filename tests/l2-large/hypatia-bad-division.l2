@@ -1,0 +1,8 @@
+//test div-by-zero
+int main() {
+  int a = 29123222;
+  for (int i = 20; i >= 0; i--) {
+    a /= i;
+  }
+  return -3;
+}

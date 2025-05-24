@@ -1,0 +1,26 @@
+//test return 0
+// test default inits
+struct thing {
+	bool james;
+};
+
+struct test {
+	int test;
+	struct thing s;
+};
+
+int main() {
+	int[] testints = alloc_array(int, 5);
+	bool[] testbools = alloc_array(bool, 5);
+	struct test[] teststruct = alloc_array(struct test, 5);
+	for (int i = 0; i < 5; i++) {
+		assert(testints[i] == 0);
+	}
+	for (int i = 0; i < 5; i++) {
+		assert(testbools[i] == false);
+	}
+	for (int i = 0; i < 5; i++) {
+		assert(teststruct[i].s.james == false);
+	}
+	return 0;
+}

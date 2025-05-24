@@ -1,0 +1,14 @@
+//test return 194
+
+int main() {
+  int x1 = 3;
+  if (x1 == 3) {
+    x1 = 4;
+  } else {
+    x1 = 5;
+  }
+  for (int i = 0; i < 20; i++) {
+    x1 = x1 + i;
+  }
+  return x1;
+}

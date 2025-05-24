@@ -1,0 +1,11 @@
+//test error
+// Undefined variable at return statement
+int main()
+{
+    int a = 0;
+    a -= a;
+    a += a;
+    a *= 400;
+    a += (a - a) + a;
+    return notDefined;
+}

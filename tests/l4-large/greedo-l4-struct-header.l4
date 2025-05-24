@@ -1,0 +1,13 @@
+//test typecheck
+
+struct s {
+    int p;
+};
+
+
+int main(){
+
+    s_t* p = foo(*alloc(s_t));
+
+    return (*p)->p;
+}

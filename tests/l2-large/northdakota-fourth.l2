@@ -1,0 +1,17 @@
+//test return 1
+// valid initialization in conditionals
+int main()
+{
+    int result = 0;
+    int x = 1;
+    int y;
+    if ( x < 2 )
+    {
+        y = 1;
+    }
+    else {
+      y = -1;
+    }
+    result += y;
+    return result;
+}

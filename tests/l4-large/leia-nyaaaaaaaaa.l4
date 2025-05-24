@@ -1,0 +1,64 @@
+//test return 103125
+
+//Floyd's cycle detection algo on collatz
+
+int f(int x) {
+    if (x % 2 == 0) return x/2;
+    return 3*x+1;
+}
+
+int[] resize(int[] orig, int orig_len) {
+    int[] result = alloc_array(int, orig_len*2);
+    for (int i = 0; i < orig_len; i++)
+        result[i]=orig[i];
+    return result;
+}
+
+int sum(int[] list, int length) {
+    int result = 0;
+    for (int i = 0; i < length; i++)
+        result += list[i];
+    return result;
+}
+
+int main() {
+    int init = 97;
+    int size = 2;
+    int[] values = alloc_array(int, size);
+    values[0] = init; 
+    int a = 1;
+    int b = 2;
+    int aval = f(init);
+    int bval = f(f(init));
+    values[1] = aval; 
+    while (aval != bval) {
+        aval = f(aval);
+        bval = f(f(bval));
+        a+=1;
+        b+=2;
+        if (a>=size) {
+            values = resize(values, size);
+            size *= 2;
+        }
+        values[a]=aval;
+    }
+    a = 0;
+    aval = init;
+    while (aval != bval) {
+        aval = f(aval);
+        bval = f(bval);
+        a+=1;
+    }
+    a+=1;
+    bool death_to_humans = false;
+    for (; a<size; a++) {
+        if (death_to_humans) {
+            values[a] = 0;
+        }
+        else if (values[a] == aval) {
+            death_to_humans = true;
+            values[a] = 0;
+        }
+    }
+    return sum(values, size)-size;    
+}

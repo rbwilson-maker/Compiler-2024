@@ -1,0 +1,9 @@
+//test error
+
+int func(int a) {
+    return a * 5;
+}
+
+int main() {
+    return func(return 5);
+}

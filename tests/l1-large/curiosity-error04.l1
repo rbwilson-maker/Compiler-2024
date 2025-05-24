@@ -1,0 +1,15 @@
+//test error
+//double declaration after usage
+
+int main()
+{
+  int a;
+  int b;
+  a = 5;
+  b = 6;
+
+  a = a+b;
+  int a;
+  a = 5;
+  return a;
+}

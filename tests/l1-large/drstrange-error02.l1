@@ -1,0 +1,9 @@
+//test error
+// unrecognized float type
+
+int main()
+{
+  int value = 1.0;
+  value = value * 1.0;
+  return value;
+}

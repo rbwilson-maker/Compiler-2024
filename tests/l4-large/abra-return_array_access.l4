@@ -1,0 +1,7 @@
+//test return 1
+typedef int[] things;
+int main() {
+	things james = alloc_array(int, 1);
+	james[0] = 1;
+	return james[0];
+}

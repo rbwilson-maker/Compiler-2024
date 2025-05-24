@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int main() {
+	int t1 = 0x1;
+	int t2 = 0;
+	t2 -= t1;
+	int t3 = 0x80000000;
+	int t4 = t3 % t2;
+
+	return t4;
+}

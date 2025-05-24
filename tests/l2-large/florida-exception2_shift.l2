@@ -1,0 +1,7 @@
+//test div-by-zero
+
+int main(){
+    int a = 10 >> 100000;
+
+    return a;
+}

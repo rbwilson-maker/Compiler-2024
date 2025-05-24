@@ -1,0 +1,37 @@
+//test error
+
+/* Uninitialized Variable Branch Test Path
+ *
+ * Brandon Perez (bmperez)
+ * Xiaofan Li (xli2)
+ * Tuesday, September 29, 2015 at 10:48:44 AM EDT
+ *
+ * This test tests whether or not the compiler can detect if a variable
+ * is initialized in all possible control flow paths.
+ */
+
+int main()
+{
+    int x = 4;
+    int y;
+
+    if (x == 0) {
+        y = x * x * x;
+    } else if (x == 1) {
+        y = 42;
+    } else if (x == 2) {
+        y = 7;
+    } else if (x == 3) {
+        y = 100000;
+    } else if (x == 4) {
+        y = x / x;
+    } else if (x == 5) {
+        y = x % x;
+    } else if (x == 6) {
+        y = x + x + x;
+    } else {
+        x += 33;
+    }
+
+    return (x + y) * (x * y);
+}

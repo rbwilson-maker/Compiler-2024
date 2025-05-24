@@ -1,0 +1,18 @@
+//test div-by-zero
+// You cannot shift a negative number.
+int main ()
+{
+  int x = 1;
+  int y = 2;
+  int z = 1;
+
+  while (x < 100) {
+    if (y > z) {
+        y = -z;
+    } else {
+        z *= 2;
+    }
+    x <<= y;
+  }
+  return x;
+}

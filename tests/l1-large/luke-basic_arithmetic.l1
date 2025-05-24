@@ -1,0 +1,10 @@
+//test return 77
+
+// This does some arithmetic using very few registers, so it should work
+// even if you give each temp its own register!
+int main() {
+    int a = 3;
+    int b = 4;
+    int c = 11;
+    return (a + b) * c;
+}

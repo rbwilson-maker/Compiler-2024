@@ -1,0 +1,11 @@
+//test typecheck
+
+int main() {
+	fpt a = true;
+	fpt c = false;
+	int test = 0;
+	while(is_correct(a, c)) {
+		test += hello_world(9, 0);
+	}
+	return test;
+}

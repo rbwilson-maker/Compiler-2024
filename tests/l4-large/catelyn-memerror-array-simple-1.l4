@@ -1,0 +1,63 @@
+//test memerror
+
+// I have a bug, can you help me?
+int binsearch_help(int[] arr, int val, int lo, int hi) {
+	if (lo > hi) {
+		return -1;
+	}
+
+	int mid = (hi + lo)/2;
+
+	if (arr[mid] == val)
+	{
+		return mid;
+	}
+	else if (arr[mid] > val)
+	{
+		return binsearch_help(arr, val, lo, mid);
+	}
+	else
+	{
+		return binsearch_help(arr, val, mid + 1, hi);
+	}
+}
+
+int binsearch(int[] arr, int val, int max) {
+	return binsearch_help(arr, val, 0, max);
+}
+
+int linsearch(int[] arr, int val, int max) {
+	for (int i = 0; i < max; i++) {
+		if (arr[i] == val) return i;
+	}
+	return -1;
+}
+
+// We don't trust our binary search so we want to check false negatives
+int is_course(int[] courses, int name, int max) {
+	int index = binsearch(courses, name, max);
+	return index == -1 ? linsearch(courses, name, max) : index;
+}
+
+int main() {
+	int MAXSIZE = 0x0DFFFFFF;
+
+	int[] a = alloc_array(int, MAXSIZE);
+	int[] b = alloc_array(int, MAXSIZE);
+
+	int[] cscourses = alloc_array(int, 9);
+	cscourses[0] = 0x15110;
+	cscourses[1] = 0x15112;
+	cscourses[2] = 0x15122;
+	cscourses[3] = 0x15151; // out of order?
+	cscourses[4] = 0x15150; // is it
+	cscourses[5] = 0x15210;
+	cscourses[6] = 0x15213;
+	cscourses[7] = 0x15251;
+	cscourses[8] = 0x15411;
+	// [0x15110, 0x15112, 0x15122, 0x15151, 0x15150, 0x15210, 0x15213, 0x15251, 0x15411];
+	int[] ececourses = alloc_array(int, 8);
+	// [0x18100, 0x18200, 0x18202, 0x18213, 0x18220, 0x18240, 0x18290, 0x18500];
+
+	return binsearch(cscourses, 0x15418, 9);
+}

@@ -1,0 +1,24 @@
+//test return 60466176
+//tests having 2 mutually recursive fns
+
+int f1(int x);
+
+int f2(int y){
+  if (y==0) return 3;
+  return 2 * f1(y-1);
+}
+typedef int hi;
+typedef int hello;
+
+hello f1(hi z){
+  if (z==0) return 6;
+  return 3 * f2(z-2);
+}
+
+hello main(){
+  return f1(27);
+
+}
+
+
+

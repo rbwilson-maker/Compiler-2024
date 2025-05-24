@@ -1,0 +1,10 @@
+//test return 0
+// Tests while loop + shift
+int main() {
+  int a = 10;
+  while (a << 3 > 10) {
+    a /= 2;
+  }
+
+  return 0;
+}

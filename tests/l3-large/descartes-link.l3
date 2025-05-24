@@ -1,0 +1,14 @@
+//test compile
+
+//utilizes function `linked_helper` in descartes-link.h0 and also checks assert statments
+
+int main() {
+    int x = 1;
+    int y = 2;
+    int z = 3;
+    int check = 2;
+
+    assert(check == y);
+
+    return (1+linked_helper(x,y,z));
+}

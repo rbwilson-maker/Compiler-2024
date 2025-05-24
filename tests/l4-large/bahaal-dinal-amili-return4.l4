@@ -1,0 +1,14 @@
+//test return 0
+// Array equality compares addresses
+
+typedef bool b;
+int main() {
+    b[] x;
+    b[] y;
+    x = alloc_array(bool, 0);
+    y = alloc_array(bool, 0);
+    assert(x == x);
+    assert(y == y);
+    assert(x != y);
+    return 0;
+}

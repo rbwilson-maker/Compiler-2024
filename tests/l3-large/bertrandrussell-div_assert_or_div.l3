@@ -1,0 +1,14 @@
+//test abort
+/* Check short circuting with the bad divide */
+
+int bad_divide(int a, int b) {
+	int x = a+b-a;
+	return x/a;
+}
+
+int main() {
+	int a = 0;
+	int b = 12312+2345-657;
+	assert(a!=0 && bad_divide(0,1) == 1);
+	return 1;
+}

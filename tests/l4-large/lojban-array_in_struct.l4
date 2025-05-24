@@ -1,0 +1,14 @@
+//test return 122
+
+struct with_array {
+   int x;
+   int[][] f;
+};
+
+int main() {
+   struct with_array *A = alloc(struct with_array);
+   A->f = alloc_array(int[], 5);
+   A->f[1] = alloc_array(int, 5);
+   A->f[1][2] = 122;
+   return A->f[1][2];
+}

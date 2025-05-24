@@ -1,0 +1,21 @@
+//test return 15411
+
+int main() {
+    int x = 237498921;
+    int l = 0;
+    int r = 237498920;
+    while (l < r) {
+        int mid = l + (r - l) / 2;
+        if (mid >= 46351) r = mid;
+        else {
+            int s = mid*mid;
+            if (s == x) {
+                l = mid+1;
+                r = l;
+            } 
+            else if (s < x) l = mid+1;
+            else r = mid;
+        }
+    }
+    return l-1;
+}

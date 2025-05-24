@@ -1,0 +1,9 @@
+//test error
+//Conflicting declarations
+
+int main();
+int main(int m);
+
+int main(){
+	return 1;
+}

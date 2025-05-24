@@ -1,0 +1,24 @@
+//test div-by-zero
+
+int main() {
+    int x = 42;
+    int y = 69;
+    int z = 5;
+    int a = 2;
+    int b = 0;
+
+    b = b + x;
+    z = z * a;
+    a = a - 1; // a = 1
+
+    b = b * z;
+    b = b * z;
+    b = b * z;
+    b = b / a;
+    a = a - 1; // a = 0
+
+    b = b + y;
+    b = b / a; // Divide by zero!
+
+    return b;
+}

@@ -1,0 +1,22 @@
+//test return 5
+
+
+struct nested {
+  int a;
+  int b;
+  int c;
+};
+
+struct overall{
+  struct nested a;
+  struct nested b;
+};
+
+
+int main()
+{
+  struct overall *S = alloc(struct overall);
+  S->a.b = 5;
+  S->a.a = S->a.b;
+  return S->a.a;
+}

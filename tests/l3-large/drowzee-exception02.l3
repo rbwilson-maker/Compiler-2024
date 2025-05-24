@@ -1,0 +1,9 @@
+//test div-by-zero
+
+int main(){
+  fpt x = itof(5);
+  fpt y = itof(0);
+  int a = ftoi(x);
+  int b = ftoi(y);
+  return (x / y);
+}

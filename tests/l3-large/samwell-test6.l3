@@ -1,0 +1,10 @@
+//test typecheck
+
+int foo(int x, bool y);
+
+int main() {
+  return foo(0,true);
+}
+
+// Read the handout and look at the files in ../../tests/l1-basic
+// for more information.

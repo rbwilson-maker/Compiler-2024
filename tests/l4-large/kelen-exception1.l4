@@ -1,0 +1,15 @@
+//test memerror
+
+struct obj {
+    int a;
+    int b;
+    bool c;
+    bool d;
+};
+
+// Tests memory error
+int main(){
+    struct obj* [] objb = alloc_array(struct obj*, 5);
+    print_int(objb[5]->a); // access array out of bound
+    return 0;
+}

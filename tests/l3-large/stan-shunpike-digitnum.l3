@@ -1,0 +1,38 @@
+//test return 1
+
+int to_num(int d0, int d1, int d2, int d3, int d4, 
+           int d5, int d6, int d7, int d8, int d9)
+{
+    if (d0 == 0 && d1 == 0 && d2 == 0 && d3 == 0 && d4 == 0
+        && d5 == 0 && d6 == 0 && d7 == 0 && d8 == 0) {
+        return d9;
+    }
+    return to_num(0, d0, d1, d2, d3, d4, d5, d6, d7, d8) * 10 + d9;
+}
+
+int get_digit(int num, int i) {
+    while (i != 0) {
+        num / 10;
+        i--;
+    }
+    return num % 10;
+} 
+
+bool is_palindrome(int d0, int d1, int d2, int d3, int d4, 
+                  int d5, int d6, int d7, int d8, int d9) 
+{
+    int n = to_num(d0, d1, d2, d3, d4, d5, d6, d7, d8, d9);
+    int rev_n = to_num(d9, d8, d7, d6, d5, d4, d3, d2, d1, d0);
+    for (int i = 0; i < 10; i++) {
+        if (get_digit(n, i) != get_digit(rev_n, i)) return false;
+    }
+    return true;
+}
+
+int bool2int(bool b) {
+    return b ? 1 : 0;
+}
+
+int main() {
+    return bool2int(is_palindrome(1,2,3,4,5,5,4,3,2,1));
+}

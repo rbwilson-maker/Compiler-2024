@@ -1,0 +1,41 @@
+//test div-by-zero
+// arithmetic operations with parentheses at the end
+
+int main()
+{
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+	int f;
+	int g;
+	int h;
+	int i;
+	int j;
+	int k;
+	int l;
+	a = -3 - -7;
+	b = a * -9;
+	c = a + b;
+	a = c * b;
+	d = 14;
+	b = d + a;
+	d += c;
+	g = 0x80000000;
+	h = 0x7fffffff;
+	i = g + h;
+	j = i - a;
+	h -= d;
+	k = h+1;
+	e = a % c;
+	c = a / 2;
+	f = a + b;
+	l = -1;
+	a = k - ((b-c)*(d-f)/((e+j)*(l+2)));
+	b = -(h/((c+d)/(e-f))) + (l- -2 + c);
+	c += a-b;
+	d /= e - f;
+	l *= h;
+	return a+b+c+d+e+f+g+h+i+j+k+l;
+}

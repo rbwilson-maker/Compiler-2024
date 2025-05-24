@@ -1,0 +1,26 @@
+//test abort
+
+int abt () {
+	assert(false);
+	return 0;
+}
+
+int dbz() {
+	1/0;
+	return 0;
+}
+
+int infl() {
+	while(true) {
+		int x = 0;
+	}
+	return 0;
+}
+
+int adder(int x, int y, int z, int w) {
+	return w + z + y + x;
+}
+
+int main() {
+	return adder(4, abt(), infl(), dbz());
+}

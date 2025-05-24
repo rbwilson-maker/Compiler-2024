@@ -1,0 +1,64 @@
+//test return 0
+// Cycle detection algorithm for linked list.
+
+typedef struct node node;
+
+struct node {
+  struct node *next;
+};
+
+node *nextRabbit(node *rabbit) {
+  if (rabbit == NULL || rabbit->next == NULL)
+    return NULL;
+  return rabbit->next->next;
+}
+
+node *nextTurtle(node *turtle) {
+  if (turtle == NULL)
+    return NULL;
+  return turtle->next;
+}
+
+bool hasCycle(node *root) {
+  node *turtle = root;
+  node *rabbit = root;
+
+  while (true) {
+    rabbit = nextRabbit(rabbit);
+
+    if (rabbit == NULL) {
+      return false;
+    }
+
+    turtle = nextTurtle(turtle);
+    if (rabbit == turtle) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+node *enq(node *root) {
+  node *new_node = alloc(node);
+  new_node->next = root;
+  return new_node;
+}
+
+int main() {
+  node *root = NULL;
+  for (int i = 0; i < 5; i++) {
+    root = enq(root); 
+  } 
+
+  // Create a cycle.
+  node *current = root;
+  while (current->next != NULL) {
+    current = current->next;
+  }
+  current->next = root;
+
+  assert(hasCycle(root));
+
+  return 0;
+}

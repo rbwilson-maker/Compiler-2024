@@ -1,0 +1,16 @@
+//test return 1
+void swap(int* a, int* b) {
+	int c;
+	c = *a;
+	*a = *b;
+	*b = c;
+}
+
+int main() {
+	int* a = alloc(int);
+	int* b = alloc(int);
+	*a = 1;
+	*b = 2;
+	swap(a, b);
+	return *b;
+}

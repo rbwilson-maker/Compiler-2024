@@ -1,0 +1,8 @@
+//test return 0
+int main() {
+  int j = 2147483640;
+  int k = 2;
+  int l = j * k;
+  int m = l / j;
+  return m;
+}

@@ -1,0 +1,13 @@
+//test error
+// l2 compiler doesn't admit the Law of Excluded Middle
+// return is not guaranteed
+
+int main() {
+    bool a = false;
+    if (a) {
+        return 1;
+    }
+    if (!a) {
+        return 0;
+    }
+}

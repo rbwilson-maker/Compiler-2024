@@ -1,0 +1,7 @@
+//test error
+int main() {
+	int b = 2;
+	b = true && true;
+	return 0;
+
+}

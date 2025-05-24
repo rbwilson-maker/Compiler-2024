@@ -1,0 +1,11 @@
+//test error
+//You didn't parse * properly.
+
+typedef int Int;
+
+
+int main () {
+  Int* x = alloc(Int);
+  x* y;
+  return 3;
+}

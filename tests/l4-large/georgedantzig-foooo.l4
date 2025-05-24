@@ -1,0 +1,38 @@
+//test memerror
+
+/* Tests:
+ *  - Parsing multiplication of dereferenced pointers
+ *  - Definition of a typedef
+ *  - Segfaults from a dereference of a null pointer
+ */
+typedef int foofoobar;
+
+int main () {
+    int* foo = alloc(int);
+    *foo = 5;
+
+    int* bar = alloc(int);
+    *bar = 2;
+
+    int fooo = 0;
+
+    // Multiplication
+    fooo * *bar;
+
+    int** foobar = alloc(int*);
+    *foobar = foo;
+
+    **foobar = *foo * *bar;
+
+    int*** foobarbar = alloc(int**);
+    *bar = *bar * * * foobar;
+
+    // Declaration
+    foofoobar * barbar;
+
+    // Multiplication of a declaration (should segfault)
+    fooo * *bar * *foo * ** foobar * * * * foobarbar * * bar;
+
+    return ***foobarbar;
+
+}

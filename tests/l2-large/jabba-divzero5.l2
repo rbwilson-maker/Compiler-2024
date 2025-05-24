@@ -1,0 +1,13 @@
+//test div-by-zero
+
+int main() {
+    for (int i = -2; i < 5; i++) {
+        int z = 42 % i;
+        if (i % 2 == 0) {
+            i++;
+        } else {
+            return z;
+        }
+    }
+    return 0;
+}

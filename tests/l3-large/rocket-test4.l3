@@ -1,0 +1,15 @@
+//test error
+
+int two() {
+    return 2;
+}
+
+int main() {
+  int one = 1;
+  int two = two();
+  
+  return one / two;
+
+  int three;
+  return three;
+}

@@ -1,0 +1,17 @@
+//test abort
+// Tests exceptions and typedef
+
+typedef int i;
+typedef bool b;
+
+i divide(i x, int y);
+
+i main() {
+    return divide(3, 0x7fffffff + 1);
+}
+
+i divide(i x, i y) {
+    assert(y != 0x80000000);
+
+    return x / y;
+}

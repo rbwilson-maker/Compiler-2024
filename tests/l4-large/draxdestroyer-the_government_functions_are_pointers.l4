@@ -1,0 +1,50 @@
+//test return 0
+// Test that you properly align values in structs
+
+struct bitpack1 {
+    int b1;
+    bool b2;
+    int * b3;
+    bool * b4;
+    int[] b5;
+};
+
+struct bitpack2 {
+    int * b3;
+    bool b2;
+    int b1;
+    int[] b5;
+    bool * b4;
+};
+
+int main() {
+    struct bitpack1* b1 = alloc(struct bitpack1);
+    struct bitpack2* b2 = alloc(struct bitpack2);
+
+    b1->b1 = 4;
+    b1->b2 = true;
+    b1->b3 = alloc(int);
+    *b1->b3 = 10;
+    // I got lazy
+    b1->b5;
+
+    b2->b1 = b1->b1;
+    b2->b2 = b1->b2;
+    b2->b3 = b1->b3;
+    b2->b4 = b1->b4;
+    b2->b5 = b1->b5;
+
+    b1->b1 = b2->b1;
+    b1->b2 = b2->b2;
+    b1->b3 = b2->b3;
+    b1->b4 = b2->b4;
+    b1->b5 = b2->b5;
+
+    assert(b1->b1 == 4);
+    assert(b1->b2);
+    assert(*b1->b3 == 10);
+    assert(b1->b4 == NULL);
+    // assert(b1->b5 == NULL);
+    
+    return 0;
+}

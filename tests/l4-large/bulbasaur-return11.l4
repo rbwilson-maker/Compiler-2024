@@ -1,0 +1,17 @@
+//test return 5
+// ensures proper namespace handling of structs
+
+typedef int a;
+
+struct a
+{
+  a x;
+};
+
+
+int main()
+{
+  struct a* b = alloc(struct a);
+  b->x = 5;
+  return b->x;
+}

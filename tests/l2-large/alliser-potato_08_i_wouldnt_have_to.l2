@@ -1,0 +1,49 @@
+//test div-by-zero
+
+
+
+//                             __ 
+//         /|/              .--'"`__`
+//        / |-.,,____       |--'"`__`
+//     __/|   ______/       |--'"`__`
+// ..""_ |   |              |--'"`_ `
+// ..""_ |   |              |--'"` `
+// ..""_ |   |           __,'-'"``
+// ..""_ |   |     __,."`    \
+// .."" ,\   ,\,."`  ,       `:
+//      \ :,; `: \`: :  ,-"\   \
+//      :    ` | | ' ;_"\   `. `:
+//      | .^.  ;_,.""    \  | ;  \
+//      : ; ', :          `.\  \ `;
+//      | ;  : |           '`, : ;`
+//      :;    ;|           /;  ' /
+//      :;    ;:          ';   ;;
+//      ;:    :|         //    :/
+//      ||    ||        //    /;
+//      ||    ||       ,;    ;/
+//      "     "       "     "         ohh!! borzoi!!!!
+
+
+int main () {
+
+  int long_dog = 1000000;
+  int short_dog = 10;
+
+  int leftover_dog = long_dog % short_dog;
+
+  while (leftover_dog < 1001)
+  {
+    if (long_dog % leftover_dog > 4) leftover_dog += 1;
+    if (leftover_dog % short_dog == 0) leftover_dog += 1;
+  }
+
+  // im tired n running out of variable names
+
+  int oh_no = 123456789;
+  int hmm = (long_dog + leftover_dog) % short_dog;
+
+  int ahhh = oh_no % hmm;
+
+  return 5;
+
+}

@@ -1,0 +1,14 @@
+//test return 2
+
+int main()
+{
+	int x = 15;
+	if (x % 7 == 0) {
+		return 1;
+	}
+	if (x % 5 == 0) {
+		return 2;
+	} else {
+		return 3;
+	}
+}

@@ -1,0 +1,86 @@
+//test return 0
+//Reverses arrays
+
+int POW(int b, int e)
+//@requires e >= 0;
+{
+  if (e == 0) return 1;
+  return b * POW(b, e-1);
+}
+
+int reverse_math(int x)
+//@requires 0 <= x && x <= POW(10,8);
+//@ensures 0 <= \result && \result <= POW(10,8);
+{
+int y = 0;
+int temp = 0;
+
+for (int i = 0; i <= 6; i++) {
+  temp = x % 10;
+  x = x - temp;
+  x = x/10;
+  y = y * 10;
+  y = y + temp;
+}
+
+return y;
+}
+
+int reverse_array(int x)
+//@requires 0 <= x && x <= POW(10,8);
+//@ensures 0 <= \result && \result <= POW(10,8);
+{
+  int y = 0;
+  int[]	A = alloc_array(int, 7);
+  for (int i = 0; i < 7; i++){
+    A[i] = x % 10;
+    x = x/10;
+  }
+  for (int j = 0; j < 7; j++){
+    y = y * 10;
+    y = y + A[j];
+
+  }
+  return y;
+}
+
+int main() {
+  assert(reverse_array(1512200) == 22151);
+  assert(reverse_array(42)      == 2400000);
+  assert(reverse_array(3749)    == 9473000);
+
+  assert(reverse_array(0)       == 0);
+  assert(reverse_array(1)       == 1000000);
+  assert(reverse_array(12)      == 2100000);
+  assert(reverse_array(123)     == 3210000);
+  assert(reverse_array(1234)    == 4321000);
+  assert(reverse_array(12345)   == 5432100);
+  assert(reverse_array(123456)  == 6543210);
+  assert(reverse_array(1234567) == 7654321);
+  assert(reverse_array(1234560) == 654321);
+  assert(reverse_array(1234500) == 54321);
+  assert(reverse_array(1234000) == 4321);
+  assert(reverse_array(1230000) == 321);
+  assert(reverse_array(1200000) == 21);
+  assert(reverse_array(1000000) == 1);
+
+  assert(reverse_array(1111111) == 1111111);
+  assert(reverse_array(2222222) == 2222222);
+  assert(reverse_array(3333333) == 3333333);
+  assert(reverse_array(4444444) == 4444444);
+  assert(reverse_array(5555555) == 5555555);
+  assert(reverse_array(6666666) == 6666666);
+  assert(reverse_array(7777777) == 7777777);
+  assert(reverse_array(8888888) == 8888888);
+  assert(reverse_array(9999999) == 9999999);
+
+  assert(reverse_array( 555555) == 5555550);
+  assert(reverse_array(5055555) == 5555505);
+  assert(reverse_array(5505555) == 5555055);
+  assert(reverse_array(5550555) == 5550555);
+  assert(reverse_array(5555055) == 5505555);
+  assert(reverse_array(5555505) == 5055555);
+  assert(reverse_array(5555550) ==  555555);
+
+  return 0;
+}

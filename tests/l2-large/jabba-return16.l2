@@ -1,0 +1,14 @@
+//test return 16
+
+int main() {
+    int found = 0;
+    int guess = 0;
+    int n = 5;
+    while (found <= n) {
+        guess++;
+        if (guess % 3 == 1) {
+            found++;
+        }
+    }
+    return guess;
+}

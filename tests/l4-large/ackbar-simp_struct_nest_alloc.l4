@@ -1,0 +1,19 @@
+//test return 0
+//Tests allowing nested structs
+
+struct test{
+    int a;
+    int test;
+};
+
+struct temp{
+    struct test a;
+};
+
+
+int main(){
+    struct test * test;
+    struct temp * temp;
+    temp = alloc(struct temp);
+    return temp->a.a;
+}

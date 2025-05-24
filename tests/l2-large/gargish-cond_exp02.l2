@@ -1,0 +1,11 @@
+//test return -9
+
+int main() {
+    int a = 10;        
+    int result = 0;
+
+    for (int i = 1; i < a; i++) {
+        result = (i % 3 == 0) ? result + i : result - i;        
+    }
+    return result;
+}

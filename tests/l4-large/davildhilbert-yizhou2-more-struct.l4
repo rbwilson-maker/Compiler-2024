@@ -1,0 +1,24 @@
+//test return 8
+struct what{
+    int integer;
+    bool boolean;
+};
+
+int main(){
+    int[] test_arr = alloc_array(int, 8);
+    test_arr[0] = 1; 
+    test_arr[1] = 2;
+    test_arr[2] = 3;
+    test_arr[3] = 4;
+    test_arr[4] = 5;
+    test_arr[5] = 6;
+    test_arr[6] = 7;
+    test_arr[7] = 8;
+    
+    int test_this = 1;
+    struct what* ah = alloc(struct what);
+    ah->integer = test_arr[7];
+    ah->boolean = true;
+    
+    return ah->integer;
+}

@@ -1,0 +1,12 @@
+//test typecheck
+
+int identity(size_t x) {
+    return x;
+}
+
+size_t main() {
+    int x;
+    x = 5;
+    x++;
+    return identity(x);
+}

@@ -1,0 +1,11 @@
+//test error
+
+int pow(int a, int b, int c){
+    return a + b + c;
+}
+
+int main(){
+    int x = 2;
+    int y = pow(x,3);
+    return other_function();
+}

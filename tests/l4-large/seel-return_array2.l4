@@ -1,0 +1,14 @@
+//test return 0
+// Tests that array accesses are not OBO.
+
+int main() {
+  int[] a0 = alloc_array(int, 1);       // All stored in heap
+  int[] a1 = alloc_array(int, 16);
+  int[] a2 = alloc_array(int, 1);
+
+  for (int i = 0; i < 16; i++) {
+    a1[i] = 42;
+  }
+
+  return a0[0] + a2[0];
+}

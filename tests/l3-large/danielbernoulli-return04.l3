@@ -1,0 +1,14 @@
+//test return 0
+// Use functions from the 15-411 l3 header file
+
+void print_yay (int n) {
+  fpt x = itof(n);
+  x = fmul(x,fdiv(fadd(x,itof(5)),itof(2)));
+  print_fpt(x);
+  print_hex(x);
+}
+
+int main() {
+    print_yay(10);
+    return 0; 
+}

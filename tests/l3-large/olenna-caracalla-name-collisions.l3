@@ -1,0 +1,10 @@
+//test error
+//Tests name collisions with the typedef
+//
+//
+typedef int look_im_special
+
+int main(){
+  int look_im_special = 0;
+  return look_im_special;
+}

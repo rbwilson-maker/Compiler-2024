@@ -1,0 +1,11 @@
+//test abort
+// main calls helper() which asserts false, and the program aborts
+
+int helper(int a){
+    assert(false);
+    return a;
+}
+
+int main () {
+  return helper(5);
+}

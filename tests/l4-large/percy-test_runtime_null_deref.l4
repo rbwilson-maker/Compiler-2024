@@ -1,0 +1,12 @@
+//test memerror
+
+int main() {
+  int* x = alloc(int);
+  int y = 5;
+  *x = 6;
+  int[] z = alloc_array(int, y - *x);
+  if(y < 2) {
+    return z[0];
+  }
+  return 5;
+}

@@ -1,0 +1,7 @@
+struct person {
+  int id;
+  int age;
+  bool alive;
+};
+
+typedef struct person* person;

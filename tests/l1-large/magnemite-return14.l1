@@ -1,0 +1,10 @@
+//test return -2147483648
+// multiplication defined in modulo 2**32
+
+int main() {
+    int a = 1073741824;
+    int b = 2;
+    int c;
+    c = a * b; //should be INT_MIN
+    return c;
+}

@@ -1,0 +1,10 @@
+//test return 3
+//test of ternary operators
+
+int main()
+{
+	int x = 5;
+	int y = 6;
+	int z = x - y > 0 ? 4 : 3;
+	return z;
+}

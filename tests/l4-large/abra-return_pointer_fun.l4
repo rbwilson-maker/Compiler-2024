@@ -1,0 +1,12 @@
+//test return 10
+typedef int booya;
+typedef booya* nextbooya;
+typedef nextbooya* nextnextbooya;
+
+int main() {
+	nextbooya a = alloc(booya);
+	nextnextbooya b = alloc(nextbooya);
+	*a = 10;
+	*b = a;
+	return **b;
+}

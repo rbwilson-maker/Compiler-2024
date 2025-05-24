@@ -1,0 +1,16 @@
+//test return 42
+// Tests that arrays are 0-initialized
+
+
+
+int main() {
+  int[] zeroes = alloc_array(int, 5);
+
+  if (zeroes[2] == 0) {
+    return 42;
+  }
+
+  else {
+    return 0;
+  }
+}

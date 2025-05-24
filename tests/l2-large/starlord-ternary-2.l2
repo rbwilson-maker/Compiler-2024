@@ -1,0 +1,7 @@
+//test return 0
+
+int main () {
+  int x = 150;
+  x >>= 2;
+  return ((x == 37) ? 0 : 1 / 0);
+}

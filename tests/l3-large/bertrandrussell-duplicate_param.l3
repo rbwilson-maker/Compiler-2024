@@ -1,0 +1,11 @@
+//test error
+/* Using the same parameter name twice*/
+
+int temps(int x, bool x) {
+  int t = 5;
+  return t;
+}
+
+int main () {
+  return temps (3);
+}

@@ -1,0 +1,23 @@
+//test return 77
+// ensure proper associativity
+
+typedef struct foo* foo_t;
+
+struct foo {
+  foo_t foo;
+  int* bar;
+};
+
+int main() {
+  foo_t foo = alloc(struct foo);
+  foo_t foo2 = alloc(struct foo);
+  foo_t foo3 = alloc(struct foo);
+  foo_t foo4 = alloc(struct foo);
+  int* b = alloc(int);
+  *b = 77;
+  foo4->bar = b;
+  foo3->foo = foo4;
+  foo2->foo = foo3;
+  foo->foo = foo2;
+  return *foo->foo->foo->foo->bar;
+}

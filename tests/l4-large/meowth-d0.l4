@@ -1,0 +1,12 @@
+//test div-by-zero
+
+// Zero out uninitialized values.
+
+struct uninit{int nothing;};
+
+int main(){
+    int[] blah = alloc_array(int, 10);
+    int *b = alloc(int);
+    struct uninit* s = alloc(struct uninit);
+    return *b/(s->nothing + blah[5]);
+}

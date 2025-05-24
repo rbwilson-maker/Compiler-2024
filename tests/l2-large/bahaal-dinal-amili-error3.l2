@@ -1,0 +1,13 @@
+//test error
+// definitions in while loop may not actually execute
+
+int main()
+{
+  int x = 0;
+  int a;
+  while (x == 0) {
+    x++;
+    a = 1;
+  }
+  return a;
+}

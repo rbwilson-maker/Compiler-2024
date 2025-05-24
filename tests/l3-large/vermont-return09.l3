@@ -1,0 +1,7 @@
+//test return 30
+
+int main () {
+  fpt x = itof(10);
+  fpt y = itof(20);
+  return ftoi(fadd(x,y));
+}

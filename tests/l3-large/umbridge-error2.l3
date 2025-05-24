@@ -1,0 +1,20 @@
+//test error
+
+void f() {
+}
+
+void g() {
+     return;
+}
+
+void h() {
+     return g();
+}
+
+int main()
+{
+    f();
+    g();
+    h();
+    return 1;
+}

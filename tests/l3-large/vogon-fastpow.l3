@@ -1,0 +1,17 @@
+//test return 1073741824
+//computes x^n where x is an integer and n is a nonnegative integer
+
+int fastpow(int x, int n) {
+  if (n == 0) {
+      return 1;
+  }
+  if (n % 2 == 0) {
+    return fastpow(x * x, n / 2);
+  } else {
+    return x * fastpow(x * x, n / 2);
+  }
+}
+
+int main() { 
+  return fastpow(2, 30);
+}

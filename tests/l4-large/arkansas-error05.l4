@@ -1,0 +1,8 @@
+//test error
+
+int main(){
+    struct hehe {int a;};
+    struct hehe h;
+    h.a = 1;
+    return h.a;
+}

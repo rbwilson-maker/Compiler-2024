@@ -1,0 +1,23 @@
+//test return 0
+
+typedef int dog;
+typedef bool cat;
+
+cat check(dog x) {
+  dog y = x + 1;
+  if (y < 32) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+int main () {
+  dog x = 0;
+  dog dogs = 1; 
+  while (check(x)) {
+    x += 1;
+    dogs <<= x;
+  }
+  return dogs;
+}

@@ -1,0 +1,10 @@
+//test typecheck
+
+int main() {
+    // according to https://www2.stetson.edu/~efriedma/mathmagic/0800.html
+    assert(Friedman(100) == 25);
+    assert(Friedman(300) == 289);
+    assert(Friedman(1000) == 736);
+
+    return  Friedman(100000);
+}

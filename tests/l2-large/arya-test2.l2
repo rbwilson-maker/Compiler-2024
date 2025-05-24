@@ -1,0 +1,8 @@
+//test div-by-zero
+// you better have register allocation : )
+
+int main(){
+  int a=2147483647;
+  while (a>0) a--;
+  return a/(a-a);
+}

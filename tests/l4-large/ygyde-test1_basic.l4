@@ -1,0 +1,17 @@
+//test typecheck
+
+// basic testing of typedefs, integers, and sample memory accesses *)
+
+typedef int foo;
+
+foo bar(foo t, foo b, foo c) {
+    foo a = t + b + c;
+    while (true) {}
+    return a;
+}
+
+int main() {
+    int b = 1;
+    foo *v;
+    return b;
+}

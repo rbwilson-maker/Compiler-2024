@@ -1,0 +1,10 @@
+//test return 1
+// testing operational semantics 
+
+int main() {
+    int a = 1; int b = a; int c = a; int d = a; int e = a;
+
+    // a = 2; b = -1; a = 4; b = -1; d = 0;
+    a += b; b -= a; a *= a; b /= c; d %= e;
+    return b * b;
+}

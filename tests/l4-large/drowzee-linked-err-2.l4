@@ -1,0 +1,38 @@
+//test memerror
+
+typedef struct Node Node;
+
+struct Node {
+    int value;
+    struct Node* next;
+};
+
+int sum_list(Node* a) {
+    if (a->next==NULL) return 0;
+
+    return a->value + sum_list(a->next);
+}
+
+void asgn_sum(Node* a) {
+    if (a==NULL) return;
+
+    a->value = sum_list(a->next);
+
+    asgn_sum(a->next);
+}
+
+
+int main() {
+    struct Node* a = alloc(struct Node);
+    struct Node* b = alloc(struct Node);
+    struct Node* c = alloc(struct Node);
+    struct Node* d = alloc(struct Node);
+
+    a->next = b;
+    b->next = c;
+    c->next = d;
+
+    asgn_sum(a); 
+
+    return 1;
+}

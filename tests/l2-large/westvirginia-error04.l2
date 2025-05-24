@@ -1,0 +1,10 @@
+//test error
+//for loop declare variable in step
+int main () {
+    int a = 0;
+    for (int i = 0; i < 10; int j = 5) {
+        i++;
+        a += j;
+    }
+    return a;
+}

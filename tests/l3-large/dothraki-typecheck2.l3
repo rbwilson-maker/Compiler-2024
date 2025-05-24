@@ -1,0 +1,13 @@
+//test typecheck
+
+void bananachom(int a) {
+  int chom = chomChom(true, false);
+  banana(a, chom);
+}
+
+int main()
+{
+  int b = 100;
+  bananachom(b);
+  return b;
+}

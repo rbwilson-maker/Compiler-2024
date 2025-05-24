@@ -1,0 +1,39 @@
+//test error
+// type of ret value assignment
+typedef int booy;
+typedef bool noy;
+
+int main() {
+return 0;
+}
+
+typedef int hoy;
+typedef hoy noopo;
+typedef noopo shoy;
+
+
+int try() {
+return 0;
+}
+
+typedef noy joy;
+joy shy(int z) {
+hoy j = 1;
+return true;
+}
+
+noy boo (int a, joy b);
+
+noy boo (int a, joy b) {
+	shy(a);
+return false;
+}
+
+typedef void haha;
+haha hey(haha a, haha b) {
+int x = 1;
+noy c;
+bool y = boo(x, c);
+return ;
+}
+

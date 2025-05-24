@@ -1,0 +1,9 @@
+//test return 0
+
+int main() {
+    int lift = 6;
+    int weight = 8;
+    int doesLift = lift < weight ? 0 : 1;
+    
+    return doesLift;
+}

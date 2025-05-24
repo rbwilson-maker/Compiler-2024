@@ -1,0 +1,220 @@
+//test typecheck
+
+// manipulate.c0 from 15-122 images
+
+int result_width(int width, int height)
+//@requires width >= 0 && height >= 0;
+//@ensures \result >= 0;
+{
+  return width;
+}
+
+int result_height(int width, int height)
+//@requires width >= 0 && height >= 0;
+//@ensures \result >= 0;
+{
+  return height;
+}
+
+
+// changes from  RGB colour space to HSV colour space.
+// since we don't have enough precision to store hue in a
+// 4-bit value while using pixel as a data structure,
+// we use 1 bit in r to represent 1.5 degrees of hue.
+// so r = h, g = s, b = v for the resultant pixel.
+
+pixel toHSV (pixel rgb)
+//@ensures get_red(\result) < 240;
+{
+  int r = get_red(rgb);
+  int g = get_green(rgb);
+  int b = get_blue(rgb);
+
+  // get maximum and minimum intensity
+  int Cmax = r;
+  int Cmin = r;
+
+  if (g>r)  Cmax = g;
+  else      Cmin = g;
+
+  if (b>Cmax)  Cmax = b;
+  if (b<Cmin)  Cmin = b;
+
+  int delta = Cmax-Cmin;
+
+  int hue = 0;
+  if (Cmax==0){
+    hue = 0;
+  }else if (Cmax==r){
+    hue = (40 * (g-b))/Cmax % 240;
+    if (hue<0){
+      hue = -hue;
+    }
+  }else if(Cmax==g){
+    hue = (40 * (b-r))/Cmax + 80;
+  }else if(Cmax==b){
+    hue = (40 * (r-g))/Cmax + 160;
+  }
+  if(hue<0){
+    hue = 0;
+  }
+
+
+  int value = Cmax;
+  int saturation;
+  if (value == 0){
+    saturation = 0;
+  }else{
+    saturation = (Cmax-Cmin) * 255/value;
+  }
+  pixel p = make_pixel(0xff, hue, saturation, value);
+  return p;
+}
+
+
+pixel toRGB(pixel hsv){
+  int r;
+  int g;
+  int b;
+  int hue = get_red(hsv);
+  int saturation = get_green(hsv);
+  int value = get_blue(hsv);
+
+  int C = value * saturation / (255);
+  int dH =  (hue%80-40);
+  if (dH<0) dH = -dH;
+int X = (value * saturation *(40- dH))/(255*80);
+
+
+
+  if (saturation == 0 && value == 0){
+    r = 0; g = 0; b = 0;
+  }else if (hue < 40){
+    r = C; g = X; b = 0;
+  }else if (hue < 80){
+    r = X; g = C; b = 0;
+  }else if (hue < 120){
+    r = 0; g = C; b = X;
+  }else if (hue < 160){
+    r = 0; g = X; b = C;
+  }else if (hue < 200){
+    r = X; g = 0; b = C;
+  }else{
+    r = C; g = 0; b = X;
+  }
+  int m = value-C;
+
+  return make_pixel(0xff, r+m, g+m, b+m);
+}
+
+int blend(int x, int y)
+//@requires 0 <= x && x <= 255;
+//@requires 0 <= y && y <= 255;
+//@ensures 0 <= \result && \result <= 255;
+{
+  int negX = 255-x;
+  int negY = 255-y;
+  int negRes = negX * negY / 255;
+  return 255-negRes;
+}
+
+
+pixel screen(pixel p1, pixel p2)
+//@requires get_alpha(p1)==255;
+//@requires get_alpha(p2)==255;
+{
+  int r = blend(get_red(p1), get_red(p2));
+  int g = blend(get_green(p1), get_green(p2));
+  int b = blend(get_blue(p1), get_blue(p2));
+  return make_pixel(255, r, g, b);
+}
+
+
+pixel[] manipulate(pixel[] pixels, int width, int height)
+//@requires width > 0 && height > 0;
+//@requires \length(pixels)==width*height;
+/*@ensures \length(\result)==result_width(width,height)*
+                             result_height(width,height);@*/
+{
+
+  pixel[] result = alloc_array(pixel, width*height);
+
+  pixel[] redShift = alloc_array(pixel, width*height);
+  pixel[] blueShift = alloc_array(pixel, width*height);
+
+  //pass 1: fill both redShift and blueShift to zeroes
+  for (int y=0; y<height;y++)
+    //@loop_invariant y >= 0 && y <= height;
+  {
+    for (int x=0; x<width; x++)
+        //@loop_invariant x >= 0 && x <= width;
+    {
+      int index = get_index(y,x,width,height);
+      redShift[index] = make_pixel(0xff,0,0,0);
+      blueShift[index] = make_pixel(0xff,0,0,0);
+
+
+      int r = get_red(pixels[index])/2;
+      int g = get_green(pixels[index])/2;
+      int b = get_blue(pixels[index])/2;
+      result[index] = make_pixel(255,r,g,b);
+    }
+  }
+
+  //pass 2: do both left and right shifts
+  int leftOscillator = 0;
+  int leftOscillator2 = 0;
+  int rightOscillator = 0;
+  int rightOscillator2 = 0;
+  for (int y = 0; y<height; y++)
+    //@loop_invariant y >= 0 && y <= height;
+  {
+    for (int x = 0; x<width; x++)
+        //@loop_invariant x >= 0 && x <= width;
+    {
+      int index = get_index(y,x,width,height);
+      int dXLeft = leftOscillator % 97 + 2*leftOscillator2 % 67;
+      int dXRight = rightOscillator % 107 + 3*rightOscillator2 % 55;
+      if (is_valid_pixel(y, x-dXLeft, width, height)){
+        int iLeft = get_index(y,x-dXLeft, width, height);
+        pixel hsv = toHSV(pixels[index]);
+        int h = get_red(hsv)/60;
+        pixel npix = make_pixel(255, h, get_green(hsv), get_blue(hsv));
+        redShift[iLeft] = toRGB(npix);
+      }
+
+      if (is_valid_pixel(y, x+dXRight, width, height)){
+        int iRight = get_index(y, x+dXRight, width, height);
+        pixel hsv = toHSV(pixels[index]);
+        int h = get_red(hsv)/60+160;
+        pixel npix = make_pixel(255, h, get_green(hsv), get_blue(hsv));
+        blueShift[iRight] = toRGB(npix);
+      }
+
+
+      leftOscillator ++;
+      leftOscillator2 ++;
+      rightOscillator ++;
+      rightOscillator2 ++;
+    }
+  }
+
+  //pass 3: merge shifted pixels with original
+  for (int y=0;y<height;y++)
+    //@loop_invariant y >= 0 && y <= height;
+  {
+    for (int x=0;x<width;x++)
+        //@loop_invariant x >= 0 && x <= width;
+    {
+      int index = get_index(y,x,width,height);
+
+      result[index] = screen(result[index], blueShift[index]);
+      result[index] = screen(result[index], redShift[index]);
+    }
+  }
+  return result;
+}
+
+int main(){
+    return 1;
+}

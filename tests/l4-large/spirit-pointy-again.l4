@@ -1,0 +1,12 @@
+//test memerror
+
+void nop() {}
+
+int main() {
+
+    int **pointy = NULL;
+    **pointy = 2 / 0;
+    nop();
+    
+    return **pointy;
+}
