@@ -5,64 +5,17 @@ C0 is a simplified version of C with some safety gurantees.
 
 # Table of Contents
 
-- [Lab6 Compiler Extension Project](#lab6-compiler-extension)
 - [Compiler Overview](#compiler-overview)
     - [Optimizations](#optimizations)
 - [Compiler Architecture](#compiler-architecture)
     - [Representations](#representations)
     - [Phases](#phases)
     - [Utils](#utils)
+- [Lab6 Compiler Extension Project](#lab6-compiler-extension)
 - [Development Best Practices](#development-best-practices)
     - [GitHub](#github)
     - [Useful Commands](#useful-commands)
 
-
-# Lab 6 Compiler Extension Project
-
-We implemented higher order functions in C0! We parse lambda functions and compile
-them into normal functions. All functions, named or lambda, can be passed around as
-values with a function type. They may be arbitrarily nested, but they may not use scoped variables (no closures yet). A lambda function application may look like:
-
-`tests/lab6-tests/ret_direct_app.l4`
-```
-int main() {
-  return fn (int x)->int {return x + 1;} (0);
-}
-```
-
-### Implementation
-
-We extended our lab5 code with constructors to represent function values. 
-Elaboration (`lib/phases/p3-elaborate/`) takes care of potentially nested lambdas
-by converting all lambdas into named functions, replacing them at their introduction site with effectively a function pointer, and adding them to a queue of functions to be elaborated.
-
-Now that we have function values, they can be used in two ways: either a function value is directly the name of an existing function, or it's an expression that 
-computes a function. This was tricky but important for us to distinguish early on, 
-so we had the typechecker detect when a function was a named function in scope, 
-and it would consider the function used.
-
-At the lower level, there are two new constructs, which correspond to creating a function value, and using one.
-
-1. The first is relative addressing of function labels. Once all lambdas have labels, this is pretty straightforward and is equivalent to `fn_label(%rip)` in assembly.
-2. The second is `*%reg` in assembly, which allows you to treat the contents of a register as an address we can call or jump to. This required some reworking in phases 4 and 5 (translate and codegen).
-
-### Testing
-
-Testing uses the existing `Compiler-dist/gradecompiler` script to test a new test suite of sixteen tests in `Compiler/tests/lab6-tests/`. The tests in the test suite use the file extension `.l4` instead of `.l6` because our code builds on the lab4 C0 language, and `.l6` seems to be reserved for the C1 lab6 project.
-
-In `Compiler/Makefile` we added a rule with allows for running our test suite.
-```
-test:
-	../gradecompiler tests/lab6-tests -O1
-
-# run on the command line `make test`
-```
-Some notes:
- - *Since our code employs the gradecompiler to link and run our generated `.s` files, we did not use the `--exe` flag. Although it can be passed, it does nothing.*
- - *All implemented `-O1` optimizations work for our extension! In the future,
-   tail call optimizations could be updated to account for tail calls to lambdas.*
- - **We have not implemented closures.** Closures allow for non-trivial currying of functions, which we were unable to implement within the given time. That said, 
-*what we do have allows for a wide variety of generalized higher order functions* which take functions as input, such as an uncurried fold function over a list type, or a list tabulate function. We implemented some such tests in `tests/lab6-tests/ret_basic_hofs.l4` and `tests/lab6-tests/ret_dropwhile.l4`
 
 # Compiler Overview
 
@@ -256,6 +209,53 @@ The utils folder includes:
   - `temp.mli`: Creates temporary variables which are not identified by their names.
 
   - `type.ml`: Provides an interface for `C0` types, as well as the `Tag` module which allows the typecheck phase to mark types at the expression level.
+
+# Lab 6 Compiler Extension Project
+
+We implemented higher order functions in C0! We parse lambda functions and compile
+them into normal functions. All functions, named or lambda, can be passed around as
+values with a function type. They may be arbitrarily nested, but they may not use scoped variables (no closures yet). A lambda function application may look like:
+
+`tests/lab6-tests/ret_direct_app.l4`
+```
+int main() {
+  return fn (int x)->int {return x + 1;} (0);
+}
+```
+
+### Implementation
+
+We extended our lab5 code with constructors to represent function values. 
+Elaboration (`lib/phases/p3-elaborate/`) takes care of potentially nested lambdas
+by converting all lambdas into named functions, replacing them at their introduction site with effectively a function pointer, and adding them to a queue of functions to be elaborated.
+
+Now that we have function values, they can be used in two ways: either a function value is directly the name of an existing function, or it's an expression that 
+computes a function. This was tricky but important for us to distinguish early on, 
+so we had the typechecker detect when a function was a named function in scope, 
+and it would consider the function used.
+
+At the lower level, there are two new constructs, which correspond to creating a function value, and using one.
+
+1. The first is relative addressing of function labels. Once all lambdas have labels, this is pretty straightforward and is equivalent to `fn_label(%rip)` in assembly.
+2. The second is `*%reg` in assembly, which allows you to treat the contents of a register as an address we can call or jump to. This required some reworking in phases 4 and 5 (translate and codegen).
+
+### Testing
+
+Testing uses the existing `Compiler-dist/gradecompiler` script to test a new test suite of sixteen tests in `Compiler/tests/lab6-tests/`. The tests in the test suite use the file extension `.l4` instead of `.l6` because our code builds on the lab4 C0 language, and `.l6` seems to be reserved for the C1 lab6 project.
+
+In `Compiler/Makefile` we added a rule with allows for running our test suite.
+```
+test:
+	../gradecompiler tests/lab6-tests -O1
+
+# run on the command line `make test`
+```
+Some notes:
+ - *Since our code employs the gradecompiler to link and run our generated `.s` files, we did not use the `--exe` flag. Although it can be passed, it does nothing.*
+ - *All implemented `-O1` optimizations work for our extension! In the future,
+   tail call optimizations could be updated to account for tail calls to lambdas.*
+ - **We have not implemented closures.** Closures allow for non-trivial currying of functions, which we were unable to implement within the given time. That said, 
+*what we do have allows for a wide variety of generalized higher order functions* which take functions as input, such as an uncurried fold function over a list type, or a list tabulate function. We implemented some such tests in `tests/lab6-tests/ret_basic_hofs.l4` and `tests/lab6-tests/ret_dropwhile.l4`
 
 
 # Development Best Practices
