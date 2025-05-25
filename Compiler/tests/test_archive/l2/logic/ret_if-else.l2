@@ -1,0 +1,14 @@
+//test return 0
+
+int main() {
+    int x = 0;
+    if (true) 
+        if (false)
+            if (true)
+                return 8;
+            else
+                return x;
+        else 
+            return x;
+    return x;
+}

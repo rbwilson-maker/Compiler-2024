@@ -1,0 +1,8 @@
+// test return -0x80000000
+// too large number should not parse
+
+int main() {
+    int z;
+    z = -0x80000000;
+    return z;
+}

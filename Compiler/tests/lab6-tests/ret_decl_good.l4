@@ -1,0 +1,12 @@
+//test return 0
+
+void declared_and_defined();
+
+int main() {
+  () -> void my_fun = declared_and_defined;
+  return 0;
+}
+
+void declared_and_defined() {
+  return;
+}

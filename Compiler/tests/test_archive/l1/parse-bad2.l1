@@ -1,0 +1,11 @@
+// test error
+// block in middle
+
+int main() {
+    int x = 5;
+    {
+        int z = 8;
+    }
+    int y = 10;
+    return 10;
+}

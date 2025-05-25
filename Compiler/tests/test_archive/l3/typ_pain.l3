@@ -1,0 +1,9 @@
+//test typecheck
+
+int guy1() { return 1; }
+
+int guy2();
+
+bool guy3();
+
+int main () { return 0; }

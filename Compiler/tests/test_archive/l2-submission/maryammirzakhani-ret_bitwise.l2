@@ -1,0 +1,6 @@
+//test return 262143
+
+int main() {
+    int x = 0xFFFFFF;
+    return (x >> 5 << 5 >> 6 << 3 | 0) >> (3 ^ 0 | 0xF3 & 0xF03); 
+}

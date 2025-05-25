@@ -1,0 +1,11 @@
+//test div-by-zero
+
+int f() {
+    assert(false);
+    return 0;
+}
+
+int main() {
+    int x = (1/0) + (f());
+    return x;
+}

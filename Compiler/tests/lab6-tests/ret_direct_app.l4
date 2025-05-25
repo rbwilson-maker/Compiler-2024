@@ -1,0 +1,5 @@
+//test return 1
+
+int main() {
+  return fn (int x)->int {return x + 1;} (0);
+}

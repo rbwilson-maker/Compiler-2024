@@ -1,0 +1,28 @@
+//test abort
+
+struct list {
+    bool hd;
+    struct list *tail;
+};
+
+bool all(struct list* L) {
+    bool out = true;
+    struct list *curr = L;
+    while (curr != NULL) {
+        out = out && (curr->hd);
+        curr = curr->tail;
+    }
+    return out;
+}
+
+int main() {
+    struct list *L = alloc(struct list);
+    struct list *rest = alloc(struct list);
+    (*rest).hd = false;
+    (*rest).tail = NULL;
+    (*L).hd = true;
+    (*L).tail = rest;
+    assert(all(L));
+
+    return 0;
+}

@@ -1,0 +1,10 @@
+//test return 2
+
+() -> void shadowed(int x) {
+  return fn () -> void {return;};
+}
+
+int main() {
+  () -> int shadowed = fn () -> int {return 2;};
+  return shadowed();
+}

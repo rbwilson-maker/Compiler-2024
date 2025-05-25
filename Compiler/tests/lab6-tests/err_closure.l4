@@ -1,0 +1,12 @@
+//test error
+//PASSES
+
+int main() {
+  int x = 4;
+
+  // Closures are not allowed yet
+  (int)->int f = fn (int y)->int {
+    return x;
+  };
+  return 0;
+}

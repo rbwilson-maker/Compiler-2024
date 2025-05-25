@@ -1,0 +1,11 @@
+//test error
+//PASSES
+
+struct s {};
+
+int main() {
+  (struct s*)->struct s f = fn (struct s* ptr)->struct s {
+    return *ptr; // Illegal even though we are inside a lambda
+  };
+  return 0;
+}

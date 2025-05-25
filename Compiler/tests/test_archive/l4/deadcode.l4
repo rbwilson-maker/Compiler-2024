@@ -1,0 +1,14 @@
+//test return 5
+
+int foo() {
+    if (true) return 5;
+    else return 20;
+    int y = 25;
+    int z = 100;
+    return y + z;
+}
+
+int main() {
+    int x = foo();
+    return x;
+}

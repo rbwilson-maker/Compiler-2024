@@ -1,0 +1,122 @@
+//test return 0;
+
+// fun little helper hofs
+int ap ((int)->int g, int x) {
+    return g (x);
+}
+
+int if_ap ((int) -> int f, (int) -> int g, int x, bool b) {
+    if (b) return f (x);
+    else return g (x);
+}
+
+typedef struct cons* list;
+struct cons {
+    int hd;
+    list tail;
+};
+
+// uncurried map inplace of an int list
+void map_inplace ((int) -> int f, list L) {
+    list curr = L;
+    while (curr != NULL) {
+        curr->hd = f (curr->hd);
+        curr = curr->tail;
+    }
+}
+
+// uncurried map of an int list
+list map ((int) -> int f, list L) {
+    if (L == NULL) {
+        return NULL;
+    } else {
+        list out = alloc(struct cons);
+        out->hd = f (L->hd);
+        list curr = L->tail;
+        list curr_out = out;
+        while (curr != NULL) {
+            list node = alloc(struct cons);
+            node->hd = f (curr->hd);
+            curr_out->tail = node;
+            curr = curr->tail;
+            curr_out = curr_out->tail;
+        }
+        return out;
+    }
+}
+
+// make a list of the numbers 1 to n
+list tabulate ((int) -> int f, int n) {
+    if (n == 0) return NULL;
+    list out = alloc(struct cons);
+    out->hd = f(0);
+    list curr = out;
+    for (int i = 1; i < n; i++) {
+        list node = alloc(struct cons);
+        node->hd = f(i);
+        curr->tail = node;
+        curr = curr->tail;
+    }
+    return out;
+}
+
+int main() {
+    (int) -> int incr = fn (int x)->int { return x+1; };
+
+    list L = tabulate (incr, 5);
+    // check that tabulate is correct
+    assert(L != NULL);
+    assert(L->tail != NULL);
+    assert(L->tail->tail != NULL);
+    assert(L->tail->tail->tail != NULL);
+    assert(L->tail->tail->tail->tail != NULL);
+    assert(L->tail->tail->tail->tail->tail == NULL);
+    assert(L->hd == 1);
+    assert(L->tail->hd == 2);
+    assert(L->tail->tail->hd == 3);
+    assert(L->tail->tail->tail->hd == 4);
+    assert(L->tail->tail->tail->tail->hd == 5);
+
+    map_inplace (incr, L);
+    // check that L was modified
+    assert(L != NULL);
+    assert(L->tail != NULL);
+    assert(L->tail->tail != NULL);
+    assert(L->tail->tail->tail != NULL);
+    assert(L->tail->tail->tail->tail != NULL);
+    assert(L->tail->tail->tail->tail->tail == NULL);
+    assert(L->hd == 2);
+    assert(L->tail->hd == 3);
+    assert(L->tail->tail->hd == 4);
+    assert(L->tail->tail->tail->hd == 5);
+    assert(L->tail->tail->tail->tail->hd == 6);
+
+    list L2 = map (incr, L);
+    // check that L2 is correct
+    assert(L2 != NULL);
+    assert(L2->tail != NULL);
+    assert(L2->tail->tail != NULL);
+    assert(L2->tail->tail->tail != NULL);
+    assert(L2->tail->tail->tail->tail != NULL);
+    assert(L2->tail->tail->tail->tail->tail == NULL);
+    assert(L2->hd == 3);
+    assert(L2->tail->hd == 4);
+    assert(L2->tail->tail->hd == 5);
+    assert(L2->tail->tail->tail->hd == 6);
+    assert(L2->tail->tail->tail->tail->hd == 7);
+    // check that L was not modified
+    assert(L != NULL);
+    assert(L->tail != NULL);
+    assert(L->tail->tail != NULL);
+    assert(L->tail->tail->tail != NULL);
+    assert(L->tail->tail->tail->tail != NULL);
+    assert(L->tail->tail->tail->tail->tail == NULL);
+    assert(L->hd == 2);
+    assert(L->tail->hd == 3);
+    assert(L->tail->tail->hd == 4);
+    assert(L->tail->tail->tail->hd == 5);
+    assert(L->tail->tail->tail->tail->hd == 6);
+    
+
+    return 0;
+}

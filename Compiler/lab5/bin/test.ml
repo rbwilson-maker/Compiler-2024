@@ -1,0 +1,1 @@
+let () = Compiler.Test.run ()

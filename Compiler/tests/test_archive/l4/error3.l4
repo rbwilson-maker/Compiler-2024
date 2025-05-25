@@ -1,0 +1,8 @@
+//test error
+// should be a parse error, not typecheck
+
+int main() {
+    int x = 100;
+    int y = fpt * x;
+    return 100;
+}

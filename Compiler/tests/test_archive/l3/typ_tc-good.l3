@@ -1,0 +1,14 @@
+//test typecheck
+
+int main();
+
+typedef int awongus;
+
+void doesntreturn() {
+  return;
+}
+
+int main() {
+  awongus x = 4;
+  return x;
+}

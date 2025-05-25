@@ -1,0 +1,9 @@
+//test return 0
+
+int main() {
+  bool x = true;
+  (int)->int f = fn (int x)->int {
+    return x;
+  };
+  return 0;
+}

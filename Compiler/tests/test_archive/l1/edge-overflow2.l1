@@ -1,0 +1,6 @@
+// test return -2147483648
+
+int main() {
+    int imax = 2147483647;
+    return imax + 1;
+}

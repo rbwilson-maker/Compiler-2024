@@ -1,0 +1,12 @@
+//test memerror
+//PASSES
+
+int main() {
+    (int*) -> (int) -> int f = fn (int* y) -> (int) -> int {
+        int z = *y;
+        return fn (int x) -> int {
+            return x;
+        };
+    };
+    return f(NULL)(1/0);
+}

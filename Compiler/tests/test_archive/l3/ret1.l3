@@ -1,0 +1,14 @@
+//test return 51
+
+int square2(int a, int b, int c, int d, int e, int f, int g, int h) {
+    return h * g * a * b * c * d * e * f;
+}
+
+int square(int a, int b, int c, int d, int e, int f, int g, int h) {
+    return square2(a,b,c,d,e,f,g,h);
+}
+
+int main() {
+    int y = square(1, 1, 1, 1, 1, 1, -5, -10);
+    return y + 1;
+}

@@ -1,0 +1,55 @@
+//test return 123
+
+typedef struct intlist intlist;
+struct intlist {
+  intlist* next;
+  int val;
+};
+
+intlist* dropWhileTrue((int)->bool p, intlist* list) {
+  intlist* head = NULL;
+  while (list != NULL) {
+    if (p(list->val)) {
+      list = list->next;
+    } else {
+      head = list;
+      list = NULL;
+    }
+  }
+  return head;
+}
+
+/** f(acc, listelt) */
+int foldl((int, int)->int f, int acc, intlist* list) {
+  while (list != NULL) {
+    acc = f(acc, list->val);
+    list = list->next;
+  }
+  return acc;
+}
+
+intlist* tabulate((int)->int f, int n) {
+  if (n == 0) {
+    return NULL;
+  }
+  intlist* head = alloc(intlist);
+  head->val = f(0);
+  intlist* ptr = head;
+  for(int i = 1; i < n; i++) {
+    intlist* node = alloc(intlist);
+    node->val = f(i);
+    ptr->next = node;
+    ptr = ptr->next;
+  }
+  return head;
+}
+
+int add(int x, int y) {return x + y;}
+
+int main() {
+  // [0,2,4,6,8,6,7,8,9,10,11,12,13,14,15,16]
+  intlist* list1 = tabulate(fn (int i)->int {return i < 5? 2*i : i+1;}, 16);
+
+  (int)->bool isEven = fn (int x)->bool {return x % 2 == 0;};
+  return foldl(add, 8, dropWhileTrue(isEven, list1));
+}

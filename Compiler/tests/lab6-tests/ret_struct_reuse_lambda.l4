@@ -1,0 +1,21 @@
+//test return 0
+
+struct s {
+  () -> struct s* make_new;
+};
+
+int main() {
+  struct s* S = alloc(struct s);
+  S->make_new = fn () -> struct s* {
+      struct s* new = alloc(struct s);
+      // Initialized the first nested new->make_new
+      new->make_new = fn () -> struct s* {
+          struct s* new = alloc(struct s);
+          // Don't initialize the second nested new->make_new
+          return new;
+        };
+      return new;
+    };
+  struct s* NEW = S->make_new()->make_new(); // Should be okay
+  return 0;
+}

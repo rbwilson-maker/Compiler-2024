@@ -1,0 +1,11 @@
+//test error
+
+typedef boid x;
+
+void foo(int z, int a, int b, x c, bool d, bool e, bool f, int g, x h, x j) {
+    return;
+}
+
+int main() {
+    return 0;
+}

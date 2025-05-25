@@ -1,0 +1,11 @@
+//test memerror
+
+void update(int *ptr) {
+    *ptr = 100;
+}
+
+int main() {
+    int *y = NULL;
+    update(y);
+    return 0;
+}

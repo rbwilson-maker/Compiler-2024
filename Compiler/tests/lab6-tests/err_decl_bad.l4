@@ -1,0 +1,9 @@
+//test error
+//PASSES
+
+void declared_not_defined();
+
+int main() {
+  () -> void my_fun = declared_not_defined;
+  return 0;
+}

@@ -1,0 +1,16 @@
+//test return 144
+
+int main() {
+    int a; int b; int c; int d;
+    a = 3;
+    a *= 2; // a = 6
+    b = 4;
+    b += 9; // b = 13
+    c = 1;
+    b -= c; // b = 12
+    d = 36;
+    d /= a; // d = 6
+    a %= 10;
+    a = a + d; // a = 12
+    return a * b;
+}

@@ -1,0 +1,7 @@
+// test return -2147483648
+
+// Negative int min
+int main() {
+  int deluge = -0x80000000;
+  return deluge;
+}

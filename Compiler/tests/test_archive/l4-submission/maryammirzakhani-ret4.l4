@@ -1,0 +1,21 @@
+//test return 128
+
+int *awongus(int* guy) {
+  *guy += *guy;
+  if (*guy > 100) { return guy; }
+  return awongus(guy);
+}
+
+int main() {
+          //  _--_
+  int     // (  ) |\
+  *       // | _  |/
+  suspect //  -  -
+  = alloc //    /\    /\
+  (       //   ,        \
+    int   // =( ' ᴥ  '  =)
+  )
+  ;       // fart XD \(òuó)/=33
+  *suspect -= *suspect - 1;
+  return *awongus(suspect);
+}

@@ -1,0 +1,10 @@
+(executable
+ (name c0c)
+ (modules c0c)
+ (modes byte exe)
+ (libraries compiler))
+
+(test
+ (name test)
+ (modules test)
+ (libraries compiler))

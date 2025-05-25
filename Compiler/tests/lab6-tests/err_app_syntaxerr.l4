@@ -1,0 +1,6 @@
+//test error
+//PASSES
+
+int main() {
+  return (fn (int x)->int {return x;}) 0;
+}

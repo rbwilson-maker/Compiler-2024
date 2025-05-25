@@ -1,0 +1,30 @@
+//test error
+
+int main();
+
+typedef int awogus;
+
+awogus f(int x, int y, bool z);
+
+awogus Yahoo();
+
+int awongagonga() {
+  return 0;
+}
+
+bool someGuy(int lalala, bool awongus);
+
+void IRetURNVOIDOOOOOOO();
+
+void IRetURNVOIDOOOOOOO() {
+  return; // OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+}
+
+int main() {
+  assert(true);
+  return 1 + awongagonga();
+}
+
+bool someGuy(int lalala, bool awongus) {
+  return 4 + 4 * f(4, lalala, true);
+}

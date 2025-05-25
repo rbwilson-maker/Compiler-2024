@@ -1,0 +1,21 @@
+//test error
+
+// should produce a type-checking error
+int main() {
+    int x;
+    int y;
+    {
+        x = 10;
+        y = 100;
+        bool z;
+        if (x == y) {
+            z = true;
+        } else {
+            z = false;
+        }
+        x = z ? 100 : -1;
+    }
+    // z can't be used outside the block
+    x = z ? y : -y;
+    return y;
+}

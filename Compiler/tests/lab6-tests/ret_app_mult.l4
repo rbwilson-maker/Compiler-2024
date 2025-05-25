@@ -1,0 +1,15 @@
+//test return 0
+//PASSES
+int main() {
+  ()->()->()->()->int f = fn ()->()->()->()->int {
+    return fn ()->()->()->int {
+      return fn ()->()->int {
+        return fn ()->int {
+          return 0;
+        };
+      };
+    };
+  };
+
+  return f()()()();
+}
