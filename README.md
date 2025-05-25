@@ -1,4 +1,5 @@
-This is a C0 compiler built by Nicole Fang and Rachel Wilson in 15-411: Compiler Design. Spring 2024 at Carnegie Mellon University.
+This is a C0 compiler built by Nicole Fang and Rachel Wilson for a course at Carnegie Mellon University.
+The compiler itself builds on files from that course, and is located in `Compiler/`
 
 C0 is a simplified version of C with some safety gurantees.
 
